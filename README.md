@@ -59,14 +59,14 @@ This step builds a local dataset of Steam games by querying the `appdetails` API
 
 1. **Initial App List Retrieval**
    * Download the full list of app IDs from the Steam endpoint (includes games and non-game apps).
-   * Save the list to [`applist.json`](./applist.json).
+   * Save the list to [applist.json](./applist.json).
 
 2. **Filtering and Metadata Collection**
 
    * For each app ID in the list:
 
      * Query the `appdetails` API individually.
-     * Record every query in [`queries.json`](./queries.json) to prevent redundant calls.
+     * Record every query in [queries.json](./queries.json) to prevent redundant calls.
      * Check whether the app is categorized as a **game**.
      * If it is a game:
 
@@ -102,6 +102,9 @@ This step builds a local dataset of Steam games by querying the `appdetails` API
      release_date_
    * The resulting CSV file is compatible with our internal **sampling tool**.
    * This step is implemented in a Jupyter notebook: [appdetails_to_csv.ipynb](./appdetails_to_csv.ipynb).
+4. **Descriptive Stats** of the selected metadata
+   * The columns of the CSV file are analysed to have insights on their content
+   * This is implemented in a Jupyter notebook: [dataset_overview.ipynb](./dataset_overview.ipynb).
 
 
 ---
@@ -114,10 +117,9 @@ This step builds a local dataset of Steam games by querying the `appdetails` API
   * Aug 8, 2025: 27% of queries made
   * Aug 15, 2025, 72% of queries made
 * ✅ Format selected metadata from individual JSON files into one csv
-
+* ✅ Script to analyze the selected metadata (descriptive stats)
 
 ### 🛠️ TODO:
-* ⬜ Script to analyze the selected metadata (descriptive stats)
 * ⬜ Fetch complementary metadata for each game? (e.g., users, hours played)
 * ⬜ Write a short update script to refresh the dataset with **new entries** without re-fetching the entire list.
 * ⬜ Begin defining sampling strategy for selecting games from the dataset for patch note analysis.
