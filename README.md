@@ -53,30 +53,56 @@ We plan to **build a local dataset** representing the Steam game catalog, from w
 
 ---
 
-## Retrieval Process Implementation
+## A. Create the **Local Dataset** 
 
-Implementation is done via a **Jupyter Notebook**: [game_metadata_extraction.ipynb](.?game_metadata_extraction.ipynb).   
-Given the **API quota limits** (100,000 calls/day, \~200 every 5 minutes), data collection is implemented incrementally over several days. This script is made to be launched once.
+This step builds a local dataset of Steam games by querying the `appdetails` API and collecting selected metadata.
 
-#### Step-by-step Process:
+1. **Initial App List Retrieval**
+   * Download the full list of app IDs from the Steam endpoint (includes games and non-game apps).
+   * Save the list to [`applist.json`](./applist.json).
 
-1. **Initial Call**: Retrieve the full list of app IDs from the endpoint (contains both games and other app types), stored in [applist.json](./applist.json)
-2. **Filtering**:
+2. **Filtering and Metadata Collection**
 
-   * For each app ID, make an individual query.
-     * All made queries are documented in [queries.json](./queries.json) to avoid redundant queries.
-   * Check if the entry corresponds to a *game*.
-   * If yes, retrieve and store its metadata in a local JSON file:
+   * For each app ID in the list:
 
-     * Filename format: `{appid}__{name}.json`
-     * Stored in the `./raw_metadata_dataset/` folder.
-3. **Create Local Dataset**:
+     * Query the `appdetails` API individually.
+     * Record every query in [`queries.json`](./queries.json) to prevent redundant calls.
+     * Check whether the app is categorized as a **game**.
+     * If it is a game:
 
-   * This dataset acts as a **sampling frame** for the next steps in the project (e.g., collecting patch notes).
-   * Only metadata is retrieved at this point (no patch notes yet).
+       * Extract basic metadata and store it locally in the folder [./raw_metadata_dataset/](./raw_metadata_dataset/).
+       * Filenames follow the format: `{appid}__{name}.json`.
+       * At this stage, only high-level metadata is collected (no patch notes or extended data).
 
+   * This step is implemented in a Jupyter notebook: [game_metadata_extraction.ipynb](./game_metadata_extraction.ipynb).
+    > **Note:** Due to Steam API rate limits (100,000 calls/day, \~200 every 5 minutes), the script is designed to run incrementally over several days. It is intended to be launched once per app ID list.
 
----
+3. **Metadata Formatting**
+
+   * After metadata extraction, format the dataset as one CSV file: [games_metadata.csv](./games_metadata.csv)
+   * Each row represents a game, with the following metadata fields as columns:
+     * _name,
+     steam_appid,
+     required_age,
+     is_free,
+     number_dlc,
+     developers,
+     publishers,
+     price_currency,
+     price_initial,
+     price_final,
+     windows,
+     mac,
+     linux,
+     metacritic_score,
+     categories,
+     genres,
+     recommendations_total,
+     achievements_total,
+     release_date_
+   * The resulting CSV file is compatible with our internal **sampling tool**.
+   * This step is implemented in a Jupyter notebook: [appdetails_to_csv.ipynb](./appdetails_to_csv.ipynb).
+
 
 ---
 
@@ -86,11 +112,15 @@ Given the **API quota limits** (100,000 calls/day, \~200 every 5 minutes), data 
 * ✅ Incremental filtering process implemented to extract game metadata
 * ✅ Metadata stored in structured JSON files for local use
   * Aug 8, 2025: 27% of queries made
+  * Aug 15, 2025, 72% of queries made
+* ✅ Format selected metadata from individual JSON files into one csv
+
 
 ### 🛠️ TODO:
-
-* Write a short update script to refresh the dataset with **new entries** without re-fetching the entire list.
-* Begin defining sampling strategy for selecting games from the dataset for patch note analysis.
+* ⬜ Script to analyze the selected metadata (descriptive stats)
+* ⬜ Fetch complementary metadata for each game? (e.g., users, hours played)
+* ⬜ Write a short update script to refresh the dataset with **new entries** without re-fetching the entire list.
+* ⬜ Begin defining sampling strategy for selecting games from the dataset for patch note analysis.
 
 ### 🤔 Related questions:
 * 99% of games on Steam are indie games, but how much game time / size of user-base compared to AAA games?
