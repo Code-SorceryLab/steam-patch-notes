@@ -1,0 +1,108 @@
+{
+    "appId": "3442880",
+    "total_notes": 17,
+    "notes": [
+        {
+            "title": "v0.8.7e (9/26/25)",
+            "date": "2025-09-26 07:40:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772275398",
+            "notes": "- Fixed the Cirno Tips list sometimes not loading correctly when tabbing left from the Exit Game tab.\n- Fixed the sell value of pumpkins. (It was intended to be scaled down in 1.8.7, and all pumpkin products were reduced accordingly, but the pumpkin itself was skipped over.)\n- Fixed the Inspect tool's target indicator to only show up on items that can be inspected.\n- Improved the randomization of how the Sympathy Chicken chooses which chicken to copy.\n- Fixed the Umbrella Chicken laying blue eggs on the day before a rainstorm, instead of on the day of one.\n- Fixed feed being added to the coop twice if the player was both carrying feed and owned the silo.\n- Auto-Pickers now have a reach of 3 instead of 2 (to create a 7x7 area centered on them). The distance between Auto-Pickers collecting items from each other if priority is set has also been increased to 6.\n- Fixed the Auto-Picker Inspect window not working correctly.\n- Auto-Pickers have been updated to also pull up out-of-season regrowable crops. In general, Auto-Pickers should now produce identical results to picking crops by hand.\n- Auto-Pickers are now updated after daily debris spawning/tile decay, so picked crops will always leave behind a \"scrungled\" tilled tile. (This will become relevant once fertilizer is added.)\n\nThis update includes some significant refactoring of the code that updates the farm overnight, let me know if you spot anything unusual."
+        },
+        {
+            "title": "v0.8.7d Hotfix (9/22/25)",
+            "date": "2025-09-22 23:52:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915541972",
+            "notes": "- Fixed rice and sweet potato crops being invisible introduced in 0.8.7c. (An outdated version of the sprite sheet with these crops in a different position was used by accident.) \n\nSorry about that."
+        },
+        {
+            "title": "v0.8.7c (9/22/25)",
+            "date": "2025-09-22 18:33:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915535202",
+            "notes": "- Fully grown crop sprites have been touched up with darker outlines to make them stand out more.\n- Fixed being able to pick grass crops without the scythe. (Not sure how that happened.)\n- To reflect the much lower value of jar products, the Pottery Wheel and Auto-Brewers are cheaper, and Fermenting Jars now require less clay to craft.\n- Trying out a different implementation for getting a stable 60 FPS."
+        },
+        {
+            "title": "v0.8.7b",
+            "date": "2025-09-21 23:37:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915508841",
+            "notes": "- Removed some code meant to stabilize FPS as it was suspected to be causing problems when the game window lost focus. Note that this will cause the game to run at 62.5 FPS without VSync.\n- Fixed rice still displaying a puddle as if it was always watered. Corrected the seed description to clarify that it cannot be grown in winter.\n- Fixed an error with the Sympathy Chicken that would cause it to only produce normal eggs sometimes.\n- Corrected a few outdated Cirno Tips."
+        },
+        {
+            "title": "v0.8.7",
+            "date": "2025-09-20 17:31:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915469296",
+            "notes": "Today's patch has a lot of nerfs to slow down how quickly the game's economy tends to spiral out of control. Better now than later.\n\nCROPS\n- Many crops have been rebalanced (via growth times, seed costs, and crop values), using profit-per-day as the primary metric. Regrowable crops in particular regrow slower and are less valuable.\n- All crops will now die instantly when more than 10 days out of season, and regrowable crops will immediately be pulled up after one out-of-season harvest. (This is more of a convenience to the player than anything, as they must no longer axe regrowable crops to get rid of them after the season ends.)\n- Grass crop seeds are significantly more expensive, and the power cost of using the millstone has increased.\n- You can now use the millstone repeatedly and quickly by holding down the Interact button while using it.\n- Terraces now dry up faster the bigger they are. At ten tiles or less, they will last 10 days (the maximum number of days between storms), and every five tiles beyond that will make them dry up one day sooner. (For reference, the average number of days between storms is 5.) This is an effort to make building up terraces a more gradual process, as it did not take many terrace walls to cover the whole farm.\n- Rice must now be watered.\n\nFERMENTING JARS\n- Products from Fermenting Jars are less valuable, now increasing the value of the batch by about 10% instead of the previous 33%.\n- Batch sizes for jars are more consistent. In general, normal crops require a batch of 3, crops that yield 2~3 per harvest require 5, and large crops require just 1. The value of the product is now scaled to the size of the batch, instead of the other way around.\n\nCOOKING\n- As the prices of many ingredients have been changed, cooked meals have had their recipes and stats tweaked accordingly.\n- Power restored is now expressed as a percentage and scales with your max power. (Your max power increases with your Faith Level.)\n- Selling cooked dishes is no longer profitable; the value of the dish is simply the total of all the ingredients. This has been done to address the fact that Casual Mode offers an unlimited amount of time to cook, making it both optimal and tedious to cook every ingredient you have. (Because of this change, Suwako's Year 2 Winter seasonal goal will be changed later.)\n- Fresh cheese can now be used in place of the cheese from the Miracle Mart in most recipes, if you feel like spending 30 minutes to save a few points.\n- Food buffs now last 6 hours (12 with high-quality).\n\nCHICKENS\n- Increased the value of basic eggs from 50 to 80, and scaled other egg types accordingly.\n- The coop menu now has an \"Inspect\" option to let you view the descriptions of your chickens and their happiness values.\n- Implemented a few new recipes using the previously unused special chicken eggs. You will receive the recipes in the mail when you ship the relevant ingredients.\n- Mystia now sells chicken feed at her grilled eel stand. (Whether this is intended for her customers to eat or not is up for interpretation.)\n\nOTHER FARM CHANGES\n- The Inspect tool is now working in a rudimentary way. It works on anything with an item tooltip, and if it's a crop, it will give you some information about how many days left it has to grow, and whether it's withered at all.\n- If you don't have a magatama equipped, you can hold down the Use button to swing the Axe or Hammer repeatedly. It will stop automatically when the object is destroyed.\n- You can now unequip magatamas in the pause menu by selecting the one you already have equipped.\n- The spawn rate for debris on the farm has been cut in half.\n- Implemented a few different kinds of flooring, craftable at the work bench. These will prevent debris from spawning. Note: the game does not currently support multiple objects per tile, so you can't put anything on top of this flooring yet.\n- Extended the effective range of sprinkler hoses by 1 to reduce confusion about their \"max length\" description.\n- Wood, stone, clay, and chicken feed can now be sold, for a measly 5 points each. (Note: metals cannot currently be sold because they are timegated and a player selling their stack early on may regret it.)\n\nFISHING\n- Fish struggle mechanics reworked, they now have more unique behavior. Salmon put up a brief but fierce struggle, eels are slow but fight doggedly. Catfish are right bastards. Crucian carp are fairly easy to catch, giving them (and thus Lake Yasaka) a niche.\n- Fish that are directly underneath you when hooked get a short initial speed boost to gain a little distance (so that you're not pulling them straight up).\n- Once they are fully exhausted, fish on the hook slow down significantly.\n- The tension meter is now displayed above the fish, instead of above Minoriko.\n- Fish prices have been adjusted upward. With no upgrades you can make about 1000 points off a full power bar's worth of fishing if you're good at it.\n\nADVENTURE\n- Wakasagihime's last spellcard is easier now.\n- A more aggressive method of culling bullets has been implemented to prevent Wriggle occasionally leaving bullets behind.\n- The lock-on crosshairs are much bolder now.\n- Added a check to prevent the player from instantly choosing a path because they were standing on it when the stage ended.\n\nMISC\n- The load game screen now shows the year of each save file.\n- Doubled the value of Momoyo's winter mining minigame. Momoyo now also walks to the mine immediately in winter so you can start early.\n- Changed the color of the gem blocks in the mining minigame to something different from the actually unbreakable blocks.\n- You now have a chance to score drunk crits with the axe and hammer. The Spiked Watermelon greatly enhances this effect.\n- Added a few missing winter lines for a few characters.\n\nBUGFIXES\n- Large rocks and logs now correctly track damage as a whole, instead of in four pieces.\n- Fixed the normal quality ingredients not getting used up if a combination of normal and quality ingredients were used for a recipe.\n- Fixed not leveling up above Faith Level 10 if you had exactly enough Faith Points.\n- Fixed volume settings in options not being set correctly upon loading the game.\n- Fixed L1/R1 appearing in the glyph set twice instead of L2/R2.\n- Fixed the item popup still showing up when an item fails to get put into your bag (usually because it's full).\n- Fixed the tile target indicator not highlighting clay and metal rocks with the hammer."
+        },
+        {
+            "title": "v0.8.6d",
+            "date": "2025-09-14 03:13:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566506535",
+            "notes": "D is for dummy.\n\n- Fixed broken interactions between the existing Adventure Mode and Mining Mode pause menus and the Esc menu. The Mining Mode quit menu (to either leave the minigame or call Momoyo for help) remains separate from the pause menu, while the option to quit Adventure Mode has been added to its Esc menu. The prompts have also been fixed accordingly."
+        },
+        {
+            "title": "v0.8.6c",
+            "date": "2025-09-14 01:18:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566503948",
+            "notes": "- Fixed the scrolling of the Tips tab, for real this time.\n- Fixed the inventory pointer being in Bless mode upon exiting and re-entering the game.\n- Fixed being able to use any item during the seed planting animation by changing the equipped item.\n- You can now raise the Pixel Scale one setting larger than your display, which should still be small enough to fix if you do it by accident.\n- Chickens now return to the coop properly if you go to sleep before 6 PM and the coop door is open. If left outside overnight with the door closed, chickens will start the day on the tile in front of the coop.\n- Chickens will no longer eat or lay an egg if stuck outside overnight. (They still won't die, but they won't be happy.)\n- Coops now have little signs next to the door to indicate which number they are."
+        },
+        {
+            "title": "v0.8.6b",
+            "date": "2025-09-13 16:18:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566492264",
+            "notes": "- The Esc Options/Quit menu is now a tab in the pause menu. Pressing Esc brings you to it.\n- Fixed Suwako seasonal goal amount in the Special Orders menu being overwritten by tooltips.\n- Fixed watering can upgrades not affecting power usage with magatama skills."
+        },
+        {
+            "title": "v0.8.6 - UI Update",
+            "date": "2025-09-13 06:34:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566479182",
+            "notes": "First new version number! This update focuses on support for making controls more customizable and visible to make the game functions clearer.\n\nUI changes:\n- The game's 1x minimum resolution has been increased to 480x360 (from 400x300) to support more information on screen.\n- The control configuration menu has been overhauled. You can now configure your controls differently for various contexts (specifically, for menus, gameplay, inventory, and adventure modes). You can also change the glyphs displayed for gamepad prompts to suit any gamepad, but you must do this manually. In general, the game uses less buttons overall which should lead to less crowded controls.\n- The configuration save file format has been updated to support this new functionality, so your controls will be reset to default the first time you load this update. Be sure the check the options to update your controls.\n- You can now access the options menu ingame by exiting any other menus and pressing Esc. (This should work during adventure mode and the mining minigame too.)\n- The Enter and Arrow Keys are now available for remapping. If you manage to brick your controls by doing this, you can reset them to default at any time by holding F1 for three seconds.\n- By default, the D-Pad can now be used in addition to any directional buttons you've configured. This functionality will be disabled if you bind any buttons to your D-Pad.\n- Button prompts are now listed in more places and are more comprehensive.\n- You can now scroll through the Special Orders and Requests lists in the pause menu, which will bring up tooltips to identify the items they want.\n- Cirno's tips have been moved to a Pause menu tab.\n- Cirno's tips menu will now scroll properly.\n- The Exit Game dialogue has been moved the Esc menu.\n- When buying from a shop, you can now select the quantity first. The \"Pick 1\" button now has the old buying functionality, so you can still buy one at a time to skip the prompt.\n- All shops now display your point counter at the bottom.\n- There is now a delay before most repeating inputs to make them less touchy.\n- The inventory sort menu has a new graphical appearance. Instead of having dedicated keys, you must use this menu to select \"Delete Mode\" or \"Bless Mode\" to perform those actions on items.\n- An additional tip explaining how to deliver requests has been added.\n\nAdventure changes:\n- The Strafe function has been replaced by two other features: Focus and Lock-On.\n- Focus reduces your movespeed and displays your hitbox for more careful maneuvering. (Giving Minoriko a different focus shot will be considered later.)\n- Lock-On causes you to automatically aim at the nearest enemy. Your damage is reduced by 20% while using this.\n\nBugfixes:\n- Fixed most pickled items not being counted in the Spring year 2 seasonal goal.\n- Fixed the Casual Winter 2 year 1 scene not playing properly.\n- Fixed the player being able to eat arbitrary items by equipping them in the middle of the eating animation.\n- Fixed the hoe \"weak\" animation not displaying upgraded hoes.\n- Fixed crops not instantly dying between Winter 11~20.\n- Fixed chickens clucking being heard when near their coordinates but not on the same map.\n- Softened the \"back\" SFX after experiencing it with headphones on. (A deeper pass on SFX balance will be conducted later.)\n- Added an entry in the options to adjust the ambient sound (bird noises, etc) separately from SFX."
+        },
+        {
+            "title": "v0.8.5i",
+            "date": "2025-09-09 21:46:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566368485",
+            "notes": "- Fixed being able to move the pointer out of bounds in the inventory screen (causing potential inventory corruption/crashes) if your bag was bigger than the container.\n- Added the ability to move coops by speaking to Suika and getting another sign marker. This costs 100 points.\n- Added unbuildable tiles in front of the silo and mills so that they can't be blocked off by coops. (This has the additional bonus of stopping clutter from spawning there.)\n- When interacting with the silo, if any feed is in your bag, it will now be added to the silo.\n- Fixed a few minor tile obstruction/layer errors.\n- Adjusted the looping of one of the summer BGMs."
+        },
+        {
+            "title": "v0.8.5h",
+            "date": "2025-09-07 21:46:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180148549",
+            "notes": "- Fixed a null pointer crash related to certain objects being on your farm during a cutscene.\n- Fixed start-of-day cutscenes not triggering when loading the game on that day.\n\nNote: despite the version name, no h-content has been added."
+        },
+        {
+            "title": "v0.8.5g Hotfix",
+            "date": "2025-09-07 14:57:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180139408",
+            "notes": "- Fried catfish no longer requires fried catfish to cook. Fried catfish.\n- Boars and birds in adventure mode no longer to continue absorbing bullets after turning to meat.\n- Fixed the Komainu chicken not spawning its copy.\n- Fixed the mining theme not looping at the correct point.\n- Fixed the Winter year 1 scene not triggering correctly when you start the day."
+        },
+        {
+            "title": "v0.8.5f Hotfix",
+            "date": "2025-09-06 17:28:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180110986",
+            "notes": "- Fixed items being deleted if attempting to return them to the first slot of a container after picking them up and pressing B.\n- Fixed ghost Special Orders being displayed when one fails to generate.\n- Fixed chickens not leaving the coop after re-entering it on subsequent days.\n- Fixed the coop door appearing closed when it is open upon loading the game.\n- Fixed Suwako's third seasonal goal (Fall year 1) not counting completed orders properly."
+        },
+        {
+            "title": "v0.8.5e Hotfix",
+            "date": "2025-09-06 12:39:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180104624",
+            "notes": "- Changed the tool select menu to require only pressing the button rather than holding it, for the benefit of players with keyboards that do not accept multiple inputs. This will be made an option later.\n- Fixed not being able to eat after re-entering the game after quitting to title.\n- Corrected the alignment of adventure mode sprites being 1 pixel off center.\n- Fixed the silo not actually putting feed in the coop while subtracting from the count.\n- Fixed an issue where if multiple scenes played in sequence and the first was skipped while a dialogue box was onscreen, the screen would be blacked out during the next scene.\n- Various typos fixed."
+        },
+        {
+            "title": "v0.8.5d Hotfix",
+            "date": "2025-09-06 02:07:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180090574",
+            "notes": "- Prevented the player from eating a crop immediately after putting it into a fermenting jar using the Use button, possibly causing a crash if the stack was empty.\n- Requests can now be delivered using the Use button as well. (The Interact button is still preferred to avoid eating it by accident.)\n- Completing a request no longer uses up the NPC's daily conversation."
+        },
+        {
+            "title": "V0.8.5c Hotfix",
+            "date": "2025-09-05 22:25:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180085788",
+            "notes": "- Fixed a null pointer crash from selecting an empty spot on the crafting list.\n- Fixed an issue introduced in 0.8.5b that caused the crafting list to not be loaded upon exiting to the title and and re-entering the game."
+        },
+        {
+            "title": "v0.8.5b Hotfix",
+            "date": "2025-09-05 19:09:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180081408",
+            "notes": "- Game state should now properly reset after quitting out to the title and re-entering the game."
+        }
+    ]
+}

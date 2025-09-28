@@ -1,0 +1,108 @@
+{
+    "appId": "402800",
+    "total_notes": 17,
+    "notes": [
+        {
+            "title": "November 2017 Update",
+            "date": "2017-11-28 12:10:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2149769425933318742",
+            "notes": "[url=https://chunks.facepunch.com/blog/november-2017-update/]View blog post[/url]\r\n\r\n[list]\r\n[*] Changed how the main menu dock is positioned to make it easier to see\r\n[*] World menu layout redesign\r\n[*] World list is now sorted by last modified\r\n[*] Rewritten Terrain Generator plugin\r\n[*] New compressed world file format\r\n[*] Can now duplicate worlds\r\n[*] Can now rename worlds in-game\r\n[*] Can now build up to any height\r\n[*] Held explosives can now carve through the world as they move (works for explosives in coaster carts too)\r\n[*] Can now load into a specific world with the \"--world <name>\" command line option\r\n[*] Support for the world to be generated around multiple points\r\n[*] Unloaded areas of the world can now be modified, changes applied on load\r\n[*] Plugins can now specify optional requirements, for plugins that should be loaded first if enabled\r\n[*] Greatly improved world generation and editing performance\r\n[*] Improved how ambient occlusion combines with fog\r\n[/list]"
+        },
+        {
+            "title": "Blog - September Update",
+            "date": "2016-09-02 19:27:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/243580289118791808",
+            "notes": "Chunks has been available on Early Access for a few months now, so here’s a summary of the updates we’ve released for the game in that period and what we hope to add next. Also, Ryleigh has been developing an example game mode, which he’ll talk about later on in this post and is now available for you to try on the Workshop.\r\n\r\n[url=https://playchunks.com/2016/09/02/september-update/]Continue reading...[/url]"
+        },
+        {
+            "title": "v0.3 Alpha 2",
+            "date": "2016-08-29 16:38:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/250335145795368639",
+            "notes": "[h1]Features / Changes[/h1]\r\n[list]\r\n[*] Merged the two block placement tools in Sandbox, using buttons on the track pad to switch between single and region placement modes.\r\n[*] Added an eye-dropper button to the track pad of the block placement tool, to copy an already placed block.\r\n[*] Blocks can now have arbitrary rotations or be flipped on any axis.\r\n[*] Holding down on the trackpad when using the block placement tool and then rotating the wand will rotate the block about to be placed.\r\n[*] Now using a more space efficient format for saved chunks.\r\n[/list]\r\n\r\n[h1]Plugin Changes[/h1]\r\n[list]\r\n[*] Can now use block clipboard items as resources in plugins.\r\n[*] Changes made to unloaded chunks are now buffered and applied when those chunks load.\r\n[*] Plugins can now override the chunk load origin, of particular use for gamemodes.\r\n[*] Tooltips now use the menu panel system, and are now completely customizable.\r\n[*] Controls can now override pointer raycasting, for controls of non-rectangular shapes.\r\n[*] Can specify colours for individual layers in a LayeredMaterial.\r\n[*] Added an API for showing interactive controls on the track pads of wands.\r\n[*] Can now set a colour range for particles.\r\n[*] Can now set a gravity value for particles.\r\n[*] Added IWorld.PlaySound() method to make it easier to play one off sounds.\r\n[*] Added an AABBPhysicsRenderer component to help debug collisions.\r\n[*] Added a Plugin property to WandTool, Component and GameMode to get the plugin that defined subclasses of those types.\r\n[*] Added a Storage API so that plugins can save and load values to a world or globally.\r\n[*] Added a \"base_color\" json property for Button controls.\r\n[/list]\r\n\r\n[h1]Bug Fixes[/h1]\r\n[list]\r\n[*] Fixed wands being re-initialized when switching back from the steam overlay.\r\n[*] Fixed a bug with raycasting both the world and entities simultaneously.\r\n[*] Fixed unreliability of setting Wand.IsVisible to false.\r\n[*] Fixed possible texture bleed in layered materials.\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 59",
+            "date": "2016-07-04 11:08:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/250329347104864792",
+            "notes": "[h1]Plugin Changes[/h1]\r\n[list]\r\n[*] Plugin script projects now automatically include a reference to Newtonsoft.Json.\r\n[*] Implemented an obsolete symbol substitution system, to keep old scripts functioning as the API changes.\r\n[*] Added the basics of a way to display custom controls on a wand's track pad.\r\n[*] Added a \"wrap\" boolean json property to Text controls.\r\n[*] Added Component.OnLateUpdate() virtual method.\r\n[*] Added more customizability to ToolTip.\r\n[/list]\r\n\r\n[h1]Bug Fixes[/h1]\r\n[list]\r\n[*] Changes to the world are now displayed on the same frame as blocks are added / removed.\r\n[*] Fixed odd behaviour with snapped menu panels.\r\n[*] Fixed possible NullReferenceException when fetching block types in chunk generators.\r\n[*] Fixed controllers not appearing if a custom model is used with invalid indices.\r\n[*] Fixed some control types still being rendered when disabled.\r\n[*] Raycasts against AABBPhysics will detect a hit if the ray starts inside the bounds of the object.\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 58",
+            "date": "2016-06-10 11:31:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/249202181065056662",
+            "notes": "[h1]Features / Changes[/h1]\r\n[list]\r\n[*] Added visual feedback to show when a wand tool is added / removed as a favourite to / from a wand.\r\n[*] Now using an arc for the teleport tool rather than a straight line.\r\n[*] Scroll wheel now toggles on the Vive controller when pointing at a menu panel.\r\n[*] Performance increase when accessing components in entities.\r\n[*] Huge improvement in performance when raycasting along long distances.\r\n[*] Improved performance when raycasting against menu controls.\r\n[*] Terrain generator tweaks.\r\n[/list]\r\n\r\n[h1]Plugin Changes[/h1]\r\n[list]\r\n[*] Custom gamemodes can now override GameMode.OnShouldGenerateChunk(x, z).\r\n[*] Can now use null for Block parameters to refer to an empty block.\r\n[*] Added a LineMaterial.IsAdditive bool, which defaults to true.\r\n[*] Added a tag system for resources, now used in the example world generator plugin so that blocks from multiple tileset plugins can be accessed at once without them needing to override each other.\r\n[*] Resource system internal redesign, support for custom resource types incoming.\r\n[*] New overloads for ModelGenerator.AddBox to make it easier to texture each face separately.\r\n[*] Renamed wand button state properties to avoid ambiguity.\r\n[*] Added Wand.IsVisible boolean, can set to false to hide a wand.\r\n[*] Added events for Holder.Held and Holder.Released.\r\n[/list]\r\n\r\n[h1]Bug Fixes[/h1]\r\n[list]\r\n[*] Fixed support for most forms of custom controller model.\r\n[*] Fixed some false positives in the script assembly sandboxing preprocessor.\r\n[*] Fixed a gamemode staying selected for a world when the related plugin is disabled.\r\n[*] Fixed pointer line vertices not being cleared correctly.\r\n[*] Fixed sun being invisible.\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 52",
+            "date": "2016-05-20 08:50:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/255955672059873112",
+            "notes": "[h1]Features / Changes[/h1]\r\n[list]\r\n[*] Fixed detection for when the controller is in range to ride a coaster car at small scales.\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 51",
+            "date": "2016-05-19 11:36:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/255955672056678131",
+            "notes": "[h1]Features / Changes[/h1]\r\n[list]\r\n[*] Coaster tools now show a pointer snapped to the nearest coaster car if one is within range of being ridden.\r\n[*] Coaster car controller tool now shows a pointer snapped to the nearest piece of track if a coaster car can be spawned.\r\n[*] Can now use the coaster track tool to ride coaster cars again.\r\n[*] Added a crosshair for the spectator view.\r\n[/list]\r\n\r\n[h1]Bug Fixes[/h1]\r\n[list]\r\n[*] Fixed some cases where moving AABBs get stuck on block corners.\r\n[*] Fixed not being able to unlock the mouse cursor properly.\r\n[*] Fixed mouse position when interacting with menus in spectator mode not always being centred.\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 49",
+            "date": "2016-05-18 11:56:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/255955672053113014",
+            "notes": "[h1]Features / Changes[/h1]\r\n[list]\r\n[*] Added example first-person player plugin, to let a second player control a non-VR character walking around the world.\r\n[*] Added a basic debug log viewer plugin, to assist with plugin development / diagnosing issues.\r\n[*] Can now pin a menu in head-relative space by pressing the track pad in while holding a menu.\r\n[*] Single block placement tool now fills in a line of blocks when the wand is moved quickly.\r\n[*] Increased size of wand tool tips.\r\n[/list]\r\n\r\n[h1]Plugin Changes[/h1]\r\n[list]\r\n[*] Added World.Regenerate().\r\n[*] Added World.RaycastWorld(), World.RaycastEntities() and World.RaycastAll().\r\n[*] Added AABBPhysics.Simulate boolean.\r\n[*] Added some helper methods to ModelGenerator so that basic model generation is less verbose.\r\n[*] Added Debug.Warning().\r\n[*] Added Debug.DrawLine().\r\n[*] Added ParticleEmitter.InitialVelocity.\r\n[*] Added \"render_mode\" json property for particle effects.\r\n[*] Can now specify a texture for LineMaterial instances.\r\n[*] Renamed FaceMaterial to LayeredMaterial.\r\n[*] Added Vector2D, Vector4D, and IntVector2D structures.\r\n[*] Added a static Mouse class to expose mouse input.\r\n[*] Can now control the spectator camera entity with scripts.\r\n[/list]\r\n\r\n[h1]Bug Fixes[/h1]\r\n[list]\r\n[*] Fixed some bugs with world collision responses.\r\n[*] Fixed Z-fighting with block placement previews.\r\n[*] Fixed error message spam when a plugin gives an incorrect script assembly path.\r\n[*] Fixed world not initializing properly if errors occurred while loading a plugin assembly.\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 47",
+            "date": "2016-04-27 10:42:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/255953775610714031",
+            "notes": "[h1]Features / Changes[/h1]\r\n[list]\r\n[*] Tool icons are now on the main body of the wand, so that the track pad can be used to display buttons etc.\r\n[*] Display now fades to black when teleporting.\r\n[*] Some world menu usability improvements.\r\n[*] Disabled delete button for worlds downloaded from the workshop.\r\n[*] Upload button for worlds downloaded from the workshop now opens that item's workshop page.\r\n[*] Added some new track types:\r\n    [list]\r\n    [*] Brakes, which gradually reduce car speed to 2m/s.\r\n    [*] Booster, which gradually accelerate cars.\r\n    [*] Chain lift, which pulls cars up slopes at 2m/s.\r\n    [/list]\r\n[*] Pressing the track pad on the track tool while holding it near to a piece of track will toggle that track's type.\r\n[*] You must now use the Coaster Car Tool to spawn and ride coaster cars.\r\n[*] Cars will no longer automatically be lifted up hills, so you must place boosters or chain lifts as appropriate.\r\n[*] Reduced hang time while taking screenshots with the camera tool.\r\n[/list]\r\n\r\n[h1]Plugin Changes[/h1]\r\n[list]\r\n[*] Added a World.Raycast overload to test for collisions with entities, using a new IRaycastable interface.\r\n[*] Added Entity.Actve to test if an entity is currently updating (both it and its parents are enabled).\r\n[*] Added \"is_grabbable\" and \"is_interactable\" flags for menu panels.\r\n[*] Added a \"Hand\" property to wands to test if they are the left / right hand wand.\r\n[*] Plugins can now reference UnityEngine.dll and UnityEngine.UI.dll.\r\n[*] Some better error reporting when loading plugin resources.\r\n[/list]\r\n\r\n[h1]Bug Fixes[/h1]\r\n[list]\r\n[*] Fixed game mode selection menu.\r\n[*] Fixed odd track pad dial behaviour at the bottom of the pad.\r\n[*] Fixed teleport history bug.\r\n[*] Fixed tool icons on wands being flipped.\r\n[*] Fixed menu panels not being removed properly.\r\n[*] Fixed menu panels popping up at an incorrect size for one frame when first created.\r\n[*] Fixed a bug related to which directories are searched when a plugin defines resources.\r\n[*] Fixed some issues with world metadata serialization.\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 41",
+            "date": "2016-04-18 11:21:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260456194804680427",
+            "notes": "[list]\r\n  [*] Menu dock now centres on whichever docked menu is open\r\n  [*] Can now adjust menu dock distance in the settings menu\r\n  [*] Can now quickly press and release the grip to grab an item without needing to keep the grip held\r\n  [*] Fixed worlds not uploading if the associated workshop item had been deleted\r\n  [*] Fixed selected world name sometimes not fitting in the header of the world menu\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 39",
+            "date": "2016-04-14 16:02:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260456194790932254",
+            "notes": "[list]\r\n    [*] Can now upload worlds to / download from the workshop\r\n    [*] Clipboard tool is now much more robust\r\n    [*] Added block grid effect, toggleable in the settings menu\r\n    [*] Fixed world menu not functioning if a plugin has an invalid definition\r\n    [*] Can now easily override lighting settings in plugins without writing scripts\r\n    [*] Replaced Terrain Blocks example plugin textures with single-colour blocks\r\n    [*] Replaced default world and clipboard background thumbnail images\r\n[/list]"
+        },
+        {
+            "title": "Garry s Mod Devs Release Vive Sandbox Game Chunks",
+            "date": "2016-04-12 15:55:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/rps/260454846523922055",
+            "notes": "<p><img src=\"https://www.rockpapershotgun.com/images/16/apr/12chunks.jpg\" alt=\"WHOOOO!\" /></p>\n<p>Garry&#8217;s Mod gang Facepunch Studios have released their virtual reality sandbox game Chunks [<a href=\"https://playchunks.com/\">official site</a>] onto Steam Early Access. It looks like Minecraft, obvs, and building with cubes is certainly part of its foundation, but Chunks is built to be mega-moddable so who knows what it could become? Heck, even from a blockbuilding perspective, things like using the HTC Vive controllers to wave rollercoaster tracks into existence within the world looks pretty dang swish. Have a gander:</p>\n<p> &#8230; [<a href=\"https://www.rockpapershotgun.com/2016/04/12/chunks-vive-vr-garrys-mod/\">visit site to read more</a>]</p>\n"
+        },
+        {
+            "title": "v0.2 Alpha 37",
+            "date": "2016-04-12 12:02:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260454846523334237",
+            "notes": "[list]\r\n    [*] Fixed possible error when a plugin is deleted while still used in a world\r\n    [*] Re-enabled mouse interaction with the spectator control panel / feedback form\r\n[/list]"
+        },
+        {
+            "title": "Early Access Launch",
+            "date": "2016-04-11 20:01:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260454846520922517",
+            "notes": "It's here! We're super excited for people to be able to try out the game, and are looking forward to receiving your feedback. We'll be setting up a more formal roadmap soon, but in the meantime this blog post should fill you in on what we have planned for the next few weeks and months.\r\n\r\nAlso worth reading is [url=http://www.facepunchstudios.com/2016/04/10/chunks/]Garry's post[/url] about the history and overall goals for the game.\r\n\r\nContinued on the [url=https://playchunks.com/2016/04/12/early-access-launch] blog[/url]"
+        },
+        {
+            "title": "Now Available on Steam Early Access - Chunks, 25% off!",
+            "date": "2016-04-11 19:59:46",
+            "url": "http://store.steampowered.com/news/21307/",
+            "notes": "<a href='http://store.steampowered.com/app/402800/'>Chunks</a> is Now Available on Steam Early Access and is 25% off!*<br><br>Build and share worlds, design rideable roller-coasters, or try out user created game modes and tools in this block-based VR sandbox.<br><br>*Offer ends April 18 at 10AM Pacific Time<br><a href=\"http://store.steampowered.com/app/402800/\"><img src=\"http://cdn.akamai.steamstatic.com/steam/apps/402800/capsule_467x181.jpg\" style=\" float: left; margin-right: 12px; height: 181px; width: 467px;\"></a>"
+        },
+        {
+            "title": "v0.2 Alpha 36",
+            "date": "2016-04-11 15:03:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260454846520173308",
+            "notes": "[list]\r\n    [*]First pass of new colours for the core blocks\r\n    [*]Fix for crash when loading a chunk containing non-existent blocks\r\n    [*]Now excluding some files / folders when uploading a plugin to the workshop\r\n    [*]Plugin project generator now produces and maintains a Plugins.sln\r\n    [*]Added helper bat files for setting up and uploading plugin projects\r\n    [*]Corrected control overview text for the Vive Pre\r\n    [*]World menu now automatically opens when the game starts\r\n    [*]Changed \"Load\" button to a less ambiguous \"Play\"\r\n    [*]Automatically creates a new world if no worlds exist\r\n    [*]Automatically selects the most recently modified world when the game starts\r\n    [*]Menu dock now stays above floor level\r\n    [*]Added a default game mode for when no game mode is selected\r\n    [*]Fixed block overrides not being reverted when loading a world with the override plugin disabled\r\n    [*]Fixed offset to cursor position when grabbing stuff at small scales\r\n    [*]Fixed vertical scroll bars being inverted\r\n[/list]"
+        },
+        {
+            "title": "v0.2 Alpha 29",
+            "date": "2016-04-08 11:10:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260454846508749446",
+            "notes": "[list]\r\n[*] Explosion and critter sound improvements\r\n[*] Looping sounds can now have random starting offsets\r\n[*] Randomly selected sounds will avoid repeating the same sound consecutively\r\n[*] Added two layers of ambient sound that varies with player altitude\r\n[*] Reduced critter grunting frequency\r\n[*] Added an option to the workshop tool to generate a C# scripting project for a plugin\r\n[*] Fixed favourite wand tool icons not being removed\r\n[/list]"
+        }
+    ]
+}

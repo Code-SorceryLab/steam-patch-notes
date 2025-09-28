@@ -1,0 +1,102 @@
+{
+    "appId": "2773930",
+    "total_notes": 16,
+    "notes": [
+        {
+            "title": "Fixed a bug that caused progression to become impossible in some areas if an int",
+            "date": "2025-08-24 00:10:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382531342",
+            "notes": "Fixed an issue where players could not see the flag when it dynamically changed."
+        },
+        {
+            "title": "解像度変更時の短時間のスレッドスリープをなくしました。",
+            "date": "2024-10-20 20:50:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583188579473",
+            "notes": "解像度変更時とフルスクリーン/ウィンドウモード切替時にSleep(150)していましたが\nSleepが解除されないことがあるためこちらの処理を削除しています。\n\n以前の環境だと解像度切り替えを短時間で頻繁に行うとアプリが落ちることがあったので抑制のためスリープを入れましたが\n現状環境だと落ちることは確認できなかったので削除しても問題ないと判断しました。"
+        },
+        {
+            "title": "Windowsサウンド設定で48000Hzを超過するとノイズになる不具合を修正。",
+            "date": "2024-08-06 23:30:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363385358873",
+            "notes": "IXAudio2::CreateMasteringVoice側に入力サンプリングレートを設定する必要がありました。\n一個前の修正だと、エラーは回避されますがサウンドにリバーブが乗らず、ノイズになっていました。\n最大32bit 192000Hzで問題なく動作するのを確認しています。"
+        },
+        {
+            "title": "サウンド設定が48000hzを超過すると初期化に失敗する不具合の修正",
+            "date": "2024-08-05 08:33:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728349620402",
+            "notes": "IXAudio2::CreateSubmixVoiceがリバーブ指定している時、サンプルレートが20000hz-48000hz外だと生成に失敗するようでした。\n生成可能な範囲に収めるように修正しております。"
+        },
+        {
+            "title": "エラーの表示をDirectX初期化とゲーム初期化で分けました",
+            "date": "2024-08-05 00:46:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728348438208",
+            "notes": "エラーの表示をDirectX初期化とゲーム初期化で分けました\n"
+        },
+        {
+            "title": "不具合調査用ログ出力追加",
+            "date": "2024-08-05 00:16:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728348362411",
+            "notes": "不具合調査用にdebug.logが出力されるように修正しました。\n下記フォルダに保存されます。\n\nC:\\Users\\(username)\\AppData\\LocalLow\\WoodTableStudio\\ShinreiRyokan\\debug.log\n※(username)はユーザー名に置き換えてください。"
+        },
+        {
+            "title": "敵が意図せず出現する不具合の修正",
+            "date": "2024-05-14 23:50:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970413445151",
+            "notes": "一部のエリアで敵のモードが初期化されておらず、意図せず出現する不具合の修正"
+        },
+        {
+            "title": "マウスで主観時にしたままパッドで移動を行うと視点移動ができなくなる不具合の修正",
+            "date": "2024-03-11 20:40:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637668483704",
+            "notes": "パッド入力時にマウス&キーボード側が排他されるように処理されていました。\n排他処理がなくても動作に問題ないのでこちらを削除。\n"
+        },
+        {
+            "title": "実績「チェックイン」が解除されない不具合の修正",
+            "date": "2024-03-08 20:19:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637657647666",
+            "notes": "イントロのカットシーンをスキップした際に実績「チェックイン」が解除されない不具合の修正しました。"
+        },
+        {
+            "title": "マウスを動かすと処理落ちする不具合の修正",
+            "date": "2024-02-20 02:16:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544509805678",
+            "notes": "一人称視点で処理落ちする不具合に対処しました。\n再現する環境で確認できましたので修正されているかと思います。\n\nループ待ち処理に不要なSleep(1)が入っておりマウスイベントを受け取るたびにスレッドを止めているようでした。こちらを削除しました。"
+        },
+        {
+            "title": "一個前の修正をもとに戻す",
+            "date": "2024-02-19 09:50:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544507307606",
+            "notes": "他の不具合を発生させていたのでこちらの修正をもとに戻しました。\nhttps://store.steampowered.com/news/app/2773930/view/6636686753333967884"
+        },
+        {
+            "title": "マウス操作時、一人称視点の際に重くなる不具合の修正",
+            "date": "2024-02-18 22:42:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544505616498",
+            "notes": "以前の修正で直っていなかったので再度修正しました。\n\n修正前はカーソルを画面内に収めるために毎フレームSetCursorPosでカーソルをセンターに固定して、そこからの移動量分を使用してました。\n\n今回の修正で単純にカーソルの移動量を取って画面端に行くとループするようにしてます。\n"
+        },
+        {
+            "title": "一人称視点時に重くなる不具合修正",
+            "date": "2024-02-14 02:53:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5750603429271855788",
+            "notes": "一人称視点時にClipCursor、GetWindowRectを毎フレーム読んでいた箇所を修正。\n一定の負荷軽減にはなりますが報告の現象と同一という確証はありません。"
+        },
+        {
+            "title": "屋上から部屋に入る時に動けなくなる不具合の修正",
+            "date": "2024-02-12 20:58:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109281740611",
+            "notes": "該当箇所で場合によってスタックする可能性のある座標へプレイヤーを移動していたので安全な座標に移動するように修正しました。"
+        },
+        {
+            "title": "不具合修正",
+            "date": "2024-02-04 01:20:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074950676048",
+            "notes": "実績「精密機械」が5分台で獲得になっていたので、説明通り5分以内に修正。\nロビーのトイレに閉じ込められる不具合の修正。"
+        },
+        {
+            "title": "不具合の修正",
+            "date": "2024-02-01 22:59:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074943030176",
+            "notes": "パッド使用時にマウスカーソルが非表示になるように修正。\nロビーのトイレに閉じ込められる不具合の修正。"
+        }
+    ]
+}

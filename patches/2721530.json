@@ -1,0 +1,96 @@
+{
+    "appId": "2721530",
+    "total_notes": 15,
+    "notes": [
+        {
+            "title": "v1.2.19: Purple Squares",
+            "date": "2025-08-05 15:04:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490853022",
+            "notes": "Here we are again. Changing the font also changed the little \"next\" arrow on the description dialogs to a purple square. But only if there is no background present, which is why I didn't see it up until now. I'm going to go make children's books or something. Those can't get bugs, right?\n\nRight??\n\nAlso since I'm here, I updated the whole underlying Unity Engine, because why not. I also made Coffee work better, because I keep seeing people use it and not even realize that coffee does something, which is a pretty big sign. If you are running around postgame, this should help you quite a bit.\n\nChangelog:\n\n[list]\n[*] Coffee makes you run faster now.\n[*] Fixed description text sometimes showing a little purple box\n[*] Updated to Unity 2022, which should fix some graphical and fps issues.\n[*] Fixed Joxxi scene post Librarian teleport not playing\n[*] Fixed music transitions sometimes not synching\n[*] Player can now access the inventory during the final fight with touch controls\n[*] Fixed a missing texture in a cutscene\n[*] Fixed several missing texts in localization and custom dialogs\n[/list]"
+        },
+        {
+            "title": "v1.2.18: I broke trees",
+            "date": "2025-07-09 14:06:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891935351",
+            "notes": "If you want to know what it's like to be a game dev, by recent update changing the font of the game somehow removed all the trees in the Surreal area with the deer. How does changing a font do this? The world may never know.\n\nI mean, well, I know now. But I think not explaining it makes it funnier, so we're going to leave it at that.\n\nEnjoy other great features such as:\n[list]\n[*] Partners no longer stop you from hitting flamingos\n[*] Fixed non-Latin character alignment\n[*] Added broader text scaling\n[/list]\nThanks all!"
+        },
+        {
+            "title": "v1.2.17: Here We Are Again",
+            "date": "2025-06-17 13:19:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289729758",
+            "notes": "​So that didn't work.\n\nText in Afterplace is a convoluted affair. The little text bubble text is not actually a Unity \"text box\". It's actually a series of little images of each letter, and custom code draws them out in a sequence to make words. \n\nWait, no, I just described a text box. Okay but this one was made by me! And it's cooler, because the little pixel letters stay pixel perfect with the rest of the game world. And also one brand of phones kept crashing when I used Unity text boxes. There are reasons, I promise.\n\nAnyways, I tried initially to do the same with... all 19,434 characters in LanaPixel, the new font for non-Latin Afterplace text. And... that seems to have created problems. Somehow the little pictures got offset from the characters they were told to represent. This was, by no ambiguity, a bad way to handle this situation. But I have now learned that, and have replaced it with a better system where Unity creates little meshes of each letter automatically.... a Text Mesh, if you will.\n\nMy wonderful community tells me that these characters are no longer spouting gibberish at them, so hopefully this solves all our problems. My apologies if you tried to use CustomDialog in the last week and found it completely broken. Please use it again this week and tell me all the new and interesting different ways it's broken!\n\nEnjoy~\n\n\n\nFull Changelog:\n\n[list]\n[*] Fixed non-Latin characters being garbled in text bubbles\n[*] Fixed resolution dropdown items spilling out of the dropdown box\n[*] Fixed missing settings texts in custom dialog\n[*] Added more translation notes\n[/list]\n"
+        },
+        {
+            "title": "v1.2.16: Refonted",
+            "date": "2025-06-12 15:42:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289572124",
+            "notes": "So last update was great, but also incredibly dumb.\n\nGreat because a lot of folks were very excited to see that custom translations could be made for Afterplace now. Which was great! \n\nDumb because the font in Afterplace only supported latin characters. So half the people making translations were kind of just. Stuck. Whoops.\n\nLuckily, there are wonderful people out there making pixel fonts that support every language under the sun, and after a lot of hard lessons about how font files are made, I have managed to combine the look of the original Latin characters in Afterplace with a font that supports basically every other character out there. Except maybe Webdings. \n\nSo! For you now, the ​actual​ custom translation update, now with actual ability to translate! To Languages! (Plus a bunch of other fixes and things, of course).\n\nOfficial Changelog:\n[list]\n[*] Added support for non-latin characters in game text\n[*] Custom dialog exporter now shows file location\n[*] Added translation notes to the custom dialog file exporter\n[*] Custom dialog file now exports subject and expression lines, but doesn't reimport them\n[*] Renamed a specific tea to be off-brand\n[*] Fixed player sometimes dropping items when using tea\n[*] Fixed ability to steal stool during mayor meeting\n[*] Fixed tentacle hole spawning in the forest\n[*] Enjoy!\n[/list]"
+        },
+        {
+            "title": "1.2.15: Now in Custom!",
+            "date": "2025-02-21 15:27:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353237821",
+            "notes": "​Okay, so I'm really excited about this one.\n\nAfterplace now supports custom dialog files, and will export and import custom dialogs in the settings menu!\n\nWhile I'm a solo dev with limited resources, I understand that it can be frustrating to not be able to play a game in your own language. So, while I continue to work on official language supports, I've opened up the ability for the community to create and share their own translations (or toss the whole thing into an auto translator, your mileage may vary).\n\nPlease note that I'm still working on support for all text and character fonts, but expect that in a future update soon.\n\nI've also fixed a ton of small bugs, including Minno showing up in the wrong place after[i] ​​important events​ happen[/i], and some small visuals to point players in the right direction of some content. The full changelog is below.\n\nThanks everyone!\n\nChangelog:\n\n[list]\n[*]Added ability for custom dialog, and button to export dialog to a file for custom translations\n[*]Added a console to the big machine so players know what to interact with\n[*]Fixed Joxxi appearing in library during fugue\n[*]Fixed Minno appearing in house after failed nightmare trip\n[*]Fixed graphics mode toggle being too easy to accidentally trigger\n[*]Added indicator that wheat is being cut during sword golem scene\n[*]Fixed partners acting weird in shattered town houses\n[*]Fixed shady doctor resetting conversations after important scenes\n[*]Fixed music sometimes cutting out in surreal and at flamingo boss\n[/list]"
+        },
+        {
+            "title": "Afterplace: Now in Spanish!",
+            "date": "2024-11-25 16:51:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783872412122651",
+            "notes": "Afterplace is now available in Spanish! Our wonderful translator has combed through all 10,665 lines of dialog in Afterplace to create a faithful localization. Thank you, Eric!\n\nYou can select your language in the settings menu, and on first boot, the game will try to pick a best language based on your device's locale.\n\nSome other fixes:\n\n[list]\n[*] Fixed coins in the mushroom woods sometimes not being collective.\n[*] Text descriptions now stay on the screen a little better.\n[*] Fixed how and when the troll becomes a cashier.\n[*] Fixed the infinite train area sometimes breaking.\n[*] Fixed librarian occasionally dropping player off the stone pedestal.\n[*] Dialog visuals (like maps) now always center on the camera.\n[*] Fixed sword head repeating himself during the tiny golem scene.\n[*] Fixed a bunch of English typos our translator found while translating.\n[*] Fixed player being able to pause during name select screen.\n[/list]\n\nHappy exploring!"
+        },
+        {
+            "title": "WASD, Mystery Prices, Elevators, and Wheat",
+            "date": "2024-10-04 00:07:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003496468355",
+            "notes": "I'm a very simple person. When I play computer games, I like to press the little keys with the arrows that point in the direction my character will go. It's charming in a way.\n\nI have found that I might be in the minority on this. \n\nBut, behold, dear player, I have made a configuration to please the masses! Now both Arrow Keys and WASD work by default, with the roll and attack keys sitting in such a way that you can play the game one-handed OR two handed with WASD, or two-handed with arrow keys (I suppose you could play one-handed with arrow keys, if you happen to have tentacle fingers. If so, good for you).\n\nThis is of course, all still remappable, but I feel this default will be a smoother ride for everyone.\n\nYou can of course remap both movement key sets now, if you so desire. I also fixed some issues where rebindings would occasionally not catch until the whole settings menu closed. \n\n\nOther fun bugs squashed: \n\nUsing large text now no longer obscures prices that are over 99 gold (a very frustrating bug, I'm sure, when the upgrade you though was 45 coins was actually 450. Sorry about that) \n\nThe elevator in [redacted] no longer crawls to a stop\n\nAccelerated wheat cutting repercussions if you so happen to cut a whole dang field in one go\n\nSeveral small typos, missing tiles, and the like.\n\n\nThere are one or two more bugs that I know of, but they are elusive and difficult to reproduce, so I will hunt them in my spare time. The next update will probably be an interesting new [i]feature[/i]! I'm excited to reveal it soon.\n\nUntil then, happy exploring~"
+        },
+        {
+            "title": "Multi Platform Madness",
+            "date": "2024-09-06 04:04:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076599593073",
+            "notes": "Found out that if players clicked through the initial intro text with the mouse, the movement tutorial would switch back to touch. Because in the eyes of the steam deck, mouse is touch. Welp. It's fixed now.\n\nAlso, still trying to fine-tune audio balances everywhere. Phone speakers are small and have terribly bass, so all the audio in the game had originally been boosted absurdly to counteract this. I did not correct for the very nice headphones everyone plays pc games with. Apologies for the ear bleed, hopefully it's fully corrected after this round.\n\nSome small things - using an item no longer also swings your sword, changed what keyboard keys are shown for some tutorials, added whole new dialog lines because I have watch several streamers do some interesting sequence breaks I did not expect.\n\nFinally, I'm getting the game set up for localization now. This includes ensuring every piece of text is in the Big Giant Properties File For Dialog. I've done my best to ensure that no dialog was harmed in the process.\n\nI'm excited to bring some more languages soon! See you then."
+        },
+        {
+            "title": "Better Ear Vibrations",
+            "date": "2024-08-10 03:00:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363396823084",
+            "notes": "Yes, those are important.\n\nSo it turns out that Unity doesn't play too terribly nice with UI sliders and controllers. The music and sfx settings went from \"loud\" to \"inaudible\" in about one dpad tick. Which is bad. So I rebalanced the sliders to have a little more fidelity than that.\n\nAlso, the initial \"talk\" sfx right at the start of the game was a little abrasive, I toned it down.\n\nSome additional updates:\n - You can now toggle cursor visibility in the settings. Just in case you want to... use the touch controls, but with a mouse? Please don't do this. Really this is just for if you want to click ui things with your mouse. Forget I mentioned the other thing.\n - Fixed the relic area foreground trees disappearing if you do the whole dungeon then go back again for seconds\n - Fixed Joxxi talking over an item gain in the library\n - Fixed Clover doubling up on dialog when talking about the axe\n - Fixed the crow at the entrance to the nightmare woods just... not talking. At all.\n - Removed the machine behind the elevator in postgame\n\nAnd that's it! Less game-breaking bugs than last time, so this is good progress in the direction of \"no bugs\". Not that I'll ever actually [i]reach[/i] no bugs. But it's a happy fantasy.\n"
+        },
+        {
+            "title": "Sequence breaks? In MY open world game?",
+            "date": "2024-07-30 00:33:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094365169445",
+            "notes": "It's more common than you think.\n\nEvidently you could make Minno disappear if you said No when they tried to follow you into the nightmare woods, then went back into town and completed all their quests anyways. The good news is, the fix should be retroactive, so anyone experiencing this will get a fresh new Minno!\n\nAlso fixed a hint Joxxi tries to give you near the end of the game triggering even when it was not relevant (leading to much confusion for a poor streamer I watched, sorry!)\n\nFinally, made the occasional glimpses of the traveling merchant in the blue woods less... occasional. If you are having a hard time finding their house, try stalking them! It's definitely a good and moral thing to do.\n\nAnd that's it! Less bugs is good, and honestly I'm surprised that there haven't been more sequence breaks due to all the weird ordering you can do things in. But really, thank the mobile players for ironing all those out for us. They did the dirty work."
+        },
+        {
+            "title": "I'm a sucker for a good accessibility setting.",
+            "date": "2024-07-26 02:54:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094350945895",
+            "notes": "Someone mentioned that disabling screen flash would be a good thing to have. And how could I not? It's one checkbox.\n\nAlso, watched a streamer fall out of an area and also there were some tutorials that didn't disappear sometimes. So those are fixed too.\n\nAlso fixed a bug where Joxxi playground scene could break the whole game if player quit in the middle of it. Good day overall."
+        },
+        {
+            "title": "Since I'm already up at 1am",
+            "date": "2024-07-25 01:23:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094347068568",
+            "notes": "Made the screen resolution dropdown work better with controller."
+        },
+        {
+            "title": "Day one bug fix two: electric boogaloo",
+            "date": "2024-07-24 23:42:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094346815090",
+            "notes": "Fixed some odd Joystick drift on Mac builds."
+        },
+        {
+            "title": "V1.2.8 Update",
+            "date": "2024-07-24 14:25:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094345403467",
+            "notes": "Hello everyone. Despite my best efforts to avoid it, here's the day one patch:\n\n[list]\n[*]By popular demand, I've switched which face buttons Attack and which Roll. B and X buttons now roll, allowing you to shift between A/X and B/Y based on your preferences.\n[*]Fixed Dodge Roll sometimes not going in the correct direction on controllers.\n[*]The inventory and dialog tutorial now show the easier button to use (right bumper, instead of select)\n[*]Fixed connection issues with the Send Error Report feature in settings.\n[/list]"
+        },
+        {
+            "title": "Apple design award winner Afterplace just released on PC with Linux support",
+            "date": "2024-07-23 12:37:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/5969041959983536780",
+            "notes": "<p><p>Originally a mobile game that won an Apple design award, Afterplace is an open world adventurous retro game for those who like to get lost. Today it released on PC with full Native Linux support.</p><p><img src=\"https://www.gamingonlinux.com/uploads/articles/tagline_images/981723557id24938gol.jpg\" alt /></p><p>Read the full article here: https://www.gamingonlinux.com/2024/07/apple-design-award-winner-afterplace-just-released-on-pc-with-linux-support</p></p>"
+        }
+    ]
+}

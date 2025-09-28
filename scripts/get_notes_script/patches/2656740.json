@@ -1,0 +1,114 @@
+{
+    "appId": "2656740",
+    "total_notes": 18,
+    "notes": [
+        {
+            "title": "Steam Inventory Items!",
+            "date": "2025-07-25 00:28:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758631038",
+            "notes": "Steam Inventory Items added!\nYou can earn/unlock them by checking in to the main menu every hour. \n"
+        },
+        {
+            "title": "Min Spawn Rate Increased (Slower Spawns During Higher Waves)",
+            "date": "2024-05-19 19:42:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970431045308",
+            "notes": "In response to a review, I have increased the minimum spawn rate from 0.2 to 0.5. This means the fastest enemies can spawn now is every 0.5 seconds. This should improve performance at higher waves, as well as make the game a bit easier.\n\nI used some design choices like this to see how much I could push using the crap the load of optimizations I used to make this game even possible... I've looked into improving the loading times, but it would take a bunch of re-writing as each pooled object would need to be baked into the scene, which simultaneously increases the game file size. Maybe I'll get around to it sometime if the sales start to pickup."
+        },
+        {
+            "title": "Set The Explosive Second Spawn Toggle In Pause Menu To Off By Defualt",
+            "date": "2024-02-02 23:09:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074946699993",
+            "notes": "Because it was annoying to have it already on when doing levels with no upgrades. Shouldn't affect players who have already played the game."
+        },
+        {
+            "title": "BUG FIX: \"Second Select Mode\" for explosive towers on start has been fixed",
+            "date": "2024-01-31 17:18:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074938519498",
+            "notes": "The second select mode toggle for explosive towers has been fixed! It was completely buggy because I accidentally put it in the Start method rather than OnEnable which checks EVERY time a tower is spawned, rather than just the first time. This was a technical and literary mistake, as Start seemed like the correct function in the heat of the moment lol."
+        },
+        {
+            "title": "Explosive Rounds & Effects Pooled | Game Renamed",
+            "date": "2024-01-29 16:01:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046264070450",
+            "notes": "1. Explosive rounds (explosive damage) is now object pooled for better performance.\n2. Explosive effects (explosive visuals) is now object pooled for better performance.\n3. Game renamed to \"Endless Furry TD\" due to trademark in regards to \"Tower Defense\"."
+        },
+        {
+            "title": "Toggle Setting For Aiming Explosive Towers",
+            "date": "2024-01-12 15:06:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510124415443",
+            "notes": "1. Fixed bug with AOE towers.\n2. Added toggle setting for explosive towers in pause menu, use this to choose whether or not you want explosive towers to toggle the second spawned by default."
+        },
+        {
+            "title": "Continuous Collision",
+            "date": "2024-01-12 11:15:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510123832365",
+            "notes": "Switched the collision detection back to collision but using continuous now which is best apparently. Line trace wasn't as accurate and was buggy at low frame rates. This allows for better hit detection while keeping the physics speed low."
+        },
+        {
+            "title": "Occlusion Culling (Performance Boost)",
+            "date": "2024-01-11 14:07:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510120620838",
+            "notes": "I was so busy writing optimizations and rushing this game to launch I forgot to use occlusion culling. This is often over looked in my unity games because unreal does this automatically.\n\nAnyways, performance boosted :)"
+        },
+        {
+            "title": "New Aim Mode! Explosive Towers Improved!",
+            "date": "2024-01-10 09:04:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510783579246960037",
+            "notes": "1. Added new aim mode \"target second spawned\"\n2. \"Rocket Type\" towers (explosive projectile towers) will now start on the new aim mode targeting second spawn, this allows them to be more effective and stop missing as often.\n3. Rotating towers towards enemy wasn't coded fully correctly, I fixed this, should make aim slightly better."
+        },
+        {
+            "title": "Line Traced Projectiles (Better Bullet Registration & Performance)",
+            "date": "2024-01-06 22:03:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585190379887",
+            "notes": "1. Added line traced bullets for better registration\n2. Reduced physics speed by 5x since bullets are no longer tied to physics\n\nBullets still occasionally miss due to the targeting being slightly off. Still looking for a solution for this, so if you're still missing occasional shots its expected. However, this will make the actual hit registration much more accurate, as the physics engine is no longer needed to do damage to enemies. You may notice the game isn't as \"smooth\" as before, this is because of the reduced physics. This should greatly help on lower end systems.\n\nIf you absolutely hate the reduced physics speed let me know, I can revert it or perhaps make it an adjustable gameplay/graphics setting."
+        },
+        {
+            "title": "Camera Rotation & Ultra Widescreen Support",
+            "date": "2023-12-21 21:30:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585131984056",
+            "notes": "1. added Camera Rotation (Q&E KEYS) use pause menu to toggle on/off\n2. esc key can now back out of audio menu in pause menu\n3. re-scaled ui to fix ultra wide monitors (29:9 aspect ratio)"
+        },
+        {
+            "title": "GAME SPEED MODIFIER! Audio Menu & First Audio Load Code Changed",
+            "date": "2023-12-19 20:40:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585124564771",
+            "notes": "1. Added game speed drop-down to pause menu, you can now choose different game speed settings to control the flow of the game. (PLEASE NOTE RUNNING THE GAME AT A HIGHER SPEED MAY CAUSE THE GAME TO BE MORE LIKELY TO CRASH!)\n2. Audio menu added to pause menu, made sure it doesn't interfere with anything from the original pause menu. Just need to clean up and re-organize the buttons next update, as the UX/UI design feels weird right now.\n3. \"First Audio Load\" code changed, you can expect the game to start a FULL VOLUME even if you have already played before, this is just cleaner code. I apologies for the small \"bug\" this causes, just adjust your audio levels again and all will be fine :)"
+        },
+        {
+            "title": "New Background Artwork & \"Simulated Audio\" (Shared Audio Sources)",
+            "date": "2023-12-17 07:23:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219983397892",
+            "notes": "1. Added new background artwork to main menu & loading screen. Loads a random furry image. Used photoshop's new AI tool to generate them.... :D\n\n2. Audio Sources are now \"shared\"... Before I was spawning a new audio source to a pool as needed for every single sound, this was very buggy and caused the audio to cut out after only a few towers and action happening. Now the audio is told to wait till the sound is finished on the current source before starting a new sound, thus sharing the same source in the pool. The \"downside\" of this is that if you increase the attack speed of towers, you may experience some missed audio sounds, as the game is only playing one sound per tower now at any given time. This however, is better than the sound cutting out nearly instantly.\n\n\nIn other news I'm making ANOTHER zombie game, as my last zombie game was a abysmal mess. Take a sneak peaky poo here: [previewyoutube=e9fFiPyOn0g;leftthumb][/previewyoutube]"
+        },
+        {
+            "title": "Edge Panning (Cursor-Camera Movement Fix, I Hope)",
+            "date": "2023-12-16 22:40:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219982072511",
+            "notes": "1. Added edge panning, just added a invisible 3 pixel wide boarder to detect for cursor to camera movement. This (should) fix the bugs everyone is having, as it give more room for the cursor to detect the \"edge\" of the game."
+        },
+        {
+            "title": "Auto Save Added & Aware Of Serious Bug",
+            "date": "2023-12-16 21:02:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219981825787",
+            "notes": "1. Added auto saving data for kills (for stats) and kill coins.\n2. Aware of serious bug not allowing players to use move camera with mouse, I am working with players to ensure this doesn't happen any more. If the issue can not be fixed, I will flip-flop the default control scheme.\n3. Changed code in regards to the camera-cursor movement bug, simple change, not too much hope."
+        },
+        {
+            "title": "Lots of improvements! Graphics, camera angles & music player",
+            "date": "2023-12-14 06:32:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/7585814657460251589",
+            "notes": "1. Fixed graphics bug with shadows not loading, I forgot to put the graphics initialization script in the game prefab, whoops.\n2. Added toggle for looping current song\n3. Added next song button, so now theres play next and play random song buttons\n4. Added text to show current song name playing\n5. Added camera angles! Use the pause menu to choose you angle. Angle are in 5 degree increments 90-45 degrees.\n6. Camera bounds extended on all maps to adjust for new angles."
+        },
+        {
+            "title": "Updated Tutorial",
+            "date": "2023-12-12 15:03:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616813707225",
+            "notes": "Updated tutorial to include new aim mode"
+        },
+        {
+            "title": "New Aim Mode",
+            "date": "2023-12-12 13:04:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616813406779",
+            "notes": "Added new aim mode to appease feedback. The new mode is now the default mode, it targets the FIRST enemy spawned and then the next, in that order. This still isn't \"perfect\" but its a big improvement over targeting closest to base, as levels are designed differently."
+        }
+    ]
+}

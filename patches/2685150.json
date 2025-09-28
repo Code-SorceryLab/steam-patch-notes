@@ -1,0 +1,828 @@
+{
+    "appId": "2685150",
+    "total_notes": 137,
+    "notes": [
+        {
+            "title": "forgot to add levels packs",
+            "date": "2025-09-13 02:21:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566473803",
+            "notes": "all levels packs readded to installation folder"
+        },
+        {
+            "title": "Rockhopper Angle-Mode",
+            "date": "2025-09-11 23:55:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566437198",
+            "notes": "First iteration of Rockhopper Angle-Mode. \n\nAngle-Mode is activated by selecting the Angle-Mode option under the rotation assist types. Angle-Mode can be accessed from the Ship Settings menu in the Rockhopper Menu, or from the pause menu while playing the Rockhopper. \n\nAngle-Mode is a self-levelling mode where the tilt of the pitch and yaw (it's yaw if the ship is flying full forward tilt, but roll if the ship is on a hover upright) are correlated to the tilt of the players input stick. If using a game controller, for example, fully tilting the thumbstick to the right will put the setpoint of the rockhoppers PID controller to 45 degrees to the right. Then, the onboard PID controller will attempt to use the thrusters to achieve that tilt. This means that these two axis are no longer tied to the thrusters at all, and all thrust on these two axis is actually controlled by the PID controller. \n\nWhile a weight is connected, the PID controller will incorporate the horizontal translation thrusters as well. (this is because the weight is connected to the bottom of the rockhopper, so using these horizontal thrusters will result in a rotation to the rockhopper-weight system). The player will still be able to apply horizontal thrust in the normal way, however it is possible that the PID controller will battle the player input for control. The thrust will still be applied, although it may occur that the PID controller counters that thrust for stabilization. \n\nAngle-Mode does not work in any of the spin-gravity levels. It is possible that angle-mode will never be supported in the spin gravity levels without updates from unity that make compound angle comparisons more consistent and stable, which may not happen during this generation of computing technology. However, spin-gravity is much more challenging to fly and therefore it is my personal expectation that most players will advance beyond angle-mode before spin-gravity is particularly important for them anyway. \n\nThere have been some general bug fixes to other rotation assist types associated with dockable weights as well, improving the performance of the vehicle while using dockable weights and rotation assist, as well as fixing how the visual thrusters were .... oops... backwards sometimes. \n\nMy future plans for angle-mode include player settable PID values as well as multiple selectable PID options that will correlate to the power profiles. I also think it may be desirable to have an automatic switch to a separate set of PID values while the vehicle is docked to a weight. I do not have a timeline for these features, although I do plan to start working on them in the near future, and do expect that they will be a few weeks out. \n\nI may also consider adding a PID controlled velocity stabilization system, as well as an altitude hold system, although this may require more study, while the above expected features only require menus and options building so a velocity stabilization system is not a future plan as of yet. I am concerned that some of the \"gimbal lock\" problems I experienced with spin-gravity may affect the gimbal-thruster vehicle types and the forward-only vehicle, as they will require a similar vector to angle correlation as they can only thrust in one direction, so I am concerned that a velocity stabilization system may be a \"basic drone and rockhopper\" thing for a while, but do think the solution will be easier than the spin-gravity problem. \n\nIf someone knows how to make my angle-mode in spin-gravity work, I would love suggestions! Thanks!"
+        },
+        {
+            "title": "fix flashing navball",
+            "date": "2024-09-11 07:47:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6250522009509282328",
+            "notes": "navball was blinking/flashing while vehicle in motion. Stable lighting for navball now. (some kind of unity instability but I used an alternate less appropriate mechanism to light the navball. It is likely that in the future stability will return to the original method and as a result of the less appropriate nature of the present fix, it will be better to change back, but for now it should be ok with this fix) \n\nfixed Ganymede1970 spawned inside of crazy big shiny object/level unplayable. This level still needs readdress but is playable and the problem is that the way I want it does not run smoothly due to CPU bottlenecking so the present state is a compromise that will require further tuning."
+        },
+        {
+            "title": "velocity crosshairs disabled in 3rd person",
+            "date": "2024-09-08 14:42:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076608498619",
+            "notes": "the velocity crosshairs don't point right in 3rd person. It's useable once you get used to the offset which also appears to be speed affected, meaning that depending on how fast you go the offset changes , so I disabled them in all 3rd person views. \n\nI am going to experiment with options to show the velocity direction with some kind of point object but in 3rd person it is difficult to interpret unless it is in 3d space and in that case it would constantly disappear behind objects so I will have to experiment and see if anything works. As long as the player is in an object-rich environment, there should be plenty of visual feedback to determine trajectory just from seeing the motion."
+        },
+        {
+            "title": "fix framedrops when loading new songs",
+            "date": "2024-09-08 05:30:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076607101054",
+            "notes": "songs were not set to load in background, now set"
+        },
+        {
+            "title": "fix dockpad no sound not working",
+            "date": "2024-09-08 04:53:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076607006146",
+            "notes": "dockpad would not dock and make sound , fixed"
+        },
+        {
+            "title": "Experimental External Cams for rockhopper class",
+            "date": "2024-09-08 04:01:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076606874421",
+            "notes": "Rockhopper, One-Gimbal Hopper, and Two-Gimbal Hopper normally have 5 FPV cameras the player may switch to in order to facilitate for capable flight, landing, acceleration, and deceleration etc. (Forward, Down, Up, UpAngle45, DownAngle45) \n\nThese cameras are simulating IRL style cameras and view from simulated camera placements. The classic third person cameras do offer the ability to see in the same directions however not with the simplicity of switching that the FPV cameras do. Now, by pressing Y to toggle external cams, the 5 primary FPV cams will switch to a 3rd person view of the same angle. So using the same keybinds as the normal FPV cams, while the Y is toggled on, the 3rd person cams will show instead. Pressing this key will ALSO store the switch in playerprefs, so that for each vehicle whatever Y setting was left last session will be what loads next time, so that you can pop in , play races or campaigns, and never worry about needing to press the button every time you load into a level if you always want 3rd person on that vehicle, and do not want to assign a keybind to your joystick/controller. It WILL be necessary to press Y once for each vehicle, however, as it is likely that the player may prefer to use 1st person cams for some vehicles and 3rd for others depending on their familiarity with the vehicle. \n\nNEW SCENE for hoppers!! \n\nTitania Mine , a reddish scifi base (a dexsoft asset). The moon titania orbits Uranus which is visible in the sky over the base, and has a reddish color according to humanities best imagery to date! \n\nNew Songs! A few songs written exclusively for Ace Racers SP have been added to the gameplay music reel. \n\nNew Billboard art! Some images produced by artists as concept art can now be placed in game as well! \n\nDocking sound effect added."
+        },
+        {
+            "title": "new music, minor changes",
+            "date": "2024-07-13 19:53:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704274611790",
+            "notes": "new versions of \"Time and Space\" by Mark Btesh in gameplay cycle.\noriginal \"Time and Space\" by Mark Btesh now plays in credits window. \n\nosd color no longer also changes race popups. race popups and warnings have separate color configuration option. \n\nload button in pause menu now also resumes game."
+        },
+        {
+            "title": "hudcolor now works like racemeshcolors",
+            "date": "2024-05-25 23:04:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105616652748",
+            "notes": "hudcolor is no longer only set as a default. \n\nnow, like racemesh colors, defaults are set from the mainmenu racemesh colors menu ,, and will be saved and loaded with racemesh color profile saves and loads. profiles can be loaded and saved from the pause menu as well, but as with racemesh colors, hud color changes made in the pause menu will NOT change the defaults that were set in the pause menu. Also like racemesh colors, hud colors will be saved with the playersaves, and loaded with the playerloads ,, meaning that imported and exported games will also have these hud color changes. \n\nThis will allow course creators to tune the hud color to their racemesh colors, allowing them to theme the entire experience and including tuning the hud color to contrast the racemesh colors. Loaded games will not overwrite defaults, so loading to new colors does not affect other scenes. \n\n"
+        },
+        {
+            "title": "training menu \"walkthroughs menu\"",
+            "date": "2024-05-23 22:26:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105609265316",
+            "notes": "new \"walkthroughs menu\" available from the training menu. \n\nthe walkthroughs menu has several buttons which change the text in the scrollview, with each text containing a written step by step description of how to do one of the basic abstract functions of the game. \n\nfix: spin-space mini-orders bubble moves from spin-space to fixed-space once mini-order is programmed, meaning that once the drum is spinning again the bubble does not follow the player-set bubble position relative to spin-space."
+        },
+        {
+            "title": "Mini-Orders !!!",
+            "date": "2024-05-21 12:05:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970437177555",
+            "notes": "New \"Mini-Orders\" allow for grouping of hoops into specific combinations with a specific order in two circumstances where hoops otherwise do not have specific ordering. \n\nMini-Orders have no effect during normal ordered courses, where checkpoints are already sequential. \n\nMini-Orders can be live when there is no race! This allows for the player to create a freestyle environment with multiple patterns available to practice that are all live at once, and will sequentially walk the player checkpoint to checkpoint once the player moves through the first checkpoint in a given mini-order. \n\nMini-Orders can also be live during a hide-and-seek race! Normally in hide-and-seek, there is no specific order and all checkpoints are live at the start of the race. Mini-Orders allows the player to make small groupings in a specific order to count as a single checkpoint in a hide-and-seek race. All other single-checkpoints can be approached from any direction and in any order, however the mini-order can only be checkpointed by moving sequentially through the grouping in the designated direction and order. \n\nMini-Orders will save and load with saves , and will export and import as well. Mini-Orders can be activated in the Race Settings Toggle. Mini-Orders can be created by spawning a \"mini-order-bubble\" from the placeable objects , and then following the prompts that appear when the player moves the warpship into the mini-order bubble. (once a mini-order is programmed, the bubble can be moved in the same way as all other objects, but caution, pressing dock again will reset it!"
+        },
+        {
+            "title": "new song! some details on player experience",
+            "date": "2024-05-15 01:25:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970413686465",
+            "notes": "new song!  \"Space & Time\" by Mark Btesh in the gameplay music mix. \n\ntest change on function of \"foul\" check on hopper class. Player input based vehicle check is slightly undesirable because not all axis inputs will provide stable zero input, meaning that exactly where to draw the line is difficult. Players can tune vehicle performance so that the vehicle stays still during countdown, but may not always have control over spikey inputs, and therefore in an unfortunate twist I cannot be sure that all players will have a consistent experience with the hoppers race begin countdown,, if I have to crank it up then some players will find they can start early if their input is low enough. But,, it is compatible with spin-grav, as the actual velocity of the vehicle is not used in the check, and while under spin grav the vehicle has velocity. \n\nan advantage for the hopper class that comes out of this change, however, is that it is no longer critical to place reset locations so that the vehicle does not drop from the location. . Previously, if the player wanted to begin race with reset and countdown, they would need to land , switch to spaysmode without moving around, and then place the reset location so that on reset, the vehicle would remain perfectly still. Now, however,, it is possible to have the vehicle gently drop onto the pad from a short distance up ,, or even have races suspended in the air where the vehicle simply drops for 3 seconds before the player must cancel their drop and move into the race trajectory ,, so course options are expanded. \n\nadditional changes are mostly minor. randomgenerator scenes will return player to the main menu instead of the vehicles menu,, loading saved levels in randomgenerator no longer loads the prompt explaining how to get to the generator. some buttons were overlapping. \n\nfuture plans: some artwork, some more music, some reorganization of menus."
+        },
+        {
+            "title": "mostly making things work as intended",
+            "date": "2024-05-14 06:06:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435413369467",
+            "notes": "spin-gravity had a lot of problems like : \n - moving hoops around after placing them in spin-space would move them to fixed-space\n - pressing reset while connected to a hoop would not leave the hoop where it was, instead would bring the hoop to the reset location\n - save/load of hoop colors/textures completely broke\n\nspin-grav has more objects, some obstacles with color-change like the hoops. spin-grav has a unique limitation in that non-convex colliders do not work with the spin-space , , (as it uses rigidbody interpolation in order to rotate smoothly, and physx does not support convex mesh colliders with rigidbody) ,, so it has a unique set of objects that players can use to make courses for it. Spin-grav also presents a unique limitation with the racetype \"timer on reset\" because the player is not allowed to move until the countdown is over,, BUT the ship is in motion with the spin-drum. It might be possible to verify that the ship velocity matches the reset location to within a tolerance, but I have not attempted this. \n\ntraining levels run a little smoother overall and work from the all-saves menu or from inside of a campaign. \n\nsave-load system SHOULD run fine after increasing the total color-change options available to players, however it is possible that some colors have moved around on any existing saves once loaded again. The most likely issues are going to be that either the texture selected will not show, or a color will be on an object that was not assigned, and the textures will not show ,, in this case unfortunately the player will just have to reset those bits of lost info and save again. \n\nload from campaign and all-saves was not properly working with spin-grav and should now."
+        },
+        {
+            "title": "\"bug\"fixes",
+            "date": "2024-05-11 17:19:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435404138309",
+            "notes": "technically when I went to upload this latest patch, I noticed that the one previously uploaded was not live, in other words, it was uploaded but not activated. I don't know why that is, therefore some things might change that are not listed below. \n\n-fixed color-change spikey gates not glowing\n-fixed game not initially starting in fullscreen, but instead starting in full-screen sized window,, and then not switching to fullscreen until buttons are clicked several times. \n-fixed dockable weight stand \"add hoop to race\" not compatible with new weight-programmer. \n-fixed \"FPV racing gates\" hoops not compatible with new racemesh system. \n-added new \"first time loading game\" panel. If you do not see the panel , you can search for the \"Regedit\" and delete the \"continued anyway\" prefs entry under the aceracerssp listing. It should be right at the top. ((Likewise, if you feel like your full-screen/windowed behavior is wonky , you can delete those relevent prefs, ask me how in the discussion section))"
+        },
+        {
+            "title": "oops, this one is actual",
+            "date": "2024-05-07 04:19:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999961088882",
+            "notes": "this is just the changes that the last one said it was"
+        },
+        {
+            "title": "lighting is hard,, changed shadows mechanism",
+            "date": "2024-05-07 02:26:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999960803754",
+            "notes": "Not a permanent change, but in an effort to understand how lighting works, I changed the shadows mechanism from \"distance shadowmask\" to \"shadowmask\" which is more basic. \n\nA quick rundown :: most of my scenes are asset demoscenes, I did not create them myself. Some have lighting, some have MORE lighting work, and some are pretty advanced lighting. All in all , I have two problems::: the framerate performance of some scenes is poor, and the lighting behavior is erratic, blinky, or in some cases outright unplayable depending on what I tried. \n\nSo , in this case I had a problem with framerate, so first I tried to turn off shadows which worked very well to improve performance but resulted in some extreme lighting behavior depending on the attitude of the playervehicle. So,, I had to have shadows on to prevent this behavior, but in the end changed to a \"lower quality\" shadows engine. The problem now is that I did not change only this one scenes engine, the setting applies to the entire game, so now the ENTIRE GAME is changed because one scene didn't have good performance. It is possible to change this for only one scene using some scripting that will change the setting when the scene is loaded, and change it back when the scene is exited, but this is overall something I will only do if I determine that it is the appropriate permanent fix, as it is a lot of \"spaghetti all over the place\" \n\nnot that I don't like spaghetti. I was just thinking today how I better keep my entire codebase a secret or else I'll have people leaving cans of pasta sauce on my doorstep."
+        },
+        {
+            "title": "play from all saves menu",
+            "date": "2024-05-06 23:33:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999960364118",
+            "notes": "cursor will now leave the \"player name input\" if the player holds a ui direction on the game controller for a short time. This is an experiment and if successful may be ported to all input fields. \n\nGiant Spaceship Interior was only for SV, now is also for L, FO, RD, TGD, VV \n\nPlay from all saves menu : from the main menu, rather than finding your saves by first going to the scene, players can select a save from a complete list of all saves and load into that scene with the save already loaded."
+        },
+        {
+            "title": "bugfix fo didn't load hoop colors",
+            "date": "2024-05-05 12:46:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999955082988",
+            "notes": "expected but untested additional bug ,,, racemesh colors not loading with save. \n\nThis is a bug that I expect I caught without having witnessed it happen as a problem, but I did make changes to remove it as a possible issue even though it never came up. \n\nFO wasn't loading hoop colors,, this is not because of the script section, but instead because the FO would have been not loading other parts of the race already, if players did not add any hoops to race when they saved it. There was a debug.log line called for a list[0] item that would throw an error if there was no hoops added to race, interrupting the load. debug.log is for debugging, so at one point I fixed another problem, and while on all other vehicles managed to remove that line, missed it for FO. It would NOT have prevented the loading of the saved objects themselves, and previously would only have prevented the loading of other racetype information, however the colors are further down the function meaning that they would have all not worked for FO."
+        },
+        {
+            "title": "new adjustable color hoops",
+            "date": "2024-05-05 03:38:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999953696654",
+            "notes": "adjustable color hoops can be adjusted from the pause menu or from the f3 menu. \n\nThese colors are NOT defaults, and only last while the player is in the scene. \n\nThese colors are saved with the level save, and loaded with the level load, but the default will always be white. (if you think it looks orange or purple by default, that is because the scene you are in has colored lighting, which will impact the color of the hoop,,, but the color is still white, lit with a colored light in that case) .. These colors will also be exported/imported. \n\n"
+        },
+        {
+            "title": "racemesh profiles, OSD text color",
+            "date": "2024-05-04 12:15:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999951359777",
+            "notes": "racemesh colors will already save with the race-save, but what if you want to preset a number of color schemes, and rather than repeatedly setting the colors to the same schemes, you could instead just load them from a few you have saved? Or if you import someones course, and just love the racemesh scheme and want to save that separately to load into any other course? \n\nRacemesh color profiles can be created in the main menu, OR, in the pause menu, and can be saved and loaded from each. Loading racemesh color profiles in the main menu will set the default scheme to the loaded profile, but loading profiles in the pause menu will not, and will only set that profile while in that level/save. \n\nOSD text color can now be changed in the pause menu. It is only one color, so while it is only one color is cannot be set as a profile, and setting it will set it as default for all scenes. It will not save with a race although I have considered that it may be desirable to save with a race in order to maximize the impact of a racemesh color scheme during a race. It is on the table but not something I've decided if it will happen, as although the racemesh color scheme is part of the external environment, perhaps players will prefer control over their HUD text as often this is set for readability."
+        },
+        {
+            "title": "race-savable checkpoint colors",
+            "date": "2024-05-02 02:00:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999942512434",
+            "notes": "default checkpoint colors can be set in the main menu. \n\nrace-specific checkpoint colors can be set in the pause menu and will be saved when the player saves. Resetting the colors to default in the pause menu will reset the colors to the defaults that were set by the player in the main menu. \n\nI didn't think of it until now, but presently there are no profiles for the defaults, so I will add the ability to have perhaps 3 separate default profiles that can be toggled or something, so that once the player selects a favorite default color-set, they don't have to lose it to set another one. maybe this will be a file save with a load list in the same style as a level save, actually. I will consider it. \n\nthe purpose of race-specific saves is so that the player can change the checkpoint colors to suit the race, particularly for the purpose of dramatizing very good courses, or helping to dramatize the next course in a campaign. This race-specific color will also be exported/imported and therefore all players will load these colors when they load your level."
+        },
+        {
+            "title": "random hoop generator ported to all vehicles",
+            "date": "2024-05-01 05:18:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999939368499",
+            "notes": "Random hoop generator button now opens a menu instead of a scene. This menu allows the player to select all vehicles. \n\nAll vehicles are not created equally with the generator, so for now some features will not be equally useful, or in one case present. Normally, the reset location is rotated to face the first hoop in the generation stack, however because the hoppers must be on a pad, none of the hopper reset locations will rotate to face the first hoop. This may change , however also presently, the hoppers are out in open space just as the other vehicles are, on a pad and with no ground, which means that unless 2dify is checked, the hoop is likely to be out of view even if the hopper is rotated to face the x direction. I would like to have hopper generators over some kind of ground, and where 2dify keeps all hoops just above the ground, and in this case it might be more useful to rotate the reset location, but presently, if the plan is to use the reset location to start the race, I suggest starting the race once, looking for where the first hoop is, and then restarting once you know which way to go. \n\nhoppers and the loader have a different \"small,medium,large\" spacing (double), as a result of their inherently larger size. The FO,RD,TGD, and VV , however, are also vehicles that players may prefer to use very large hoops for (as it is much more difficult to aim while flying backwards), which means that most of the hoops in their repertoire are larger. However, i did not choose to double the spawn spacing for these vehicles at this time, as I wanted the very small spacing to be available, and am not sure that the random hoop generator is the best way to get extreme distances courses anyway, in my experience it is best suited for very tight courses. Therefore it is likely the situation that the player may find themselves always scrolling all the way down the list to the smallest hoops in these vehicles objects list, but as these are advanced vehicles anyway, I will leave it this way. \n\nUsing the loader is likely only favorable if dockable weights are to be used, but the generator does not program \"needs weight\" into the course at all. Probably if the player wants to use dockable weights, then there are three best practices::\n\n1- generate hoops and then additively generate 1 or 2 weights, in race-settings toggle \"ignore needs weight\", and just have your own little game of \"get it through one and then ditch it\" , where the race will not track if you but you will know you now have a weight, you should go through one hoop before ditching it ... \n\n2- generate one weight, then generate one bay, then generate one weight, then generate one bay etc. until you are satisfied with the count. If you will play \"hide and seek\" this will not be important as the checkpoints will work in any order, however if you plan to fly an ordered race, then it may not be possible to complete the race unless there is a weight before each bay in the generation stack. (( if you plan to use hoops as well, be sure to enable \"ignore needs weight\" or else be prepared to program the course yourself)) \n\n3- my personal favorite ,, Generate hoops, and then PLACE one weight manually . Check \"ignore needs weight\" and at the start of the race, even though it is not a checkpoint, dock to the weight, and just leave it connected, flying the course while connected."
+        },
+        {
+            "title": "ship colors customization",
+            "date": "2024-04-30 00:36:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966681479138",
+            "notes": "ship colors can be customized from a menu accessible in the \"Play from Vehicles Menu\". \n\n"
+        },
+        {
+            "title": "made the visible racemesh direction meshes single-sided",
+            "date": "2024-04-28 19:31:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966677060569",
+            "notes": "previously the meshes which are transparent would affect the color of the other meshes on the other side, which are also transparent, because they were 3d objects that rendered on both sides. Now that it is possible to change the color of the racemeshes in the main menu,, I made it so that the colors would not be affected by the live meshes on the other side. (so for example, the side you should go through is green by default, and the side you should not go through is red by default, but now they will not be like,, yellow orange on both sides)"
+        },
+        {
+            "title": "test racemesh default color changer",
+            "date": "2024-04-28 11:37:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966675860178",
+            "notes": "from the main menu you can experiment with racemesh colors"
+        },
+        {
+            "title": "frame performance overhaul neon-city",
+            "date": "2024-04-27 12:38:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966672372147",
+            "notes": "complete overhaul of \" Lunar Surface 2242 alleys \" , and \"Lunar Surface 2242 neon alleys\" . \n\nscene mesh consolidation to improve cpu performance. \n\n"
+        },
+        {
+            "title": "new levels for SV,Loader,RD,FO,TGD",
+            "date": "2024-04-25 03:13:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966663650605",
+            "notes": "Polygon SciFi interior and exterior demo-scenes. \n\nThe loader only gets the exterior scene atm. If you love dockable weights,, the SV has them! \n\nI removed some objects from the lunarsurface2242neonalleys scene. This scene is technically the \"Daelonik Artworks neon ads demo scene\". The objects I removed are mostly the buildings around the edges that make it feel like a dense skyline environment,, but,, now it's just a bit more like paris, and a bit less like manhattan. The result is much smoother performance on my 7800xt ,, which should make it more playable in general down to a 3060. The rockhopper can perform at lower framerates because it doesn't have a gimbal,,, but the gimbal system is tied to the framerate a little bit so terribly low frames result in input delays for the gimbal tilt. I have experimented a little bit with fixed update with this system, however I found it to be undesirable and found normal framerate gimbal update to be smooth and natural. This system and the flight recorder system function with a lot of jitter in the fixed update, which would be the expected \"easy solution\" to the possibility of framerate inconsistency, however my screen is at a 60fps update cycle and is very consistent so for these inconsistencies, the best solution is using your graphics driver or windows to set your fps to 60."
+        },
+        {
+            "title": "i accidentally deleted code, it's back",
+            "date": "2024-04-23 10:33:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032409295061",
+            "notes": "loader now works to reset loader bays each lap. In the furvor of all the laps mechanics I missed some loader-specific code that was previously in there but did not make it to the new version. \n\nlunarsmallbigger shouldn't give weird blocky surface coloring anymore. BermudaLowGrav should be less blocky with the terrain texture distance."
+        },
+        {
+            "title": "little fix attempts",
+            "date": "2024-04-22 12:11:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032405898119",
+            "notes": "needs weight hoops now show on the first few torus hoops. The first two did not use the same checkpoint prefab because they had an earlier variant and so are now up to date. \n\n\"press dock to add to race\" for dockable weights would remain on if the player turned off buildmode while in the docking area of the weight. Now a temporary fix until a redesign of the detector,, the indicator will turn off after a short cooldown. \n\nLoader-weight bays were not fully compatible with the new \"weight-programmer\", and are now fully compatible."
+        },
+        {
+            "title": "true bugfix",
+            "date": "2024-04-21 21:33:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032403673910",
+            "notes": "attempt at bugfix,, actual bug. \n\nfor some undiscoverable reason, \"first selected\" is not working on main menu, meaning gamepad and keyboard are not able to select buttons. ,,, this fix enables it to work , but is not an appropriate programming design, as it is wonky to work, and counts as a \"bug workaround\". There is no issue in the editor, but in the build it wasn't working correctly. \n\nIf you are unable to arrow out of the text-field for playername,, press escape to reset the button selected."
+        },
+        {
+            "title": "more racesettings, mesh upgrades in svscenes",
+            "date": "2024-04-21 19:40:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032403387257",
+            "notes": "Changed from compound box colliders to mesh colliders in HDscifi scenes. \n\nracesettings updates ::: new racetypes :::: HideAndSeek Laps  ,,,, HideAndSeek Laps (weights reset) \n\nHideAndSeek was previously only a line-race style racetype, where the player would go through each checkpoint one time (in any order that they can come across the checkpoints) and then the race would be finished. With laps mode, once all checkpoints have been triggered (hide and seek is in any order, there is no first or last hoop) all will once again reset. ((this does mean you can turn around and go right back the way you came, although there may be considerations if some checkpoints require weights!)) \n\nWith normal laps, if a weight is required and carried and then left somewhere, it will stay there on the start of the next lap, however with \"weights reset\" mode, once the next lap has begun, the weights will return to their initial start location. \n\nThere is a NEW way to program \"needs weight\" into courses. This is highly desirable as previously it was possible for the player to leave the weight somewhere other than its intended reset location, which might cause this weight to have a new reset location by accident. Using the new system, the player can press \"p\" while building race to spawn a \"weight programmer\" which is represented by a bubble around the player. While this bubble is active, all hoops the player flies through (to add to race) will now require weights to be connected during the race. So the new best practice for programming course orders using dockable weights is as follows: \n\nin spaysmode, place the hoops and weights as desired. Then, press \"f1\" while in spaysmode to enter \"building race\" mode. fly through each hoop in order, and as normal to add a dockable weight fly into the docking position of the weight and when prompted press \"dock\" (spacebar) to add the weight as a checkpoint. Then, move away from the weight and press \"p\" to spawn the \"weight programmer\" bubble. While the bubble is active, all hoops the player moves through to add, will now require that a weight is connected. To add a weight-dock, move up to the weightdock with the bubble and when prompted press \"dock\" (spacebar) to add the weightdock, then press \"p\" to deactivate the weight programmer, then move through the remaining checkpoints without the bubble to add these checkpoints as \"does not need weight\". \n\ndockable weights are only available to the following vehicles and all other vehicles do not have the option to have hideandseek weights reset ::: SV, SVS, Loader, Rockhopper.. The existing laps with weights reset on all other vehicles is benign at present although this may change however docking without RCS would be extremely difficult so a different connection technique would be required. \n\nHideAndSeek will also allow for needs-weight, so although there is no order to the checkpoints, the player must first dock to a weight in order to trigger a checkpoint that needs weight. In normal ordered racing, a HUD text will notify the player if a checkpoint needs weight, but in HideAndSeek, there is no \"next hoop\" , so a small blue-purple ring will appear in front of all checkpoints that need weight! \n\n"
+        },
+        {
+            "title": "fixes to campaign not loading new racesettings",
+            "date": "2024-04-21 03:03:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032400864311",
+            "notes": "racesettings will now load in campaigns correctly, new racesettings were not loading correctly during campaigns."
+        },
+        {
+            "title": "race-settings changes",
+            "date": "2024-04-20 23:54:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032400387994",
+            "notes": "hullcam menu button in pause menu. Previously hullcams menu was accessible only by button press. It is now available from the in-game pause menu as well. hullcam settings save unique to each vehicle. The hullcam positioning will apply to ALL scenes for that particular vehicle type, but will NOT apply to any other vehicle, each vehicle must be set up independently although the most likely scenario is that these cameras will need to be uniquely positioned for each race. \n\nadded snap-look reverse to space-vehicle. (there is no actual hardware visible on the space-vehicle however it may be desired by the player particularly after using it so frequently on the duckys) \n\nrace-settings changes: These changes are accessible from the pause menu in the \"race settings\" menu. These settings will save the saved level as with the other race-settings. \n\n-skip next-to-last checkpoint on last lap. \nIt was already possible to have the last checkpoint work on the last lap only. (for example to have a dockport or landing pad be the final race checkpoint) ... Now it is possible to skip the 2nd to last checkpoint on the last lap if the last checkpoint is also last-lap only. One logical use-case is where the dockport/landing pad might be the final checkpoint, but the player wants the race to move past this checkpoint each lap, so places a hoop nearby the port/pad, but does NOT want the race to have to move through this hoop when the player approaches the pad itself. \n\n-timer on lasthoop or timer on firsthoop. \nPreviously the laptimer would begin counting a new lap only on the first checkpoint of the next lap. However depending on start location or player preferences, it may be desired that the laptimer begins counting the new lap on the last checkpoint of the previous lap. \n\nfull rundown of race-settings that save with player-saves :: racetype, timertype, lasthoop type, ignore weights, laptimer reset checkpoint"
+        },
+        {
+            "title": "removed some scenes due to potato",
+            "date": "2024-04-19 01:58:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032393411188",
+            "notes": "some scenes despite my best efforts remained very laggy. \n\nThese scenes have been shelved and removed to save install space as well as to result in more consistency in the performance of the scenes. \n\nThe general problem is that high-resolution meshes are designed for environments where culling can occur within a short viewing distance, as most gameplay occurs in a local space. however, this is a flying game therefore visibility of the environment is crucial for the player to be able to maintain orientation during maneuvers. It is not impossible to make these scenes run better however it is a bit above my skill level at present."
+        },
+        {
+            "title": "more rework of \"bermuda lowgravity island\"",
+            "date": "2024-04-18 12:10:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032391314485",
+            "notes": "Bermuda LowGravity Island now runs at normal fps compared to the lighter scenes on my rx7800xt . \n\nIMO it should be smooth on 3060 , the recommended gpu for the game. \n\nlunarsurface2242 and lunarsurface2242moredetails are potato, but alleys and ads for ls2242 are smooth on 3060. \n\nganymede1970 still struggles a bit but I will readdress it to try and gain similar performance to bermudalowgrav."
+        },
+        {
+            "title": "efforts to optimize",
+            "date": "2024-04-18 02:13:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032389803994",
+            "notes": "some scenes are overcrowded and run slow and are hard to play. \n\nSome efforts towards optimization : texture resolution reduction. total objects in some scenes have been reduced. \n\n\"lunar surface 2242\" and \"lunar surface 2242 more details\" for hoppers is still very slow ,, however some improvements in performance have been made in \"ganymede1970\" \"bermuda lowgravity island\" , \"dark side of moon\""
+        },
+        {
+            "title": "little changes (not fixes)",
+            "date": "2024-04-16 00:49:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312198095091",
+            "notes": "replay campaign button on endscreen \n\nadded front facing light to hoppers that will be affected by headlight/landinglight controls. This light is not presently independently toggleable, it will come on, off, and change intensity with the landing light only. I have found it to be useful particularly in the newly added to hoppers tunnel sections, particularly in darker scenes. \n\n"
+        },
+        {
+            "title": "proliferated items, small fixes, pages for racehistory",
+            "date": "2024-04-15 18:09:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312197084367",
+            "notes": "racehistory will display a single page until page is full (200 entries), then will roll that page to a new file and restart page 1. \n\nnew billboards to hoppers. \n\nexperimental tunnel section to hoppers, including spin-grav hoppers. \n\nfixed spin-grav OGH, TGH item not selecting from f3 menu. \n\nwhen switching to back from spaysmode, ship will attempt to match appropriate velocity to reacquire gravity without requiring the resetlocation."
+        },
+        {
+            "title": "added more placeable objects for spacecrafts",
+            "date": "2024-04-15 00:23:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312194384795",
+            "notes": "small details: fixed racetype not updating in end-of-race popup for campaigns. \n\nchanged highlighted color for some buttons. \n\nadded some more billboards and neon ads to SV, L, FO, RD, TGD, VV"
+        },
+        {
+            "title": "meow resolution",
+            "date": "2024-04-13 23:53:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312190663315",
+            "notes": "idk how to make games"
+        },
+        {
+            "title": "added \"campaign start\" and \"campaign finish\" screen",
+            "date": "2024-04-13 23:10:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312190555509",
+            "notes": "at campaign start, screen will show all levels names, racetypes, and timertypes. campaign start screen will stay on for a short period and then the level will load. \n\ncampaign finish screen will show this and also total racetimes. player must then press a button to return to main menu."
+        },
+        {
+            "title": "import/export campaigns!",
+            "date": "2024-04-13 17:59:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312189769177",
+            "notes": "rudimentary import/export system for campaigns! \n\nexporting and important can be done to the game files (which is accessible from steam by \"view game files\") ,, or by pasting a path into the path-input . \n\nexporting a campaign will generate a folder that contains the levels for the campaign and the campaign file itself. importing the campaign will import the levels so that they are accessible just as any other save. Importing files of the same name as saves a player already has will NOT overwrite them. This means that if the player imports a campaign that has a level with the same name as another level the player has already created IN THE SAME SCENE ONLY then the campaign will run with the players existing level instead!!! The easiest way to fix this problem is to rename the players existing level (perhaps adding a number or symbol) and then importing the campaign again."
+        },
+        {
+            "title": "fix \"best lap\" not actual best lap, updated rudimentary campaign info panels",
+            "date": "2024-04-11 00:40:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762993398271619053",
+            "notes": "some additions to campaign info panels for each race ,, intro panel gives playername, scenename, racename, racetype, timertype , outro panel gives playername, racename, totalracetime, best lap, laps. \n\nbest lap was not correct in most cases, fixed."
+        },
+        {
+            "title": "racetime history",
+            "date": "2024-04-10 03:23:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762993398268386016",
+            "notes": "the game will now save racetime history. \n\nracetime history is viewable from the main menu. \n\nracetime history is fairly comprehensive, storing date, scenename, savename, playername, lapcount, bestlap, total racetime, lapslist, timertype, racetype, vehicletype, \n\nThere is not a \"leaderboard\", or \"viewer friendly version\" of racetime history at present, although I may develop one later, rather the racetime history is intended for those desiring an ordinary racing log. \n\nplayername can be changed on the main menu"
+        },
+        {
+            "title": "fixed hoops only add to race in one direction",
+            "date": "2024-04-08 11:45:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364323094701",
+            "notes": "}"
+        },
+        {
+            "title": "fix \"Store Existing\"",
+            "date": "2024-04-07 08:36:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364318971678",
+            "notes": "fix for \"works in editor but not in build\" for Random Hoop Generator \"Store Existing\", \"Restore Existing\" functionality. \n\n\"Restore Existing\" was deleting all game objects. The problem was the startup script execution order, which unity automatically organizes and can be different in the build. The specific problem was that the list of possible objects to be placed was not fully initialized before being referenced by another script. So the actual problem was the \"Store Existing\" function. \n\nI repeated this startup reference in the function itself and the problem is fixed."
+        },
+        {
+            "title": "new features in \"random hoop generator\"",
+            "date": "2024-04-06 22:43:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364317469385",
+            "notes": "some new \"hint buttons\" on main menu and in hoop generator menu. \n\nRandom Hoop Generator new features: \n\noriginal hoop generator is titled \"Spawn Rings (basic)\" \noriginal hoop generator function is unchanged, all objects are deleted and a new set of objects of a single type are generated. \n\nnew hoop generator is titled \"Spawn Rings (additive)\" and is accompanied with two functions , \"Store Existing\" and \"Restore Existing\". Players may manually place objects or randomly generate objects and when satisfied with the \"obstacle / non-hoop\" objects, they can then \"Store Existing\" before hitting \"Spawn Rings (additive)\" which will spawn hoops without deleting any of the existing objects. If the player wishes to try several times to find a set of random hoops they want to fly, they can hit \"Restore Existing\" which will delete all objects and then replace the stored objects, and then they can hit \"Spawn Rings (additive)\" again. If they wish to add multiple types of hoops, or more hoops that the maximum, they may do so, the hoops will not be deleted until \"Restore Existing\" is used."
+        },
+        {
+            "title": "spin-grav levels for all hoppers",
+            "date": "2024-04-05 05:25:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364311198561",
+            "notes": "spin grav test levels have been ported to all hoppers. \n\nThese are \"full levels\" in the sense that players can save, load, export, etc. , but the scenery is not particularly spectacular, and the quantity of placeable objects is limited. \n\nminor change, in the random-hoop spawner level, when spawning the random hoops, the reset location will also respawn in the same location but facing the \"first\" hoop."
+        },
+        {
+            "title": "new levels, experimental \"crash checkpoints\" for SV",
+            "date": "2024-04-04 11:10:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364308426355",
+            "notes": "3 experimental \"crash panel\" checkpoints  for Space Drone. \n\nThese \"crash panels\" are hoops that have a wall instead of being able to be passed through. In the same way that hoops register a checkpoint by flying through them, \"crash panels\" register a checkpoint by flying into them. To add them to race, bonk into them on the side wished to be added, and to fly them while racing, bonk into them on the side with the checkpoint field that normally appears on hoops. \n\nThe gameplay objective of these \"crash panels\" are to make tumble-recovery an intentional gameplay element. Tiny drones are more durable than large vehicles, and so flying into something is less likely to cause the drone to break into pieces, and instead it is likely that the drone will simply bounce off of the impacted surface with some rotation. The crash panels allow players to force racers to either slow down enough to eliminate potential tumbling, or to overcome the tumbling as part of the race. \n\nNew Scenes for spacevehicles: a handful of new scenes for SV, FO, RD, TGD. credits and additional vehicle access will be added in the near future. Also \"platform city\" added for TGH."
+        },
+        {
+            "title": "experimental menu reorganization, total racetime timer",
+            "date": "2024-04-02 04:53:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331454527706",
+            "notes": "experimental menu reorganization. \n\nmain menu still is home to all experimental levels , campaigncreator, import/export. \n\nvehicle menus are now listed in a separate \"play from vehicle menu\" menu. \n\nprimary play buttons now on the main menu are \"play from vehicles menu\" , \"play campaign\" and \"play from training menu\" \n\ntotal racetime is now visible below laps. total racetime also appears with \"racefinished\" \n\n"
+        },
+        {
+            "title": "fixes",
+            "date": "2024-04-01 00:58:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331450287884",
+            "notes": "landing light no longer reflects from gimbal housings\n\ncampaign player now clears campaigns even if player quits them prematurely\n\nTGH now works with campaigns\n\n"
+        },
+        {
+            "title": "added VV to exportpack lists",
+            "date": "2024-03-31 22:07:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331449853997",
+            "notes": "VV saves can now be exported from the \"export pack\" menu"
+        },
+        {
+            "title": "random hoop generator test , hide-and-seek racetype",
+            "date": "2024-03-31 21:35:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331449774183",
+            "notes": "Hide-And-Seek racetype :: \n\nthis racetype is likely to expand in the future, but presently \"Hide-And-Seek\" only means that there is no hoop order and no direction requirement for the hoops. Presently the racetype only has one lap. At the start of the race, all hoops/checkpoints are lit from both sides, and the player may move through them in any order, and they will turn off as the player passes through them, and the HUD will inform the player how many checkpoints are remaining. \n\nIt is possible for the player to make any form of hoop arrangement, although the name \"hide-and-seek\" is meant to suggest that the player may place hoops in various places within one of the interior style environments (so that the player must navigate around the hallways and rooms to find them) , and then the player must find them and fly through them. However, it is also possible to simply be out in the open, and have all of the hoops available at once, so that players may go through them in any order and any direction to find their own best path through the checkpoints, as an alternate primary racetype under the title. A good example of this is in the new \"random hoop generator test\", where a set of hoops will appear at random positions and rotations within an area of otherwise empty space, and then the player may set the racetype to hide-and-seek and then experiment with the fastest resulting route. \n\nRandom Hoop Generator Test ::: \n\nthe random hoop generator test uses the full version of the basic space-vehicle. Players may save the hoopsets they've generated, as well as add from the usual list of placeable objects once the hoops have been generated. IF, however, the player wishes to regenerate a new set of random hoops, all objects that have been placed WILL be deleted and need to be placed again if they are desired in addition to the newly generated random hoops. \n\n"
+        },
+        {
+            "title": "Vector Vanes full version initial release",
+            "date": "2024-03-29 03:00:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331439664182",
+            "notes": "Now including the full version of the Vector Vanes vehicle! \n\nVector Vanes attempts to simulate a forward thruster with thrust vanes in the thrust plume (as in a sidewinder missile!) \n\nWhen the player tilts the thrust vanes, they add some drag and cause some lift so that the flight characteristics of this vehicle will be different from the gimbal-ducky although the method of flight will be similar."
+        },
+        {
+            "title": "details, nothing big",
+            "date": "2024-03-26 12:06:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301736633054",
+            "notes": "small details changed"
+        },
+        {
+            "title": "oops fix",
+            "date": "2024-03-26 00:09:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301734817454",
+            "notes": "fixed campaign creator menu erasing added saves when new scene is selected."
+        },
+        {
+            "title": "campaign creator!",
+            "date": "2024-03-25 23:34:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301734729065",
+            "notes": "Some new scenes \n\nlanding light intensity toggle for hoppers. \n\nCampaign Creator (draft version) !!!! \n\nThe Campaign Creator allows players to assemble their saves into a campaign that will play in order. Players can choose 3,5 or 7 saves per campaign, and create the campaign in the \"create campaign\" menu. Saves can be added and reordered in the campaign, and then the campaign can be saved .\n\nfuture plans for the campaign: export campaigns which will generate a levels pack that will also be automatically imported when players import the campaign. ,, and some more tips for how the campaign creator should work will be included in instructions."
+        },
+        {
+            "title": "Moonar Cave Explorer scene",
+            "date": "2024-03-11 01:02:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637665500445",
+            "notes": "added \"Moonar Cave Explorer\" to hopper vehicles."
+        },
+        {
+            "title": "landing light for hoppers, new scenes",
+            "date": "2024-03-10 22:03:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637665047399",
+            "notes": "landing light for hoppers (headlight aimed down). \nlanding light has two intensity settings. \nlanding light controllable in other ship settings menu , or via keybind. \n\nnew scene : \"Bermuda Triangle Low-Gravity Island\" ,, island with trees and rocks and earth sky for hoppers. \n\nnew scenes : rockhopper only ,, spin-gravity cube ring test, spin-gravity very large drum test."
+        },
+        {
+            "title": "added Ganymede 1970 to hoppers",
+            "date": "2024-03-09 17:52:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637660919619",
+            "notes": "added new scene \"Ganymede 1970\" to hoppers"
+        },
+        {
+            "title": "SpinGravity Station Arena for RockHopper",
+            "date": "2024-03-02 21:16:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5688680204379417877",
+            "notes": "Full Version Rockhopper now has a Spin-Gravity Arena. \n\nObjects can be placed in spin space or fixed space. \nplayers can save just as in other scenes. \ncourse orders will save as normal, however some race settings may not work as normal. \n\nIf the player wishes to have a race begin with countdown and reset, they will need to have the start location be in zero-g (fixed space) or the motion of the ring will foul them. I intend to fix this but haven't decided the best fix for this. \n\nThere are no landing pads that can be docked to, or dockable weights until I figure out the best way to integrate them into ringspace. \n\nPlaceable cameras can be placed in ringspace or fixed space."
+        },
+        {
+            "title": "\"fixed space\" rings added to spin-gravity tests",
+            "date": "2024-02-27 02:45:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065199311665",
+            "notes": "Players may now place hoops in \"fixed space\" or \"spin-space\" in the spin-gravity tests. Pressing a button toggles between the two. \"Fixed Space\" objects do not move at all, while \"Spin Space\" objects rotate with the spin drum (regardless of location) \n\nreduced the rotation for \"spaysmode duckies\". I didn't realize how intensely powerful the rotation was after I shrunk the vehicles."
+        },
+        {
+            "title": "ported experimental levels to other hoppers",
+            "date": "2024-02-24 16:41:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065190493637",
+            "notes": "added the experimental levels to other hoppers."
+        },
+        {
+            "title": "ghost colliders removed",
+            "date": "2024-02-24 13:15:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065189972953",
+            "notes": "fixed invisible cars (colliders only) would fly around."
+        },
+        {
+            "title": "more experimental scenes in Rockhopper",
+            "date": "2024-02-24 11:43:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065189739565",
+            "notes": "mostly just experimentation with urban settings simulating a future lunar city as justification for a skyscraper environment."
+        },
+        {
+            "title": "box to mesh colliders",
+            "date": "2024-02-22 03:32:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065181204905",
+            "notes": "changed several box to mesh colliders in lowpoly lunar surface 2242"
+        },
+        {
+            "title": "added lowpoly cyberpunk scene",
+            "date": "2024-02-22 02:11:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065180998732",
+            "notes": "Added a lowpoly urban setting titled \"LowPoly Lunar Surface 2242\" which is a lowpoly cyberpunk scene."
+        },
+        {
+            "title": "slowed rotation of fast drum",
+            "date": "2024-02-20 10:15:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544511018979",
+            "notes": "fast drum was very challenging to fly low. slowed fast drum to increase speed that player can remain aloft."
+        },
+        {
+            "title": "added larger spin-drum fast and slow",
+            "date": "2024-02-20 02:13:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544509798121",
+            "notes": "some test worlds in rockhopper also"
+        },
+        {
+            "title": "\"round\" hoop test for spin-drum test",
+            "date": "2024-02-19 16:09:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544508268577",
+            "notes": "added a \"round\" hoop to the spin-drum test."
+        },
+        {
+            "title": "fix",
+            "date": "2024-02-18 00:01:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544502173313",
+            "notes": "accidental invisible box colliders fixed"
+        },
+        {
+            "title": "fix",
+            "date": "2024-02-17 21:57:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544501860222",
+            "notes": "spin-drum warpship tumbling with rotation assist on fixed"
+        },
+        {
+            "title": "fix",
+            "date": "2024-02-17 19:37:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544501504572",
+            "notes": "fixed inverted pitch on spin-gravity test warpship"
+        },
+        {
+            "title": "Spin-Gravity Drum Test!!",
+            "date": "2024-02-17 19:24:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544501473459",
+            "notes": "some fixes for some racemeshes to optimize ability to trigger. \n\nMajor Update!!! \n\nSpin-Gravity Drum Test!! \n\nalong with thrustvanes test, now available a \"spin gravity drum\" test. In this test, players may place a hoop, a rock, and a reset location from the \"spaysmode\" By first pressing \"m\" to toggle the warpship. While the warpship is toggled, the drum does not spin, however once the player has placed the objects and switches back to the One-Gimbal-Hopper the objects placed will rotate along with the drum!! \n\nCaution!! unless your reset location pad is parallel to the \"spin-gravity\" (which will NOT be exactly flat to the edge directly out from the pad) it is extremely challenging to land!!! Worry not, full implementation of the spin-gravity drums will include standard rockhopper so the thrust directions that make pinning the vehicle to the pad will be available. ((but for this test, I challenge you to manage your landings from gimbal thrust only!))"
+        },
+        {
+            "title": "fix",
+            "date": "2024-02-08 23:13:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109267500574",
+            "notes": "set RD and TGD tilt defaults to 15 from 45"
+        },
+        {
+            "title": "added max gimbal tilt setting for gimbal rocket vehicles",
+            "date": "2024-02-08 21:50:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109267289273",
+            "notes": "In \"Other Ship Settings\" for each of the gimbal-thruster vehicles, a set of 3 toggles has been added to set the max gimbal-tilt to 45, 30, or 15 degrees. \n\nThis settings is also toggleable by keypress, although no default is assigned. It is presumed that most players will simply set and forget, although some players may wish to be able to cycle through them depending on the maneuvering situation. \n\nVehicles affected: Rubber Ducky, Two-Gimbal Ducky, One-Gimbal Hopper, Two-Gimbal Hopper. \n"
+        },
+        {
+            "title": "fix",
+            "date": "2024-02-08 01:41:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109264227739",
+            "notes": "fix thinhoops able to be passed through at shallow angle without triggering checkpoint"
+        },
+        {
+            "title": "fix",
+            "date": "2024-02-07 19:10:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109263238982",
+            "notes": "fixed slow duckies"
+        },
+        {
+            "title": "fix rubber ducky rotation for resize",
+            "date": "2024-02-07 10:31:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109261922875",
+            "notes": "Just as it may be necessary to reset the power defaults for FO ,, it may be necessary to reset the power defaults for the Rubber Ducky as well. If you already have custom power levels, it may be necessary to readjust torque, as a smaller vehicle rotates more quickly for the same power input."
+        },
+        {
+            "title": "shrink FO, RD, TGD to be same as SV",
+            "date": "2024-02-07 10:18:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109261890586",
+            "notes": "Shrank the physical size of the Forward Only Vehicle, Rubber Ducky, and Two-Gimbal Ducky. \n\nThis is to make them more compatible with the new interior environments without having to have different sized environments. (the astronauts are one size) \n\nAs a result, rotation has been affected for the Forward Only Vehicle. Rubber Ducky fix coming soon. \n\nIt may be necessary to reset FO ship power levels to default. If your power settings are custom, they will need to be readjusted as well, as the smaller size vehicle rotates more quickly from the same power input."
+        },
+        {
+            "title": "added more hoops to ducky and twogimbal ducky",
+            "date": "2024-02-06 23:00:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109260173102",
+            "notes": "smaller hoops for the gimbalrockets. This is to increase the usefulness inside of hte new space staiton environments. I may decide to shrink the two vehicles a little bit also. \n"
+        },
+        {
+            "title": "fix no sound TGD",
+            "date": "2024-02-04 18:17:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074953250694",
+            "notes": "fixed sound for TGD\nupdated credits"
+        },
+        {
+            "title": "New scenes for zero-g ,, new vehicle test!",
+            "date": "2024-02-04 17:39:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074953153479",
+            "notes": "SV, RD, FO, TGD, all get new space station interiors. \n\nThrust Vane test vehicle only has duckycam, only has one scene, and is unable to use most features such as object placement and course creation, but the \"Arena\" scene it does have allows the player to fly multiple courses unguided. \n\n[img]{STEAM_CLAN_IMAGE}/44752707/a08826f7fe7f9d63e1b3c19a52d5a1c00834a6b0.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/44752707/eb7902cb49c44e65806ddb03f9baf5975643d1e0.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/44752707/0717248aff15f064c232074eec47984e4f3da86f.png[/img]"
+        },
+        {
+            "title": "thrust vanes test",
+            "date": "2024-02-01 09:17:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074940947541",
+            "notes": "intial test of the \"thrust vanes space drone\" \n\nthis vehicle as with all tests is probably a little overpowered. There are some differences in handling between gimballed thrusters and vane thrusters. Vanes appear to better preserve straight forward thrust while under handling. while gimballed thrusters are at full tilt, (for roll mostly, as while turning it is less noticeable anyway) they do not contribute as much to forward acceleration, as the entire thrust is aimed at up to 45 degrees. With the vanes craft, however, the vanes in total only cover about 1/4 of the surface area of the thruster, so rotation costs less of the forward thrust. (the thruster remains pointed in a fixed position throughout.) \n\nOf course my own personal knowledge of the vehicle type as it applies to my ability to \"accurately simulate\" the correct amount of lift and drag generated by the thrust vanes is very limited. My rough approximation will likely be subjected to some degree of tuning and then ultimately need to be rebuilt as I learn more, but the basic mechanic of using the vanes to redirect thrust should result in the same basic rotations that this vehicle will give you based on input. (so although this is not a good simulation, it IS a correct \"game\")"
+        },
+        {
+            "title": "fix",
+            "date": "2024-01-30 00:14:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046265320579",
+            "notes": "lapcount in racesettings menu not updating on load, fixed"
+        },
+        {
+            "title": "fix",
+            "date": "2024-01-29 22:16:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046265021689",
+            "notes": "fix escape not closing controlmapper. \n\nthen fixed escape closing controlmapper AND going back to menu"
+        },
+        {
+            "title": "cycle cameras initial rendition",
+            "date": "2024-01-28 16:39:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046260523173",
+            "notes": "cycle cameras next/prev\n\ncycle cameras 2 next/prev \n\nEach individual vehicle has a unique set of cameras. This update adds 2 sets of cycle camera next and prev. Each set is able to be set up by the player for which cameras will be cycled from the pause menu for that vehicle. These settings are not available from the vehicle menu settings at present. To assign or de-assign cameras to each cycle , check or uncheck the appropriate toggle. \n\ncycle cameras next/prev have default keybinds ([,]) ,  cycle cameras next2/prev2 do not. \nbecause of the new keybinds, it may be necessary for the player to reset their keybinds to default if they experience problems, however it is possible that the only error is that the default keybinds for cyclecamera do not work and the player may be able to merely assign these two keybinds manually and everything may work normally once this is done. \n\nThere is now a small HUD indicator in the upper left (below the previous times stack) which will display which camera is active."
+        },
+        {
+            "title": "\"last hoop on last hoop only\" option",
+            "date": "2024-01-28 00:58:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046258140748",
+            "notes": "In the race settings, the new \"last hoop\" options are as follows: \n-last hoop is last hoop (normal)\n-first hoop is last hoop \n-last hoop on last lap only\n\nthese settings apply to the last lap. The race can be set so that the final hoop of the last lap can be the first hoop of the course, the last hoop of the course, or so that the final checkpoint is ONLY used on the last lap of the course. (allowing for a special finish gate or finish pad/dockport)"
+        },
+        {
+            "title": "some new objects and scenes",
+            "date": "2024-01-27 18:40:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046257184572",
+            "notes": "3 new ships in placeable objects\n\nnew scene for FO, L, RD, TGD\n\nreorganized drone menu buttons to sort svs more clearly"
+        },
+        {
+            "title": "added \"half reverse, quarter reverse\" to SV (drone)",
+            "date": "2024-01-26 23:10:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046254223287",
+            "notes": "added a larger version of all thinhoops to loader, RD, TGD, and FOV\n\nadded a \"half reverse\" and \"Quarter Reverse\" toggle in the \"other ship settings\" also available for keybind. \n\nThe new default other ship settings for the SV is halfreverse, halflats"
+        },
+        {
+            "title": "oops.. NOW its right",
+            "date": "2024-01-25 02:07:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046247379221",
+            "notes": "fixed terrain texture misalignment after reducing resolution \n\nadded a number of \"thinhoops\" to SV , RH, OGH, TGH.  \n\nloader, Fo, Ducky, and tgd will get \"thinhoops\" in the future."
+        },
+        {
+            "title": "reduced terrain resolution for better performance",
+            "date": "2024-01-24 23:01:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046246909107",
+            "notes": "several lunar terrains were reduced in graphics quality to improve performance."
+        },
+        {
+            "title": "more scenes for hoppers",
+            "date": "2024-01-23 09:47:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213116369214",
+            "notes": "added \n\"distant moon\" , \"icy moon\", and \"lunar surface 4.5billion bc\""
+        },
+        {
+            "title": "more hoops for SV and hoppers",
+            "date": "2024-01-21 18:22:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213110382752",
+            "notes": "just more hoops"
+        },
+        {
+            "title": "added \"red moon\" to hoppers",
+            "date": "2024-01-21 13:32:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213109648380",
+            "notes": "added red moon to hoppers."
+        },
+        {
+            "title": "added \"dark moon\" level to hoppers",
+            "date": "2024-01-21 12:33:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213109499337",
+            "notes": "added dark moon to hoppers. \n\nfixed smallshiphatchopen connector position"
+        },
+        {
+            "title": "more objects for hoppers.",
+            "date": "2024-01-20 21:18:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213107182274",
+            "notes": "some little adjustments to object positions, more objects to hoppers, updated credits"
+        },
+        {
+            "title": "slightly improved resolution support, more props",
+            "date": "2024-01-20 16:55:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213106518459",
+            "notes": "slight adjustments to the HUD layout and the way menus react to screen resolution to favor widescreens. (still temporary newb fix) \n\nadded \"polystyle distant station\" to OGH and TGH. \n\nadded some new placeable objects to all hoppers. \n\n"
+        },
+        {
+            "title": "hullcam changes, rh input changes, little adjustments/fixes.",
+            "date": "2024-01-18 23:13:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213100182110",
+            "notes": "hullcams are now able to be rotated during gameplay. This rotation is separate from the hullcam menu rotations. The player may use camera rotation while a hullcam is active to rotate shiptied cams to point them or rotate world-tied cams to swing them around the ship. The player may use \"recenter cam\" to recenter it, or it will recenter automatically when the hullcam menu is opened, and this rotation is not stored. ( hullcam setup is stored as normal) \n\nRockHopper inputs originally had separate rotation assignments, but now also have separate translation assignments. This means there is a Forward, Up, Right, but also a rockhopper Forward, rockhopper Up, and rockhopper Right. (rockhopper assignments apply to all \"lunar gravity\" vehicles). \n\nThis is mostly to allow players to assign forward and up as they prefer. Previously \"Forward\" caused hoppers to move up, as \"forward\" represents throttle forward, and hoppers are \"tailsitters\". Now if a player prefers they can use forward for \"forward\" without affecting the spacevehicle assignments. \n\nPlayers will need to add assignments for these inputs, but will not need to reassign all other controls unless they have not played since the last major input update. \n\nDuckyCam for the rockhopper was pulled back a bit. \n\npotentially fixed an issue where dockport invisible meshes would become visible when pause menu is opened and closed after building race. \n\npotentially fixed an issue where dockpad \"press dock to add pad to race\" would stay on if player switched from spaysmode while it was on. \n\nedit::: ALSO added ,, input filtering zerokill . \nzerokill will cause the input filter to zero out when input is zero. With zerokill off, input filtering will cause the input to gradually reduce to zero (the rate will depend on the slider position) in the same way that it gradually increases to the player input value. (the suggested purpose of inputfiltering is to help the player make tiny inputs while docking by decreasing the input value that is applied while pulsing input). With zerokill enabled , the input will increase gradually according to the filter slider value , however when the player stops giving input, it will immediately go to zero."
+        },
+        {
+            "title": "fix TGH pad not adding to race",
+            "date": "2024-01-15 18:38:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510135885503",
+            "notes": "TGH pad now adds to race"
+        },
+        {
+            "title": "Two-Gimbal-Hopper",
+            "date": "2024-01-15 15:54:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510135470157",
+            "notes": "some fixes for nonfunctional menus related to recent additions. \n\nTwo-Gimbal Hopper \"beta\" release."
+        },
+        {
+            "title": "attempt fix \"ghost default assignments\"",
+            "date": "2024-01-15 02:28:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510133428536",
+            "notes": "Not sure if it's fixed. \n\nYou may need to \"reset to default\" in the config menu and reassign all of your controls."
+        },
+        {
+            "title": "support multiple controllers simultaneously",
+            "date": "2024-01-15 02:14:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510133394703",
+            "notes": "I hope it's fixed, the game should allow the player to use 3 controllers simultaneously , dividing the controls among them."
+        },
+        {
+            "title": "NEW VEHICLE (now including full version 2-gimbal ducky)",
+            "date": "2024-01-15 01:53:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510133341830",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/44752707/1d4baddabe17fd7ca8d322fc697cac6c3682271d.png[/img]\n\nThe Two-Gimbal Ducky uses only the 2 gimballed thrusters for all control. The vehicle only accelerates forward, and can only pitch. roll, and yaw as a result of the thrusters gimballing. This means that forward thrust must be applied for the vehicle to accelerate on a rotation axis. \n\nAs with the other vehicles, rotation assist makes use of the vehicles thruster array, therefore rotation assist also has these same limitations. \n\nI will soon add the Two-Gimbal Hopper full version, and MAY include one more vehicle as part of the \"Simple Vehicles Update\". The \"Simple Vehicles Update\" is made of a set of vehicles that do not have a full-featured thruster array, and are built around making use only of a gimballed thruster. The final vehile which may be added or may be added later , will be one that rather than using gimballed thrust, will use \"thrust vanes\" mounted in the thrust plume. The difference in feel while flying this craft should be greater reduction in forward thrust during rotation input, as the vanes will result in drag in the thrust plume. \n\nAlthough the full features are already available for several of these vehicles as a result of small updates, the \"Simple Vehicles Update\" will be an official point of completion of these \"Simple Vehicles\". The next step for vehicles to be included will be a \"Full Thruster Array\" set of vehicles which will make use of gimballed thruster or vectored thrust thrusters, while being paired with a normal 6-axis RCS array. These vehicles will also feature a set of input options, where the vehicle can be controlled using an algorithm that makes use of all available thrusters and depending on player input it will automatically determine to use the gimbals or rcs array for those rotations that can be done with either, or alternatively the RCS array can be assigned separately from the gimbal actions (which may require up to 10 axis for input) allowing the player to use various thrusters as they see fit depending on the given maneuvering circumstances. \n\nEstimated timeline for this full featured thruster update is unknown, although I expect it to take a few months in total. As features are built they will become available in small updates, but I will focus first on completing all of the simple vehicles first, and likely a reorganization of the menus. I also may try to include additional \"training content\" although this is not a priority as the vehicles are already challenging enough that a \"walkthrough of controls\" will not result in player success anyway. The vehicles must be practiced regularly, therefore training content will be limited to simple course elements arranged for players to have access to easily accomplishing basic navigation once they have learned the controls on their own. (there is a controls description already included in the menus)"
+        },
+        {
+            "title": "fixed dockpad would not add to race OGH",
+            "date": "2024-01-13 01:34:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510126005614",
+            "notes": "the dockpad was not adding to race for the OGH . It now works\n\nadded \"pad3\" to OGH"
+        },
+        {
+            "title": "hotfix hullcams would go wonky in menu when selected",
+            "date": "2024-01-09 01:02:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585198121457",
+            "notes": "when selecting hullcams they would occasionally rotate to extreme angles for no apparent reason. \n\nit appears to be fixed."
+        },
+        {
+            "title": "hotfix hopper placeable cams rotating wonky axis",
+            "date": "2024-01-08 23:06:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585197826947",
+            "notes": "when the player would interact with the hopper vehicle placeable cam angle controls, the cameras would rotate on unusual axis and would not aim correctly. \n\nfixed."
+        },
+        {
+            "title": "hotfix",
+            "date": "2024-01-07 23:31:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585194246244",
+            "notes": "placeable cameras not functioning rockhopper and one-gimbal hopper"
+        },
+        {
+            "title": "adjusted rubber ducky power settings",
+            "date": "2024-01-06 19:51:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585190044137",
+            "notes": "it may be necessary for the player to reset each power level to default for changes to take effect."
+        },
+        {
+            "title": "hotfix advanced settings not opening",
+            "date": "2024-01-04 01:08:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585179912468",
+            "notes": "fixed advanced settings won't open."
+        },
+        {
+            "title": "hotfix",
+            "date": "2024-01-03 22:57:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585179580755",
+            "notes": "control mapper will no longer unassign controller from one config when assigning it to another, meaning that all config slots can be simultaneously live with individual configs for a single controller."
+        },
+        {
+            "title": "One-Gimbal Hopper , configs revamp,",
+            "date": "2024-01-02 03:30:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585172981701",
+            "notes": "configuration revamp ALERT!!!! \n \nyou may need to go to config, and reset to default for full changes to take effect. You will lose your config and need to reassign your controls that are not default. \n\nAlong with the config revamp, a player is now able to create multiple configs and switch between them. Choosing which config will work for which vehicle can only be done from the \"advanced settings\" page in each vehicles main menu page.\n\nAlso with the config revamp, I have un-defaulted several buttons from functions that have already been made available as a toggle in a settings menu to make more keys available that are unassigned. \n\nAlso with the config revamp, several cameras have been reorganized to new keys. \n\nThe One-Gimbal-Hopper is now a full vehicle although only one scene is available in this update. \n\nthe Ducky-Cam is now available on all vehicles. \n\n"
+        },
+        {
+            "title": "added 2gimbal hopper test",
+            "date": "2023-12-30 17:49:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585164224205",
+            "notes": "2 gimbal hopper does not have rcs for any axis.\n\nall axis are thrust and gimbal tilt."
+        },
+        {
+            "title": "added \"2-gimbal spacedrone test\"",
+            "date": "2023-12-30 06:35:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585162517682",
+            "notes": "the 2-gimbal spacedrone does not use rcs for attitude control of any axis. all 3 rotation axis are controlled by the forward thrusters gimbal tilt. In order to rotate, the player must also have forward thrust. \n\nThe Rotation Stabilization system likewise uses the gimbals for stabilization. It can stabilize rotation while inputs are zero, while thrust only is input, (which will then use player thrust input as the thrust value) , or while roll has no input it will self stabilize. \n\nThese features are for the test vehicle only and once the full version is added to the game it will have features consistent with all other vehicles."
+        },
+        {
+            "title": "hotfix",
+            "date": "2023-12-26 04:16:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585147590709",
+            "notes": "fixed main menu music slider would not work on first load, only when returning to main menu\n\nfixed navball in gimbal-only rocket wonky in one direction\n\nfixed shipvolume slider in gimbal-only rocket selected by player gameplay input, with value changing as player flew ship \n\n"
+        },
+        {
+            "title": "Gimbal-Only Hopper Test!!",
+            "date": "2023-12-25 23:03:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585146797906",
+            "notes": "try out the new \"gimbal-only hopper\" in a test scene. \n\nThis is a test vehicle and will be replaced by a \"full featured\" version, but for now it is possible to use the camera up-down-left-right to look and basic flight controls, as well as being able to place a reset location with a pad."
+        },
+        {
+            "title": "hotfix",
+            "date": "2023-12-24 23:37:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585143238677",
+            "notes": "when deactivating rotation assist, ship thrusters would remain visibly on if they were on for rotation assist. (they would not provide thrust, but would make sound and be visible) \n\nfixed"
+        },
+        {
+            "title": "Rotation Assist Update part 1",
+            "date": "2023-12-24 05:10:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585140438179",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/44752707/709cac3ddc03fe10882c5fed107d8e26a2c0921a.png[/img]\n\nNew Rotation Assist modes : \n- All axis independently stabilize \n- Roll axis only independently stabilizes, pitch and yaw are linked. \n- Roll axis only stabilizes, pitch and yaw do not stabilize \n- All axis are linked, no stabilization until player rotation input is zero. \n\nRotation assist improvements with weights connected: rotation assist arrest rotation a little faster with weights connected. part 2 will hopefully have better smoothing without sacrificing the rate of arrest. I may make some options for rotation assist while weights are connected, although I do not plan to pursue the ultimate goal of full \"robotic tuning\" features in the near future. Just some preset tunings. Rotation assist does not exceed max rotation thrust available to the player in manual mode (anymore) under any circumstance.  (there was a little spike when approaching zero previously, not noticeable but not fair) \n\n[url={STEAM_CLAN_IMAGE}/44752707/928875ee53168c781bcbd89847cf06ce365b44c9.png][img]{STEAM_CLAN_IMAGE}/44752707/a78d22c0e77690f02d7ac720807c64151a34af09.png[/img][/url]\n\nRubber Ducky gimbal is now on a frame filter, which may need tuning. Part 2 of the update may see a slider setting so that the player can make the tail wag faster or slower to preference. Overall the mass to thrust ration of the rubber ducky means that as long as it doesn't take a whole second to aim the gimbal, overall performance will be about the same for the player, so in part it's just a visual preference, although my objective is to have a hard limitation that simulates the limitations of machine part acceleration,, and with spacecraft machine parts must be lighter more importantly than stronger, so I intend to have some degree of \"slowness\" in the gimbal translation,, at least such that the translation is visible, although not sluggish. This filter is unfortunately not in the fixed update and therefore a faster computer will have a different performance than a slower computer, although I do not want to update my filter in the fixed update as I am tracking player input in the update function. Therefore this setting may be included so that potato computers or racehorse computers can result in a pleasant visual experience from the stabilization wobbles while under thrust etc. (It uses the gimbal rocket for rotation stabilization)\n\nsome little fixes here and there, but a big fix to the \"other ship settings\" menu's accessed from the ships submenus (not from the pause menu, but via the main menu) where none of the toggles were loading at the correct setting and changing a setting would set all of the players previously set settings from other menus to options that had numbers that did not even exist in the game code ... ?? NOw it is necessary to have a \"save\" button in this menu although I imagine some players won't be happy without one anyway. \n\nall of the various cameras now have the same \"post processing\" settings, which will certainly change as I experiment in the future. \n\nother fixes not worth listing. \n\npart 2 expectations :: well I like how the mechanicalness of some of the vehicles stabilization is while connected to a weight. I know I should just smooth everything out, but will leave that for later in hopes that some players play the current stabilization and have an experience with it. also, stabilization loops are an arena of virtually infinite technological advancement, and therefore i COULD try to learn all sorts of things to include related to it, so most likely I will try to find a way to keep it rough for now, while offering smoothing for those who just can't stand it, with the future plan of trashing the entire current system in favor of a proper one. \n\nI may work on a \"rockhopper ducky\" or maybe not until after christmas, so perhaps for the part 2 the \"rubber ducky tests\" from the main menu will be replaced by a gimbal rocket lander test. \n\n"
+        },
+        {
+            "title": "fix rubberducky spawner menu",
+            "date": "2023-12-20 21:11:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585128287001",
+            "notes": "fix f3 spawner menu not selecting items when buttons pressed (rubber ducky only)"
+        },
+        {
+            "title": "Rubber Ducky Full",
+            "date": "2023-12-20 20:34:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585128193577",
+            "notes": "Rubber Ducky Full Update! \n\nUse the \"Rubber Ducky\" which uses a gimbal-rocket for everything but roll, which is powered by a set of rcs thrusters. Rotation Stabilization also uses the gimbal rocket, and pitch and yaw result in translation thrust. The \"Rubber Ducky\" warpship is an actual rubber ducky. \n\n\"Rubber Ducky Training\" is on the shelf, as I intend to work on a gimbal-rocket for gravity, as well as a gimbal rocket for space and gravity that utilizes normal full 6axis rcs. \n\n"
+        },
+        {
+            "title": "rotation assist to Rubber Ducky Test",
+            "date": "2023-12-20 13:34:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585127130645",
+            "notes": "I'm working on a proper Rubber Ducky build, but the test will have RA for now."
+        },
+        {
+            "title": "duckycam now can \"snaplook\"",
+            "date": "2023-12-18 14:56:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219988188294",
+            "notes": "Rubber Ducky Test will remain as it is, and all future changes will be to a new vehicle called \"Rubber Ducky Full\" , however this last change allows the player to use cam rotation controls to point the \"duckycam\" so that it is possible to see the horizontal directions to aid in thrust planning."
+        },
+        {
+            "title": "rubber ducky big",
+            "date": "2023-12-18 10:10:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219987463347",
+            "notes": "rubber ducky big is the same as rubber ducky, but the world objects are 3 times larger to make the hoops easier to traverse"
+        },
+        {
+            "title": "rubber ducky test",
+            "date": "2023-12-17 17:27:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219984924908",
+            "notes": "added \"Rubber Ducky Test\" accessible from the main menu. \n\nJust press \"esc\" to return to the main menu!"
+        },
+        {
+            "title": "added new experimental tunnels to FO",
+            "date": "2023-12-13 22:02:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/7585814657458961310",
+            "notes": "after deciding the larger size of FO wasn't a problem for an experimental object set, I added the tunnels to the FO also. (rocinante training)"
+        },
+        {
+            "title": "experimental tunnel sections (for SV)",
+            "date": "2023-12-13 21:28:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/7585814657458875494",
+            "notes": "new tunnel sections experiment. Placeable tunnel sections allow for various tunnel shapes to be formed. tunnels do not have a checkpoint. \n\nsome other meshfixes. \n\nupdated controls description (SV cameras) [previewyoutube=uVwUGM2_QK4;rightthumb][/previewyoutube]"
+        },
+        {
+            "title": "meshfixes mostly",
+            "date": "2023-12-10 18:19:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616806912495",
+            "notes": "racehoop mesh fixes. ship meshfixes to reduce tunneling (mostly unsuccessful), new placeable objects"
+        },
+        {
+            "title": "some more little details to help onboard players",
+            "date": "2023-12-09 23:56:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616804120378",
+            "notes": "some more little changes to training menu texts. \n\na starmade ship added to the placeable objects"
+        },
+        {
+            "title": "some more directions in the menu",
+            "date": "2023-12-09 19:09:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616803395716",
+            "notes": "following \"space game junkies\" first impression/ review?? ,,, I have added some more texts in the training menu to help players get loaded in to a training level."
+        },
+        {
+            "title": "added some scenes for FO and RH",
+            "date": "2023-12-09 10:17:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616802049129",
+            "notes": "added a couple of scenes to FO including one new scene only available to FO presently. \n\nRH now has \"distant lowpoly\" scene as well"
+        },
+        {
+            "title": "bugfix",
+            "date": "2023-12-08 10:19:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616798409594",
+            "notes": "missing mesh fixed"
+        },
+        {
+            "title": "added more placeable objects",
+            "date": "2023-12-08 09:32:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616798290109",
+            "notes": "added some new objects to space vehicles (not rockhopper) \n\nfilled out the forward only vehicle placeable objects to include more of the objects available to spacevehicle\n\nseveral new large objects to build courses around!"
+        },
+        {
+            "title": "reorganize menus/ui",
+            "date": "2023-12-03 23:40:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983674346267",
+            "notes": "The UI / Menu system is far from refined, but this is a general reorganization of the main menu system to bring all of the vehicles each to their own menu ,, and then to have the vehicle specific settings available in this vehicle menu in addition to being in the vehicles pause menu, making it possible to set up your vehicle specific power/input curves and filtering/ and other settings without loading into a scene. \n\n"
+        },
+        {
+            "title": "more placeable objects",
+            "date": "2023-12-03 17:09:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983673358253",
+            "notes": "added some more placeable objects"
+        },
+        {
+            "title": "import single level from main menu",
+            "date": "2023-12-03 14:22:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983672936091",
+            "notes": "some minor main menu layout changes"
+        },
+        {
+            "title": "just some materials fixes",
+            "date": "2023-12-02 20:50:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983670272650",
+            "notes": "fixed tie fighter panels\n\nadded proper CC credits"
+        },
+        {
+            "title": "nothing notable",
+            "date": "2023-12-02 20:16:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983670188199",
+            "notes": "just some small refinements. \n\nstarted work on making training levels have instructions. All existing training levels have some instructions on load now. \n\nsome billboards with images on them to place around and decorate the scene."
+        }
+    ]
+}

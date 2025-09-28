@@ -1,0 +1,96 @@
+{
+    "appId": "2881590",
+    "total_notes": 15,
+    "notes": [
+        {
+            "title": "A few hotfixes, and testing better a theorically collision detection",
+            "date": "2025-08-17 21:35:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939453850",
+            "notes": "- Fix powerup effects being given to only one player\n- Fix some bug where death effects would have improper positionning\n- Fix a bug that would make killscreens with physics objects behave improperly (fixes Blackhole)\n- Fix the camera scaling not being the same with different level zooms\n- Slightly enlarge the 'Eater' killscreen\n- Slow objects in 'Spawner11'\n\nI now use continuous CD (collision detection) on props and some other physics objects, this should make the game run slightly slower (theorically, but I didn't notice it yet), but make collision detection slightly better. On that note:\n\n- Nerf deagle/kalashnikov bullets since collision detection was buffed\n\n\nAlso the game should now have a proper Nintendo Switch Pro Controller config"
+        },
+        {
+            "title": "Bugfixes and new stuff",
+            "date": "2025-08-08 23:29:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909623864",
+            "notes": "It is now possible to make levels with a different camera zoom. This permits to have bigger levels.\nBackgrounds, Killscreens and Powerups are not scaled, Events aren't either, but it's not forced.\nA few levels were added to showcase this new feature.\n\n- Add some more levels\n- Remove CRT option, bring it back in an event with a better look (Pixelize)\n- Add a bit of audio processing for some events (Pixelize, Wind, Tsunami, LowGravity)\n- Change a lot of powerup visuals to fix physics interpolation, accidentally making some of them better (Revert, HighJump, Sleep, Freeze)\n- Put back Godot Input for emotes on triggers (for controllers)\n- Fix some many minor bugs\n- Lots of tweaks here and there\n\nAlso, the API was updated"
+        },
+        {
+            "title": "'Missiles' killscreen",
+            "date": "2025-07-07 14:09:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891871137",
+            "notes": "- Add a new killscreen called 'missiles', it might be tweaked later on\n- Some new booster levels\n- better random distribution for spawner levels\n- fix a crash on killscreen exit"
+        },
+        {
+            "title": "Various fixes and new levels",
+            "date": "2025-06-15 13:52:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289665531",
+            "notes": "[list]\n[*] Fix physics interpolation bugs with a few particles (it's not supported well for particles yet in the engine)\n[*] Enhance physics1 level\n[*] Add a new kind of levels called 'boosters' with 5 levels\n[*] Tweak basketball water movement\n[*] Tweak rugby movement\n[*] Various bugfixes\n[/list]"
+        },
+        {
+            "title": "Physics interpolation",
+            "date": "2025-06-05 15:22:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199401097",
+            "notes": "Enable physics interpolation in the engine. High refresh rate users are happy."
+        },
+        {
+            "title": "Small update with various changes",
+            "date": "2025-06-04 07:54:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199357655",
+            "notes": "[h2]Twitch[/h2]\n- Add a more noticeable countdown to votes\n- Add a feedback to votes being registered\n- Show the name of the event selected upon selection\n- Fix players picking in votes\n\n[h2]Other[/h2]\n- Rename events \"ColorFlip\" to \"Chromatics\", \"ColorSwitch\" to \"ColorFluid\" and \"LowG\" to \"LowGravity\"\n- Make \"Chromatics\" event more noticeable\n- Enhance the blackhole killscreen effect\n- Add a slight visual change to the \"LowGravity\" event\n- Rename \"race\" levels to \"survival\"\n- Add 5 simple \"survival\" levels\n\n- Various tweaks/bugfixes"
+        },
+        {
+            "title": "Gun reworks",
+            "date": "2025-05-08 10:45:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287834863",
+            "notes": "- Guns now drop bullets on shooting (it's just fancy)\n- Deagle now reloads after 7 bullets shot\n- Rework very slightly deagle/kalashnikov sounds\n- \"Highjump\" powerup now also increases shooting speed for shooting props\n- Nerf grenade launcher a bit"
+        },
+        {
+            "title": "Bugfixes, gameplay content, tweaks and save",
+            "date": "2025-04-30 09:35:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487571628",
+            "notes": "The game should now save your progress on the cloud, so you can have a backup when moving to another PC, or re-installing the game.\n\n[h3]Twitch[/h3]\n\n[list]\n[*] New potential vote: \"Which player would you help\" (gives 5 point to the most voted player)\n[*] Change the random pick animation from a random sequence to a more \"roulette\" style animation\n[*] Launch events instantly on pick, not on the next round\n[/list]\n\n[h3]Bugfixes[/h3]\n\n[list]\n[*] Probably fix threaded loading of game parts, thus fixing deadlocks (note the 'probably')\n[*] Fix some collision sounds not triggering\n[*] Fix some sounds attenuation/freeing issues\n[*] Enhance hit detection a tiny bit for contact props (Basketball, Cross, Crate, Football, Rugby)\n[*] Add some forgotten translations\n[/list]\n\n[h3]Gameplay[/h3]\n\n[list]\n[*] New event: SuperProp\n[*] Crate now works with a charge jump\n[*] Bazooka can now slightly control the missile direction\n[*] Slightly lower Bazooka power\n[*] GrenadeLauncher bullets now explode each other when close to each other\n[*] Jump buffering has been added for Crate, Football, Fridge, GloveBox, Rugby, Toaster\n[*] Change event modifier values (in the menu)\n[/list]\n\n[h3]Modding[/h3]\n\n[list]\n[*] 'util' isn't a loaded node anymore, all its functions are now static\n[*] game.time_scale variable to change time scale\n[*] game.event_new_round signal triggered on each new round (useful for events)\n[/list]"
+        },
+        {
+            "title": "Twitch hotfix",
+            "date": "2025-04-14 06:34:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172370545",
+            "notes": "Changed Twitch authentification method from \"Implicit Flow\" to \"Device Code\".\n\nThis requires slightly more steps but will cause less issues with different systems and remote play focus"
+        },
+        {
+            "title": "Twitch integration, color updates and more",
+            "date": "2025-04-12 22:57:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172329050",
+            "notes": "Some cool changes coming in, some less, probably new bugs, who knows? This update hasn't been tested a lot so as always if you encounter bugs, please report them in our [url=https://discord.gg/JrGufkfWnp]discord server[/url].\n\nChinese translation hasn't been updated in time and it's entirely my fault. It will be updated when it can.\n\nAnyways, here's a quick overview of the changes\n\n\n[h1]Twitch integration[/h1]\n\nThe game should now permit [b]Twitch integration[/b] (go to [i]Game Settings > Twitch[/i]).\nThis will change the event system to only work with votes. The Twitch chat will be able to vote for the next events they want, and you can set the voting time.\n\n[h1]Gameplay[/h1]\n\nA few workshop addons were added to the base game\n- Fog event\n- Wind event\n- Freeze powerup\n\n- A few arenas were added to the game\n- Added a hard limit of 16 to the x2 powerup (so this doesn't happen anymore) https://youtu.be/qaR-x7vMiFY\n\n\n[h1]Graphics[/h1]\n\n- Player colors were all changed to be a bit better looking and less eye hurting\n- A few backgrounds were adjusted to be a bit better looking in terms of colors too\n- A slight vignette effect was added on the background layer to make it a bit smoother\n- The crate texture was remade (hype!)\n\n\n[h1]Engine[/h1]\n\nThe Godot Engine version was bumped from 4.3 to 4.4.1, this should enhance performance a bit but might trigger some new bugs.\nThe game now also triggers a bunch of not important errors too, but that will only be a tiny issue for mod makers.\n\nThere was a lot of code cleanup and fixes, mainly to solve problems due to changing the Godot Engine version, but also to try to fix pre-existing bugs that were just silent or whatever.\n"
+        },
+        {
+            "title": "Nobody asked for it... yet",
+            "date": "2025-03-07 18:12:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379419964",
+            "notes": "[h2]Nobody asked for it (yet), but here it is, the colorblind mode option![/h2]\n\nYou can access the option at Game [b]Settings -> Accessibility[/b] and even force your friends to play without colors.\n\n[img]{STEAM_CLAN_IMAGE}/45344106/03f16a49736d4bddb6ceeb06409a6b978cade12c.png[/img]\n[img]{STEAM_CLAN_IMAGE}/45344106/d77b8c3ab6c4912815fb754e7afc146636275c15.png[/img]\n\n\nWith that, team indicators were also made different shapes to help with colorblindness, and were added as a new cosmetic.\n\n[img]{STEAM_CLAN_IMAGE}/45344106/91b92efaf007a0a0d2f050bead8140cca4fde97b.png[/img]\n[img]{STEAM_CLAN_IMAGE}/45344106/a8e83edf5df1152dc296896948a430f04f1da6e5.png[/img]\n\nThe shop was also enhanced a bit, and a few other adjustments were also made, like Cross being a bit more powerful or some more canvas layering issues were (hopefully) fixed.\n\nDon't forget to join the discord if you encounter any issues!\n\n(also big thanks to our chinese translator for helping with updating the translations so fast when new things come in)."
+        },
+        {
+            "title": "Small fixes/tweaks",
+            "date": "2025-03-01 05:26:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526070954",
+            "notes": "Tweaks:\n- try to boost the cross's attacking capability, probably making it even buggier\n- tweak some minor audio and visual things\n\nFixes:\n- fix the background's front layer loading\n- fix a bug where clashing keyboard inputs wouldn't be set and stored properly\n- fix some canvas layering issues with outlines again"
+        },
+        {
+            "title": "Small fixes (mostly outlines)",
+            "date": "2025-02-23 17:44:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353303364",
+            "notes": "- fix initializing multiple keyboards on initial config creation\n- probably fix a bug in team mode where round wouldn't end if more than 2 players of the same team are alive\n- enhance outline visuals and canvas layering a bit."
+        },
+        {
+            "title": "no more reWASD",
+            "date": "2025-02-21 18:08:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353241401",
+            "notes": "Some players were using reWASD to have several people playing on a single keyboard.\n\nYou can now bind up to [b]4 players on keyboard/mouse[/b] (their respective inputs must be different from one another)\n\nThis can be useful over parsec or remote play if you don't have a controller, or if you want to exceed the remote play controller limit of 4 controllers connected (so you could theorically have 4 controller players and 4 keyboard players on remote play).\n\nDon't hesitate to report bugs on the [url=https://discord.gg/JrGufkfWnp]Discord server[/url] if you encounter any."
+        },
+        {
+            "title": "Mic check 1-2...Is this working?",
+            "date": "2025-02-17 09:39:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580426095043",
+            "notes": "Thanks everyone who bought the game or got a key offered by some generous donator.\n\nThe game got released last week and we're already fixing some things over time, don't hesitate to report bugs you encounter on steam forums or on [url=https://discord.gg/JrGufkfWnp]the official discord server[/url]!\n\nThe OST will soon be available on Steam but you can already listen to it on [url=https://open.spotify.com/album/639Bub9Fglcv2fiEpyL3Y9]Spotify[/url], [url=https://www.youtube.com/watch?v=ayrSY6d4fkU&list=OLAK5uy_lYlpPAr72Ht3W32SMtxhKzrdRXCxdfLmI&index=1]Youtube[/url] or [url=https://distrokid.com/hyperfollow/obani2/lets-props-propfight-soundtrack]some other streaming platforms[/url].\n\n[h3]What's planned?[/h3]\n\nNot much is planned for now except Twitch integration which is being worked on. I'm planning to work on enhancing the modding support and make a better documentation. On that note...\n\n[h3]Looking for modders[/h3]\n\nThe game heavily focuses on making mods and right now I'm the only user of my tools so I don't really know what's missing/needed to add to the documentation. I'm open to questions and suggestions regarding modding and the documentation, so don't hesitate to ask something, even if it you think it sounds dumb, it's probably not."
+        }
+    ]
+}

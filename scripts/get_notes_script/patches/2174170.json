@@ -1,0 +1,54 @@
+{
+    "appId": "2174170",
+    "total_notes": 8,
+    "notes": [
+        {
+            "title": "新增原始数据开关等",
+            "date": "2025-03-17 07:23:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528201149",
+            "notes": "[b]原始数据开关[/b]\n一些特殊情况下，可能会希望不处理轴的死区和映射，这时可以在设置中打开原始数据开关。\n\n[b]管理员权限[/b]\n软件现在默认需要管理器权限运行，以防止在一些游戏运行时无法获取手柄数据。\n\n[b]其他[/b]\n更新了硬件检测库"
+        },
+        {
+            "title": "VInputLite Update",
+            "date": "2024-04-28 11:57:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966675911708",
+            "notes": "I noticed that most users only need the handle mapping function, so today we launched a lightweight version with only the handle function.\n[img]{STEAM_CLAN_IMAGE}/43186438/41fd13daa83e4c42d40bedf7983825be8da3e50a.png[/img]\nThe function logic of the Lite version is consistent with the XBox controller template in the full version, but the operation is simplified as much as possible. As long as you open the Lite version and connect to VTS, the corresponding controller parameters will be automatically registered.\n\nMoreover, in the Lite version, the handle no longer distinguishes specific models, and all available handles are mapped to the same set of parameters.\n\nIf you want to use the Lite version, please right click on \"Properties\" -> \"Browse Local Files\" -> double click on \"run_VInputLite.bat\"\n\nVInput official QQ group: 751202335"
+        },
+        {
+            "title": "小型更新",
+            "date": "2023-05-10 09:58:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340308866025686",
+            "notes": "修复了当自定义公式中有语法错误时，输入源列表显示不全的问题。\n\n添加了一个方法，用于在自定义公式中忽略公式顺序设置值。\n使用方法 CS.Helper.SetValue(id, value)\n例子：CS.Helper.SetValue(\"TestValue\", math.random(1, 6))\n此例子在公式中为名为TestValue的输入源设置一个1到6的随机值。"
+        },
+        {
+            "title": "新增自动重连功能和MIDI信号支持等功能",
+            "date": "2023-03-01 07:07:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176558324998",
+            "notes": "[b]自动重连[/b]\n现在，在未连接VTS的情况下，每隔10秒，会进行一次重新连接尝试。\n如果当前有启用的推荐模板，当重新连接到VTS时，会自动尝试重新注册模板参数到VTS。\n\n[b]MIDI输入源[/b]\n为MIDI信号提供了支持，现在VInput可以接收到来自MIDI的信号，并将其应用到模型上。\nMIDI信号一共有从C-1到G9共128个音符，以及128个0-1的浮点值(适用于旋钮或推子)。\n现在，MIDI输入源只有一个吉他的推荐模板，并且此模板是测试阶段，将来可以会进行调整。\n\n注：你可能需要使用MIDI Guitar2将来自声卡的吉他声音转换为MIDI信号。也可以使用loopMIDI配合midishow网站等MIDI输出来使用虚拟的MIDI信号。"
+        },
+        {
+            "title": "新增PS5手柄推荐模板和模板切换功能",
+            "date": "2023-02-03 08:15:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743883608468",
+            "notes": "新增：\n1. 新增了XBox手柄推荐模板2：食指中指分别控制肩键和扳机键\n2. 新增了PS5的推荐模板，规则同XBox手柄\n3. 新增了模板切换功能\n\n修复：\n1. 修复了同种手柄连接多个时会异常的问题"
+        },
+        {
+            "title": "小型更新",
+            "date": "2023-01-29 06:28:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109519981881",
+            "notes": "在未连接到VTS时，禁用了推荐模板按钮的点击，避免误操作。"
+        },
+        {
+            "title": "bug修复",
+            "date": "2023-01-28 00:52:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109515486403",
+            "notes": "修复了在XBox推荐模板下，XB_Back和XB_Start两个值不正确的问题"
+        },
+        {
+            "title": "增加针对XBox手柄的推荐模板",
+            "date": "2023-01-18 06:11:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474407026529",
+            "notes": "新增了推荐模板功能，这是为了简化一些常用设备的绑定流程而制作的，也可以方便主播使用者在不懂具体原理的情况下仅通过勾选 使用推荐模板 选项来使用适配了此功能的模型。\n如果使用推荐模板，则可以不需要自己编写自定义公式，直接使用模板预先计算好的参数进行使用。\n\n此次更新加入了XBox手柄的推荐模板。\n模板包含一下参数：\nXB_LeftStickX\nXB_LeftStickY\nXB_RightStickX\nXB_RightStickY\nXB_LeftTrigger\nXB_RightTrigger\nXB_A\nXB_B\nXB_X\nXB_Y\nXB_LeftShoulder\nXB_RightShoulder\nXB_Back\nXB_Start\nXB_LeftStickButton\nXB_DPadUp\nXB_DPadRight\nXB_DPadDown\nXB_DPadLeft\nXB_LFinger1ToBack\nXB_LFinger1ToDPad\nXB_LFinger1ToDPadUp\nXB_LFinger1ToDPadRight\nXB_LFinger1ToDPadDown\nXB_LFinger1ToDPadLeft\nXB_RFinger1ToABXY\nXB_RFinger1ToA\nXB_RFinger1ToB\nXB_RFinger1ToX\nXB_RFinger1ToY\nXB_LFinger2ToShoulder\nXB_RFinger2ToShoulder\n\n每个区域的按键都做了优先级，当一个手指对应的区域同时按下多个键时，只会输出优先级更高的按键。\n\n另外此模板还计算了手指停留，例如当按下A松开之后，XB_RFinger1ToA参数还会停留在1，直到按下其他按键，可以以此做出更自然的手指效果。\n\n优先级说明\n大拇指：摇杆区 > DPad(ABXY) > Back(Start)\n食指：触发键(扳机键) > 肩键\n\n制作模型时的要求：\n大拇指默认停留在摇杆上，食指默认停留在触发键。\nXB_LFinger1ToDPad XB_RFinger1ToABXY表示移动手指到4键区域的中间，在移动到4键区域的基础上，根据下属的4个具体参数再进行偏移即可。\n带有Finger的参数决定了手指的位置，其他的参数则决定手指是否按下。\n\n如果有不懂的地方需要询问，可以加群751202335"
+        }
+    ]
+}

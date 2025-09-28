@@ -1,0 +1,102 @@
+{
+    "appId": "241680",
+    "total_notes": 16,
+    "notes": [
+        {
+            "title": "Minor Update 8.15.3 Released",
+            "date": "2025-05-22 11:03:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164409757",
+            "notes": "[b][!][/b] The overall speed is slightly increased.\n\n[b][+] Mouse:[/b] Now the system-wide mouse input processing can be disabled completely by turning off all the mouse hook-dependent features:\n\n[list][*] Mouse > Drag and Scroll > Make the entire window area responsive to dragging/sizing\n\n[*] Mouse > Drag and Scroll > Scroll inactive windows with the mouse wheel\n\n[*] Mouse > Drag and Scroll > Drag the mouse to scroll windows (Hand tool)\n\n[*] Mouse > Multiple Monitors > Tight monitor boundaries\n\n[*] Mouse > Multiple Monitors > Wrap the desktop\n\n[*] Multiple Monitors > Screen Saver > Save Idle Screens > Start automatically when a monitor remains idle for[/list]\nThis can be useful if you do not need those features and have any problems with the input processing (delays, mouse stuttering, overall performance degradation, etc.).\n\nTurning all those features off tells Actual Multiple Monitors not to install a new (or remove the existing) system mouse hook. Turning any of them on keeps the system mouse hook on and operational.\n\n[b][ *] Hotkeys:[/b] Now, if [i]Actual Multiple Monitors[/i] is paused, only two its hotkeys remain available: [i]\"Configure\"[/i] ([b]Win-C[/b] by default) and [i]\"Pause/resume\"[/i] ([b]Ctrl-Shift-Alt-Num-[/b] by default).\n\n[b][-] Actual Taskbar, Windows 10+:[/b] The following Light visual theme incompatibilities have been fixed:\n\n[list][*] in Windows 10+, taskbar toolbar items were white\n\n[*]in Windows 11 22H2+, system tray icons, like Network/Sound/Battery, were white[/list]\n[b][-] Title Buttons, Vista+:[/b] In some rare cases, extra buttons could prevent the main app window from receiving input focus.\n\n[b][-] Easy Window Dragging/Sizing:[/b] Once enabled, the feature remained active even if it was disabled in the Configuration window - until [i]Actual Multiple Monitors[/i] complete reloading (i.e. exiting and starting again).\n\n[b][-] Window Layout:[/b] In some cases, fast sequential display configuration transitions could be handled improperly."
+        },
+        {
+            "title": "Minor Update 8.15.2 Released",
+            "date": "2024-11-14 00:01:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125201686",
+            "notes": "[b][!][/b] Program startup speed is slightly increased and overall security is hardened by adding page hashes to [i]Actual Multiple Monitors[/i] executable files.\n\n[b][!] Windows 11 24H2, Actual Taskbar:[/b] Compatibility is restored back again:\n\n[list][*] Actual Taskbar no more crashes randomly on showing task button previews\n[*] the system tray is restored\n[*] the system taskbar gets hidden/shown automatically if the \"Replace the system taskbar\" option is enabled[/list][b][-] Windows 11 23H2+, Actual Taskbar:[/b] System taskbar displayed buttons for the apps on secondary monitors even if the Individual or Mixed mode was enabled (discovered in the build [u]22631.2861[/u]).\n\n[b][-] Windows 11 22H2+, Actual Taskbar:[/b] Since the version [u]8.15.1[/u] maximized windows placed behind taskbars.\n\n[b][-] Windows 7+, Actual Taskbar:[/b] Since the version [u]8.14.4[/u] the AeroPeek preview stopped working when placing the mouse pointer over the Show Desktop button.\n\n[b][-] Actual Taskbar:[/b] Since the version [u]8.15.1[/u] taskbars got frozen when trying to show a task button of an app either being hung or being suspended (e.g. by a debugger) at the moment.\n\n[b][-] Title Buttons:[/b] Some bad-behaving apps might impose noticeable useless load on CPU if extra buttons were added to their windows."
+        },
+        {
+            "title": "Minor Update 8.15.1 Released",
+            "date": "2024-04-30 11:18:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966683103458",
+            "notes": "[b][!] Windows 11, Actual Taskbar[/b]: Compatibility is improved (checked on Windows 11 Version 23H2, build 22631.3447):\n\n      - the system tray is restored (however, it still may be incompatible\n        with particular apps - empty icons, not working mouse clicks, etc.)\n\n      - the Input Language Switch button is restored\n\n      - the Action Center button is functional again\n\n      - system tray icons (e.g. Sound Volume, Network, Battery) display their\n        corresponding flyout windows (still Win10-style though)\n\n      - Start button displays its context menu on mouse right click\n        (although the context menu responds to keyboard only yet)\n\n[b][+] Configuration, Desktop Divider[/b]: Ability is added to make the Tiles Editor windows semi-transparent to adjust the tiles more accurately with the actual layout of desktop windows.\n\n[b][ *] Mouse Drag and Scroll[/b]: The window dragging part of the \"Make the entire window area responsive to dragging/sizing\" feature has been reimplemented: now it works much more stable and smoother (no more unwanted title button activations, sizing instead of dragging, or sudden window jumps while dragging), and is compatible with most of the apps.\n\nThe known issues: tabbed CMD/PowerShell/Notepad/Explorer windows in Win11, Actual Tools Tabbed Explorer windows.\n\n[b][-] Windows 11 22H2+, Keyboard Modifier Keys[/b]: Any specified modifier key combination stopped being recognized after dragging out any tab in the system tabbed apps (File Explorer, Notepad, CMD/PowerShell). So the Actual Multiple Monitors features based on those combinations stopped working as well.\n\n[b][-] Windows 10+, Window Settings[/b]: In some cases, settings stopped being applied to Metro/UWP apps after restarting Actual Multiple Monitors.\n\n[b][-] Logon Screen Slideshow[/b]: The slideshow processes remained running in inactive user sessions after stopping the Logon Screen service of Actual Multiple Monitors.\n\n[b][!] Windows 11, Actual Taskbar[/b]: List of knows issues in this version (subject to fix in the future updates, last checked on Windows 11 Version 23H2, build 22631.3447):\n\n      - the entire visual style and behavior of Actual Taskbar is more similar\n        to Windows 10 than to Windows 11\n\n      - there is no ability to align the taskbar buttons (including Start,\n        Search, Virtual Desktops, Recycle Bin) center/right\n\n      - system tray is incompatible yet with particular apps\n\n      - sometimes Start menu on secondary monitors does not show up after\n        clicking the Actual Taskbar's Start button\n\n      - Start button's context menu does not react on mouse\n\n      - Actual Taskbar does not handle the overflow (i.e. when there are\n        so many apps open so that their buttons do not fit taskbar's\n        visual space)\n\n      - additional buttons (like Recycle Bin or Actual Tools VD Switcher)\n        do not appear in the system taskbar\n\n[b][!] Windows 11, Title Buttons[/b]: List of knows issues in this version (subject to fix in the future updates, last checked on Windows 11 Version 23H2, build 22631.3447):\n\n      - extra buttons may cover tabs in the system tabbed apps (File Explorer,\n        Notepad, CMD/PowerShell)"
+        },
+        {
+            "title": "New Version 8.14.6 Released",
+            "date": "2021-11-24 20:29:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224935490633939669",
+            "notes": "[url=https://www.actualtools.com/multiplemonitors/whatsnew/#8.14.6]What's New in Version 8.14.6[/url]"
+        },
+        {
+            "title": "What's new in the version 8.14.5",
+            "date": "2021-02-13 07:32:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4703417046206686764",
+            "notes": "Most noticeable changes:\n[list][*]Overall system load is reduced.\n\n[*]Mirroring: Added the ability to flip the mirrored content both horizontally and vertically.\n\n[*]Per-application Audio Device Switcher: Sound switching now works in Chromium-based [i]Microsoft Edge[/i].\n\n[*]Fixed invalid memory operation in sending the collected usage statistics.\n\n[*]Fixed compatibility with [i]Directory Opus[/i].[/list]\nView the full list of changes [url=https://www.actualtools.com/multiplemonitors/whatsnew/#8.14.5]here[/url]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.10 Now Available!",
+            "date": "2017-01-02 11:32:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130547994",
+            "notes": "[h1]We are happy to announce the new version of Actual Multiple Monitors. This version offers the following enhancements:[/h1]\r\n[list]\r\n[*][i]Windows 10[/i]: Extra title buttons now look correct on windows with colored title bars (e.g. [i]Messaging, Phone, Photos, Windows Mail[/i]) and in the Dark visual theme.\r\n\r\n[*]Numerous [i]Windows 10[/i] compatibility fixes.\r\n\r\n[*]Stability is greatly improved when running on [i]Windows x64[/i] platform.\r\n\r\n[*]Configuration windows now look and work correct in high DPI resolutions.[/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.10 Now Available!",
+            "date": "2017-01-02 11:32:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/91593954431718477",
+            "notes": "[h1]We are happy to announce the new version of Actual Multiple Monitors. This version offers the following enhancements:[/h1]\r\n[list]\r\n[*][i]Windows 10[/i]: Extra title buttons now look correct on windows with colored title bars (e.g. [i]Messaging, Phone, Photos, Windows Mail[/i]) and in the Dark visual theme.\r\n\r\n[*]Numerous [i]Windows 10[/i] compatibility fixes.\r\n\r\n[*]Stability is greatly improved when running on [i]Windows x64[/i] platform.\r\n\r\n[*]Configuration windows now look and work correct in high DPI resolutions.[/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.9 Now Available!",
+            "date": "2016-07-22 13:51:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130548123",
+            "notes": "[h1]We are happy to announce the new version of Actual Multiple Monitors. This version offers the following updates:[/h1]\r\n[list]\r\n[*][b]New hotkeys[/b] to invoke advanced title button dialogs (usually invoked via right-click on a button) for a currently active window:\r\n\r\n- Show the \"Move to specific monitor\" dialog      (Win-Ctrl-/)\r\n- Show the \"Maximize to selected monitors\" dialog (Win-Ctrl-Num*)\r\n- Show the \"Put into Divider tile\" dialog         (Win-Ctrl-Num5)\r\n\r\nYou can change the default key combinations in the Hotkeys-Actions panel.\r\n\r\nThis feature can be useful on monitors with high resolutions (up to 4K) where distance to a required button may be too long to drag the mouse there just to invoke the dialog via right click. Using the hotkeys above will make the dialogs appear exactly under the mouse pointer, ready for immediate use.\r\n\r\n[*][b]Far more robust Image processing for slideshows[/b] (both background and screen saver): now it uses less memory and works faster even for huge images (like NASA space photos having up to 20K pixels resolution).\r\n\r\n[*][b]Proper scaling in high DPI resolutions[/b] for Actual Taskbar jump lists and thumbnail previews as well as for extra title buttons.\r\n\r\n[*][b]Improved overall stability.[/b][/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.9 Now Available!",
+            "date": "2016-07-22 13:51:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/251457560646851622",
+            "notes": "[h1]We are happy to announce the new version of Actual Multiple Monitors. This version offers the following updates:[/h1]\r\n[list]\r\n[*][b]New hotkeys[/b] to invoke advanced title button dialogs (usually invoked via right-click on a button) for a currently active window:\r\n\r\n- Show the \"Move to specific monitor\" dialog      (Win-Ctrl-/)\r\n- Show the \"Maximize to selected monitors\" dialog (Win-Ctrl-Num*)\r\n- Show the \"Put into Divider tile\" dialog         (Win-Ctrl-Num5)\r\n\r\nYou can change the default key combinations in the Hotkeys-Actions panel.\r\n\r\nThis feature can be useful on monitors with high resolutions (up to 4K) where distance to a required button may be too long to drag the mouse there just to invoke the dialog via right click. Using the hotkeys above will make the dialogs appear exactly under the mouse pointer, ready for immediate use.\r\n\r\n[*][b]Far more robust Image processing for slideshows[/b] (both background and screen saver): now it uses less memory and works faster even for huge images (like NASA space photos having up to 20K pixels resolution).\r\n\r\n[*][b]Proper scaling in high DPI resolutions[/b] for Actual Taskbar jump lists and thumbnail previews as well as for extra title buttons.\r\n\r\n[*][b]Improved overall stability.[/b][/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.8 Now Available!",
+            "date": "2016-03-31 15:16:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260454846480459567",
+            "notes": "[h1]New version of Actual Multiple Monitors introduces the following updates:[/h1]\r\n[list]\r\n[*][i][b]Back/Forward[/b] buttons[/i] in each Configuration window provide the navigation through the user interface panels like in web browsers.\r\n\r\n[*][i]Incremental [b]Search[/b] box[/i] in each Configuration window lets you quickly discover a panel that contains the required option just by typing several letters of what you want to find.[/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.8 Now Available!",
+            "date": "2016-03-31 15:16:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130548239",
+            "notes": "[h1]New version of Actual Multiple Monitors introduces the following updates:[/h1]\r\n[list]\r\n[*][i][b]Back/Forward[/b] buttons[/i] in each Configuration window provide the navigation through the user interface panels like in web browsers.\r\n\r\n[*][i]Incremental [b]Search[/b] box[/i] in each Configuration window lets you quickly discover a panel that contains the required option just by typing several letters of what you want to find.[/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.7 Now Available!",
+            "date": "2016-02-04 12:10:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/295352659731326294",
+            "notes": "[h1]In the new version of Actual Multiple Monitors we have added the following features:[/h1]\r\n[list]\r\n[*][b]Group Size/Drag[/b] allows to handle tiled windows in natural efficient manner:\r\n[list]\r\n\r\n[*][i]Group Size[/i] - just start to resize a window, and all its neighboring windows will begin to change their sizes accordingly, as if they were cells in a spreadsheet;\r\n\r\n[*][i]Group Drag[/i] - start to drag any window in the group, and all other windows in the group will move along, as if the group were a single window:[/list]\r\n\r\n    [*]Improved support of Metro windows in [b]Windows 10[/b]\r\n\r\n    [*]Improved compatibility of Actual Taskbar with [b]Windows 10[/b]\r\n\r\n    [*]Navigation panel in the main Configuration window revamped\r\n[/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.7 Now Available!",
+            "date": "2016-02-04 12:10:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130548360",
+            "notes": "[h1]In the new version of Actual Multiple Monitors we have added the following features:[/h1]\r\n[list]\r\n[*][b]Group Size/Drag[/b] allows to handle tiled windows in natural efficient manner:\r\n[list]\r\n\r\n[*][i]Group Size[/i] - just start to resize a window, and all its neighboring windows will begin to change their sizes accordingly, as if they were cells in a spreadsheet;\r\n\r\n[*][i]Group Drag[/i] - start to drag any window in the group, and all other windows in the group will move along, as if the group were a single window:[/list]\r\n\r\n    [*]Improved support of Metro windows in [b]Windows 10[/b]\r\n\r\n    [*]Improved compatibility of Actual Taskbar with [b]Windows 10[/b]\r\n\r\n    [*]Navigation panel in the main Configuration window revamped\r\n[/list]"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.6.2 Now Available!",
+            "date": "2015-12-25 15:58:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/341510664120258182",
+            "notes": "[h1]In the new version of Actual Multiple Monitors we have added the following features:[/h1][list] [*][b]The Recycle Bin[/b] is available as an extra button in both\r\n    the system taskbar and the Actual Taskbar, and this button provides exactly\r\n    the same operations as the Recycle Bin icon on the desktop:\r\n    [*][b]Windows 10 full compatibility[/b] \r\n[/list]\r\n"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.6.2 Now Available!",
+            "date": "2015-12-25 15:58:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/341510664120257144",
+            "notes": "[h1]In the new version of Actual Multiple Monitors we have added the following features:[/h1][list] [*][b]The Recycle Bin[/b] is available as an extra button in both\r\n    the system taskbar and the Actual Taskbar, and this button provides exactly\r\n    the same operations as the Recycle Bin icon on the desktop:\r\n    [*][b]Windows 10 full compatibility[/b] \r\n[/list]\r\n"
+        },
+        {
+            "title": "Actual Multiple Monitors 8.6.2 Now Available!",
+            "date": "2015-12-25 15:58:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130548469",
+            "notes": "[h1]In the new version of Actual Multiple Monitors we have added the following features:[/h1][list] [*][b]The Recycle Bin[/b] is available as an extra button in both\r\n    the system taskbar and the Actual Taskbar, and this button provides exactly\r\n    the same operations as the Recycle Bin icon on the desktop:\r\n    [*][b]Windows 10 full compatibility[/b] \r\n[/list]\r\n"
+        }
+    ]
+}

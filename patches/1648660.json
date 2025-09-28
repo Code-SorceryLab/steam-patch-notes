@@ -1,0 +1,246 @@
+{
+    "appId": "1648660",
+    "total_notes": 40,
+    "notes": [
+        {
+            "title": "Breaking Changes No More",
+            "date": "2025-02-14 10:42:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580426000806",
+            "notes": "When I began developing Caïssa Board in January 2021, my goal was to create a modern chess interface.  I envisioned an application where users could analyze their own games, marvel at master tactics, and enjoy the experience with 2D or 3D visuals and gamepad support.\n\nThe first playable version was released in July 2021, but it didn't achieve the success I had hoped for.  Simply displaying forks, pins, and skewers on the board wasn't enough.  This prompted me to reconsider what a truly modern chess interface should offer, leading to a series of significant changes.\n\nI began by adding chess variants, followed by Lichess integration, a switch from Unity to Unreal Engine, a database, multiplayer mode, and finally, the Lua scripting language for database filtering. Each of these additions required substantial modifications.  Two more major features remained: a mod creator and the ability to adapt Caïssa Board to various board sizes and chess sets, enabling support for variants like Capablanca Chess, Xiangqi, and Shogi.\n\nI believe these will be the last major overhauls. Going forward, the game should be flexible enough to accommodate new features without requiring such extensive changes.  There are two additional features I'd like to include, and I anticipate being able to implement them before the next update.\n\n[h1]What Has Changed So Far?[/h1]\n\nAs you may recall, my last update concerned the database. However, I wasn't satisfied with its performance when handling millions of games. While I don't intend to compete with specialized chess software like SCID or ChessBase, I wanted reasonable speed. Consequently, I switched the database from SQLite to PostgreSQL. PostgreSQL offers excellent performance due to its binary data handling. However, I'll partially revert this change, allowing users to choose between SQLite and PostgreSQL, as SQLite is often more convenient.\n\nAnother key addition is the mod creator.  Users can now design their own chess pieces, boards, and even maps for Caïssa Board.  They can also incorporate their Lua scripts and game databases into mods for sharing on the Steam Workshop.\n\nGiven the extent of these changes, I decided to incorporate even more: support for Shogi, Xiangqi, and the Capablanca Chess variant, which requires additional pieces and an 8x10 board.  This necessitated changes to how moves are represented and will definitely make Caïssa Board slower than SCID and ChessBase.  However, I believe these additions are worth the trade-off.\n\nThe two features I'm considering adding next are Lua game analyzers and Lua chess bots.  These shouldn't be too difficult for me to implement and won't require significant changes to the existing structure.  While I'd also like to include Lua chess variant support, this is unlikely at this stage. \n\nAfter the next update, Caïssa Board will transition from alpha to beta.  At that point, my focus will shift to polishing the UI and maps.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/8b35739497cdd976349e6e79e7fb270960a311b4.png[/img]\n\n\n[h1]Next Release[/h1]\n\nPrior to the next update, I'll release a dedicated Unreal Engine project on GitHub to facilitate mod creation.  It's nearing completion, but I'll need to conduct some final testing before making it available.\n\nFollowing this, the update will enter its beta phase. I'm confident that the public release will occur before July 2025, and I expect to be ready well in advance, as the majority of the development is already behind us.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/ac25e45d4357a4582ea16b816884492e9a03c138.png[/img]\n\n[h1]Social Networks[/h1]\n\nI am sometimes posting progress about Caïssa Board on BlueSky (mainly) and Mastodon (occasionally), here are the links:\n\n[url=https://bsky.app/profile/dominiquelorre.bsky.social]https://bsky.app/profile/dominiquelorre.bsky.social[/url]\n\n[url=https://mastodon.social/@DominiqueLorre]https://mastodon.social/@DominiqueLorre[/url]\n\nI have also opened a Discord server if you wish to contact me there:\n\n[url=https://discord.gg/mrsNM5b5tz]https://discord.gg/mrsNM5b5tz[/url]\n\n\n\n\n\n\n"
+        },
+        {
+            "title": "Database update",
+            "date": "2024-07-28 14:37:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094360014237",
+            "notes": "Until now, only the database structure was updated. It was a fairly flexible solution that didn't impose any constraints. However, in the next update, the data will evolve, some will disappear and others will change.\n\nTo achieve this, I've introduced a version number which is zero now and will start at 1 as of the next update. By going from 0 to 1, your game data will be converted. Unfortunately, if your data is very old (if you've let several versions of Caissa Board go by without updating it) the conversion will fail.\n\nYou therefore have two solutions: the first is to delete all your old games from the Documents/My Games/Caïssa Board folder, and the second is to update Caïssa Board now and launch it. After the next update, it will be too late and you'll have to delete your old games.\n\nFrom now on, all game databases will have a version number, and this situation should not happen again.\n"
+        },
+        {
+            "title": "The Database Update is on the unstable Channel",
+            "date": "2024-07-11 10:21:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267360754429",
+            "notes": "As I am finailizing the testing of the next database update, you are welcome to try it out with me on the \"unstable\" channel (no password required).\n\nAlthough this update shouldn't set your game databases on fire, I'd still recommend making a backup of your data before proceeding (the folder is in Documents/My Games/Caïssa Board)."
+        },
+        {
+            "title": "Stability Update",
+            "date": "2024-07-06 12:29:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267342855202",
+            "notes": "Fixed an issue where clicking the mouse the first time would warp the pointer to the middle of screen.\n\nFixed an issue where Lichess games were not opened automatically.\n\nImprovements for the challenges screen."
+        },
+        {
+            "title": "Update Notes and Games In Progress",
+            "date": "2024-07-05 15:00:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267339592780",
+            "notes": "The update notes are now displayed on the home screen.\n\nThe games in progress are now displayed correctly.\n\nThe chess engines are now displayed with their name and level.\n"
+        },
+        {
+            "title": "Players List Update",
+            "date": "2024-07-04 06:03:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267334586045",
+            "notes": "The engine level was not correctly initialized in its settings.\n\nWhen a variant is changed, the players list is now reset and the engines that cannot play that variant are removed."
+        },
+        {
+            "title": "Dedicated Servers, New Positions and Chess Engine Settings",
+            "date": "2024-07-03 18:04:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267332767063",
+            "notes": "The dedicated server is finally available!  You can now download it as a Windows or Linux version from an anonymous account.\n\nStockfish 16.1 has been added to the chess engines. \n\nCurrent positions have been added to the database. Endgame and other positions have been added, so you can now practice knight and bishop checkmate or Philidor's position!\n\nYou'll only be able to benefit from these by default if you reset your database. It's easy enough: just delete the caissa-board.sqlite file from your \"Documents/My Games/Caïssa Board/Game Files\" folder, then relaunch Caïssa Board. However, if you do so, you'll lose the game databases you've created. You can recover them by recreating them again, as long as the corresponding files still exist in the folder (you can also save them, recreate them and copy them later). In the future I'll provide options for an easier recovery.\n\nIn the version created with Unity, it was possible to set chess engine parameters. This is now also possible in this version. Settings are sent to the chess engine at the start of the game. It's not yet possible to reset them, so be careful if you're not familiar with them. Some parameters, such as \"Protocol\", should never be changed.\n\nIf you're only looking to modify the parameters to set the chess engine's strength, you can do so with a separate option (bottom of image). It has been initialized for UCI engines and is quite simple to use: just indicate the Elo level you want.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/8efcac37be14fad99cc166684db6407ec48db06a.png[/img]\n\n\nFixed an issue where the chessboard was not reset after a game and when switching to analysis.\n\nWith this update, I'm continuing to consolidate the single player mode, before returning to the development of the multiplayer mode.\n\n"
+        },
+        {
+            "title": "Stability Update",
+            "date": "2024-07-01 12:32:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267324633259",
+            "notes": "Fixes and improvements for the display and of captured pieces.\n\nMade takeback moves unavailable on Lichess, they were meaningless and would only display an incorrect position.\n\nF5 key can now hide UI (as per the Unity version)"
+        },
+        {
+            "title": "Camera Fix",
+            "date": "2024-06-30 12:19:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267320955732",
+            "notes": "This update is part of the single players fixes that I need to do before resuming work on the multiplayer. The camera can now be moved by pressing the TAB key and a mouse button. Alternatively you can use the gamepad right stick. Pressing the right stick or the middle mouse button will reset the camera."
+        },
+        {
+            "title": "Bug fixes",
+            "date": "2024-06-28 15:08:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267314094984",
+            "notes": "Fixed bugs around Lichess gameplay and the display of arrows\n\nThe Play Online option has been removed as it could cause confusion."
+        },
+        {
+            "title": "3 Years Anniversary Update",
+            "date": "2024-06-27 07:33:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267309294309",
+            "notes": "Caïssa Board was released the 1st July 2021, at the time it was made with Unity Engine. Since then I have moved it to Unreal Engine and have brought major changes to it.\n\nIn this release I have focused on the User Interface and the Multiplayer Mode. You can now host games online and even launch a dedicated server built for Windows or Linux!\n\n[h2]User Interface[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/40641594/19911b0934c65b91a90d3f8350a2ff206f8c0ec8.png[/img]\n\nThe User Interface needed some work, so I went and redesigned most of it. The menus are now easier to understand.\n\n[h2]Multiplayer[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/40641594/b0b7e81194cbdc9a26f3ea3cf54571689dcc4dc4.png[/img]\n\nAs I was ahead of my schedule, I've spent a couple weeks to see if I could make Linux and the multiplayer mode work. After much struggle I could finally succeed with both! This version is very basic, you can pick a side, choose a chess variant and start a game. The bells and whistles will come later.\n\nWhile the dedicated servers are ready on my side, there is an issue with Steam which makes them unavailable right now. I'm working with them to fix it and in the meantime you can still host multiplayer games from your computer.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/c8267528bdbbe95f24690550f0808da8a041beeb.png[/img]\n\n\n[h2]Linux[/h2]\n\nI have successfully packaged Caïssa Board for Linux! What's left to do are minor details such as installing the right chess engines. The dedicated server works already for Linux and will be available as soon as Steam unlocks it.\n\n[h2]Bugs[/h2]\n\nUnfortunately, in order to make the multiplayer work, I had to break about everything in the game. While I have fixed the most obvious errors, you might see the game crashing on less used features. Don't hesitate to tell me if you experience any bug or crash.\n\n[h2]Future[/h2]\n\nBefore going further with the multiplayer mode, I want to stabilize the single player mode a bit more. Once done I can work on the Linux version and then expand the multiplayer mode.\n\n"
+        },
+        {
+            "title": "I see people in the basement!",
+            "date": "2024-06-25 12:21:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039994899001",
+            "notes": "The new version is now available on the unstable channel (no password required). The patch notes will be available soon.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/e084343b50c905422792d15613952fc5c0451dfe.png[/img]"
+        },
+        {
+            "title": "Tactics Update",
+            "date": "2024-05-01 10:10:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999940108376",
+            "notes": "The final part of the review mode has just been completed: the tactics update.\n\nThe various tactical diagrams have been reviewed and corrected, displaying less whimsical information than before. For example, a fork will not be validated if the attacking piece can be captured by one of its targets, unless it is itself defended and of a lower value than the target.\n\nYou can now view tactical information about a piece by dragging the mouse cursor over it. \n\n[img]{STEAM_CLAN_IMAGE}/40641594/afb9f1c2bff8e24ee47d0d9d2e4208805be30560.png[/img]\n\nFor example, here the knight can launch a discovery attack against the opponent's queen.\n\nGame selection has been slightly improved, although this is not the final version. You can now also select positions for analysis.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/f48f3c32cb73e302f79888392e1c9c0818ab9e15.png[/img]\n\n\nFixed a bug in 2D, the moved part was displayed incorrectly.\n\nPlease let me know if you're not happy with the new way of calculating tactics.\n\nI now need to improve the user interface and special effects before leaving early access.\n\n"
+        },
+        {
+            "title": "Finalizing the review mode",
+            "date": "2024-04-23 13:43:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032409776624",
+            "notes": "As you may have noticed, most of the recent updates were focused on improving the review mode.\n\nIn order to finalize it, I had to add the letters and numbers of the squares, the markers for the last move and the possible moves. These are colored in review mode (but not in game mode, as this would be considered cheating).\n\nA green marker means that the square is guarded by another piece.\n\nA red marker means that the square is being attacked by the opponent.\n\nA yellow marker means that the square is challenged (guarded and attacked).\n\nA white marker means that the square is neither attacked nor guarded.\n\nI may change the white and yellow markers later, as the white marker is sometimes difficult to see. Thus, the marker for challenged squares would become orange and the white marker would become yellow.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/c3e41f888ad199249b16f31843820bf0b98895fd.png[/img]\n\nNext I will need to fix the tactics, fix some minor issues and maybe add the status bar now and the cursor for the gamepad and then I will be able to move onto other parts of Caïssa Board. Those are less demanding so the finalization of the whole app is not very far now."
+        },
+        {
+            "title": "Multiple Evaluation Bars",
+            "date": "2024-04-18 13:45:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032391555906",
+            "notes": "Multiple evaluation bars have been added. This makes it easy to spot dangerous situations where only one move is winning or avoids losing. You can see them in the analysis window. There will be as many bars as the number of evaluation lines set in the options.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/6e164adf1c87b3fac6b03b8f657e139d5d750cf4.png[/img]\n\nFixed a display corruption issue when reviewing the game"
+        },
+        {
+            "title": "Various Fixes",
+            "date": "2024-04-17 13:19:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032387843647",
+            "notes": "Fix for the captured pieces color changing when switching between 2D and 3D.\n\nSome PGN files were not imported correctly\n\n"
+        },
+        {
+            "title": "Arrows are back!",
+            "date": "2024-04-14 17:53:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312193396767",
+            "notes": "[list]\n\n[*] Arrows are back! The arrow from the analysis engine will be displayed in yellow, and you can add new ones with the right mouse button. A left-click will remove the arrows from the board.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/4aa9cfbe595f9ec5092c5c92a9cc137358724113.png[/img]\n\n[*] In review mode, you have now access to the history of consulted games.\n\n[*] It is possible to delete moves from the main line.\n\n[*] Fixed a bug that prevented clicking on an empty square when the mode had been toggled from 2D to 3D several times.\n\n[*] The lighting has been improved\n[/list]\n\n"
+        },
+        {
+            "title": "Position Finding",
+            "date": "2024-04-08 10:55:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364322966674",
+            "notes": "It is now possible to search for positions from the Study mode. After the search, games are displayed according to descending Elo and moves are displayed according to descending number of games."
+        },
+        {
+            "title": "Gameplay Stability",
+            "date": "2024-04-05 16:02:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364312811087",
+            "notes": "Various fixes to chess engines and gameplay.\n"
+        },
+        {
+            "title": "Graphics Update",
+            "date": "2024-04-03 19:41:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364306072865",
+            "notes": "Removing pieces from the board could lead to an incorrect display"
+        },
+        {
+            "title": "Various Bugfixes",
+            "date": "2024-04-03 14:55:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364305350139",
+            "notes": "Fixed some visual glitches\nVariations in PGN files were not imported correctly."
+        },
+        {
+            "title": "Hotfix",
+            "date": "2024-04-02 16:22:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331456272641",
+            "notes": "Hotfix: removed piece where displayed at a wrong spot"
+        },
+        {
+            "title": "Position finding",
+            "date": "2024-04-02 13:10:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331455787590",
+            "notes": "Position finding has been reworked and now is much faster.\n\nSome graphics have been improved."
+        },
+        {
+            "title": "Graphics Update",
+            "date": "2024-04-01 13:38:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331452210611",
+            "notes": "Corrected the display bug where pieces could be of wrong color\n\nGraphics improvements\n\nThe knight orientation can now be changed."
+        },
+        {
+            "title": "Stability Update",
+            "date": "2024-03-31 10:13:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331448047247",
+            "notes": "I have spent quite some time to have the chess engine plays vs itself with all the variants. Then I have saved the games and reloaded them in review mode.\n\nWhile I didn't fix some minor issues, most of the crashes have been fixed.\n\nThe tactics have been disabled for several variants, specially Crazyhouse, for performance issues.\n\nThe chess engines console is back!\n\n[img]{STEAM_CLAN_IMAGE}/40641594/3433234fef4e26bc0785e99bbb402b507649df2e.png[/img]\n\nAs in the Unity version, you need to press F6 to toggle it. \n\nThere is a known display issue when reviewing, the board can appear wrong (but the internal positions are correct). Pressing a combination of F2 and F3 will restore the correct display until a fix is made."
+        },
+        {
+            "title": "Colors for variations and moves displayed in line mode",
+            "date": "2024-03-26 12:13:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301736650032",
+            "notes": "When variations are displayed in study mode, they will each be shown in a different color, with the main line displayed in dark brown and the first variation in orange-red.\n\nIt is also possible to display moves in line mode, the options being 3 moves, 2 moves or 1 single move per line. This mode can also be disabled, in which case the moves will be shown without any particular formatting.\n\nA number of bugs have been fixed, in particular with regard to numerical annotation glyphs (nags).\n\n[img]{STEAM_CLAN_IMAGE}/40641594/4e90974910c22e7c2412519af79c0c4f1dd846c0.png[/img]\n\n"
+        },
+        {
+            "title": "Update 25th March 2024",
+            "date": "2024-03-25 14:49:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301733399539",
+            "notes": "Added Icons to the game\nVariations can now be inserted from chess engines lines"
+        },
+        {
+            "title": "The Unreal version is now live!",
+            "date": "2024-03-24 11:43:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301729283900",
+            "notes": "There is still a lot of work to do on the graphic side, however this version works better than the previous Unity build and this justifies making it public.\n\nCompared to the Unity version, some things have been lost:\n\n[list]\n[*] Smooth graphics\n[*] Music and sounds\n[*] Miniboard\n[*] Arrows on the board\n[*] Chess Engine window\n[*] Most of gamepad support\n[/list]\n\nIn return we gain here:\n\n[list]\n[*] More stability\n[*] The database feature (saving and loading games)\n[*] Retrieving games given a position\n[*] More chess variants\n[*] Playing online on lichess.org\n[*] Openings\n[*] The Windows specificities have been removed, opening the way to Mac and Linux (and perhaps mobile) builds\n[/list]\n\nSo, basically this version desn't look as good but works so much better that it is worth publishing it.\n"
+        },
+        {
+            "title": "The Unreal version is available on the 'unstable' branch",
+            "date": "2024-03-01 12:33:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5688680204374447775",
+            "notes": "[h1]The new version has arrived[/h1]\n\nThe switch from Unity to Unreal wasn't too painful, in the sense that I'd already prepared the game's main functionalities: all that was left to do was to transfer the code from Unity to Unreal.\n\nOf course, as far as the user interface and graphics are concerned, everything remains to be done. But that shouldn't stop you from enjoying the game.\n\nThe main features that have been implemented are :\n\n[list]\n[*] 2D and 3D gameplay\n[*] Interfacing with UCI and CECP chess engines\n[*] Support for numerous game variants (antichess, atomic chess, chess 960, horde, etc.)\n[*] Local play against a human opponent or chess engine\n[*] Online play on Lichess with challenge detection and resumption of games in progress\n[*] Database containing hundreds of thousands of games\n[*] Study mode for analysis of your own or other players' past games\n[*] Position analysis using chess engines\n[*] Possibility of searching for a position in the database\n[*] PGN format file import\n[*] Opening directory\n[*] Display of possible tactics in a given position (forks, nailing, etc.)\n[*] Position directory\n[*] Directory of control times (in tournament or friendly mode)\n[/list]\n\nFeatures not yet completed:\n\n[list]\n[*] The chess engine console\n[*] Most of the graphical features (such as arrows on the chessboard) that I plan to implement as I go along.\n[/list]\n\nFeatures that I plan to add later:\n\n[list]\n[*] A scripting system\n[*] The ability to create mods\n[*] Native online play and the creation of dedicated servers.\n[/list]\n\n[h1]How to test[/h1]\n\nIn the game properties, select the 'unstable' test branch. No password is required.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/205ef06d99c7ed908862c582122d5d3e7a3eff53.png[/img]\n\nThe game will then update, and you'll be able to launch the Unreal version:\n\n[img]{STEAM_CLAN_IMAGE}/40641594/de0cc23bea51bbcf2637411991627ad224f88118.png[/img]\n\nIf this popup does not appear, restart Steam and things will return to normal.\n"
+        },
+        {
+            "title": "Development update",
+            "date": "2024-01-18 08:13:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213097905080",
+            "notes": "The migration from Unity to Unreal Engine has gone very well so far. It has brought order to the menus, helped me find a number of hard-to-detect errors and will allow us to add some very interesting possibilities in the future, such as dedicated servers, mods and scripting.\n\nUnfortunately I can't show you many images, as I've done very little work on the display and user interface, concentrating mainly on adding all the systems that are part of Caïssa Board, namely :\n\n* the game engines\n* position editor\n* the clock\n* interface with the Lichess online platform\n* PGN file import\n* 2D and 3D boards\n\n\nIn addition to what existed previously, I've added the missing database functionality and the ability to save positions.\n\nI still have to do:\n\n* variants other than Chess960\n* the display of tactics when viewing games.\n\nThen I can concentrate on graphics and special effects. Next I'll add the help functionality, and finally once the application has stabilized we can think about extending it (mods, dedicated servers and scripting).\n\nFor the more intrepid among you, the beta version will be accessible as soon as the two points I've mentioned are done.\n"
+        },
+        {
+            "title": "Development update",
+            "date": "2023-10-25 13:49:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621573148041",
+            "notes": "You are probably wondering how long this update will take since I decided to make the transition from Unity to Unreal Engine.\n\nWell, there is still a lot of work to be done, but the essential features are already ready.\n\nIndeed, the interface with the chess engines has just been ported and I've made good progress on the position editor.\n\nSo the wait shouldn't be too long. I should point out that I'm not starting from scratch, and that I can reuse almost all the features I developed with the Unity version.\n\nIt's still too early to say whether performance is up to scratch, as I haven't yet imported the PGN files, but I've been able to identify improvements to be made, as often happens when you rewrite your application.\n\nThis screenshot shows the main menu and a position on the chessboard. I'm planning to put a first version on the beta test channel soon, so that those of you who want to can try it out."
+        },
+        {
+            "title": "The next update is delayed",
+            "date": "2023-09-24 13:00:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352635253046",
+            "notes": "As you may know, Caïssa Board was developed using the Unity game engine. Recently, Unity has updated its terms of use in unacceptable terms, which led me to change the game engine. So I began the transition to Unreal Engine.\n\nSince then, the conditions of use have improved, but I realized that Caïssa Board would benefit greatly from a switch to Unreal Engine. Indeed, I noticed that the camera was fluid and that the user interface navigation system was efficient.\n\nAs a result, I decided not to go back to Unity. In practice, I'm going to have a lot of work to do, but I'm not starting from scratch. The algorithms are done, the models and textures are the same and I simply have to transpose what was done on Unity to Unreal, while if possible improving it. Some special effects are specific to Unity and will be difficult to reproduce on Unreal Engine, but this won't have any major consequences.\n\nI apologize for the extra delay, but I feel that I have made the best choice for Caissa Board."
+        },
+        {
+            "title": "Hotfix",
+            "date": "2023-03-24 05:13:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143713753731683007",
+            "notes": "Standard Chess did not generate moves correctly."
+        },
+        {
+            "title": "Stability Update",
+            "date": "2023-03-23 10:49:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536879654893",
+            "notes": "Fixed the Chess 960 castling issues\n\nFixed a variety of issues with Antichess\n\nThe promoted piece is now correctly displayed when using a gamepad or keyboard"
+        },
+        {
+            "title": "Antichess is here!",
+            "date": "2023-03-21 10:38:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536872337502",
+            "notes": "As promised, chess variants are coming. After Chess 960 here is Antichess. In this variant you have to force your opponent to capture all your pieces to win.\n\nAnother improvement is that you can now start your Chess 960 games by choosing the starting position:\n\n[img]{STEAM_CLAN_IMAGE}/40641594/0e010e6f27cc45f433584e48565b6b0c01ec498a.png[/img]\n\nThe promotion interface has been improved to work with Antichess.\n\nKnown issues:\n\nCastling in chess 960 does not work in some positions.\n\nPromoting pawns with the XBox controller or keyboard does not display the piece that will be promoted.\n\n"
+        },
+        {
+            "title": "Various fixes",
+            "date": "2023-03-20 09:10:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536868471286",
+            "notes": "Added the possibility of pasting your PGN content into the Games list.\n\nFixed an issue where the status bar keys where incorrect.\n\nFixed an issue where a captured rook would still allow castling.\n\nImproved support for variants.\n"
+        },
+        {
+            "title": "Caissa Board update: user interface & game controller",
+            "date": "2023-03-16 07:46:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536853680204",
+            "notes": "[h1]What's new[/h1]\n\nThe update of Caissa Board brings important new features:\n\n[list]\n[*] Remote Play Together: it is now possible to invite your friends to play chess with you remotely.\n[*] Improved graphical interface: move list and comments no longer hide the board and are available at the bottom of the screen. \n[*]Changed the way tactics are displayed, they are also displayed in 2D mode\n[url={STEAM_CLAN_IMAGE}/40641594/7d4d084926a16cfbb09aa51e34a8ab27c4cbbde7.png][img]{STEAM_CLAN_IMAGE}/40641594/f697d499304d30fbf8d535d89aa6d9de554aea0d.png[/img][/url]\n[*] Added an information bar at the bottom of the screen to show you the available features\n[*] Replaced the help window by a screen with categories\n[*] Replacement of the game's music\n[*] Improved graphics rendering\n[*] Support for XBox type game controllers.\n[*] Improved support for chess engines with access to their options and a console window that displays the exchanges between Caissa Board and the selected engine.\n[url={STEAM_CLAN_IMAGE}/40641594/5091b245b698fefed451f009e6cef0b31adabb95.png][img]{STEAM_CLAN_IMAGE}/40641594/8888ee02ea60429128841327b30e0d5e3763d483.png[/img][/url]\n[*] Improved clock, with the ability to use tournament or friendly modes such as sandclock mode.\n[url={STEAM_CLAN_IMAGE}/40641594/d67e4d10ca54f5eb3a216d596e0fe8c10f0a2509.png][img]{STEAM_CLAN_IMAGE}/40641594/84559ee13acb402ac0bcbf55cbb7b2cb9a879261.png[/img][/url]\n[*] Rewriting of the internal engine to speed up the analysis of PGN files. 500 games are now read in fifteen seconds compared to almost a minute before.\n[*] Partial variant support, Chess 960 variant is available\n[*] Gull 3 replaced by Fairy Stockfish as default chess engine\n[/list]\n\n[h1]Known issues[/h1]\n\n[list]\n[*]lists and multiple choices selectors can be difficult to access with the controller\n[*]tactics are not displayable with the controller\n[*]the move list may disappear in some cases.\n[/list]\n"
+        },
+        {
+            "title": "The Caïssa Board update is wrapping up",
+            "date": "2023-03-14 10:05:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528810310482650",
+            "notes": "Since my last blog post I have changed a few things that delayed the update further, in fact I have rewritten the internal engine to speed it up. \n\nThe gains in speed are a bit less than expected, however while doing it I have introduced the possibility of adding chess variants. Actually only Chess 960 is available but more will come in the future.\n\nI have also removed Gull3 as the default chess engine and replaced it with Fairy Stockfish which supports a great number of variants. I have also added support for the engine options.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/5091b245b698fefed451f009e6cef0b31adabb95.png[/img]\n\nAmong these options, the one named Skill Level allows you to lower the engine difficulty so that you get more chances to beat it. However be careful about how you change these options because they could break the engine and Caïssa Board! In this case there is a Reset button that will help you fix it.\n\nYou can check these changes today by suscribing to the unstable channel or wait some more until the release is ready.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/8a047ed57fd66d1cd34537606c6bded896bba8f2.png[/img]\n\nThe update will finally be published when I'm done with new screenshots and videos, and naturally fix the last minute bugs I may find along the way.\n\n"
+        },
+        {
+            "title": "The update is nigh!",
+            "date": "2022-12-14 04:44:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4991708208074072615",
+            "notes": "When I announced that the next update would cover UI and gamepad I expected it to take at most 3 months. Alas, several real life and technical issues have slowed me down to the point that I was not able tp make any progress. However I have been able to achieve most of my goals. Let's have a look, shall we?\n\n[img]{STEAM_CLAN_IMAGE}/40641594/3ee3e26b98e16237e5cff0bdc5481145d654149c.jpg[/img]\n\nHere you can see that the main UI has been redesigned so that the chessboard is never hidden. At the bottom the 4 panels represent the game moves, the comments, the evaluation of the move and the last one is for the analysis window. You can cycle through these panels with the gamepad.\n\nYou can also notice a status bar at the bottom that indicates the available commands depending on the panel you are interacting with.\n\nAnd of course, the lighting of the scene has been corrected, it looks much better now.\n\n\n[img]{STEAM_CLAN_IMAGE}/40641594/d722d14d4bf523145c88d150b942db9c7ed9b9b0.jpg[/img]\n\nThe position editor has been improved, no more drag and drop but a cursor mechanism. Editing a chess position is fast and easy with it.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/d67e4d10ca54f5eb3a216d596e0fe8c10f0a2509.png[/img]\n\nThe clock has been entirely redesigned. You can check the times with real sentences that tell you exactly what the time control will be doing.\n\n\n[img]{STEAM_CLAN_IMAGE}/40641594/7de89686aeb4c96db5189be21799d4eb9e6f14d9.jpg[/img]\n\nThe chess engine console is a new feature that lets you see how Caïssa Board interacts with your chess engines.\n\n\n[h1]What is left to do?[/h1]\n\nI am going to replace the icons above the chess pieces, finalize the new help window and verify that the gamepad works correctly. I will also add the Steam feature Remote Play Together so that you can invite friends to play with you but that's only a parameter to check in Steam. This will take some more time but the unstable channel will be updated very soon so you can check in realtime the final steps.\n\n[h1]The next update[/h1]\n\nIn the next update I will focus on the games database so that we will be able to move onto multiplayer after that.\n\n"
+        },
+        {
+            "title": "Analysis Update",
+            "date": "2021-07-25 08:18:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692296842201",
+            "notes": "As announced before, the first big update of Caïssa board is about Analysis and everything related. Caïssa Board now supports variations, comments, numeric annotation glyphs and features a position editor. The chess engines (UCI and CECP) can be used to analyze your games by entering the analyze mode. When you stop analyzing, the position resumes to where it was when the analyze mode was entered. Caïssa Board has been tested successfully with very complex PGN files and is able to save them back. This also includes PGN extensions such as %eval and %clk which are detected properly.\n\n[h1]Improvements[/h1]\n\n[h2]Position Editor[/h2]\n\nCaïssa Board now offers a full featured position editor that includes the castling and the en passant square. You are still able to copy and paste FEN position lines for fast sharing and setup.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/4930de4eda5c48c57fc63848920c909f438692f5.png[/img]\n\n[h2]Variation Lines\n[/h2]\n\nYou can visualize and edit variation lines in your games.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/de8a6bd5f74e67ad28da037417e62133279a3e7c.jpg[/img]\n\n[h2]Analysis[/h2]\n\nThere is a new orange 'A' button in the Chess Engines window that lets you pick a chess engine for analysis.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/8ece7db912573e1b953e69249baed2f4e0132017.png[/img]\n\nWhen analyzing the moves are displayed on the left bottom of the screen and an arrow points at the best move calculated by the engine.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/dfd612914a7ccdce1ddfd3ae75d86c726b0c2fcb.jpg[/img]\n\n[h2]Clear Text Annotations[/h2]\n\nDefined by the PGN format, the numeric annotation glyphs are often displayed as esoteric symbols. This explains why they are so rarely used. Caïssa Board displays them in clear text and breaks them into categories so that you can easily add them whenever it is necessary.\n\n[img]{STEAM_CLAN_IMAGE}/40641594/fc67b7630cbf8c86bc88756f367b716909e8adc5.jpg[/img]\n\n[h2]PGN Format[/h2]\n\nI have searched over the net for very complex PGN files to test with Caïssa Board. The PGN reader is now very robust. Games are exported with their comments, annotations, variation lines and the PGN extensions that were found before (Caïssa Board does not add any PGN extension as of today).\n\n\n[h2]Other improvements[/h2]\n\n[h3]2D Board[/h3]\n\nThe 2D board can be now flipped by pressing F9\n\nThe pieces move instead of being shifted instantly.\n\n[h3]Game Panel[/h3]\n\nNavigations buttons have been added to the game panel\n\nThe players names now appear in the top bar rather than in the game panel\n\n[h3]3D Board[/h3]\n\nRight clicking on a square creates an outline\n\nRight click and drag between 2 squares creates an arrow\n\nThe pieces move instead of being shifted instantly.\n\n[h1]Bugfixes[/h1]\n\nThe complete list of moves was not sent to stockfish and other UCI engines, which led them to ignore repetition draws.\n\nUnderpromotion was sometimes ignored which led to illegal moves\n\n[h1]Known Issues[/h1]\n\nCaïssa Board does not use any other character set than UTF8 when reading and writing PGN files, which can cause some compatibility issues with older programs (and strictly speaking the PGN format itself). I will consider improving that part only if there is sufficient demand, because UTF8 is the modern way of handling text files.\n"
+        }
+    ]
+}

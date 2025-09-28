@@ -1,0 +1,72 @@
+{
+    "appId": "2287140",
+    "total_notes": 11,
+    "notes": [
+        {
+            "title": "Camera Behavior Improvements on the Steam Deck",
+            "date": "2024-12-14 11:10:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543594511",
+            "notes": "I've been porting Mooselutions to iOS. This occasion made revisit the game's camera behavior on the Steam Deck.\n\nI was never a fan of the player-centered camera on the Steam Deck version of the game. To be completely honest, it was thrown together rather quickly. Only after launching on Steam did I then realize the game has a player base on the Steam Deck. I scrambled to put something in as quickly as I could, knowing I would come back later and improve upon it.\n\nThe old camera behavior was rather simple. It placed the player in the center of the screen and simply drew whatever was around the player.\n\nWhile this can work for many types of games, it's not ideal for a puzzle game like Mooselutions where it's very useful to see as much of the puzzle as possible. On the Windows and Mac OS versions where there is plenty of screen real estate, I just show the entire puzzle. I can't do that on the Steam Deck, however, because the game's artwork doesn't look good at smaller scales.\n\nThus a compromise was born. The new camera doesn't show the entire puzzle, but at least it's no longer tethered to the player. Instead of placing the player at the center of the screen, the camera moves with the player to reveal the puzzle in the area where the player moves.\n\nI defined some hard edges for each level, spaces beyond which the camera can't move. This is helpful for keeping the puzzle in focus. You no longer have these situations where most of what gets drawn on the screen is outside of the edges of the puzzle.\n\nIf you haven't played Mooselutions on the Steam Deck, I now urge you to give it a try. If you like what you're playing, leave a review.\n\nIf the game gets enough reviews, it will trigger something in the Steam algorithm that makes them verify it for the Steam Deck, and it would be great to see the game with a Steam Deck verified rating on it.\n"
+        },
+        {
+            "title": "My friend Demetri plays Mooselutions",
+            "date": "2024-11-18 17:17:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125354823",
+            "notes": "We talk about puzzle design with some interesting banter about user interface / experience design."
+        },
+        {
+            "title": "Steam Deck Graphics Improvements",
+            "date": "2024-11-10 12:13:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801697484",
+            "notes": "I was getting the game ready for Super MAGFest and the Turn Based Carnival sale, and I was testing one of my builds on the Steam Deck. I popped over to play some of my other favorite pixel art games (Axiom Verge specifically).\n\nI noticed the pixel art in that game and was impressed with how crisp it looked. I then took a second look at Mooselutions and figured something must be wrong because it wasn't quite as crisp.\n\n(For those of you who are super nerdy and technical, Mooselutions uses a pixel art scaling shader that does bilinear interpolation to blend ever so slightly, but only at texel boundaries. Inside of a texel, the shader samples the texel color, resulting in non-blurry pixel art scaling at non-integer multiples of the texture. It is very convenient because it means I don't have to letterbox the game and can arbitrarily scale textures so long as I preserve the aspect ratio.)\n\nAnyway, I thought something might be wrong with this specific shader, so I tried a few experiments to rule out the shader and found the shader not to be responsible for the slight blurriness.\n\nInstead, it turned out it was a problem integrating with the Windows API. My game's viewport wasn't exactly set to the window's content area size, so there was a teeny tiny amount of stretching which was fairly visible at much smaller window sizes.\n\nThis latest update fixes that discrepancy, and the consequence is pixel art that is just as crisp as Axiom Verge is on the Steam Deck. I think you'll find it much more pleasing on the eye.\n\n"
+        },
+        {
+            "title": "Juice the Moose Update",
+            "date": "2024-11-07 16:48:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801607569",
+            "notes": "Since Moosleutions got into both MAGFest and the Turn-Based Carnvial sale, I thought it would be nice to improve upon some areas of the game that I found lacking.\n\nThe main thrust of the update has been the desire to add more \"juice\" to the game, to make it feel more lively.\n\nWith that goal in mind, this recent update includes the following juicy bits:\n- A totally new set of player animations\n- A camera shake effect when the moose hit obstacles in the terrain\n- A particle effect when the moose charge through grass and leaves\n- A particle effect when the moose hit trees\n- A bright new summer theme\n\nIf you haven't purchased Mooselutions yet, don't buy it right now. Wait for the Turn-Based Carnival of the Steam fall sale, which we will be participating in."
+        },
+        {
+            "title": "Steam Deck Controls",
+            "date": "2024-02-29 15:16:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5688680204371215619",
+            "notes": "I just uploaded a small update that makes the controls on Steam Deck fully native. They should just work right out of the box.\n\nThanks to Casey Muratori for pointing out that you can just use XInput on Windows. When the game is running via Proton it will act as if the Steam Deck controller is an XBox controller."
+        },
+        {
+            "title": "Steam Deck Improvements",
+            "date": "2024-02-27 17:28:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065201549505",
+            "notes": "When Mooselutions first launched, I knew about the Steam Deck. I figured it might be cool to eventually launch the game there, but it would require porting the game over to Linux, and I didn't have time to do that before (or after) the game went live.\n\nI had no idea there's this thing called Proton, which allows you to run pretty much any Steam game that also runs on Windows.\n\nNeedless to say, it came as a surprise to me that people were even able to play the thing, let alone that some of them were having a good time doing it.\n\nI wasn't able to do much about the Steam Deck while I was in the hospital recovering from heart valve surgery, but once the doctor cleared me to drive, I made it my mission to see what's going on. I met up with a friend in town who happened to have a copy of the game running on his Steam Deck.\n\nThe game mostly played how it should. It's just that the puzzles looked really squished on the small screen.\n\nNormally, on large screen devices like my Windows gaming PC, I can fit the entire puzzle on the screen in high resolution. It looks beautiful, and I can see every element in the puzzle.\n\nThat's not the case on the Steam Deck. You've only got 1280 by 800 pixels. Fitting the entire puzzle on the screen and making it look good wasn't going to work.\n\nThat's why I've decided to have a camera that centers on the player and scrolls, like in Zelda games. \n\nAt first, I was concerned that you won't be able to see the entire puzzle at all times. But I tried it out, and it still feels very playable. You can get a feel for a puzzle by walking around. Most puzzles give you the freedom to explore in this way, and if you're in the center of the map, you can usually see the whole puzzle.\n\nThe only real problem I noticed happens when there is an angry moose offscreen. You might have angered him and not know about it. To make this more clear, I turned on the game's moose danger map by default. That way, you can always see which areas will cause a moose to get angry, even if he's offscreen. This only happens in a handful on puzzles.\n\nThe controls should work just fine out of the box. There is no need to use Steam Input on Steam Deck. You can keep it disabled.\n\nAs always, thanks for playing the game! I'm so thrilled to see so many of you enjoying it.\n\n"
+        },
+        {
+            "title": "Navigation Redesign",
+            "date": "2024-01-17 10:34:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213094614353",
+            "notes": "Hi folks,\n\nI just finished the last update for a little while. It contains a few often requested quality of life improvements.\n\n1. The menus are redesigned. Now you can access the menu from inside of a level and from the world map.\n\n2. World map access from the main menu. If you are in a puzzle, you can go to the main menu to access the world map. (Note: you can also access the world map at any time by pressing 'M' on the keyboard or 'X' on most game controllers).\n\n3. Volume controls follow a logarithmic pattern for additional precision.\n\n4. A bunch of tiny improvements to the way the menus and world map feel when you use them.\n\nI have a major surgery next week (don't worry, I will be totally fine), and it will require a short hospitalization. If you have any questions at all during this time, please head over to the game's Discord, and my friends will help you out.\n\nThanks so much for playing and for your overwhelmingly positive support. I feel so lucky to have given you this game."
+        },
+        {
+            "title": "Volume Controls and Non-Destructive Reset",
+            "date": "2024-01-14 14:22:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510131593812",
+            "notes": "Hi folks,\n\nI just updated the game to support music and sfx volume controls. \n\nYour volume settings are saved with each session and synced over Steam cloud.\n\nI also fixed the non-destructive reset bug and brought non-destructive reset back into the game.\n\nNext up some much-needed improvements to the game's pause menu and map navigation layout.\n\nI'm going to make the pause menu accessible from every screen in the game, which ought to fix some of the confusion you've rightly been experiencing when navigating between the game's levels and map. Thanks Andrea for pointing this out!\n\nEnjoy playing, and don't hesitate to reach out if you have any feedback"
+        },
+        {
+            "title": "Steam Cloud Support",
+            "date": "2024-01-14 11:23:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510131140856",
+            "notes": "I've updated the game's Steam settings to support Steam cloud.\n\nProgress you make in the game will get synced to Steam cloud after a play session, and it's cross-platform.\n\nIf you start a game on Mac OS, you can resume it on Windows. No fuss. Lots of muss."
+        },
+        {
+            "title": "Rollback to January 5th version",
+            "date": "2024-01-13 17:42:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510128456013",
+            "notes": "Hi Folks. My apologies, but I had to roll the game back to the January 5th version. \n\nA player discovered a bug in the new undo system (thanks Diane!) that allows you to cheese every puzzle in the game. So for now the restart behavior will remain destructive until I push the update that fixes it.\n\nI'm planning to release a major update this week, just before my upcoming heart valve procedure after which I will be temporarily unable to work on the game (1-2 weeks of down time). \n\nIt will have volume controls, steam cloud support, and a fix to the bug Diane found.\n\nThanks as always for playing, and don't hesitate to reach out if you find any other issues."
+        },
+        {
+            "title": "First post-launch update",
+            "date": "2024-01-08 10:04:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585195849629",
+            "notes": "Hi folks,\n\nThe first official update for Mooselutions addresses the following:\n\n1.) Trying to enter a level while moving on the world map loads the level where you were, not the level you're going to. This was fixed by simply preventing the player from entering a level while walking on the map.\n\n2.) There was an occasional crash that could get triggered by undoing in the middle of a long moose charge. It had to do with animation state machines not being reset at the time of the undo.\n\n3.) One of the winter puzzles wasn't constrained enough and was easily cheesed. The update adds a constraint that prevents the cheese from being an allowable Mooselution.\n\n4.) Restart is now non-destructive. It is considered \"just another move,\" which means you can now rewind past your restart to the state before the restart."
+        }
+    ]
+}

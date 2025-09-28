@@ -1,0 +1,78 @@
+{
+    "appId": "2095170",
+    "total_notes": 12,
+    "notes": [
+        {
+            "title": "Update 0.4.10",
+            "date": "2024-02-04 01:22:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074950682784",
+            "notes": "+Added company presets, so players can save many different companies and select them when joining the game. This also means players can rejoin the game and play a different company if something goes wrong.\n+Added the ability to set what AI difficulty and personality different companies will have when a player is not playing as them (though AI is not currently functioning)\n*Fixed the new week popups covering each other when ending the turn quickly\n*Nodes will now start the game owning 50 of their own shares as a way to dilute shares initially (player ownership always supersedes this)\n*Fixed buying shares under 51 being a way to pump and dump a node, this was because share dilution was being capped to 51 minimum\n*Changed tooltips from a transparent blurred background to an opaque background\n*Fixed share orders starting at the value of a previous order instead of starting at 0\n*Changed the colors of the Buy Controlling and Sell All share buttons to better avoid accidental clicks\n*Fixed highlighted tiles not returning to normal when placing routes"
+        },
+        {
+            "title": "Update 0.4.9",
+            "date": "2024-02-02 13:52:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074945291347",
+            "notes": "+Added quick buttons to sell all shares or buy controlling interest\n+Added more tooltips to the share orders UI for estimating costs and new ownership quantities\n+Nodes will now calculate their total inventory value and apply it to their share prices\n+Added inventory value to the finances and logistics tabs in the node details UI\n+When placing a route all accessible nodes will be highlighted\n*Fixed configuring starting capital in the lobby not working\n*Companies will now track what nodes they have route access to\n*Effects now have their names and descriptions translated more procedurally"
+        },
+        {
+            "title": "Update 0.4.8",
+            "date": "2024-01-31 00:43:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074935998512",
+            "notes": "*Fixed an issue allowing players to send negative money to other players\n*Pressing ESC will no longer bring up the ingame menu if there is a window open\n*Removed some old logic that was causing lag when hitting ESC or closing a window\n*Fixed nodes not updating their ownership if they were loaded before the company owning them in saved games\n*Fixed the map collision box not being resized properly in saved games\n*Fixed nodes recording investments on their books as revenue, thus overly inflating their share prices"
+        },
+        {
+            "title": "Update 0.4.7",
+            "date": "2024-01-28 23:06:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046261502675",
+            "notes": "+Added 3-Week Operational Expense to the node financial tab\n+Added Last Dividend Payment to the node financial tab\n*Replaced Average Revenue with Net Revenue in the node financial tab\n*Retail nodes will now always sell for max price\n*Retail nodes no longer need to set their margins\n*Cities no longer care about their weekly budget (which was never being met in-game anyway)\n*Cities maximum order quantity is now tied to their population\n*Fixed margin sell price display showing the wrong number\n*Removed internally tracking what office a node was built from\n*Fixed an issue that would not allow new offices to be built if they weren't within the range of another office\n*Removed several unnecessary RPC calls to reduce network congestion\n*Consolidated the tech tree into fewer total taps, still separated by industry\n*Fixed closing a window without using [x] not allowing that window to be reopened"
+        },
+        {
+            "title": "0.4.6 Hotfix",
+            "date": "2024-01-26 18:31:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046253516869",
+            "notes": "Fixed a typo in Tutorial Chapter 3"
+        },
+        {
+            "title": "0.4.6 Hotfix",
+            "date": "2024-01-26 17:38:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046253383595",
+            "notes": "Fixed an error in Tutorial Chapter 3 that would instruct the player to build a shed outside the office's range"
+        },
+        {
+            "title": "Chains of Acquisition Launch",
+            "date": "2024-01-25 23:31:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046250631682",
+            "notes": "Hello all!\n\nWe're excited to finally be releasing Chains of Acquisition. We hope you all will enjoy playing the full game, and we want to extend our sincere thanks (in the form of a launch sale ;)) for joining us on this journey and giving us a shot!\n\nIt's been quite a journey getting here and we are proud of how far we've come as such a small team. We have so many great ideas for the future, and we are excited to see what the community at large has in mind too!\n\nIn the meantime though, we want to get some of the quality-of-life updates out of the way to make the base game more enjoyable. Here's a small list of some of the more immediate updates we are already working on:\n[list]\n[*]The rest of the tutorial chapters, these are our first priority right now\n[*]More optimizations, especially to load times, focused on enabling larger maps and even more complexity\n[*]Fleshing out the smaller branches of the tech tree, we have 3-4 more levels immediately in the works, not including plans for a much larger tech tree expansion in the future\n[*]Adding the ability to mod sounds and music\n[/list]\n\nIf any of that sounds interesting, we hope you'll give the game a try, and if you have questions, suggestions, or just want to hang out, please consider joining our discord. We would love to have you!\n[url=https://discord.gg/Vu9QbpaCv5]Discord Link[/url]"
+        },
+        {
+            "title": "Map Optimizations and Steam Workshop",
+            "date": "2024-01-24 01:53:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046243698620",
+            "notes": "Hello all!\n\nOver the past week we've been conducting some stress testing of the game to see how large things can get.\nWhile Chains of Acquisition is intended for small to medium sized maps, large maps can be fun when playing with lots of friends even if it pushes the balance a bit. We prefer 20x20 or 25x25 maps, but we have been seeing how big we can get, and have been using 100x100 as a reasonable test for a large map size.\nChains, like many simulation/strategy games, is a very CPU-heavy game, so our focus between 0.4.1 and 0.4.2 has been optimizing the CPU load, particularly when loading the map. Our primary optimizations in this update were to the collisions on the map grid and the nodes, reducing them to as few meshes as possible. We tested on a 100x100 map, totaling 10000 tiles with an additional 2000 nodes. The following results include FPS, CPU usage, RAM usage, and Approximate load times on the same map:\n[img]{STEAM_CLAN_IMAGE}/43644932/792dbf6ecbdc5a1800268e722365ce671e1b4129.jpg[/img]\nSurprisingly we didn't see much of an improvement in framerate at this size, but we did see a decent decrease in CPU load and loading times. In any case, these optimizations will allow for significantly larger maps in the future, though we have not been able to load a 1000x1000 map due to object limits. (though that is something we would like to improve) We do believe for map sizes under 100x100, this will keep the game more accessible to lower-end hardware, even if it doesn't result in much of a boost in high-end setups.\n\nAdditionally with this update comes a brush size tool for the Map Editor, just in time for larger maps to be viable. Alongside this, we have updated the modding UI for a smoother experience enabling, sorting, and uploading mods.\n\nAnd finally, the Steam Workshop page is live! So once the game is available everyone will be able to start modding immediately. We think modding is the lifeblood of games like ours, and are very much looking forward to what everyone comes up with.\nJust for fun, we have also uploaded the map we used to stress test for this update, and we plan to add a few more maps to our official unofficial big maps mod.\n\nThank you all for following! We are looking forward to our launch at the end of this week!"
+        },
+        {
+            "title": "Tutorial Chapter 3 Released",
+            "date": "2024-01-15 19:56:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510136084047",
+            "notes": "Hello all!\n\nChapter 3 of the tutorial is here, bringing an explanation of storage nodes, how to set up demands in your storage and retail nodes, and how to connect all of your nodes using routes. \n\nWe believe this tutorial chapter is an important step in smoothing out the learning curve in Chains of Acquisition. Using these first three tutorials, players will have everything they need to create basic supply chains and actually begin playing the game. Notably, this chapter also demonstrates how resources are pulled through the chain to warehouses and retail nodes, rather than pushed from production nodes.\nAlthough not all mechanics are covered, many of the remaining mechanics are similar to the explanations in these tutorials and we believe this will help a large majority of players figure the rest of the game out from here while we continue to work on the rest of the tutorial chapters.\n\nThe next chapter, Chapter 4, will cover Retail Nodes, Logistics, and Selling goods. While Chapter 3 contains enough information to figure out retail nodes, we definitely think they need their own chapter. Stay tuned for that and more as we prepare for launch on the 26th!\n\nThanks for playing!"
+        },
+        {
+            "title": "Tutorial Chapter 2 Released",
+            "date": "2024-01-13 21:47:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510129076048",
+            "notes": "Hello all!\n\nOnce again we are presenting a new chapter of the tutorial. This time we have completed Chapter 2, covering Production Nodes and construction.\n\nProduction Nodes are one of the key components of your supply chain in the game, so this was definitely an important piece of the tutorial to introduce. We hope this will significantly help ease the learning curve of understanding how resources are produced and why nodes don't simply produce their recipes until they are full.\n\nNext update we will introduce Chapter 3, which will cover Warehouse Nodes, Demand, and Routes. We currently consider these first three chapters the most important parts, because using them players can begin setting up their own supply chains far more easily. Chapter 3 will also round out our explanation of a pull system in supply chains, which we believe is one of the largest hurdles to understanding supply chains in Chains of Acquisition.\n\nThank you for bearing with us as we attempt to smooth out the learning curve!"
+        },
+        {
+            "title": "Tutorial Chapter 1 Released",
+            "date": "2024-01-12 02:42:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510122531882",
+            "notes": "Hello all!\n\nDue to a multitude of requests we have expedited adding a tutorial to the game. As we complete chapters of the tutorial we will be adding them to both the final game build and the demo for a better on-boarding experience.\n\nIn this update we introduced Chapter 1, a tutorial for the basic controls and UI of the game.\n\nIn the next update we will be adding Chapter 2, covering production nodes and construction, so stay tuned!"
+        },
+        {
+            "title": "Chains of Acquisition - Demo Available Now",
+            "date": "2024-01-09 20:20:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510783579245025041",
+            "notes": "Hello everyone!\n\nThis week for Steam's Capitalism and Economy Fest we have released a demo of Chains of Acquisition. We hope you will give it a try, and we are eager to hear your feedback!\n\nThe demo is not time limited. Included are the following features:\n[list]\n[*]Multiplayer\n[*]All base-game mechanics\n[*]All starting technologies\n[*]The first tab of Agriculture, Production, and Logistics technologies\n[*]One map, Lakeside\n[*]The map editor and custom map support\n[/list]\n\nFrom our testing this is enough to set up a couple small supply chains to get a feeling for how the game plays. We're excited to get more feedback on the game!\n\nIf you encounter bugs or have suggestions, please join our [url=https://discord.gg/My3JpAPMtY]Discord[/url]!\n\nIn the coming days and weeks we hope to release more in-depth showcases of our game's mechanics under different circumstances, so stay tuned for more!"
+        }
+    ]
+}

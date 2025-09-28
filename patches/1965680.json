@@ -1,0 +1,258 @@
+{
+    "appId": "1965680",
+    "total_notes": 42,
+    "notes": [
+        {
+            "title": "3.02",
+            "date": "2025-06-19 12:01:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906733976",
+            "notes": "[p]basically just fixed an issue with GUI scaling and selecting objects in the editor.[/p][p]updated checkblock to use goal level entry[/p][p]made a sign in hell easier to read. [/p]"
+        },
+        {
+            "title": "3.01",
+            "date": "2025-06-16 16:55:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289702103",
+            "notes": "added movelock to settings. \n1 move in each direction for hop. may add dodge movelock if requested."
+        },
+        {
+            "title": "HopDodge 3.0",
+            "date": "2025-06-07 21:38:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199475298",
+            "notes": "[h1]HOPDODGE 3.0 Changelog[/h1][p][/p][h2]New Item: Shield. \n\nNew Boss: OpDo[/h2][p][/p][p]I think this one is better left a mystery. There's will be a lot of new stuff to do. But it's all old. [/p][p]Most people haven't even completed the game. But I have faith that new players will find this update refreshing. \n\nI have high hopes. Here's to you, the players, for making HopDodge worth noting in your libraries. [/p]"
+        },
+        {
+            "title": "2.9",
+            "date": "2024-10-23 13:33:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911795504",
+            "notes": "New song\nNew background\nFixed goggles moon jump bug. \n"
+        },
+        {
+            "title": "2.81",
+            "date": "2024-10-06 23:56:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003507374305",
+            "notes": "Fixed a crashing bug with multiplayer ghosts."
+        },
+        {
+            "title": "2.8",
+            "date": "2024-09-29 00:49:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370191662962",
+            "notes": "Alright let me be real here. \nIt's been a long 4 months since the last update\nAnd sorry for that. \nThere were a couple(?) beta build updates but like\nuntil now there were a lot of weird bugs and optimizations that were in the works.\nAnd now the weird bugs are all gone for new optimizations.\n\nAmong those updates:\n[list]\n[*]Static sprites are batched now to reduce vertex batch breaks. \nThis is something that was a lot harder to do than adding a new feature, but instead of doing that I reduced the frame lag on 9999 instances of coins from 12fps to 60. \nSo that's exciting to me for no reason since I will never make a level where there are 9999 coins.\n[*] Greedy meshing on the level previews. \nthe level models all get generated in game time and can range from 10-6000Kb \nand this way of meshing blocks with a shared face in growing segments reduces the vertex counts by around 50%. This is all nerd stuff so don't worry about it guys. \n[*] Wave form visualizer for the MicNotes\nJust something to make recording feel a little more reactive. It's not the exact right way to show a waveform, but it definitely reacts to sound coming through the mic.\n[*]Goblins are more optimal now\nThis was because of a weird thing where someone had hundreds of goblins in the floor. as a benefit they are faster now. \n[*] Level Updates\nI changed the backgrounds on some of the story levels. IDK something to look at while we work on the next story updates. \n[*] the spider gets stronger \n[/list]\n\n\nAnyway there's not a lot to report these optimizations took a long time because writing complex algorithms to manage vertex buffers in GML is something not a lot of people do so it's dumb and arcane and you have to be able to sit there staring at an alarm that has 755 lines in it and you're still not done even after you get 4 sides done but you don't want to have to remember the neighbor vector math for all the stupid faces but you suck it up and get it done because you saw a comment from the day you wrote the inside block face culling for the particle maker and you see it says \"be super happy now that you know greedy meshing. Then don't fix the voxels for 3 months. ;0;\" and you don't know how or why but you realize that you wrote that comment 3 months ago and it's time to start doing the greedy meshing and then it doesn't work 30 or 40x but eventually it's generating big colored panels instead of tons of smaller squares that are lame and we don't want. \nAnyway next is greedy meshing the blocks in the level but I am really not excited for that. \nYou have to understand that the particle makers are just white textured colored planes and that the ability to greedy mesh them once in the course of the first time its loaded then caching that data is what makes it possible to greedy mesh. \nFor the rest of the blocks there's a lot more to consider. \n\nFor example. when a block is placed and destroyed. How does it figure out how to update the mesh. It needs to delete the face, then add every block associated with that face back to the queue and update the function to take into account the VB ticket for each face of each block. \n\nAnd then it needs to work with tiling on an atlus which I'm sure is possible but it may require updating the shader, which is really tough to navigate in GML, but whatever it's worth doing to make things faster for this game no one plays.\n\nThe billboard and planes batching also took a lot of bugfixes and shader updates. I had to ensure that they would still render normally with shadows off. And there were a lot of instances where I needed to add extra logic to ensure sprites would update when the object was moved (by deleting the mesh and remaking it whenever a variable affecting it is updated). \n\nAnyway none of this matters to you, HopDodger. All you gotta do is start making some levels. You know you want to, don't you? \nI want you to. I want to play some more levels in this game. this game is actually awesome and I love it. Thanks good night."
+        },
+        {
+            "title": "2.7",
+            "date": "2024-05-31 23:52:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639335944361",
+            "notes": "GUYS THERE'S HATS NOW????!?!??!?\nCheck out the settings\n\nAlso TONS of new bugfixes\n"
+        },
+        {
+            "title": "2.64",
+            "date": "2024-04-17 14:59:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032388098608",
+            "notes": "Should fix silent crash, pong and pong3D in the menu, and a few other minor things. \nLet me know if it still has silent crashing. Actually. Please. Literally if you crash to desktop with no error, just like drop a comment on this post. \nFeedback critical and all that. \nThanks!"
+        },
+        {
+            "title": "2.62",
+            "date": "2024-04-14 21:17:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312193914285",
+            "notes": "New Menu, some other fixes"
+        },
+        {
+            "title": "2.61",
+            "date": "2024-04-03 00:43:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364303192139",
+            "notes": "steamworks update"
+        },
+        {
+            "title": "2.6 Hot Dog!",
+            "date": "2024-04-02 16:33:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331456301117",
+            "notes": "-added Hot Dog\nto play as hot dog load up the 1dog level 1\n\nnote: there is only 1 hot dog level\n\nAlso some fixes for editor stuff \n\nand switch arrows/regular arrows are now switched for zup and zdown. (minor change no need to panic.)\n\nuh and yeah I guess that's about all of it let me know if anything breaks. \nhappy easter/april fools"
+        },
+        {
+            "title": "2.59",
+            "date": "2024-03-27 01:15:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331432106282",
+            "notes": "This is a small patch with a few small fixes.\nEscape now works on all popups in editor for closing them.\nFullscreen now no longer breaks textboxes. \n"
+        },
+        {
+            "title": "2.58",
+            "date": "2024-03-05 16:19:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5688680204389602953",
+            "notes": "MicNotes no longer crash in multiplayer (tested host to peer only so let me know if they need a second pass) but anyway this should let people communicate in the levels with voice notes.\n\nLevel Updates: Tutorial and Volcano reworked.\n\nEditor QOL:\nNow when loading into a level, the Z layer will auto jump to the layer that the cam character is on."
+        },
+        {
+            "title": "2.56",
+            "date": "2024-02-29 22:45:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5688680204372352458",
+            "notes": "HopDodge buffs\n-4 new songs from new artist TheLine\n-MicNotes may work over network\n-Fixed some bugs and crashes\nHopdodge nerfs\n-There's a spider somewhere\n-MicNotes may crash over network"
+        },
+        {
+            "title": "2.5 We're back, baby",
+            "date": "2024-02-05 11:27:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074955858053",
+            "notes": "This update fixes a few bugs but also adds a new level of optimization to the voxel system. Enjoy much faster copy, pasting, and voxel counts well into the 10s of thousands without having the client lag. \n\nIn addition there's now a new interface for the MicNotes that should make selecting which audio device to record with less of a guessing game. (Plus now it crashes 80% less).\n\n\nMost importantly the demo for HopDodge has been updated. Make sure to tell your friends to try it out!"
+        },
+        {
+            "title": "2.4",
+            "date": "2024-01-03 17:06:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585178692594",
+            "notes": "Welcome to patch 2.4 everyone. It's got some new featuers.\n\nEDITOR:\nPressing T will change the plane that you edit on from Z to Y to X to Z. The plane that you rotate to is based off where your mouse is hovering. \nNew Mic Notes allow you to record microphone input into levels as an object that is triggered by player objects (skulls, rabbits, turtles)\nAdded CTRL Z and CTRL SHIFT Z to undo and redo. \n\nGAME:\nSigns now make a noise while reading in text. \n\nMisc: \nRemoved egdodpoh."
+        },
+        {
+            "title": "Level Contest Final Hours",
+            "date": "2023-12-04 20:40:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983677538680",
+            "notes": "Last Day for the Level Contest\n\nGet your submissions in by the of day tuesday and I will pick the winner based on the best submission. \n\nLaters\n\nGo to workshop -> share a level then fill in the boxes and such."
+        },
+        {
+            "title": "Show me what you got: Level Contest $$$",
+            "date": "2023-11-28 22:47:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983655988192",
+            "notes": "Make a level and post it in the next week and I'll give whoever makes the best one 30 bucks."
+        },
+        {
+            "title": "2.33",
+            "date": "2023-11-21 01:20:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5382426458968872990",
+            "notes": "Crates were broken. So that's fixed.\nAlso fixed Syagrius's find on Helping Hand for getting the green guy out of the map.. \nNo more green and red running off into the sunset ending."
+        },
+        {
+            "title": "2,32",
+            "date": "2023-11-01 19:27:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5288974951204434038",
+            "notes": "2.32\n+small lightning box optimizations"
+        },
+        {
+            "title": "2.31",
+            "date": "2023-11-01 00:40:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5288974951201580051",
+            "notes": "Ambient color access in code blocks + Error checking for empty maps in the object list of saves.\n"
+        },
+        {
+            "title": "2.3",
+            "date": "2023-10-22 20:23:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989055583592",
+            "notes": "Fixes for the last achievement not firing. Reload last level. \n\nalso has an intro video now. Skip with space or enter."
+        },
+        {
+            "title": "Important Announcement Regarding \"HopDodge\"",
+            "date": "2023-10-13 00:34:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944122843390",
+            "notes": "\n\nDear players and community members,\n\nAfter much introspection and consideration, I've come to the difficult decision to delist \"HopDodge\" from Steam on November 13th.\n\nThis isn't a decision I've taken lightly. I've poured countless hours and immeasurable effort into this project. However, I genuinely believe that the game, in its current state, might not be suitable for a wider audience. There are aspects of the game that I feel could be potentially problematic if left unchecked. While Steam requires some notice before delisting, if it were entirely up to me, I'd have it removed immediately.\n\nI'm deeply grateful to everyone who has supported and believed in this project. Your feedback, encouragement, and engagement have meant the world to me. As I transition into a new phase of my career in investment banking software, I hope you'll understand this decision. It's a step I'm taking to ensure the well-being and safety of the gaming community.\n\nFor those who have already purchased the game, you'll still be able to access and play it. I'd advise caution, especially when tinkering with the game's code. Please, enjoy the experience but refrain from diving too deep into its mechanics.\n\nThank you for your understanding and support. It's been a journey, and I'm grateful to have shared it with all of you.\n\nWarm regards,\nBlank\n\n(Tom)"
+        },
+        {
+            "title": "HopDodge Update 2.2",
+            "date": "2023-08-30 18:50:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355655424466",
+            "notes": "The new update includes:\n\nAdded workshop browser.\nAdded Lights.\nAdded Water Effects.\nImproved wall texture and specular mapping.\nAdded Credits.\nChanged and updated many older levels.\nAdded saveMapper to create a world map for each story save.\n5 new songs.\n\n\nIn other news, the Catholic Church has endorsed HopDodge after Pope Francis played it and said \"HopDodge is better than that Undertale game that weirdo in the vest gave me.\"\n[img]{STEAM_CLAN_IMAGE}/42254488/8afb54a9bcbe56d849baa767055bedb608f84bb4.png[/img]"
+        },
+        {
+            "title": "2.1",
+            "date": "2023-06-23 01:36:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124581515257229031",
+            "notes": "There's also a new pause button gui made by Joe. It has an outline and presses in on a shadow now. \n\nAnd of course the new shadows look good on all the objects. \n\nThe new heaven level is thanks to Managryx the talented builder. His door and throne build are actually beautiful as hell. (Well not technically)\n\nPlease enjoy all the new stuff."
+        },
+        {
+            "title": "update 2.04",
+            "date": "2023-06-06 18:40:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846333134023",
+            "notes": "Level previews\nPerformance improvements\nShadow texture improvements"
+        },
+        {
+            "title": "2.02",
+            "date": "2023-05-24 19:18:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151600576585940999",
+            "notes": "Just some bugfixes and QOL\nCtrl-c for color\nCtrl-f for select\nCtrl-v for paste\nhover on objects to see names."
+        },
+        {
+            "title": "HopDodge 2.0",
+            "date": "2023-04-25 02:54:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583099812711808",
+            "notes": "[h1]HopDodge 2.0![/h1]\nWelcome to year 2 of HopDodge. \nThis year is gonna be another year of explosive progress. We're gonna see the game come alive with secrets, mechanics, and graphics. ! Wow. I, for one, cannot wait. \n\nAnyway here's the changelog.\n\n[h2]New Lobby Browser[/h2]\n[img]{STEAM_CLAN_IMAGE}/42254488/0e2dd20d7e4e40dd43aa7c9f5b0bed512b42710c.gif[/img]\nThis is the new Lobby Browser menu. It let's you join any play lobby or public editor lobbies. Join your friends or make new ones! \n\n[h2]New Tutorial Level[/h2]\n[img]{STEAM_CLAN_IMAGE}/42254488/c621f5fe70990bddb55297d7135fcf89589b0c52.png[/img]\nThe tutorial level got a glow up. New secrets and it provides insight into how Hop ends up in heaven. \n\n[h2]New Achievements[/h2]\n[img]{STEAM_CLAN_IMAGE}/42254488/0b362da919fd212c69ac4a42f2ba465c48734ea0.gif[/img]\nNew achievements for beating the first 3 Chapters of the story (1, 2, and 3). \n\n[h2] New Sound Effects [/h2]\nIf you listen closely you'll hear some new sounds have been added:\n[list]\n[*] Swords\n[*] Crossbow \n[*] Coin Blocks\n[*] Goblins\n[*] Ghosts\n[*] Bee Hives\n[*] Bees\n[*] Cannons\n[*] Teleporters\n[*] Crates\n[*] Switches\n[*] ColorPainters\n[*] Hedges\n[*] Lightning Boxes\n[/list]\n\n[h2] New Items [/h2]\n[list]\n[*] Goggles\nNow Hop, Dodge, and opDo are ready to go for a swim!\n[img]{STEAM_CLAN_IMAGE}/42254488/60d574a71448a78eea7707521433c43b6553fa39.gif[/img]\n\n[*] Lightning Box\nA spinning box of Lightning? That can be extended? And goes different speeds? Redirected by arrows? AAAAAAAAA\n[img]{STEAM_CLAN_IMAGE}/42254488/4d02d528ddc1a1b29ec04d5d75c966703da44b26.gif[/img]\n\n[/list]\n\n\nAnd that's about it.\nsome small stuff\nrevisited opDo collision\nlots of bugfixes\nswitches are much faster now\ncodeblocks have additional functionality\n\n\nThanks again to everyone who's supported the game so far. I'm excited for more to come and for you all to get familiar with the game and all it has to offer."
+        },
+        {
+            "title": "HopDodge 1.999",
+            "date": "2023-02-16 21:38:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268099238449152",
+            "notes": "Yeah this is the year long development anniversary for HopDodge. This update includes crossbows, squids, and codeblocks. \n\nCrossbows work like swords, can be used by Hop and OpDo and fire arrows. These arrows interact with MP like the swords do where both players need to be solid for it to have an effect. \n[img]{STEAM_CLAN_IMAGE}/42254488/74f5ee6d72900489d3ef944c8afe9644276067fd.gif[/img]\n\n\nSquids are like goblins, but a little different. They will chase the camChar when they are in range, and will ignore other characters. They also move on the x/z plane and fall on the y, while being able to jump. Touching them will respawn them, as well them dropping off the map. However, a sword or crossbow can kill them until the level is reset or reloaded. \n\nCodeblocks are the biggest thing in this update. They essentially allow the creation of custom code that can be run in levels. Using some of the example code as a base, it could be possible to make powerups, animations, weapons, and so much more. The potential is very high, but will anyone take advantage? Not sure.\n[img]{STEAM_CLAN_IMAGE}/42254488/d2732a7c85ea7440eb8efc2b27fdbcb136d415db.gif[/img]\n\nThere's a few miscellaneous changes. Rabbits have cooldown walking into walls now, preventing them from wall scaling. WASD is now the default bindset. There's a scanline effect that can be toggled with f5. Level completion now triggers an animation and a prompt showing the how long it took to beat that time as well as the record for the level completion. Almost forgot! There's a death animation for Hop now. \n\nFinally there's now a bunch of new examples of codeblocks being used in the file: code.sav. That can be loaded from within the game. \n\nGodspeed."
+        },
+        {
+            "title": "HopDodge update 1.888, Joe's Requiem",
+            "date": "2023-01-16 05:57:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840545278737",
+            "notes": "[b][h1]What's new in this patch?[/h1][/b]\n\ngreat question. So\n\nLighting and Shadows and Background Effects (Looking a little more fancy):\n[previewyoutube=fOXFUoXP79Q;full][/previewyoutube]\n\n\nDodge and OpDo have their diagonal movement speed properly scaled now\nAs well as new billboarding effects for Dodge:\n[previewyoutube=8mAqqM9Cqc0;full][/previewyoutube]\n\nLevel previews on goals now show where the goal leads too. \n[img]{STEAM_CLAN_IMAGE}/42254488/db7bd3cae4a5e68a375087b36b68afa8d5061ec9.png[/img]\n\nThere's new load and save menus.\n[img]{STEAM_CLAN_IMAGE}/42254488/dac5c5b6b0b0d69cb1a30da143b7ea27d3e03a62.gif[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42254488/3d79d9815188f73d2385fdcb84b2cfc77967df44.gif[/img]\n\nCopy and Paste Improvements:\nRotating selections\n[previewyoutube=Vg9nwQik-P8;full][/previewyoutube]\n\nPressing 1-9 keys will hot save the current selection. Allowing for quick swapping and constant memory between levels:\n[previewyoutube=4Irzk3H1N4o;full][/previewyoutube]\n\nPlay mode is now connected to the last save you played. So going back into the play mode will put you right back where you left off. \n[img]{STEAM_CLAN_IMAGE}/42254488/e7ed230789dc34b3a3ce1f902793807a0bf3e3b2.gif[/img]\n\n\n\nAnyway thanks to all of you HopDodge players for sticking it out through this Early Access period. More stuff coming soon!"
+        },
+        {
+            "title": "HopDodge 1.778",
+            "date": "2022-11-29 17:58:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4836332027675112080",
+            "notes": "Added shadows button in the settings\nPressing t opens the timer in game. \nTimer will not change while paused, and will reset when the level is reset. \nPausing is not the reset button. Now the level must be paused and the reset button must be clicked. \nThere's now some menu control with the arrow keys and the enter button. Useful for controller users I think, but there's also a way to bind the mouse to the joysticks using steam works. \n\naddit:\nOpdo stair collision is improved.\nRabbit will trigger a sign that is under it. \nCrate collisions \"mostly\" improved. \n\n\nNext update (Plans):\nEditor tutorial save.\nStory map updates/improvements.\nToybox object holder (Save selections and choose them across different levels to paste). \n\nUpdate after that:\nSpeed run challenges.\nEditor Undo.\nselect box right click menu.\nSun object and moon object. \n"
+        },
+        {
+            "title": "HopDodge 1.777 MULTIPLAYER AND STORY3",
+            "date": "2022-11-11 23:11:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6368680725426954438",
+            "notes": "[b][h1]Patch Notes[/h1][/b]\n\n[list]\n[*] Multiplayer Lobbies in the Editor (Click the icon, enable multiplayer, invite friends, give them and yourself access, edit and play levels in real time with your friends)\n[*] MP Shadows can now toggle solid, (the s on the character) by pressing caps lock\n[*] Solid shadows can collide on with each other, so long as both are solid.\n[*] Solid Shadows can now PVP using swords as Hop or Opdo.\n[*] FX controller lets you change the background to a variety of different effects that players can choose their own parameters for.\n[*] Many bug-fixes\n[*] Story3.sav added to the game. Adds 21 new levels to the base game. \n[/list]\nComing soon! \nLevel Editor tutorial room. \nTeaches players the ins and outs of each object, and the editor. \n\nPlease like and share this update to let people know that the game now supports multiplayer.\n"
+        },
+        {
+            "title": "HopDodge 1.666 UPDATE",
+            "date": "2022-09-26 18:20:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330747996721",
+            "notes": "Hedges\nIce\n[img]{STEAM_CLAN_IMAGE}/42254488/5716a16bcadc930aa3b4f302fadd82b4fa1184ce.gif[/img]\nColor Scanner\nColor Painter\nClouds\nCoins\nCoin Block\nSwitchArrow\nWolf Stairs\n[img]{STEAM_CLAN_IMAGE}/42254488/06645aea3c2928553a780fe1a543eaa2f6faa0e5.gif[/img]\nShatter Glass\nScrolling up and down for zoom, mouse control on all characters.\n[img]{STEAM_CLAN_IMAGE}/42254488/7a7cce16d6a7bb4c25803503bad5f32e2aa519eb.gif[/img]\nNew song\nBillboarding sprites\ncoin bb\ncannonball bb\nbee bb\nhive bb\nstairs fix\nobjSign bb\nghost bb\nlevelUploader and LevelSave text input update\nSelect box now repeats its texture\npressing CTRL now moves the camera while paused like it does when clicking in the game\nHeaven Update, Tutorial Update, and Story levels are now hidden until they are unlocked."
+        },
+        {
+            "title": "Ghost Multiplayer and some bugfixes 1.51",
+            "date": "2022-08-14 19:09:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4607764924162493735",
+            "notes": "Yeah now you should see people in the same level as you in play mode. \nEnjoy. \n\n"
+        },
+        {
+            "title": "HopDodge 1.5, Ghosts, Goblins, and Bees.",
+            "date": "2022-08-01 16:33:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4587497456696378598",
+            "notes": "[previewyoutube=8H5Qj3WohKQ;leftthumb][/previewyoutube]\n\n\n\nchangelog 1.5\nFixed a bunch of bugs with various things.\nAdded beehive\nadded goblins\nadded ghosts\nadded note object\nadded full text editing to signs.\nadded checkBlocks\nAdded goal filename input (press tab on a goal while editing it.)\nFixed editor issues with rotating\nAdded level completion checking (now levels will show if they've been beaten in the level list)\nchanged the way audio worked for some things\nChanged a couple sprites\nGave Dodge some Coyote time. He can now jump up to 6 frames after leaving a block. \n"
+        },
+        {
+            "title": "OpDomization Update!~",
+            "date": "2022-06-29 20:49:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295753420068",
+            "notes": "Major Changes:\nVertex Batching:\nbetter frames roughly 30% higher fps on water tornado. There's still plenty of ways to lag the game with large rooms, but now authors can trust that regular walls, offwalls, glass, and water blocks won't cause significant lag. \n\nSigns now use Jujuadam's \"Scribble\" text markup plugin:\n[img]{STEAM_CLAN_IMAGE}/42254488/13e8f88650663fe7f0bc0197df5711353844b7eb.gif[/img]\nNow you can use all the different markups here:\nhttps://www.jujuadams.com/Scribble/#/latest/text-formatting\n(here's a blurry but readable list of the sprite names):\n[img]{STEAM_CLAN_IMAGE}/42254488/4f661d9eb0df5efb23b42cd17e98c9fbfb9e07fb.png[/img]\n\nOkay so there's a bunch of stuff that got fixed and I can't keep track of all of it, but I have a feeling not a lot of people care about bugfixes they just want levels and opDo. \nSo like yeah basically you can play as the turtle now. He see the world in first person. You can left click to move the camera, or use ijklou to move it with the keyboard.\n[img]{STEAM_CLAN_IMAGE}/42254488/2616c8ff4c291c85e1fa912bb6b742ae423fb5fa.gif[/img]\n\n\nAdditional Changes:\nMoving objects are now synced so that they no longer desync (at least on the x and y axises) \nCannon crash now (should be) fixed. \n\n\n\n\nThis update is coming a little earlier than i intended to coincide with the end of the level contest. So like look out for the next level competition. I'll be doubling the prize to $50 dollars and it will be themed around making opDo levels. \nAnyway have fun guys."
+        },
+        {
+            "title": "One day left for the level contest!",
+            "date": "2022-06-28 15:34:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295748980798",
+            "notes": "You can check out the event on the community hub."
+        },
+        {
+            "title": "Level Contest Now Open to submission",
+            "date": "2022-06-22 16:14:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295727224805",
+            "notes": "Hey guys if you're interested in the level competition, the deadline to submit is now the 29th.\n\nJust make a level and share the save and you could win a $25 gift card!"
+        },
+        {
+            "title": "HopDodge Level Contest",
+            "date": "2022-06-15 04:29:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4480533160881667144",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/42254488/ba5f8bee48f6ae94f2e2a29b936060ca8b4c732d.gif[/img]\n\n[h1][u][b]HopDodge Level Contest:[/b][/u][/h1]\n[h2][b]Rules and How to Submit[/b][/h2]\nCreate a save file with 1 or more levels of your own design.\nTake a screenshot that encapsulates the theme of your levels.\nGo to the \"Share Levels\" button on the main menu.\nSelect the save file with your level(s), the screenshot of the level, and write a name and description.\nGo and play 3 levels and rate them up and down.\n The best level will come down to the judges. but user ratings will be considered. \n\n[h3][b]Criteria[/b][/h3]\n Levels will be rated on the following criteria:\n- Playability, is the level beatable with normal knowledge\n- Aesthetics, Is the level pretty to look at? Does it catch the eye in any way?\n- Ingenuity, How well does it implement the 20 core objects to accomplish complex or interesting behaviour?\n- Appeal, How many likes/dislikes did it receive?\n- Story, Do the levels tell the player an interesting story? \n\n[h3][b]Prize[/b][/h3]\n the author of the best submission will win an Amazon Gift Card for $25\n"
+        },
+        {
+            "title": "HopDodge Update #3",
+            "date": "2022-06-08 09:12:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4480532526714103990",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/42254488/7edbbea8d9767a3c4425551ba82276cfbc66db73.png[/img]\n\nHopDodge released last week to critical acclaim (100% positive reviews!)\n...\n(1 review)\n...\n\nBut don't let the facts drag you down, I always say. It's time for some NEW FEATURES!\n\nChangelog:\n[list]\n[*] Camera control\n[img]{STEAM_CLAN_IMAGE}/42254488/62cd6dc5fc5cfa776d0a5c0dd28eb68288d88fb3.gif[/img]\nCamera can now be rotated, pitched, and yawed (is that a word?) Using IJKL and O/U\n\nCam Objects also save the pitch, roll, and yaw of the camera when they are placed.\n[img]{STEAM_CLAN_IMAGE}/42254488/248d56500ebefb63b8874cde7c084c6e1f141afa.gif[/img]\n\nWhile paused, you can now use space to flatten the world to the current layer and below creating almost a 2D pov:[img]{STEAM_CLAN_IMAGE}/42254488/8e40f8eef6cf539b34eea77f7223b64122287dbf.gif[/img]\n\n[*] Analog Dodge\n[img]{STEAM_CLAN_IMAGE}/42254488/9cace39493b2e46153087149e092fae410d5974f.gif[/img]\nDodge now moves with the left joystick in an Analog manor. Go slow, fast, or do whatever! I don't care!\n\n[*] Level Updates\n[img]{STEAM_CLAN_IMAGE}/42254488/bb65dc388680a48f9192185f803ef2cb68211ecb.png[/img]\nEasy Street has a new Dog Park.\nGod turns the light on.\nThe Devil gets a new look.\nThe \"Buddugh\" acts benevolently. \n\n[*] New Music\n3 New Tracks!\n[olist]\n[*]Mr. Future\n[*]Almost Home\n[*]Cello There\n[/olist]\n\n[*] Level Background Bonus\n[img]{STEAM_CLAN_IMAGE}/42254488/9e64f1a688eaa6dc89b8c1d8d40055ed5581988f.gif[/img]\nAny object at 0,0,-15 (the top left corner) will now change the color of the background. \nFinally, levels don't have to be a black void anymore. Using enemies, one can make backgrounds that change color. \n\n[*] Settings button in Editor/Game\n[img]{STEAM_CLAN_IMAGE}/42254488/7d4940893f6be780aee3bfb23744d42df4df8c3e.gif[/img]\nSo previously, the settings were only reachable from the main menu. That changes today! Now you can access the menu straight from the game! Handy and convenient for changing the sound or your keybinds on the fly. \n\n[*] TONS of additional small changes and bugfixes\n[list]\n[*] Painting works correctly now (top face selection of current Z layer) left click to paint, and right click to grab the color of the selected object.\n[*] Dodge now dies if he gets trapped in on/off blocks\n[*] Lava and water are now slightly more visible\n[*] Y rotation key added to the settings menu\n[*] Back faces of cube objects now draw if there is no adjacent face\n[*] Dodge has collision improvements\n[*] Stairs no longer reset direction upon being painted\n[*] camObject draws on the correct layer in the menu background.\n[*] Music now stores a more consistent track index. (GML can sometimes change the sound_index of older files when new ones are added. This update should fix that, but some custom levels might have the wrong or no music now)\n[*]Hop now collides with water if he is on a movingPlatform passing through a water block. He can still jump through water regardless of the layer it is on. \n[*]Platforms allowing access to the next z layer has been fixed. \n[*]The camera culling distance has been increased to include practically the whole map. \n[/list]\n[/list]\n\nPhew, that's a lot of stuff to add in a week. \nDid I mention that the stress of no one caring about this game is giving me stomach aches? no? Well now you know. \nPlease continue giving me feedback. I am looking to make sure that every player's qualms can be calmed. I hope this update goes a little in the long way of making HopDodge as fun as possible."
+        },
+        {
+            "title": "HopDodge Update",
+            "date": "2022-05-21 07:09:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4292505348832302278",
+            "notes": "Hey what's good HopDodgers. I just want to say thanks again for being part of the beta development. With your feedback HopDodge has gotten so much cleaner, robust, and fun!\n\n[b]What you should know:[/b]\nThe game is now labeled as Early Access with a 4th Quarter 2022 release planned to be announced down the line. \nFor now, know that this means that the game is looking to expand it's a scope a bit. This means that feedback you guys offer should be easier to use and organize. \nFor any of you players looking to offer your juicy essays on the things I'm doing wrong and all the stuff that broke during your testing: \nhttps://steamcommunity.com/app/1965680/discussions/0/3276940452460971975/\nI direct you to this thread where you can berate me, Hop, and Dodge all you want.\n[b]\n*Important*[/b]\nAccept the Steam workshop agreement here:\nhttps://steamcommunity.com/workshop/workshoplegalagreement/\nbefore uploading to the workshop. Otherwise it will be unlisted.\n\nLevels may take a few minutes to register so please be patient and don't flood the workshop with the same level trying to get it to work. \n\n[b]New Music![/b]\nJazz Hop is now selectable in the music menu, it goes well with Easy Street \n[img]{STEAM_CLAN_IMAGE}/42254488/849583cbb3ede877818ba21f1c3745f54609c064.gif[/img]\n\n[b]New levels!:[/b]\n[img]{STEAM_CLAN_IMAGE}/42254488/99926429b73c102bc3c70d26422becd2eef0fd0d.gif[/img]\n[b][/b]\nDude I love the way this looks all zoomed out lmao\nGive this one a shot if you like Hop levels.\n\n[b]Additionally:[/b]\n[img]{STEAM_CLAN_IMAGE}/42254488/9da1f23ac2f7bf78992977024e873b1f179b428f.gif[/img]\nThere's now a scrolling selector for the levels.\n\nwell technically nothing is infinite and windows probably has a limit to the number of files in a directory but whatever. You get it. \n\nTons of other bugfixes and improvements that are pretty invisibile:\nDodge can no longer clip in the front of blocks\nHop can no longer move in the air after unpausing.\n\n\n[b]Btw can anyone tell me who these guys are?[/b]\n[img]{STEAM_CLAN_IMAGE}/42254488/59df4596d2f2197d1c3f3dfabe94a09c31688562.png[/img]\n\ncause I do NOT recognize them!"
+        },
+        {
+            "title": "HopDodge 0.2 Level Sharing and Editor Improvements update",
+            "date": "2022-05-09 13:21:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348799082205458109",
+            "notes": "[previewyoutube=9u0UqV13Fp8;full][/previewyoutube]\n\n\nThis update comes in to help improve some of the editor functionality\n\nFull Changelog:\n\nbugfixes with sign text editting dropping input in large levels\nSteam workshop uploading levels and downloading levels\nDeleting selections now possible with delete key\nSelection box now appears while selecting an area\nShift+a/z will move 5 layers up or down instead of just 1."
+        }
+    ]
+}

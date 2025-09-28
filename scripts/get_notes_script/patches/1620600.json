@@ -1,0 +1,90 @@
+{
+    "appId": "1620600",
+    "total_notes": 14,
+    "notes": [
+        {
+            "title": "V1.3.43",
+            "date": "2023-07-16 09:15:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6079346804882553798",
+            "notes": "Fixes bug in \"The Signal\" campaign - second planet, 3rd map, the purple door incorrectly required a blue key."
+        },
+        {
+            "title": "V1.3.34",
+            "date": "2023-04-21 15:05:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583099799984684",
+            "notes": "On popular request I finally decided to cave in and change the controls so that it is now tap to move and drag to attack. Vs. the previous setup where you used drag to move and tap to attack.\n\nI've added two additional features as part of this (the last of which wasn't really possible with the previous scheme):\n\n1. With a selected mech, your movement boundaries are now clearly shown on the map.\n2. When attacking, the mechs attack cone is visually rendered on the map, and as you drag in the direction you wish to attack, the mech rotates accordingly and highlights potential targets.\n\nPt.2. means you now have much more control of what gets hit in an attack. You can, for example, aim between two units to hit both, where previously you were only able to hit one of them.\n\nIn addition to this, build 1.3.34 has the following fixes:\n\n* Fix crash after finishing first map in Omol Cleansing\n* Fix occasional infinite 180 degree rotation at end of path\n* Fix prespawns so they don't happen on isolated tiles or on the players spawn point\n* Fix trying to load bad campaign index on launch (after upgrade)\n"
+        },
+        {
+            "title": "V1.2.29",
+            "date": "2023-04-13 18:33:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519486944632",
+            "notes": "An initial batch of 17 Steam Achievements has been added."
+        },
+        {
+            "title": "V1.2.28 - New Improved Tutorial Mission",
+            "date": "2023-04-12 05:20:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5132456474582774997",
+            "notes": "This update includes a new 3-map tutorial mission which tries to address the onboarding situation for new players by giving more explicit hints for every step in a game turn.\n\nI'm fully aware that I have been developing this game in a vacuum, and probably invented some UX or game mechanics along the way that are not entirely intuitive. It's hard for me to tell, though, having worked with it for so long, so any feedback is appreciated."
+        },
+        {
+            "title": "V1.2.25",
+            "date": "2023-02-19 05:30:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268099246929554",
+            "notes": "This patch is primarily aimed at fixing the Omol Cleansing which was broken because of the drag-to-move fix in 1.2.24. (I simply forgot to apply the fix across all campaigns which left \"The Omol Cleansing\" in a strange non functioning hybrid state).\n\nIt does, however, also include a couple of minor features and fixes:\n\n[list]\n[*] Tapping a tile will now show line-of-sight markers from that tile in all directions\n[*] Ambient occlusion had been accidentally disabled in a previous build.\n[*] Tile markers were using a silly amount of material switches and texture memory which is now fixed for a small performance boost.\n[*] Mechanic Skill now requires line of sight (this was always the case, but implicit when tiles could not block on edges. Since walls now allow two units to be adjacent without actually being able to see each other, an explicit line-of-sight check was needed)\n[*] Added colliders to mechs and map visuals for particle collision\n[/list]\n"
+        },
+        {
+            "title": "The Signal Part 2",
+            "date": "2023-02-08 07:47:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277225781450",
+            "notes": "[h1]V1.2.23[/h1]\n\nThis is a *major* update - So much so that I was tempted to call it \"Master of Puppets 2\". The focal point is the next 8 chapters of \"The Signal\", but with it comes a number of tweaks, gameplay adjustments and changes:\n\n[h2]The Signal[/h2]\n\nSecond part of \"The Signal\", all 8 chapters of it, is now available free of charge, and it has a lot more nuance to it than any previous map. There are doors and bridges, buildings and machinery. Oh, and it's hard. Like proper difficult. Most of the maps are all about finding the right approach, so don't despair if you don't succeed at first attempt.\n\n[h2]New Map Structure[/h2]\n\nThe single biggest change is the complexity of the game maps which now supports interior as well as exterior tiles as well as walls that sit on the edges between tiles. This has some obvious visual implications and some (maybe?) less obvious strategic implications:\n\n[olist]\n[*]You cannot lop grenades or \"throw\" area effects from inside to outside or v.v. unless you have a direct line of sight. You *can*, however, lop grenades over buildings.\n[*]You cannot order artillery strikes inside a building.\n[*]Area effects like smoke, rust and acid, as well as weapon splash damage is blocked by walls on the edge between tiles, so unlike previous versions, the effect may not extend to all 6 neighbouring tiles.\n[*]The edge that separates two tiles can now be dynamically altered to mimic e.g. doors or destructible walls, or temporary bridges across canyons.\n[/olist]\n \nThe new map structure also supports triggers so the campaign now has maps where you need to activate machinery or open doors (some of which requires specific keys to be carried by the Mechs).\n\n[h2]Line of Sight[/h2]\n\nI have changed line of sight so that it now considers partial cover. This is indicated with a shield icon on the tiles during an attack, and the provided cover can be either 25%, 50% or 75% (in addition to 0% and 100%, obviously). Damage is reduced by that same amount.\n\n[h2]Enemy Logic[/h2]\n\nI have done a ton of tweaks to the enemy logic, to the point where I was actually concerned that it had become too good. It will now do a much better job at avoiding dangerous locations and will try to force you into positions where you need to make sacrifices. I think it's more fun this way, but do let me know if it's still too easy :)\n\n[h2]Gameplay Changes[/h2]\n\n[list]\n[*]Sentries no longer expire automatically, but must be destroyed\n[*]Level 3 Rocketeer has reduced damage (was wildly overpowered)\n[*]Mining Skill has been reduced to 6, 9 and 12 (from 10, 15 and 20, respectively)\n[*]You can now deliberately destroy your own sentries and walls (They still won't take accidental friendly fire, but at least you can now get rid of a blocking Sentry if you need to)\n[*]Require line-of-sight for rocket Powerup (same as for grenadelauncher)\n[*]Require line-of-sight for Melee attacks (this wasn't needed when blocks were always complete tiles)\n[*]AI sentries and other area effects no longer target other AI players (they're all against you :) )\n[/list]\n\n[h2]Quality of Life Changes[/h2]\n\n[list]\n[*]Tap any cell to show a pop text with all area effects that affect that cell\n[*]Add backfill to pop text to make them more readable\n[*]Change: Improved camera panning while enemy moves\n[/list]\n\n[h2]General Bug Fixes[/h2]\n \n[list]\n[*]BugFix: Don't award mech again on second win in stories (oops)\n[/list]\n"
+        },
+        {
+            "title": "Dev Update",
+            "date": "2023-01-27 14:34:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109513920195",
+            "notes": "Stories are being written...\n\nThe lack of updates recently is not because I've been idle but rather because I've opened several cans of worms that I was kind of hoping I wouldn't have to.\n\nAs I've been trying to complete the next chapter in \"The Signal\" story campaign, I have had to come to terms with the fact that the game was never really designed for detailed manual map layouts. I could have stuck within the limitations and accepted that the story missions would not be all that different from the procedurally generated ones, but that felt like betrayal and a lost opportunity.\n\nSo, I decided to fix whatever needed fixing to be able to create truly unique manual expansions.\n\nI've already mentioned some of the hurdles in previous updates, from manually ordering the progress tree to creating custom objectives and special triggers, but as it turns out, those were only the tip of the iceberg.\n\nFor example, the level format was just an array of bytes, which is tiresome to edit by hand. So I've had to implement a complete hex map editor inside of Unity to speed things up.\n\nThe latest cascade of changes came when I, on a whim, decided to introduce interiors with walls and doors. Because why not? I could have taken the easy route and made both walls and doors 1 tile thick, but that would have reduced it to a visual gimmick and not really introduced anything new from a tactical or level design perspective. \n\nAlso, why take the easy path when there's a complicated one :)\n\n[img]{STEAM_CLAN_IMAGE}/43337289/0ef32bc08e4e80552f268e015c523f09c67a9655.png[/img]\n\nSo walls and doors now sit on the edges between tiles, and grenades and areaFx (anything \"thrown\") cannot cross these boundaries (I.e. you can toss grenades into a building through an open door, but not over a wall as it would end up on the roof).\n\nAs a consequence, I've had to change the entire level format, I had to re-do line of sight and path finding, and fix a ton of little subtle bugs that resulted from this.\n\nIn the end, it's all for the better; it has opened pandoras box for a plethora of other things like destructible walls, folding bridges and even puzzles that require additional planning on top of the basic strategy of survival.\n\nUnfortunately, it means that I've still not finished the next part of \"The Signal\" - but I'm pretty sure most of the roadblocks are now out of the way (famous last words), and I can focus on the remaining 6 levels...\n\n[img]{STEAM_CLAN_IMAGE}/43337289/9476f995dac8599c7b5f342cbcdfb92388854dc5.png[/img]"
+        },
+        {
+            "title": "V1.1.22",
+            "date": "2023-01-11 15:55:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840528573164",
+            "notes": "Build 1.1.20 will not correctly load new locations for story based campaigns because of a silly mistake I made in the last minute before building. I quickly tested on Mac, Windows and iOS but didn't do a clean install on any of them. Should have know better, but there you go...\n\nAlso in this build:\n\n* Improved event queue for mech actions - now pop texts for e.g. shield during overwatch should happen at the right time and not long before the mech is shot at.\n* Story triggers allow more engaging stories to be constructed - this will be much more evident in the second half of \"The Signal\"\n* Reduced difficulty of the first locations in \"The Signal\" - I had managed to crank them up to 11 - you kind of loose perspective after hours of testing the same map over and over again :)\n"
+        },
+        {
+            "title": "V1.1.19",
+            "date": "2023-01-08 17:00:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387700083818",
+            "notes": "There's a new update in the pipeline which adds an additional campaign type: \"Story\". \n\nThese are campaigns where each location, and the connections between the locations, are manually set up and tied together with a bit of narrative. It's not Shakespeare or LOTR, but it  does add a bit of purpose to the missions."
+        },
+        {
+            "title": "V1.0.16",
+            "date": "2023-01-01 17:01:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037480166124",
+            "notes": "V1.0.16 introduces a simple hint system that should make it easier to get started playing the game.\n\nDon't hesitate to let me know if there are still dark spots in the ruleset :)\n"
+        },
+        {
+            "title": "V1.0.14",
+            "date": "2022-12-28 06:16:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037463960997",
+            "notes": "V1.0.14 fixes a major save-game issue that would cause the game to not launch properly on most Windows installations (everyones by mine, apparently :( ) ..."
+        },
+        {
+            "title": "V1.0.13",
+            "date": "2022-12-23 15:36:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037447160575",
+            "notes": "A final pre-holidays update on popular request: Volume controls under Options for music, 3D sound effects and UI sounds. Merry X-mas :)"
+        },
+        {
+            "title": "V1.0.11",
+            "date": "2022-12-22 16:00:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037443577700",
+            "notes": "This is a fairly small update with a large impact: The New Campaign options now includes configurable skirmishes which allow you to use an existing deck in a special single-location game where you have a large degree of control over size, enemies and difficulty.\n \n* Improved configuration options for randomly generated campaigns\n* Support configurable single-location skirmishes\n* Allow deletion of generated campaigns\n"
+        },
+        {
+            "title": "V1.0.10",
+            "date": "2022-12-20 13:41:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145769803668",
+            "notes": "V1.0.10 Fixes a problem with savefiles that I had missed as well as some general UX updates\n\n[olist]\n[*] Changed campaign generation logic (or planet location, more specifically)\n[*] Optimized planet route generation (x2 faster)\n[*] UX tweaks to support touchscreen input (for non touch screen, move now requires an additional click)\n[*] Ad and IAP support for mobile platforms\n[*] Fixed bug that could cause rockets to miss their targets and fly around in circles\n[*] Redesigned main into/campaign selection UI to match new UI look \n[*] Fix potential sharing violation with save-game file\n[*] Fix occasional issue with next turn button disappearing\n[*] Show player name in player color in header to make it more obvious what the players own color is.\n[/olist]\n"
+        }
+    ]
+}

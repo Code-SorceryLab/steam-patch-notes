@@ -1,0 +1,204 @@
+{
+    "appId": "1595280",
+    "total_notes": 33,
+    "notes": [
+        {
+            "title": "调整游戏难度",
+            "date": "2022-03-09 00:08:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247463006799843164",
+            "notes": "调整游戏难度"
+        },
+        {
+            "title": "Full English Support",
+            "date": "2022-02-09 07:14:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4235075565595307008",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/40429154/a5afbd460bff745524b04f01eabed3ac5b573ad1.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/be1174ca1237d35e74a6453c8dfe3eff18ced1a2.png[/img]\n\nThanks to steam user Dazz Aephiex, all texts in Card Maker and technical documents are fully translated into English. Google Translate is not needed anymore."
+        },
+        {
+            "title": "增加25张卡，完善一些接口",
+            "date": "2022-01-27 05:34:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104319093087",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/40429154/a6731ab8b45aa0d2287b204823041aed4c30c136.png[/img]\n新卡：\n\n白色\n2|2|3 蓝 每当你的英雄获得生命值时，此生物获得2点护甲\n3|1|7 白\n4|2|7 蓝 为你的英雄抵挡伤害\n2费 蓝 使目标获得1|5\n4费 金 使我方牌库，手牌，战场随从  攻击等于生命值\n绿色\n1|1|2 白 英雄获得2点护甲\n3|2|3 蓝 获得3点护甲，抽一张牌\n蓝 消耗全部的法力值，获得该值双倍的护甲\n6费 紫 对所有敌方随从造成英雄护甲值的伤害\n5|5|5 紫 对目标造成英雄护甲值的伤害\n黑色：融合\n1|2|2 获得一个随机的异能\n发现2张恶魔牌\n2费 你拥有异能的随从，每一个异能使该随从+1|+1\n你的随从获得异能时，此生物也获得该异能\n金 8|8|8 死亡时复活，生命值为原来的一半，直到生命值小于1不在复活\n蓝色 \n1|1|2 解除我方场上随从的睡眠状态\n2|1|4 使进攻此卡的随从进入睡眠\n3费 复制一个目标随从\n5费 消灭对手所有睡眠中的随从\n6|4|6 使用法术牌时：抽一张牌；抽牌时：对随机敌方单位造成3点伤害\n\n红色\n1-1-2 白 对目标随从造成1点伤害，使其+1|+1\n2-1-4 蓝 每次受到伤害抽一张牌\n3-4-3 紫 进攻时，获得+1|+1\n4-4-4 紫 每当一个单位受到伤害时，此单位+1攻击\n4-6-4 金 造成双倍的伤害\n\n补充接口\n #显示卡牌选项（选项id，卡牌列表,提示文本，可选数量，选中时提示的字符） 用以实现抉择，发现 等\nfunc optShow(optId,cardArr,txt = \"\",seln = 1,selc = \"\")\n现在可以多选\n\nboss可选数量，随boss池变化\n修复hasTabStrict"
+        },
+        {
+            "title": "更换新版引擎，增加一点接口，修复一些bug",
+            "date": "2021-12-30 09:13:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224938027325040371",
+            "notes": "增加接口 card.hasTabStrict(id) 严格匹配标签\n修复hero.newCard 的卡执行g_ Connect() 回调的问题\n更换新版引擎，修复富文本关键字导致换行的问题\n牌册增加了文本筛选功能，只显示名字，描述，标签 存在指定文本的卡牌\n英雄技能现在如果只作用于自己的，点击即可施放\nhero的信号onCryChange（oldVal）现在正确记录修正前的值\n特效图默认加法模式，纯黑背景则透明\n修复ai手里有降低为0费的卡会导致不出该牌的问题\n王城牧师改为回2血\nboss强化显示去除\n剑帝复活需要4人类\n雷击 改成对目标及同列随从造成2点伤害\n天才法师不会再因为宝物而触发技能\n刺客BOSS被动技能无效的问题"
+        },
+        {
+            "title": "修复任务显示和沉默",
+            "date": "2021-11-21 11:49:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4227186657152392789",
+            "notes": "修复任务显示和沉默"
+        },
+        {
+            "title": "一些接口的更新",
+            "date": "2021-11-14 00:45:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4971406207528531465",
+            "notes": "Card增加如下接口：\nvar atkMark = \"\" #可以设置字符代替的原本攻击力数值的显示\nvar hpMark = \"\"  #可以设置字符代替的原本生命值数值的显示\nvar canGet = true #为false 则无法从sys.scene.getAllCard  获取\nDeck增加如下接口：\nsignal onDelCardStart(card) #将要删牌时，牌库为空也会触发，可以实现炉石疲劳\nSkill现在修改图标能够实时刷新\n现在敌方使用非奥秘的挂载牌不会变成问号图标"
+        },
+        {
+            "title": "Show player mods",
+            "date": "2021-11-05 05:57:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652991112641499",
+            "notes": "The card game debut was not perfect and went through a series of refactorings, adjusting various aspects, lowering the threshold of getting started and reading difficulty, adding a treasure system, longer levels, and more cards. Make the game process more enjoyable and more growth. Nowadays, players diy the card Mod, but also a certain number of.\n\nHereby show\n\n\n[img]{STEAM_CLAN_IMAGE}/40429154/c9e3ef6a3ab1f0a631a934b27e2e4ccbd9db5d31.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/2ba1d801cabcdd5e0a85d607d421a3d77b0aa02b.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/0f11b5341a5646f760107d7d432a39e724cec258.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/9f7ac0a8cd32c7576b95842849cd87d88f8286d0.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/eb9bf0efe117b9fec43236d3ff5be7732776df15.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/a139686c364fcd06a71176d10d1f3d2d6fb80db8.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/96fca1f71bc28c50249a14ca50e52ab6a691f65b.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/36f3043ec9d73b019e82830e40c5ede5233fd4ca.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/3856bc03ffa9efcfab70dcd57573ce797af257a5.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/ea5f1b928cd2daf285d790c80ce6696124fdf9c2.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/7adf1396ef3c0c3e5109912e03272141f07f91fe.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/b25e974f02b3906869e64459a329548886a18834.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/7caba55a6ba78c5d04f11aa107c49bcfc240f1ba.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/5c2974bb9be30655156a3e22ccc7edd7abac9930.png[/img]\n[img]{STEAM_CLAN_IMAGE}/40429154/22f3a431a215a24b25a22cdcdb42c23be11eb1f9.png[/img]"
+        },
+        {
+            "title": "一些降低上手门槛的调整",
+            "date": "2021-10-30 04:35:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652357030631847",
+            "notes": "优化初始卡牌\n降低第一关boss难度\n首战不选牌，先进入战斗熟悉卡牌\n现在选牌不再出现重复的卡牌，稍微减少可选卡牌数量\n\n框架：可以自定义卡牌的解锁需要的魂值  card.soul\n"
+        },
+        {
+            "title": "增加5个BOSS，且现在打BOSS可以二选一",
+            "date": "2021-10-21 19:17:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4103335143107168333",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/40429154/1dabc43187103103442699dc644cbbac04dcc08b.png[/img]\n\n量化：增加5个BOSS，且现在打BOSS可以二选一\n框架：增加BGM播放接口  sys.playBgmMp3(文件绝对路径)\n框架：增加Card类 挂载牌被点击时触发信号，onPressed\n修复：手牌上限不生效"
+        },
+        {
+            "title": "增加对话事件",
+            "date": "2021-10-04 00:57:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3938951840893464569",
+            "notes": "同时Mod可以使用对话框，可参考新范例 f_diag\n\n[img]{STEAM_CLAN_IMAGE}/40429154/f954933d228d19e8014a12e00fe68281beb2b66a.png[/img]"
+        },
+        {
+            "title": "修复死触角，光影魔术",
+            "date": "2021-09-22 02:18:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936699406865191658",
+            "notes": "修复死触在反击结算前\n修复光影魔术对无目标法术施放2次"
+        },
+        {
+            "title": "修复",
+            "date": "2021-09-18 10:43:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5418383147742991953",
+            "notes": "修复传奇生物契约\n修复火红符文\n圣盾增加额外判断"
+        },
+        {
+            "title": "增加10个宝物",
+            "date": "2021-09-17 05:11:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5418383147738510002",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/40429154/b9ee3f81d697bce428e7cc6457ad90e95200fd5f.png[/img]\n\n增加10个宝物\n框架：mod文件夹嵌套读取资源\n修复 异能远攻的bug\n修复 墓地复活的单位不执行_connect()"
+        },
+        {
+            "title": "增加卡牌选择可选卡牌数量",
+            "date": "2021-09-11 21:02:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014731803931108",
+            "notes": "增加卡牌选择可选卡牌数量"
+        },
+        {
+            "title": "修复可选牌过多，现在只计算以选择阵营的",
+            "date": "2021-09-10 17:34:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014731799767717",
+            "notes": "修复可选牌过多，现在只计算以选择阵营的\n且现在可以跳过选牌"
+        },
+        {
+            "title": "增加25涨卡牌",
+            "date": "2021-09-10 06:55:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014731798149550",
+            "notes": "增加25涨卡牌，且现在选牌会根据牌池大小增加可选卡牌\n\n[img]{STEAM_CLAN_IMAGE}/40429154/d3c804b502e3be13de0eeb9ae2a9b4f21ef73cf7.png[/img]"
+        },
+        {
+            "title": "接下来的更新计划",
+            "date": "2021-09-04 10:48:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099095755492",
+            "notes": "1：更新若干张新的卡牌\n\n2：更新若干宝物\n\n3：更新若干强化\n\n4：更新若干BOOS\n\n5：增加通用的对话事件设施，提供给Mod作者使用，这个事件不用自己制作tscn，写脚本即可\n\n6：待以上更新完成，会搞一次mod创作活动"
+        },
+        {
+            "title": "开放，音频，特效，背景故事等Mod接口",
+            "date": "2021-08-13 04:30:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149058305060",
+            "notes": "开放，音频，特效，背景故事等Mod接口\n\n框架：增加音效播放接口 sys.playSeMp3(文件路径)\n框架：增加属性 card.bdec = “” 可以为卡牌添加背景描述\n框架：增加特效接口 参考：https://atkcore.coding.net/public/cardMaker/cardMakerOfficial/git/files/master/eff/e_test\n\n\n[img]{STEAM_CLAN_IMAGE}/40429154/afa35b34c510882d5730d283b7f3ec6bd0e43690.jpg[/img]"
+        },
+        {
+            "title": "修复难度4成就无法完成",
+            "date": "2021-08-11 04:39:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4040278393510826014",
+            "notes": "修复难度4成就无法完成"
+        },
+        {
+            "title": "一些bug的修复",
+            "date": "2021-08-08 05:15:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530951002900",
+            "notes": "修复：异能等之类tip描述不消失的bug\n修复：设施描述闪烁\n修复：远攻攻击结算顺序的bug\n修复：现在所有需要指向目标随从的战吼，都无视魔免\n修复：BOSS使用发现卡的问题\n调整：丘比特提升为紫卡\n调整：战意天使效果改为，随从被有效治疗时：被治疗随从获得+2|+2"
+        },
+        {
+            "title": "设置页面增加动画加速选项",
+            "date": "2021-08-07 06:53:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530947610161",
+            "notes": "设置页面增加动画加速选项\n\n难度3 调整为：敌方英雄+10生命值，回合结束回复2点生命值"
+        },
+        {
+            "title": "关卡加长，黑化BOSS完成",
+            "date": "2021-08-07 01:46:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530946834938",
+            "notes": "黑化BOSS，将获得一件黑化宝物，而其他随机宝物\n该设定将增加关卡长度，以免玩家刚刚成型体验却又戛然而止，同时增加挑战\n另外3，4难度进行了调整\n难度3：对手英雄获得额外+1|+10\n难度4：对手随从获得+1|+1，且包含之前的加强\n\n[img]{STEAM_CLAN_IMAGE}/40429154/6ef8393cc82b2914b5b07830cf838d1fabdf3ab6.png[/img]"
+        },
+        {
+            "title": "宝物系统完成，以及现在可以扩展事件",
+            "date": "2021-07-24 05:27:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692292770177",
+            "notes": "宝物系统完成，以及现在可以扩展事件\n\n现在事件不在是固定的强化，买卡，销卡，而是随机的3样事件，此次增加宝物系统，能随机到宝物商店\n\n随机事件也能由moder扩展\n\n[img]{STEAM_CLAN_IMAGE}/40429154/5cceb043c8b83bcd8b9743ec27f6250105e4492e.jpg[/img]"
+        },
+        {
+            "title": "修复复制和公主骑士",
+            "date": "2021-07-19 09:56:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340180104113",
+            "notes": "修复复制和公主骑士"
+        },
+        {
+            "title": "版本更新计划",
+            "date": "2021-07-19 06:27:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340179576825",
+            "notes": "接下来要实现的一些内容：\n\n宝物系统以及宝物设施，宝物会是一些强力的卡牌，或者维持整场战斗的特殊效果\n\n开放特效和音效的API接口，供Moder使用\n\n随机事件，不在固定的（强化，购卡，销卡 等），以及开放事件接口，供Mod制作自定义事件\n\n更多的BOSS，以及挑战BOSS可二选一，你可以跳过与你套牌相克的BOSS\n\n更多的卡牌，以及单张卡在套牌中的数量限制机制\n\n增加卡牌背景故事页面，Mod的卡牌可以为单卡添加故事描述"
+        },
+        {
+            "title": "紧急修复强化失效，顺便削弱提灯",
+            "date": "2021-07-18 07:19:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340176068353",
+            "notes": "紧急修复强化失效，顺便削弱提灯"
+        },
+        {
+            "title": "2021年7月18日 00:49:44",
+            "date": "2021-07-17 12:50:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340173266965",
+            "notes": "修复 强化-复制，复制的牌不能完全触发其他强化\n标题页面，创意工坊金色显示"
+        },
+        {
+            "title": "修复碾压不生效",
+            "date": "2021-07-17 07:08:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340172401899",
+            "notes": "修复碾压不生效"
+        },
+        {
+            "title": "2021年7月17日 17:01:42",
+            "date": "2021-07-17 05:02:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340172083583",
+            "notes": "修复牌册查看卡牌信息不断跳闪的问题\n增加难度4的通关成就"
+        },
+        {
+            "title": "增加一个初始难度，整体难度全部下调 初始难度：入门，你将额外获得1个法力水晶",
+            "date": "2021-07-16 15:35:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340170046325",
+            "notes": "增加一个初始难度，整体难度全部下调\n初始难度：入门，你将额外获得1个法力水晶"
+        },
+        {
+            "title": "部分BOSS技能削弱",
+            "date": "2021-07-16 14:43:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340169911878",
+            "notes": "山野人：2费，杀死5费及以下随从\n军团长：友方随从失去圣盾时，该随从+1/+2\n辉煌天使：使你的随从获得复生\n兽王白虎：本局英雄+5点攻击"
+        },
+        {
+            "title": "2021年7月17日 00:12:46",
+            "date": "2021-07-16 12:13:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340169532652",
+            "notes": "修改强化-复制的描述\n修改强化-减费的描述\n修复公主骑士效果"
+        },
+        {
+            "title": "游戏标题页面，增加制作卡牌教程的链接",
+            "date": "2021-07-16 08:23:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340168951826",
+            "notes": "游戏标题页面，增加制作卡牌教程的链接"
+        }
+    ]
+}

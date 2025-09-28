@@ -1,0 +1,138 @@
+{
+    "appId": "3211840",
+    "total_notes": 22,
+    "notes": [
+        {
+            "title": "Patch 2.0.3",
+            "date": "2025-04-14 02:37:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172364920",
+            "notes": "- redesigned controls and inner logic in fishing minigame to make it more intuitive and accessible, it now has additional keyboard controls and controller behaves more naturally ; it should remove an edge case bug where the frame did not move at all or \"snapped\" to edges and center\n\nWhile it changes how this minigame works, I find it a tiny change overall, and probably you wouldn't notice it if you're in the middle of the game - except if you're using a controller, but now it's more intuitive, just push the joystick to the edge instead of fiddling with it."
+        },
+        {
+            "title": "Play it on Steam Deck!",
+            "date": "2025-02-14 16:29:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580426008981",
+            "notes": "I'm happy to announce that the game received official \"Verified\" compatibility status after recent updates!\nGrab your Steam Deck and give it a go!\nThe game utilizes a full 16:10 aspect ratio for most of the time, but sex scenes are locked to 16:9 with black bars at the top and bottom of the screen.\n\n[i]PS: In theory, it also means that it should also play well on other handheld console devices running on Windows or Linux operating systems.[/i]\n\n[h1]About using PlayStation controller[/h1]\nTo see [b]PlayStation-style icons[/b] when using an external PS controller, you should disable Steam Input.\nGo to the settings [cog icon to the right], then \"Properties...\", go to \"Controller\", and in \"Override for Slave Harem\" select \"Disable Steam Input\". You can switch between controllers at any time - the game engine will handle the display of glyphs upon pressing a button. \n\n[img]{STEAM_CLAN_IMAGE}/45215732/6e3766fa400a6092f564473cb0fa305d43b1e64b.png[/img]\nSteam Deck unit provided courtesy of Valve for testing and development."
+        },
+        {
+            "title": "Changes in 2.0.2",
+            "date": "2025-02-13 03:00:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580425956368",
+            "notes": "2.0.2\n- adjusted UI and a few skill description texts\n- fixed dialogue log scroll with controller\n- fixed hiding UI in dialogue with controller to toggle-style\n- fixed behavior when having two controllers connected - changed input detection to only button\n- fixed SteamInput controller on Deck (trackpads act as joysticks instead of mouse)\n- auto-fit for aspect ratios other than 16:9 (except for sex scenes which are locked to 16:9)\n- tiny change to Flania's sprite to accommodate for higher screen size\n\nI had to change Input detection because when two different controllers were connected, they were sending conflicting signals.\nNow switching works on button press - I don't think changing the controller mid-game is common.\nSimilarly for the mouse & keyboard, removed mouse motion as a trigger when the controller is connected.\n\nSome of those changes were requested by Valve to get official Steam Deck compatibility.\n\nAs always, let me know if you encounter any issues!"
+        },
+        {
+            "title": "Hotfix 2.0.1",
+            "date": "2025-02-08 03:26:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102679206",
+            "notes": "Fixed \"Sex\" button not working with mouse.\nI changed the backend of this button with 2.0 and forgot to hook it up back to original function."
+        },
+        {
+            "title": "UPDATE 2.0!",
+            "date": "2025-02-01 14:46:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123156361",
+            "notes": "Hello!\nFirst of all, thank you for giving Slave Harem a chance, even despite the current review rating. I've learned a lot since this game so I thought I'll backport several cool things I developed for \"Flavors of Desires\" (link at the bottom). It's hard to summarize what's changed, but it's mostly systems and performance - things this game had most issues with at the release, I made further improvements. Oh, and I also updated screenshots on the Steam page.\n\nMake sure you've updated the game, it will not start with old files.\n\nAs usual, here's list of known issues and fixes - https://steamcommunity.com/app/3211840/discussions/0/4692280123603371390/\n\nPlease let me know if you encounter new issues. I tested this update for the past several days and I hope there are no errors at all. I played it on both Steam Deck and Windows PC, but I never know how players would actually interact with the game soooo...\n\nAnyway, here's the full changelog and some technical notes - the most notable bits, at least.\n\nv2.0:\nMost of the changes are backported from \"Flavors of Desires\"\n- huge performance boost in the first map/title at the cost of less visuals (from ~25 FPS on Steam Deck to around 50)\n(other maps performed well without changes, the first one just had way too many stuff, especially trees)\n- forced shader/material pre-caching to eliminate occasional stutters when new shader is rendered\n- rewritten ending to be more satisfying\n- new options menu with settings for gameplay, visuals, and performance!\n- new lighting and clouds system in 3D maps - few maps completely re-lighted\n- added running animation\n- enhanced controller support - now with dynamic input detection and more intuitive scheme\n- better sex scenes interaction with controller + additional animation loop \"Rest\"\n- PlayStation controller support with glyphs + new controller icons\n- new, persistent 3D controls hints\n- replaced scene loading backend - no more long loading times and freezes!\n- partially replaced dialogue backend - more error-proof\n- not important for this game, but replaced monster drops backend so it works properly\n- new \"The end\" message that can't be just skipped accidentally\n- warnings about possible data loss before exit\n- improved readability on smaller resolutions\n- fixed issue with some UI elements not rendering properly sometimes\n- various changes to UI and interaction\n(for example, you can hold \"Skip\" in dialogue and select choice, the dialogue will continue skipping)\n- various adjustments to 3D maps\n- first slime in the first map is now unavoidable\n- changed interaction in town facilities to \"press and hold to confirm\" instead of simple button\n- removed \"Talk\" context button in favor of auto-progress (you probably didn't even notice it was there)\n- fixed shop not resetting when switching between modes with items in cart\n- fixed visual errors in a few side scenes\n- just in case something goes wrong with Red Slime battle event, item \"Slime Essence\" was added to Kurone's shop\n- plenty of small changes and adjustments I did not note\n\nThose changes aim to achieve official Steam Deck compatibility and improve overall experience.\nThe original code was a mess so I just removed it, replaced with \"Flavors of Desires\" modules and bridged the gaps.\nTurns out I used terrain and vegetation systems that are not quite optimized and I can't change those in this game. Flavors of Desires are using different solution and the issues do not appear there.\n\n---\nI'd use this space to also promote my upcoming project - Flavors of Desires\nFREE DEMO now available! Wishlist today!\n\nhttps://store.steampowered.com/app/3411490/Flavors_of_Desires/"
+        },
+        {
+            "title": "Flavors of Desires - new game announced!",
+            "date": "2024-12-29 10:06:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930943230",
+            "notes": "Adult-Only 3D Adventure with JRPG-inspired elements and card-based combat. The end of adventuring is not the end of the journey.\n\nCheck out the details on Store Page!\n\nhttps://store.steampowered.com/app/3411490/Flavors_of_Desires/"
+        },
+        {
+            "title": "Version 1.3.6",
+            "date": "2024-12-27 04:49:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930873700",
+            "notes": "v1.3.6:\n- fixed error in shop locking selling to the amount of held money\n- filled hole in hilltop 3D map\n- probably fixed bug when trying to change party order\n- monster logic processing optimization (backported from next project)\n- added native Linux OS support\n\nAs usual, let me know if there are any issues!\nBest way to do that is by posting on game's Community Hub."
+        },
+        {
+            "title": "Update 1.3.5 - Remade movement and bugfixes",
+            "date": "2024-11-28 08:33:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359013707",
+            "notes": "This is not a very big update, but I thought I'd post it as more visible news so you can see that I've added more \"normal\" 3D character control. It's actually a partial backport from the upcoming project. Unfortunately adding running would require rewriting everything and that might break other components. But I think the maps in this game are so small and you don't go to 3D often, so it's not much needed.\n\nv1.3.5:\n- added 8-directional movement to 3D character control (all devices, backported from next project)\nyou can use standard WASD / Arrow Keys / Left Joystick to move. Right Mouse Button still works too if you like that.\n- fixed bug when clicking B on controller when first Flania or Cleo CG is displayed during dialogue at Slave Trader breaks sequence\n- fixed activity icons in towns not being selected when using controller\n- fixed battle screen sometimes not closing when playing with controller\n\nIf you find other issues, just let me know!\n\nJust a quick reminder: If you enjoyed the game, let others know! As you can see, review score is low due to technical issues on release and that discourages players who might enjoy the game now for the content.\n\nAlso, you can take a look at my other games that have quasi-shared universe:\nhttps://store.steampowered.com/bundle/46440/stories_in_artoonuverse/"
+        },
+        {
+            "title": "v1.3.4",
+            "date": "2024-11-07 07:09:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801594049",
+            "notes": "- disabled all input between scene changes, should fix rare bugs when clicking something during loading\n\nThe previous solution worked, but the issue still existed for events in 3D maps, this patch hopefully fixes it."
+        },
+        {
+            "title": "1.3.3 Quick patch",
+            "date": "2024-11-05 02:42:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657174054374",
+            "notes": "v1.3.3:\n- hopefully, fixed a rare bug that caused bypassing an event causing sequence progress break\n- disabled skipping in the first seconds after opening dialogue, pressing it before it initialized caused background load failure"
+        },
+        {
+            "title": "1.3.2 small adjustments",
+            "date": "2024-11-02 14:16:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173973372",
+            "notes": "v1.3.2:\n- fixed Merylice 2nd scene visuals\n- attempt to fix a bug when clicking during loading after battles caused a crash in some cases"
+        },
+        {
+            "title": "1.3.1 hotfix",
+            "date": "2024-10-31 02:55:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173891290",
+            "notes": "Fixed load saves screen not displaying when using mouse and keyboard."
+        },
+        {
+            "title": "1.3 - \"Take Control\" is here!",
+            "date": "2024-10-30 12:52:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173872476",
+            "notes": "I've decided to take the opportunity and test how to even handle controller support. Turns out that the game should be designed with it in mind for best results. While not perfect, it works in most gameplay, some UI are a bit unintuitive. I've also noticed that some players are confused how to use skills in battle (drag-and-drop) so I added a small overview before first battle.\n\nI see and appreciate your feedback! While I can't implement all of it at this point, I will keep it in mind for future games. Things like better controls/movement, better inventory/items variety, possible story approaches, making an actual deck-builder. Adding any of that now would mean serious rewrites of game logic that would probably break something or at least cause the entire design/experience to fall apart.\n\nI've also noticed questions \"Why does he make such updates so fast!?\" and the answer is simple: I work from sunrise past sunset and I think I'm pretty efficient at what I do. Plus, I work solo so I don't have to wait for anyone.\n\nAnyway, here's the full changelog:\n\nv1.3:\n- FULL CONTROLLER SUPPORT - includes icons and fitting control scheme thorough the game\nMight be a little wonky and unintuitive in certain places, game was not designed with controller in mind\n- added battle tutorial\n- fixed rare error when using manual \"skip\" in dialogue caused crash / repeating scene / showing pink screen\n- fixed skip function in dialogue sometimes skipping lines past choices but displaying choice menu\n- fixed \"Deliver\" and \"Purchase\" buttons not disabling\n- fixed more icons in screens not displaying properly\n- replaced ASCII icons with text -!- symbolizing main story quests and key items - it didn't display properly for some users\n- corrected typos in dialogue and cards\n- moved dialogue points in 3D space for last quests - reaching exit before dialogue subsystem loaded caused an error or crash\n- improved rendering of event icons in 3D space by fixing depth/alpha\n- fishing minigame is easier, bar fills faster\n- small UI adjustments\n- small 3D terrain adjustments\n- fixed crash at the end of scene when loading at Airin (guild) quest briefing or completion dialogue\n*- fixed error when loading save with choices displayed\nI'm not sure if it was present in previous versions or introduced when I was working on 1.3, but it's fixed anyway\n\nI know this game didn't have the best start but I hope I made up for it with this and previous updates.\nAs always, if you encounter any issue, please let me know. I can't fix anything if I don't know what exactly happens and where to begin to look for a solution. As a reminder, list of possible solutions and information on how to report problems can be found here: https://steamcommunity.com/app/3211840/discussions/0/4692280123603371390/\n\nThat being said, I think this will be the last major update for this title. I will take all the lessons learned and try to make the next game better! Thank you for playing Slave Harem!"
+        },
+        {
+            "title": "v1.2 - \"White Fluid\"",
+            "date": "2024-10-28 06:12:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911947265",
+            "notes": "v1.2 changes:\n- I've seen you wanted more obvious C-U-M, so I added that to sex scenes\n- 1st Merylice scene got the button removed\n- tiny adjustments here and there\n\nAlso, if you encounter any crashes that do not display anything, I've updated possible fixes, you can take a look at it here: https://steamcommunity.com/app/3211840/discussions/0/4692280123603371390/\n\nYou will also find there what to do when it still crashes. Let me know and send me save files so I can investigate the error in game logic.\n\nI read your feedback and I try to address what I can, or try to make it clear what the game actually is. Unfortunately, I cannot address every single personal preference at this point. I will keep those in mind with future games.\n\nI understand that the game won't be liked by everyone, and across my past games I've been getting contradicting feedback about a variety of aspects of games, so it's hard for me to make correct design decisions."
+        },
+        {
+            "title": "Regarding bugs - how to report them",
+            "date": "2024-10-27 13:11:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911924868",
+            "notes": "I'd like to make everyone's experience as good as possible, but for that, I need your help. I can't fix the issue if I don't know what's causing it. Posts and reviews \"It's not working\" don't help without more information. Please read the details below.\nI'm just one person, I don't have a QA team and dozens of devices to check every possible configuration and action order you can take in the game. This game has complex overlaying systems, and has 3D segment on top of that. The errors you encountered were not found in testing before release.\n\n[h1]How to report bugs:[/h1]\n1) check if the issue was already reported or solutions below help. If not, please make a new thread with a descriptive title (eg. Empty dialogue when [what] ) in the Community Hub.\n2) please describe when the error occurred, and what you clicked immediately before it happened\n3) check in the folder at %APPDATA%\\Godot\\app_userdata\\Slave Harem\\logs if there's anything, it might help me determine what caused the error, the log might have printed something.\n4) look in the folder [%APPDATA%\\Godot\\app_userdata\\Slave Harem], please send *.sav and *.log file(s) and provide information of your computer specification if possible to address:\n\nartoonu [at] protonmail [dot] com \n\n----------------------------\n[h1]Known solutions for some cases, try first:[/h1]\n\n[b]#1 Restart your computer - surprisingly it might fix whatever was happening[/b]\n\n[b]Game crashes:[/b]\n- in the settings, try:\na) lower or even disable MSAA 3D and/or other anti-aliasing settings\nb) change fullscreen mode (if playing in fullscreen)\nc) launch game with [--rendering-driver opengl3] parameter. How to set launch parameters: https://help.steampowered.com/en/faqs/view/7D01-D2DD-D75E-2955\n\nd) disable Steam Overlay - where to find the setting: https://help.steampowered.com/en/faqs/view/3978-072C-18DF-FBF9\n\ne) if you have integrated and dedicated GPU, make sure the game runs from dedicated one\n\n\n[b]Black screen with music on start:[/b]\n- This seems to be an issue related to GPU drivers or settings and I cannot replicate it on my end. What I found online is that the game engine has issues when certain graphical features are forced via graphic global settings\nYou can try:\n0) press \"F11\" or \"F\" on keyboard, it's a shortcut to switch between fullscreen and windowed mode which refreshes renderer\n1) reinstall the game, restart the system\n2) update the drivers, repeat 1\n3) disable global graphic settings or revert them to default, repeat 1\n\n[b]Missing visuals and text:[/b]\nPlease verify files integrity from launcher or just reinstall the game.\nHow to verify files - https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB"
+        },
+        {
+            "title": "1.1.2 adjustments",
+            "date": "2024-10-26 15:02:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911895879",
+            "notes": "- small adjustments to a few dialogue scenes"
+        },
+        {
+            "title": "v 1.1.1 - hotfix",
+            "date": "2024-10-26 10:22:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911889665",
+            "notes": "v1.1.1:\n- slightly changed dialogue event queueing, trying to make it double-click proof"
+        },
+        {
+            "title": "Version 1.1",
+            "date": "2024-10-26 08:24:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911887007",
+            "notes": "v 1.1:\n- fixed crash in battle when clicking on entity card without active skill\n- fixed self-effect not being applied (\"dizzy\" from Merylice's skill \"Bash\")\n- fixed dialogue progressing more lines at once with some input devices (probably, can't test it)\n- you can now progress dialogue with Enter or Space and navigate choices with arrow keys\n- added option to invert mouse Y and set motion sensitivity in the Options menu\n- log goes back directly to dialogue now\n- the final boss is now immune to effects (as intended)\n- replaced font icons with images to fix display error\n- added memo on splash screen to make manual saves\n- added 2D MSAA setting as it can also affect stability on low-end devices and certain GPU/CPU\n- (testing) - partial controller support, not in battles and some menus - not official\n\n[b]It is recommended to remove the file \"settings.dat\" in folder %APPDATA%\\Godot\\app_userdata\\Slave Harem[/b]\n\nLet me know if there's anything else, please follow instructions on how to report issues so I know where to look for an answer.\nhttps://steamcommunity.com/app/3211840/discussions/0/4692280123603371390/"
+        },
+        {
+            "title": "Upcoming patches!",
+            "date": "2024-10-26 03:20:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911880431",
+            "notes": "Thank you very much for playing Slave Harem! This is a very different and much more complex game from my previous ones, so, unfortunately, bugs happen. There are things that my playtesters and I just don't catch or the errors just don't appear.\n\nPlease give me a couple of days to look into it and see what I can do.\n\nThe next update aims to:\n- fix crashes during battles - probably some logic error I didn't run into, will hopefully fix it \"in blind\"\n- add an option to set mouse sensitivity and invert the Y axis - doable\n- some UI adjustments like going back to the game from the dialogue log screen - doable\n- hopefully, fix dialogue skipping lines on certain input devices - logic queueing probably\n- replace all font-based icons with images as it doesn't display properly on some devices for some reason\n- add memo splash to make manual saves (?)\n\nI can't promise I will add it to this game, but I will look into:\n- adding gamepad controls - this would require heavy rewrites to entire system, it will be hard to do in this game, but I'll try to design with it in mind for future ones\n- sound effects - while technically possible, I have trouble finding fitting ones\n- voice acting - also technically possible, I made a framework for it, the problem is finding actresses and costs\n\nIn the meantime, please look at this sticky post to see how to report bugs so I can get notified on them. I don't get notifications on reviews. I need more information to know where to start. I see and hear your opinion and I try to make the game work for all of you when possible.\nhttps://steamcommunity.com/app/3211840/discussions/0/4692280123603371390/"
+        },
+        {
+            "title": "Day 0 Patch (25 October)",
+            "date": "2024-10-25 02:56:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911846798",
+            "notes": "I've heard that the game crashes for some players in 3D segments, following your suggestions, I set lowest graphical settings by default, that should minimize issues on low-end computers and integrated GPUs.\n\nYou can always turn up anti-aliasing settings and lower/turn off again if crashes start happening.\n\nUnfortunately, this is not something I can replicate and look into, it seems to be hardware issue.\n\nPlease refer to this thread on how to report bugs so I can attempt to fix it: https://steamcommunity.com/app/3211840/discussions/0/4692280123603371390/"
+        },
+        {
+            "title": "Now available!",
+            "date": "2024-10-24 03:34:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911814186",
+            "notes": "I'm happy to announce that Slave Harem is now available!\nThis was a much bigger project than all of my previous ones, and I hope you'll enjoy it.\n\nLET ME KNOW WHAT YOU THINK! What did you like? What did you not? What could be improved in the future? I'd like to start making more games like this, going even more in 3D and RPG-ish systems.\n\nThis is a more complex game and there may be some bugs I didn't find because of the nonlinear approach and free roam. If such occurs, please let me know and refer to this post:\nhttps://steamcommunity.com/app/3211840/discussions/0/4692280123603371390/\n\n\n---\nI would like to announce project \"artoonuverse\" - while not grandiose and serious, some of my games just share similar concepts and worldbuilding but otherwise can be enjoyed separately. More like \"Easter eggs\" than a hard-defined lore. If you liked one, there's a chance you will like others story-wise.\nhttps://store.steampowered.com/bundle/46440/stories_in_artoonuverse/\n\n\nAs usual, there's an extra discount for those who own most of my previous games:\nhttps://store.steampowered.com/bundle/25882/games_by_artoonu/\n\n\nPS: I'm already working on the next game, to make sure you'll be notified, please follow my Creator Page:\nhttps://store.steampowered.com/curator/42090521\n\nYou can also take a look at my X - https://x.com/artoonu"
+        },
+        {
+            "title": "Coming October 24th!",
+            "date": "2024-10-02 05:23:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003489974435",
+            "notes": "I've decided to release the game on October 24th.\n\nIf there will be any bugs I won't manage to find due to complexity of the game, I hope we'll fix it together, just like with my previous game - My Cheetah Friend. This is much bigger game with semi-nonlinear progression, so I'm afraid there might be some bugs or balancing issues on release."
+        }
+    ]
+}

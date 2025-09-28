@@ -1,0 +1,216 @@
+{
+    "appId": "993090",
+    "total_notes": 35,
+    "notes": [
+        {
+            "title": "Performance Mode Hotfix",
+            "date": "2025-07-14 13:41:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805065414339197",
+            "notes": "[list][*][p]Resolved a critical bug that impacted quality in LSFG 3.1 Performance mode.[/p][/*][*][p]Fixed an issue where holding down a key wouldn’t repeat input if it was part of a scaling hotkey combo.[/p][/*][*][p]Added Macedonian localization.[/p][/*][/list][p][/p][p]Big thanks to everyone helping make LS better.[/p][p][/p][p]Also, check out the excellent work by PancakeTAS on running LSFG on Linux:[/p][p][url=\"https://github.com/PancakeTAS/lsfg-vk\"]https://github.com/PancakeTAS/lsfg-vk[/url][/p][p][/p][p]Have fun![/p]"
+        },
+        {
+            "title": "LSFG 3.1",
+            "date": "2025-06-11 11:28:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802261838717968",
+            "notes": "[p]This update introduces significant architectural improvements, with a focus on image quality and performance gains.[/p][p][/p][h3]Quality Improvements[/h3][list][*][p]Enhanced overall image quality within a specific timestamp range, with the most noticeable impact in Adaptive Mode and high-multiplier Fixed Mode[/p][/*][*][p]Improved quality at lower flow scales[/p][/*][*][p]Reduced ghosting of moving objects[/p][/*][*][p]Reduced object flickering[/p][/*][*][p]Improved border handling[/p][/*][*][p]Refined UI detection[/p][/*][/list][p][/p][h3]Introducing Performance Mode[/h3][list][*][p]The new mode provides up to 2× GPU load reduction, depending on hardware and settings, with a slight reduction in image quality. In some cases, this mode can improve image quality by allowing the game to achieve a higher base frame rate.[/p][/*][/list][p][/p][h3]Other[/h3][list][*][p]Added Finnish, Georgian, Greek, Norwegian, Slovak, Toki Pona localizations[/p][/*][/list][p][/p][p]Have fun![/p]"
+        },
+        {
+            "title": "Adaptive Frame Generation",
+            "date": "2025-03-08 07:27:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379437153",
+            "notes": "[h3]AFG[/h3]\nIntroducing Adaptive Frame Generation (AFG) mode, which dynamically adjusts fractional multipliers to maintain a specified framerate, independent of the base game framerate. This results in smoother frame pacing than fixed multiplier mode, ensuring a consistently fluid gaming experience.\n\nAFG is particularly beneficial for games that are hard or soft capped at framerates that don’t align as integer multiples of the screen's refresh rate (e.g., 60 → 144, 165 Hz) or for uncapped games — the recommended approach when using LS on a secondary GPU.\n\nSince AFG generates most of the displayed frames, the number of real frames will range from minimal to none, depending on the multipliers used. As a result, GPU load may increase, and image quality may be slightly lower compared to fixed multiplier mode.\n\n[h3]Capture[/h3]\nTo support the new mode, significant changes have been made to the capture engine. New Queue Target option is designed to accommodate different user preferences, whether prioritizing the lowest latency or achieving the smoothest experience:\n\n• 0\nUnbuffered capture, always using the last captured frame for the lowest latency. However, performance may suffer under high GPU load or with an uncapped base game framerate.\n\n• 1 (Default)\nBuffered capture with a target frame queue of 1. Maintains low latency while better handling variations in capture performance.\n\n• 2\nBuffered capture with a target frame queue of 2. Best suited for scenarios with an uncapped or unstable base framerate and high GPU load, though it may introduce higher latency. Also the recommended setting for FG multipliers below 2.\n\nAdditionally, WGC capture is no longer available before Windows 11 24H2 and will default to DXGI on earlier versions if selected. GDI is no longer supported.\n\n[h3]Other[/h3]\n- LSFG 3 will disable frame generation if the base framerate drops below 10 FPS. This prevents excessive artifacts during loading screens and reduces unnecessary GPU load when using AFG.\n\n- The \"Resolution Scale\" option has been renamed to \"Flow Scale\" with an improved tooltip explanation to avoid confusion with image scaling.\n\n[h3]Latency[/h3]\nLatency testing by @CptTombstone\n\n[img]{STEAM_CLAN_IMAGE}/34089147/c8dae083804c0341b515e995073717dcb30b4783.png[/img]\n\n[h3]Tutorial[/h3]\nBe sure to check out this awesome video by @Jagadhie, where he explains the new feature in detail:\nhttps://www.youtube.com/watch?v=q4i8TPSQi2M"
+        },
+        {
+            "title": "LSFG 3",
+            "date": "2025-01-10 07:11:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1788311419046741",
+            "notes": "Happy anniversary, LSFG!\n\nLSFG 3 is built on a new, efficient architecture that introduces significant improvements in quality, performance, and latency.\n\nKey improvements include:\n[list]\n[*] Better quality:\nReduced flickering and border artifacts, with noticeable enhancements in motion clarity and overall smoothness.\n\n[*]Lower GPU load:\nA 40% reduction for X2 mode compared to LSFG 2 (non-performance mode). Over 45% reduction for multipliers above X2 compared to LSFG 2 (non-performance mode).\nThe \"Resolution Scale\" feature remains an excellent way to further reduce GPU load. For instance, setting it to 90% roughly aligns with the LSFG 2 \"Performance\" mode.\n\n[*]Improved latency:\nLatency testing with the OSLTT tool (at 40 base FPS, X2) shows approximately 24% better end-to-end latency compared to LSFG 2.\n\n[*]Unlocked multiplier:\nLSFG 3 also introduces an unlocked multiplier, now capped at X20. While this offers greater flexibility, the following recommendations apply for optimal results:\n\nBase framerate: A minimum of 30 FPS is required (40 FPS or higher is preferred, with 60 FPS being ideal) at 1080p. \nFor best overall experience, locking the game framerate is recommended. This helps to avoid 100% GPU load (reducing its impact on latency) and ensures smoother framepacing.\nFor higher resolution use at higher than recommended framerates or use the \"Resolution Scale\" option to downscale input to 1080p:\nFor 1440p, set it to 75%.\nFor 4K, set it to 50%.\n\nHigher multipliers (e.g., X5 or above) are best suited for high refresh rate setups, such as:\n\n48 FPS × X5 for 240Hz.\n60 FPS × X6 for 360Hz.\n60 FPS × X8 for 480Hz.\n[/list]\n\nBy CptTombstone:\n[img]{STEAM_CLAN_IMAGE}/34089147/d23a7588ca453e6a64bfda8f27e756bb7e12af84.png[/img]\n\n----------------------------------------------\n\nWe’re also happy to announce the Lossless Scaling 3.0 UI Update Beta! To join the beta testing, follow these steps:\n\nOpen Steam.\nNavigate to Lossless Scaling in your library.\nRight-click and select Properties.\nGo to the Betas tab and select \"beta\" from the dropdown.\nYour feedback on the new UI is invaluable as we continue to improve!\n\n[img]{STEAM_CLAN_IMAGE}/34089147/2daaaec0201dacec2ea348c903174a3a394dd8aa.png[/img]\n\n----------------------------------------------\n\nOn a side note, the DXGI Capture API is working again in Windows 11 24H2, thanks to the KB5046617 update. Much appreciated, Microsoft.\n\n----------------------------------------------\n\nHave fun!"
+        },
+        {
+            "title": "Announcing LSFG 3",
+            "date": "2025-01-05 06:55:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1787858252810077",
+            "notes": "We’re excited to unveil LSFG 3, featuring significant improvements in quality, performance, and latency! It will officially launch on January 10, celebrating the anniversary of the LSFG 1 release.\n\nThank you for being part of our journey, stay tuned for more updates!"
+        },
+        {
+            "title": "Resolution Scale, SGSR v1, and Windows 11 24H2 Compatibility",
+            "date": "2024-11-16 06:40:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125276910",
+            "notes": "[list]\n[*] Introduced a new \"Resolution Scale\" option for LSFG. This feature allows input frames to be processed at a reduced resolution while generating output at the original resolution. For example, when playing at 1440p, setting the scale to 50% enables LSFG to generate 1440p output from a 720p input. This provides a performance boost with only a minor quality trade-off (depending on the game). Note that this is not related to image scaling; rather, it reduces the amount of information available to LSFG for motion estimation.\n\n[*] LSFG 1.1 has been fully replaced by LSFG 2.3 and is no longer available. For instance, at a resolution scale of 90%, LSFG 2.3 Performance is both faster and of higher quality.\nIf you still wish to use LSFG 1.1, LS 2.11 remains available in the Betas section on Steam.\n\n[*] Introduced SGSR v1, a highly lightweight spatial upscaler. For more details, visit the official page: https://github.com/SnapdragonStudios/snapdragon-gsr.\n\n[*] With the latest Windows 11 24H2 update, Microsoft changed how the Desktop Duplication API (DXGI) functions, making it heavily reliant on MPO (Multiplane Overlay) support. Without MPO, DXGI cannot reliably distinguish between updates from game window and the LS window when both are displayed on the same monitor. This prevents it from capturing only new frames, thereby breaking the existing framepacing algorithm.\n\nMPO support varies between systems, and there is no definitive way to determine why it is supported on some setups and not on others. You can use dxdiag to check if your system has MPO support. In some cases, you might be able to work around the issue. For instance, if you have two monitors connected, disconnecting one may force the remaining monitor to support MPO.\n\nAs of the 24H2 update, DXGI is no longer a reliable capture method unless Microsoft changes its approach or Nvidia and AMD improve MPO support in their drivers.\n\nOn the other hand, Microsoft has addressed a five-year-old bug in the Windows Graphics Capture (WGC) API, which previously prevented it from capturing only new frame updates. Starting with version 24H2, WGC now works as expected for the most part. Essentially, DXGI and WGC have switched roles in this update. WGC capture in LS has been updated with a new framepacing algorithm to replace DXGI on newer systems while maintaining the same behavior as before on older systems. DXGI continues to function normally up to version 23H2, but beyond that, it depends on MPO support.\n\nWhile WGC generally offers some advantages over DXGI, such as allowing LS to be recordable by most tools, it also has drawbacks without MPO support. Specifically, in games where a hardware cursor is displayed and VRR is enabled, WGC disables independent flip mode globally. This can lead to issues with LS and VRR functionality.\n\nStarting with Windows 11 24H2, MPO support becomes highly desirable. We can hope that future updates from Microsoft, Nvidia, and AMD will address these challenges. Notably, there have been reports that DXGI is functioning correctly again on the Windows 11 Dev branch.\n[/list]"
+        },
+        {
+            "title": "X4 Frame Generation & G-Sync Support",
+            "date": "2024-08-11 14:30:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363402214706",
+            "notes": "- LSFG 2.3 introduces X4 frame generation mode, generating three intermediate frames. The recommended usage scenario starts with the game's base framerate of 60 frames and for monitors with a high refresh rate of 240 and above, but can also be used with lower framerates (where the base mode is expected to give better results compared to \"performance\").\n\n- X3 mode has been updated to further reduce artifacts on patterned textures and in dark scenes.\n\n- Increased UI detection rate from every 4th frame to 1 for \"performance\" mode, as it was found that this could cause some artifacts. This led to a slight decrease in performance, so this parameter can now be changed in the config.ini file located in the installation folder.\n\n- Initial support for G-Sync. It is recommended to enable it for full screen mode in the driver settings.\n\nSpecial thanks to the Reddit user That_Committee9145 who first found a way to enable G-Sync for LS, as well as DerGefallene who brought the information to my attention. A huge thanks to the team of alpha testers who help me a lot every day. Thanks to each user for being here, without you this software would not be possible.\n\nYou may also be interested in the [url=https://steamcommunity.com/app/993090/discussions/0/4520010991996308303/]contest[/url] started recently for the best video tutorial for LS."
+        },
+        {
+            "title": "Quality fixes",
+            "date": "2024-08-04 05:22:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728345493684",
+            "notes": "- Reduction of LSFG artifacts on patterned textures and in dark scenes, especially noticeable when HDR is enabled.\n\n- LS1 sharpening correction, now the value 0 should match the original. Improved colors with HDR.\n\n- Added Portuguese and Serbian translations"
+        },
+        {
+            "title": "Framepacing and LSFG updates",
+            "date": "2024-07-18 18:18:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959966172945",
+            "notes": "This version aims to improve smoothness, framerate stability and latency for a wide range of GPUs.\n\n- LSFG 2.2 updates the UI detection part by reducing the level of over-detection, which eliminates some artifacts caused by UI detection and has a positive effect on the overall smoothness of the image.\n\n- Cursor rendering at the target framerate.\n\n- Return to the previous behavior when rendering over refresh rate is allowed.\n\n- The new \"Max Frame Latency\" option acts as a balance between latency and performance. There is no best value, as all systems are different. Most likely, the optimal value will be 1 for Nvidia GPUs and 3 for AMD. It should be at least 2 (3 for AMD) if you want LS to be able to render over refresh rate.\n\n- Merged the \"Vsync\" and \"Allow tearing\" options into one menu, where \"Default\" means that both of them are disabled.\n\n- Improved Freesync support (works only on AMD GPUs).\n\n-Lithuanian and Vietnamese localizations added.\n\nPrevious version is available in Steam betas."
+        },
+        {
+            "title": "X3 Frame Generation",
+            "date": "2024-06-06 15:03:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972549753224",
+            "notes": "- Introducing the X3 frame generation mode. LSFG 2.1 can now generate two intermediate frames, effectively tripling the framerate.\n\nX3 has increased GPU load by approximately 1.7 times compared to X2 mode. At the same time, LSFG 2.1 Performance and LSFG 1.1 have been optimized to be 20% faster in X2 mode compared to the previous version.\n\nIt has been tested that X3 mode does not cause any additional latency compared to X2. Latency is affected by the base framerate and when the GPU is fully utilized. For the best experience in both image smoothness and latency, it is recommended to lock the game framerate at 1/3 of the monitor's refresh rate in X3 mode.\n\nThe minimum recommended base frame rate remains the same as for X2 mode at 30 FPS for 1080p and 40 FPS for 1440p, respectively.\n\n- New behavior when the final framerate should exceed the monitor refresh rate:\n\nPreviously, LS rendered all necessary frames, some of which were later discarded when displayed on the monitor. LS will now skip rendering extra frames while accounting for correct frame pacing, so the result should be very similar to the old behavior but much more resource efficient.\nWhile a higher base framerate is better for latency purposes, forcing LS to skip frames may not result in the best smoothness.\n\nGiven that the LS framerate will never exceed the refresh rate now, for convenience and also for identifying issues, the 'Draw FPS' option also outputs captured frames when using DXGI capture.\n\nJoin our Discord [url=https://discord.gg/5cCP6aACgT]community[/url] to share your experience and get help."
+        },
+        {
+            "title": "Introducing LSFG 2.0",
+            "date": "2024-05-08 17:02:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435393159387",
+            "notes": "- Enhanced architecture for processing large-scale movements, enabling efficient usage at lower frame rates. Hence, the minimum recommended base frame rates are 30/40 for 1080p/1440p resolutions respectively, with 60 FPS and higher recommended for an optimal experience.\n\n- Noticeable reduction of common artifacts such as motion ghosting, edge distortion, and image blurring. In cases where artifacts persist, it is advisable to increase the base frame rate.\n\n- GPU load has increased by 1.5 - 2x depending on the resolution. Therefore, a new 'Performance' mode has been added to preserve the performance of the previous version. It retains all the main advantages of the quality version and surpasses the LSFG 1.1, all at the same speed."
+        },
+        {
+            "title": "General improvements and bug fixes",
+            "date": "2024-04-04 17:57:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364309455895",
+            "notes": "Reduced distortion/ghosting artifacts for LSFG that could occur at certain resolutions and low frame rates.\nChanges to DXGI capture that may improve frame rate stability and address possible other issues.\n\nRead the full changelog [url=https://steamcommunity.com/app/993090/discussions/0/4351114280578261818/]here[/url]."
+        },
+        {
+            "title": "LSFG 1.1 – New UI detection model",
+            "date": "2024-03-07 09:43:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637652391470",
+            "notes": "Part of the LSFG has been reworked to detect UI more effectively. As a result, a significant reduction in UI ghosting and less impact on the main image in case of incorrect detection.\n\nRead the full changelog [url=https://steamcommunity.com/app/993090/discussions/0/4288061352810656967/]here[/url]."
+        },
+        {
+            "title": "New frame capture API",
+            "date": "2024-02-09 09:26:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109269053040",
+            "notes": "New DXGI frame capture API, that should fix most performance issues, also allows the LS to be tied to the game's framerate and simply double the number of frames when frame generation is used. For the best LSFG experience, it is still recommended to lock the game's framerate to half the LS refresh rate (which can be limited by the vsync option). However, you can now also lock the game at any framerate or not lock at all, while LS will do its best to ensure the correct framepacing.\n\nRead the full changelog [url=https://steamcommunity.com/app/993090/discussions/0/4209246056405471570/]here[/url]."
+        },
+        {
+            "title": "Introducing Frame Generation - LSFG",
+            "date": "2024-01-09 18:06:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585200714422",
+            "notes": "Introducing LSFG 1.0 - a universal frame generator that can be used for most games and not only. Designed from the ground up using machine learning to run on a wide range of GPUs, including integrated graphics cards. Can be used with or without scaling.\nThe recommended minimum to have the best quality is 60 FPS in a game and a 120 Hz monitor, but it can also be used in a combination of 30 FPS and 60 Hz in some games at a resolution of up to 1080p.\n\nTo read the brief guide and see all the changes, please check [url=https://steamcommunity.com/app/993090/discussions/0/4039232337479089112/]release notes[/url]."
+        },
+        {
+            "title": "Introducing a new scaling type - LS1",
+            "date": "2022-08-09 06:09:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598757090467796585",
+            "notes": "Based on machine learning, LS1 is a small and fast general-purpose neural network optimized for scaling factors in the 1x–2x range. LS1 has similar performance and image quality to FSR, while surpassing it in many cases.\n\nThere have also been many other changes since the release of version 2.0, the last major announcement. Summary for those who do not follow updates in the community:\n[list]\n[*] New scaling types: Anime4K, Sharp bilinear, xBR\n[*] Cursor scaling option\n[*] Latency improvements\n[*] Experimental VRR support\n[*] Stretch to fullscreen mode\n[*] Windowed mode\n[*] Crop input option\n[*] Multi-display mode\n[/list]\nI look forward to your feedback, \nHave fun!"
+        },
+        {
+            "title": "Stand with Ukraine!",
+            "date": "2022-03-02 05:35:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367426422500",
+            "notes": "Due to the attack of the Russian Federation, I was forced to leave my home. Program development has been suspended indefinitely.\nYou can support Ukraine, all income from sales of this program during the war will be directed to the needs of the Ukrainian army and the affected population of the country."
+        },
+        {
+            "title": "2.0 released!",
+            "date": "2021-12-01 15:49:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224935490658722607",
+            "notes": "[h2]What's new:[/h2]\n\n[h3]UI:[/h3]\n[list]\n[*] Completely new UI with themes support;\n[*] Support for game profiles: you can still use the hotkey or scale button - game profile will be applied automatically, or you can use the auto scale option to let the game window to be scaled automatically whenever it is activated (including window activation when the game starts);\n[*] Ability to choose preferred GPU (may be useful for laptops);\n[*] Option to run as administrator;\n[*] Option to start minimized at Windows startup;\n[*] Option to minimize to tray;\n[*] New settings storage;\n[*] Localizations for:\n[list]\n[*] French\n[*] German\n[*] Portuguese, Brazilian\n[*] Russian\n[*] Spanish\n[*] Turkish\n[/list]\nIf you would like to translate the program into your own language, you can help me with this on [url=https://crowdin.com/project/lossless-scaling]Crowdin[/url].\nIf your language is not listed please tell me to add it.\n[/list]\n\n[h3]Core:[/h3]\n[list]\n[*] The latency has been improved. The \"Low Latency\" option has been removed as unnecessary;\n[*] LS will create a driver profile for itself on first launch to set \"Prefer Maximum Performance\" (NVIDIA only, relaunch required to apply profile);\n[*] FSR updated to 1.0.2 version, NIS updated with a fix;\n[*] Got rid of the old Windows API which was used for integer and nearest neighbor scaling. Now that uses modern way of capturing and scaling which paves the way for adding a large number of new scalers for pixel art graphics. The rendering options are now the same for all types of scaling.\n[/list]\n\n[h2]What has been removed:[/h2]\n[list]\n[*] Shortcut support;\n[*] Alignment option;\n[*] Hide cursor option;\n[*] Multi-display option;\n[*] Anti-aliasing option;\n[*] Low latency option.\n[/list]\n\nIf you miss the previous version 1.6.0:\nSteam > Library > Lossless Scaling > Properties > Betas > legacy1.6 - Lossless Scaling 1.6.0\n\nTo discuss the new version go [url=https://steamcommunity.com/app/993090/discussions/0/3194737632275000212/]here[/url] \n"
+        },
+        {
+            "title": "1.6.0 released - NVIDIA Image Scaling is here!",
+            "date": "2021-11-18 05:45:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4227186657140549145",
+            "notes": "Added another great upscaler - NIS (NVIDIA Image Scaling). \n\nNotes:\nThe sharpness setting is unified for both FSR and NIS in the range [0–1.0], where 1.0 is the maximum sharpness.\n\nHave fun!"
+        },
+        {
+            "title": "1.5.7 Released",
+            "date": "2021-09-13 09:13:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014731809420506",
+            "notes": "This is the 20th update since the release of the first version 1.4.0 with FSR support. I decided to post it as a major update to tell about the main changes that happened during this time for those who do not follow the forum.\nThe main efforts were spent on polishing the program, getting rid of bugs, improving stability and performance. Not without new features. Here are the main changes since version 1.4.0:\n- The UI has been changed to better differentiate the settings of the scaling factor from its type and options for this type.\n- LS now almost does not consume CPU time (about 1-2%). In the original version, it fully loaded one logical core.\n- Added an optimized version of the FSR, which can be much faster than the original and is well suited to weaker GPUs.\n- Added optimizations that reduced GPU usage by up to 20%.\n- Added option to reduce latency, which allowed to get latency comparable to exclusive fullscreen.\n- Added HDR support for hardware and games that support it.\n- As well as many bug fixes and improvements for the stability of the program.\n\nThank you for helping with your advice, suggestions and bug reports! I will try to please you further. \n\n1.5.7 changes:\n- Performance optimizations.\nOn my hardware, LS now uses 12% / 20% less GPU for FSR / FSR Lite, respectively, and 20% less VRAM when scaling 1440p to 4k. Let me know how it works for you.\n\n- LS now handles changing game resolution when scaling.\nYou can change the resolution in the game settings while scaling. Note that the output resolution will not change in this case, so in essence you will be changing the scale factor."
+        },
+        {
+            "title": "1.4.0 released - AMD FSR is here!",
+            "date": "2021-08-01 05:05:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038025597321900111",
+            "notes": "- Added AMD FSR 1.0 scaling type;\n- LS is now run with administrator privileges by default to set the GPU scheduling priority; \n\nNotes:\nAMD FSR 1.0 is a GPU demanding type of scaling compared to integer scaling, but produces a higher quality image. Depending on your GPU and target resolution, it can consume significant resources. But in most cases it is advisable to use it for modern 3D games.\nFor the best result, AMD FSR requires the input image to be well antialiased as well as be noise-free (turn off various post-effects that create noise). It's designed to be used in [1.0-2.0] scaling factor range, the less number you select the better quality you get. AMDs quality presets for native implementations are:\n[list]\n[*] 1.3x - Ultra Quality\n[*] 1.5x - Quality\n[*] 1.7x - Balanced\n[*] 2.0x - Performance\n[/list]\nPlease do not compare this with a native game implementation, because the LS post-scaling method may have performance and quality disadvantages.\n\nThere is a lot of new code in this update, and I would like to know how it works on your PC. Please leave your feedback in this [url=https://steamcommunity.com/app/993090/discussions/0/3053989078739351832/]thread[/url]."
+        },
+        {
+            "title": "1.3.2 released",
+            "date": "2020-01-21 12:48:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3690071589859827741",
+            "notes": "- Fixed bug in \"Cursor speed\" calculations. When you turned off \"Enhanced Pointer Precision\" in the mouse settings in Windows, the sensitivity calculation was incorrect;\n- Fixed gray window background in high contrast mode;\n- When starting Lossless Scaling with arguments, \"path\" is now an optional argument. Also Lossless Scaling will start minimized."
+        },
+        {
+            "title": "Integer Scaling from AMD!",
+            "date": "2019-12-10 11:26:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2587811707184339894",
+            "notes": "AMD released the Radeon Software Adrenalin Edition 2020 Driver with Integer Scaling support for games. Unlike Nvidia or Intel, who made this feature available only for the new generation of their graphics cards, AMD has delivered Integer Scaling to graphics cards from 2011!\nA good move from AMD, I congratulate all gamers on this event!"
+        },
+        {
+            "title": "1.3.1 released",
+            "date": "2019-11-01 08:23:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2451574645861452894",
+            "notes": "- Now you can use \"Force resize\" while scale factor is 1;\n- Changed \"Cursor speed\" calculations. Windows mouse sensetivity is set as integer. There used to be a ceiling of new sensitivity, but now it is rounded."
+        },
+        {
+            "title": "1.3.0 released",
+            "date": "2019-10-05 10:37:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2426802221726285386",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/34089147/4d03be904a6ba461c9c6e553b98daab6695b843f.png[/img]\n\n- Now you can use the nearest neighbor option for the Auto setting. This option will calculate a non-integer scale factor to scale your game to full screen while maintaining the aspect ratio.\n- The performance of the multi-display mode for screens with a high refresh rate has been improved.\n- The Force Resolution setting has been renamed to Force Resize, as it matches more with what it actually does. See readme for more explanation.\nIf you use command line arguments, note that the 'forceResolution' argument also changed to the 'forceResize'."
+        },
+        {
+            "title": "1.3.0 Beta - For multi-display users",
+            "date": "2019-08-25 16:02:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416665403781467705",
+            "notes": "Everyone who has multiple displays, especially if the main display has a high refresh rate, please test this beta for performance. Changes were made, a user with a 144 hz monitor confirmed that his problems with a jerky mouse and low FPS were solved. Please feedback here about your results, but remember that this mode generally works slower than the single-display mode, so compare the release version of the app and this beta between each other in same mode.\r\nTo participate in beta, go to Library - Software - Lossless Scaling - Properties - Betas and select \"beta\" from the drop-down list. Beta version will automatically download to your computer and replace the previous one. To return the release version of the app, select \"NONE\"."
+        },
+        {
+            "title": "Nvidia adds integer scaling support.",
+            "date": "2019-08-21 07:44:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416665403765764967",
+            "notes": "Following Intel, which announced that will support integer scaling in its new Graphics Gen11, Nvidia just added support for integer scaling to its drivers... for Turing only.\r\nDespite the fact that in general these are positive changes for the industry, it is amazing how the marketing of graphics card manufacturers works in the conditions of increased competition in the market. It’s ridiculous to read Nvidia's statement that only in Turing there are special cores that allow integer scaling to be implemented, or Intel's that Gen9 graphics lack hardware support for nearest neighbor algorithms (like 2 * 2 = 4 algorithm).\r\nNevertheless, until recently we didn’t have this either. The more community will use it, mention it, put pressure on graphics card manufacturers, the faster the day will come when everyone will have the opportunity to freely use integer scaling on any graphics card. Up to this point, you can use the free Lossless Scaling Demo with the auto function, which does exactly the same as the new Nvidia drivers, except for scaling the desktop."
+        },
+        {
+            "title": "1.2.9 released",
+            "date": "2019-08-12 09:28:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412160539868555358",
+            "notes": "This is a bug fix release.\r\nMost of the bugs appeared with the Windows 10 version 1903 release, such as inability to turn off anti-aliasing as soon as you turned it on and a jittery mouse in the multi-display mode. This has been fixed.\r\nAlso fixed a bug leading to inaccurate window centering when using 1x scale."
+        },
+        {
+            "title": "1.2.8 released",
+            "date": "2019-07-01 08:19:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440581225262",
+            "notes": "Now you can create shortcuts to start and scale the game easily without launching the app and selecting individual settings for each game. Note: only games that run without a launcher are supported (i.e., if launching the .exe file of the game will directly launch the main game window).\r\n\r\n[b]Supported arguments[/b]\r\nThe value after the argument is default. Possible options are in brackets.\r\n[list]\r\n[*]-path \"\" \r\nThe only required argument. This must be the absolute path to the executable file of the game, enclosed in quotation marks.\r\n[*]-args \"\"\r\nSpecify this if the game requires special arguments to run.\r\n[*]-auto false [true] \r\n[*]-scaleFactor 2.0 \r\n[*]-alignment center [top] [bottom] \r\n[*]-forceResolution false [true] \r\n[*]-antiAliasing false [true] \r\n[*]-multiDisplay false [true] \r\n[*]-clipCursor true [false] \r\n[*]-cursorSpeed true [false] \r\n[*]-hideCursor false [true] \r\n[/list]\r\n\r\n[b]Stortcut example[/b]\r\nTarget: \"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Lossless Scaling\\LosslessScaling.exe\" -path \"C:\\Program Files (x86)\\Steam\\steamapps\\common\\FTL Faster Than Light\\FTLGame.exe\" -scaleFactor 3.0 -antiAliasing true\r\n\r\nStart in: \"C:\\Program Files (x86)\\Steam\\steamapps\\common\\FTL Faster Than Light\"\r\n"
+        },
+        {
+            "title": "1.2.6 released",
+            "date": "2019-02-08 07:05:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368388292015",
+            "notes": "Changelog:\r\n- Added alignment option.\r\nIn some situations, you can use a larger integer scale factor to fill the screen more, but the game may slightly exceed the height of the screen. With the alignment option you can decide which part of the image will be cropped.\r\n\r\n- LS now prints a focused window.\r\nIn the case where the game loses focus, you can find out the current focused window.\r\n\r\n- Fixed crash on German locales."
+        },
+        {
+            "title": "Lossless Scaling Demo",
+            "date": "2019-02-05 06:55:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368377426240",
+            "notes": "Now you can download the free demo version of Lossless Scaling. It allows you to use only the “Auto” function - automatic selection of an integer scale factor for your game, all other settings are set by default and cannot be changed.\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34089147/20f0e877ddd41827bd480abdac004fe2efd156ed.png[/img]\r\n\r\nI wanted to make a demo not just as a demonstration of the full version, but also as something useful too. Therefore, the demo version is not limited in time, so depending on your needs it can be used for many games."
+        },
+        {
+            "title": "1.2.5 released",
+            "date": "2019-01-31 16:10:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2462808987392551518",
+            "notes": "Changelog:\r\n- Added \"Auto\" option.\r\nCalculates the maximum integer scale factor that can be used to fit the game on the screen. If you do not need the use of a non-integer scale factor or the \"Force Resolution\" option, you can use this option in order not to calculate the scale factor every time.\r\n\r\n- Fixed a bug where the window border could not be hidden in some games, in some other games this could cause image distortion (Game Maker games).\r\n\r\n- Fixed a bug with incorrect window position when running a game on secondary display without using \"Multi-display\" setting.\r\n\r\n[url=https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34089147/30099f669bad82dc8ec221da84e685c2f61f4dc6.png][img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34089147/36a1202ffd403ad8c7c828c86ecdfd40e206e758.png[/img][/url]"
+        },
+        {
+            "title": "1.2.4 released",
+            "date": "2019-01-26 18:46:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2425653583391014619",
+            "notes": "Changelog:\r\n- Multi-display support;\r\n- 'Clip Cursor' option (for multi-display users);\r\n- Mouse speed now taken into account. Can be disabled via option;\r\n- Custom scale factor (non-integer values can be used);\r\n- New \"Scale in 5 seconds\" button. Usuful for games which supress hotkey;\r\n- Fixed a couple of bugs.\r\n\r\nNotes:\r\nMultiple display support is implemented through a different API and is slower. You may not notice it, but it is recommended not to enable it for modern 3D games. For other games, multi-display support should be revealed to the full. Also in this case, it does not force vertical sync, so you may want to enable it in the game.\r\nUp to this point, the program has scaled the game, but did not change the mouse movement speed. The mouse movement from edge to edge of the display was essentially a movement from edge to edge of the game window. The new option allows you to slow down the mouse in proportion to the scale factor, so that the mouse movement speed corresponds to that in the full-screen game.\r\nThe new \"Scale in 5 seconds\" button allows you to scale the games that suppressed the pressing of a hotkey and required the launch of the program as administrator or did not work at all."
+        },
+        {
+            "title": "Multi-display users are invited to the beta test",
+            "date": "2019-01-11 12:20:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2711631078217817718",
+            "notes": "Multi-display support is finally here. To participate in open beta testing, go to Library - Software - Lossless Scaling - Properties - Beta and select \"beta\" from the drop-down list. Version 1.2.0 Beta will automatically download to your computer and replace the previous one. To return the release version of the application, select \"NONE\".\r\nMulti-display support will be disabled if you select 'Anti-aliasing' option.\r\nPlease send bug reports and feedback to losslessscaling@gmail.com\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34089147/01ad0036e4011cd1100c87d324a185ce5ad7d798.png[/img]"
+        },
+        {
+            "title": "App released",
+            "date": "2018-12-28 06:48:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111312223179",
+            "notes": "30% launch discount!\r\n\r\nMany thanks to all beta testers for your feedback and reports.\r\n\r\nHappy Holidays!"
+        }
+    ]
+}

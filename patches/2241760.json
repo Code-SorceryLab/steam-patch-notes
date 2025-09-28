@@ -1,0 +1,936 @@
+{
+    "appId": "2241760",
+    "total_notes": 155,
+    "notes": [
+        {
+            "title": "July 4th Update - Refined Physics and Patriotism",
+            "date": "2025-07-07 01:38:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891853680",
+            "notes": "[p][img src=\"{STEAM_CLAN_IMAGE}/43344896/fb20c33ad2c6b972ffb2d45773f427a5d35cad29.png\"][/img][/p][p]Here's a breakdown of new things to look forward to with today's update:[/p][p][/p][p]PROGRAMMING[/p][p]The entire online multiplayer endeavor took 6 months and multiple angles of attack to work well with offline gameplay as well. It's robust, fast, and provides a great foundation for future online modes. We will go live in a few weeks.[/p][p]All scripts have been refined to run more efficiently per clock cycle, and the vehicle physics are noticeably more fun! The way they intersect with the ground has been improved as well. [/p][p]The suspension and wheels hug and react to the ground better. Not to mention the A.I. Competitors are smarter drivers now. This is more behind the scenes, but more controls were added so that we can customize the 3rd person camera positions and how much vehicles yaw, pitch and roll mid-air now.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/43344896/2b69698f181000df0a363a3b6bc5668400d9ce5d.png\"][/img][/p][p][/p][p]LEVELS[/p][p]Cave Dweller lighting and reflection maps have been given another round of polish to keep the track exciting, telegraph upcoming turns, but still provide low light challenge and thrills.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/43344896/33e16b95cc4dbf01f7406204ed5f090889aa2793.png\"][/img][/p][p]VEHICLES[/p][p]The War Hawk vehicle is part of the game roster now.[/p][p]Patriot Oxide version 2 is now in the game.[/p][p][/p][p]VFX[/p][p]Foliage system updated for better wind effects and less strain on the CPU.[/p][p][/p][p]AUDIO[/p][p]Music tracks Leave You Far Behind (Reborn, 2025), Home to Seattle, All's Well in Roswell and Call of the Wild were updated.[/p][p]All music tracks were mastered for use in gameplay such that most of the gameplay sound effects are still present in the mix.[/p][p][/p][p][/p]"
+        },
+        {
+            "title": "Build 1389 - Carnage, Destruction and Polish",
+            "date": "2025-01-26 10:48:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505406441",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/43344896/397bca2ef1bfecc66395388cad56a2e179ca0923.jpg[/img]\n\nHey everyone, here's some updates on what has changed with MotorCubs RC since early December. Online multiplayer lobbies work, and online gameplay is being chipped away behind the scenes. We expect to make that mode public within the next month!\n\n[b]Network and Multiplayer Improvements (hidden for public builds):[/b]\n[list]\n[*] Switched to using NetworkRigidbody3Ds for all car models for better multiplayer synchronization.\n[*] Human players can now drive in multiplayer mode.\n[*] Significant work on multiplayer stability, including reducing lightmap sizes to prevent network drops.\n[*] \n[/list]\n\n[b]Lighting and Visual Enhancements:[/b]\n[list]\n[*] New lighting bake for the Cave Dweller level with updated light settings.\n[*] Reduction in lightmap sizes across various levels to optimize performance (e.g., Charles Run, Game of Thorns, Guttural Crack).\n[*] Added and adjusted reflection probes in Cave Dweller.\n[/list]\n\n[b]Physics and Vehicle Mechanics:[/b]\n[list]\n[*] Updated control values for specific vehicles like Patriot Oxide, adjusting speed, steering, and jump impulse.\n[*] Fixed and optimized physics-related issues, including impact particles, terrain interaction, and vehicle respawn mechanics.\n[*] Added new explosion prefabs and adjusted explosive forces for vehicles.\n[*] Vehicles now split into multiple pieces after dying if another car drives through them.\n[/list]\n\n[b]UI and User Experience:[/b]\n[list]\n[*] Numerous updates to the user interface, including race UI, lobby navigation, and menu screens.\n[*] Added features like nametags, boost gauges, and improved online lobby management.\n[*] Players can vote for Level A, Level B, or Random level in a lobby.\n[*] Implemented new sounds for vehicle interactions and environment detection.\n[/list]\n\n[b]Gameplay and Scene Management:[/b]\n[list]\n[*] Fixed scene loading and level transitions, ensuring all levels load correctly in multiplayer via Photon.\n[*] Updated car spawning mechanisms, ensuring vehicles start at the correct position.\n[*] Enhanced gameplay mechanics like jumping, steering, and skid physics.\n[*] Tire skids are visible from Balanced quality mode upward.\n[/list]\n\n[b]Performance and Bug Fixes:[/b]\n[list]\n[*] Optimized camera settings, collider behaviors, and UI navigation for smoother gameplay and menu interaction.\n[*] Fixed numerous bugs related to vehicle models, track selection, and player inputs.\n[*] Added and updated scripts for various game mechanics like car destruction, UI responsiveness, and player management.\n[/list]"
+        },
+        {
+            "title": "Build 1144 - Programming Framework Updates",
+            "date": "2024-12-08 10:25:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795705147",
+            "notes": "We've made amazing strides in the speed and efficiency of the programming scripts in MotorCubs RC. Here's a short summary of the improvements made since build 1029:\n\n[list]\n[*] Playfab allows for offline gameplay, useful for Steam Deck travel play.\n\n[*] Vehicle A.I. is aware of other cars nearby.\n[*] Vehicle A.I. fuzzy logic when it feels it's stuck in a wall.\n[*] Vehicle A.I. can be taught where to jump.\n[*] Vehicle A.I. decisions are hexadecimal instead of string for faster processing.\n\n[*] Vehicles tilt forward in mid-air to align better with terrain.\n[*] Vehicles can recover from being upside down or on their side by steering left or right.\n[*] Vehicle wheels hang in mid-air.\n[*] Vehicles are able to clutch flip, useful after a pit maneuver is executed on the player.\n[*] Vehicle turning reduced by 30% if fewer than 3 wheels are touching the ground.\n[*] Dead vehicle chassis' can be driven into and ripped apart for a Bear Biscuit reward.\n[*] When steering in mid-air the vehicle tilts its yaw, which helps when landing on tilted surfaces.\n[*] Vehicle tires catch on fire when driving too close to an explosion.\n[*] Steer smoothing implemented for more nuanced steering.\n[*] Vehicle physics have shorter calculations for faster frame response time.\n\n[*] Pause Game function implements time slowdown to help maintain vehicle velocity and script stability.\n[*] Custom particle emitter to respect time slowdown.\n[*] Radio volume reduces when Paused.\n[*] Cabin View Camera code less prone to rigid body issues when transitioning back to 3rd Person Camera.\n[*] Menu caches selections for faster processing.\n[*] Respawn function now has modular prefabs: Explosion, Car Chassis, Teddy Bear, empty slot for future effects.\n[*] Car Path Follow function no longer searches hierarchy for premade targets.\n[*] Massive refactoring of the waypoint list, respawn manager and other startup components for a 9x faster race load time.\n[*] CarPathFollow no longer searches hierarchy for premade targets, not needed in level design anymore.\n[*] UI buttons have more stickiness with the joystick.\n[*] Set foundation for Player 2 to earn Bear Biscuits too.\n\n[*] Level 9 \"Cave Dweller\" is playable while we work through the initial layout design process.\n[/list]\n\nWe currently only use the Patriot Oxide for A.I. vehicles until we're 100% happy with how they drive and react. Then will slowly roll out the other vehicles for the A.I. to select from through the end of December.\n\nThere's still a few more optimizations to make with the menu and car controller scripts, but the game runs a lot better on the CPU side compared to a month ago. Online multiplayer work depends on all these single player systems running as fast as possible with clean code, that way the server isn't slowing the players down or causing its own issues. Expect Online Quickplay to be available to test in early January.\n\n\n\n\n"
+        },
+        {
+            "title": "Build 1029 Hotfix 2 - FSR Toggle and Presets",
+            "date": "2024-10-30 18:21:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173879826",
+            "notes": "The Settings -> Graphics page in the Main Menu enables the player to automatically change their FSR Quality setting by choosing a different Graphics Quality Tier such as \"Simple\", \"Steam Deck\" or \"Fantastic\".\n\nThese settings have subtle differences, such as Texture quality, Shadow quality, Lighting Method (per vertex or per pixel for secondary lights), Resolution of the Directional Sunlight, etc.\n\nThe FSR Toggle button right below them allows the user to override the Quality Presets for FSR set by those graphics quality tiers. So feel free to mix and match Graphics vs FSR quality going forward!\n\nAnd yes, Fantastic Quality has screen space ray traced reflections enabled. It's intensive so definitely try toggling FSR to the level that you prefer depending on your graphics card."
+        },
+        {
+            "title": "Build 1014 - Major New Features",
+            "date": "2024-10-25 19:49:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911870878",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/43344896/326e02c2b6c75e919a5cb63d30de16e86a193d4b.jpg[/img]\n\nThanks for your many months of patience! We've made a lot of changes to the core programming of the game. We really thought about the game loop of entering, finishing, and exiting a race and decided to amplify the experience with the following changes:\n\nBear Biscuit coins are earned depending on your placement in a race:\n[list]\n[*] 50 Bear Biscuits for 1st Place\n[*] 20 Bear Biscuits for 2nd Place\n[*] 10 Bear Biscuits for 3rd Place\n[/list]\n\nThose earnings are reflected in the Results Page with an animated counter AND a drop of physical Bear Biscuit Coins onto the Podium, occasionally knocking the cars off! We even have an End of Race Announcer voiced by the talented Dela, who can be found here:\n\n[url=https://delbellzva.carrd.co/]https://delbellzva.carrd.co/[/url]\n\nAnd yes, Bear Biscuits found off-track get included with your Podium Placement earnings once you arrive on the Main Menu.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/135bff582cb9a81c927a73a8c193fc2446e07405.jpg[/img]\n\nA lot of thought has been put into the life cycle of vehicles between spawning into a race and either overloading from boost or falling off a cliff. So we upgraded all the shader materials and programmed in some new features. The vehicles build up dings and dents with every car and object impact. And when the vehicles drive through mud they build up a thick layer of mud on the body, tires and interior.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/1e575fb4e062969c014a3489d561c07560dd478a.jpg[/img]\n\nYou'll also get to see our new Mud Spray effect in action. It looks really dark on Guttural Crack but that's because we did so much post processing with the camera exposure, so expect that to be fixed next week.\n\nSpeaking of fixes, the foliage is a lot sharper because we stopped streaming in textures and billboards for foliage. There's a slight performance cost, but way less pop-in and the foliage feels fuller. We'll actually have to trim them down soon! Also the foliage has baked lighting now, which helps it sit in the environments a lot better.\n\nCactus doesn't have the ability to destroy vehicles right now since we rebuilt foliage from scratch, so take advantage of your invincibility while you can.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/cae5b5520bd9a2853796d26163c9c3067c5b7074.jpg[/img]\n\nThere's been a small under the hood change to respawning where we don't call game objects directly, which is good for performance. A lot of variables and game objects have been serialized for performance gains as well. Sadly we had to ditch our Object Culling solution due to instability with Unity Editor, so we lost 10-15% of our framerate switching back to the built in Unity culling system. But we still have a lot of optimizing to do for vehicles, props and environment assets. Just need another month for that milestone.\n\nThe Boost Audio was fixed so that it no longer stutters when the player starts boosting from say the middle of the boost bar. The cooldown audio plays when the boost button is released. And the code behind the scenes is just cleaner for boost in general, with separate audio sources for each clip.\n\nWe brought back Depth of Field, which is especially great when playing in 1st Person Mode (R1 Button). And if you haven't raced in 1st person, you haven't lived.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/27029eb33d685694824dd65149af04511099adbd.jpg[/img]\n\nOur new vehicle the Floor Hawk isn't playable yet but it will occasionally harass you on the track. Richard did an amazing job making this vehicle, and it will ultimately be the final vehicle of the game.\n\nThanks for reading this long ass post and we hope you enjoy this update!\n\n"
+        },
+        {
+            "title": "Build 863b - Better Compiled Build",
+            "date": "2024-07-14 02:54:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704275676092",
+            "notes": "Hey everyone, we're getting a lot of work done behind the scenes for a potential online multiplayer mode. But in the meantime here's a higher performance version of the game to help tide things over until we have that mode solved. Some systems like boosting cars/a.i. or respawning had to be disabled in the main A pipe build. So for now the suffix \"b\" will indicate the alternate B pipe version of the game with just single player and local multiplayer.\n\nThanks again and we hope you're enjoying the game!"
+        },
+        {
+            "title": "Ristretto Ronin, BiteCoins and More!",
+            "date": "2024-04-25 18:02:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966665901604",
+            "notes": "We've added a new vehicle called the Ristretto Ronin to our lineup and made a whole host of changes to the game:\n\n[img]{STEAM_CLAN_IMAGE}/43344896/571e98e813c749382d3f9c8d2020c2407a08e284.png[/img]\n\n[list]\n[*] Level Selection screen displays best Podium Placement and number of Honeypots discovered per level.\n[*] Race UI is more compact, with streaks to help with readability of text.\n[*] DirectX12 as default Graphics API\n[*] Advanced object culling for more stable framerates on all levels.\n[*] Improved lighting effects on Guttural Crack.\n[*] Improved lighting effects on Sidewinder Spin.\n[*] Minor layout improvements to Guttural Crack.\n[*] Minor layout improvements to Sidewinder Spin.\n[*] Introduction of script that changes bear spectator animations depending on Podium Placement.\n[*] Introduction of BiteCoin collectibles for future vehicle upgrades.\n[*] New Honeypot Collection script can handle 3 honeypots per level.\n[*] Teddy Bears are destructible with high speed impacts.\n[*] Removed bolts from car explosions until performance is improved.\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/43344896/4a27ad5e2e1a0febc203715f82ec63d3ed7d4c71.png[/img]"
+        },
+        {
+            "title": "Dual Sense Controller Support",
+            "date": "2024-02-19 16:32:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544508326836",
+            "notes": "Hey everyone,\n\nIt's been a long journey but we finally have Dual Sense (PS5) controller support in the PC and Mac builds, along with universal support of most controllers. We even tapped the RGB LED controls of Dual Sense and look forward to taking full advantage of that controller's API over the next few months."
+        },
+        {
+            "title": "Pit Maneuvers, Radio Stations, Honeypots and Speed Increase!",
+            "date": "2024-01-30 11:40:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046267057007",
+            "notes": "Hello MotorCubs fans, the team has made big changes under the hood!\n\nA sexy new Controller Layout was created for the Loading Screen and Pause Menu.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/98e98543abb89242999af8aeb6ba487597264e00.png[/img]\n[img]{STEAM_CLAN_IMAGE}/43344896/cbd0f59574f54d1faab5a7e6d75f92ed50a806ca.png[/img]\n\nPit Maneuvers can occur when a vehicle is going over 5 mph and gets hit by another vehicle near the rear tires on either side. The built in electronic control stability system will do its best to recover from these hits.\n\nThe Radio stations 98.3 (original songs) and 105.7 (licensed songs) play in parallel, and when the player switches stations with Dpad Up or Dpad Down the timeline is preserved. You'll jump into the middle of whatever song was playing on the other station. But using Dpad Left and Dpad Right you can skip backward or forward through the song playlist. We also animated the Radio Panel UI to appear and disappear with flair.\n\nFSR 3 was fixed to remove a minor memory leak and improve GPU performance with FP16. Definitely test the various quality slider options to find your optimal framerate and resolution!\n\nCavity and Curvature render tech, similar to what's used in Uncharted 4, is layered on to help preserve subtle details in indirect lighting scenarios.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/59c243ce385fc1b039a532a101f7d48808700bae.png[/img]\n\nVehicle Boost Speed was increased to 20% above Max Speed of each vehicle's stats. \n\nVehicle Gravity and Center of Gravity Shift were increased to compensate for the Boost Speed increase, otherwise vehicles would flip backwards from the air draft off of jumps.\n\nThe 1st person camera can roll around and get hit by vehicles after the player's vehicle explodes.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/2dc40680e6e32be7876f35f1615c342c7975fd52.jpg[/img]\n\nNew Honeypot model looks really good.\n\nHoneypot locations and hidden paths were updated on Gasoline Oasis, Game of Thorns and Arch Angel.\n\nTiny pebbles come off the vehicle tires.\n\n"
+        },
+        {
+            "title": "Cabin View Camera and Zen Garage",
+            "date": "2024-01-16 17:14:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510139320055",
+            "notes": "We've made major changes to the game on PC and Steam Deck:\n[list]\n[*] L1 creates Car Honk sound.\n[*] If Vehicle Class equals Sport, Mud Plugger or Titan the Honk scares vehicles out of the way.\n[*] Steam Deck volumetric fog support added.\n[*] Optimized Gasoline Oasis for Steam Deck.\n[*] Layout changes to final turn of Gasoline Oasis.\n[*] More efficient light probe count for Game of Thorns.\n[*] Game of Thorns is 4 laps now.\n[*] Gasoline Oasis is 2 laps now.\n[*] R1 switches the camera view.\n[*] Cabin View Camera and 3rd Person Camera have physics after vehicle respawns.\n[*] Vehicle handling and body sway are smoother.\n[*] Vehicle Dust emission behaves more realistically.\n[*] Vehicle tires emit small pebbles as they drive.\n[*] Zen Garage scene added to Track List with new music.\n[*] Fixed behind the scenes errors related to impacts and respawns.\n[/list]"
+        },
+        {
+            "title": "Build 685 - FSR 3.0 Upgrade and Honking",
+            "date": "2024-01-10 17:43:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510783579248273982",
+            "notes": "We've upgraded from the official FSR 1.0 provided by Unity and gone with a custom implementation of FSR 3.0! That's right, we skipped 2.0 because we were already fashionably late to the first party.\n\nWith FSR 3 we're getting 90-120 FPS on Game of Thorns on a Mobile 3080Ti.\n\nWe also added a Honk feature to the L1 button. Depending on the vehicle class you might see vehicles react to the honking..."
+        },
+        {
+            "title": "Build 679 Performance Adjustment",
+            "date": "2024-01-06 17:28:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585189684227",
+            "notes": "[list]\n[*] Vehicle Body LODs are added, and Vehicle Wheel LOD distances are adjusted to be more performant.\n[*] Number of MipMap texture renderers is reduced from 512 to 256 for all quality settings for less CPU load.\n[*] FSR Scaling is 0.5 on Fastest/Fast\n[*] FSR Scaling is 0.55 on Simple\n[*] FSR Scaling is 0.6 on Good\n[*] FSR Scaling is 0.65 on Great/Fantastic\n[/list]"
+        },
+        {
+            "title": "Anniversary Year 1 Update",
+            "date": "2024-01-02 15:10:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585174753577",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/43344896/c2267ec76e31040843291ba5005aa69826ce7828.png[/img]\n\nToday's Build 666 marks the 1 year anniversary of our Early Access release and represents hundreds of development hours to refine and improve the gameplay experience of MotorCubs RC. Over the next 6 months the full roster of 12 Levels and 24 Vehicles will make this one of the best Arcade Racing experiences in 2024. Framerate will continue to improve and features that make the game more fun will be sprinkled in along the way. Thank you for your support and we're looking forward to leaving Early Access on July 4th 2024.\n\n[img]{STEAM_CLAN_IMAGE}/43344896/0029e1d69f102559be6721b2957c469a62386276.png[/img]\n\n[b]2023 Update Summary[/b]\n\nSteam Achievements.\nSteam Deck quality setting.\nAbility to clear save data.\nAbility to view Min, Max and Average framerate in-game.\nCreation of a gamepad Back Button.\nGamepad menu support via the D-pad.\nClear progression of unlockable vehicles and levels.\nUI icons showing which level or vehicle was unlocked via Podium Placement in a race.\nUI icons showing which level or vehicle was unlocked via Honeypot discovery in a race.\nMultithreaded batched rigid body physics for interactive rocks and props.\nAsynchronous skid mark calculations.\nAbility for the AI to boost just like the Player.\nAdded mud physics zones that also generated electric sparks in the Sport and Compact vehicles since they hate the mud.\nSquashed a bug where a vehicle would respawn multiple times at once.\nSquashed a bug where Player 2 could affect Player 1's controls.\nSquashed a bug where vehicle physics would re-enable after being paused past 10 seconds.\nSquashed a bug where the podium camera would slowly fall to the ground.\n\n"
+        },
+        {
+            "title": "Build 643 - D-pad Support and Game of Thorns Updates",
+            "date": "2023-12-20 17:39:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585127751549",
+            "notes": "[list]\n[*] Added D-pad Support for the Menus.\n[*] Keyboard Boost button changed to Left Shift.\n[*] Game of Thorns set dressing updated.\n[*] Game of Thorns podium placement moved.\n[*] Gasoline Oasis podium placement moved.\n[*] Announcer audio distance changed from 150 to 50 units from source.\n[/list]\n[img]{STEAM_CLAN_IMAGE}/43344896/524c2fd9674a4243172ea7cac2aa6a5a17f7c70b.png[/img]"
+        },
+        {
+            "title": "Build 637 - Game of Thorns Update, Camera Adjustments",
+            "date": "2023-12-19 03:22:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219990076945",
+            "notes": "[list]\n[*] Game of Thorns now has background buttes.\n[*] Filled in level gaps for Game of Thorns.\n[*] Camera starts 6% closer.\n[*] Camera settings consistent across all levels.\n[/list]"
+        },
+        {
+            "title": "Build 635 - Game of Thorns Player Count of 24, Minor Fixes",
+            "date": "2023-12-18 14:22:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219988101418",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/43344896/6a103f3ee833e6c34e5c30bac7f8ccd9c6410e3a.png[/img]\n[list]\n[*] Game of Thorns player count raised from 8 to 24.\n[*] Boost gauges have proper heat and cooldown values in Game of Thorns.\n[*] Menu fixed to auto highlight Resume button in Game of Thorns.\n[*] Additional traffic cones and tires added to Game of Thorns.\n[*] Reflections fixed for the podium on Game of Thorns.\n[*] One obstacle rock sticking out of the ground has a smoother collision in Game of Thorns.\n[*] AI is now aware of a key cactus location to reduce pileups on the final turn of Game of Thorns.\n[*] Traffic cones now float in the water.\n[*] Tires now float in the water.\n[*] Motor Storm achievements added.\n[*] Twisted Metal achievements added.\n[*] Load screen image fix pending to allow for longer Changelists.\n[/list]\n\n"
+        },
+        {
+            "title": "Windows Build 631 - Game of Thorns is Playable",
+            "date": "2023-12-17 22:56:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219985758458",
+            "notes": "Hey everyone, here's what's new with the game:\n\n[img]{STEAM_CLAN_IMAGE}/43344896/a13efe7b9aab98c0c97fa678a04754557151af01.png[/img]\n\nKeyboard input responsiveness is improved with faster return to Neutral.\nGame of Thorns level is playable and should already be unlocked if you got 3rd place or higher on Gasoline Oasis (formerly known as Charles Run).\nVehicles now create water ripples.\nAll level unlock achievements are available.\nAll vehicle unlock achievements are available.\nAll honeypot unlock achievements are available.\nThe song \"Gasoline Oasis\" has been applied to the level \"Gasoline Oasis.\"\nThe song \"Right Back\" has been applied to level \"Game of Thorns.\"\nRemoved one announcer tower from Gasoline Oasis.\n\n"
+        },
+        {
+            "title": "Windows/Mac Build 620 - Tornado Effect Sound and Audio Tuning",
+            "date": "2023-11-29 23:18:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983659711397",
+            "notes": "Windows and Mac builds are synced to Build 620.\n\n[list]\n[*] Tornado and wind gust audio is quieter and has spatial falloff in Sidewinder Spin.\n[*] Music on Sidewinder Spin is reduced 10%.\n[*] Music on Granite God Mesa is reduced 10%.\n[*] Music on Dive in the Hive is reduced 10%.\n[*] Swapped in Lewis's adjusted Announcer Audio to sound more like a megaphone.\n[*] Achievements are still being programmed and a work in progress.\n[/list]"
+        },
+        {
+            "title": "Windows Build 608 - Tornado and Dust on Sidewinder Spin",
+            "date": "2023-11-07 03:16:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5288974951223997994",
+            "notes": "We're testing out the visual aspect of the Tornado and Dust on Sidewinder Spin. Physics effects to come later after R&D."
+        },
+        {
+            "title": "Windows Build 604 Hotfix 2",
+            "date": "2023-11-07 03:06:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5288974951223974065",
+            "notes": "New splash screen"
+        },
+        {
+            "title": "Mac Build 604 Hotfix 1",
+            "date": "2023-10-31 10:00:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621594439531",
+            "notes": "Minor fixes to the in-game scripts to be more Mac compatible."
+        },
+        {
+            "title": "Mac Build 604 - Explosion Wreckage",
+            "date": "2023-10-30 19:51:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621592287712",
+            "notes": "[list]\n[*] The Granite Wildcat doesn't clip the ground anymore.\n[*] The Granite Wildcat XT has improved speed and handling compared to the base model.\n[*] Polygon reduction was done for both Wildcats. LODs will be reinstated for the Wildcats in the next update.\n[*] Explosions have better visibility now.\n[*] Additional minor fixes to Dive in the Hive.\n[*] Explosions use fewer particles per second for improved framerate.\n[*] Patriot Oxide and Patriot Oxide Fury leave behind vehicle body after respawn.\n[*] Teddy Bears are visible again from within the Vehicles.\n[*] Patriot Oxide explosion is longer and more complex.\n[*] Dive in the Hive has additional cactus and waypoint updates.\n[*] The Patriot Oxide now leaves behind a burning car body when it explodes.\n[*] Patriot Oxide explosion now has bolts and burning teddy bear closer to the explosion source position.\n[*] The teddy bears from vehicle explosions are now on fire!\n[*] Charles Run has additional foliage added to the oasis section.\n[*] Arch Angel has some respawn zone fixes and waypoint fixes.\n[*] Explosion debris has bolts.\n[*] Charles Run has additional Cactus.\n[*] \n[/list]"
+        },
+        {
+            "title": "Windows Build 604 - Granite Wildcat Doesn't Clip Ground",
+            "date": "2023-10-26 13:45:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621576785253",
+            "notes": "Small fix, but the Granite Wildcat doesn't clip the ground anymore, the Granite Wildcat XT has improved speed and handling compared to the base model, and some polygon reduction was done for both Wildcats. LODs will be reinstated for the Wildcats in the next update."
+        },
+        {
+            "title": "Windows Build 602 Hotfix 1",
+            "date": "2023-10-23 13:09:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989058130158",
+            "notes": "A texture was accidentally assigned to the explosion light expansion sprite. Explosions have better visibility now."
+        },
+        {
+            "title": "PC Build 602 - Dive in the Hive Updated, Explosions More Efficient",
+            "date": "2023-10-22 00:54:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989052626916",
+            "notes": "[list]\n[*] Additional minor fixes to Dive in the Hive.\n[*] Explosions use fewer particles per second for improved framerate.\n[*] Patriot Oxide and Patriot Oxide Fury leave behind vehicle body after respawn.\n[/list]"
+        },
+        {
+            "title": "Windows Build 597 - Hotfix 2",
+            "date": "2023-10-21 22:06:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989052202307",
+            "notes": "[list]\n[*] Teddy Bears are visible again from within the Vehicles.\n[*] Patriot Oxide explosion is longer and more complex.\n[*] Dive in the Hive has additional cactus and waypoint updates.\n[/list]"
+        },
+        {
+            "title": "PC Build 597 Hotfix 1 - Patriot Oxide Exploded Car Parts",
+            "date": "2023-10-21 18:22:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989051634903",
+            "notes": "[list]\n[*] The Patriot Oxide now leaves behind a burning car body when it explodes.\n[*] Patriot Oxide explosion now has bolts and burning teddy bear closer to the explosion source position.\n[/list]"
+        },
+        {
+            "title": "Windows Build 597 - Flaming Bears",
+            "date": "2023-10-20 03:13:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989045689573",
+            "notes": "[olist]\n[*] The teddy bears from vehicle explosions are now on fire!\n[*] Charles Run has additional foliage added to the oasis section.\n[*] Arch Angel has some respawn zone fixes and waypoint fixes.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 592 - New Explosion Debris",
+            "date": "2023-10-18 13:54:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989040021799",
+            "notes": "[olist]\n[*] Explosion debris has bolts.\n[*] Charles Run has additional Cactus.\n[/olist]"
+        },
+        {
+            "title": "Mac Build 590 - Arch Angel Fixes",
+            "date": "2023-09-27 17:36:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220291886484692569",
+            "notes": "Same notes as the Windows build today."
+        },
+        {
+            "title": "Windows Build 590 - Arch Angel Minor Fixes",
+            "date": "2023-09-27 11:57:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220291886483834396",
+            "notes": "[list]\n[*] Baked new Traffic Cones DMC on Arch Angel for performance benefit\n[*] Baked new Wood Beams DMC on Arch Angel for performance benefit\n[*] Fixed respawn planes on Arch Angel so that you truly go to heaven\n[*] Lowered backup physics grid collision on Arch Angel\n[*] Added Colliders to Arch Angel turn signs\n[*] Removed erroneous scripts from Scissor Lift prop for performance benefit, fewer errors\n[/list]"
+        },
+        {
+            "title": "Mac Build 589 - Announcers and Physics Update",
+            "date": "2023-09-26 18:25:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220291886481167891",
+            "notes": "[list]\n[*] Better energy preservation of physics collisions.\n[*] Announcers added to Granite God Mesa.\n[*] Announcers added to The Pretzel Drop.\n[*] Announcers added to Dive in the Hive.\n[*] Announcers added to Charles Run.\n[*] New lighting bake to integrate Announcer Tower in Dive in the Hive.\n[*] Additional foliage in Dive in the Hive.\n[/list]"
+        },
+        {
+            "title": "Windows Build 589 - Announcers",
+            "date": "2023-09-26 15:29:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352642921384",
+            "notes": "[list]\n[*] Updated Dive in the Hive foliage\n[*] Added announcer tower to Dive in the Hive\n[*] Added announcer towers to Charles Run\n[*] Added announcer tower to The Pretzel Drop\n[*] Added announcer tower to Granite God Mesa\n[/list]"
+        },
+        {
+            "title": "Windows Build 588",
+            "date": "2023-09-25 00:15:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352636961102",
+            "notes": "[list]\n[*] Rewired updated.\n[*] The Pretzel Drop has more interactive rocks in 3 locations.\n[*] Cars have slight velocity boost from impacts.\n[*] Props now have sound and spark emission.\n[*] Volumetric quality tuned.\n[*] Graphics Setting available from Granite God Mesa pause menu.\n[*] Default resolution is now 2560 x 1440 per tester feedback.\n[*] Patriot Oxide is slightly faster to help players clear the first three levels without a Compact Class car.\n[*] Greater intelligence range for AI on Levels 1, 2 and 3.\n[/list]"
+        },
+        {
+            "title": "Windows Build 587 - Hotfix 2",
+            "date": "2023-09-24 19:10:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352636191094",
+            "notes": "Granite God Mesa - Pause - Graphics Settings now has updated UI graphics to match the rest of the game."
+        },
+        {
+            "title": "Windows Build 587 - Hotfix 1",
+            "date": "2023-09-24 19:07:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352636182932",
+            "notes": "[olist]\n[*] Patriot Oxide and Patriot Oxide Fury are 5% faster to help with Dive in the Hive podium placement.\n[*] New players indicated game is too difficult without Compact Class availability.\n[*] Graphics Settings available in Pause Menu for Granite God Mesa.\n[*] Default Resolution is now 2560 x 1440 to help 4K monitor owners who are using low to mid-range GPUs like Intel Arc.\n[/olist]"
+        },
+        {
+            "title": "Mac Build 587 - Unity 2022",
+            "date": "2023-09-24 14:53:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352635539697",
+            "notes": "[list]\n[*] Upgraded the Mac M1/Intel version to Unity 2022.\n[*] Volumetrics are enabled for Good Graphics and higher now.\n[/list]\n"
+        },
+        {
+            "title": "Windows Build 587 - Sidewinder Spin Update",
+            "date": "2023-09-22 13:32:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352628046684",
+            "notes": "[list]\n[*] Sidewinder Spin now has subtle volumetrics in the lower half of the level.\n[*] Sidewinder Spin has interactive rocks and wood beams close to the finish line.\n[*] Sidewinder Spin has resized and more plentiful foliage.\n[/list]"
+        },
+        {
+            "title": "Windows Build 584 - Hotfix 5",
+            "date": "2023-09-22 02:59:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352626444370",
+            "notes": "Volumetric lighting improved."
+        },
+        {
+            "title": "Windows Build 584 - Unity 2022 Upgrade",
+            "date": "2023-09-21 23:31:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352625915954",
+            "notes": "Unity 2022 upgrade test."
+        },
+        {
+            "title": "Mac Build 584 - Hotfix 1",
+            "date": "2023-09-18 09:11:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588797165925",
+            "notes": "[list]\n[*] Physics sync improved for M1 Pro.\n[*] Honeypot found volume is at 20% now.\n[/list]"
+        },
+        {
+            "title": "Windows Build 584 - Hotfix 1",
+            "date": "2023-09-18 00:40:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588795871637",
+            "notes": "[list]\n[*] Shadowmask distance adjusted to more reasonable distances based on Graphics Quality.\n[*] Honeypot Found volume is now at 20% instead of 100%.\n[/list]"
+        },
+        {
+            "title": "Mac Build 584 - Mega Super Update",
+            "date": "2023-09-17 23:10:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588795644299",
+            "notes": "Jesus, where do we start:\n[list]\n[*] Click and Hover sounds volume fixed on Main Menu.\n[*] Click and Hover sounds added to Pause Menu.\n[*] Music volume reduced on The Pretzel Drop.\n[*] Bear Crowd volume standardized at prefab level.\n[*] Charles Run now has bleachers, and higher resolution light bake.\n[*] All vehicle audio is mixed and rebalanced with new Engine, Skid and Impact sound effects.\n[*] All levels have fewer and fine tuned crowd audio sounds with 15m max listening distance.\n[*] Music in all levels is reduced in volume so that vehicle sounds are primary.\n[*] Lightning sound volume is partially spatial and reduced in volume by 20% in Guttural Crack.\n[*] Confetti sound is 50% volume now with only 50m max listening distance in all levels.\n[*] Teddy Bears now emit dust as they roll around.\n[*] Large interactive rocks now emit dust as they move around.\n[*] Additional colliders for large interactive rocks, more work needed.\n[*] Controller rumbles at Boost Bar 7/8 instead of Boost Bar 6/8, more intuitive warning.\n[*] Dive in the Hive starting line lengthened.\n[*] Erroneous lights in Dive in the Hive removed for better performance.\n[*] Erroneous lights in Arch Angel removed for better performance.\n[*] Light bloom reduced slightly in Sidewinder Spin.\n[*] Minimum brightness threshold adjusted in Sidewinder Spin.\n[*] Less audio clipping in Arch Angel, still more work to be done at starting line.\n[*] All AI in all levels rebalanced to be less aggressive and more focused on the race.\n[*] Additional boost zones added to Charles Run.\n[*] Podium Tracker and Podium Pedestal added to Charles Run.\n[*] Vehicles are aware for small shortcut in Charles Run on Bridge 1.\n[*] New Impact Effects for Compact, Sport, Mud Plugger and Titan vehicle classes.\n[*] New RC Car Motor Effects for Compact, Sport, Mud Plugger and Titan vehicle classes.\n[*] Rebalanced vehicle audio volumes per effect.\n[*] Rebalanced Granite God Mesa crowd volume.\n[*] Rebalanced Granite God Mesa reverb zones.\n[*] Lower volume of Leave You Far Behind on Granite God Mesa.\n[*] Updated Good graphics performance setting to allow 1 additional light.\n[*] Raised the Body Colliders for Granite Wildcat and Wildcat XT.\n[*] Reimported all textures to be 2K resolution across the board.\n[*] Additional foliage and bleachers added to level Dive in the Hive.\n[*] More consistent placement of reflection probes in Dive in the Hive.\n[*] Granite Wildcat and Wildcat XT have higher body collisions to prevent ground clipping.\n[*] Patriot Oxide and Oxide Fury have bigger wheels so they don't sink under ground like before.\n[*] Adjusted lighting at the final turn of Guttural Crack level.\n[*] Added 3 more mud zones to Guttural Crack level for more Titan and Mud Plugger class advantage.\n[*] Good and Beautiful graphics settings support 1 extra light.\n[*] All textures are now 2048 resolution with mip map streaming.\n[*] Dive in the Hive foliage added.\n[*] Dive in the Hive bleachers added.\n[*] Dive in the Hive reflection probes redone.\n[*] Dive in the Hive light baking redone.\n[*] Reduced Granite God Mesa player count to 16 for improved performance.\n[*] Reduced and combined Distant Environment Pieces, reducing overall scene poly count 25%.\n[*] Removed 330 shadow casters from Granite God Mesa.\n[*] Occlusion culling redone for Granite God Mesa.\n[*] Occlusion culling redone for The Pretzel Drop.\n[*] Vehicle Debris resized and given different collision shapes.\n[*] Debris and interactive props go to sleep over time, further helping performance.\n[*] Honeypot Unlock works as intended now.\n[*] Default quality setting is Good so that PCs don't die.\n[*] Vehicle Impact Debris enabled as a test.\n[*] Made changes to the handling of Patriot Oxide so it's not so heavy and catches a little more air after jumps.\n[*] Sidewinder Spin now has physics optimized interactive props, some changes to set dressing and a fixed Podium camera. \n[*] The Graphics Settings has improved Quality options that have granular control over what Post Effects and Rendering Quality is assigned to each of the 6 options. \"Good\" seems well suited for the latest Laptop GPUs.\n[*] More work is being done to make the vehicles handle better. This update changes the wheel size and collision meshes for Grizzly Logger and Grizzly Logger Flower Power.\n[*] \n[/list]"
+        },
+        {
+            "title": "Windows Build 584 - Main Menu Audio Fix, Charles Run Fix",
+            "date": "2023-09-17 17:07:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588794726712",
+            "notes": "[list]\n[*] Click and Hover sounds volume fixed on Main Menu.\n[*] Click and Hover sounds added to Pause Menu.\n[*] Music volume reduced on The Pretzel Drop.\n[*] Bear Crowd volume standardized at prefab level.\n[*] Charles Run now has bleachers, and higher resolution light bake.\n[/list]"
+        },
+        {
+            "title": "Windows Build 583 - Audio Rebalanced",
+            "date": "2023-09-17 03:14:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588792617401",
+            "notes": "[list]\n[*] All vehicle audio is mixed and rebalanced with new Engine, Skid and Impact sound effects.\n[*] All levels have fewer and fine tuned crowd audio sounds with 15m max listening distance.\n[*] Music in all levels is reduced in volume so that vehicle sounds are primary.\n[*] Lightning sound volume is partially spatial and reduced in volume by 20% in Guttural Crack.\n[*] Confetti sound is 50% volume now with only 50m max listening distance in all levels.\n[*] Teddy Bears now emit dust as they roll around.\n[*] Large interactive rocks now emit dust as they move around.\n[*] Additional colliders for large interactive rocks, more work needed.\n[*] Controller rumbles at Boost Bar 7/8 instead of Boost Bar 6/8, more intuitive warning.\n[*] Dive in the Hive starting line lengthened.\n[*] Erroneous lights in Dive in the Hive removed for better performance.\n[*] Erroneous lights in Arch Angel removed for better performance.\n[*] Light bloom reduced slightly in Sidewinder Spin.\n[*] Minimum brightness threshold adjusted in Sidewinder Spin.\n[*] Less audio clipping in Arch Angel, still more work to be done at starting line.\n[*] All AI in all levels rebalanced to be less aggressive and more focused on the race.\n[*] Additional boost zones added to Charles Run.\n[*] Podium Tracker and Podium Pedestal added to Charles Run.\n[*] Vehicles are aware for small shortcut in Charles Run on Bridge 1.\n[/list]"
+        },
+        {
+            "title": "Windows Build 579 - New Audio Effect, Audio Balancing",
+            "date": "2023-09-13 18:22:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5211283418279068108",
+            "notes": "[list]\n[*] New Impact Effects for Compact, Sport, Mud Plugger and Titan vehicle classes.\n[*] New RC Car Motor Effects for Compact, Sport, Mud Plugger and Titan vehicle classes.\n[*] Rebalanced vehicle audio volumes per effect.\n[*] Rebalanced Granite God Mesa crowd volume.\n[*] Rebalanced Granite God Mesa reverb zones.\n[*] Lower volume of Leave You Far Behind on Granite God Mesa.\n[*] Updated Good graphics performance setting to allow 1 additional light.\n[*] Raised the Body Colliders for Granite Wildcat and Wildcat XT.\n[*] Reimported all textures to be 2K resolution across the board.\n[*] Additional foliage and bleachers added to level Dive in the Hive.\n[*] More consistent placement of reflection probes in Dive in the Hive.\n[/list]"
+        },
+        {
+            "title": "Windows Build 572 - Hotfix 2",
+            "date": "2023-09-11 01:22:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482922311461",
+            "notes": "[list]\n[*] Granite Wildcat and Wildcat XT have higher body collisions to prevent ground clipping.\n[*] Patriot Oxide and Oxide Fury have bigger wheels so they don't sink under ground like before.\n[*] Adjusted lighting at the final turn of Guttural Crack level.\n[*] Added 3 more mud zones to Guttural Crack level for more Titan and Mud Plugger class advantage.\n[*] Good and Beautiful graphics settings support 1 extra light.\n[/list]"
+        },
+        {
+            "title": "Windows Build 572 - Hotfix 1",
+            "date": "2023-09-10 20:29:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482921570540",
+            "notes": "[list]\n[*] All textures are now 2048 resolution with mip map streaming.\n[*] Dive in the Hive foliage added.\n[*] Dive in the Hive bleachers added.\n[*] Dive in the Hive reflection probes redone.\n[*] Dive in the Hive light baking redone.\n[/list]"
+        },
+        {
+            "title": "Windows Build 572 - Granite God Mesa Optimization",
+            "date": "2023-09-10 17:05:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482921055696",
+            "notes": "Since Granite God Mesa is locked design-wise, we optimized the distant environment pieces to remove 14 million polygons from the scene and 330 shadow casters. And occlusion culling is rebaked for Granite God Mesa and The Pretzel Drop.\n\n[list]\n[*] Reduced Granite God Mesa player count to 16 for improved performance.\n[*] Reduced and combined Distant Environment Pieces, reducing overall scene poly count 25%.\n[*] Removed 330 shadow casters from Granite God Mesa.\n[*] Occlusion culling redone for Granite God Mesa.\n[*] Occlusion culling redone for The Pretzel Drop.\n[*] Vehicle Debris resized and given different collision shapes.\n[*] Debris and interactive props go to sleep over time, further helping performance.\n[/list]"
+        },
+        {
+            "title": "Windows Build 567 - Hotfix 2",
+            "date": "2023-09-09 01:14:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482915004493",
+            "notes": "[olist]\n[*] Honeypot Unlock works as intended now.\n[*] Default quality setting is Good so that PCs don't die.\n[*] Vehicle Impact Debris enabled as a test.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 567 - Hotfix 1",
+            "date": "2023-09-08 23:07:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482914683296",
+            "notes": "We made changes to the handling of Patriot Oxide so it's not so heavy and catches a little more air after jumps."
+        },
+        {
+            "title": "Build 567 - Sidewinder Spin Updated, Quality Settings Fine Tuned",
+            "date": "2023-09-06 20:57:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482907062737",
+            "notes": "Sidewinder Spin now has physics optimized interactive props, some changes to set dressing and a fixed Podium camera. The Graphics Settings has improved Quality options that have granular control over what Post Effects and Rendering Quality is assigned to each of the 6 options. \"Good\" seems well suited for the latest Laptop GPUs.\n\nMore work is being done to make the vehicles handle better. This update changes the wheel size and collision meshes for Grizzly Logger and Grizzly Logger Flower Power. Let us know what you think!"
+        },
+        {
+            "title": "Windows Build 565 - Sidewinder Spin Updates and Return of the Skidmarks",
+            "date": "2023-09-06 15:03:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355680368001",
+            "notes": "[list]\n[*] Updated waypoints and added soft collision to ramp on Turn 1 of Sidewinder Spin.\n[*] Added bleachers and shade.\n[*] Removed a few posts in the straight before the bleachers.\n[*] Added set dressing.\n[*] Added interactive rocks, boards, and soda cans.\n[*] Improved Lightmapping resolution by 20%.\n[*] Skidmarks are back!\n[/list]"
+        },
+        {
+            "title": "60hz Physics - Windows Build 560 Hotfix 3",
+            "date": "2023-09-05 13:27:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355676479015",
+            "notes": "We raised the physics timestep from the default of 1/50 (PAL region) to 1/60 (NTSC region). Physics and rendering are now in sync with each other on NTSC monitors for a smoother gameplay experience."
+        },
+        {
+            "title": "Windows Build 560 - Hotfix 2",
+            "date": "2023-09-05 01:02:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355674591098",
+            "notes": "Removed the framerate counter for now.\nGranite God Mesa is complete."
+        },
+        {
+            "title": "Windows Build 560 - New Props, Granite God Mesa update",
+            "date": "2023-09-04 17:49:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355673497419",
+            "notes": "Granite God Mesa has the following changes:\n[list]\n[*] Added bleachers.\n[*] Added tire props.\n[*] Added tumbleweed props.\n[*] Added interactive rocks back in.\n[*] Updated foliage placement to route vehicles better.\n[*] Optimized lightmap density.\n[/list]\n\nThe game now has optimizations to vehicle impact debris and tire skid marks for improved performance. Reverted back to Unity 2021 for stable shadow cascades."
+        },
+        {
+            "title": "Windows Build 557 - Unity 2022 LTS Experiment",
+            "date": "2023-09-02 14:24:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355665687935",
+            "notes": "We upgraded the project to Unity 2022 LTS to take advantage of an important volumetric fog quality issue (scanlines of missing visual data for foliage in fog). But physics are also calculated slightly differently, which affects vehicle handling in a mostly positive way.\n\nWe disabled vehicle impact debris for now until a global batcher is finished for that feature."
+        },
+        {
+            "title": "Build 557 Hotfix 1 - Mac",
+            "date": "2023-09-01 17:18:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355662483105",
+            "notes": "Please refer to Windows notes for Build 557 Hotfix 1"
+        },
+        {
+            "title": "Build 557 - Vehicle LOD Adjustments, New Environment Background",
+            "date": "2023-09-01 13:35:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355661918605",
+            "notes": "[list]\n[*] LOD1 adjusted from 30% to 17% of screen space.\n[*] LODCULL increased from 0% to 1% screen space.\n[*] New background environment for Granite God Mesa.\n[*] New background environment for Dive in the Hive.\n[*] New background environment for Sidewinder Spin.\n[*] New background environment for Arch Angel.\n[*] Lightmap quality increased 25% for Arch Angel.\n[/list]"
+        },
+        {
+            "title": "Windows Build 553 - Lap Count Consistent and More Vehicle Dust",
+            "date": "2023-08-31 16:08:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355658658990",
+            "notes": "[list]\n[*] All levels now have consistent max Lap Count for the game tracker and podium result tracker.\n[*] Increased number of laps for most levels now that page result debugging is complete.\n[*] Increased emission rate and max particle count for Vehicle Dust.\n[/list]"
+        },
+        {
+            "title": "Windows Build 551 - Improved Lighting and Cloud Performance",
+            "date": "2023-08-31 15:21:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355658541222",
+            "notes": "[list]\n[*] Maximum distance of the clouds in Arch Angel reduced to track boundaries.\n[*] Maximum distance of the clouds in Granite God Mesa reduced to track boundaries.\n[*] Collision grid added to bottom of Arch Angel so that fallen props and Vehicle Impact Shards have something to stop their fall, otherwise floating point values could get out of hand.\n[*] Second generator lamp now has lighting on Granite God Mesa.\n[*] Lighting rebalanced on Sidewinder Spin.\n[*] Reflection probes 01-11 resized for the starting line on Sidewinder Spin.\n[*] Removed secondary exposure compensation on Sidewinder Spin (left on by accident).\n[*] Removed secondary exposure compensation on Arch Angel (left on by accident).\n[*] Vehicle names visible on Results Page of Arch Angel.\n[*] Volumetric fog dithering bug reported to vendor.\n[*] Boost flames no longer cast light to help with framerate.\n[*] Boost flames are shorter and have more animation to them.\n[/list]"
+        },
+        {
+            "title": "Mac Build 550 - Hotfix 1",
+            "date": "2023-08-31 02:29:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355656584371",
+            "notes": "We got to the root of the cause of Mac crashing. Don't use Unity Graphics Jobs on Mac, easy enough.\n\nThis hotfix also has a new approach to secondary light sources that helps a lot with performance. We're now seeing 60FPS and above more consistently, even before the physics optimizations!\n\nHave fun and let us know what you think.\n\nSincerely,\nDraisey Digital"
+        },
+        {
+            "title": "Windows Build 550 Hotfix 1",
+            "date": "2023-08-31 01:19:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355656408053",
+            "notes": "This is the first time we're doing hotfixes, mainly because of insights from performance changes to the Mac version. Let's see how high the framerate is now."
+        },
+        {
+            "title": "Mac Build 550",
+            "date": "2023-08-30 20:57:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355655745209",
+            "notes": "[list]\n[*] Brings feature parity from Windows over to Mac M1 and Mac Intel.\n[*] Vehicle Impact Shards and Teddy Bears now use dynamic physics combining.\n[*] Minor updates to Charles Run level layout.\n[*] Racer count increased from 12 to 18 on The Pretzel Drop for more chaos.\n[/list]"
+        },
+        {
+            "title": "Windows Build 550",
+            "date": "2023-08-30 13:25:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355654602576",
+            "notes": "Additional racers added to The Pretzel Drop."
+        },
+        {
+            "title": "Windows Build 549 - DMC Prefab Updates",
+            "date": "2023-08-29 00:34:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722344016229",
+            "notes": "[list]\n[*] Restructured how vehicle impact shards are batched and submitted to the physics engine for more stable performance past 2-3 minutes of gameplay.\n[*] Teddy Bear components are now batched per bear.\n[/list]"
+        },
+        {
+            "title": "Regression Update",
+            "date": "2023-08-28 20:59:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722343471749",
+            "notes": "Windows build stopped launching, going back to prior version. Build 547"
+        },
+        {
+            "title": "Windows Build 547 - Explosive Charles Run update",
+            "date": "2023-08-28 19:54:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722343308068",
+            "notes": "The starting line of Charles Run has 24 players now, an explosive trick up its sleeve, and some danger lurking on the upper deck."
+        },
+        {
+            "title": "Windows Build 544 - Charles Run Update",
+            "date": "2023-08-28 02:00:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722340589031",
+            "notes": "[list]\n[*] Additional props and lighting changes to Charles Run.\n[/list]"
+        },
+        {
+            "title": "Mac Build 543",
+            "date": "2023-08-28 01:39:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722340537284",
+            "notes": "[list]\n[*] Level lighting and layout updates to Charles Run.\n[*] Render resolution restored for FSR.\n[*] Car names visible in Guttural Crack and Sidewinder Spin.\n[*] Player 2 camera has HDR enabled for Charles Run, Granite God Mesa and Guttural Crack\n[*] Added Haze to Sidewinder Spin and Charles Run.\n[*] Removed erroneous DMC script components.\n[*] Updated Ultimate Lit Shader and Water system.\n[*] Camera Follow isn't as dramatic now, less back and forth movement for reduced motion sickness.\n[*] LODs for Balloon Sign, Cone with Arrow, Hot Air Balloon, Lamps, Generators.\n[*] Fractured metal pieces emitted from Vehicle on Vehicle collisions.\n[*] Prefab LODs applied to all vehicles.\n[/list]"
+        },
+        {
+            "title": "Windows Build 543 - Charles Run Level Edits",
+            "date": "2023-08-27 20:06:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722339692738",
+            "notes": "[list]\n[*] Changes to the layout of Charles Run.\n[*] New occlusion culling bake for Charles Run.\n[*] New lighting bake for Charles Run.\n[*] Car Names visible on Guttural Crack results page.\n[*] Car Names visible on Sidewinder Spin results page.\n[/list]"
+        },
+        {
+            "title": "Windows Build 539 - Charles Run Performance Boost",
+            "date": "2023-08-13 23:52:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5839532486223964481",
+            "notes": "[olist]\n[*] Reduced Charles Run light probe count 40%.\n[*] Removed distant rock formations to improve Charles Run framerate.\n[*] Removed rock formations more than 20 units below the track of Charles Run.\n[*] Camera distance is now consistent in all levels.\n[*] Player 2 camera now has HDR enabled on all levels.\n[*] Removed burst instancing for turn signs and interactive wood boards.\n[*] Removed GPU instancing (3rd part) for Wood Board 4 prop, accidentally left behind.\n[*] Baked Charles Run reflection probes and static lighting again.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 534 - More Stable Debris",
+            "date": "2023-08-02 02:45:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124585319844568307",
+            "notes": "[olist]\n[*] Interactive debris from Car Collisions is more stable in motion.\n[*] Player 2 Camera in The Pretzel Drop has HDR enabled again.\n[*] Dynamic mesh combining tech updated behind the scenes.\n[*] Internal scaling is at 75% on each axis instead of 66% for less aliasing via FSR 1.0.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 533 - Guttural Crack Update",
+            "date": "2023-08-01 03:47:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686263472510",
+            "notes": "[olist]\n[*] Balloon Sign now has LODs.\n[*] Cone with Arrow now has LODs.\n[*] Hot Air Balloon now has LODs.\n[*] Pickaxe now has LODs.\n[*] Lamp Heavy Duty has LODs.\n[*] Lamp With Generator has LODs.\n[*] Lamp Wood Pole has LODs.\n[*] Scissor Lift has LODs for the complex wiring.\n[*] Patriot Oxide Rusted Body prop has LODs and fewer submeshes.\n[*] Level \"Guttural Crack\" layout is finalized with volumetric light sources added.\n[*] Default Camera distance is 1.4, per tester feedback.\n[*] Camera pullback distance reduced by 20% per tester feedback.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 531 - Vehicle LODs and Interactive Debris",
+            "date": "2023-07-31 20:37:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686262384078",
+            "notes": "[olist]\n[*] All 14 vehicles have Level of Detail swap geometry to help improve performance as they travel further from the camera.\n[*] Introducing interactive debris resulting from vehicle to vehicle collisions that is persistent lap to lap.\n[/olist]"
+        },
+        {
+            "title": "Mac Build 516 - Clear Save Data",
+            "date": "2023-07-30 21:49:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686258921572",
+            "notes": "Duplicate of Windows Build 516 - Please clear save data to have proper progression of content unlock up through launch. Behind the scenes every vehicle and level to be created is included in the unlock system."
+        },
+        {
+            "title": "Windows Build 516 - Clear Save Data",
+            "date": "2023-07-30 18:57:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686258488015",
+            "notes": "This build adds the names of all future levels and vehicles, and the order they will be unlocked. It is recommended to go to Settings -> Clear Save Data so have proper progression of content through to launch."
+        },
+        {
+            "title": "Windows Build 515 - Registry Update",
+            "date": "2023-07-30 18:56:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686258484457",
+            "notes": "Part 1 of the registry update"
+        },
+        {
+            "title": "Mac M1 + Mac Intel Build 514",
+            "date": "2023-07-29 22:59:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686255456051",
+            "notes": "[olist]\n[*] Level Selection images are cropped properly.\n[*] Controller Layout Image added to main menu.\n[*] Controller Layout Image added to pause menu.\n[*] \"71\" was deleted from Grizzly Logger Flower Power so its name can fit in the Results page.\n[*] Grizzly Logger Flower Power updated in the Tracker script.\n[*] Deleted rocks from Vehicle Selection screen due to hard to solve bug.\n[*] Rebalanced vehicle audio for engines and impacts.\n[*] Reduced maximum audio source distance from 50 to 20 for less convoluted sound effects.\n[*] Compact vehicles don't slow down as much in the mud anymore.\n[*] Clear Saved Data for more accurate unlock level and unlock vehicle announcement icons.\n[*] All 7 levels now have accurate level unlock, vehicle unlock, and honeypot unlock icons.\n[*] The images of the levels in Main Menu are also up to date now.\n[*] Honeypot in Arch Angel is now visible.\n[*] Honeypot in Charles Run is now visible..Arch Angel now has more set dressing.\n[*] Arch Angel lighting rebaked.\n[*] Arch Angel cloud color is fixed.\n[*] Pretzel Drop now has water down below.\n[*] Pretzel Drop interactive rocks removed until performance is fixed.\n[*] Grass blows in the wind more realistically.\n[*] Collisions with Props emits impact effect, being rolled out slowly prop by prop.\n[*] Vehicle engine sounds reduced 50%.\n[*] Vehicle impact sounds replaced with new custom sounds.\n[*] Vehicle weight, speed and class information is accurate again.\n[/olist]\n\nThe layout and structures for Charles Run were updated in a few key places, mainly the bridge that crosses over the path after the cave. Work has begun on levels 8 and 9 which are currently hidden to players. A menu image for Charles Run was also added. And a respawn zone was added to the pond in Charles Run.\n\nThe video background in the Main Menu now uses the WebM VP8 codec for Linux compatibility.\n\n"
+        },
+        {
+            "title": "Windows Build 514 - Rebalanced Car Audio, Controller Layout Help Images",
+            "date": "2023-07-29 02:58:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686252418087",
+            "notes": "[olist]\n[*] Level Selection images are cropped properly.\n[*] Controller Layout Image added to main menu.\n[*] Controller Layout Image added to pause menu.\n[*] \"71\" was deleted from Grizzly Logger Flower Power so its name can fit in the Results page.\n[*] Grizzly Logger Flower Power updated in the Tracker script.\n[*] Deleted rocks from Vehicle Selection screen due to hard to solve bug.\n[*] Rebalanced vehicle audio for engines and impacts.\n[*] Reduced maximum audio source distance from 50 to 20 for less convoluted sound effects.\n[*] Compact vehicles don't slow down as much in the mud anymore.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 513 - New Vehicle and Level Icons",
+            "date": "2023-07-28 20:11:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686251387988",
+            "notes": "[olist]\n[*] Clear Saved Data for more accurate unlock level and unlock vehicle announcement icons.\n[*] All 7 levels now have accurate level unlock, vehicle unlock, and honeypot unlock icons.\n[*] The images of the levels in Main Menu are also up to date now.\n[*] Honeypot in Arch Angel is now visible.\n[*] Honeypot in Charles Run is now visible.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 511 - Arch Angel Updates",
+            "date": "2023-07-27 17:11:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686247285802",
+            "notes": "[olist]\n[*] Arch Angel now has more set dressing.\n[*] Arch Angel lighting rebaked.\n[*] Arch Angel cloud color is fixed.\n[*] Pretzel Drop now has water down below.\n[*] Pretzel Drop interactive rocks removed until performance is fixed.\n[*] Grass blows in the wind more realistically.\n[*] Collisions with Props emits impact effect, being rolled out slowly prop by prop.\n[*] Vehicle engine sounds reduced 50%.\n[*] Vehicle impact sounds replaced with new custom sounds.\n[*] Vehicle weight, speed and class information is accurate again.\n[/olist]\n"
+        },
+        {
+            "title": "Windows Build 508 - New Charles Run Structures",
+            "date": "2023-07-19 10:22:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051966328015",
+            "notes": "The layout and structures for Charles Run were updated in a few key places, mainly the bridge that crosses over the path after the cave. Work has begun on levels 8 and 9 which are currently hidden to players. A menu image for Charles Run was also added. And a respawn zone was added to the pond in Charles Run."
+        },
+        {
+            "title": "Windows Build 495 - VP8 Menu Video",
+            "date": "2023-07-08 11:13:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150163883511",
+            "notes": "The video background in the Main Menu now uses the WebM VP8 codec for Linux compatibility."
+        },
+        {
+            "title": "Windows Build 494 - Mesh Combine Fixes",
+            "date": "2023-07-04 13:47:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150149696193",
+            "notes": "We're still working out issues with indirect lighting of mesh combined interactive rocks, but Granite God Mesa's rocks are behaving better. The other props are visible again at runtime."
+        },
+        {
+            "title": "Mac Build 493 Hotfix",
+            "date": "2023-07-03 02:02:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150144267374",
+            "notes": "Fences don't disappear anymore."
+        },
+        {
+            "title": "Windows Build 493 - Hotfix",
+            "date": "2023-07-03 00:18:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150144002683",
+            "notes": "Fences no longer disappear during gameplay."
+        },
+        {
+            "title": "Mac Build 494 - Performance Improvements",
+            "date": "2023-07-02 23:36:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150143896993",
+            "notes": "Framerate increase of 25% on Macbook Pro M1.\nInteractive Rocks are dynamically combined into game object chunks.\nInteractive Wood Beams are dynamically combined into game object chunks.\nInteractive Sign components are dynamically combined into single game objects.\nFilled level gap in Granite God Mesa.\nNew lighting bake and bridge construction on Charles Run.\nCrowd sounds are loaded in the background instead of the Main thread.\nData Garbage Collection is now spread across multiple frames instead of all at once.\nAudio Clips are now processed asynchronously on multiple cores instead of with high priority on the main CPU thread.\nReduced FSR1 resolution from 66% to 50% to account for the high resolution of MacBook Pro screens.\nReduced Shadowmap resolution from 4096 to 2048 pixels for better framerate.\nReduced Per Pixel Lights drawn from 8 objects to 4 objects for better framerate."
+        },
+        {
+            "title": "Windows Build 492 - Interactive Prop Performance",
+            "date": "2023-07-01 13:30:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150138720780",
+            "notes": "Today's update increases framerate by a good margin, we're seeing 50% uplift on a 3080Ti Mobile with a Core i7-12700 Mobile. We've been experimenting with pre-batching interactive rocks and a few props made up of many parts to cut down on the number of game objects during runtime.\n\n[olist]\n[*] Framerate increase of 50%.\n[*] Interactive Rocks are dynamically combined into game object chunks.\n[*] Interactive Wood Beams are dynamically combined into game object chunks.\n[*] Interactive Sign components are dynamically combined into single game objects.\n[*] Filled level gap in Granite God Mesa.\n[*] New lighting bake and bridge construction on Charles Run.\n[*] Crowd sounds are loaded in the background instead of the Main thread.\n[/olist]"
+        },
+        {
+            "title": "Build 484 - Performance Improvement",
+            "date": "2023-06-22 22:35:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124581515256770311",
+            "notes": "During our performance analysis we noticed issues and fixed two big performance spike sources:\n\n[olist]\n[*] Data Garbage Collection is now spread across multiple frames instead of all at once.\n[*] Audio Clips are now processed asynchronously on multiple cores instead of with high priority on the main CPU thread.\n[/olist]"
+        },
+        {
+            "title": "Windows Hotfix",
+            "date": "2023-06-22 02:45:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124581515253757858",
+            "notes": "Disabling SSAO also disables Lightmaps in Unity for some reason. So we turned it back on."
+        },
+        {
+            "title": "Windows Build 481 - Performance Improvement",
+            "date": "2023-06-22 01:27:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124581515253560206",
+            "notes": "We noticed the game wasn't hitting 60 FPS on a 3080Ti (mobile) very often, maybe 10% of the time on Granite God Mesa. So we're trying a different configuration.\n\n[olist]\n[*] Reduced FSR1 resolution from 75% to 66%.\n[*] Reduced Shadowmap resolution from 4096 to 2048 pixels.\n[*] Reduced Per Pixel Lights drawn from 8 objects to 4 objects.\n[*] Disabled SSAO (6% of GPU render time).\n[*] Disabled the Skid Marks script (8% of CPU calculation time).\n[/olist]\n\nPlayers who want to push their hardware should be given the option of adjusting these values or turning them on or off, so we'll look into how to control these via the Graphics Option menu over the next few months."
+        },
+        {
+            "title": "Mac Build 475 - Props Update",
+            "date": "2023-06-21 12:08:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124581515251538436",
+            "notes": "[olist]\n[*] Added Heavy Duty Lamp\n[*] Added Lamp with Generator\n[*] Added Wood Pole with Lamp\n[*] Added Scissor Lift\n[*] Added the word \"BOOST\" to the boost meter.\n[*] Added controller icon with boost button indicator to the boost meter.\n[*] Granite God Mesa has more slanted ground sections at Turn 1 and 2.\n[*] Granite God Mesa has Turn Signs and Hazard Signs to help players with navigation.\n[*] Granite God Mesa lighting rebaked.\n[*] Dust emission increased 25% - 50% depending on vehicle class.\n[*] Vehicle List is restructured so that Patriot Oxide is available first.\n[*] Level List is restructured so that Granite God Mesa is available first.\n[*] Motion Blur minor upgrade.\n[*] Slowdown effect reduced in power when impacting AI vehicles.\n[*] Physics bounciness increased 50% to help maintain momentum when colliding with walls.\n[*] Updated Charles Run layout and lighting bake.\n[*] Updated Charles Run auto exposure to be 0.25 stops darker.\n[*] Occlusion culling enabled for Charles Run.\n[*] All vehicles utilize GPU Instancing for Bodies and Wheels for increased performance.\n[*] Custom Rock Shader reflections cut by half for a more matte finish.\n[*] Turn Sign prop upgraded to Ultimate Lit Shader v2.\n[*] Interactive Rocks have a smoother look and are darkened.\n[*] New layout for The Pretzel Drop to lengthen race.\n[*] Added volumetric lighting to The Pretzel Drop.\n[*] Added volumetric lighting to Dive in the Hive.\n[*] Added volumetric lighting to Granite God Mesa.\n[*] Fixed missing Podium camera for end of race on Dive in the Hive.\n[*] New lighting setup for Dive in the Hive.\n[*] More accurate ambient lighting for interactive props.\n[*] New water zones being trialed for Charles Run.\n[*] All materials have GPU Batching now for faster framerate.\n[*] All textures utilize texture streaming and mip-maps for faster framerate.\n[*] Environment rock texture resolution increased 2x on average.\n[*] Behind the scenes foliage library expansion.\n[*] Identified and fixed rigid body errors for a smoother framerate.\n[/olist]\n"
+        },
+        {
+            "title": "Windows Build 475 - New Props",
+            "date": "2023-06-19 19:53:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309855616964",
+            "notes": "Additional Props were added to the game library and placed in Granite God Mesa:\n\n[list]\n[*] Heavy Duty Lamp\n[*] Lamp with Generator\n[*] Wood Pole with Lamp\n[*] Scissor Lift\n[/list]"
+        },
+        {
+            "title": "Windows Build 473 - Granite God Mesa Updates",
+            "date": "2023-06-19 14:49:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309854847557",
+            "notes": "We're in the process of adding 12 new props to the environment library. The first one in is the Watch Tower for announcers, currently on Granite God Mesa. We also added the word \"BOOST\" to the boost meter because many players didn't know that's what the meter is for."
+        },
+        {
+            "title": "Windows Build 472 - Granite God Mesa Update",
+            "date": "2023-06-19 03:06:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309853067460",
+            "notes": "Hey everyone, here's what changed:\n\n[list]\n[*] Granite God Mesa has more slanted ground sections at Turn 1 and 2.\n[*] Granite God Mesa has Turn Signs and Hazard Signs to help players with navigation.\n[*] Granite God Mesa lighting rebaked.\n[*] Dust emission increased 25% - 50% depending on vehicle class.\n[/list]"
+        },
+        {
+            "title": "Windows Build 470",
+            "date": "2023-06-18 19:47:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309851956390",
+            "notes": "The reflection probes on Charles Run were too small. Lighting should look better in the cave."
+        },
+        {
+            "title": "Windows Build 469 - Menu Fix",
+            "date": "2023-06-18 17:24:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309851593573",
+            "notes": "A typo in our tracker code broke the menu in Builds 466 onward. Sorry about that, the levels should load properly from the menu now!"
+        },
+        {
+            "title": "Windows Build 467",
+            "date": "2023-06-18 15:16:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309851270683",
+            "notes": "Vehicle List is restructured so that Patriot Oxide is available first.\n\nLevel List is restructured so that Granite God Mesa is available first."
+        },
+        {
+            "title": "Windows build 466",
+            "date": "2023-06-18 13:33:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309851009121",
+            "notes": "Hey everyone, here's the list of updates for update 466.\n\n[list]\n[*] Motion Blur minor upgrade.\n[*] Slowdown effect reduced in power when impacting AI vehicles.\n[*] Physics bounciness increased 50% to help maintain momentum when colliding with walls.\n[*] Updated Charles Run layout and lighting bake.\n[*] Updated Charles Run auto exposure to be 0.25 stops darker.\n[*] Occlusion culling enabled for Charles Run.\n[*] All vehicles utilize GPU Instancing for Bodies and Wheels.\n[*] Custom Rock Shader reflections cut by half for a more matte finish.\n[*] Turn Sign prop upgraded to Ultimate Lit Shader v2.\n[*] Interactive Rocks have a smoother look and are darkened.\n[/list]\n\nA known issue right now is missing collision sounds. This is due to data corruption of vehicles a few months ago, and they're being restored."
+        },
+        {
+            "title": "Windows Build 458",
+            "date": "2023-05-17 00:32:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943300250333",
+            "notes": "[olist]\n[*] New layout for The Pretzel Drop.\n[*] Podium is more metallic in look.\n[*] New shader for interactive rocks.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 453 - Pretzel Drop Works Again",
+            "date": "2023-05-15 02:11:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386954738773",
+            "notes": "Our bad, Pretzel Drop game manager works again!"
+        },
+        {
+            "title": "Windows Build 452 - Minor Fixes",
+            "date": "2023-05-14 03:38:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386951317140",
+            "notes": "Mostly behind the scenes tech updates that will be tested and deployed over the next month.\n\n[olist]\n[*] Added volumetric lighting to The Pretzel Drop.\n[*] Added volumetric lighting to Dive in the Hive.\n[*] Added volumetric lighting to Granite God Mesa.\n[*] Fixed missing Podium camera for end of race on Dive in the Hive.\n[*] New lighting setup for Dive in the Hive.\n[*] More accurate ambient lighting for interactive props.\n[*] New water zones being trialed for Charles Run.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 420 - GPU Batching",
+            "date": "2023-05-11 03:17:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386940331690",
+            "notes": "[olist]\n[*] All materials have GPU Batching now for faster framerate.\n[*] All textures utilize texture streaming and mip-maps for faster framerate.\n[*] Environment rock texture resolution increased 2x on average.\n[*] Behind the scenes foliage library expansion.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 416 - Rigid Bodies Fixed",
+            "date": "2023-05-11 00:00:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386939833585",
+            "notes": "[olist]\n[*] Identified and fixed rigid body errors for a smoother framerate.\n[/olist]\n"
+        },
+        {
+            "title": "Mac Build 406 - Volumetric Fog and Performance",
+            "date": "2023-05-10 16:44:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340308867053836",
+            "notes": "A lot has changed since Build 384, here's what's new:\n\n[olist]\n[*] Dust is now additive instead of multiplied in the shader.\n[*] Tire marks are restored.\n[*] True volumetric fog is now in Guttural Crack.\n[*] Added volumetric spotlights to Guttural Crack.\n[*] Implemented a Shadow Manager for multi-light levels like Guttural Crack.\n[*] More accurate occlusion culling in The Pretzel Drop.\n[*] More accurate occlusion culling in Dive in the Hive.\n[*] More accurate occlusion culling in Granite God Mesa.\n[*] More accurate occlusion culling in Guttural Crack.\n[*] More accurate occlusion culling in Sidewinder Spin.\n[*] More accurate occlusion culling in Arch Angel.\n[*] Shadow casting removed from vehicle Boost Flames for improved performance.\n[*] Electric Arc lighting intensity reduced from 0.5 to 0.2.\n[*] Updated Dive in the Hive foliage to have more types of plants.\n[*] Added subtle collision hump to agave plant.\n[*] Removed rock piece that allowed for track crossover.\n[*] Removed boost point light shadows.\n[*] Dive in the Hive, added additional rock pieces for the ramp down to be more forgiving.\n[*] Dive in the Hive, added wood fence at Turn 1 to be more forgiving.\n[*] Player 2 Camera now has HDR enabled for all levels.\n[*] New reflection probe placements for Granite God Mesa.\n[*] New reflection probe placements for Guttural Crack.\n[*] Identified lights with \"indirect intensity\" that should have been baked instead of realtime.\n[*] Removed performance intensive interactive rocks, will replace with more performant rocks.\n[*] Adjusted track layout for Pretzel Drop to be wider right before the first turn.\n[*] Main Menu vehicle selection area given improved lighting.\n[*] Dive in the Hive given improved lighting and filled wall-track gaps.\n[*] Performance intensive interactive rocks removed from Granite God Mesa.\n[*] New reflection sampling probes in Granite God Mesa.\n[*] Auto Exposure added to Pretzel Drop, Dive in the Hive and Granite God Mesa.\n[*] Added prop Warning Dropoff\n[*] Added prop Hazard Cactus\n[*] Added prop Turn Sign\n[*] Developed new Metallic shader, now used for Honeypot unlockables.\n[*] Developed Camera Auto Exposure, implemented in The Pretzel Drop and Granite God Mesa.\n[*] Widened the track near the starting line for Sidewinder Spin.\n[*] Added additional railing in 2 spots for Sidewinder Spin to prevent falling off the track during tight turns.\n[*] Added additional lights in the first turn of Sidewinder Spin to help players see the upcoming turn.\n[*] Removed erroneous lights that were bogging performance in Granite God Mesa.\n[/olist]\n"
+        },
+        {
+            "title": "Windows Build 406 - Performance Improvements",
+            "date": "2023-05-10 03:49:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340308865091860",
+            "notes": "[olist]\n[*] Dust is now additive instead of multiplied in the shader.\n[*] Tire marks are restored.\n[*] True volumetric fog is now in Guttural Crack.\n[*] Added volumetric spotlights to Guttural Crack.\n[*] Implemented a Shadow Manager for multi-light levels like Guttural Crack.\n[*] More accurate occlusion culling in The Pretzel Drop.\n[*] More accurate occlusion culling in Dive in the Hive.\n[*] More accurate occlusion culling in Granite God Mesa.\n[*] More accurate occlusion culling in Guttural Crack.\n[*] More accurate occlusion culling in Sidewinder Spin.\n[*] More accurate occlusion culling in Arch Angel.\n[*] Shadow casting removed from vehicle Boost Flames for improved performance.\n[*] Electric Arc lighting intensity reduced from 0.5 to 0.2.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 401 - Dive in the Hive Updates",
+            "date": "2023-05-08 12:14:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875094507563",
+            "notes": "[olist]\n[*] Updated Dive in the Hive foliage to have more types of plants.\n[*] Added subtle collision hump to agave plant.\n[*] Removed rock piece that allowed for track crossover.\n[*] Removed boost lighting.\n[*] Added additional rock pieces for the ramp down to be more forgiving.\n[*] Added wood fence at Turn 1 to be more forgiving.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 400",
+            "date": "2023-05-08 01:58:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875092950466",
+            "notes": "Did a revamp of the lighting for every level, which involved removing all data, bakes and references to the former lighting plugin and rebaking strictly with the new one. Auto Exposure is on any level that requires it, which so far is every level except Arch Angel. We also found a solution to the flickering shadows on specific parts of the levels, which will require a rebuild of all track pieces for consistency.\n\n[olist]\n[*] Rebuilt lighting for all levels.\n[*] Player 2 Camera now has HDR enabled for all levels.\n[*] New reflection probe placements for Granite God Mesa.\n[*] New reflection probe placements for Guttural Crack.\n[*] Identified lights with \"indirect intensity\" that should have been baked instead of realtime.\n[*] Removed performance intensive interactive rocks, will replace with more performant rocks.\n[*] Adjusted track layout for Pretzel Drop to be wider right before the first turn.\n[/olist]\n"
+        },
+        {
+            "title": "Windows Build 392",
+            "date": "2023-05-06 13:35:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875087425814",
+            "notes": "[olist]\n[*] Main Menu vehicle selection area given improved lighting.\n[*] Dive in the Hive given improved lighting and filled wall-track gaps.\n[*] Performance intensive interactive rocks removed from Granite God Mesa.\n[*] New reflection sampling probes in Granite God Mesa.\n[*] Auto Exposure added to Pretzel Drop, Dive in the Hive and Granite God Mesa.\n[*] New volumetric tech added to Guttural Crack.\n[/olist]\n"
+        },
+        {
+            "title": "Windows Build 388 - New Props for Pretzel Drop",
+            "date": "2023-05-05 02:54:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875082159559",
+            "notes": "Hey everyone,\n\nWe've got several new props to indicate when to turn and what hazards, like cactus, and track warnings, like dropoffs, are coming up ahead. The Pretzel Drop level saw the biggest changes, and should help new players get acclimated to our game faster.\n\n[olist]\n[*] New Lighting Bake for The Pretzel Drop\n[*] Added prop Warning Dropoff\n[*] Added prop Hazard Cactus\n[*] Added prop Turn Sign\n[*] Developed new Metallic shader, now used for Honeypot unlockables.\n[*] Developed Camera Auto Exposure, implemented in The Pretzel Drop and Granite God Mesa.\n[*] Lightning and Fog temporarily disabled in Guttural Crack while new Fog system is in development.\n[/olist]\n\n[img]https://twitter.com/MotorCubs/status/1654378882555068417/photo/1[/img]\n\n"
+        },
+        {
+            "title": "Windows Build 386 - Sidewinder Spin Update",
+            "date": "2023-04-19 14:27:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519508191247",
+            "notes": "[olist]\n[*] New Lightmap, Light Prope and Occlusion bake for Sidewinder Spin. \n[*] Widened the track near the starting line for Sidewinder Spin. \n[*] Added additional railing in 2 spots for Sidewinder Spin to prevent falling off the track during tight turns.\n[*] Added additional lights in the first turn of Sidewinder Spin to help players see the upcoming turn.\n[*] New Lightmap for Granite God Mesa to address shadowmap inconsistency. \n[*] Removed erroneous lights that were bogging performance in Granite God Mesa. \n[*] New Occlusion baking for Granite God Mesa.\n[*] 795 MB Data change.\n[/olist]"
+        },
+        {
+            "title": "Mac Build 384 - Physics Update",
+            "date": "2023-04-19 01:29:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519506222981",
+            "notes": "[olist]\n[*] Player Camera distance during Max Speed adjusted to have FOV of 75.\n[*] Player Camera height adjusted to 2 units.\n[*] Motion Blur added to all levels.\n[*] Global physics bounce reduced from 0.25 to 0.20.\n[*] 1 additional Mass unit added to Sport, Mud Plugger and Titan Classes.\n[*] Stiffened suspension for the Honey Buggy.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 384 - Physics Update",
+            "date": "2023-04-19 01:29:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519506221575",
+            "notes": "[olist]\n[*] Player Camera distance during Max Speed adjusted to have FOV of 75.\n[*] Player Camera height adjusted to 2 units.\n[*] Motion Blur added to all levels.\n[*] Global physics bounce reduced from 0.25 to 0.20.\n[*] 1 additional Mass unit added to Sport, Mud Plugger and Titan Classes.\n[*] Stiffened suspension for the Honey Buggy.\n[/olist]"
+        },
+        {
+            "title": "Windows Build 381 - Motion Blur Medium",
+            "date": "2023-04-18 16:20:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519504834869",
+            "notes": "We noticed that the framerate wasn't quite where we wanted it to be, so Per Pixel Motion Blur was changed from High Quality to Medium Quality. Camera FOV maximum value was raised from 70-75."
+        },
+        {
+            "title": "Windows Build 380 - Closer Camera, Motion Blur",
+            "date": "2023-04-18 15:14:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519504665362",
+            "notes": "Today's update is small but game changing.\n\n[olist]\n[*] Per Pixel Motion Blur for the Camera and for Objects.\n[*] Closer camera when at max speed.\n[*] Lower camera for a better view of the environment.\n[*] Max FOV when boosting changed from 80 to 70.\n[/olist]\n\nEnjoy!"
+        },
+        {
+            "title": "Mac Build 379-B",
+            "date": "2023-04-18 13:32:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519504409309",
+            "notes": "The \"Charles Run\" level is enabled. It wasn't added to the Build Export by accident!"
+        },
+        {
+            "title": "Mac Build 379",
+            "date": "2023-04-18 12:14:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519504210532",
+            "notes": "The Mac build now has feature parity with the Windows build.\n\nThis update requires you to reset your saved data by going to Settings -> Clear Save Data. Doing so will ensure Vehicles and Levels are unlocked properly. Due to the addition of Dive in the Hive the order was out of sync and not unlocking consistently.\n\nHere is what changed since the last update:\n\n[olist]\n[*] Level #7 \"Charles Run\" has new level geometry, lighting, AI boost behavior and music.\n[*] Debug Logs removed to improve performance.\n[*] Titan and Mud Plugger class vehicles no longer drop performance due to missing particle assignment.\n[*] Vehicle names are visible in the Vehicle Selection screen again.\n[*] Removed Main Menu's \"Sound\" setting page until navigation glitch is fixed.\n[*] Guttural Crack track had a few collision errors removed.\n[*] Guttural Crack finish line is more accurate now.\n[*] Guttural Crack now has \"Rock Hazard\" warning signs with temporary collision box.\n[*] Widened two sections of The Pretzel Drop.\n[*] Added additional fences to The Pretzel Drop to address tester feedback about falling off the level.\n[*] Skid marks no longer appear in deformable mud ground zones.\n[*] Results page shows vehicle names rather than CPU 1, 2, etc.\n[*] Results page now has smaller font and text alignment.\n[/olist]\n\nNew Vehicles were added:\n[olist]\n[*] Lunatic Hopper\n[*] Lunatic Beetle\n[*] Typhoon Wrangler\n[*] Typhoon BubblePop\n[/olist]\n\nThe vehicles now use a different set of impact clips unique to each vehicle. We think it feels a little hollow, so we are setting up a full foley day at the end of this month to get meaty impacts. Some props are meant to slide, so we'll see if our programmer can add a \"sliding audio\" feature to props based off velocity."
+        },
+        {
+            "title": "Windows Build 379 - New Impact Audio",
+            "date": "2023-04-17 17:47:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519501408137",
+            "notes": "The vehicles now use a different set of impact clips unique to each vehicle. We think it feels a little hollow, so we are setting up a full foley day at the end of this month to get meaty impacts. Some props are meant to slide, so we'll see if our programmer can add a \"sliding audio\" feature to props based off velocity."
+        },
+        {
+            "title": "Windows Build 378 - Charles Run Update",
+            "date": "2023-04-17 03:21:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519499213144",
+            "notes": "Level #7 \"Charles Run\" is updated with new level geometry, lighting, AI boost behavior and music."
+        },
+        {
+            "title": "Build 377 Windows - Removed Internal Debug Logs, Mud Zone Error",
+            "date": "2023-04-15 02:21:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519491775381",
+            "notes": "Behind the scenes we saw dozens of Debug Logs per frame and hundreds of errors for Titan and Mud Plugger class vehicles because the mud particle slot wasn't assigned yet. Performance should have fewer hitches."
+        },
+        {
+            "title": "Windows Build 375 - New Vehicles, New Level",
+            "date": "2023-04-12 17:49:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831443775902506",
+            "notes": "The Windows Build 375 brings the following new content and fixes:\n\n[olist]\n[*] Lunatic Hopper (Vehicle)\n[*] Lunatic Beetle (Vehicle)\n[*] Typhoon Wrangler (Vehicle)\n[*] Typhoon BubblePop (Vehicle)\n[*] Charles Run (Level)\n[*] Updated vehicle handling for Mud Plugger and Titan classes.\n[*] Vehicle names visible again.\n[/olist]\n\nCharles Run is still in the early stages, but we want to see how a wider track feels and get your input. Please leave comments about level design on this post so we can refer back to this update. Thanks!\n\nP.S. The Mac build will match Windows tomorrow."
+        },
+        {
+            "title": "Build 374 - Sound Setting Removed, Guttural Crack Updated",
+            "date": "2023-04-12 10:39:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5132456474583583087",
+            "notes": "Hello everyone, here's today's minor patch notes for Build 374:\n[olist]\n[*] Removed Main Menu's \"Sound\" setting page until navigation glitch is fixed.\n[*] Guttural Crack track had a few collision errors removed.\n[*] Guttural Crack finish line is more accurate now.\n[*] Guttural Crack now has \"Rock Hazard\" warning signs with temporary collision box.\n[*] Currently looking into why cars rotate up at the end of jumps, could be related to the \"arch forward\" feature we added.\n[/olist]"
+        },
+        {
+            "title": "Build 373 - Widened Track 1, Results Page Revamp",
+            "date": "2023-04-09 17:09:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841300576259",
+            "notes": "Hello everyone, here's what's new with MotorCubs RC:\n\n[olist]\n[*] Widened two sections of The Pretzel Drop.\n[*] Added additional fences to The Pretzel Drop to address tester feedback about falling off the level.\n[*] Skid marks no longer appear in the mud zones.\n[*] Results page shows vehicle names rather than CPU 1, 2, etc.\n[*] Results page now has smaller font and text alignment.\n[/olist]\n\nThanks for playing and spread the word!"
+        },
+        {
+            "title": "Build 371 - Windows",
+            "date": "2023-04-08 17:59:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841297058953",
+            "notes": "[olist]\n[*] Cars arch forward after jumps slightly more, per user feedback.\n[/olist]"
+        },
+        {
+            "title": "Build 369 - Save System Reset",
+            "date": "2023-04-05 03:03:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841283859801",
+            "notes": "WARNING\n\nThis update requires you to reset your saved data by going to Settings -> Clear Save Data\n\nDoing so will ensure Vehicles and Levels are unlocked properly. Due to the addition of Dive in the Hive the order was out of sync and not unlocking consistently."
+        },
+        {
+            "title": "Build 368 - Balanced Car Performance, More Mud",
+            "date": "2023-04-05 00:58:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841283543837",
+            "notes": "Hey all,\nTonight's patch includes the following changes:\n\n[olist]\n[*] Rebalanced the top speeds of the 4 vehicle classes to have a closer Min and Max (7.9-8.2).\n[*] Made the Compact vehicles slow down 1.4x in Mud.\n[*] Made the Sport vehicles slow down 1.2x in Mud.\n[*] Guttural Crack has 3 mud zones, now with optimized deformation settings and extra lighting.\n[*] Guttural Crack was widened in the lowest section (Mud Zone 2).\n[*] Electrical discharge VFX now occurs when a Compact or Sport class vehicle is in the mud, further indicating they're having a rough time.\n[*] All vehicles create mud deformation now.\n[/olist]"
+        },
+        {
+            "title": "Build 367 - More \"Guttural Crack\" Mud, Car Balance",
+            "date": "2023-04-04 19:11:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841282666370",
+            "notes": "Hey everyone, we updated the Guttural Crack level with more mud and updated the Vehicle handling in mud zones, as well as the max speed of each vehicle based off their class.\n\n[olist]\n[*] Guttural Crack now has 3 mud zones.\n[*] Guttural Crack opening track section was widened.\n[*] Guttural Crack lighting is rebaked, fixed a few reflection regions.\n[*] Compact class vehicles max speed is 8.50.\n[*] Sport class vehicles max speed is 8.25.\n[*] Mud Plugger class vehicles max speed is 8.00.\n[*] Titan class vehicles max speed is 7.75.\n[*] Compact class vehicle slowdown is 1.4x in mud.\n[*] Sport class vehicle slowdown is 1.2x in mud.\n[/olist]"
+        },
+        {
+            "title": "Mac Version Now Has Mud",
+            "date": "2023-04-03 18:19:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551997882617",
+            "notes": "The Mud section at the beginning of Guttural Crack is now in the Mac OS version. It does affect handling of the Compact and Sport class vehicles negatively, so make sure to drive on higher ground if you choose the Italian Growliano, Honey Buggy or Patriot Oxide for that level."
+        },
+        {
+            "title": "Interactive Mud on Guttural Crack (Windows Patch)",
+            "date": "2023-04-03 00:51:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551995228801",
+            "notes": "Windows users can try out the new Interactive Mud patch just past the starting line on Guttural Crack. Depending on your vehicle class it's best to stay above the mud on the alternate path to the right. Otherwise the lack of grip is intense!"
+        },
+        {
+            "title": "Remapped Mac Buttons, Default Good Graphics Quality",
+            "date": "2023-04-01 12:00:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551989633957",
+            "notes": "We've been hearing from play testers that framerates had seemingly dropped. It turns out we were on Excellent Graphics Quality by default (probably from doing promo screenshots) and have changed the defaults to \"Good\" which is tier 4 out of 6. Speaking of, we might reduce the number of graphics quality tiers in the near future.\n\nMac platform is interesting. The button mapping in Unity Editor isn't quite what it is via Steam App, so we redid the controller button mapping on Mac this morning.\n\nAnd yes, the Mac version is compatible with Intel and M1 chips. =]"
+        },
+        {
+            "title": "Mac Version Released",
+            "date": "2023-03-31 21:54:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551987495430",
+            "notes": "Hey all, the Mac OS version is released with support for Intel and M1 chips in the same package. Enjoy!"
+        },
+        {
+            "title": "Build 365 - Balanced Audio",
+            "date": "2023-03-30 21:13:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551983745966",
+            "notes": "We did further audio balancing by removing the erroneous bear vocalizations and reducing the volume of crowds in every level. Music volume was adjusted slightly in each level and the song for Arch Angel was changed to the track \"Dark Angel\", which we think is more fitting. The Jump Warning Sign was added to 3 locations in the level Arch Angel as well.\n\nThanks for playing and spread the word!"
+        },
+        {
+            "title": "Build 363 - Quieter Vehicles, Less Dust, New Prop",
+            "date": "2023-03-30 19:54:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551983546045",
+            "notes": "To help with performance, the amount of dust emitted from vehicles was reduced by 30%. That should help the framerate.\n\nThe vehicle engine volume felt overpowering, so we reduced those by 30% as well. We may go further.\n\nFinally we also added a new prop to The Pretzel Drop, a Jump Warning Sign. New warning signs will be added to the levels week by week."
+        },
+        {
+            "title": "Build 361 - Physics Improvement",
+            "date": "2023-03-22 15:13:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536876680031",
+            "notes": "The default physics had a regression in quality, everything should have less friction on impact now."
+        },
+        {
+            "title": "Dust - Modern Material Update",
+            "date": "2023-03-22 14:48:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536876614823",
+            "notes": "Today's minor update upgrades the Dust Particles from Unity Legacy Shader to Unity's modern Universal Render Pipeline shader. The upside is that we can use 20% fewer particles for the same visual occlusion, and now it accepts lighting and shadows from the environment. So they look pretty nice!"
+        },
+        {
+            "title": "Build 359 - Minor Fixes",
+            "date": "2023-03-18 15:42:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536862174889",
+            "notes": "Hey everyone,\n\nToday's patch fixes a lingering issue where Player 1 Car Selection screen would be aligned slightly left when exiting the Level Selection screen only. That is now fixed.\n\nThe boost warning sound is using Clayton's new audio effect Version 3.\n\nThe boost warning only occurs on the last bar of the Boost meter rather than the second to last bar.\n\nPardon our dust on Guttural Crack, we have an idea to split the AI into an upper and lower section so there's temp geometry in there.\n\nWe created new audio controls for our team in the Unity editor, so we'll be able to fine tune the Boost audio clips (4 of them) in Unity rather than diving in and out of an audio program like Audition.\n\nTwo new levels are currently being developed behind the scenes, Game of Thorns and Charles Run. Expect to see those drop in next month for community feedback.\n\nThanks for your time and spread the word about MotorCubs RC!"
+        },
+        {
+            "title": "Dive in the Hive Glitch, Camera Stuck Glitch, Explosion Physics, Boost UI Warn",
+            "date": "2023-02-26 17:26:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268543369217545",
+            "notes": "Hey everyone,\n\nWe've addressed the following issues. Just as a warning, the Explosion sound may not work. But we'll address that in a future patch.\n\n[olist]\n[*] Dive in the Hive track placement should be accurate now when the race finishes.\n[*] Dive in the Hive main menu no longer gets stuck when pausing.\n[*] Camera no longer gets stuck under the ground or under bridges after dying.\n[*] Boost UI jolts the controller force feedback when on Bar 7+.\n[*] Boost UI plays temporary warning sound (will create something better) when on bar 7+.\n[*] Explosions from respawning/dying now have an explosive physics force that affects all physics enabled objects, such as cars and rocks.\n[*] Boost UI is now PS5 shader compliant.\n[/olist]"
+        },
+        {
+            "title": "Build 349 - New Level \"Dive in the Hive\"",
+            "date": "2023-02-15 01:14:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059267908809574758",
+            "notes": "Hey everyone, great news! \n\nWe've added Dive In The Hive into the list of playable levels. It's playable after Pretzel Drop and before Granite God Mesa. There's currently no vehicle or honeypot unlocks linked to it, but it does unlock after playing The Pretzel Drop. \n\nOur next step is balancing the AI on that level and finalizing a sick new vehicle we have in the works called Typhoon Wrangler!\n\n[olist]\n[*] Made new level \"Dive in the Hive\" playable.\n[*] Added level selection image for Dive in the Hive.\n[*] Updated the Level Selection image for The Pretzel Drop.\n[/olist]"
+        },
+        {
+            "title": "Build 348 - Crowd Sounds and AI Balancing",
+            "date": "2023-02-14 13:39:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277248552496",
+            "notes": "[olist]\n[*] Added crowd sound effects to all levels.\n[*] Rebalanced A.I. for Granite God Mesa.\n[*] Rebalanced A.I. for Arch Angel.\n[*] Fixed rock podium position for Vehicle Selection Screen P1 and P2.\n[*] Small lighting fix to the final turn of Guttural Crack and the Honeypot location.\n[*] Covered up fence edge that was causing vehicles to get stuck on Arch Angel.\n[*] Minor environment design fixes to Granite God Mesa and new Lighting bake.\n[*] Granite God Mesa brightness rebalanced.\n[*] Covered 2 holes where vehicles could fall through on Sidewinder Spin.\n[*] Made Italian Growliano slightly more stable.\n[/olist]"
+        },
+        {
+            "title": "Build 344 All Unlock Icons Added",
+            "date": "2023-02-12 16:24:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277241677887",
+            "notes": "Minor patch ensuring every level has unlock icons for content earned by the player's Placement at the end of a race.\n"
+        },
+        {
+            "title": "Build 343 Guilty Spark",
+            "date": "2023-02-11 18:33:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277238358595",
+            "notes": "Ok it's not Halo related but by random chance this update landed on at build number! So here's the rundown for today's update:\n\n[olist]\n[*] Honeypot Unlock, Level Unlock and Vehicle Unlock badges only appear if the Finish Line criteria was met and/or if a Honeypot was unlocked during the race.\n[*] FYI 1st place is now required to unlock vehicles, 3rd place to unlock levels. Leave a message on the Steam Page forum if specific levels are making this too difficult, we will be balancing the entire upcoming week.\n[*] Vehicle Selection Screen viewport spacing is centered in 1 Player Mode, and the gap between P1 and P2 viewports is centered as well.\n[*] Main Menu buttons now have a separate sound for Hovering over a button.\n[*] Player cameras now collide with vehicles and the environment to prevent view clipping.\n[*] Boost Overload now respawns the player if they overload the Boost Meter.\n[*] Destroyed vehicle debris (wheels and teddy bear for now) are persistent throughout the race.\n[/olist]\n\nThank you for your support and make sure to spread the word about MotorCubs RC!\n\n"
+        },
+        {
+            "title": "Build 366 Support for 16:10 Monitors",
+            "date": "2023-02-10 00:35:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277231983037",
+            "notes": "In preparation for the Mac version of MotorCubs RC, we began updating the Main Menu to dynamically adjust between 16:9 and 16:10 aspect ratios. In the process some buttons and windows have been organized for slightly easier navigation and reading.\n\n[olist]\n[*] Main Menu -> Arcade -> Vehicle Selection -> Level Selection subpages have been updated for 16:10 aspect ratios.\n[*] Vehicle, Level and Honeypot Unlock badges show up in Results Page of The Pretzel Drop.\n[*] Logic to hide and unhide the badges is pending our programming work this upcoming weekend.\n[/olist]"
+        },
+        {
+            "title": "Build 334",
+            "date": "2023-02-09 03:39:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277228802505",
+            "notes": "Hey everyone, thanks for the input you've been sending us and the positive reviews. We've got a few quality of life changes in this update:\n\n[olist]\n[*]Clear Save Data button added to Main Menu -> Settings\n[*]FYI Clear Save Data will help when new levels and vehicles are added in a different sequence.\n[*]Main Menu framerate is 5x faster, average 120 FPS.\n[*]Main Menu video backdrop is darker to help with UI legibility.\n[*]Confirm Button flickering fixed upon first playthrough.\n[*]Lighting adjustment to Vehicle Selection Screen.\n[*]Granite God Mesa foliage placement adjustments.\n[*]Honeypot collision sound works.\n[*]Celebratory confetti on Granite God Mesa works now.\n[*]Results page has Unlocked Content placeholders.\n[/olist]\n\nThanks for playing! We're preparing a new Level and new Vehicle to release in 2-3 weeks."
+        },
+        {
+            "title": "Updated Handling per Class, Honeypot Unlock Popups",
+            "date": "2023-01-20 00:46:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474413494235",
+            "notes": "Hey everyone, we're dabbling with new handling for the vehicles that get slightly more stable as you move up the classes from Compact -> Sport -> Mud Plugger -> Titan. The honeypots now have additional lighting to help them stand out and when they come into contact with the player a new Popup Image appears to tell you what unlocked. We also added a new type of interactive rock (small, medium, large) on the level The Pretzel Drop to make the track more interesting.\n\n[olist]\n[*] Handling adjusted to be less stiff. Each class of vehicle should feel slightly different, i.e. more weight for the Mud Plugger and Titan Classes.\n[*] Quality of life design changes to The Pretzel Drop level.\n[*] New interactive rocks added to The Pretzel Drop level.\n[*] Honeypot model updated with additional lighting to help it stand out per level.\n[*] Granite God Mesa's honeypot unlocks the Patriot Oxide Fury vehicle; it previously unlocked nothing.\n[*] Sidewinder Spin's podium camera is centered and angled better.\n[*] Sidewinder Spin is now 2 laps instead of 3.\n[*] Confetti effects should now be on every finish line.\n[/olist]"
+        },
+        {
+            "title": "Lights, Cameras and Levels",
+            "date": "2023-01-12 21:09:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840533011503",
+            "notes": "We updated almost every level to have more consistent lighting and removed a lot of design issues in Sidewinder Spin. Occlusion culling, a technique that improves GPU performance, has also been set up for each level. The camera shouldn't clip the ground as much anymore.\n\nThanks for your time and bandwidth, and we hope you like this update!"
+        },
+        {
+            "title": "Sidewinder Spin Fixes",
+            "date": "2023-01-12 16:58:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840532376487",
+            "notes": "Sidewinder Spin was behind in terms of playability and graphics, but also pretty large on disk. So we did some optimizations:\n\n[olist]\n[*] Sidewinder Spin lighting uses 1/4 the data outside of the track bounds.\n[*] Added more barriers and fences to Sidewinder Spin.\n[*] Increased width of some wooden platforms to reduce gameplay friction on Sidewinder Spin.\n[*] Added more Respawn Triggers for instances where falling off the track are possible on Sidewinder Spin.\n[*] Main Menu now indicates Build number for player feedback organization.\n[/olist]"
+        },
+        {
+            "title": "Stabilized Handling, Performance Increase",
+            "date": "2023-01-12 01:17:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840529994248",
+            "notes": "Hello everyone, we made big changes to how the vehicles handle, which means some levels will require design changes to account for that new handling. Right now all vehicles have the same speed and grip for testing purposes. Only their weights differ by Class.\n\nChangelog:\n[olist]\n[*] Vehicles have more stable handling while steering per feedback.\n[*] Vehicles have more resistance to impacts per feedback.\n[*] Vehicle speed is increased per feedback.\n[*] Performance improvements due to lighting and shadow adjustments.\n[/olist]"
+        },
+        {
+            "title": "Build 293: Italian Growliano Physics Fix",
+            "date": "2023-01-10 01:59:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387705090053",
+            "notes": "Good evening, here are tonight's patch notes for Build 293:\n\n[olist]\n[*] Italian Growliano restored to original size to fix handling.\n[*] Physics collision friction for cars reduced. No longer as sticky when hitting walls or each other.\n[*] Lighting adjusted for The Pretzel Drop to lead the player's eye on Ramp 1.\n[*] Outer walls removed for Turn 1 on The Pretzel drop to remove ping pong effect.\n[*] AI is aware of splits in the track for Granite God Mesa.\n[*] Quality of life fixes to first and last jumps of Granite God Mesa.\n[/olist]"
+        },
+        {
+            "title": "Build 285: Honeypots, Pretzels and Handling",
+            "date": "2023-01-07 14:15:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387696022640",
+            "notes": "It's been a busy morning with lots of important feedback from play testers. So thanks again to these amazing folks for putting in the time to help make this game more fun and intuitive.\n\n[olist]\n[*] The Pretzel Drop has more fences to ease the pain of falling to your doom.\n[*] The hidden Honeypot, which unlocks alternate versions of cars, is easier to find on The Pretzel Drop level.\n[*] Player 1 and 2 start at the front of the pack on The Pretzel Drop. It's your first time playing, let's give you a fighting chance.\n[*] Vehicles have been given 50% more road grip to help with vehicle and wall collisions.\n[*] Vehicle Selection UI now indicates the truth; you need to get 3rd place to unlock the main roster of vehicles.\n[/olist]\n\nWe appreciate your time and bandwidth. Download away!"
+        },
+        {
+            "title": "Build 284: Brightness Hotfix",
+            "date": "2023-01-07 12:35:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387695769669",
+            "notes": "We noticed the game is a little darker in Play mode than in our Editor.\n[olist]\n[*] The Pretzel Drop brightness raised.\n[*] Granite God Mesa brightness raised.\n[*] Guttural Crack brightness raised.\n[*] Guttural Crack fog turned back on.\n[*] Sidewinder Spin brightness raised.\n[*] Arch Angel brightness raised.\n[/olist]\n\nThank you for supporting us and have a great day!"
+        },
+        {
+            "title": "Build 281 Patch",
+            "date": "2023-01-07 02:51:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387694290846",
+            "notes": "Thanks for downloading this update, it's got great quality of life improvements to the code, physics handling and UI.\n\n[olist]\n[*]Solved A.I. respawn issue.\n[*]Fixed gamepad double clicking of confirm button.\n[*]Gamepad 1 and 2 have separate Respawn functions now.\n[*]Removed erroneous car controller errors that bogged performance.\n[*]Removed erroneous particle error that bogged performance.\n[*]Quality Settings tiers are tuned for 512 MB VRAM up to 4GB VRAM.\n[*]Quality Settings force higher LODs in Beautiful and Fantastic tiers.\n[*]Texture Streaming enabled for all Quality tiers.\n[*]Added \"Back\" button function to Main Menu.\n[*]Added \"Back\" button function to in-game races.\n[*]Fixed Car Selection glitch.\n[*]Added more fences to The Pretzel Drop per Early Access user feedback.\n[*]The Pretzel Drop level was widened in 2 sections per Early Access user feedback.\n[*]Rebalanced all cars to be more stable.\n[*]Resized the Italian Growliano to be more in line with Compact Class.\n[*]Resized the Honey Buggy to be more in line with Compact Class.\n[*]Camera view increased from 60 to 65 FOV.\n[*]Camera is now closer and lower to the ground.\n[*]Granite God Mesa track pieces have more even polygon distribution.\n[*]Vehicle Stats UI updated in the Main Menu to better communicate Handling.\n[*]Reduced A.I. player count within all levels per Early Access user feedback.\n[*]A.I. players now adhere to the racing line more consistently.\n[/olist]\n\n"
+        },
+        {
+            "title": "Build 266 Patch Notes",
+            "date": "2023-01-05 12:00:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037493981266",
+            "notes": "[list]\n[*] Italian Growliano and Honey Buggy vehicles have narrower wheel placement for more stability. \n[*] LOD quality and Texture quality now varies per Quality setting.\n[/list]\n\n"
+        },
+        {
+            "title": "Build 265 Notes",
+            "date": "2023-01-04 20:38:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037491646942",
+            "notes": "[olist]\n[*]Fixes the Pause Menu from not preselecting Resume in levels 2-5.\n[/olist]"
+        },
+        {
+            "title": "Patch Build 264",
+            "date": "2023-01-04 19:27:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037491468611",
+            "notes": "[olist]\n[*] Pause Button Glitch is fixed.\n[*] Player 1 and Player 2 Respawn buttons respond properly.\n[*] Back Button functionality is added to Menus.\n[*] Texture Streaming enabled for all quality settings.\n[*] Anisotropic Filtering no longer forced for Good Quality and Below to improve performance.\n[/olist]"
+        }
+    ]
+}

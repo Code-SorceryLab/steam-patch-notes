@@ -1,0 +1,42 @@
+{
+    "appId": "2289080",
+    "total_notes": 6,
+    "notes": [
+        {
+            "title": "Update from 14.06",
+            "date": "2023-06-14 13:01:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5126832680918046902",
+            "notes": "updated the balance\nchange the levels of the game"
+        },
+        {
+            "title": "Update 1.0.14",
+            "date": "2023-06-13 03:21:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846356320902",
+            "notes": "Use digits from 1 to 7 to fast access to the top panels. Press the same digit to close it. Use F1, F2, F3 to change the speed of the game and use the Space button for pause of the game\nAnd other"
+        },
+        {
+            "title": "Update from 11.06",
+            "date": "2023-06-11 12:31:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846350425127",
+            "notes": "Bug fix"
+        },
+        {
+            "title": "Update from 10.06",
+            "date": "2023-06-10 15:17:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846347201065",
+            "notes": "Fixed the balance"
+        },
+        {
+            "title": "Update 1.0.12",
+            "date": "2023-06-10 14:10:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846347031473",
+            "notes": "Fixed tutorial"
+        },
+        {
+            "title": "Avia corporation",
+            "date": "2023-05-26 10:20:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151600576591869430",
+            "notes": "This game is an economic strategy. It is the game where you can manage, optimize, distribute passenger traffic and build your own successful airline. The game is made in a minimalist style and is not complicated by unnecessary elements such as:\n - emission into the environment;\n - number of seats in business class;\n - managing schedule; etc.\n\n[img]{STEAM_CLAN_IMAGE}/43702942/33dfebf1d31766233144af65208f3b796fe170bb.gif[/img]\n\nThe first thing, I would like to find the shortest way to a destination. I faced the problem of searching solution. I was starting to find the plugins for this. But all wasn`t easy because the game world is the sphere.\n\n[img]{STEAM_CLAN_IMAGE}/43702942/5d7d46fc38232421ba5c51e626f2bbba9898652b.png[/img]\n\nAs an option to solve this problem, I could create all routes in advance. Since there are 144 cities in the game and a player can create routes in any order the number of potential routes would be 20736. This could lead to indeterminacy and chaos in movement of passengers.\n\n[img]{STEAM_CLAN_IMAGE}/43702942/5d2c753f29915a3b6514a3f9c189fbc89a285866.png[/img]\n\nSo, I had to look for the shortest way after a player creates a route.\n\n[img]{STEAM_CLAN_IMAGE}/43702942/104da9d86d66f3b8a153f54ca34ac4236e4b912b.gif[/img]\n\nI used Floyd-Warshall`s algorithm for solving this task. The algorithm works step by step. At each step, it goes through all vertices and checks the ability to pass from one to another through the current vertex. The algorithm is executed until all possible routes are found . So we will get the matrix of the distances among all pairs of vertices.\n\nFor example:\n[img]{STEAM_CLAN_IMAGE}/43702942/518b8171240dd9059034100a677e6ccfea09a646.jpg[/img]\n\nWe have points and distances among them. To find out the shortest way, we have to create a matrix of distances. The game is developed by Unity Engine so I will use C#. We have to create a two-dimensional array where 999 is infinity when points aren`t connected with each other and other digits are the distances between the connected points.\n\nint[,] graph = new int[6, 6]\n  {\n        { 999, 1, 999, 999, 999, 999},\n        { 1, 999, 2, 4, 4, 999},\n        { 999, 2, 999, 999, 999, 999},\n        { 999, 4, 999, 999, 2, 999},\n        { 999, 4, 999, 2, 999, 3},\n        { 999, 999, 999, 999, 3, 999},\n  };\n\nThe search algorithm itself looks like this.\n\nint[,] distance = new int[graph.GetLength(0), graph.GetLength(1)];\n        int[,] finishMatrix = new int[graph.GetLength(0), graph.GetLength(1)];\n\n        for (int i = 0; i < graph.GetLength(0); ++i)\n        {\n            for (int j = 0; j < graph.GetLength(1); ++j)\n            {\n                distance[i , j] = graph[i , j];\n                finishMatrix[i , j] = j;\n            }\n        }\n\n        for (int k = 0; k < graph.GetLength(0); ++k)\n        {\n            for (int i = 0; i < graph.GetLength(0); ++i)\n            {\n                if (distance[i , k] != 999)\n                {\n                    for (int j = 0; j < graph.GetLength(1); ++j)\n                    {\n                        if (distance[i , j] > distance[i , k] + distance[k , j])\n                        {\n                            distance[i , j] = distance[i , k] + distance[k , j];\n                            finishMatrix[i , j] = finishMatrix[i , k];\n                        }\n                    }\n                }\n         }\n    }\n\n\nThis is the working example but we remember that in my game can be 20736 routes and this is too slow for this quantity. There for, there are various optimizations so that the miscalculation doesn`t affect the player`s experience in the game.\n\nFinally, we launch it and see the result.\n[img]{STEAM_CLAN_IMAGE}/43702942/0e4d85ea73cbd938dbad9b71cfd4f254cf9c92b1.jpg[/img]\n\nWe have got the final matrix and at the first glance we can `t see the way itself.\nThe next step is taking the finish point for example 3. 3 is the column 0 is the row and the start point.\n[img]{STEAM_CLAN_IMAGE}/43702942/3dc6e24bc82b46877488bce24517a46d9a1ebbf8.jpg[/img]\n\nYou can see, we have found out from 0 to 3 but this way is quite easy.\nLet`s take the finish point 5. There are two ways but it is easy to 0,1,4,5 is the best. This is easy for a human. But how can the program understand it?\n[img]{STEAM_CLAN_IMAGE}/43702942/1621acd5dc988ce0f3e9385a0573c751c35208c9.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/43702942/8d833379e2899709c4b3cb7219fa5fa8c2234881.jpg[/img]\n\nGreate, we have found out the way through out our pre-prepared matrix. As, I wrote above the option of calculating routes isn`t suitable in advance, so I have wrote my rather complex algorithm for a creating distance matrix. By the way you can search for paths from different points yourself, start and finish points can be any.\n\nNow the passengers can take the destination point even if there is no direction route.\n[img]{STEAM_CLAN_IMAGE}/43702942/6f4c9e03038408befbec106a9a97ed88e1209f49.png[/img]\n\nThe game will be released on  9 June 2023 on Steam, Nintendo Switch, IOS, Android\n\n"
+        }
+    ]
+}

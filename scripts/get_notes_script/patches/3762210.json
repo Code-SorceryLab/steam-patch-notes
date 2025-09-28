@@ -1,0 +1,120 @@
+{
+    "appId": "3762210",
+    "total_notes": 19,
+    "notes": [
+        {
+            "title": "Galaxy Engine 1.7.2",
+            "date": "2025-09-15 03:38:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566538868",
+            "notes": "[p][b]Hello! For this update I have worked mainly on optimizing the gravity algorithm and adding GPU support. Currently GPU doesn't grant a massive boost but any extra FPS are welcome! The performance on CPU has improved by roughly 63% and with the help of GPU, the total performance gain is roughly 82% with density color on (this is the most computationally expensive color mode and the one I used for testing). This is almost double the performance with GPU enabled![/b][/p][p][b]On top of that, I have been working on some new features including a 3D model exporter to bring the simulations to your favorite 3D program like Blender, a new turbulence color mode and reworked trail visuals.[/b][/p][p][/p][p][b]Here is a video showcasing the new update:[/b][/p][p][/p][previewyoutube=\"hAHMUydiWio;full\"][/previewyoutube][p][/p][p][i]Changelog:[/i][/p][list][*][p]Added basic GPU support (doesn't support all features)[/p][/*][*][p]Added \"Turbulence\" color mode[/p][/*][*][p]Added \"Max Turbulence Color\" slider[/p][/*][*][p]Added \"Turbulence Fade Rate\" slider[/p][/*][*][p]Added \"Turbulence Contrast\" slider[/p][/*][*][p]Added \"Turbulence Custom Colors\" button[/p][/*][*][p]Added .ply file export feature[/p][/*][*][p]Reworked trail visuals[/p][/*][*][p]Optimized quadtree creation[/p][/*][*][p]Optimized quadtree traversal[/p][/*][*][p]Set softening minimum slider value to 0.5[/p][/*][*][p]Changed slider \"Max Color Force\" to \"Max Force Color\"[/p][/*][/list][p][/p][p][b]Currently, GPU doesn't support all features like fluids and correct temperature simulation.[/b][/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.2 - GPU Beta 1",
+            "date": "2025-08-23 15:14:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382519248",
+            "notes": "[p][b]This new beta update features some of the new changes and additions for the next 1.7.2 regular update which will mainly include a new GPU mode and several performance improvements.[/b][/p][p][/p][p][i]Current changelog:[/i][/p][list][*][p]Added obj file export feature (Found in the \"Fun Tab\" in the Tools Menu)[/p][/*][*][p]Added GPU button to enable GPU physics (currently work in progress)[/p][/*][*][p]Optimized quadtree creation process for the gravity simulation[/p][/*][*][p]Optimized quadtree traversal for the gravity simulation[/p][/*][*][p]Improved gravity simulation quality while also improving performance (densely packed regions like stars don't drift away anymore[/p][/*][*][p]Set softening minimum slider value to 0.5[/p][/*][*][p]Changed slider \"Max Color Force\" to \"Max Force Color\"[/p][/*][/list][p][i]Known issues:[/i][/p][list][*][p]Currently GPU simulation doesn't have a massive impact in performance. I'm trying to work on this[/p][/*][*][p]GPU currently doesn't support fluids[/p][/*][*][p]GPU currently doesn't support constraints[/p][/*][*][p]GPU currently doesn't support correct temperature simulation[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.1",
+            "date": "2025-08-01 21:18:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490732438",
+            "notes": "[p][b]Small update with some additions, bug fixes and UI changes.[/b][/p][p][/p][p][i]Changelog:[/i][/p][list][*][p]Added merger simulation mode[/p][/*][*][p]Added exit button[/p][/*][*][p]Worked on the UI's right side[/p][/*][*][p]Added drop down menus for color, simulation modes and materials[/p][/*][*][p]Moved fluid materials to the right side[/p][/*][*][p]Moved \"Ship Gas\" button to the \"Fun\" tab in the tools menu[/p][/*][*][p]Fixed camera following dark matter particles[/p][/*][*][p]Particle size now doesn't affect neighbor search[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.0 - Optics Update",
+            "date": "2025-07-23 15:47:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758586211",
+            "notes": "[p][b]This new major update brings light simulation with ray tracing, as well as some quality of life additions and bug fixes.[/b][/p][p][/p][p]Changelog:[/p][p][/p][list][*][p]Added ray-traced light simulation[/p][/*][*][p]Added \"Optics\" tab[/p][/*][*][p]Added new tools menu[/p][/*][*][p]Added \"Long Exposure\" feature[/p][/*][*][p]Added new presets showcasing the new optics features[/p][/*][*][p]Added new basic stats for optics (enable optics to see them)[/p][/*][*][p]Improved UI readability[/p][/*][*][p]Galaxy Engine now uses 16 bits-per-channel color data internally. This enables more accurate colors, especially for dark values.[/p][/*][/list][p][/p][p]I decided to go for a PBR approach, meaning that you can make scenes and modify materials similar to how you would in a traditional 3D path tracer. The lighting simulation does approximate some things more than others, like energy conservation and dispersion.[/p][p]The ray tracer is geometry-based, which means that it doesn't use mathematical functions for shapes. Instead, shapes are made out of individual edges, again, similar to 3D rendering tools. This means that walls and shapes have edge normals and vertex normals. These normals allow smooth shading while using actual geometry.[/p][p]\n[/p][p]All that said, here is a list of features the ray tracer showcases:[/p][p][/p][p]Diffuse lighting[/p][p]Specular reflections[/p][p]Refraction[/p][p]Emission[/p][p]Specular roughness[/p][p]Refraction roughness[/p][p]Fresnel simulation[/p][p]Index of Refraction (IOR)[/p][p]Nested dielectrics with different IOR[/p][p]Light dispersion[/p][p]Total internal reflection[/p][p]Sampling with ray accumulation[/p][p]Wall creation[/p][p]Draw shape tool[/p][p]Lens creation tool[/p][p]Circle creation tool[/p][p]Diffuse color editing[/p][p]Specular color editing[/p][p]Refraction color editing[/p][p]Emission color editing[/p][p]Light color editing[/p][p]Shape relaxation[/p][p]Point lights[/p][p]Area lights[/p][p]Cone lights[/p][p]Light spread[/p][p][/p][p]Here you can see a video that showcases some of the new features:[/p][p][/p][previewyoutube=\"wxoEvtipIrg;full\"][/previewyoutube][p][/p][p]I have a background in 3D rendering, and now that I know how to code, I thought to myself: \"I could make my own ray tracer!\" And so, this is why I started working on this update. It was a fun experiment, and I'm glad that I did it. But now that I've finally finished it, I'm getting back to particles.[/p][p][/p][p]I hope you like it![/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.0 - Optics Update Beta 5",
+            "date": "2025-07-16 03:58:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065295815",
+            "notes": "[p]This new beta update brings some quality of life features:[/p][p][/p][list][*][p]Tool menu[/p][/*][*][p]Optics selection tool[/p][/*][*][p]Optics eraser[/p][/*][*][p]Now optics elements can be modified after being placed. Use the select tool to select the assets you want to modify and then just adjust the settings from the lighting tab.[/p][/*][*][p]Deleted alpha contribution for lights and walls colors[/p][/*][*][p]The scene now renders after adjusting the lighting settings automatically[/p][/*][*][p]Changed a little how the heavy particles spawning behaves. Now they are only accessible from the tools menu (all the shortcuts are untouched)[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.0 - Optics Update Beta 4",
+            "date": "2025-07-05 18:04:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891812723",
+            "notes": "[p]Building optical instruments like telescopes, cameras and more is now possible in Galaxy Engine![/p][list][*][p]Added lenses[/p][/*][*][p]Added drawable shapes[/p][/*][*][p]Fixed diffuse lighting appearing with full refraction[/p][/*][*][p]Made default global light absorption more subtle[/p][/*][*][p]Added \"Show Normals\" button[/p][/*][*][p]Added \"Symmetrical Lens\" button[/p][/*][/list][p]I plan on adding more features before releasing the full 1.7.0 update. I want to add stuff like volumetric lighting, a tool menu for more intuitive controls, sphere lights (circle actually, but sphere sounds nicer), and more. [/p][p]You can also check all of these new features' source code here: [url=\"https://github.com/NarcisCalin/Galaxy-Engine\"]https://github.com/NarcisCalin/Galaxy-Engine[/url][/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.0 - Optics Update Beta 3",
+            "date": "2025-07-01 16:40:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891681984",
+            "notes": "[p]Refraction is fun, this is the first step towards building telescopes in Galaxy Engine![/p][p][/p][list][*][p]Added refraction[/p][/*][*][p]Added new refraction color editor[/p][/*][*][p]Added new refraction roughness slider[/p][/*][*][p]Added new refraction amount slider[/p][/*][*][p]Removed specular amount slider[/p][/*][*][p]Set default samples to 1[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.0 - Optics Update Beta 2",
+            "date": "2025-06-30 13:49:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891645668",
+            "notes": "[p]This new beta release includes more light simulation features:[/p][p][/p][list][*][p]Added specular reflections[/p][/*][*][p]Added fresnel simulation[/p][/*][*][p]Added IOR slider[/p][/*][*][p]Added roughness slider[/p][/*][*][p]Added specular color editor[/p][/*][*][p]Added light color editor[/p][/*][*][p]Separated specular reflections from diffuse lighting[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.7.0 - Optics Update Beta 1",
+            "date": "2025-06-29 10:23:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891608569",
+            "notes": "[p]This upcoming release will include light simulation as well as some other visual improvements.[/p][p]These are a list of features that are included in the beta 1 update:[/p][list][*][p]2D Ray tracing with global illumination[/p][/*][*][p]New \"Lighting\" tab[/p][/*][*][p]Modified internal rendering to use 16 bits per channel. This greatly improves color visuals with dark colors or large particles[/p][/*][*][p]Added new \"Max Dynamic Size\" slider[/p][/*][*][p]Added new \"Min Dynamic Size\" slider[/p][/*][*][p]Now fullscreen is actually windowed borderless[/p][/*][/list][p]You can find the current placeholder controls in the new \"Lighting\" tab[/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.6.3 - Sound Update",
+            "date": "2025-06-25 06:08:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891470621",
+            "notes": "[p][b]This regular update includes a new official soundtrack for Galaxy Engine as well as menu sounds and some bug fixes.[/b][/p][p][/p][p][i]Changelog:[/i][/p][list][*][p]Added menu and intro sounds[/p][/*][*][p]Added Galaxy Engine official soundtrack[/p][/*][*][p]Added new \"Sound\" tab[/p][/*][*][p]Added new intro[/p][/*][*][p]Added new config file system for parameters like sound[/p][/*][*][p]Made controls and information windows resizeable[/p][/*][*][p]Fixed bug that caused a crash when using Fluid Mode with Looping-Space disabled[/p][/*][*][p]Fixed temperature bug which caused the heat to go towards the top left side of the screen[/p][/*][*][p]Fixed bug that caused undefined behavior when moving constrained particles while paused[/p][/*][*][p]Fixed a bug where heavy particles escaped the domain in Fluid Ground Mode[/p][/*][/list][p]Special thanks to HAVA, the artist behind the first official Galaxy Engine tracks! You can check more of their work here: [url=\"https://open.spotify.com/artist/1vrrvzYvRY27SDZp7WsMwx\"]https://open.spotify.com/artist/1vrrvzYvRY27SDZp7WsMwx[/url][/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.6.2",
+            "date": "2025-06-19 10:14:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906731108",
+            "notes": "[p]Minor changes[/p][p][/p][p]Changelog:[/p][list][*][p]Fixed draw brush bug which caused position correction to not work when using different particle sizes[/p][/*][*][p]Made rock material 25% lighter[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.6.1",
+            "date": "2025-06-17 20:22:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906679292",
+            "notes": "[p]Minor patch[/p][p][i]Changelog:[/i][/p][list][*][p]Fixed materials leaking through pinned particles[/p][/*][*][p]Fixed pinned materials velocity bug[/p][/*][/list][p][/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.6.0 - Solids Update",
+            "date": "2025-06-17 18:55:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906677102",
+            "notes": "[p][b]The 1.6.0 update features a new constraint system to simulate solid and soft materials like metal, rock and rubber! This new update also brings multiple new fun and useful features for the players to explore, which include enhanced brush drawing, pin feature, mesh visualization and more![/b][/p][p]Here you can check out new video showcasing some of the new features:[/p][p][/p][previewyoutube=\"vu9Ld46LirI;full\"][/previewyoutube][p][i]Changelog:[/i][/p][list][*][p]Added constraint physics[/p][/*][*][p]Added \"Particle Constraints\" button[/p][/*][*][p]Added \"Unbreakable Constraints\" button[/p][/*][*][p]Added \"P\" shortcut for Constraint Solids[/p][/*][*][p]Added \"Constraint Solids\" button in the Right-click menu[/p][/*][*][p]Added \"Constraint Selected\" button in the Right-click menu[/p][/*][*][p]Added \"Delete All Constraints\" button in the Right-click menu[/p][/*][*][p]Added \"Del. Selec. Constraints\" button in the Right-click menu[/p][/*][*][p]Added \"Constraints Stiffness Multiplier\" slider[/p][/*][*][p]Added \"Constraints Resistance Multiplier\" slider[/p][/*][*][p]Added \"Visualize Mesh\" feature[/p][/*][*][p]Added \"Draw Constraints\" feature[/p][/*][*][p]Added \"Iron\" material[/p][/*][*][p]Added \"Rubber\" material[/p][/*][*][p]Added \"Mass Multiplier\" button in the visuals tab[/p][/*][*][p]Added \"Constraint Stress Color\" mode[/p][/*][*][p]Added \"Pin\" particles feature[/p][/*][*][p]Improved Fluid Mode brush drawing[/p][/*][*][p]Now the simulation can run when the window is minimized[/p][/*][*][p]Material buttons are now enabled only if Fluid Mode is active[/p][/*][*][p]Internally modified the save system. From now on, newer versions of GE should be able to open older scenes (starting from 1.6.0)[/p][/*][*][p]Particle amount multiplier now works with Fluid Mode too[/p][/*][*][p]Modified the information tab[/p][/*][*][p]Improved performance for particle deletion when Looping Space is disabled[/p][/*][*][p]Removed fullscreen key shortcut[/p][/*][*][p]Renamed \"SPH\" to \"Fluid Mode\"[/p][/*][*][p]Renamed material buttons[/p][/*][*][p]Renamed \"SPH Color\" to \"Material Color\"[/p][/*][*][p]Minor UI changes[/p][/*][*][p]Fixed missing temperature when subdividing[/p][/*][*][p]Removed \"Collisions Mode\"[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.6.0 Beta 2",
+            "date": "2025-06-15 13:25:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289665090",
+            "notes": "[p]This beta update include some progress on the constraints system. Now constraints react to temperature.[/p][p]New visualization modes were added too:[/p][list][*][p]Visualize Constraints[/p][/*][*][p]Visualize Mesh[/p][/*][/list][p]Adding constraints to solids is possible from the right-click menu now too[/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.6.0 Beta 1",
+            "date": "2025-06-14 10:27:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289629480",
+            "notes": "[h3]This new beta update includes the upcoming constraint physics system.[/h3][p][b]How to enable the beta branch:[/b][/p][olist][*][p]Right-click on Galaxy Engine.[/p][/*][*][p]Go to properties.[/p][/*][*][p]Go to Betas.[/p][/*][*][p]Select the \"betafeatures\" branch[/p][/*][/olist][p][b]How to test out the new constraints:[/b] [/p][olist][*][p]Enable \"Particle Constraints\"[/p][/*][*][p]Select the particles you want to add constraints to.[/p][/*][*][p]Press \"P\" on your keyboard[/p][/*][*][p]Now the particles are tied together[/p][/*][/olist][p]This is still in progress, so you can expect bugs here and there.[/p][p]Please, let me know if you find any bugs.[/p][p]Join our Discord community! [url=\"https://discord.gg/Xd5JUqNFPM\"]https://discord.gg/Xd5JUqNFPM[/url][/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.5.2",
+            "date": "2025-06-10 06:23:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199553157",
+            "notes": "[p][i]Changelog:[/i][/p][list][*][p]Set fullscreen to default[/p][/*][*][p]Fixed icon not showing bug[/p][/*][/list]"
+        },
+        {
+            "title": "Galaxy Engine 1.5.1",
+            "date": "2025-06-09 18:51:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199537620",
+            "notes": "[p][i]Changelog:[/i][/p][p]- Set default threads amount to user's max available threads[/p][p]- Fixed transparent screenshots/frames bug[/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.5.0 - Temperature Update",
+            "date": "2025-06-07 15:51:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199467726",
+            "notes": "[p][b]This new major update includes temperature simulation as well as some new visual modes, statistics and more![/b][/p][p][i]Note:[/i] Any saved scenes prior to this version will not be compatible with the new version.[/p][p]Here is a video showing the new features: [/p][previewyoutube=\"8K0sG__ZLmw;full\"][/previewyoutube][p][i]Changelog:[/i][/p][list][*][p]Added temperature simulation[/p][/*][*][p]Added Temperature Color mode[/p][/*][*][p]Added Temperature Gas Color mode[/p][/*][*][p]Added temperature sliders[/p][/*][*][p]Added temperature brush (K and L keys)[/p][/*][*][p]Added SPH Vertical Gravity slider for SPH Ground Mode[/p][/*][*][p]Added SPH Gas material[/p][/*][*][p]Modified save system. Now scenes are being saved in .bin files[/p][/*][*][p]Removed rest density slider as it was not being used anymore[/p][/*][*][p]Removed SPH size slider[/p][/*][*][p]Fixed SPH max vel with looping space disabled[/p][/*][*][p]Made minor changes to controls text[/p][/*][*][p]Made minor changes to some tooltips[/p][/*][/list][p][i]Known issues:[/i] There is a bug that makes particles heat up when they are moving at high speeds[/p]"
+        },
+        {
+            "title": "Galaxy Engine 1.4.0 - Better Fluids Update",
+            "date": "2025-05-30 05:34:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756339305",
+            "notes": "[b]This major update adds a lot of new features and improvements like better fluids, more materials, a UI redesign, expanded recording functionality, and more![/b]\n\n[b]The new fluids use a basic variant of the PCISPH algorithm, which enforces incompressibility much better than before. This stops fluids from collapsing and makes materials behave in a more realistic manner. These new fluids are a step closer to a more realistic simulation[/b]\n\n[i]Note:[/i] Any saved scenes prior to this version will not be compatible with the new version.\n\nHere is a video that shows some of the most relevant new features: [previewyoutube=k6whorF35oU;full][/previewyoutube]\n\n[i]Changelog:[/i]\n\n[list]\n[*] Made major improvements to fluids by using a variation of the PCISPH algorithm for better incompressibility\n[*] Added new SPH ice material\n[*] Added new SPH mud material (previous mud is now named soil)\n[*] Added new SPH delta slider, which controls overall incompressibility of SPH materials\n[*] Added new SPH max velocity slider, to avoid particles getting flung at very high speeds\n[*] Added new advanced stats tab with many new fun graphs and statistics\n[*] Added new Pressure Color visuals\n[*] Added max Pressure Color slider\n[*] Added max Velocity Color slider\n[*] Added new record functionality\n[*] Added new record tab\n[*] Made new presets for this version\n[*] Redesigned the entire UI\n[*] Renamed DeltaV Color to ShockwaveColor\n[*] Improved color customization in the right-click menu. This means that now the colors are explicitly modified instead of using a basic color multiplier. This makes color customization much easier and intuitive\n[*] Right-click color customization now works in SPH color mode too\n[*] Reduced brush minimum size\n[*] Fixed description text for some visuals buttons\n[*] Made minor optimizations\n[/list]"
+        }
+    ]
+}
