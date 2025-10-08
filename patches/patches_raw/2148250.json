@@ -1,0 +1,84 @@
+{
+    "appId": "2148250",
+    "total_notes": 13,
+    "notes": [
+        {
+            "title": "Update version 1.0.13",
+            "date": "2024-03-05 20:23:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637646721089",
+            "notes": "[enhancement] Drawn content now looks sharper while running the \"Liquify filter\" and \"Retouch filter\". Previously, when I zoomed in, it was a little blurry.\n[bugfix] If you painted and executed \"Undo\" immediately after creating a canvas, the wrong \"Undo\" might be executed. Fixed this.\n[bugfix] Commands such as \"Transform\" could sometimes darken the color of semi-transparent pixels. Fixed this. As a result, adjusting the brightness parameter with the \"Radial blur\" filter now looks different than before.\n[bugfix] The calculation formula for the \"Noise\" filter was incorrect, so it has been corrected. As a result, the translucent pixels look a little different than before."
+        },
+        {
+            "title": "Update version 1.0.12",
+            "date": "2024-02-06 19:06:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109259580822",
+            "notes": "[new feature] You can now rearrange layers by dragging them with mouse or pen in the layer window.\nYou can easily reorder layers and change their stacking order.\nYou can easily move layers into and out of groups.\n\n[enhancement] You can now load and save psd files faster.\n\n[bugfix] Fixed an issue where the processing of layers where the mask and drawing content were linked was incorrect when loading a psd file.\n[bugfix] Fixed an issue where a layer without a layer name was treated as an error when loading a psd file, and now it can be loaded.\n[bugfix] Fixed an issue where the processing was incorrect when any of RGB was 0 when using \"Divide\" in the composition mode."
+        },
+        {
+            "title": "Update version 1.0.11",
+            "date": "2023-10-17 00:38:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944137432163",
+            "notes": "[enhancement] Copying an image by right-clicking in a browser such as Chrome now correctly pastes it from the clipboard to the canvas or layer.\n[enhancement] Updated webp library.\n\n[bugfix] When changing a layer name and confirming without entering any characters, the UI layout was broken. Fixed this bug."
+        },
+        {
+            "title": "Update version 1.0.10",
+            "date": "2023-07-13 22:12:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124583599316227310",
+            "notes": "[enhancement] Changed to automatically scroll the position of the canvas when reaching the edge of the window while dragging with the \"Rectangle\" tool.\nThe \"Circle\" tool works in the same way.\n[enhancement] You can resize only horizontally by pressing the \"H\" key while dragging with the \"Rectangle\" tool.\nSimilarly you can resize only vertically by pressing the \"V\" key while dragging with the \"Rectangle\" tool.\n[enhancement] Reduced the amount of memory allocated on the GPU when launching the app.\n[enhancement] Improved performance with SIMD and algorithm improvements.\n[new feature] Added \"Duplicate layer to another canvas\" command.\n\n[bugfix] When resizing the canvas, etc., the layer color palette of the pixel art vector layer was not copied. Fixed this bug.\nThe paper texture angle parameter was also not copied. Fixed this bug.\n[bugfix] When executing the \"Move\" command on the pixel art layer, the part drawn in black (RGB 0,0,0) was converted to transparent color. Fixed this bug.\nSimilarly, the part drawn in black (RGB 0,0,0) on the pixel art vector layer was converted to transparent color. Fixed this bug."
+        },
+        {
+            "title": "Update version 1.0.9",
+            "date": "2023-06-12 20:28:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846355277139",
+            "notes": "[new feature] You can now add or remove control points after drawing a brush stroke with the \"Curve brush\" tool.\n[new feature] Added a new transformation algorithm in the \"Perspective transform\" command (Type B)."
+        },
+        {
+            "title": "Update version 1.0.8",
+            "date": "2023-05-22 21:17:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943321622180",
+            "notes": "[new feature] \"Anti-alias\", \"Blur 3x3 px\", and \"7x7 px\" have been added for how to paint lines on vector layers.\n[new feature] It is now possible to specify the size up to 4 px for how to paint lines on vector layers.\n\n[new feature] Gradients have been added to the fill method for closed curves on vector layers.\nYou can select linear gradient or radial gradient for this gradient.\nYou can create gradients of up to 5 colors.\nYou can adjust the \"mid point\" and \"color stop\".\nThe start and end points of the gradient can be moved by clicking and dragging the purple dots in the canvas.\n\n[change] The \"Create gradation\" command when creating a layer has been renamed to the \"Gradients\" command.\n[change] Changed the algorithm when creating gradients with the \"Gradients\" command.\nCompared to before, the gradation is created evenly with no bias in the color change.\n\n[enhancement] Optimized the processing of the \"Curve brush\" tool in \"Pixel pen\" mode.\nCompared to before, the amount of calculations in \"Pixel pen\" mode has decreased.\n\n[bugfix] Fixed an issue where incorrect calculation results were obtained for certain colors when \"Luminosity\" was selected as the \"Blending mode\" for brushes and vector layers."
+        },
+        {
+            "title": "Update version 1.0.7",
+            "date": "2023-05-16 10:59:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386959720384",
+            "notes": "[enhancement] Older versions of gif files (GIF87a) and gif files without a \"Global Color Table\" could not be opened, but these gif files can now be opened.\n\n[new feature] Added \"Blending mode\" to how to paint with the \"Curve brush\" tool.\n[new feature] Added \"Pixel pen\" mode to \"Curve Brush\" tool.\n[enhancement] Enabled to scale the brush stroke with Ctrl + Alt click when manipulating control points with the \"Curve brush\" tool.\n[change] Enabled to change the pen pressure of control points by Ctrl + Shift dragging with the \"Curve brush\" tool.\n[enhancement] Enabled to move multiple control points at the same time by Shift-clicking with the \"Curve brush\" tool.\n[enhancement] Enabled to adjust the size of the circle when there is no control point in the circle when moving multiple control points at the same time by Shift-clicking.\n[enhancement] Added a mouse cursor (image) that appears when moving a curve with Ctrl + Shift drag.\n[enhancement] Reduced drawing delay by increasing the drawing update frequency when adjusting brush strokes etc. with the \"Curve brush\" tool.\n\n[enhancement] The settings for how to paint with the \"Pixel pen\" tool are now saved automatically.\n\n[enhancement] The currently selected tool in the \"Select tool\" window is now a button with a yellow frame to make it stand out.\n[enhancement] The currently selected item in the pop-up window that appears when selecting a blending mode etc. is highlighted in white to make it stand out."
+        },
+        {
+            "title": "Update version 1.0.6",
+            "date": "2023-05-09 22:07:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340308864227048",
+            "notes": "[new feature] Added \"Pick screen color at cursor position\" command (in the \"etc\" section of the Keyboard shortcuts window).\nUnlike the eyedropper tool, this command allows also you to pick screen color in another app's window.\n\n[new feature] Added \"Anti-alias\" mode to the blur mode of Lasso tool, Polygon tool and Fill tool.\n    \"Anti-alias\" mode preserves hard edges unlike \"Blur 3x3 px\" mode.\n\n[new feature] Added \"Replace\" mode to lasso and polygon(selection) tools.\n[enhancement] It has become easier to transform when the size is large with the \"Move Scale Rotate\" command.\n[enhancement] You can now execute commands between pixel art layers with the \"Combine with lower layer\" command and \"Transfer to lower layer\" command (only if the pixel art layer uses a shared color palette).\n[enhancement] Added a checkbox for \"Color\" in \"Noise\" in \"Filter\".\n[bugfix] Fixed it because \"Blur 5x5 px\" and \"7x7 px\" of the brush(selection) tool were the same as \"Blur 3x3 px\".\n\n[change] The \"Pixel\" tool has been renamed to the \"Pixel pen\" tool.\n[new feature] \"Anti-alias\" mode, \"Blur\" mode, and \"Blur (strong)\" mode have been added to the painting method of the \"Pixel pen\" tool."
+        },
+        {
+            "title": "Update version 1.0.5",
+            "date": "2023-05-04 03:28:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875078601157",
+            "notes": "[new feature] Added \"Open the online manual\" button inside the Setting window"
+        },
+        {
+            "title": "Update version 1.0.4",
+            "date": "2023-04-26 01:11:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583642646247216",
+            "notes": "[new feature] Added \"Visualization mode\" to all 4 types of lasso tools (for drawing/selection/layer mask/pixel art).\n[change] Initialize \"Min size\" of marker brush from 15 to 0.\n[bugfix] Shortcut keys for brush presets remained assigned after clicking the \"Initialize brush preset\" button."
+        },
+        {
+            "title": "Update version 1.0.3",
+            "date": "2023-04-14 06:56:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519488827092",
+            "notes": "[bugfix] When opening a text file (.json) in a text layer and loading sentences, an error occurs when there are too many characters in a specific character.\n[bugfix] An error occurs under certain circumstances for animations with specified a layer."
+        },
+        {
+            "title": "Update version 1.0.2",
+            "date": "2023-04-13 22:27:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519487538784",
+            "notes": "[enhancement] The number of characters per single text block in the text layer has been expanded to about 4 times what it was before."
+        },
+        {
+            "title": "Update version 1.0.1",
+            "date": "2023-04-12 23:07:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831443776708457",
+            "notes": "[bugfix] \"Move\" command when drawing content is too small\n[bugfix] \"Color Vibrance\" (adjustment layer) when R, G or B is 0\n[enhancement] \"Color Vibrance\" (adjustment layer): add \"Gamma\" parameter\n[enhancement] \"Color Vibrance\" (filter): add \"Gamma\" parameter\n[enhancement] \"Directional blur\" (filter): smoother blur than before\n[enhancement] \"Swirl\" (filter): add \"Aspect ratio\" checkbox and add \"Blur\" parameter\n[enhancement] \"Metal\" (filter): add \"Aspect ratio\" checkbox\n[enhancement] \"Blur\" (filter): smoother blur than before\n[enhancement] \"Blur\" (filter): add \"Rotate\" checkbox ([new feature] Rotation blur)\n[enhancement] \"Contour\" (filter): changed algorithm, fixed an issue where contour lines were not created in some cases\n[change] \"Paste clipboard\" command: paste at the copied position instead of the center position of the canvas\n[new feature] \"Line art\" (filter)\n[enhancement] \"Line art\" (3D): add \"Threshold\" parameter and add \"Width\" parameter\n[enhancement] \"Color library\" window and \"Color palette\" window: add \"↑\" button and add \"↓\" button"
+        }
+    ]
+}

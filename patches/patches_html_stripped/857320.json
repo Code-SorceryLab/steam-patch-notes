@@ -1,0 +1,438 @@
+{
+    "appId": "857320",
+    "total_notes": 72,
+    "notes": [
+        {
+            "title": "SRPG Studio 1.317 Update Released!",
+            "date": "2025-09-22 05:08:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915516353",
+            "notes": "Hello, everyone!\nWe have now released version 1.317.\n\nNew Feature:\n\nAdded script methods to set/get values in game.ini. Use them as follows.\nroot.setGameIniValue('ConfirmGameExit', 0);\nroot.getGameIniValue('HardwareAcceleration');\nAdded changeUnitSetOffset(dx, dy); to root.getCurrentSession(). It is called right before drawUnitSet.\nAdded variable-dynamiclevel.js to official plugins. Gets the player's maximum level or average level.\nAdded skill-stock.js to official plugins. Units possessing skills can access the stock.\nAdded battle-unskippable.js to official plugins. Disables turn skipping in important battles.\nAdded state-followleader.js to official plugins. Units inflicted with states will move toward the leader unit.\nAdded skill-debuffafterbattle.js to the official plugins. Debuffs will be added after battle ends.\nAdded skill-nofusionattack.js to the official plugins. It disables fusion attacks from targets.\nThe console window can now be resized horizontally.\n\n\nBug Fixes:\n\nFixed a bug where item usage count would decrease when canceling a \"steal\" item."
+        },
+        {
+            "title": "SRPG Studio 1.316 Update Released!",
+            "date": "2025-08-06 07:53:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909536150",
+            "notes": "Hello, everyone!\nWe have now released version 1.316.\n\nNew Feature:\n\nWe've modified the system to store voice folder contents from the Material folder in localization.dat.\nPreviously, in games with voice acting, voices were unconditionally stored in data.dts.\nHowever, when localization is enabled, voices for each language are now stored in localization.dat.\nThis change helps prevent data.dts from becoming excessively large as multilingual support expands.\nAdded getParameterValue and getConditionValue methods to the script's Aggregation object.\nIn addition to \"Effective Targets\" data, you can now retrieve \"Parameter Conditions\".\nAdded character illustration changing functionality to the official plugin face-changeclass.js.\nAdded WEAPONTYPE to the script's IconDecorationType.\n\n\nBug Fixes:\n\nFixed a bug where deleting map chips from \"Look Up Resources\" would leave residual data in the map tree.\nFixed a bug where \"Crt Direct Finisher\" in \"Cut-in\" wouldn't activate when \"Battle Motions\" were missing.\nFixed a bug where drawUnitSet method could only accept indices up to a maximum of 4.\nFixed a bug where getCurrentMapInfo().getMapColorIndex() couldn't return values greater than 2.\nFixed a bug in the official plugin custom-itemcolor.js where color changes weren't being applied.\nFixed a bug where the GraphicsDecoration object's setLargeSize method ignored the second argument."
+        },
+        {
+            "title": "SRPG Studio 1.312 Update Released!",
+            "date": "2025-05-08 10:30:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287834403",
+            "notes": "Hello, everyone!\nWe have now released version 1.312.\n\nNew Feature:\n\nAdded root.getMediaManager().getActiveMusicDuration to retrieve the length of the currently playing BGM.\nUpdated the script API reference.\nWhen HP is set in \"Stat Changes during Fusion\", HP now recovers during fusion.\nIf the BGM playing in the battle preparation scene is the same as in the player phase, the BGM will no longer stop.\nEnabled system-levelcap.js to work in conjunction with system-interruption.js.\nAdded battle-bgmcontinue.js to the official plugins, allowing real battles to resume from the previous BGM.\nAdded terrain-eventchecker.js to the official plugins to detect auto-start events during unit movement.\nAdded window-blinkingitem.js to the official plugins to make the selected item blink.\nAdded skill-invalidateex.js to the official plugins, which also disables \"Critical Counterattack\".\n\n\nBug Fixes:\n\nFixed a bug in root.getElapsedTime.\nFixed a bug in released games where character illustration numbers (variations) could not be omitted.\nFixed the \"Show Chapter\" event command so that localization succeeds even if the map name is not entered.\nFixed a bug where coordinates would shift when scrolling dialogs if \"Positioning\" was enabled in the map editor.\nFixed a bug in other-shopnegotiator.js where discounts were not applied in the battle preparation scene.\nFixed a bug in battle-smoothlytransition.js where zooming in real battles was not handled properly.\n\n\nIn addition, we released some new JRPG-style battle backgrounds--hope you enjoy them!\n\nhttps://store.steampowered.com/app/3706520/SRPG_Studio_JRPG_Background_Vol2/"
+        },
+        {
+            "title": "SRPG Studio 1.311 Update Released!",
+            "date": "2025-04-06 05:17:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897416454",
+            "notes": "Hello, everyone!\nWe have now released version 1.311.\n\nNew Feature:\n\nAdded the \"Bulk settings from folders\" button to \"Database/Players/Details/Char Illust\". If you create a Nash folder in the charillust folder, for example, and manage the files in it as Nash.png, Nash-1.png, and Nash-2.png, you can use the bulk settings. This saves you the trouble of setting illustrations for each facial expression. Managing \"Char Illust\" in folders prevents the charillust folder from becoming too large.\nChanged \"Copy Pattern Data\" in the enemy dialog to \"Copy Data.\" It is now possible to copy not only \"Action Pattern\" but also \"face image\" and \"description\" all at once.\nAdded \"Auto Sort by ID\" and \"Auto Sort Alphabetically\" to the \"Resources\" menu. Selecting these items will sort all original resources.\nAdded a \"File\" menu to the console during gameplay. The contents of the console window can be output as console.txt.\nAdded battle-autoitem.js, which automatically uses owned items after battle, as an official plugin.\nAdded scriptexecute-unitmenu.js, which displays the unit menu screen, as an official plugin.\n\n\nBug Fixes:\n\nFixed a bug that occurred when \"Skip weapon select menu when only have 1 weapon\" was enabled. After selecting \"Fusion Attack,\" FusionControl.endFusionAttack was not being called even when canceled.\nFixed a bug where the \"Show Chapter\" event command was not included during localization output.\nFixed a bug where root.getElapsedTime was being measured even when the window was inactive.\nFixed a bug in the getList method of DataVariable.Pdb.\nFixed a bug when null was specified for a method that requires a font object.\n\n\n{STEAM_CLAN_IMAGE}/33322541/d4b37ca5a2c784de81488693a8165cde32e26c3d.jpg"
+        },
+        {
+            "title": "SRPG Studio 1.310 Update Released!",
+            "date": "2025-03-12 04:56:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794014851383982",
+            "notes": "Hello, everyone!\nWe have now released version 1.310.\n\nNew Feature:\n\nModified to prevent automatic output of game.ini when \"Use the Steam API\" is enabled. If game.ini is included by default in the game folder, the contents of game.ini will be reset each time the game is updated. From this version, game.ini will be generated when the game starts, like environment.evs, resolving the automatic overwriting of game.ini.\nAdded the addHpByBigNumber method to the GraphicsDecoration object. This can be used to enlarge the numbers when \"Num\" is selected for \"Map Unit HP\".\nAn example of its use has been added to the official plugin highlevel-statedecoration.js.\nModified to set HardwareFullScreen to 1 in game.ini when a custom resolution is set. For example, the official plugin highlevel-resolution.js allows you to set a custom resolution, but custom resolutions fail in hardware full screen. For this reason, HardwareFullScreen=1 is written when the game starts.\nAdded the ability to set \"Skill Effects\" to the \"Damage Absorption\" skill. You can specify the absorption percentage.\n\n\nBug Fixes:\n\nFixed a bug that could cause an error when releasing cached BGM.\nFixed a bug that caused the screen to disappear when a player unit used a \"Steal\" item.\nFixed a bug in enemy leveling where the case of sorting parameters in ParamGroup._configureUnitParameters was not taken into account.\nFixed a bug where some private fonts could not be rendered correctly in game.exe.\nFixed a bug where a break statement was missing from the if statement in getCollectionData in PictureScrollBlock.\nFixed a bug where \"Change Unit Info\" and unit.setName() were not reflected when using the control character \\pdb[id].\nFixed a bug in the official plugin skill-critical.js."
+        },
+        {
+            "title": "SRPG Studio 1.309 Update Released!",
+            "date": "2025-02-23 02:02:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353283045",
+            "notes": "Hello, everyone!\nWe have now released version 1.309.\n\nNew Feature:\n\nAdded the getKeyword method to the TerrainGroup object in the script.\n\n\nBug Fixes:\n\nFixed a bug where Steam Deck optimization and Steam Input were randomly applied when \"Use the Steam API\" was enabled. This bug occurred in released games.\nFixed a bug where the values of \"Map Unit Symbol\" and \"Damage Popup\" were swapped. If \"Damage Popup\" is hidden in the game, change it manually from \"Config\" in the map command.\nFixed a bug that prevented data from being viewed during the second and subsequent playthroughs when global switches were set in the \"Display Conditions\" of \"Story Settings/Characters\" and \"Story Settings/Glossary.\" Specifically, it could be viewed in the \"Title\" scene and \"Base\" scene, but not in the \"Battle Prep\" scene.\nFixed a bug where subsequent event commands were executed immediately after the \"Play Video\" event command.\nFixed a bug where plugins using root.changeScene would cause an error when clearing cached memory.\nFixed a bug where custom parameters for units other than the player were not being localized.\nFixed a bug where custom parameters for items held by enemies were not being localized.\nFixed a bug where the class's \"Conditional Show\" did not take into account \"Stat Changes during Fusion\"."
+        },
+        {
+            "title": "SRPG Studio 1.308 Update Released!",
+            "date": "2025-02-04 03:59:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123238062",
+            "notes": "Hello, everyone!\nWe have now released version 1.308.\nThis update is beneficial for large-scale games that use srk files.\n\nNew Feature:\n\nAdded LoadControl object to scripts. This object can receive custom parameters when loading save files.\nAdded system-levelcap.js, which sets a level cap, to the official plugin.\nAdded terrain-boundarycursor.js as an official plugin to prevent moving the map cursor to the dummy area.\nAdded window-statehelptext.js to the official plugin, which displays an explanation when you hover over a state.\nAdded exp to \"Change Variable\" / \"Operand\" / \"Unit\".\n\n\nBug Fixes:\n\nFixed more secure compounding process for srk files.\nFixed a bug that constants-stringtable.js cannot handle accents.\nFixed root.writeTestFile being used in released games.\nFixed a bug in the \"Unit Affiliation\" event command."
+        },
+        {
+            "title": "SRPG Studio 1.305 Update Released!",
+            "date": "2024-12-17 02:36:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543678854",
+            "notes": "Hello, everyone!\nWe have now released version 1.305.\n\nNew Feature:\n\nThe \"Graphics\" dialog has experimentally added a search box.\nThe \"Resources\" menu has experimentally added \"Save All Map as Images\".\nThe script method unit.setCharIllustImage(id, img); has been added.\nAdded custom-drop.js to the official plugin, which associates dropped items with classes.\nAdded calc-multiply.js to the official plugin, which multiplies parameter bonuses.\n\n\nBug Fixes:\n\nFixed a bug that sometimes caused errors during item exchange.\nFixed a bug where some private fonts may not be correctly reflected during the game.\nFixed a bug with \"Defeat the Unit\" when right-clicking the mouse.\nModified to allow the variables \"Attacker\" and \"Defender\" to be obtained outside of battle events.\nFixed a bug where the unit panel would briefly appear when auto-cursor is off."
+        },
+        {
+            "title": "SRPG Studio 1.304 Update Released!",
+            "date": "2024-11-27 02:49:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506358970036",
+            "notes": "Hello, everyone!\nWe have now released version 1.304.\n\nNew Feature:\n\nAdded a new BattleContainer to the scripts to support real battle scaling in 16:9 resolution.\nThis container is used when \"Do not scroll in battle\" is enabled and BoundaryLine is 292 or higher.\nThe battle area is scaled while maintaining the aspect ratio.\nAdded a sorting function for imported resources to the \"Resources/Graphics\" dialog.\nA popup menu is displayed when right-clicking on an original tree item (folder).\nChanged root.getMediaManager().g(s)etActiveMusicTime to be based on milliseconds.\nHow to use this method is described in MediaControl.g(s)etCurrentMusicTime.\nPlayers who have joined your team through \"Unit Affiliation\" can now be changed back to Enemy (Ally) through \"Unit Affiliation\".\nChanged the upper limit of \"Max Enemy Count\" from 200 to 300.\nAdded \"Classes & Class Types\" to \"Restore Data\".\n\n\nBug Fixes:\n\nFixed a bug that prevented the same reinforcement unit from appearing multiple times using \"Unit Appearance.\"\nFixed a bug that allowed sav files from other games to be displayed on the save screen.\nFixed a bug that caused the \"Use Item\" command to be used on an item that had not yet appeared in a unit during a game.\nFixed a bug that prevented targets from being specified for \"Steal\" and \"Transform\" when using the \"Use Item\" command.\nFixed a bug that caused terrain skills to be ignored in event conditions."
+        },
+        {
+            "title": "SRPG Studio 1.303 Update Released!",
+            "date": "2024-10-30 02:22:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173857240",
+            "notes": "Hello, everyone!\nWe have now released version 1.303.\n\nNew Feature:\n\nAdded setActiveMusicTime to the script method to seek the current BGM to a specific time.\n// The following code shows an example of seeking to the 12 second position:\n// var minutes = 0;\n// var seconds = 12;\n// var time = (minutes * 60) + seconds;\n// root.getMediaManager().setActiveMusicTime(time);\nAdded getActiveMusicTime to the script method to get the playback time of the current BGM.\n// var time = root.getMediaManager().getActiveMusicTime();\n// var minutes = Math.floor(time / 60);\n// var seconds = Math.floor(time % 60);\n// root.resetConsole();\n// root.log(minutes + ' : ' + seconds);\nAdded custom-storysettings.js to the official plugin. Exclude unreviewed data from the list.\nAdded other-gradedshopitem.js to the official plugin. Items that cannot be purchased due to lack of money are displayed in gray.\nAdded battle-backgroundanimation.js official plugin to animate during events.\n\n\nBug Fixes:\n\nFixed UI bug in terrain edit dialog.\nFixed a bug that prevented shortcuts in the Optional Skills dialog from handling skills over 1000.\nFixed a bug that reduced an item's durability by two if the event using the Use Item command was skipped.\nFixed a bug that prevented background animations from expanding when using an item on a map."
+        },
+        {
+            "title": "SRPG Studio 1.302 Update Released!",
+            "date": "2024-09-24 10:10:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536521032979",
+            "notes": "Hello, everyone!\nWe have now released version 1.302.\n\nNew Feature:\n\nWhen executing the \"Unit Affiliation (Player)\" command on an Enemy or Ally, they will be treated as a guest unit.\nIf a sprite is rotated at a specific angle, it will be fine-tuned to the optimal angle. This feature reduces the jaggedness of sprites when rotated when anti-aliasing is disabled. If you need this feature, return NEARESTNEIGHBOR in the _getWeaponInterpolationMode script.\nThe official plugin window-gold.js can now display gold in the Battle Setup Scene.\n\n\nBug Fixes:\n\nFixed a bug in the right-click menu for original motion and original effects."
+        },
+        {
+            "title": "SRPG Studio 1.301 Update Released!",
+            "date": "2024-09-20 02:25:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536505276268",
+            "notes": "Hello, everyone!\nWe have now released version 1.301.\n\nNew Feature:\n\nThe Graphics dialog is now displayed at a size consistent with the PC monitor.\nYou can now see more registered resources without scrolling.\nThe wider display range makes it easier to see images that are long both horizontally and vertically.\nA preview is now displayed when placing a map chip in the map editor.\nThe chip is displayed semi-transparently, making it easier to prevent accidentally overwriting the map.\nIncreased the height of the Edit Terrain dialog.\nYou no longer need to scroll the movement cost list view, and you can see more of the terrain.\nAdded Map Animation to the Skill Effects of the Automatic Recovery skill.\nThe set Map Animation takes priority over Resource Location.\nThe \"Choice Show\" event command now supports highlighting of titles.\nTitleRenderer.drawhHiglightTitle has been added to the core script.\nWe've added composition-timedchoice.js to the official plugin.\nChoices and a timer are displayed, and a countdown occurs with the timer.\nIf no choice is made within the time limit, self-switch C turns on.\nvariable-itemtargetinfo.js has been added to the official plugin.\nYou can get the unit ID that most recently used an item, the unit ID that used the item, and the item ID that was used.\nIf B-Phese 11 error occurs, an error code will now be displayed.\nThe B-Phese 11 error is a DInput (Direct Input) related error and should not normally occur.\nAdded ScriptCall_GetFriendDirectoryName to the core script.\nThe Friend directory name was fixed, but can now be changed through this method.\nIt is now possible to change the IDs of original motions and original effects to specific values.\nAn \"ID management\" item has been added to the right-click menu on the list.\n\n\nBug Fixes:\n\nFixed a bug that caused a crash when pressing the Cancel button in the map color dialog.\nThis issue occurred when \"Enable to confirm cancel\" was checked in the Options dialog.\nFixed a bug that prevented the use of class change items in the \"Use Item\" event command.\nPreviously, the class change screen was replaced by scriptexecute-classchangescreen.js, which is now supported by the core script.\nFixed a bug that caused the current HP to exceed the maximum HP when the HP lowering state was inflicted.\nFixed a bug that prevented multiple pasting by Ctrl or Shift in Growth Value Settings(Prototype) and Parameter Correction(Difficulty).\nFixed a bug where renderer-conditionalshow.js would not change colors when waiting for a unit.\nFixed a bug in ScriptCall_GetWeapon when an incorrect value was returned.\nFixed some translation bugs in the English sample game."
+        },
+        {
+            "title": "SRPG Studio 1.300 Update Released!",
+            "date": "2024-08-04 04:50:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728345412116",
+            "notes": "Hello, everyone!\nWe have now released version 1.300.\n\nNew Feature:\n\nAdded custom-difficulty.js to the official plugin.\nUse this when you want to increase the \"Bonus Exp Rate\" when the game is difficult.\nAdded $config-gohome.js to the official plugin.\nYou can return to the tile scene at any time from the map.\nAdded terrain-skillcondition.js to the official plugin.\nTerrain skills can only be added under certain conditions.\nThe magic number in the final argument of drawFixedTitleText in the script has been made into a function.\n\n\nBug Fixes:\n\nFixed a bug that, in very rare cases, prevented erased units from reappearing.\nFixed a bug in which text added by a dynamic event command could not be displayed in the backlog.\nFixed a bug when handling transparent chips in \"Control Map Pos\" of \"Extensive Command\".\nFixed a bug in which state was not released when a unit was defeated by an event command."
+        },
+        {
+            "title": "SRPG Studio 1.298 Update Released!",
+            "date": "2024-07-01 02:46:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267323151521",
+            "notes": "Hello, everyone!\nWe have now released version 1.298.\n\nBug Fixes:\n\nFixed a bug when introducing reinforcements via \"Unit Appearance\".\nFixed a bug when erasing a unit after a successful fusion attack.\nFixed a bug where the mainEventCommand method was not called when \"Execute Script\" was selected.\nFixed a bug where the game option \"Heal player units upon entering the battle prep screen\" was working unconditionally.\nFixed a bug in the official plugin highlevel-versus.js."
+        },
+        {
+            "title": "SRPG Studio 1.297 Update Released!",
+            "date": "2024-06-16 02:41:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005358861884",
+            "notes": "Hello, everyone!\nWe have now released version 1.297.\n\nNew Features:\n\nChanged so that when \"Remove Unit\" is executed, it does not delete the turn state.\nIn other words, if a erased unit is reintroduced on the same map, the turn state is maintained.\nWhen proceeding to the next map, the turn state will be cleared.\n\n\nBug Fixes:\n\nFixed a bug that caused \"Overlapped\" to be ignored when reappearing an erased unit at the same location.\nFixed a bug that caused FastObjectToString to fail when \\n was included in a string.\nFixed a bug when executing \"Execute Script\" with \"Extensive Command\"."
+        },
+        {
+            "title": "SRPG Studio 1.296 Update Released!",
+            "date": "2024-06-10 04:03:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972562665453",
+            "notes": "Hello, everyone!\nWe have now released version 1.296.\n\nNew Features:\n\nAdded $highlevel-versus.js to the official plugin.\nIf you receive a cleared save file from another user of your own game, \nyou can play against his/her save data.\nFast algorithm for converting javascript objects to strings is now enabled by default.\nAdded other-switchitemusable.js to the official plugin, which allows switch items to be used in the \"Use Item\" screen.\nAdded root.setRelativeTurnCount method to the script.\n\n\nBug Fixes:\n\nFixed a bug that caused weapons to disappear in \"Change Item Durability\" even when the game option \"Weapon durability is unlimited\" was enabled.\nFixed a bug where store layouts for id0 did not exist.\nFixed a bug where root.changeScene did not clear the event background.\nFixed a bug where root.writeTestFile could not write long strings.\n\n\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=3264913373"
+        },
+        {
+            "title": "SRPG Studio 1.294 Update Released!",
+            "date": "2024-05-20 03:00:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970432151705",
+            "notes": "Hello, everyone!\nWe have now released version 1.294.\n\nNew Features:\n\nAdded terrain-autostate.js to the official plugin.\nState is inflicted when a unit waits on a specific terrain.\nAdded variable-reinforcements.js to the official plugin.\nUnit IDs of reinforcements with multiple appearances are received by ID Variable.\nAdded terrain-randomreinforcements.js to the official plugin.\nThis plugin makes reinforcements appear in random positions instead of the default position.\nAdded \"Easy AttackCritical\" to \"Weapon Effects\".\nChanged the script method root.writeTestFile so that it does not overwrite previously written text.\nChanged \"Shift Map\" so that the initial position of the player is also shifted.\nChanged \"Shift Map\" so that the event command \"Change Map Chip\" is also shifted.\n\n\nBug Fixes:\n\nFixed a bug that shifted the event command with a variable set.\nFixed a bug that a variable cannot be used for \"Select Position\" in the \"Use Item\" event command.\nFixed a bug when a unit in berserk state uses a teleportation item.\nFixed a bug when a custom parameter contained double quotation marks when exporting json."
+        },
+        {
+            "title": "SRPG Studio 1.293 Update Released!",
+            "date": "2024-04-29 04:59:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966678498789",
+            "notes": "Hello, everyone!\nWe have now released version 1.293.\n\nNew Features:\n\nThe algorithm for converting javascript objects to strings has been sped up.\nIf you want to use this new algorithm, write the following in the [game] section of game.ini:\nFastObjectToString=0\nMouse drag can now be used in \"MoveUnit\"/\"Course\".\nIt is easy to create courses that are straight horizontally and vertically.\n\n\nBug Fixes:\n\nFixed a bug that caused the target unit of \"Remove Unit\" to be erased if it was fused to another unit.\nFixed a bug that prevented \"Remove Unit\" from erasing the target unit if it was fused to another unit.\nFixed a bug that caused new units to appear when \"Move Unit\" was executed on an affiliation unit.\nFixed a bug that prevented sorting in \"Volume Settings\" even when \"Sort Resources\" was enabled.\nFixed a bug that R and B in root.getBaseData().getMapColorList().getData(i).getColor() were inverted."
+        },
+        {
+            "title": "SRPG Studio 1.292 Update Released!",
+            "date": "2024-03-29 02:38:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331439608404",
+            "notes": "Hello, everyone!\nWe have now released version 1.292.\n\nNew Features:\n\nChanged so that doping items with experience value can be used.\nAdded a comment to Probability.getProbability in the script.\nThe getApproachCombination part of the script was implemented as a separate method.\nAdded ai-scoredisabled.js, which does not attack targets with Invalid skills, to the official plugin.\nAdded config-messagespeed.js to add message speed to official plugins.\nAdded window-bonusdisabled.js to the official plugin, which prevents specific units from using \"Bonus Exp\".\nAdded composition-negatebackground.js, which inverts the background color with a real effect, to the official plugin.\nAdded a description to the official plugin custom-animationframesound.js.\n\n\nBug Fixes:\n\nFixed a bug where the event command \"Play Video\" would be shrunk in full screen.\nFixed a bug where enemy AI was ignoring \"Round Attack\" when calculating scores.\nFixed a bug where setAlpha method was not called on NumberRenderer in the script.\nFixed a page switching bug on the game's \"Use Item\" screen.\nFixed a bug where a new unit would appear when a unit using \"Unit Affiliation\" was used for \"Move Unit\"."
+        },
+        {
+            "title": "SRPG Studio 1.291 Update Released!",
+            "date": "2024-02-22 01:58:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065180966098",
+            "notes": "Hello, everyone!\nWe have now released version 1.291.\n\nNew Features:\n\nAdded \"New From Bookmark\" to the right-click menu on the map. \"Display bookmark tab when selecting unit\" is checked in the game options, and Displayed when there is one or more bookmark units.\nThe script's WavePanel object internals have been changed to use an ImageScroller object. The ImageScroller object is good at scrolling images.\nAdded scriptexecute-appearbookmarkunit.js to the official plugin. It shows how to use root.getObjectGenerator().generateUnitFromBookmarkUnit. Also shows how to delete a guest unit from a bookmark origin.\nsystem-disablestock.js has been added to the official plugin. It disables sending specific items to stock. This plugin is useful when you do not want to pass unit-specific items to other units through stock.\nsystem-charchipanimation.js has been added to the official plugin. The default character chip animation order is 0->1->2->1, but this plugin changes it to 0->1->2->0. This is useful if you want to replace all character chips with original chips and use 4 columns of chips like 0->1->2-3.\n\n\nBug Fixes:\n\nFixed an issue where guest unit unit command events were not localized correctly.\nFixed a bug where variable names were not localized correctly.\nFixed a bug where the script's _setPositionSettings was returning the obj variable."
+        },
+        {
+            "title": "SRPG Studio 1.290 Update Released!",
+            "date": "2024-02-15 02:01:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544491541191",
+            "notes": "Hello, everyone!\nWe have now released version 1.290.\n\nNew Features:\n\nAdded support for horizontal scrolling when pressing the LShift key and using the mouse wheel.\nModified eventcommand-itemchange.js to make it easier to customize.\n\n\nBug Fixes:\n\nFixed a bug where localization would fail when a unit had multiple unit commands.\nFixed a bug where experience points could not be obtained for \"Steal\", \"Again\", and \"Transform\" in auto AI state.\nFixed a bug where units could appear beyond the \"Max Units\".\nFixed a bug where the enemy offset was off by one frame in real battle.\nFixed a bug where the initial value of discount skills was over 100.\nFixed a bug where names were not displayed in the editor list when the number of maps was huge.\nFixed a bug where the isGuest method returned false for guest units in the Battle Prep scene.\nFixed a bug where OriginalContent.getUnit() returned null."
+        },
+        {
+            "title": "SRPG Studio 1.289 Update Released!",
+            "date": "2024-01-18 02:10:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213096985320",
+            "notes": "Hello, everyone!\nWe have now released version 1.289.\n\nNew Features:\n\nAdded changeInputDevice script method to change GamePadDInput in game.ini.\nUse like root.changeInputDevice(InputDeviceType.XINPUT); or var type = root.getInputDeviceType();.\nAdded BlendMode.NORMAL. It can be specified in the setBlendBitmap method.\nAdded map-chipchanger.js, window-marshal.js, and window-gold.js to the official plugins.\n\n\nBug Fixes:\n\nFixed a bug where the options included line breaks when importing text.\nFixed a bug where the game would force close if the base area could not be found.\nFixed property bug in animation dialog."
+        },
+        {
+            "title": "SRPG Studio 1.288 Update Released!",
+            "date": "2023-11-18 02:45:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6560117310270615710",
+            "notes": "Hello, everyone!\nWe have now released version 1.288.\n\nNew Features:\n\nDoping items can no longer be used when the unit's parameters have reached the upper limit. For example, doping items that increase strength cannot be used by units with maximum strength.\n\n\nBug Fixes:\n\nFixed a bug that prevented wav files from being played with MaterialManager.voicePlay.\nFixed a bug in the return value of BaseEventCommand.backEventCommandCycle.\nFixed a bug where memory consumption increased when a unit had a large number of custom parameters.\nFixed a bug where memory consumption increased when a save file from another game was placed in the Save folder.\nFixed a bug where staff rolls could not break new lines when localized.\nFixed a bug where the title of the shop screen was not displayed correctly when localized."
+        },
+        {
+            "title": "SRPG Studio 1.287 Update Released!",
+            "date": "2023-10-23 01:22:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989056341691",
+            "notes": "Hello, everyone!\nWe have now released version 1.287.\n\nNew Features:\n\nThe maximum value of a variable can now be specified up to 9999999 (7 digits).\nAdded root.getCurrentSession().getMapBoundaryValueExX(Y) to the script method.\nAdded custom-terrain.js to the official plugins that plays sound effects set for terrain.\n\n\nBug Fixes:\n\nFixed localization error when maps.json and texttags.json are missing.\nFixed a bug that prevented certain MP3 files from being played.\nFixed text import bug in \"Narration Message\".\nFixed bug in root.getEventGenerator().itemUse script method."
+        },
+        {
+            "title": "SRPG Studio 1.286 Update Released!",
+            "date": "2023-08-29 04:33:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722344621148",
+            "notes": "Hello, everyone!\nWe have now released version 1.286.\n\nNew Features:\n\nChanged the minimum width and height of \"Map Information\" to 10. If your game resolution is 640*480 and your map chip size is 48*48, 14*10 will not leave any blank space on your map. Also, the visual of the unit menu does not collapse.\nThe number of event commands available for 'Command' and 'Active Turn in 'Unit Event Settings' has been increased. 'Show Choices', 'Reduce HP', and 'Force Battle' allowed.\nAdded \"Use message font instead of default in event editor\" to \"Tools/Options/Expert\". If enabled, the event editor uses the default font instead of the message font.\nAdded window-mapthirdparts.js to official plugins. The first line of victory conditions is always visible on the map.\nAdded calc-itemweight.js which reduces agility when a unit is carrying a weighted item.\nAdded eventtrigger-allareareached.js to check if the unit has reached all specified positions.\n\n\nBug Fixes:\n\nFixed a bug when selecting \"ID management\" in the blank area of Database/Players."
+        },
+        {
+            "title": "SRPG Studio 1.284 Update Released!",
+            "date": "2023-06-21 03:04:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124581515250158633",
+            "notes": "Hello, everyone!\nWe have now released version 1.284.\n\nNew Features:\n\nAdded \"Ignore Terrain\" to the \"Move Unit\" event command. If this option is enabled, the unit will be forced to move even if the unit is in a normally impenetrable position.\nAdded the function to create a shortcut from right-click in the original data dialog.\nAdded battle-unitdeathcommon.js, which implements unit common events with bookmark events.\nAdded calc-avoidex.js that allows setting avoidance rate as a custom parameter for weapons.\nAdded custom-surpriseattack.js that can start the map from the enemy phase.\nAdded scriptexecute-unitidbyitemuse.js to get the ID of the unit that just used the custom item.\nAdded skill-parameterbonus.js to set the activation rate of parameter bonuses and the effective targets.\n\n\nBug Fixes:\n\nFixed a bug that the motion loop sound kept playing when a unit died in a real battle.\nFixed a bug in root.getEventGenerator().backgroundChange method.\nFixed a bug that when the damage guard skill was activated, the displayed damage was sometimes not halved."
+        },
+        {
+            "title": "SRPG Studio 1.282 Update Released!",
+            "date": "2023-05-15 09:38:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386955871389",
+            "notes": "Hello, everyone!\nWe have now released version 1.282.\n\nNew Features:\n\nChanged \"Self Switch\" in \"Command Conditions\" to list view format. When displaying A, B, C, and D in \"Show Choices\", it is now possible to perform the same processing regardless of whether the user selects A or C.\nAdded createTextFigure method to Canvas object in script. You can create bordered text as a shape. The usage of createTextFigure has been added to the official plugin highlevel-canvas.js.\nAdded custom-randomtrophy.js to official plugins. You can set the probability of getting a drop trophy.\n\n\nBug Fixes:\n\nAdded CurrentMap.prepareMap call after root.openMap in highlevel-customscene.js."
+        },
+        {
+            "title": "SRPG Studio 1.281 Update Released!",
+            "date": "2023-04-25 02:50:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583099812700394",
+            "notes": "Hello, everyone!\nWe have now released version 1.281.\n\nNew Features:\n\nAdded highlevel-customscene.js to official plugins.\nPlease refer to it when creating a custom scene with a plugin.\nAdded ability to set \"Item Effects\" for Again items.\nLike the Again skill, you can choose between 'One Unit' and 'Surroundings'.\nAdded EQUIPWEAPON to IconDecorationType in scripts.\nWeapons currently equipped by units on the map can now be displayed.\nYou can now display map symbols on moving objects as well.\nIn something like SetupControl.setup, call root.getCustomizationOptionsManager().enableMovingObjectSymbol(true);\nAdded enableRenderUnitsBasedOnPosition method to root.getCustomizationOptionsManager object.\nAdded root.setRandomNumberSeed method to give seed to root.getRandomNumber method.\n\n\nBug Fixes:\n\nFixed a bug that circles were not displayed in Database/Terrain when using large map chips.\nFixed a display error in the event command \"Command Jump\".\nFixed a bug where fusion attacks rarely failed."
+        },
+        {
+            "title": "SRPG Studio 1.274 Update Released!",
+            "date": "2022-12-15 01:14:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145749690089",
+            "notes": "Hello, everyone!\nWe have now released version 1.274.\n\nNew Features:\n\nMade it possible to use the event command \"Change Scene / Battle Result\" in the Battle Prep scene.\nPlayers can return to their base at any time when they are unprepared for battle.\nCustom skills now have animations that can be set in the skill dialog.\nThe groupbox was visible even when \"Display skill activation as animation rather than text\" was disabled.\nAdded skill-groupstate.js to official plugins.\nAdd multiple states to adjacent units.\nAdded skill-quickex.js to official plugins.\nThe unit can act even after using the Again skill.\n\n\nBug Fixes:\n\nFixed a bug when adding a mov decreasing state to a unit."
+        },
+        {
+            "title": "SRPG Studio 1.273 Update Released!",
+            "date": "2022-12-06 05:37:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4979322040034544039",
+            "notes": "Hello, everyone!\nWe have now released version 1.273.\n\nNew Features:\n\nThe data registered in the shortcut is highlighted on the list.\nAdded \"Not Equala To\" condition operator.\n\n\nBug Fixes:\n\nFixed a bug that specific commands were not output in \"Localization / Output Data in JSON Format\".\n\"Steal Skill\", \"Again Skill\", \"Transform Skill\" and \"Fusion Settings\" are output.\nFixed a bug with very high values for \"Mov Consumed\".\nFixed a bug in the script's getMoveCombination method and the plugin's ai-multiplegoals.js.\nFixed a bug where \"Weapon Types / Items / Broken Item\" would return weapons."
+        },
+        {
+            "title": "SRPG Studio 1.272 Update Released!",
+            "date": "2022-11-30 04:30:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4979322040012507740",
+            "notes": "Hello, everyone!\nWe have now released version 1.272.\n\nNew Features:\n\nThe order in which units are drawn on the map can now be position based.\nroot.enableRenderUnitsBasedOnPosition(true);\nLarger classes are drawn first. The order is LL > L > M > S.\nAdded \"ID management\" to the pop-up menu when right-clicking the map. You can change the data's ID, but it cannot be duplicated with another data's ID.\nAdded support for setting custom parameters to TurnState objects in scripts.\nAdded ai_multiplegoals.js to official plugins. Multiple goals can be set for enemy units in the Move Action Pattern.\nAdded simulation_cost.js to official plugins. It is now possible to dynamically decrease terrain 'Mov Consumed'. Set the terrain group for the terrain. Also, the terrain group must specify a keyword that can be linked with the plugin.\nAdded system_itemcap.js to official plugins. You can set the maximum number of items you can own.\nAdded scriptexecute-blankplayer.js to official plugins. You can create an infinite number of units without setting up databases or bookmarks.\n\n\nThe official plugin can be subscribed from the Steam Workshop.\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1471107160"
+        },
+        {
+            "title": "SRPG Studio 1.270 Update Released!",
+            "date": "2022-11-09 04:17:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4732747437223214682",
+            "notes": "Hello, everyone!\nWe have now released version 1.270.\n\nNew Features:\n\nAdded \"Replace\" to Resource/Graphics. You can replace an already imported file with another file while keeping the id.\nAdded a label to the \"Command Jump\" event command. Added a checkbox to the event dialog.\nAdded root.writeTestFile method for testing. Create srpg_test.txt in the project folder. The file is read by root.readTestFile method. The specifications may change depending on feedback. These methods can be called only for test play (map test) .The following is sample code. root.writeTestFile('the text you want to save'); var text = root.readTestFile();\n\n\nBug Fixes:\n\nFixed a bug that event guest units were not localized correctly.\nFixed a bug that the mark on the terrain tab was shifted when \"Scale down mapchip to half size\" was enabled.\nFixed bug in \"Highlight unit position\"."
+        },
+        {
+            "title": "SRPG Studio 1.269 Update Released!",
+            "date": "2022-10-13 01:57:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6402455182503467445",
+            "notes": "Hello, everyone!\nWe have now released version 1.269.\n\nNew Features:\n\nA new item has been added to the right-click menu on Enemies in the EN dialog (Unit Settings).\nWhen you select \"Highlight unit position\" the map scrolls to show the current position of the unit.\nAdded \"Scale down mapchip to half size\" to Tools/Options/Map.\nEnable this option when using a large mapchip such as 96 x 96.\nThe event command \"Change Switches/Global\" now displays a right-click shortcut menu.\nAdded battle-cancel.js and calc-shootdamage.js to official plugins.\n\n\nBug Fixes:\n\nFixed a bug where root.setKeyBinding added unnecessary spaces.\nFixed arrow bug in event command \"Command Jump\"."
+        },
+        {
+            "title": "SRPG Studio 1.268 Update Released!",
+            "date": "2022-10-04 02:16:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4613399405931839638",
+            "notes": "Hello, everyone!\nWe have now released version 1.268.\n\nNew Features:\n\nAdded \"mob\" and \"wait\" to Effective Targets/Roles.\nAdded \"Display Conditions (VA)\" to shop items.\nItems are only visible when the variable has a certain value.\nAdded \"Map Hp Number\" to Resource Location/UI.\nThis data is referenced by the script's GraphicsDecoration object's addHp method.\nEnabled to select Execute Script in Extensive Command.\nHow to use is explained in the official plugin scriptexecute-emptycustomparameter.js.\nFlexible implementation of the SkillProjector object in scripts.\n\n\nBug Fixes:\n\nFixed a bug that caused the \"Extract Map Pos\" command to crash.\nFixed a bug where \"This Unit is also Selectable\" did not work.\nFixed a bug that the \"Play Video\" command was not displayed in the whole game window.\nFixed a bug in the \"Enable map chip animations\" option.\nFixed a bug that the custom parameters cannot be set in the \"Area Settings\" of the base.\nFixed a bug where the getKeyBinding method contained garbage data.\nFixed a bug in the setGameClearPoint method."
+        },
+        {
+            "title": "SRPG Studio 1.266 Update Released!",
+            "date": "2022-08-28 04:03:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316500012825996",
+            "notes": "Hello, everyone!\nWe have now released version 1.266.\n\nNew Features:\n\nImplemented a composition API that can do things like Gaussian blur.\nWorkshop official plugin has been updated.\ncomposition-helloworld.js explains how to use the API.\nAdded root.setKeyBinding to script methods.\nThis method changes the keyboard section of the key assignment (game.ini) while the game is running.\nroot.setGamepadBinding has also been added.\nAdded Bow Attack2 and Magic Attack2 to Classes/Battle Motions.\nAdded Details2 to \"Config / Transformation\".\nStatus up, face image change, state addition are supported.\nAdded resetSelfSwitches to the \"Event Command / Choice Show\" script.\nIf you comment out resetSelfSwitches, the self switches will not be cleared before executing the event command.\n\n\nBug Fixes:\n\nFixed a bug where \"Event Command / Move Unit\" could not move bookmark units correctly.\nFixed a bug where enemies with an inflicted confusion state would not target allies."
+        },
+        {
+            "title": "SRPG Studio 1.261 Update Released!",
+            "date": "2022-06-09 09:10:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4480532526717740542",
+            "notes": "Hello, everyone!\nWe have now released version 1.261.\n\nNew Features:\n\nThe startup speed of game.exe has been improved. Previously, all maps were initialized when the game was launched, but from this version onward, maps are initialized as soon as they are referenced.\nAdded \"Agility\" to \"Compatibility\" under \"Weapon Types.\" For now, Agility is only referenced in the round count calculation.\nWhen the face image of a unit (NPC) is changed, the face images of other units (NPCs) selected in Shift are also changed.\nWhen \"Confirm application exit\" is enabled, the exit message is displayed even if hardware full screen is enabled.\nAdded battle-rotationtransition.js to enter the battle while rotating the map.\nAdded scriptexecute-inventorycontrol.js to set inventory for items that are not set to inventory in the editor.\nAdded other-galleryswitchcondition.js\n\n\n\nBug Fixes:\n\nFixed a bug where the HP gauge would not update after \"Unit Affiliation.\"\nFixed a bug that aggain skill with enemy AI rarely failed.\nFixed a bug that the background music did not stop when exiting a base."
+        },
+        {
+            "title": "SRPG Studio 1.259 Update Released!",
+            "date": "2022-05-17 05:28:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5849624375835798385",
+            "notes": "Hello, everyone!\nWe have now released version 1.259.\n\nNew Features:\n\nAdded \"Name of Expression\" button in Database/Config/Character.\nIt is displayed when \"Enable facial expressions\" is enabled in Tools/Options/Expert.\nAdded Reinforcements tab to Unit Appearance command.\nAdded getBookmarkEventList to the script's BaseData object. The events of this method will not be executed.\nUpdated the official plugin scriptexecute-videoplayer.js.\n\n\nBug Fixes:\n\nFixed a bug that game.exe was forcibly stopping the BGM when a map was cleared.\nFixed a bug when using broken items.\nFixed a bug that this._itemInfoWindow.moveWindow() was not called from any method.\nFixed a bug that the import of text failed when \"None\" was set to the \"Show Message\" command."
+        },
+        {
+            "title": "SRPG Studio 1.258 Update Released!",
+            "date": "2022-04-27 01:37:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348798430269701206",
+            "notes": "Hello, everyone!\nWe have now released version 1.258.\n\nNew Features:\n\nWrapping the getSortiePosX and getSortieMaxCount methods of the script. The plugin makes it easier to dynamically change the initial position of the unit.\nEnabled to select \"Ignore Layer\" from the right-click menu of terrain data. Set this option to the map chip for the shadow of the building.\nThe screen effect is no longer reset when the transition is set to \"None\" in the event command \"Background Change\".\nAdded new control characters such as vpdb. Previously it was described as pdb[va1[0]], but now it can be shortened to vpdb1[0].\nAdded battle-deathanime.js and skill-critical.js to the official plugins.\n\n\nBug Fixes:\n\nFixed a bug when the width and height do not match in the map layout.\nFixed a bug where enemies wouldn't use unlock skills in Move AI.\nFixed a bug where the initially placed guest unit was not displayed in the test play demo map.\nFixed a bug where the Gold Drop Trophy would be lost when capturing an enemy.\nFixed a bug that the screen goes black for a moment when the video loops.\nFixed a bug in the event command \"Use Item\".\nFixed a bug where this._itemInfoWindow.moveWindow() was not called."
+        },
+        {
+            "title": "SRPG Studio 1.256 Update Released!",
+            "date": "2022-03-29 04:20:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269525541150",
+            "notes": "Hello, everyone!\nWe have now released version 1.256.\n\nNew Features:\n\nAdded window-sortunits.js to the official plugin. You can sort the units in descending order of parameters, as shown in the screenshot.\nAdded skill-forcecapture.js to the official plugin.  Players attacked by enemies with certain custom skills will be captured.\nAdded \"This Unit is also Selectable\" to \"Start and Range\" in \"Extract Map Pos\".\n\n\nBug Fixes:\n\nFixed a bug in the game option \"Enemy AI takes supports into account\". Support skill \"Scope\" is also supported by \"Specify\".\nFixed a bug that archiving fails when only Lord.png and Lord-c.png are used.  From now on, even if you cut Lord-a.png and Lord-b.png, the archive will be successful.\nFixed a bug where the effect of \"Display Original Name when Broken\" was reversed.\n\n\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2786554003"
+        },
+        {
+            "title": "SRPG Studio 1.255 Update Released!",
+            "date": "2022-03-15 07:29:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5631194088576116886",
+            "notes": "Hello, everyone!\nWe have now released version 1.255.\n\nNew Features:\n\nAdded changeNextMapId to SceneController object. This API is available for bases and quest maps.Added getImportSrcId to Unit object.\n\n\nBug Fixes:\n\nThe judgment of \"Weapons\" in \"Data Conditions\" was invalid, so it was corrected.\nFixed a bug when releasing character chips that did not include -a and -b.\nFixed a bug when \"Specific Folder\" was selected in \"Tools/Options/Project File Path\"."
+        },
+        {
+            "title": "SRPG Studio 1.254 Update Released!",
+            "date": "2022-03-07 04:05:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367444403261",
+            "notes": "Hello, everyone!\nWe have now released version 1.254.\n\nNew Features:\n\nEnabled to specify \"Effective Targets\" for \"Steal\" skill and \"Again\" skill.\nAdded \"Global Switches\" tab to \"Data Conditions\".\nTabs selected in \"Unit Events\" are now displayed in color.\nAdded other-goodweapon.js and other-durabilityrecovery.js to the official plugins.\nThe \"Change Unit Info\" command and \"Change Map Info\" command are now localized.\n\n\nBug Fixes:\n\nFixed a bug in localization when a constant (such as SelectionRangeType.ALL) was set to a custom parameter of data.\nFixed the bug that null is not returned when getCurrentMapInfo is called in SetupControl."
+        },
+        {
+            "title": "The Winter Sale is here! And so is an update to the Snow Background DLC!",
+            "date": "2021-12-22 12:54:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224938027296470822",
+            "notes": "Hello, everyone! \n\nWith the winter sale underway, the year's drawing to a close. We added a castle town background in the DLC for SRPG Studio Snow Background.\n\nAs you might have seen in this news' screenshot, we are already preparing motions to be added for next year's big update. Like this year, it'd be great if we could get 12 new motions out to you next year.\n\nNot only that, but we've also released a new trailer for SRPG Studio! You can view it any time from the store page.\n\nBut wait, there's more! SRPG World now has a sorting feature! This will make it easier to find recently hosted URLs.\n\nWe look forward to your continued support in the year to come!"
+        },
+        {
+            "title": "SRPG Studio 1.249 Update Released!",
+            "date": "2021-12-17 04:05:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5320438099038910149",
+            "notes": "Hello, everyone!\nWe have now released version 1.249.\n\nNew Features:\n\nAdded \"Display Format\" to the \"Change Background\" event command.\nLarge size background images can now be scaled down and displayed on the game screen.\nAdded the root.appendBacklogCommand method to register text to the backlog.\n\n\nBug Fixes:\n\nFixed a bug in the \"Change Switches\" of the base event that the local switch operation may be lost.\nFixed a bug that the variable \"Current Map Id\" was wrongly set to \"Active Unit Id\".\nFixed a bug in which name resolution sometimes failed in text export of unit events."
+        },
+        {
+            "title": "SRPG Studio 1.247 Update Released!",
+            "date": "2021-11-09 00:29:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186653398787054516",
+            "notes": "Hello, everyone!\nWe have now released version 1.247.\n\nNew Features:\n\nAdded setMultiTileArray method to ScriptUnit object.\nA unit can occupy multiple tiles. \nUpdated the official plugin renderer-conditionalshow.js.\nThis file supports setMultiTileArray.\nUpdated the official plugin $highlevel-resolution.js. \nAdded an example of using getHardwareScreenSizeArray. \nAdded custom-animationframevoice.js to the official plugin.\n\n\nBug Fixes:\n\nFixed a bug where fusion commands would fail for caught units."
+        },
+        {
+            "title": "SRPG Studio 1.246 Update Released!",
+            "date": "2021-10-11 03:04:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069556867217918223",
+            "notes": "Hello, everyone!\nWe have now released version 1.246.\n\nNew Features:\n\nAdded system-overlimit.js to the official plugins.\nDisable the upper limit set by \"Max Stats\" in \"Database/Config2\".\nAdded custom-animationframesound.js to the official plugins.\nMultiple sound effects can be set for custom parameters of the animation frame.\n\n\nBug Fixes:\n\nFixed a bug that caused character illustrations to shift when running soft fullscreen on maps smaller than the screen resolution."
+        },
+        {
+            "title": "SRPG Studio 1.244 Update Released!",
+            "date": "2021-09-17 08:10:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5418383147738962930",
+            "notes": "Hello, everyone!\nWe have now released version 1.244.\n\nBug Fixes:\n\nFixed a bug when skipping the \"Command Jump\" event command.\nFixed a bug when using \"Copy to Original Motions\" with single-selected runtime motions.\nFixed a bug where invalid data would be kept in the unit's item slot and not set to null."
+        },
+        {
+            "title": "SRPG Studio 1.242 Update Released!",
+            "date": "2021-09-03 08:12:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099091722464",
+            "notes": "Hello, everyone!\nWe have now released version 1.242.\n\nNew Features:\n\nAdded \"Command Jump\" to the event command. You can use this event command to go back to the previous event command. In other words, you can loop through events.\nMade it easier to copy \"Victory conditions\" to other maps.\nAdded support for copy/paste on the list in the \"Optional Skills\" dialog.\n\"Copy to Original Motions\" in the \"Animations\" dialog can now copy multiple selected motions by the user.\nAdded support for duplicating data with the \"Sort\" button in the \"Show Choices\" command.\nAdded support for right-click shortcut menus with the \"Add Skills\" and \"Inflict State\" commands.\n\n\nBug Fixes:\n\nFixed a scrolling bug when canceling the use of an item.\nFixed a bug that the \"Play Video\" command did not detect the F12 key and other keys."
+        },
+        {
+            "title": "SRPG Studio 1.237 Update Released!",
+            "date": "2021-07-12 05:03:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4036897704065733906",
+            "notes": "Hello, everyone!\nWe have now released version 1.237.\n\nNew Features:\n\nAdded custom-weaponanimeoff.js and scriptexecute-inventorycontrol.js to the official plugins.\nAdded \"Include Parameter Bonus\" to \"Event Conditions / Variables\".\nThe sprite of the animation editor can be enlarged in the center.\nEnabled to set global switch in \"New Game Plus\".\n\n\nBug Fixes:\n\nFixed a bug where new class difficulty boosts would not be added to enemies when an enemy was specified in the setClass method.\nFixed a bug where the background animation of an effect was not displayed when multiple effects were displayed in a real battle.\nFixed a bug when using \"Location Focus\" in an Easy Battle unit event.\nFixed a bug when the scale of the real battle effect was different.\nFixed a bug that the unit waits in the event command \"Call Save Screen\"."
+        },
+        {
+            "title": "SRPG Studio 1.234 Update Released!",
+            "date": "2021-06-16 02:41:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4056035920050173364",
+            "notes": "Hello, everyone!\nWe have now released version 1.234.\n\nNew Features:\n\nAdded \"Enemy AI takes supports into account\" to \"Database/Config/Game Options\".\nIf you use this feature, the enemy AI will check the support status of the player unit when calculating the score.\nAdded the \"Handle Coordinates as Variables\" group box when you press the \"Details\" button in the \"Place Event Settings\" dialog.\nIf you use a variable for the coordinates, the script PlaceEventInfo.getX(Y) will return the value stored in the variable.\nThis feature is used when you want to move the current position of a place event by a variable.\nEnabled to show shortcut menu in \"Event Conditions/Switches/Global\".\nYou need to create a shortcut by right-clicking on the GS(Global Switches) dialog beforehand.\nAdded support to check \"Global Parameters\" and \"Env Parameters\" of \"Database/Config/Script\" in Json format. \nAdded support for the right-click menu in the \"Database/Terrain/Select Terran\" dialog.\n\n\nBug Fixes:\n\nFixed a bug when using \"Reduce HP\" continuously in the opening event."
+        },
+        {
+            "title": "SRPG Studio 1.233 Update Released!",
+            "date": "2021-06-07 02:55:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4093189347056539852",
+            "notes": "Hello, everyone!\nWe have now released version 1.233.\n\nBug Fixes:\n\nFixed a bug that caused the map to be displayed only momentarily after the ending logo was displayed.\nFixed a bug in the \"Back to Base Music\" function of the \"Change Background\" event command.\nFixed a skipping bug when using the \"Unit Fusion\" event command."
+        },
+        {
+            "title": "SRPG Studio 1.232 Update Released!",
+            "date": "2021-06-04 02:43:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4093189347045593269",
+            "notes": "Hello, everyone!\nWe have now released version 1.232.\n\nNew Features:\n\nThe map file format has been significantly revamped. Previously, .smap and .sysmap were created for map export, but from this version, only .smap is available. You can load a sample map from the \"SRPG Studio Official PV Data\" item in the Workshop.\nAdded \"Steam Settings\" to the File menu of the Steam edition of SRPG Studio. If you are releasing your game on the Steam platform, you can set the APPID of your game in this dialog. If you set the APPID, then steam_appid.txt and steam_api.dll will be output when the game is released.\nAdded root.getSteamManager().setAchievement to the script method. You must have set an \"achievement\" for your game in Steamworks to call this method.\nYou should also check \"Use the Steam API\" in the \"Steam Settings\" dialog in the editor. In \"ExecuteScript/ExecuteCode\", you can write root.getSteamManager().setAchievement('apiname');.\n\n\nBug Fixes:\n\nWhen \"Back to Base BGM\" is executed in the recollection event, the bug that it does not return to the screen BGM after the event ends is fixed.\nFixed a bug in which null was not checked when referring to _slideObject in the script."
+        },
+        {
+            "title": "SRPG Studio 1.231 Update Released!",
+            "date": "2021-05-31 02:00:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544815369742338",
+            "notes": "Hello, everyone!\nWe have now released version 1.231.\n\nNew Features:\n\n\"Event Conditions / Variables\" can now be conditional on multiple variables. \nAdded an \"Esc key to confirm exit\" box in the game.ini tab of the \"Tools / Options\" menu.\nAdded MediaControl.musicPlaySingle method to play BGM without looping.\nAdded \"Event Command\" checkbox to \"Shift Map\" dialog.\nAdded face-changeclass.js, face-disablereverse.js, and other-durabilitychangeex.js to the official plugins.\n\n\nBug Fixes:\n\nFixed a bug that prevented the \"Call Save Screen\" command from saving correctly in auto events.\nFixed a bug that caused game.exe to successfully load environment.evs for different games.\nFixed a bug where skipping occurred when releasing a caught unit.\nFixed a bug when executing \"Unit Affiliation\" with \"Extensive Command\"."
+        },
+        {
+            "title": "SRPG Studio 1.229 Update Released!",
+            "date": "2021-05-17 04:35:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588124434248",
+            "notes": "Hello, everyone!\nWe have now released version 1.229.\n\nNew Features:\n\nAdded \"Setting up environment.evs\" to the file menu of the editor. Starting with this version, environment.evs will not be output when the game is released, it will be created when game.exe is launched. You can set the default values for environment.evs in the \"Setting up environment.evs\" menu.\n\nAdded the \"Backup\" tab to the editor's options menu dialog. If you set more than 1 for \"Setting the backup interval (in minutes)\", then the project files will be backed up. By default, a Backup folder will be created in the project folder. The backup file will be overwritten every minute, but a new one will be created after each day.\n\nPlayers can now be changed to enemies with the \"Change Unit Affiliation\" event command.\nAdded item type tab to \"Users\" of weapons.\nAdded custom-weaponsound.js to the official plugin.\nAdded isGeneratable method to the unit object of the script.\nAdded getAnimationLoopIndex method to the image object of the script.\n\n\nBug Fixes:\n\nFixed a bug where sprites were misaligned with the \"Play Animation\" event command. \nFixed a bug when an invalid ID was specified in the \"Move Unit\" event command.\nFixed an error message when the \"Execute Script\" event command is invalid.\nFixed a bug that the name of the animation map chip file is not recognized by 2 digits. \nFixed a bug where \"Extensive Command\" checks guest units twice."
+        },
+        {
+            "title": "SRPG Studio 1.224 Update Released!",
+            "date": "2021-03-22 03:00:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4048146376723714610",
+            "notes": "Hello, everyone!\nWe have now released version 1.224.\n\nBug Fixes:\n\nFixed a bug where motion types were included when exporting original effects.\nFixed a bug that the information window was not updated when switching the category of the stock screen.\nFixed a bug that thumbnails are not saved even if you select OK after selecting thumbnails in the recollection event dialog."
+        },
+        {
+            "title": "SRPG Studio 1.223 Update Released!",
+            "date": "2021-03-05 02:48:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4057152305715431681",
+            "notes": "Hello, everyone!\nWe have now released version 1.223.\n\nNew Features:\n\nThe game.ini file can now support \"NonActiveAnimationStop\".\nIf you set it to 1, the game animation will not stop when the window becomes inactive.\nYou can do other work until the enemy AI is processed.\nCurrently you edit by selecting \"Open game.ini\" from the \"File\" menu.\nA pop-up is now displayed when the application is started for the first time.\nThis illustration makes it easy to understand the lead to the sample game.\nThe startup information is saved in option.dat after the test play is executed.\n\nBug Fixes:\n\nFixed a bug when opening the Terrain tab after deleting the map chip file."
+        },
+        {
+            "title": "SRPG Studio 1.222 Update Released!",
+            "date": "2021-02-04 04:12:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4051520269925137662",
+            "notes": "Hello, everyone!\nWe have now released version 1.222.\n\nNew Features:\n\nAdded \"Display Help Button in Title Bar of Dialog Box\" to Tools/Options/Editor. You can easily access the manual by pressing the help(question) button. \nAdded \"Open Sani File\" item to \"Resources Menu/Animation File/Import\" dialog. If your computer can't detect drag and drop, you can open the .sani file with this menu item. \nThe right-click menu can now be displayed when grouping sprites in the animation dialog. If you select \"Copy to Next Frame\", you can copy the grouped sprites to the next frame. \nAdded LoadSaveManager.syncInterruptionFile method. \nThe text export feature now supports the \"Choice Show\" event command. \n\nBug Fixes:\n\nFixed a bug when root.saveScreenShot was executed by the event command. \nFixed a bug where the state was not displayed above the map guest unit in the battle prep scene."
+        },
+        {
+            "title": "SRPG Studio 1.220 Update Released!",
+            "date": "2020-12-14 01:52:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3879252510644732425",
+            "notes": "Hello, everyone!\nWe have now released version 1.220.\n\nNew Features:\n\nUpdated \"Database / Config / Original Data\" button. You can specify negative values for the Value1 to Value6 fields.\n\nBug Fixes:\n\nFixed \"UnitCommand.PlaceCommand.isCommandDisplayable\" method.\nFixed \"HpDecoration.addHp\" method."
+        },
+        {
+            "title": "SRPG Studio 1.218 Update Released!",
+            "date": "2020-09-29 05:14:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3715990047711975179",
+            "notes": "Hello, everyone!\nWe have now released version 1.218.\n\nNew Features:\n\nAdded config-automode2.js to the official plugin. This plugin can change the auto mode while the event is running.\n\nBug Fixes:\n\nFixed \"Probability.getProbability\" method.\nFixed \"Database / Classes / Custom Parameters\" button."
+        },
+        {
+            "title": "SRPG Studio 1.216 Update Released!",
+            "date": "2020-08-06 04:54:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3667572003457888249",
+            "notes": "Hello, everyone!\nWe have now released version 1.216.\n\nNew Features:\n\nYou can now use'-1' or'-2' for color variations in image files.\nFor example, you can use water.png, water-1.png, water-2.png.\nIf you use numbers instead of alphabets (a-z), there is no limit of 26, so you can have longer animations.\n\nBug Fixes:\n\nFixed \"Unit Appearance\" command.\nFixed an animation screen effect still being reflected after skipping."
+        },
+        {
+            "title": "SRPG Studio 1.214 Update Released!",
+            "date": "2020-06-18 02:52:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3384966595869251843",
+            "notes": "Hello, everyone!\nWe have now released version 1.214.\n\nNew Features:\n\nAdded MapIconDecorator object to singleton-currentmap.js. You can customize the display position of the state icon of the map unit.\n\nAdded $highlevel-resourceviewer.js to the official plugin. View the resources currently loaded in memory using the newly added ResourceProfiler object.\n\nAdded renderer-global.js to the official plugin. Use the newly added root.setGlobalRenderer to change the character chip to a face image or motion.\n\nThe official plugin custom-conditionalshow.js has been renewed as renderer-unit.js.\n\nThe official plugin custom-conditionalshowex.js has been renewed as renderer-conditionalshow.js."
+        },
+        {
+            "title": "SRPG Studio 1.211 Update Released!",
+            "date": "2020-05-13 13:07:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3110243848761729953",
+            "notes": "Hello, everyone!\nWe have now released version 1.211.\n\nNew Features:\n\n\nYou can now customize the rules of the MapSimulator.startSimulation method of the script.\nYou can decide which enemies to wall by developing a plugin.\n\nWe have added simulation-defaultfilter.js and simulation-levelfilter.js to the official plugins."
+        },
+        {
+            "title": "SRPG Studio 1.209 Update Released!",
+            "date": "2020-03-10 05:38:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2579938650940963992",
+            "notes": "Hello, everyone!\nWe have now released version 1.209.\n\nNew Features:\n\nAdded scriptexecute-reviveunit.js to the official plugin.\nLong names can now be entered in the media dialog.\n\nBug Fixes:\n\nFixed getEventCommmandName name of ScriptExecuteEventCommand object.\nFixed animation frame property bug."
+        },
+        {
+            "title": "SRPG Studio 1.208 Update Released!",
+            "date": "2020-02-06 04:25:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2582187916834705021",
+            "notes": "Hello, everyone!\nWe have now released version 1.208.\n\nNew Features:\n\nVariables can be used in \"Show Choices\" of the event command.\nAdded getPassableAggregation and getTerrainGroup to Terrain object of script.\n\nBug Fixes:\n\nFixed the number of characters that can be entered in the custom parameter dialog."
+        },
+        {
+            "title": "SRPG Studio 1.206 Update Released!",
+            "date": "2019-10-18 08:48:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2404285581864318166",
+            "notes": "Hello, everyone!\nWe have now released version 1.206.\n\nNew Features:\n\nEnemies can use fusion items.\n\nBug Fixes:\n\nFixed video error.\nFixed \"Adjust Object\" Command."
+        },
+        {
+            "title": "SRPG Studio 1.204 Update Released!",
+            "date": "2019-05-27 06:26:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408775863533162133",
+            "notes": "Hello, everyone!\r\nWe have now released version 1.204.\r\n\r\nBug Fixes:\r\n\r\nFixed damage offset bug.\r\nFixed large face bug.\r\nFixed learning skills bug.\r\n \r\nPlugin Updates:\r\n\r\nAdded custom-classfootstep.js\r\nAdded other-foregroundmotion.js\r\nThis plugin displays text automatically.\r\nYou can subscribe to the Official Plugin on Steam Workshop."
+        },
+        {
+            "title": "SRPG Studio 1.202 Update Released!",
+            "date": "2019-03-25 21:08:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2543878145187993489",
+            "notes": "Hello, everyone!\r\nWe have now released version 1.202.\r\n\r\nNew Features:\r\n\r\nIncrease maximum value of \"Max Skill Count\" of Database/Config 2/System Limit.\r\nAdded isVoicePlaying function to script.\r\nAdded notifyBattleStart function to script.\r\n \r\nBug Fixes:\r\n\r\nFixed convoy screen bug.\r\nFixed extensive command bug.\r\nFixed inflict state bug.\r\nFixed berserk state bug.\r\nFixed drawing order bug.\r\nFixed message backlog bug.\r\n \r\nPlugin Updates:\r\n\r\nAdded config-automode.js\r\nThis plugin displays text automatically.\r\nYou can subscribe to the Official Plugin on Steam Workshop."
+        },
+        {
+            "title": "SRPG Studio 1.199 Update Released!",
+            "date": "2019-02-22 03:41:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2480825216191861597",
+            "notes": "Hello, everyone!\r\nWe have now released version 1.199.\r\n\r\nNew Features:\r\n\r\nAdded Unit.setClassGroupId1(2) function to script.\r\n \r\nBug Fixes:\r\n\r\nFixed map layout bug.\r\n \r\nPlugin Updates:\r\n\r\nAdded custom-unitevent.js\r\nThis plugin does not put the unit event in the execution completion state.\r\nYou can subscribe to the Official Plugin on Steam Workshop."
+        },
+        {
+            "title": "SRPG Studio 1.197 Update Released!",
+            "date": "2018-11-15 03:12:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163913247344",
+            "notes": "Hello, everyone!\r\nWe have now released version 1.197.\r\n\r\nNew Features:\r\n\r\nIncrease maximum value of \"Message Width\" of Tools/Options/Size.\r\nAdded GameSession.getPassableDirectionFlag function to script.\r\n \r\nBug Fixes:\r\n\r\nFixed full screen restore bug.\r\nFixed custom parameters of original data.\r\nFixed variable bug in class group.\r\n \r\nPlugin Updates:\r\n\r\nAdded config-largemapunitwindow.js\r\nThis plugin displays a large face image in the map unit window.\r\nYou can subscribe to the Official Plugin on Steam Workshop."
+        },
+        {
+            "title": "SRPG Studio 1.195 Update Released!",
+            "date": "2018-09-21 05:30:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2450411965554963544",
+            "notes": "Hello, everyone!\r\nWe have now released version 1.195.\r\n\r\nBug Fixes:\r\n\r\nFixed Base Setting UI"
+        },
+        {
+            "title": "SRPG Studio 1.194 Update Released!",
+            "date": "2018-09-10 04:57:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447032995779601717",
+            "notes": "Hello, everyone!\r\nWe have now released version 1.194.\r\n\r\nNew Features:\r\n\r\nYou can now use variables in \"Execute Script\" under event commands.\r\n \r\nBug Fixes:\r\n\r\nFixed script for root.isMouseState\r\n \r\nPlugin Updates:\r\n\r\nAdded custom-conditionalshowex.js\r\nThis Plugin lets you change character chips to be original effects.\r\n\r\nAdded scriptexecute-customparameter.js\r\nThis plugin lets you get the current value from a unit's custom paramters.\r\n \r\nYou can subscribe to the Official Plugin on Steam Workshop."
+        },
+        {
+            "title": "SRPG Studio 1.193 Update Released!",
+            "date": "2018-08-27 09:19:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293801589835",
+            "notes": "Hello, everyone.\r\nWe have now released version 1.193.\r\n\r\nBug Fixes:\r\n\r\nFixed terrain bug when changing map layout."
+        },
+        {
+            "title": "The full version is released!",
+            "date": "2018-08-20 19:29:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293777826256",
+            "notes": "Hello, everyone!\r\n\r\nThe full version of SRPG Studio has finally been released! You can output your game as a file if you use the full version.\r\n\r\nOf course, you can also upload your game to the Steam Workshop. It will be easier for people to find out about your game if you use the Steam Workshop, as many users may access it in seek of materials necessary for their games."
+        }
+    ]
+}

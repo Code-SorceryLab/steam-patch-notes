@@ -1,0 +1,54 @@
+{
+    "appId": "894020",
+    "total_notes": 8,
+    "notes": [
+        {
+            "title": "Rumble, options changes, and general fixes - 15 September",
+            "date": "2021-09-15 05:30:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936698772940656461",
+            "notes": "[list]\n[*]Upgraded Controller plugin to fix issue with Dualsense controllers and bluetooth.\n[*]Added rumble to supported XInput controllers.\n[*]Added option to menu to disable Native Input for controllers which have issues, some PS Controller drivers work better with this option off.\n[*]Split options menu into sub menus\n[*]Added chromatic aberration toggle to graphics options.\n[*]Added blood toggle in accessibility options.\n[*]Added enemy flashing toggle in accessibility options.\n[*]Added fullscreen flash effects toggle in accessibility options.\n[*]Minor optimisations throughout the game.\n[*]Changed player interpolation methods to give a smoother movement to the crow character.\n[*]Changed interpolations on some other NPCs to give smoother movement.\n[*]Added backup deathplanes to some scenes where in rare instances players could glitch through walls and get out of bounds softlocking the game.\n[*]Added further backup respawns to fix situations where players could get their respawn point set to the scene origin.\n[*]Changed the save file system to write a temporary file before overwriting previous saves, hopefully avoiding any crashes corrupting save files. The game still also stores up to 20 backup saves that can be manually used by a player.\n[*]Improved mouse aiming for heavy attacks so it doesnt follow player movement direction.\n[*]Fixed issue where hammer heavy charge impacts were mis-aligned.\n[*]UI optimisations\n[*]When erasing a save file \"No\" is now selected by default in the popup window.\n[*]Fixed bug with some endgame content spawning the player at the wrong door in the forest scene.\n[*]Fixed positional sounds on nocturnal avian creatures.\n[*]Increased some timings on the Ice Canyon challenge (still exercise caution).\n[*]Fixed some occasional falling animations at the top of ladders\n[*]Added trowel glow to some scenes where a neighbouring area without a door contains a seed\n[*]Added behaviour fallback to the spear-wielding enemy AI that would sometimes get stuck in an incorrect state\n[*]Separated menu Confirm and Back in key binds so they are no longer assosiated with attacks.\n\n[/list]"
+        },
+        {
+            "title": "Hotfix - August 6",
+            "date": "2021-08-06 08:42:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530944247638",
+            "notes": "Fixed an issue where the game sees multiple controllers but didn't handle them correctly."
+        },
+        {
+            "title": "Optimisations and minor bug fixes - 6 August",
+            "date": "2021-08-06 04:43:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530943642231",
+            "notes": "[list]\n[*]Tweaked controller configuration in game to allow DS4Windows to work correctly with Playstation controllers.\n[*]Added \"uinput\" flag to config file, may allow some users to have native controller support over Bluetooth when using Dualsense controllers.\n[*]Some general code optimisation for UI.\n[*]Fixed some lag spikes in some AI pathfinding.\n[*]Optimised some ray cast checks for moving platforms.\n[*]Changed some characters' animated interpolation to be smoother at higher framerates.\n[*]Enabled Graphics Jobs in Unity, should allow more code to run spread over separate CPU cores while preparing for rendering.\n[*]Changed order of saving on scene loads to prevent a potential rare crash.\n[/list]\n\nPlaystation Controllers Bluetooth support:\n\nWe tweaked controller configuration which should now allow Dualshock 4 controllers to be used with Bluetooth for players using DS4Windows drivers.\nAdded a workaround for players using Dualsense controllers with bluetooth and native drivers - open the config.xml file at \n[code]%USERPROFILE%\\AppData\\LocalLow\\Acid Nerve\\DeathsDoor[/code]\nand set 'uinput' to 'true' before booting the game. This will turn off direct input drivers and revert to Unity input systems.\n\nNote that without DS4Windows or changing the config file, all playstation controllers are supported when wired, or when Steam Input is enabled (though this will show Xbox buttons)."
+        },
+        {
+            "title": "Hotfix - 2 August",
+            "date": "2021-08-02 07:30:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038025597325906724",
+            "notes": "Removed left over debug script."
+        },
+        {
+            "title": "Controller update and bug fixes - 2 August",
+            "date": "2021-08-02 05:48:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038025597325648981",
+            "notes": "[list]\n[*]Controller input switched to native input, changes from the controller beta moved to main branch - this should fix most issues with controller compatibility including allowing players to use Steam Input.\n[*]Removed screenshake and wait frames from fire DoT ticks.\n[*]Fixed minor collision softlock in mansion.\n[*]Fixed bat AI that would cause issues in rare circumstances in the Avarice fight meaning it would never complete the battle.\n[*]Fixed potential similar AI issue on spear enemies that may cause them to just run off or stand still.\n[*]Fix for people affected by a previous ghost save issue.\n[*]Fixed softlock returning to a night shrine with jefferson for a second time.\n[*]Fixed friction bug on pot mimics.\n[*]Added silent servant completion to end game door glow checks.\n[*]Fixed rare bug where end game boss door would not spawn after a premature game exit.\n[*]Fixed issue where travelling with the gondola in certain circumstances can cause you to spawn at the wrong location and lock the camera.\n[*]Added extra backup saves and a readable JSON file dump for assistance debugging future save issues.\n[/list]\n\nRolling out controller changes from the beta branch to main. Switching from Unity input to direct/native input and allowing supported devices to use Xinput. Also added checks to ignore signals sent by phantom controllers that some people's drivers were doing.\nIf this patch changes/breaks controller input for you please get in touch here or email me at contact@acidnerve.com letting me know what controller you have, and emailing me log files if possible."
+        },
+        {
+            "title": "Bug Fixes - July 28",
+            "date": "2021-07-28 04:52:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038025325468613242",
+            "notes": "[list]\n[*]Fixed bug where you could move through some Avarice doors without unlocking them.\n[*]Fixed bug where leaving a ladder could give you infinite mass and also break interactions with ram platforms in grandma's basement level.\n[*]Fixed bug where you would no longer gain any souls until reloading the game.\n[*]Fixed exploit in final boss room.\n[*]Fixed bug with ghosts not counting to an endgame counter.\n[*]Added backup code for people affected by a previous bug, if you are stuck on 99.5% completion interact with the Shrine in the Camp of the Free Crows and this will be corrected.\n[*]Added more checks to saving to prevent a rare save file corruption, also added crash logging here to help me find any causes if it happens to anyone. Reminder backup saves were added in the last patch in case anyone does have that issue!\n[/list]\n\nGame Save files can be found here:\n[code]%USERPROFILE%\\AppData\\LocalLow\\Acid Nerve\\DeathsDoor\\SAVEDATA[/code]\nI'm still looking into controller issues, but have some leads now - if anyone has controller issues with the game the beta branch may fix it for them, right click the game in steam library, properties, betas and password is: controllercr0w\nIf anyone uses that beta please send log files to contact@acidnerve.com even if you've sent them before, I've added more logging there which may help me to crack the issue."
+        },
+        {
+            "title": "Bug fixes - July 26",
+            "date": "2021-07-26 09:44:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692300699056",
+            "notes": "[list]\n[*]Save files now save backups each time a successful save occurs. These are in the same folder as other saves. If anyone has issues with corrupted save files they can now use a backup by renaming them.\n[*]Fixed issue in one log file in Japanese which repeated a line over and over.\n[*]Final boss fight now forces save spots in the scene to stop the issue that some people had of being re-spawned at an out-of-bounds door.\n[*]Added more logging around controller information.\n[*]Fixed some minor spelling errors.\n[*]Fixed purchasing upgrades not saving under certain conditions.\n[*]Some world/collision issues fixed.\n[/list]\n\nIf your controller is not working please get in touch and send your Player.log and Player-prev.log files to use at contact@acidnerve.com, files can be found here:\n[code]%USERPROFILE%\\AppData\\LocalLow\\Acid Nerve\\DeathsDoor[/code]\nThere is also a beta branch you can try to see if that helps as we continue to test potential fixes for some controller issues a small number of people are having. Right click the game in your steam library, go to betas and enter the code: controllercr0w\n\nWe are also continuing to look into the stuttering issue some people experience, we will have more info and test builds for that in the coming weeks.\n"
+        },
+        {
+            "title": "Bugfixes - 23 July",
+            "date": "2021-07-23 10:53:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692289954704",
+            "notes": "[list]\n[*]Added Vsync in options menu\n[*]Readable Signs no longer hookshot-able\n[*]Fixed softlock from sequence break in forest dungeon\n[*]Slightly moved some typewriters on the floor of Hall of Doors to stop the player landing between them and getting stuck\n[*]Reduced the movement force of heavy and rolling attacks for daggers by 30%\n[*]Fixed missing deathplane in one part of Castle Lockstone\n[*]Fixed softlock when spamming buttons during bard interactions and yes/no prompts\n[*]Fixed missing wall collider in Grove of Spirits\n[*]Fixed bug where Ancient Doors could be triggered without freeing all crow souls\n[*]Fixed bug where player could get trapped in furnaces\n[*]Fixed bard bug in forest where old dialogue would re-appear\n[/list]"
+        }
+    ]
+}

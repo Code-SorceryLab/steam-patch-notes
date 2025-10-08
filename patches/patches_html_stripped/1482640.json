@@ -1,0 +1,192 @@
+{
+    "appId": "1482640",
+    "total_notes": 31,
+    "notes": [
+        {
+            "title": "Hotfix 0.13.1",
+            "date": "2024-10-02 03:31:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003489690237",
+            "notes": "Fixed some bugs introduced in the last patch. Larger balance changes will be made in the next patch.\n\nChanges:\n\n Adjusted preview moving dummy movement.\n Increased rock received collision damage and applied the same scaling to explosion damage.\n Adjusted wizard mass scaling.\n\nBug fixes:\n\n Fixed leaderboard crash.\n Fixed undo/redo crash.\n Fixed duplicate default loadouts.\n Fixed empty stack crash issue with the new end block glyph.\n Fixed issue causing wizard clones to not move in a given direction.\n Fixed UI scaling in the preview window.\n Fixed color picker visual bug.\n Fixed explosion stacking bug."
+        },
+        {
+            "title": "0.13.0 The SpellCrafting Update",
+            "date": "2024-09-28 08:42:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370189217116",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/bad3b2e61d33ac1ac1d7cb6e31084e40f1746117.png\n\nIt has been a while. This update improves spellcrafting in various ways. Most notably:\n\n Custom glyphs: Spells are no longer confined to a single grid, increasing spell customizability.\n Loadout Workshop support: Loadouts can now be shared within the game through Steam Workshop.\n Element changes: Rock element added and several elemental buffs reworked, allowing for more tactical spells per element.\n Loop glyphs reworked: Replaced the loop glyphs with start, reset, invert, and end block glyphs, which should be more intuitive.\n Performance: Recoded the entire spell execution system to allow for more glyphs with less online lag.\n\n\n\nAdded:\n\n Added Workshop support with in-game browsing and preview editor.\n Added custom glyphs with icon editor.\n Added rock element.\n Added bounce glyph.\n Added different pathing glyphs.\n Added tether direction glyph.\n Added control tether.\n Added a screen shake on/off option.\n Added a new large map with powerups.\n Added back the original empty pre-0.12.0 map to the rotation.\n\n\nChanges:\n\n Reworked and optimized the entire glyph execution system. This will introduce timing differences compared to previous versions but should be minimal.\n Glyph count limit is set to 255 per wand to allow for complex interplay with custom glyphs, with a cap for performance.\n Reduced ambient mana decay of shots.\n Increased knockback scaling with wand instability.\n Increased directional explosion radius by 75% compared to the normal explosion radius.\n Increased rounds from best of 5 to best of 7 (first to win 4 rounds).\n Reduced input delay from 2 to 1 step.\n Changed Nature Element effect to \"lifesteal.\" A portion of damage dealt is given back as health.\n Changed Air Element effect to allow walking through spellshots.\n Changed Water Element mana powerup drops to follow the player around.\n Buffed the strong mana powerup effect.\n Scaled harden tether force with mass to reduce random self-acceleration issues.\n Changed hand animation.\n Healing amount is now shown, similar to how damage is displayed.\n Increased map size for several maps.\n Changed Fire Edge map crate layout.\n Changed all icons to uniform size for the custom glyph icon editor.\n Homing performance optimizations.\n Moving while shooting now reduces movement speed.\n Window border is now black instead of white on Windows 11.\n Moved target glyphs to the Utilities tab as it has more space.\n Increased fire ground effect damage.\n Changed loadout file naming structure.\n\n\nBug Fixes:\n\n Fixed an OpenGL texture issue causing crashes at startup for specific hardware.\n Fixed window start visibility issue.\n Fixed large spellshot collision issue.\n Air reduced damage multiplier was not applied to arrow damage.\n Fixed hand animation bug.\n Fixed out-of-map bounds check.\n Fixed animation bug when shooting in a different direction than movement.\n Fixed leaderboard menu crash if 0 matches have been played.\n Improved networking lag distribution so that both players experience similar levels of jitter."
+        },
+        {
+            "title": "0.12.0 Environment Update",
+            "date": "2023-12-21 14:08:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585130864779",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/575d7f7c507822512942c560c0473d429f566f03.png\n\nOver the past months, I have been working on improving the environment. Most notably, the online arena map has been overhauled. It now spawns as one of four maps with various obstacles. It should be more interesting than the empty square it used to be. Much of the effort has been in implementing reflections in the engine which took more time then expected.\n\nAdded:\n\n Added four different arena maps with various obstacles. \n Added destructible crates.\n Added teleporters.\n Added ground reflections. After many rendering changes, the game now has reflective surfaces, which should make everything look a bit better.\n Added tower ambient occlusion rendering effect.\n\n\nChanges:\n\n Target dummies are no longer static and move back towards their original location after not receiving damage for a while. The new behaviour more accuratly reflects the damage and knockback.\n Modified network clock sync code; hopefully, it will improve the lag spike at the start of the first round.\n Increased mana/health powerup regen effect strength.\n Modified UI scrolling behavior; it should be smoother now.\n Changed Nature element colors a little to be more vibrant.\n Changed the descriptions of target glyphs.\n\n\nBug fixes:\n\n Fixed initial camera position so that the camera does not need to move to the center for the first couple of frames.\n Fixed the bug causing clones to sometimes use their wands. So no more clones shooting wands (for now).\n Reduced transition delay between clicking 'play' and seeing the home world.\n Wands can't shoot in a wall anymore.\n Changed the collision resolution factors to have objects less likly to be stuck in walls.\n Optimized the target glyphs logic by reducing the number of spatial query calls needed and moved to a 'filter' approach where possible.\n Fixed lag spike occurring when creating a bunch of wizard clones. It was a very dumb bug caused by my lacking competence. (I was doing a network call for the Steamworks leaderboard per wizard clone spawn to check which rank to display, which is very slow.)"
+        },
+        {
+            "title": "0.11.0 Wand Update",
+            "date": "2023-09-04 14:38:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355673012382",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/7d378e0588496675f71b5fefa447f184bda21fa8.png\nThis update introduces wand customizability, expanding the available build options. The game is moving closer to complete control over spells. Still a couple large updates left before release, but we're getting closer to full release. Full changelog:\n\nAdded:\n\n Added Wand Editor: Wand settings such as mana use, charge time, cooldown are now customizable. \n Added Wand Stability: A new concept, 'stability,' is introduced to prevent wands from being over/underpowered, ensuring better balance.\n Totem can now shoot in addition to spellshots, shooting orbs and arrows.\n Added Friendly target glyph.\n Added Enemy target glyph.\n Added Any target glyph.\n Added Any enemy orb glyph.\n Added health and mana bar indicators.\n Added physics object freezing to improve performance when there are a lot of spellshots.\n\nChanges:\n\n Migrated all prebuild wands to the new system. Should behave similearly, but with a different texture.\n Remade chatbox to support text wrapping and to look a bit cleaner.\n Changed start direction glyph mana cost from none to 3 mana per second. As wand stabiity is a factor now, so no more free perfect aim.\n Changed the 'typing indicator' texture.\n\nFixed:\n\n Fixed issue with tooltips positions were updating with the fixed update rate instead of the frame rate.\n Fixed hardend tether bug which was causing unusual movement.\n Reduced the chance of audio source reuse by removing silence from some explosion audio files.\n Fixed another audio bug that caused sudden and very high volume in some audio instances."
+        },
+        {
+            "title": "Hotfix 0.10.2",
+            "date": "2023-07-05 13:00:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150153221642",
+            "notes": "Added:\n\n Added elemental effects (fire tick damage and electricity sparks) to arrows.\n Added element particles to arrows and orbs.\n\nChanges:\n\n Reduced erratic movement of orbs.\n Changed the dummy mass to be the same as the wizard's, for more accurate damage indication.\n Buffed fire tick damage.\n Changed the maximum mana used by the scaling wand to be 450 instead of 600. This doesn't really change much as the wizard has a maximum mana of 450.\n Simplified how fire tick damage is calculated. Now it is a flat x damage over x seconds, resetting whenever an object collides with a fire element object, regardless of other factors.\n Optimized rendering, removing redundant rendertextures and render passes.\n Optimized the main menu background rendering.\n Adjusted the alternative color for the water element to look less like air."
+        },
+        {
+            "title": "Hotfix 0.10.1",
+            "date": "2023-06-30 04:23:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150133689734",
+            "notes": "Bug fixes:\n\n Fixed startup crash occurring for new players.\n Fixed Bow wand name and description."
+        },
+        {
+            "title": "Hotfix 0.9.1",
+            "date": "2023-04-29 13:27:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583642659047323",
+            "notes": "Changes:\n\n The explosion damage has been increased by 20% for one specific player.\n The mana-to-health ratio has been halved, making walling less effective.\n\nRemoved:\n\n The debug 'trailshot' wand has been removed, as it should not have been included in version 0.9.0."
+        },
+        {
+            "title": "Hotfix 0.8.1",
+            "date": "2022-07-29 06:08:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4587497456683965644",
+            "notes": "Changes:\n- Decreased homing glyph cost from 10 mana/sec to 5 mana/sec.\n- Increased instant glyph cost from 1 mana to 5 mana.\nBug fixes:\n- Fixed crash that occurred after every other match played.\n- Fixed rank rendering in online matches."
+        },
+        {
+            "title": "0.8.0 UI update, direction glyphs changes, new sound effects and more",
+            "date": "2022-07-28 06:29:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4587497456680405224",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/e3033285a67c526d321c145851516b3a9fe6f620.png\nFor the last 6 weeks, I have been working on improving the UI and various back-end changes.  Most notable changes include:\n\n Improved spell editing with a better UI, undo, redo buttons, unique glyph borders, and a bunch of glyph variations.\n Changed how direction glyphs work. They no longer instantly set the direction but turn toward a target and can be stacked for faster turning. Nerfed homing glyph so that it isn’t a must-have in each build.\n New sound effects thanks to Mestiez!\n Changed and updated a bunch of libraries and the .NET version. So, expect some networking issues while I find all the new networking bugs.\n\nThis and many more balancing changes and bug fixes. Full changelog:\n\nAdded\n\n Added UI animations.\n Added different glyph borders for each glyph section.\n Added glyph variations for splitting, delay, and nearby glyphs.\n Added undo, redo, and clear buttons to the spell editor. \n Added damage numbers.\n Added a steam invite screen when hosting a lobby. \n Added max frame rate setting.\n Added 'last split direction' glyph.\n Added 'click' audio when clicking a button.\n Added an instant homing glyph.\n\nChanges\n\n Increased home map area size.\n Mestiez (people playground dev) randomly redid most of the sound effects because he couldn’t stand the old ones and I hate audio. Big thanks!\n Increased player health and decreased mana decay to allow for more interesting builds.\n Nerfed fire effect damage duration. \n Buffed orbs. Reduced explosion delay, increased speed, and now has 100% more explosion damage than spellshots (was 80%).\n Increased size factor when calculating damage for a wizard. Max size wizard now takes 50% less damage while min size wizard takes 200% damage.\n Made mana bar flashing when out of mana indicator clearer.\n Direction glyph changes:\n Changed direction glyphs to turn towards a target instead of instantly setting the rotation. Direction glyphs can be stacked for more accurate turning for a greater mana cost. \n Changed split direction glyphs to set the direction of each tick after a split. It used to only set it once when split. \n Changed how the 'rotate 90 deg' and wave glyph behave. They now modify the direction offset instead of the direction directly. Making it possible to combine them with other direction glyphs and stack them.\n Expanded the leaderboard to show the top 50 players.\n Renamed 'infinite loop glyph' to 'reset loop glyph' to better describe its function.\n Locked the default builds so they can't be modified or deleted.\n Renamed 'bracket end' glyph to 'close bracket' glyph.\n Refactored all Steamworks code to use a different library.\n Changed from steam sockets to steam messages API for improved netcode. \n Migrated to .NET 7 preview version.\n\nBug fixes\n\n Fixed mana calculation of the scaling wand.\n Fixed the \"When a player dies in the lobby the selected wand gets reset\" issue.\n Fixed an issue where players could spawn multiple totems with the same wand in the lobby after dying.\n Changed game process priority from normal to high which fixes some of the freeze/lag issues on certain machines.\n Fixed the \"past a certain number of loadout you can't select the ones at the bottom\" issue with the loadout dropdown.\n Fixed mana calculation of the scaling wand.\n Fixed the \"When a player dies in the lobby the selected wand gets reset\" issue.\n Fixed an issue where players could spawn multiple totems with the same wand in the lobby after dying.\n Changed game process priority from normal to high which fixes some of the freeze/lag issues on certain machines.\n Fixed the \"past a certain number of loadout you can't select the ones at the bottom\" issue with the loadout dropdown.\n Fixed 'self target wand sometimes not splitting when low on mana' issue.\n Fixed rendering issue with spellshots spawned using the 4th wand with the 'quick fire' key.\n Fixed issue with UI sound effects sometimes not playing."
+        },
+        {
+            "title": "Hotfix 0.7.2",
+            "date": "2022-06-18 05:05:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6214419130145618170",
+            "notes": "Bug fixes:\n\n Fixed an audio bug that caused game crashes during online matches."
+        },
+        {
+            "title": "Hotfix 0.7.1",
+            "date": "2022-06-16 04:54:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6214419130138305594",
+            "notes": "Changes\n\n Lowered shooting volume.\n\nBug fixes\n\n Fixed the 'shooting dummy sometimes not shooting' issue.\n Changed logging to be on a different thread to fix certain lag/crash issues."
+        },
+        {
+            "title": "0.7.0 Orb wand, increased mana, and trailer update",
+            "date": "2022-06-14 11:17:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4480532686366119619",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/24c327a02c1f7095d1b112f687e1269801f206ef.png\n\nAdded a new wand that shoots orbs which are slow, floaty projectiles that don't deal any collision damage but have increased explosion damage. Mana and health are increased to allow more complex builds while avoiding one-shot spells. \n\nAdded\n\n Added orbs. Orbs are slower, floaty projectiles with increased explosion damage and no collision damage.\n Added a wand that shoots orbs.\n Added friendly orb glyph.\n Added friendly totem glyph.\n Added enemy totem glyph.\n Added visual feedback when a wizard receives damage.\n\nChanges\n\n Updated the steam trailer, screenshots, and gifs.\n Increased wands mana usage.\n Increased player max mana and mana regen.\n Increased player health.\n Decreased wizard base movement speed.\n Changed explosion damage to not damage friendly entities anymore and to have more pushback force.\n Slightly decreased spitting cost for small spellshots.\n Changed wall tiles to have more variety.\n Changed post-processing to make the game more vibrant.\n Changed spellshot lighting to be more consistent.\n Removed bloom effect. \n Increased render performance by ~20%.\n Increased the camera to mouse interpolation.\n Changed the launch entry point from NuroseGame.Desktop to NuroseGame.Launcher. Should not change anything if you launch the game through steam.\n Removed background moon.\n Changed audio of the nature element.\n\nBug fixes\n\n Fixed two bugs that caused players sometimes to not be able to use any wands until the player respawns. \n Fixed issue when combining paths of two splitted glyphs not working correctly.\n Fixed an audio issue that occurred when cloning a wizard with low health.\n Fixed a rendering issue with powerup particles.\n Fixed the powerup circle particle effect render issue when the player dies before the effect is finished.\n Fixed splitting position offset.\n Fixed render size of typing indicator issue if players have different UI scale settings.\n Fixed the crash reporter to (hopefully) always show up no matter the crash cause."
+        },
+        {
+            "title": "Hotfix 0.6.1",
+            "date": "2022-05-14 06:45:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5849624375825066921",
+            "notes": "Changes:\n\n lowered shooting volume a bit.\n\nBug fixes: \n\n Fixed crash on startup on video cards that don't support the latest OpenGL functions.\n Fixed spellshot render direction interpolation."
+        },
+        {
+            "title": "0.6.0 Audio, loading screen, and balance update",
+            "date": "2022-05-13 09:02:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5849624375821769467",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/b75c137731af8802437777bf018e25fee21c590f.png\n\nThis month I have reworked the audio engine to allow for spatial and higher quality audio. New sound effects have been added and existing ones modified. The game now has a loading screen on startup and many bug fixes and balance changes.\n\nAdded:\n\n Added a loading screen on startup.\n Added background birds singing audio.\n Added campfire sound effect.\n Added explosion sound effect.\n Added powerup pickup sound effect.\n Added totem spawn sound effect.\n Added a hit sound effect when damaging wizards.\n Added collision sound effect.\n Made sound effects spatial. Sound effects are now louder/quiter depending on the distance from the audio source.\n Made sound effects directional. Sound effect volume in left/right speaker volume now depends on direction of the audio source.\n Added environment volume and directional audio setting. This will reset the current settings but perserve all loadouts.\n\nChanges: \n\n Decreased minimum spellshot size.\n Changed splitting result size calculation to be more accurate.\n Changed spellshot particle emission to leave more of a particle trail.\n Changed powerup station positions to discorage hugging the corners.\n Decreased powerup spawn rate for both stations and water/nature elements and increased their effectiveness.\n Removed collision from the nonplayer spawned powerups.\n Decreased input delay by 1 frame.\n Reworked cloth system for improved performance.\n Improved performance for online games a bit.\n Reduced Air element brightness.\n Changed music.\n Removed unnused resource files.\n Made sure that spellshots and totems can't get out of the map bounds.\n Removed player name/rank rendering from the home world. \n Increased spellshot lighting.\n Having too many consistent force glyphs used to use up mana without adding additonal force. Now it won't use more mana than force added.\n\nBug fixes:\n\n Fixed crash when 'pasting loadout from clipboard' fails. Now it shows up an error message instead of crashing the game.\n Fixed crash that occured when splitting wizard clones. \n Fixed crash when starting certain online matches. Was caused by Steam sometimes not being able to estimate ping between players.\n Fixed the crash that occurred when Steam API was not able to find a leaderboard rank.\n Fixed hand rendering direction issue when using the quickfire key.\n Fixed some spelling mistakes.\n Fixed audio issue that casued certain sound effects to randomly stop playing.\n Smoothed spellshot direction rendering to decrease spellshot render jitter artifacts."
+        },
+        {
+            "title": "0.5.0 Elements and Powerups Update",
+            "date": "2022-04-15 12:26:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5493837466483491418",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/3fc38355535c0fe1a0579aeb1d6f109da9b29f8f.png\nThis update adds nature and air elements and health/mana pickups to the arena map. Glyphs can now have circular and multiple paths and fixed the issues with one shot spells.\n\nFull changelog:\nAdded\n\n Added nature element which drops health pickups when damaged.\n Added air element that has increased movement speed and spellshot speed.\n Added health and mana pickups in the arena map.\n Added a powerful powerup dispenser in the center of the online map.\n Added element description to the element buttons.\n\nChanges\n\n Changed water element to drop mana pickups. (used to have increased spellshot speed).\n Added an extra cost for splitting when the target is not large enough to split its mass. Should fix most of the one-shot builds. \n When splitting the velocity is split between clones. This will nerf builds that rely on splitting right before colliding.\n Allowed circular paths and multiple flows to the same glyph.\n Increased range for 'someone in queue' indicator to be shown when anyone within matchmaking range is in queue, not just for the same region.\n Increased max projectile speed slightly.\n\nBug fixes\n\n Fixed force calculation for very fast projectiles.\n Fixed issue with dragging the scrollbar pointer.\n Fixed bracket loadout validation for condition glyphs."
+        },
+        {
+            "title": "0.4.0 The Visual Update",
+            "date": "2022-04-01 06:20:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995463472058",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/da113bfa45518cf6734835b3ff3cc8fc68212451.png\n\nA whole new look. Rewrote big chunks of the rendering code to make game look better while optimizing rendering performance for budget/older video cards. Fixed some bugs reported by players and made some minor gameplay changes. Full changelog:  \n\nAdded\n\n Added birds that fly in the background. (has no effect on gameplay)\n\nChanges\n\n Modified visuals of pretty much everything except for UI.\n Remade the lighting and particle system to be more performant. So should be more playable for budget/older GPUs.\n Adjusted the cost of splitting spellshots, wizards, and totems to discourage lag machines without limiting spell possibilities.\n Lowered mana cost of harden tether ‘pull’ force to be more competitive.\n Renamed staffs to wands. Existing loadouts will be automatically migrated and should work as expected.\n Renamed group directions category to split directions.\n Increased selftarget wand cooldown to 3 seconds (was 2 seconds).\n\nBug fixes \n\n Fixed issue that caused spellshots with low health to do more damage than allowed.\n Fixed loadout dropdown not rendering correctly when there are more than ~10 loadouts.\n Fixed camera offset. It had different behavior per resolution.\n Fixed an issue with the camera offset which occurred when a popup window was open while the editor window was closed.\n Fixed the crash that occurred when a hardentetherglyph tries to harden with a dead or removed entity.\n Fixed shot canceling behavior/animation.\n Fixed a rare crash that occurred when spawning totems.\n Fixed text hard edges issue which should improve text readability for 1920x1080 and smaller screens.\n Fixed robe rendering bug that occurred when splitting a wizard while holding a wand in hand.\n Accidently adding extra whitespaces while copying loadout will now be detected and work properly.\n Fixed 4th wand refresh particle trigger to work with totem wands."
+        },
+        {
+            "title": "Hotfix 0.3.2",
+            "date": "2022-03-09 08:56:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247463006801180752",
+            "notes": "Added\n\n Added an indicator when someone in the same region is in matchmaking.\n \nChanges\n\n Some optimizations. The game runs about 10% faster now.  \n Added extra mana cost for splitting wizards and totems to discourage lag machines.\n Fire element explosions will now apply fire damage over time effect.\n Removed collision damage from wizards and totems.\n Nerfed collision damage."
+        },
+        {
+            "title": "Hotfix 0.3.1",
+            "date": "2022-03-04 12:16:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367434719748",
+            "notes": "Changes\n\n Redone the drag calculation as the 0.3.0 version had a lot of issues.\n Rebalanced forces and damages values.\n Fire totems now apply on hit fire damage.\n\nFixes\n\n Fixed hardened tether not resetting properly after breakage.\n Fixed totem spellshots not working with path left glyphs. \n Fixed totem not receiving collision damage."
+        },
+        {
+            "title": "0.3.0 The Staffs and Totems Update",
+            "date": "2022-03-03 12:48:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367431158167",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/23b8bd5511c0d452d44fc04e9b1cf2ce5174a317.png\nAdded\n Added totem staff.\n Added staff HUD indicators.\n Added copy/paste loadout from clipboard functionality. So, builds can be more easily shared.\n Added staff type selection menu.\n Added staff stats.\n Added staff reordering functionality.\n Added shot canceling.\n Added spawn child glyph.\n Added shooter glyph.\n Added a console command for disabling freeze detection for certain players who experience faulty freeze detection.\n Added an out of mana indicator in the mana bar.\n Added visual indicator of mana available to the self target staff.\n Added weapons changing with scrollbar functionality.\n\nChanges\n Remade the whole staff shooting system.\n Reduced mana cost of movement glyphs.\n Rebalanced drag/speed of spellshots. Spamming force glyphs no longer create superfast spellshots.\n Reworked loadout validation logic and rendering.\n Rebalanced weapon stats.\n Fire wizards are now immune to fire damage (except for the round ending fire ground).\n Self target staff glyphs are now limited by their mana cost and can't use up all the wizard’s mana.\n Transfer tethers now absorb all mana on collision. \n Changes the loadout file saving logic to execute in a background thread so that the game does not freeze/crash.\n Changed loadout file structure. Added automatic migration for pre 0.3.0 loadouts files.\n\nFixes\n Fixed the issue where mana cost was not showing up in the glyph help window. \n Fixed spellshots fire damage over time. Previously the effect was rendered without actually doing any damage to spellshots.\n Fixed the distance calculation of the nearby glyphs. It now takes account of entity size. \n Fixed tether type not resetting when using the tether disconnect glyph.\n Fixed the issue where harden tether got priority over transfer tether independent of order.\n Fixed the issue where dying in matchmaking, takes you out of matchmaking.\n Fixed issue that caused changes made to the loadout while in queue to not be saved.\n And a bunch of other small fixes."
+        },
+        {
+            "title": "Hotfix 0.2.6",
+            "date": "2022-01-23 07:05:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237325463682029219",
+            "notes": "Bug fixes:\n\n Fixed the crash which occurred when a player changed selected weapon while dead.\n Fixed the crash which occurred when using the harden tether glyph on a destroyed spellshot."
+        },
+        {
+            "title": "Hotfix 0.2.5",
+            "date": "2022-01-22 07:35:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237325463678462629",
+            "notes": "Bug fixes:\n\n Fixed crash reporter (was broken in 0.2.4).\n Fixed the internal replay system."
+        },
+        {
+            "title": "Hotfix 0.2.4",
+            "date": "2022-01-21 16:05:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237325463676111532",
+            "notes": "Bug fixes:\n\n Made the matchmaking happen in a background thread, so no more freezes when entering or leaving matchmaking.\n Reworked and reorganized most of the networking code. This should fix the initial matchmaking connection issues/crashes and socket crashes. \n Fixed the crash that occurred when opening the glyph editor while the player was dead.\n Increased matchmaking radius for quicker matchmaking."
+        },
+        {
+            "title": "Hotfix 0.2.3",
+            "date": "2022-01-16 13:54:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931839695728",
+            "notes": "Bug fixes:\n- Fixed game breaking crash which occurred when any player died in an online match. (crash introduced in 0.2.2)"
+        },
+        {
+            "title": "Hotfix 0.2.2",
+            "date": "2022-01-16 11:40:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931839357197",
+            "notes": "Changes:\n- Netcode: Inputs of other players is now received sooner. This should reduce rubber banding.\n- Netcode: Previously one player experienced 100% of the lag while the lobby host experienced 0 lag. Now it is 50/50 so that high ping games are more playable.\n- Netcode: Added networking data reporting for online matches to gather latency issues.\n- Added wizard clone death animation.\n\nBug fixes:\n- Fixed the crash which occurred when player died in the home area while the spell building UI was open."
+        },
+        {
+            "title": "Hotfix 0.2.1",
+            "date": "2022-01-14 17:01:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931832887770",
+            "notes": "Bug fixes:\n- Fixed infinite self cloning bug.\n- Fixed round not ending bug when a player dies from a self explosion.\n- Fixed round ending fire position to cover the whole map."
+        },
+        {
+            "title": "0.2.0 The Tether Update",
+            "date": "2022-01-14 16:10:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931832757472",
+            "notes": "{STEAM_CLAN_IMAGE}/39928699/9b95a8d5b008c520524c24455b0a5904e3b23a50.pngFeatures:\n- Added tether glyph.\n- Added harden tether glyph.\n- Added transfer mana tether glyph.\n- Added tether disconnect glyph.\n- Added friendly spellshot of different staff glyph.\n- Added a shooting dummy in the home area.\n- Added wizard explosions so now you can explode yourself and your clones.\n- Entering matchmaking now closes the window and shows time searching for match allowing you to continue playing in the home area.\nChanges:\n- Increased spellshot minimum size.\n- Modified homing and nearby glyph behavior to work properly when no filter glyph is chosen.\n- Modified glyph helper window text format.\nBug fixes:\n- Fixed the crash which occurred when starting the game with Steam closed.\n- Fixed the crash which occurred when a Steam user had no profile picture set.\n- Fixed the corner pillars exploit where players could force themselves in the pillars."
+        },
+        {
+            "title": "Hotfix 0.1.5",
+            "date": "2022-01-09 10:43:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386887533056",
+            "notes": "Modified:\n- Fixed grow before exploding exploit. Explosion damage is now based on remaining mana.\n- Fixed inconsistent explosion damage.\n- Made certain glyph descriptions clearer.\n- Online matches time synchronization improved. Should fix the lag at start of matches.\n- Improved movement predication for online matched. Should fix most of the rubber banding/teleporting issues.\n- Turned off the afk system as it currently produces a lot of false positives."
+        },
+        {
+            "title": "Hotfix 0.1.4",
+            "date": "2022-01-08 03:51:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386882849058",
+            "notes": "Fixed:\n- Networking issues.\n- Nearby glyph activation when no filtered entity found."
+        },
+        {
+            "title": "Hotfix 0.1.3",
+            "date": "2022-01-07 18:00:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386881354994",
+            "notes": "Added:\n- Version mismatch checking when joining lobby.\nFixed:\n- Remapping of the activation keys.\n- Scrollbar divide by zero crash.\n- Improved netcode a bit more."
+        },
+        {
+            "title": "Hotfix 0.1.2",
+            "date": "2022-01-07 14:34:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386880835627",
+            "notes": "Fixed:\n- Fixed out of map glitches.\n- Fixed missing OpenAL.dll error.\n- Limited matchmaking to same region because of netcode issues.\n- Improved netcode a bit.\n- Fixed collision glyph typo.\n- Nerfed force effect on shrunk wizards but increased shrunk wizards movement speed."
+        },
+        {
+            "title": "Hotfix 0.1.1",
+            "date": "2022-01-07 09:52:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386880121669",
+            "notes": "Added:\n- Game will now autofocus when match starts so less players get the afk auto surrender issue.\nFixed:\n- Fixed typo.\n- Fixed multiple explosion bug."
+        }
+    ]
+}

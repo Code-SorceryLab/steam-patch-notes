@@ -1,0 +1,390 @@
+{
+    "appId": "629520",
+    "total_notes": 64,
+    "notes": [
+        {
+            "title": "Soundpad Update 4.0.9",
+            "date": "2024-08-30 04:05:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642457204855",
+            "notes": "The changes include:\n\n- Compatibility fix for Logitech headsets on Windows 11.\n- Fixed crash when changing theme from default to custom while the main window is maximized.\n- Accessibility update: Screen readers don't work with custom themes, so the native system theme is selected upon first start by default, except Windows is configured for dark mode. Same applies for users with high contrast settings.\n- Sorting of sound list now uses a natural sort algorithm: F1, F2, F12. Not F1, F12, F2 anymore.\n- Fixed sorting when custom tags are set.\n- Allow right-click in device preferences without present devices to access options like Restart Win-Audio.\n- Backup of sound list updated: No more backups of empty lists and higher backup periods.\n- Remote control interface: GetSoundlist() now returns color and tag attributes of sounds.\n- Fixed notification translations for hotbar pages."
+        },
+        {
+            "title": "Soundpad Update 4.0.3",
+            "date": "2024-05-08 14:01:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435392701622",
+            "notes": "The changes include:\n\n- Fixed compatibility issues, which were introduced in version 4.0.0. If your system was affected, then please regard the notice at the end of this list.\n- The installation doesn't abort with a generic warning anymore if requirements aren't met.\n- Fixed regression: Some special characters were removed from tags to protect the integrity of the sound list, although they didn't harm the integrity.\n- Fixed option: Typing prefers TTS rather than search. It now doesn't prevent typing in the search box when the search box is focused, e.g. after pressing Ctrl+F.\n- Added a little tolerance to the window restore logic for native themed windows so they can line up with monitor boundaries.\n\nImportant for everyone, who had compatibility problems with 4.0.0. After the installation of 4.0.3, Soundpad needs to be re-installed on the microphone:\nFile -> Preferences -> Devices -> Deselect mic -> Apply -> Select mic -> Apply.\n\nShould the status not become Good or should there still be issues with the microphone, then right-click the mic -> Set setup mode -> Start setup test, and follow the instruction therein."
+        },
+        {
+            "title": "Soundpad Update 4.0.2",
+            "date": "2024-04-29 12:02:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966679568845",
+            "notes": "The changes include:\n\n- Fixed TTS related crash after launch. It seems, that the speech synthesizer of Windows is generally malfunctioning on affected computers, and cannot be properly used even in the Windows settings. Many thanks to Даня for helping to find the culprit."
+        },
+        {
+            "title": "Soundpad Update 4.0.1",
+            "date": "2024-04-26 10:05:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966668338395",
+            "notes": "The changes include:\n\n- Temporarily removed the TTS.dll as it could crash the application upon launch on some computers. The reason for the crash is not yet clear. Now the TTS component won't allow the selection of newer voices until the cause is found and fixed. If you were able to launch v4.0.0 without that problem and want to try the full TTS stuff, then you may switch to the beta version, which is v4.0.0."
+        },
+        {
+            "title": "Soundpad Update 4.0.0",
+            "date": "2024-04-25 10:35:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966664770475",
+            "notes": "The changes include:\n\nMajor\n- Different compatibility, reliability and performance improvements (more below).\n- Added TTS (Window -> Text to speech [Ctrl+T]).\n- Added a web import interface, which is not exclusive to Meowpad, but available for all websites to provide their own Add to Soundpad links.\n- Added Arabic and Hebrew translations.\n\nRemote control interface\n- Updated the remote control interface to version 1.1.2.\n- Added commands: DoPlayRandomSound, DoPlayRandomSoundFromCategory and IsTrial. See reference implementation for details.\n- The remote control interface is now available in the free version of Soundpad.\n- Fixed command DoScrollTo to be able to scroll to the first line.\n- Fixed crash, that could occur when multiple commands were simultaneously received while the playback had a hang.\n\nHotkeys and Auto Keys\n- Hotkeys and Auto Keys now work in user mode as reliable as if Soundpad is run as administrator. There was a similar fix in previous versions, but it didn't work for everyone.\n- Auto Keys are now pressed after the configured Push-to-Talk delay is over.\n- Added troubleshooting mode to the Auto Keys (right-click the A-icon in the statusbar -> Troubleshooting).\n\nHotbar\n- Increased maximum elements to 20x10.\n- Added special hotkeys to switch hotbar pages.\n- Added option to set a page title.\n- Added option to lock the hotbar to prevent accidental drag and drop actions.\n- Added option to automatically select the sound in its category when a hotbar entry is left-clicked.\n- Added option to show the pagination above the hotbar.\n- Added format options to change the style and the amount of displayed text lines.\n- Format changes are done immediately rather than after confirming the dialog.\n- The hotbar is immediately updated when the window is resized instead of in an idle moment after resizing.\n- Fixed last hotbar entries not being clickable at their last pixels if using many columns in fullscreen.\n\nSound Editor\n- Added option to use another editor (File -> Preferences -> Editor -> Use external sound editor).\n- Added shortcut Ctrl+E to edit the selected file. Added shortcuts to save as Ctrl+Alt+S and crop Ctrl+T.\n- Added save and close option (in the Sound Editor at File -> Close window after saving).\n- Added option to save files as mp3 (only if an mp3 encoder is available).\n- Added a Reverse effect.\n- Show selected range as tooltip (toggleable at File -> Show selected range).\n- Added context menu to sound editor.\n\nDrivers and compatibility\n- Reworked the setup, which increases the compatibility with all kinds of different systems and audio drivers.\n- Fixed specific compatibility issues with Lenovo notebooks models 81 and 82, Focusrite Scarlet Solo, different virtual audio drivers and many other devices.\n- Improved overall compatibility with Windows 11.\n- The setup status is now more precise, particularly when Soundpad is used with multiple devices.\n- Updated driver extension. It will now consume even less CPU.\n- Added mic boost option to amplify the volume of your microphone (File -> Preferences -> Devices -> Right-click a recording device -> Set boost).\n- Got rid of the reoccurring restart required error. A system restart isn't necessary anymore, except in rare occasions.\n- Users, who experienced the error code 2 or error code 5 when selecting devices, will be greeted with a new dialog with an instruction how to fix it.\n- Reworked core thread components, reduced timeouts and improved handling of improperly dropped instances of the driver extension. Beyond fixing different issues and improving performance and responsiveness, this fixes an often reported bug, where it begins to hang at the end of a playback for up to a few seconds and no other sound can be played until the hang is over.\n\nOthers: New\n- Added option to adjust the speaker volume with a logistic function. It allows to adjust the volume more precisely in low and high volume ranges (right-click the volume slider to toggle).\n- Added m3u support. Drag & drop an m3u file onto categories to create a category for that m3u. It will automatically load the first image from the m3u folder as category icon.\n- Allows more image formats to be dropped on categories.\n- Added more tray options.\n- Added option Pass hotkeys to hotkey context menu (H-icon in status bar).\n- Added color column to allow sorting by color.\n- Allow sorting by index.\n- Added menu to restore backups of the sound list (File -> Restore sound list).\n- Added navy theme.\n- Added Set hotkey context menu to categories to play random files from that category.\n- Added option: Typing prefers TTS rather than search (File -> Preferences -> Interface -> Misc).\n- Allow .opus file ending.\n- Added option to Edit tag text (right-click a sound -> Edit tag text).\n- Added option to find and remove missing sound files (Edit -> Find dead entries).\n- If a sound file is not found and struck through, then you may edit its location by right-clicking it -> Edit file location.\n- If you enabled File -> Preferences -> Interface -> Toolbar -> Display microphone level on toolbar, then you can add a dynamic marker to it by right-clicking that panel on the toolbar. It will mark the measured voice volume.\n- Added icons to special hotkeys.\n- Added some stock icons.\n\nOthers: Changes\n- Slightly reordered the context menus of the sound list and hotbar to have a similar structure.\n- Hotbar now ignores continuous playback options. Played sounds are always stopped after playback.\n- Special hotkeys to select the next or previous category won't select hidden categories anymore.\n- Hidden categories can't be selected as destination for recordings anymore.\n- The hotkey overview shows the filename instead of the Tag if the Tag column is hidden in the main window.\n- Only import playlists (.spl, .m3u) if no sound files or directories are selected along with them.\n- Select the next hotbar page instead of the previous one when removing pages.\n- The theme is set to dark by default on first start, except Windows (10 or newer) is configured to use the light theme.\n- Right-click on a sound file -> Rename file is now available for all file types.\n- Focus the sound list after the search, the recorder or other windows are closed.\n- The progress bar of a file import isn't immediately shown, but only if the import takes some time.\n- Redesigned category options dialog.\n- Set min sizes in all windows. Removed resize option from certain dialogs.\n- Added notification panel for File not found.\n- Show trial limit message as notification panel when loading lists, otherwise it is too unobtrusive.\n- Added launch parameter --version.\n- Many changes in troubleshooting report. Added launch parameter -t, with which a report can be created from command line.\n\nOthers: Fixes\n- Windows won't be restored in an invisible state anymore, e.g. being too small or hidden behind the taskbar. Windows are restored on one monitor in multi monitor setups if the window is closed while being shown on two or more monitors.\n- Fixed context menus opening in the wrong location if a new monitor connected.\n- The width of table columns cannot be decreased until they disappear.\n- Fixed app hang when quickly pressing different hotkeys.\n- Fixed Aero docking in non-native themes. Fixed some visual glitches when resizing windows. Fixed border shadows in sub windows.\n- The sound recorder now locks its buffer file to avoid manipulations. It fixes a rare issue when recordings failed to be read after the recording has finished.\n- The tag reader supports more file types and correctly reads multiple artists.\n- Updated list of forbidden characters, that could make a sound list unreadable. Also improved sound list save speed.\n- Fixed undo/redo not working properly when sounds were removed from the All sounds category.\n- Fixed Select in explorer not always selecting the target file inside a directory on Windows 11.\n- Fixed incorrect seek position of certain m4a files.\n- Fixed decoding bug of certain flac files, which were decoded with a lower volume than they actually should have.\n- Having the same sound multiple times in one category won't increase the play count multiple times.\n- Write protected directories can't be selected for recording anymore. The encoder will return an error if a write operation to a protected directory fails instead of getting stuck in a loop.\n- Fixed menu items being executed although a text control had focus.\n- Fixed menu items being executed by hotkey on disabled menu items in non-native themes.\n- Fixed delayed scrolling behavior in text components in non-native themes.\n- Fixed plenty of different other UI problems.\n- Updated Restart Win-Audio to wait until all dependent services are completely running. It increases the reliability of that function on Windows 11.\n- Fixed crash when no recording device is used with Soundpad, the voice measurement is running and the Win-Audio service is restarted.\n- Fixed crash when the Win-Audio service was stopped and then the preferences were opened."
+        },
+        {
+            "title": "Soundpad Update 3.4.1",
+            "date": "2021-05-05 05:55:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4072920612497580292",
+            "notes": "The changes include:\n\n- Fixed crash when using Ctrl+Z to undo changes in the sound editor with non-native style, although there were no changes, yet.\n- Fixed crash when loading a sound list with hotbar identifiers, that don't exist."
+        },
+        {
+            "title": "Soundpad Update 3.4.0",
+            "date": "2021-04-30 12:19:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045878076627149",
+            "notes": "The changes include:\n\nHotbar\n- The hotbar can now have multiple pages.\n- Changed rendering, which is much faster with many entries.\n- Changing the grid format is now quicker and moving the window with 1000 Hz mouse polling rate on Windows 10 Build 19041 or newer lags less.\n\nHotkeys and Auto Keys\n- Added option, which allows to assign hotkeys to a row rather than to a sound. Pressing the hotkey will play the sound at the row of the currently selected category (File -> Preferences -> Hotkeys -> Same hotkeys in all categories).\n- Fixed: Using undo, after setting a random category hotkey, which overwrote a sound file hotkey, didn't restore the hotkey of the sound file.\n- Changed hotkey prioritization. Hotbar hotkeys now have a higher priority than random category hotkeys or sound file hotkeys. If you load a sound list, which contains sounds with hotkeys, that are already in use by the hotbar, then the hotkeys of the hotbar will prevail.\n- Fixed detection of fullscreen windows in multi-monitor setups for the Auto Key rule Press when foreground application is fullscreen.\n- Fixed Auto Keys being affected by the state of num lock, when used with particular keys like Home or End.\n- Changed Alt+Numcode recognition. It now takes the last key down on the numpad into account even if Alt is released before the numpad key.\n- Fixed: Alt+Numcode hotkeys on hotbar entries weren't saved correctly and vanished upon next start.\n- Attributes of special hotkeys are now shown in the hotkey overview, e.g. Volume up by 5% instead of just Volume up by.\n\nInstaller and compatibility updates\n- On certain audio devices Soundpad wasn't working in Skype, Lync, Microsoft Teams and similar voice applications, because they used DSP offloading, which bypassed Soundpad. This update contains a workaround to bypass their bypass. To apply it: Go to File -> Preferences -> Devices, deselect your microphone, apply, then select it again and Restart Win-Audio or your computer.\n- Fixed another problem with Nahimic related driver incompatibilities (requires reinstalling of Soundpad).\n- Fixed general incompatibility with Microsoft's Surface Pro, Microsoft's Surface Laptops, Monster Tulpar Laptops and HP Envy Laptops (requires reinstalling of Soundpad).\n- Fixed another conflict with WAVES MAXXAUDIO (requires reinstalling of Soundpad).\n\nRemote control interface\n- Updated the remote control interface to version 1.1.1.\n- Added method: DoPlaySoundFromCategory. See reference implementation for details.\n- Added ACL to the interface, so UWP apps can access it.\n- Calls from command line are now also logged when logRcCalls is enabled.\n- Updated return codes to contain additional information about errors.\n\nOthers\n- The sound recorder now negotiates differently with the audio drivers about the audio format. That should accommodate flaws of the drivers and fix the 88890008 error for many devices.\n- Audio files with format changes inside the stream can now be decoded properly.\n- Rename or delete categories on key down.\n- Fixed NumDel deleting the selected category, although NumDel was assigned as a hotkey and should've been blocked.\n- Added minimum size to the main window in the dark and light themes. It's not possible to resize the window until it is completely gone anymore.\n- Show correct SteamID in the About dialog instead of the multiseat account id.\n- Fixed wrong position of the register button in the About dialog.\n- Fixed crash if the Media Feature Pack is installed, but its resampler module is missing or broken.\n- Fixed occasional crash when Soundpad is launched by adding a sound from Meowpad. The sound import will now wait for Soundpad to fully initialize first.\n- Fixed occasional error message on exit of Soundpad, when the working copy of the sound list couldn't be saved on the first try.\n- The error message, that is shown if a save operation fails, now also contains an error code.\n- Fixed logger: Log level was falsely reset from NOLOG to INFO.\n- Fixed some typos in German translation."
+        },
+        {
+            "title": "Soundpad Update 3.3.2",
+            "date": "2020-07-18 01:53:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4738301002606106909",
+            "notes": "The changes include:\n\n- Minor spelling correction in Norwegian translation."
+        },
+        {
+            "title": "Soundpad Update 3.3.1",
+            "date": "2020-07-16 04:21:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3898379576088764670",
+            "notes": "The changes include:\n\n- Fixed error in remote control interface, which prevented the Text-To-Speech app from working correctly.\n- Logging of remote commands is now turned off by default and can be turned on by setting logRcCalls to 1 in the registry.\n- The old num lock functionality can be enabled by setting numLock to 1 in the registry."
+        },
+        {
+            "title": "Soundpad Update 3.3.0",
+            "date": "2020-07-15 11:24:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3659688711190562125",
+            "notes": "The changes include:\n\nMajor\n- Meowpad was recently updated and supports sound lists. Soundpad can now download such lists with one click.\n- Added history of the last ten sounds, that have been played. See new menu entries Edit -> Select recently played file and Play -> Play recently played file. The list resets automatically upon restart of Soundpad.\n- Added two special hotkeys, one to play the current file again and another one to play the previously played file.\n- Added a context menu to the seek slider and to the track time, which allows you to select the currently played file and the category it is in. Double-clicking the time does the same.\n- Added auto stop option, that is turned on by default. What it does, is explained in its tooltip in the preferences (File -> Preferences -> Hotkeys -> Advanced options).\n- Updated remote control interface to version 1.1.0. It can deal with categories and some new functions. Remote control commands are now logged (Help -> Show Log).\n- Added language confirmation.\n- Added reset button to the preferences window, with which you can reset all your local preferences to defaults. The sound list or system wide changes on the recording devices remain unchanged. To reset system wide changes you need to uninstall Soundpad.\n- Added launch parameter --clean, which resets all your local preferences.\n\nHotkey handling\n- Numpad hotkeys now ignore the status of Num Lock.\n- Numpad hotkeys aren't restrictive anymore and can be used with all modifiers.\n- Left and right modifiers are handled separately allowing you to set Ctrl+1 and RCtrl+1 hotkeys. You can enable the old behavior in the hotkey preferences (File -> Preferences -> Hotkeys -> Advanced options).\n- Added recovery of wrong modifier states, when the release of modifier keys is blocked by the system or by other applications, e.g. when pressing Win+L or Ctrl+Alt+Del or when using DisplayFusion and pressing Alt+Tab.\n- Improved performance of hotkey recognition when a lot of hotkeys are configured.\n\nOthers\n- Fixed volume slider being attached to the wrong playback device in a particular configuration.\n- Fixed special case in the installer when all microphone effects were disabled before installing Soundpad.\n- Updated installer to install differently for certain ASUS headsets like the ROG or TUF on Windows 10 with ROG Armoury II.\n- Double-clicking a special hotkey or auto key in the hotkey overview now jumps to the appropriate entry in the preferences.\n- Added separate special hotkeys to start recording from speakers or to start recording from microphone.\n- Added separate notification sounds when starting to record from speakers or microphone. The old shorter notification sound is still available and if you want to have it working as it was before this patch, you can choose the old recording.m4a notification sound at File -> Preferences -> Notifications for Start to record speakers and Start to record microphone.\n- Playing random sounds from the menu now selects the sound file and the category it is in.\n- Double-clicking the splitter between categories and sounds doesn't close the categories anymore.\n- The hidden all sounds category can now be selected from the menu even if the categories panel is closed.\n- Bring window to foreground when opened by double-click from tray icon. It could happen that it wasn't shown when other windows hid it behind themselves.\n- Custom theme only: Removed small gaps between the minimize, maximize and close button. Clicking in these gaps was handled like a click on the title bar and allowed to move the window.\n- Custom theme only: The maximize icon now changes when the window is maximized.\n- Custom theme only: Fixed submenus staying open sometimes.\n- Added option to configure whether typing automatically opens and starts a search (File -> Preferences -> Interface -> Misc -> Typing begins search).\n- Restarting Win-Audio will now apply all device changes before the audio service is restarted. In previous versions you had to apply the changes first.\n- The option to reduce other applications volume now also disables the appropriate option in Windows when it is being disabled in Soundpad.\n- Added custom tooltip to the volume slider, which shouldn't flicker like the old one.\n- Added save button to the troubleshooting window and a refresh option.\n- Removed obsolete -t and --theme launch parameter entirely. You might see an error message if you still have -t 2 in your launch parameters.\n- Different visual adjustments in all dialogs and windows for the upcoming support of right to left languages."
+        },
+        {
+            "title": "Soundpad Reliability Update 3.2.16",
+            "date": "2020-04-30 09:12:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3127131079125202332",
+            "notes": "The changes include:\n\n- Fixed installation on Realtek devices with disabled composite effects.\n- Fixed installation on devices with partly uninstalled Clownfish, which left over a dead component on the device.\n- Fixed installer for Tosbiha notebooks (model Tecra S11), where the microphone became silent after installation of Soundpad."
+        },
+        {
+            "title": "Soundpad Reliability Update 3.2.14",
+            "date": "2020-04-24 13:46:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112493747271132022",
+            "notes": "The changes include:\n\n- Reworked installer: It is now checking a lot more of the system's requisites before deciding how to install the driver extension.\n\nFixes problems with different Logitech headsets and different Realtek(R) drivers.\nFixes general problems, that occur on allegedly healthy drivers, which contain unused remnants.\nFixes restart required issue on old Windows 10 versions 1507 and 1511.\nAdded quite a lot new tests to the installer. Thanks to everyone for sending in the diagnostic troubleshooting reports. These reports essentially help to improve the reliability of Soundpad.\n\n- The troubleshooting report now lists the latest Windows errors, that have to do with the audio service and Soundpad. This helps to identify conflicts with driver effects.\n- Removed old helper library UniteFxControl.dll.\n\nImportant: If the patch doesn't work on your system immediately, then re-install Soundpad. If asked for a restart, then do it only once."
+        },
+        {
+            "title": "Soundpad Update 3.2.7",
+            "date": "2020-04-07 14:15:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2978509755364302058",
+            "notes": "The changes include:\n\n- Changed installer for Windows 10 systems with preinstalled legacy effects, which is mostly seen on older notebooks from Acer, HP and Samsung. Previous versions of Soundpad tried to build upon the legacy effects, which could lead to different unpredictable problems depending on system and drivers, e.g. low volume of the microphone.\n- Fixed restart required problem on systems with malfunctioning Nahimic effects.\n\nImportant: To get this patch working on affected systems, you need to re-install Soundpad or to uncheck, apply and re-check your microphone in Soundpad's device preferences."
+        },
+        {
+            "title": "Soundpad Update 3.2.6",
+            "date": "2020-04-02 13:10:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2978509755346069906",
+            "notes": "The changes include:\n\n- Fixed installer for Acer Aspire E5-575G notebooks. This fixes a critical issue, where the microphone became muted after Soundpad was installed.\n- Fixed a false restart required message, although everything was already set up and running.\n- Fixed decoding of OGG Opus mono files."
+        },
+        {
+            "title": "Soundpad Update 3.2.4",
+            "date": "2020-03-18 15:32:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2698159409970713715",
+            "notes": "The changes include:\n\n- Fixed installer for Realtek(R) devices, where the microphone became quiet after installing Soundpad. This change makes Soundpad not work in Skype and Lync on these devices. We tried to overcome this issue, but it wasn't possible. (fix from beta 3.2.4)\n- Windows DRM validation won't be turned off on Windows 10 anymore. Soundpad now works with enabled or disabled DRM validation. (fix from beta 3.2.4)"
+        },
+        {
+            "title": "Soundpad Update 3.2.1",
+            "date": "2019-12-27 12:08:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573876858125",
+            "notes": "The changes include:\n\n- Re-integrated Steam SDK 1.46.\n- Fixed hotbar not playing sounds on left click when games like VRChat were running."
+        },
+        {
+            "title": "Soundpad Update 3.2.0",
+            "date": "2019-12-21 18:50:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573856185794",
+            "notes": "The changes include:\n\nMajor\n- Added Estonian, Latvian, Lithuanian, Slovakian, Croatian, Slovenian, Serbian, Hungarian, Bulgarian, Romanian, Greek, Hindi, Indonesian, Malay and Vietnamese translations.\n- Added themes and zoom. Launch param -t 2 was removed.\n- Updated hotkey processing by using additional Soundpad Service making them more reliable. Soundpad doesn't need to run as administrator anymore and we recommend all users, that used to run Soundpad as administrator, to change it back again.\n- Added OGG Opus decoder.\n- Hotbar elements and sound files can have custom colors. Right-click an entry and select color or select Window -> Color tool from the menu.\n- Hotbar elements can now be moved. Press Ctrl to also move the assigned hotkey and color.\n- Sound files can now be drag & dropped from the file explorer onto the hotbar directly.\n- Added some tutorial notification messages to help you get started with Soundpad.\n- Changed speakers volume icon on main frame to show, that it has nothing to do with microphone volume and added a message when using the volume slider.\n\nOthers\n- Fixed disable hotkeys not disabling mouse hotkeys.\n- Fixed disable hotkeys still blocking hotkeys.\n- Fixed auto keys not working when using special hotkeys to play a random sound.\n- Category icons are now centered horizontally. The selected category is now bold.\n- Category info panel at the bottom can now be enabled or disabled even if categories are closed.\n- Changing the hotbar layout adds an undo step.\n- Changed installer to avoid conflicts when Clownfish is installed. Users already having trouble to use both need to uninstall both and then install Clownfish first, then Soundpad. (This change is part of the beta which some users were able to test already).\n- Rework of audio transmission timeouts to the microphone. Resolves sound stuttering on microphone, when a recording instance dies.\n- Updated digital code signing.\n- Moved sound recorder menu entry from File to Window. The shortcut Ctrl+R remains as before.\n- Restore window position even if half of the window is outside of the most left monitor.\n- Auto Keys won't trigger unintended actions in Soundpad anymore, e.g. opening the search panel.\n- Reworked rendering audio on speakers and recording from speakers. This will solve error 88890008 for some users, but some may instead get code 1 now. We would really like to get some feedback on that one. If you get an error upon recording, please contact us and tell us which USB headphones or notebook or motherboard you use.\n- Added menu entry to clear recently loaded sound lists.\n- Integrated latest Steam SDK 1.46 in the Steam edition.\n- Fixed issue where sound stats (play count and last played on) weren't loaded for all files in all categories\n- If you chose to add a recording to the currently selected category (File -> Preferences -> Recording -> Add to category), then this choice is properly displayed now.\n- Show loading icon in auto keys app dialog, because initial fetching of currently running applications may take a second.\n- Hotkey overview: double-clicking Play random sound from category selects the target category, but also ensures, that the category is visible if you have many categories.\n- Added option to display microphone level on toolbar.\n- Fixed export of all settings not properly exporting the applications associated to Auto Keys.\n- Auto Keys now find more applications and more reliably than before.\n- Display default application icon for applications in the Auto Key options, that don't have a custom one.\n- A lot of different small fixes and improvements, in particular concerning the themes, e.g. not overlapping the taskbar in maximized mode."
+        },
+        {
+            "title": "Soundpad Update v3.1.8",
+            "date": "2019-06-12 10:52:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408777766633992716",
+            "notes": "The changes include:\r\n\r\n- Fixed playback device selection not being saved. When changing the playback device and recording devices at the same time and applying the changes, then only the recording device changes were saved.\r\n- Fixed sound list save process, where sounds disappeared or appeared in another category after next launch.\r\n- Fixed decoding of certain FLAC files.\r\n- Special hotkey to pause or resume a sound now plays the selected sound if no sound was paused or playing.\r\n- When you open up the search by just typing something, then the first letter in the search will respect your keyboard layout and language.\r\n- Fixed some buttons on the search panel not being directly rendered when the search was opened by just typing (only Windows 7).\r\n- Some error dialogs, that also show an error code, now have a link to get more information about the code.\r\n- Added more descriptions and solutions for known error codes."
+        },
+        {
+            "title": "Soundpad Update v3.1.4",
+            "date": "2019-02-12 06:58:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368402731017",
+            "notes": "The changes include:\r\n\r\n- Fixed regression as of v3.1.3: pause was not working in certain situations."
+        },
+        {
+            "title": "Soundpad Update v3.1.3",
+            "date": "2019-02-11 09:48:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368399543188",
+            "notes": "The changes include:\r\n\r\n- Installer fix for silent microphone on Corsair Void USB headset (same fix as in the beta 3.1.1).\r\n- Fixed application freeze when playing back missing files in a loop. The freeze occurs when Continue playback after current file and Repeat playback of sound list are enabled and every file in the sound list is missing."
+        },
+        {
+            "title": "Soundpad Update v3.1.2",
+            "date": "2019-02-07 05:41:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368384469324",
+            "notes": "The changes include:\r\n\r\n- Fixed application not starting when launched in maximized state with native theme (Thanks for sending in the crash dumps)."
+        },
+        {
+            "title": "Soundpad Update v3.1.0",
+            "date": "2019-02-06 10:57:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368381648968",
+            "notes": "The changes include:\r\n\r\n- Sound recorder can now record speakers or microphone and shows maximum recording time.\r\n- Fixed application freeze when the maximum recording time is reached.\r\n- Hotbar entries now have a flexible width and resize dynamically.\r\n- Added context menu entries to play a hotbar sound on speakers or microphone only.\r\n- Added option to start Soundpad minimized (not available in demo version).\r\n- Added option to show Soundpad always on top.\r\n- Preparations for dark theme. It is not yet complete and colors are subject to change, but if you want to test it, launch Soundpad with parameter -t 2.\r\n- When the default playback device is changed in Windows, and Soundpad is configured to play on the default device, then the currently played sound will continue to play on the new default device.\r\n- Changed pause symbol in main window title on Windows 10.\r\n- Added option to remember if hotkeys are enabled or disabled throughout application starts.\r\n- Added status symbols to the status bar showing Repeat playback of current file and Continue playback after current file.\r\n- Added notification icon to status bar. Is not yet used in the Steam edition, but only in the standalone version to notify if a new version of Soundpad is available.\r\n- Certain error codes, that are shown in the status bar, e.g. when a sound can't be played, can now be clicked to get further information and solutions.\r\n- Installer fix for silent microphone on certain systems with IDT sound chips. Affected users received the temporary version 3.0.8 to fix it and can now uninstall that version.\r\n- Installer fix for silent microphone on systems with specific Realtek Chip when sample rate was set higher than 48kHz.\r\n- Troubleshooting report is now generated asynchronously and contains date, elevation state and if a minidump exists."
+        },
+        {
+            "title": "Soundpad Update v3.0.5 (Bugfix)",
+            "date": "2018-11-19 12:45:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163929140743",
+            "notes": "The changes include:\r\n\r\n- Fixed issue with forbidden characters when saving the sound list. This bug allowed sound files with such characters in their tag (artist or title) to make the entire sound list unreadable."
+        },
+        {
+            "title": "Soundpad Update v3.0.4",
+            "date": "2018-07-13 09:53:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2838841185436840212",
+            "notes": "The changes include:\r\n\r\n- Updated installer to handle the installation differently on Acer Aspire notebooks with Windows 8.1 or Windows 10 and a Realtek audio device. This fixes a critical issue, where the microphone became muted after Soundpad was installed.\r\n- Added manufacturer and model name to the troubleshooting report."
+        },
+        {
+            "title": "Soundpad Update v3.0.3",
+            "date": "2018-07-12 09:08:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2838841185433111089",
+            "notes": "The changes include:\r\n\r\n- Fixed autostart option not being shown in certain cases.\r\n- Autostart is now removed upon uninstallation.\r\n- Fixed: Using F2 as hotkey for playing a file was not blocked in the sound category view. Pressing F2 played the file and opened the edit dialog when a category had focus.\r\n- Fixed minor display bug in hotkey dialog when removing a hotkey by pressing Del."
+        },
+        {
+            "title": "Soundpad Update v3.0.2",
+            "date": "2018-07-06 08:41:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313684209834",
+            "notes": "The changes include:\r\n\r\n- Fixed regression as of v3.0.0: jump backward and forward by special hotkeys and seeking when paused didn't work.\r\n- Command line -rc DoStartRecording() now opens the sound recorder if it was closed.\r\n- The recording finished notification is played when stopping a recording by command line -rc DoStopRecording() or if the configured maximum recording time is reached."
+        },
+        {
+            "title": "Soundpad Update v3.0.1",
+            "date": "2018-07-04 13:06:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313677647229",
+            "notes": "The changes include:\r\n\r\n- Fixed crash when doing a ghost drag & drop beneath the last row of the categories."
+        },
+        {
+            "title": "Soundpad Update v3.0.0",
+            "date": "2018-07-04 10:48:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313677300504",
+            "notes": "The changes include:\r\n- New feature Categories\r\n- New feature Hotbar\r\n- New feature Hotkey overview\r\n- New feature Exports\r\n- Fixes & improvements\r\n\r\nDetails\r\nCategories\r\n- Organize your sound collection by using categories.\r\n- Set icons for categories by dropping images on them.\r\n- Play a random file from a certain category by setting a hotkey for that category.\r\n- Added new hotkey preferences at File ▷ Preferences ▷ Hotkeys ▷ Numpad Hotkeys, that allow you to set an index to a category, e.g. 5, so index hotkeys beginning with 5 will play sound files from that category.\r\n\r\nHotbar\r\n- Drop sound files on the hotbar for quick access. Try it out at Window ▷ Hotbar.\r\n- Play a sound file by left click or by assigning a hotkey to the hotbar entry.\r\n\r\nHotkeys\r\n- Added an overview of all configured hotkeys. Access the overview from the menu at Window ▷ Hotkeys ▷ Hotkey overview.\r\n- Added option to enable or disable all hotkeys (the H-icon in the status bar). This option always resets when you start Soundpad.\r\n- Made hotkeys work on key down, which makes it much easier to trigger hotkeys like Shift+1. Exceptions to this rule are numpad hotkeys like the Alt+Numcode or Ctrl+Alt+Index hotkeys.\r\n\r\nExport\r\n- Export compact sound lists, sound files or preferences at File ▷ Export.\r\n- The sound list format changed with the introduction of categories. If you want to save sound lists the old way, e.g. to make playlists of albums, then you can export a compact list. This list contains only the files of the selected category and no additional information.\r\n- Backup all your sound files and the sound list to a directory of your choice. It will physically copy over all the files.\r\n- Backup preferences into a REG-file. Restore your preferences by closing Soundpad and executing the REG-file.\r\n\r\nOthers\r\n- Added option to the recorder preferences to specify in which category recordings should land. The same option also applies to sounds, that you download from Meowpad.\r\n- The volume measurement changes the configured value only if the measured value was above the minimum of 59 dB.\r\n- For users of index hotkeys: the index is now defined by the order in the All sounds category. This category is hidden by default and can be shown from the menu at File ▷ Window ▷ Categories ▷ All sounds.\r\n- The command line argument -rc DoPlaySound(index) now plays the sound file at position \"index\" from the All sounds category.\r\n- Added special handling when microphone access is denied, because of the microphone privacy settings on Windows 10 with April 2018 update.\r\n- Added auto scrolling to the sound list when dragging a sound file to the first or last visible entries in the list.\r\n- Added automatic safe start if the application was not closed properly.\r\n- Revised random play back logic to not repeat the last 10 sounds (per category).\r\n- Changed file hashing on non NTFS file systems to prevent hash collisions. In collision cases different files shared the same stats (play count, last played on).\r\n- Fixed application freeze when starting the sound recorder after a driver or system update has changed sound device identifiers.\r\n- Fixed: when Soundpad was closed to tray, then it didn't come back to front when run again from superbar or by clicking the executable.\r\n- Fixed: Saving the sound list while a sound is being played, removed the currently played sound name from the main window title."
+        },
+        {
+            "title": "Soundpad Update v2.6.9",
+            "date": "2018-05-07 13:35:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394104285110346282",
+            "notes": "The changes include:\r\n\r\n- Fixed occasional sound stuttering when playing back sounds on the microphone on Windows 10 with April 2018 update as described here.\r\n\r\nThis update requires a system restart. You may also decline to restart the computer and just restart Win-Audio at File -> Preferences -> Device -> Restart Win-Audio."
+        },
+        {
+            "title": "Soundpad Update v2.6.8",
+            "date": "2018-04-12 04:35:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394102381816928182",
+            "notes": "The changes include:\r\n\r\n- Updated installer to properly install on Realtek audio devices of the type Microphone Array (SST) like they are used in Acer Predator Gaming Laptops. To get this patch working on affected systems, you need to re-install Soundpad or to uncheck, apply and re-check your microphone in Soundpad's device preferences."
+        },
+        {
+            "title": "Soundpad Update v2.6.7",
+            "date": "2018-04-01 11:09:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2383968106580651390",
+            "notes": "The changes include:\r\n\r\n- FLAC and OGG now support unicode file names and tags.\r\n- Added launch parameter -rc, that allows to execute certain commands in Soundpad like play or stop a sound. Use Soundpad --help on a command line to get a list of available commands."
+        },
+        {
+            "title": "Soundpad Update v2.6.7",
+            "date": "2018-04-01 11:09:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480225",
+            "notes": "The changes include:\r\n\r\n- FLAC and OGG now support unicode file names and tags.\r\n- Added launch parameter -rc, that allows to execute certain commands in Soundpad like play or stop a sound. Use Soundpad --help on a command line to get a list of available commands."
+        },
+        {
+            "title": "Soundpad Update v2.6.6",
+            "date": "2018-03-31 13:23:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2383968106577374292",
+            "notes": "The changes include:\r\n\r\n- Fixed regression as of v2.6.5: File import from Meowpad failed."
+        },
+        {
+            "title": "Soundpad Update v2.6.6",
+            "date": "2018-03-31 13:23:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480319",
+            "notes": "The changes include:\r\n\r\n- Fixed regression as of v2.6.5: File import from Meowpad failed."
+        },
+        {
+            "title": "Soundpad Update v2.6.5",
+            "date": "2018-03-31 08:58:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2383968106576709303",
+            "notes": "The changes include:\r\n\r\n- Fixed not translated message when playback of a file fails.\r\n- Added support for FLAC, MP4 and OGG. MP4 will play the first audio stream available if there is more than one."
+        },
+        {
+            "title": "Soundpad Update v2.6.5",
+            "date": "2018-03-31 08:58:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480434",
+            "notes": "The changes include:\r\n\r\n- Fixed not translated message when playback of a file fails.\r\n- Added support for FLAC, MP4 and OGG. MP4 will play the first audio stream available if there is more than one."
+        },
+        {
+            "title": "Soundpad Update v2.6.3",
+            "date": "2018-03-20 08:23:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2982945658369420146",
+            "notes": "The changes include:\r\n\r\n- Fixed visual bug: moving sounds within the sound list didn't refresh sounds in between.\r\n- Fixed: Special hotkey to play the selected file didn't trigger Auto Keys.\r\n- Rolled back the integrity level handling of patch 2.6.0. It should make hotkeys more reliable even when Soundpad was not explicitly run as administrator, but it also had drawbacks, in particular in the Steam edition, but also with certain Auto Keys elements."
+        },
+        {
+            "title": "Soundpad Update v2.6.3",
+            "date": "2018-03-20 08:23:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480546",
+            "notes": "The changes include:\r\n\r\n- Fixed visual bug: moving sounds within the sound list didn't refresh sounds in between.\r\n- Fixed: Special hotkey to play the selected file didn't trigger Auto Keys.\r\n- Rolled back the integrity level handling of patch 2.6.0. It should make hotkeys more reliable even when Soundpad was not explicitly run as administrator, but it also had drawbacks, in particular in the Steam edition, but also with certain Auto Keys elements."
+        },
+        {
+            "title": "Soundpad Update v2.6.2",
+            "date": "2018-03-14 10:42:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363700548699659049",
+            "notes": "The changes include:\r\n\r\n- Added Czech, Danish, Dutch, Finnish, Norwegian, Swedish, Turkish and Ukrainian translations.\r\n- Added special hotkey to play the selected file.\r\n- Soundpad remembers minimized state throughout application starts. Allows to start minimized in system tray when used with the interface option minimize to system tray."
+        },
+        {
+            "title": "Soundpad Update v2.6.2",
+            "date": "2018-03-14 10:42:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480656",
+            "notes": "The changes include:\r\n\r\n- Added Czech, Danish, Dutch, Finnish, Norwegian, Swedish, Turkish and Ukrainian translations.\r\n- Added special hotkey to play the selected file.\r\n- Soundpad remembers minimized state throughout application starts. Allows to start minimized in system tray when used with the interface option minimize to system tray."
+        },
+        {
+            "title": "Soundpad Update v2.6.1",
+            "date": "2018-02-27 12:21:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2361446846784881005",
+            "notes": "The changes include:\r\n\r\n- Allow hotkeys with the keys F13 to F24.\r\n- Hotkeys can now also be used with keys, for which there is no descriptive text in the system. These keys will be shown as Key + virtual key code, e.g. Key136.\r\n- Added special hotkeys to select the previous or the next file.\r\n- Fixed mouse wheel scrolling issue in the preferences window."
+        },
+        {
+            "title": "Soundpad Update v2.6.1",
+            "date": "2018-02-27 12:21:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480766",
+            "notes": "The changes include:\r\n\r\n- Allow hotkeys with the keys F13 to F24.\r\n- Hotkeys can now also be used with keys, for which there is no descriptive text in the system. These keys will be shown as Key + virtual key code, e.g. Key136.\r\n- Added special hotkeys to select the previous or the next file.\r\n- Fixed mouse wheel scrolling issue in the preferences window."
+        },
+        {
+            "title": "Soundpad Update v2.6.0",
+            "date": "2018-02-20 07:52:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3263292409710621009",
+            "notes": "The changes include:\r\n- New feature Play mode\r\n- New feature Auto Keys\r\n- New audio notifications\r\n- Revised hotkey handling\r\n- Fixes & improvements\r\n\r\nDetails\r\nPlay mode\r\n- The play mode determines whether a sound is played back on speakers, microphone, or both when you play it by hotkey, double-click, Enter or Play icon.\r\n- You can change the play mode in the status bar by left-clicking or right-clicking the very first icon or from the Play menu or by using special hotkeys.\r\n- The play mode only affects the next sound you play with the above mentioned actions. It doesn't change on-the-fly and doesn't affect a currently played sound.\r\n- When you play the first sound after application start and the play mode is not set to default (speakers and microphone), then you will be remembered by an acoustic notification about the active play mode. This notification can be disabled in the preferences by unchecking File ▷ Preferences ▷ Notifications ▷ Play mode ▷ Notify me when playing first sound after application start.\r\n\r\nAuto Keys\r\n- This feature presses keys automatically when you play sounds (Thanks to Entity for suggesting it).\r\n- It is the A-icon in the status bar. You can enable or disable Auto Keys by double clicking this icon or by using special hotkeys.\r\n- Although the idea looked easy in the beginning, you'll see that it comes with a lot of options and conditions. You really should take some time to set it up properly, so keys aren't automatically pressed in situations you don't want to.\r\n\r\nHotkeys\r\n- There were many users struggling with hotkeys in certain games and the only solution was to run Soundpad as administrator or to start Soundpad after the game. That's not necessary now. We entirely revised hotkey handling and fixed problematic restrictions.\r\n- Hotkeys are more reliable now and should work everywhere even if Soundpad isn't run as administrator.\r\n- If a game deliberately blocks hotkeys, then Soundpad goes into a fallback mode and still processes them.\r\n- Hotkeys can now be entered easier, even if the hotkey dialog is not focused. It's particularly helpful when entering mouse hotkeys, as you can click anywhere on the screen.\r\n- Removed the obsolete options Use keyboard hook and Timeout of Numpad Hotkeys.\r\n\r\nNotifications\r\n- Added notification sounds for different hotkey actions like starting or stopping a recording, enabling or disabling Auto Keys and switching play modes.\r\n- You can configure the notifications at File ▷ Preferences ▷ Notifications.\r\n- Special behavior for the recording notification: the recording will begin immediately after the notification sound was fully played, so it isn't recorded as well.\r\n\r\nOthers\r\n- Remember distinct directories of add sound files and load/save sound list.\r\n- The working copy of the sound list is now saved periodically every 5 minutes if there were changes and once on application exit like in previous versions.\r\n- Restoring scroll position and selected sound upon application start is now done independently of the preference Remember playback state throught application starts.\r\n- Fixed bad layout in several frames when the system's text and item size was changed from Smaller (100% default) to Medium (125%) or Larger (150%).\r\n- Fixed text color in device preferences to be derived from system's theme settings.\r\n- Fixed inaccurate Karaoke timing issue.\r\n- Fixed very short sound files not being played on speakers if Karaoke was set to a negative value between -124 and -1 and sound was issued to be played on speakers and microphone.\r\n- Updated installer to set more restrictive permissions on required registry keys and folders. This fixes the rare issue that block voice could only be changed when Soundpad was run as administrator.\r\n- Fix for notebooks with specific Realtek audio drivers designed by Bang & Olufsen and other specific Realtek audio drivers being shipped with WAVES' MAXXAUDIO. Both enhance microphone volume in a very late stage of audio processing and previous versions of Soundpad interrupted it."
+        },
+        {
+            "title": "Soundpad Update v2.6.0",
+            "date": "2018-02-20 07:52:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480875",
+            "notes": "The changes include:\r\n- New feature Play mode\r\n- New feature Auto Keys\r\n- New audio notifications\r\n- Revised hotkey handling\r\n- Fixes & improvements\r\n\r\nDetails\r\nPlay mode\r\n- The play mode determines whether a sound is played back on speakers, microphone, or both when you play it by hotkey, double-click, Enter or Play icon.\r\n- You can change the play mode in the status bar by left-clicking or right-clicking the very first icon or from the Play menu or by using special hotkeys.\r\n- The play mode only affects the next sound you play with the above mentioned actions. It doesn't change on-the-fly and doesn't affect a currently played sound.\r\n- When you play the first sound after application start and the play mode is not set to default (speakers and microphone), then you will be remembered by an acoustic notification about the active play mode. This notification can be disabled in the preferences by unchecking File ▷ Preferences ▷ Notifications ▷ Play mode ▷ Notify me when playing first sound after application start.\r\n\r\nAuto Keys\r\n- This feature presses keys automatically when you play sounds (Thanks to Entity for suggesting it).\r\n- It is the A-icon in the status bar. You can enable or disable Auto Keys by double clicking this icon or by using special hotkeys.\r\n- Although the idea looked easy in the beginning, you'll see that it comes with a lot of options and conditions. You really should take some time to set it up properly, so keys aren't automatically pressed in situations you don't want to.\r\n\r\nHotkeys\r\n- There were many users struggling with hotkeys in certain games and the only solution was to run Soundpad as administrator or to start Soundpad after the game. That's not necessary now. We entirely revised hotkey handling and fixed problematic restrictions.\r\n- Hotkeys are more reliable now and should work everywhere even if Soundpad isn't run as administrator.\r\n- If a game deliberately blocks hotkeys, then Soundpad goes into a fallback mode and still processes them.\r\n- Hotkeys can now be entered easier, even if the hotkey dialog is not focused. It's particularly helpful when entering mouse hotkeys, as you can click anywhere on the screen.\r\n- Removed the obsolete options Use keyboard hook and Timeout of Numpad Hotkeys.\r\n\r\nNotifications\r\n- Added notification sounds for different hotkey actions like starting or stopping a recording, enabling or disabling Auto Keys and switching play modes.\r\n- You can configure the notifications at File ▷ Preferences ▷ Notifications.\r\n- Special behavior for the recording notification: the recording will begin immediately after the notification sound was fully played, so it isn't recorded as well.\r\n\r\nOthers\r\n- Remember distinct directories of add sound files and load/save sound list.\r\n- The working copy of the sound list is now saved periodically every 5 minutes if there were changes and once on application exit like in previous versions.\r\n- Restoring scroll position and selected sound upon application start is now done independently of the preference Remember playback state throught application starts.\r\n- Fixed bad layout in several frames when the system's text and item size was changed from Smaller (100% default) to Medium (125%) or Larger (150%).\r\n- Fixed text color in device preferences to be derived from system's theme settings.\r\n- Fixed inaccurate Karaoke timing issue.\r\n- Fixed very short sound files not being played on speakers if Karaoke was set to a negative value between -124 and -1 and sound was issued to be played on speakers and microphone.\r\n- Updated installer to set more restrictive permissions on required registry keys and folders. This fixes the rare issue that block voice could only be changed when Soundpad was run as administrator.\r\n- Fix for notebooks with specific Realtek audio drivers designed by Bang & Olufsen and other specific Realtek audio drivers being shipped with WAVES' MAXXAUDIO. Both enhance microphone volume in a very late stage of audio processing and previous versions of Soundpad interrupted it."
+        },
+        {
+            "title": "Soundpad Update v2.5.11",
+            "date": "2018-01-16 12:36:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2747626897949215581",
+            "notes": "The changes include:\r\n\r\n- Fixed access denied issue when setting up Soundpad for a microphone even when running as administrator.\r\n- Fixed incomplete installation when Windows is not located in C:\\Windows."
+        },
+        {
+            "title": "Soundpad Update v2.5.11",
+            "date": "2018-01-16 12:36:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687480981",
+            "notes": "The changes include:\r\n\r\n- Fixed access denied issue when setting up Soundpad for a microphone even when running as administrator.\r\n- Fixed incomplete installation when Windows is not located in C:\\Windows."
+        },
+        {
+            "title": "Soundpad Update v2.5.9",
+            "date": "2018-01-09 12:26:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949576139466",
+            "notes": "The changes include:\r\n\r\n- Added Spanish, Italian, Polish, Thai and Japanese translations (can be changed at File -> Preferences -> Interface -> Language).\r\n- Improved handling of long file names when downloading sounds to fit the systems path length limit."
+        },
+        {
+            "title": "Soundpad Update v2.5.9",
+            "date": "2018-01-09 12:26:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481104",
+            "notes": "The changes include:\r\n\r\n- Added Spanish, Italian, Polish, Thai and Japanese translations (can be changed at File -> Preferences -> Interface -> Language).\r\n- Improved handling of long file names when downloading sounds to fit the systems path length limit."
+        },
+        {
+            "title": "Soundpad Update v2.5.7",
+            "date": "2017-12-27 07:16:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949528385256",
+            "notes": "The changes include:\r\n\r\n- Play selected section in Sound Editor is now exact. Previous versions stopped playback loosely some milliseconds after the selection's end was reached.\r\n- Fixed Sound Editor's vertical growth each time it was opened.\r\n- Fixed application crash when downloading files from Meowpad. Crash had to do with displaying the download speed, which is only shown when the download takes long enough and as such the crash appeared to happen randomly.\r\n- Increased special hotkey table width to better fit certain languages."
+        },
+        {
+            "title": "Soundpad Update v2.5.7",
+            "date": "2017-12-27 07:16:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481214",
+            "notes": "The changes include:\r\n\r\n- Play selected section in Sound Editor is now exact. Previous versions stopped playback loosely some milliseconds after the selection's end was reached.\r\n- Fixed Sound Editor's vertical growth each time it was opened.\r\n- Fixed application crash when downloading files from Meowpad. Crash had to do with displaying the download speed, which is only shown when the download takes long enough and as such the crash appeared to happen randomly.\r\n- Increased special hotkey table width to better fit certain languages."
+        },
+        {
+            "title": "Soundpad Update v2.5.5",
+            "date": "2017-12-14 07:15:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2442505391472124552",
+            "notes": "The changes include:\r\n\r\n- Added Chinese (Simplified), French, Korean, Portuguese (Brazil) and Russian translations (can be changed at File -> Preferences -> Interface -> Language).\r\n- Fixed premature abbreviation at the end of recordings when trim silence was enabled.\r\n- Fixed autostart in Steam edition.\r\n- Fixed regression as of v2.5.0: currently played back sound was not marked bold when the the same sound was played back again without waiting for it to finish."
+        },
+        {
+            "title": "Soundpad Update v2.5.5",
+            "date": "2017-12-14 07:15:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481323",
+            "notes": "The changes include:\r\n\r\n- Added Chinese (Simplified), French, Korean, Portuguese (Brazil) and Russian translations (can be changed at File -> Preferences -> Interface -> Language).\r\n- Fixed premature abbreviation at the end of recordings when trim silence was enabled.\r\n- Fixed autostart in Steam edition.\r\n- Fixed regression as of v2.5.0: currently played back sound was not marked bold when the the same sound was played back again without waiting for it to finish."
+        },
+        {
+            "title": "Soundpad Update v2.5.2",
+            "date": "2017-12-01 12:30:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2152021858900576714",
+            "notes": "The changes include:\r\n\r\n- Added audio ducking option to reduce the volume of other applications when playing sounds.\r\n- Added fade-in and fade-out effects to the sound editor. If you set the cursor at a position without selecting any section, then fade-in will work from beginning to the cursor and fade-out from cursor to end.\r\n- Fixed dynamic volume normalization for sounds shorter than 0.4 seconds.\r\n- Fixed negative Karaoke values to not stop the playback line prematurely."
+        },
+        {
+            "title": "Soundpad Update v2.5.2",
+            "date": "2017-12-01 12:30:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481432",
+            "notes": "The changes include:\r\n\r\n- Added audio ducking option to reduce the volume of other applications when playing sounds.\r\n- Added fade-in and fade-out effects to the sound editor. If you set the cursor at a position without selecting any section, then fade-in will work from beginning to the cursor and fade-out from cursor to end.\r\n- Fixed dynamic volume normalization for sounds shorter than 0.4 seconds.\r\n- Fixed negative Karaoke values to not stop the playback line prematurely."
+        },
+        {
+            "title": "Soundpad Update v2.5.1",
+            "date": "2017-11-30 09:19:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2152021858896483385",
+            "notes": "The changes include:\r\n\r\n- Fixed Play selected section in sound editor to work again.\r\n- Added autostart option to the interface preferences.\r\n- Sound downloads from Meowpad are now inserted at the beginning or the end of the soundlist according to the recorder preference insert position in soundlist."
+        },
+        {
+            "title": "Soundpad Update v2.5.1",
+            "date": "2017-11-30 09:19:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481541",
+            "notes": "The changes include:\r\n\r\n- Fixed Play selected section in sound editor to work again.\r\n- Added autostart option to the interface preferences.\r\n- Sound downloads from Meowpad are now inserted at the beginning or the end of the soundlist according to the recorder preference insert position in soundlist."
+        },
+        {
+            "title": "Soundpad Update v2.5.0",
+            "date": "2017-11-29 06:49:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2152021858892494227",
+            "notes": "The changes include:\r\n\r\nAudio processing\r\n- Response times are much lower when starting a sound or seeking within a sound.\r\n- Speakers and microphone lines are now starting synchronized.\r\n- Fixed dynamic volume normalization to be recalculated when seeking within sounds.\r\n- Added karaoke audio option to defer the microphone output when playing on speakers and microphone simultaneously (configurable in the audio preferences).\r\n\r\nCommon media player functionality\r\n- Added pause/resume, play previous file, play next file. Accessible from toolbar, Play menu or by special hotkeys (configurable in the hotkey preferences).\r\n- About pause: you may resume playback with the pause button itself, but you may also change the play mode. It means, you can play a sound on speakers to a certain position, pause and then resume to play on speakers and microphone. It is disabled by default and can be enabled in the interface preferences.\r\n- Added further special hotkeys to jump/seek in the played file and to change speaker volume by a configurable value.\r\n- Added option to the Play menu to continue playback after current file, that allows you to play an entire soundlist. The play mode (speakers, microphone or both) is retained. When playing a random sound, then this option will continue to play random sounds.\r\n- Added options to the Play menu to repeat the currently played sound or to repeat the soundlist, when the end of the list is reached.\r\n- Added Shuffle list option to the Edit menu.\r\n- Added option: Remember playback state throughout application starts. On by default.\r\n\r\nOthers\r\n- Remember last open preference page throughout application starts.\r\n- Added option to change the update rate of the seek slider, that shows the current playback position. Defaults to 60 updates per second. Previous versions were 10.\r\n- Fixed volume input fields to only accept numeric values.\r\n- Fixed sound recorder to record from the configured playback device instead of the default one.\r\n- Troubleshooting report now contains extended device information.\r\n- Removed File not found and Demo limit reached popups when playing sounds from UI. The appropriate message is now only shown in the status bar."
+        },
+        {
+            "title": "Soundpad Update v2.5.0",
+            "date": "2017-11-29 06:49:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481771",
+            "notes": "The changes include:\r\n\r\nAudio processing\r\n- Response times are much lower when starting a sound or seeking within a sound.\r\n- Speakers and microphone lines are now starting synchronized.\r\n- Fixed dynamic volume normalization to be recalculated when seeking within sounds.\r\n- Added karaoke audio option to defer the microphone output when playing on speakers and microphone simultaneously (configurable in the audio preferences).\r\n\r\nCommon media player functionality\r\n- Added pause/resume, play previous file, play next file. Accessible from toolbar, Play menu or by special hotkeys (configurable in the hotkey preferences).\r\n- About pause: you may resume playback with the pause button itself, but you may also change the play mode. It means, you can play a sound on speakers to a certain position, pause and then resume to play on speakers and microphone. It is disabled by default and can be enabled in the interface preferences.\r\n- Added further special hotkeys to jump/seek in the played file and to change speaker volume by a configurable value.\r\n- Added option to the Play menu to continue playback after current file, that allows you to play an entire soundlist. The play mode (speakers, microphone or both) is retained. When playing a random sound, then this option will continue to play random sounds.\r\n- Added options to the Play menu to repeat the currently played sound or to repeat the soundlist, when the end of the list is reached.\r\n- Added Shuffle list option to the Edit menu.\r\n- Added option: Remember playback state throughout application starts. On by default.\r\n\r\nOthers\r\n- Remember last open preference page throughout application starts.\r\n- Added option to change the update rate of the seek slider, that shows the current playback position. Defaults to 60 updates per second. Previous versions were 10.\r\n- Fixed volume input fields to only accept numeric values.\r\n- Fixed sound recorder to record from the configured playback device instead of the default one.\r\n- Troubleshooting report now contains extended device information.\r\n- Removed File not found and Demo limit reached popups when playing sounds from UI. The appropriate message is now only shown in the status bar."
+        },
+        {
+            "title": "Soundpad Update v2.4.6",
+            "date": "2017-11-03 14:31:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2140760316594314622",
+            "notes": "This is a reliability & compatibility update, that also contains the Beta v2.4.3 changes.\r\n\r\nThe changes include:\r\n- Improved registration of the driver extension, so that it works on systems whose settings and permissions so far prevented the driver extension from being loaded.\r\n- Increased compatibility with a variety of sound devices, e.g. USB sound devices using C-Media effects.\r\n- Fixed issue, that Soundpad didn't work with Lync and certain Skype versions on Windows 10.\r\n- Updated handling of incompatible sound device effects to continue without them instead of refusing to work at all, and thus blocking the effects anyway.\r\n- Fixed initial stuttering of sounds, which were played on the microphone. This bug only occurred on some systems.\r\n- Added troubleshooting function to the help menu, which does a diagnose run and creates a report. This report can be used to open a bug report on our website.\r\n\r\nThis update requires a system restart. You may also decline to restart the computer and just restart Win-Audio at File -> Preferences -> Device -> Restart Win-Audio."
+        },
+        {
+            "title": "Soundpad Update v2.4.6",
+            "date": "2017-11-03 14:31:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481875",
+            "notes": "This is a reliability & compatibility update, that also contains the Beta v2.4.3 changes.\r\n\r\nThe changes include:\r\n- Improved registration of the driver extension, so that it works on systems whose settings and permissions so far prevented the driver extension from being loaded.\r\n- Increased compatibility with a variety of sound devices, e.g. USB sound devices using C-Media effects.\r\n- Fixed issue, that Soundpad didn't work with Lync and certain Skype versions on Windows 10.\r\n- Updated handling of incompatible sound device effects to continue without them instead of refusing to work at all, and thus blocking the effects anyway.\r\n- Fixed initial stuttering of sounds, which were played on the microphone. This bug only occurred on some systems.\r\n- Added troubleshooting function to the help menu, which does a diagnose run and creates a report. This report can be used to open a bug report on our website.\r\n\r\nThis update requires a system restart. You may also decline to restart the computer and just restart Win-Audio at File -> Preferences -> Device -> Restart Win-Audio."
+        },
+        {
+            "title": "Soundpad Update v2.4.4",
+            "date": "2017-10-26 07:22:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2140759684342258069",
+            "notes": "- Fixed audio formatting, which blocked audio being added to microphones with certain audio format settings like mono, 48000Hz, 32bit.\r\n\r\n  This patch does not include the Beta 2.4.3 changes."
+        },
+        {
+            "title": "Soundpad Update v2.4.4",
+            "date": "2017-10-26 07:22:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687481977",
+            "notes": "- Fixed audio formatting, which blocked audio being added to microphones with certain audio format settings like mono, 48000Hz, 32bit.\r\n\r\n  This patch does not include the Beta 2.4.3 changes."
+        },
+        {
+            "title": "Soundpad Update v2.4.2",
+            "date": "2017-10-20 13:06:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3111284858375179387",
+            "notes": "Associated file extension .spl with Soundpad. You can now load soundlists by double click or add them to the current list by drag and drop.\r\n    Improved performance of directory imports.\r\n    Fixed instant search to highlight sounds, which were added after the search term has been entered."
+        },
+        {
+            "title": "Soundpad Update v2.4.2",
+            "date": "2017-10-20 13:06:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687482182",
+            "notes": "Associated file extension .spl with Soundpad. You can now load soundlists by double click or add them to the current list by drag and drop.\r\n    Improved performance of directory imports.\r\n    Fixed instant search to highlight sounds, which were added after the search term has been entered."
+        }
+    ]
+}

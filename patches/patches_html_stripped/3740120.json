@@ -1,0 +1,36 @@
+{
+    "appId": "3740120",
+    "total_notes": 5,
+    "notes": [
+        {
+            "title": "v1.1.2 - The Fast & Fancy Update",
+            "date": "2025-09-20 12:34:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915463003",
+            "notes": "Fixed Errors From SharpPlusNative/GraphicsEngine Changes.\n\nAdded \"--list-minigames\" Flag To List Available Idle Minigames.\n\nRemoved All Left Over \"Ownership\" Code.\n\nAdded New Flexible Path Permissions Check, Making System Folder Private To The Admin User, User Home Folders Private To Each User.\n\nThe Editor Now Saves New Files As \"/Users/\\[UserName]/Test.txt\" Rather Than \"/MabelDOS/Test.txt\".\n\nThe \"admin\" User's Home Folder Is The System Folder \"/MabelDOS\".\n\nRenamed \"HackerModeBGM\" To \"HackerMode\".\n\nAdded CRT Screen Filter Effect.\n\nAdded The \"toggle-crt\" To Toggle The CRT Screen Filter Effect (Disabled By Default For Accessibility).\n\nReplaced \"minreq\" With \"reqwest\", Making The \"download\" Command Faster, And Shrinking The Linux Build Back Down To The 900KB Range.\n\nReplaced LZMA Compression Of Assets With LZMA2, Speeding Decompression Up At The Cost Of A Tiny Size Increase.\n\n\"Edit\" Command Now Requires A Filename As A Paramater.\n\nAdded \"Edit\" Command To Help Blurb.\n\nReduced Timeout For Konamicon Achievement From 3 To 1 Seconds.\n\nNow Requires At Least 11 Accounts For The 10 User Accounts Achievement (Including The Admin Account).\n\nSimplified The Achievements Code, Storing The Steam API Values As The Accessors Instead Of Arbitrary Index Values."
+        },
+        {
+            "title": "v1.1.1 - Clean & Tidy Update",
+            "date": "2025-08-14 10:08:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939341503",
+            "notes": "Added Hash Verification For The AssetPack.\n\nUpdated To Revamped Graphics Engine, Which Also Has A More Efficient Keyboard Buffering System.\n\nAdded \"idle --manual-click\" Sub-Command Flag, To Manually Collect Idle Points.\n\nAdded \"IdleDouble\" Achievement.\n\nImplemented Dependency Improvements Downstreamed From SharpPlusNative.\n\nAssetPack Now Holds All Language Sheets, Removing The Need For Language Depos.\n\nDefault Language Sheet (\"english\") Now Embedded Into The Binary As A Fallback When Loading The Asset Pack Fails.\n\nDefault Language Sheet Not Included In AssetPack To Reduce File Size (It Loads The Embedded Version).\n\nAdded Intel MacOS Support, As It's Been Fixed.\n\nIf The Virtual Disk Image Can't Be Loaded, It Is Assumed It's Corrupted, Renamed Into A Backup, And Replaced By THe Default Disk State.\n\nFixed Crash When Static Base Files Cannot Be Unpacked.\n\nMade \"No Way Home\" Advancement Possible.\n\nRemoved File Ownership.\n\nRemoved \"chown\" Command.\n\nReplaced UserName To Enter To Directly Reset From \"reset\" To \"\\[\\[Reset]]\". This Allows The \"reset\" User To Work Properly, And Makes The Reset Shortcut Less Likely To Cause Naming Collisions."
+        },
+        {
+            "title": "v1.1.0 - The Permissions Update!",
+            "date": "2025-07-21 15:15:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065473768",
+            "notes": "Directories Store Files & Directories Under A Unified Store, So Now A File And A Directory Cannot Share A File Name.\n\nUpdated MabelMedia-LLC.SharpPlusNative To Use The Standard Library Rather Than The \"byteorder\" Crate For Binary Serialization, And Added A Standardized Format For booleans.\n\nReplaced Hard-Coded Permission Checks With User Ownership Markers.\n\nDeduplicated Ownership Checks.\n\nAdded \"Chown\" Command, To Change The Owner Of A File / Directory.\n\nFiles Under /MabelDOS And /home/admin Are Owned By The \"admin\" Account.\n\nAdded List Of Static / System Directories To Create When Extracting Static Resource Files To The Virtual Disk Image, Instead Of Hardcoding Said List."
+        },
+        {
+            "title": "v1.0.9 - Bug Fix Bonanza!",
+            "date": "2025-07-16 15:30:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065312812",
+            "notes": "Added \"Base64\" Command To Encode / Decode Files With Base64 Encoding.\n\nAdded Automatic Wrapping Of Output Text, So The Help Lines Being To Long No Longer Matters. (Will Probably Still Break Them Up For Consistency's Sake)\n\nThe \"Color\" Command Errors When The Background And Foreground Colors Are The Same, So The Text Doesn't Become Invisible.\n\nFixed Bug Where Failing To Meet The Password Requirements In The Initial Setup Program Will Replace The Username With The Failing Password.\n\nRemoved Hiding Passwords In Prompts To Improve Accessibility.\n\nClicking The Close Button On The Window Now Saves And Quits Immediately.\n\nEntering \"reset\" At The Login Prompt Will Allow For Resetting The Save Without Needing The User Account Password.\n\nThe \"Social Computing\" Achievement No Longer Requires Exactly 10 User Accounts.\n\nFixed \"Definition Of Insanity\" And \"Desperate For Help\" Achievements (The Code For Them Was Removed By Accident).\n\nFixed Hang On The \"UserAdd\" Command When New User Password Doesn't Meet The Complexity Requirements.\n\nFixed \"Su\" Command's Password Validation Failing To Verify."
+        },
+        {
+            "title": "v1.0.8 - The Colorful Update!",
+            "date": "2025-07-12 15:28:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805065414277907",
+            "notes": "Scripts Now Split Lines On The ';' Character.\n\nThe \"Reset\" Command Now Resets Your Cloud Save (If Cloud Saving Is Enabled).\n\nAdded Better Console Coloring, Where The User Input Is Light Gray.\n\nAdded \"Sha256sum\" Command To Hash Files.\n\nAdded \"Color\" Command For Switching The Shell's Foreground & Background Color. It Accepts Color Indecies / Names (\"light_gray\", \"white\" Etc.)\n\nErrors Are Now Red, And Warning Messages Are Now Yellow.\n\nAdded \"%HOSTNAME%\", \"%USERNAME%\", \"%CD%\" And \"%OS_VERSION%\" Environment Variables.\n\nYou Can Now Customize The Prompt String With The \"%PS1%\" Environemnt Variable. Use The \"Unset\" Command To Reset It To Default.\n\nEnviroment Variables Are Reset On Reboot.\n\n\"%HOSTNAME%\" Loads From Virtual Disk On Startup.\n\nAdded Host Naming Step To Initial Setup."
+        }
+    ]
+}

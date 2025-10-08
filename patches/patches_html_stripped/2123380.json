@@ -1,0 +1,42 @@
+{
+    "appId": "2123380",
+    "total_notes": 6,
+    "notes": [
+        {
+            "title": "[Beta] 2.32.0 Update",
+            "date": "2025-09-06 08:24:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180098604",
+            "notes": "Use Key CGECAGECBAFAGGGA to enable beta test\n\n\nHibiscus2.32.0Update to FFMpeg 8.0\nshould be faster......?\n\n\nFix crash if application fallback to D3D9\nFFMpeg object will always try to query D3D11 device when init, which will cause crash if user run the game on PC that doesn't support D3D11 (fallback to D3D9)."
+        },
+        {
+            "title": "[Beta] 2.31.0 Update",
+            "date": "2025-08-06 11:15:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909540945",
+            "notes": "Use Key CGECAGECBAFAGGGA to enable beta test\n\n\nHibiscus2.31.0Move `LaunchCount` and `SettingsPage` to `_GlobalProgress`\nor settings will be modified each time it runs.\n\n\nFFMpeg now fully supports hardware decode\nWhen playing video, the hardware decode result texture doesn't need to copy to memory, now the pixel format conversion is done on GPU, and enabled by default. You can see a significant CPU usage drop, and may increase GPU usage if running on very old hardware. For modern GPU, it's easy to decode dozes of 1080P YUV 422 videos at the same time.\n\nCreate a file named NOHWDECODE at game root to force software decode.\n\nNote: if your hardware doesn't support D3D11, by default game will fallback to D3D9 or software runtime, as currently only implemented D3D11 adaptor and will still trying to create D3D11 device according to system device (which is D3D9 or not exist), which will causes crash.\n\n\n`EpicOnlineServices` crash when parsing application command line if path includes non-English character\nCommand line parser uses CLI11, which relies on std::codecvt, and requires input is encoded in UTF-8. However, GetCommandLineA will return depending on the code page of application. It works fine because it's relying on a bug somewhere."
+        },
+        {
+            "title": "2.30.0 Update",
+            "date": "2024-08-31 09:42:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642461703747",
+            "notes": "Game recording (Aka steam timeline) support"
+        },
+        {
+            "title": "12.30 2.25.0 Update",
+            "date": "2023-12-30 08:34:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585162818854",
+            "notes": "When reading illegal save files, it will go back to the beginning of the chapter where the file is saved, instead of disabling the loading directly.\n End-of-text state is not reset when loading a new script, i.e. if you go back to the title page after the text display is completed, then start the game, the text display is still considered finished, resulting in no text will be displayed until you click the mouse to trigger change page.\n Optimized memory usage estimation during garbage collection, possibly reducing lag after long play sessions."
+        },
+        {
+            "title": "12.29 2.24.7 Update",
+            "date": "2023-12-29 10:39:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585159492039",
+            "notes": "Hibiscus\n\n If the text starts with a line break, save, load the save file and save again, the save message changes to #NULL\n Using space and mouse wheel doesn't skip the performance\n When keep shake is turned off, the shutdown animation is also shown in fast-forward mode.\n Zooming, rotating, and moving performances can now be skipped.\n Memory leak when saving images if the image to be saved is not legal\n reset font doesn't work in format control\n If saving a file without recording a character and reading that file after recording that character, the character's separate voice sequence ID is incorrectly calculated from zero\n\n\nMobius\n\n When entering the save page, the default \"System will load file #1\" is displayed in the lower left corner before the mouse action triggers a refresh.\n\n\nIf a voice offset has been triggered and saved at that time, please read a save file from a period when the bug was not triggered, e.g., as the first line of current chapter's history log"
+        },
+        {
+            "title": "Update 12.29",
+            "date": "2023-12-29 00:25:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585157936734",
+            "notes": "fix volume & cut issue of some dubs\n cannot unlock music 18, 19, 20\n cannot unlock background in page 2 slot one\n\n\nthe unlock issue is due to the mistake in config files\nIf you already encounter this, please delete the following file when game is at title screen\nGamePath\\savings\\_Global\\Appreciation_Progress\nTo reset the record, or wait for future update"
+        }
+    ]
+}

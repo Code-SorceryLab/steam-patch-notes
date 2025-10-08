@@ -1,0 +1,108 @@
+{
+    "appId": "2685150",
+    "total_notes": 17,
+    "notes": [
+        {
+            "title": "new music, minor changes",
+            "date": "2024-07-13 19:53:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704274611790",
+            "notes": "new versions of \"Time and Space\" by Mark Btesh in gameplay cycle.\noriginal \"Time and Space\" by Mark Btesh now plays in credits window. \n\nosd color no longer also changes race popups. race popups and warnings have separate color configuration option. \n\nload button in pause menu now also resumes game."
+        },
+        {
+            "title": "bugfix fo didn't load hoop colors",
+            "date": "2024-05-05 12:46:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999955082988",
+            "notes": "expected but untested additional bug ,,, racemesh colors not loading with save. \n\nThis is a bug that I expect I caught without having witnessed it happen as a problem, but I did make changes to remove it as a possible issue even though it never came up. \n\nFO wasn't loading hoop colors,, this is not because of the script section, but instead because the FO would have been not loading other parts of the race already, if players did not add any hoops to race when they saved it. There was a debug.log line called for a list[0] item that would throw an error if there was no hoops added to race, interrupting the load. debug.log is for debugging, so at one point I fixed another problem, and while on all other vehicles managed to remove that line, missed it for FO. It would NOT have prevented the loading of the saved objects themselves, and previously would only have prevented the loading of other racetype information, however the colors are further down the function meaning that they would have all not worked for FO."
+        },
+        {
+            "title": "true bugfix",
+            "date": "2024-04-21 21:33:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032403673910",
+            "notes": "attempt at bugfix,, actual bug. \n\nfor some undiscoverable reason, \"first selected\" is not working on main menu, meaning gamepad and keyboard are not able to select buttons. ,,, this fix enables it to work , but is not an appropriate programming design, as it is wonky to work, and counts as a \"bug workaround\". There is no issue in the editor, but in the build it wasn't working correctly. \n\nIf you are unable to arrow out of the text-field for playername,, press escape to reset the button selected."
+        },
+        {
+            "title": "race-settings changes",
+            "date": "2024-04-20 23:54:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032400387994",
+            "notes": "hullcam menu button in pause menu. Previously hullcams menu was accessible only by button press. It is now available from the in-game pause menu as well. hullcam settings save unique to each vehicle. The hullcam positioning will apply to ALL scenes for that particular vehicle type, but will NOT apply to any other vehicle, each vehicle must be set up independently although the most likely scenario is that these cameras will need to be uniquely positioned for each race. \n\nadded snap-look reverse to space-vehicle. (there is no actual hardware visible on the space-vehicle however it may be desired by the player particularly after using it so frequently on the duckys) \n\nrace-settings changes: These changes are accessible from the pause menu in the \"race settings\" menu. These settings will save the saved level as with the other race-settings. \n\n-skip next-to-last checkpoint on last lap. \nIt was already possible to have the last checkpoint work on the last lap only. (for example to have a dockport or landing pad be the final race checkpoint) ... Now it is possible to skip the 2nd to last checkpoint on the last lap if the last checkpoint is also last-lap only. One logical use-case is where the dockport/landing pad might be the final checkpoint, but the player wants the race to move past this checkpoint each lap, so places a hoop nearby the port/pad, but does NOT want the race to have to move through this hoop when the player approaches the pad itself. \n\n-timer on lasthoop or timer on firsthoop. \nPreviously the laptimer would begin counting a new lap only on the first checkpoint of the next lap. However depending on start location or player preferences, it may be desired that the laptimer begins counting the new lap on the last checkpoint of the previous lap. \n\nfull rundown of race-settings that save with player-saves :: racetype, timertype, lasthoop type, ignore weights, laptimer reset checkpoint"
+        },
+        {
+            "title": "little changes (not fixes)",
+            "date": "2024-04-16 00:49:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312198095091",
+            "notes": "replay campaign button on endscreen \n\nadded front facing light to hoppers that will be affected by headlight/landinglight controls. This light is not presently independently toggleable, it will come on, off, and change intensity with the landing light only. I have found it to be useful particularly in the newly added to hoppers tunnel sections, particularly in darker scenes. \n\n"
+        },
+        {
+            "title": "Vector Vanes full version initial release",
+            "date": "2024-03-29 03:00:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331439664182",
+            "notes": "Now including the full version of the Vector Vanes vehicle! \n\nVector Vanes attempts to simulate a forward thruster with thrust vanes in the thrust plume (as in a sidewinder missile!) \n\nWhen the player tilts the thrust vanes, they add some drag and cause some lift so that the flight characteristics of this vehicle will be different from the gimbal-ducky although the method of flight will be similar."
+        },
+        {
+            "title": "hullcam changes, rh input changes, little adjustments/fixes.",
+            "date": "2024-01-18 23:13:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213100182110",
+            "notes": "hullcams are now able to be rotated during gameplay. This rotation is separate from the hullcam menu rotations. The player may use camera rotation while a hullcam is active to rotate shiptied cams to point them or rotate world-tied cams to swing them around the ship. The player may use \"recenter cam\" to recenter it, or it will recenter automatically when the hullcam menu is opened, and this rotation is not stored. ( hullcam setup is stored as normal) \n\nRockHopper inputs originally had separate rotation assignments, but now also have separate translation assignments. This means there is a Forward, Up, Right, but also a rockhopper Forward, rockhopper Up, and rockhopper Right. (rockhopper assignments apply to all \"lunar gravity\" vehicles). \n\nThis is mostly to allow players to assign forward and up as they prefer. Previously \"Forward\" caused hoppers to move up, as \"forward\" represents throttle forward, and hoppers are \"tailsitters\". Now if a player prefers they can use forward for \"forward\" without affecting the spacevehicle assignments. \n\nPlayers will need to add assignments for these inputs, but will not need to reassign all other controls unless they have not played since the last major input update. \n\nDuckyCam for the rockhopper was pulled back a bit. \n\npotentially fixed an issue where dockport invisible meshes would become visible when pause menu is opened and closed after building race. \n\npotentially fixed an issue where dockpad \"press dock to add pad to race\" would stay on if player switched from spaysmode while it was on. \n\nedit::: ALSO added ,, input filtering zerokill . \nzerokill will cause the input filter to zero out when input is zero. With zerokill off, input filtering will cause the input to gradually reduce to zero (the rate will depend on the slider position) in the same way that it gradually increases to the player input value. (the suggested purpose of inputfiltering is to help the player make tiny inputs while docking by decreasing the input value that is applied while pulsing input). With zerokill enabled , the input will increase gradually according to the filter slider value , however when the player stops giving input, it will immediately go to zero."
+        },
+        {
+            "title": "NEW VEHICLE (now including full version 2-gimbal ducky)",
+            "date": "2024-01-15 01:53:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510133341830",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/44752707/1d4baddabe17fd7ca8d322fc697cac6c3682271d.png[/img]\n\nThe Two-Gimbal Ducky uses only the 2 gimballed thrusters for all control. The vehicle only accelerates forward, and can only pitch. roll, and yaw as a result of the thrusters gimballing. This means that forward thrust must be applied for the vehicle to accelerate on a rotation axis. \n\nAs with the other vehicles, rotation assist makes use of the vehicles thruster array, therefore rotation assist also has these same limitations. \n\nI will soon add the Two-Gimbal Hopper full version, and MAY include one more vehicle as part of the \"Simple Vehicles Update\". The \"Simple Vehicles Update\" is made of a set of vehicles that do not have a full-featured thruster array, and are built around making use only of a gimballed thruster. The final vehile which may be added or may be added later , will be one that rather than using gimballed thrust, will use \"thrust vanes\" mounted in the thrust plume. The difference in feel while flying this craft should be greater reduction in forward thrust during rotation input, as the vanes will result in drag in the thrust plume. \n\nAlthough the full features are already available for several of these vehicles as a result of small updates, the \"Simple Vehicles Update\" will be an official point of completion of these \"Simple Vehicles\". The next step for vehicles to be included will be a \"Full Thruster Array\" set of vehicles which will make use of gimballed thruster or vectored thrust thrusters, while being paired with a normal 6-axis RCS array. These vehicles will also feature a set of input options, where the vehicle can be controlled using an algorithm that makes use of all available thrusters and depending on player input it will automatically determine to use the gimbals or rcs array for those rotations that can be done with either, or alternatively the RCS array can be assigned separately from the gimbal actions (which may require up to 10 axis for input) allowing the player to use various thrusters as they see fit depending on the given maneuvering circumstances. \n\nEstimated timeline for this full featured thruster update is unknown, although I expect it to take a few months in total. As features are built they will become available in small updates, but I will focus first on completing all of the simple vehicles first, and likely a reorganization of the menus. I also may try to include additional \"training content\" although this is not a priority as the vehicles are already challenging enough that a \"walkthrough of controls\" will not result in player success anyway. The vehicles must be practiced regularly, therefore training content will be limited to simple course elements arranged for players to have access to easily accomplishing basic navigation once they have learned the controls on their own. (there is a controls description already included in the menus)"
+        },
+        {
+            "title": "hotfix hullcams would go wonky in menu when selected",
+            "date": "2024-01-09 01:02:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585198121457",
+            "notes": "when selecting hullcams they would occasionally rotate to extreme angles for no apparent reason. \n\nit appears to be fixed."
+        },
+        {
+            "title": "hotfix hopper placeable cams rotating wonky axis",
+            "date": "2024-01-08 23:06:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585197826947",
+            "notes": "when the player would interact with the hopper vehicle placeable cam angle controls, the cameras would rotate on unusual axis and would not aim correctly. \n\nfixed."
+        },
+        {
+            "title": "hotfix",
+            "date": "2024-01-07 23:31:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585194246244",
+            "notes": "placeable cameras not functioning rockhopper and one-gimbal hopper"
+        },
+        {
+            "title": "hotfix advanced settings not opening",
+            "date": "2024-01-04 01:08:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585179912468",
+            "notes": "fixed advanced settings won't open."
+        },
+        {
+            "title": "hotfix",
+            "date": "2024-01-03 22:57:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585179580755",
+            "notes": "control mapper will no longer unassign controller from one config when assigning it to another, meaning that all config slots can be simultaneously live with individual configs for a single controller."
+        },
+        {
+            "title": "hotfix",
+            "date": "2023-12-26 04:16:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585147590709",
+            "notes": "fixed main menu music slider would not work on first load, only when returning to main menu\n\nfixed navball in gimbal-only rocket wonky in one direction\n\nfixed shipvolume slider in gimbal-only rocket selected by player gameplay input, with value changing as player flew ship \n\n"
+        },
+        {
+            "title": "hotfix",
+            "date": "2023-12-24 23:37:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585143238677",
+            "notes": "when deactivating rotation assist, ship thrusters would remain visibly on if they were on for rotation assist. (they would not provide thrust, but would make sound and be visible) \n\nfixed"
+        },
+        {
+            "title": "Rotation Assist Update part 1",
+            "date": "2023-12-24 05:10:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585140438179",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/44752707/709cac3ddc03fe10882c5fed107d8e26a2c0921a.png[/img]\n\nNew Rotation Assist modes : \n- All axis independently stabilize \n- Roll axis only independently stabilizes, pitch and yaw are linked. \n- Roll axis only stabilizes, pitch and yaw do not stabilize \n- All axis are linked, no stabilization until player rotation input is zero. \n\nRotation assist improvements with weights connected: rotation assist arrest rotation a little faster with weights connected. part 2 will hopefully have better smoothing without sacrificing the rate of arrest. I may make some options for rotation assist while weights are connected, although I do not plan to pursue the ultimate goal of full \"robotic tuning\" features in the near future. Just some preset tunings. Rotation assist does not exceed max rotation thrust available to the player in manual mode (anymore) under any circumstance.  (there was a little spike when approaching zero previously, not noticeable but not fair) \n\n[url={STEAM_CLAN_IMAGE}/44752707/928875ee53168c781bcbd89847cf06ce365b44c9.png][img]{STEAM_CLAN_IMAGE}/44752707/a78d22c0e77690f02d7ac720807c64151a34af09.png[/img][/url]\n\nRubber Ducky gimbal is now on a frame filter, which may need tuning. Part 2 of the update may see a slider setting so that the player can make the tail wag faster or slower to preference. Overall the mass to thrust ration of the rubber ducky means that as long as it doesn't take a whole second to aim the gimbal, overall performance will be about the same for the player, so in part it's just a visual preference, although my objective is to have a hard limitation that simulates the limitations of machine part acceleration,, and with spacecraft machine parts must be lighter more importantly than stronger, so I intend to have some degree of \"slowness\" in the gimbal translation,, at least such that the translation is visible, although not sluggish. This filter is unfortunately not in the fixed update and therefore a faster computer will have a different performance than a slower computer, although I do not want to update my filter in the fixed update as I am tracking player input in the update function. Therefore this setting may be included so that potato computers or racehorse computers can result in a pleasant visual experience from the stabilization wobbles while under thrust etc. (It uses the gimbal rocket for rotation stabilization)\n\nsome little fixes here and there, but a big fix to the \"other ship settings\" menu's accessed from the ships submenus (not from the pause menu, but via the main menu) where none of the toggles were loading at the correct setting and changing a setting would set all of the players previously set settings from other menus to options that had numbers that did not even exist in the game code ... ?? NOw it is necessary to have a \"save\" button in this menu although I imagine some players won't be happy without one anyway. \n\nall of the various cameras now have the same \"post processing\" settings, which will certainly change as I experiment in the future. \n\nother fixes not worth listing. \n\npart 2 expectations :: well I like how the mechanicalness of some of the vehicles stabilization is while connected to a weight. I know I should just smooth everything out, but will leave that for later in hopes that some players play the current stabilization and have an experience with it. also, stabilization loops are an arena of virtually infinite technological advancement, and therefore i COULD try to learn all sorts of things to include related to it, so most likely I will try to find a way to keep it rough for now, while offering smoothing for those who just can't stand it, with the future plan of trashing the entire current system in favor of a proper one. \n\nI may work on a \"rockhopper ducky\" or maybe not until after christmas, so perhaps for the part 2 the \"rubber ducky tests\" from the main menu will be replaced by a gimbal rocket lander test. \n\n"
+        },
+        {
+            "title": "bugfix",
+            "date": "2023-12-08 10:19:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616798409594",
+            "notes": "missing mesh fixed"
+        }
+    ]
+}

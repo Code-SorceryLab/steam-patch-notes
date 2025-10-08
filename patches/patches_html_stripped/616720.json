@@ -1,0 +1,1356 @@
+{
+    "appId": "616720",
+    "total_notes": 225,
+    "notes": [
+        {
+            "title": "2025.9.25 Update: Submodel feature and Model Slot Editing",
+            "date": "2025-09-24 21:03:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772227628",
+            "notes": "Version：2025.9.25\n\n\nJson Config: Added \"add_submodel\" and \"remove_submodel\" commands\n\nJson Config: Renamed \"change_cos\" command to \"change_model\"\n\nEX Studio: Merged Live2D/Spine editor and uploader\n\nEX Studio: User interface optimization\n\nCommon: Added submodel feature\n\nCommon: Added model slot editing feature\n\nCommon: Bug fixes\n\n\nAbout Model Slot Editing\n\n\nMainly used to configure the default position, size, etc. of models when they are loaded into a specific slot. When a model is loaded for the first time, it will use this slot setting.\n\n\n\nIn the Control Panel or Quick Menu, click Edit Model Slot to open the editing panel, where you can configure the default position, size, and other settings of a model slot. You can switch model slots using the menu in the upper-left corner. Drag the crosshair intersection or adjust the X/Y values in the panel to set the default position. The Reset All Model Transforms button resets all models’ position, size, and related settings for the current model slot.\n\n\n\nUse case:\n\nIf a user wants all models to be placed in the corner of the screen without editing each one individually, they can move the model slot to the corner and click the 'Reset all model transforms' button. After that, all models loaded for the first time will default to this position.\n\n\n\n[img src=\"{STEAM_CLAN_IMAGE}/29049399/07b68a4dec7a17c62f38eb1195185deba3f2099a.png\"]\n\n\nAbout Merging Live2D and Spine Editors\n\n\nAfter the merge, you can freely switch between Live2D and Spine models, including switching via the change_model command. Submodels of different types can also be displayed simultaneously.\n\n\n\n\nAbout Submodels\n\n\nUse cases\n\nSome models separate the background and character. You can set the character as the parent model and load the background on startup, allowing both models to move and scale as a single unit.\n\nWhen creating models, you can separate UI, character, and background to reduce complexity of a single model. This also enables dynamic switching of backgrounds or characters, offering greater flexibility than simply replacing textures.\n\n\n\nLimitations\n\nSubmodels can only be added or removed by the parent model through commands. Submodels cannot have their own submodels. When the parent model is removed, its submodels are removed as well.\n\nWhen adding a submodel, you can set its display order from -3 to 3. The parent model is at position 0, positive values display in front, negative values display behind. Multiple models can occupy the same position, but overlapping may cause display issues.\n\nUsers cannot adjust the position or size of submodels; only initial position and size can be set in the Json configuration. Submodels will follow the parent model’s movement and scaling.\n\nSince there is no dedicated editing panel for submodels, you cannot change expressions or adjust mesh opacity from the editor; these can only be changed via commands.\n\nSubmodels use the parent model’s text box for text display, so if multiple models display text at the same time, they may compete for the same text box.\n\nWhen using Workshop items or WPK files, submodels share the parent model’s save data, meaning changes to floating-point variables, affinity, etc., affect both. With LPK or Json files, the submodel’s save data is separate from the parent model.\n\nSubmodels and parent models can be different types (e.g., parent is Live2D, submodel is Spine).\n\nTo ensure performance and prevent abuse, a maximum of 6 submodels can be added.\n\n\n\nHow to use\n\nAdd submodel: add_submodel config.json 1 (1 is the position, an integer in the range -3 to 3. The parent model is at position 0; values greater than 0 display in front, values less than 0 display behind.)\n\nRemove submodel: remove_submodel config.json (removes all submodels with the configuration name config.json)\n\n\n\n[img src=\"{STEAM_CLAN_IMAGE}/29049399/8852ca3b9e0eba9d3f8bb4d4db73f1cf725f0f16.png\"]"
+        },
+        {
+            "title": "2025.9.20 Update: breaking change to model setting",
+            "date": "2025-09-19 21:53:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915443373",
+            "notes": "Version: 2025.9.14\n\n\n\n[EX Studio] Redesigned the command editing panel\n\n\n\n[EX Studio] Motion selection panel now supports double-click to select\n\n\n\n[EX Studio] Improved the editor interface\n\n\n\n[Common] Updated Spine SDK\n\n\n\n[Common] Bug fixes and code optimizations\n\n\nAbout the breaking change to model position and size\n\n\nReason for the change:\n\nTo simplify the setup of model position and size, and to prepare for an upcoming major feature update.\n\nBefore the change:\n\nBoth the model slot adjustments and individual model adjustments were applied. When loading another model, it would inherit the current model slot settings plus its own saved settings.\n\n\n\nAfter the change:\n\nModel slot adjustments have been removed. Each model’s position, size, and related settings are now saved completely independently. The editing panel will only edit each model individually. Models are saved separately based on the model slot number and the screen aspect ratio.\n\n\n\nImpact on existing users:\n[olist]\nOn the first launch after the update: The settings of loaded models will be overwritten by the model slot settings, which may cause changes to model position or size.\n\nOn the second and subsequent launches: Models will be displayed only according to their individually saved settings.\n\nFor old scene snapshots: If a model was individually adjusted, its position or size may change. If it was not individually adjusted, there will be no effect.\n[/olist]"
+        },
+        {
+            "title": "2025.9.14 Update",
+            "date": "2025-09-13 19:53:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566497063",
+            "notes": "Version: 2025.9.14\n\n\n\n\n[EX Studio] Redesigned the command editing panel\n\n\n\n\n[EX Studio] Motion selection panel now supports double-click to select\n\n\n\n\n[EX Studio] Improved the editor interface\n\n\n\n\n[Common] Updated Spine SDK\n\n\n\n\n[Common] Bug fixes and code optimizations"
+        },
+        {
+            "title": "2025.9.11 Update",
+            "date": "2025-09-10 21:44:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566401187",
+            "notes": "Version: 2025.9.11\n\n\n[Json Config] Added 'animations' command for Spine\n\nUse animations lock/unlock/set to adjust the animation progress of a specified layer. The animation must already be playing.\n\n\n\n[Json Config] Added 'Cull Back' option for Spine\n\n\n\n[Json Config] Added 'Clickable When Invisible' option for Live2D hit areas\n\n\n\n[Json Config] Mouse tracking can now be toggled individually for each item\n\n\n\n[EX Studio] Added 'Fixed Ratio' option when editing model boundaries\n\n\n\n[EX Studio] Improved editor interface\n\n\n\n[Common] Fixed an issue with loading UTF-8 BOM formatted files\n\n\n\n[Common] Fixed an issue with model motion looping\n\n\n\n[Common] Other bug fixes and code optimizations"
+        },
+        {
+            "title": "2025.8.24 Update",
+            "date": "2025-08-23 20:32:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382526457",
+            "notes": "Version: 2025.8.24\n\n\n[Control Panel] Added import/export functionality to the edit tags panel\n\nSome users have reported cases of tags being lost. The issue is still under investigation, and a fix timeline cannot be determined yet. Users experiencing this problem are advised to back up their data. This feature can also be used to import tags onto another computer\n\n\n\n[General] Optimized save data"
+        },
+        {
+            "title": "2025.8.18 Update",
+            "date": "2025-08-17 23:13:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939455595",
+            "notes": "Version: 2025.8.18\n\n\n[Json Config] Added \"Fade In on Loop\"\n\nNote: Only newly created configurations can use \"Fade In on Loop.\" For older configurations, you need to manually modify conf_ver or ConfVer in the configuration file and change the value to 1. In addition, this property is not related to whether motion looping is enabled— it will be applied whenever the current motion is the same as the previous one.\n\n\n\n[EX Studio] Holding the left Ctrl key and clicking a slider value now brings up an input box for precise adjustment\n\n\n\n[EX Studio] The default value is now displayed to the right of the fade-in/fade-out label\n\n\n\n[General] Fixed an issue related to hit areas"
+        },
+        {
+            "title": "2025.7.29 Update",
+            "date": "2025-07-28 20:16:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758753880",
+            "notes": "Version: 2025.7.29\n\n\n[Json Config] Added a new operation for float variables: round\n\n\n\n[Json Config] Added a new type for parameter looping: inverted sine\n\n\n\n[EX Studio] When creating a Spine configuration, the atlas and texture will be auto-filled based on the selected skeleton name\n\n\n\n[Control Panel] Window title now displays the instance name\n\n\n\n[Control Panel] Added a status icon to indicate workshop item refresh\n\n\n\n[General] Fixed a display issue when running multiple instances\n\n\n\n[General] Improved display detection logic\n\n\n\n[General] Optimized logging functionality"
+        },
+        {
+            "title": "2025.5.16 Update",
+            "date": "2025-05-25 03:45:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164496630",
+            "notes": "Version: 2025.5.25\n\n\n[General] Fixed an issue where outfit switching failed when loading a model\n\n[General] Fixed an issue with the daily bonus limit (Intimacy System)\n\n[General] Fixed an issue that generated excessive logs when Spine bones could not be found"
+        },
+        {
+            "title": "2025.5.16 Update",
+            "date": "2025-05-15 19:51:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379483386",
+            "notes": "Version: 2025.5.16\n\n\n[EX Studio] Added skeleton display in the Spine editor, bones can now be selected by clicking\n\n[EX Studio] Hit areas can now be quickly created based on selected artmeshes or bones\n\n[EX Studio] Hovering over list items now quickly highlights the corresponding area (Artmesh/Bone/Slot)\n\n[EX Studio] Controllers now show the default parameter value to the right of the min/max labels for reference\n\n[General] Fixed an issue where parameter dragging’s min/max values had no effect\n\n[General] Fixed mouse binding not working in bordered window mode\n\n[General] Fixed incorrect texture display in certain situations\n\n[General] Other optimizations\n\n\n{STEAM_CLAN_IMAGE}/29049399/5248cadeaf2a6829f5aef15df4ce8a4a04024a39.png\n{STEAM_CLAN_IMAGE}/29049399/bcc82462b081ce0abe3d74708bc64ddc6058ec24.png"
+        },
+        {
+            "title": "2025.3.10 Update",
+            "date": "2025-03-09 19:11:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379483024",
+            "notes": "Version: 2025.3.10\n\n\n[ExAPI] Added play and stop sound api for third-party TTS integration\nDoc: https://live2d.pavostudio.com/doc/en-us/exapi/api-list/\n\nGithub: https://github.com/pavostudio/ExAPI\n\n\n[Main App] Optimized scene data saving; note that this data update is irreversible\n\n[Main App] Improved handling when Workshop models are missing at startup, automatically switching to backup models\n\n[Main App] Optimized playlist to ensure equal probability for all items when selecting random playback\n\n[Control Panel] Nearly all sliders can now be reset by clicking the value\n\n[Control Panel] Holding the left Ctrl key and clicking a slider value now brings up an input box for precise adjustment\n\n[Control Panel] Toggle buttons can now be changed directly by clicking (previously only draggable)\n\n[Control Panel] Workshop details page now displays user tags"
+        },
+        {
+            "title": "2025.1.16 Update",
+            "date": "2025-01-15 23:56:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014323400",
+            "notes": "Version: 2025.1.16\n\n\n[Json Config] Added support for multiple Spine controllers\n\n\n Mouse Tracking\n Lip Sync\n Param Hit\n Param Loop\n Accelerometer\n Key Trigger\n\nThe difference between Spine and Live2D controllers is that Live2D is parameter-based, while Spine is animation-based. Therefore, controllers operate at a higher level to play the animation (Except for Param Hit, which only affects the currently playing animation), then set the speed to 0, controlling the animation progress through code. Please keep this in mind when using them.\n\n[Json Config] Replaced the 'Loop' property of motion events with 'When reaching the end'\n\n[Json Config] Added 'Max Value' and 'Min Value' properties for Param Hit\n\n[Json Config] Added 'Pointer Down Motion' and 'Pointer Up Motion' properties to hit areas\n\n[Json Config] Fixed an issue where the 'stop_mtn' command was ineffective in certain situations\n\n[Json Config] Fixed the 'set_colors' command not working (Spine)\n\n[Json Config] Fixed the 'weight' property of controllers not functioning\n\n[EX Studio] Added animation duration display to the Spine animation list\n\n[EX Studio] Redesigned the motion selection panel in the Json editor\n\n[Main App] Fixed an issue where the background turned black in desktop mode on macOS after waking from sleep"
+        },
+        {
+            "title": "2024.12.8 Update: Video recording for Editor",
+            "date": "2024-12-07 21:13:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795688215",
+            "notes": "Version: 2024.12.8\n\n\n[EX Studio] Added video recording feature to the Live2D/Spine editor\n- High-resolution and high-frame-rate video recording requires significant performance, which may cause frame drops.\n- The recording feature only supports capturing the model itself, UI elements like text box cannot be recorded.\n\n[EX Studio] Improved render size and snapshot functionality\nRender size now supports both automatic adjustment and custom size.\n\n[Main App] Fixed an issue related to hotkeys\n\n\n{STEAM_CLAN_IMAGE}/29049399/d383136fb39f6bfe6ce1bb1e95b008420e9d445d.png\n{STEAM_CLAN_IMAGE}/29049399/0df0deac8f89aaa5b2683241b2f1b864dce7e2c7.png"
+        },
+        {
+            "title": "2024.9.2 Update: New Window Mode",
+            "date": "2024-09-02 01:41:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642467774968",
+            "notes": "Version: 2024.9.2\n\n\nAdded Window Mode: Runs in a window with border\nNote: This Window Mode includes borders, while in Desktop Mode, when the display type is set to “Window”, it displays a borderless window without background\n\nSome improvements and bug fixes\n\n\n{STEAM_CLAN_IMAGE}/29049399/214c946030d2856feea0652d0f7ac3ddc40a5cdf.png"
+        },
+        {
+            "title": "2024.7.7 Update: Spine 4.2 & WebP image",
+            "date": "2024-07-07 01:27:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267344822600",
+            "notes": "Version: 2024.7.7\n\n\n Added support for Spine 4.2\n\n Added support for WebP image\n\n Some improvements and bug fixes"
+        },
+        {
+            "title": "2024.6.24 Update",
+            "date": "2024-06-23 20:33:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039988852690",
+            "notes": "Version: 2024.6.24\n\n\n [EX Studio] Added search field for Live2D/Spine Editor\n\n [EX Studio] Added 'Loop' button and 'Speed' slider for Spine Editor\n\n [EX Studio] Added import/export content templates for Workshop Uploader\n\n [EX Studio] Fixed an issue caused by change_cos command\n\n [EX Studio] Optimized the user interface\n\n [Control Panel] Optimized the multi-select panel"
+        },
+        {
+            "title": "2024.4.21 Update",
+            "date": "2024-04-21 02:18:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032400751888",
+            "notes": "Version: 2024.4.21\n\n\n Optimized data loading speed after application startup, especially for users with large amount of workshop items.\nPlease note that after this update, Control Panel needs to connect to Steam for update and create cache data.\n\n Some improvements and bug fixes"
+        },
+        {
+            "title": "2024.4.16 Update: Added 64-bit version (Windows)",
+            "date": "2024-04-16 00:39:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312198070480",
+            "notes": "Version: 2024.4.16\n\n\nAdded 64-bit apps for Windows version (Switch via Instance Manager)\nThe 64-bit version removes the 4GB memory limit and can support larger textures for models. However, testing has shown no significant increase in memory usage compared to the 32-bit version. Users can choose between the 32-bit or 64-bit version as needed.\nNote: Only a few key applications have been updated to the 64-bit version, not all applications.\n\nSome improvements and bug fixes"
+        },
+        {
+            "title": "2024.3.25 Update",
+            "date": "2024-03-25 01:39:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301731400277",
+            "notes": "Version: 2024.3.25\n\n\nAdded \"blend mode\" support for Spine textures\nSome improvements and bug fixes"
+        },
+        {
+            "title": "2024.2.24 Update",
+            "date": "2024-02-23 23:57:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065187953802",
+            "notes": "Version: 2024.2.24\n\nADD:\n\nAdded \"add_skins\" and \"remove_skins\" commands to Json config (Spine)\nAdded \"Save scale and position\" button to the editor, Click to write the current size and position into the Json config -> option\n\n{STEAM_CLAN_IMAGE}/29049399/bf111b04c08c0dbae91779a85a5651f8ecdd19fb.jpg\n\nCHANGE:\n\nOptimized model bounds editing function\nOptimized the trigger conditions of the hit areas\n\n{STEAM_CLAN_IMAGE}/29049399/a18755c066c5f430937d1bdc661c39e7506db1de.jpg\n\nFIX:\n\nFixed mouse offset issues on some computers\nFixed an issue where the Edit Panel would move outside the desktop when changing models in some cases"
+        },
+        {
+            "title": "2023.10.8 Update: Cubism SDK 5",
+            "date": "2023-10-08 03:47:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220292521190766835",
+            "notes": "Version: 2023.8.13 -> 2023.10.8\n\n\nAdded Cubism SDK 5 support\n\nLive2D/Spine Editor: Added 'Render Size' option\n\nLive2D/Spine Editor: Custom 'Snapshot Size' (256-4096)\n\nLive2D/Spine Editor: Some improvements"
+        },
+        {
+            "title": "2023.8.13 Update",
+            "date": "2023-08-13 08:18:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5839532486221599310",
+            "notes": "Version: 2023.4.10 -> 2023.8.13\n\n\nAdded buttons to hide left and right panels for Live2D/Spine Editor\nHide the left and right panels to get a larger model display window\n\nAdded option for snapshot size to Live2D/Spine Editor\n\nOptimize the model display of EX Studio\n\n{STEAM_CLAN_IMAGE}/29049399/e84eebcae179e9878e05819308345943ec6e8d81.png\n{STEAM_CLAN_IMAGE}/29049399/ea4f3c6497e385663dd862637de7fd8499601242.png\n{STEAM_CLAN_IMAGE}/29049399/b3da94a06d4729d66f4e5addc3db05c3ffd3650a.png\n{STEAM_CLAN_IMAGE}/29049399/6c87891a0c4535be88103f9f79f2ff85ebc42632.png"
+        },
+        {
+            "title": "2023.4.10 Update: Multi-language support",
+            "date": "2023-04-09 22:27:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841301379634",
+            "notes": "Version: 2023.3.22 -> 2023.4.10\n\n\nAdded multi-language support for workshop model\n\n\n Except for the default option, other languages are translated by Google, the contents may be inaccurate\n Only the public workshop item can get multi-language contents\n Network is required to get contents\n Please reload the model to apply changes\n\n\n{STEAM_CLAN_IMAGE}/29049399/a10e71c6dd53fe69d8f35caa2469c484c92f9bfb.jpg"
+        },
+        {
+            "title": "2023.3.22 Update",
+            "date": "2023-03-22 00:06:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536874383043",
+            "notes": "Version: 2023.2.5 -> 2023.3.22\n\nAdded a security check for moc3 files\n\nCubism SDK update\n\nBug fixes"
+        },
+        {
+            "title": "2023.2.5 Update",
+            "date": "2023-02-04 19:33:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743888968964",
+            "notes": "Version: 2022.12.04 -> 2023.2.5\n\nVideo plugin update\n\nBug fixes"
+        },
+        {
+            "title": "2022.12.04 Update",
+            "date": "2022-12-03 18:52:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4979322040025622547",
+            "notes": "Version: 2022.11.05 -> 2022.12.04\n\nNew feature: Playlist\n\n\n Support 4 types (model+background, model, background, scene)\n Model, background and scene can set interval time separately\n Can setup for each model slot\n Can setup background for each monitor\n Support importing / exporting config file\n\n{STEAM_CLAN_IMAGE}/29049399/746eda273fac79bf61c4367d73662e5693943360.jpg\n\nRemoved Background Slideshow (Replaced by Playlist)\n\nBug fixes\n\n\n【Tips】\n\nWhen playing [Scene] with [Playlist], it will change the status of entire scene, which means that when changing [Playlist type] from [Scene] to [Model] or [Background], the other scene status will be retained (such as effects, widgets, etc.). It is recommended to create a default scene for restoration before playing the scenes.\n\nThe initial size of the models will be different. It is recommended to adjust the size of each model separately in [Editing Panel]. This setting will be stored separately\n\n{STEAM_CLAN_IMAGE}/29049399/811b4c78ab2da3030607ca111a80e2adfed58475.jpg\n{STEAM_CLAN_IMAGE}/29049399/1e99a4fbb00a556cbad08cfaf736b0b73a0f4305.jpg"
+        },
+        {
+            "title": "2022.11.05 Update",
+            "date": "2022-11-05 01:38:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4732747437208085240",
+            "notes": "Version: 2022.10.13 -> 2022.11.05\n\nAdded support for Spine 4.1"
+        },
+        {
+            "title": "2022.10.13 Update",
+            "date": "2022-10-13 01:50:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6402455182503449998",
+            "notes": "Version: 2022.9.23 -> 2022.10.13\n\nMotion Tracker: SDK Update\n\nMotion Tracker: Added camera resolution option\n\nMotion Tracker: Hand tracking improvements\n\nBug fixes"
+        },
+        {
+            "title": "2022.9.23 Update",
+            "date": "2022-09-23 02:58:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330734735367",
+            "notes": "Version: 2022.7.21 -> 2022.9.23\n\nCubism SDK update\n\nVideo plugin update"
+        },
+        {
+            "title": "2022.7.21 Update",
+            "date": "2022-07-20 22:46:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598755821863577553",
+            "notes": "Version: 2022.6.23 -> 2022.7.21\n\nAdded 'Edit Tag' and 'Export' buttons for each workshop item\n\n{STEAM_CLAN_IMAGE}/29049399/1466dcf1e61af079f10de0cb6c71afdd140b8f81.jpg\n\nSome improvements and bug fixes"
+        },
+        {
+            "title": "2022.6.23 Update",
+            "date": "2022-06-22 21:45:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295728060354",
+            "notes": "Version: 2022.5.21 -> 2022.6.23\n\nCubism SDK update (SDK 4.2)\n\nSome improvements and bug fixes"
+        },
+        {
+            "title": "2022.5.21 Update",
+            "date": "2022-05-21 01:56:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4292505348831510247",
+            "notes": "Version: 2022.4.23 -> 2022.5.21\n\nAdded 'Auto Reset' option for auto mouse tracking\nAfter turning on, when the mouse stops moving for 3 seconds, the tracking reset automatically\n\n{STEAM_CLAN_IMAGE}/29049399/9937ff67d64602bc098da77ba459f5bbcea594e0.jpg\n\nSome improvements and bug fixes"
+        },
+        {
+            "title": "2022.4.23 Update",
+            "date": "2022-04-23 03:39:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348797798081803931",
+            "notes": "Version: 2022.3.25 -> 2022.4.23\n\nSupported more hotkeys\n\nSome improvements and bug fixes"
+        },
+        {
+            "title": "2022.3.25 Update",
+            "date": "2022-03-25 02:46:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269510736815",
+            "notes": "Version: 2022.3.13 -> 2022.3.25\n\nJson config update\n\nVideo plugin update\n\nBug fixes"
+        },
+        {
+            "title": "2022.3.13 Update",
+            "date": "2022-03-12 21:05:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5631194088567406100",
+            "notes": "Version: 2022.2.13 -> 2022.3.13\n\nAdded name display for monitors\n\nImproved the feature 'Always on top' for Desktop Mode\n\nSpine SDK update\n\nCubism SDK update"
+        },
+        {
+            "title": "2022.2.13 Update",
+            "date": "2022-02-13 01:11:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6154735015623927661",
+            "notes": "Version: 2022.1.22 -> 2022.2.13\n\nAdded support for DragonBones models\nSpine Expansion DLC required"
+        },
+        {
+            "title": "2022.1.22 Update",
+            "date": "2022-01-21 21:34:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237325463676943054",
+            "notes": "Version: 2021.12.20 -> 2022.1.22\n\nAdded 'Save as expression file' for Live2D Editor\nOnly for Cubism SDK3+. Select parameters in Parameter tag page, set value and save as exp3.json.\n\nImprovements of Json Editor\n\nBug fixes"
+        },
+        {
+            "title": "2021.12.20 Update",
+            "date": "2021-12-20 02:32:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5320438099049597320",
+            "notes": "Version: 2021.11.19 -> 2021.12.20\n\nImprovements of Json Editor\n\nVideo plugin update\n\nBug fixes"
+        },
+        {
+            "title": "2021.11.19 Update",
+            "date": "2021-11-19 00:56:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4227186657143458667",
+            "notes": "Version: 2021.10.19 -> 2021.11.19\n\nExAPI update\n\nBug fixes"
+        },
+        {
+            "title": "2021.10.19 Update",
+            "date": "2021-10-18 21:49:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4698935641771687628",
+            "notes": "Version: 2021.10.2 -> 2021.10.19\n\nAdded transform option for individual model\nLong press the button to adjust continuously\n\n{STEAM_CLAN_IMAGE}/29049399/6541284093664dc5daa9134afd049cc7f3fcc328.jpg\n\nAdded graph for 'Range' option (Motion Tracker)\n\n{STEAM_CLAN_IMAGE}/29049399/f50e25989363b7a1f4cb3b3e90815f9f8598b117.jpg\n\nRemoved AI Talk (Deprecated)\nDue to technical reasons, this feature is no longer maintained\n\nJson config update\n\nVideo and GIF plugins update\n\nBug fixes"
+        },
+        {
+            "title": "2021.10.02 Update",
+            "date": "2021-10-01 23:17:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3938951840885930992",
+            "notes": "Version: 2021.9.21 -> 2021.10.2\n\nImprovements of Motion Tracker\n\nSpecification has been changed:\n\n\nThe position Y of the hand is consistent with the position Y of the face (up->maximum, down->minimum)\n\n The position Z of the face is consistent with other face tracking software (before change: forward -> minimum; after change: forward -> maximum)\n\nThis change will affect the position Z of the face tracking of the old models. The quick solution is to check the \"Inverted\" of the face position Z in the face tracking APP settings. \n\nThe mobile version will also be updated to the same specifications in the next update. \n\nApologize for the inconvenience caused.\n\nBug fixes"
+        },
+        {
+            "title": "20210921 Update",
+            "date": "2021-09-20 23:02:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5418383147752140380",
+            "notes": "Version: 2021.9.11 -> 2021.9.21\n\nMotion Tracker: Added support for Mac with Apple Silicon\n\nBug fixes"
+        },
+        {
+            "title": "20210911 Update",
+            "date": "2021-09-10 22:03:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014731800445753",
+            "notes": "Version: 2021.8.30 -> 2021.9.11\n\nNew feature: Hand Tracking\n2 new trackers: Hand Tracker and Face&Hand tracker\n\nSample mode download: HARU_HAND_180\n\n[previewyoutube=gDgJGCH-Tig;full][/previewyoutube]\n\nJson config update\nAdded 2 new hand-related controllers: HandTracking and HandTrigger\n- HandTracking: Parameters for hand and finger tracking\n- HandTrigger: Customize gestures to trigger motion event\n\nSome improvements and bug fixes"
+        },
+        {
+            "title": "20210823 Update",
+            "date": "2021-08-30 01:56:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4018887653993620127",
+            "notes": "Version: 2021.8.23 -> 2021.8.30\n\nJson config update\nAdded more keys for KeyTrigger controller\n{STEAM_CLAN_IMAGE}/29049399/4e40ee022179ac9c350cd6d3f64a84d53237a81b.png\n\nCode optimization"
+        },
+        {
+            "title": "20210823 Update",
+            "date": "2021-08-22 23:00:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629324326617",
+            "notes": "Version: 2021.8.10 -> 2021.8.23\n\nAdded support for Spine 4.0\n\nJson config update\n\nVideo plugin update"
+        },
+        {
+            "title": "20210810 Update",
+            "date": "2021-08-09 20:28:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530956949833",
+            "notes": "Version: 2021.7.1 -> 2021.8.10\n\nFace Tracker update: \n\n\n New tracker with iris tracking (Experimental, currently supports Windows x64 and Intel Mac)\n\n Face setting UI update\n\n Hand and body trackers are in development\n\n\n{STEAM_CLAN_IMAGE}/29049399/85b77a4fc55d1ca674f0b774f9b32ad2a8f3a5e5.png"
+        },
+        {
+            "title": "20210701 Update",
+            "date": "2021-06-30 21:28:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032392655087444851",
+            "notes": "Version: 2021.6.14 -> 2021.7.1\n\nJson config update\n\nBug fixes"
+        },
+        {
+            "title": "20210614 Update",
+            "date": "2021-06-13 20:51:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5019805792173741169",
+            "notes": "Version: 2021.5.15 -> 2021.6.14\n\nCubism SDK update\n\nJson config update\n\nVideo plugin update\n\nBug fixes"
+        },
+        {
+            "title": "20210515 Update",
+            "date": "2021-05-15 03:54:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588117055466",
+            "notes": "Version: 2021.5.2 -> 2021.5.15\n\nMoved some tray settings to Control Panel setting page \n\n{STEAM_CLAN_IMAGE}/29049399/7dce5a40488013d46f56a481c6ccb62a15fd7032.png\n\nOptimized some settings related to Face Tracking\n\nJson config update\n\nVideo plugin update\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20210502 Update",
+            "date": "2021-05-01 22:52:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045878081865127",
+            "notes": "Version: 2021.4.17 -> 2021.5.2\n\nImproved Microphone widget\n\nImproved Json Editor\n\nMinor changes"
+        },
+        {
+            "title": "20210417 Update",
+            "date": "2021-04-17 01:20:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4570566564997880934",
+            "notes": "Version: 3.5.0 -> 2021.4.17\n\nAnimation system update\n\nJson config update\n\nChanged version number format"
+        },
+        {
+            "title": "20210404 Update",
+            "date": "2021-04-05 02:05:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4023377846288594233",
+            "notes": "Version: 3.4.0 -> 3.5.0\n\nNew Feature: Live2D Recorder\nRecord any motion of the model into a motion3.json file (including any motion generated by facial capture), and the recorded motion file can be directly edited in Cubism software, which is convenient for the model creator to make more natural animations\n\n{STEAM_CLAN_IMAGE}/29049399/205716548acb9f4317fbe06c51da48c1f2a77d65.png\n[previewyoutube=NHvZhN-IjDQ;full][/previewyoutube]\n\nNew Effect: Visualizer 2D\nCurrently two shapes for 2D display, and the rest are the same as Visualizer 3D. Because it is based on 2D rendering, it is more convenient to move the visualizer position\n\n{STEAM_CLAN_IMAGE}/29049399/fc32126bc94ae1b0435812b126fefde733d64ce3.png\n\nVideo plugin update"
+        },
+        {
+            "title": "20210322 Update & Introduction to multi-instance featrure",
+            "date": "2021-03-21 22:51:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4048146376723085224",
+            "notes": "Version: 3.3.1 -> 3.4.0\n\nNew feature: Multi-instance\n\nBug fixes\n\n\nIntroduction to multi-instance feature\n\n【Features】\n\n Run multiple EX applications on the same PC\n\n Datas and configurations are not shared between EX instances (except for workshop items)\n\n Each EX instance occupies independent disk space\n\n\n【Advantage】\n\n Each monitor can run independent EX\n\n The wallpaper and desktop mode can be run at the same time\n\n The number of models can be expanded (for example, when you run two instances, you can display 16 models at the same time)\n\n\n【How to use】\n\n Open the tray menu and click \"Instance Manager\"\n{STEAM_CLAN_IMAGE}/29049399/f22c045fc64e5c12aaf00fb33d9e06bed83b5b35.png\n\n Click \"New Instance\" to create a new instance. After clicking Start, the new instance will start in desktop mode\n{STEAM_CLAN_IMAGE}/29049399/bddb1ae71fa3b96c346b62f7ccdb3ec461a53611.png\n\n The instance name is displayed at the top of the tray menu bar, you can modify the instance name to mark the purpose of each instance\n{STEAM_CLAN_IMAGE}/29049399/db345fed12147156fdd727e3e4ca46614e162d17.png\n\n If you want to run different instances on each monitor, please assign a different monitor to each instance in the setting\n{STEAM_CLAN_IMAGE}/29049399/91a238a8526daf8b4f959fc2bc5494d1a04262da.png"
+        },
+        {
+            "title": "20210216 Update",
+            "date": "2021-02-16 01:33:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4703417046216693300",
+            "notes": "Version: 3.3.0 -> 3.3.1\n\nRedesigned user tag interface\n\n{STEAM_CLAN_IMAGE}/29049399/21b0d48ac2248d96cb8096f1db945ab54d99b92f.png\n\nBut fixes"
+        },
+        {
+            "title": "20210124 Update",
+            "date": "2021-01-24 02:32:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4043637702557512489",
+            "notes": "Version: 3.2.9 -> 3.3.0\n\nCubism SDK update\n\nRemoved 'Artmesh Culling' function (directly supported by SDK)"
+        },
+        {
+            "title": "20201215 Update",
+            "date": "2020-12-15 01:02:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3879252510648221863",
+            "notes": "Version: 3.2.8 -> 3.2.9\n\nFixed an issue that the video background is cropped when zooming\n\nFixed an issue for the option of 'Microphone' widget"
+        },
+        {
+            "title": "20201118 Update",
+            "date": "2020-11-17 23:30:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3856732611026858560",
+            "notes": "Version: 3.2.7 -> 3.2.8\n\nNew effects: Cherry Petals & Maple Leaves\n{STEAM_CLAN_IMAGE}/29049399/5181fcac7b6ed1aadc25a87b60f8c6fd2ed61071.png\n\nAdded more options for nature effects"
+        },
+        {
+            "title": "20201114 Update",
+            "date": "2020-11-14 00:06:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3872494575593647777",
+            "notes": "Version: 3.2.6 -> 3.2.7\n\nAdded multiple atlases support for Spine"
+        },
+        {
+            "title": "20201010 Update",
+            "date": "2020-10-09 22:18:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3853351107554919668",
+            "notes": "Version: 3.2.5 -> 3.2.6\n\nAdded framerate option for Control Panel\nYou can set it to 30 FPS in the setting tab page If CPU usage of Control Panel is too high\n\nBug fixes"
+        },
+        {
+            "title": "20200920 Update",
+            "date": "2020-09-20 03:31:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206277447928",
+            "notes": "Version: 3.2.4 -> 3.2.5\n\nAdded new mouse / keyboard capture method (Win)\nThe new capture method has better compatibility when running other games\n\n{STEAM_CLAN_IMAGE}/29049399/05568309df074541b28fdff80b6572a27ceeef0b.png\n\nBug fixes"
+        },
+        {
+            "title": "20200810 Update",
+            "date": "2020-08-10 01:55:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3667572003471896366",
+            "notes": "Version: 3.2.3 -> 3.2.4\n\nNew: Custom Text Box\n\n{STEAM_CLAN_IMAGE}/29049399/ec28c15baa123f67945e238b5fe094a2c5ee899a.png\n{STEAM_CLAN_IMAGE}/29049399/ff2c968f9466cacefc969b81ebe9776fe6e31159.png\n\nAdded 'Show Close Icon' option for Text Box\n\nJson config update\n\nBug fixes"
+        },
+        {
+            "title": "20200802 Update",
+            "date": "2020-08-01 22:41:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3664193578968858668",
+            "notes": "Version: 3.2.2 -> 3.2.3\n\nAdded 64-bit version for FaceTracker (Win)\n\nAdded 'Pause/Resume' hotkey\n\nJson config update\n\nBug fixes"
+        },
+        {
+            "title": "20200725 Update",
+            "date": "2020-07-24 22:28:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3978319116841872501",
+            "notes": "Version: 3.2.1 -> 3.2.2\n\nNew: EX Script\nEX script is used to perform configuration-related operations on Live2DViewerEX instead of manual operation by the user\n\nThe original intention of this function is because the use of EX for live stream requires many settings in advance. By using EX script can greatly simplifies user operations\n\nDocument: http://live2d.pavostudio.com/doc/en-us/exapi/ex-script/\n\nSetting changes\n\nBug fixes"
+        },
+        {
+            "title": "20200715 Update",
+            "date": "2020-07-15 00:05:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3659688711188857618",
+            "notes": "Version: 3.2.0 -> 3.2.1\n\nUpgraded to Unity 2019\n\nAdded reset icon for Widget\n\nLive2D Editor update\n\n Added Text Editor\n\n You can set the Part (Artmesh / Spine) value to 0 or 1 by clicking the value text\n\n Added VarFloats selection button\n\n\nJson config update\n\n Added Artmesh Colors for SDK 3+ / Slot Colors for Spine\n{STEAM_CLAN_IMAGE}/29049399/de9811900f1cb97375185a0e3c8f67e72558e7e8.png{STEAM_CLAN_IMAGE}/29049399/411502cd72228581bb5d733801fab895de367628.png\n{STEAM_CLAN_IMAGE}/29049399/9b7c5f98cf2d913ab41a8b63e3ff7bc98c7d40f8.png\n\n Added 'Pressing' type for ParamHit\n\n Added command 'stop_mtn', 'artmesh_colors', 'slot_colors'\n\n\nFolder structure changes (Win)\n\nFixed a path issue for Virtual Camera (Win)\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20200701 Update",
+            "date": "2020-06-30 20:29:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3444639924513812589",
+            "notes": "Version: 3.1.7 -> 3.2.0\n\nAdded support for Spine Expansion (DLC)\n\nJson Editor update\n\nVideo plugin update\n\nBug fixes\n\n\nhttps://store.steampowered.com/app/1350680/Live2DViewerEX__Spine_Expansion"
+        },
+        {
+            "title": "20200608 Update",
+            "date": "2020-06-08 01:50:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3157533729865603571",
+            "notes": "Version: 3.1.6 -> 3.1.7\n\nAdded 'Hide' button for Window Mode\n\n\nImprovements for Face Tracking\n\n\nVideo plugin update\n\n\nBug fixes"
+        },
+        {
+            "title": "20200528 Update",
+            "date": "2020-05-27 20:42:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3142896212086897420",
+            "notes": "Version: 3.1.5 -> 3.1.6\n\nAdded 'Combine Monitors' option（Win）\nWhen \"Extended\" and check \"Merge monitors\", all monitors will show the same background\n\nAdded 'snapshot' button to Live2D Editor\nYou can export a model snapshot with transparent background when background is set to \"Disable\"\n\nBug fixes"
+        },
+        {
+            "title": "20200517 Update: Big improvement for FaceTracker",
+            "date": "2020-05-17 03:20:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4742798964245852566",
+            "notes": "Version: 3.1.4 -> 3.1.5\n\nFaceTracker update (1.2.0)\n\n The stability has been greatly improved with new SDK\n\n Added 'Network Discovery' function for remote devices, which can automatically search and connect to the computer (need to check 'Network Discovery' in the tray settings of Live2DViewerEX)\n\n Added: Double-tap screen to reset pose\n\n Settings Optimization\n\n Android version: http://live2d.pavostudio.com/doc/en-us/android/#live2dviewerex-face-tracker\n\n\nVideo plugin update\n\nBug fixes"
+        },
+        {
+            "title": "20200507 Update",
+            "date": "2020-05-07 03:56:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3110243214554788300",
+            "notes": "Version: 3.1.3 -> 3.1.4\n\nAdded key binding for motion event to Model Customization\n\nJson config update\n\nJson Editor update\n\nFaceTracker update\n\nBug fixes"
+        },
+        {
+            "title": "20200502 Update",
+            "date": "2020-05-01 21:17:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3127131079130634036",
+            "notes": "Version: 3.1.2 -> 3.1.3\n\nJson config update\n\nAdded artmesh culling controller (SDK 3 and above)\n\nAdded min / max value for LoopParam\n\nAdded fade in / out for command 'parameters lock / unlock' and 'parts lock / unlock'\n\nAdded set_exp\n\nAdded fade out for clear_exp (SDK 3 and above)\n\nAdded 'enforce' for command 'eye_blink' and 'lip_sync'. When enforce is set, eye_blink and  lip_sync are forced to be controlled by program\n\n\nBug fixes"
+        },
+        {
+            "title": "20200422 Update",
+            "date": "2020-04-22 07:13:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112493747262920249",
+            "notes": "Version: 3.1.1 -> 3.1.2\n\nAdded Screen Mapping (for mouse binding)\n\nJson config update\n{STEAM_CLAN_IMAGE}/29049399/78ef94ae42cc759cd482ac938b03006bfc2f0263.png\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20200417 Update",
+            "date": "2020-04-16 21:54:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4654976078206173272",
+            "notes": "Version: 3.1.0 -> 3.1.1\n\nAdded virtual camera plugin (Win)\n{STEAM_CLAN_IMAGE}/29049399/970a9be4200fe8c4ef321a36cd31b1c4b5392e6a.png\n\nJson Editor update\n\nJson config update\n\nBug fixes"
+        },
+        {
+            "title": "20200408 Update",
+            "date": "2020-04-09 00:20:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112492477884597124",
+            "notes": "Version: 3.0.3 -> 3.1.0\n\nAdded support for pose3.json\n\nAdded translation for Json editor\n{STEAM_CLAN_IMAGE}/29049399/e816e6687cba2486985dbca19ed2565e24ce3216.png\n\nAdded 8 new face tracking parameters\nNew parameters only support Face Tracker for iOS (unreleased)\n\nJson config update\nThis version has made a major update to the Json config structure, the old version will not be compatible with the new model\n\nFaceTracker update\n\nMicrophone setting update\n\nBug fixes"
+        },
+        {
+            "title": "20200318 Update",
+            "date": "2020-03-18 05:07:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2698159409969145983",
+            "notes": "Version: 3.0.2 -> 3.0.3\n\nOptimized memory usage\n\nJson config update\n\nBug fixes"
+        },
+        {
+            "title": "Mac Version Now Supports Desktop Mode",
+            "date": "2020-03-09 05:07:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2579938650937271816",
+            "notes": "{STEAM_CLAN_IMAGE}/29049399/1f3721e8e1ba4c94ce96976a78700af0681638b1.png\n\nVersion: 3.0.1 -> 3.0.2\n\nAdded Desktop Mode for MacOS\n\nAdded name modification for Scene\n\nAdded model position reset button to Control Panel\n\nJson config update\n\nBug fixes"
+        },
+        {
+            "title": "20200303 Update",
+            "date": "2020-03-02 21:54:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2578812118969235604",
+            "notes": "Version: 3.0.0 -> 3.0.1\n\nAdded 'Intercept Mouse Events' option for Window Mode\n\nAdded 'Face Tracking' tag to Workshop Browser\n\nImproved mouse tracking\n\nJson config update\n\nBug fixes"
+        },
+        {
+            "title": "20200211 Update",
+            "date": "2020-02-11 00:48:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2582187916852227323",
+            "notes": "Version: 2.8.3 -> 2.8.4\n\nAdded rating tag for workshop\n\nFixed an issue that some lpk files can not be loaded properly\n\n\nIf you cannot run properly after the update. Please shut down the computer and start up (not restart)"
+        },
+        {
+            "title": "20200205 Update",
+            "date": "2020-02-05 01:40:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2582187916830678315",
+            "notes": "Some users report that they cannot run properly after the update. Please shut down the computer and start up (not restart)\n\nVersion: 2.8.2 -> 2.8.3\n\n\nAdded user tag for workshop list page\n{STEAM_CLAN_IMAGE}/29049399/349c6c3891a098fe33eb9ea23177280e85f4bc47.png\n\nAdded mute option for application playback rule (Win)\n\nCubism SDK update\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20200126 Update",
+            "date": "2020-01-26 01:10:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2597949245056896262",
+            "notes": "Version: 2.8.1 -> 2.8.2\n\n\nAdded feature for separately adjusting position and size of models and widgets with different screen aspect ratio\n\nAdded ID copy button for Live2D Editor (Parameter, Part and Artmesh)\n\nAdded reset function for model options\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20191228 Update",
+            "date": "2019-12-27 23:54:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573878630858",
+            "notes": "Version: 2.8.0 -> 2.8.1\n\n\nAdded 'Value Sync' for Live2D Editor\n\nAdded 'Free Select' for Live2D Editor\n\nCode optimization"
+        },
+        {
+            "title": "20191219 Update: GIF Support and Playback Rule",
+            "date": "2019-12-19 00:06:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573846138060",
+            "notes": "Version: 2.7.2 -> 2.8.0\n\n\nAdded GIF support\n\n Add and load GIF files as background\n Add and load GIF files as Image Sticker\n Options for GIF playback speed, reverse and ping-pong\n\n\nNote: Large GIF files spend more memory than video files\n\n{STEAM_CLAN_IMAGE}/29049399/4ceccabad3a21f35b9e6e98f6b408b201ab58bc5.png\n{STEAM_CLAN_IMAGE}/29049399/decb25dee629a56e72a170588bbb9eef56bf1f95.png\n\nAdded playback rules for application (Win)\n{STEAM_CLAN_IMAGE}/29049399/f490ba068b7121edcc5ee77a4eb5002ccfe22dc6.png\n\nAdded Moc information and log for Live2D Editor\n\nUI changes\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20191121 Update",
+            "date": "2019-11-21 02:07:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2468465044715416818",
+            "notes": "Version: 2.7.1 -> 2.7.2\n\n\nAdded 'Thumbnail Size' button to Control Panel\n\nAdded 'Fix Motion Files' to Live2D Editor\nThe program will try to fix some motion issues, please select all motion files you want to use (even if it looks fine). Be sure to back up the source files before repairing!\n\nNew Json properties\n\nUI changes\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20191105 Update",
+            "date": "2019-11-04 20:32:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2451574645874273246",
+            "notes": "Version: 2.7.0 -> 2.7.1\n\n\nEngine update\n\nAdded 'Time Difference' option\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20191013 Update",
+            "date": "2019-10-13 03:36:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3051677487685113126",
+            "notes": "Version: 2.6.9 -> 2.7.0\n\n\nAdded 'Max Texture Size' option\n\nAdded 'Launch Mode' to Control Panel (Win)\n\nVideo plugin update\n\nWeb plugin update\n\nResource Monitor update\n\nImproved Json Editor\n\nUI changes\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190920 Update",
+            "date": "2019-09-19 22:32:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841130053301",
+            "notes": "Version: 2.6.8 -> 2.6.9\n\n\nAdded search box to model and background tab pages\n\nImproved Json Editor\n\nUI changes\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190916 Update",
+            "date": "2019-09-15 22:13:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3658535001304172577",
+            "notes": "Version: 2.6.7 -> 2.6.8\n\n\nNew widgets: Sticker\n\nAdded 'Foreground Color' option for some widgets\n\nAdded 'Title Bar Opacity' option for some widgets\n\nUI changes for some widgets\n\nResource Monitor update (Admin permission is required)\n\nBug fixes and code optimization\n\n\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/bf19a84bcf3f073dbeadae5ba675149f94b348f0.png"
+        },
+        {
+            "title": "20190910 Update",
+            "date": "2019-09-09 19:36:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413289226971068605",
+            "notes": "Version: 2.6.6 -> 2.6.7\n\n\nAdded offset option for parallax effect of background\n\nNew Json properties\n\nImproved compatibility with Cubism SDK\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190905 Update",
+            "date": "2019-09-04 22:27:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413288973187187727",
+            "notes": "Version: 2.6.5 -> 2.6.6\n\n\nAdded support for Cubism SDK 4\n\nNew Json properties\n\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190827 Update",
+            "date": "2019-08-26 21:30:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416665403785904950",
+            "notes": "Version: 2.6.4 -> 2.6.5\r\n\r\n\r\nNew Json properties\r\n\r\nImproved Json Editor\r\n\r\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190813 Update",
+            "date": "2019-08-12 20:59:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412160539870288409",
+            "notes": "Version: 2.6.3 -> 2.6.4\r\n\r\n\r\nAdded export button for Live2D uploader\r\n\r\nImproved Json Editor\r\n\r\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190808 Update",
+            "date": "2019-08-07 23:08:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412160539852543147",
+            "notes": "Version: 2.6.2 -> 2.6.3\r\n\r\n\r\nAdded auto backup for workshop model\r\n\r\nAuto backup function copies workshop models to the software installation directory to prevent the local models from disappearing when the uploader deletes them. This can be turned off in settings if not needed\r\n\r\nAdded 'Open Folder' button\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/11746224af52aa96696fc01f273762f42c1e671d.png\r\n\r\nNew Json properties\r\n\r\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190806 Update",
+            "date": "2019-08-06 03:30:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412159905943104257",
+            "notes": "Version: 2.6.1 -> 2.6.2\r\n\r\n\r\nNew Json properties\r\n\r\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190723 Update",
+            "date": "2019-07-22 21:42:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413284533108671772",
+            "notes": "Version: 2.6.0 -> 2.6.1\r\n\r\n\r\nAdded \"Show Sound Bar Rays\" to Visualizator options\r\n\r\nAdded \"EX Studio\" and \"Repair\" launch options to Steam Launcher\r\n\r\n\r\nYou can start EX Studio directly without Live2DViewerEX now\r\nIf the application can not start properly after update, you can try to repair it via Steam Launcher\r\n\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/51839fcc367cd345ccb10f1434166dd9f1a163f4.png\r\n\r\nVideo plugin update\r\n\r\nUI changes and bug fixes"
+        },
+        {
+            "title": "20190717 Update",
+            "date": "2019-07-17 02:28:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413284533087706700",
+            "notes": "Version: 2.5.9 -> 2.6.0\r\n\r\n\r\nNew Json properties\r\n\r\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190630 Update",
+            "date": "2019-06-29 19:34:19",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440575691981",
+            "notes": "Version: 2.5.8 -> 2.5.9\r\n\r\n\r\nNew Json properties\r\n\r\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190620 Update",
+            "date": "2019-06-19 21:19:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415533798130007781",
+            "notes": "Version: 2.5.7 -> 2.5.8\r\n\r\n\r\nCubism SDK 3 update\r\n\r\nBug fixes and code optimization"
+        },
+        {
+            "title": "20190605 Update",
+            "date": "2019-06-04 23:53:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2411028931134842505",
+            "notes": "Version: 2.5.6 -> 2.5.7\r\n\r\n\r\nNew Json properties\r\n\r\nAdded mobile video support for workshop uploader\r\nIf you want to upload video background for mobile, please select 'Mobile Video' in workshop uploader\r\n\r\nBug fixes"
+        },
+        {
+            "title": "Android Version Update (20190520)",
+            "date": "2019-05-20 02:16:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2905297189260937509",
+            "notes": "Live2DViewerEX 3.0.0.05200841\r\n\r\n Added edit page for workshop items (update & remove)\r\n\r\n Added ‘Clear Cache’ to setting page\r\n\r\n New Json properties\r\n\r\n Video plugin update\r\n\r\n UI changes and bug fixes\r\n\r\nGoogle Play"
+        },
+        {
+            "title": "20190516 Update",
+            "date": "2019-05-15 20:58:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2405397525626219588",
+            "notes": "Version: 2.5.5 -> 2.5.6\r\n\r\n\r\nNew Json properties\r\n\r\nVideo plugin update\r\n\r\nBug fixes"
+        },
+        {
+            "title": "20190417 Update",
+            "date": "2019-04-16 23:16:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2434668385542120975",
+            "notes": "Version: 2.5.4 -> 2.5.5\r\n\r\n\r\nImproved Edit Panel\r\n\r\nImproved Json Editor\r\n\r\nAdded some properties to Json configuration\r\n\r\nUI changes and bug fixes\r\n\r\nSave data optimization\r\n\r\nCode optimization"
+        },
+        {
+            "title": "20190329 Update",
+            "date": "2019-03-29 04:31:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2465065785300882624",
+            "notes": "Version: 2.5.3 -> 2.5.4\r\n\r\n\r\nAdded some properties to Json configuration\r\n\r\nBug fixes"
+        },
+        {
+            "title": "Android Version Update (20190304)",
+            "date": "2019-03-03 22:07:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2534869043317098751",
+            "notes": "Live2DViewerEX 3.0.0.03040948\r\n\r\n Improved model interaction\r\n\r\n Bug fixes\r\n\r\nGoogle Play\r\n\r\n-------------------------------------------------------------------\r\n\r\nLive2DViewerEX Floating Viewer 1.0.0.03040951\r\n\r\n Improved model interaction\r\n\r\n Bug fixes\r\n\r\nGoogle Play"
+        },
+        {
+            "title": "20190303 Update",
+            "date": "2019-03-02 20:28:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2534869043313237469",
+            "notes": "Version: 2.5.2 -> 2.5.3\r\n\r\n\r\nIncreased the number of model slot to 8\r\n\r\nAdded some properties to Json configuration\r\n\r\nVideo plugin update\r\n\r\nExAPI changes\r\n\r\nBug fixes"
+        },
+        {
+            "title": "Android Version Update (20190213)",
+            "date": "2019-02-12 23:53:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2465061982066988747",
+            "notes": "Live2DViewerEX 3.0.0.02130855\r\n\r\n Fixed a compatibility issue for Cubism SDK 3.3\r\n\r\n Added loading type option for snapshot\r\n\r\n Bug fixes\r\n\r\nGoogle Play\r\n\r\n-------------------------------------------------------------------\r\n\r\nLive2DViewerEX Floating Viewer 1.0.0.02130937\r\n\r\n Fixed a compatibility issue for Cubism SDK 3.3\r\n\r\n Added 'Reset' menu item\r\n\r\n Bug fixes\r\n\r\nGoogle Play"
+        },
+        {
+            "title": "20190211 Update",
+            "date": "2019-02-10 23:49:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368398039105",
+            "notes": "Version: 2.5.1 -> 2.5.2\r\n\r\n\r\nAdded new display type 'Window' to Desktop Mode\r\nAfter changed Display Type to 'Window' in Desktop Mode, you can adjust window position and size and reduce GPU usage a lot. \r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/e8dffc5a97c80df5b7edc3d77b4d3370ded498c8.jpg\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/ca225b688d49876ddcefa889b57841a2d0e15630.jpg\r\n\r\nAdded 'Adjust Model' and 'Adjust Window' to tray menu\r\n\r\nAdded Import and Export for model customization\r\n\r\nAdded 'Artmesh' list to Live2D Editor\r\n\r\nFixed issuse of motion key binding\r\n\r\nUI changes and bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.02070816)",
+            "date": "2019-02-06 02:37:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368380393056",
+            "notes": "Google Play\r\n\r\n3.0.0.02070816\r\n\r\n Bug fixes\r\n\r\n\r\n3.0.0.02061500\r\n\r\n Added lock option for bubble text\r\n\r\n Improved compatibility with some devices and Android 9\r\n\r\n UI changes and bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.01251334)",
+            "date": "2019-01-25 02:42:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2425653583384981841",
+            "notes": "Google Play\r\n\r\n\r\n3.0.0.01251334\r\n\r\n Added Free User account type\r\n\r\n Workshop models can be updated now\r\n\r\n UI changes and bug fixes"
+        },
+        {
+            "title": "20190118 Update",
+            "date": "2019-01-18 00:14:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2426778849018322002",
+            "notes": "Version: 2.5.0 -> 2.5.1\r\n\r\n[Win]\r\n\r\nImproved compatibility with some desktop softwares\r\n\r\nAdded voice input for AI Talk\r\nTo use voice input you must install speech recognition for specified language in system\r\n\r\n\r\n[Mac]\r\n\r\nAdded Graphic API option"
+        },
+        {
+            "title": "Android Version Update（3.0.0.01080946）",
+            "date": "2019-01-07 21:42:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417770561727110220",
+            "notes": "Google Play\r\n\r\n\r\n3.0.0.01080946\r\n\r\n Added help text to loading page\r\n\r\n Added button for opacity of model parts\r\n\r\n Added option of Bubble Text Position\r\n\r\n Added options of Bubble Width and Fixed Bubble Width\r\n\r\n Added option of Model Text Language \r\n\r\n Added multi-language support for model\r\n\r\n Moved Model Customization to edit bar\r\n\r\n Upgraded Cubism SDK to 3.3\r\n\r\n Bug fixes"
+        },
+        {
+            "title": "20190101 Update",
+            "date": "2018-12-31 20:00:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111325048971",
+            "notes": "Happy New Year!\r\n\r\nVersion: 2.2.7 -> 2.5.0\r\n\r\n\r\nNew feature: ExAI\r\nExAI Tutorial\r\n\r\nNew option: Desktop Area\r\n\r\nNew option: Bubble Text Position\r\n\r\nNew options: Bubble Width and Fixed Bubble Width\r\n\r\nNew options: Speak Randomly and Speaking Interval\r\n\r\nNew option: Model Text Language\r\n\r\nAdded multi-language support for model json\r\n\r\nUpgraded Cubism SDK to 3.3\r\n\r\nUI changes and bug fixes\r\n\r\n\r\nHappy New Year to everyone!"
+        },
+        {
+            "title": "20181205 Update",
+            "date": "2018-12-05 04:03:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416641943167996558",
+            "notes": "Version: 2.2.6 -> 2.2.7\r\n\r\n\r\nImproved compatibility with Cubism 3 models\r\n\r\nBug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.11301244)",
+            "date": "2018-11-30 00:18:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415515408471466325",
+            "notes": "Google Play\r\n\r\n3.0.0.11301244\r\n\r\n New widgets: Digital Clock and Analog Clock\r\n\r\n Optimized edit mode (please refer to tips dialog in app)\r\n\r\n UI changes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.11251329)",
+            "date": "2018-11-25 03:54:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415514774178840641",
+            "notes": "Google Play\r\n\r\n3.0.0.11251329\r\n\r\n Optimzed memory usage when changing models and backgrounds frequently\r\n\r\n Optimzed the loading time when Texture Correction is on\r\n\r\n Code optimization"
+        },
+        {
+            "title": "20181120 Update",
+            "date": "2018-11-20 00:11:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163930862247",
+            "notes": "Version: 2.2.5 -> 2.2.6\r\n\r\n\r\nOptimzed memory usage when changing models and backgrounds frequently\r\n\r\nAdded 'Texture Compression' option\r\n\r\nTexture Compression can significantly reduce memory usage but increase the loading time\r\n\r\nRedesigned Color Picker\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/51f111bbee965f586d15c5c65ad7d6e075bb02d1.jpg\r\n\r\nCode optimization\r\n\r\nUI changes and bug fixes"
+        },
+        {
+            "title": "20181103 Update",
+            "date": "2018-11-03 01:25:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2407631646377836395",
+            "notes": "Version: 2.2.4 -> 2.2.5\r\n\r\n\r\nAdded auto restart function for main application exiting unexpectly\r\n\r\nFixed some desktop display issues when screen resolution changed\r\n\r\nCode optimization"
+        },
+        {
+            "title": "Android Version Update (3.0.0.10270741)",
+            "date": "2018-10-26 20:34:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403127338434364161",
+            "notes": "Google Play\r\n\r\n3.0.0.10270741\r\n\r\n Added 'Filtering Mode' and 'Anisotropic Filtering Level' options\r\n\r\n Improved compatibility with some Cubism 3 models\r\n\r\n Code optimization\r\n\r\n Some UI changes and bug fixes"
+        },
+        {
+            "title": "20181026 Update",
+            "date": "2018-10-26 00:38:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403127338431362068",
+            "notes": "Version: 2.2.3 -> 2.2.4\r\n\r\n\r\nAdded Display setting tab to Control Panel setting page\r\n\r\nAdded 'Filtering Mode' and 'Anisotropic Filtering Level' options\r\n\r\nAdded 'AnisoLevel' property to Json configuration\r\n\r\nhttp://live2d.pavostudio.com/doc/en-us/live2d/model-config-sdk3/#anisolevel\r\n\r\nAdded some APIs for ExAPI\r\n\r\nhttp://live2d.pavostudio.com/doc/en-us/exapi/api-list/\r\n\r\nRenamed 'Compat Mode' to 'Texture Correction' and moved it to Display setting tab\r\n\r\nImproved compatibility with some Cubism 3 models\r\n\r\nCode optimization\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "20181018 Update",
+            "date": "2018-10-18 01:53:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403126706515052194",
+            "notes": "Version: 2.2.2 -> 2.2.3\r\n\r\n\r\nAdded color options for floating particle effect\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/638bb8f7f4de3b643a8b933e33cb6f1037a97c90.jpg\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20181015 Update",
+            "date": "2018-10-14 18:32:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3594328263098029732",
+            "notes": "Version: 2.2.1 -> 2.2.2\r\n\r\n\r\nAdded sorting function for model and background items\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/e8fc58b2742993f212fa3630c4af214734f9412b.jpg\r\n\r\nVideo plugin upgraded\r\n\r\nWeb plugin upgraded\r\n\r\nReduced application startup time\r\n\r\nCode optimization\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.10030839)",
+            "date": "2018-10-02 21:51:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447035533289186483",
+            "notes": "Google Play\r\n\r\n3.0.0.10030839\r\n\r\n Added double-click option for triggering motion\r\n\r\n Improved compatibility with Cubism 3 models\r\n\r\n Improved model display and interaction\r\n\r\n Code optimization\r\n\r\n Minor bug fixes"
+        },
+        {
+            "title": "20181001 Update",
+            "date": "2018-10-01 01:18:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3167611029759572823",
+            "notes": "Version: 2.2.0 -> 2.2.1\r\n\r\n\r\nAdded support for playing multiple motions at the same time\r\n\r\nAdded json property 'ScaleFactor'\r\n\r\nImproved json property 'HitAreas'\r\n\r\nImproved json property 'LoopParam'\r\n\r\nImproved json property 'TimeLimit'\r\n\r\nCode optimization\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180927 Update",
+            "date": "2018-09-27 00:53:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2450412598621118780",
+            "notes": "Version: 2.1.9 -> 2.2.0\r\n\r\n\r\nAdded double-click option for triggering motion\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/50327645c64e0adc15a2dadd2f2e80ab697fa944.jpg\r\n\r\nAdded hotkey for moving and zooming models\r\n\r\nNote: To use this you must enable Hotkey option first\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/d1fcd41fc7f26e484500183c6f32282f58c76040.jpg\r\n\r\nAdded option into json configuration (Parameter 'Order' for HitArea)\r\n\r\nhttp://live2d.pavostudio.com/doc/en-us/live2d/model-config-sdk2/#hit_areas\r\n\r\nAdded reset position icon to edit panel\r\n\r\nChanged the interface of edit panel\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/a9e8983d9b076e21a7e220b11d5d5c9484d368e1.jpg\r\n\r\nImproved some functions for Live2D Editor\r\n\r\nImproved compatibility with Cubism 3 models\r\n\r\nCode optimization\r\n\r\nMinor bug fixes\r\n\r\n\r\n\r\nWin\r\n\r\nNew feature: Model can be attached to window and follow with the window movement\r\n\r\nhttps://youtu.be/NX3qHFL1-ho"
+        },
+        {
+            "title": "Android Version Update (3.0.0.09191026)",
+            "date": "2018-09-18 22:58:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2450411965546752951",
+            "notes": "Google Play\r\n\r\n3.0.0.09191026\r\n\r\n Added some options into json configuration\r\n\r\n Fixed an issue of mouse tracking for rotated model and mirror model\r\n\r\n Fixed rotation state not restored when Cubism 3 model loaded"
+        },
+        {
+            "title": "20180918 Update",
+            "date": "2018-09-17 22:08:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2454914931415355969",
+            "notes": "Version: 2.1.8 -> 2.1.9\r\n\r\n\r\nAdded fine-turning for edit panel\r\n\r\nClick or hold left/right arrow for finer adjustments, click value text to restore the default value\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/e1c169d9fd1ccdc11fc3e5a990710e075cbb717f.jpg\r\n\r\nAdded some options into json configuration\r\n\r\nFixed an issue of mouse tracking for rotated model and mirror model\r\n\r\nFixed rotation state not restored when Cubism 3 model loaded\r\n\r\nImproved some functions for Live2D Editor\r\n\r\nMinor bug fixes\r\n\r\n\r\nWin\r\n\r\nFixed a crash issue for tray application"
+        },
+        {
+            "title": "Android Version Update (3.0.0.09110758)",
+            "date": "2018-09-10 20:27:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447032995781934500",
+            "notes": "Google Play\r\n\r\n3.0.0.09110758\r\n\r\n Fixed tap detection not working in some cases\r\n\r\n Fixed an issue of finger tracking\r\n\r\n Fixed customization not working for Cubism 3 models\r\n\r\n Changed scale range of model"
+        },
+        {
+            "title": "20180909 Update",
+            "date": "2018-09-09 03:18:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447032995775739724",
+            "notes": "Version: 2.1.7 -> 2.1.8\r\n\r\n\r\nFixed click detection not working in some cases\r\n\r\nFixed an issue of mouse tracking\r\n\r\nFixed customization not working for Cubism 3 models\r\n\r\nChanged scale range of model\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.08300933)",
+            "date": "2018-08-29 22:54:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447032361185978646",
+            "notes": "Google Play\r\n\r\n3.0.0.08300933\r\n\r\n Added support for controling model by microphone\r\n* Microphone permission is for controling some models\r\n\r\n Fixed some issues for Intimacy System\r\n\r\n Minor bug fixes"
+        },
+        {
+            "title": "20180828 Update",
+            "date": "2018-08-27 22:07:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293803518097",
+            "notes": "Version: 2.1.6 -> 2.1.7\r\n\r\n\r\nAdded hotkey for video sound\r\n\r\nFixed video sound always on when application started\r\n\r\nSome UI changes and bug fixes\r\n\r\n\r\nWin\r\n\r\nFixed mouse not work when desktop icon opacity is 0\r\n\r\n\r\nMac\r\n\r\nFixed application freezes in old versions of OS\r\n\r\nFixed not being able to change monitor"
+        },
+        {
+            "title": "20180818 Update",
+            "date": "2018-08-18 02:38:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293768061822",
+            "notes": "Version: 2.1.5 -> 2.1.6\r\n\r\n\r\nAdded text color and highlight color options for Calendar\r\n\r\nAdded video volume and playback rate options into background edit panel\r\n\r\nRenamed widget 'Virtual Avatar' to 'Microphone'\r\n\r\nAdded model control option for Microphone\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "20180806 Update",
+            "date": "2018-08-05 22:15:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2451533424647398629",
+            "notes": "Version: 2.1.4 -> 2.1.5\r\n\r\n\r\nNew UI for Workshop Browser\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/3d11bebb2d3879dd54f9f842ebe16786c8cbe9ea.jpg\r\n\r\nAdded background mirror option\r\n\r\nFixed an issue of Analog Clock and Digital Clock not updated when app resumed\r\n\r\nFixed a sort issue for workshop item list\r\n\r\nVideo plugin upgraded\r\n\r\nCode optimization\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.08021031)",
+            "date": "2018-08-01 23:28:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2451533424633129521",
+            "notes": "Google Play\r\n\r\n3.0.0.08021031\r\n\r\n Added 'Mirror' option for background\r\n\r\n Fixed a sort issue of Workshop item list\r\n\r\n Code optimization for Cubism SDK 2 and 3"
+        },
+        {
+            "title": "20180729 Update",
+            "date": "2018-07-28 20:26:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2462791699379157560",
+            "notes": "Version: 2.1.3 -> 2.1.4\r\n\r\n\r\nAdded Orthographic Camera for Visualizator\r\n\r\nAdded 'Display list items by folder' option for Music Player\r\n\r\nAdded support for mouse wheel\r\n\r\nFixed issue of edit panel not shown with 360 background\r\n\r\nCode optimization for Cubism SDK 2 and 3\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "20180724 Update",
+            "date": "2018-07-24 05:20:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2462791699362429977",
+            "notes": "Version: 2.1.2 -> 2.1.3\r\n\r\n\r\nAdded square visualization for Visualizator\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/eef88c46793f47428d8ed85fbe0958fdf2dce650.jpg\r\n\r\nAdded sound bars color option for Visualizator\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/738d264b7c936c95a4abdac454eb8fb726c0322d.jpg\r\n\r\nAdded mirror and rotate options for Visualizator\r\n\r\nAdded more fonts for Digital Clock\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.07220954)",
+            "date": "2018-07-21 22:22:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412125660643550008",
+            "notes": "Google Play\r\n\r\n3.0.0.07220954\r\n\r\n Video background item now available in built-in workshop (50MB Limit)\r\n\r\nDue to server pressure, you can only view and download video items smaller than 50MB. If you are a creator and want to see your items in built-in workshop, you need to ensure that the uploaded video is no more than 50MB.\r\n\r\n Added support for workshop item import and export\r\n\r\nFor old exported folders, just copy them to 'Android/data/com.pavostudio.live2dviewerex/files/workshop/' folder, do not change the folder name.\r\n\r\n Some UI changes and bug fixes"
+        },
+        {
+            "title": "20180721 Update",
+            "date": "2018-07-20 20:41:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412125660639681713",
+            "notes": "Version: 2.1.1 -> 2.1.2\r\n\r\n\r\nFixed an issue of Mouse Effect\r\n\r\nImproved the function of Workshop item import and export\r\nNow you can import/export workshop items as wpk files to prevent data loss when creator delete the item\r\n\r\nFor old exported folders, just copy them to '[Installation Directory]\\bin\\res\\workshop\\' folder, do not change the folder name.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/811ec717cf72af3b77db5fe06038669e0d42ff02.jpg\r\n\r\nImproved the content of guide panel\r\n\r\nAudio plugin upgraded, added support for Flac format\r\n\r\nAdded some APIs for ExAPI\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "20180718 Update",
+            "date": "2018-07-17 20:25:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412125660628801631",
+            "notes": "Version: 2.1.0 -> 2.1.1\r\n\r\n\r\nAdded font and shadow options for Digital Clock\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/9bf2604f670bad9a89b71023c46822a6b27e0118.jpghttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/c5ef4b8e7b7146b34cc5f7bb128dfc0142f05026.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/a9335d2688d31a564daccb417b165062f658833c.jpghttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/57fcafffd028bb4d65700562102e5d2810a56efa.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/b7e9cad6fe114f8b6eed82ef7c82b990b5ce7caa.jpg\r\n\r\nAdded shadow option for Analog Clock\r\n\r\nImproved the function of downloading workshop items, now you can check the download progress in Control Panel\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/c801520f72ce6175ba73c419a70302d3e7ba7e5a.jpg\r\n\r\nImproved compatibility with Cubism SDK3\r\n\r\nFixed some issues when screen changed\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.07151024)",
+            "date": "2018-07-14 22:37:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2838841185442369073",
+            "notes": "Google Play\r\n\r\n3.0.0.07151024\r\n\r\n Fixed an issue of authentication"
+        },
+        {
+            "title": "20180715 Update",
+            "date": "2018-07-14 21:22:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2838841185442180809",
+            "notes": "Version: 2.0.7 -> 2.1.0\r\n\r\n\r\nFixed an issue of model setting\r\n\r\nChanged listen address to 'IPv4 Loopback' to bypass firewall blocking\r\n\r\nBackground zoom and remove functions are moved into background edit panel\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/40f8188c9e257581a6ed1d382b8e58e9a420c03d.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/45283a9304b9f16f543afb4796efff6887eae7b9.jpg\r\n\r\nSome changes for Json Editor\r\n\r\nSome UI changes and bug fixes\r\n\r\n\r\n[Win]\r\n\r\nAdded multiple backgrounds support for multi-display\r\n\r\n\r\nHow to set multiple backgrounds for multi-display\r\n\r\nIn tray setting, set 'Monitor' to 'Extend'\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/ba67531971d0e5bfcc3400587e07beff328d4be3.jpg\r\n\r\nIn Control Panel, go to Background page, select a monitor and load  backgrounds\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/1e6110063057f8cac040ae037a521bbdc74ae7ac.jpg"
+        },
+        {
+            "title": "Android Version Update (3.0.0.07080910)",
+            "date": "2018-07-06 05:04:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313683666155",
+            "notes": "Google Play\r\n\r\n3.0.0.07080910\r\n\r\n Video plugin upgraded\r\n\r\n3.0.0.07061624\r\n\r\n Added some options into json configuration\r\n Minor bug fixes"
+        },
+        {
+            "title": "20180705 Update",
+            "date": "2018-07-05 00:55:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313679426926",
+            "notes": "Version: 2.0.6 -> 2.0.7\r\n\r\n\r\nFixed some issues for LPK Generator\r\n\r\nAdded some options into json configuration\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "20180701 Update",
+            "date": "2018-06-30 21:16:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313664423249",
+            "notes": "Version: 2.0.5 -> 2.0.6\r\n\r\n\r\nFixed an issue that hotkey becomes invalid after application resumed\r\n\r\nFixed an issue that text bubbles can move outside the screen\r\n\r\nAdded some options into json configuration\r\n\r\nVideo plugin upgraded\r\n\r\nSome setting items changed\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.06241106)",
+            "date": "2018-06-24 01:15:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313639725677",
+            "notes": "Google Play\r\n\r\n3.0.0.06241106\r\n\r\n Added support for several video formats\r\n When adding Json config files, the SDK version can be detected automatically now\r\n Improved accurancy of model click area\r\n Improved random method for motion event\r\n Added some options into json configuration\r\n Minor bug fixes"
+        },
+        {
+            "title": "20180623 Update",
+            "date": "2018-06-22 19:24:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313635232689",
+            "notes": "Version: 2.0.4 -> 2.0.5\r\n\r\n\r\nWhen adding Json config files, the SDK version can be detected automatically now\r\n\r\nImproved accurancy of model click area\r\n\r\nImproved random method for motion event\r\n\r\nAdded click area display option into Edit Panel\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/ecd54242669e3c7026ecd16d726e1c236fc3d085.jpg\r\n\r\nAdded some options into json configuration\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180615 Update",
+            "date": "2018-06-15 05:18:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2842216343262907855",
+            "notes": "Version: 2.0.3 -> 2.0.4\r\n\r\n\r\nFixed a loading issue for some models\r\n\r\nFixed an issue for connecting to Steam client\r\n\r\nAdded some options into json configuration\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "20180607 Update",
+            "date": "2018-06-07 00:29:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2431262152933471720",
+            "notes": "Version: 2.0.2 -> 2.0.3\r\n\r\n\r\nNew widget: Virtual Avatar. You can use the microphone to synchronize the selected model mouth\r\n\r\nVirtual Avatar Introduction & Tutorial\r\n\r\nNew feature: Key Binding. You can set hotkeys for motions and expressions\r\n\r\nWorkshop items in Control Panel can be shown without connecting to Steam\r\n\r\nHotkey setting has been Moved from Tray to Control Panel\r\n\r\nModel options have been consolidated into Control Panel setting page\r\n\r\nMinor bug fixes\r\n\r\n\r\n[Win]\r\n\r\nAdded 'Compatible with OBS Studio' option (for window capture)\r\n\r\nFixed unexpected pause issue when Control Panel maximized"
+        },
+        {
+            "title": "Android Version Update (3.0.0.06011439)",
+            "date": "2018-06-01 03:19:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2396358621999982253",
+            "notes": "Google Play\r\n\r\n3.0.0.06011439\r\n\r\n Added: Second model slot \r\nNow you can load two models at the same time\r\n\r\n Added: Background offset with home screen\r\nMenu -> Setting -> Background -> Background Offset, choose 'Home Screen' \r\n\r\n Added: 'Help' to main menu\r\n Changed: Model setting has been seperated for each model\r\n Other: Some UI adjustment and bug fixes"
+        },
+        {
+            "title": "20180523 Update",
+            "date": "2018-05-23 02:13:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394106188073536827",
+            "notes": "Version: 2.0.1 -> 2.0.2\r\n\r\n\r\nRain effect changes, added fog and wind options\r\n\r\nReduced memory usage\r\n\r\nFixed a sort issue for multiple filters display\r\n\r\nSome UI changes and bug fixes"
+        },
+        {
+            "title": "20180519 Update",
+            "date": "2018-05-18 19:30:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2391853754540737029",
+            "notes": "Version: 2.0.0 -> 2.0.1\r\n\r\n\r\nAdded search bar to Workshop Browser\r\n\r\nAdded Display Method and Opacity options for Mouse Effect\r\n\r\nAdded Font Size option for bubble text\r\n\r\nFixed back screen issue when app paused in Desktop Mode\r\n\r\nFixed an issue of exporting scene"
+        },
+        {
+            "title": "Android Version Update (3.0.0.05171241)",
+            "date": "2018-05-15 05:04:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3822871998327324853",
+            "notes": "Google Play\r\n\r\n3.0.0.05171241\r\n\r\n New feature: Slideshow\r\n Fixed an issue of loading snapshot\r\n Fixed an display of workshop listview\r\n Code optimization\r\n\r\n\r\n3.0.0.05151536\r\n\r\n New effect: Touch Effect \r\n New feature: Workshop Search \r\n Added Gridview List for selecting image and video files \r\n Added font size option for bubble text \r\n Added option of 'Authenticate via Steam Community' for users who can not authenticate via current way \r\n Improved compatibility with Cubism SDK 3 \r\n Bubble UI changes \r\n Minor bug fixes"
+        },
+        {
+            "title": "20180513 Update",
+            "date": "2018-05-12 19:18:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3822871998318626724",
+            "notes": "Version: 1.8.5 -> 2.0.0\r\n\r\n\r\nNew App: EX Studio\r\n\r\nThe replacement of Workshop Tool\r\n\r\nCurrent features: \r\n\r\n Workshop Uploader: a tool to upload Live2D Model and Background\r\n Live2D Editor: an alternative of CubismViewer3 (for OW), with embeded Json Config Editor. Support both Cubism SDK 2 and 3\r\n LPK Generator: a tool to pack multiple models into a lpk file\r\n\r\n\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/e3c8614ca83a4f401de9e7b3860e592f16468243.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/6e4b2bd78715c66a9d95be849692a778d0f74a9a.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/0871bc2dd0d8f8318e857dc42e569fc7ad41d915.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/a08bee18408147a7f3e8879df092121936a60d3d.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/f2b17fa504a31361468485985512aca14333dae1.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/829b01530c419d5e97bf0baf90f7b2d4f76f148d.jpg\r\n\r\n\r\nFixed black screen issue when app resumed\r\n\r\nImproved compatibility with Cubism SDK 3\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180502 Update",
+            "date": "2018-05-01 20:22:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394104285089684729",
+            "notes": "Version: 1.8.4 -> 1.8.5\r\n\r\n\r\nNew effect: Mouse Effect\r\nhttps://youtu.be/m6cQwMJozhc\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/b982080e8ef377ce023310d31502380d040964d1.jpg\r\n\r\nFixed an issue of generating thumbnails\r\n\r\nModel json config changes\r\n\r\nSome text changes\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180428 Update",
+            "date": "2018-04-27 22:00:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394103650893696680",
+            "notes": "Version: 1.8.3 -> 1.8.4\r\n\r\n\r\nAdded text frame opacity option\r\n\r\nFixed a display issue for Calendar\r\n\r\nBubble UI changes\r\n\r\nSome text changes\r\n\r\nMinor bug fixes\r\n\r\n\r\n[Win]\r\n\r\nCompletely solved display issues of model in Desktop Mode\r\n\r\nEffect for Desktop Mode is available now\r\n\r\n\r\n[Mac]\r\n\r\nWallpaper can be assigned to all desktops now"
+        },
+        {
+            "title": "Android Version Update (3.0.0.04230757)",
+            "date": "2018-04-22 20:27:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2758894130324862217",
+            "notes": "Google Play\r\n\r\nVersion: 3.0.0.04230757\r\n\r\n New feature: Model Customization \r\nYou can replace model text with your text or translation \r\nTo use default text again, just clear your text\r\n\r\n Added 'Texture Correction' option for some model display issues\r\nThis option will cause a longer loading time for model\r\n\r\n Minor bug fixes"
+        },
+        {
+            "title": "20180422 Update",
+            "date": "2018-04-21 20:51:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2758894130321309334",
+            "notes": "Version: 1.8.2 -> 1.8.3\r\n\r\n\r\nNew feature: Model Customization\r\nFor anyone who wants to change text or sound of models, choose a model and click 'Customzation' button, input your text or translation, then reload the model.\r\nTo use default text again, just clear your text.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/a48fe6e19167d0275d456ff3ded77c488676dc39.jpg\r\n\r\nAdded a new type 'Sound' into Resource Library\r\n\r\nFixed a display issue for Analog Clock\r\n\r\nOptimized list for Resource Library\r\n\r\nAdded background & widget opacity for Calendar\r\n\r\nAdded background & widget opacity for Music Player\r\n\r\nAdded random & repeat play for Music Player\r\n\r\nAdded background & widget opacity for Resource Monitor\r\n\r\nTurned on VSync for Control Panel\r\n\r\n\r\n[Win]\r\n\r\nAdjusted detection of maximized\r\n\r\n\r\n[Mac]\r\n\r\nOptimized thumbnail generation"
+        },
+        {
+            "title": "Android Version Update (3.0.0.04170804)",
+            "date": "2018-04-16 01:58:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2758894130300396687",
+            "notes": "Google Play\r\n\r\nVersion: 3.0.0.04170804\r\n\r\n Fixed an issue of background offset \r\n\r\n\r\nVersion: 3.0.0.04161259\r\n\r\n Added support for Cubism SDK 3\r\n Added on/off switch for tilt reaction\r\n Added text frame opacity option\r\n Added hexadecimal input for Color Editor\r\n Changed tilt reaction axis from X to Z\r\n Fixed issue of incorrect display of time\r\n Bubble UI changes\r\n Some text changes\r\n Now you can drag & move bubble directly"
+        },
+        {
+            "title": "20180414 Update",
+            "date": "2018-04-13 22:41:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2758894130292674822",
+            "notes": "Version: 1.8.1 -> 1.8.2\r\n\r\n\r\nNew widget: Desktop Decoration\r\n\r\nIntroduction and Quick Start\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/a93cea181afdaec39497f68d9071c6b6475a6ec3.jpg\r\n\r\nAdded decoration resource page to Resource Library\r\n\r\nOptimized the feature of application update\r\n\r\nRemoved edit model panel of Control Panel, redirected to the panel in wallpaper\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/c5b5c147da81062d6a1f87e3303f566dfc7f5914.jpg\r\n\r\nFixed issue when loading multiple models from one lpk or scene, only one model can be loaded\r\n\r\nFixed issue when changed scenes, some of widget options in Control Panel did not update\r\n\r\nCode optimization"
+        },
+        {
+            "title": "20180408 Update",
+            "date": "2018-04-08 01:39:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394101748808240668",
+            "notes": "Version: 1.8.0 -> 1.8.1\r\n\r\n\r\nNew widget: Desktop Icon\r\n\r\nIntroduction and Quick Start\r\n\r\nYou can add file, folder, url and command and choose icon, and group them, and drag them to everywhere.\r\nThis widget does not affect your system desktop, you can use it with the default system desktop icons.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/d71a173d2467e8fdefbe0fc27d881133ddb13e2e.jpg\r\n\r\nNew feature: Resource Library\r\nResource Library is a panel that you can manage your resources, everything you imported will be uploaded to Steam Cloud. (Icon only currently, more resource type will be added later)\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/9a9a427b662b044419e42a12ca7411051c9752dd.jpg\r\n\r\nAdded a splash screen while launching\r\nDon't need to wait too much time to see something now\r\n\r\nAdded Anti-Aliasing option\r\n\r\nAdded scale, opacity and show date options for Digital Clock\r\n\r\nAdded scale, opacity options for Analog Clock\r\n\r\nAdded support for Steam Cloud\r\nNow you can see Cloud space usage in Control Panel\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/c6f57d44b7cb0816dda2951cf35731225a663937.jpg\r\n\r\nOptimized launch time\r\n\r\nEnhanced Color Picker\r\nYou can pick some preset colors and edit hex value now\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/cf090920c34e56f90e2b48b2aeb91501b21dff5d.jpg\r\n\r\nVideo plugin upgraded\r\n\r\nWeb plugin upgraded\r\nDue to a problem of 3rd-party plugin, some users may not be able to use web background with Windows 7, please wait for a hotfix\r\n\r\nCode optimization\r\n\r\n\r\n[Win]\r\n\r\nAdjusted detection of fullscreen and maximized\r\n\r\nAdjusted detection of mouse event for Desktop Mode with No Topmost\r\n\r\nFixed issue of desktop icon visibility reset when application exited\r\n\r\nFixed issue with desktop level setup failure"
+        },
+        {
+            "title": "20180408 Update",
+            "date": "2018-04-08 01:39:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687430959",
+            "notes": "Version: 1.8.0 -> 1.8.1\r\n\r\n\r\nNew widget: Desktop Icon\r\n\r\nIntroduction and Quick Start\r\n\r\nYou can add file, folder, url and command and choose icon, and group them, and drag them to everywhere.\r\nThis widget does not affect your system desktop, you can use it with the default system desktop icons.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/d71a173d2467e8fdefbe0fc27d881133ddb13e2e.jpg\r\n\r\nNew feature: Resource Library\r\nResource Library is a panel that you can manage your resources, everything you imported will be uploaded to Steam Cloud. (Icon only currently, more resource type will be added later)\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/9a9a427b662b044419e42a12ca7411051c9752dd.jpg\r\n\r\nAdded a splash screen while launching\r\nDon't need to wait too much time to see something now\r\n\r\nAdded Anti-Aliasing option\r\n\r\nAdded scale, opacity and show date options for Digital Clock\r\n\r\nAdded scale, opacity options for Analog Clock\r\n\r\nAdded support for Steam Cloud\r\nNow you can see Cloud space usage in Control Panel\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/c6f57d44b7cb0816dda2951cf35731225a663937.jpg\r\n\r\nOptimized launch time\r\n\r\nEnhanced Color Picker\r\nYou can pick some preset colors and edit hex value now\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/cf090920c34e56f90e2b48b2aeb91501b21dff5d.jpg\r\n\r\nVideo plugin upgraded\r\n\r\nWeb plugin upgraded\r\nDue to a problem of 3rd-party plugin, some users may not be able to use web background with Windows 7, please wait for a hotfix\r\n\r\nCode optimization\r\n\r\n\r\n[Win]\r\n\r\nAdjusted detection of fullscreen and maximized\r\n\r\nAdjusted detection of mouse event for Desktop Mode with No Topmost\r\n\r\nFixed issue of desktop icon visibility reset when application exited\r\n\r\nFixed issue with desktop level setup failure"
+        },
+        {
+            "title": "20180401 Update",
+            "date": "2018-03-31 21:30:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2383968106578596779",
+            "notes": "Version: 1.7.5 -> 1.8.0\r\n\r\n\r\nAdded support for Cubism SDK 3\r\nConfig file for SDK 3 is '*.model3.json'\r\n\r\nDrag and move text bubble is available now\r\nWhen text bubble is showing, you can drag and move bubble freely.\r\n\r\nText bubble UI changed\r\n\r\nSave method optimized\r\n\r\nExpand/collapse state can be saved for Calendar and Resource Monitor\r\n\r\nCode optimzation and minor bug fixes\r\n\r\n\r\n[Win]\r\n\r\nIncreased accuracy of mouse estimation\r\n\r\nAdded 'desktop icon opacity' option to tray setting\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/7e79066e115e376e318704cd4ef8ebedcc7887ab.jpg"
+        },
+        {
+            "title": "20180401 Update",
+            "date": "2018-03-31 21:30:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687431067",
+            "notes": "Version: 1.7.5 -> 1.8.0\r\n\r\n\r\nAdded support for Cubism SDK 3\r\nConfig file for SDK 3 is '*.model3.json'\r\n\r\nDrag and move text bubble is available now\r\nWhen text bubble is showing, you can drag and move bubble freely.\r\n\r\nText bubble UI changed\r\n\r\nSave method optimized\r\n\r\nExpand/collapse state can be saved for Calendar and Resource Monitor\r\n\r\nCode optimzation and minor bug fixes\r\n\r\n\r\n[Win]\r\n\r\nIncreased accuracy of mouse estimation\r\n\r\nAdded 'desktop icon opacity' option to tray setting\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29049399/7e79066e115e376e318704cd4ef8ebedcc7887ab.jpg"
+        },
+        {
+            "title": "20180324 Update",
+            "date": "2018-03-23 19:22:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2365952982533923681",
+            "notes": "Version: 1.7.4 -> 1.7.5\r\n\r\n\r\nTray Log moved into Setting Panel as a tab\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/48ff670e7aa57589c8a25185aa79f2c3910d3fd1.jpg\r\n\r\nAdded User Manual into Tray Menu\r\n\r\nhttp://live2d.pavostudio.com/doc/\r\n\r\nAdded internal resource monitor application (Windows)\r\n\r\nNow for Windows user you don't need to run OpenHardwareMonitor first, just enable the widget then it will launch an application to monitor.\r\n\r\nYou can set update interval, and if you want, you can choose Data Source to External to keep using OpenHardwareMonitor \r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/e79a7e4302df20732ea39a65a6f89d7eb2655ad1.jpg\r\n\r\nAdded voice cache\r\n\r\nFixed an issue that mouse lags in some situations\r\n\r\nFixed an issue that expression can not be saved\r\n\r\nFixed an issue that birthday option can not be saved\r\n\r\nAdded 'auto_breath' property to model.json\r\n\r\nAdded 'parts' property to model.json\r\n\r\nWhen you load a model with this property, you will see a parts list in Edit Panel, you can set opacity of parts the property defined. This is useful when there are some accessories and you want to choose which can be shown\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/afa3617f7ad4eee5eb26e095aa144cc548f989d5.jpg\r\n\r\nSome text changes"
+        },
+        {
+            "title": "20180324 Update",
+            "date": "2018-03-23 19:22:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687431181",
+            "notes": "Version: 1.7.4 -> 1.7.5\r\n\r\n\r\nTray Log moved into Setting Panel as a tab\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/48ff670e7aa57589c8a25185aa79f2c3910d3fd1.jpg\r\n\r\nAdded User Manual into Tray Menu\r\n\r\nhttp://live2d.pavostudio.com/doc/\r\n\r\nAdded internal resource monitor application (Windows)\r\n\r\nNow for Windows user you don't need to run OpenHardwareMonitor first, just enable the widget then it will launch an application to monitor.\r\n\r\nYou can set update interval, and if you want, you can choose Data Source to External to keep using OpenHardwareMonitor \r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/e79a7e4302df20732ea39a65a6f89d7eb2655ad1.jpg\r\n\r\nAdded voice cache\r\n\r\nFixed an issue that mouse lags in some situations\r\n\r\nFixed an issue that expression can not be saved\r\n\r\nFixed an issue that birthday option can not be saved\r\n\r\nAdded 'auto_breath' property to model.json\r\n\r\nAdded 'parts' property to model.json\r\n\r\nWhen you load a model with this property, you will see a parts list in Edit Panel, you can set opacity of parts the property defined. This is useful when there are some accessories and you want to choose which can be shown\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/afa3617f7ad4eee5eb26e095aa144cc548f989d5.jpg\r\n\r\nSome text changes"
+        },
+        {
+            "title": "Android Version Update (3.0.0.03100718)",
+            "date": "2018-03-08 19:39:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363699913372617353",
+            "notes": "Google Play\r\n\r\nVersion: 3.0.0.03100718\r\n\r\nFixed a crash issue when adding Json files\r\n\r\n\r\nVersion: 3.0.0.03090758\r\n\r\nBuilt-in Workshop\r\nFixed an issue that sometimes wallpaper will not pause when screen off\r\nNow you can select files or folders to add LPK and Json files\r\nAdded brithday setting for model event\r\nSome text and UI changes\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/0551aa29655bab63aab8b16ad79485725b9d7795.png    http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/74eabc294e5980dddee53e9e58c6044adefb6d6d.png"
+        },
+        {
+            "title": "Android Version Update (3.0.0.03100718)",
+            "date": "2018-03-08 19:39:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687431415",
+            "notes": "Google Play\r\n\r\nVersion: 3.0.0.03100718\r\n\r\nFixed a crash issue when adding Json files\r\n\r\n\r\nVersion: 3.0.0.03090758\r\n\r\nBuilt-in Workshop\r\nFixed an issue that sometimes wallpaper will not pause when screen off\r\nNow you can select files or folders to add LPK and Json files\r\nAdded brithday setting for model event\r\nSome text and UI changes\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/0551aa29655bab63aab8b16ad79485725b9d7795.png    http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/74eabc294e5980dddee53e9e58c6044adefb6d6d.png"
+        },
+        {
+            "title": "20180303 Update",
+            "date": "2018-03-02 18:47:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363699280662139563",
+            "notes": "Version: 1.7.3 -> 1.7.4\r\n\r\n\r\nSnapshot now upgraded to Scene, which supports export to spk file then you can import it to any computer to restore wallpaper quickly\r\n\r\nAdded 'Load Types' option to Scene, you can choose types you want to load\r\n\r\nFixed an issue of incorrect display for Resource Monitor\r\n\r\nAdded 'Position' option to Effect, you can control the effect position relative to the model\r\n\r\nAdded 'Amount' option to Rain & Snow Effect\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180303 Update",
+            "date": "2018-03-02 18:47:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687431521",
+            "notes": "Version: 1.7.3 -> 1.7.4\r\n\r\n\r\nSnapshot now upgraded to Scene, which supports export to spk file then you can import it to any computer to restore wallpaper quickly\r\n\r\nAdded 'Load Types' option to Scene, you can choose types you want to load\r\n\r\nFixed an issue of incorrect display for Resource Monitor\r\n\r\nAdded 'Position' option to Effect, you can control the effect position relative to the model\r\n\r\nAdded 'Amount' option to Rain & Snow Effect\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180221 Update",
+            "date": "2018-02-20 20:53:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2361446846760869763",
+            "notes": "Version: 1.7.2 -> 1.7.3\r\n\r\n[Win & Mac]\r\n\r\nNew Widget UI: Resource Monitor, note that this widget receives data from an external application\r\n\r\nWhy not make embeded resource monitor?\r\nMonitoring hardware is very complicated, and may cause unexpected problems (such as application crash). To prevent this, I decide to use external application to send data to widget via ExAPI, in this way application crashes will not affect the running of Live2DVIewerEX. \r\n\r\nHow to use resource monitor?\r\nYou can use Open Hardware Monitor EX. (Windows Only)\r\nDownload:\r\n English Version  \r\n Chinese Version with Network Monitor \r\n\r\nYou can write your own software with ExAPI and send data to Resource Monitor.\r\nSource Code:\r\nGithub \r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/4ff9116d50c203f509cefc9e4a26fbbe528f09e1.jpg\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/f469efcef32c00b23941f07fcbe5441f3e8e9372.jpg\r\n\r\n\r\nAdded more options for Visualizator\r\n\r\nAdded reset button to Filter options\r\n\r\nSome text changes and minor bug fixes\r\n\r\n\r\n[Win]\r\n\r\nExternal Application: Open Hardware Monitor EX, this is for sending data to Resource Monitor\r\n\r\nAdded 'Run' to tray menus, this is for running an external application with websocket port"
+        },
+        {
+            "title": "20180221 Update",
+            "date": "2018-02-20 20:53:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687431636",
+            "notes": "Version: 1.7.2 -> 1.7.3\r\n\r\n[Win & Mac]\r\n\r\nNew Widget UI: Resource Monitor, note that this widget receives data from an external application\r\n\r\nWhy not make embeded resource monitor?\r\nMonitoring hardware is very complicated, and may cause unexpected problems (such as application crash). To prevent this, I decide to use external application to send data to widget via ExAPI, in this way application crashes will not affect the running of Live2DVIewerEX. \r\n\r\nHow to use resource monitor?\r\nYou can use Open Hardware Monitor EX. (Windows Only)\r\nDownload:\r\n English Version  \r\n Chinese Version with Network Monitor \r\n\r\nYou can write your own software with ExAPI and send data to Resource Monitor.\r\nSource Code:\r\nGithub \r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/4ff9116d50c203f509cefc9e4a26fbbe528f09e1.jpg\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/f469efcef32c00b23941f07fcbe5441f3e8e9372.jpg\r\n\r\n\r\nAdded more options for Visualizator\r\n\r\nAdded reset button to Filter options\r\n\r\nSome text changes and minor bug fixes\r\n\r\n\r\n[Win]\r\n\r\nExternal Application: Open Hardware Monitor EX, this is for sending data to Resource Monitor\r\n\r\nAdded 'Run' to tray menus, this is for running an external application with websocket port"
+        },
+        {
+            "title": "20180214 Update",
+            "date": "2018-02-13 23:40:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363698013319968723",
+            "notes": "Version: 1.7.1 -> 1.7.2\r\n\r\n\r\nNew Effect: Visualizator\r\nhttp://steamcommunity.com/games/live2dwallpaper/announcements/detail/1657758135882775832\r\nImportant: System audio input is not supported for Mac, in MacOS you can only use Music Player widget as input device.\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/686b1dfcb105288e4385218b01e65df464d7fdfb.jpg\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/180f40819f4f5abe90ec308899a2bfacd563585c.jpg\r\n\r\n\r\nNew Widget: Music Player, currently supported format: mp3, wav, aif, ogg, m4a\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/0ad328edea60db585efc35d4badf68a80f5f3734.jpg\r\n\r\nAdded birthday option, birthday events for model can be triggered now\r\n\r\nRain&Snow effect changed\r\n\r\nRemoved dynamic framerate option\r\n\r\nFixed an issue that wallpaper can not fit screen when position of taskbar is top or left\r\n\r\nFixed an issue that Control Panel can not connect to wallpaper occasionally\r\n\r\nSome text changes and minor bug fixes"
+        },
+        {
+            "title": "20180214 Update",
+            "date": "2018-02-13 23:40:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687431747",
+            "notes": "Version: 1.7.1 -> 1.7.2\r\n\r\n\r\nNew Effect: Visualizator\r\nhttp://steamcommunity.com/games/live2dwallpaper/announcements/detail/1657758135882775832\r\nImportant: System audio input is not supported for Mac, in MacOS you can only use Music Player widget as input device.\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/686b1dfcb105288e4385218b01e65df464d7fdfb.jpg\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/180f40819f4f5abe90ec308899a2bfacd563585c.jpg\r\n\r\n\r\nNew Widget: Music Player, currently supported format: mp3, wav, aif, ogg, m4a\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/0ad328edea60db585efc35d4badf68a80f5f3734.jpg\r\n\r\nAdded birthday option, birthday events for model can be triggered now\r\n\r\nRain&Snow effect changed\r\n\r\nRemoved dynamic framerate option\r\n\r\nFixed an issue that wallpaper can not fit screen when position of taskbar is top or left\r\n\r\nFixed an issue that Control Panel can not connect to wallpaper occasionally\r\n\r\nSome text changes and minor bug fixes"
+        },
+        {
+            "title": "20180208 Update",
+            "date": "2018-02-07 23:48:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363697377448311056",
+            "notes": "Version: 1.7.0 -> 1.7.1\r\n\r\n\r\n[Win & Mac]\r\n\r\nNew UI for tray setting\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/6233e8ed5e30dca782185ad0fa9130beecc7855f.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/9513d569f26bdf6ce8614a99bd58c73f7cc4d287.png\r\n\r\nNew feature: Hotkey. You can use hotkey to open quick menu or enter edit mode\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/0f940c92435e25c94a1e83c36b42fa97a745dea5.png\r\n\r\nExAPI Released: https://github.com/pavostudio/ExAPI\r\n\r\nFixed an issue that image background cannot fit the screen properly\r\n\r\nCode optimization and UI adjustments\r\n\r\n\r\n\r\n[Win]\r\n\r\nAdded option for when other app fullscreen"
+        },
+        {
+            "title": "20180208 Update",
+            "date": "2018-02-07 23:48:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687432090",
+            "notes": "Version: 1.7.0 -> 1.7.1\r\n\r\n\r\n[Win & Mac]\r\n\r\nNew UI for tray setting\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/6233e8ed5e30dca782185ad0fa9130beecc7855f.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/9513d569f26bdf6ce8614a99bd58c73f7cc4d287.png\r\n\r\nNew feature: Hotkey. You can use hotkey to open quick menu or enter edit mode\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/0f940c92435e25c94a1e83c36b42fa97a745dea5.png\r\n\r\nExAPI Released: https://github.com/pavostudio/ExAPI\r\n\r\nFixed an issue that image background cannot fit the screen properly\r\n\r\nCode optimization and UI adjustments\r\n\r\n\r\n\r\n[Win]\r\n\r\nAdded option for when other app fullscreen"
+        },
+        {
+            "title": "20180202 Update",
+            "date": "2018-02-01 22:11:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363696743801375802",
+            "notes": "Version: 1.6.0 -> 1.7.0\r\n\r\n\r\nNew background type: Web. You can add URL by clicking 'Web' button or add html file by clicking 'Add files' in background tab\r\n***Experimental, not recommended to load complex web page\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/b3928c58b4687e3e406e0e30c82d95d356b485a9.jpg\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/22976bb198be2b01373d0be6b07a05d666cb840e.png\r\n\r\nAdded 'Web Control' option to background setting. If you don't want web background to receive mouse event switch this to off\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/800a6faeba60239f3b6559350b8914486007d8c7.png\r\n\r\nNew workshop item type: Web\r\n\r\nAdded release notes to Control Panel->About\r\n\r\nInput method optimization\r\n\r\nPause method optimization\r\n\r\nFixed an error when loading some filters\r\n\r\nUI adjustments"
+        },
+        {
+            "title": "20180202 Update",
+            "date": "2018-02-01 22:11:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687432214",
+            "notes": "Version: 1.6.0 -> 1.7.0\r\n\r\n\r\nNew background type: Web. You can add URL by clicking 'Web' button or add html file by clicking 'Add files' in background tab\r\n***Experimental, not recommended to load complex web page\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/b3928c58b4687e3e406e0e30c82d95d356b485a9.jpg\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/22976bb198be2b01373d0be6b07a05d666cb840e.png\r\n\r\nAdded 'Web Control' option to background setting. If you don't want web background to receive mouse event switch this to off\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/800a6faeba60239f3b6559350b8914486007d8c7.png\r\n\r\nNew workshop item type: Web\r\n\r\nAdded release notes to Control Panel->About\r\n\r\nInput method optimization\r\n\r\nPause method optimization\r\n\r\nFixed an error when loading some filters\r\n\r\nUI adjustments"
+        },
+        {
+            "title": "20180125 Update",
+            "date": "2018-01-25 02:48:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2356940714980924508",
+            "notes": "Version: 1.5.2 -> 1.6.0\r\n\r\nResizable window for Control Panel and Workshop Tool\r\n\r\nAdded bubble transparency option\r\n\r\nAdd auto pause when other app maximized (trayicon -> options), this feature is experimental\r\n\r\nFixed an issue that the application will not pause when other app fullscreen (need more test)\r\n\r\nFixed an issue for triggering quick menu by tripple clicking\r\n\r\nChanged mouse event method\r\n\r\nChanged the structure of application folder\r\n\r\nRemoved internal file browser\r\n\r\nCode optimization\r\n\r\nSome adjustment and bug fixes"
+        },
+        {
+            "title": "20180125 Update",
+            "date": "2018-01-25 02:48:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687432443",
+            "notes": "Version: 1.5.2 -> 1.6.0\r\n\r\nResizable window for Control Panel and Workshop Tool\r\n\r\nAdded bubble transparency option\r\n\r\nAdd auto pause when other app maximized (trayicon -> options), this feature is experimental\r\n\r\nFixed an issue that the application will not pause when other app fullscreen (need more test)\r\n\r\nFixed an issue for triggering quick menu by tripple clicking\r\n\r\nChanged mouse event method\r\n\r\nChanged the structure of application folder\r\n\r\nRemoved internal file browser\r\n\r\nCode optimization\r\n\r\nSome adjustment and bug fixes"
+        },
+        {
+            "title": "Live2DViewerEX for Android Beta Release!",
+            "date": "2018-01-13 01:25:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2747626897936690094",
+            "notes": "Note: Before use this application, you must get Steam version first\r\n\r\nGoogle Play\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/f21041d62909fc82f7bbad665019c473683da3cd.jpg        http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/ace746c6efacc0d3c048eacdd85c5728778d714c.jpg        http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/6c9948460e5f233734a01dda7a5ed2805ceaf50c.jpg        http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/59f7032f58b49add83d287f03d16bd1377d9d1f7.jpg\r\n\r\n\r\nFeatures\r\n\r\nSet Live Wallpaper\r\n\r\nLoad Live2D Models with Workshop items, LPK files and Json files (same as Steam ver.)\r\n\r\nEdit model's position, scale and position\r\n\r\nLoad image and video as background (same as Steam ver.)\r\n\r\nSupports accelerometer\r\n\r\nUnlimited model extension\r\n\r\n\r\n\r\nUsage\r\n\r\nAuthentication is required at the first time you start the application. ( If  you get any problem for authenticating try to restart your phone)\r\n\r\nThe application does not include any model and background resource, you should copy them from PC to the mobile storage and import them via application\r\n\r\nYou can use \"Export Files\" button (20180113 Update) to export Workshop Items to destination folder, then copy them to the mobile storage. ( DO NOT RENAME ITEM FOLDERS! )\r\n\r\nIt may consumes a lot of electricity when keeping screen on (It will pause when screen off )\r\n\r\nCurrent supported language: English, Chinese Simplified / Tranditional"
+        },
+        {
+            "title": "Live2DViewerEX for Android Beta Release!",
+            "date": "2018-01-13 01:25:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687432765",
+            "notes": "Note: Before use this application, you must get Steam version first\r\n\r\nGoogle Play\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/f21041d62909fc82f7bbad665019c473683da3cd.jpg        http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/ace746c6efacc0d3c048eacdd85c5728778d714c.jpg        http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/6c9948460e5f233734a01dda7a5ed2805ceaf50c.jpg        http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/59f7032f58b49add83d287f03d16bd1377d9d1f7.jpg\r\n\r\n\r\nFeatures\r\n\r\nSet Live Wallpaper\r\n\r\nLoad Live2D Models with Workshop items, LPK files and Json files (same as Steam ver.)\r\n\r\nEdit model's position, scale and position\r\n\r\nLoad image and video as background (same as Steam ver.)\r\n\r\nSupports accelerometer\r\n\r\nUnlimited model extension\r\n\r\n\r\n\r\nUsage\r\n\r\nAuthentication is required at the first time you start the application. ( If  you get any problem for authenticating try to restart your phone)\r\n\r\nThe application does not include any model and background resource, you should copy them from PC to the mobile storage and import them via application\r\n\r\nYou can use \"Export Files\" button (20180113 Update) to export Workshop Items to destination folder, then copy them to the mobile storage. ( DO NOT RENAME ITEM FOLDERS! )\r\n\r\nIt may consumes a lot of electricity when keeping screen on (It will pause when screen off )\r\n\r\nCurrent supported language: English, Chinese Simplified / Tranditional"
+        },
+        {
+            "title": "20180113 Update",
+            "date": "2018-01-13 01:24:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2747626897936689591",
+            "notes": "Version: 1.5.1 -> 1.5.2\r\n\r\nAdded \"Export Files\" button, for users who want to copy workshop items to mobile storage\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/0cc5b5604d1af26d3d6ad80477b49988baf940f8.png\r\n\r\nFixed an issue when switch the language\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180113 Update",
+            "date": "2018-01-13 01:24:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687432879",
+            "notes": "Version: 1.5.1 -> 1.5.2\r\n\r\nAdded \"Export Files\" button, for users who want to copy workshop items to mobile storage\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/0cc5b5604d1af26d3d6ad80477b49988baf940f8.png\r\n\r\nFixed an issue when switch the language\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180104 Update",
+            "date": "2018-01-05 19:14:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949562708116",
+            "notes": "Version: 1.5.0 -> 1.5.1\r\n\r\nAdded new features for model interaction\r\n\r\nMain Menu renamed to Control Panel\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20180104 Update",
+            "date": "2018-01-05 19:14:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687432986",
+            "notes": "Version: 1.5.0 -> 1.5.1\r\n\r\nAdded new features for model interaction\r\n\r\nMain Menu renamed to Control Panel\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20171225 Update",
+            "date": "2017-12-26 21:11:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949526868313",
+            "notes": "Version: 1.4.3 -> 1.5.0\r\n\r\nAdded internal workshop browser\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/02aa222eeae85bf276ef0087443fe77abdeb3ccd.jpg\r\n\r\nAdded \"mouse event\" option to tray, if you got any problem for mouse operation, try to choose \"Universal\"\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20171225 Update",
+            "date": "2017-12-26 21:11:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687433096",
+            "notes": "Version: 1.4.3 -> 1.5.0\r\n\r\nAdded internal workshop browser\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/02aa222eeae85bf276ef0087443fe77abdeb3ccd.jpg\r\n\r\nAdded \"mouse event\" option to tray, if you got any problem for mouse operation, try to choose \"Universal\"\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20171207 Update",
+            "date": "2017-12-06 19:31:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2163281492515922954",
+            "notes": "Version: 1.4.2 -> 1.4.3\r\n\r\nAdded 'Quick Load' button to Json Model page for loading json models without adding to list\r\n\r\nThe items of json list show file path now\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/bab5b9841944248b114d11f8c4d091444f69a3b8.png\r\n\r\nFixed an issue when measuring the length of voice file\r\n\r\nAdded and changed some contents for json configuration"
+        },
+        {
+            "title": "20171207 Update",
+            "date": "2017-12-06 19:31:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687433360",
+            "notes": "Version: 1.4.2 -> 1.4.3\r\n\r\nAdded 'Quick Load' button to Json Model page for loading json models without adding to list\r\n\r\nThe items of json list show file path now\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/bab5b9841944248b114d11f8c4d091444f69a3b8.png\r\n\r\nFixed an issue when measuring the length of voice file\r\n\r\nAdded and changed some contents for json configuration"
+        },
+        {
+            "title": "20171116 Update",
+            "date": "2017-11-15 01:51:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2143013295366909585",
+            "notes": "※ Since I'm focusing on developing Android version, there is no big update recently.\r\n\r\nVersion: 1.4.1 -> 1.4.2\r\n\r\nFixed an issue that Main Menu can not connect to Wallpaper/Desktop occasionally\r\n\r\nAdded 'Log' option into trayicon\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20171116 Update",
+            "date": "2017-11-15 01:51:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687433475",
+            "notes": "※ Since I'm focusing on developing Android version, there is no big update recently.\r\n\r\nVersion: 1.4.1 -> 1.4.2\r\n\r\nFixed an issue that Main Menu can not connect to Wallpaper/Desktop occasionally\r\n\r\nAdded 'Log' option into trayicon\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20171027 Update",
+            "date": "2017-10-25 02:44:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2140759684337947769",
+            "notes": "Version: 1.4.0 -> 1.4.1\r\n\r\nFixed an issue that models can't show properly with multi-display\r\n\r\n\r\nAdded 'Graphic API' option into trayicon, you can choose API manually when the software doesn't work normally\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/5a8d6c3c8698df9441aef0684fa45ba0eb5d5465.png\r\n\r\n\r\nAdded 'auto reconnect' function for Main Menu\r\n\r\n\r\nAdded 'Raindrop' filter\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/e2989dc014418cdeed680d65df76e6c05923a8cb.png\r\n\r\n\r\nAdded some properties for model json file\r\n\r\n\r\nSome other changes"
+        },
+        {
+            "title": "20171027 Update",
+            "date": "2017-10-25 02:44:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687433711",
+            "notes": "Version: 1.4.0 -> 1.4.1\r\n\r\nFixed an issue that models can't show properly with multi-display\r\n\r\n\r\nAdded 'Graphic API' option into trayicon, you can choose API manually when the software doesn't work normally\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/5a8d6c3c8698df9441aef0684fa45ba0eb5d5465.png\r\n\r\n\r\nAdded 'auto reconnect' function for Main Menu\r\n\r\n\r\nAdded 'Raindrop' filter\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/e2989dc014418cdeed680d65df76e6c05923a8cb.png\r\n\r\n\r\nAdded some properties for model json file\r\n\r\n\r\nSome other changes"
+        },
+        {
+            "title": "20171016 Update",
+            "date": "2017-10-13 19:22:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2139632606722793599",
+            "notes": "Version: 1.3.2 -> 1.4.0\r\n\r\nSome UI and icons changes\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/0ef53796c67f9ab1eb5ae309d808604e06a7ae4c.png\r\n\r\n\r\nMultiple filters support\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/8cdc2edd2d9323057f267735d7248ea296213128.png\r\n\r\n\r\nMultiple effects support\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/4a4d142d0b907cdb63e6f4c77639221a25dea212.png\r\n\r\n\r\nWidget UI changes\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/38b2b5824ecfe27ce7356f14633204fc7c65d1f7.png\r\n\r\n\r\nPosition adjustment for image and video (normal background only)\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/b786438a4fafcb5cbaaadd23acd9d48dc4022b80.png\r\n\r\n\r\nSome changes for assistant shortcut\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/881215c1968392182a7b926b2756e5893586893e.png\r\n\r\n\r\nFixed an issue that background and model will disappear when the contents updated in Workshop (please sync with Main Menu once after upgrading to this version)\r\n\r\n\r\nFixed an issue for model area drag\r\n\r\n\r\nAdded some new features and properties into Model Json Editor (Workshop Tool)"
+        },
+        {
+            "title": "20171016 Update",
+            "date": "2017-10-13 19:22:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687433919",
+            "notes": "Version: 1.3.2 -> 1.4.0\r\n\r\nSome UI and icons changes\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/0ef53796c67f9ab1eb5ae309d808604e06a7ae4c.png\r\n\r\n\r\nMultiple filters support\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/8cdc2edd2d9323057f267735d7248ea296213128.png\r\n\r\n\r\nMultiple effects support\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/4a4d142d0b907cdb63e6f4c77639221a25dea212.png\r\n\r\n\r\nWidget UI changes\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/38b2b5824ecfe27ce7356f14633204fc7c65d1f7.png\r\n\r\n\r\nPosition adjustment for image and video (normal background only)\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/b786438a4fafcb5cbaaadd23acd9d48dc4022b80.png\r\n\r\n\r\nSome changes for assistant shortcut\r\n\r\nhttp://cdn.steamstatic.com.8686c.com/steamcommunity/public/images/clans/29049399/881215c1968392182a7b926b2756e5893586893e.png\r\n\r\n\r\nFixed an issue that background and model will disappear when the contents updated in Workshop (please sync with Main Menu once after upgrading to this version)\r\n\r\n\r\nFixed an issue for model area drag\r\n\r\n\r\nAdded some new features and properties into Model Json Editor (Workshop Tool)"
+        },
+        {
+            "title": "20171007 Update",
+            "date": "2017-10-05 18:15:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2145261379785627592",
+            "notes": "Version: 1.3.1 -> 1.3.2\r\n\r\nNow filters can be applied to background only.\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/594ad6e98eb308d1f84c60e8fbcbf3d097531970.png\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/6c1cc06826c6628a89574ca3381166aaf879fa32.png\r\n\r\n\r\nAdded 3 blur filters\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/188acb8b6b751964c21ef62fe002ea01c6e1edb4.png\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/0689c04b190a565cec2883a34b45a42113f0d75f.png\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/32a4e13ae76c0ba52da3f1c9c23343031fb0a204.png\r\n\r\n\r\nNew option for thumbnail, set it to 'Compat' when thumbnails can't be created (compat mode may cause UI freeze when creating thumbnails)\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/05e363c71904c14f3c2c2d00d788bdd3f57934c6.png\r\n\r\n\r\nSome adjustments and bug fixes"
+        },
+        {
+            "title": "20171007 Update",
+            "date": "2017-10-05 18:15:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434144",
+            "notes": "Version: 1.3.1 -> 1.3.2\r\n\r\nNow filters can be applied to background only.\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/594ad6e98eb308d1f84c60e8fbcbf3d097531970.png\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/6c1cc06826c6628a89574ca3381166aaf879fa32.png\r\n\r\n\r\nAdded 3 blur filters\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/188acb8b6b751964c21ef62fe002ea01c6e1edb4.png\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/0689c04b190a565cec2883a34b45a42113f0d75f.png\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/32a4e13ae76c0ba52da3f1c9c23343031fb0a204.png\r\n\r\n\r\nNew option for thumbnail, set it to 'Compat' when thumbnails can't be created (compat mode may cause UI freeze when creating thumbnails)\r\n\r\nhttp://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29049399/05e363c71904c14f3c2c2d00d788bdd3f57934c6.png\r\n\r\n\r\nSome adjustments and bug fixes"
+        },
+        {
+            "title": "20171001 Update",
+            "date": "2017-09-29 02:15:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2175660043467145922",
+            "notes": "Version: 1.3.0 -> 1.3.1\r\n\r\nAdded 2 color filters\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/447b04b321d7862b5cacba10a210621fe4a4d3a0.png\r\n\r\n\r\nAdded \"Remove Background\" button to Quick Menu (same as Main Menu)\r\n\r\n\r\nFixed an issue that sometimes Main Menu shows infinite \"requesting\" when loading model\r\n\r\n\r\nImproved model load speed with compat mode\r\n\r\n\r\nEnhanced model interaction, more details will be announced recently\r\n\r\n\r\nSome adjustments and bug fixes"
+        },
+        {
+            "title": "20171001 Update",
+            "date": "2017-09-29 02:15:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434232",
+            "notes": "Version: 1.3.0 -> 1.3.1\r\n\r\nAdded 2 color filters\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/447b04b321d7862b5cacba10a210621fe4a4d3a0.png\r\n\r\n\r\nAdded \"Remove Background\" button to Quick Menu (same as Main Menu)\r\n\r\n\r\nFixed an issue that sometimes Main Menu shows infinite \"requesting\" when loading model\r\n\r\n\r\nImproved model load speed with compat mode\r\n\r\n\r\nEnhanced model interaction, more details will be announced recently\r\n\r\n\r\nSome adjustments and bug fixes"
+        },
+        {
+            "title": "What's The Next: Android Version",
+            "date": "2017-09-22 07:58:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2149763711094232715",
+            "notes": "http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/21ca27669beaa6b9617aca00aac63e6758744fd0.png\r\n\r\n\r\nAbout Android version\r\n\r\nIn fact Android version has existed for 2 years, but the new verison will be the mobile version of PC, which means it will have almost all features of PC version.\r\n\r\nOld version can be downloaded here: Live2DViewerEX 2.0.5\r\nPlease note: Workshop items can't be used in old version.\r\n\r\n\r\nAbout the release date\r\n\r\nI expect to release it at the end of this year, but there is still a lot of work to do, the release date may be delayed.\r\n\r\n\r\nAbout the price\r\n\r\nIt's free, but you must activate it via PC version, which means you should buy PC version first.\r\n\r\n\r\nAbout the publishing\r\n\r\nIt will be published on Google Play, and a direct download link for people who can not access Google Play. \r\n\r\n\r\nAbout IOS version\r\n\r\nIt may exist but no guarantee, and may be just a general APP due to the limitation of system.\r\n\r\n\r\nAbout Mac version\r\n\r\nAccording to plan a test version will be released at the end of this year or the beginning of next year."
+        },
+        {
+            "title": "What's The Next: Android Version",
+            "date": "2017-09-22 07:58:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434336",
+            "notes": "http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/21ca27669beaa6b9617aca00aac63e6758744fd0.png\r\n\r\n\r\nAbout Android version\r\n\r\nIn fact Android version has existed for 2 years, but the new verison will be the mobile version of PC, which means it will have almost all features of PC version.\r\n\r\nOld version can be downloaded here: Live2DViewerEX 2.0.5\r\nPlease note: Workshop items can't be used in old version.\r\n\r\n\r\nAbout the release date\r\n\r\nI expect to release it at the end of this year, but there is still a lot of work to do, the release date may be delayed.\r\n\r\n\r\nAbout the price\r\n\r\nIt's free, but you must activate it via PC version, which means you should buy PC version first.\r\n\r\n\r\nAbout the publishing\r\n\r\nIt will be published on Google Play, and a direct download link for people who can not access Google Play. \r\n\r\n\r\nAbout IOS version\r\n\r\nIt may exist but no guarantee, and may be just a general APP due to the limitation of system.\r\n\r\n\r\nAbout Mac version\r\n\r\nAccording to plan a test version will be released at the end of this year or the beginning of next year."
+        },
+        {
+            "title": "20170921 Update",
+            "date": "2017-09-18 23:37:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3136051487780451066",
+            "notes": "Version: 1.2.5 -> 1.3.0\r\n\r\nNew feature: Mirror (Edit Mode)\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/cb8b50dc70a1e00f50f4456ca893b113972d6daf.png\r\n\r\n\r\nNow you can remove model just by clicking the green point under Model Slot\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/117ff8c286a19b3f7050f8003946408712435f3c.png\r\n\r\n\r\nReconnect button added for Main Menu to reconnect directly when lost connection to Wallpaper/Desktop\r\n\r\n\r\nUI optimized, especially the usage of memory when displaying a large number of list items\r\n\r\n\r\nFix an issue that Rotate Slider in Edit Panel of Main Menu controls a wrong property\r\n\r\n\r\nSome adjustments and bug fixes"
+        },
+        {
+            "title": "20170921 Update",
+            "date": "2017-09-18 23:37:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434447",
+            "notes": "Version: 1.2.5 -> 1.3.0\r\n\r\nNew feature: Mirror (Edit Mode)\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/cb8b50dc70a1e00f50f4456ca893b113972d6daf.png\r\n\r\n\r\nNow you can remove model just by clicking the green point under Model Slot\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/117ff8c286a19b3f7050f8003946408712435f3c.png\r\n\r\n\r\nReconnect button added for Main Menu to reconnect directly when lost connection to Wallpaper/Desktop\r\n\r\n\r\nUI optimized, especially the usage of memory when displaying a large number of list items\r\n\r\n\r\nFix an issue that Rotate Slider in Edit Panel of Main Menu controls a wrong property\r\n\r\n\r\nSome adjustments and bug fixes"
+        },
+        {
+            "title": "20170908 Update",
+            "date": "2017-09-06 21:36:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2127244540317459496",
+            "notes": "Version: 1.2.4 -> 1.2.5\r\n\r\nAdded 3 filters\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/6ab8804808701f9508fe738ba0bcd27acfaad88e.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/5f0dee09cbf33f16b46eb82f5b9fb9f9711521e8.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/90abd4c88e61603568bbd7948a0abcee914aa0ec.png\r\n\r\n\r\nFont display optimized\r\n\r\n\r\nAdded 'Cache Clear' button in setting tab, this is useful when you want to recreate thumbnails\r\n\r\n\r\nFullscreen Auto-Pause algorithm optimized\r\n\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20170908 Update",
+            "date": "2017-09-06 21:36:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434560",
+            "notes": "Version: 1.2.4 -> 1.2.5\r\n\r\nAdded 3 filters\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/6ab8804808701f9508fe738ba0bcd27acfaad88e.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/5f0dee09cbf33f16b46eb82f5b9fb9f9711521e8.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/90abd4c88e61603568bbd7948a0abcee914aa0ec.png\r\n\r\n\r\nFont display optimized\r\n\r\n\r\nAdded 'Cache Clear' button in setting tab, this is useful when you want to recreate thumbnails\r\n\r\n\r\nFullscreen Auto-Pause algorithm optimized\r\n\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20170901 Update",
+            "date": "2017-08-30 22:19:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2095718613764692570",
+            "notes": "Version: 1.2.3 -> 1.2.4\r\n\r\nAdd 7 floating particle effects\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/77b4a9a4e5475823fbbe30d382384f76bdb1a6ea.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/b350ea032cdfda2c293ec4f2d909a369f17b648d.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/642486f14bf0371a4bce6059648d54f07f1f72f7.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/ec60615204b11515db8fec3b64a7717015998eac.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/792e96407a0a3cfdce305d3788f5038542f64fb6.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/a6376ed9754441f38e8f21c627dea59345a474fb.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/9bf3212473de7711ab5c9b1ba30816c340b3f085.png\r\n\r\n\r\nAdd color picker for background, solid color will be showed when removed background\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/92a14f2984a79309549c4607a13ac5947f9fd0cf.png\r\n\r\n\r\nAdd switch for Assistant\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/8f5eb71900acdd4c3d4380033fc2fe38026fea44.png\r\n\r\n\r\nNew feature for Workshop Tool: Model Json Editor\r\n\r\nYou can use this to create / modify *.model.json file, for more information please view Json Configuration Document\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/dfe6a111a32b67a64d5ea41d0278496bbbb6277b.png\r\n\r\n\r\nFix an issue that language not changed for list items when changed language setting\r\n\r\nFix an issue that model covers the taskbar in Desktop Mode"
+        },
+        {
+            "title": "20170901 Update",
+            "date": "2017-08-30 22:19:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434667",
+            "notes": "Version: 1.2.3 -> 1.2.4\r\n\r\nAdd 7 floating particle effects\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/77b4a9a4e5475823fbbe30d382384f76bdb1a6ea.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/b350ea032cdfda2c293ec4f2d909a369f17b648d.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/642486f14bf0371a4bce6059648d54f07f1f72f7.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/ec60615204b11515db8fec3b64a7717015998eac.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/792e96407a0a3cfdce305d3788f5038542f64fb6.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/a6376ed9754441f38e8f21c627dea59345a474fb.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/9bf3212473de7711ab5c9b1ba30816c340b3f085.png\r\n\r\n\r\nAdd color picker for background, solid color will be showed when removed background\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/92a14f2984a79309549c4607a13ac5947f9fd0cf.png\r\n\r\n\r\nAdd switch for Assistant\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/8f5eb71900acdd4c3d4380033fc2fe38026fea44.png\r\n\r\n\r\nNew feature for Workshop Tool: Model Json Editor\r\n\r\nYou can use this to create / modify *.model.json file, for more information please view Json Configuration Document\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/dfe6a111a32b67a64d5ea41d0278496bbbb6277b.png\r\n\r\n\r\nFix an issue that language not changed for list items when changed language setting\r\n\r\nFix an issue that model covers the taskbar in Desktop Mode"
+        },
+        {
+            "title": "20170826 Update",
+            "date": "2017-08-24 04:56:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2094592080066989016",
+            "notes": "Version: 1.2.2 -> 1.2.3\r\n\r\nNew feature: Assistant\r\n\r\nLong-press the assistant model will trigger the assistant bubble, which contains 3 parts:\r\n\r\n\r\n    Greeting: you can change the words freely\r\n    System shortcut: now support Shutdown, Restart, My Computer, Web Browser and Task Manager. \r\n    User shortcut: support file, folder and url\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/9ebec44278f985e3a4c2d57c3ef0accda48cc80a.png\r\n\r\nNote\r\n\r\n\r\n    Only 12 user shortcuts can be shown at the same time.\r\n    Please confirm that you set the correct assistant model ID if long-press doesn't work.\r\n \r\n\r\n\r\nNow you can set bubble position x and y separately\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/806f3ec29a09ee546f06eb5a08e40972083291db.png\r\n\r\n\r\nButton \"Add To Folder\" was added to background workshop panel, now you can apply slide show to workshop items by adding them to folders\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/1af0163f5fa2aae4c856d9c06baf0b889b33251a.png\r\n\r\n\r\nFix an issue that list items can't be shown correctly in slide show panel\r\n\r\nFix an issue that bubble not following when moving a model\r\n\r\nFix an issue that model may not response mouse events in some situation\r\n\r\nFix an issue that Workshop Tool can not load some background file"
+        },
+        {
+            "title": "20170826 Update",
+            "date": "2017-08-24 04:56:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434782",
+            "notes": "Version: 1.2.2 -> 1.2.3\r\n\r\nNew feature: Assistant\r\n\r\nLong-press the assistant model will trigger the assistant bubble, which contains 3 parts:\r\n\r\n\r\n    Greeting: you can change the words freely\r\n    System shortcut: now support Shutdown, Restart, My Computer, Web Browser and Task Manager. \r\n    User shortcut: support file, folder and url\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/9ebec44278f985e3a4c2d57c3ef0accda48cc80a.png\r\n\r\nNote\r\n\r\n\r\n    Only 12 user shortcuts can be shown at the same time.\r\n    Please confirm that you set the correct assistant model ID if long-press doesn't work.\r\n \r\n\r\n\r\nNow you can set bubble position x and y separately\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/806f3ec29a09ee546f06eb5a08e40972083291db.png\r\n\r\n\r\nButton \"Add To Folder\" was added to background workshop panel, now you can apply slide show to workshop items by adding them to folders\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/1af0163f5fa2aae4c856d9c06baf0b889b33251a.png\r\n\r\n\r\nFix an issue that list items can't be shown correctly in slide show panel\r\n\r\nFix an issue that bubble not following when moving a model\r\n\r\nFix an issue that model may not response mouse events in some situation\r\n\r\nFix an issue that Workshop Tool can not load some background file"
+        },
+        {
+            "title": "20170814 Update",
+            "date": "2017-08-13 20:33:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2093464278194995498",
+            "notes": "Version: 1.2.0 -> 1.2.1\r\n\r\nAdd Russian language support\r\n\r\nTrigger icon feature changes: 3 buttons will appear by clicking the icon (Quick Menu, Main Menu, Edit Mode)\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/a70f4898e10f92e39e71e0b911e02c5852f24302.png\r\n\r\n\r\nFix a display issue for Calendar\r\n\r\nFix a display issue for LPK list\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "20170814 Update",
+            "date": "2017-08-13 20:33:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687434994",
+            "notes": "Version: 1.2.0 -> 1.2.1\r\n\r\nAdd Russian language support\r\n\r\nTrigger icon feature changes: 3 buttons will appear by clicking the icon (Quick Menu, Main Menu, Edit Mode)\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/a70f4898e10f92e39e71e0b911e02c5852f24302.png\r\n\r\n\r\nFix a display issue for Calendar\r\n\r\nFix a display issue for LPK list\r\n\r\nMinor bug fixes"
+        },
+        {
+            "title": "Version 1.2.0 Introduction: New App Name, New Desktop Mode, New Price",
+            "date": "2017-08-11 16:11:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2093464278187110085",
+            "notes": "Greetings\r\n\r\nWith the release of version 1.2.0, I made some important changes\r\n\r\n New Mode: Desktop Mode (Desktop Mascot)  \r\n\r\nDisplay the models on your desktop!\r\nMouse event supported!\r\nTopmost supported!\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/1a11fabacef881aaff694097beeb2b63c832f178.png\r\n\r\n\r\nHow To Use\r\n\r\n How to switch: Right-click trayicon -> Launch Mode -> Desktop. If you got a black background, please choose 'Desktop (Compat Mode)'\r\n\r\n Desktop Mode does not support Background, Effects and Filters, you will not see these tabs in Main Menu\r\n\r\n Desktop Mode does not support Workshop Screenshot\r\n\r\n You can not use Desktop Mode and Wallpaper Mode at the same time currently, it will be available in future update\r\n\r\n Desktop Mode supports 'Topmost' and 'No Topmost', you can change it in options of trayicon.\r\n\r\n When Desktop Mode enabled, you will see two options in Setting panel of Main Menu, you can adjust them according to the actual situations: \r\n\r\n\r\n Key Color: Application will filter this color to make a transparent background\r\n Color Margin: Filter threshold, a large value means more similar color will be filtered, a small value will let the model has a clear border\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/61289983c35aac2f7703b1d1b85489bb65d6d8ad.png\r\n\r\n\r\n\r\n New App Name: Live2DViewerEX \r\n\r\nSince Live2D Wallpaper is not suitable for the new version of application, I decide to change the name to Live2DViewerEX, the same name with an Android APP I made before. \r\n\r\n\r\n New Price \r\n\r\nWith the great new feature, I decide to change the price from $3.99 to $4.99\r\n\r\n\r\n\r\nThank you for your support\r\n\r\nPavo Studio"
+        },
+        {
+            "title": "Version 1.2.0 Introduction: New App Name, New Desktop Mode, New Price",
+            "date": "2017-08-11 16:11:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687435108",
+            "notes": "Greetings\r\n\r\nWith the release of version 1.2.0, I made some important changes\r\n\r\n New Mode: Desktop Mode (Desktop Mascot)  \r\n\r\nDisplay the models on your desktop!\r\nMouse event supported!\r\nTopmost supported!\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/1a11fabacef881aaff694097beeb2b63c832f178.png\r\n\r\n\r\nHow To Use\r\n\r\n How to switch: Right-click trayicon -> Launch Mode -> Desktop. If you got a black background, please choose 'Desktop (Compat Mode)'\r\n\r\n Desktop Mode does not support Background, Effects and Filters, you will not see these tabs in Main Menu\r\n\r\n Desktop Mode does not support Workshop Screenshot\r\n\r\n You can not use Desktop Mode and Wallpaper Mode at the same time currently, it will be available in future update\r\n\r\n Desktop Mode supports 'Topmost' and 'No Topmost', you can change it in options of trayicon.\r\n\r\n When Desktop Mode enabled, you will see two options in Setting panel of Main Menu, you can adjust them according to the actual situations: \r\n\r\n\r\n Key Color: Application will filter this color to make a transparent background\r\n Color Margin: Filter threshold, a large value means more similar color will be filtered, a small value will let the model has a clear border\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/61289983c35aac2f7703b1d1b85489bb65d6d8ad.png\r\n\r\n\r\n\r\n New App Name: Live2DViewerEX \r\n\r\nSince Live2D Wallpaper is not suitable for the new version of application, I decide to change the name to Live2DViewerEX, the same name with an Android APP I made before. \r\n\r\n\r\n New Price \r\n\r\nWith the great new feature, I decide to change the price from $3.99 to $4.99\r\n\r\n\r\n\r\nThank you for your support\r\n\r\nPavo Studio"
+        },
+        {
+            "title": "20170808 Update",
+            "date": "2017-08-07 01:38:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2093464278170464497",
+            "notes": "Version: 1.1.3 -> 1.1.4\r\n\r\nWorkshop tool updated, now you can upload video, 360 image & video to Workshop\r\n\r\nTutorial\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/c7e08b5626bff911eb19f1c186efcacbda71db5e.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/ff9f7143546b84180d45a5c5c42a0b37dc506ffb.png\r\n\r\n\r\nButtons 'Refresh Items' and 'Upload Items' added to Main Menu\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/afe20e6ae0e4f257484658ef3194e6a65cdb9464.png\r\n\r\n\r\nWorkshop panel for background added\r\n\r\nSlide show does not support for workshop items currently, it will be available in next version.\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/156daa6ad2037b2a3fb4ab763faba9ee298fad7b.png\r\n\r\n\r\nFix video sound setting issue\r\n\r\nFix expression selection issue\r\n\r\n\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'"
+        },
+        {
+            "title": "20170808 Update",
+            "date": "2017-08-07 01:38:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687435431",
+            "notes": "Version: 1.1.3 -> 1.1.4\r\n\r\nWorkshop tool updated, now you can upload video, 360 image & video to Workshop\r\n\r\nTutorial\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/c7e08b5626bff911eb19f1c186efcacbda71db5e.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/ff9f7143546b84180d45a5c5c42a0b37dc506ffb.png\r\n\r\n\r\nButtons 'Refresh Items' and 'Upload Items' added to Main Menu\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/afe20e6ae0e4f257484658ef3194e6a65cdb9464.png\r\n\r\n\r\nWorkshop panel for background added\r\n\r\nSlide show does not support for workshop items currently, it will be available in next version.\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/156daa6ad2037b2a3fb4ab763faba9ee298fad7b.png\r\n\r\n\r\nFix video sound setting issue\r\n\r\nFix expression selection issue\r\n\r\n\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'"
+        },
+        {
+            "title": "20170802 Update & 360° Background Introduction",
+            "date": "2017-08-01 01:40:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2093463643468955930",
+            "notes": "Version: 1.1.2 -> 1.1.3\r\n\r\nNew feature: 360° image and video as background\r\n\r\nTo add 360° files please click the following button\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/60fc89ce83faa9b51ab879a1e063ccd0a2c1f6c6.png\r\n\r\nBackground filter\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/26f8133abfce178fda40debc9ce77bf451b7c34e.png\r\n\r\n\r\nModel rotate slider and edit panel changes\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/7eec64447a0a63ed58aa8945f23bbd6a888d1cd4.png\r\n\r\n\r\nModel options now moved to the edit panel of Main Menu window\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/1f5f716dc02fda88730cc9d051d917a3c170fc9e.png\r\n\r\n\r\nNow you can change the color of Calendar\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/e2abadb3877830f701d3c6b94b28d99afab7a1c5.png\r\n\r\n\r\nMinor bug fixes\r\n\r\n\r\n\r\n360° image and video introduction\r\n\r\nhttps://youtu.be/YXMt4dzb6MI\r\n\r\nOptions in setting panel\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3ba14ecf75b8622a50b8ec81b1358feebdab0879.png\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'"
+        },
+        {
+            "title": "20170802 Update & 360° Background Introduction",
+            "date": "2017-08-01 01:40:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687435545",
+            "notes": "Version: 1.1.2 -> 1.1.3\r\n\r\nNew feature: 360° image and video as background\r\n\r\nTo add 360° files please click the following button\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/60fc89ce83faa9b51ab879a1e063ccd0a2c1f6c6.png\r\n\r\nBackground filter\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/26f8133abfce178fda40debc9ce77bf451b7c34e.png\r\n\r\n\r\nModel rotate slider and edit panel changes\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/7eec64447a0a63ed58aa8945f23bbd6a888d1cd4.png\r\n\r\n\r\nModel options now moved to the edit panel of Main Menu window\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/1f5f716dc02fda88730cc9d051d917a3c170fc9e.png\r\n\r\n\r\nNow you can change the color of Calendar\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/e2abadb3877830f701d3c6b94b28d99afab7a1c5.png\r\n\r\n\r\nMinor bug fixes\r\n\r\n\r\n\r\n360° image and video introduction\r\n\r\nhttps://youtu.be/YXMt4dzb6MI\r\n\r\nOptions in setting panel\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3ba14ecf75b8622a50b8ec81b1358feebdab0879.png\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'"
+        },
+        {
+            "title": "20170723 Update",
+            "date": "2017-07-23 04:27:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2079952210078322391",
+            "notes": "Version 1.1.0 -> 1.1.1\r\n\r\nTo prevent from some update issues, a new update strategy is used\r\n\r\nUsing a new video plugin to increase the performance and compatibility\r\n\r\nNew feature: Auto pause when any application is full screen (Beta) \r\n\r\nMinor bug fixes\r\n\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        },
+        {
+            "title": "20170723 Update",
+            "date": "2017-07-23 04:27:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687435872",
+            "notes": "Version 1.1.0 -> 1.1.1\r\n\r\nTo prevent from some update issues, a new update strategy is used\r\n\r\nUsing a new video plugin to increase the performance and compatibility\r\n\r\nNew feature: Auto pause when any application is full screen (Beta) \r\n\r\nMinor bug fixes\r\n\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        },
+        {
+            "title": "20170721 Ver 1.1.0 Update",
+            "date": "2017-07-20 23:04:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2079952210070284849",
+            "notes": "Important\r\n\r\nSavedata will lost after upgraded to this version, you can take a snapshot for restoring quickly\r\n\r\nThe application will use local network for communication, please allow internet connect if any warning dialog prompted\r\n\r\n\r\n1.1.0 Update\r\n\r\nApplication structure changed: Add main menu window and Quick Menu\r\n\r\n\r\nQuick Menu: For quickly changing models, background and such\r\n\r\nMain Menu: Replaces the old menu, which can support all mouse events and user inputs.\r\n\r\nMain menu window can be opened via 3 ways:\r\n\r\n\r\nButton in Quick Menu\r\nDouble click the tray icon\r\nRight click the tray icon and select 'Main Menu'\r\n\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/7a99d1388c86cea24142a96fec41f5dc5fb29824.png\r\n\r\n\r\nModel Editor（beta）: you can quickly edit all models at the same time\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/59168a33c7882d83e0391fbb0bc315ff02bf394b.png\r\n\r\n\r\nScreenshot: Capture the screenshot and add to Steam screenshot library (Desktop icons excluded)\r\nTo use this fuction Steam connect is required\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/209330fef06980a26e06c4893630a9363d5af2c7.png\r\n\r\n\r\nOffline Mode: Application can run without Steam now\r\nYou need to connect to Steam if you want to use workshop and screenshot, you can check the connection status at the top-left of the window.\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/f1d4b8beb16a390dbd007a431e918e3bbe75c8d2.png\r\n\r\n\r\nNew widget: Calendar\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3bc77b2ca6abe04044c50534f4122d3ebc244073.png\r\n\r\n\r\nYou can vote workshop contents in preview panel now\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/cb349e9d83db442aeced30cec37aee98e16b95eb.png\r\n\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        },
+        {
+            "title": "20170721 Ver 1.1.0 Update",
+            "date": "2017-07-20 23:04:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687435981",
+            "notes": "Important\r\n\r\nSavedata will lost after upgraded to this version, you can take a snapshot for restoring quickly\r\n\r\nThe application will use local network for communication, please allow internet connect if any warning dialog prompted\r\n\r\n\r\n1.1.0 Update\r\n\r\nApplication structure changed: Add main menu window and Quick Menu\r\n\r\n\r\nQuick Menu: For quickly changing models, background and such\r\n\r\nMain Menu: Replaces the old menu, which can support all mouse events and user inputs.\r\n\r\nMain menu window can be opened via 3 ways:\r\n\r\n\r\nButton in Quick Menu\r\nDouble click the tray icon\r\nRight click the tray icon and select 'Main Menu'\r\n\r\n\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/7a99d1388c86cea24142a96fec41f5dc5fb29824.png\r\n\r\n\r\nModel Editor（beta）: you can quickly edit all models at the same time\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/59168a33c7882d83e0391fbb0bc315ff02bf394b.png\r\n\r\n\r\nScreenshot: Capture the screenshot and add to Steam screenshot library (Desktop icons excluded)\r\nTo use this fuction Steam connect is required\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/209330fef06980a26e06c4893630a9363d5af2c7.png\r\n\r\n\r\nOffline Mode: Application can run without Steam now\r\nYou need to connect to Steam if you want to use workshop and screenshot, you can check the connection status at the top-left of the window.\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/f1d4b8beb16a390dbd007a431e918e3bbe75c8d2.png\r\n\r\n\r\nNew widget: Calendar\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3bc77b2ca6abe04044c50534f4122d3ebc244073.png\r\n\r\n\r\nYou can vote workshop contents in preview panel now\r\n\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/cb349e9d83db442aeced30cec37aee98e16b95eb.png\r\n\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        },
+        {
+            "title": "1.0.3p1 Patch",
+            "date": "2017-07-13 22:13:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2472890725397907949",
+            "notes": "Live2D Wallpaper\r\nVersion: 1.0.3 -> 1.0.3p1\r\n\r\nFixes\r\n\r\nMemory optimization\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nThe upcoming version will be a big update"
+        },
+        {
+            "title": "1.0.3p1 Patch",
+            "date": "2017-07-13 22:13:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687436093",
+            "notes": "Live2D Wallpaper\r\nVersion: 1.0.3 -> 1.0.3p1\r\n\r\nFixes\r\n\r\nMemory optimization\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nThe upcoming version will be a big update"
+        },
+        {
+            "title": "20170713 Update",
+            "date": "2017-07-13 03:07:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2472890725395031734",
+            "notes": "Live2D Wallpaper\r\nVersion：1.0.2 -> 1.0.3\r\n\r\nNews\r\n\r\nSeveral filters added\r\n\r\nPreview mode was added to File Browser\r\nNote: Be aware of opening a folder with large amount of pictures since it may take a long time to create thumbnails!\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3b08ee27f606c50a9858e42ce72365cd1f7308ed.png\r\n\r\n12-hour clock and show seconds were added to Digital Clock \r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/bc462b434a68f4a34dc305b1ccbf0ac3663d8c96.png\r\n\r\n\r\nChanges\r\n\r\nThe font of Digital Clock changed\r\n\r\nThe layout of setting panel changed\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/d86f9c569a8f9bd9d9e07dd5e55d354272a83b8b.png\r\n\r\n\r\nFixes\r\n\r\nCode optimization\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nThe upcoming version will be a big update"
+        },
+        {
+            "title": "20170713 Update",
+            "date": "2017-07-13 03:07:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687436191",
+            "notes": "Live2D Wallpaper\r\nVersion：1.0.2 -> 1.0.3\r\n\r\nNews\r\n\r\nSeveral filters added\r\n\r\nPreview mode was added to File Browser\r\nNote: Be aware of opening a folder with large amount of pictures since it may take a long time to create thumbnails!\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3b08ee27f606c50a9858e42ce72365cd1f7308ed.png\r\n\r\n12-hour clock and show seconds were added to Digital Clock \r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/bc462b434a68f4a34dc305b1ccbf0ac3663d8c96.png\r\n\r\n\r\nChanges\r\n\r\nThe font of Digital Clock changed\r\n\r\nThe layout of setting panel changed\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/d86f9c569a8f9bd9d9e07dd5e55d354272a83b8b.png\r\n\r\n\r\nFixes\r\n\r\nCode optimization\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nThe upcoming version will be a big update"
+        },
+        {
+            "title": "1.0.1p1 Patch",
+            "date": "2017-07-06 07:19:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2078825132631765650",
+            "notes": "Patch\r\nLive2D Wallpaper: 1.0.1 -> 1.0.1p1\r\nLive2D Wallpaper Launcher: 1.0.1 -> 1.0.1p1\r\n\r\nFixes\r\n\r\n“In-App” issue\r\nThe value of slideshow interval not correct.\r\n\r\n\r\nAbout the ”In-App“ patch\r\n\r\nIt will cause the workshop list not refresh automatically when subscribed a new item (since the software can not receive callbacks from Steam client), please do it manually by using refresh button\r\nDo not exit Steam client when using this software, it may cause unpredictable problems\r\nThis patch is a temporary solution, a better solution will be used in future update \r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        },
+        {
+            "title": "1.0.1p1 Patch",
+            "date": "2017-07-06 07:19:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687436418",
+            "notes": "Patch\r\nLive2D Wallpaper: 1.0.1 -> 1.0.1p1\r\nLive2D Wallpaper Launcher: 1.0.1 -> 1.0.1p1\r\n\r\nFixes\r\n\r\n“In-App” issue\r\nThe value of slideshow interval not correct.\r\n\r\n\r\nAbout the ”In-App“ patch\r\n\r\nIt will cause the workshop list not refresh automatically when subscribed a new item (since the software can not receive callbacks from Steam client), please do it manually by using refresh button\r\nDo not exit Steam client when using this software, it may cause unpredictable problems\r\nThis patch is a temporary solution, a better solution will be used in future update \r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        },
+        {
+            "title": "20170704 Update",
+            "date": "2017-07-04 04:40:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2564086801878480722",
+            "notes": "Live2D Wallpaper Launcher\r\nVersion: 1.0.0 -> 1.0.1\r\n\r\nNews\r\n\r\nNew option 'Reset Application': This will clear all saved data of Live2D Wallpaper\r\n\r\nNew 'Help' button\r\n\r\n\r\nLive2D Wallpaper\r\nVersion: 1.0.0 -> 1.0.1\r\n\r\nNews\r\n\r\nNew DLC: Analog Clock Free (will be available once passed Steam review)\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/895ab4c4130fb536abb45a0e8d0b93b3eef397e4.png\r\n\r\nNew Filters: 'Lines' and 'Distored'\r\n\r\n'Delete All Files' button added for Model and Background\r\n\r\nNew Feature: Slide Show \r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/e1eb15a0c336bd2f4bb20bf62449997219292c17.png\r\nOptions: 'Disable' 'Image Only' 'Video Only' 'Mixed'\r\nInterval: 1 - 60 Minutes\r\n\r\n\r\nChanges\r\n\r\nNow background image will fit the screen automatically.\r\n\r\nLayout changes for Model and Background:\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3ad7103de372d63d015d54367234846065823d75.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/f3e675c1c87c4038dbc7b2946b14958d84ed1ee6.png\r\n\r\nChanges for indicator in Edit Mode: \r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/87cbaf70124bb807ad8321c7f6d03eb74c480606.png\r\nDrag the blue area will change the position of indicator only\r\nDrag the red area will change the position for both indicator and model\r\nNew button for quickly exit Edit Mode (at the top-right corner)\r\n\r\n\r\nFixes\r\n\r\nSubscribed items will be shown in list once installed (no need to restart)\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        },
+        {
+            "title": "20170704 Update",
+            "date": "2017-07-04 04:40:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687436526",
+            "notes": "Live2D Wallpaper Launcher\r\nVersion: 1.0.0 -> 1.0.1\r\n\r\nNews\r\n\r\nNew option 'Reset Application': This will clear all saved data of Live2D Wallpaper\r\n\r\nNew 'Help' button\r\n\r\n\r\nLive2D Wallpaper\r\nVersion: 1.0.0 -> 1.0.1\r\n\r\nNews\r\n\r\nNew DLC: Analog Clock Free (will be available once passed Steam review)\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/895ab4c4130fb536abb45a0e8d0b93b3eef397e4.png\r\n\r\nNew Filters: 'Lines' and 'Distored'\r\n\r\n'Delete All Files' button added for Model and Background\r\n\r\nNew Feature: Slide Show \r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/e1eb15a0c336bd2f4bb20bf62449997219292c17.png\r\nOptions: 'Disable' 'Image Only' 'Video Only' 'Mixed'\r\nInterval: 1 - 60 Minutes\r\n\r\n\r\nChanges\r\n\r\nNow background image will fit the screen automatically.\r\n\r\nLayout changes for Model and Background:\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/3ad7103de372d63d015d54367234846065823d75.png\r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/f3e675c1c87c4038dbc7b2946b14958d84ed1ee6.png\r\n\r\nChanges for indicator in Edit Mode: \r\nhttp://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29049399/87cbaf70124bb807ad8321c7f6d03eb74c480606.png\r\nDrag the blue area will change the position of indicator only\r\nDrag the red area will change the position for both indicator and model\r\nNew button for quickly exit Edit Mode (at the top-right corner)\r\n\r\n\r\nFixes\r\n\r\nSubscribed items will be shown in list once installed (no need to restart)\r\n\r\n\r\nNote: If you get any issue with this version, you can go back to the previous version by the following steps:\r\nLibrary -> Live2D Wallpaper (Right click) -> Properties -> Betas -> Select 'pre_version'\r\n\r\nNext update time: next week"
+        }
+    ]
+}

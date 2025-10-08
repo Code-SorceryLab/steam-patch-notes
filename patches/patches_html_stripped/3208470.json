@@ -1,0 +1,48 @@
+{
+    "appId": "3208470",
+    "total_notes": 7,
+    "notes": [
+        {
+            "title": "Alpha.31 - Minor Memory Fix Patch",
+            "date": "2025-08-22 23:11:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382497656",
+            "notes": "Hi everyone,\n\nIt’s been a while since the last patch, and I wanted to take a moment to share where things stand and where I’m hoping to go next.\n\nOver the past few weeks, I’ve spent a lot of time trying to optimize the backend, especially around memory usage. After many tests and investigations, here’s what I’ve found:\n\n1. Backend limitations – I originally built the game in Python using Kivy, which is not really designed for game development at scale.\n2. Memory issues – Text in Kivy is rendered as images, which eats up memory. Even worse, widgets often don’t clean up properly unless manually killed.\n3. Animations – These add a lot of silent memory strain, especially when loops are involved.\n4. Hard limits – Realistically, fixing this deeply would require months of rewriting core systems.\n\nThat said, I’ve made a couple of improvements:\n\n- Widgets now clean up a bit more often (a small 2–5% reduction in RAM).\n- You can now toggle the Seasons overlay animation off before starting the game, which gives another ~3% reduction.\n\nThese fixes are admittedly modest, and I’m sorry I couldn’t bring bigger improvements here.\n\nOver the past year, I’ve also run into some other challenges with Python/Kivy:\n\n1. Sound paths – If your computer used Mandarin paths, some sound files wouldn’t load.\n2. Frame timing – Sometimes fast machines outpaced the loading frames, causing crashes (rare but frustrating).\n3. Image quality – Rendering, especially when shrinking assets, often didn’t look as sharp as I wanted.\n\nSo why am I sharing all of this?\n\nBecause I’ve been thinking a lot about the future of this project. I love what we’ve built together, but I want to push the game further than this engine realistically allows. Which is why I’m leaning toward ending active support for this version (keeping it free), and instead focusing on building a Version 2.\n\nHere are a few ideas I’m considering for Version 2:\n\n1. A new backend – Built in Godot, a proper game engine.\n2. Real-time gameplay – Instead of rounds, time flows in 60-second “days” (possibly with day/night cycles).\n3. WASD movement – Think classic 2D Pokémon style movement, exploring and traveling across the map.\n4. Map interaction – Roads, resources, and city travel would feel more like exploration rather than clicking tiles.\n5. Combat – Still debating between turn-based and real-time. In a real-time system, enemies could pop up and fights would use keyboard/mouse inputs with varied moves and styles.\n\nThe core objectives and aptitudes (Combat, Knowledge, Capital, Reputation, Fellowships, Titles) would remain, along with the same world, cities, and characters. But the feel of the game would be very different—more immersive, more fluid, and hopefully more fun.\n\nTo be clear: I haven’t started building this new version yet. Before I do, I really want to hear your thoughts. Does this sound exciting to you? Would you prefer I keep working on the current version, or should I take what I’ve learned and rebuild from scratch in a way that better supports everything I’ve always wanted to add (like NPCs and global servers)?\n\nIt’s a lot to take in, I know. But I wanted to be upfront about where my head’s at and where this journey might go next.\n\nAs always, thank you so much for playing, supporting, and sharing your feedback. This community means a lot to me, and your input will help shape where the game goes from here."
+        },
+        {
+            "title": "vAlpha.30 - Minor rule changes and season display update",
+            "date": "2025-07-04 15:33:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891778008",
+            "notes": "Hi all! Thank you for your patience. I know it has been a while since the last update.\n\nThe latest update brings diverse changes:\n\n1. The current season will now display directly ontop of the city and board pages.\n\n2. If you receive an ally to battle with you, it will now show-up on the ally tab.\n\n3. Mandarin language updates: two individuals, Wren and Inori, have graciously volunteered their time to improve the Mandarin language. Please give them your thanks!\n\n4. Rule changes:\n   - Instead of wilderness requiring 3 \"clearances\" to revert back to normal, it now only requires one.\n   - Now, if you excavate a foe, the tile will not be emptied. This allows for longer combat training in the same tile.\n   - Now, you can always choose which combat attribute to level up when you get to 100xp. Note: we may slightly modify this rule in a future update.\n\n5. Bug fixes:\n   - In multiplayer, some players were getting stuck at the character choice page. This has been fixed.\n   - Fixed fighting with a group in multiplayer\n   - Fixed glitchy technique hit-box sizing\n   - Sometimes the game tried to randomly harvest plants that didn't exist, crashing or bugging out some players' games. This has been fixed.\n   - For stage 2, mission 3 - the blue highlight would not be removed if you failed the quest. This has been resolved."
+        },
+        {
+            "title": "v Alpha.20 - Emergency Bug Fixes / 紧急错误修复",
+            "date": "2025-01-01 11:50:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573931040104",
+            "notes": "I deeply apologize guys. Alpha.19 had a critical bug that was causing combat to crash. I fixed this. Also, someone was having trouble loading a previous save? I added some sanity checks to prevent load failures.\nI also forgot to mention in the vAlpha.19 update that female characters were added.\n\n非常抱歉，各位。Alpha.19 版本中存在一个严重错误，导致战斗时游戏崩溃。我已经修复了这个问题。\n另外，有人遇到了加载之前存档的问题吗？我添加了一些完整性检查来防止加载失败。\n我还忘了在 Alpha.19 版本更新中提到，已经添加了女性角色。"
+        },
+        {
+            "title": "v Alpha.17 - Multiplayer Bug Fix / 多人模式错误修复",
+            "date": "2024-12-13 02:34:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543550506",
+            "notes": "Looks like my previous update caused critical multiplayer bugs- I am sorry for not testing it before deploy! I fixed these bugs in this version and confirmed it was working through a multiplayer playthrough. Thanks for your patience guys!\n\n看起来我之前的更新导致了严重的多人模式错误——很抱歉在发布之前没有测试！我在这个版本中修复了这些错误，并通过一次多人游戏测试确认了一切正常。谢谢大家的耐心！"
+        },
+        {
+            "title": "v Alpha.16 - Investment Page + Minor Changes",
+            "date": "2024-12-11 03:14:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543484945",
+            "notes": "This update introduces an Investment Page, accessible by visiting a village and clicking \"Invest.\" The goal is to make your options clearer and more intuitive.\n\nIt also includes several refinements: Drop-down menu items now feature an \"x\" for deleting records, with a confirmation prompt to help manage and clean up save files. A fix has been implemented to address issues with corrupted save files containing invalid numeric values. Additionally, five new achievements have been added to test functionality, and an in-game animation will now appear when an achievement is earned."
+        },
+        {
+            "title": "v Alpha.9 - Bug Fixes / 错误修复",
+            "date": "2024-11-23 16:32:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783872412058118",
+            "notes": "Thank you for participating in v Alpha.8! That version introduced the ability to automatically capture the bugs you’ve encountered, which has helped me resolve most of them. Your continued support is invaluable—please keep it up!\n\n感谢您参与v Alpha.8版本的测试！该版本引入了自动捕捉您遇到的Bug的功能，这帮助我解决了大部分问题。您的持续支持非常宝贵，请继续加油！"
+        },
+        {
+            "title": "vAlpha 6 Release - With MacOS Support!",
+            "date": "2024-10-14 17:10:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6211118320239077092",
+            "notes": "Mac Compatibility and Save System Improvements (Alpha 6)\n\nWe’re excited to announce the release of Alpha 6, which brings full support for macOS users! The game is now playable on both Windows and macOS, so our Mac community can dive into the world of Magic Sword.\n\nImportant Note for Windows Users: While this update introduces improvements, Windows users will notice that existing save files will not carry over. However, moving forward, the save system is now more robust, and saves will persist across future updates on both platforms."
+        }
+    ]
+}

@@ -1,0 +1,180 @@
+{
+    "appId": "1208770",
+    "total_notes": 29,
+    "notes": [
+        {
+            "title": "Droid slice bugfix!",
+            "date": "2023-03-06 05:54:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176576362509",
+            "notes": "Hello there once again.\n\nI'm posting a quick fix for a bug many of you have noticed - When the droid was cut it stayed in a frozen pose. This is fixed now.\n\nThanks [b]TheNormalGecko[/b] for reaching out to me and bringing this issue to my attention."
+        },
+        {
+            "title": "Bugfixes and Improvements",
+            "date": "2022-08-17 08:10:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4584121659776981233",
+            "notes": "Hello there\n\nThis is update with mixed content. There are some bugfixes and other improvements for performance and enemies.\n\n- Updated game engine\n- Fixed bug where you could jump through the ceiling sometimes\n- Improved management for small pieces when you cut a single object many times\n- Fixed a bug where the droid stopped firing from a certain angle\n- Improved drone move detection. They will hit walls less accidentally.\n- Fixed Z-Fighting on some Door/Wall configuration\n- Added sleep for physics calculation for stationary objects like large boxes to save performance\n- Improved sound sphere configuration for better 3D effect for projectiles"
+        },
+        {
+            "title": "Deflection Update",
+            "date": "2022-05-27 06:48:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4437747060829777084",
+            "notes": "Hello there\n\nDeflecting projectiles is one of the biggest challenges for a saber user. Many of you mentioned that it can be annoying. I saw a lot of your videos and comments (I watch all of them). I noticed how to improve deflection to be more enjoyable, more satisfying, and more suited to the gameplay.\n\nActive Deflection:\n- Changed the aiming method. The deflections are much more accurate. They automatically select the origin target (+ - 15cm) instead of choosing the general projectile direction (+ - 2*)\n- Projectiles are faster (2.5x -> 3x)\n- Projectile deal more damage (x3)\n\nPassive Deflection:\n- The ability to aim has been added. Now the projectiles will be deflected in the direction we are looking instead of in a random direction.\n- Projectiles are faster (1x -> 2x)\n- Projectile deal more damage (x2)\n\nOthers:\n- Base deflection collider size increased (0.02 -> 0.025)\n- Equipment slots on the belt have been moved a little forward\n- Fixed bug - At certain angles, the blade collider disappeared\n\n\n\nDid you know that the deflection collider dynamically increases its radius depending on the swing speed? It can go from 0.025 to 0.200. Give it a try, you might be surprised how easier it is to hit with a fast blade swing than with a static cover."
+        },
+        {
+            "title": "Physics Update - Cut and Deflection improvement",
+            "date": "2022-05-18 06:54:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4292505348821334734",
+            "notes": "Hello there\n\nWhile trying to fix the sword's feeling of heaviness (there shouldn't be any lag) I found some problems in physics, so I prepared this fix. Physical interactions should now be more reliable.\n\n- The accuracy of the physical calculations has been increased\n- Collision detection for projectiles has been improved\n- Improved the method of calculating the blade speed - Now the results will be more stable\n- Fixed object double cut bug\n- Fast cut detection improved - The blade will now pass through the target much less frequently\n- Changed the way the physics interact with the sword in hand (this may solve the weight and responsiveness issues)\n- Physics computing resource management has been improved - Optimization\n- Sword rotation resistance reduced - Now quick spinning while throwing should be easier\n- Fixed blade collider bug shrinking to 0 during passive deflection\n- Changed detection thresholds for active deflection - Now it should be a little easier\n\nLet me know in the comments if this solves your recent problems."
+        },
+        {
+            "title": "Bugfix Update - Hand physics fix",
+            "date": "2022-05-05 10:31:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348799082190459111",
+            "notes": "This update mainly fixes recent bugs. The problem with hand physics gave me a lot of trouble, but finally managed to fix it. Thanks GOYDRASCRE for reporting this quickly!\n\n- Fixed reactivation of the hidden turret when cut through during animation\n- Adjusted dimensions and positioning of the large screen props\n- Adjusted physics behavior of small drone casing props \n- Fixed level generator refactor bugs when rooms would sometimes fail to render\n- Adjusted player position reset, random teleportations to the start of the room will be less frequent\n- Fixed hands freeze/shake when the player was moving\n- The game will now adjust the target frame rate to the device's max framerate setting"
+        },
+        {
+            "title": "Bugfix Patch",
+            "date": "2022-03-23 10:43:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269504657285",
+            "notes": "[b]Hello there[/b]\n\nThis update mainly includes fixes to the previous Level Generator Rework update.\n\n- Engine, software, tools update\n- Added vibrations during hand collisions\n- Balance the number of enemies on the map\n- Improved performance (Levels should load even faster)\n- Improved performance (Better global light management)\n- Now, when you somehow manage to fall behind the map, you will be moved to a safe position in the last room you were in\n\n- Fixed hint on how to change saber color\n- Fixed bug where hidden enemies would fire before exiting the vent\n- Fixed a bug where multiple hidden enemies could spawn in one vent\n- Better area detection for enemy spawn\n- Fixed some spawn bugs like opponent spawning in an obstacle\n- Fixed access for extra content from streamer station"
+        },
+        {
+            "title": "Level Generator Rework - Big Content Update",
+            "date": "2022-03-14 11:22:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5631194088573064722",
+            "notes": "[b]Hello there[/b]\n\nThe level generator rework is finally ready. This is one of the biggest updates in the game. The work was time-consuming and complicated because it touches many aspects of the game, from small props to enemies and entire rooms.\n\nI have focused right now on changing how the rooms are created and how much they can be modified by the generator. Thanks to more variables and more pre-calculations, the levels will not only be more interesting but also run much faster. This will allow to fill them with more content and it will open up new paths for development. \nThis is a very important update that will allow me to focus on other level-dependent elements such as enemy behavior or interaction with the world.\n\nThe update also includes fixes for enemies. Their positions are now completely randomized taking into account the layout and content of the rooms.\nIn addition to the improvements to the systems, new elements were also created from which levels can be built (walls, doors, obstacles, decorations).\n\n[b]Levels[/b]\n- All old levels (25) have been reworked and improved - more variants, more objects, and improved design\n- 8 new levels have been added\n- Added new object categories (7 -> 14) - From micro props like a small pistol to much larger piles of materials or entire blockades that you will have to break through (corridor obstacles coming soon!).\n- Added 43 new interactive objects (28 -> 71)\n- Multiple door support - Levels randomize entry and exit from each possible door. Previously, only some levels had an inverted variant. Now, if there are 5 doors on the level, the generator can use each of them as an enter/exit.\n- Randomization of walls - This will allow differentiating the walls with small details that can play an important role (hole through which drones can fly in, ventilation, etc.)\n- Improved level resource management system - Levels load faster, take up less memory, run smoother and clean their resources better. \n- Improved lighting - Better transparency, prettier and faster for your PC\n\n[b]Enemies[/b]\n- Stationary enemies spawn - Enemies will be able to spawn in completely new places if the conditions allow them (obstacles, presence of other enemies, the slope of the terrain, etc.)\n- Hidden enemies spawn - Now, as optional opponents, they wait in secret for the right moment to surprise the player instead of simply jumping out of the walls when you enter the room.\n\n[b]Others[/b]\n- Increased performance (up to 100% - 300%) - Improved resource management on levels, optimization of effects, light, and physics.\n- The door generation system has been rebuilt - Doors are now very important in resource management. They are prepared to handle many more locks and variants (More door-cutting experience coming soon!)\n- A new version of the magnetic lock has been added\n- A new door variant has been added\n- Fixed enemies accidentally activating before entering the room\n\n\n\nBe aware, such a large update can cause a lot of new bugs. I try to fix them all regularly. If something is wrong, let me know in the comments and I will take care of it immediately.\nBig updates are sometimes necessary, but I think small updates with playable content work better. I will try to focus on them now. The new systems now give me a lot of opportunities to add new gameplay stuff.\n"
+        },
+        {
+            "title": "Status Update - I'm back",
+            "date": "2021-01-23 06:53:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4043637702554533111",
+            "notes": "Hello there\n\nIt's been a while now, I can finally resume the Saber Fight VR updates. I have just come back from my hometown, where I was resting. I still have Level Generator Rework to do, but I think I'll add some minor updates in the meantime. I will try to add some new levels and maybe even new enemies!\n\nsee you soon!"
+        },
+        {
+            "title": "Status Update",
+            "date": "2020-11-28 13:12:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3856733252014081058",
+            "notes": "Hello there\n\nI'd like to let you know how things are going.\nI took a short break recently due to events and holidays in my country. I wanted to spend some time with my family and visit my hometown. \n\nUpdates are delayed but will continue as soon as I return. There are tons of things I want to add to this game :). I'll take care of it right after celebrating the new year!\n\nI wish you all the best in the coming events!"
+        },
+        {
+            "title": "Level Generation options and rotation hotfix",
+            "date": "2020-09-29 11:27:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3715990047712912405",
+            "notes": "This little patch includes some little bugfixes and player rotation fix.\n\nA tab with levels generation options has been added to the options menu. Now you can turn off the vertical levels if for some reason you can't jump or you don't like them."
+        },
+        {
+            "title": "Power Update Part 2 - Power Jump!",
+            "date": "2020-09-05 14:14:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571008264075448",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/36352839/af608a58fe446cdfd93c975614695cafad1710f0.png[/img]\n\nHello there\n\nAnother power update featuring a brand new ability - Power Jump!\nNow you can achieve completely different combat dynamics and get into previously inaccessible places! Such as brand new 5 levels that will allow you to test a new ability!\n\nThe handling of the new power is very intuitive and immersive. Just crouch and quickly jump up. The strength of your jump will depend on the intensity of your movement. You don't have to jump high, sometimes just standing on your toes is enough to make a smaller jump to the enemy. Make your workout with Saber Fight VR!\n\nExpect small bugs, future updates will fix everything and add new vertically oriented levels!\n\nI hope you will like it.\n\n\n\nDo you like this update? Want more updates like these? Join the fans of the game on Patreon, together we raise funds for another cool updates!\n[img]{STEAM_CLAN_IMAGE}/36352839/941687b8bf007bbf7e7b23df75ddd752cd154800.png[/img]\nhttps://www.patreon.com/SaberFight"
+        },
+        {
+            "title": "Random bugfixes",
+            "date": "2020-08-23 11:59:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4644854581172919426",
+            "notes": "The Power Jump update is almost ready. during the work, I had to update the engine software, which caused many problems. I managed to fix them all, including some previously known bugs. I am sending this little update to make sure everything is working.\n\nCan [b]Oculus [/b]and [b]Vive Cosmos[/b] users confirm that their controllers are working?\n\n- [Added] - New 3D map model (old map was crashing the game)\n- [Change] - Collisions and hand physics has been improved\n- [Change] - During rotation, the player is rotated where he is standing, not relative to the center of the playspace\n- [Fixed] - Double hand grip has been fixed\n- [Fixed] -  Radio music surround sound has been reduced\n- [Fixed] -  Changing the saber from hand to hand works again\n- [Fixed] -  Unlocking the achievement \"Ready for More!\" has been fixed\n- [Fixed] -  Fixed Saber throwing (now throw works on Grip release instead of Grip Click, this will help with accuracy)"
+        },
+        {
+            "title": "Exit Area bugfix",
+            "date": "2020-08-14 08:21:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4828375451922545537",
+            "notes": "There was a bug that prevented you from completing the level at \"Exit Area\". Now it is fixed."
+        },
+        {
+            "title": "Power Update! Part 1: Push/Pull Rework",
+            "date": "2020-07-15 15:21:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3659688711191156233",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/36352839/be1d931331a54d51898a4db48b9bb95f4c28bd60.png[/img]\n\nHello there\n\nFinally, the long-awaited Power Update!\nThanks to your support, the basic implementation of Power abilities has been improved! Considering your comments and watching how streams use power, I have prepared a completely new mechanics that give you more freedom in action and is more useful!\nDo you want to smash these little annoying drones against the wall? Now you can!\n\nThis is just the beginning of a series of updates related to Power abilities. New powers will be added in the next ones!\n\n- [Added] - Shatter turrets by throwing objects\n- [Added] - Smashing drones against walls\n- [Added] - Knocking down Droids with power\n\n- [Added] - New mechanics of push / pull power skills\n- [Added] - New hand panel for power\n- [Added] - New power pool and regeneration mechanics\n- [Added] - Power handling for each hand separately\n- [Added] - New special power effects\n- [Added] - New power sounds\n\n- [Change] - Saber on / off volume has been reduced\n\n\n\nDo you like this update? Would you like more updates like this?\nSupport me on Patreon! With your help, I can do much more!\n[img]{STEAM_CLAN_IMAGE}/36352839/941687b8bf007bbf7e7b23df75ddd752cd154800.png[/img]\nhttps://www.patreon.com/SaberFight"
+        },
+        {
+            "title": "Important bugfixes",
+            "date": "2020-06-19 11:29:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3384966595874165026",
+            "notes": "Hello there.\n\nDynamic game development often causes unwanted bugs. This update contains fixes to the most unwanted bugs that have recently appeared in the game. With a more stable game base, I can approach Force Rework with ease!\n\n- [Fiexd] - Falling through the floor has been fixed\n- [Fiexd] - Freefall has been fixed\n- [Fiexd] - Fast cut detection has been fixed\n- [Fiexd] - The disappearance of previous rooms after passing through the door has been fixed\n- [Fiexd] - The bug that made turrets cut-resistant has been fixed\n- [Fiexd] - Lag when passing between rooms has been reduced"
+        },
+        {
+            "title": "Tutorial hotfix, grab bugfix",
+            "date": "2020-05-24 11:37:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112496281302556433",
+            "notes": "Recent updates have brought some bugs. this update fixes the most urgent of them.\n\n-[Change]- Minimal movement tolerance is increased from 0.1 to 0.2 (anti drifting) \n-[Change]- Automatic position reset now reacts faster when you fall behind the map\n-[Fixed]- Double saber disappearing when throwing/pulling have been fixed\n-[Fixed]- A bug causing disabling power in hands have been fixed\n-[Fixed]- A bug preventing the use of power in the tutorial has been fixed\n-[Fixed]- Tutorial door crash have been fixed"
+        },
+        {
+            "title": "Extended personalization and bugfixes",
+            "date": "2020-05-07 07:09:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3110243214555271656",
+            "notes": "[img]{STEAM_CLAN_IMAGE}/36352839/8ac61876961d64eb3670b56c849a8fd2ced85cf8.png[/img]\n\nHello there.\n\nThis update contains a number of different bug fixes and changes. I've added more Saber personalization options to keep things more interesting.\n\n- [Added] - 2 new blade colors\n- [Added] - 2 new hilts\n- [Added] - New blade speed calculation system for more reliable deflections\n\n- [Change] - Hand-Saber interaction support is now more reliable (less saber catching problems)\n- [Change] - The arrow in the lobby is less bright\n- [Change] - The method of reversing the grip has been changed (Now just hold the MENU Button for 1s)\n- [Change] - Increased minimum movement range from 20% to 10% (Enables smoother movement, prevents the character from moving spontaneously when the joystick is too sensitive or damaged)\n\n- [Fixed] - Saber personalization has been fixed\n- [Fixed] - Active deflections for double-bladed saber has been fixed\n- [Fixed] - Power use has been fixed. Now the power will always be available in the hand without a sword\n- [Fixed] - Fixed accidental Push/Pull during saber pulling and other interactions\n- [Fixed] - Fixed particle effects for the double-bladed saber"
+        },
+        {
+            "title": "Status Update",
+            "date": "2020-04-24 10:04:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112493747270576664",
+            "notes": "Hello there.\n\nI would like to tell you that I am currently working on fixing bugs from the last update, with focus on problems with the [b]Valve Index[/b]. I want you to know that I see your feedback and I don't ignore you. I will try to send updates as soon as possible. If you have any additional information about bugs, put them in the comments below any post. It will help me fix them."
+        },
+        {
+            "title": "Bugfix Patch / Content Update!",
+            "date": "2020-03-17 07:50:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3893864668627927856",
+            "notes": "This update contains a collection of various patches, bug fixes and additions. I introduced experimental changes to throwing mechanics for the Valve Index, I hope it solves the problems. I also added 2 edited levels to make things more interesting.\n\n- Added start screen\n- Added 2 new levels\n- Added new music for the temple\n\n- Changed Saber throwing for Valve Knuckles\n- Changed the number of initial location modifications (their number is now more random).\n- Changed the number of modifications for new locations from 1 to 3\n\n- Fixed spawning hidden enemies from the side walls (more hidden turrets!)\n- Fixed GUI selection with Saber in hand\n- Fixed save system"
+        },
+        {
+            "title": "WMR Saber Grab Hotfix",
+            "date": "2020-03-11 06:14:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2579938650944667286",
+            "notes": "There was a configuration error for WMR controller. This has been fixed now."
+        },
+        {
+            "title": "Hotfix Patch and Upcoming WMR support",
+            "date": "2020-02-22 07:40:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2578811485598956565",
+            "notes": "I've made some preparations for the upcoming Custom Saber Personalization update. I have fixed few bugs and made improvements.\n\nGood news for [b]WMR[/b] and [b]Vive Cosmos[/b] users, I'm almost done adding support for your controllers.\n\n- Fixed minor bugs in the info panel\n- News behavior changed. Now they are not displayed after the tutorial.\n- Added arrow for tutorial direction\n- The number of modifiers for missions has been reduced\n- Improvement for cutting many objects at the same time (detection will no longer skip some objects when cutting many objects at once)\n- Better use of cut sound (no spamming)\n- Spark effects for burning through objects have been improved\n- Fixed saber sparking near the door"
+        },
+        {
+            "title": "TACTICAL MAP UPDATE",
+            "date": "2020-02-18 08:14:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3183419193845428161",
+            "notes": "After a long time, I finally finished updating the tactical map. Now you can finally decide what mission to choose due to strategic factors. Thanks to your strategic thinking, you can use the gaps in your opponent's defense to your advantage and attack where they are weak, or if you are looking for a challenge, you can choose the most protected location and destroy everyone.\n\nNow each location has functions on the map. For example, droid bases can send additional units to other locations, other buildings can coordinate combat operations by increasing the rate of fire of drones etc. By destroying locations, you eliminate its impact on other locations making missions easier.\n\nThis update took me much longer than I thought because i was ill, but this will not stop me from making more updates. Global modifiers affecting missions are a complicated thing and I will definitely add more of them.\n\n\n\n[b][ADDED][/b] - New map generation system. Completed locations are removed from the map and replaced with new ones on an ongoing basis.\n[b][ADDED][/b] - More locations on the map\n[b][ADDED][/b] - Locations influence each other with modifications\n[b][ADDED][/b] - 17 location modifications\n\n[b][CHANGE][/b] - Small drones will attack now more slowly and they will mark when they are ready to shot.\n\n[b][FIXED][/b] - Red door light (its red now, not pink)\n[b][FIXED][/b] - Cutting multiple objects at once\n[b][FIXED][/b] - Music in the tutorial\n[b][FIXED][/b] - Bug preventing exit from the tutorial\n[b][FIXED][/b] - Tutorial info panel flashing\n\n\n\nNext update will have something you always wanted - [b]Custom Saber Personalization![/b]"
+        },
+        {
+            "title": "Tutorial Hotfix",
+            "date": "2020-02-17 08:26:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3183419193841844774",
+            "notes": "In the tutorial there was an error at the very end, preventing you from entering the temple. This is now fixed.\n\nI have sent an early version of the TACTICAL MAP update. More information in the next update."
+        },
+        {
+            "title": "Mission Map Update",
+            "date": "2020-02-06 15:26:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2582187916836365277",
+            "notes": "The new mission panel is finally here! It was probably one of the most underdeveloped elements, but now it looks good and will be much better.\n\n[ADDED] - New mission map model\n[ADDED] - New locations on the mission map\n[ADDED] - New GUI for mission location\n[ADDED] - Twice as many location definitions\n[ADDED] - Better positioning of mission miniatures\n[ADDED] - Difference in level generation complexity\n[ADDED] - Difference in difficulty levels\n\n[FIXED] - Deselecting missions\n[FIXED] - Reflections of the map material\n[FIXED] - Problems with lighting in the temple\n\nWhen designing missions, I wanted to give you the opportunity to make tactical decisions by choosing where and when you want to play. I've always wanted to make a single mission part of a larger picture. Make player decisions affect the map. Soon it will be done. This is just the first part of TACTICAL MAP UDATE. In the next part, there will be mission modifiers and location effects. Hope you will like it."
+        },
+        {
+            "title": "Hints, Bugfixes and Preparation for bigger update",
+            "date": "2020-02-04 14:46:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2609208878399343611",
+            "notes": "I have recently sent some small updates. Most are minor improvements. I have also added some new small elements like the hint system. Sometimes I see that you encounter problems in the game that you can easily avoid,new hints should help here. This update contains elements that are preparation for the larger Tactical Map Rework.\n\n- Added new hint system\n- Added new sounds for falling objects\n- Added 2 new slicable objects (plates for hints)\n- Changed 2 slicable object to use Hint system\n- Fixed throwing saber through the wall\n- Fixed missing bindings for some controllers"
+        },
+        {
+            "title": "Saber Detection Hotfix",
+            "date": "2020-01-30 08:37:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2609208878380349023",
+            "notes": "Finally I managed to fix the collision detection in fast saber swings. It took me a while, but things should be much better now. The feeling of cutting is now much satisfying. This is an experimental solution, so some more complex objects may behave strangely. I also improved the visual view of temple plates."
+        },
+        {
+            "title": "Gameplay Content Update! New Levels!",
+            "date": "2020-01-25 10:38:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2597949245054710164",
+            "notes": "It took me some time but its finally ready, the Content Update is here. Are you bored of current level setting? Not any more! This update add more than twice new objects and levels. There are also improvements for current levels, bether level generation and enemy spawning. Hope you will like it.\n\n[ADDED] 10 new levels\n[ADDED] 15 new slicable objects\n[ADDED] New elements for current levels\n[ADDED] New improved doors\n[ADDED] New enemy spawn locations\n[ADDED] Improved level generation\n[ADDED] Improved lighting for locations\n\n[CHANGED] More tolerance for cutting angles\n[CHANGED] More variety in enemies spawning\n[CHANGED] Amount of enemies\n\n[FIXED] More save position resetting\n\nNew level generator can create more complex levels by creating multiple doors to different corridors/rooms. Rooms can now lead upwards or downwards. Some doors are closed but this will enable in future to create some dead ends or secret places.\n"
+        },
+        {
+            "title": "Grab and Movement hotfix",
+            "date": "2020-01-19 13:48:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3690071589852748936",
+            "notes": "There were some strange problems with grabbing saber in some cases. Now it's finally fixed.\n\n[FIXED] - Grabbing Saber issues\n[FIXED] - Catching Saber after pull issues\n[FIXED] - Swapping hand grab issues\n[FIXED] - Turning On/Off issues\n[FIXED] - Swapping hand for movement/rotation for Oculus/Index\n"
+        },
+        {
+            "title": "Controllers update is here! New movement method!",
+            "date": "2020-01-05 14:39:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573909757743",
+            "notes": "Based on your support, I have prepared a new controller mapping. I think this is much better configuration, I hope you will like it.\n\nMany of you have asked for smooth movement, so I added a new movement. Now you can move freely using the Joystick / Trackpad. The simplest solutions are the best.\n\nI have added a panel for you in which you will be able to choose what type of movement you prefer. Interactions with the GUI have also been improved. The tutorial has been reset to help you learn new controls.\n\n[b]HTC Wand[/b]\nMovement: Trackpad\nGrab things: Grip\nSword On / OFF: Trigger\nUse Power: Offhand Grip\nPull sword back: Main Hand Grip;\nMENU: Button Menu\nGUI Interaction: Trigger\n\n[b]Oculus Touch[/b]\nMovement: Joystick\nGrab things: Grip\nSword On / OFF: Trigger\nUse Power: Offhand Grip\nPull sword back: Main Hand Grip;\nMENU: Y/B\nGUI Interaction: X/A\n\n[b]Valve Knuckles[/b]\nMovement: Joystick\nGrab things: Grip\nSword On / OFF: A\nUse Power: Offhand Trackpad\nPull sword back: Main Hand Trackpad;\nMENU: B\nGUI Interaction: Trigger\n\nIf you think something can be configured better, write suggestions in the comment.\nYou also asked about the option of smooth rotation on the second controller. This option will be added shortly, I wanted to give you better control as soon as possible."
+        }
+    ]
+}

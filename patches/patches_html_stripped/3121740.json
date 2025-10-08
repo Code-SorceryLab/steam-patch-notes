@@ -1,0 +1,66 @@
+{
+    "appId": "3121740",
+    "total_notes": 10,
+    "notes": [
+        {
+            "title": "Playtest Patch 8",
+            "date": "2025-06-06 16:06:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199435359",
+            "notes": "Improved AI\nAI now makes simple decisions instead of being completely random by rating its available actions.\n\n Compares the target unit's resistance to its attacking unit attack to decide if the attack is worth doing.\n Discourages placing units into enemy attack range and encourages placing units for opposing units to be in their attack range.\n Each skill has its own rating logic to best fit its behavior.\n\n\nUI Improvements\n\n Arcade Lobby UI has been improved.\n In combat, when selecting a unit action, an Icon of the selected action remains on top of the unit's head to indicate the selected action more clearly while selecting the target. The icon can also be pressed to cancel the action.\n When selecting a target for a unit action, hovering over a target will show its name to clarify what target is being selected.\n The combat's objective is now shown above the combat log, indicating to each player what they must do to advance in the match.\n\n\nControls\nThe controls input system was changed in favor of input mapping. \n\n Unit dragging is not longer available. Deploying units can be done by pressing the unit's Icon in the menu and selecting the tile to deploy the unit on, similarly to unit actions for units on the board.\n Camera Panning and Rotation no longer relies on \"dragging\" the board itself, allowing players you drag the mouse from any positions on the screen.\n Controls Settings was added to the settings, where players can remap their camera controls and view all available controls.\n\n\nTeams\nPlayers and AIs now have teams allowing team combat.\n\n Players can change their own teams in the lobby by selecting the number tag beside their name.\n The lobby owner can change AI's team in the same manner.\n\n\nMatch Loading\nThe combat now waits for all players to successfully load before allowing players to take action."
+        },
+        {
+            "title": "Playtest Patch 7",
+            "date": "2025-02-28 15:21:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526052643",
+            "notes": "Weather System\n\n Introducing the first version of the Combat Weather System, adding additional environmental threats.\n Arcade Combat Weather: Transitions to thunder storm over time introducing thunder strikes.\n\n\nSkills\n\n Foothold Traps: Place down a trap on an empty tile lasting for 8 turns. Units walking on the traps are immobilized for the remainder of the trap's duration. Units can be pushed out of the trap to be freed.\n Guard: Guarding allows the unit to automatically attack an enemy entering attack range at any moment. While guarding, the unit cannot move and will receive a +1 to physical attack per 3 turns."
+        },
+        {
+            "title": "Playtest Patch 6",
+            "date": "2024-10-18 12:52:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583180078499",
+            "notes": "Gameplay\n\n Fixed issues with damage calculation.\n Ice now melts over time.\n Increase Frost Burst cooldown to 5 turns.\n Added Icemeld, granting a weapon ice damage.\n\n\nUser Interface\n\n Remade main menu and arcade menu.\n Arcade menus now offer a match list to join other players.\n Hosting comes with 3 hosting service options. Lan for local matches, Unity Relay for cross platform matches and Steam Relay for ease of use between steam players.\n\n\nNetworking\n\n Expanded the Steam Integration with lobbies. Steam Players can now invite and join their friends through their friends list."
+        },
+        {
+            "title": "Playtest Patch 5",
+            "date": "2024-09-22 14:18:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536514370386",
+            "notes": "Terms Glossary\nThe terms glossary provides descriptions and definitions to certain words found in skills and items descriptions. These terms will be underlined and can be tapped or clicked to open their definition.\n\n Status Effects glossary will provide details about the status' behavior.\n Damage Types glossary will provide details about a damage type's category and effect.\n\n\nSkills\n\n Cooldowns were added to some skills, requiring you to wait a certain amount of turns before being able to use the skill again.\n Frost Burst now has extended range with a cooldown.\n Safeguard was replaced with Inearth, granting the target a stone shield and has a cooldown.\n\n\nUser Interface\n\n Items and Skill descriptions have been updated with glossary terms."
+        },
+        {
+            "title": "Playtest Patch 4",
+            "date": "2024-09-01 16:40:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642466406625",
+            "notes": "Units\n\n The Knight wields a greatsword and can increase another unit's defense.\n The Spearman wields a Halberd, allowing for longer ranged melee attacks.\n The blacksmith was given the ability to push units away if there tile on the opposing side of the target unit is not occupied.\n\n\nImprovements\n\n Units in the party builder can be swapped individually by pressing on their cell in the party view."
+        },
+        {
+            "title": "Playtest Patch 3.5",
+            "date": "2024-08-22 17:29:30",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438689448485",
+            "notes": "Steam Integration\n\n The game now uses player's steam accounts information (username & avatar).\n\n\nGameplay\n\n Fixed the burn status effect using the wrong variable to count turns, causing the fire to never proc.\n\n\nUser Interface\n\n Changed weapons icons\n The arcade lobby, Turn Indicator and unit inspection view now shows the steam player's name and avatar.\n\n\nServer Preparation\nMost of the changes in this patch are not visible to the player, consisting mostly of api refactoring to prepare for a dedicated server."
+        },
+        {
+            "title": "Playtest Patch 3",
+            "date": "2024-08-14 03:13:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875594803673384055",
+            "notes": "Gameplay\n\n Frost Burst now applies Ice to affected tiles.\n Drastically reduces the bonus chances for units to block. Units will now barely ever block unless they have more defense bonuses.\n\nLoads of bug fixes!\n\n     Fixed null client updates from Apply Or Combine logic, caused by Meld statuses not updated to new bool return.\n     Removed the use of Effect Type in skills. AI now uses defined logic to evaluate the efficiency of a skill's usage.\n     Fixed Action buttons to properly deselect after pending action is cancelled or confirmed, no longer requiring the player to press on the button twice.\n     Fixed the board highlighting for Area of Effect ranges.\n     Improved Frost Burst visual effect.\n     Added Mode view data refresh, allowing the arcade lobby view to fetch the new data if it was altered while the player was in another view (party builder).\n     Improved state machines to block and throw exceptions on the case where it attempts to switch states while a switch is ongoing.\n     Fixed Match and Menu state machines according to State Machine change, preventing switching to a state before the previous switch is complete or duplicate state switching.\n     Fixed the issue where quick players could do multiple actions in their turn if done before the first was completed."
+        },
+        {
+            "title": "Playtest Patch 2",
+            "date": "2024-08-11 19:35:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363402985292",
+            "notes": "Minor Features\n\n Added a Forfeit option in the settings, available during combat to forfeit a combat match.\n Added a Exit to Menu option in the settings, available when in a match/lobby.\n Added a Information tab in the settings with links to Warcoven communities and social medias.\n Changed the fire visual effect. The status' tier is now more clearly visible through the fire's color.\n\n\nBug Fixes\n\n Fixed an issue where the player's turn would not be skipped when their last unit was tripped prone, causing the match to block. This was caused by the code considering defeated units while checking for available moves.\n Fixed networking issues causing an error due to a race condition while updating a unloaded unit's status.\n Fixed an issue with hexagonal diagonals not showing the right range in the unit's information UI.\n Fixed an issue with attacking not existing units.\n Fixed an error occurring when removing status effects from a unit when defeated.\n Minor fixes."
+        },
+        {
+            "title": "Playtest Patch 1",
+            "date": "2024-08-09 19:25:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363395673972",
+            "notes": "Fixed Online hosting.\n Fixed Issue where a unit disappears when selecting on another unit while the first is in its deployment animation.\n Fixed Issue where the cold status visual effect would not be removed due to the client update stating \"Applied\" instead of \"Removed\".\n Other minor status visual effect fixes."
+        },
+        {
+            "title": "Playtest version 1.0",
+            "date": "2024-08-09 14:00:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363394849452",
+            "notes": "Alpha 1.0\n\n\n Single player, Lan and online 1v1 Arcade Mode.\n 7 premade units."
+        }
+    ]
+}

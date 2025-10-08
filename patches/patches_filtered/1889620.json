@@ -1,0 +1,216 @@
+{
+    "appId": "1889620",
+    "total_notes": 35,
+    "notes": [
+        {
+            "title": "Bug fixes and better bug reporting",
+            "date": "2025-09-10 15:21:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566392699",
+            "notes": "[list]\n[*] Fixed a few bugs related to the previous update\n[*] Added bug reporting feature which will pop up automatically if encountering an error, but can also be accessed manually by pressing esc and clicking the top-right feedback button in Scenario Settings.\n[/list]"
+        },
+        {
+            "title": "Small update 07/20/2025",
+            "date": "2025-07-20 18:53:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065446456",
+            "notes": "[list]\n[*] Switched free cloud text generation to a slightly better model\n[*] Improved free cloud text generation speed\n[*] Improved AI Roguelite Free image generation coherence (not to be confused with Wombo, which is a 3rd-party image gen)\n[*] Added a new style to AI Roguelite Sapphire image generation called \"Vibrant V2\", which outperforms other styles in most cases\n[*] Added support for detecting if multiple items were crafted simultaneously\n[*] Fixed bug in Dungeon Crawl leveling system where player was always \"stronger than enemy\" in roll mods\n[*] Added tip to utilize Scenario Settings when opening the New Game UI for the first time\n[/list]\n"
+        },
+        {
+            "title": "Crafting hotfix",
+            "date": "2024-11-07 13:40:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801603512",
+            "notes": "Fixed error when crafting with desired item name"
+        },
+        {
+            "title": "Corpse mechanic, short side quests, combat changes",
+            "date": "2024-11-05 11:41:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657174066862",
+            "notes": "[h2]Side quest overhaul[/h2]\nReimplemented appearance of side quests while tracking a quest. Side quests will also be categorized as short or epic. Short side quests are a new type of quest which only have 1 task. Short side quests can be failed outright.\n\nLong form quest generations now have an option to specify the objective as being the end goal rather than the initial plot hook.\n\n[h2]Corpse/revival mechanic[/h2]\nNPCs and enemies will now become a corpse when they die. The corpse disappears after 3 turns, and the character may be revived within that time frame. It is up to the story generator whether the recently deceased character will be described as revived or never having died in the first place. For NPCs, there will be a visible corpse you can interact with. For enemies, the corpse won’t be directly interactable, but the mechanic remains similar under the hood.\n\n[h2]Combat minor overhaul[/h2]\n[list]\n[*] Collapsible combat view: You can now collapse the enemy view while in combat, which allows for more combat actions such as interacting with nearby things\n[*] Using item/ability on enemies outside of combat is now allowed. If you defeat an enemy in this way, the XP will be nerfed.\n[*] Added out-of-combat charm check\n[*] Turned off loot for charming an enemy\n[*] Reinstated story-based run away for non-insane difficulties, which is feasible now that combat can be player-confirmed\n[*] Added roll check logic for running away with item/ability\n[*] Added cheat code “run” in case you prefer escaping the enemy with no checks\n[*] AI-detected enemy strength: The AI now decides based on the story whether your attacker is normal, elite, or legendary. Only applies to new entities.\n[*] Added cheat codes ene2 and ene3 to spawn an elite or legendary enemy respectively.\n[/list]\n[h2]Revised task completion mechanic[/h2]\nWhen you’re on the last step of a task, the event check switches to a different prompt to make it less likely to trigger a task completion false positive\n\n[h2]Misc[/h2]\n[list]\n[*] Added player confirmation for mentioned location\n[*] Fixed item epicness detection\n[*] Fixed bugs with conversation dropdown\n[*] Revised item depletion logic to allow losing items that weren’t directly used that turn\n[*] Added level-up logic to set your HP and survival bars to their original ratios when leveling up\n[*] If you visited a locked place via the story, it now becomes unlocked\n[/list]\n"
+        },
+        {
+            "title": "Update about 3rd-party Steam key stores",
+            "date": "2024-10-24 16:39:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911833424",
+            "notes": "A long time ago I entered a contract with a company called \"Immanitas\" whom I now believe may be a fraudulent company. They sold some AI Roguelite steam keys to various 3rd-party stores/websites and haven't yet paid me the agreed share of profits, even after almost a year of reminding them.\n\nToday I banned the Steam keys I gave to Immanitas and which made their way to those 3rd-party Steam key stores. This ban is not retroactive, so if you already purchased from a 3rd-party store and activated the key before, then you're fine. The ban also doesn't affect you at all if you purchased from the actual Steam store.\n\nThe 3rd-party stores might take some time to realize the keys are no longer working before de-listing them as purchasing options. In the unlikely event you were one of the unlucky users who bought from those stores before they de-listed it but after I applied the ban: Please first reach out to the store, tell them to delist AI Roguelite because the keys were deactivated by the developer, and ask if they'll give you a refund; if not, feel free to email me at max@maxloh.com with the Steam key you got and the store you purchased from."
+        },
+        {
+            "title": "Update/hotfix",
+            "date": "2024-10-09 10:10:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6360862737592285719",
+            "notes": "[list]\n[*] Added button in the story editor to copy story text to clipboard, in case you want to share/use it outside the game\n[*] Got rid of deprecated python server logic which wasn’t used anymore, which means the download file size of the game can be again reduced in the near future\n[*] Removed deprecated local stable diffusion as an option; if you need this, please run your own A1111-compatible server instead\n[*] Fixed serious issue where NPCs who left the premises could disappear from your save forever\n[*] Better more tolerant substring matching for achievements for skills\n[*] Tweaked colon parsing logic to handle an edge case where colon with no space appears in description\n[*] Added logic to prevent simultaneous “left the premises” with defeated or died\n[*] Tweaked graphics settings to maybe slightly reduce GPU load without affecting image quality\n[*] Added starting location to the starting quest story blob generation prompt to improve its coherence\n[*] Added support for displaying Chinese and Russian characters, although actual support for non-English languages won’t be available until much later\n[/list]"
+        },
+        {
+            "title": "Hotfix for free image gen",
+            "date": "2024-03-08 15:08:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637656859858",
+            "notes": "Wombo had some updates and some styles weren't working. Updated to default to one of their styles which are currently working."
+        },
+        {
+            "title": "Free cloud hotfix, comfyui API image gen",
+            "date": "2024-01-15 14:52:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510135314499",
+            "notes": "- Hotfix for unofficial free cloud \"NSFW\" error when changing locations\n- Added a local image gen option (ComfyUI API)\n- Fixed minor scrolling bug"
+        },
+        {
+            "title": "Sounds update",
+            "date": "2023-12-17 20:00:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219985313528",
+            "notes": "[h2]Ambient sounds[/h2]\n[list]\n[*] A number of ambient sounds have been added such as outdoors nature, cave, etc. The volume is adjustable under General Settings.\n[*] For now, all ambient sounds are non-AI-generated. They exist in the default directory under “sounds” and are moddable (read the README file for more details on how to mod it).\n[*] For non-ChatGPT style, the ambient sound for the location is chosen by a regex word matcher. For ChatGPT style, it’s chosen by the AI based on the location name and description.\n[*] You can change the ambient sound in your current location by right-clicking on the location picture and clicking on Edit Details.\n[/list]\n\n[h2]Sound effects[/h2]\n[list]\n[*] The game now uses an experimental new service called Audiogen to generate AI sounds. They offer a lot of free generations per day per account. If you use my unofficial cloud relay, you’ll be rate-limited to 50 per day, but if you follow instructions under the “Sound” options, you can use your own account credentials to get 500 per day, which should be enough for most purposes.\n[*] Currently supported entities are items, abilities, things, and enemies. Items/abilities play the generated sound if you use them on something. Things play it when you interact with them. Enemies play it when you enter combat or they take a turn.\n[*] If the sound isn’t generated yet, the game falls back to the placeholder sound from before this update.\n[/list]\n\n[h2]Misc[/h2]\n[list]\n[*] Fixed an issue related to item ability loadout causing saves to fail to load\n[/list]\n"
+        },
+        {
+            "title": "\"What's Your Name\" Update",
+            "date": "2023-11-27 10:11:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5382426458991951664",
+            "notes": "When you learn an NPC’s name, it replaces their original generic name. For example, “Old man sitting on a bench” becomes “George” if he introduces himself as such. Like most features, this can be toggled off in the event check sliders.\n\nMisc:\n[list]\n[*] Fixed a game-breaking bug from the previous update which would fail to read certain saves. The fix is retroactive and should unbreak your broken saves without you doing anything.\n[*] Actual error message for generic error messages instead of infinite hanging for blue brain\n[*] Option to globally disable NPC history introduced by previous update if it’s causing you issues\n[*] Raised story context limit for Sapphire to approximately 2400 tokens\n[/list]"
+        },
+        {
+            "title": "Unofficial free cloud update",
+            "date": "2023-11-14 03:28:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486388015587209",
+            "notes": "Migrated to an entirely different service for Unofficial Free Cloud, which should hopefully fix most of the issues that were affecting this text gen option earlier."
+        },
+        {
+            "title": "AI Roguelite Full Release",
+            "date": "2023-10-25 19:21:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621573988227",
+            "notes": "I am happy to announce that AI Roguelite has entered full release, having spent about a year and a half in Early Access. This means I consider the game to be decently playable and stable. Almost all the originally planned features from Early Access have been implemented, plus several extras.\n\nHuge thanks to all Early Access users and participants in the Steam forums and Discord for helping debug issues and making development an enjoyable experience.\n\nGoing forward, I will continue to fix high-priority issues that crop up in the game and push small updates. I will also make an effort to continue pushing larger updates with new and exciting features, but can’t make any guarantees about the pacing of these larger updates. I am devoting some of my free time to a highly experimental new game I’m working on (not related to AI) which I’ll announce at some later time if it pans out."
+        },
+        {
+            "title": "ChatGPT Hotfix",
+            "date": "2023-10-17 01:32:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944137568404",
+            "notes": "Sapphire tier: Decreased chances of OpenAI's ChatGPT refusals by switching to the 0613 model for some tasks and tweaking the preambles to make it behave properly"
+        },
+        {
+            "title": "Bug fixes, partial NovelAI customization",
+            "date": "2023-09-03 15:14:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355669457523",
+            "notes": "[list]\n[*]Adds partial customization options for NovelAI params such as bad_words_ids. It’s available under “default/model-params/novelai-common-params.txt”. Temperature and repetition penalty are dependent on the prompt so these customization options will need to wait until a future update\n[*]Fixed bug in location change with NPC/enemy where they’d be duplicated, which would occasionally cause save file corruption if that NPC/enemy later died. Also changed save loading logic to be more lenient of this issue regarding missing enemies, so previously corrupted saves should now be loadable.\n[*]Fixed bug where location change or quicktime event would override the portal to another universe when defeating legendary boss.\n[*]Fixed UI issue where local model wasn’t displayed when using free cloud, which still requires local model for event checks\n[*]Fixed UI issue where kobold api URL format was unintuitive. It now accepts both with and without “http://” \n[/list]"
+        },
+        {
+            "title": "Wombo Hotfix",
+            "date": "2023-06-16 20:41:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309844805064",
+            "notes": "Wombo updated their API which broke Wombo image gen; this update should fix it.\n\nUpdates are currently slowed because I'm currently working on an experimental new game called AI Roguelite 2D. It has not much to do with AI Roguelite, but will be an AI-generated 2D roguelite.\n\nSoon after AI Roguelite 2D goes into \"Coming Soon\" and/or Early Access release, I'll be able to make more updates to AI Roguelite. Thanks for your patience!"
+        },
+        {
+            "title": "Mods Update",
+            "date": "2023-03-21 04:47:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536871448079",
+            "notes": "There are now four categories of moddable things: World presets, survival bars, prompts, and event checks. With this also comes the \"open sourcing\" of almost all prompts and event checks.\n\nWorld presets: You can add new game world presets to the defaults, and share them as mods. This is the simplest kind of mod.\n\nSurvival bars: You can make your own survival bars with a limited API of how they function in the world, e.g. whether they drain over time. You can also specify your own event checks to use to increase or decrease said survival bar (more on that below), as well as the event checks for whether a consumable heals that survival bar. The original 3 survival bars have been migrated to this new system so you can use them as examples (located in the \"Default\" directory) for how the survival bar mod config works.\n\nPrompts: All prompts are now visible in the \"prompts\" directory and can be modified based on how you see fit. Some prompts may be outdated because they were engineered to play nice with the 125M, which is becoming less used for general text generation. There may be some low-hanging fruit, and if there are mods that improve them, I may incorporate them into the base game. For example, to avoid the \"small,\" issue, maybe we can start separating entities by semi-colon, period, newline, or numbered list, instead of commas.\n\nEvent checks: Using gpt_testing.exe and my_gpt_calibration.exe, you can create your own event checks. Each event check must go through a \"calibration\" process, invented by yours truly, to make sure it plays nice with each AI model. This is where you provide positive and negative examples to try to make it hone in on a desirable threshold value. You should run calibration for at least the top 3 most used models as recommended by the instructions. For less-used models, the game will try to automatically run calibration for the user before running the model. It is not always easy to find event check prompts that work well, because what seems to work in calibration might not be great in the actual game. However, as with prompts, if people discover an absolute improvement, I will likely incorporate it into the base game.\n\nInstructions on how to mod are inside the ai-roguelite-config/my-mods directory. It is not that intuitive at the moment. Better instructions and validation are forthcoming. Please note it's not recommended to modify the \"Default\" directory because it's the base game which will be updated; it's preferable to make a mod instead. Overall, making mods is intended for enthusiasts, and people who just want to play the game with mods can subscribe to them on the [url=https://steamcommunity.com/app/1889620/workshop/]AI Roguelite steam workshop page[/url], which will hopefully be more populated as time goes on."
+        },
+        {
+            "title": "Survival Update (and base-building incentives)",
+            "date": "2023-03-04 21:48:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176571489336",
+            "notes": "[list]\n[*] You now have 3 survival bars: Mood, Energy, Hunger.\n[*] Consumables will be slotted into either healing, energy, or hunger. All consumables heal a little bit of mood.\n[*] All turns now get the event checks: Hunger satisfied, Mood decreased, Mood increased, Energy decreased, Energy increased. These take precedence over the consumable effect (for example, if the story says you became exhausted, you won’t gain energy from an energy-based consumable).\n[*] Mood and hunger drain are dependent on current area level. They also drain based on travel and fast travel.\n[*] If your mood reaches zero, you have a 30% chance of triggering a zero-mood effect whenever you take a turn, which will override the thing you’re trying to do.\n[*] All built things contribute an “aura” of 1 area radius which offset the mood/hunger drain. It is possible for things to offset mood drain to the point it becomes positive. For hunger, it can only mitigate the drain (not retroactive for older saves).\n[*] Built things have a better recovery rate and number of uses for harvesting, if they are harvestable (not retroactive for older saves).\n[*] Abilities now cost “energy” which has a small base recovery rate.\n[*] If you are starved, your health will decrease slightly each turn\n[/list]"
+        },
+        {
+            "title": "Quests Update",
+            "date": "2023-02-19 22:03:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268099249442145",
+            "notes": "Quests Update\n\nRequired item: In each stage of a quest, the AI is asked whether it requires an item. If true, it’ll require an item instead of a location. Tasks that require items have an xp multiplier of x2. The item is only required to be in your inventory or in the current location’s “things”; you are not required to explicitly use it.\n\nQuest completion via story: Each story turn now asks the AI whether the current task has been completed according to the story events. The accuracy is not guaranteed, and it currently uses a combination of the generic “task was completed” check combined with checking whether the probability of producing your task string after the story was significantly higher than a baseline value. In the future, more powerful AI models will be able to evaluate this more accurately. Completion via story also gives an xp multiplier of x2, which can stack with the required item multiplier.\n\nMisc:\n- Possibly fixed issue where parent area incorrectly had a quotation in it\n- Removed some cruft debugging statements which were slowing down event checks. Local event checks duration reduced from 3 seconds to 1 second (on average)"
+        },
+        {
+            "title": "Update 1.44",
+            "date": "2023-01-29 00:49:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109519126746",
+            "notes": "[list]\n[*] Attempted to fix the negative gold/xp bug\n[*] Fixed ability selection exploit bug introduced by last update\n[*] Fixed bug where Things weren’t using description for image gen (known issue: Things currently use the “items” prefix)\n[*] Implemented destructibility for Things\n[*] Tentatively implemented status effect for Things (possibly unfinished)\n[/list]"
+        },
+        {
+            "title": "Things update",
+            "date": "2023-01-21 02:01:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474417331335",
+            "notes": "Things: There is new category of things called… Things.\n\t- Each thing *could* be a resource node or crafting station depending on the AI’s sentiments\n\t- Tentative: This paves the way for building things as well as AI-generated crafting recipe trees.\n\nUI Overhaul: Added the “all” tab and “things” tab, moved places/navigation to the middle\nFixed Stable Horde breakage: Stable Horde changed their output format to a url instead of base64 image. I have updated the code to take the new format."
+        },
+        {
+            "title": "small update",
+            "date": "2023-01-16 00:03:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840544383708",
+            "notes": "Slightly overhauled event checks for charm enemy, new character, and NPC opinion decrease.\nReinstating salvaging, paving the way for building materials hopefully (experimental)."
+        },
+        {
+            "title": "Small changes incl. Single-item crafting",
+            "date": "2023-01-14 22:41:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840540533498",
+            "notes": "- Added a couple skill achievements as well as quest completion achievements\n- Slightly improved skill deduplication logic\n- Changed default male NPC voice type to Ghostface because Rocket was too annoying (Rocket is now the default for enemies)\n- Added single-item crafting, e.g. cooking a raw salmon over a campfire to become smoked salmon. Single-item crafting works slightly different from multi-item crafting: The tier and rarity will always be the same as the ingredient, and the level will increase by 1 unless it’s already at the area level."
+        },
+        {
+            "title": "Skills Update",
+            "date": "2023-01-13 03:12:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840533931104",
+            "notes": "[h2]Skills which improve as you use them, like in Elder Scrolls and other famous RPG’s.[/h2]\n\n[list]\n[*] For each action using an ability, item, or quest completion option, the AI will try to determine the most relevant skills.\n[*] All relevant skills will receive a boost in XP that turn.\n[*] The top relevant skill will be the one picked for the roll check.\n[*] The roll check will be in tandem with the Attribute roll check.\n[*] View your skills XP and Levels via the \"View Skills\" button in the character/inventory screen.\n[/list]\n\n[h2]Misc/fixes:[/h2]\n\n[list]\n[*] Fixed bug where game would get stuck when same tts voice was chosen for multiple npc types\n[*] If a merchant doesn’t have enough gold, you can now still sell an item for their remaining gold\n[*] Speculative: Hopefully mitigated issue where Steamdeck would freeze when selling at a merchant\n[*] Fixed lag when copy/pasting into image gen prefix text box\n[*] Added edit details and redo image dropdown menu for enemy image when in combat\n[/list]"
+        },
+        {
+            "title": "Speech Update",
+            "date": "2023-01-02 02:33:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037481612935",
+            "notes": "Added Text To Speech Options using the free TikTok Text To Speech API\n\nCurrently the categories are:\n- Narrator\n- Male\n- Female\n- Monster\n- Robot\n\nCurrently the category is determined by a non-AI algorithm which analyzes the words of the NPC name.\n\nEdit: Please note \"NPC's only\" option isn't working at the moment."
+        },
+        {
+            "title": "Some bug fixes",
+            "date": "2022-12-19 03:41:14",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145764638512",
+            "notes": "Changed merchants mechanic a bit:\n- All NPCs are capable of trading\n- Only \"merchants\" have lots of gold and lots of items. An NPC will spawn as a merchant if their name has a shop-like name such as \"merchant\", \"vendor\" etc OR they pass a 10% rng chance roll.\n- In addition to Charisma, now Sentiment also influences buy/sell prices\n- Can't trade with anyone with -2 sentiment or lower\n- Added the \"Valuable\" demarkation to the item tooltip which makes it great for selling and bad for buying. This AI-determined mod sets an item's gold value at 5x what it would've been. It triggers if the name sounds valuable (e.g. ancient bones, golden statue etc).\n\nMisc:\n- Fixed some bugs and possible save file issues related to the merchants update\n- Fixed a bug with detecting whether quest location was the right location"
+        },
+        {
+            "title": "Sentiment update",
+            "date": "2022-11-05 22:23:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4732747437211232734",
+            "notes": "All NPC's now have an opinion of you starting at 0 and ranging from -3 to +3. When it hits +2 they become your follower (if you don't have an existing follower) and remain so unless they hit -2. \n\nThe sentiment also influences the way they respond to your actions/words. These \"influenced try strings\" are sent to the AI each turn and visible in the text log, but not stored verbatim in the story (to prevent the AI picking up on something repetitive and imitating it)."
+        },
+        {
+            "title": "Location state changes",
+            "date": "2022-10-15 23:02:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6402455182513955575",
+            "notes": "Location state changes: Entities can now have state changes (different from status effects). In all likelihood, status effects will be sunset in favor of state changes, in the future. So far, only a location can have a state change. For example, if you cast “flames” inside a building, the AI could determine that the building is now on fire. Then, the game will automatically regenerate the image to reflect the current state of the location.\n\n\nMisc\n\n- Implemented parallelized calls for cloud generation. That means for cloud and novelAI generation you might see some lower generation times especially when visiting a new location. Please note however that currently the response times are very finnicky and could be slow regardless (this is a temporary issue)\n- Fixed issue with disallowed words with krake models."
+        },
+        {
+            "title": "World Map Update",
+            "date": "2022-10-13 01:21:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6402455182503376510",
+            "notes": "There is finally a world map to view all your locations simultaneously and the option to fast travel to any of them. This makes traversing and orienting oneself with the world much easier. \n\nThe location hierarchy has been slightly simplified such that it is no longer possible for each \"zone\" of a location to have a [i]different[/i] parent location. \n\nMisc: \n- Probably fixed bug where image gen failed for users with computers in a foreign language\n- Fixed sound volume bug when exiting combat\n- Changed default sort order to chronological\n- Flashing red warning when area level is too high relative to player level"
+        },
+        {
+            "title": "Charm update",
+            "date": "2022-09-23 03:52:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330734871928",
+            "notes": "- Added the \"charm\" check to the AI event checks. An enemy can now be charmed which qualifies as instant defeat (except that they are still alive, and become an NPC)\n\n- Updated Wombo settings to include their new settings which use Stable Diffusion; changed default to “comic”, which looks wayyy better than the previous setting, and almost as good as locally run stable diffusion.\n\n- Fixed stable diffusion bug where it crashed for certain characters (hopefully actually fixed this time)"
+        },
+        {
+            "title": "Essences Update",
+            "date": "2022-09-21 10:21:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330728567977",
+            "notes": "Essences:\nEssences allows you to perform manipulations in the game such as changing an entity, editing the last story turn, and taking an “open-ended” turn.\n\n[list]\n[*] Essence of Transforming: Allows editing name/description of 1 entity\n[*] Essence of Rewinding: Allows editing the last story turn\n[*] Essence of Opportunity: Allows 1 “open-ended” turn\n[/list]\n\nEssences have a chance of dropping from regular mobs, at least 1 guaranteed drop from an elite mob, and 1 of each will drop for a legendary boss. Your max # of essences is influenced by your character level.\n\nCreative mode:\n\nIn creative mode you can do all these things infinitely without needing to consume essences. This can be toggled on or off at will in the options.\n\nMisc: \n\nThere was an issue where the save would be corrupted if your follower became an enemy and died in a place they weren’t born. This is probably fixed now."
+        },
+        {
+            "title": "hotfix",
+            "date": "2022-07-23 18:17:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598755821873827692",
+            "notes": "Fixed a bug from the previous patch where consulting AI could sometimes be stuck forever\nFixed a bug from previous patch where Wombo image gen might fail\nFixed rate-limit logic for Wombo"
+        },
+        {
+            "title": "Version 1.8 (Quests v2)",
+            "date": "2022-07-18 22:01:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144701779754",
+            "notes": "Quests v2: There are now multiple types of quests, and the game tries to parse the words to determine what kind of quest it is. To get the new type of quests, you need to start a new game (though I tried to make it backward compatible so it won’t crash an older save)\n[list]\n[*]Kill quests: Kill a specific enemy in a specific region.\n[*]NPC quests: Interact with NPC’s until the AI decides the task is done.\n[*]Find item quests: Press the forage button in the relevant location to find a specific item. Note this will count as a story turn, which means all of the usual checks (player injured, player attacked etc) will happen. However, in this case receiving the item will be guaranteed.\n[*]Open-ended quests: Same as before; use an item or ability to try to complete it.\n[/list]\n\nQuest Journal:\n[list]\n[*]Added a legit quest journal with two tabs: the quests tab and the story-so-far tab.\n[*]You have 1 main quest which infinitely generates additional quest stages. You can also get an unlimited number of side quests during the story (if the AI decides that you got a new quest). You can choose which quest to track. Note: If any location, NPC or enemy needs to spawn for a quest, it will only do so if the quest is being tracked. \n[*]Quest log gives instructions on how to complete the tracked quest. It also keeps track of historical events from previous quest stages, as well as completed side quests.\n[/list]\n\nMisc:\n[list]\n[*]Fixed a couple bugs with quest text generation\n[*]Installed a new font for a more RPG-like feel\n[*]Forgot to mention from last update; added another world gen preset for MMA / martial arts\n[/list]"
+        },
+        {
+            "title": "hotfix 2nd try",
+            "date": "2022-05-13 23:08:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5849624375823910849",
+            "notes": "hotfix for broken new game image generation hopefully actually works this time"
+        },
+        {
+            "title": "hotfix",
+            "date": "2022-05-13 22:36:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5849624375823829553",
+            "notes": "Hotfix: Fix issue where starting a new game would make image generation crash"
+        },
+        {
+            "title": "Version 1.1 released",
+            "date": "2022-03-24 07:26:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269507802892",
+            "notes": "Changes:\n[list]\n[*] Overhauled the main gameplay loop. Before, each action was based on its own prompt which had no relation to the story. Now the game is driven by recent story events, world background, and current characters in the scene.\n[*] Switched to the \"adventure\" versions of gpt-neo, which leads to much more interesting stories and combat similar to early versions of AI Dungeon. Thanks to mrseeker for helping create these fine-tuned gpt models.\n[*] Improved event detection (somewhat fixes glitchy combat and other issues): Instead of using laundry-list-of-examples prompt engineering which only works for large OpenAI models, we now list the highest probability words after any event. When the words we’re looking for cross a certain threshold, e.g. “the enemy has been [injured]”, it is considered to have happened.\n[*] Added the possible events to each story iteration: [b]Player death, player injury, enemy death, enemy injury, npc death, being attacked by a new enemy, appearance of new NPC, change of location,[/b] and (in some cases) [b]player being healed, player receiving a new item.[/b] Multiple things can happen in a turn; for example, if a big explosion happens during combat, there's a pretty good chance both you and the enemy are injured or killed.\n[*] You can now one-shot enemies in combat due to the detection of sudden death in the story. This means the name of your item matters more than before. This goes both ways, so your enemy can instantly kill you as well. Fortunately, the player now has [b]plot armor[/b] to protect you from sudden death from the story, which can be regenerated by healing.\n[*] Overhauled NPC interactions which can actually affect the world now. For example, you can ask for or threaten someone for an item. If the story says they gave you an item, the AI could detect that you got a new item.\n[*] Fixed an issue where bundling the default models didn’t work correctly. Now you shouldn’t have to download extra things if using the 125M, 1.3B, or 2.7B versions.\n[/list]\n\nKnown issues:\n[list]\n[*] The story prompt can sometimes end up in a bad state because of repeating words, causing the AI to produce low-quality text. We are currently looking into a fix.\n[*] Accuracy of event detection got a lot better but still needs improvement\n[*] 6B model isn't \"calibrated\" for detection so it's running on 2.7B's calibration which could be unpredictable\n[/list]"
+        }
+    ]
+}

@@ -1,0 +1,186 @@
+{
+    "appId": "2060160",
+    "total_notes": 30,
+    "notes": [
+        {
+            "title": "🥳 The Farmer Was Replaced – Full Release on October 10! 🥳",
+            "date": "2025-09-10 11:42:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566387400",
+            "notes": "[p][b]Hey folks[/b] [/p][p]I’m super excited to share some big news with you: [b]The Farmer Was Replaced is leaving Early Access and officially launching into version 1.0 on October 10! 🎉[/b][/p][p]This is a huge milestone for me. After three years of solo development the full release is finally coming up now! You may have noticed some changes to the Steam page. This is because the folks from Metaroot are helping me with marketing.[/p][p][img src=\"{STEAM_CLAN_IMAGE}/42555169/cffe5cf263e6ca1e9f5868acf08206b2c137f2e9.gif\"][/img][/p][h3]What’s new in the 1.0 Full Release on Oct. 10?[/h3][list][*][p][b]Multiple drones[/b] to really maximize your farming [/p][/*][*][p]A reworked tech tree with a more exponential progression[/p][/*][*][p]50+ Achievements[/p][/*][*][p]A complete sound overhaul[/p][/*][*][p]One brand-new music track[/p][/*][*][p]11 languages fully supported[/p][/*][*][p]Breaking Changes: Upgrades will be partially reset. Reusing mazes works slightly differently.[/p][/*][*][p]The price has already been adjusted to $9.99 for the 1.0 release. (On 10 Oct., there will be a launch discount.)[/p][/*][/list][p]👉  Because of these changes, [b]I really recommend waiting until October 10 to jump back in.[/b] That way you’ll get the full experience with all the new content  and you won’t have to deal with resets or missing features.[/p][h3]🙏 Some things we could use your help with:[/h3][p]For the 1.0 to be a success and for me to be able keep making games, I would greatly appreciate your support:[/p][list][*][p]Andri from Metaroot is looking for YouTubers who could enjoy the game: Do you know any gaming YouTubers who also like programming? Write them! And let him know who they are [url=\"https://steamcommunity.com/app/2060160/discussions/0/597411554294542409/\"][b]here[/b][/url][b].[/b][/p][/*][*][p]Which programming communities or Reddits do you hang out in? Where should TFWR be shared? (Of course, you are also welcome to share it there yourself!) Post them [url=\"https://steamcommunity.com/app/2060160/discussions/0/597411554294542409/\"][b]here[/b][/url][b].[/b][/p][/*][*][p]Get the word out to your fellow programmers![/p][/*][/list][p][b]Thank you so much for being part of this community.[/b] Your support has carried me from a small prototype all the way to full release. It feels a bit surreal that 1.0 is finally coming up. Looking forward to October 10.\n\nTimon[/p][table noborder=\"1\" colwidth=\"308,307\"][tr][th colwidth=\"308\"][p][url=https://discord.com/invite/kj33cJkeJn][img src=\"{STEAM_CLAN_IMAGE}/42555169/587e2770243730a13de3e3770c1e9608be429478.png\"][/img][/url][/p][/th][th colwidth=\"307\"][p][url=https://store.steampowered.com/publisher/Metaroot][img src=\"https://images-ext-1.discordapp.net/external/pCTAINOD_Wl1Cg4upCvSi4BPqKa1pS_TBN9IQONXB28/https/clan.akamai.steamstatic.com/images/28912985/1fb9a308322abf93a79c77e45558004d8ff8832c.png?format=webp&quality=lossless&width=600&height=120\"][/img][/url][/p][/th][/tr][/table]"
+        },
+        {
+            "title": "Editor Update",
+            "date": "2025-03-18 05:54:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528231816",
+            "notes": "-Code windows are now scrollable.\n-Added code highlights to visualize the call stack.\n-You can now search all windows with ctrl + F.\n-If an error happens in a window that is completely off screen the camera will move to it.\n-The code autocomplete is now more fuzzy and inserting autocomplete words with Enter works better.\n-There is now a warning icon that pops up when a warning is emitted to make it more visible.\n-To better support external editors that don't automatically pick up on the `__builtins__.py` file, importing from that file can now already be done before unlocking the import feature.\n-The Undo and Redo history is now per window instead of global.\n-Autocomplete suggestions work better with imports now.\n-Green is back in the syntax color.\n\n-Fixed a bug that mixed leaderboard runs with the main simulation.\n-Fixed growtimes not being updated when watering grassland.\n-Fixed the UI issue that was caused by trailing spaces in file names.\n-Fixed unindent problems with the \"tabs to spaces\" option.\n-Infecting bushes by using 1 weird substance after upgrading the maze now works.\n-Fixed item numbers rounding wrong in some cases.\n-Typing in values in slider options in the menu has been fixed.\n-Fixed the broken \"error_not_a_function\" error.\n-Fixed a bunch of error messages that showed up in the wrong place."
+        },
+        {
+            "title": "Small Update",
+            "date": "2025-01-23 12:44:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505312403",
+            "notes": "-`from file import *` no longer imports variable names starting with an underscore.\n-All import statements are now free (take 0 ticks).\n-Added a special error message if a function is used before it's defined.\n-Added a special error message when importing filenames with invalid characters."
+        },
+        {
+            "title": "Import Cost Changes",
+            "date": "2025-01-22 12:11:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505278690",
+            "notes": "This update fixes some issues with the number of simulation ticks spent on imports.\n-`from file import` now costs 1 tick.\n-`import file` is still free.\n-Reading from a module like `y = file.x` is now free as long as the variable `file` has been assigned by an import statement. This is analogous to functions being free as long as they have been directly assigned by a def statement, and prevents exploits that abuse the dynamic nature of modules to do completely free computations.\n-Writing to modules like `file.x = y` now costs the same as reading from them.\n-`def` and `import` statements inside an `if`, `while` or `for` block no longer make the functions/modules they create free, because this could also be used to do free computations.\n\n-Fixed importing into local scope."
+        },
+        {
+            "title": "Hotfix",
+            "date": "2024-12-15 05:04:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543618005",
+            "notes": "-Fixed planting cost not scaling with upgrades.\n-Reset `Leaderboards.Fastest_Reset`, `Leaderboards.Polyculture` and 60s stats.\n-Removed the simulation speedup cap."
+        },
+        {
+            "title": "Post Update Fixes",
+            "date": "2024-12-14 06:07:08",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543587854",
+            "notes": "-Fixed running empty windows.\n-Apples no longer destroy crops.\n-Fixed the cost of for loops.\n-Fixed outer walls disappearing in smaller mazes.\n-Fixed running `simulate()` on invalid files.\n-Stats no longer break when loading a save.\n-Fixed documentation and various tooltips."
+        },
+        {
+            "title": "Simulation Update",
+            "date": "2024-12-12 08:38:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543525828",
+            "notes": "It took a bit longer than expected but the Simulation Update is finally here. \nIt improves a lot but also breaks existing code and removes the old dinosaurs. If you prefer to keep the old version you can switch back to it in Steam via \"The Farmer Was Replaced -> Properties -> Betas -> Jul 2024\".\n\nBreaking Changes:\nYou'll have to change these in your code.\n-`Items.Bones` has been renamed to `Items.Bone` so all items are singular.\n-`Entities.Carrots` has been renamed to `Entities.Carrot` so all entities are singular.\n-`Grounds.Turf` has been renamed to `Grounds.Grassland` to make it easier to understand.\n-`Items.Water_Tank` has been renamed to `Items.Water` because the tank refill feature has been removed.\n-`Unlocks.Benchmark` has been replaced with `Unlocks.Timing`.\n-`get_op_count()` has been renamed to `get_tick_count()`.\n-`set_farm_size()` has been renamed to `set_world_size()` to be consistent with `get_world_size()`.\n-`get_companion()` now returns a tuple of the form (entity, (x, y)) instead of a list.\n-`trade()` has been removed from the game.\n\nSimulation:\nThe way the game simulates the farm has been completely reworked. Some of the most noteable consequences of this are:\n-Fixed all sorts of time inconsistency bugs.\n-Added a `simulate()` function that allows testing code much faster.\n-Starting a leaderboard run now starts a simulation for a specified file.\n-The speed factor now only speeds up the simulation and not the rest of the game.\n\nLeaderboards:\n-There are now multiple leaderboard categories.\n-`timed_reset()` has been replaced by `leaderboard_run()`.\n-`leaderboard_run()` can now be given a starting speed factor which can be up to 256.\n-`leaderboard_run()` now also resets the water level.\n-Leaderboard runs no longer allow precomputing values before the timer starts.\n-Leaderboard runs are now repeated and averaged until a total of 2h of virtual time has passed.\n\nOperation Costs:\nIn the past it was possible to save ops in ways that made the code uglier. For the full new timing model see the new Timing unlock that replaces Benchmark.\n-Function calls now free so it's no longer encouraged to inline everything.\n-Reading and writing variables is now completely free (This is required for function calls to be free).\n-Loops now only cost one tick once instead of every iteration.\n-Indexing to write to a dict or list is no longer free.\n-The time of accessing a dictionary or a set now depends on the size of the key.\n-If the game isn't able to keep up with how fast the program is supposed to run it will no longer freeze. Instead the simulation time is slowed down to match it.\n\nUnlock Tree:\n-The unlock tree has been restructured. Dinosaurs, Cactus and Mazes can now be done in any order you like.\n\nDinosaurs:\nDinosaurs were by far the least fun challenge of the game. A change was needed.\n-Dinosaurs have been completely reworked. Read the docs on them.\n\nCactus:\n-Harvesting a cactus no longer harvests all cacti but instead the harvest propagates to adjacent cacti if they are all larger or equal to the harvested cactus.\n-Harvesting `n` cacti with a single harvest call yields `n * floor(sqrt(n))` cacti.\n-Harvesting cacti before they are grown no longer yields anything.\n\nMazes:\n-Mazes are no longer spawned with fertilizer. You have to use weird substance instead.\n-Mazes are no longer required to fill the whole grid. The size of the maze depends on how much weird substance you use.\n\nFertilizer and Water:\nThe problem with fertilizer and water was that they were a bit expensive early on and almost free late in the game, making them impossible to balance. These water and fertilizer changes try to fix that.\n-Fertilizer and Water are no longer traded. Instead you now automatically receive a fixed amount of water and fertilizer over time based on the upgrade level of each one.\n-Fertilizer no longer dries out the ground.\n-Fertilizer now turns 50% of the yield of the fertilized plant into weird substance.\n-Water now affects all ground types.\n\nSeeds:\nTrading for seeds doesn't really serve any purpose. The only interesting thing about seeds was that you could prebuy them before upgrades to get them cheaper, but this made the game really hard to balance.\n-You no longer need to trade for seeds to before you plant. Instead the `plant()` command directly removes the cost of the plant.\n-The `trade()` function is no longer used for anything.\n-The multi trade unlock has been removed.\n\nSunflowers and Pumpkins:\nIt was a bit too easy to get an almost infinite supply of power and pumpkins in the late game. These changes remove some of that late game scaling.\n-Sunflower yield is now 1 power per sunflower and you get a constant yield multiplier if there are at least 10 sunflowers and you harvested the largest one.\n-Harvesting a smaller sunflower no longer destroys the entire field.\n-Pumpkin yield now only scales cubically up to 5x5, quadratic after that.\n\nPolyculture:\nRushing polycuture as fast as possible has become the dominant strategy for leaderboard runs. These changes try to make the optimal unlock order a bit more interesting and the early game a bit less deterministic.\n-Polyculture is now unlocked after the maze.\n-Polyculture now starts at a 5x multiplier and can be upgraded up to a 15x multiplier.\n-Polyculture is now active before it's unlocked. There is no way of knowing the companions but you can get some lucky hits.\n\nOther:\n-The `get_cost()` function used on unlocks now has an optional second argument for the upgrade level. It now returns `None` for unlocks that are already unlocked.\n-The `unlock()` function now allows unlocking an unlock even if the parent unlock isn't unlocked yet. This way leaderboard unlock orders no longer need to deal with unlock dependencies.\n-Updated the `__builtins__.py` file.\n-The `__builtins__.py` file no longer gets regenerated unless you delete it.\n-If you set an upgrade higher than it's max level the game will now disable stats and show a red warning in the unlock menu.\n\nFixes:\n-Loading files with CRLF line endings no longer breaks the editor.\n-Error messages when checking equality of a function are now also disabled by the corresponding option.\n-Fixed broken links.\n-Fixed empty return statements not returning `None`.\n-Fixed pumpkins sometimes not merging correctly.\n-Fixed problems with stat calculations.\n-Fixed copying dicts with `dict()`."
+        },
+        {
+            "title": "Follow up fixes of the Documentation Update",
+            "date": "2024-07-03 11:59:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267331842093",
+            "notes": "-The text in the ouput window now wraps.\n-Fixed editing dicts during iteration.\n-Fixed broken link.\n-Fixed clicking links outside the windows.\n-The output window now resets again when execution starting.\n-Fixed spoiler tags.\n-Fixed misaligned breakpoints.\n-Fixed the cost in seed tooltips."
+        },
+        {
+            "title": "Documentation Update",
+            "date": "2024-07-02 11:51:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267328176039",
+            "notes": "- Reworked the in game documentation:\n    - Docs windows can now be added like code windows.\n    - Docs windows can now be closed and minimized like code windows.\n    - All windows can now be resized.\n    - Docs pages can now have inline links.\n    - Many changes and additions to the documentation texts.\n- The game now keeps a few backups of your save files in case of file corruption.\n- Added safeguard error message for forgetting the () after a function call.\n- Added safeguard error message for shadowing variables.\n- Added setting to disable warnings.\n- Dicts can now be copied with `dict()`.\n- `set_farm_size` now resets the drone position.\n- Identifiers can now start with an underscore.\n\nFixes:\n- Graphics setting no longer messes up the frame setting.\n- # inside strings now has correct syntax coloring.\n- `get_time` now gets unlocked by `Benchmark` instead of `Senses`.\n- `print` and `quick_print` now return `None`.\n- Sets and dicts now throw an error if you try change their size during iteration.\n- `swap` no longer makes a sound when it doesn't work.\n- Using `+=` on an undefined variable now gives the right error message.\n- Fixed the error messages of `max` and `min`.\n- Harvesting pumpkins before they are grown now destroys them like other plants.\n- Fixed problem when calling `pop()` without arguments.\n- Polyculture on 3x3 can no longer make a tile it's own companion.\n- `list + []` now takes `len(list)` operations.\n- `Items.Piggy` no longer shows up when iterating all items.\n- The unlock button is no longer unclickable on very wide windows."
+        },
+        {
+            "title": "Small Update",
+            "date": "2024-05-20 15:56:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970434117202",
+            "notes": "-Import statements are now ignored by the game.\n-Removed the commas in the print output.\n-Debug_2 and Benchmark pages can now be reached through the contents page.\n-Some minor documentation improvements.\n\n-Fixed binding the left mouse button as the menu key.\n-Fixed freeze when dragging a window with both mouse buttons.\n-Fixed right clicking till() leading to the pumpkin page."
+        },
+        {
+            "title": "Small Changes",
+            "date": "2024-05-15 16:27:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970415972048",
+            "notes": "Removed the awesome \"delete multiple files at once\" feature.\nMade a few small improvements to the help texts.\n\nFixed a get_companion bug that was caused by yesterday's patch.\nFixed syntax coloring strings with keywords in them."
+        },
+        {
+            "title": "Bug Fixes",
+            "date": "2024-05-14 17:13:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435415059124",
+            "notes": "[list]\n[*] Comparison operators now work more like in python.\n[/list]\n\n[list]\n[*] Fixed game hanging when a file ends with a missing colon syntax error.\n[*] Maybe fixed a file watcher related crash?\n[*] Fixed \"wrong number of args\" message when there is a syntax error in the called function.\n[*] Fixed single line unindent.\n[*] Fixed bug with F5 hotkey.\n[*] Fixed \"error_bad_operator\" error message.\n[/list]"
+        },
+        {
+            "title": "Small Update",
+            "date": "2024-04-01 13:47:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331452235035",
+            "notes": "[list]\n[*] Added Benchmark unlock\n[*] Added get_op_count() function\n[*] Calling functions is now slightly faster\n[*] All values can now be used as bools like in python\n[*] Measuring the treasure after 300 relocations now returns None\n[*] Made leaderboard scores also visible for those not on the leaderboard\n[*] Fixed missing right click links for items\n[/list]"
+        },
+        {
+            "title": "Cactus Balancing Update",
+            "date": "2024-02-25 04:34:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065192297986",
+            "notes": "[list]\n[*] use_item no longer uses an item if the item can't be used. Instead it returns False.\n[*] each cactus now drops cactus items equal to the farm size so it is no longer more profitable to farm cactus on a smaller farm.\n[*] all prices involving cactus have been adjusted.\n[*] changing the farm size now clears the farm to prevent some exploits.\n\n[*] fixed constructing sets from other data structures.\n\n[*] due to the cactus balance changes the leaderboard has been reset.\n[/list]"
+        },
+        {
+            "title": "Small Patch",
+            "date": "2024-02-11 11:34:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109276665720",
+            "notes": "[list]\n[*] __builtins__.py files are now ignored by the game and @Noon has generously provided his __builtins__.py file to be included with all saves automatically.\nThis gives external code editors proper intellisense information on all the builtins of the game.\n[*] Added an info page about using external editors.\n[*] Maze stats are now scaled based on how long the maze lived to better represent how fast you solve the maze.\n[*] The same maze can now be solved at most 300 times.\n[/list]\n\n[list]\n[*] Fixed duplicates showing up in code completer.\n[*] Fixed invalid name errors being case-insensitive.\n[/list]"
+        },
+        {
+            "title": "Stats Update",
+            "date": "2024-01-31 12:21:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074937768086",
+            "notes": "[list]\n[*] Added a stats page that tracks how much you're farming.\n[*] Improved all text in the game.\n[*] Removed the trade cost overview page. All item costs can still be seen in the item tooltips.\n[*] Added ctrl s to save the game.\n[*] Added a tabs to spaces option.\n[*] Missing unlock errors now tell you which unlock you're missing.\n[*] \n[*] Fixed unlock function being able to bypass unlocks.\n[/list]"
+        },
+        {
+            "title": "Bug fix",
+            "date": "2023-10-29 09:06:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621587012626",
+            "notes": "Fixed bug that allowed you to cheat the leaderboard."
+        },
+        {
+            "title": "Content Update",
+            "date": "2023-10-21 11:06:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989050530497",
+            "notes": "[list]\n[*] added cactus\n[*] added dinosaurs\n[*] removed reset (timed_reset still exists)\n[*] removed piggies\n[*] upgrades now have a max level\n[*] watering and multi_trade now also remain unlocked after the reset\n[/list]\n\n[list]\n[*] added functions to change the drone speed and the farm grid size\n[*] added set, list and dict constructor functions\n[*] added random function\n[*] added 'not in' operator\n[/list]\n\n[list]\n[*] code is no longer read only during execution but the execution stops when you edit executing code\n[*] when an error occurs the execution pauses before exiting so you can inspect values of variables\n[*] changes to files made in external editers are now automatically applied in the game\n[*] error message improvements\n[*] the output now no longer puts a \"printed: \" before everything you print.\n[*] the output is now also written into a file in the game folder.\n[*] increased max recursion depth\n[*] ctrl + y can now also be used to redo\n[*] added a line to separate the breakpoint panel\n[/list]\n\n[list]\n[*] fixed problem with empty tuples\n[*] fixed delete confirmation popup showing up when no deletion is possible.\n[*] fixed zoom still working while mouse isn't over window\n[*] fixed len not working with tuples\n[/list]"
+        },
+        {
+            "title": "Bug Fixes",
+            "date": "2023-08-26 07:46:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722334177128",
+            "notes": "[list]\n[*] fixed the measure return value being of the wrong type\n[*] fixed indentation of nested functions not being checked\n[*] fixed sequence unpacking on lists\n[*] fixed breakpoints not being removed\n[*] fixed floating error message after reloading the scene\n[/list]"
+        },
+        {
+            "title": "bug fixes",
+            "date": "2023-07-10 15:46:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150171859739",
+            "notes": "[list]\n[*] fixed the dot operator not being parsed correctly\n[*] fixed the get_cost tooltip not opening the right docs page\n[*] fixed being able to call functions that aren't unlocked\n[*] fixed modifying a dict while iterating it\n[*] fixed line continuation in dict literal\n[*] fixed None key in dict\n[*] fixed len() on dicts and sets\n[*] improved some descriptions\n[/list]"
+        },
+        {
+            "title": "Language Update",
+            "date": "2023-07-06 03:32:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150155427651",
+            "notes": "[list]\n[*] functions now work like in python and you can write code outside of functions in the global scope.\n[*] windows now correspond to files instead of functions and every file is saved individually instead of as one file.\n[/list]\nThis means that there is a change to how the game is saved. \nOld save games should be automatically converted to the new format but you will have to adapt your code.\n\n[list]\n[*] added dictionaries\n[*] added sets\n[*] added tuples\n[*] added strings\n[*] added sequence slicing\n[*] added sequence unpacking\n[*] added default arguments\n[*] functions now have to be unlocked\n[*] get_cost now returns a dictionary\n[*] renamed Cost_Lists to Costs\n[*] removed get_active_power\n[*] adapted the docs to the new changes\n[*] added corruption protection to the save system\n\n[*] fixed some list operations not being affected by speed upgrades\n[*] fixed list index out of bounds bug\n[*] fixed the for loop docs page not opening when you first unlock it\n[*] fixed iterating Entities, Grounds, Items and Unlocks in a for loop\n[*] fixed trees unlock description\n[/list]"
+        },
+        {
+            "title": "Balancing Changes",
+            "date": "2023-06-03 04:56:32",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211232718695",
+            "notes": "Making power more empowering:\nUsing power efficiently has always been unnecessarily tedious and not very rewarding.\nSo I've decided to make power much easier to use. As long as you have power the drone now automatically goes twice as fast and uses up the power.\nNo more use_item(Items.Power)\n\nCompanions are now never more than 3 moves away from a plant because otherwise some companion planting methods get punished for expanding the farm.\n\nTo move the focus of the game away from carrots speed upgrades now cost power instead of gold and carrots after 12 upgrades.\nWater tanks now cost wood instead of carrots.\nSunflower upgrades now cost gold instead of power.\n\n\"Auto_Unlock\", \"Reset\" and \"Leaderboard\" now come after \"Cost_Lists\" in the research tree.\n\"Multi_Trade\" now costs 300 carrots instead of 5k gold and is an optional unlock.\n\"Reset\" now costs an extra 10k gold.\n\nFinishing a leaderboard run now no longer requires reloading the whole game.\nThe gold item model is now a treasure chest.\nDirection keywords now remain unlocked after a reset.\n\nBecause the times on the leaderboard no longer reflect the state of the game the leaderboard has been reset."
+        },
+        {
+            "title": "Bug Fixes",
+            "date": "2023-05-22 14:52:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943320646881",
+            "notes": "[list]\n[*] added option to enable/disable autosaves\n\n[*] fixed menu on wide screens\n[*] fixed output window problems\n[*] fixed functions deleting almost instantly when time is sped up\n[*] fixed hovering variables to see their values not working\n[*] fixed variable value not showing on hover if the variable has the same name as a function\n[*] fixed performance issue when item numbers go to to 0 often\n[*] fixed page down and page up messing up the carret\n[*] the Unlocks keyword now gets unlocked earlier\n[*] docs improvements\n[/list]"
+        },
+        {
+            "title": "Debug Update",
+            "date": "2023-05-18 04:39:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943304519772",
+            "notes": "[list]\n[*] added output window and quick_print()\n[*] added breakpoints\n[*] you can now see the current value of a variable when you hover it\n[*] the executing function is now slightly brighter\n\n[*] added the floor division operator //\n[*] added + operator for lists\n\n[*] fixed discord link\n[/list]"
+        },
+        {
+            "title": "Leaderboard Update",
+            "date": "2023-04-21 14:19:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583099799868164",
+            "notes": "[list]\n[*] added leaderboard (but it's not quite finished yet)\n[*] optimizations to make the game run better while sped up\n\n[*] fixed sunflowers being destroyed even when you harvested the largest sunflower\n[*] fixed sunflower upgrades\n[*] fixed being able to delete all functions if they are all stacked\n[*] fixed being unable to delete function with an error sometimes\n[*] fixed discord link\n[/list]"
+        },
+        {
+            "title": "Tooltip Update",
+            "date": "2023-04-08 14:27:35",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841296523629",
+            "notes": "[list]\n[*] added item tooltips\n[*] added code tooltips\n[*] added tooltips to the code completer\n[*] added tooltips to settings in the menu\n[*] tooltips now only pop up after a short delay\n[*] tooltips on buttons now appear in a fixed position above the button so they don't cover up parts of the code\n[*] some tooltips now have a \"--right click for more info--\" message that opens the corresponding docs page on right click\n\n[*] added \"open folder\" button to open the folder with the savegames in the explorer\n[*] you can now copy code from a running function\n[*] the automatically inserted indentation after a colon is now using spaces if the previous indentation was already using spaces\n[*] print now rounds less\n[*] the text on the unlock buttons now changes to \"Upgrade\" after the first unlock and the button changes it's color\n[*] selecting a docked function now moves the whole function stack to the front\n[*] get_cost(Entities.Hedge) now returns an empty list like other plants.\n\n[*] added continue statement\n[*] local scopes now work like in python\n[/list]"
+        },
+        {
+            "title": "Small Patch",
+            "date": "2023-03-25 16:08:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143713753736985180",
+            "notes": "[list]\n[*] you can now dock functions together\n[*] sunflowers now yield 0.05 times the number of sunflowers\n[*] the reset unlock is now slightly more expensive\n\n[*] fixed operators (again)\n[*] mazes no longer spawn on a 1x3 grid\n[*] more docs improvements\n[/list]"
+        },
+        {
+            "title": "Some QoL changes and some fixes",
+            "date": "2023-03-14 12:35:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528810310863658",
+            "notes": "[list]\n[*] you can now add comments before the function\n[*] trees neighbour condition no longer wraps around the field because that was somewhat unintuitive and confusing\n[*] you can now iterate Items, Entities, Ground, Unlocks with a for loop\n[*] the camera can now also be moved with WASD\n[*] get_world_size, get_water, use_item, trade, move and till now also remain unlocked after the reset. They are useless until you've unlocked the items/entities needed but you don't get an error for trying to use them before.\n\n[*] fixed first piggy being ignored\n[*] fixed drone position not reset on reset()\n[*] fixed trading non integral quantities\n[*] fixed operator associativity\n[/list]"
+        },
+        {
+            "title": "Small changes",
+            "date": "2023-03-06 13:06:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176577455260",
+            "notes": "[list]\n[*] replaced the is_over function with two new functions to check the ground and the plants separately (you'll have to adjust your functions to this)\n[*] added the None keyword\n[*] added get_time()\n[*] added a hint for the maze\n\n[*] really fixed german locale bug now (I hope)\n[*] fixed bug caused by using a binary operator on a None value.\n[*] fixed tilling in the maze\n[/list]"
+        },
+        {
+            "title": "Balancing Update",
+            "date": "2023-02-28 13:44:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268543375944857",
+            "notes": "Balancing:\n-farming only on one tile is a bit boring so fertilizing has to be more expensive. fertilizing a plant now completely dries out the ground\n-getting millions of pumpkins meant that fertilizer was essentially free. pumpkins now only drop side length cubed pumpkins\n-really high drone speeds make it hard to actually see the execution of the programs which removes a lot of the satisfaction of the game. Drone speed new grows linearly with upgrades instead of exponentially\n-expressions that don't require the drone to do anything now execute 10 times faster\n-failed actions (like moving into a wall in the maze) now count as fast expressions that don't take the full execution time of an action\n-growing tons of mazes was a bit too cheap so mazes now only grow with a 10% chance after fertilizing instead of every time\n-unlock prices have been adjusted to the changes\n-grass can now be planted\n\nNew Content:\n-added polyculture\n-added yield upgrades\n-added a new unlock that allows trading several items at once\n-some more docs improvements\n\nFixes:\n-Items.Gold now gets unlocked properly\n-fixed locale bug that caused watering to break in Germany\n-fixed modifying lists in for loops\n-fixed list comparison"
+        }
+    ]
+}

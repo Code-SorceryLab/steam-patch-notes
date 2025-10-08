@@ -1,0 +1,84 @@
+{
+    "appId": "2104660",
+    "total_notes": 13,
+    "notes": [
+        {
+            "title": "Patch: 2025.03.09.0",
+            "date": "2025-03-09 09:07:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379469721",
+            "notes": "Additions\nThe start of the localization system.\nWhile right now the ONLY language other then English, is just the US dialect of English (So English AU and English US are the only two languages), but if it works, you'll be able to notice the word \"Colour\" will drop it's 'u' for the Americanised translation. (I actually have zero idea if this even works, I believe it to work, so please let me know if changing the language setting, changes anything.)\n\nI intend to offer the original set of languages from Table Ball (English, French, German, Spanish and Swedish), plus a few other languages.\nYou can feel free to help translate the game through Crowdin\n\nI do apologise that there aren't any other changes to the game, I've been focused on a few other projects and some personal stuff so haven't been able to dedicate time to Unreal Table Ball.\n\nWhat's next for Unreal Table Ball?\nFurther enhancements to the VR Mode Beta - I've made live the beta branch, and will be quickly distributing a new build to that, that SHOULD contain a very VERY early version... (As in barely anything works yet, controlling the game is through physical buttons you have to stand on, and I have NO idea if you can even do anything in the VR mode as my headset isn't working... Gonna get it replaced...)\n\nThe 3D Game Mode\n\nAdding the customization system to the main menu\n\nStart of the saving system"
+        },
+        {
+            "title": "Quick .1 Patch",
+            "date": "2025-02-23 03:41:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353285193",
+            "notes": "I accidentally left some debug stuff enabled, would just show the current velocity in the top-left corner. Has been disabled however."
+        },
+        {
+            "title": "Unreal Table Ball Update One Beta 3",
+            "date": "2025-02-23 01:48:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353282616",
+            "notes": "Unreal Table Ball Update One Beta 3\n2025.02.23.0\n\nChanges\nChanged how the Steam Sync works\n\nThe process for syncing achievements on Steam is now Check and Unlock \"free\" achievements ingame -> Request Steam User Stats and Achievements -> On success Get the data for all ingame achievements -> For each individual achievement - Check whether it's unlocked -> If so, Check if unlocked on Steam -> If not, Unlock on Steam. Once every single achievement has been processed -> \"Store\" the stats and achievements. Originally some of the steps taking place outside of the \"achievement loop\" were taking place inside the loop, this likely lead to issues in Steam and so hopefully, this should fix that issue.\n\nUpdated the achievements menu.\n\n The individual achievement listings have been remade.\n\nUpdated the game controller\n\n The game should no longer, spawn bumper 1 in front of the camera in the main menu, nor try to access input.\n The issues outlined above were caused by me using the exact same game controller and \"Game Mode\" within the Main Menu Map and not experiencing these specific issues myself until today\n\nPlaytest Builds now use the Playtest icon.\nDemo Builds now use the Demo icon.\n\nFixes\nFixed an issue where the game was starting with both the player and the AI having 49 points...\n\n When testing the issue with achievements I needed to basically force my points score to be close to the first achievements. Due to an oversight, I left this in the game... This has now been fixed."
+        },
+        {
+            "title": "Unreal Table Ball Update One Beta 2",
+            "date": "2025-02-20 08:44:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353194571",
+            "notes": "Unreal Table Ball Update One Beta 2\n2025.02.20.0\n\nChanges\n\n Steam Sync now occurs every 20 points, instead of every single time it checks if an achievement is earnt should eliminate lag when the game cannot connect to Steam\n Started work on a function to check if the ball is moving in a straight line\n Started cleaning up redundant code\n Cleaned up some code for better readability Won't have much effect on gameplay\n Updated the playtest's assets\n\n\nFixes\n\n - Fixed an issue where the game was giving a Player Score Achievement instead of an AI achievement Earning at least 10 points should cause the game to trigger the correct achievement\n - Fixed an issue in the Achievements Sync event where it was getting the achievements Name instead of it's Key\n\n\nWhat's Next?\nThe 3D Game Mode! - It'll be about the same as the old version\nFurther enhancements to the VR Mode Beta - I'll be making this live for everyone using the Playtest when it is updated.\nStart of the saving system - This won't be accessible within the actual game and will mostly be hidden until it's ready. At the start the save system will be used purely for saving achievement progress.\nAdding the customization system to the main menu."
+        },
+        {
+            "title": "2.3.0 Release Candidate 1",
+            "date": "2024-01-29 21:11:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046264855911",
+            "notes": "Added German Localization\n - Using Google Translate right now\nRemoved ALL code relating to the old powerups system\n\nI had intended to get the \"pre-powerup\" images working for this build, but with the good and bad powerups being split now it's going to have to wait until 2.4.0.\n\nFull Changelog\nTable Ball 2.3.0.0 30012024 Release Candidate\n\n=== Additions ===\n- Control reconfiguration\n - Available within the settings menu in ALL scenes\n\n- Four new ball skins\n - Glitched\n - SD\n - Salus\n - Tes\n\n- All new UI\n\n- Added backend code for the Skin Packs system\n - Will be for the eventual Skin Pack DLC's\n - Be sure to add Skin Pack 1 and Skin Pack 2 to your Steam wishlist\n\n- Added new Debug Information Plugin\n - We now use a plugin called \"Graphy\"\n - Can be toggled on with Control+F11 (Information can be toggled on with Control+F10)\n\n- Various parts of the game are now localised\n - The entire game is localised, if any strings are not localised please let us know\n - Current languages are English, French, Swedish, Spanish and German\n\n- Completely remade the powerups system\n - There is now a grace period of about 15 seconds before a second powerup can trigger\n - Added 3 new powerups (Do not work if \"old powerups system\" is enabled, this toggle will be removed in the future)\n  - Score+\n  - Score++\n  - Double Bumper\n\n- Added skin audio\n - All skins can now change ingame audio, they can have custom music and custom hit sounds\n\n- Game now warns you if you've run out of pings\n\n- Added about 20 \"dummy\" skins\n - These can be considered \"reserved\" skin slots\n - Means we don't have to manually add new skins to each scene\n\n=== Changes ===\n- Temporarily removed the \"Secret Life\" Easter Egg due to legal issues.\n\n- Updated how the game checks for Steam\n\n- Submenus can now be exited by pressing the back button *Circle on PS, B on Xbox*\n\n- The background in all scenes now moves\n\n- Removed the controls menu from all scenes\n\n- Skins with a price value of 0 are now unlocked on launch\n\n- Background work for the Complete Collection code\n - Even though the complete collection was delisted on itch, we're still cleaning up and fixing the code for it\n\n- Updated the store manager and skinInShop manager\n\n- Game audio now changes when specific skins are applied\n - Can be disabled by disabling Easter Eggs in the settings menu\n\n- Remade the \"emotions\" ball skin pack\n\n- Renamed all Game Modes\n - Advanced -> Table Ball\n - Continuous -> Endless\n - Survival -> Space Game\n\n- Disabled old debug information\n\n- Due to issues with the touch input in the game, we've disabled the ability to use it\n - Heavily considering fully removing it\n\n- Updated achievements\n - Changed names and descriptions\n - Updated most of their icons (should be more consistant)\n - Unhid quite a few (We've decided that ones you work your way upto, ones for using game modes, and easy to get ones, should not be hidden)\n\n- Consolidated the save/load options into their own menu\n - This is the first part of eventually making multiple save files\n\n- Disabled \"other\" settings in all scenes bar Main Menu\n\n- Hid Beta powerups toggle\n\n- Disabled all unfinished settings\n\n=== Bug Fixes ===\n- Fixed Steam Deck issues\n\n- Finally fixed \"bumpers and ball invisible on main menu\"\n\n- Finally fixed \"main menu game not running\"\n\n- Fixed \"Skin applied on entitlement check\"\n - This means that when going through the skins menu, you should no longer have random skins applied\n\n- Fixed an issue where some paid skins were automatically purchased\n\n- Fullscreen Mode cannot be toggled in some scenes\n\n- Colours System can be reenabled when Steam is unavailable\n\n- Skins System is disabled when Steam is unavailable\n\n- Fixed an issue where some skins would be unavailable in some scenes\n\n=== IMPORTANT ===\nDropped support for 32-bit systems\n- Robin"
+        },
+        {
+            "title": "Beta 17012024.1 patch",
+            "date": "2024-01-17 00:49:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213093133680",
+            "notes": "17012024.1\nThat's embarrassing, the previous build had some annoying bugs, those have been fixed now.\n\nChanges from last build\n- Fixed bug causing the Customisation System to break if Steam is detected\n- Updated the Skin Packs menu to separate the \"Amazing Extras\" skin pack content from the \"default\" skin pack\n- Fixed bug causing purchased skin packs from unlocking ingame\n- Updated the skin pack in the Skin object for all Amazing Extras skins to use the \"amazingextras\" text"
+        },
+        {
+            "title": "Patch Notes - 2.2.0.1",
+            "date": "2023-10-03 21:00:55",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220292521175158598",
+            "notes": "Fixed an issue with the free achievement"
+        },
+        {
+            "title": "Update Notes for 17th September 2023",
+            "date": "2023-09-17 02:43:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588792540044",
+            "notes": "This is hopefully the LAST Beta Build for Table Ball 2.2.0.0\n\nFixed Slowness Counter not Disappearing\n- The way that popup works has been completely rewritten\n\nAllow game to run completely DRM-free\n- Removed reliance on Steamworks API\n- Removed reliance on Discord API\n- Customisation System disables itself if Steam is not detected"
+        },
+        {
+            "title": "Update notes for 16th September 2023",
+            "date": "2023-09-16 01:52:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588788768070",
+            "notes": "Updated the powerup system\n - Increased the chance for a powerup to spawn from 10% to 30%\n- HOPEFULLY fixed the bug where the speed boost powerup doesn't spawn\n\nRemake the REDACTED Easter Egg\n- Removed all references to REDACTED\n- Remade the REDACTED"
+        },
+        {
+            "title": "Update Notes for September 3rd",
+            "date": "2023-09-03 03:52:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355667733266",
+            "notes": "Remade the entire Achievement System\n- Achievements are now disabled on levels where cheats are used\n- Added a few different achievements\n\nUpdated cheats handler\n- Added a few new cheats\n- The achievement.free.unlock cheat now works on all scenes where cheats are enabled\n- Cheats now disable Steam stats and the money system\n-- However the achievements, steam stats and the money system are reenabled on scenes where they can be used.\n\nContinuous Mode\n- Allows you to \"save\" the game\n-- Currently only saves the score, in the future the game will save the current position of each ingame item, settings and various other stuff.\n\nImportant\nWe're aware of a bug in the current powerup system where some powerups just do not spawn.\n- We're working on a complete rewrite to the powerup system due for the 2.2.0.0 update\n- We'll be pushing back the 2.2.0.0 update specifically to finish the rewrite and to fix the bug\n- We were meant to have this finished over the weekend, but unfortunately that wasn't enough time."
+        },
+        {
+            "title": "2.0.0 Release Candidate 2",
+            "date": "2023-06-10 00:42:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846344987088",
+            "notes": "- Removed unfinished skins\n- Disabled version information"
+        },
+        {
+            "title": "2.0.0 Release Candidate 1",
+            "date": "2023-05-31 01:29:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211221257332",
+            "notes": "Updated the games icon\nRemoved unfinished features\nAdded a whole bunch of new skins\n- As we have such a diverse team we decided to represent all our team-mates by their respective pride flags. Be sure to let us know which other flags (whether pride or country) you'd like to see added.\n- We MAY have accidentally left some unfinished skins in, let us know if so."
+        },
+        {
+            "title": "2.0.0 Beta 5 Patch 1",
+            "date": "2023-05-29 07:39:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151600576602393326",
+            "notes": "Full 2.0.0 Changelog here: https://docs.lockyzdev.net/home/table-ball-changelogs/2.0.0\n\nPatch 1 Changelog\nFixes\n\nReenabled the \"spawners\" in the survival game mode\n\n\n2.0.0 Beta 5 Patch 0 changelog\nAdditions\n\n 3D toggle in game settings\n\n Turns on the 3D Game Mode\n Currently has no \"gimmick\" other then being a \"bumper POV\" view.\n For some reason though, you can break out of bounds by just moving up.\n Need to investigate further, let us know what happens ;)\n\n Started working on content toggles\n\n These will allow you to toggle off optional content\n\n Started working on a Twitch friendly mode\n Added some Easter Eggs\n Added a Game Mode menu to the Main Menu\n\n You can select either Advanced or Survival\n Game Modes will be selected after clicking \"start\"\n\n Started work on the theming system.\n\n Currently only the game background changes\n As UI elements don't change rn, light mode defaults to dark mode\n\n\n\nChanges\n\n Made some improvements to the controller configuration\n\n The REDACTED version of the game should now be fully playable\n\n Started unifying the visuals of every single menu\n\n Every single menu should now be using the exact same Hex value for the background\n Each button should now use the exact same Hex value for text and background\n Some menu's may not be done yet. Please let us know: lockyzdev@gmail.com\n\n All scenes use the \"Space\" background\n\n In the future when the theming system is introduced this will be changeable\n\n Removed the theme tab from the customisation system\n\n Is now a dropdown in the display settings\n\n Removed the Game Mode selection from the Advanced Game mode\n Started updating all scripts to use Unity's new Input System\n\n This means in a future build we will be able to introduce \"Controller Disconnection\" messages\n We're still experimenting with the new Input System so some features are not using it just yet and may be broken\n\n Updated the SURVIVAL Game Mode\n\n You can NOW shoot with E (Right Trigger on Controller)\n Added powerups\n Enemies now use a new model\n Added a level up mechanic\n Player health now scales based on level\n Enemies now stay in place and shoot the player\n\n\n\nTechnical Changes\n\n Finished the main code for the new Colouring System\n\n Uses VERY similar code to the skins system\n Is MUCH nicer then the old customisation system\n\n Temporarily removed multiplayer mode"
+        }
+    ]
+}
