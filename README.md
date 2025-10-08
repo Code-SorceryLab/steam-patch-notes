@@ -107,7 +107,57 @@ This step builds a local dataset of Steam games by querying the `appdetails` API
    * This is implemented in a Jupyter notebook: [dataset_overview.ipynb](./dataset_overview.ipynb).
 
 
+
 ---
+# 2.  Dataset Structure
+The organization of our repository follows the implementation of
+the data extraction pipeline described above.
+## 2.1 Repository Organization
+This repository is structured as follows:   
+* raw_metadat_dataset/  
+&nbsp;&nbsp; {appid}.json 
+* steamspy_dataset/  
+&nbsp;&nbsp; {appid}.json 
+* patches/  
+&nbsp;&nbsp; news_raw/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {appid}.json    
+&nbsp;&nbsp; patches_filtered/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {appid}.json    
+&nbsp;&nbsp; patches_html_strip/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {appid}.json  
+* outputs/  
+&nbsp;&nbsp; applist.json  
+&nbsp;&nbsp; queries.json  
+&nbsp;&nbsp; game_metadata.csv  
+&nbsp;&nbsp; game_metadata_totals.csv  
+* scripts/  
+&nbsp;&nbsp; cleaning_script_pipeline/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; files_handler.py    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; filter_patch_notes.py   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; game_data.py   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run_all.py   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strip_html.py   
+&nbsp;&nbsp; get_notes_script_pipeline/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; logs/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; skipped_files.txt  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output.log  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; create_json_files.py  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_patch_notes.py  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; load_batches.py  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; process_notes.py  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; session.py  
+&nbsp;&nbsp; add_totals_to_csv.py  
+&nbsp;&nbsp; total_patch_count.py  
+&nbsp;&nbsp; appdetails_to_csv.ipynb  
+&nbsp;&nbsp; dataset_overview.ipynb  
+&nbsp;&nbsp; game_metadata_extraction.ipynb  
+&nbsp;&nbsp; steamspy_extraction.ipynb  
+<p>
+Each component is modular and can be reused or extended to
+support more detailed patch note collection and analysis in future
+work.
+</p>
+
 
 # Current Status and TODO
 
