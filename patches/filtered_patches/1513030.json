@@ -1,0 +1,144 @@
+{
+  "appId": "1513030",
+  "count": 23,
+  "notes": [
+    {
+      "title": "Update 1.3.4",
+      "date": "2025-05-12 13:47:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287964923",
+      "content": "Remove a developer hotkey"
+    },
+    {
+      "title": "Update 1.3.3",
+      "date": "2025-05-12 13:24:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287964444",
+      "content": "[list]\n[*] Fix a barrier preventing player from re-entering the hole they fell into in the tutorial\n[*] Fix problems when starting a new game\n[*] Make tutorial harder to break\n[*] Remove a random door & windmill from village\n[/list]"
+    },
+    {
+      "title": "Update 1.3.2",
+      "date": "2025-05-11 23:50:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287945875",
+      "content": "[list]\n[*] Fix several bugs rendering the main quest uncompletable\n[*] Improve HLODs\n[*] Fix random bits of corruption not clearing properly\n[*] Fix waterfall island (near Shajara) not being properly corrupted\n[*] Fix maze + shrine island offset\n[*] Fix regrown forest not rendering on loading save game\n[/list]"
+    },
+    {
+      "title": "Update 1.3.1",
+      "date": "2025-05-10 18:52:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287910504",
+      "content": "[list]\n[*] Fix updraft windlines in pillar area rendering in the wrong location\n[*] Fix whale's island not appearing in HLOD\n[*] Fix torch quest corruption not clearing\n[*] Fix animal corruption near desert castle\n[*] Fix day/night cycle getting stuck just after sunset\n[/list]"
+    },
+    {
+      "title": "Optimization 2",
+      "date": "2025-05-09 13:14:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287871620",
+      "content": "As mentioned during the last optimization pass, the bulk of Soar's performance problems stem from inefficiently loading in the overworld & poor foliage optimization. Sharp-eyed players will have noticed lag spikes as they approach Fadh-as-Sayl, Shajara, and the trapped Whale. These are areas where, for one reason or another, large chunks of the overworld are loaded in all at once. Unlike most performance problems- which are tied to the GPU or CPU- streaming is limited by storage and RAM speed; which is why these issues can affect even high end systems.\n\nThe solution is very simple- turn down the streaming distance, and use HLODs to fill in the now-empty world. We've avoided doing this because HLODs are very intensive to generate- they lock up a given machine for up to an hour, and on top of that they need multiple passes to get right. For our small team, that's a massive amount of developer time we're not using to playtest or bugfix. However, as Soar is maturing, it feels like an appropriate time to start investing in HLODs. This has the added benefit of allowing us to keep the entire map visible at all times without any added performance cost, a massive win in our book.\n\nWhile this update (probably) won't improve your peak framerate, it will significantly stabilize framerates in problematic areas compared to the last update. We don't feel that optimization is complete- it never is- but, for better or for worse, the bulk of what remains will just involve improving the HLODs. So, unless there's another major bottleneck that we find, this is the final optimization oriented update, and all other future performance improvements will be rolled into other patches.\n\nSome players have expressed frustration that Soar has un-removable motion blur or uses upscaling. While we greatly sympathize with concerns around certain industry trends, there's no motion blur whatsoever, and the only upscaling in the game- TSR- is totally optional. However, as always, these frustrations come from a legitimate place. In this case, our cloud material uses sub-surface scattering to give them a soft, voluminous look- at some distances, angles, and speeds, this can cause a smearing effect on the player character that looks quite a lot like temporal smearing. It's most noticable in the opening cinematic, which certainly may have soured some first impressions. Rest assured, we're aware of the issue and plan to fix it, but as it has no impact on gameplay and isn't triggered often, it's a low priority for us right now.\n\nAlongside optimization, we also have a variety of bugfixes and improvements to tide you over until the next major update.\n\n[b]Patchlist:[/b]\n[list]\n[*] Add HLODs\n[*] Optimize foliage meshes\n[*] Fix collected trapped stars leaving behind corruption when loading a save\n[*] Removed extra UI element from inventory popup\n[*] Fix incorrect water rendering, especially in Shajara\n[*] Polish ball challenge\n[*] Improve the way NPCs choose dialogue from their available pool\n[*] Update obelisk hunt translations\n[*] Tweak obelisk cutscene timing\n[*] Seed collectible no longer leaves behind an interaction icon\n[*] Make herbs bigger & respond to player movement\n[*] Make mouse hide on pause menu if using gamepad\n[*] Fix text overflow on 'leviathan's repose'\n[*] Fix a couple of zones that were offset from their content\n[*] Improve Corruption effect\n[*] Tweak Corruption placement to be more logical\n[*] Improve boar behavior on mountain foot trial\n[*] Exiting to main menu now triggers a save\n[*] Reverse shot in the intro cutscene that had the player falling backwards\n[*] Fix a lighting bug at lower scalability settings\n[*] Fix gyroscope (by laser) being uncompletable\n[*] Fix Corruption on the 2nd largest tree in Shajara not clearing properly\n[/list]\nComing soon- major improvements to the way that players are directed to the main quest"
+    },
+    {
+      "title": "1.2.4 Hotfix",
+      "date": "2025-05-05 15:52:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487741208",
+      "content": "Make resetting location work a little more coherent with the tutorial"
+    },
+    {
+      "title": "Hotfix 1.2.3",
+      "date": "2025-05-05 15:42:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487740777",
+      "content": "Pressing R now reloads you at the middle of the world"
+    },
+    {
+      "title": "Patch 1.2.2 Hotfix",
+      "date": "2025-05-05 13:37:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487737991",
+      "content": "Correct the last two hotfixes"
+    },
+    {
+      "title": "Revert last hotfix",
+      "date": "2025-05-05 13:12:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487737527",
+      "content": "As title says"
+    },
+    {
+      "title": "Soar 1.2.1 Hotfix",
+      "date": "2025-05-05 13:04:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487737082",
+      "content": "Remove collision from objects atop Aisha's shelf, preventing players from getting stuck there"
+    },
+    {
+      "title": "Update 3: Exploration",
+      "date": "2025-05-05 04:11:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487725233",
+      "content": "Exploration should be challenging, but it's important to strike a balance between challenge and fun. We're experimenting with improving player's ability to track their own progress in-game, starting with our freshly re-designed Torch Hunt and placing more area-scanning objects around the over world.\n\nPatchlist\n[list]\n[*] Torch hunt quest has been replaced with Obelisks\n[*] Can now scan the area to get a hint for the location of remaining Obelisks\n[*] Add scanners to every major region\n[*] Improve stability and reliability of scanners\n[*] Improve scanner interface, bringing it in line with other actors\n[*] Update scanner design to something more legible\n[*] Fix whale totem glow & echo not responding properly to direction\n[*] Improve the way gliding & transformation are taught in the tutorial\n[*] Fix the Mountain being a few meters too low\n[*] Clean up some leftover meshes\n[*] Improve nighttime visibility\n[*] Hedaad collected dialogue no longer triggers inappropriately\n[*] Improve timer visibility\n[*] Tuck piece of iron back in\n[/list]\n\nComing next- strengthening the direction of the main quest & the relationship between the trapped whale and clearing corruption"
+    },
+    {
+      "title": "Update 2: Interactions",
+      "date": "2025-04-30 20:58:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487587490",
+      "content": "Interactions were a bit finnicky and inconsistent, due to a rushed codebase. With some time to breath, we could lock in and iron out a lot of the edge cases.\n\n[list]\n[*] under the hood: redo interaction system, fixing several small bugs\n[*] add dedicated drop button & accompanying popups\n[*] improve Hedaad capture quest\n[/list]\n\nNext patch, we'll be targeting NPC dialogue!"
+    },
+    {
+      "title": "Soar 1.11 Hotfix",
+      "date": "2025-04-30 08:55:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487570656",
+      "content": "Fixes:\n[list]\n[*] translated logos errors\n[*] save file not loading properly if you quit & reload tutorial\n[*] tutorial being uncompletable\n[*] ability to freely exit tutorial at any time\n[/list]"
+    },
+    {
+      "title": "Hotfix- translations",
+      "date": "2025-04-29 23:02:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487557038",
+      "content": "Fixed a couple of untranslated lines in the tutorial"
+    },
+    {
+      "title": "The Tutorial Update",
+      "date": "2025-04-29 17:51:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624635092",
+      "content": "From user feedback and our own internal testing, we've decided to improve the tutorial and some controls. We understand that this may negatively impact some players, but we felt that the potential gains were worth the discomfort. This will be the only change to [i]Soar's [/i] control scheme. If you've already finished the tutorial, we strongly encourage you to read the patch notes, if you haven't, then this won't affect you.\n\nTutorial:\n[list]\n[*] Fix a couple of bugs\n[*] Tutorialize air braking\n[*] Tutorialize mantling\n[*] Time of day no longer changes during tutorial\n[*] Reloading mid-tutorial no longer forces you to re-do the whole tutorial\n[/list]\nControls:\n[list]\n[*] Mantling is moved to a button: RT on gamepad, Left Shift on keyboard\n[*] Air braking & walking are rebound to Left Control on keyboard\n[/list]\nOther:\n[list]\n[*] Improve foliage distance blending & performance\n[*] 'Continue' loads your last location, instead of a predetermined location\n[/list]\n\nComing soon- translations, new audio and particles, and more!"
+    },
+    {
+      "title": "Soar 1.01 Hotfix",
+      "date": "2025-04-29 04:20:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624615460",
+      "content": "Hi everyone, and welcome to the first ever patchlist for Soar!\n\n[list]\n[*] Fixed Aisha's dialogue not being correct during herb harvesting\n[*] Fix mirror lake\n[*] Fix Haroon's positioning after freeing the djinn\n[*] Add SFX and VFX to gliding\n[/list]\n\nKeep your eye out for more bugfixes, upgrades to the tutorial, and gameplay improvements!"
+    },
+    {
+      "title": "Big Announcement!",
+      "date": "2025-03-21 08:13:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830910903322",
+      "content": "[h2]SOAR: PILLARS OF TASNEEM - OFFICIAL RELEASE DATE![/h2]\n\n[b]The wait is almost over![/b] We're thrilled to announce that [i]SOAR: Pillars of Tasneem[/i] will officially launch on [b]April 15, 2025[/b]! \n\nGet ready to:\n-> Transform into a [b]majestic dragon[/b] and experience the pure joy of flight\n-> [b]Explore a vast, mysterious world[/b] filled with secrets, ruins, and wonders\n-> Uncover [b][i]Tasneem's[/i] hidden past[/b] and restore balance to a land corrupted by darkness\n\nAdd SOAR to your [b]wishlist[/b] now to be [b]notified at launch[/b]!\n\nWe couldn\u2019t have reached this point without your incredible support, feedback, and encouragement throughout development \u02d0steamhappy\u02d0\n\nStay tuned for more updates as we prepare for launch... and [b]get ready to take flight on [u]April 15[/u][/b]!\n[img]{STEAM_CLAN_IMAGE}/44946247/aee62f1e156a2e17d18b29794bca07bf6c8aa440.png[/img]"
+    },
+    {
+      "title": "Devlog: Wall-running",
+      "date": "2025-03-07 13:14:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379413237",
+      "content": "The next fest provided an absolutely enormous amount of feedback. As we've sorted through it all, one thing we noticed over and over again was that people just do not like wall-running. The most common complaints were that it's unreliable, unintuitive, and not used frequently enough to justify it's existence. And, after taking a closer look at wall-running, we completely agree.\n\nIn fact, we realized that the situation was worse than that- there are only 3 or 4 locations [i]in the entire game[/i] that properly support wall-running. The team was unanimous: wall-running just isn't a good fit for SOAR. It's too specific, too linear- our lead designer described it as 'perpendicular' to SOAR's design ethos- not to mention, very time consuming to implement properly.\n\nNow, nobody's shedding any tears over losing wall-running, but, it still held an important place in SOAR's design. We built it originally to add variety and interest to the human form, and even though it failed in that goal, that doesn't mean we should give up on achieving it. So we had a brainstorming session, and we decided to cook up something new. These are the ideas that we've settled on:\n\n[list]\n[*] Air dash\n[*] Wall jump\n[*] Superjump\n[*] Vertical wall run\n[*] Breath of the Wild-style glide\n[/list]\n\nWe'll spend the next couple of days prototyping these, then play through them as a team and see what feels right. Which ones are intuitive? How difficult will they be polish? How many new bugs might they introduce? What kind of new avenues for play do they open up? And most of all, which ones are the most fun?\n\nWe'll be sharing these playable snippets exclusively on our Discord in the next couple of days, so if you're interested in helping to guide SOAR's development, [url=https://discord.gg/xNJ7KM9a]come on by and say hello! [/url]"
+    },
+    {
+      "title": "Developer Update: Flight",
+      "date": "2025-03-05 12:41:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379346308",
+      "content": "Hey everyone-\n\nFlight is at the heart of SOAR, in more ways than one. Obviously, from a player's perspective, it's the core way that you experience Tasneem, and the main thing that separates us from any other game that you might choose to play. But, it's special for us, too- we made SOAR because we love flight, and we wanted to see more games that centered around it.\n\nOur flight system took about 2 years & 4 separate attempts to develop, and we're extremely proud of it. It sets us apart from every other flight-based game by being very physical and active, resisting your attempts to control it- which, as I'm typing this out, doesn't [i]sound[/i] all that fun. But, as many of our players know, if you're able to get in-tune with it, SOAR's flight provides a marvelous sense of speed and momentum. The physicality of it, which initially breaks your immersion, transforms into a tactility that sinks you more deeply into the player character than you might have thought possible.\n\nUnfortunately, we've known for many years that a certain subset of players (about 10-20%) just don't seem to click with this flight system. It's not for lack of interest, they come to SOAR fully aware of what it is and excited to play it, but then they find that flight just drags them out of the experience. As we've researched the problem, explored dozens of tutorialization options, and even tried in-person coaching, we've learned more and more that this just isn't solvable. Some players simply don't like how SOAR plays, and if there's a way around that, we can't see it.\n\nThat left us at a bit of an impasse. On the one hand, we didn't want to ignore a sizable chunk of our player base, but on the other, we couldn't seem to find any way to engage them. Until, that is, the Next Fest. Thanks to the feedback that you all provided, we had an epiphany: If players don't like the way SOAR flies, give them another way to fly.\n\nAs I mentioned earlier, SOAR has had 3 major iterations on flight before this one. We dug around in our archives, grabbed the last one, and brought it back to life. SOAR now has two flight modes: [b]Physical[/b] and [b]Simplified[/b]. Physical is our default flight mode, but [b]Simplified[/b] is exactly what it sounds like- a flight mechanic with simplified physics. I'll spare you all the technical details, but, if you felt frustrated by the way the dragon automatically drops while you're flying, you should definitely try out [b]Simplified[/b] flight.\n\nWhile you can change your flight style at any time in the [b]Options[/b] menu, under [b]Controls[/b], we understand that digging around in menus isn't most people's idea of a good time (even if it might be ours). So, as you're playing through the tutorial, you'll eventually encounter this pop-up:\n\n[img]{STEAM_CLAN_IMAGE}/44946247/d858f22ef26657967778dc1e35f90a814ce2e9c4.png[/img]\n\nNow, to be clear, Physical flight is the intended experience for SOAR, we built out the world and content with it in mind. So, we want to encourage players to stick with the default flight schema as much as possible.\n\nThis is just a first pass on this system, so, please let us know what you think- does Simplified flight suit your playstyle better? Does this integration system work well for you? What did you have for breakfast today? We want to know!"
+    },
+    {
+      "title": "THANK YOU!",
+      "date": "2025-03-03 11:26:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526143592",
+      "content": "[img]{STEAM_CLAN_IMAGE}/44946247/538a19956e47668602c1e44cdb1b6f0e3900b1fb.png[/img]\n[h2]Next Fest is Over, But the Journey Continues! \ud83d\udc09[/h2]\n\n[b]WOW[/b]! What an incredible week! The [i]SOAR: Pillars of Tasneem demo[/i] has reached [i]thousands [/i]of players, and we couldn\u2019t be more [b]grateful for all your support[/b]. Whether you played the demo, shared the game, or added it to your wishlist, [b]THANK YOU![/b] \nYour excitement and feedback mean the world to us.\n\n[u][b]\ud83c\udf81 As a thank-you, we\u2019ve decided to keep the demo live! \ud83c\udf81[/b][/u]\n\nIf you haven\u2019t had the chance to try it yet, now\u2019s the perfect time to [i]take flight[/i], [i]explore the skies[/i], and [i]uncover the mysteries of [b]Tasneem[/b][/i]. And of course, if you enjoyed it, don\u2019t forget to [b]wishlist the game[/b], it truly helps us as an indie team!\n\n[u][b]\ud83d\udce2 What\u2019s Next?[/b][/u]\nWe\u2019re working hard on improving [i]SOAR[/i], fixing bugs, and adding exciting new content. [b]Stay tuned[/b] for more updates, behind-the-scenes insights, and sneak peeks of what\u2019s to come!\n\n[b]Thank you again for being part of this adventure! [i]The sky is yours.[/i] \ud83d\udc09\ud83d\udc99[/b]\n[img]{STEAM_CLAN_IMAGE}/44946247/b7cccd19a7e3c590914451d3da69d87c047a1e8d.gif[/img]"
+    },
+    {
+      "title": "2,000+ Wishlists in 4 Days!",
+      "date": "2025-03-01 11:15:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526078723",
+      "content": "[h2]SOAR: Pillars of Tasneem is taking off! [/h2]\n\nIn just 4 days, we've hit [b]2,000+ wishlists on Steam[/b]! We're extremely [b]GRATEFUL [/b]to everyone who's supported the game so far, whether by [b]playing the demo, sharing it, or adding it to your wishlist[/b]. Your support is making a huge difference!\n\nWe're just getting started, and we can\u2019t wait to bring you more updates soon. If you haven't already, [i][b]join us on this adventure and wishlist SOAR today![/b][/i]\n\nAnd don\u2019t forget! If you love the game, spread the word! Every wishlist counts as we work towards launch!\n[img]{STEAM_CLAN_IMAGE}/44946247/7e69c74706a6d62e46aa9afaa89615308ee6946f.png[/img]"
+    },
+    {
+      "title": "Developer Update: Collectibles",
+      "date": "2025-02-28 16:30:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526054060",
+      "content": "Hey everyone-\n\nThanks so much to all of you who played the demo and provided feedback! We've heard a large number of players have been struggling with finding hidden collectibles and feeling lost past collecting a certain amount of content. To remedy this, we've made two important changes.\n\nFirstly, we've added a feature to the Warm Egg that will give you an easier time finding missing pieces of corruption:\n\n[img]{STEAM_CLAN_IMAGE}/44946247/36ecfeba56308d626d975169b7c005925a81d7b7.gif[/img]\n\nWe hope that this'll help you have an easier time keeping track of your progress.\n\nSecondly, we've dramatically enhanced the visibility of corrupted shards:\n\n[img]{STEAM_CLAN_IMAGE}/44946247/42cdd275a08f6cc059f793bfe04bc3708283a2ca.gif[/img]\n\nWe hope this makes your time in Tasneem smoother and more enjoyable!"
+    },
+    {
+      "title": "1,000+ Wishlists!",
+      "date": "2025-02-25 14:10:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353365400",
+      "content": "[h2]SOAR REACHES 1,000+ WISHLISTS![/h2]\n\nGreat news! [i]SOAR: Pillars of Tasneem[/i] officially [b]surpassed 1,000 wishlists yesterday![/b]\n\nA huge [b]THANK YOU[/b] to everyone who has supported us so far- your enthusiasm means the world to us. [i]Let\u2019s keep soaring higher![/i]\u02d0steamthis\u02d0\n\n[b]Keep spreading the word & stay tuned for more updates![/b]\n[img]{STEAM_CLAN_IMAGE}/44946247/419fffd9e3fa5fd05dcfe8864878a6513f6570d2.png[/img]"
+    }
+  ]
+}

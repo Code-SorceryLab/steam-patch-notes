@@ -1,0 +1,18 @@
+{
+  "appId": "1512210",
+  "count": 2,
+  "notes": [
+    {
+      "title": "Ultra App Kit 1.1 goes cross-platform",
+      "date": "2021-07-19 13:50:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340180696280",
+      "content": "Ultra App Kit 1.1 is now available. This free update brings cross-platform development to our fast resolution-independent GUI toolkit.\n\nIn addition to Windows, Mac and Linux are now supported, which means you can code once and compile everywhere to easily create cross-platform GUI applications.\n\nBuilds on Linux use minimal dependencies and will work on virtually any distro without any additional libraries to install. This effectively solves the Linux user interface problem forever and provides us with a strong foundation on which to build new game development tools that look great and run everywhere.\n\n{STEAM_CLAN_IMAGE}/40326982/a93943f0e6de3ddbfb6bfd77bdd914909dd32471.png\n\nUltra App Kit is gorgeous on macOS and works with both Intel-based Macs or running natively on Apple Silicon.\n\n{STEAM_CLAN_IMAGE}/40326982/6b160c338d7fd3e90fc1bc544319df5a2a7d1112.png\n\nAlong with various small bug fixes, version 1.1 adds the following new commands:\n\n Display::ClientArea() returns an iVec4 defining the usable area inside the screen, minus any bars the OS uses.\n Widget::SetFontBold() allows you to display bold text on a widget.\n Command() allows easy interaction with the system console / terminal."
+    },
+    {
+      "title": "1.1 Beta adds Linux and Mac support",
+      "date": "2021-06-22 04:55:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4056035920072350339",
+      "content": "Version 1.1 beta is now available, with experimental support for MacOS and Linux. See these instructions for compiling on Linux.\n{STEAM_CLAN_IMAGE}/40326982/a93943f0e6de3ddbfb6bfd77bdd914909dd32471.png\n\nTo get version 1.1, right-click on the application title in the Steam interface and select the Properties menu item. In the BETAS settings you can opt into version 1.1 beta:\n\n{STEAM_CLAN_IMAGE}/40326982/a7e3510be0ff5d0ed96a5d0f99d5ce7b20478921.png\n\nVersion 1.1 fixes several small bugs and adds new features:\n\n Adding Display::ClientArea() which returns an iVec4 defining the usable area inside the screen, minus any bars the OS uses.\n Adding Widget::SetFontBold()\n Added Thread::Start().\n Added PATH_DOWNLOADS and removed all other paths except DESKTOP, APPDATA, and DOCUMENTS.\n\nOther changes:\n\n SeedRandom renamed to Seed()\n Thread::Resume and Thread::Pause removed, since these don't work with POSIX threads\n CreateThread() will start the thread immediately by default.\n MOUSEREPEAT event and Widget::MouseRepeat removed, since the slider it the only widget that uses this. I programmed the desired behavior into the Slider class which leaves the window class more lightweight.\n The CursorBlink() stuff is moved out of the Interface class and just contained in the textfield class, since this is the only class that uses it.\n Window::Close() removed, use EmitEvent(Event(EVENT_QUIT)) instead."
+    }
+  ]
+}

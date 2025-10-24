@@ -1,0 +1,54 @@
+{
+  "appId": "2660970",
+  "count": 8,
+  "notes": [
+    {
+      "title": "Enemies drop coins now! New gun: Vindicator (reboot from 2018).",
+      "date": "2025-08-06 14:29:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909545250",
+      "content": "\\[1.4.0] - 2025-08-08\n\nAdded\n- Enemies now drop coins from exploded corpses! You have to physically touch them to collect your reward. Watch out though - you will drop the coins you collected if you die before the end of the round!\n\n\n\n- Resurrected unused gun: Vindicator. An economy rifle ($2500) specific to Resistance. Has 35 bullets, so more than Galilea, but less damage than Baka47 (32 vs 40) and is as slow firing as Baka47. It is however way lighter and has almost non-existent recoil.\n\n\nChanged\n- Balance: to account for the fact that you now have to walk to get the kill awards, all awards are now multiplied by 1.5, as well as dropping an additional $500 for a headshot.\n\n- Balance: SMGs are more affordable now.\n\n- Balance: Galilea: 34 -> 24 bullets, price: $2100 -> $2200"
+    },
+    {
+      "title": "Fixed ranked servers not connecting",
+      "date": "2025-07-25 18:17:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758655706",
+      "content": "\\[1.3.4] - 2025-07-25\n\nFixed\n- Fix broken ranked servers not letting in any clients.\nChanged\n- Balance: buff `pro90` headshot radius multiplier from `0.6` to `0.85`.\n\n\nTech details\n\n\nThat was another bug that was only made apparent thanks to introducing bots.\n\n- Indirect cause: bots were just playing warmup in perpetuity, causing world state to bloat.\n\n    - This is because when bots play, `is_idle()` is mistakenly reported `false`.\n\n    - This caused the maps (and thus the current round) to never change once `when_idle_change_maps_once_every_mins`.\n\n    - Maps now correctly cycle once every 15 minutes on ranked servers so this will never have a chance to happen again.\n\n- Direct cause: the world and game mode round state growing in perpetuity as bots continue to play the same \"warmup\" round indefinitely.\n\n    - `cosmic::set_specific_name` wasn't cleared when a bot entity was deleted.\n\n    - `knockouts` history (the list of kills) was growing indefinitely as it is only cleared on round restart.\n\n    - `awards` history as well.\n\n    - All of these are transmitted through the network on new connections - but the limit is only `2 MB`."
+    },
+    {
+      "title": "Fixed deep netcode bug",
+      "date": "2025-07-20 14:59:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065441238",
+      "content": "Player was sometimes teleported, or getting randomly killed by bots even though it still walked on the screen. The footstep smokes were there but no bot was visible.\n\nTechnical:\n\n\t\t- This was because of the decorative organisms (e.g. fish on `de_cyberaqua`) mistakenly using the same RNG as the simulation logic.\n\t\t- Normally when state desyncs, it is detected by the client - a state hash that differs from the server's is seen and a resync from the server is requested.\n\t\t- Not this time - this bug was apparent on the predicted game world which only exists on the client.\n\t\t- When the client is alone on the server, their predicted game world is usually spot on and might never get corrected for a long time until a random spike in lag (latency affects which simulation step your inputs might get applied to, so the **more stable your connection was, the more often this happened** as the predicted world was corrected more rarely).\n\t\t- However if that predicted game world has a different advance logic, the predicted and the referential server world might start diverging exponentially.\n\t\t- This is what happened here - within the predicted world, I purposely disable simulating fish to save processing time, assuming that will not break determinism of the rest of the simulation, but I haven't realized the fish are using the same RNG as the logic. Fish requesting next random values from the RNG causes the next requests to be different for the other simulation logic later down the road."
+    },
+    {
+      "title": "Fix frozen crosshair when holding a mouse button. CTs see planted bomb location.",
+      "date": "2025-06-19 18:21:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906742619",
+      "content": "- There was a super annoying glitch on Linux distros with X11 window systems - when switching between windows and back to Hypersomnia, the crosshair stops moving whenever you hold a mouse button, making shooting very uncomfortable.\n\n- Metropolis players can now see a bomb indicator once the bomb is planted. This is to make the game easier on newbies because some maps have several bombsites."
+    },
+    {
+      "title": "Added bullet shadows.",
+      "date": "2025-06-05 15:36:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199401537",
+      "content": "Can turn them off in Settings -> Graphics -> Draw bullet shadows.\n\nOther changes:\n- Implement nickname-based authentication for LAN parties so local ranked matches between friends can be played without Steam - this means the match will be properly frozen in case somebody's client crashes and they'll be able to reconnect to continue.\n- Disable packet reliability for Web builds - it was mistakenly enabled. This will improve Web based experience.\n- Upgrade freetype2 to fix a security vulnerability."
+    },
+    {
+      "title": "Netcode fixes. Use JSON for configs now. Manage multiple server instances.",
+      "date": "2024-06-25 12:32:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039994926697",
+      "content": "Game settings have been reset.\nYour old settings can still be found in user/config.lua for reference (Settings -> Open user folder in explorer), but you need to set them again manually. Forgive the inconvenience! All other user data (maps etc.) remains 100% intact.\n\nWe have migrated from LUA to JSON for improved security, efficiency and Hypersomnia codebase simplicity - removed two major dependencies!\n\nOn a positive note, you now don't have to worry about copy-pasting someone else's config which could previously potentially execute malicious lua code!\n\nI would have to do this at some point on the way to scripting because the old Lua version has to be replaced with Roblox's Luau dialect.\n\nGreat news community server admins!\nYou can now manage MULTIPLE INSTANCES with a SINGLE SERVER PROCESS!\nNo f*ing around with 10s of appdata folders! No 10s of configs flying around!\n\nJust pass this to one of your existing ranked server configs:\n\n\"num_ranked_servers\": 4,\n\"num_casual_servers\": 2\n\nAnd a single  AppImage process will automatically manage several ranked + casual server instances with incrementing port numbers and name suffixes!\n\nThis was done to prepare for crazygames.com release so we can instantly scale in case of a sudden influx of players.\n\nOther fixes:\n- Netcode improvements: the game goes back on its feet faster after a lag spike. I upped the maximum number of messages per packet which was too low.\n- Fixed a nasty interpolation glitch on connect.\n- Auto-assign based on  team score, THEN player count.\n- Marginal balance updates: Deagle muzzle vel: 5000 -> 5100 (+2%, so it's viable against the revolver), Szczur kill award: $600 -> $900"
+    },
+    {
+      "title": "Rare crash fixed. Linux build uses GLFW now. Minor fixes.",
+      "date": "2024-03-21 12:25:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301718453557",
+      "content": "This update fixes an extremely rare crash related to multithreading.\nThe Linux build now uses GLFW which fixes some issues with French keyboard layout and possibly gives a better fullscreen behavior.\n\nOther minor fixes:\n- Prevent \"AFK!\" kick when match is suspended.\n- Prevent kicking AFK spectators during ranked."
+    },
+    {
+      "title": "\ud83e\udd73\ud83e\udd73\ud83e\udd73 RANKED MATCHES ARE LIVE \ud83e\udd73\ud83e\udd73\ud83e\udd73",
+      "date": "2024-02-02 17:38:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074945863694",
+      "content": "Ranked matches are live!\n\nInvite your friends to play and steal their MMR!\nYour nickname and your rank will appear FOR EVERYONE in the main menu!\n\nhttps://i.imgur.com/lyTwQYP.png\nhttps://cdn.discordapp.com/attachments/430472346151944193/1201182664040923226/rankeds.gif\n\nWill you be the first to reach the legendary Sol Invictus rank (MMR > 55.00)?\n\nWe're using OpenSkill to calculate MMRs after each match.\nDon't worry and play 1v3 or 1v2 if you just have 3 players - the algorithm will take even massive team disparities into account!\n\nYou can track all matches and MMR changes that happened here:\nhttps://hypersomnia.xyz/matches\n\nRanked server commands:\n\n/go - Start match immediately - to work, everyone has to send it.\n/next - Choose a random next map from the cycle.\n/map de_metro - Loads a specific map: \"de_metro\". Map must be in the ranked cycle.\n\nThese can only be used once during countdown and only once every 30 seconds."
+    }
+  ]
+}

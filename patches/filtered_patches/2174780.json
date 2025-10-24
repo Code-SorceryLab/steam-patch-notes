@@ -1,0 +1,654 @@
+{
+  "appId": "2174780",
+  "count": 108,
+  "notes": [
+    {
+      "title": "Dev Log 9/19/2025",
+      "date": "2025-09-19 15:37:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915434946",
+      "content": "[h1]Onwards![/h1][table equalcells=\"1\" colwidth=\",\"][tr][td rowspan=\"2\"][p][img src=\"{STEAM_CLAN_IMAGE}/43196755/9001523a6306bab0872f87a6b821e0754c04d1f1.jpg\"][/img][/p][/td][td rowspan=\"2\"][p]After taking a week or some away from rendering, I am back to try to finish up Madison's arc in this story. After that, I plan to move into the other arcs to close them up for this visual novel.[/p][p]Now, to clarify, I do plan to make another visual novel that continues with the aftermath of this one, but I am trying to make sure they progress in a way that make sense.:)[/p][/td][/tr][tr][/tr][/table]"
+    },
+    {
+      "title": "Fire of Life: New Day 0.80s \"Prelude to Chaos\" Released",
+      "date": "2025-08-23 21:38:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382527780",
+      "content": "[h1]Prelude to Chaos[/h1][p]This segment covers the rest of events for Day 3 and sets up for Night 3. Aida and Emily have their final scenes for this visual novel, while Dee, Dria, Lucia, Madison, Tori, Kei, and others move prepares to deal with the night.[/p][h1]Some Code Optimization[/h1][p]Tried to change some coding to make the work in Init a little less.:) For example, no need to loop Bria's accent into a dictionary when I can put a dictionary into it instead. :)[/p][h1]Possible Known Issues[/h1][list][*][p]Nvidia drivers may cause the screen to go white and then crash. Recommend trying to going ot a previous version of the Nvidia Game Drivers while both Nvidia and Ren'Py investigates the why.[/p][/*][*][p]Potential issues with Ren'Py and Steam. I have put the DLL for Steamworks 160 to try to mitigate this, but let me know if there is an issue.[/p][/*][/list]"
+    },
+    {
+      "title": "Dev Log 7/25/2025 Gallery, Ren'Py, Story Update",
+      "date": "2025-07-25 18:12:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758655702",
+      "content": "[p][/p][table equalcells=\"1\" colwidth=\",\"][tr][td][p][img src=\"{STEAM_CLAN_IMAGE}/43196755/709a9c7e2195982feecc959631ee12a5caab83b3.jpg\"][/img][/p][/td][td][p][b]Ren'Py 8.4.1[/b][/p][p]Updated to this version, which helps with some issues. One potential issue was lagging on Quit.[/p][p][b]Gallery[/b][/p][p]There was a bug where certain gallery images would not populate correctly. I have adjusted the code, and now it works as intended. I apologize for the inconvenience.\n[/p][p][b]\"Chaos\"[/b][/p][p]The current working title is Chaos, and I am making progress on it as the image to the left shows. :) [/p][/td][/tr][/table][p][/p]"
+    },
+    {
+      "title": "Dev Log 7/18/2025",
+      "date": "2025-07-18 19:09:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065384003",
+      "content": "[h1]Ren'Py Fixes[/h1][p]Updated to the latest Fix branch version to deal with any potential engine bugs.[/p][p][/p][h1]Biography/Character Profiles[/h1][p]Rewrote this section a bit. Before, there were 95 rpyc that were used only once and stayed in memory. I have reduced this to one JSON that is read once and put into objects. This should help with some of the initialization time because part of it is loading all the rpycs into memory.:)[/p][h1]Kimmy in the Gym with the Werewolves[/h1][olist][*][p]If there is only one who may go after Kimmy, it will only show that.[/p][/*][*][p]Fixed an issue where it would play the last video (and may affect other areas that would have this type of issue).[/p][/*][/olist][h1]N1 Josh Scene[/h1][p]A bug was introduced where it couldn't find an image. This was due to a space in dictionary (Python sees \"Python is great\" and \"Python is great  \" differently, so this was the cause of the problem. Space had been deleted, and now it plays without an issue.[/p][h1]Translations Not Working in Menus[/h1][p]I have change screen navigation (which has the begin, continue, etc) so that they are translated. :)[/p]"
+    },
+    {
+      "title": "New Chapter Create Method and Bug Fix for Menu Images",
+      "date": "2025-07-16 18:18:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065316356",
+      "content": "[h1]New Chapter Build Method[/h1][p]I have transferred the creation of the chapter information to an automated system that creates a jSON file, and that is what is used to create the chapters on init. This reduces how many rpycs that exist, and also reduce the amount of calls. In the previous state, it would call a function with the chapter name in it, which increases complexity. In the new method, it would load a json once, run through it, and create the chapter, which reduces the complexity a bit. :)[/p][p]Also, it also catches errors a little better. For example, Day of Temptation was missing Eric's name.[/p][p][/p][h1]Menu images would not retain after Quit[/h1][p]There was an init that changed the menu image based on persistent.NSFW. The intent of this (if I remember right) was to transfer from one type of value to another. I have change this process to only do it is if the value is not a integar, and it is not in 0,1, or 2. This would allow others who open it after awhile with the old style of menu to convert to the newer, but also keep the persistent set when you leave and return to the VN. :)[/p]"
+    },
+    {
+      "title": "Renpy 8.4/Bug Fixes/Gallery",
+      "date": "2025-07-12 23:46:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805065414288329",
+      "content": "[h1]Ren'Py 8.4[/h1][p]Updated to the Released version of Ren'Py 8.4 with more bug fixes in there.[/p][p][/p][h1]Gallery[/h1][p]Change the back-end to making it more efficent for me to add Gallery Images (via automation). Also, I changed the refresh so it is only looking if the Show value is False. This will reduce the time between clicking on Gallery and it loading.[/p][p][/p][p]This was prompted by running into an image that I want to add to the gallery, and the method at the time meant careful editing of a dictionary. :) This changes that by creating an individual file in the dev folder (only on my system) that will automatically got through folders and json files to create a dictionary json that shown in the Source Code DLC.[/p][h1][/h1][p]There were also some bug fixes.[/p]"
+    },
+    {
+      "title": "Missing Images/Bugs/New Achievement Gallery",
+      "date": "2025-07-06 11:46:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891835899",
+      "content": "[h1]Ren'Py July 5th 8.4 Prerelease[/h1][p]Updated to this version to resolve issues found in the previous.[/p][h1]Achievement Gallery[/h1][p]I have decide for the internal achievement gallery, I would go with Feniks. Just looks and operates a little cleaner. Also, there was a missing image for Day 3 in achievement. I have resolved that.[/p][h1]Error in Day of Temptation[/h1][p]There is a problem in the Coffeeshop Bathroom if you select leave. For some reason, it is ignoring != \"leave\", so I just created a hidden label for it to jump to create the same effect.[/p][h1]Sex Screen Video Error[/h1][p]There was an issue that it would play the video from before or error out. This was a value that I did not copy over to the function I made. This has been resolved.[/p][p][/p]"
+    },
+    {
+      "title": "Fixed issues in Early Rise",
+      "date": "2025-07-04 12:56:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891774878",
+      "content": "[h1]Bug Fixes[/h1][p]There was an issue where a blackscreen would appear with \"cannot find d3 andrei wakeup lily 02\". This was due to this should be gal d3 andrei wakeup lily 02. This has been fixed. Additionally in the Kei locker scene, thumbnails from Lily earlier scene will appear. This has been fixed.[/p][p][/p][h1]Update On Content[/h1][p]For the last few weeks, I had been a little ill and not really concentrating that well. I am more on the mend, so decided to break that dry spell with producing content. The issues I found were while reviewing a few scene to remind myself what happened previous, so I do not mistakenly rewrite something. ;)[/p]"
+    },
+    {
+      "title": "Ren'Py 8.4 and tweaked the Bios as little more",
+      "date": "2025-06-23 07:20:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906856193",
+      "content": "[h1]Ren'Py 8.4[/h1][p]I have updated Ren'Py to the latest version. This goes based on Python 3.12 which has more improvements than 3.9. [/p][h1]Tweak Bios[/h1][p][img src=\"{STEAM_CLAN_IMAGE}/43196755/3261a8620392851dafb422962f67de9745aa6af5.png\"][/img][/p][p]Although not seen in the picture, the vertical scrollbar has been set to only appear if the amount of text in history exceeds 1110 characters. :) Also fixed the alignment of the names so it looks more consistent. Also placed the Return button in one place.[/p]"
+    },
+    {
+      "title": "Dev Log: 6/22/2025 Bios/Name changing fixed",
+      "date": "2025-06-22 20:14:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906841244",
+      "content": "[h1]Code Cleanup[/h1][p]A lot of what I have done in the last few days is code cleanup to make. Mostly removing multiple lines of code when one line can do the same thing. ;)[/p][h1]Bios Fixed[/h1][p]There were several issues, so I changed how bios get the information. I have also changed how it is updated as well. Before, it would get the dictionary for all the characters, but the information does not change (just the availability flags). So, I changed it so the information is captured during the initiation phase, and the only thing that updates when going into Bios is the availability flags.[/p][p][/p][h1]Update on Content[/h1][p]I hope to start on writing/rendering thing week. Last week, I have spent most of it recovering from a procedure, so I was not as productive as I like to be. Working toward improving that this week. :)[/p]"
+    },
+    {
+      "title": "Fire of Life: New Day 0.75 \"Early Rise\" Released",
+      "date": "2025-06-10 09:43:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199558081",
+      "content": "[h1]Early Rise[/h1][p]This chapter in part 3 follows up with early morning routines after Night 2 for Madison, Andrei/Lily, Kei, Lucia, and Tori. :) [/p][h1]Update to Counts[/h1][p][/p][table equalcells=\"1\" colwidth=\",\"][tr][th][p]AVIF[/p][/th][th][p]WEBM[/p][/th][/tr][tr][td][p]5689[/p][/td][td][p]250[/p][/td][/tr][/table][h1]Ren'Py 8.4[/h1][p]This is not released in this version as it is still in development and not released as a stable. However, once it does, I will be updating to this version once it does. There are a few reasons:[/p][olist][*][p]It will make upscaling options easier. Currently, only 1920x1080 images are available which may not look great on 4k monitors. However, a feature added into Ren'Py 8.4 allows it to evaluate different images based on aspects, and use those. If I do this,  I will likely make the 4K a DLC to make it optional as it will result in larger files.[/p][/*][*][p]Certain items had been improved now that it will go with Python 3.12 rather than split support between 3.9 and 2.7. More improvements likely coming to assist with enabling things to run even smoother.[/p][/*][*][p]As Steam had droped Windows 7/8/8.1 support and will only run on Windows 10+, this should not present an issue.[/p][/*][/olist]"
+    },
+    {
+      "title": "Dev Log 06/08/25",
+      "date": "2025-06-08 22:36:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199508788",
+      "content": "[h1]Update[/h1][table equalcells=\"1\" colwidth=\"249,\"][tr][td rowspan=\"2\" colwidth=\"249\"][p][img src=\"{STEAM_CLAN_IMAGE}/43196755/35d9b0017f2d9ae66577dce25ec291a5db49dba9.jpg\"][/img][/p][/td][td rowspan=\"2\"][p][/p][list][*][p]I have finished the main art for \"Early Rise\", which will focus on Fio, Kei, Madison, Tori, and Lily getting started with their day. :)[/p][/*][*][p]Soundtrack has been applied.[/p][/*][*][p]Replay and Sex Gallery has been added.[/p][/*][*][p]Making a few new renders for the Gallery (image to the left is an example of one).[/p][/*][*][p]Going to check to make sure Lore is updated because a few things were mention in text.[/p][/*][*][p]Content Filter will be checked.[/p][/*][/list][p]I estimate publishing this portion after some bug checks 6/15/2025[/p][table equalcells=\"1\" colwidth=\"\"][tr][/tr][/table][/td][/tr][tr][/tr][/table]"
+    },
+    {
+      "title": "Missing Label d2englishskipsex",
+      "date": "2025-06-02 07:19:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756437924",
+      "content": "Added what was necessary for that label."
+    },
+    {
+      "title": "Bug Fix: Python items stopping Fire of Life from Starting",
+      "date": "2025-05-28 02:45:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756269324",
+      "content": "[list]\n[*] I changed the persistent.CharacterName to setdefault everytime the VN launches. If the name exists in there, it will just ignore. If it is not in there, it will set it to the default name.\n\n[*] Added a check to see if the character categories are available in bios. For example, if you had not played through Ascent to Hell, Tony and Madison would not appear yet and it would be blank (which does not look good).\n\n[*] Added a few more batchchecks, and added the batchcheck function to Extras biobutton. This will  refresh it if you go that route.\n\n[*] Change image settings for the bios so it will update correctly.\n\n[*] Did a few other changes to match what I did with python earlier this year.\n[/list]\n\nThis should fix the issues. If not, please let me know.\n"
+    },
+    {
+      "title": "Fixed Replay/Updated Credits/Removed Unused Fonts",
+      "date": "2025-05-25 14:08:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164510040",
+      "content": "[h1]Updated to Latest Renpy 8.3.38 Fix Build[/h1]\n\nThere was something that caused a delay between clicking on a button to playing a scene. Updating to this build fixed that.\n\n[h1]Fixed Replays[/h1]\nRedid the Replay and Contentfilter system so it now works as expected.\n\n[h1]Removed Unused Fonts[/h1]\nThere were fonts in there that was just taking up space. They have been removed.\n\n[h1]Credits[/h1]\nWrote a new way to have the credits processed, and placed into the credits screen. Now, the information should be a little more accurate and mostly in alphabetical order."
+    },
+    {
+      "title": "\"Missing argumenet permission set\"",
+      "date": "2025-05-08 13:00:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287837791",
+      "content": "Fixed an issue that caused this error message whenever it changes a \"reveal\" bio option. :)"
+    },
+    {
+      "title": "Dev Log 5/7/25: Bios fixed and Renpy 8.3.8",
+      "date": "2025-05-07 21:23:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287816582",
+      "content": "[h1]Renpy 8.3.8[/h1]\nUsing the latest fix build to deal with bugs that exists within Renpy.\n\n[h1]Biography Update[/h1]\nFront-end, there should not be that much of a difference. However, I noticed a few bios missing because of how I was doing it before. So I rewrote how bios work on the backend to limit the amount of mistakes that can be made."
+    },
+    {
+      "title": "Dev Log 4/23/2025: Bug fix and update",
+      "date": "2025-04-23 10:43:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624429406",
+      "content": "[h1]Bug Fix[/h1]\nWhen entering the Extra menu from the Game Menu, the top menu will be missing. I had applied the function to that textbutton that is in the main menu and the replay button in the extra menu that builds that menu.\n\n[h1]Update[/h1]\nCurrently working on the Vampire story while dealing with allergy season for me. So, it went a little slow last week, but I am working on catching up. :)"
+    },
+    {
+      "title": "Translation update for the Bug Fixes..",
+      "date": "2025-04-04 10:51:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897360768",
+      "content": "Forgot to do this after spending a few day fixing bugs. :)"
+    },
+    {
+      "title": "Bug Fix Friday (4/4/2025)",
+      "date": "2025-04-04 10:31:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897360276",
+      "content": "Pushed a patch out to resolve quite a few issues:\n\n[h1]Ren\u2019Py 8.3.7[/h1]\nUpdated to this version to fix issues that may crop up within the engine. \ud83d\ude0a\n\n[h1]Bug Fixes[/h1]\n\n[h2]Emily Shower Scene[/h2]\nFixed focus_masks and other issues that prevented this from working as intended.\n\n[h2]Gallery command errors[/h2]\n\nRedid some of the gallery adds to deal with those exception screens.\n\n[h2]Missing Animations in Fangs and Claws[/h2]\n\nWhile they will appear as stills, the path to the webm files was incorrect. This has been fixed and now working as intended.\n\n[h2]Fixed Divide by Zero error in the Butterfly minigame[/h2]\nThis might not happen as often, but wrote code to fix it.\n\n[h2]Fixed Substitutions[/h2]\n[h2]Kimmy and the Werewolves Gym Scene[/h2]\n[list]\n[*] One error that would happen all the wolves are remorseless, which would cause an exception screen.\n[*] Also fixed an issue where it would assume all three were involved in the scene instead of just one or two.\n[*] Fixed an action set when it is one werewolf and Kimmy (the maps were colliding among other things).\n[/list]\n\n[h2]Tori and Cayla fight scene[/h2]\nRedid the screen and python to work as intended.\n\nUpdated translation will be up in a moment."
+    },
+    {
+      "title": "Dev Log 3/25/25",
+      "date": "2025-03-25 19:53:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637768825",
+      "content": "[h1]Heads up about the Security of Fire of Life:[/h1]\n\nSince two games made into Steam with info-stealing malware, I want to assure everyone that is not the case with Ren'Py and Fire of Life: New Day. Everything written in Ren'Py script follows the latest standards indicated in the documentation, which I do not use deprecated methods. Anything that done in Python does not access personal information or attempts to. Finally, I download Ren'Py from its source to make sure it is secure and does not have anything it shouldn't in anything necessary to run it. My only desire is to tell stories. :) So the copy you retrieve from Steam follows a good faith effort to avoid any malware, which includes a routine daily malware sweep of my system.\n\n[h1]Update on the Story[/h1]\n\nI am one scene away from being done with the main art for Secrets of Fire. It is a complicated scene so it may take a bit, but it feels as I have progressed more efficiently through this than I have done in the past. After this, I do need to add gallery images, sex up the sex gallery, etc. However, it moving right along. :)"
+    },
+    {
+      "title": "\"Contains None\"/{If} not a valid tag/Error in Katia's d1 apartment scene",
+      "date": "2025-03-02 19:56:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526122149",
+      "content": "[h1]Contains None[/h1]\n\nHad to change these to texts and added translations. They should not say None now when you have either Content Filter on.\n\n[h1]{if ###} not a valid text tag[/h1]\nFor some reason, Inline_conditions.rpyc was not making it into defines. So I reinserted the code from the Itch plugin, and let it create the archive.rpa that has it is in it. I may refine this later, but now it should recongize {if} {else}, etc. These are a third party plugin rather than built into Ren'Py.\n\n[h1]Tempposition not defined[/h1]\nI thought I had changed all of these to the new variable, but apparently not. This has been fixed."
+    },
+    {
+      "title": "Story Progress and Ren'Py 8.3.6",
+      "date": "2025-02-28 10:57:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526045835",
+      "content": "[h1]Ren'Py 8.3.6[/h1]\n\nUpdated to this version of Ren'Py to fix some bugs, which includes some text not appearing correctly. \n\n[h1]Story Progress[/h1]\n\n[img]{STEAM_CLAN_IMAGE}/43196755/ad3eee857343f261d0120f3ab5d620f802419748.jpg[/img]\n\nThe first segment for Part 3 will be Secrets of the Fire Fae. Currently outlined, this will go to the conclusion of Bria and Eric's portion of the Fae Storyline for this particular VN. Thus far, I have completed three scenes and continuing to go strong. :)\n\nMade a change to the creative process to hope to organize it better. By outlining, I am adding a bunch of #TODO into the script. :) This allows me to put placeholders of what I intend to be there as I structure the story. So far, it is going faster than my previous method. ;)"
+    },
+    {
+      "title": "Fix Image Settings when Hide NSFW selected and other fixes",
+      "date": "2025-02-20 13:07:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353200978",
+      "content": "[h1]Other Fixes[/h1]\n\nI believe there were some fixes part of what I announced earlier that didn't make it into the main branch for some reason. Now all branches are updated with these fixes.\n\n[h1]Image Settings not responding to Hide NSFW [/h1]\nNoticed this when I was testing something in development. If I change it from Show to Hide NSFW and have the menu image appearence set to nude..it will not change. Now if Hide NSFW is selected, it will revert the images back the Clothed state."
+    },
+    {
+      "title": "Update BriaAccent Translator and other fixes",
+      "date": "2025-02-18 11:00:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580426129564",
+      "content": "[h1]Bria Accent[/h1]\n\nAs I was starting to write Day 3, the method I was using to translate Bria from her Irish Accent to the regular statement (which is used for translations) was getting messy. So I redid it so I can do a simple bca.add() for each statement. This might cause a little delay in startup, but it has the same speed when playing. Finally, it ensures I do not cause too many dictionary related errors Is (since the method is building that dictionary from a template).\n\n[h1]Wrong statement playing if successfully completing Butterflies[/h1]\n\nChange a variable to the correct one and it will now play the correct statements.\n\n[h1]When you play Day 2 Classes again (not replay), it would carry the same values you had for Bria regardless of what you did in First Year Composition. A function runs after the chapter starts to reset those to default.\n\n"
+    },
+    {
+      "title": "Fire of Life: 0.66s (Elsewhere) Released. :)",
+      "date": "2025-02-15 21:10:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580426046577",
+      "content": "[h1]Elsewhere (Fire of Life: New Day 0.66) Released![/h1]\n\nThis release concludes Day/Night 2 of the story, and now officially 2/3rd of the way complete. \n\nThe following scenes are added:\n[list]\n[*] Constance post-Eldritch Event.\n[*] Emily and Aida End of Night 2 content\n[*] Lily and Andrei have some fun!\n[*] Alex and Fio have some fun!\n[*] Kei tries chilling out!\n[*] Tony deals with Cait and Katia\n[*] Tori and Matt take a walk.\n[/list]\n[h2]Bug Fixes:[/h2]\n[list]\n[*] Katia and Andrei Night 1 Apartment fixed (it was not behaving as intended).\n[*] Redid Day 2 Classes to work a little better.\n[*] Madison Break has been fixed (it would not play correct on 2nd play through).\n[*] Translations for both Elsewhere and other areas have been updated.\n[/list]\n\n"
+    },
+    {
+      "title": "Dev Log 2/3/25 Gallries, Replay, Oh my...",
+      "date": "2025-02-03 23:41:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123232419",
+      "content": "[h1]Story Update[/h1]\n\nI am currently two scenes away from finishing Night 2 story and art. There will likely still be extras I need to do, but progress.:)\n\n[h1]Gallery[/h1]\n\nA main issue with having Begin reset things, it can reset the gallery as well. So, built something to scan all the persistents I made for the images and turn it into seen images to capture any that were seen before so Begin does not affect it. It should still look the same on the front end.\n\n[h1]Preparing Replay Bug[/h1]\nFound an issue that was a typo. In this case, I was trying to use setdefault() to create a dictionary inside the replay. Somehow, VS code autocorrected it to something else. Sorry about that.\n\n[h1]Future Proofing[/h1]\nI have used .has_key a lot in the code, and apparently that was removed from Python. If I went to 8.4 (might be a consideration since only Windows 10 and higher can use Steam at the moment), it would cause a lot of crashes. I changed all of those to the Python 3.12 friendly method.:)"
+    },
+    {
+      "title": "Lore System Fixed and Reorganized Animations a little.",
+      "date": "2025-01-18 10:16:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014402957",
+      "content": "[h1]Lore System[/h1]\n\nFor some reason, the system I had where Lore items would go into a list was deleted. So I restructured the lore system Python class to handle it a little differently, and now it is showing information.\n\n[h1]Reorganized Animations[/h1]\nIn the RPAs, the animations are in folders. For the most part, this will work the same as before, but it will help troubleshoot if there is an animation problem (like a missing animation file). :)"
+    },
+    {
+      "title": "Bug Fixes and Scene Continues",
+      "date": "2025-01-11 17:16:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1788311419092964",
+      "content": "[h1]Bug Fixes[/h1]\n\n[*] An exception screen will appear with foltuil. This has been corrected with the correct spelling of the object.:)\n\n\n[h1]Scene Continue[/h1]\n\nAdded a feature (and setting options in both Settings and Quick Settings) that will continue to play scenes (i.e. Going from Bria Prologue to Bria Day 1). There are three options: Yes, will play the scene to the end of a particular line (after Classes, this would be the Eldritch Effect). Ask will ask if you want to, while no will play the segment and go back to the chapter menu. :)"
+    },
+    {
+      "title": "Dev Log 12/28/2024",
+      "date": "2024-12-28 18:01:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930922577",
+      "content": "[h1]Fixed Wolves Gym[/h1]\n\nThere were errors when selecting certain options. I redid how some of it went code wise, and it seems to be working. Let me know if there are any errors if you select hand or feet (or any other option).\n\n[h1]Fixed Playing different chapters after you just played it[/h1]\n\nUnlike Replay (which goes based on default), If you play a segment, it will still hold the values from before. So I put those as defaults before a particular scene plays so it works as normal.\n\n[h1]Dee\u2019s crime scene in Demons and Mage now in the right order[/h1]\n\nDue to a code issue, the scene where the cop visits an abandoned site and Dee questioning her was in the opposite order. This has been corrected.\n\n[h1]Content Filter issue with Kei and the lockerroom in Prologue[/h1]\n\nThere was an issue where the wrong images were displaying, which would make balloons not appear correct. This has been fixed.\n\n[h1]Translations Gaps[/h1]\n\nThere were items not translating. I have corrected it and put the translations in.\n\n[h1]Putting more of the previous python functions into classes.[/h1]\n\nBefore, I would make an init python in the screen that would use it. This was untidy. The only one I did not put into classes was the Tori/Lucia/Cayla cage fight. Part of the purpose of this is I am considering adding the RPY files as a DLC. So, I want it to look as readable as possible. \ud83d\ude0a\n\nAll scenes now play as intended even I did not write down the exact issues.\n"
+    },
+    {
+      "title": "Dev Log 12/21/24",
+      "date": "2024-12-21 16:16:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930699052",
+      "content": "Still working on the Lucia/Dria vs. Constance (and real-life got in the way). However, did some small improvements.\n\n[h1]Begin[/h1]\n\nThe Begin button will now clear any Seen_Labels used to mark if Part 1 and Part 2 is available. The reason for this is that bugs would crop up. There is a warning when you click on begin and those appear, which warns you it will do the action above. Instead of begin, there is Load and Continue.:)\n\n[h1]Quick Settings[/h1]\n\nAdded Languages and Audio so you can adjust those without going to settings (thus reducing the number of clicks) \ud83d\ude0a\n\n"
+    },
+    {
+      "title": "Quick fix to the gallery and sex gallery for initial play",
+      "date": "2024-12-09 16:35:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795745971",
+      "content": "[h1]Sex Gallery[/h1]\n\nIt was not setting up properly and creating the menus. Fixed that. \n\n[h1]Gallery[/h1]\nIt was going based on how many images that could be shown. Changed it to how many are set to be show, and now works as intended."
+    },
+    {
+      "title": "Bug Fix Sunday",
+      "date": "2024-12-08 22:01:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795720623",
+      "content": "\n[h1]Character List[/h1]\nOne of the biggest thing was finding a \"better\" way to handle the names in the backend. Before, a set list was made, and some additions done. It led to the problem that the last few bug fixes were about. So, I am using Python to build a character list. So, if it the first launch, it will create that list for you. If somehow a name goes missing, or I add a character (this is another reason), it will see that it is not in the list and add it. \n\n[h1]Bugs[/h1]\nThere were bugs like Supernatural.Notify and such that have been fixed. There were not able to find images. Basically, I did a speed runthrough of all the current stories and made sure each were working the way they were supposed to. :)\n"
+    },
+    {
+      "title": "Bug Fix for New Installations",
+      "date": "2024-12-08 01:38:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795693785",
+      "content": "There were a few issues in the name setup.\n\n[list]\n[*] Had characternameinfo instead of persistent.characternameinfo for some reason, and that is two different things in Python, so it would throw an error.\n[*] The wrong variable was set for the Long Names, so set it correctly.\n[/list]\n\nThese issues have been fixed. I have deleted persistents and launch it. I went through the launch issues until Fire of Life would launch the way it is supposed to."
+    },
+    {
+      "title": "New \"Quit\" screens and Ren'Py Update",
+      "date": "2024-12-07 12:47:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795677337",
+      "content": "[h1]Ren'Py 8.3.4 [/h1]\nUpdated to Ren'Py 8.3.4 to fix bugs that were introduced in 8.3.3 and to assure that it does not occur within the game.  \n\n[h1]New Quit Menu[/h1]\n[img]{STEAM_CLAN_IMAGE}/43196755/57f64d9cb45afc5faa9828d6651eb697a382fb60.jpg[/img]\n\nLike others, there are three variations that dependent on what you choose.:) Did this while working out logic and needed a break. :)"
+    },
+    {
+      "title": "Fix and Addition",
+      "date": "2024-12-03 18:42:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359191416",
+      "content": "Added a small menu near the version on the main menu to allow you to change the clothing level without needing to go to Settings. This allows three places to change this setting.:)\n\nI also removed the Renpy updater from the Steam version of the game. All updates should be coming through the Steam Client.:)"
+    },
+    {
+      "title": "New \"Quicksettings\" and Content Filter Fix",
+      "date": "2024-12-02 14:58:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359153313",
+      "content": "[h1]Content Filter Bug Fix[/h1]\nSo after I put everything in a Python class, Content Filter stopped working because I was calling the function incorrectly. This has been fixed and should now work without an exception screen.\n\n[h1]Quick Settings[/h1]\nNext to the button Character Profile button after you click Begin, there is a new Gear. I have put what was in the Content Settings in there for quick access. If you want me to add more to that, let me know.:)"
+    },
+    {
+      "title": "Update to Main Menu/removed unused images/",
+      "date": "2024-12-01 21:00:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359127954",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43196755/60f487a59a517b0e9f20b9f59c5438963975f53c.jpg[/img]\n\nUpdated the Main menu to use variable that changes the clothing level in Settings to match other menus.:)\n\nAlso removed images from the RPA that no longer being used."
+    },
+    {
+      "title": "Gallery and Character Bios Fixes",
+      "date": "2024-11-28 10:44:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359017103",
+      "content": "[h1]Gallery[/h1]\n\n980x1080 images will now appear with a black screen behind it.\n\n[h1]Character Bios[/h1]\n\nBria's name is now not repeated twice.\n\nIndividuals who have the same name as their long name (Emily in the beginning) will not have their name repeated.\n\nThere might be a few other fixes but...:)"
+    },
+    {
+      "title": "Lore System Updates",
+      "date": "2024-11-27 21:32:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506358998095",
+      "content": "[h1]Bug Fix[/h1]\nFirst off, there was a bug in the gallery. If you selected gallery item that had 6 pictures and then you went to one with 3, it would give an out of index error (I  had tested that before, but something had changed). Now, Now anytime a gallery item is selected, the first page number for the images will be 0. :)\n\n[h1]Lore System[/h1]\n\nThe only thing that looks different is that I have the categories (Location, Supernatural, etc) on the side and the different entrys on the bottom in the parchment. I might come up with a different idea, but that was a way to get some of the longer names to fit without blocking too much of Kei. :)\n\nThe backend (the part you don't see) was change. For the most part, it is a way for me to add entries without using a dictionary (which was getting long and hard to manage). :)"
+    },
+    {
+      "title": "Dev Log 11/24/2024",
+      "date": "2024-11-24 18:08:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783872412091357",
+      "content": "[h1]Bug Fixes[/h1]\n\nFixed an issue where the rest of Kimmy's Gym images were not properly being granted. In the same scene, fixed the replay so it would not give an exception upon opening.\n\n[h1]Gallery[/h1]\nMade a few changes to how the gallery works. Before, I would have a dictionary seperating it into pages, which...works. However, it means that things might not show on page 2 that has been granted, so on and so forth. Made the contentlist all the images, and it will paginate based on 6 images per page. \n\nAnother change is Arrows so you can click on those to go between pages, or use the right or left (in the gallery) or keypad 4 and 6 if you are looking at the images. \n\n[h1]Where am I with the story[/h1]\n\n[img]{STEAM_CLAN_IMAGE}/43196755/b8088db708d8ce1ad554cab9d57492efa1b5d98f.jpg[/img]\n\nStarted workin on the last segment for Part 2 this week. Here is a scene where Lily and Tony talk after observing some protocols.:) So, it is moving along.;)\n"
+    },
+    {
+      "title": "Bug Fixes",
+      "date": "2024-11-13 03:53:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125173501",
+      "content": "[list]\n[*] Sex Screen (what plays the video after going through the narrative) has been checked and made sure all videos there would play what it is supposed to (instead of Rebecca during Neil Michelle scene).\n[*] Fixed Wolves in the Gym during preparing..more or less. Might need to redo the code there.\n[\n[/list]"
+    },
+    {
+      "title": "Not able to find BetweenScene text in other languages, and \"Bool renpy.get_scre",
+      "date": "2024-11-10 13:41:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801699665",
+      "content": "1. The first error was due to how the text went into the BetweenScene screen. Since I use dictionaries a lot, it needs to find the key. However, if it is translating the key before it gets there, it causes a problem. This is remains from the initial translation code. This has been fixed.\n\n2. Game Menu would cause a bool renpy.get_screen not subscriptiable. I reconfigured the Game Menu screen to stop that error."
+    },
+    {
+      "title": "Fixes for the Gallery and related items.",
+      "date": "2024-11-08 19:12:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801644065",
+      "content": "[list]\n[*] That has been fixed if you have been getting Unlock exception screens.\n[*] I have updated the gallery code to fix some issues, and now it should work as well if not better.:)\n[*] I have two issues to resolve before releasing Eldritch Effect (segment title). Need to get all scenes properly soundtracked, and replays work as intended.\n[/list]"
+    },
+    {
+      "title": "Bad Build and new \"python\" things.;)",
+      "date": "2024-11-02 21:44:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173982949",
+      "content": "Okay, the VN should work as intended now.\n\n[h2]Bad Build[/h2]\nI had gone through the build.classify and build.archive (what is responsible for the RPA files) to ensure everything that needs to be in there is in there. I also double-checked by running it on my system to make sure in-line conditions work, and they do. Right now, it is all back in defines.rpa. I may revisit it, but for right now, I am interested in not breaking what works. :) I apologize for that inconvenience.\n\n[h2]Bios/Gallery have been redone.[/h2]\n\nOther than it refreshing each time there is a change, there is not a lot you will see that is different. Initially, I was doing it as a dictionary and tried refreshing it with mixed results. So I made Python classes and spent time converting them to that and setting up things so they would refresh each time you entered. So when you get a new Bria image in the gallery...if you see the notice, it will appear.:) Bios and Character Profiles were redone in the background because I was repeating a lot of information. This helps keep it in one place. So if there is an error, I can look in that one place rather than doing a search everywhere else.:)\n\n[h2] Bria's Irish Translator [/h2]\nAnother thing you may not notice visibly is that I redid the Irish translator. A large part of it so I am not going down a long list of translations in an overly complicated dictionary. \n\nThat is all at the moment. Again, I apologize for the inconvenience with the VN not working."
+    },
+    {
+      "title": "Bug Fix Tuesday 10/22/2024",
+      "date": "2024-10-22 19:42:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911771215",
+      "content": "There were numerous bug fixes, and I didn't write them down this time. However, I ran through the scenes and addressed any exception screens.\n\nThe major changes made were script-related:\n\n[list]\n[*] Redid Bria's accent translator. Before, I had several dictionaries for each language. I made it one dictionary and used the Ren'py Translation system to replace the strings. I also used this type of thing in another dictionary I used to translate things. The result is the translations end up in the TL folder. Since Fire of Life: New Day uses deferred Translation loading, it will only load one language simultaneously. This makes the visual novel open quicker; the more I let it go based on that, the better. :)\n\n[*] The other purpose of redoing Bria's accent is to put it in her text as well. You do not see it since I don't currently release the rpy files, but it was bc \"[bria.flag]\" which is terrible for troubleshooting.;) So BriaSpeak(\"Ya Ya Ya\") tells me what the dialog is. IT also helps with translations because bc \"[BriaSpeak('ya ya ya')!t]\" has since Renpy 8.1 (I believe) been able to translate Python functions with a return of a value as a string.:)\n\n[*] Split the defines.rpa up into translations, scenes, and defines. If there is something I need to fix it the defines, that is an 873KB download rather than 10-12MB each time.:)\n[/list]"
+    },
+    {
+      "title": "Untitled",
+      "date": "2024-10-08 23:18:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6360862737590634865",
+      "content": "There were issues with the build (both new and some that had been there for a while without my notice). So, I sat down, reviewed things, and fixed exception screens and glitches.\n\n[list]\n[*] Replays would play once and not again until restart. I changed the code to create a temporary list, so it is not going based on the main list of scenes.\n[*] Andrei Prologue Subway Katia Scene looked weird after exiting the selection screen. There was code in there to address a problem a previous version of Renpy had. After that got updated, it started acting weird, so I removed the code to make it look smoother.\n[*] Bria's Accent translation produced key errors. I have checked these and made sure they work properly.\n[*] Unknown Text Tag: This is a case where I had forgotten to make something a f-string, so it read the {x} and like like a text tag. This has been fixed.\n[*] Madison Kitchen Prologue sex video would flicker. This was due to the color of the start image (what shows while the video prepares to play) being a lighter color than the video. This has been fixed.\n[*] Key error for Replays with Madison Apothecary scenes. There was a typo in the list, and that has been fixed.\n[*] Josh and Eric d2 Sex scene produced an error. This was due to an outdated code I wrote. It has been removed.\n[/list]\n\nThere might be more that I had fixed and not listed. :)\n"
+    },
+    {
+      "title": "Renpy Fixes and Tori Spell fixes",
+      "date": "2024-10-01 11:32:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370200582181",
+      "content": "[h1]Renpy 8.3.3[/h1]\n\nI updated Renpy to the latest fixed version for Renpy 8.3. This has fixed bugs that were reported, and should reduce with exceptions not directly caused by a typo on my part. :)\n\n[h1]Tori combat mini-game[/h1]\nFor some reason, the way I did the keypad stopped working. So, I changed how the buttons are made and it now works. You can use 0,1,2 on the keypad or mouse once again.:)"
+    },
+    {
+      "title": "Replay Fixed and \"Preparing\" bug.",
+      "date": "2024-09-20 12:24:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536506791772",
+      "content": "[list]\n[*] The Preparing chapter had an \"int, not iterable\" bug. That has been fixed. I rewrote that code so it would accomplish the same thing without running into that issue.\n[*] The Replay function has been wonky for a bit, so I went through and fixed it. TLDR: There is only one replay label that it will go to and direct traffic from there. ;)\n[/list]"
+    },
+    {
+      "title": "Dev Update: Sex Gallery",
+      "date": "2024-09-07 15:30:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076604974376",
+      "content": "The sex Gallery on the Extra page has been updated (and fixed). It had been accidentally leaked in the previous fix. I thought it looked a bit eh, with only 3 on one page and several on others. So, I went based on the character it is for.:)"
+    },
+    {
+      "title": "Updated Sound in Video Loops",
+      "date": "2024-09-03 09:55:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642472671769",
+      "content": "Added sound to the video loops and fixed any issues I ran into when going through them. also updated Renpy to 8.3.1 to fix any engine related issues.\n"
+    },
+    {
+      "title": "Bug Fixes in Dialogue",
+      "date": "2024-08-16 12:00:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6909171012599735126",
+      "content": "Fixed instances where dialogue did not display properly."
+    },
+    {
+      "title": "Bugfixes and Enhancements",
+      "date": "2024-08-12 02:30:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363404035872",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43196755/c2415929681e40ec93af7a6a1bb62df7c1ca9fad.jpg[/img]\n\nPreview of a Scene :)\n\n[h1]Bug Fixes[/h1]\n\nSomething happened to the translations, so I reviewed what needed redone. As I changed the Thought Bubbles to Captions, I fixed any exception screen that popped up.\n\n[h1]Enhancement[/h1]\n\nAdd sound to more videos. I will eventually get to them all.:)\n\n[h1]Dev Log[/h1]\n\nI spent the weekend reviewing the chapters to ensure any bugs were dealt with. However, I had finished a scene with Eric. I have finished an Eric and Michelle scene. Tomorrow, I will continue with the Madison scene you see pictured and go from there. ;)"
+    },
+    {
+      "title": "Font Change/Movies code update",
+      "date": "2024-08-04 08:47:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728346010985",
+      "content": "[olist]\n[*] Credits were updated for easier maintenance.\n[*] Movies have been put into Groups, so when you rollback and skip forward, you shouldn't see the transparency screen.:)\n[*] Change the font for dialogue to Medula (which is the same one I use for the main menu text buttons). The other one was making readability issues (especially with F in certain circumstances being crushed into the word).\n[/olist]"
+    },
+    {
+      "title": "0.52s Released!",
+      "date": "2024-07-21 15:16:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959976646618",
+      "content": "[h1]Darling Moonshine Released[/h1]\nThe next segment has been released! This takes place (mostly) in the Darling Moonshine and focuses on Bria/Eric, Cayla/Tori/Matt, Kei, and Constance. :) A few changes:\n\n[h2]Renpy 8.3[/h2]\n\nUsing a Nightly build currently, and will update it to the released version when that happens (should be soon). The main reason was Text Shaders. The old kinetic text extension would make the text thin and somewhat difficult to read. The Text Shaders keep the same font and apply the movement (it should apply to all translated ones).\n\n[h2]New Chapter/Replay Windows[/h2]\nI made each button wider to use an image from the scene rather than build a whole new chapter button. :) Also added an alpha when hovering to show the hover. If I put too much alpha, let me know. The same effect (minus the alpha) was added to the Replay menu.\n\n[h2] Galleries should be updated more frequently.[/h2]\nBefore, the gallery wouldn't update until you closed and reopened the Visual Novel. Now, it should do so whenever you unlock the image. \n\n"
+    },
+    {
+      "title": "New Font",
+      "date": "2024-07-19 08:35:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959968342856",
+      "content": "Added a new font to help with some readability (let me know if this is fine or if you have other suggestions)"
+    },
+    {
+      "title": "Bugfix and Change",
+      "date": "2024-07-17 08:14:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959960997227",
+      "content": "[h1]Bug Fix[/h1]\n\nThere was error that was caused by a typo during Day 2 Classes for a tooltip. This has been fixed.\n\n[h1]Renpy 8.3[/h1]\n\nFor what I use, Renpy 8.3 Nightly build works. I mainly added it for the Text Shaders, which I used to replace some of the kinetic text effects. The previous was done using one meant for Renpy 7.4 and didn't account for the Bubbles introduced in 8.1. \n\n[h1]\"New\" Menu[/h1]\n\nThey have changed the chapter screen's menu to use the hover image. It will make the buttons fade when the hover image appears and show the title and descriptors. \n"
+    },
+    {
+      "title": "Bug Fix Sunday Part 2",
+      "date": "2024-06-16 17:30:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005361111576",
+      "content": "Ran through the segments to catch exceptions.\n\n[list]\n[*] Corrected Spacing in Text during the Night 1 Vampire \"The Dungeon\" scene with Kathy. \n[*] Corrected an issue if you do not remove all items from Kathy, it would give an exception.\n[*] Corrected an Image for Emily Punishment selection.\n[*] Corrected an issue in D2 Classes where selecting all three werewolves will cause an key exception of '3'\n[*] Corrected an issue When Bria tells Rebecca what she does (positional argument).\n[/list]"
+    },
+    {
+      "title": "Dev Log 6/2/2024",
+      "date": "2024-06-02 16:14:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639342072885",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43196755/761977869e26465ce96aa4af4af11ce370dfb1ec.jpg[/img]\n\nStill working on the Darling Moonshine scenes for Night 2. Yes, I am likely going to re-render the room for shadows under their feet once I get all the characters in, but so far I have been working on Bria/Eric, Constance, and Kei. Similar to the classroom scene, you can click on them to play their story.\n\nDone for the most part:\n\n[list]\n[*] Bria and Eric's scenes for Darling Moonshine.\n[/list]\n\nHalfway done:\n[list]\n[*] Kei scenes\n[*] Constance Scenes (need an aftermath scene for what she sees during the completed portion).\n[/list]\n\nNeed to Start:\n[list]\n[*] Matt and Tori scenes.\n[/list]\n\nDid it with that screen above because it is complex and that was the best way I could think of to break it down into digestible chunks. :)"
+    },
+    {
+      "title": "Fixed Issues in Classes and Bria N1 Dorm",
+      "date": "2024-05-14 13:21:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435414472053",
+      "content": "1. There was a bug where 'bio' or 'biology' was not found. Fixed it.\n2. If you skipped Bria and Reb sex scene in night one, bria would appear nude. Fixed the typo that caused it, and now Bria appears with her tank top on."
+    },
+    {
+      "title": "Bug Patch Sunday 4/21/2024",
+      "date": "2024-04-21 13:50:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032402502117",
+      "content": "A list of few of the bugs fixed:\n[list]\n[*] SFW images shown instead of NSFW - Now, NSFW and SFW will show appropriately.\n[*] Content Tags weren't applied correctly (the version of the image depending on filter) fixed.\n[*] Steam Achievement Must be a string error fixed.\n[*] \"does not accept attribute of idle\" fixed.\n[*] Button missing images in Sex Videos fixed.\n[*] D2 Eric Dorm Morning not giving correct achievement fixed.\n[*] Constance and Benni Scene may hit a Key error '6' or something: fixed.\n[/list]\n\nThere were plenty more but did not really write them down as I was going along. I have played all the chapters and they work as intended. If there are any more I might have missed somehow, let me know."
+    },
+    {
+      "title": "Bug PAtch Sunday",
+      "date": "2024-04-19 22:10:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032396479010",
+      "content": "The latest release (0.48s) has some issues in previous chapters. I am going to go through them this week and fix any bugs that occur."
+    },
+    {
+      "title": "Update Visuals for Tone and fixed bugs",
+      "date": "2024-04-19 17:00:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032395695730",
+      "content": "A few bugs:\n\n[list]\n[*] Stopped the bio images from squeeshing together by making the container a little wider.\n[*] The bugs that causes an exception after deciding if you want to change Tori's name to a shorter version has been fixed.\n[*] Bug in the hospital where Tony asks Madison what she does and it comes up with an exception screen has been fixed (typo).\n[*] Fixed a bug in the first Madison sex scene in Ascent from Hell where it would always show Facials. It now shows what you choose.\n\n[/list]\n\nUpdated videos with sound and tone, and did the same with images."
+    },
+    {
+      "title": "Small update",
+      "date": "2024-04-14 06:45:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312191705726",
+      "content": "Change a few menus to screens for a better look (similar to what I Have done to other menus).\n\nWhen selecting Long Replay Scene (when you click on a replay and another screen pops up), the hover background now works.\n\nFixed a misspelling and a few translations."
+    },
+    {
+      "title": ".48s Released!",
+      "date": "2024-04-11 00:40:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762993398271618251",
+      "content": "Version 0.48s has been released:\n\n[list]\n[*] \"Preparing\" Storyline Segment in Part 2.\n[*] Modified the Gallery with pagination.\n[*] Bug Fixes.\n[*] New UI interface with Clothed, Nude, and Sexy as options except for the main menu.\n\n[/list]"
+    },
+    {
+      "title": "Dev Lop 4/8/24",
+      "date": "2024-04-08 16:19:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364323786767",
+      "content": "Just a quick update.\n\n[list]\n[*] All Principle artwork has been done for \"Prepare\".\n[*] Translations has been done.\n[*] Replay and Sex Gallery updated.\n[*] Interface work has been done.\n[/list]\n\nWhat's left for me to do for release:\n[list]\n[*] A few more gallery images.\n[*] Add new achievements and images to those.\n[*] Fix a sound issue with two of the videos.\n[/list]\n\n\n"
+    },
+    {
+      "title": "UI Update, Bug fix, and more.",
+      "date": "2024-03-23 07:30:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301724998169",
+      "content": "Still working on the story, but:\n\n[olist]\n[*] As noted a week ago, I wanted to update the look of the UI. Nothing that drastically changes it from Renpy, but keeping it in tune with the tone of the story.\n[*] There was a bug in Credits in Music/SFX/Amb that has been fixed.\n[*] There is a new feature called Screenshot mode that lets you scroll up and down the 1920x2160 images (able to change in Content Settings).\n[*] I have changed how different ladies appear on all screens. They would appear based on the NSFW setting but decided to give players a choice between Clothed, Sexy, and Nude. I have not changed the Main Menu (yet) with this.\n[*] Added a Movie mixer because I am starting to put sound within the webm rather than hope it syncs up otherwise. Some videos have been changed with a soundtrack.\n[*] Some images have been updated with a new look. These were non-destructive (meaning the source PSD still has the information I need to change the background and foreground colors:)\n[*] Still working on Preparing...hit a bit of a snag with health and whatnot, but still going.\n[*] Extended one part of the snacktern subway scene so it doesn't just go straight from menu to video..there is a mini-scene like the others.\n[/olist]"
+    },
+    {
+      "title": "Dev Log 3/18/2024",
+      "date": "2024-03-18 18:15:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/7309977427450807190",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43196755/8b4332cbcfb29725f9746c0ead980baef0885c2f.jpg[/img]\n\nMeant to post this yesterday but life caught up. :)\n\nA few things:\n\n[list]\n[*] 3 more images for Duo, and then I work on the Trio Set (and hope I don't take as long on those ;))\n[*] When I cannot focus on creating new images, I adjust older images (from Source PSD) to match the tone.\n[*] Adjusting some UI elements as well.\n[*] I managed to re-render one series of animations (the Subway Snacktern one) to get the tone and also add sound effects. I did this with a few other animations as well. So when the update does come, it might be a big one because it will be new and updated content.\n[/list]\n"
+    },
+    {
+      "title": "Dev Log 2/10/2024",
+      "date": "2024-02-10 19:22:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109274206206",
+      "content": "[h1]Day 2 \u201cPrepare\u201d progress.[/h1]\n\nWhile it is still in progress, there are a few things I have done and things I am planning to do. Ultimately, Preparing is a transition between Day 2 to Night 2, and a good part of it occurs at the Darling Moonshine. \ud83d\ude09 One thing I am trying to avoid is \u201cOh, they are just there\u201d. \n\n[h2]The ButterFly Mini-Game[/h2]\n[img]{STEAM_CLAN_IMAGE}/43196755/9911b730cc905dbd7e83fa0a4f3ab2c9d29edcf3.jpg[/img]\nThis one took me a little bit of time to figure out how I wanted to present it and get over how much it hurts to do it \ud83d\ude0a. A long long time ago, I was on the High School Swim Team. Not very good, but enough to realize how difficult each stroke is to perform. The reason why Coach gives Eric X number of Butterfly laps (if you trigger that) is because of how difficult it is. At the same time, did not want to make it too difficult to distract from the story.\n\n[h2]Fae Appearances[/h2]\n[img]{STEAM_CLAN_IMAGE}/43196755/3aa5b22edc141c9b0dbc7bcf2f6887994084a96c.jpg[/img]\nSo far, we have seen Amy mostly appear like a normal person. At the Darling Moonshine, she is under no such obligation, so I used some of the options (and clothing styles) to fit her well. And, she gets even bossier. \ud83d\ude09\n\n[h2]Fun with steam[/h2]\n[img]{STEAM_CLAN_IMAGE}/43196755/1e402dcb818e1886b19e35018bd8304fcaf8ac4f.jpg[/img]\nThere is a section for Bria here, and this one I had to specially craft to make a point about how hot she is. Daz Studio had updated over the years with physical steam (vs. planes with transparencies) and decided to have fun with that.\n\n[h2]Consolidating some choices into new dictionaries[/h2]\nThis does not directly affect previous chapters as I leave those in to avoid breaking anything with saves. In Preparing, the first thing it will do is put those values into unique dictionaries (i.e ericroberts, briaconnell, etc). The biggest reason is to make it easier to transfer it to a multipersistent. TLDR: Multi-persistent can exist between Two or More Renpy VNs. So when I am done with New Day (still got Night 2, Day 3 and Night 3 to do), I can start work on the next VN that continues this. Going for an interactive Graphic Novel. \n\nRather than:\n$mp.something = HUNTING DOWN THE dictionary for it!\n\nIt is:\n$mp.briaconnell = briaconnell\nAnd\n$bria.connell = mp.briaconnell\n\nA nice clean way to transfer. \ud83d\ude0a\n"
+    },
+    {
+      "title": "Renpy 8.2 Released Version and \"bug fixes\"",
+      "date": "2024-01-28 21:45:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046261296591",
+      "content": "[list]\n[*] Updating Renpy to the released version of Renpy 8.2. This will help with potential bugs that Renpy may have had, and also took care of some conflicting properties that may cause problems in the future.\n[*] Removed some orphan translations to avoid any potential issues in the future.\n[/list]\n\nGot some scenes done last week to prepare for Night 2. :)"
+    },
+    {
+      "title": "\"Index out of range\" when Starting the App.",
+      "date": "2024-01-17 07:49:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213094198306",
+      "content": "What was suppose to happen:\n\n1. Check to see if you saw a label.\n2. If True, try to add a missing gallery image.\n\nHowever, this wasn't working. So I change that to changing the related persistent to True. :)"
+    },
+    {
+      "title": "Fire of Life v 46s \"Dealing\" Released",
+      "date": "2024-01-16 16:09:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510139153461",
+      "content": "A few changes:\n\n[list]\n[*] \"Dealing\" Storyline. Similar to Classes, this focuses on a particular theme. This focuses on Tony dealing with certain psychological things with his patients, Aida dealing with what happened the previous night and what it means to Emily, and Dee and Tobias working on the Men of Sin crimewave.\n[*] This uses Renpy 8.2.0.\n[*] You will see a number after 0.46s.xxxx, which is the build time. I am expertimenting with this to let it be the minor version (or when I build a version or fix) to avoid forgetting to do it. :)\n[/list]"
+    },
+    {
+      "title": "Backend change and update to Gallery",
+      "date": "2024-01-08 22:00:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585197661987",
+      "content": "As noted, I had merged what I was developing for the next segment into Main and pushed it to Steam. However, I had forgotten to add gallery.rpa, so some of those ugly error messages were showing up as thumbnail. That is now fixed. There should be 4 that are locked. and will be unlocked when I release \"Dealing\" and you play through it.:)\n\nMade a backend change to how the Gallery runs. This makes it easier for me to add them on without unnecessary data. :)"
+    },
+    {
+      "title": "Bug Fixes and Update",
+      "date": "2024-01-07 15:42:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585193058732",
+      "content": "In the process of working on the latest segment, there were some fixes I have made:\n\n[olist]\n[*] Gallery changed so it list the character on the side and show their gallery in the almost normal spot. The goal is to minimize the time it takes to launch it, and since it is textbuttons.;) I might do something else, but need more focus to do that.:)\n[*] For some reason, the persistents for some gallery images vanished and not unlocking. Fixed that. Also added something so if you have seen a certain part of the story, it will unlock at launch\n[*] There were other, but for the most part backend.\n[/olist]\n\nI got two more scene to do for Day 2 Dealing, and then it is soundtrack, bugfixes, translations, and gallery images. ;)"
+    },
+    {
+      "title": "0.42.2s",
+      "date": "2023-11-13 20:33:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486388014538473",
+      "content": "After a few weeks, I have translated (to the best of my ability) to four languages. These will likely be improved in the future, but it should suffice for the moment in Early Access.:)\n\nAlso added some new screens for menus.:)\n\nFixed a few bugs from the galleries (some images were not appearing). \n\n"
+    },
+    {
+      "title": "Dev Log 11/12/23",
+      "date": "2023-11-12 20:20:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486388010859507",
+      "content": "A short log:\n\nRight now, I am going through each scene and screen to make sure that:\n\n[list]\n[*]  the translated text fits in the bubbles,\n[*]  something that didn't translate (I didn't do a _(), or something)\n\nOn top of that, made some changes to reduce the number of text menus where it made sense to do so.:) Replaced it with imagebuttons that depicts what it is asking. ;) Why I said where it makes sense: There are some cases where it is overkill to make a screen when Menu does the job.:)"
+    },
+    {
+      "title": "Update the Interaction at the end of \"Classes\" and spelling correction",
+      "date": "2023-10-17 19:50:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5218041989037278845",
+      "content": "I somehow couldn't spell concepts for a brief moment. That has been fixed.\n\nI have added something to the moment when Neil says something about Bria and there is a button \"Stop Neil Comments\". How much patience Eric has affects his bond with Bria, and having it go all the way isn't that bad of thing. I will elaborate storywise why later, but figure I would give that heads up. \n\nFor starters, Bria is not defenseless...she is fire! :) I will elaborate on this narratively later.:)"
+    },
+    {
+      "title": "Translation Update (there will be a slight delay)",
+      "date": "2023-10-17 14:20:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944139513994",
+      "content": "I am going to delay my attempt at translating what is currently there by at least a week. The reason is I am ill and I am not concentrating as well as I could. This makes me miss things, so I will hold off on it for a week while the remedy tries to resolve the issue.:)"
+    },
+    {
+      "title": "Released: Fire of Life: New Day 0.42s \"Classes\"",
+      "date": "2023-10-16 14:31:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944135895960",
+      "content": "Andrei, Bria, Eric, Cayla, Kei, Matt, and Tori head off to class! This story also elaborates why Bria and Eric act the way they do when in proximity to each other (a supernatural reason) \ud83d\ude0a. \n\nA few changes:\n\n[list]\n[*]New Initiate Screen: That scene with Lily and Fio when you click on Begin. I have moved that to the splashscreen section, and use that for initial set ups and a brief tutorial. That way when you click on Begin, you are going right to the chapter window.\n[*]Continue Button: This will load the last save. I am keeping the Load button (for now) if you have you have another save you want to load.\n[*]Main Menu button (both in Game Menu and the Chapter Screen): This will create a quicksave before you fully exit. This will cooperate with the Continue Button.\n[*] Also changed the Chapter screen a bit. The top bar (Prologue, Part 1, Part 2) makes it easier to switch without doing a \"Next Page\" mechanicism.\n[/list]\n\nTranslations are a work in progress at the moment. When they are implemented, you will be greated with a screen of Flags when you first launch. I have not yet decided how to implement it in the Settings Menu.\n"
+    },
+    {
+      "title": "Version .38s Demon and Mage Released",
+      "date": "2023-09-03 20:03:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355670189096",
+      "content": "\n[h1]Fire of Life v. 38 Demons and Mages[/h1]\nThis version represents the last of the \u201cremake\u201d for the Prologue and Part 1. Shortly after releasing it in December, there was people who complained (rightfully) that is was very fast pace (too confusing the exact words were) \ud83d\ude0a So, I approached it with a different method as you see it now. This chapter shows Madison\u2019s day at work and Cayla/Tori getting orientation done for school.\n\n[h2]Enhancements[/h2]\n[h3]Bio filters:[/h3] There are a lot of characters in this story, so I put in a filter so you can search based on who they are (human, vampire, shifter, etc.).\n[h3]New Pics for Bios:[/h3] I have render new images to serve as Day 1 rewards (it goes based on seeing a particular part of the story). All the ladies are done, and I did some male. I plan on doing more in the future.\nI So you don\u2019t have to go into each bio to change the picture, there is an option to change all to the Base Image or Day 1 image.\n[img]{STEAM_CLAN_IMAGE}/43196755/eb88d2c746d3582a7e39340cc898bbefa496e29e.jpg[/img]"
+    },
+    {
+      "title": "Dev Talk 8/21/2023",
+      "date": "2023-08-21 14:00:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289188216952",
+      "content": "If I have been quiet, I do apologize. Outside the fact I am normally quiet, I had been ill the last few weeks with sinuses causing holy havoc. But I still try to get some work done.\n\n[img]{STEAM_CLAN_IMAGE}/43196755/8675d676d2da2125d25749d9984354a01ae06b4c.jpg[/img]\n\nYou might recall her appearing in the Madison and Tori prologue...briefly. Morrigan (Celtic goddess, not to be confused with Dragon Age :)) was one character I thought \"Maybe a brief appearence to introduce Cayla, and ...\n\nThen came the idea of her making an appearence in the same gym Tori and Cayla practiced in. :) Thinking some mother-daughter interactions to help work through their issues for the greater good. :) \n\nAs of right now (with Prologue and Part 1 and some left overs of Part 2 I am going to rework):\n\n[list]\n[*] Number of AVIF images (main image format for this VN): 2,167\n[*] Number of Webp (Secondary and often used where AVIF doesn't work out well): 188\n[*] Number of WebM (movie animation): 146\n[/list]\n\nThis number went up dramatically compared to what it was before I decided to expand the prologue and Part 1...and that's ok. :) More to tell the story. :)\n\nI have a few plot lines to complete for the Demon and Mage chapter of part 1, but it is moving along. ;)"
+    },
+    {
+      "title": "Set Extras to appear",
+      "date": "2023-06-27 22:26:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150125494925",
+      "content": "Removed one of the If statements to hide the Extra menu option in the main menu. There is still one there so it doesn't appear in the demo (doesn't have galleries and certain features). This seemed to most expedient way to resolve an issue with things looking the same going from demo to full."
+    },
+    {
+      "title": "\"Next Button\"",
+      "date": "2023-06-08 01:04:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846337751617",
+      "content": "Removed the persistent for Kitsune Torment and Ascent from Hell for the Next Button on the Chapters screen. This will prevent the next button appearing if you only play Andrei, Kei, Madison, and Tori's prologues. I will add them back in when I finish the related segments."
+    },
+    {
+      "title": "Bria Translation during Eric's Library Scene",
+      "date": "2023-06-03 14:47:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211234215368",
+      "content": "1. Corrected which key is used for the translations to not create that exception.\n2. Also redid how it gets the unique wording. May adjust in the future with the word bubbles."
+    },
+    {
+      "title": "Fire of Life: New Day v.36s",
+      "date": "2023-05-21 13:53:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943316853194",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43196755/d34690ebef480661a766eb76f49afd9a1a8a256b.jpg[/img]\n[h1]V 0.36s \u201cThe Council\u201d[/h1]\n\nThis chapter focuses on the Virginian American Branch of the Council. In previous chapters, there were mentions, so this one elaborates more on it (especially why the supernatural creatures dislike them). This is still Day 1, but it is a few weeks after Ben captured Emily.\n\n[h2]Renpy Improvements[/h2]\n\nTom had changed the distribution of Renpy Nightly. The channel I will focus on is Fixes, which can fix any bugs or errors from Renpy. So if you go to credits and see \u201cNightly,\u201d this is still the released version of Renpy 8.1. \ud83d\ude0a\n\n[h2]JSON Support[/h2]\n\nI believe I had implemented a bit of this in previous minor updates. I transferred a few things to JSON files and now use them to manage things like the gallery, etc. It keeps the Screens clean, so I can troubleshoot that rather than scrolling through a long list. Furthermore, it updates the moment you launch. \ud83d\ude0a It is also a step to reduce errors on my end.\n\n[h2]Version. rpyc[/h2]\nYou don\u2019t see this file, but I separated critical information, such as buildname, into a new file. This enables me to ensure the correct names are displayed (and I don\u2019t see a visual novel called \u201cFire of Life: New Day Beta\u201d in the main channel).\n\n[h2]Bugs[/h2]\nAs far as I know, there are either no bugs or less visible ones. If any crop up, let me know, and I will fix it as soon as possible. \ud83d\ude0a\n"
+    },
+    {
+      "title": "HotFix 2",
+      "date": "2023-05-15 12:52:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386956361958",
+      "content": "Beta made it into the names. So, I fixed it.\n\nWhat I will likely do in the future (not today...I messed the code up enough;)) is make different rpy files for the different branches (steam, develop (beta), demo) ..so they have a unique define that have the correct name so I don't worry about it too much. :)"
+    },
+    {
+      "title": "Hotfix",
+      "date": "2023-05-15 12:40:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386956330887",
+      "content": "Disabled the access to \"The Council\" chapter. As I said, still working on it. However, it is getting close to completion."
+    },
+    {
+      "title": "Update 4/29/2023",
+      "date": "2023-04-29 20:40:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583642660144778",
+      "content": "This week I had gone through all the dialogue (and still need to tweak some) and change them to Word Balloon (like Comic Books). I will add a switch in to go back to \"adv\" style (how it looks now). However, it is one of the features of Renpy 8.1 that I thought would make things stand out a little more (make it clearer who is talking..what their emotion in their tone is..etc). \n\nWorking on a scene (well..trying to). I have been a little distracted the last day or so, which is a bad thing for any 3D program. :) So, I have spent a little bit of today transferring some information into JSON. Why? It was making the screens a little unwieldy the way I was doing it. \n\nOnce these adjustments are done, tested, and working like it is supposed to, I will likely update the UI.rpa and defines.rpa and push it out. ;) emily day 1 is not ready yet, so don't want to push that content yet.\n\nThanks for your patiences.:)\n\nDana"
+    },
+    {
+      "title": "Eric Day 1 Released",
+      "date": "2023-04-04 23:14:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841283281661",
+      "content": "Eric and Bria taking some R&R as I release this update...\n[img]{STEAM_CLAN_IMAGE}/43196755/80944026766a30975d0e0a0db3db66c9e7f3d25d.jpg[/img]\n\n[h1]Update 0.35.5[/h1]\n[h1]Eric Day 1[/h1]\nThe continuation of \u201cJourney of Knight\u201d where you start in the lobby of the Male Dorm. It continues with different scenes until you wake up in the library. \ud83d\ude0a With the completion of Bria Day 1 and Eric Day 1, this sets up the Fae Storyline. \ud83d\ude0a\n\n[h2]Previous Save Games[/h2]\nThe bad news is that critical changes have made previous save games incompatible. However, a lot of the variables are persistent, so it will go with that. If you need a chapter variable to be defined, both Eric and Bria can begin with their prologue and continue onto their Day 1 Story. Basically, if you load a save, there is a risk of \u201cCannot find Return\u201d error. There isn\u2019t a good fix for this other than replaying.\n\n[h2]Animations:[/h2]\nOn top of switching to WebM, I have designed the \u201cSex Screen\u201d to be able to change the video inside rather than calling the scene itself.\nSex Options For Eric:\nAs you might notice with Bria, she is open to guys and gals. The same choice can be for Eric, which there will be a menu option to let you decide.\nUpdated Codex:\nAdded a more text to indicate which Bio/Codex/Gallery/Sex Gallery was changed. \n\n"
+    },
+    {
+      "title": "Follow-Up",
+      "date": "2023-03-31 14:36:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551986385305",
+      "content": "[h1]Renpy 8.1[/h1]\n\nI routinely check the GitHub page for Renpy to see where they are. They have two crucial milestones: 8.1/7.6 Prerelease and 8.1/7.6 Release. Currently, the only thing in the \"Release\" milestone relates to Live2D. Now, I am familiar with Live2D and like some of the games that use them. However, not something I use. So unless there is something stops the game from functioning, I will likely start work with the pre-release. Good chance that it will be pre-released before I finish the bug testing for Eric Day 1. So included in that release will be updated images/movies.\n\n[h1]Size[/h1]\n\nI did get a comment about file size (as long as it doesn't exceed 500MB). I have a few thoughts of game size:\n\n[h2]Size of Game[/h2]\n Fire of Life: New Day could get big if I am not careful. I remember back when played my first RenPy game, and going \"Wow, that is a large file\". Furthermore, I remember how disinterested I got because I had to update it with yet another big download. Thankfully, Steam only sends the changed/missing files, and Renpy has ways of organizing files. Part of why I put all the scripts in defines.rpa is that if there is a bug..it is a 1.6MB download vs. 200MB. Given the complex story, the size of the RPAs will get larger, but I want to make sure it is within reason.\n\n[h2]Quality[/h2]\n However, I am not going to randomly reduce a file size. I once went too far, and the renders looked..eh.  Right now, WebP should be at 95% quality and the WebM should be at 22 Quality according to Handbrake (export as mov, and use Handbrake for final compression since Adobe doesn't have a native tool that works well in my opinion). The AV1 version split the video file size in half with the same quality. On average, I saw the AVIF achieving the look I want with a much smaller size then WebP was achieving for the same result. \n\n[h2]Ability to Play[/h2]\nIt should not affect your ability to play the game at all. Renpy uses FFMPEG to play, which is always included in the renpy folder as part of the install. :)  There are small things in 8.1 that will make me change a few things to ensure it plays, but...easily fixed.\n\n[h2]7.6[/h2]\nOne of the primary reasons I use 8.0.3 is because of Python 3. Long story short: I am an IT person. So, I recognize certain issues with using a language no longer supported by the community (python 2.7). However, the drawback is that Renpy 8.0.3 only delivers 64-bit executables, which will not play on 32-bit Operating Systems.\n\nSo...\n\nIf someone wants me to make a version that able to be used by Windows 32-bit (Windows 7 to Windows 10 since 11 is 64-bit only), let me know. I will create a 7.6 version of the game. :)"
+    },
+    {
+      "title": "Update 3/30/2023",
+      "date": "2023-03-31 00:05:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551984180855",
+      "content": "[h1]Apologies for the Silence[/h1]\nSo, I have been a little absent with making announcement updates (or bug fixes). A huge part of that is because: I was recovering from a cold. There were days I was sitting in front of Daz Studio and not able to progress forward because of illness. However, that is being taken care of and now I am working to move through the Eric Day 1 Storyline. If I am remembering the sequence right at the moment: I have this scene, plus an alternate sequence, and make sure the library works..and boom. The biggest part of the scene that will take a little time is that it involves animations, but that should be fine.\n\n[h1]AV1[/h1]\nYes, I had managed to test AV1 in the Nightly, and it seems to play well from that test. I even converted a WebM with VP9 to AV1, and it looked decent. So I will likely be converting videos once Renpy 8.1 is available. The goal for this is smaller file sizes while maintaining quality.\n\nOnce 8.1 is released (or preleased) I will also get on converting the AVIF as well. :)\n\n[h1]Who's Next?[/h1]\nAfter I am done with Eric, I am considering on going onto Emily (The girl who had a short prologue through the woods). I can be convinced otherwise, but here is my reason:\n\n[b]The Council[/b]\n\nA lot of fantasy and urban fantasy stories have these. In terms of humans, it is usually a group of people who make sure regular humans don't know the supernatural exist. The Council has been mentioned [i]briefly[/i] in the different chapters, so having one that goes a little more into detail will help the overall story. :)\n"
+    },
+    {
+      "title": "Update 3/17/2023",
+      "date": "2023-03-17 18:22:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536858937247",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43196755/fe5f771f5dfe9d0747359d8b5fe0defa6a4496e6.jpg[/img]\n\nI would be remiss if I didn't do a St. Paddy inspired image of Bria, so...:) Now that is out of the way. I am working on the Eric Day 1 content, and I got through first half of it. Now, I am working on the \"Night 1\" part of the segment. Only downside is I have been ill, so it has been slower this week than I would like. \n\nRight now, I am at the Swim Practice portion and expanding on that piece.  Renpy 8.1 is at 91% on GitHub, so it is getting closer to release. ;)\n\nOne of the promises is that AV1 video will be released there and it is supposed to be better than VP9 (a common codec used with WebM). I will probably test it soon, but my main concern is responsiveness. My goal when video play is to less delay when it start playing. AV1, from what I heard, can be a CPU intensive item unless you have a RTX 40xx GPU. So, need to test that. ;)"
+    },
+    {
+      "title": "HotFix For Extras",
+      "date": "2023-03-13 19:45:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528810308306110",
+      "content": "[list]\n[*] In some cases, the Extra menu will not show even if you do play through a prologue scene. So, made it so it evaluates the flag for unlocking the extra menu regardless if a persistent flag exists.\n[*] For some reason, the file for one of the long chapter thumbnails did not get replaced for Kei. Fixed.\n[/list]"
+    },
+    {
+      "title": "Minor Update and Bugfix (and 30% smaller)",
+      "date": "2023-03-10 14:47:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528810296773957",
+      "content": "[olist]\n[*] I didn't notice until I was preparing for this install that andrei.prologue.rpa was not in there. My apologies. I had an incident with that, but I thought I fixed it with that.\n[*] Converted a lot of animations to WebM and tested to make sure they work the same. The size was getting to me. For example, the embers in the main menu was 20MB...and the webm reduces that down to 6mb.\n[/olist]"
+    },
+    {
+      "title": "Update on Future Plans",
+      "date": "2023-03-08 14:00:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528810289363306",
+      "content": "Obviously, I am going to do a new chapter, and I will focus on Eric at the moment (although there is a chance I might do one more for the update depending on how much work needs to be done. :) However, one thing I am noticing is the bloat of the visual novel. \n\n[olist]\n[*] Part of it is because some of those image files are WebP at 95% quality, which is the lowest I could go that meets my acceptable quality. That portion will be reduced with AVIF. For example, one WebP that is 445KB is 221KB in AVIF, which adds up. Currently, Renpy 8.1 sits at 86%, so there is still a bit to go before that is released.\n[*] Animations are actually a BIG cause of the bloat. Those embers you see in the main menu? That is actually 22MB worth of WEBPs. After experimenting and playing with some ideas, I will be changing it to WebM with specific quality and items to ensure that it plays smoothly. ;) The size reduction? That 22MB embers will be 6MB. So far, I have worked through some scenes with conversions and thus far seen a 20% reduction in overall build size. That release will likely come in the next couple of weeks so I am not hogging up all your disk space. :)\n[/olist]"
+    },
+    {
+      "title": "Hotfixes",
+      "date": "2023-03-05 14:57:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176574094119",
+      "content": "[list]\n[*] Emily Prologue will activate the Extra's menu.\n[*] Bria and Lily's gallery gallery fixed so the \"missing\" images now show. :)\n[/list]"
+    },
+    {
+      "title": "A Brief Note where I am (3/3/2023)",
+      "date": "2023-03-03 20:05:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176567587524",
+      "content": "As far as I am aware, the content and code for Bria Day 1 is fine. However, doing some additional work:\n\n[h1]Changing how Long Chapters are done in Replay. [/h1]\n\nThe Kei and Madison/Tori prologue as well as Bria Day 1 have multiple scenes that are a little long (well, depending on how you view long ;)). So, I created a new screen that will show different sections to start with. For example, want to Start where Madison finds Tori? You can do that. \n\n[h1]Adding code to insert different Codex, Bio, and Gallery images as you move along.[/h1]\nRather than locking it to a single chapter, I will introdoce gallery images, sex scenes, etc. as you move through the content. This one is taking a little longer than expected, and what I am currently working on. This also means I will need to user after_load to convert existing persistence to new ones, but that is fine. :)\n\nThank you for your patience. I hope to have Bria Day 1 chapter up in the next couple of weeks."
+    },
+    {
+      "title": "Update 2023 Feb 27",
+      "date": "2023-02-27 07:54:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268543371414905",
+      "content": "The artwork for Bria Day 1 chapter is done. Right now I am debugging and refining things. A few things I want to address:\n\n[olist]\n[*] Renpy 8.1 is 80% as of last night. So, they have a little to go before I have the capability of switching to AVIF. For now, I have increased the quality rating to 95 for Webps, and that may result in a larger file size. Hopefully, that balances out a bit later on.\n[*] Changing the Gallery notification. Before, I had it when the scene was done. However, given the potential length of chapters, I will probably include it when a segment of it is done. :) Also, going to add a notification when Bio and Codex information added.\n[*] As mentioned above, a Codex system has been designed and implemented. It still needs some polishing but it should work to give information. :)\n[*] If you think you are missing sex scenes, I will probably be adding them back in or just let me know. I am going to try to add ones that were introduced in the prologue.\n[*] For the Replay, I am considering Breaking it into segments, Maybe not the Bria prologue (since that is short), but the Madison and Kei ones are kind of long.\n[/olist]\n\nThat the update for development as of right now. :)"
+    },
+    {
+      "title": "Hotfix",
+      "date": "2023-02-14 05:39:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277247335092",
+      "content": "Demo code got into this somehow."
+    },
+    {
+      "title": "0.34.9s",
+      "date": "2023-02-09 12:03:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277230080470",
+      "content": "Added Sex Scene Gallery back"
+    },
+    {
+      "title": "update 0.33.6s",
+      "date": "2023-01-31 00:14:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109526324412",
+      "content": "[olist]\n[*] Fixed a bug where it crashes if you decide not to shorten Tori's name.\n[*] Updated Andrei/Lily bedroom interaction ..mainly because of the golden chains not appearing..golden.\n[*] I think that everything for the night. Thank you for your patience with some of these issues.\n[/olist]"
+    },
+    {
+      "title": "Upcoming Update (TBA)",
+      "date": "2023-01-29 15:59:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109521428115",
+      "content": "Caveat: Renpy 8.1 (currently at 61% Pre-Release) needs to be released before this occurs. I have tested this with a nightly build, but I am not going to subject players to potential issues that might come from that. :)\n\nOne issue I have seen come up is comments about images. I don't think the source images is the problem, but rather the compression used. \n\nThe problem is:\n[olist]\n[*] When I test different jpegs with different level of quality, I get really weird artifacts with Bria's ponytail.\n[*] If I increase the Webp too much, the file sizes get even worse.\n[*] Even worse than that, it doesn't help with the color.\n[/olist]\n\n[img]{STEAM_CLAN_IMAGE}/43196755/a58ffe9d6fd7e947d9be793fb335998f3aa9c0ca.png[/img]\n\nHere is how Bria appears in the Game with Webp at the current setting. Even if I went to 99, I have not gotten that much clarity and colors seem a bit meh.\n\n[img]{STEAM_CLAN_IMAGE}/43196755/f35e7a706cd292da7641e32fa1000d837939e9a3.png[/img]\n\nScreenshot from 8.1 Nightly Build with avif file. Her freckles appears, there is stranges in her hair, and things look more pronounced colorwise. So, my plan is this:\n\n[olist]\n[*] When working on new content (was in the middle when I started the bios that needed a lot of render time. ;), I will save it in webp and avif until 8.1 comes out. Then I will push the avif as a replacement.\n[*] Now and then I will work on converting the PSD files I have of the scenes into avif (what I did with the game menu image. :)\n[/olist]"
+    },
+    {
+      "title": "Fire of Life: New Day v0.34s released!",
+      "date": "2023-01-22 13:13:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474422675477",
+      "content": "[h1]Release v 0.34s[/h1]\n\nThe vital feedback I have gotten is that the story is confusing with the constant change of characters in short scenes. The story will tie into each other, so it might be difficult to create a single Renpy game for each storyline (see Such and Such that are common in comics). So, my solution is to develop concrete chapters. When you load your Save, it will take you to an Initial scene where Lily and Fio will introduce you to the new method of storytelling. Your progress isn't lost if you are past the Prologue scenes in the previous version. I am still reorganizing Day 1/Night 1 into chapters (currently on Bria). \n\n[h2]Clarification:[/h2]\nWhen you see \"Continue\" appear, this is because it is a looping animation, and Continues triggers an action to state you are finished viewing the animation. \ud83d\ude0a\n\n[h2]What is fixed:[/h2]\n[olist]\n[*] A prologue focusing on no more than two protagonists at a time. The reason for the two is that Tori and Madison start at the same place, but I refuse to portray infants in a scene. So, the Madison portion takes place 20 years before the current story and goes up to the point she is flapping her wings in that dimension. \ud83d\ude0aTori (who is 18 at that point) progresses from that point. Aside from that, the chapters focus on one protagonist as it runs with their story. Some are short (i.e., Bria), but I try to make up for it with Bria dorm-move-in-day scenes. \ud83d\ude0a\n\n[*] Some behind-the-scenes simplifications have been performed, such as dictionaries. The reason is that I do not accidentally break the gallery and similar items when populating those areas.\n\n[*] Prologue Scene has items below that say Play/Replay. This will allow you to use Replay without going to the Replay gallery.\n\n[*] Removed the Renaming of every character in the game. This will still be able to happen when I get the character bios working, but the default names will be used for now. The only time you can currently change is when a protagonist first appears in a storyline.\n\n[*] On the Chapters screen, it will hold variables as any Renpy game. I have included a save/load for your convenience. The Game Option takes you to the Game menu and the Main Menu will return you the main menu. I advise saving the game before that to continue later. \ud83d\ude0a\n[/olist]\n\n[h2]What Still Needs Work (other than chapters):[/h2]\n[olist]\n[*] I have taken the Character Renaming (except for the protagonists) offline for the moment. The names of the protagonists will follow the Renpy standard method. The character screen is disabled because I also plan to put short bios in there. That is still a work in progress. \ud83d\ude0a\n\n[*] Images. I replaced some of them with JPG, which looks okay-ish. However, I had to revert Bria because jpg at a reasonable size made her ponytail look\u2026wrong. I did a test with AVIF, and it looks better. However, this game runs on Renpy 8.0.3 currently, and 8.1 has not been released. When that occurs, I will update those images. \ud83d\ude0a\n\n[*]The Lore section has not been developed yet. Still a work in progress. \ud83d\ude0a\n[/olist]\n"
+    },
+    {
+      "title": "Coming Soon: Chapter System Update",
+      "date": "2023-01-17 21:17:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474405673318",
+      "content": "I plan to release the prologue in the next couple of days. Most of the content is ready, but I want to doublecheck to make sure it works as intended."
+    },
+    {
+      "title": "Progress 1/3/2023",
+      "date": "2023-01-03 09:26:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037486302665",
+      "content": "[h1]Prologue Update[/h1]\nSo for context, there are Six prologue for characters. Madison and Tori will share a prologue story because they tie into it (and also because for the first half, Tori would be technically underage. To avoid that bit of blurry lines, the first half will focus on Madison while the second will focus on Tori after she is over 18. Any mention of Tori in Madison's half is just that..a mention. She is not portrayed.)\n\nSo with that context, I am nearly halfway through the Madison/Tori prologue and the other 5 are done content wise. \n\n[h1]Coding Change[/h1]\nWhen I am not rendering new scenes, I am also making changes to behind the scenes code. For example, I am changing how the Gallery works. Will you see a major difference? No. The reason for these changes is simplicity and lack of crashing on because of an error I made. TLDR - I am creating a dictionary for different functions so that I have a standardize format to follow for entries and I decrease how many mistakes I make. :)\n\nSo, this is to say I am still at it! :)\n[img]{STEAM_CLAN_IMAGE}/43196755/c4211d7d64142fc847862b61e26e87d7c5265ad3.jpg[/img]"
+    },
+    {
+      "title": "Update 12/19/22",
+      "date": "2022-12-19 10:08:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145765620222",
+      "content": "[olist]\n[*] Added a label to the Save/Load screen to make it clearer which screen you are on.\n[*] Also Added more confirm screens so it is not always saying \"Return to Main Menu\" :)\n[/olist]"
+    },
+    {
+      "title": "Update for 12/18",
+      "date": "2022-12-18 10:40:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145762055261",
+      "content": "Somehow, the wrong code went into Lucia Gallery (I could've sworn I tested that). Fixed it and now it should work."
+    },
+    {
+      "title": "Update Note for 12/12/2022",
+      "date": "2022-12-12 13:11:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4980448574123946756",
+      "content": "This patch addresses some bugs (particularly for the last few sex scenes). If there are still any oddities I missed (exception screens), let me know.\n\nNow, this does not have any new scenes like I mentioned in the announcement. This is strictly bug fixs. :) So far, I have one prologue done, and working on other to explain characters a little more. My priority is:\n\n[olist]\n[*] Make sure the characters make sense and are properly introduced.\n[*] Also allows me to reorganize the existing scenes into chapters.\n[*] And NOT make your saves incompatible. ;)\n[/olist]"
+    }
+  ]
+}

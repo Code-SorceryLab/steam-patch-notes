@@ -1,0 +1,1494 @@
+{
+  "appId": "887490",
+  "count": 248,
+  "notes": [
+    {
+      "title": "Full 1.0.83",
+      "date": "2025-09-24 17:15:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811772772222683",
+      "content": "Bugs\n- Crash: LdrSufficientOrdersNAtStartChkResult.calc_orders_n_net_cost() takes 1 positional argument but 2 were given. (Luke)\n- AI bug: AI would pickup wrong battle_stance (e.g. offensive/defensive) from the chain of command in certain circumstances (Henk, Patrick, Luke)- leading to things like AT Guns suddenly moving on the offensive!  Trello trello\n-(2nd try at this ;-) )Removed:  confusing/annoying \u2018orders_n 0 >= cost 0 but still failing..\u2019 message silenced ;-) (luke)"
+    },
+    {
+      "title": "Full 1.0.82",
+      "date": "2025-09-23 15:44:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915564558",
+      "content": "Bugs\n- Achievement system had broken (John, Luke)- fixed\n- Removed:  confusing/annoying \u2018orders_n 0 >= cost 0 but still failing..\u2019 message silenced ;-) (luke)- would happen when the unit was spent and would move over possible move hex.\n- Removed: Pointless/confusing \u201cMorale Check!\u201d over unreachable hexes (Luke) - when unit spent.."
+    },
+    {
+      "title": "Full Release 1.0.80",
+      "date": "2025-09-20 14:04:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915464794",
+      "content": "Features\n-  Significant AI Performance improvement in large scale scenarios (Luke) - when AI has a lot of units performance could dramatically slow down. This has been significantly reduced (on order of 7 times faster).  Please watch for strange behavior around AI Bolstered attacks in particular shooting (this is where the performance gain was made, the AI was expensively building at too many possible plans to implement as opposed to figuring out optimal targeting quickly and just working on a plan for that).\n- Max 150 saves message now warns must turn off Steam cloud while delete (Luke) - or will get readded by cloud ;-)\n\nBugs\n- Crash: \u2018SufficientOrdersNChkResult' object has no attribute 'get_action_state'\u2019 (Henk, Luke)\n - AI Rally Bug (Luke) was sometimes picking as optimal rally target a squad that while very in need was out of range of the leader\u2026. leading to no Rally at all. For now, allowing for AI 1.0 since was a bug. And shouldn\u2019t have been too common. But might lead to more dangerous rally attempts\n- Misreporting Orders insufficient for costs of a plan when weren\u2019t (Luke) -a confusing popup right said a plan could not be afforded by AI but reported in a way that looked like could be afforded! In short confusing .\n- Flags - c08: Several minor bugs in text courtesy of Kiks.\n- San Frattello - c09: Grammatical error. Death to the grammar errors!\n- Sicily to Italy - c10_5: Grammar/programming typo.\n- Volturno Crossing - c11: Grammar fixes.\n- Anzio Advance - c12: Grammar fix.\n- Tunnels and scenes: Dearborn stress scene typo.\n- Crash: object has no attribute 'doctrine_mindset_used_n' (Luke) -sentry\n- Crash: object has no attribute 'doctrine_mindset_used_n' (Luke) - sentry"
+    },
+    {
+      "title": "SR1.0.79",
+      "date": "2025-09-13 17:02:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566493150",
+      "content": "Bugs (hotfix)\n\n- 'GTHelpObject' object has no attribute 'image_folder_path' (Luke)"
+    },
+    {
+      "title": "Full Release \"SR1.0.78\"",
+      "date": "2025-09-12 19:15:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566464476",
+      "content": "Features\t\n- More support for imminent \u201cThree Nations\u201d playtesting including  more \u2018AI 2.0\u2019 revisions (Luke) - AI changes not yet available in Cottonbalers ( a more aggressive AI likely unbalances campaign).\n\nBugs\n- Crash: `'NoneType' object has no attribute 'post_add'` (Luke) \n- Crash: \u2018Str is not callable (Luke)"
+    },
+    {
+      "title": "Full 1.0.75",
+      "date": "2025-09-09 15:04:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180205531",
+      "content": "Infrastructure\n- In anticipation of Three Nations DLC playtesting - ;-)\n\nBugs\n- Road to Casablanca - c05: Typos.\n- Anzio Bridgehead - c13_3: Typos.\n- Rome - c13_75: Typos!\n- Berchtesgaden - c21: More Typos!\n- Epilogue: Yet moar typos!"
+    },
+    {
+      "title": "Full Release 1.0.74",
+      "date": "2025-09-08 15:45:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180173060",
+      "content": "Features\n- Renamed \u2018casualties\u2019 in men victory conditions to 'losses' to more clearly communicate that includes surrendered not just literal casualties (Luke) - see bug fix below as well.\n- Scenario C12 Cottonbalers scen file updated, added Tk Ldr, new crumbs.\nMap C12 map fixed error with double roads, added swamp tiles to keep German armor on the roads. Also tanks now on maneuver offensive\n- efficiency: Rallies (Luke) - AI was looking at too many rally plans too slowly due to a bug. Fixed for both AI 1.0 and 2.0.\n\nBugs\n- Surrendered Units were not being counted in \u201ccasualties\u201d (Henk, Luke) - for Men victory condition. Now called \u2018losses\u2019 (at least to player, scenario editor is likely a bit out of date now\n- Rome - c13_75(Allen) Fixed two text issues with Signore Ricci at the Majestic.\n- Volturno Crossing - c11 (Allen): Swapped incorrect breadcrumbs for two German Lieutenants.\n- Crash: \u201cchange_hitting_HexI passed 'None' for 'new_hitting_Hex\u201d (Luke) \n- Crash: 'NoneType' object is not subscriptable (Luke) - when dead unit that has been destroyed tried to change facing towards the destroyer. But this is not a zombie sim! ;-) \n- Crash:  Hex' object has no attribute 'map_x' (Patrick, Luke) - sentry\n\n\nInfrastructure\n- In anticipation of Three Nations DLC: AI 2.0 changes for a more aggressive AI (Henk,Patrick, Luke) - not available for Cottonbalers scenarios currently given concerns about balance.\n- Config files for different release (Luke) - e.g. different AI for Cottonbalers (1.0) vs for Three Nations (2.0)"
+    },
+    {
+      "title": "Full 1.0.73 (hot patch for nasty patch 1.0.72 :-( )",
+      "date": "2025-08-21 18:36:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382457955",
+      "content": "- Crash: \"bad operand type for unary ~: 'str' (Luke)\" - unfortunately the fix for  a missing Acting Grant crash in  \"Full 1.0.72\"  in other circumstances would cause this new crash. Crossing fingers (after testing of course) that 1.0.73 fixes both now."
+    },
+    {
+      "title": "Full 1.0.72",
+      "date": "2025-08-21 15:49:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382454261",
+      "content": "Bugs\n- Crash: \"retire_Acting_GrantI_early: no Acting_GrantI\"  (Luke) \n- Augsburg- c19: Allen\u2019s poor German corrected neatly by Native German speakers\n- crash: \"For maneuvering, the battle_stance owner (%s) must be the same as the breadcrumb owner\" (Luke)"
+    },
+    {
+      "title": "Release \"Full 1.0.69\"",
+      "date": "2025-08-12 15:10:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909741107",
+      "content": "FEATURES \n\n\nMore explicit shout out that a Morale Check ('MC') is required (Luke) - i.e. that the donut is telling the probability your men will undertake the action you are contemplating. So, for example, the chance of a requested Assault action happening... regardless of whether you would win it if you did (for that see the initiative donuts of the combat display at bottom, not shown here).\n\n[img src=\"{STEAM_CLAN_IMAGE}/33420403/3121ee3d940cfe2a6643c96550207daaf4ba385a.png\"]\n\n\n- Experimental! If you flank a tank then it will not fire back\u00a0 (Patrick, Curt, Luke): -for THIS fire exchange ;-)\u00a0 Have not yet\u00a0 done same for stopping out of arc opfire.\n\n[img src=\"{STEAM_CLAN_IMAGE}/33420403/1ce2eaeb8ef0161702d4c004b5dca43e18070000.png\"]\n\n\n\nBUG FIXES\nCrash: 'utf-8' codec can't decode byte 0xe4 in position 8697: invalid continuation byte (Luke)- shoutout to new player friedice who gave key guidance on debugging. Cause was obscure.. Namely having this setting on in windows: \u201cUse Unicode UTF-8 for worldwide language support.\u201d This bug fix might produce odd Interactive Fiction text (has to do with German/French accents etc). Let us know if soSentry\n\nCrash: 'PLMainMenuModel' object has no attribute 'process_ScenarioEndEveI' (Luke) - sentry\n\nreports of an action being unavailable to you when in fact was available (Luke) - triggered by the combat display at bottom of screen being visible. E.g. if you hit assault hotkey again whle the proposed assault was already visible.\n\nRoad to Casablanca - c05: Fixed issue with Dearborn\u2019s insubordination.\n\nSicily Landing - c07: Fixed text issue with Thompson\u2019s War event.\n\nVolturno Crossing - c11: Fixed a false casualty text and inserted a subtle Archer reference.\n\nAnzio Beachhead Part 1- c13_1: Issue with pilot killed/captured parsed out properly in text.\n\nAnzio Beachhead Part 2 -c13_2: - Fixed issue with multiple units being named \u2018Ink Only\u2019.\n\nAnzio Beachhead Part 2 -c13_2: - Corrected early end of the scenario to proper event.\n\nRome - c13_75: Several syntax errors in rollovers fixed.\n\nPalma di Montechiaro - c8: Issue with Wilson being too tough and ignoring wounds to participate in the surrender has been fixed.(Allen)\n\nUtweiler scenario: Issue with hex_arrow text overlapping has been fixed. (allen)\n\nCrash: Missing destroyed AT gun graphic (Luke) - 3N testing"
+    },
+    {
+      "title": "SR1.0.67 (hotpatch)",
+      "date": "2025-07-24 15:35:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758619174",
+      "content": "- when quiting to main menu or desktop crash \"Dying core err_chk restricted to non public' - (luke)"
+    },
+    {
+      "title": "Patch 1.0.65",
+      "date": "2025-07-24 07:59:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758608424",
+      "content": "Bugs\n\n  Freezeup on save game load (Luke) - manifested as your turn and yet the game does not respond to any action requests. \n Possible fix for \u2018'NoneType' object has no attribute 'find_immediate_LdrI'\u2019 (Luke) -we\u2019ll see."
+    },
+    {
+      "title": "Full 1.0.62",
+      "date": "2025-07-15 22:18:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065288349",
+      "content": "Bugs\n-  Fixed running in place us infantry squads [/b](Luke)\n- 'NoneType' object has no attribute 'destroyed_p' (Luke) \n- unsupported operand type(s) for -: 'NoneType' and 'tuple' (Luke) -\n- USFlamethrower now runs as single sprite (Luke)"
+    },
+    {
+      "title": "Full 1.0.60",
+      "date": "2025-07-05 17:06:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891811838",
+      "content": "Bugs\n- Campaign saves would sometimes acquire names of scenarios instead (Luke)\n- Save game stalls on loading AI turn (Luke) - i.e. save game load left game in AI\u2019s turn but AI does nothing. Discord\n- Crash: 'PLMainMenuView' object has no attribute 'MainMenuButtonsColI' (Luke)\n- Crash: 'NoneType' object has no attribute 'turn_on_selected' while editing character sheet (Luke)\n- Crash:`'UsPlayer_Cottonbalers' object has no attribute 'PlayerI'` (Luke)"
+    },
+    {
+      "title": "Full 1.0.59",
+      "date": "2025-07-02 17:10:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891715133",
+      "content": "Bugs\n- Achievement \u201cUnder German Fire\u201d only triggers starting in C09 (San Fratello) (Allen/John) - Some players reported \u201cpremature\u201d triggering due to artillery fire in earlier scenarios. The artillery batteries were German for convenience but operated by the Vichy, not Germans.\n- Crash:  \u2018Failed to remove from limited_dead_UnitIs\u2019 (Luke)\n- Crash: \"Invalid pointerize request per above warnings; stopping run.\" (Luke)\n- Crash: \u201ccrash: 'str' object has no attribute 'combat_fatigue' (Luke) - sentry"
+    },
+    {
+      "title": "Full 1.0.58",
+      "date": "2025-06-27 11:54:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891547055",
+      "content": "Bugs\n- Crash: 'redundant store_pre_firefight_combat_vals requested' (luke) - subtle bug due to new multi-threading\n- Crash: \u2018NoneType' object has no attribute 'show'\u2019 (Luke) -during interscenario transition to next scenario. \n- Crash: \u2018list index out of range\u2019 (Luke) - during removal of unit from map. \n- La Londe- c14: Fixed issue with rollovers not displaying current VC state. (Allen)\n- Epilogue: Fixed issue with not being able to replay Cpt. Rodgers outcome. (Allen)"
+    },
+    {
+      "title": "Full Release 1.0.57",
+      "date": "2025-06-26 15:25:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891518314",
+      "content": "Features\n- Quit button on main menu now fast (luke) - before was confusing in that it took a while and so users might keep clicking the quit button since feedback was poor. It is now very fast (and feedback is improved if for some reason goes slowly. See below too).\n- Quit Button in inter-scenario and tactical GUI now signal when Quit is underway (Luke) -before the play got no clear signal and could be left repeatedly clicking \u2018quit.\u2019\n \n\nBugs\n- Crash: object has no attribute 'start_creeping' (Luke)- When a unit was added late to Creep via dialog box a crash would occur.   \n- Crash: object has no attribute 'special_action_aimed_fire_p'(Luke)  \n- Volturno Crossing - c11: Illegal Zombie Officers removed from reference. (Allen)\n- Anzio scenarios c13_1-_3:  Installed check for New Officers where missing. (Allen)\n- Two Tanks - Anzio scenario 13_3:  Fixed issue with Thompson/Camara refusal. (Allen)\n- Vy-les_Lure - c15: Fixed issue with text overrun. (Allen)\n- Vosges - c16: Fixed issue with text overrun. (Allen)"
+    },
+    {
+      "title": "Full 1.0.55",
+      "date": "2025-06-13 19:21:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289609719",
+      "content": "Sorry for multiple updates today. The threading is likely manifest  subtl new bugs our small team of playtesters couldn't surface. Also trying to get these  out before on vacation Saturday for a week :-()\n\nBugs\n- Crash:After \u201cfully_die_AuxIs there is still an aux\u201d (Luke) - sentry"
+    },
+    {
+      "title": "SR1.0.54",
+      "date": "2025-06-13 16:58:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289606634",
+      "content": "Pushing a few more fixes out before this solo dev goes on vacation tomorrow ;-) \n\nBugs\n\n Crash: \u201credundant plan\u201d (Luke) -  hidden for public till future debugging. Sentry \n Crash: \u201cNone not iterable\u2019 around \u2018prior_LdrIs (Patrick, luke)  -sentry\n Crash: failed to remove from limited  dead (Luke) - hidden for public till future debugging  sentry"
+    },
+    {
+      "title": "Full 1.0.53",
+      "date": "2025-06-13 13:00:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289601105",
+      "content": "Features\nFPS improvements during heavy AI turns (luke) - multithreading of AI to have its \u2018thinking\u2019 interfere\u00a0 less with graphical updates. See 2x to 3x improvements in the more intensive AI scenarios (where AI has a lot of units and is doing things ;-) ).\u00a0\n\nGeneral performance improvements (Luke)\n\n\nBugs\nCreep wrongly charged sometimes (Patrick, Luke) -If a leader ordered a unit with it to creep on own the leader would still pay 2 Orders and continue to do so thereafter :-( (i.e. keep acting like creeping).\n\nMontelimar - c14_5: Re-fixed artillery images to match designer updates to maps. (Allen)"
+    },
+    {
+      "title": "Full 1.0.52",
+      "date": "2025-06-09 20:21:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199539392",
+      "content": "Features\nSome further AI speedups when hidden movement (Luke)\n\nImage size reductions (historical media team)\nBugs\nRed Beach - c02: Fixed CTD for too many mandatory events. (Allen) \n\nLa Londe - c14: Solved the riddle of non-expressing vc_level variables during the scene following the taking of the main objective. (Allen) -"
+    },
+    {
+      "title": "Full 1.0.50",
+      "date": "2025-06-05 16:06:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199402009",
+      "content": "- Colmar Pocket - c17: Revised text about the busted bridges and bridge engineering units, and tanks. (Allen)\n- Crash \u201cfailed to remove\u2026 from .. limited_dead\u201d (Luke) - frequent in 1.0.49 \n- Crash: in _err_chk_one_LdrI (Luke)"
+    },
+    {
+      "title": "Short Dev Update",
+      "date": "2025-06-05 02:15:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199382452",
+      "content": "Some updates from Luke about the German market, Turn-Based Thursday, and our Three Nations DLC:\n\n[previewyoutube=gCoQs1CT9QA;full][/previewyoutube]"
+    },
+    {
+      "title": "Full 1.0.49",
+      "date": "2025-06-04 18:00:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199371773",
+      "content": "BUGS\n- Colmar Pocket - c17: Issue with Patterson or Morris returning from the dead (but not as zombies) fixed with a bit of deft coding. (Allen)\n- Colmar Pocket - c17: Fixed issue with tank leader not arriving as reinforcement. (Allen)\n- Siegfried Line - c18: Fixed a shocking/reveal bark and choicebox interaction. (Allen)"
+    },
+    {
+      "title": "Full 1.0.48",
+      "date": "2025-06-03 14:22:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756480840",
+      "content": "Features\n- Performance improvements (Luke) -general across board moderate improvements.\n- Montelimar - map updates (Henk)\n- Continuing effort to shrink photographs size on disk (Steve and historical media team) - while preserving quality\n\n\nBugs\n- Montelimar - c14: Fixed blank IF screen issue on turn 5. (Allen)\n- Colmar Pocket - c16_5 and c17: Updated image rollover text for Marie. (Allen)\ncrash: missing interscenario bkgd image for 3n scenarios (Luke)"
+    },
+    {
+      "title": "Full 1.0.47",
+      "date": "2025-05-31 11:35:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756380243",
+      "content": "Features\n- AI Visual Performance improvement (Kai, Luke) - hidden AI units now move super fast (like speeding bullets ;-) ) to speed up AI turn for you  :-)\n- Siegfried Line (c18) map and scen updates (Henk)\n- AI vehicular facing edge case (Luke) -- AI vehicles moving parallel to enemy side would reverse direction. They though for boring math reasons they were getting further from enemy.\n- San Fratello c9 and Anzio Advance c12: Added Undaunted reminders via message_box. (Allen)"
+    },
+    {
+      "title": "SR1.0.46",
+      "date": "2025-05-30 14:13:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756351916",
+      "content": "Features\n- QOL: Visual Performance improvements:\n  - GENERAL SPEEDUP OF UNIT MOVES (Luke)  since they move further. Less time devoted to.\n  - Move speed for AI units sped up even more (Luke) -so you wait less time for the enemy to do his dumb moves so you can get back to your brilliant ones :-)\n  -Artillery Explosions speedup (Luke) - makes longer barrages  not be as tiresome ;-)\n\n\nBugs\n- Vehicle leader portrait less laggy when in  vehicle and moving on map (Luke)- really happy to get this little SOB (mostly). So amateur hour.\n- write_txtfile failure: FileNotFoundError(2, 'No such file or directory') (Luke)  -log files could not be written due to my operator error in 1.0.45."
+    },
+    {
+      "title": "Full 1.0.45",
+      "date": "2025-05-29 13:53:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756318051",
+      "content": "Features\n - AI PERFORMANCE IMPROVEMENTS! (Luke) - AI planning taking 3 times less time now in tests for AI intensive (many units) Montelimar scenario. Doesn\u2019t make those scenarios \u2018zip\u2019  but feels sane now ;-)  Will be interested to hear if folks feel any difference in the slower scenarios (La Londe is another that tends to be slow).\n\n\nBugs\n- crash: 'NoneType' object has no attribute 'get_special_action_state' (Luke)\n- crash: NoneType' object is not iterable (Luke) -sentry\n- crash: 'NoneType' object has no attribute 'WorldObjI' (Luke) - sentry\n- Late war scenario - c20: Code fragments appearing as text. Fixed. (Allen)\n- Rome - c13_75: Issue of Wednesdays being Thursdays is fixed in text. (Allen)\n- Anzio part 1 - c13_1: Issue with non-disappearing hex_arrow is fixed. (Allen)\n- Epilogue: Mislabeled rollovers for Caution/Compassion have been fixed. (Allen)\n- Release 1.0.44 got skipped somehow (bug LOL) so going from 1.0.43->45"
+    },
+    {
+      "title": "Full 1.0.42",
+      "date": "2025-05-23 20:04:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164455135",
+      "content": "further hot patch (sigh)\n - NoneType' object is not iterable (Luke) -"
+    },
+    {
+      "title": "Hot Patch 1.0.41",
+      "date": "2025-05-23 18:49:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164453394",
+      "content": "Features\n Starting to shrink footprint of game by shrinking images - also reduces \u2018sharpness\u2019 of edges for many images. Win-Win.\n\n\nBugs\nSerious bug (so hotpatch):  'NoneType' object has no attribute 'get_special_action_state' (Luke) - sentry Was -preventing loads of some games."
+    },
+    {
+      "title": "Full 1.0.40",
+      "date": "2025-05-23 14:51:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164448479",
+      "content": "Features\n La Londe - c14: Enemy trucks are revealed, tracked by sound, when they move in the city even when otherwise hidden.  (Allen) -helps explain why AI seems to \u2018freeze\u2019 at times (it\u2019s busy moving its vicious hordes ;-) (Luke)\n\n\nBugs\n- SCOUTING PARTY WORKS AGAIN (Luke) - was not working when a squad was involved.\n - Crash: 'NoneType' object has no attribute 'die' (Luke) - sentry"
+    },
+    {
+      "title": "Full 1.0.39",
+      "date": "2025-05-21 15:19:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164383028",
+      "content": "Features\n - Montelimar - c14_5: Revised old images of maps for whirlwind and creeping barrage. (Allen)\n\n\nBugs\n- Crash: object has no attribute 'SpriteEleIs' (Luke) - sentry \n- Crash: Invalid pointerize request per above warnings; stopping run.- sentry"
+    },
+    {
+      "title": "Full 1.0.38",
+      "date": "2025-05-19 19:03:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379610406",
+      "content": "Features\n- Siegfried Line - c18: Added Message boxes concerning German counterattack (Allen)\n\n\nBugs\n- crash: find_UnitI_by_game_id: game_id 'UsPlayer_Cottonbalers' is ambiguous (Luke) - latest effort on this nasty.\n- Crash: 'NoneType' object has no attribute 'fow_uncertain_p' (luke) \n- Crash: 'NoneType' object has no attribute 'fow_uncertain_p' (luke) \n- Crash AttrIconFontSprite' object has no attribute 'DrawOrderedSpriteIs' (Luke)"
+    },
+    {
+      "title": "Full 1.0.37",
+      "date": "2025-05-17 14:26:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379540316",
+      "content": "Bugs\n\n Crash: 'UnitActionsCommitEvent' object has no attribute 'PlanReqI' (Luke)\n Crash list.remove(x): x not in list (Luke)"
+    },
+    {
+      "title": "Full 1.0.35 & 36",
+      "date": "2025-05-16 16:27:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379511639",
+      "content": "Features\n\n  Infrastructure: better bug reports to developer (Luke)\n\n\nBugs\n\n find_UnitI_by_game_id: game_id 'UsPlayer_Cottonbalers' is ambiguous. Multiple UnitIs r (Luke)\n '<=' not supported between instances of 'int' and 'NoneType' (Luke) during AI move \n Missing 20mm flak portrait (SteveL, Ville, Luke)\n '#attribute_to_ink_var(player_character_KIA_this_scen crashes in 1.035 (Luke)\n Seigfreid line , revised panzerschreck command and control (Henk)- previously would not do much if leader it was assigned to got killed (happened often)."
+    },
+    {
+      "title": "Full 1.0.35",
+      "date": "2025-05-16 07:59:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379499872",
+      "content": "Features\n[olist]\n (Dev team only) Smoke LOS no longer affects origin hex (Luke / John / Patrick)\n Crash: Mismatch between prior_LdrIs 2 and _history 3\n Crash: Scenario 8 flags: \u201cOnly core units can have plot armor But UsThompsonI@(15, 17)m12{810512} is not core yet has plot armor (Luke, Allen)\n[/olist]\n\nBugs\n\n  Million Dollar Ridge - c10: Fixed crash related to Roberts\u2019 sniping."
+    },
+    {
+      "title": "Full 1.0.34",
+      "date": "2025-05-14 23:09:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379454607",
+      "content": "Features\n\n Million Dollar Ridge - c10: Added message boxes to help parse the mortar situation. (Allen)\n Two Tanks to Bury - c13_3: Added message boxes to parse the insubordination event. (Allen)\n\n\n\nBugs\n\n Briefings at start of scenario were no longer firing since 1.0.32 (often) (Luke)\n Cape Fedala - c04: Fixed grammatical errors. (Allen)"
+    },
+    {
+      "title": "Full 1.0.33",
+      "date": "2025-05-13 22:10:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799722702478973",
+      "content": "- Crash: stupid typo set_prior_LdrIss -> set_prior_LdrIs (Luke) naturally only spotted right after 1.32 out. Soquick 1.33 to address"
+    },
+    {
+      "title": "Full 1.0.32",
+      "date": "2025-05-13 20:41:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799722702477223",
+      "content": "- Crash after sending squad on R&R (no good deed goes unpunished)(Luke)  - manifest in next scenario load as \u2018Duplicate found of 'unique' - discord \n- Crash: \u2018object has no attribute 'GT_ID' (Luke) - during load of new scenario in campaign.\n- Crash: remove_acting_LdrI_for: Can't find acting LdrI(s) (Luke) - sentry"
+    },
+    {
+      "title": "Full 1.0.31",
+      "date": "2025-05-11 00:28:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287917797",
+      "content": "Bugs\n-  NoneType' object has no attribute 'dead_p' (Luke )- related to ongoing prior_LdrI/acting_LdrI bug"
+    },
+    {
+      "title": "Full 1.0.29",
+      "date": "2025-05-10 17:50:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287909209",
+      "content": "Features\n - Specialized ink test for writers (Luke, Allen) - \u201cattribute_to_ink_var\u201d test can take player_character_KIA_this_scen as  testable attribute.\n\n\nBugs\n- Refinements in replacing Out of Action Leaders logic (Luke) - pre-empt some possible bugs."
+    },
+    {
+      "title": "Full 1.0.28",
+      "date": "2025-05-09 17:10:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287876627",
+      "content": "Bugs\n- Crash: when changing values in settings interface  (Luke)\n- Rome - c13_75: Fixed Ink code in the stolen rifle random event. (Allen)\n- Crossroads - t04: Swapped Umpire portrait for Bennett portrait at start. (Allen)\n- Anzio Advance - c12: Hex_arrow overlap fixed. Ldr arrival synchronized with tanks. (Allen)\n- Million Dollar Ridge - c10: Minefields managed. (Allen)\n- Crash: Invalid pointerize request (Luke)"
+    },
+    {
+      "title": "Full 1.0.27",
+      "date": "2025-05-08 16:46:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287843394",
+      "content": "Bugs\n\n Montelimar - c14_5: Reconfigured truck barks for location and dynamism. (Allen)\n Resolved issue with checking/awarding \u201cMaster Tactician\u201d Achievement (John)\n Cape Fedala - c4: Issue with Professionalism Mindset fixed. (Allen)\n Crash: 'Us155mm_M1' object has no attribute 'done_processing_impulse_p' (Luke) \n\nInfrastructure\n\nSteam persona added as Tag to Sentry crash reports for better player follow up (John)"
+    },
+    {
+      "title": "Full 1.0.26",
+      "date": "2025-05-07 18:39:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287813070",
+      "content": "Features\n(Dev team only) Smoke LOS impact changes for dev team testing (John / Patrick):\n- Smoke affects LOS at all heights above it (i.e. smoke rises)\n- Smoke hinders LOS (\u00bd effect) for a unit inside a smoke filled hex looking out to other hexes\n- Road to Casablanca - c05: Message boxes when Victory level changes. Thanks mhsiea. (Allen)\n\n\nBugs\n- Montelimar crashes during AI turn Level: \u2018'NoneType' object has no attribute 'surround_HexIs\u2018\u2019 (Luke) - sentry \n - Volturno-Updated xp, made the enemy more aggressive, adjusted placement of some units.(Henk) Also resolves crash \u2018For maneuvering, the battle_stance owner  must be the same as the breadcrumb owner\n- Officer Barks - Crash involving a lack of a \u2018)\u2019 is fixed. (Allen)"
+    },
+    {
+      "title": "Full 1.0.25",
+      "date": "2025-05-07 08:57:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287799615",
+      "content": "Features\n - New bridge art, including new rail bridges in Tiled and BoC (Sergey / John)\n\n\nBugs\n- Crash: certain burning buildings would crash on load (Luke) -  \u2018list index out of range\u2019\n- Crash: Duplicate Unique LdrIs (e.g. Thompson) on load (Luke) - discord  sentry\n- Vosges - c16: Fixed issue with victory conditions and REFRESH_INK statements. (Allen)\n- La Londe - c14: Fixed issue with flipped failure/success outcomes for Mindset checks.(Allen)"
+    },
+    {
+      "title": "Full 1.0.24",
+      "date": "2025-05-05 19:17:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487745577",
+      "content": "Features\n - New bridge art, including new rail bridges in Tiled and BoC (Sergey / John)\n\n\nBugs\n- Volturno Crossing - c11: More guardrails on battle_stance events. (Allen)\n- Volturno Crossing - c11: The American artillery barrages that no-one likes now trigger. (Allen)\n- Anzio Advance - c12: Fixed issue with code not issuing a draw via Ink when requested. (Allen)\n- Crash: after try to start next scenario in campaign: \u2018invalid pointerize request p\u2019 (Luke) -discord sentry\n- Crash: maps folder not found for next DLC (Luke) sentry \n- Crash: find_UnitI_by_game_id: game_id 'UsPlayer_Cottonbalers' is ambiguous. (Luke)  - sentry\n- Crash: cen units defn error: Duplicate found of 'unique' UsPlayer_Cottonbalers (Luke ) - sentry"
+    },
+    {
+      "title": "Full 1.0.23",
+      "date": "2025-05-03 19:26:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487682455",
+      "content": "- Crash: NoneType' object has no attribute 'get_alive_USIs' (Luke) - sentry\n- La Londe - c14: Event pops to end the scenario after all 4 objectives are taken. (Allen)\n- Crash: index out of rangedue to solo leader Out of Action (Luke) - discord\n- Tunnel system: Fixed \u2018text too long\u2019 issue with Glascoe\u2019s Stress scene. (Allen)\n- Crash during change facing: 'NoneType' object has no attribute 'gen_and_post_tmp_MsgI_over' (luke) - sentry"
+    },
+    {
+      "title": "Full 1.0.21",
+      "date": "2025-05-01 15:20:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487612939",
+      "content": "Bugs\nFull 1.0.20 was not allowing units to attack (Luke) - stupid use of \u2018not\u2019 in code when meant opposite. Sigh. So that is fixed and all the below (were intended for 1.0.20) are back in:\n\n\n Bug in Colmar Pocket - c17. History tab had \u201c instead of \". (Allen)\n Bug in Road to Casablanca - c05: us_shooting_group amended to us_group. (Allen)\n Crash: 'NoneType' object has no attribute 'surround_HexIs' (luke)\n Crash: object has no attribute 'player_character_p' (Luke)\n Crash:  object has no attribute 'PlayerI' (Luke )\n Crash: NoneType' object has no attribute 'CUI_in_grp_p'(Luke)\n Crash: NoneType' object has no attribute 'get_HexI' (Luke)"
+    },
+    {
+      "title": "Rollback to patch 1.0.19!",
+      "date": "2025-04-30 23:10:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487590539",
+      "content": "Today's bug-fix patch 1.0.20 unfortunately introduced a new bug in the target and shoot code, preventing players from actually shooting at the enemy. Since being able to actually fire a weapon at the enemy is pretty important to wining the game... ;-) we have rolled the Steam build back to 1.0.19.\n\nWe will address the issue with 1.0.20 tomorrow and a proper bug-fix patch out then."
+    },
+    {
+      "title": "Full 1.0.19",
+      "date": "2025-04-29 15:12:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624631533",
+      "content": "Features\n- BoCopedia images were massaged to be more kindly to the eyes. (Allen)\n\n\nBugs\n-Crash: \u201cScen units defn error\u2026\u201d caused by Player Character going out of action and conflicting with new \u2018acting\u2019 one (luke) - Steam  Discord\n-Dead Player Character (and consequent new \u2018acting\u2019 leader) led to no interactive fiction (Luke) - this should be patched with a player character who now can be edited in terms of portrait etc. This is very tricky code so this version may still need work. Turns out resurrecting the dead in a better form is hard! :-)\n-Player Character portrait visible on main screen of inter-scenario aid view did not change after right clicking and changing portrait (Luke)\n\nInfrastructure\n-Updated Tiled map editor road graphics for next campaign (Sergey / John)\n-Corrupted save game handler - remove had save so BoC can load (John)"
+    },
+    {
+      "title": "Live today!! 5:15 PST",
+      "date": "2025-04-28 15:18:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624598187",
+      "content": "\"American Courage, American Carnage\" -- the book that inspired the immersive game Burden of Command -- reprint is out now!\n\nThree different ways to connect to history:\n\n\n you are there' tours with host @history_under\n you gain perspective' with author @JohnCMcManus3\n you are in their boots' with @BurdenOfCommand \n\n\n[previewyoutube=kf586ClfD30;full][/previewyoutube]"
+    },
+    {
+      "title": "Full Release 1.0.18",
+      "date": "2025-04-27 16:48:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624567467",
+      "content": "Bugs\n\n Achievement tracking/awarding when loading a saved game was failing (John) - Fixed"
+    },
+    {
+      "title": "Full Release 1.0.17",
+      "date": "2025-04-26 15:38:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624534429",
+      "content": "Features\n\n Various scenario updates (Allen)\n\nInfrastructure\n\n Achievement System 2.0 (John):\n - Resolved problem with \u201cEvent queue\u201d timing, sometimes missing Achievement triggers"
+    },
+    {
+      "title": "Full Release 1.0.16",
+      "date": "2025-04-25 15:13:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624502300",
+      "content": "Features\n\n Anzio Advance - c12: Adjusted AI to include a multi-pronged counterattack (Allen)\n\nBugs\n\n Leaders put on R&R would be gone from the Aid View the next time player went there if still on R&R  (Luke) - now they show as R&R on subsequent visits to the Aid View\n Death of the player character led to a permanent \u2018acting leader\u2019 which you could not customize :-( (portraits etc). Fixed\n Also said \u2018acting\u2019 player character was not marked as such - probably leading to some interactive fiction turning off (still testing if this is so). Potentially serious bug.\n Streets of Casablanca - c06: Clarified titles after \u2018The Talk\u2019. (Allen)\n Vosges - c16: Fixed label on Marie\u2019s image. (Allen)\n Augsburg - c19: Fixed a poorly labeled image for american_medic. (Allen)\n Crossroads - t04: Fixed issue with hex_arrow overlap. (Allen)\n Bad bark albert0215 has been removed. (Allen)\n Tank Country t05 - Fixed typo with Dearborn\u2019s name. (Allen)\n\nInfrastructure\n\n Achievement System 2.0 (John):\n- Works Offline\n- More stable awards (using local Steam App vs. requiring online signal to Steam)\n- Various bug fixes"
+    },
+    {
+      "title": "Full Release: 1.0.15",
+      "date": "2025-04-22 15:04:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861807666",
+      "content": "Features\n\nBocopedia entry explaining \u2018hidden\u2019 icon better (Allen)\n\nBugs\n\n Crash: Mindset Ability \u2018ByTheBook\u2019 (\u201c\u2018Set\u2019 object is not subscribable) (Luke)\n Crash at scenario end: \u201ccannot access local variable 'senior_CommanderI' where it is not associated with a value\u201d (Luke)\n Crash; waypoints \u201clist index out of range\u201d (Luke)\n\nInfrastructure\n\n Improved crash reporting system (John)"
+    },
+    {
+      "title": "Full Release: 1.0.14",
+      "date": "2025-04-21 18:20:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861778830",
+      "content": "-- Bugs --\n- Scenario (San Fratello, for example) could end prematurely  (Luke)- if compassionate Mindset leader had good (mis) fortune to trigger a \u201ccomrade in arms\u201d event triggering a casualty fix and confusing thereby the \u2018MEN\u2019 victory condition leading to victory condition going to 'Major Defeat' and scenario over. Subtle!"
+    },
+    {
+      "title": "Updates for patch 1.0.12",
+      "date": "2025-04-19 16:49:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861714186",
+      "content": "Bugs:\n\n Vy-les-Lure c15 crash: Issue with hex_xy\u2019s and hex_arrows is resolved, also added portraits to the event (Allen)\n Images seen bad entry (Luke)\n 'NoneType' object has no attribute 'find_senior_CommanderI' (Luke)\n get_most_recent_waypoint: bad indexing (see debug log) for [] (Luke)\n 'NoneType' object has no attribute 'get_best_xp_failed' (Luke)\n Level: Error 'NoneType' object has no attribute 'disable' (Luke)\n\n\nInfrastructure:\n\n FTP Crash Log upload sys streamlined and errors fixed (John)\n Expanded logging of Achievement sys activities (John)"
+    },
+    {
+      "title": "Full 1.0.10",
+      "date": "2025-04-17 14:27:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861646554",
+      "content": "- Crash when putting all leaders on RnR: \u2018NoneType' object has no attribute 'find_senior_CommanderI'\u2019-  \n- Crash on exiting aid view \n- UsLambI@(None, None)m14{999760}: core units cannot be defined as starting scenario destroyed  \n- Left over messages about OOA status on left or top of screen cleaned up - OOA means \u201cOut of Action\u201d messages like \u201creturned to duty\u201d. These were still appearing on the tactical battle screen.\n- Crash when putting all leaders on RnR: \u2018NoneType' object has no attribute 'find_senior_CommanderI'\u2019\n- Crash on exiting aid view \n- UsLambI@(None, None)m14{999760}: core units cannot be defined as starting scenario destroyed  \n- Left over messages about OOA status on left or top of screen cleaned up - OOA means \u201cOut of Action\u201d messages like \u201creturned to duty\u201d. These were still appearing on the tactical battle screen.\n- C05 grammar issues fixed\n- C08 sniper events refined - counter sniper event accounted for\n- C12 issue with overlapping choice boxes fixed\n- C15 hex_xy issue resolved \u2018hex arrows added to compensate for map changes\u2019"
+    },
+    {
+      "title": "\"Full\" Release 1.0.8 patch notes",
+      "date": "2025-04-15 14:42:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172415361",
+      "content": "- c03 - Hotel Miramar. Edited grammar, fixed flags for personalization. \n- c05 - Road to Casablanca. Edited grammar, adjusted horse-holder event. \n- c07 - Sicily Landing. Fixed bug with farm field barks, edited grammar because Allen gets too much sleep. \n- c10 - Million Dollar Ridge. Fixed issue with officers on R&R appearing within story events.\n-'NoneType' object has no attribute 'map_x' - sentry\nearlier bug detect of \u2018Level: Error list.remove(x): x not in list\u2019 - not yet fixed but trapping earlier to debug more.\n- Too many 'mandatory' story events fired. Only one should be possible at any given time: [auto_scenario_13_5_the_grave - sentry\n- 'ClearComplex0Hex' object has no attribute 'get_GoalHexI' - the pervasive crash in 1.0.7\n- Attempt to recover from missing map_descrip in saved game file (John) - Sentry"
+    },
+    {
+      "title": "SR1.0.7",
+      "date": "2025-04-14 19:34:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172388781",
+      "content": "Bugs (by how manifest):\n- 'NoneType' object has no attribute 'map_x' (Luke) - sentry\n- earlier bug detect of \u2018Level: Error list.remove(x): x not in list\u2019 - not yet fixed but trapping earlier to debug more.\n- Too many 'mandatory' story events fired. Only one should be possible at any given time: [auto_scenario_13_5_the_grave - sentry"
+    },
+    {
+      "title": "Full 1.0.6",
+      "date": "2025-04-11 20:01:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172293811",
+      "content": "- \u201cWakeup\u201d crash end scenario 5  (Luke)- 2nd attempt at patch. Sentry\nAnd also Allen patching\n- \u201cCounterattack\u201d multi modal crash (Allen) - sentry\n- Better debug tracing for Achievement (not) firing issues (John)"
+    },
+    {
+      "title": "STEAM DECK SUPPORT!",
+      "date": "2025-04-08 21:57:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796551539170909",
+      "content": "Burden of Command has Steam Deck support!\n\nSee the Burden of Command Steam Deck Controller layout here!\n\nSee the Steam Deck Custom Controller Layout - Radial Menu here!"
+    },
+    {
+      "title": "STEAM DECK SUPPORT!",
+      "date": "2025-04-08 21:50:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796551539170905",
+      "content": "Burden of Command has Steam Deck support!\n\nSee the Burden of Command Steam Deck Controller layout here!\n\nSee the Steam Deck Custom Controller Layout - Radial Menu here!"
+    },
+    {
+      "title": "Update notes for patch 1.0.2",
+      "date": "2025-04-08 14:59:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897494735",
+      "content": "This is a \"quick patch\" as we are noticing some players are experiencing game crashes when their Firewall blocks access to manage the game logs and saved games. We write and manipulate logs to help with debugging, plus saved games require manipulating files on the player's hard drive. \n\nThis patch eliminates SOME file manipulation to reduce the firewall impact. \n\nIf players are still seeing crashes when trying to save the game (which happens automatically between each turn), please see the FAQ on the BoC Steam Community Discussion page for how to check and allow Firewall access and prevent this.\n\nhttps://steamcommunity.com/app/887490/discussions/0/600775246650303986/"
+    },
+    {
+      "title": "Burden of Command - Release Date Announced!",
+      "date": "2025-03-11 08:49:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379533770",
+      "content": "Save the Date: April 8th, 2025\nWe\u2019re thrilled to announce that Burden of Command will officially launch on April 8th! It\u2019s been a long journey, but the finish line is finally in sight\u2014and we can\u2019t wait for you to experience the full campaign.\n\nNew Trailer Out Now\nTo mark the occasion, we\u2019ve just released a brand new trailer, now live on both Steam and YouTube. It\u2019s a fresh look at the leadership challenges, tactical decisions, and emotional moments that define Burden of Command. Make sure to check it out and let us know what you think!\n\n[previewyoutube=k3fdOFUFKVQ;full][/previewyoutube]\n\nA Heartfelt Thank You\nWe wouldn\u2019t be here without you\u2014our community of players, history buffs, wargamers, and storytellers. Your support, feedback, and belief in this unique project have carried us through development. We hope we\u2019ve made a game worthy of your trust, and we can\u2019t wait to hand you the Burden of Command this April.\n\nSee you on the battlefield,\nThe Burden of Command Team"
+    },
+    {
+      "title": "\u201cFeels like a new genre\u201d!",
+      "date": "2025-02-08 14:52:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102694658",
+      "content": "Big Boss Battle says Burden of Command \"feels like a new genre\"!\n\n{STEAM_CLAN_IMAGE}/33420403/0f77c4953eb850e9f2a232b1790afe531b0290c8.jpg\n\nSome other highlights of their preview:\n\n\n \u201cIt\u2019s a masterwork in design intent, and feels like more of a \u2018life\u2019s work\u2018 than an entry in any set genre.\u201d\n\n \u201cit rocks the applecart from the get-go.\"\n \n \u201cIt very much feels like a delivery of the concept that sometimes you\u2019ve got to break stuff to build it back stronger.\u201d\n\n\nThank you Big Boss Battle for the great preview!"
+    },
+    {
+      "title": "Talking about Design Challenges",
+      "date": "2024-12-12 15:18:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543535360",
+      "content": "Luke Hughes talks Design Challenges with game critic Josh Bycer. Among the topics:\n\n*  Burden isn\u2019t XCom WW2, but wanted to be;\n* Thinking out of the box has its cons as well as pros!\n* Josh: \u201cand the most horrific thing of all: onboarding and tutorial design.\"\n\nInterview with @GWBycer:\n\n[previewyoutube=Q0xfWwFgSTk;full][/previewyoutube]"
+    },
+    {
+      "title": "Listening to demo players",
+      "date": "2024-10-10 02:49:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6931694080290479261",
+      "content": "Players of our demo told us:\n\n\ud83e\uddd0\n- 1 - reachable hexes vs in LOS hexes - hard to distinguish\n- 2 - which units in stack selected - could be tricky to tell.\n\ud83e\uddd0\n\n\ud83e\udee1\nWe listened.\n\ud83e\udee1\nComing in version 0.101.165 of demo:\n\n{STEAM_CLAN_IMAGE}/33420403/40b96cf5eb7e747beb4c8f1c475b143190f38931.jpg"
+    },
+    {
+      "title": "440,000 views!",
+      "date": "2024-08-25 16:12:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438700187109",
+      "content": "Our consulting historian @JohnCMcManus3 hits it out of park commenting on Saving Private Ryan! Might be worth checking out.\n\nvia @thisisinsider\n\n[previewyoutube=WS7Tm4Au0lg;full][/previewyoutube]"
+    },
+    {
+      "title": "New feature?",
+      "date": "2024-08-10 17:32:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363399029828",
+      "content": "There goes Luke, adding more features!\n\n[previewyoutube=dVfAdwjFPoQ;full][/previewyoutube]"
+    },
+    {
+      "title": "We have a Release Window!",
+      "date": "2024-07-20 13:46:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959972775109",
+      "content": "Our plans for releasing Burden of Command!\n\n[previewyoutube=t7OLM8xRW6k;full][/previewyoutube]\n\nFor further details, please signup for our newsletter!"
+    },
+    {
+      "title": "Buyer's Guide: Historically Credible?",
+      "date": "2024-07-13 12:55:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704273555124",
+      "content": "Here's another new in-depth six-minute video, with Lead Designer Luke Hughes discussing Burden's historical credibility.\n\n[previewyoutube=IzQBsOlYOIQ;full][/previewyoutube]"
+    },
+    {
+      "title": "Buyers Guide: Is Burden tactically credible?",
+      "date": "2024-07-06 20:21:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267344047565",
+      "content": "[previewyoutube=mGYAG5ANQ6I;full][/previewyoutube]\n\nIn depth video (17 minutes!) about Burden of Command's tactics, narrated by Lead Designer Luke Hughes."
+    },
+    {
+      "title": "Squad Leader meets Band of Brothers?",
+      "date": "2024-06-08 16:05:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972557204143",
+      "content": "[previewyoutube=mpepsg2rNqk;full][/previewyoutube]\n\n\"Squad Leader meets Band of Brothers\"? - @TheStrategyInf1"
+    },
+    {
+      "title": "Memorial Day",
+      "date": "2024-05-27 13:15:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105622451762",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/fbed2e8226c2deb7f8ff3d9504318bce79f6d842.png\n\nA Chaplain of the 1st US Inf Div collects personal effects from a dead G.I.\n\nColorized by historical media team member Kirill.\nOriginal from https://www.flickr.com/photos/photosnormandie/6381756709/"
+    },
+    {
+      "title": "Change Our Logo?",
+      "date": "2024-04-20 19:51:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032399771607",
+      "content": "Our portrait artist, noted Total War artist Marisuz Kozik, has offered an alternative portrait for our \"Burden of Command\" brand image. Adopt?\n\n[previewyoutube=Uvm68R4N_Xk;full][/previewyoutube]\n\nVote on this tweet!"
+    },
+    {
+      "title": "Are we crazy to do this?",
+      "date": "2024-04-13 14:14:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312189199861",
+      "content": "[previewyoutube=mYaZHGq3mJk;full][/previewyoutube]\n\nWhat is this craziness, footnotes in a game?\n\nLet us know in the comments what you think.\n\nAlso, remember to add us to your Wishlist, and sign up for our newsletter to get the latest information."
+    },
+    {
+      "title": "What playtesters are saying ...",
+      "date": "2024-03-16 19:14:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/7309977427443668294",
+      "content": "[previewyoutube=pjWYfKzR3oQ;full][/previewyoutube]\n\nMore and more of our testers are finishing the campaign and sharing their thoughts..."
+    },
+    {
+      "title": "Early Beta!",
+      "date": "2024-03-09 13:03:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637660187558",
+      "content": "[previewyoutube=PuPkD7le3CY;full][/previewyoutube]\n\nWhat got done since alpha besides playtesting?\n\nSign up for our newsletter to learn more!"
+    },
+    {
+      "title": "Playtesters begged for this ...",
+      "date": "2023-11-13 17:03:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486388014005585",
+      "content": "[previewyoutube=P5fmc1oPQyc;full][/previewyoutube]\n\nPlaytesters have been begging for a line-of-sight tool, and now it's implemented!\n\nDon't forget to wishlist Burden!"
+    },
+    {
+      "title": "We've been quiet ... because we've been busy!",
+      "date": "2023-07-22 04:17:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051976339228",
+      "content": "We started Phase 2 playtesting (playtesting the alpha) and just had no time for fun videos. But we thought you guys might get a kick out of this sample of our internal status report. We're busy!\n\n{STEAM_CLAN_IMAGE}/33420403/c95a3e9df2f1ceb5c6bd78f3956ee0c8be83febb.png"
+    },
+    {
+      "title": "Updated Roadmap",
+      "date": "2023-06-10 13:06:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846346868080",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/c0c2730261d8e88a5eeeec0a91812b38a7342bda.png\n\nTake a look at our updated roadmap ... Phase 2 testing to begin shortly!\n\nTo find out more or to apply to be a playtester:\nSign up here\n\nRemember to add Burden of Command to your Steam wishlist too!"
+    },
+    {
+      "title": "Early Alpha!",
+      "date": "2023-06-09 12:55:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846343197679",
+      "content": "[previewyoutube=qaZhAN4zwc8;full][/previewyoutube]\n\nTo find out more or to apply to be a playtester:\n\nSign up here\n\nRemember to add Burden of Command to your Steam wishlist too!"
+    },
+    {
+      "title": "The last campaign segment",
+      "date": "2023-05-22 13:37:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943320456910",
+      "content": "[previewyoutube=39C2p2WdHu0;full][/previewyoutube]\n\nOur testers have played through the Germany campaign to the end of the war ...\n\nTurn sound on, and remember to add Burden of Command to your Steam wishlist!"
+    },
+    {
+      "title": "Emotional authenticity",
+      "date": "2023-04-01 20:02:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551990853808",
+      "content": "[previewyoutube=2Nad3bK-ZHs;full][/previewyoutube]\n\nEmotional Authenticity.\n\nGuilt.\n\n(turn sound on)"
+    },
+    {
+      "title": "You are There",
+      "date": "2023-03-04 13:14:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176570190264",
+      "content": "[previewyoutube=J_0C8-YZ310;full][/previewyoutube]\n\nWe go the extra mile for your historical immersion.\n\nPhoto editing by Andrei Nikulau and @Red_Shuheart"
+    },
+    {
+      "title": "Help us with the main screen",
+      "date": "2023-03-02 15:21:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176563221411",
+      "content": "[previewyoutube=QdiJhP6sH3g;full][/previewyoutube]\n\nHelp us pick the main screen layout! As you play Burden of Command, memories from your specific journey will appear on the main screen.\n\nVote for your favorite layout on our Twitter page, or just list your preference here and we'll keep a tally.\n\nThanks for the help!"
+    },
+    {
+      "title": "Flamethrowers!",
+      "date": "2023-02-18 16:23:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268099244939979",
+      "content": "[previewyoutube=_6mbR4ym02s;full][/previewyoutube]\n\n\ud83d\udd25\nNewly animated flamethrowers!\n\ud83d\udd25\n\n\ud83d\udd0aTurn on audio. \ud83d\udd0a"
+    },
+    {
+      "title": "What's Horribly Wrong Here???",
+      "date": "2023-02-04 13:07:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743887992442",
+      "content": "[previewyoutube=hqFx-gZqFMA;full][/previewyoutube]\n\nSomething big is going on with these tanks ...\n\n\ud83d\udd0aTurn on audio. \ud83d\udd0a"
+    },
+    {
+      "title": "Nice Preview from The Strategy Wargamer",
+      "date": "2023-01-10 15:22:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387707124257",
+      "content": "[previewyoutube=q4tspySwLF4;full][/previewyoutube]\n\nThe Strategy Wargamer has some kind words for Burden of Command in his most recent update, along with a nice synopsis of how we're trying to merge strategy games with roleplaying games. \n\nThanks to The Strategy Wargamer for the great preview! No pressure!"
+    },
+    {
+      "title": "Dread of the MG42",
+      "date": "2023-01-03 20:12:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037487936765",
+      "content": "[previewyoutube=ve0cXRw5rhI;full][/previewyoutube]\n\nHelp us decide ...\n\nWhich image best conveys the dread of the MG42?\n\n{STEAM_CLAN_IMAGE}/33420403/f190d9be6d5e30b2092e6de2682ab6b4e87f0e5c.png\n\nLet us know your answer in the comments!"
+    },
+    {
+      "title": "A Taste of Italy",
+      "date": "2022-12-17 12:44:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145758726576",
+      "content": "[previewyoutube=Is8BS9GrbRw;full][/previewyoutube]\n\n\ud83d\udd0aTurn on audio. \ud83d\udd0a"
+    },
+    {
+      "title": "New Portrait Reveal",
+      "date": "2022-12-16 19:35:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145756124023",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/b4fcc8837242adf29b31c6ab836b37a2b2215162.png\n\nCaptain Rogers. Women's Army Corps. From our portrait artist Mariusz Kozik\n\nTune in Saturday for more context."
+    },
+    {
+      "title": "A Taxonomy of Destruction",
+      "date": "2022-11-19 19:13:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4789043687482939673",
+      "content": "[previewyoutube=fCZufHFR3OM;full][/previewyoutube]\n\n\ud83d\udd0a Turn on audio! \ud83d\udd0a"
+    },
+    {
+      "title": "Veterans Day",
+      "date": "2022-11-11 19:06:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6368680725426336507",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/1c1d9756a6e9255dfcfc94b833ec0b8cf31a5330.jpg\n\nColorized just for today by @Red_Shuheart\n\nThere are probably some scenes like this playing out right now in Ukraine\ufe0f\n\nCaption: US Army Signal Corp Photo Tec-4 Elvin Harley getting a kiss from a French child while listening to the US 9th Armored Division Band near Aboncourt, France, 14 Feb 1945"
+    },
+    {
+      "title": "Campaign Sneak Peek!",
+      "date": "2022-10-29 13:51:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4706851091181113374",
+      "content": "[previewyoutube=WdSQqAm6ilg;full][/previewyoutube]\n\nCampaign sneak peak -- Sicily is a huge step up from Morocco.\n\n(Be sure to turn on audio!)"
+    },
+    {
+      "title": "Smoke barrages and ... leadership?",
+      "date": "2022-10-08 14:52:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4613399405948329640",
+      "content": "[previewyoutube=F5K_mU3GjVw;full][/previewyoutube]\n\nWell, Captain, should we attack or not?"
+    },
+    {
+      "title": "Early Campaign Playtesting Started!",
+      "date": "2022-09-10 14:57:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4606641560256574434",
+      "content": "After we previously tested all Cottonbalers' scenarios as standalone battles, our campaign code is now working well enough that playtesters have begun the first \"mini\" (five-scenario) campaign: Morocco 1942.\n\nThe Cottonbalers were inexperienced and pretty ill-equipped going into Morocco, so we'll see how well the officers lead them in their first Burden of Command.\n\nHere's a snippet from the \"Hotel Miramar\" scenario:\n\n{STEAM_CLAN_IMAGE}/33420403/2d70ce8ac23e8aa2f52aa57cc8c529da7b462d00.png"
+    },
+    {
+      "title": "A Nice Preview",
+      "date": "2022-08-23 16:33:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4584122114611100646",
+      "content": "New community member, YouTuber, and RPG enthusiast @Videlsports has taken time to a review a lot of our prior content and bring it together in a preview video. Check it and his channel out!\n\n[previewyoutube=4m0qd607pFM;full][/previewyoutube]"
+    },
+    {
+      "title": "RPG Economics!",
+      "date": "2022-08-05 19:18:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598757090455310075",
+      "content": "RPG Economics means guestimating costs for player to help the Company with:\n\n\n Combat Fatigue,\n Stress,\n XP,\n Trust,\n Casualties\n\n'Currency' spent is Loyalty, Prestige, and Replacements earned in last scenario. All that means spreadsheets\ud83d\ude2c\n\n{STEAM_CLAN_IMAGE}/33420403/ac70ae155794d9ba7da71a928ec0f551e3bab64a.png"
+    },
+    {
+      "title": "First Campaign Feature Reveal!",
+      "date": "2022-07-02 13:38:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295763259015",
+      "content": "[previewyoutube=fk4EW8YDgeI;full][/previewyoutube]\n\nAid, mentor, and counsel your men between scenarios ...\n\nPlus new music from @ChrisScribs!"
+    },
+    {
+      "title": "Full victory - nothing else",
+      "date": "2022-06-06 14:33:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4469272893507953472",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/015e0549b0ad15eb998342def5130f7080f24258.jpg\n\nRemembering the heroes of June 6, 1944, on the anniversary of D-Day.\n\nFurther south, the Cottonbalers were wrapping up the capture of Rome before moving into France as well. Add us to your wishlist and make the journey along with them!"
+    },
+    {
+      "title": "Significant Progress!",
+      "date": "2022-04-25 15:23:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348797798090867294",
+      "content": "[previewyoutube=-iV6yq31BKA;full][/previewyoutube]\n(Sound on for our theme from @ChrisScribs)\n\nOur new newsletter is out with lots of information!\n\nSignup for the newsletter here!\n\nInterested in Playtesting? See the Newsletter \ud83d\ude09\n\nDon't forget to add us to your Wishlist"
+    },
+    {
+      "title": "Combat Fatigue",
+      "date": "2022-04-09 13:24:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4353300134233001863",
+      "content": "[previewyoutube=0DBLg8pn-ok;full][/previewyoutube]\n\nBurden models (uniquely?):\n\n\ud83d\udc94Combat Fatigue\n\ud83d\udc94Combat Stress\n\ud83d\udc94PTSD\n\nToday - Combat Fatigue"
+    },
+    {
+      "title": "What is Trust?",
+      "date": "2022-03-26 16:51:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269516515901",
+      "content": "[previewyoutube=B-hexF7keJA;full][/previewyoutube]\n\nBurden models Trust.\n\nBurden is a Leadership RPG.\n\nSpecial thanks to @MilHiVisualized for pointing out article cited in their \"Why No German Collapse?\""
+    },
+    {
+      "title": "A bit of fun with parallax",
+      "date": "2022-03-20 13:39:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535839120671",
+      "content": "[previewyoutube=Ch6jCB1ouW0;full][/previewyoutube]\n\nSamples of three colorized images that will be in the game. We have edited and colored more than 1000 images! Here photo artist and volunteer Andrei Niculau has fun with parallax (game will not use)."
+    },
+    {
+      "title": "Winter Art: Refined",
+      "date": "2022-03-05 15:28:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367438847525",
+      "content": "[previewyoutube=V4O79-Vl4g8;full][/previewyoutube]\n\nWe're going over and refining all our terrain art to a final state."
+    },
+    {
+      "title": "Gaining experience",
+      "date": "2022-02-12 12:34:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6154735015622014054",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/3ff9ecf77e6e4c3ca0df92c5c657803e22d75e86.gif\n\nYour soldiers now gain experience.\n\nAnd hmm... something else... we'll leave that for next time \ud83d\ude09\n\nSmall step for them, big step for the game. Our first working \"rpg\" attribute."
+    },
+    {
+      "title": "Another mini-interview with Luke Hughes",
+      "date": "2022-02-08 18:42:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4235075565593404106",
+      "content": "Project Lead Luke Hughes is busy giving interviews! This time he gave a mini-interview to Tim Stone (formerly of The Flare Path) at TallyHo Corner, \n\nTopics include:\n\n Does the AI surprise?\n Combat Stress\n and character \u201cMindsets\u201d\n\n(Luke's portion is further down in the article, under the heading \"M is for Miniature interview\")"
+    },
+    {
+      "title": "Interview with Luke Hughes",
+      "date": "2022-02-01 14:04:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104338591596",
+      "content": "Luke Hughes, lead developer for Burden of Command, gave an in-depth interview with Strategy and Wargaming and dropped some hints along the way. See what Luke had to say!"
+    },
+    {
+      "title": "Your men can die",
+      "date": "2022-01-22 15:40:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237325463679690804",
+      "content": "[previewyoutube=LNYiarpfQHg;full][/previewyoutube]\n\nYou and your leaders can die. Permanently.\n\nWith many consequences.\n\n(Turn on sound)\n\nColorization at end by @marinamaral2"
+    },
+    {
+      "title": "Happy Holidays to you and yours",
+      "date": "2021-12-24 22:19:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224938027305182588",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/385d7e4e6373868a446c2d608e1e2926e6764ec7.png\n\nColorized by expert volunteer Ville Tirronen\n\nOriginal caption:\n\"Sitting around a miniature Christmas tree and opening a Christmas package ... members of F. A. Bn., 3rd Div. Pietramelara, Italy. December 16, 1943.\" - Research by Steve Lohr.\n\n\n{STEAM_CLAN_IMAGE}/33420403/77f4480939e7652ae184f550dc2437d0299d7891.png\nColorization by talented volunteer @Red_Shuheart\n\nOriginal caption:\n\u201cS/Sgt. John F. O\u2019Brien, while in a foxhole, decorates a Christmas tree with C ration can & tinsel dropped by American planes to interrupt the enemy radar system.\u201d \n\n\n{STEAM_CLAN_IMAGE}/33420403/9cb8156ccde353c7e0b6f765cc6f0372e020f8e9.png\nColorization by talented volunteer Andrei Niculau\n\nOriginal caption:\n\u201cSanta Claus arriving at Camp Carson, Co. Instead of a sleigh with reindeer, he comes in an Army jeep.\u201c\n1943"
+    },
+    {
+      "title": "Every map tells a story",
+      "date": "2021-12-16 16:01:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5320438099037077264",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/ed671b3f70e964903173d395e96e6adbeb2652ad.png\n\nBefore, units were wrecked by active combat. But a designer had a nice idea to allow them at the start of a scenario as part of the map. For example, there might have been a fight before you arrived."
+    },
+    {
+      "title": "Avoid Dribbling Death!",
+      "date": "2021-12-11 18:18:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936849659349107",
+      "content": "[previewyoutube=oFNga3fEkDc;full][/previewyoutube]\n\nTeaching an AI not to die piecemeal ...\n\n(Turn speakers to hear the barks)\n\nRemember to add us to your wishlist!"
+    },
+    {
+      "title": "December 7, 1941",
+      "date": "2021-12-07 10:02:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936215402175125",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/d9cd9c9dbc373f0b05547c68ef351e1a5771ce9a.jpg\n\nToday we pause to remember the fallen at Pearl Harbor, December 7, 1941."
+    },
+    {
+      "title": "Happy Thanksgiving to those celebrating!",
+      "date": "2021-11-25 14:05:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224935490636610891",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/5b7dcd2866d3b2ef9d2e5eb3f12c426a760f47f7.jpg\n\nPardons seem doubtful!\n\n(Image and commentary via @sarahsundin, a WWII fiction writer)"
+    },
+    {
+      "title": "Maybe a little TOO good",
+      "date": "2021-11-09 11:54:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186653398788786484",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/c7d8d96721cc50d8e075f8904dbcfe73237fbc24.jpg\n\nPlaytesters got the first taste of the new Attack AI from Project Lead Luke Hughes and ... the good news is that it works!\n\nThe bad news ... it's attacking YOUR Cottonbalers!"
+    },
+    {
+      "title": "It's getting better ...",
+      "date": "2021-11-06 16:13:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652991117841420",
+      "content": "[previewyoutube=K75b3CRXdo0;full][/previewyoutube]\n\nThe attack AI is getting smarter ...\n\nTurn on sound for AI 'barks' too!"
+    },
+    {
+      "title": "Awakening the past",
+      "date": "2021-10-31 12:36:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652357035488666",
+      "content": "[previewyoutube=5kGd2qSdETE;full][/previewyoutube]\n\nOur dedicated volunteers go the extra mile ... for you.\n\nPhoto of end of war surrender to Cottonbalers\n\nColorization by Andrei Niculau, original music by Chris Scribner"
+    },
+    {
+      "title": "Update on our progress",
+      "date": "2021-10-09 12:28:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069556867212064928",
+      "content": "Since you've been asking where things stand we thought it was a good time for a quick update. We don't have a release date yet, but we are making great progress and have tested most of our planned scenarios.\n\nIn the scenarios we've tested so far, the Cottonbalers' opponents were on the defensive; we did those first because the AI was easier to write. We're working on the offensive AI now, and when it's ready (soon!) we will have seven remaining scenarios to test.\n\nThen all those scenarios will be integrated into a true narrative campaign, and we'll need to add and playtest the RPG mechanics. And of course there will be fine tuning, balance, and polish.\n\nIt's all starting to come together, so remember to check back all the time because we have regular updates here on Steam, and on our Twitter, Youtube, and Facebook pages.\n\n{STEAM_CLAN_IMAGE}/33420403/217047e476bdc59ff0b774ac2e80e2b4cb2be0d2.png"
+    },
+    {
+      "title": "The AI learns a new skill",
+      "date": "2021-10-02 12:35:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3938951840887949469",
+      "content": "[previewyoutube=IOi39iK7nLQ;full][/previewyoutube]\n\nThe AI learns Carpe Diem\n\nAdvances in perception, and a new skill: Assaults."
+    },
+    {
+      "title": "Your own dynamic soundtrack",
+      "date": "2021-09-18 12:35:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5418383147743274369",
+      "content": "[previewyoutube=_nPKsW6Vido;full][/previewyoutube]\n\nDynamically Generated Soundtrack in a turn-based game ...\n\nNovel??? Tell us! (We think so.)\n\nDefinitely experimental. Like it?\n\n* Turn on audio! *\n\nThanks especially to work of audio director @ChrisScribs, John Strong, and @RA_Mathis (a combat vet)."
+    },
+    {
+      "title": "Incoming!",
+      "date": "2021-09-15 13:42:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936698772941901540",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/b52dd4cc8aa29123b51390d487a107ffc911e31b.jpg\n\nNew audio feature reveal coming!\n\nPossibly never seen before in a turn-based battle!\n\nStop by this Saturday Sept. 18 at 9:30 am PDT (4:30 GMT) and give us your reactions! Our Youtube and Twitter pages will be updated too, so let us know what you think!"
+    },
+    {
+      "title": "Historically accurate FORGERY",
+      "date": "2021-08-16 19:16:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149071464195",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/d43d80d7a3d8f12c628b4faaa164b2ebe59537b1.jpg\n\nWe wanted a credible furlough pass for the narrative but also wanted to be respectful of the personal information.\n\nRespect for those who served.\n\nRespect for history.\n\nWe go the extra mile.\n\n\nThanks to volunteer Andrei Niculau for his careful work!"
+    },
+    {
+      "title": "Schooling the AI",
+      "date": "2021-08-14 21:27:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149064516305",
+      "content": "[previewyoutube=ZYfVbDimF-o;full][/previewyoutube]\n\nOpfire needed some improvements ...\n\n(Turn on audio!)"
+    },
+    {
+      "title": "New Combat Mechanic: Undaunted!",
+      "date": "2021-08-06 16:55:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530945494402",
+      "content": "[previewyoutube=KuSAGJjPgFQ;full][/previewyoutube]\n\nNamed in honor of designer David Thompson's Undaunted boardgame series.\n\nTurn on audio!"
+    },
+    {
+      "title": "Command decision on beer!",
+      "date": "2021-07-12 16:45:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4036897704067510530",
+      "content": "We did a poll Saturday on a fictional event where your men are doing some illegal brewing. Choices included ending it, and 'do medicinal facilities' (runner-up).\n\nBut the winner was \"men deserve this small if dangerous relief,\" and here is the result:\n\n{STEAM_CLAN_IMAGE}/33420403/f28bf8ab6603c6a54d56734f2c10180b1921371d.jpg"
+    },
+    {
+      "title": "Illegal Activity!",
+      "date": "2021-07-10 13:06:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4036897704059677434",
+      "content": "[previewyoutube=zPpgCKcHhYU;full][/previewyoutube]\n\nTURN ON AUDIO!\n\nNew music from @ChrisScribs!\nNarrative by @AllenGies\nPhoto restoration by @Red_Shuheart \n\nYour decision on \"illegal\" and maybe \"dangerous\" brewing, Captain? Visit our official Burden of Command Twitter page and vote for your order.\n[olist]\n No brewing\n \"Medicinal\" brewing facilities allowed\n Spread word of poisoning\n It's dangerous but I'll allow it\n[/olist](we had to omit the \"safe Army beer\" choice because Twitter only provides four poll choices)\n\nWe'll find the most popular order, then reveal what happens with that choice!\n\nRemember to put our RPG on your Wishlist!"
+    },
+    {
+      "title": "June 5-6, 1944",
+      "date": "2021-06-05 19:05:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4093189347051713591",
+      "content": "After the original landing in January, the Battle of Anzio officially ended on June 5, 1944, with the capture of Rome. This marked the end of a months-long slog for the Cottonbalers of the 7th Infantry Regiment. \n\nBut the very next day, June 6, 1944, would see an even bigger event in history -- D-Day in Normandy, France. Allied forces were advancing all over the continent, but many months of combat were still ahead.\n\nIt's a quiet weekend here in 2021, but in 1944 the dates of June 5 and 6 were important to the Allied cause. Stay tuned to Burden of Command as we trace the history of the Cottonbalers across Northern Africa and Europe.\n\nAnd please remember to add us to your wishlist!"
+    },
+    {
+      "title": "Find, Fix, Flank, Finish",
+      "date": "2021-06-01 18:33:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544815375890245",
+      "content": "[previewyoutube=KdmIzmJbdxY;full][/previewyoutube]\n\nBurden is a different kind of tactical game.\n\nTactical gameplay video.\n\n(Turn on audio. Expand for detail.)"
+    },
+    {
+      "title": "Refining and colorizing old images",
+      "date": "2021-05-24 18:35:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544181444090314",
+      "content": "[previewyoutube=cSM0QTCNE2Y;full][/previewyoutube]\n\n\nWe're finding, refining, and colorizing nearly 1000 images. Your Cottonbalers (7th Rgt, 3rd US Inf Div) landed in North Africa as part of Operation Torch 1942.\n\nPhoto editing by @Red_Shuheart"
+    },
+    {
+      "title": "Recon by Artillery Fire",
+      "date": "2021-05-17 11:55:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588125545873",
+      "content": "[previewyoutube=c8B8D7Xr3IQ;full][/previewyoutube]\n\n... or \"advanced boom!\"\n\n(Turn on sound)"
+    },
+    {
+      "title": "Tanks lead the attack!",
+      "date": "2021-04-27 14:42:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045244022872933",
+      "content": "[previewyoutube=0i_Bh8s6cII;full][/previewyoutube]\n\n(Turn on sound)\n\nIn late World War II, this was often the outcome. You'll want to learn combined arms."
+    },
+    {
+      "title": "Something's burning",
+      "date": "2021-04-24 22:09:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045244013085311",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/b34a1f1b7b502faeb383dbefc31095622ad561f5.gif\n\n\"Tiger, Tiger, burning bright\"\n\nSorry Captain, that's \"Sherman, Sherman, burning bright.\" The Sherman gained the grim nickname \"Ronson\" because, like the cigarette lighter, \"it lights up the first time, every time.\"\n\nWrecks now burn."
+    },
+    {
+      "title": "Research and colorization",
+      "date": "2021-04-19 15:41:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4570566565007334235",
+      "content": "[previewyoutube=0Z9-DnpZSos;full][/previewyoutube]\nWe go the extra mile for an authentic experience. Careful colorization and research by @Red_Shuheart with Henk Stoffers and Steve Lohr."
+    },
+    {
+      "title": "Making their past more present",
+      "date": "2021-04-11 13:45:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4117954073010403867",
+      "content": "[previewyoutube=f2E2-q-Lexc;full][/previewyoutube]\n\nRespect.\n\n(EXPAND TO APPRECIATE DETAIL)\n\nPhoto restoration by @Red_Shuheart. Team led by Steve Lohr.\nBritish Firefly tank in this example."
+    },
+    {
+      "title": "The romance of combat",
+      "date": "2021-04-10 18:36:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4117954073007501155",
+      "content": "[previewyoutube=ECBqb3Re7wE;full][/previewyoutube]\n\nTURN ON AUDIO to see how sound effects by @ChrisScribs, historical imagery restoration by @Red_Shuheart, and writing by @AllenGies integrate to put you in the Cottonbalers' boots."
+    },
+    {
+      "title": "When the art is the GUI",
+      "date": "2021-04-05 16:13:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4023377846290737877",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/d33db4aaf1a2bf52a6affcc69442b1af03d00cd4.png\n\nGuess which woods provide heavy cover and which provide light. Simple isn't it? \n\nBut it took MANY art cycles to get here.\n\nMaking things simple is hard."
+    },
+    {
+      "title": "Burn it all down",
+      "date": "2021-03-28 14:42:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4026754911356793772",
+      "content": "[previewyoutube=LsFlCdMUgrU;full][/previewyoutube]\n\nPeriod, custom, credible (we hope) destruction.\n\nAnd yeah some \"boom!\" too if you turn on sound.\n\nWe go the extra mile. And then we burn it down. For you.\n\nDon't forget to burn us onto your wishlist!"
+    },
+    {
+      "title": "Are wargames educational?",
+      "date": "2021-03-16 13:32:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5556851879153401204",
+      "content": "[previewyoutube=6lGeywCHYnM;full][/previewyoutube]\n\nWe came, we saw, we ... discussed history and gaming.\n\nBurden of Command's project lead, Luke Hughes, joined a discussion Monday (March 13) on WW2TV. The topic was Wargames -- are they educational? And how do developers balance authenticity and gameplay?\n\nThe discussion is now available, featuring:\n\n Col. John Antal - executive producer for Brothers in Arms\n @djackthompson - noted boardgame designer\n @DPJHodges - Noted commentator & designer\n Luke Hughes - project lead for Burden of Command"
+    },
+    {
+      "title": "Wrecking things",
+      "date": "2021-03-13 12:35:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5556851879142495541",
+      "content": "[previewyoutube=XhWjrG0rD9M;full][/previewyoutube]\n\nMaking a wreck of things.\n\nGeek Star for anyone who can ID the old placeholder art..."
+    },
+    {
+      "title": "Boom!",
+      "date": "2021-03-09 16:59:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4057152305732134448",
+      "content": "[previewyoutube=45nbe5ortXA;full][/previewyoutube]\n\n(Turn on sound)\n\nWe're working hard on credible sound and animations for all the distinct weapons involved. Very Work-in-Progress.\n\nSound thanks to @ChrisScribs"
+    },
+    {
+      "title": "Their lives, your burden",
+      "date": "2021-03-07 17:53:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4057152305724993923",
+      "content": "[previewyoutube=zF6pt_4O7JU;full][/previewyoutube]\nBurden of Command is about the human face of war. But friend and foe are different, and our photo work aims to convey this burden ...\n\nHistorical media team: Gary Bezant, @Red_Shuheart, Steve Lohr."
+    },
+    {
+      "title": "Got a good quote?",
+      "date": "2021-03-02 15:22:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4060529371721378868",
+      "content": "Want to get a quote in Burden of Command?\n\nWe're soliciting quotes on leadership and war, both moral and tactical. Post in this thread and we'll consider it for our load screen! You can also post your quotes on our Burden of Command Twitter or Facebook pages.\n\nPlease attribute. An example from our current load screen:\n{STEAM_CLAN_IMAGE}/33420403/75ea62b21da4d41023fcdd48b8d38404f45b0363.jpg\nAlso, don't forget to add Burden of Command to your Steam wishlist!"
+    },
+    {
+      "title": "The extra mile",
+      "date": "2021-02-27 12:38:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4060529371710050157",
+      "content": "[previewyoutube=SJSGsmFuYi0;full][/previewyoutube]\n\nWe go the extra mile, for those who risked their lives, and for you.\n\nTo connect you with the men of The Cottonbalers.\n\nOriginal score by @Chris Scribner. Restoration by @Red_Shuheart"
+    },
+    {
+      "title": "Colorized historical imagery",
+      "date": "2021-02-14 20:13:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4703417046212245654",
+      "content": "This team goes the extra mile. We\u2019re working on our US WWII tank training scenario.\n\nEvocative, colorized, historical imagery thanks to finds of @AllenGies and photo artist @Red_Shuheart\n \n Some converted from period film:\n{STEAM_CLAN_IMAGE}/33420403/b877e5351c3661649483ff8783a1b379fcb8a2d0.jpg\n{STEAM_CLAN_IMAGE}/33420403/9979c82f56dab346e516f4d16ef2b52dfc84492a.jpg\n{STEAM_CLAN_IMAGE}/33420403/b5fc8b2d2ffbd616f3635ce48f081adfb62a343e.jpg"
+    },
+    {
+      "title": "MORE tanks!",
+      "date": "2021-02-12 16:03:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4703417046204340396",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/669fdbf28da6e314da6741b2f8a2b863180f218a.jpg\nSNAFU!\n\nTank leaders are now in Burden of Command. But sadly, in this case, he is not your leader.\n\nGood luck, Captain.\n\n\nHistorical colorization (leader) courtesy of team member \n@Red_Shuheart"
+    },
+    {
+      "title": "Tanks!",
+      "date": "2021-02-12 11:41:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4703417046203677537",
+      "content": "Tanks are smarter now. They keep better-armored front to enemy when retreating. Rather than weak rear.\n\nTanks ... such different beasts then poor GIs. Too bad you won't get many, infantry captain\n[previewyoutube=qLjMAuNc4oA;full]ned yt link[/previewyoutube]\n\nAnd, yes:\n[olist]\n We hope to animate tracks, etc., eventually\n The explosion is odd since the tank didn't die\n The tank should have presented its front, not its flank\n[/olist]\nRemember to add Burden of Command to your Steam wishlist!"
+    },
+    {
+      "title": "Playtester feedback",
+      "date": "2021-01-26 13:43:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4043637702566482437",
+      "content": "Each scenario we survey playtesters in waves:\n\n informal - Written answers.\n\n formal - Numeric. Scored 1 to 5 (5 is extremely good, 1 very bad).\n\nHere are the numerical surveys from playtesters who took part in \"Sicily landing\" over the last couple of weeks.\n\n{STEAM_CLAN_IMAGE}/33420403/db51f5677d1b8ac4a10ae5946e65ea1a1b14d9e3.jpg"
+    },
+    {
+      "title": "Seeing red!",
+      "date": "2020-12-31 14:40:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3917534300099703725",
+      "content": "A lot of interface improvement involves dull attention to detail ... and a lot of listening. \n\n{STEAM_CLAN_IMAGE}/33420403/0d2fa41e1dbf909a832495f79d2c7863e45b04c3.jpg"
+    },
+    {
+      "title": "They were there. Now you are there.",
+      "date": "2020-12-17 21:02:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4090922416497141717",
+      "content": "[previewyoutube=B3PqwbHJY0Q;full][/previewyoutube]\n\nWe work hard to immerse you in their history ... now your experience. Historical notes are available at your beck and call. And there will be lots of tough decisions to make.\n\nOriginal music from Chris Scribner"
+    },
+    {
+      "title": "A glimpse of a Cottonbaler Campaign Scenario",
+      "date": "2020-12-06 17:18:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3856733878306854033",
+      "content": "[previewyoutube=mCqr4zN7aEM;full][/previewyoutube]\n(Turn audio on for original music from Chris Scribner)\n\nAnd a glimpse of your future past...\n\nAnd of your leadership journey...\n\nMorocco, 1942."
+    },
+    {
+      "title": "Scripted Sound Effects",
+      "date": "2020-11-13 17:45:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3872494575592690276",
+      "content": "\"The crunch of a landing craft...\"\n\"Distant calls in Italian...\"\n\nBurden of Command's Twitter account has gone rogue and revealed some behind-the-scenes planning for scripted sound effects! \n\nLead Writer Allen Gies and Audio Director Chris Scribner didn't know this was going to be posted off our team Discord ... \n\n{STEAM_CLAN_IMAGE}/33420403/ecef968e82b90317c71cfbd3da0a70f3f34659cd.jpg"
+    },
+    {
+      "title": "Historical accuracy",
+      "date": "2020-11-02 14:26:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3884878205229884162",
+      "content": "[previewyoutube=oqWlIKH2b4s;full][/previewyoutube]\n\nIn this video, Military Aviation History discusses historical accuracy and what popular media like movies and video games always get wrong. Luke Hughes, Burden of Command project lead, joins the discussion at 22:30 and again at 24:30, and gives some insight into how Burden of Command will address history and historical figures."
+    },
+    {
+      "title": "Scripting Music!",
+      "date": "2020-10-31 13:47:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3884878205222406063",
+      "content": "[previewyoutube=5LJZL3YGKP4;full][/previewyoutube]\n\nEx: scripted music, which also subtly shift after button pressed.\n\nComposer @ChrisScribs unleashed with writers @AllenGies and @Cataphrak and maybe YOU as a modder someday!"
+    },
+    {
+      "title": "Company Level Assault",
+      "date": "2020-10-24 16:10:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3895010671345339124",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/05e6aeb681c2c8e29897f5c2e9523a13ea07a375.jpg\n\nYour leadership on the right, and on the field:\n-- Captain\n- Lt Wilson - vet. Too old a vet?\n- Lt Thompson - eager. Too eager?\n- Lt Stern - an ax to grind...\n- Lt Dearborn - Thinks he knows best. Does he?\n\nGood luck Cpt!"
+    },
+    {
+      "title": "You must lead ...",
+      "date": "2020-10-20 18:00:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5422856308631214171",
+      "content": "[previewyoutube=Ksj9NFx8vIE;full][/previewyoutube]\n\nBest know your men, Captain."
+    },
+    {
+      "title": "More Variety in Artwork!",
+      "date": "2020-09-22 15:16:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206286444715",
+      "content": "We did a poll a bit back on our new woods art. Your advice? Add more variety in:\n\n\n shade\n\n size\n\n shape\n\n density\n\n\nWe listened!\n\n{STEAM_CLAN_IMAGE}/33420403/8edd11971ea04948059fa365002568e66f2092e8.jpg\n{STEAM_CLAN_IMAGE}/33420403/ff0e331a025741e5bcfd8c011f910b7b8d6cc0c2.png\n\nAnd yes it's meant to be 'bucolic'... war will change that. Apologies to those who prefer pixel art. Our vision remains 'painterly.'"
+    },
+    {
+      "title": "Could you command a modern tank platoon?",
+      "date": "2020-09-17 12:00:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206267884576",
+      "content": "Try your hand at leading a tank platoon this classic reprint of Armor Attacks: The Tank Platoon - An Interactive Exercise in Small-Unit Tactics and Leadership, by John Antal, who is also: \n\n\n Executive Director for the Brothers in Arms games\n 30 Years commander in US Army\n Senior Advisor, Burden of Command\n\n\nThe reprint comes with a recommendation from Burden of Command Community Lead R.A. Mathis!\n\n{STEAM_CLAN_IMAGE}/33420403/fcc0c88c7c7c830741e457d58b62b77ca2bfefb4.png"
+    },
+    {
+      "title": "Less polish. More frequent.",
+      "date": "2020-09-15 21:18:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206262056315",
+      "content": "[previewyoutube=xchYIs0XzpM;leftthumb][/previewyoutube]\n\nOur old pathfinding made chickens look smart. You had to do a lot of waypointing to avoid. Now you're less annoyed.\n\nOh, uh, downside...\n\nNow the AI ain't so dumb either."
+    },
+    {
+      "title": "Your future command?",
+      "date": "2020-08-29 12:25:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3788045105531528157",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/7d61eebd282e401826be0001f1e6890a861a1e27.png\n\nTo give you a better look at the men you'll be leading, we put together this depiction of the Cottonbalers (7th Rgt, 3rd Div) \"Nickle\" Company during World War II. It is fictional but historically structured in a carefully historical campaign, and advised closely by official Cottonbalers historian J. McManus.\n\nDon't forget to add Burden of Command to your wishlist, and to sign up for our newsletter ...\n\n Get ready to lead! Sign up today!"
+    },
+    {
+      "title": "Less polish. More frequent.",
+      "date": "2020-08-22 17:09:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4644854581170085202",
+      "content": "Successful design means learning from failure and...\n\nYou'll have to watch to see our other design 'trick' \n\nYou'll want to expand this video: God is in the details.\n\n[previewyoutube=_W-ClKuW85Q;leftthumb][/previewyoutube]"
+    },
+    {
+      "title": "Happy V-J Day!",
+      "date": "2020-08-15 12:00:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4828375451926708694",
+      "content": "Hi Again Everyone!\n\nToday marks the 75th anniversary of the surrender of Imperial Japan, which effectively ended World War II.\n\n{STEAM_CLAN_IMAGE}/33420403/f0ccec79ef47f9360618ade9819c187087d851d3.jpg\n\nAs many of you know, we draw great inspiration from our own family experiences in this conflict. In that spirit, we will share a few more of our personal heroes...\n\n{STEAM_CLAN_IMAGE}/33420403/799b5ca77e59bab4bfea542915fb44877a89532b.jpg\n\nMeet Thomas P. Hughes and Agatha Chipley (later Hughes). They are the parents of our Project Lead, Luke Hughes.\n\nAgatha served as a nurse during the war.\n\nTom served in the Pacific Theater as Lt Commander of the USS Arthur Middleton, then went on to earn a PhD in history and invent an entire field of study, the history of technology. Development of Systems Theory was a key element of his work.\n\nHe went on to become a finalist for the Pulitzer Prize in History in 1990.\n\nYou can watch a great lecture he delivered at MIT on his work here.\n\nAnother team member, Craig Elliott, also remembers his father, Ed Elliott, on V-J Day. After Ed graduated from Kress High School in West Texas in 1944, he joined the Navy and served as a radioman. He served on the USS Pine Island and other seaplane tenders, one of which survived a kamikaze attack. Ed earned two Bronze Stars and served through 1946. This photo shows him shipping out in 1944, and on the back is handwritten \"The Kid from Kress.\"\n\n{STEAM_CLAN_IMAGE}/33420403/c6b396703da3a0fbd77884446fa2b2e18258ca2e.jpg\n\nI would also like to introduce you to my grandfather, Isaac Clevenger.\n\n{STEAM_CLAN_IMAGE}/33420403/9d4fa88192490f1d9a0e24952905ff47e95b8faf.jpg\n\nIsaac served on the minesweeper, USS Token. His was the second ship to enter Tokyo Harbor.\n\nAfter the war, he became a barber and settled down in Tennessee.\nHe went on to become one of the best grandfathers ever.\n\nThat's all for now.\n\nYou can see more about our commitment to honoring history and those who lived it here.\n\nWe'll be back soon with more game related news and goodies.\n\nI'll see you on the high ground,\nRob\nCommunity Lead"
+    },
+    {
+      "title": "3D Sound in Burden of Command",
+      "date": "2020-08-10 14:45:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3667572003473830194",
+      "content": "We're working hard to immerse you.\n\nSound changes dynamically based on location.\n\nWe think this unusual in our style of game. Are we right?\n\nTurn on speakers!\n\nAudio team lead by @ChrisScribs\n\n[previewyoutube=zvNGcS09OCM;full][/previewyoutube]"
+    },
+    {
+      "title": "A new Senior Advisor",
+      "date": "2020-07-25 15:08:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3978319116844381010",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/0c462c9f1fbc6e828ae5c923c06b703745c44ca1.jpg\n\nBurden of Command's newest senior advisor, Colonel John Antal, is a soldier, military historian, author, and leadership expert. He served 30 years as an Army officer and was historical advisor and executive producer for the Brothers in Arms game series. He draws on his own deep leadership experience plus years of teaching others in contexts like the Normandy battlefields. \n\nHe is also the author of the newly reprinted interactive classic Infantry Combat: The Rifle Platoon, as well as 15 other books and hundreds of articles on military technology, history, and leadership. You can learn more about John at www.american-leadership.com."
+    },
+    {
+      "title": "See no evil, hear no ...",
+      "date": "2020-07-15 15:18:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3659688711191149511",
+      "content": "[previewyoutube=-QvXGlX-d9g;full][/previewyoutube]\n\nNow that we have your attention, remember to add Burden of Command to your wishlist, and to sign up for our newsletter ...\n\n Don't miss out! Sign up today!"
+    },
+    {
+      "title": "Forging Ahead",
+      "date": "2020-07-07 12:00:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3444640809415740696",
+      "content": "Our Burden of Command team has moved to an exciting new phase of internal testing, and we wanted to provide a brief update on our progress.\n\nFor a while now we've been developing and testing the Burden of Command tactical engine and artificial intelligence, and the fiction and narrative of the Seventh Infantry Regiment have been growing alongside. Sound effects, music, historical images, and other important features are also coming together. Now it's time to start joining the pieces and integrating the story of the Cottonbalers into the tactical engine.\n\nAfter testing through several hypothetical scenarios with nameless units, we're now meeting Capt. Lamb, Lt. Wilson, Sgt. Grant, and the others for the first time.\n\n{STEAM_CLAN_IMAGE}/33420403/2623ce8ba0368e1f4675ffa12abcfd8289f023c4.jpg\n\nReading their stories and learning their personalities adds a whole new layer to the decisions you have to make. Knowing what happened recently to one particular platoon, do you really want to order them to assault that fortified position? There's another platoon in range, and its leader has been wanting to get into the action lately. \n\n{STEAM_CLAN_IMAGE}/33420403/5c4d8ec34d7c52a7a0a8965e53a3cbfd178c6ed2.jpg\n\nBut as you maneuver the platoons, an unexpected sighting interrupts your plans...\n\n{STEAM_CLAN_IMAGE}/33420403/80d3b966083af04ab72496cde80c470c54d459ea.jpg\n\nMaybe it's time to radio Capt. Lamb about that artillery support...\n\n\nWe'll have plenty of future updates, so be sure to add Burden of Command to your Steam wishlist and remember to check back often.\n\nYou can also stay up to date on the latest Burden of Command news by subscribing to our newsletter. Don't miss out! Sign up today!"
+    },
+    {
+      "title": "New Wallpaper -- Capt. Boston",
+      "date": "2020-06-16 12:20:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3309530667994516283",
+      "content": "Capt. Boston is an old-school commando. Rangers lead the way, and Captain Boston leads his Rangers from the front. As a Ranger officer, Captain Boston is good at getting out of scrapes, but Anzio is no ordinary battleground.\n\n\n{STEAM_CLAN_IMAGE}/33420403/133f53b4325717bc3fbd1aaf042fd5f38c235c40.jpg\n\n\n{STEAM_CLAN_IMAGE}/33420403/e12c90c7e3c6838e74d976922b1a2c4b53d48f80.jpg\n\nThese wallpapers come in both PC and Mobile device versions. In addition to the these links, you can also find these images in the 'Art' tab. We hope you enjoy them.\n\nPlease keep checking back as we introduce you to more of the Cottonbalers, and don't forget to add Burden of Command to your Steam wishlist.\n\nAnd be sure to stay up to date on the latest news by subscribing to our newsletter. Don't miss out! Sign up today!"
+    },
+    {
+      "title": "Burden of Command Main Theme #3",
+      "date": "2020-06-02 13:02:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3142896212107425958",
+      "content": "[previewyoutube=0TNt2ATgCfM;full][/previewyoutube]\n\nIn \"Men vs Mission\u201d you can feel the weight of the mission in the horns at the start. They break for a section of quiet contemplation in the middle of the track before ramping up into the soaring main theme for the men at the end."
+    },
+    {
+      "title": "War Machines? Yes, also homes",
+      "date": "2020-06-01 12:22:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3142896212103710940",
+      "content": "Many World War II games understandably emphasize equipment. But, focused on the Burden of Command, we concentrate on lives. The lives of people often just like you.\n\n\n{STEAM_CLAN_IMAGE}/33420403/9c9dd0c719ddb1f359a68aebdbb1ee365bae5fd2.jpg\n\n\n\nOriginal images provided by Dr. Erik Villard, CMH"
+    },
+    {
+      "title": "More Original Music for Burden of Command",
+      "date": "2020-05-26 12:00:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112496866899402431",
+      "content": "[previewyoutube=ihOon8Jjlwk;full][/previewyoutube]\n\n\u201cThe Mission\u201d theme is a melodic piece with a steady rhythm meant to convey the martial valor needed to lead. It establishes a sense of togetherness and a common goal for the men to work toward.\n\nCan you lead them?"
+    },
+    {
+      "title": "Memorial Day 2020",
+      "date": "2020-05-25 03:00:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112496281304874376",
+      "content": "On this Memorial Day, we honor and remember those who fought and sacrificed their lives throughout American history. We can never repay the debt, but we will always honor the sacrifice.\n\nHave a safe Memorial Day, and check back later this week for another new clip of original music from Chris Scribner."
+    },
+    {
+      "title": "Original music for Burden of Command",
+      "date": "2020-05-19 12:00:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4742798964254385719",
+      "content": "[previewyoutube=nEHp-fDj-aI;full][/previewyoutube]\n\nThis is a soaring, melodic theme meant to instill the emotional burden of leading a group of men to battle. It helps solidify the fact that these men are not just soldiers in a war, but they are your brothers. They are your burden.\n\nCan you lead?"
+    },
+    {
+      "title": "Aircraft Wrecks",
+      "date": "2020-05-12 12:00:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3110243741291581583",
+      "content": "[previewyoutube=Y1qMySicdO4;full][/previewyoutube]\n\nWe've got some new additions to the battlefield environment from artist Sergey Averkin. Check out this video showing downed aircraft wrecks. These additions to the battlefield environment will help illustrate the chaos and violence inherent in the Burden of Command."
+    },
+    {
+      "title": "Happy Victory Day to Our Friends in the East",
+      "date": "2020-05-09 01:00:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3110243486340581504",
+      "content": "The end of the War in Europe is celebrated on May 8th in the West (known as VE Day) and on May 9th by the Eastern Allies (known as Victory Day).\n\n{STEAM_CLAN_IMAGE}/33420403/842ef015ab23d19b437775e4bec6d17b22e71c9d.jpg\n\nSo we would like to wish a happy Victory Day to our Eastern friends.\n\nWhichever day we observe, it meant that the war in Europe was finally over. After six years of unbelievable suffering, peace was finally at hand. Though it would be another three months of hell before hostilities ended in the Pacific.\n\nAs always, we wish you all happiness, health, prosperity, and peace.\n\nSincerely,\nThe Burden of Command Team"
+    },
+    {
+      "title": "VE Day Through a Soldier's Eyes",
+      "date": "2020-05-08 17:26:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3110243214560434894",
+      "content": "Seventy-Five years ago today, Sergeant Robert Mathis had just heard that the War in Europe was over. So had the rest of the world.\n\n{STEAM_CLAN_IMAGE}/33420403/9fb296a6f05ae2653564e6f7f5e61ebec1bf294a.jpg\n\nHe marked the occasion by sitting down to write a letter home. \n\nThis is that letter:\n{STEAM_CLAN_IMAGE}/33420403/17bcb2dbe24678a255df9d7abe3b103f663b7ed7.jpg\n{STEAM_CLAN_IMAGE}/33420403/31c4ab1c2e0662dc237bc4da604bce30786b294f.jpg\n\nIt reads,\n\"May 8, 1945\nGermany\n\nDear Sis,\n\nI'm trying to catch up on some of my writing tonight, so don't bawl me out for writing such a short letter. It's been such a long time since I've wrote to anyone, I guess you all have been worried about me.\n\nWell, as you know Sis, the war in Europe is over. I for one am very happy. I still don't know anything about coming home though. I can sweat it out pretty good now that I don't have to live in a foxhole.\n\nI'll close for now, but I'll be writing again soon. I'm sending you a picture of me in this letter. Tell Bill to be ready for that celebration I've been waiting for when I come home.\n\nTrue From Your Bub,\nCleve\n\nP.S. Tell Bill if I have to count on the points system to get me home, I won't even have enough to get to Paris.\nCM\"\n\nSergeant Mathis was an artilleryman in the 8th Infantry Division. He served in every campaign from Normandy the end of the War.\nHe was also my grandfather.\nI'm very proud to be his grandson.\n\nHappy VE Day Everyone.\nWishing Peace and Prosperity to all.\n\nRob\nCommunity Lead"
+    },
+    {
+      "title": "Alas, Poor Yorick",
+      "date": "2020-04-18 12:00:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4654976078211908790",
+      "content": "[previewyoutube=amVoyGV-trA;full][/previewyoutube]\n\nWe are pleased to report that the artificial intelligence stage of development has begun!\n\nStay tuned for further updates.\n\nRob\nCommunity Lead"
+    },
+    {
+      "title": "An Interview with Moe's Gaming Table",
+      "date": "2020-04-04 15:08:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2978509755353595260",
+      "content": "Luke sat down this week to talk Burden of Command with the gang over at Moe's Gaming Table.\n\n[previewyoutube=8RDNwEhHcE4;full][/previewyoutube]\n\nThe conversation covered everything from game vision & mechanics to the challenges of integrating artificial intelligence. \n\nDefinitely worth a watch...especially if you have a bit more time on your hands these days. ;)\n\nHuge thanks to Moe, Nate, & Dan for being such awesome hosts.\n\nWe hope you all stay well,\nThe Burden of Command Team"
+    },
+    {
+      "title": "Keep Calm and Carry On",
+      "date": "2020-03-22 18:47:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2698159409985658614",
+      "content": "It can be difficult to keep our spirits up in times like these.\n\n[previewyoutube=bDR_hUQLDhY;full][/previewyoutube]\n\n\nIt helps to remember that hope and goodness still exist and can be found in great supply if we know where to look. Better yet, we can spread these gifts to those around us.\n\nThe weeks ahead may be tough, but we will make it.\n\nAll will be well again.\n\n{STEAM_CLAN_IMAGE}/33420403/cfb98d0be94236383974ac58de1c428ea816257c.jpg\n\nSo be calm, be strong, and be well.\n\nWe're all in this together.\n\nSincerely,\nThe Green Tree Games Team"
+    },
+    {
+      "title": "Wreckage!",
+      "date": "2020-03-08 12:00:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2579938650934694234",
+      "content": "[previewyoutube=LXqmFi55yds;full][/previewyoutube]\n\n[code]\nYou will see a lot of carnage during your tour of duty, Captain.\n\nHere's a preview of what you can expect.\n[/code]"
+    },
+    {
+      "title": "Development Road Map Update!",
+      "date": "2020-03-04 14:56:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2579938650920831218",
+      "content": "[previewyoutube=YNUew745qh4;full][/previewyoutube]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 9",
+      "date": "2020-03-01 12:30:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2578812118964206475",
+      "content": "[previewyoutube=BhtWSpl1DdQ;full][/previewyoutube]\n\n[code]\nIn the finale of our miniseries about the North Africa landings in November of 1942, you are faced with one of your most difficult decisions yet...\n\nYou have your mission. The men are ready.\n\nYou examine your map...\n\n{STEAM_CLAN_IMAGE}/33420403/71ec64d4a8278bf7c6d439e6ed2b76a06f5d8cdc.jpg\n\nYour task is not to take the resort itself, but to capture its high-profile German guests. That means you'll have to move quick and avoid alerting your targets. Otherwise, they are sure to escape and disappear into the desert.\n\nThere are three options. None are perfect, but you must choose one and commit all you have to it. Now you see what your instructors meant when they told you that the worst decision is indecision.\n\nLife or death. Victory or defeat. Success or failure...\n\nAll are in your hands, Captain--And your hands alone.\n\nThis is the Burden of Command.\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 8",
+      "date": "2020-02-23 12:30:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2578811485603298792",
+      "content": "[previewyoutube=64U3Ps27h2E;full][/previewyoutube]\n[code]\n\nIf you've learned one thing in your brief war experience, it's to expect the unexpected.\n\nYour newest mission offers more of the same.\n\n\"A hotel?\" asks a sergeant.\n\nYour men a surprised as you are.\n\nA private jokes, \"Will there be room service?\" It brings a laugh from the men. You even allow yourself a grin.\n\n\"At ease, Patterson.\" You regain your bearing. This is still a war...Even if your objective is a luxury resort.\n\n\"Listen up, knuckleheads!\" First Sergeant Grant barks. That wipes the smiles from the men's faces.\n\n{STEAM_CLAN_IMAGE}/33420403/29844737423ba8e522bbb52ca521bf08226e3bae.png\n\nGrant is a good man. You're thankful to have him. It's good to know he always has your back.\n\n\"Go ahead, Sir.\" Grant nods to you.\n\n\"Thank you, First Sergeant.\" You clear your throat. \"As I said, our objective is the Hotel Miramar. Our mission is to capture some very important guests...\"\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 7",
+      "date": "2020-02-16 12:30:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3183419193838842705",
+      "content": "[previewyoutube=zyf2MAueSQ8;full][/previewyoutube]\n[code]\nYou enter the town of Fedala at the head of Able Company.\n\nThe streets are quiet. There isn't a French soldier in sight. It seems the enemy has no stomach for this fight.\n\nThe only signs of life are the occasional glimpses of locals peeking through the windows above and the few denizens walking the narrow, dusty lanes. They seem unfazed by your presence.\n\nChildren appear. A few of your men smile at them. That's all it takes.\n\nThe youths are soon buzzing around the column like bees in a field of clover, bounding from soldier to soldier, tugging at pant legs and field jackets. The men hand them candy bars, C-rations, and anything other trinkets they have handy.\n\nThe scene reminds you of the stories the old timers told about orphans in France begging American Dough Boys for food during the Great War.\n\nYour heart goes out to these poor kids, but you also know this is putting them and your men in danger.\n\nThis wasn't in the training manuals.\n\nYou have to do something. But what?\n\nYour blood runs cold as you suddenly realize just how unprepared you are for this and whatever else lies ahead.\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 6",
+      "date": "2020-02-09 12:30:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2582187916846762350",
+      "content": "[previewyoutube=QAuXXIIY_wg;full][/previewyoutube]\n[code]\n\nYou lead your men off the beach, thankful to feel solid earth beneath your boots. Whatever waits ahead, at least you're off that infernal Higgins Boat.\n\nAs the sun crests the horizon, you spot movement ahead. Your training kicks in again as you and your men hit the dirt.\n\nYou reach into your map case and retrieve a set of Army-issued field binoculars. Your eyes strain to make out the figures ahead in the gathering light.\n\n\"Infantry.\" You tell your radio operator. \"Some cavalry, too.\"\n\nYou lower the field glasses as fear grips your stomach again.\n\nDying doesn't scare you as much as the idea of failing your men. Are you up to the task?\n\nThe men look to you. You can feel their nervous eyes upon you like a hundred burning spotlights.\n\nIt's time to find out what you're made of.\n\nYou grab the radio's handset and key the mic. \"This is Able Six. All Able elements prepare to attack.\"\n\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 5",
+      "date": "2020-02-02 12:30:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2609208878391773880",
+      "content": "[previewyoutube=Uxnk4q2zcUw;full][/previewyoutube]\n[code]\nYou made it ashore in one piece, but there's no time for congratulations.\n\nA successful landing only means you're that much closer to the people who want to kill you.\n\nYou pat yourself down, checking your gear out of the habits gained from months of intensive training back in the States.\n\nFrankly, you're surprised you made it this far.\n\nThe men start to mill around in the pre-dawn gloom, unsure what to do next.\n\nThey look to you. \"Whada we do now, Sir?\"\n\nThe muffled report of heavy machine gun fire echoes from further inland. It gives you focus.\n\nYou respond, \"We do what we came here to do.\"\n\nYou set your boots toward your objective and march toward the sound of the guns.\n\n\"Follow me.\"\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 4",
+      "date": "2020-01-26 12:30:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2597949245058603447",
+      "content": "[previewyoutube=rGbyz8-u_NA;full][/previewyoutube]\n[code]\nThe landing craft are loaded. The night is dark. The sea is rough.\n\nYour thoughts bounce back and forth from praying your Higgins Boat doesn't capsize to trying to keep your last meal from coming back up.\n\nThankfully, this should still be a relatively easy landing. The boys up at intel section aren't expecting any resistance on the shore.\n\nYou spot a long, bright, horizontal strip ahead in the darkness.\n\n\"It's the beach!\" someone yells.\n\nSome men allow themselves a smile at the thought of getting of this tin can.\n\nFear loosens it's grip on your gut. You're almost there.\n\nThen the shooting starts...\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 3",
+      "date": "2020-01-19 12:30:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3690071589852554246",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/aa0e5835d0340dec08fd4e95238b880a6763afb7.gif\n[code]\nThe interviews included in the HBO series, Band of Brothers, were incredibly personal and powerful.\n\nWe are unbelievably fortunate to have access to similar interviews of the real-life Cottonbalers who lived the history you will recreate in Burden of Command.\n\nWe are equally thrilled to be able to share portions of these interviews with you.\n\n[previewyoutube=5eDBDxFimEw;full][/previewyoutube]\n\nYou've made it to your landing craft, Captain. Now it's time for what crossed the ocean to do.\n\nSet your bow toward shore...and go like hell.\n\nGood Luck and God's Speed, Captain.\n\nI'll see you on the high ground.\n\nSaber 6 out.\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 2",
+      "date": "2020-01-12 12:20:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2600199781651503407",
+      "content": "[previewyoutube=PkB3oD49i4w;full][/previewyoutube]\n[code]\nWelcome back, Captain.\n\nBy now, you likely know we will be landing on the North African coast -- Fedala to be precise.\n\nAn amphibious invasion ain't a walk in the park.\n\nYou and your men will have to carry sixty pounds of gear, plus weapons down the side of your troop ship via rope ladders in rough waters to embark into waiting landing craft. A single wrong move can mean certain death.\n\nDid I mention you'll have to do all this at night?\n\n...And that's the easy part.\n\nReturn next week for another briefing.\n\nDismissed, Captain.\n...\n[/code]"
+    },
+    {
+      "title": "The Cottonbalers and You: Part 1",
+      "date": "2020-01-11 10:43:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2600199781647646599",
+      "content": "[previewyoutube=WNV9YCKT77I;full][/previewyoutube]\n[code]\nTake a seat, Captain.\n\nThis is the first in a series of weekly intelligence briefings meant to prepare you for the challenges you will face in the campaign to come.\n\nWARNING: These videos contain highly sensitive information about the anticipated location of future landings as well as other confidential materials.\n\nThis knowledge is disseminated on a need-to-know basis...And you need to know.\n\nProtect this information with your life, Captain.\n\nCome back to this location tomorrow morning for further briefing.\n\nThat's an order.\n\nSaber 6 Out.\n[/code]"
+    },
+    {
+      "title": "We Made the Most Wanted List!",
+      "date": "2019-12-27 12:00:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573876838592",
+      "content": "[code]\n{STEAM_CLAN_IMAGE}/33420403/d6b1010ef424791e55b91d86004ccb5b08db2679.jpg\nWe are honored to be named one of the most promising story games of 2020 by Only Singe Player.\n\nIt is quite humbling to be named alongside established franchises such as The Last of Us Part II and Vampire: The Masquerade - Bloodlines 2.\n\nRead about it here!\n\nIt's a great way to end a great year!\n\nSee You All Soon!\nThe Burden of Command Team\n[/code]"
+    },
+    {
+      "title": "Tidings of Comfort and Joy",
+      "date": "2019-12-25 12:00:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573869613105",
+      "content": "[code]\nWe at Green Tree Games wish each and every one of you comfort, joy, health, prosperity, and peace in this season and in the year ahead.\n\n{STEAM_CLAN_IMAGE}/33420403/88778d77264e6bde3dc3af18bd30ee920b5816e4.jpg\n\nMerry Christmas and Happy New Year!\n\n[/code]"
+    },
+    {
+      "title": "Winter is Coming",
+      "date": "2019-12-24 13:56:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573866289553",
+      "content": "[previewyoutube=SE_6DJJYtIs;full][/previewyoutube]\n\n[code]\nGreetings Captain,\n\nThe enemy isn't the only thing trying to kill you in war. The elements are often just as dangerous.\n\nWinter is especially challenging to friend an foe alike.\n\nStudy the images in this film carefully, Captain. The Germans have faced Russian winters for years. Don't underestimate them. They know how to operate in temperatures that would freeze a polar bear.\n\nThe good news is we finally got winter gear for your men. Better late than ever. Get your unit over to supply before the admin guys get it all.\n\nWinter is coming. Good luck, Captain.\n\nSaber 6 Out.\n\n\n[/code]"
+    },
+    {
+      "title": "More New Recruits!",
+      "date": "2019-12-13 14:22:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3370312875252908144",
+      "content": "[code]\nThe Burden of Command Team is proud to welcome our newest testers, David Kotomski and Craig Elliott.\n\n{STEAM_CLAN_IMAGE}/33420403/f928b0c017e1abd9b544a3f9efe421ff8adb0f48.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/45d7ceb8b247c54793c317749b43fca76ef8d21f.jpg\n\nPlease join us in welcoming David and Craig to the team!\n\nWe would also like to thank all of you who have signed up to play test BoC. We will be contacting several more of you after the New Year!\n\nSee You All Soon,\nThe Burden of Command Team\n[/code]"
+    },
+    {
+      "title": "An Early Christmas Present: Wallpaper!",
+      "date": "2019-11-29 11:00:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2551782186262654817",
+      "content": "[code]\nWe hope this Black Friday finds you all well and in one piece. Those stores can be brutal on this day.\n\nThis year, we would like to give you a little something to say thank you for all your incredible support.\n\nMeet Lieutenant Wilson.\n\n{STEAM_CLAN_IMAGE}/33420403/8a49826481b1216733757c0973b56c6859ff87bd.jpg\n\nThis grizzled veteran is your eldest platoon leader. He's the company 'old hand.' The coming campaign marks his twenty-fifth year in uniform - and his second world war. Wilson's been in the army from private to lieutenant. Sent around the world and back again to Europe, just in time for his second world war.\n\n{STEAM_CLAN_IMAGE}/33420403/836841e41ba2bcf0efa93c90f4b7c80aa56d8fb6.jpg\n\nIn addition the links provided here, you can find these wallpapers for PC and mobile devices in the 'Art' tab. We hope you like them.\n\nWe'll see you again very soon.\n\nCheers!\nThe Burden of Command Team\n\n[/code]"
+    },
+    {
+      "title": "HAPPY THANKSGIVING!",
+      "date": "2019-11-28 11:15:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2551782186259078878",
+      "content": "[code]\nToday is Thanksgiving for our friends in the U.S.A.\n\nIt is tradition that the American military does all it can to provide a hot turkey dinner to every soldier, sailor, and marine on this day. This holds true in both war and peace.\n\n{STEAM_CLAN_IMAGE}/33420403/f3aeb6784c41c9776c3f9a7725f97f19418b0321.jpg\n{STEAM_CLAN_IMAGE}/33420403/732c10a8fa7583ba79198331d2a38f83abd61a9c.jpg\n{STEAM_CLAN_IMAGE}/33420403/72cd26dfa75e37b570dde198ba518e1521942260.jpg\n{STEAM_CLAN_IMAGE}/33420403/be24b791d9298295019918df838506bbb8ecea0a.jpg\n\nWe offer our sincerest thanks to all those who serve in the cause of Freedom, no matter which uniform you wear...and especially to those in harm's way.\n\nThank you also to all of you awesome community members who continue to support Burden of Command. You inspire and motivate us every day.\n\n\nWe wish you the happiest and warmest of holidays,\nThe Burden of Command Team\n\n\n\nPS: As a token of our appreciation, we plan to give you all an early Christmas present tomorrow. Be sure to tune in and see what it is!\n\n\n[/code]"
+    },
+    {
+      "title": "Wrestling Pythons",
+      "date": "2019-11-27 16:19:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2551782186256227225",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/2e5fcbf3aab065265cdbd1f1e2997aaaede02d10.jpg\n[code]\nWe've been a bit slow in releasing news about game-related updates lately. The good news is that big things were happening behind the scenes.\n\nYou may recall a post a while back where we announced the addition of a new play tester named Chaim Krause.\n\nWell, it turns out that Chaim is far more than a play tester. He has been instrumental in our upgrade from Python 2 to Python 3, which took A LOT of work. As you can see above, that's just a part of what Chaim has been up to.\n\nAs a result of his hard workd and dedication, Chaim has been promoted to Devops Engineer!\n\nThank you, Chaim! We couldn't have done it without you.\n\nSincerely,\nThe Burden of Command Team\n[/code]"
+    },
+    {
+      "title": "Play Testers Wanted!",
+      "date": "2019-11-15 20:30:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3657414904093589095",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/c98ac6947f9233bc9139510770fb56c38d647e4f.jpg\n[code]\nBurden of Command is looking for play testers!\n\nWe are putting out an open call to test the tactical engine for BoC.\n\nCandidates will be chosen in the following phases:\n\nPhase 1. Prior Game or Software Development. These folks know how the sausage is made and are comfortable operating in early developmental stages of a game engine.\n\nPhase 2. Prior Play Testing Experience. These seasoned souls are familiar with industry standards. They will do all they can to 'break' our precious game, making it more stable and robust in the process.\n\nPhase 3. Anyone Else Interested in Burden of Command. This is our opportunity to gain a wider perspective. People from myriad backgrounds will give us their thoughts and opinions to make the finished product the best it can be.\n\nWe hope to have a testing pool made up of people of all ages and interests, regardless of historical or military knowledge. We're looking for input from as many perspectives as possible so that this game experience can be accessible and meaningful to everyone from casual gamers to combat veterans.\n\nSIGN UP HERE!\n\nWe'll See You on the High Ground!\nThe BoC Team\n[/code]"
+    },
+    {
+      "title": "Get Your Official BoC Wallpapers!",
+      "date": "2019-11-13 12:01:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2448198215006751960",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/6bc22fe552ac4e2b9f69028916ce010eea1e2fe2.jpg\n[code]\nToday, we have goodies and an update from the commanding officer!\n\nWhat are the goodies?\nWallpapers!\nWe have posted wallpapers of Lieutenant Thompson in two resolutions (1920x1080 for PC and 320x480 for mobile).\nGet them here!\n\n\n\nAnd now a message from your commanding officer:\n\nGreetings, Captain.\n\nA good leader knows his men.\n\nHere's a summary from the personnel file of one of your platoon leaders. You can see an image of him above. Study both well.\n\nName: Eddie Thompson\nRank: 2nd Lieutenant\nAge: 22\nHome State: Vermont\n\nLieutenant Thompson is an idealist. Few doubted the evils of war, but the fresh-faced Lt Thompson always sought out the good in men. The American spirit is more than mom and apple pie. Lt. Thompson is proof of that.\n\n\n\nIn the coming weeks, I'll give you files and photos of more of your men. Get to know them as best you can, Captain.\n\nTheir lives are in your hands.\n\nThat is all, Captain.\nNow see to your men.\n[/code]"
+    },
+    {
+      "title": "Let Us Remember",
+      "date": "2019-11-11 12:00:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2448197582034042237",
+      "content": "[code]\nIt is Veterans Day here in the USA. For many of you around the world, it is Remembrance Day.\n\nPlease join us in remembering the service and sacrifice of all who have served and continue to serve.\n\nThe following pictures are a mixture of our team members in uniform and family members they wish to honor:\n[/code]\n{STEAM_CLAN_IMAGE}/33420403/2d34dcece4e576c99728b827af8cad4ab2c21648.png\n\n{STEAM_CLAN_IMAGE}/33420403/6b95a55fd81fe6569b4fbfe50bf94b90b4609671.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/acc139bff00d06508e0812ec001b6aec82e7acad.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/09a3c065cb330083e1bfdb3cf653e597a7f0d3d8.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/02c8e23eedd7478d9b5871e525d192922d2ce583.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/7da40c9a98d7516dec4a0d55fdc2cf408bd848a9.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/61f723125b7bd7268c052a0fa40d8c5c616d54df.png\n\n{STEAM_CLAN_IMAGE}/33420403/ea4ff9696f5e9aca12bbf5ee745512671535382c.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/06b3931b1c1a501db8772ac953bd7e7576b448f4.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/a0d2d8b32e7ed6957f985914b140a11c93400473.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/587ec70d83017046cfc2181185ba332bbb44de9b.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/664749401aa8efabe83f800dd5604e1d146a5db7.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/f3eedc6f7e07b8c27b6bee03004eb4900ea25021.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/82cef47359486e333e77bc5fb0088cd24cc1c357.jpg\n\n{STEAM_CLAN_IMAGE}/33420403/4cd28da5631671935aea2bd5f02a22db0d94bea8.jpg\n\n[code]Do you have any veterans you wish to recognize today? Please share your stories and pictures here.\n\nLet us all remember together.\n\nThe Burden of Command team\n[/code]"
+    },
+    {
+      "title": "We Want Your Opinion",
+      "date": "2019-11-02 12:05:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2451574645865622035",
+      "content": "[previewyoutube=NNegKBh5a6o;full][/previewyoutube]\n[code]\nWar is about a lot of things--politics, ideas, tactics, equipment, and myriad others.\n\nBut it is ultimately about people. That's why we are incorporating period photographs as unit portraits in the battlefield interface.\n\nNow, this a fairly straight-forward idea for Allied troops...\n\n{STEAM_CLAN_IMAGE}/33420403/ac36c0a6b8468f80cd0a2abcb20f47ef676540d8.png\n\nBut what about the Axis Forces?\n\nHow 'personal' should these portraits be?\n\nThis is where you come in.\n\nPlease watch the video above, then give us your thoughts.\n\nAlso, please find us on Twitter @BurdenOfCommand and vote in the official pole!\n\n\n\nAs always, thank you all for your help and opinions,\n\nThe Burden of Command Team\n[/code]"
+    },
+    {
+      "title": "Restoring History",
+      "date": "2019-10-19 12:35:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2404285581868500581",
+      "content": "[code]Our newest team member, Eric Benjamin, has taken up the burden of preserving history via the art of digitally enhancing historical images.\n\nHere is some of his work!\n[/code]\n{STEAM_CLAN_IMAGE}/33420403/bee39a4f13ea45b336edadc22fbd36fe89e9fa17.jpg\n{STEAM_CLAN_IMAGE}/33420403/33b6b72af6d2772d7e23f6ab2b5b7c6879a218bc.jpg\n[code]\nAs you can see, Eric's work is not limited to World War II.\n[/code]\n{STEAM_CLAN_IMAGE}/33420403/a7c9ce649231f953af937c874b910acbd3072f04.jpg\n{STEAM_CLAN_IMAGE}/33420403/66c8eb1f7943693df7234ee449e843b0d2a9bfdf.png\n{STEAM_CLAN_IMAGE}/33420403/c9c76bc3a0410630772989fd341c71c2c920db29.png\n{STEAM_CLAN_IMAGE}/33420403/bd77e5815c682acfa9830578bcb5fb2cbeb58d73.png\n{STEAM_CLAN_IMAGE}/33420403/373c58a47a569747678197d1af0a2ffa1ef6a15a.png\n{STEAM_CLAN_IMAGE}/33420403/ba1ca3787ef85800bb86573908cf229faa1b7a24.png\n[code]\nAs you can see, Eric is very talented.\n\nHe will be bringing these talents to bear in bringing Burden of Command to life. As you may know, preserving and promoting history is something that is at the top our priority list!\n\nPlease join me in welcoming Eric to the team.\n\nLastly, if you haven't done so, please add us to your wish list!\n\nRemember, every time you wish-list us, a sergeant gets his stripes!\n\nI'll see you all on the high ground,\nRob\n[/code]"
+    },
+    {
+      "title": "Friendly Fog of War",
+      "date": "2019-10-12 12:32:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3051677487682846007",
+      "content": "[previewyoutube=MoZv12XIvX8;full][/previewyoutube]\n[code]\nKnowing your men is crucial for any leader. Knowing exactly how far you can push them is much harder.\n\nBurden of Command is modeling this challenge by giving you an estimate of your men's likelihood to follow certain dangerous orders, such as assaulting an enemy position.\n\nYou don't have the luxury of exact percentages in war. You only have the look in your men's eyes.  Will they charge with you, or will you advance only to find yourself alone under enemy fire?\n\nYou have a gut feeling they will follow, but you can never be sure.\n\nThis is the Burden of Command.\n[/code]"
+    },
+    {
+      "title": "The Faces of Command",
+      "date": "2019-10-01 19:08:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2426802221713114246",
+      "content": "[code]In Burden of Command, you won't simply be moving pieces around a map. \nYou're going to be leading men...Men with hopes, dreams, and fears...Men who hope to make it home alive.\n\n[/code]\n{STEAM_CLAN_IMAGE}/33420403/446b755076e37b5f09a40d49ff4ce6e3d822eeea.png\n[code]\nSo we're adding their pictures to the tactical map as reminder.\n\nWhen you select a unit, now you'll look into the eyes of the men you're about to order into harm's way.\n\nLead them well, Captain...\n\nTheir lives depend on it.\n[/code]"
+    },
+    {
+      "title": "Celebrity Voice Over!",
+      "date": "2019-09-24 11:48:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841146505228",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/fdceb04dca5e613a8db7c167e9a3a548dabe40d8.png\n[code]\n\nWe are thrilled to announce that veteran actor, Shane Taylor (who played \"Doc\" Roe in Band of Brothers), has joined the Burden of Command Team! He is the battlefield voice of Sgt Grant!\n\nGrant will play a prominent role in Burden of Command. He will be your right hand man in the coming campaign.\n\nListen to Sergeant Grant. Learn from him. Protect him. Lead him.\n\nHere's a sneak peek of Shane as Sgt Grant:\n\n[previewyoutube=_2dMLHe_iO0;full][/previewyoutube]\n\nI hope you are as excited about this as we are!\n\nLet us know what you think!\n\nRob\n[/code]"
+    },
+    {
+      "title": "Cheer Up! Cool News Hits Tomorrow!",
+      "date": "2019-09-23 11:00:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841142772134",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/fdb450c8c5d4be2c60f0b29eb14423fd9b908220.gif\n[code]\nCheer up! The cool news will be here tomorrow!\n\nNo, it's not a release date.\n\nSo what could it be?\n\nWe've hidden clues is in the teaser gifs.\n\nCare to guess what it is?\n\nSee You Tomorrow!\nRob\n\n[/code]"
+    },
+    {
+      "title": "Fun News Ahead!",
+      "date": "2019-09-21 11:00:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841135544363",
+      "content": "{STEAM_CLAN_IMAGE}/33420403/ad46d7a5ea0d3b6a0824e52e9fb16acf2ddc4e92.gif\n\n[code]\nWhat could it be?\n\nAgain, not a release date.\n\nMight want to check in here at 8:00am PST on Tuesday, September 24th to find out!\n[/code]"
+    },
+    {
+      "title": "The Evolving Warfighter",
+      "date": "2019-09-20 12:18:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841132126516",
+      "content": "[previewyoutube=gu9bEIeRJUg;full][/previewyoutube]\n[code]\nHi Again!\n\nWe are VERY excited to share today's news.\n\nLuke recently had a long-form conversation with Dr. Franklin C. Annis of The Evolving Warfighter. The wide-ranging discussion covered history, leadership, psychology, war, and all things Burden of Command.\n\nHuge thanks to Franklin for his amazing support of Burden of Command.\n\nWhile you're on his channel, please be sure to check out Dr. Annis' other outstanding videos and interviews. He really knows his stuff and is a great guy, too!\n\nAs always, we also want to thank all of you for your continued support.\n\nSincerely,\nThe Burden of Command Team\n\n[/code]"
+    },
+    {
+      "title": "A Day at the Range",
+      "date": "2019-09-20 09:33:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841131712884",
+      "content": "[previewyoutube=w6b2jDeeCTM;full][/previewyoutube]\n[code]\nIn our last post, we talked about how Henk Stoffers (BoC scenario designer & Dutch Army Reservist) recently got to live fire an MG3 (modern equivalent of the MG42).\n\nWe thought you'd like to see some video, so here ya go!\n\nSee you again soon!\nRob\n[/code]"
+    },
+    {
+      "title": "Hands-On History",
+      "date": "2019-09-15 13:52:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3658535001302916736",
+      "content": "Henk Stoffers is key member of our scenario design team. He also happens to be a reservist in the Dutch Army. [code] [/code]\nAs such, he has access to some pretty cool equipment. [code]\n [/code]\n{STEAM_CLAN_IMAGE}/33420403/9695d4dd9b5407b4e04a9bca554e6dabce263675.png\n[code]\n [/code]Henk recently got the chance to take a vintage MG42 to the range.  While there, Henk took the opportunity to do some hands-on historical research. [code]\n{STEAM_CLAN_IMAGE}/33420403/581e39c3cbf6cb6bb2793bb13d3c2c1ced7efc33.png\n[/code]\nTurns out, the MG42 is pretty darn lethal. It also turns out that Henk is a great shot! [code]\n [/code]\n{STEAM_CLAN_IMAGE}/33420403/b57ad224a0ee11d18b40b35710426ddf3512c02b.png\n [code]\n [/code]That's all for now.[code] [/code]\nSee you again soon![code] [/code]\nRob"
+    },
+    {
+      "title": "A Lesson in Tactical Leadership",
+      "date": "2019-09-05 09:19:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413288973188824357",
+      "content": "Greetings, Captain.\n\nToday's lesson is a quick one: Never give the enemy the upper hand. It will cost you dearly.\n\n[previewyoutube=9l7GdC7yy0Q;full][/previewyoutube]\n\nTo paraphrase General Patton, our job is not to die for our country; it is, instead, to make the other guy die for his.\n\nThat is all, Captain.\n\n\nSaber 6 out."
+    },
+    {
+      "title": "Welcome Chaim!",
+      "date": "2019-08-29 18:31:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415540140457696453",
+      "content": "Today we introduce the second of our two Wave 1 beta testers, Chaim Krause.\r\n\r\nChaim is a very impressive guy. He's been testing, writing, and debugging programs and games for years. If that weren't enough, he currently works with the U.S. Army to run combat simulations. Needless to say, he knows his stuff.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/0321770b1a83489f1983cbda1c4035e4ee491826.png\r\n\r\nPlease join us in welcoming Chaim to the BoC team!\r\n\r\nSee you again soon,\r\nThe Burden of Command Team"
+    },
+    {
+      "title": "Testing of the Tactical Engine Has Begun!",
+      "date": "2019-08-28 17:19:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415540140453902459",
+      "content": "It is with great pleasure that we introduce you to our first wave of tactical play testers!\n\n\nThere are only two of them, but they are pretty amazing folks!\n\n\nOur first tester hails from the Great White North, is currently developing his own game, Valiant effort (which looks AMAZING!), and is the co-founder of the first person shooter, Insurgency (yes, THAT Insurgency).\n\n\nLadies and gentlemen, I give you Andrew Spearin!\n\n\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/2055f309ceed659efa6e62948f717bfc038e0a3a.png\n\n\nWe'll be back tomorrow with our next tester, who is also amazing!\n\n\n\nSee You Tomorrow,\n\nThe BoC Team"
+    },
+    {
+      "title": "Have a Listen!",
+      "date": "2019-08-21 13:44:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416665403766666495",
+      "content": "Our fearless Project Lead, Luke Hughes, recently had a great chat with Kyle, Karrington, Andrew, & Cody of the Real Dudes Podcast.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/4ee4a8de72dfb2a99c7b7b59a25e9382995e7260.png\r\n\r\nIt went great. These guys are great interviewers.\r\nThey even managed to squeeze some Top Secret details about Burden of Command out of Luke!\r\n\r\n\r\nListen to it here!\r\n\r\n\r\nSee you again soon,\r\nRob"
+    },
+    {
+      "title": "BoC Featured in Forbes Magazine!",
+      "date": "2019-08-20 18:48:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416665403763815412",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/dc4bc983ef4344f246ac336e75a467b526b6df61.png\r\n\r\n\r\n\r\nHUGE thanks to Matt Paprocki of Forbes magazine for featuring Burden of Command!\r\n\r\nRead the whole thing here!\r\n\r\nIt doesn't get much bigger than this.\r\n\r\nAgain, thanks to Matt and Forbes for such a great write-up.\r\n\r\nAnd thank YOU for your continued support for Burden of Command.\r\n\r\nSincerely,\r\nThe BoC Team"
+    },
+    {
+      "title": "Dynamic Hiding (Fog of War)",
+      "date": "2019-08-13 19:25:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412161173659100468",
+      "content": "Hello Again Captain,\r\n\r\nLet's talk about hiding.\r\n\r\nSure, it ain't the flashiest thing you can do. But sometimes it's your best bet.\r\n\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/aa57677e7f4a272378ca7bee7b514d32f5ff58d6.jpg\r\n\r\nNow you can get out of sight even if the enemy already has eyeballs on you.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/6a47eaecd76628094e60632de15d3d2a940bc3c8.jpg\r\n\r\nOnce you break line of sight, not only can't your adversaries see you, but they will also lose track of your position.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/ba83b21005fbd8806085cc159c706e9dd1cc9ba2.jpg\r\n\r\nWhich means you can effectively break contact.\r\n\r\nBut don't get too cocky. These guys are smarter than you think.\r\n\r\nThat is all for now, Captain.\r\n\r\nSaber 6 out."
+    },
+    {
+      "title": "Recon by Fire",
+      "date": "2019-07-26 19:23:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3364670677183518416",
+      "content": "Greetings, Captain.\r\n\r\nToday's lesson is all about Fog of War.\r\n\r\nThink that tree line ahead looks suspicious?\r\n\r\nYou could scout it out yourself...Or maybe send a squad to check it out for you, though they won't be very happy about it.\r\n\r\nOption three is to throw some hot lead into it and see what pops out.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/cdf6053689f118543f3c61b839fb02b195c994c9.jpg\r\n\r\nBefore you give that fire command, always remember....tracers work both ways.\r\n\r\nThat is all, Captain.\r\n\r\nSaber 6 out."
+    },
+    {
+      "title": "A New Team Member!",
+      "date": "2019-07-09 16:40:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440611392107",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/cc917ddee7805ba4377f74cc77d59e3c15747f4b.jpg\r\n\r\nPlease join us in welcoming Emil Sofroniev to the team!\r\n\r\nAs you can see above, Emil is our new Testing Lead...Poor guy. ;)\r\n\r\nWe're lucky to have Emil on board. He's going to do great things for Burden of Command."
+    },
+    {
+      "title": "Take Cover! ...Or Not...",
+      "date": "2019-06-19 15:11:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415533798129084909",
+      "content": "Hello again Captain,\r\n\r\nNot all cover is created equal.\r\n\r\nWooded terrain can provide good cover in a firefight, but what happens when the shelling starts?\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/f36209715674b8cf697a837cdc7ffc114e79a6f5.jpg\r\n\r\nInstinct may tell you to seek refuge among the trees, but this instinct is wrong.\r\n\r\nIndirect mortar and artillery fire can transform trees into weapons, turning a forest into hell storm of splinters and shrapnel. Hunkering down here will do more harm than good when being bombarded by high explosive shells.\r\n\r\nKeep this in mind as you plan your mission, Captain.\r\n\r\nLives will depend on it.\r\n\r\nSaber 6 out.\r\n\r\nWant even more updates? Follow us on Twitter @BurdenOfCommand"
+    },
+    {
+      "title": "Here Comes the Cavalry!",
+      "date": "2019-06-07 21:18:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2411028931145295800",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/4917160ed91f94afbd74d46838bc44db733ec277.jpg\r\n\r\nThe Easy Eight is a beaut ain't she?\r\n\r\nBut don't go fallin' in love with 'er. It'd never work out. She's a tank and you're an infantry officer.\r\n\r\nIt ain't meant to be.\r\n\r\nThat bein' said, she sure is a sight for sore eyes when you're in a pinch...Just a radio call away if you ever need her...And you will.\r\n\r\nThat bein' said. She's been known to play hard to get. Plan accordingly.\r\n\r\nThat's all for now, Captain.\r\n\r\nSaber 6 out."
+    },
+    {
+      "title": "Day of Days",
+      "date": "2019-06-06 21:23:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2411028931141693481",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/f69a449f677d0e187c70c0bbb6bfdf9b231b8a76.jpg\r\n\r\nOn this 75th anniversary of The Day of Days, the Green Tree Team offers our deepest thanks to all who have served and to those who continue to serve in the cause of freedom.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/17e6846edf3ea98d01e8e8823daa6db71ba47073.jpg\r\n\r\nWe are humbled by your service and awed by your sacrifice.\r\n\r\nSincerely,\r\nThe Green Tree Games Team"
+    },
+    {
+      "title": "Intel Dump on the Way!",
+      "date": "2019-05-28 10:08:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408775863537332983",
+      "content": "Hi Again!\r\n\r\nSomething is cooking up at HQ.\r\n\r\nHere's a sneak peak.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/d053f113e852fb66c853e0a26ffdf14fe8b59ef7.png\r\n\r\nWant to know more?\r\n\r\nSign up for our newsletter and get tomorrow's intel update to find out.\r\n\r\nSee you soon!\r\n\r\nRob"
+    },
+    {
+      "title": "Not All Decisions Are Made in Battle",
+      "date": "2019-05-27 18:07:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408775863534923152",
+      "content": "Hello again, Captain.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/aa54a46a63c90a466fcf27d4d466025c5538044c.png\r\n\r\nAs you know, you are expected to lead your men into battle and make tough choices under pressure....But not every decision happens on the battle field. \r\n\r\nCommand means being in charge at all times. Just because bullets aren't flying doesn't mean you won't have tough decisions to make...\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/e34b78ba56639505a55418fc596660f7c6addb23.png\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/124325825ba2de6451dbbd6193a1fc9047112502.png\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/5ada1446019585168fb588be13e6b94a21bb83dc.png\r\n\r\nThis is just one of the challenges that lie ahead of you, Captain.\r\n\r\nPrepare yourself accordingly.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/5550de5b9e9682ef54f147ba2a3a0f3fd1fc8470.png\r\n\r\nSaber 6 out."
+    },
+    {
+      "title": "The Voices of Command",
+      "date": "2019-05-05 10:21:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2404270358333064535",
+      "content": "Authentic sound effects have been a top priority from the beginning. Just like the soldiers on the ground in WW2, players will be able to hear the difference between a U.S. M2 Heavy Machine Gun (50 cal) and a German MG42 (Hitler's Buzzsaw). They will even be able to hear the difference between a Panzer IV and a Sherman...Again, just like the men who heard these sounds on the war-torn fields of Europe.\r\n\r\nAs development continued, we realized that there was one type of sound we were missing...People.\r\n\r\nSo we decided to add voice overs. Like the vehicles and equipment in the field, each man under your command will have his own voice, his own personality, his own words.\r\n\r\nWe knew we needed help to do this right. So we found  top-notch Voice Director, Maurice Suckling.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/7086f783fa3513d7d7a2f5c95a5b34ad0c1584f0.jpg\r\n\r\nMaurice brings a vast amount of experience and expertise. We are very lucky to have him.\r\n\r\nPlease join us in welcoming Maurice to the Burden of Command team!\r\n\r\nAs always, thank you all for your support,\r\nRob"
+    },
+    {
+      "title": "A New Team Member!",
+      "date": "2019-04-26 14:05:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2432417221740061570",
+      "content": "Hi Again Everyone,\r\n\r\nI am pleased to announce that our team is growing!\r\n\r\nSound is every bit as important as visuals in game design. This is especially true in regard to immersion. \r\n\r\nWe recently welcomed our new audio director, Chris Scribner, to the Burden of Command Team.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/0488792f9c7f359c86a8581b919993d078079401.jpg\r\n\r\nChris hails from the Great Whit North (Canada) and has an extensive background in sound design.\r\n\r\nAs always, authenticity and immersion are our primary goals. Chris is every bit as dedicated to this purpose as the rest of the team...Which is why he is such a great fit. He's already accomplished some great things.\r\n\r\nAs always,  stay tuned to keep up to date on the latest news and developments.\r\n\r\nThat's all for now.\r\n\r\nI'll see you on the high ground!\r\nRob"
+    },
+    {
+      "title": "The Lived-In Look",
+      "date": "2019-04-15 10:46:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3763229740657172827",
+      "content": "Good Morning Captain,\r\n\r\n\r\nAs you know, this ain't the battlefield our fathers knew. Things have changed sine The Great War. Armies don't just run on their stomach these days; they also run on their fuel tanks.\r\n\r\nThe theater of operations you are about to enter will reflect that. Your ears will ring with the growl of diesel engines and the squeal of tank tracks. Your eyes will burn from the acrid clouds of their exhaust. The smell of burning petrol will stick in your nose for weeks.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/dde3199d02e7c3b1760f39cdbac9d6a6c91ed2ea.jpg\r\n\r\nBut remember, these steel beasts don't drive themselves. They are driven, operated, and maintained by living, breathing men. These aren't merely fighting machines; they are homes to the men who crew them...Often for months at a time.\r\n\r\nOur team back at HQ realizes this, so we changed the animations to better reflect the human side of mechanized warfare.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/7f0b19336bfba2267376c76df4a2b61a3c206424.jpg\r\n\r\nYou can see the full story, along with some shots of our own veterans in their rolling homes here:\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/ed8975b642519614b8d409e5dafe30ad6531b64b.jpg\r\n\r\nAll vehicles in Burden of Command will get this treatment to give them 'the lived-in look' both for authenticity and to respect the real men who called them home.\r\n\r\nThis concludes today's briefing.\r\n\r\nSaber 6 out."
+    },
+    {
+      "title": "More Audio Goodness",
+      "date": "2019-04-01 14:54:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2465065785313288401",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/3cd29c3ad8ea75c5df33df514b4b5831d83851a5.png\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/409272c7b24df69ff4a5ebc96a3f109acc1cc5d5.png\r\n\r\n\r\nThis week we return to our catching-up-with BoC series with an interview conducted a while back when Chris and Brant (of GrogHeads GrogCast fame)   hosted our commander-in-chief, Luke Hughes, for an in-depth conversation about all things war, games, leadership, psychology, and Burden of Command.\r\n\r\nThere is some great insight here about what Burden of Command is all about and what our team is working to accomplish.\r\n\r\nListen to the full interview here:\r\n\r\nhttp://grogheads.com/podcast/grogcast-season-5-episode-13-luke-hughes-of-burden-of-command\r\n\r\nThank you again to Chris, Brant, and the Grogheads gang!"
+    },
+    {
+      "title": "INCOMING!!!!",
+      "date": "2019-03-16 17:06:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3140604542249777476",
+      "content": "Hit the dirt, Captain!\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/d4a050a084da627b7aee858f43cb739d43299513.gif\r\n\r\nWhile rifle fire is deadly, it is surpassed in both lethality and psychological impact by artillery fire.\r\n\r\nOnce you see the business end of an artillery barrage, you know why it\u2019s called \u2018The King of Battle.\u2019\r\n\r\nBest keep your head down.\r\n\r\nSaber 6 Out."
+    },
+    {
+      "title": "Do You Want to Live Forever?",
+      "date": "2019-03-12 16:13:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2530366080614500147",
+      "content": "Greetings Captain,\r\n\r\nThe boys up at S-2 (intelligence section) just dropped the latest Burden of Command update. They've sure been busy from the looks of it.\r\n\r\nHere's today's intel dump, Captain. Prepare to copy... \r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/5a6f1f9552975053d118b62be9ced29575adca2f.jpg\r\n\r\nOur latest news letter and dev blog are packed full of updates.\r\n\r\nWe've been focusing a lot lately on the tactical portion of Burden of Command.\r\n\r\nThis update is more about the RPG elements of the game (Boc is a Tactical RPG, after all.)\r\n\r\nHow will you lead, direct, motivate, and preserve your men in the face of chaos?\r\n\r\nRead our latest Developer Blog to learn more.\r\n\r\nWhat about game progress?\r\n\r\nHere are a few tasty tidbits from our latest newsletter:\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/570ae2e2b5294cf413eebe731ee81b40c139a39c.jpg\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/158ca7e0fd92bf988a5a18b7aa34404a2a676292.jpg\r\n\r\nRead the whole thing here!\r\n\r\nLastly, you can be the first to get all these updates and more by joining our mailing list.\r\n\r\nJoin up here!\r\n\r\nThis concludes your briefing, Captain. \r\n\r\nAny questions or comments can be submitted below.\r\n\r\nNow see to your men and continue preparations for the pending campaign."
+    },
+    {
+      "title": "Panzers Ahead, Sir!",
+      "date": "2019-02-25 08:27:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2480825216203418935",
+      "content": "Hi Again!\r\n\r\nWe've got something very cool for you this week...Panzers!\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/7872700e0ad3f7f2bd6b124f83842f30a8806eef.gif\r\n\r\nYou asked for more content-related updates and we heard you loud and clear.\r\n\r\nOur team is hard at work making good-looking, realistic content for you. Visuals are big part of that effort.\r\n\r\nAs always, we want to get it right and the devil is in the details. Take the vehicle above, for example. The model was constructed after meticulous study of the real thing. Then several variants were designed by adding camouflage, equipment, and other details.\r\n\r\nWhat do you think?\r\n\r\nBonus points for anyone who can correctly identify this armored beast. \u02d0steamhappy\u02d0\r\n\r\n(edit)\r\nHere's a side-by-side of the vehicle schematic and the in-game model to show the level of detail we are committed to.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/e4eae540a9c1292cf7ac0eae1f4ee8b25300b68e.jpg\r\n\r\nSee You Soon!\r\nRob"
+    },
+    {
+      "title": "More Positive Waves",
+      "date": "2019-02-11 09:34:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368399508775",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/f788d9379138ea394de97032294b040aea020e42.jpg\r\n\r\nBig thanks to YouTuber, The Historical Gamer, for including Burden of Command in his list of most anticipated upcoming Wargames.\r\n\r\nBoC coverage starts @ 25:19\r\n\r\nClick this image to see the video.\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/f84d387db07e1313b94f53aaab8bb8ba49e63ae4.jpg\r\n\r\nWe are honored to be included (as an honor roll mention) with the great Wargaming titles on his list. I look forward to playing them, too. :)\r\n\r\n(DISCLAIMER: We can't promise a 2019 release. Remember, BoC is done when it's done right.)\r\n\r\nKeep those positive waves coming!\r\n\r\nRob"
+    },
+    {
+      "title": "Never Let Your Guard Down",
+      "date": "2019-01-28 09:12:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2425653583396802118",
+      "content": "10 August, 1943\r\nOutskirts of Messina, Italy\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/2772cec61b65d5c2bfbc33a7f7857e728ec08e9d.jpg\r\n\r\nYour company advances.\r\n\r\nFor once, there is no enemy contact. Looks like your lucky day.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/0f77ee17cefef5d12061828ad4d50583f36775e6.jpg\r\n\r\nBut then...\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/ea2c7105dde2744c2d43181a44c4ec774cc2add3.jpg\r\n\r\nYou are in command, Captain.\r\n\r\nWhat are your orders?"
+    },
+    {
+      "title": "We Made the Most Wanted List!",
+      "date": "2019-01-22 14:33:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2426778849034931240",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/3cc6fad56239607fc18486c466ccc0d3961ccdd4.jpg\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/b546f7cd2e9bbdb1171666014fd71831748dc853.jpg\r\n\r\n\r\nIan Boudreau recently wrote a piece announcing Wargamer.com's most anticipated pc games and we made the list!\r\n\r\nClick the image below to read all about it.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/c5958ef8821edfe8e8ac2962cf70ed3d71957f1f.jpg\r\n\r\nCongratulations to these upcoming games which are also on the list:\r\nKlotzen! Panzer Battles\r\nUnity of Command 2\r\nClose Combat: The Bloody First\r\nGeneral Staff Wargaming System\r\nSteel Division II\r\nPanzer Corps 2\r\nRule the Waves II\r\nGrand Tactician: The Civil War (1861-1865)\r\nWar of Rights\r\nField of Glory: Empires\r\n\r\nIt goes without saying that we are very grateful to be mentioned along side such great titles.\r\n\r\nSee you again soon,\r\nRob"
+    },
+    {
+      "title": "BoC is on the Cover of Stars and Stripes!",
+      "date": "2019-01-16 20:07:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2426778849014089493",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/58fab5e6d614bad5415d1e7e51426e1b143926b0.jpg\r\n\r\n\r\nWow! Just...WOW!!!\r\n\r\nWe have just recievd an incredible honor.\r\n\r\nStars and Stripes was founded in 1861 and is the official newspapaer of the United States Armed Forces.\r\n\r\nToday, I am elated to tell you that Burden of Command made the FRONT PAGE!\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/81ba4e37820d8a2ae8d9c44abaf1947b78408a5b.png\r\n\r\nHUGE thanks to veteran and journalist J.P. Lawrence for writing such a great article.\r\n\r\nRead it here!\r\n\r\n\r\nBe sure to put Burden of Command on your wishlist and join the BoC newsletter to get additional updates and exclusives.\r\n\r\nSee you soon,\r\nRob"
+    },
+    {
+      "title": "What Makes Burden of Command Unique?",
+      "date": "2019-01-09 13:58:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417771014045650281",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/78acc1781e8ae3612699d4f57467f8dedaeaf9f7.png\r\n\r\n\r\nWhat sets Burden of Command apart from other tactical & wargames?\r\n\r\nWhat was the inspiration for BoC?\r\n\r\nShould current Marines and Soldiers play BoC?\r\n\r\nLearn the answers to these questions (and many more) in an interview the good folks at The Warfighting Society recently conducted with our project lead, Luke Hughes.\r\n\r\nRead the entire interview here.\r\n\r\nThe Warfighting Society is a group dedicated to promoting professional military education, especially in the US Marine Corps.\r\n\r\nClick the image below to visit their Facebook page.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/6d219ea30910dd06be6022d106ffe149f0ab7c1c.jpg\r\n\r\nAlright, coffee break's over. Back to working on the game. ;)\r\n\r\nRob"
+    },
+    {
+      "title": "A New Year. A New Roadmap",
+      "date": "2019-01-01 18:16:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111328402436",
+      "content": "HAPPY NEW YEAR!!!\r\n\r\nWelcome to 2019, everyone! We hope it's a great one for you and yours.\r\n\r\nWe finished 2018 with a bang by accomplishing multiple goals in December.\r\n\r\nSee our performance objective video here.\r\n\r\nAs you can see by our updated development roadmap, last year's near-term goals are all complete.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/bdd8b3b04f027e5a14dbe81dbc0e176995bcafda.png\r\n\r\nWe are building on this momentum by diving straight into the remaining tasks.\r\n\r\nFor your viewing pleasure, here's a video of our milestones for 2019.\r\n\r\nAs new milestones are reached, you'll be among the first to know.\r\n\r\nIn the meanwhile, be sure to put Burden of Command on your wishlist and join the BoC newsletter to get additional updates and exclusives.\r\n\r\nWith that, we raise a final toast to 2018 and look ahead with hope and excitement to a happy and prosperaous 2019.\r\n\r\nBest,\r\nRob"
+    },
+    {
+      "title": "Tidings of Comfort and Joy",
+      "date": "2018-12-23 17:59:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111295837132",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/4a28823e71dc844caecfba9b4f426d97e763f5e6.jpg\r\n\r\n\r\nThis will be the last message of the year for us.\r\n\r\nThank you all for a great 2018.\r\n\r\nMerry Christmas to all who celebrate this Holiday.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/fa4d3224f3a4738e7367421e3ea281ee4af5c7b6.jpg\r\n\r\nWe wish everyone comfort, joy, and peace now and always.\r\n\r\n\r\nSincerely,\r\n\r\nThe Burden of Command Team"
+    },
+    {
+      "title": "The Art of Command",
+      "date": "2018-12-22 12:44:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111291434028",
+      "content": "Welcome to another update!\r\n\r\nBefore we get into today's subject, I'd like to remind everyone that Burden of Command can now be added to your wishlist. You can also sign up for our newsletter to stay up to date on all things related to the game.\r\n\r\nWe really do appreciate the wonderful support all of you in our community have shown. Thank you so much.\r\n\r\nAnd now, the news!\r\n\r\nIt's been a busy week for our Team.\r\n\r\nWe've served up heaping helpings of BoC progress.\r\n\r\nWe Hope You Saved Room for Desert.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/1497499ff86dd014050bb003f575279d556c4931.jpg\r\n\r\nToday's news is a reveal of some of the desert terrain art from Burden of Command...French Morocco to be exact. These wonderful landscapes are the creation of our amazing art team, Ahmed Rawi and Sergey Averkin.\r\n\r\nWatch the reveal video here!\r\n\r\nStudy this terrain, Captain. Your life and the lives of your men will depend on it.\r\n\r\nThat's all for now.\r\n\r\nI'll see you again very soon!\r\n\r\nRob"
+    },
+    {
+      "title": "Double Update Friday!",
+      "date": "2018-12-21 14:26:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111288075976",
+      "content": "Hello Again!\r\n\r\nThat's right, today we offer you two updates in one!\r\n\r\nYou may have seen Burden of Command's development roadmap in the discussions area. \r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/cbaa598143a1dddda16a10ec9c5e4720729473e1.jpg\r\n\r\nThe subjects of today's updates are the first two items on the roadmap.\r\n\r\nUpdate #1: Basic Tactical Features\r\n\r\nAs a Commanding Officer, you will face many tactical dilemmas. The battlefield is a chaotic and deadly place. \r\n\r\nWhat is that ahead? It's...It's...TANKS!!!\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/29812dcbeccdcad24fa00ab49b3302d3f35efe72.png\r\n\r\nWatch this video to see an example of the tough battlefield choices you'll have to make.\r\n\r\n\r\nUpdate #2: Narrative\r\n\r\nNot all decisions happen on the battlefield...\r\n\r\nYou happen upon a local. He claims to have useful information. He says he wants to help. Can you trust him?\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/6ab2dc90aed4164c098e28a00a11630e9ea23c2b.jpg\r\n\r\nWatch this video for a taste of the narrative choices you will face.\r\n\r\nYou are in Command, Captain. You have your mission. Your men's lives are in your hands. What will you do?\r\n\r\nI hope you liked these sneak peeks.\r\n\r\nAs always, we would greatly appreciate adding Burden of Command to your wishlist and joining our newsletter to get even more news and updates.\r\n\r\nWe'll be back tomorrow with even more news!\r\n\r\nRob"
+    },
+    {
+      "title": "WE ARE ON THE MARCH!!!",
+      "date": "2018-12-19 20:34:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111281770947",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/b24bd271308b1effd33109864161c64cf5ffe235.jpg\r\nGreetings Friends!\r\n\r\nOk. We hoped to release in 2018, but that ain't gonna happen.\r\n\r\nOur fearless leader and all around great guy, Luke Hughes, put together a special gif message for you about that. You can watch it here:\r\n\r\n\r\nIn spite of this, we haven't been idle. In fact, our team has been hard at work.\r\n\r\nWe are very happy to announce that Burden of Command has reached a major milestone in its development.\r\n\r\nInternal (Alpha) play testing has begun!\r\n\r\nThe team's advance has been tough, but relentless. As a result, we will have updates coming hot & heavy this week.\r\n\r\nGreat things are afoot.\r\n\r\nStay Tuned!\r\n\r\nIn the meanwhile, be sure to:\r\n1. Add Burden of Command to your wishlist and...\r\n2. Sign up here for our newsletter to get all the latest news and updates!\r\n\r\n\r\nRob"
+    },
+    {
+      "title": "Finnish Friends!",
+      "date": "2018-12-13 10:12:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3244179105160184187",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/471c89dfd169707dd62084f37c955f29eabf2593.jpg\r\n\r\n\r\nWarmest Greetings (and 'Hei! kaveri!' to our Finnish friends)!\r\n\r\nOne of the best parts of creating a game is the great people you meet along the way. And you never know when or where you will encounter them.\r\n\r\nLuke recently had a great conversation with Ilja Varha of Pelit, a finish gaming magazine.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/7efa9b85d23d498dd14d94bd08969d86199981ed.jpg\r\n\r\nIt turns out that Ilja is not only a gaming journalist, but a game designer and a former Infantry Company Commander!\r\n\r\nAs if that weren't enough, Ilja is multilingual, which is great, because none of us speaks a word of Finnish. (Do we get partial credit for using a few phrases we found on the internet?)\r\n\r\nA sincere 'Kiitos paljon!' goes out to Ilja from all of us here a Green Tree Games for taking the time to bring attention to Burden of Command.\r\n\r\nIf you haven't done so, please consider adding Burden of Command to your Steam Wishlist to get all the latest news & updates!\r\n\r\nThat's all for now. See you again soon!\r\n\r\nThank You and N\u00e4hd\u00e4\u00e4n my\u00f6hemmin!\r\nThe Burden of Command Team"
+    },
+    {
+      "title": "Are You Ready to Make Tough Choices?",
+      "date": "2018-11-30 15:47:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415515408473798051",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/b4001e5c8e80b53cc1492b8d9f0965e0c02114fc.jpg\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/c194ae08a901a1e90d8e01d2bfcd5395ee0ad68c.jpg\r\n\r\n\r\nLeadership is often about tough choices. The higher the stakes, the tougher those choices become.\r\n\r\nAdrian Burrows of thesixthaxis.com talks with Luke about the how the moral dilemas players will face in Burden of Command go beyond simple 'right and wrong.'\r\n\r\nThis exchange really gets to the heart of what BoC is all about.\r\n\r\nSee the full story here:\r\n\r\nhttps://www.thesixthaxis.com/2018/11/22/playing-with-history-dealing-with-the-burden-of-command/\r\n\r\nBig thanks again to Adrian for a great conversation.\r\n\r\nBe sure to add Burden of Command to your wish list to get news and updates!\r\n\r\nWe greatly appreciate your show of support.  (It also encourages the devs work faster! \u02d0steamhappy\u02d0)"
+    },
+    {
+      "title": "HAPPY THANKSGIVING!",
+      "date": "2018-11-20 14:31:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163933019321",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/d0d0a46c920cfc46e653540b869811e1feda1cbb.jpg\r\n\r\n\r\nHave any of you spent holidays away from home, maybe even in uniform?\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/3b8f850b072557d05b42e8bb194bf9762acf1b46.jpg\r\n\r\nPlease tell us all about your experiences below. We'd love to read them!\r\n\r\nWhether this holiday is celebrated in your home or not, we wish each and every member of our community happiness, health, love, and peace...today and always.\r\n\r\nWarmest Regards,\r\nThe Green Tree Games Team"
+    },
+    {
+      "title": "The Blogging of Command",
+      "date": "2018-11-07 14:44:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2423394805994163605",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/e5c08d21195859f7e0deab661c02bef7b5a75c2a.png\r\n\r\n\r\nGrant and the good people at theplayersaid.com  recently put our project lead, Luke Hughes, in the commander's seat by promoting him to the rank of 'War Game Wednesday Guest Blogger.'\r\n\r\nIn this piece, Luke explains the core mechanics of Burden of Command in more detail than you may have seen before. \r\n\r\nHow did the table top tactical games Luke grew up playing infuence Burden of Command? Read on to find out!\r\n\r\nAlso, be sure to add BoC to your Steam wishlist and let us know how much you're looking forward to playing Burden of Command!\r\n\r\nRead the guest blog here:\r\n\r\nhttps://theplayersaid.com/2018/10/29/guest-blog-tactical-board-games-on-your-computer-screen-a-look-at-burden-of-command-by-luke-hughes/\r\n\r\nThen come back and let us know what you think!"
+    },
+    {
+      "title": "Friends, Gamers, Grognards! Lend Us Your Ear!",
+      "date": "2018-10-22 10:39:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403126706530828628",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/dc71170afd150342a8007e0ce0a25cbe441d17bc.png\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/4e870d00f49eb8fab005927e604aa283314828ff.png\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/1e20377471a6db967b0d78b5464bd79f8799bcb4.png\r\n\r\nGreetings and Salutations!\r\n\r\nWe've got some great stuff for you this week.\r\n\r\nMatt and Jean from Single Malt Strategy recently sat for an interview with our Commander-in-Chief, Luke Hughes. The conversation covers subjects ranging from the psychology of war to game design and most things in between.\r\n\r\nOur sincere thanks go out to Matt & Jean for this great opportunity.\r\n\r\n\r\nListen here:\r\n\r\nhttps://www.spreaker.com/user/single_malt_strategy/burden-of-command-interview?utm_medium=widget&utm_source=user%3A9172420&utm_term=episode_title"
+    },
+    {
+      "title": "BoC: More than a Game",
+      "date": "2018-10-10 09:23:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2448162067116492603",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/3cd29c3ad8ea75c5df33df514b4b5831d83851a5.png\r\n\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/0c15ac0ed9ab608864f72cfe406bbd40ed5aa190.png\r\n\r\n\r\nHi again!\r\n\r\nThe inrepid Green Tree team continues to labor day and night in the salt mines (of game development) to deliver the immersive experience that is your birthright as a gamer.\r\n\r\nA lot of thought and study has gone into making Burden of Command more than just a game. We truly do want it to be an experience.\r\n\r\nIn that spirit, we're changing tack regarding announcements over the next few weeks to showcase the background and motivations that drive our team.\r\n\r\nFirst up is a conversation that Luke, our fearless leader, had with Brant Guillory of Grogheads.com a while back. It's not new, but it is great stuff.\r\n\r\nWe hope you enjoy it:\r\n\r\nhttp://grogheads.com/interviews/15577"
+    },
+    {
+      "title": "BoC is on RPS!",
+      "date": "2018-09-24 11:50:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2450411965566757607",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/dab993293ddc9f7148f9ff3af8de8e51c87fdc08.png\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/e40a289ad331512e0f768b295b033fa2e96df8d7.png\r\n\r\nTim Stone of Rock, Paper, Shotgun recently published a thoughtful and detailed looked at Burden of Command and what sets it apart from other war-related games.\r\n\r\nIt's a great read. See the whole article here:\r\n\r\nhttps://www.rockpapershotgun.com/2018/08/24/the-flare-path-no-place-for-cowards/"
+    },
+    {
+      "title": "BoC Gets a Shoutout From PC Gamer!",
+      "date": "2018-09-10 11:32:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447032995780592988",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/9cd7cd8666655be9cd447a209c2e76cbf6396560.png\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33420403/5177e94c6ac5f85ed03b998e7d4f709d01b4d4fa.png\r\n\r\nA BIG THANKS to Andy Chalk and PCGamer.com for this awesome write-up.\r\n\r\nGreat press like this motivates us to work even harder! \u02d0steamhappy\u02d0\r\n\r\nHere's a link to the full story:\r\n\r\nhttps://www.pcgamer.com/burden-of-command-is-a-tactical-rpg-that-aims-to-capture-the-personal-experiences-of-war/"
+    }
+  ]
+}

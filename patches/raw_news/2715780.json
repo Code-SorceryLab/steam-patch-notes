@@ -1,0 +1,30 @@
+{
+    "appId": "2715780",
+    "count": 4,
+    "notes": [
+        {
+            "title": "bug fix to ensure only logic is needed",
+            "date": "2024-06-17 12:47:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005364041284",
+            "content": "This update is a small bug fix where some players reported that levels where sometimes generated with very few mines. This mostly happened in expert mode.\n\nThis was due to the internal solver that attempts to complete the level with logic only (so that you can do, no luck needed). And if the level was not possible to complete, it would remove some mines. In some cases, it would remove way too many mines.\n\nSo this should now be sorted, or at least very much improved. But if you ever see levels that cannot be solved, I encourage you to post screenshots in the discussions."
+        },
+        {
+            "title": "improved internal solver to avoid moves requiring luck",
+            "date": "2024-06-14 09:18:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005352575953",
+            "content": "There has been several feedback recently of situations where there would be no move available. For instance [url=https://www.reddit.com/r/Minesweeper/comments/1de2now/minesweeper_twist_review/]here[/url], [url=https://www.reddit.com/r/Minesweeper/comments/1dbnm0w/oh_god_oh_fuck/]here[/url] and [url=https://www.reddit.com/r/Minesweeper/comments/1dae8xq/now_what/]here[/url]. \n\nIdeally, the generated levels should be solvable without having to rely on luck, so there clearly was something I had not implemented. I've then taken another look at the internal solver, that simulates how a player would uncover or flag tiles. And it wasn't dealing with walls of mines very well. Instead of removing mines in that wall, it would get stuck and revert to removing mines randomly.\n\nThis updates fixes that, so now hopefully we should be at a stage where no luck is required to solve any level."
+        },
+        {
+            "title": "1.2.12 released",
+            "date": "2024-04-08 08:37:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364322616712",
+            "content": "This update fixes the following:\n\n- custom settings like grid size and mines percentage could be set to invalid values when using the input field instead of the slider. The values are now checked to make sure they are within range.\n\n- the tutorial text would hide the top bar where the number of remaining mines was displayed. This wasn't great when that tutorial would tell you to check this number. So now the text is lowered just under the text.\n"
+        },
+        {
+            "title": "First update",
+            "date": "2024-03-08 12:26:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637656450739",
+            "content": "Thanks a lot to all the players who took the time to give me feedback on Minesweeper Twist, I absolutely appreciate.\n\nAnd I've addressed the most common one, which is that the undo button removes a bit of the fun. First, it downplays the challenge of completing a level, and second, the missed mines would all be displayed, which taints the rest of the level.\n\nSo I've removed it. By default at least.\n\nFrom now, when you hit a mine, you'll have to restart a level from scratch, just like in the original minesweeper. It's more challenging and - I hope - more fun.\n\nBut for the times when you want a more casual puzzle experience, you can still bring it back from the controls menu ( ⚙️ ).\n\nThat's it for now. If you have any other feedback, please don't hesitate to reach out to me at gui at the domain polyreplay.com\n"
+        }
+    ]
+}

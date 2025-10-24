@@ -1,0 +1,162 @@
+{
+    "appId": "1331390",
+    "count": 26,
+    "notes": [
+        {
+            "title": "Summer 22 Update",
+            "date": "2022-06-30 11:26:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295755638808",
+            "content": "I made many changes and improvements to sfäre after launch. Unfortunately feedback and sales were hard to come by. So I was struggling to find motivation to put more work into sfäre. I ended up just leaving for a while. I recently started up sfäre again and found a few things lacking. As I don't like having unfinished business, I rolled up my sleeves to give it another go.\n\nThere have been a few quality of life improvements and some bug fixes. \n- shuffle button now only changes the music\n- new randomizer button to quickly get different visuals\n- audio-buttons are toggled if they can't be used\n- dragging over the UI no longer causes drag to continue after releasing the button\n- the editor toggles now have +- to indicate they can be opened/closed\n\nIn case you have missed previous updates, this is now what sfäre supports:\n- visualize your system audio (this works well with spotify web)\n- play music from a designated system folder\n- visual filters for cool effects and audio visualization\n- webcam integration\n- lots of post-processing effects (not all work well to export as animations, as they don't all loop)\n\n[img]{STEAM_CLAN_IMAGE}/38799746/dee678c7b9f91eee92eeebb0c3286af1c75a8ab7.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/38799746/1c72ba217021bc9a6ac4eb8c545db17cab72ef25.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/38799746/a906ae180d131b99d7a394488886056025552234.gif[/img]\n\nI will probably be quiet for a while now again, unless there is an unexpected surge of feedback. I hope some of you have fun with sfäre!\n\n"
+        },
+        {
+            "title": "Auto-play Filtering & Camera",
+            "date": "2022-04-18 13:42:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5493837466494524049",
+            "content": "It's now possible to use your webcam with sfäre. Whatever your webcam is showing will be projected on the background. Combined with mirrors and filters this can lead to new, weird and interesting kaleidoscopic effects.\n[img]{STEAM_CLAN_IMAGE}/38799746/dee678c7b9f91eee92eeebb0c3286af1c75a8ab7.jpg[/img]\n\nThe filters can be toggled in a radial interface with some questionable icons, but it should be functional. Only active filters will show up when randomizing in auto-play.\n[img]{STEAM_CLAN_IMAGE}/38799746/1c72ba217021bc9a6ac4eb8c545db17cab72ef25.jpg[/img]"
+        },
+        {
+            "title": "Wallpaper Madness",
+            "date": "2022-03-17 19:15:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535829046268",
+            "content": "The idea was to allow sfäre to be used as an animated background on your windows desktop. I found a Unity Asset to do just this and I was confident to get it out in no time. The asset allowed me to create a second window for the wallpaper and I really liked the idea of being able to control the wallpaper from this second window.\n[img]https://i.imgur.com/KrmYRmf.jpg[/img]\n\nI got most of this working in the editor, but when it came to the release, nothing worked anymore. Turns out the asset was just creating the second window as a preview. Outside of the editor Unity's multi-screen support is pretty terrible. I ended up having to code a large chunk of windows specific code myself. For everything I added in relation to wallpaper mode, I had to test it in release mode as it was not compatible with the Unity editor. Painful. After quite some time I eventually got the second screen working as a wallpaper. I could place it on any desired monitor or over all available monitors. But there was one big problem. The second screen did not allow me to set the resolution, so the image was stretched and it was not pretty.\n\nI did a lot of testing and experimenting and noticed that the primary screen did not have a resolution issue. So to solve my wallpaper problem, I decided to use the primary window as the wallpaper. A lot of work later, I managed to get this working and the resolution issue was fixed. Of course this was not the end. The second display did not work properly. Mouse input was off. Interestingly my own UI did kind of work, but anything that used the more complex Unity UI failed. At this point I nearly gave up, as the whole process was extremely tiring. \n\nI took a short break, but then came back to it and started analyzing mouse input. I found out how Unity was transmitting the mouse position and managed to figure out how to correct for it. \n\nThere were a lot of other painful things I needed to deal with, e.g. swapping between full screen and windowed mode had to be handled freshly without touching any Unity functions. It's possible there might still be some issues. The resolution of the second screen still does not adjust, but at least it works. I've turned off all complex UI, so in this mode you can't use the settings or the editor.\n\n[img]https://i.imgur.com/AFTXQv6.jpg[/img]"
+        },
+        {
+            "title": "Audio Movement",
+            "date": "2022-03-09 12:29:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247463006801718331",
+            "content": "Reduced movement speed in reaction to audio. It could get quite erratic.\n\nIt can be set in the Audio-Tab via slider. I'm currently working on allowing sfäre to display as animated wallpaper but it's way more complicated than I hoped."
+        },
+        {
+            "title": "Quick Update",
+            "date": "2022-03-07 15:02:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367446065526",
+            "content": "Fire mode added to Auto-Play. This does not work in either Play or Editor so far.\nMade some adjustments to Audio-Visualization, main reason for this update."
+        },
+        {
+            "title": "Smoooth Visuals",
+            "date": "2022-03-04 12:00:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367434679091",
+            "content": "The new tunnel effect was quite noisy, depending on what kind of image was being mapped to the walls. I've switched to mip-mapping and now the tunnel is a lot smoother. This new technique is also used on various other filters and should improve the overall visual quality!\n[img]https://i.imgur.com/bbFAdDr.gif[/img]\n\nI've made a small improvement to the Twitch connect interface. If the connection failed, so far you had to manually disconnect by clicking \"Disconnect\". It now does this for you, so if something goes wrong you can simply press \"Connect\" again :)"
+        },
+        {
+            "title": "Auto-Play Movement",
+            "date": "2022-03-03 13:49:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367431312444",
+            "content": "Movement based on audio has increased. The dots speed up when the beat drops, as do other parameter changes. I think it's an improvement, but it might require further balancing. \n[previewyoutube=Dk0fSKLeZ68;full][/previewyoutube]\n\nI've also tackled a fairly complicated issue. While listening to external audio-sources sfäre has no knowledge of the actual volume you have set. So when changing the volume e.g. Spotify-Web, this directly affected the amplitude of the spectral visualization. I know try to find the average volume and base the amplitude on this average. This also means if the song starts quiet and end loud, the spectral pattern will stay on a similar level. I think this is probably good, but would be interested to hear other opinions."
+        },
+        {
+            "title": "Tunnels and Balls",
+            "date": "2022-03-02 16:49:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367428125607",
+            "content": "I've added a few more filters to sfäre and improved the lighting analysis for auto-play (tries to prevent too bright and too dark images).\n\n[previewyoutube=zKYocpP4K98;full][/previewyoutube]\nMusic by Rundfunk (friends of mine). Interestingly the video on YouTube got claimed by some sketchy firm \"The Orchard Music\".\n\nBouncing Balls (only auto-play)\n[img]https://i.imgur.com/p9G4sxh.png[/img]\nUsing Unity's physics system I built a ball pit. The positions and rotation of the balls are used in a custom shader resulting in perfect bouncy balls. The balls are only available in auto-play, you have no options to handle them in play mode or in the editor.\n\nTunnel Effect\n[img]{STEAM_CLAN_IMAGE}/38799746/2f5e6b10a7a7f40b614d0b59a845bb87771504a7.png[/img]\nThis effect was derived from code I found on ShaderToy: https://www.shadertoy.com/view/4tKXzV\n\nLine Inverter\n[img]https://i.imgur.com/1l8WLPo.png[/img]\nWeird shader I came up with. Parts of the image are inverted and distorted before applying the bloom effect. This is the reason the inverted areas are not color inverted, but only inverted in brightness.\n"
+        },
+        {
+            "title": "Filters & Visualizer",
+            "date": "2022-02-23 07:16:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832504339245",
+            "content": "sfäre was never meant to be a music visualizer. But it is what most people see at first glance. So I've decided to go with the flow and improve sfäre's capacity as a visualizer. This lead me on a new voyage of discovery and I came up with a bunch of filters that can greatly increase the complexity of an image.\n\n[img]{STEAM_CLAN_IMAGE}/38799746/2e073bbed7eac36af00755070d11ee94b2b1adf6.gif[/img]\n\nWhen you use auto-play filters will appear at random, currently there is no way to control this. In play-mode I've added a new little button next to the fractals, that let's you toggle filters on and off. Every time you enable this button, it will randomly select up to two filters with randomized parameters.\n\n[img]https://i.imgur.com/aSRmGJt.jpg[/img]\n\n"
+        },
+        {
+            "title": "Kaleidoscope Update",
+            "date": "2022-02-11 10:03:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6154735015617989501",
+            "content": "I'm enjoying adding new shaders, the results can be quite astonishing :)\n[img]https://i.imgur.com/zi9Wixl.gif[/img]\n[img]https://i.imgur.com/PegeiwG.jpg[/img]\n\nThe plan is to animate these shaders in the future, so sfäre can be used as an interesting visualizer as well."
+        },
+        {
+            "title": "Rotation Symmetry Update",
+            "date": "2022-02-07 13:33:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4235074931862460667",
+            "content": "More shader stuff. This time I've added rotational symmetry. It works with mirroring and all the other features as far as I can tell. \n\n[img]https://i.imgur.com/6UEEdFX.png[/img]\n[img]https://i.imgur.com/S4Weewa.gif[/img]\n\nI also fixed a bug in the editor, where entering a numeric value updated the slider, but did not actually change the visuals... urgs."
+        },
+        {
+            "title": "Bump Update",
+            "date": "2022-02-03 09:18:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4235074931847249097",
+            "content": "I have been experimenting with a few shaders/filters for sfäre. It's just not really easy to make anything interesting. But I came up with a pretty nice bump effect, that can add more depth/texture to the images.\n\n[img]https://i.imgur.com/deigxhB.gif[/img]"
+        },
+        {
+            "title": "Twitch Update",
+            "date": "2022-02-01 08:52:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104337803023",
+            "content": "As some of you might have noticed, it is possible to connect sfäre to your twitch channel. When enabled viewers can interact with sfäre. You can use this to take a nap or do the washing while sfäre entertains your viewers, or just have a fun time on stream while chatting.\n\nSo far I was relying on a token generator not maintained by twitch (https://twitchapps.com/tmi/). But I was told this is not a good approach. So now I've adapted to my own token generator and now have full control (well not really, twitch does all the work).\n\nMy last test with bits and subscribers did not work out, as there was some connection issue. If anyone is up for testing, come say hi on Discord https://discord.gg/hMdgyrWwbu."
+        },
+        {
+            "title": "Color Sphere Fix",
+            "date": "2022-01-30 21:02:01",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104332363906",
+            "content": "I had noticed the color changing spheres were reacting slowly a while back. I made a quick fix for this, thinking I only needed to speed them up. This worked on my machine, but I noticed while watching a stream that my fix was not really helping. So I've fixed the fix, this time I found the real issue after digging deep."
+        },
+        {
+            "title": "Smooth Update",
+            "date": "2022-01-28 13:22:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104323920275",
+            "content": "One thing has been bugging me since I created the editor. Switching back into the fun-mode (with the spheres) was not possible without losing some of the settings that were created in the editor. I had a hard think about this and decided to tackle the problem, in spite of not knowing how to do so. I just decided to find the most straight forward non flashy solution to the problem, if there was one. Turns out, there is and I would dare to say it's probably good enough. I had originally envisioned a complicated mapping from editor parameters to spheres, but ended up just checking for the differences and using these differences to adapt what you see in the play mode. Works like a charm and was not that complicated. Hardest part was actually converting the colors. Had you asked me before, I would have guessed the colors to be the only easy bit...\n\nThis has opened up a few new possibilities. You can now load any saved file into sfäre and use it in fun or auto-play mode. Before this update these creations only could live in the editor. Due to this I have added an option to chose a start up file (Settings -> General). Additionally, you may chose if you want sfäre to start in fun, auto-play or editor mode.\n\nThe spectrum visualizer is now something that can be adapted in the editor. I've continue with the horribly named values, as I have not started with localization or even considered sensible names. It being in the editor means it will be a part of you save file. So if you find a very cool visualization you can use it at a later time again.\n\nWhile working on these features I noticed I had badly messed up the invert-mode. The UI was no longer getting inverted, so everything just went dark. No idea why I only just noticed this... but it's fixed now."
+        },
+        {
+            "title": "Logo/Images Positioning + Fixes",
+            "date": "2022-01-14 09:01:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931831674101",
+            "content": "Logo/Images:\n- you can now select a row and reposition/scale/rotate the image with your mouse\n- idle images were showing on start up, fixed\n\nFractal Saving:\n- some fractal images were looking wrong after loading. I noticed that I was saving too many fractals in some cases, as there was a bug in the code to remove fractals. Fixed. If you have an image that looks wrong (mostly too bright), you will likely have Repeaters with mostly 0 information in them. You can delete them to fix the image.\n\n"
+        },
+        {
+            "title": "System Audio Visualization",
+            "date": "2022-01-13 18:05:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931829405803",
+            "content": "it's now possible to listen to System audio, so you can visualize audio from your system. Unfortunately it does not work with Spotify. But it does work with the Spotify web version. It must have something to do with how Spotify processes Audio, I just currently don't know what I would need to change."
+        },
+        {
+            "title": "Hot Fix Nr.4",
+            "date": "2022-01-11 05:35:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386894035966",
+            "content": "When adding tons of new features, some issues just slip through the cracks. Added a bunch of fixes for following issues:\n- gradient settings will be transferred to the editor on first try\n- Invert can be set in the editor\n- color selector hides when the color panels are closed\n- alternative cursor for Editor and Settings\n- keyboard actions work again, but are disabled in the editor and export\n- Twitch connection was swapping channel and username... duh\n- ESC does not close the app\n- settings window can be moved (you can click buttons underneath the window, it's not perfect yet)\n\n"
+        },
+        {
+            "title": "Streamer Update",
+            "date": "2022-01-10 09:28:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386890985338",
+            "content": "I've handed out keys to streamers and watched how sfäre is performing. Thank you for streaming! Due to C19 I have not been able to attend any live events, limiting my options to see people interact and find out what they like/dislike.\n\nSome streamers were nice enough to contact me directly on discord or write in the steam forums. My first real update is therefore very streamer focused. I expect this to change after release.\n\nSome wished for their own music. You can now select a folder with music and sfäre will recursively load up to 200 songs. They must be \".ogg\" or \".wav\". sfäre will sequentially play these songs on a loop. If you desire, sfäre will start up with your music.\n\nOthers wished to be able to use sfäre as a kind of in-between games screen on twitch. To make it their own, adding a logo/image is essential. So now you can add logos/images in sfäre. As the screen get's busy very quickly, you can optionally make these images only appear when the native sfäre controls retract.\n\nTwich integration. This is my first attempt ever connecting with twitch. I've added a few simple commands that let viewers interact. There is also a reaction within sfäre if bits are sent, or someone subscribes to your channel.\n\nOne streamer had issues with the buttons. I am not sure why. My guess is framerate. I've added a framerate limiter. Sfäre is now by default limited to 60fps and can be set to a max of 144fps. \n\nThe glow effect and sphere reactivity can also be adjusted in the settings.\n\n[previewyoutube=buKyho2dZ8w;full][/previewyoutube]\n"
+        },
+        {
+            "title": "Hot Fix Nr.3",
+            "date": "2022-01-06 06:32:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939386875974884",
+            "content": "Saving and loading was only added quite recently. Mostly quite reliable, but there are so many parameters. While watching streamer shalimara I noticed something was off. She saved her creation, restarted sfäre and after loading it, it was not quite the same. She noticed too of course. So I went looking for the bug. She had been using Shape-Morphing so that was the first thing I tried. Turns out... I forgot to save the second shape. Great. Fixed!\n\nStill working on Twitch integration, would be interested to hear what would make sense to add. I'm not that well versed in Twitch. I was thinking I could add actions for new followers, subscribers, bits, raids. Something that looks like this:\n[previewyoutube=gorQSvAd9PQ;full][/previewyoutube]\n\n"
+        },
+        {
+            "title": "Hot Fix Nr.2",
+            "date": "2022-01-04 17:02:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939245931606644",
+            "content": "I've been watching some streamers play sfäre and it's been interesting for me. I have not had any live testing done, due to missing out on live events thanks to \"you know what\". Today I was watching a French streamer Ranufle and noticed something was up. He could hardly rotate the spheres. So I started sniffing around in my code and found something that looked experimental & fishy that slipped by. I think he was running sfäre at a very high framerate and my code was slowing down his movements. I'm not even sure why I added this... but it's gone now.\n\nThe update also includes toggles for \"Music\" and \"Sound Effects\" in the \"Ugly Settings\". This means you can run your own music in the background if you prefer, but still have the sound effects. There is also a very very experimental dropdown that let's sfäre listen to input audio. sfäre will then play this audio itself, so that the Spectrum Analyser can pulse to the beat. It requires that you play your Audio on a Channel that is not going to your speakers, or you will end up with double audio. You can also check out your microphone, but this will very likely end in a feedback loop.... just be careful.\n\nI did have some issues creating the build as I have been working on Twitch integration. I've also split off the mobile version as it was getting too tedious to write code to enable/disable features for PC/mobile. For some reason this messed up all my custom shaders in the Unity Editor and I spent most of my time fixing this. Oh well.\n\nOne week until launch.... I should probably be marketing more instead of coding. But I like coding better."
+        },
+        {
+            "title": "Hot Fix Nr.1",
+            "date": "2021-12-30 05:08:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224938027324421428",
+            "content": "I sent out some keys on keymailer yesterday and noticed a few streamers actually gave it a shot. Thanks! I watched some of the resulting videos, read the tweets and it looks like everyone had fun. I was really glad about that! The main toy was working as expected and the reactions were better than I had hoped for.\n\nThe editor was behaving weirdly. This is fixed. It's still Alpha :)\n\nIt's now clear to me that streamers want sfäre to continue running when they leave the screen. There is an option to turn on \"Run in Background\" in the \"Ugly Settings\", but not everyone found it. Running in the background is now default.\n\nThe server stuff is confusing. I know. It's still very WIP as I don't know if it's something that even makes sense. I built it for a party/festival but in the end auto-play was used. I will try to improve the UI and make it more understandable. This will take some time.\n\nI had not thought of sfäre as a tool for streamers. Thanks for the input!\n\nFresh Todos:\n- twitch integration\n- custom text + image placement with bells and whistles\n- create your own playlist\n- clicking on the sfäre logo should not only make a sound, but do something cool\n- toggle music/soundeffects so you can run your own music but keep the effects\n\n"
+        },
+        {
+            "title": "Morph Emitter",
+            "date": "2021-10-08 11:00:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069556867208200513",
+            "content": "Added a new feature to the Editor, I think it's pretty cool :)\nIt let's you morph between different emitter shapes.\n[img]https://i.imgur.com/3OfCr0a.gif[/img]"
+        },
+        {
+            "title": "sfäre: hands on",
+            "date": "2021-10-04 21:11:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3938951840896536010",
+            "content": "Let me show you [b]sfäre[/b]. If you have any questions I will be glad to answer! \nI will be using both touchscreen and mouse to demonstrate sfäre. \n\nThere will be a way for viewers to connect and interact with what's on screen. Hopefully I will have learned from the first stream on Sunday and will have improved the experience :)\n\n[url=https://discord.gg/hMdgyrWwbu]Visit my Discord![/url]"
+        },
+        {
+            "title": "sfäre: hands on",
+            "date": "2021-10-02 16:30:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3938951840888543240",
+            "content": "Let me show you [b]sfäre[/b]. If you have any questions I will be glad to answer! \nI will be using both touchscreen and mouse to demonstrate sfäre. \n\nThere will be a way for viewers to connect and interact with what's on screen. I've never tried this with an unknown audience before, so I am not sure what to expect. Some of my ideas will probably not work or cause total chaos, but that's something I would like to find out.\n\n[url=https://discord.gg/hMdgyrWwbu]Visit my Discord![/url]"
+        },
+        {
+            "title": "sfäre: hands on",
+            "date": "2021-06-19 10:05:25",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4056035920062216496",
+            "content": "[url=https://discord.gg/hMdgyrWwbu][img]{STEAM_CLAN_IMAGE}/38799746/f58dfe3990488ea754e5e6dc16692f395fbe5006.jpg[/img][/url]\n\nLet me show you my toy. If you have any questions I will be glad to answer! It's possible something might go wrong at any time, as it's my first time streaming. \n\nI will be using both touchscreen and mouse to demonstrate sfäre.\n\n[img]{STEAM_CLAN_IMAGE}/38799746/9852d1c2e0bc72ff6f427fe7cb25e3369cf27fc7.png[/img]\nOpen beta for mobile\n[url=https://play.google.com/store/apps/details?id=space.spherience.app]Android / Google Play[/url]\n[url=https://testflight.apple.com/join/GH71fwhx]Apple iOS[/url]"
+        }
+    ]
+}

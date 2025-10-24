@@ -1,0 +1,48 @@
+{
+  "appId": "2880780",
+  "count": 7,
+  "notes": [
+    {
+      "title": "1.0.7 Challenge Mode Leaderboards!",
+      "date": "2024-06-12 23:21:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005347417169",
+      "content": "Hello all,\n\nThe new leaderboard system seems to be working fairly well so far and I will be able to get the limit for the standard leaderboard increased to 1,000 entries which is a few more than we'll need right now haha. In this update I have added leaderboards for each of the challenge modes.\n\nUpdate Details:\n\n[list]\n[*] Added Challenge Mode: Alphabet Leaderboard\n[*] Added Challenge Mode: Time Attack Leaderboard\n[*] Added Challenge Mode: Required Leaderboard\n[*] Added Challenge Mode: Platforms Leaderboard\n[*] Fixed a bug that prevented How to Play menu navigation on controller\n[/list]\nGood luck and happy climbing!\n\nMike Davis Jr."
+    },
+    {
+      "title": "1.0.6 New Leaderboard System!",
+      "date": "2024-06-12 12:40:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747236506607237348",
+      "content": "Hello all!\n\nA new leaderboard system has been implemented, you should not notice any changes on your end other than it should work now! Unfortunately, the leaderboard system I was using previously started to have a lot of down time and would cause issues such as player scores showing up multiple times and different users on one device having scores override. The new system should not have any of these issues and also allows me some more data on the backend to ensure scores are legit. \n\nI have uploaded all of the scores from the previous system to the new system so your placements should all be as they were. If you happened to get a new high-score during the downtime, just send me a screenshot of your game and we can get your score on there.\n\nThe only downside of the new system is that it currently only allows for 25 entries, for now that is not an issue, but some of you will get booted off the leaderboard pretty soon. Looking to see if I can get this cap raised a bit. \n\nBelow is the update overview:\n\n[list]\n[*] Implemented new leaderboard system\n[*] Updated credits screen\n[*] Updated standard word list to remove some profanity\n[*] Updated profanity word list to remove some duplicates\n[/list]\nAs you can tell from 6 updates in just as many days this has been a work in progress and a learning experience. Thank you for sticking with me through this and continuing to give me feedback it is all very helpful. If there is anything you'd like to see in the game please let me know as I am happy to continue to update the game and add content over time. I'm thinking of maybe adding a wild card tile that can act as any letter (if I can get this to work without absolutely breaking everything).\n\nNow that the leaderboard is fixed I need to focus on getting that top spot back!\n\nMike Davis Jr."
+    },
+    {
+      "title": "1.0.5",
+      "date": "2024-06-11 10:54:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972567352780",
+      "content": "[list]\n[*] Fixed Leaderboard Issue\n[/list]\nSorry for all the issues over the weekend. I tried to organize the code a bit better and created a new Game Modes Manager which caused the Game Modes to not be set correctly so they became unplayable. This also caused an issue where the game did not realize classic mode was active which is what was causing leaderboard scores to not update. This has all been resolved.\n\nIf you have a new high-score that is not reflected in the leaderboard, please post a screenshot from your stats page of the new score and I will amend the leaderboard on the backend.\n\nMike Davis Jr."
+    },
+    {
+      "title": "1.0.3",
+      "date": "2024-06-10 15:49:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972564454388",
+      "content": "[list]\n[*] Fixed bug where game would no longer spawn letters after a power-up is used to create a big combo.*\n[*] Improved random letter generation**\n[*] Added UI notification on profile settings when you try to delete profile data without first checking the box\n[*] Added UI notification on profile settings when you delete profile data to confirm deletion occurred\n[*] Game now saves after deleting profile data so changes take effect immediately rather than on next save\n[*] Fixed bug where Time Attack Mode: Most Words Created stat was not reset on data deletion \n[/list]\n* The freezing issue occurred when a power-up would cause several tiles to shift and eventually create words and potentially make combos. The old code allowed 1.5 seconds after using a power-up to check for created words. So the issue occurred when there were many tiles on screen and several words created causing more movement and if movement and words were still being made after that 1.5 second grace period ended then it would cause a freeze. Now when a power-up is used the code waits for all tiles to stop moving before it continues. This new code, along with a safeguard I implemented, should keep the game from freezing at any point.\n\n** I have added a letter history that tracks what letters were spawned recently to avoid getting repeat letters too close to one another. I've had a few instances lately were I would get the same letter 5 out of 7 spawns, this is not great and will no longer occur. \n\nThank you to those of you who have let me know about any bugs you encountered, I hope that these bug fixes make the experience more enjoyable. Please continue to let me know about any issues (or any other suggestions you may have for the game), you can submit a ticket from the Bug Report button in the Settings menu or use the link here: [url=https://forms.gle/6hDoLk5PmRuyz7e99]https://forms.gle/6hDoLk5PmRuyz7e99[/url]\n\nP.S. Congrats to Dlive for being the first player to beat my high-score, I'm coming for that top spot again! \n\nMike Davis Jr."
+    },
+    {
+      "title": "Leaderboard Issue",
+      "date": "2024-06-07 17:45:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972553811627",
+      "content": "Hello all,\n\nThanks to those of you who have already started playing Down Word!\n\nI just wanted to address issues with the leaderboard. Currently I'm using an external tool to manage the leaderboard and the issues that I thought were addressed are starting to occur again.\n\n[b]Issues:[/b]\n[list]\n[*] Multiple entries per player\n[*] Players using the same system on different profiles overwriting each others scores\n[/list]\n\nGoing to try and switch over to the Steamworks integrated leaderboard system over the weekend and hopefully transfer all of the scores currently on the leaderboard over to the new system.\n\nOriginally I stayed away from the Steamworks integrated leaderboard because Down Word was intended to be a multiplatform release, however this is no longer the case. I'm hoping this change should also allow me to add in leaderboards for the different challenge modes which is currently not possible.\n\nI will post an update as soon as I have a new system working. In the meantime, I hope you enjoy the game and please continue to let me know about any bugs/issues/etc.\n\nThank you,\n\nMike Davis Jr."
+    },
+    {
+      "title": "1.0.2 The Profanity Update (Added ****, $#@!, and REDACTED)",
+      "date": "2024-06-07 16:00:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972553543586",
+      "content": "[list]\n[*]Added [i]limited [/i]profanity into the game [i](profanity is disabled be default)[/i]\n[*]Added profanity toggle to the profile menu in settings.\n[*]Moved some words from default dictionary to profanity dictionary.\n[*]Fixed bug with SFX slider in audio menu not moving.\n[*]Added version number to settings menu.\n[/list]"
+    },
+    {
+      "title": "Version 1.0.1",
+      "date": "2024-06-07 12:47:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972553056054",
+      "content": "[list]\n[*] Fixed leaderboard display issue where long usernames were running over their line.\n[*] Fixed issue where UI was not displaying points earned when using powerups [i](Note: Points were being awarded, but the amount of points were not displayed at the top of the screen)[/i]\n[*] Fixed issue where there was no audio queue when getting points when using a powerup.\n[/list]"
+    }
+  ]
+}

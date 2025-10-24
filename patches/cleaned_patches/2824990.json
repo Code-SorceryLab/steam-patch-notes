@@ -1,0 +1,24 @@
+{
+  "appId": "2824990",
+  "count": 3,
+  "notes": [
+    {
+      "title": "Rapid auto fire & Changed default GPU",
+      "date": "2024-04-09 00:30:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364325030878",
+      "content": "Support Rapid Auto-Fire (Windows, Linux, macOS)\n\nAdded shot firing function for keyboard input.\nThe c key is assigned by default.\nIt can be customized to any key with CTRL+K (Windows) or config.json (Linux/macOS).\n\nbugfix: Keyboard configuration does not saved (Windows)\n\nA bug in the Windows version that caused keyboard assignment settings to be reset to default settings after rebooting, has been addressed.\n\nChanged default GPU (Linux)\n\nThe default GPU at startup has been changed from OpenGL to Vulkan.\nIn environments where Vulkan is not available, OpenGL is used as before.\nIn environments where OpenGL is not available, software rendering can be used by specifying the startup option: -g None\n\nChanged default GPU (macOS)\n\nThe default GPU at startup has been changed from OpenGL to Metal.\nOn environments where Metal is not available, OpenGL is used as before.\nOn environments where OpenGL is not available, software rendering can be used by specifying the startup option: -g None"
+    },
+    {
+      "title": "Support configuration for Linux and macOS",
+      "date": "2024-04-06 09:09:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364315409953",
+      "content": "Fixed a problem that could cause rendering errors in some environments.\nFixed a problem that could cause a crash during ELF relocation.\nFixed a problem that could cause a crash when exiting the game\nCustomization of behavior settings is now supported.\n\n\nHow to customize the operation settings\n\nWhen you launch Battle Marine after this update, a configuration file called config.json will be generated.\nThe config.json file is saved under the directory opened by opening the Battle Marine page in the Steam client and selecting \"Settings Icon\" > \"Manage\" > \"Browse local files\".\n\nYou can customize the following items:\n\ngraphic.isFullScreen: true = full screen, false = window mode\ngraphic.isScanline: true = with screen effects, false = without screen effects\ngaphic.windowHeight: height of the screen in window mode \ngaphic.windowWidth: width of the screen in window mode\nsound.volumeBgm: Volume of background music (0-100)\nsound.volumeSe: Volume of sound effect (0-100)\nkeyboard.a: Key code for A button (jump)\nkeyboard.b: key code for B button (fire)\nkeyboard.start: key code for START button (pause)\nkeyboard.select: key code for SELECT button (n/a)\nkeyboard.up: key code for up button\nkeyboard.down: key code for down button\nkeyboard.left: Key code for left button\nkeyboard.right: Key code for right button\nkeyboard.reset: Reset button key code\nkeyboard.quit: Key code for quit button\n\n\nThe keycode specifies the SDL keycode.\nhttps://wiki.libsdl.org/SDL2/SDLKeycodeLookup"
+    },
+    {
+      "title": "Update for Windows",
+      "date": "2024-02-29 01:02:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5688680204369052769",
+      "content": "The following update was made to the Windows version only\n\n1) Fixed issue with faster than 60Hz displays.\n\nBecause the game was always controlled by the vertical synchronization of the screen (V-SYNC), the game would run faster when played on a display with a faster screen refresh interval, such as 144Hz.\nNote1: The fix is to adjust the timing by V-SYNC as before when the screen refresh interval is 60Hz, and by Sleep in other cases.\nNote2: This problem should not occur on Linux and macOS because they always use Sleep to adjust timing.\n\n2) Added volume sliders for background music and sound effects.\n\nThe volume balance of background music and sound effects can now be adjusted by CTRL+V or \"Sound\" -> \"Volume Control\" in the menu."
+    }
+  ]
+}

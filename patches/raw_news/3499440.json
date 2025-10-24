@@ -1,0 +1,78 @@
+{
+    "appId": "3499440",
+    "count": 12,
+    "notes": [
+        {
+            "title": "Devlog - August 2025",
+            "date": "2025-09-01 07:30:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871713761",
+            "content": "[p]The most major progress I've made this month is that I beat the game on Hard difficulty for a first time without mutators on NG. I obviously did it before release, and not even once, but with developer cheats for testing purposes. And it turned out exactly as I anticipated: it is as much more difficult than Normal as Normal is more difficult than Easy, with minimal damage and health modifiers.[/p][p]I also finally found a reason to update the game and, for the first time since release, update the demo, but generally for the sake of reminding myself of this process.[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45482566/3687a775026c5a8d2669212a41f9353cf348b78d.png\"][/img][/p][p]I finally managed to design a laser rifle. I tried it and gave up many times, even though I supposed to arm Angel with it, but I didn't, so in the release she was armed with something that is labeled as \"Combo\" in the game files. Laser rifle might be one of the first weapons when I finally start adding them.[/p][p]To be exact, this is the most major progress that I was able to interpret. Generally, I am still working on the zone editor. However, I want to prepare something interesting by the end of October.[/p]"
+        },
+        {
+            "title": "Update v1.0.1.2",
+            "date": "2025-08-22 08:05:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382476761",
+            "content": "To make sure I remember how it works\n\n[b]Changelog:[/b]\n- Fixed postprocessing in cinematics\n- Fixed incorrect render of electrospikes in Core\n- Removed random trigger positioning in the last section of Core (descent)\n- Fixed text render in \"Loop playthrough\" menu"
+        },
+        {
+            "title": "Devlog - July 2025",
+            "date": "2025-08-01 11:29:06",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490718887",
+            "content": "[p]I was doing good, until I got down on a topic that I afraid the most: scripting language and event language for zone editor. I was predicted that this would probably be the hardest part of working with the new zone editor, because in this case I need to create a small programming language. I mean the better version of what I have currently:[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45482566/906c49937706ffdb6a701f2797859ca55b2569c5.png\"][/img][/p][p]This is an event that executes when you enter the zone where you fight Lanius. You also revisit it later, under different circumstances, which makes this event a little complicated. It serves its purpose well, but it's really bad, and I don't think someone would have a good time when working with this syntax, not to mention that it can sometimes crash the zone editor if it has syntax errors. But where it shines is Greywater offices, where I fit a large number of events for this small location. As a result, this part of the game is uniquely non-linear.[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45482566/3d44008795057e6aa58bde3724f8b6960977790c.png\"][/img][/p][p]But with a better event language I (and another user) could do much more with relative easy. My current objectives are:[/p][p]- Implementation of shunting yard algorithm, that will allow the use of expressions and comparison operations instead of conditional functions\n- 'if'('else') improvements: currently I can't add one conditional operaton inside another\n- goto improvements: to change the event stream I need to call a function that jumps the stream to certain action based on it's position order, which is not very convenient\n- 'replace' macro, which allows replacing a string with a certain piece of code. This is already implemented in my scripting language\n- Loading multiple files in scripting language[/p][p]Obviously, this is a minor part of my objectives. Following that I will need to rewrite the loading of campaigns in the game itself, fortunately I made a base for this before the release of the game. I hope this will be useful[/p]"
+        },
+        {
+            "title": "Devlog - June 2025",
+            "date": "2025-07-01 10:49:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891673984",
+            "content": "[p]Alrighty. Let's start with a pictures:[img src=\"{STEAM_CLAN_IMAGE}/45482566/f6a78c9b163d56c2e75fd57e2c1ea511f5cc48e4.png\"][/img][img src=\"{STEAM_CLAN_IMAGE}/45482566/fea6161ef6d1849dbcaa41e353117c8ec212dd06.png\"][/img]These are \"panoramas\" of two zones of the original game. They were made using a new zone editor and should demonstrate that work on it is ongoing: the functionality is updated, tools are added, and the creation of zone panoramas, as well as the conversion of old zones to more functional format are among them. Panoramas looks presentable, but they're imperfect, because OpenGL have some trouble with proper alpha channels rendering without glBlendFuncSeparate function. Generally the progress may be evaluated by the content of 'zone' class/structure in source code of my new zone editor:[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45482566/c51b6f0f3f60a2f99b9b2c6d9cd2e5bdd05e1a9d.png\"][/img]Looks humble, however one of the two complex members, shadow maps (shadmap) is added, and another - triggers/events will be in further. Comparing to legacy zone editor it's much easier.\n\nIt's nice that I was able to show at some progress. But without the work I've done over the past two months I wouldn't have been able to.\n[img src=\"{STEAM_CLAN_IMAGE}/45482566/a3276474b2e189d6594a53ec0821f22cadf8d78c.png\"][/img][/p][p]By the way, the Steam Summer Sale is started, you have a chance to purchase a game with a discount. Or buy one for a friend, if you have one.[/p]"
+        },
+        {
+            "title": "Update v1.0.1.1",
+            "date": "2025-06-28 05:33:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891570768",
+            "content": "-Wreturn-type works perfectly, until it doesn't\n\n[b]Changelog:[/b]\n- Fixed string formatting\n- \"MBT.exe\" no longer require external .dll files\n- Updated localization files"
+        },
+        {
+            "title": "Update v1.0.1.0",
+            "date": "2025-06-12 01:54:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289552541",
+            "content": "Sub-optimal\n\n[b]Changelog:[/b]\n- Overhauled localization files\n- Overhauled config files and file streams\n- Changed popup messages content\n- Removed gamepad message in intro\n- Increased electrospikes delay on Easy difficulty in Core"
+        },
+        {
+            "title": "Devlog - May 2025",
+            "date": "2025-06-01 12:02:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756411887",
+            "content": "The update that I wanted to finish at the end of April I ended up releasing at the beginning of June. It's like it goes on forever. I would have finish it earlier, but I really want to deal with it in a proper way so I don't have to return, and even if I could, with lesser trouble. And I need to, since I'm planning to add functionality for user campaign, including new map editor, as I mentioned in previous devlog. And I don't know how long will it take: maybe a week, maybe a couple month, and maybe, in weird case, even two days, like with improved music player and include it in game before release.\n[img]{STEAM_CLAN_IMAGE}/45482566/8cc6637d956786893f5c00dc6aec05a12a139343.png[/img]\nThis is an interface of a program to test and view strings outside of a game. Humble, even poor, and I don't think people will actually utilize it, but this program allowed me to interpret sprites, fonts, file streams, config files and another modules outside of a game, and improve it. For example, default Courier font can be included without external files and RC-scripts, with 1.3 KB inside executable and 9 KB in include file.\n[img]{STEAM_CLAN_IMAGE}/45482566/06c0fdf4b1c8b4d6721ba85781abb9679e523c49.png[/img]\nBut it isn't even stick and stones, AGAIN. It would be great if I could get as much done as possible before Summer Sale."
+        },
+        {
+            "title": "Devlog - April 2025",
+            "date": "2025-05-01 12:40:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487609198",
+            "content": "In this month I've planned to update localization system: change files, tweak string loading and write a guide, but I got too adventurous and also decided to rework fonts, strings, tweak texture loading, config and file streams. Typical for me, when I snowball incoming changes and eventually delay update. Sadly, I couldn't finish it in April, and I'll try to release it next week. However, I must report about my current progress.\n\n[img]{STEAM_CLAN_IMAGE}/45482566/c43e98e5e511057d2e5a9513f1b704867c7fd3f6.png[/img]\n[b]WARNING: TECHNICAL CONTENT AHEAD[/b]\nCurrently you can actually create localization with locale that uses 2-byte UTF-8 characters (Cyrillic, for example), but game can't read 3 and 4 bytes chars. This functionality will be added with an update.\nI don't like a grouping of static strings, that contains names and descriptions: items, difficulties, challenges, achievements. With an update these will group in separate files.\nLocalizations uses .fcf files - 2-channel image containers, but I want add .bmp support. I could add .png, but this require including external libraries, while simple .bmp files without compression can be loaded in with a single function. I may eventually add .png in another update.\n\nThis led me to necessity to write a program that tests strings outside of a game and move some game code in external libraries. I've practiced this before, but on smaller scale, because I had no idea what of it I could implement in other programs. And this made me to think about updating the zone editor.\n\n[img]{STEAM_CLAN_IMAGE}/45482566/354977a892b6b97fa3c01dc3d904deee310ad245.png[/img]\nBefore release, some people are wanted to work with zone editor, but I didn't, since it's far from user friendly: interface is junky, event and scripting languages are specific and not failsafe, game doesn't support zones outside of campaign, etc. The purpose of this zone editor was to create zones for the game, and improving its functionality was always prioritized over QoL. But with the game release and some practice writing user friendly software, I might start working on a new zone editor.\n\nNot quite what I had planned before. I really wanted to start working with a random zone generator, but I'm going to work with zones anyway, so maybe it's for the best."
+        },
+        {
+            "title": "Update v1.0.0.3",
+            "date": "2025-04-05 13:29:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897396124",
+            "content": "I don't like making patches with minimal changes, but I must fix this obvious oversight. Next one may include tools for creating localization files. Feedback is welcome, give me reasons to make patches with more than two entries.\n\n[b]Changelog:[/b]\n- Fixed intro cinematic screen\n- Changed camera position on lower floor rooms in Greywater"
+        },
+        {
+            "title": "Devlog - March 2025",
+            "date": "2025-04-01 12:41:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637986438",
+            "content": "20 days after release, I lost my grip. Need to move on.\n\nThe game is released, but the development continues, and it isn't particularly about patches that I rolled out before and I will probably roll out after. Before release I tried to make a base for supplemental content and I need to evaluate what I can add without major brutalizations of engine code. It may be a new campaign, items (especially weapons), challenges, etc, but long-term plans are the last thing I should be concerned about at the moment. But yet, I can start with something simple, like sprites/concepts of weapons that may or may not appear in the future.\n[img]{STEAM_CLAN_IMAGE}/45482566/0cc7a57395f7c8e4a4d216c0a529130ad22f61e2.png[/img]\n\nCurrently game includes two languages: English and Russian. I need to write a tutorial to create localization files and write a software for it's testing outside of game. It will be available soon in Steam guides for players who wish to work with it.\n\nThe most important thing is that I should start writing development logs, monthly updates (or lack of them) and manage social media, since I have a content that I would like to share: concepts, screenshots, footage that I currently share with a very few people. This can be considered as March 2025 devlog, and I hope I can tell you more in the next update."
+        },
+        {
+            "title": "Update v1.0.0.2",
+            "date": "2025-03-27 04:02:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637812234",
+            "content": "[b]Changelog:[/b]\n- Fixed achievement sync with Steam\n- Fixed borderless window mode reset on game start\n- Fixed display of progress if some achievements remained unveiled\n- Changed width of a jammer trigger in Hangar\n- Game will only pop-up error once if failed to create/reset BGM config file"
+        },
+        {
+            "title": "Update v1.0.0.1",
+            "date": "2025-03-22 06:05:57",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830910932567",
+            "content": "[b]Changelog:[/b]\n- Fixed incorrect hostage positioning in Greywater after saving\n- Hostages can no longer appear on a third floor in Greywater\n- Game will run properly if failed to generate GL Query object\n- Updated clouds background texture in cinematics\n- Fixed incorrect wood impact particles\n- Changed pop-up window titles\n- Updated localization files"
+        }
+    ]
+}

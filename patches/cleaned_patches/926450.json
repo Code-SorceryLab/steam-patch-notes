@@ -1,0 +1,324 @@
+{
+  "appId": "926450",
+  "count": 53,
+  "notes": [
+    {
+      "title": "Steam overlay button added",
+      "date": "2023-09-07 03:29:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482908054597",
+      "content": "1694061868\n\n\tPressing controller platform specific home button now opens Steam overlay. Previous players will need to reset controller configuration for this to work."
+    },
+    {
+      "title": "Parity Update",
+      "date": "2022-07-21 22:09:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598755821867127096",
+      "content": "In preparation for a wider multi-platform release, I have the latest version to share.\n\nHere are the changes:\n\n1647385972\n\n\tExtended lift distance in Stage 1 Area 22 to allow for bidirectional travel through the shaft\n\n\n1654230439\n\n\tAdded additional Korean characters to font data\n\n\n1655268457\n\n\tChanged the term \"settings\" to \"options\" for some languages\n\tFixed some mistranslated German terms in the pause menu\n\tFixed some mistranslated German terms in the item pickup screen\n\tFixed misaligned loading text for German due to extra space character"
+    },
+    {
+      "title": "Possible Null Reference Occurance fix",
+      "date": "2022-03-15 06:52:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5631194088576021346",
+      "content": "Becuase of how Unity tries to make development easier, this resulted in major issue.\n\nUnity will automatically assign an order for how soon some code will run. While this can be manually overridden, it should not be required unless automatic assignment fails to generate a desired result.\n\nIn the upgrade to a new engine, it appears that a particular case, that would be game breaking in several places, has been introduced.\n\nHopefully no one encountered any issues, but the fix is here just in case.\n\nChangelog is as follows:\n\n1647329462\n\n\tBranding and version text offset towards screen center\n\tFixed an issue where title screen tiles would no longer animate\n\tAdded the use of any right-hand face buttons in menu actions\n\tFixed a vertical alignment issue with stage to stage load bars\n\tChanged Xbox button layout to indicate it is also the Steam layout\n\tFixed an execution order oversight which could lead to some null reference exceptions"
+    },
+    {
+      "title": "Major Update! Updated Engine!",
+      "date": "2022-03-01 17:28:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832527739865",
+      "content": "Because of future plans, I ended up making quite a few changes to Thibalryn for everyone.\n\n\u02d0winter2019coolyul\u02d0\n\nMost notable are:\n\n\tUpgraded engine from Unity 2017 to Unity 2019\n\tScripting backend changed to improve performance\n\tIntermediary loading scenes to reduce memory usage\n\tBuild compression changed to decrease game size\n\tAdd saved indicator\n\tSealed away most flip discs\n\n\nHere is the full changelog:\n\n1646153617\n\n\tRemoved debug output of SFXSlider value\n\tFixed skull blocks being too high in Stage 3 Area 81\n\tAdded gating blocks to Stage 4 Area 61 so a player does not potentially waste thier time going to Stage 3 too soon\n\tAdded extra skull blocks to Stage 4 Area 63 to prevent a player becoming stuck in a pit\n\tAdded skull blocks to both areas on the sides of Stage 5 Area 13 as a hint\n\tSealed away most flip discs\n\tAdded unreachable coloured flip discs above Stage 1 SpawnArea 5\n\tCulled some leapers from Stage 4 SpawnArea 44, 45 and 46\n\tUpgraded to newer Unity engine (2019.4)\n\tChanged scripting backend to IL2CPP\n\tRemoved a lot of decorative tiles near Stage 4 Area 48\n\tEnforced pixel light limit of 1\n\tRemoved compression from logo\n\tFixed a major display issue with the \"item get\" window\n\tFixed a case where sometimes the language would be English\n\tAdded editor script to find prefabs with component\n\tAdded editor script to find prefabs with script\n\tRemoved some enemies from Stage 5 Area 42, 48 and 49\n\tAdded random rotation to player ball on spawn\n\tAdded extra tiles to Stage 5 Area 48\n\tRedesigned scene loading system to fix high memory usage during stage transitions\n\tFixed a case where loading text could disappear from the title screen\n\tLoading text on title screen no longer flashes\n\tFixed a minor scale error on the loading bars\n\tAdded indicator bars for when the game is saved\n\tIncreased \"coyote time\" to make it easier to jump from ledges\n\tJumping from ground can be accomplished sooner\n\tRemoved error message from when demo manager is not found in scene\n\tFixed an issue where the flip disc would not function on some platforms\n\tEnabled usage of the new speculative collision detection for some objects\n\tFixed an exploit where camera could be stuck in an unexpected rotation due to flip disc usage while player focus was lost\n\tChanged build compression to use LZ4HC\n\tUpdated non PCM audio to use the PCM format\n\tChanged method used for getting reference to the game manager\n\tSetTint no longer tries to get renderer component again and reuses what is already referenced\n\n\nNote that due to engine changes, it is entirely possible new bugs have taken up residence. I have exterminated all I could, but upgrading Unity is messy.\nIf you find any, please don't hesitate to let me know. I would very much appreciate it.\n\nSpecial thanks to VertPlaysGames for the discovery of some bugs in the previous version. \u02d0steamthumbsup\u02d0"
+    },
+    {
+      "title": "Thibalryn on macOS!",
+      "date": "2021-12-10 01:20:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936849653132239",
+      "content": "I finally saved up for and bought the nessecary hardware to verify full compatablity with macOS, including for those with newer M1 devices. As a result, Thibalryn and my future games will be made available for those who prefer to play certain games on their Apple machines. Yay!\n\n{STEAM_CLAN_IMAGE}/33485399/45fb0168997fbfcb924bb9a99f3241e24fcc44af.png\n\nI have also made some other changes for monetary supporters:\n\nNot only will you have the golden player ball, but now you will see golden explosions on both player spawn and death events.\n\nIn the process of updating a few things, I am transitioning from using Steam's DLC feature to the Steam Inventory Service for future Support the Developer implementation. If you are one of those who used one of the original monetary support methods, such as an outright purchase or DLC, you will still have all the same benifits plus the new effects.\n\nThe major reason for me doing all this is to better prepare for my next game's release in what I hope will not be too long of a wait. You can follow development progress of that at the following places:\n\nTwitter: https://twitter.com/hashtag/PowersOfHex\nYoutube: https://youtube.com/playlist?list=PL1QNSS-4sB0i8VioIykjmhDDcmjlX_Pk6\n\nHere is the changelog for this release:\n\n1639028978\n\n\tPrevented hiding of mouse cursor on title screen. This allows interaction with system pop-ups on some operating systems.\n\tFixed an issue where mouse cursor could be hidden while working in the Unity editor\n\tAdded mac bundle identifier\n\tAdded registry key to allow overriding windowed mode scaling\n\tAdded detection of Steam Inventory Service Support the Developer items\n\tUpdated DLC detection to allow for late detection\n\tAdded function to obtain player renderer reference when needed\n\tAdded function to obtain player spawn explosion and death explosion references when needed\n\tRewrote function that enables gold ball for monetary supporters\n\tAdded gold supporter effect to spawn and death particles for the player ball\n\n\nEnjoy!"
+    },
+    {
+      "title": "Fixed unicode character \u2605 missing from font file",
+      "date": "2021-09-13 23:31:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014731811589633",
+      "content": "1631587931\n\n\tFixed unicode character \u2605 missing from font file\n\tUpdated default ranking text to \u2605\u2605\u2606\u2606\u2606"
+    },
+    {
+      "title": "Multilingual Thibalryn!",
+      "date": "2021-08-23 07:41:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629325641776",
+      "content": "To help with reaching more players and to allow me to share Thibalryn with more people around the world, I have taken the days required and performed the necessary work to add an additional 8 languages to Thibalryn.\n\n1629123665\n\n\tUpdated ability names in the bindings menu to be less generic\n\tUpdated font rendering to fix some issues\n\tAdded Pixel Font Converter to credits\n\n\n1629705341\n\n\tUpdated font rendering of stars and total time\n\tRemoved display of milliseconds and seconds from timer to account for new font width\n\t\"Press Start\" text now blinks\n\tRemoved directions for controls menu\n\tAdded 8 languages"
+    },
+    {
+      "title": "Tiny \"Secret Kode\" Fix",
+      "date": "2021-08-06 05:42:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530943790972",
+      "content": "1628240182\n\n\tFixed a case where the button passkode secret would not activate\n\tAdded placeholder version number incase version number cannot be loaded\n\n\nHint: enter the \"kode\" while paused. It will actually use the correct input sequence now, including from the joystick."
+    },
+    {
+      "title": "Minor Tweaks",
+      "date": "2021-08-04 09:02:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396459855857916",
+      "content": "1627979551\n\n\tReduced duration of splash screen\n\n\n1628078916\n\n\tChanged default screen mode to full screen"
+    },
+    {
+      "title": "Thibalryn is now FREE!",
+      "date": "2021-02-02 15:48:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4050393736357531659",
+      "content": "A huge thank you for everyone who bought Thibalryn while it was on sale.\n\nFor everyone who previously own Thibalryn or those who puchase any \"support the developer\" DLC, your in game player ball will be turned to gold in recognition.\n\n{STEAM_CLAN_IMAGE}/33485399/4d3fff549b4919e5de9e88947ebcb95a0f663b14.png"
+    },
+    {
+      "title": "Rebinding Menu Fix",
+      "date": "2020-01-07 06:31:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573915761194",
+      "content": "1578393758\n\n\tFixed a issue where some players could not access the key rebinding menu\n\tAdded Unity branding to splash screen"
+    },
+    {
+      "title": "DYK? Features of Thibalryn!",
+      "date": "2019-11-03 20:17:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2451574645870621689",
+      "content": "Baddies can change between difficulty modes when you spawn.\n\nWhether it is loading a new area or just coming back to life after a death, there is a chance for each type of baddie that they will switch to a different difficulty mode.\nThis can be a simple as moving faster, or a combination of different attributes.\n\nThe texture used on each tile is randomly selected using a custom, procedural noise algorithm.\nThe first tile is chosen at complete random, then the next in a row is decided based on the outcome of the previous tile. This is then done for the first row.\nFinally after we have the initial tiles laid out around the left and top edges, we can iterate through each other tile based on the neighbors. When an adjacent tile is absent, it simple wraps back around to find a comparison.\nThe appearance of darker tiles is actually just random though.\n\nIt is possible to jump after only just having rolled off an edge. You can also use this to drop bombs!\nI have seen some already utilise this technique and I applaud them for having figured this one out on their own.\nIt is not easy to pull off, but doing so can help you deal with some of the more tricky baddie placement.\n\nFor a frame-perfect speedrunner it is possible to jump a couple of frames before touching the ground.\nThe human brain automatically predicts that you will touch the ground, but the actions of the human nervous system can sometimes occur too soon. It is for that reason that you may feel some of the movement in this game is as responsive as it is.\n\nThe music fades out to silence for a while every so often to give a sense of tension, while allowing more focus on sfx.\nTension is something very hard to create in media. Fear is much easier, but that is something subjective. Done right you can achieve an effect that is experienced by the vast majority and having silence to do so is a trick I have seen few games use.\nSilence also takes a lot less resources. No need to spend hours choosing which notes you want from your scale.\n\nWhen mapped out the game areas fit together like slices of a cube. Changing areas actually moves you in 3D space!\nIt may not be apparent at first, but if each area is mapped out and then overlaid you will find something rather special. Each transition pipe between areas actually matches up such that they all fit in a nice perfect arrangement.\nBonus fact: the green stage is actually the only stage that is tall, rather than wide.\n\n\nHit boxes on baddies area actually 1/16th of a tile shorter than they appear.\nBaddies have 3 separate sets of detection each. Player collision, bomb collision and tile collision.\nIt feels great when you somehow survive something you expected would kill you. But the question is how lenient should one be? My \"rule of thumb\" is the amount of penetration at the speed of 1/30ms. This can then be simplified to something more sensible such as 1 pixel of detail on a sprite.\nWhen landing an attack the opposite direction holds true. It feels great to only just hit a shot you think you actually missed.\nHaving these 2 detection ranges already doubles the resources needed, but neither are suitable for having the interaction of an object with the environment be pixel perfect. A 3rd set of detection rules is then needed, but with some clever coding this can be simplified."
+    },
+    {
+      "title": "Repaired the Walls and Build some Pipes",
+      "date": "2019-09-27 06:49:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2422298078086757690",
+      "content": "Just a small patch.\n\n1569579616\n\n\tFixed a missing wall in Stage 1 SpawnArea 5\n\tFixed a missing pipe in Stage 1 Area 50\n\n\nThanks to Skittles for reporting!"
+    },
+    {
+      "title": "Free Demo now available!",
+      "date": "2019-09-13 13:00:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3658535001295557575",
+      "content": "{STEAM_CLAN_IMAGE}/33485399/9741f28914ec752ec2ae164a6eb47c2e704ee728.gif\nA love letter to classic NES games!\n\nExplore an ever-expanding, challenging maze filled with countless secrets.\nYou'll need true skill whilst fighting various baddies each with their own unique AI.\nMaster what skills you have to unlock new possibilities while you search for mores.\n\nYou will find that this game feels amazing to play with never-seen-before game mechanics.\n\nFeatures:\n\nMany, many hours of gameplay!\nImmersive Binaural sounds!\nNo boring tutorials!\nNon-Linear!\n90+ pickups to obtain!\nMany Easter eggs!\nPixel Perfect mode included!\nMost controllers supported w/ no setup required!\nTime yourself!\nEarn your rating!\n4K UHD support!\nUp to 240fps!\nDRM Free!\n\n\nThis is a game lovingly crafted over 2 years. Designed for speedrunning and easy streaming."
+    },
+    {
+      "title": "Preparation for a Demo",
+      "date": "2019-09-06 00:41:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413288973191139797",
+      "content": "Here is the changelog:\n\n1567737721\n\n\tCreated DemoManager\n\tStage pipe teleports will no longer occur if set to a stage destination of 0\n\tStage pipe teleport game objects are now set as enabled in the dev stage\n\tGame objects modified by demo mode now are automatically added to a list\n\tReadded name branding to title screen\n\tDemo tiles added to block stage pipe teleports when running in demo mode\n\tStage pipe teleports will become disabled if running in demo mode\n\tSteam achievements will not unlock while running in demo mode\n\tDemo branding message appears on title screen if running in demo mode\n\n\n{STEAM_CLAN_IMAGE}/33485399/5bfbb2a476da46d228b4cd8528b87eae353462f5.png"
+    },
+    {
+      "title": "Framed with Pride",
+      "date": "2019-08-20 18:28:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416665403763767415",
+      "content": "With a small update, those playing in full-screen mode will now see a fancy border instead of just blackness.\r\n\r\n1566338661\r\n\r\n\tCreated frame art and object\r\n\tFrame objects become inactive when in pixel perfect mode\r\n\r\n\r\nI decided to not animate the frame in a clever way (modifying render offsets randomly in the shader) as it may impact those trying to record footage."
+    },
+    {
+      "title": "Cosmetic Tiles",
+      "date": "2019-08-14 03:31:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412161173660318939",
+      "content": "Just a small update to fix some tiles:\r\n\r\n1565765838\r\n\r\n\tSlightly modified the tile placement in Stage 5 Area 47.\r\n\tCorrected the y-offset for some of the green leapers in Stage 5 Area 51, 52 and 53.\r\n\tAdded the missing tiles to the pipe in Stage 5 Area 69.\r\n\tAdded the missing tiles in Stage 5 Area 51 and 52."
+    },
+    {
+      "title": "Now with a little extra gold!",
+      "date": "2019-08-08 18:04:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412160539855395255",
+      "content": "1565300198\r\n\r\n\tRadar border now turns gold when all pickups in the area have been collected.\r\n\tFixed parts of the radar testing for raycast.\r\n\tFixed tracer dots being misaligned.\r\n\tStage 1 music now stays silent for 25 seconds less.\r\n\tCredits text now turns gold on beating the game with a five star rating.\r\n\tAdded an extra name into the credits.\r\n\tFixed a left over black bar on the title screen.\r\n\tFixed missing pipes in Stage 1 Area 7!"
+    },
+    {
+      "title": "A new way has opened!",
+      "date": "2019-07-27 05:37:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3364670677185059764",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33485399/df6a7b8fc8a2cb6c4635bcf1e6faab2aed669b22.gif\r\n1564219049\r\n\r\n\tStage 1 SpawnArea 5 now connects to Area 22!\r\n\tAdded missing boss blocks in Stage 2 Area 37 to prevent pointless backtracking.\r\n\tFixed lifts in Stage 2 Area 32 being too slow.\r\n\tMade the whole column of tiles on either side of Stage 1 Area 23 breakable.\r\n\tRemoved bouncers from Stage 1 Area 52 as they got in the way of learning.\r\n\tMade tiles under the pickup in Stage 1 Area 58 breakable.\r\n\tModified secret in [redacted].\r\n\tCleaned up sprites for all bouncers. Collision detection area remains the same.\r\n\tAdded some red crawlers to the title screen.\r\n\r\n\r\n1564356806\r\n\r\n\tFixed the part of the columns of tiles in Stage 1 Area 7 being unbreakable.\r\n\tFixed part of the secret in [redacted] being inaccessible.\r\n\tAdded pdb files for easier future debugging."
+    },
+    {
+      "title": "Lava. Lava, lava. You don't treat me so bad no more!",
+      "date": "2019-07-15 16:26:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436927798963974115",
+      "content": "I will be trying to keep gameplay changes to an absolute minimum so as to not make life hard for speedrunners.\r\n\r\n1563219642\r\n\r\n\tMade lava much more red.\r\n\tMade lava more opaque.\r\n\tRefactored time in lava variable name.\r\n\tLava damage now scales with player max health.\r\n\tLava damage no longer scales with stage difficulty.\r\n\tLava now does less base damage than previously at less than 10 max health.\r\n\tLava now does more base damage than previously at more than 10 max health.\r\n\tLava will now result in death after 20 seconds of exposure.\r\n\tGame now defaults to windowed \"pixel perfect\" mode.\r\n\tFixed mislocated lift in Stage 3 Area 12.\r\n\tFixed a case where the Stage 3 boss room entry would not be possible.\r\n\tAdded breakable tiles to Stage 3 boss room entry.\r\n\r\n\r\n1563334603\r\n\r\n\tFixed a case where a boss would become blocked off.\r\n\tChanged Stage 4 difficulty mulitplier to 0.75.\r\n\tChanged Stage 2 difficulty multiplier to 1.\r\n\r\n\r\n1563353415\r\n\r\n\tStage 5 damage received reduced by 25%.\r\n\tFixed Stage 5 boss doing way too much damage.\r\n\tFixed a case where the Stage 5 boss would escape their confines.\r\n\tFixed a case where the Stage 5 boss would not have health reset.\r\n\tFixed music not fading out during credits.\r\n\tFixed music not fading in after credits.\r\n\tStage 5 boss shortcut now opens when first reaching the boss instead.\r\n\tAdded signs to Stage 5 to indicated the shortcut has opened."
+    },
+    {
+      "title": "A Feedback Fueled Update",
+      "date": "2019-07-07 01:53:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440601937791",
+      "content": "Special thanks to TinaHacks and RogueLink!\r\n\r\n1562473376\r\n\r\n\tFixed gating in Stage 3 being bypassable early.\r\n\tFixed a case in Stage 1 SpawnArea 5 where a player could disregard gravity.\r\n\tFixed dropper placement in Stage 1 Area 2.\r\n\tMade Stage 1 Area 22 (the tower) easier to climb.\r\n\tRemoved a small amount of the bouncers from Stage 4 Area 19 (the ballroom).\r\n\tMoved some tiles about in some stages to make it easier to avoid some flip discs.\r\n\tRemoved signs from next to flip discs in Stage 2 as it may have been confusing.\r\n\tMade flip disc functionality clearer in Stage 1 Area 66.\r\n\tRemoved flip disc from Stage 1 Area 55.\r\n\tRemoved some of the zappers from Stage 1 BossArea.\r\n\tMade it harder to \"cheese\" the boss of Stage 1.\r\n\tMade some of the zappers in Stage 1 BossArea travel further.\r\n\tChanged the type of Zapper that exist in Stage 1 BossArea.\r\n\tAdded some extra blocks to Stage 3 BossArea.\r\n\tAdded a couple of extra zappers to Stage 3 BossArea.\r\n\tRed leapers now fall if they block underneath them is destroyed.\r\n\tRed leapers now must wait at least 500ms before leaping again.\r\n\tGreen leapers now must wait at least 250ms before leaping again.\r\n\tLeapers now have a tiny bit longer time before leaping.\r\n\tAdded extra tiles in Stage 1 Area 43 to help prevent a player from unintentionally falling.\r\n\tRemoved a few leapers from Stage 1 Area 50.\r\n\tMade Stage 1 boss's explosion more impressive.\r\n\tAdded some padding digits to the timer.\r\n\tReceded the lava in Stage 4 areas 39, 48, 49 and 50.\r\n\tRemoved Stage 4 Area 51.\r\n\tAll damage taken in Stage 1 reduced by 20%.\r\n\tAll damage taken in Stage 2 and Stage 4 reduced by 10%.\r\n\tFixed achievement for boss defeat not popping immediately.\r\n\tFixed achievement for completion rate not popping immediatly.\r\n\tAdded extra check for fiveStarRating achievement."
+    },
+    {
+      "title": "QoL Update Part 2",
+      "date": "2019-07-04 17:15:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440593411362",
+      "content": "Fixed some issues...\r\n\r\n1562272537\r\n\r\n\tFixed HUD not showing armour when a new stage is loaded.\r\n\tAdded missing gating to Stage 3 boss.\r\n\tAdded gating to Stage 3 entrances top help guide players to other abilities.\r\n\tAdded decoration blocks to Stage 3 Area 12.\r\n\tAdded gating to Stage 1 Area 13."
+    },
+    {
+      "title": "Major QoL Update!",
+      "date": "2019-07-03 05:58:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440588099747",
+      "content": "Here are a few changes for you to enjoy reading about...\r\n\r\n1562089253\r\n\r\n\tAdded save file deletion option to the settings menu.\r\n\tStart screen now ensures time it not frozen.\r\n\tFixed missing reference to InputManager in EventSystem.\r\n\tFixed loadingNextScene variable not reseting for title screen.\r\n\tAdded tracer dots to radar.\r\n\tMoved blocks in Stage 1 SpawnArea 5.\r\n\tAdded debug mode switch.\r\n\tChanged some blocks in Stage 4 Area 8 to be breakable.\r\n\tModified block placement in Stage 4 Area 19.\r\n\tModified block placement in Stage 4 Area 10.\r\n\tModified block placement in Stage 4 Area 20.\r\n\tAdded shortcut in Stage 4.\r\n\tTimer now shows milliseconds.\r\n\tTimer more clearly shows when each second passes.\r\n\tFixed there being too many zippers in Stage 2 Area 4.\r\n\tFixed missing gating in Stage 2 Area 54.\r\n\tAdded a sign to Stage 2 to help guide player to the boss.\r\n\tAdded a sign to Stage 4 to help guide player to the boss.\r\n\tFixed being able to bypass gating in Stage 4 Area 41 with the wrong ability.\r\n\tAdded lava to Stage 4 Area 41.\r\n\tAdded extra bouncers to Stage 4 Area 41.\r\n\tMoved around blocks in Stage 2 Area 82.\r\n\tFixed an issue where players could get stuck in Stage 2 Area 82.\r\n\tAdded signs to Stage 2 to help the player locate the ability pickup.\r\n\tAdded signs to Stage 4 to help the player locate the ability pickup.\r\n\tFixed a case where the boss of Stage 3 would come back to life.\r\n\tFixed tracer dot parent assignment."
+    },
+    {
+      "title": "Now With More Sausage!",
+      "date": "2019-06-22 20:59:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415533798140798485",
+      "content": "1561248925\r\n\r\n\tCollecting a max health pickup now refills all of your health instead of just adding to it.\r\n\tFixed ItemGet text being included in a ui raycast test.\r\n\tIncreased size of ItemGet popup.\r\n\tPickups now give text about what type they are.\r\n\tRadar now shows where the boss of each stage is located.\r\n\tMade lava slightly more red.\r\n\tFixed being able to get stuck to the bottom of some pickups."
+    },
+    {
+      "title": "Timer fixed!",
+      "date": "2019-06-17 06:41:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408777766651432256",
+      "content": "1560763772\r\n\r\n\tFixed 24px text being blurry\r\n\tFixed timer not showing\r\n\tFixed gating in Stage 3 Area 16"
+    },
+    {
+      "title": "Game is now LIVE!",
+      "date": "2019-06-13 20:07:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408777766638998621",
+      "content": "Here are the last patch notes that made it in in pre-release:\r\n\r\n1559913259\r\n\r\n\tAdded all of the remaining music.\r\n\r\n\r\n1560101624\r\n\r\n\tIncremented render queue for pickup materials.\r\n\tFixed incorrect parenting for TileBreakables in Stage 2 Area 94.\r\n\tFixed incorrect parenting for TileColliders in Stage 2 Area 89.\r\n\tFixed incorrect parenting for TileSingles in Stage 5 Area 42.\r\n\tFixed incorrect parenting for TileColliders in Stage 5 Area 42.\r\n\tAdded texture for when pickups have been taken.\r\n\tMoved sign in Stage 1 Area 0 into the middle.\r\n\tFixed y offset for NormalBombPickup.\r\n\tUpdated how explosion particle system game objects are used for most baddies.\r\n\tRemoved Beta branding.\r\n\tRemoved Beta debug hud.\r\n\tHid copyright message on title screen.\r\n\tChanged colours used in radar.\r\n\tAdded order layer offset to GameMenu.\r\n\r\n\r\n1560292968\r\n\r\n\tGame will now pause if a controller is disconnected"
+    },
+    {
+      "title": "Tiny updates as the finish line is in sight",
+      "date": "2019-06-01 02:26:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2400895196210899437",
+      "content": "I can feel the end now. 2 years and it is almost here.\r\n\r\n1559089202\r\n\r\n\tAdded gating to Stage 2 Area 41.\r\n\tAdded gating to Stage 2 Area 49.\r\n\tFixed Boss 2 bullets being the wrong scale.\r\n\r\n\r\n1559243462\r\n\r\n\tChanged how completion rate is calculated.\r\n\tSaving now happens after completion rate calculation.\r\n\tAdded achievements.\r\n\r\n\r\n1559346097\r\n\r\n\tAdded the remaining achievements.\r\n\r\n\r\n1559358175\r\n\r\n\tIncreased radius of normal bomb breakables detection.\r\n\r\n\r\n1559375218\r\n\r\n\tCompletion rate can now be calculated without saving\r\n\tFixed a case where completion rate may not be calculated"
+    },
+    {
+      "title": "Last Chance to Play the Alpha Demo!",
+      "date": "2019-05-27 17:28:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408775863534823998",
+      "content": "As the final few weeks of work are here, so too is the end of the Alpha Demo availability. Download and play it while it is still possible!\r\n\r\nI have decided to not include a free demo of full game, as the refund system in place on Steam allows people to return the game if they really do not like it.\r\n\r\nIn the next 24 hours, beta testing should be under way for the 5 people whom took time to help test the special Alpha versions.\r\n\r\nHere is the change log of what has changed since last time:\r\n\r\n\r\n\r\n1558986423\r\n\r\n\tFixed missing gating tiles in Stage 4 Area 41\r\n\tChanged Eyer pupil colour to blue\r\n\tExposed Zapper speed as public\r\n\tA fallback spawn area is now used if a non valid spawn area is called\r\n\tMoved FPS counter down 1 tile\r\n\tCreated area tracker to HUD for Beta\r\n\tCreated Boss 4\r\n\tFixed some tiles in Stage 2 using the wrong set\r\n\tCreated Boss 2\r\n\tSelf unparenting now allows to keeping local position and resetting rotation\r\n\tAdded animation to Boss 2\r\n\tCreated Boss 3\r\n\tSelf unparenting now allows for applying a custom scale\r\n\tCreated Boss 5\r\n\tUpdated SerifJay font to include the \" character\r\n\tAdded credits screen\r\n\tUpdated colour and size or Boss 1 explosion\r\n\tPlayer health debug now just adds health"
+    },
+    {
+      "title": "All Detailing Completed!",
+      "date": "2019-04-29 00:29:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2432417221748853562",
+      "content": "After months of work sketching stages layouts, laying skeleton and pipes and finally adding all the details it is all done!\r\n\r\nThis leaves only the bosses, music and minor misc. stuff to be done in the remaining weeks.\r\n\r\nHere is what changed during Stage 1 detailing:\r\n\r\n1556362009\r\n\r\n\tLayed skeleton for Stage 1\r\n\tLayed pipes for Stage 1\r\n\tFixed missing collision in Stage 4\r\n\tFixed overlapping collision in templates Area H_PB 6 and Area H_PB 9\r\n\tUpdated tile shader to use color tint\r\n\tTile now randomly become darker on load\r\n\t[Redacted] now sleeps based on player's x distance\r\n\tAdded [redacted] easter egg [redacted] to [redacted]\r\n\tFixed Stage 1 boss using wrong boss id\r\n\tReduced health that health debug cheat gives\r\n\tFixed boss beaten state being checked one frame too soon\r\n\tMade the flip discs in Stage 2 avoidable\r\n\tMade the flip disc in Stage 4 more avoidable"
+    },
+    {
+      "title": "Stage 5 Done!",
+      "date": "2019-03-25 21:43:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2543878145188080135",
+      "content": "Many games have only a small stage for the final part of the game. I decided it should be the same size as every other stage.\r\n\r\nHere is everything that has been done during Stage 5 detailing:\r\n\r\n1553564277\r\n\r\n\tCreated area templates H_PL_0 and H_PR_0\r\n\tLayed skeleton for Stage 5\r\n\tLayed pipes for Stage 5\r\n\tAdded measurement box to [redacted]\r\n\tAdded SpawnArea 0 to Stage 0\r\n\t[redacted] range check method replaced\r\n\t[redacted] range doubled\r\n\t[redacted] now always faces the player\r\n\t[redacted] now only resets during sideways movment\r\n\tFixed [redacted] having incorrect fallback move speed values\r\n\tAdjusted [redacted] move speed\r\n\tOptimised collisions for many area templates\r\n\tFixed an unassigned parent in Stage 3\r\n\tPlaced and configured spawn areas in Stage 1\r\n\tCreated circle measure tool\r\n\tAdded measure tool to [redacted]\r\n\tAdded difficulty bias for [redacted] making it more likely to be hard\r\n\tAdded target location delay for [redacted]\r\n\t[redacted] difficulty is now randomised per [redacted]\r\n\tIncreased speed of [redacted]\r\n\tAdded coded message Easter Egg\r\n\tAdded [redacted] Easter Egg\r\n\tChanged [redacted] to be a sound effect\r\n\tRemoved [redacted] sfk file from game data"
+    },
+    {
+      "title": "Stage 4 Detailing Complete!",
+      "date": "2019-02-20 02:52:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2480825216184510701",
+      "content": "This one took a little longer, but is finally done.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33485399/7ec66fd40b00019a89742f0dbf2000cc61d87dc6.png\r\n\r\n1550316147\r\n\r\n\tAdded arc measurement script tool\r\n\tPlayer now turns red when in lava\r\n\tModified hurt sound is now played when player takes damage from lava\r\n\tChanged render order so that [redacted] appear on top of default\r\n\tAdded measurement lines to [redacted]\r\n\tIncreased speed of [redacted]\r\n\tReversed render order of [redacted] base and sides\r\n\tFinished details for Stage 4\r\n\r\n\r\nOnly 2 more stages to lay skeletons, pipes and then detail."
+    },
+    {
+      "title": "Stage 3 Completed!",
+      "date": "2019-01-28 00:19:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2425653583395462333",
+      "content": "1548538965\r\n\r\n\tAdded measurement guide for [redacted]\r\n\tUpdated colour of [redacted] so they stand out more\r\n\tRemoved unused align function for [redacted]\r\n\tFixed beta branding still showing on some stages\r\n\t[redacted] no longer become inactive when [redacted] is off-screen\r\n\t[redacted] now reloads [redacted] if it hurts the player\r\n\tFixed [redacted] not firing [redacted] at random times\r\n\tDifficulty now affects max time a [redacted] stay unfired\r\n\tRemoved obsolete variables for [redacted] sleeping\r\n\tRemoved obsolete [redacted] parent reference\r\n\tRemoved obsolete [redacted] renderer reference\r\n\t[redacted] animation speed now changes based on difficulty\r\n\t[redacted] now self disable after behaviour routine is complete\r\n\tFixed minor inaccuracy of diagonal [redacted] positional vector result\r\n\tAdded [redacted] easter egg to [redacted]\r\n\tFixed [redacted] firing on waking\r\n\tFixed a [redacted] being created as a particle explosion GameObject\r\n\tAdded missing explosion particles\r\n\tFixed player actions being delayed by 1 frame\r\n\tRemoved cover from [redacted] pickup\r\n\tFixed abilities in Stage 3 and Stage 5 being swapped with each other\r\n\tCorrected the render queue value for [redacted] parts\r\n\tFully detailed Stage 3\r\n\r\n\r\nWhile does not account for the music and bosses, it does mean 2 of 5 stages are now in a playable state.\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33485399/7ec66fd40b00019a89742f0dbf2000cc61d87dc6.png"
+    },
+    {
+      "title": "Stage 2 Complete!",
+      "date": "2019-01-10 21:29:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2711631078215582863",
+      "content": "The skeleton was built, pipes were layed and finally the whole thing has been detailed.\r\n\r\n1546950563\r\n\r\n\tFixed reverse state for red [redacted] not being random\r\n\tFixed render queue offsets for lift materials\r\n\tRecreated dev grid game object and prefab\r\n\tMade it possible to set a custom speed for each lift\r\n\tSlightly modified the colour for blue [redacted] bases\r\n\tFixed signs not using transparency\r\n\tUpdated access modifier for StageExitTeleport\r\n\tPassing through the spawn area now sets it as a respawn destination\r\n\tMissing area error from pipes now returns a numeric id\r\n\tCreated object select by id tool\r\n\tFixed state of boss defeat not being checked\r\n\tCompleted detailing of Stage 2!"
+    },
+    {
+      "title": "The Last Big Dumping",
+      "date": "2019-01-01 13:49:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111327732248",
+      "content": ":goldfeatherduster:\r\n\r\n1544577905\r\n\r\n\tUpdated player movement guide in stage 0\r\n\tSlowed down drop speed of [redacted]\r\n\tUpdated and optimised how search range is calculated for [redacted]\r\n\tIncreased animation speed of [redacted]\r\n\tCreated measuring tool\r\n\tBubbles now show distance box in editor\r\n\tRemoved milliseconds from ratings timer\r\n\tDetailed SpawnArea 1 in Stage 2\r\n\tSave data tracks if player has won\r\n\tSave data now includes performance rating from a win\r\n\tFixed test stage using wrong damage multiplier\r\n\tLoading a saved game after winning now shows rating\r\n\r\n\r\n1544768909\r\n\r\n\tRemoved tile set variance from Stage 2\r\n\tSave data type changed from dat to sav\r\n\tUpdated debug fps counter to update colour based on calculated half frame accuracy\r\n\tFixed mouse cursor being shown while playing\r\n\tFixed a physics issue where the player model could rotate in 3D\r\n\tCreated a lift to speed up climbing vertical areas\r\n\tDetailed some areas in Stage 2\r\n\r\n\r\n1545309852\r\n\r\n\tAdded tile set variance for stages 2, 3 and 4\r\n\tFixed blue [redacted] using red particles\r\n\tUpdated colour for [redacted] bullets to stand out more\r\n\tIncreased speed of lifts\r\n\tFixed bullets from [redacted] being active for a single frame too early\r\n\tFixed [redacted] clipping through corners\r\n\tDetailed some more areas in Stage 2\r\n\r\n\r\n1545382160\r\n\r\n\tFixed a case where a controller could not proceed past the start screen\r\n\tFixed a case where collected health pickups would not be honoured on player spawn\r\n\r\n\r\n1545606251\r\n\r\n\tRemoved beta branding\r\n\tHalved damage dealt by [redacted]\r\n\tReduced move speed of [redacted]\r\n\tFixed [redacted] hit box using incorrect vector\r\n\tLift sign now disappears when lift is in use\r\n\t[redacted] now reset to a random position when becoming visible\r\n\tFixed [redacted] being static\r\n\tIncrease collider size for pickup covers\r\n\tFixed health pickup bit string not being converted to a total bit count\r\n\r\n\r\n1545902137\r\n\r\n\tUpdated lift end zone to default to 6 high\r\n\tFixed a case where some controllers could not close the item pickup ui\r\n\tFixed a case where [redacted] could change direction when they should not be able\r\n\tDirection changing behaviour moved to green [redacted]\r\n\tUpdated [redacted] bullet appearance\r\n\tFixed player collision area for pickup covers\r\n\tColour tinted base for [redacted]\r\n\tRevered sprite for yellow [redacted]\r\n\tChanged colour of yellow [redacted] to blue\r\n\tDecreased time it takes for a bubble to respawn\r\n\tDoubled health gain and health loss\r\n\tFixed red [redacted] missing reference to bullets\r\n\t[redacted] bullets now flash rapidly\r\n\r\n\r\n1546012176\r\n\r\n\tAdded missing particle arrays to stage 0\r\n\tFixed [redacted] remaining active when offscreen\r\n\tFixed a performance issue with particle similation space\r\n\t[redacted] no longer move while shooting\r\n\tIncreased penetration distance of [redacted] bullets\r\n\tFixed bullets from red [redacted] being active for a single frame too early\r\n\tHalfed maximum bullets for red [redacted]\r\n\tAdded new baddie projectile layer mask\r\n\tFixed render order for [redacted]\r\n\tFixed transparency issue with [redacted] bullets\r\n\tFixed issue where a [redacted] shot in the wrong direction after respawn\r\n\t[redacted] now move slower on easy mode than previously\r\n\t[redacted] now moves slightly faster on hard mode than previously\r\n\tReplaced physics code used for [redacted]\r\n\tDev prefab no longer includes a grid\r\n\tAdded dev object to stage 0\r\n\t[redacted] now remain active at all times\r\n\r\n\r\n1546080633\r\n\r\n\tFixed [redacted] getting stuck in a loop bouncing off corners\r\n\t[redacted] now use a look up table to determine direction\r\n\t[redacted] now bounce off of each other\r\n\r\n\r\nFrom here on out it is just laying out the stages and adding music. The only other coding that should happen is for the bosses and Steam features. \u02d0steamhappy\u02d0"
+    },
+    {
+      "title": "2nd Last Major Progress Log",
+      "date": "2018-12-22 15:12:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111291804776",
+      "content": "1543818732\r\n\r\n\tAppended missing length value to H_PL and H_PR area templates\r\n\tFixed boss room entry being function only on the left\r\n\tUpdated boss room area template to better fit around the changes\r\n\tUpdated boss room area in Stage 2 to reflect these changes\r\n\tFinished skeleton for Stage 3\r\n\tLaid pipes for stage 3\r\n\tAdded error log message for if a pipe is missing an assigned area\r\n\tFinished laying pipes for stage 3\r\n\tUpdated stage exits in stage 2 to use the correct data\r\n\r\n\r\n1544004589\r\n\r\n\tStarted stage 4 skeleton\r\n\tCreated more H_PL and H_PR area templates\r\n\tFinished stage 4 skeleton\r\n\r\n\r\n1544296458\r\n\r\n\tFixed counting error in FlipDiscRespawn\r\n\tFlip discs no longer respawn\r\n\tLaid pipes in stage 4\r\n\tAttached all spawn areas in stage 0\r\n\tFixed missing parenting for fluids in movement area\r\n\tTransplanted copy of movement area into stage 0\r\n\tCleaned up leftovers in stage 0\r\n\tRemoved unused pipes from stage 0\r\n\tRemoved obsolete staging scene\r\n\tFixed pipe assigment error to now use the correct name\r\n\r\n\r\nNote that \"stage 0\" is just a debug and testing stage using during development. It will not be part of the full game."
+    },
+    {
+      "title": "These Points of Data Make a Beautiful Line...",
+      "date": "2018-12-08 13:28:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416641943180257454",
+      "content": "With the save system complete it is time to move onto laying out more stages.\r\n\r\n1543177667\r\n\r\n\tSaving now creates a backup\r\n\tFixed stage exit pipe child parenting\r\n\tFixed stage exit pipe TileCollider being too wide\r\n\tCreated sprites for final stage blocker\r\n\tCreated tiles for blocking exit to final stage\r\n\tCreated code for exit blocker tiles\r\n\tPadded boss save data for easier to use ids\r\n\tRewrote code for assiging boss beaten status on stage load\r\n\tCreated stage loading behaviour\r\n\tCreated stage loading bar\r\n\tChanged how SaveManager behaviour reference is obtained\r\n\tChanged how SaveData behaviour reference is obtained\r\n\tSave data is now loaded on the title screen\r\n\tTitle screen now takes player to last used spawn stage and area\r\n\tRemoved obsolete data load check in SaveManager\r\n\r\n\r\n1543567754\r\n\r\n\tReassigned parents in templates\r\n\tCreated H_PB area templates\r\n\tFixed Palette prefab initialising redundant data\r\n\tFixed new palette not being loaded after going to a new stage\r\n\tStarted skeleton for Stage 3\r\n\tCreated new area templates H_PL and H_PR"
+    },
+    {
+      "title": "The Final 2 Baddies",
+      "date": "2018-12-06 03:15:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416641943171489905",
+      "content": "1542621133\r\n\r\n\tAdded exit pipe to Spawn\r\n\tAnimation can now run in reverse order\r\n\tSeperated out sheath for [redacted]\r\n\tCreated behaviour for [redacted]\r\n\tSet particle colour for [redacted] explosion\r\n\tCreated difficulty for [redacted]\r\n\tSetup explosion particle effect for [redacted]\r\n\r\n\r\n1542785380\r\n\r\n\tCreated special [redacted] particle explosions\r\n\tCreated behaviour for [redacted]\r\n\tFixed [redacted] sprites using incorrect masking\r\n\tChanged [redacted] difficulty to be set per object\r\n\r\n\r\nWhile I have still left to create 4 more bosses, all the baddies have been finished. Yay!"
+    },
+    {
+      "title": "Difficult Baddies",
+      "date": "2018-11-30 03:52:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415515408472003303",
+      "content": "1542357632\r\n\r\n\tUpdated Spawn to include stage exit\r\n\tUpdated Stage 2 spawn areas to include stage exit\r\n\tUpdated spawn area template to include stage exit\r\n\tPipes no longer create an error if an area is missing\r\n\tBaddies now have a difficulty setting\r\n\t[Redacted] now uses a faster animation\r\n\tAdded model reference caching for some baddies\r\n\tAdded BaddieTile to Spawn\r\n\tBaddie references are now exposed in the inspector for GameManager\r\n\tAdded a difficulty variation to many baddies\r\n\t[Redacted] now have a directional bias\r\n\tCreated a variable for reading colour version of [redacted]\r\n\tDoubled max number of bullets for [redacted]\r\n\tHalved move speed of [redacted]\r\n\tHalved walk animation speed of [redacted]"
+    },
+    {
+      "title": "More progress",
+      "date": "2018-11-29 02:41:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415515408468210178",
+      "content": "1541671373\r\n\r\n\tCleaned up left over objects in stages\r\n\tAdded [redacted] to Stage2\r\n\tCreated Stage0 for testing\r\n\tUpdated default spawn stage to 1\r\n\tUpdated default spawn area to 5\r\n\r\n\r\n1542244931\r\n\r\n\tCreated sprites for [redacted] and [redacted]\r\n\tUpdated Stage 2 skeleton to include boss return path"
+    },
+    {
+      "title": "A Wild Mystery Appears!",
+      "date": "2018-11-25 15:32:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415514774180591648",
+      "content": "1541505692\r\n\r\n\tCreated bullets for [redacted]\r\n\tUpdated [redacted] AI to now shoot bullets\r\n\tAdded missing parents from spawn areas and spawn area template\r\n\tAdjusted hit boxes on [redacted]\r\n\r\n\r\n1541589328\r\n\r\n\tFixed bomb explosion using wrong shader\r\n\tUpdated box check on [redacted] to be one dimensional\r\n\tModified the shooting arc for [redacted] and [redacted]\r\n\tModified shooting frequency for [redacted]\r\n\tTweaked placement of numbers for player movement guide in Staging\r\n\t[redacted] can now turn around if there are no more tiles to stand on\r\n\t[redacted] can now function upside down\r\n\t[redacted] now uses a pool for bullets\r\n\r\n\r\nNote that the player movement guide mentioned in the logs is only functional in development. It is not actually part of the game."
+    },
+    {
+      "title": "Oh Baby, A Triple?",
+      "date": "2018-11-21 02:34:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415514774164184189",
+      "content": "1540972354\r\n\r\n\tRewrote spawn area assignment code\r\n\tFixed radar slider incorrect parenting\r\n\tRealigned areas in Staging\r\n\tRewrote code for radar coordinate system\r\n\tRemoved obsolete StageBase\r\n\r\n\r\n1541200395\r\n\r\n\tSpawn areas are now disabled when not in use\r\n\tplayerSpawnLocation and cameraSpawnLocation are no longer hidden in Unity inspector\r\n\tFixed invalid spawn stage id SaveData placeholder in Stage2\r\n\tFixed using wrong spawn area id SaveData placeholder in Stage2\r\n\tAdded kill player debug button to Unity inspector\r\n\tFixed updating spawn location relocating player and camera\r\n\tUpdated tile set replacement tool to allow all quadrants\r\n\tTile set replacement tool no longer prints to log\r\n\tFix wrong tile sets being used in Stage 2\r\n\r\n\r\n1541404903\r\n\r\n\tCreated baddie base template\r\n\tCreated sprites for [redacted]\r\n\tUpdated spirte animation code to allow material element selection\r\n\tCreated [redacted] and [redacted]\r\n\tCreated AI for [redacted]"
+    },
+    {
+      "title": "The Redactioning",
+      "date": "2018-11-19 04:56:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163927963552",
+      "content": "1540906794\r\n\r\n\tReduced size of [redacted] and [redacted]\r\n\t[redacted] can no longer destroy blocks intended for [redacted]\r\n\t[redacted] can no longer destroy blocks intended for [redacted]\r\n\tReduced horizontal velocity for [redacted] \r\n\tRemoved horizontal velocity from [redacted] \r\n\t[redacted] can no longer move veritically\r\n\t[redacted] can no longer move horizontally\r\n\tEnsured that [redacted] no longer has no horizontal velocity on its spawning\r\n\tFixed incorrect bit being used for BeginJump input\r\n\tBits for input int can no longer be modified by Unity inspector\r\n\t[redacted] now only starts rising when button is released\r\n\tBomb explosion particles now start with radius derived from bomb scale\r\n\t[redacted] now lasts longer\r\n\tBomb explosion particles now render infront of player"
+    },
+    {
+      "title": "The First Complete Skeleton!",
+      "date": "2018-11-14 20:26:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163912229641",
+      "content": "1540622089\r\n\r\n\tCreated tile set conversion tool\r\n\tRemoved obsolete TileSingle prefabs variants\r\n\tFinished stage skeleton for Stage 2\r\n\r\n\r\n4 more to go, but expect the next few updates to not have skeleton work. That will be done in bulk over a few weeks coming soon."
+    },
+    {
+      "title": "More Bones for the Skeleton",
+      "date": "2018-11-05 03:04:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2407631646385462014",
+      "content": "1539987891\r\n\r\n\tCreated stage skeleton for more areas in Stage 2\r\n\tReordered template children\r\n\tRemoved unused section templates\r\n\tRenamed most section templates\r\n\tTranslated position for most segment templates\r\n\tCreated segment hierarchy objects"
+    },
+    {
+      "title": "Stage Layout Begins!",
+      "date": "2018-11-02 18:28:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2407631646376790781",
+      "content": "1539840787\r\n\r\n\tVerified stage lighting\r\n\tCreated skelton for areas 1, 2 and 3 in Stage 2\r\n\tFixed spawn areas being treated as static\r\n\tRemoved CrawerBlue leftovers in SpawnArea template\r\n\tFixed TileBreakables being treated as respawnable in SpawnArea template\r\n\tFixed position vector for tile breakables reference point in SpawnArea 1\r\n\tAdded in spawn areas in Stage 2 for spawn 3 and 4\r\n\tDev debug tools set as a debug layer\r\n\tDebug layer set to no longer allow picking"
+    },
+    {
+      "title": "Double Up",
+      "date": "2018-10-30 09:46:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403127338447192352",
+      "content": "1539217228\r\n\r\n\tAll SaveManager save calls now managed via calls from other scripts\r\n\tRemoved log message for when save game data does not exist\r\n\tAdded warning logs for if the save file cannot be read from\r\n\tAdded warning logs for if the save file cannot be written to\r\n\tVerified file write time\r\n\r\n\r\n1539780217\r\n\r\n\tUpdated SpawnArea template's TileSingles to have TileSingles parent group\r\n\tReset position vector for PipeLeft and PipeRight\r\n\tCreated stage skeletons for SpawnArea 1 and Area 0 in Stage 2\r\n\tRemoved obsolete dev tools from stages\r\n\tChanged active state of some dev tools in template scene\r\n\tRemoved obsolete SaveDataDebug object"
+    },
+    {
+      "title": "Always Be Saving",
+      "date": "2018-10-29 00:36:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403127338442196968",
+      "content": "1539152792\r\n\r\n\tSet stage damage multipliers\r\n\tRemoved obsolete ability pickup data in GameManager\r\n\tAdded save data for total armour\r\n\tAdded save data for spawn location\r\n\tChanged data management for health container total\r\n\tAdded data for number of starting health containers\r\n\tCreated stage music placeholders\r\n\tMoved some SaveData calls from SaveManager script to pickup scripts\r\n\tUpdated SaveManager script reference to be public\r\n\tExposed value of total health containers to inspector\r\n\tPlayer now spawns with correct health and armour values"
+    },
+    {
+      "title": "Here's to more progress",
+      "date": "2018-10-22 20:52:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403126706532365871",
+      "content": "1539059437\r\n\r\n\tUpdated product name and logo to beta versions\r\n\tSet stage ids\r\n\tRemoved stage specific script placeholders\r\n\tChanged execution order for GameManager script\r\n\tCreated SaveFileManager script\r\n\tData is now loaded and saved\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33485399/7ec66fd40b00019a89742f0dbf2000cc61d87dc6.png"
+    },
+    {
+      "title": "Yet more progress...",
+      "date": "2018-10-18 01:39:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403126706515018034",
+      "content": "Did you know the version numbers are actually a Unix epoch timestamp of when the batch of changes were completed?\r\n\r\n1538720335\r\n\r\n\tSigns no longer flip\r\n\tSigns are once again static\r\n\tAdded pickups to stage template\r\n\tCreated the 5 stages\r\n\tAdded all pickups into thier stages\r\n\tAssigned all pickup ids\r\n\tAssigned all palette ids"
+    },
+    {
+      "title": "Progress Report 3 & 4",
+      "date": "2018-10-13 03:35:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3594328263092166251",
+      "content": "Please note these update notes do not apply at all to the Alpha Demo.\r\n\r\n1538205182\r\n\r\n\tReplaced BouncyBomb with new bomb type\r\n\tCreated art assest for new the bomb type\r\n\tFinished [REDACTED]\r\n\r\n\r\n1538386497\r\n\r\n\tRemoved PickupCover from ability pickups\r\n\tFixed BombExplosion prefab grouping\r\n\tFixed BombExplosionParticle having incorrect alpha channel values\r\n\tConverted BombExplosionParticle into a mask\r\n\tAdjusted colors in [REDACTED]\r\n\tUpdated various objects to no longer have a static transform\r\n\tFixed arrow sign pointing in the wrong direction after a flip\r\n\tUpdated explosion particle code to now use various colours based on ability"
+    },
+    {
+      "title": "Progress report part 2",
+      "date": "2018-10-09 19:29:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2448162067114399259",
+      "content": "Here is more of what I have been working on\r\n\r\n1538103242\r\n\r\n\tSplit bomb types into their own individual assets\r\n\tMapped new bomb types to thier own actions\r\n\tAdjusted timing of BouncyBomb\r\n\tFixed colour palette on bombs using too many colours\r\n\tAdded colour variety to bomb types\r\n\tApplied colour variety to ability pickups\r\n\tCreated [redacted]"
+    },
+    {
+      "title": "Just incase everyone wants a progress report...",
+      "date": "2018-10-06 07:53:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447035533301537761",
+      "content": "I will now post logs here so you all can follow my work as the game develops.\r\n\r\nI will start by posting a few older changlogs and catch up in time. Enjoy!\r\n\r\n1537932388\r\n\r\n\tCreated block spacing guide area in Staging\r\n\tRemoved SectionHE template as the area layout is not possible\r\n\tUpdated section templates based on feedback and alpha play testing"
+    },
+    {
+      "title": "Alpha Demo Now Available!",
+      "date": "2018-09-05 15:01:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447032995763049060",
+      "content": "A little ball in a big labyrinth with a nostalgia inducing 8-bit theme.\r\n\r\nExplore a challenging maze, while you try not to get lost. I dare you to not get lost, while tackling this tricky dungeon.\r\nYou'll need skills and patience whilst fighting various baddies, each with their own sprites and AI.\r\nMaster what skills you have and increase your survivability with pickups you earn. Search for the boss and defeat them, if you can.\r\n\r\nThis is a game that does away with story. In it's place you'll find continuous action and adventure. Just you, your old-school gameplay experience and an expanding demo labyrinth to explore.\r\n\r\nFeatures:\r\n\r\nNo hand-holding!\r\nNo tutorials!\r\nNon-Linear!\r\nMost controllers supported with no setup!\r\nDRM Free!\r\nEaster eggs!\r\nIndie!\r\nPixel Perfect mode included!\r\nBinaural sounds!\r\nUp to 240fps!\r\n8-bit graphics, sound effects and music!\r\nAn exclusive alpha demo only stage!\r\n19 pickups to obtain!\r\n\r\n\r\nThis is an alpha demo for a game lovingly crafted, while taking inspiration from classic NES games.\r\nAs my very first product release I hope that you enjoy what I have to share."
+    }
+  ]
+}

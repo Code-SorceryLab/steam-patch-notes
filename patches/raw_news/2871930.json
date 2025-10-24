@@ -1,0 +1,168 @@
+{
+    "appId": "2871930",
+    "count": 27,
+    "notes": [
+        {
+            "title": "Major Performance Optimizations and Improved Controller Experience",
+            "date": "2024-11-21 14:42:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783872411990936",
+            "content": "[list]\n[*] We've optimized game performance: Astro Looter can now achieve peak frame rates of [b]300 FPS[/b] on [u]RTX 2060-era[/u] hardware with max settings, with an average frame rate exceeding [b]120 FPS[/b]. On [u]GTX 1050 or equivalent[/u] hardware, the game maintains a stable [b]60 FPS[/b] during normal gameplay.\n[*] Reduced VRAM usage, lowering the likelihood of crashes on some hardware during startup.\n[*] [u][b]Fully rebuilt the UI system[/b][/u], significantly enhancing the controller-based UI experience.\n[/list]"
+        },
+        {
+            "title": "Optimize Weapon Stats and Balance",
+            "date": "2024-10-11 15:35:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6931694080296063897",
+            "content": "- Optimize the handling difficulty and growth curve of late-game weapons, reducing the difficulty of using certain weapons.\n- Performance optimization\n- Minor bug fixes"
+        },
+        {
+            "title": "New Weapon Overclock Skills and UI Optimization",
+            "date": "2024-07-30 04:09:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094365715271",
+            "content": "1. [b]Weapon Overclock:[/b] When a weapon reaches levels 2, 6, and 10, and after upgrading 9 times using weapon upgrade [orange card] (excluding Projectile cards) in game, the ultimate overclock ability will be triggered. Examples include:\n\n[b]High-Explosive Rounds:[/b] Bullets generate shockwave damage upon explosion.\n[b]Hydrogen Fuel:[/b] Produces blue flames with higher damage.\n[b]Mini Prism: [/b] Adds mini prisms that cause some rays to scatter.\n\n[img]{STEAM_CLAN_IMAGE}/44991943/176d8fd7caa71af8da1afcd60a6afc2e08de1747.gif[/img]\n\nAdditionally, after overclocking, the selected weapon upgrade cards will be enhanced.\n\n[u]We've uploaded videos showcasing all weapon effects on the Vault page for players to view.[/u]\n\n2. [b]UI Improvements: [/b]\n    - Weapon upgrade previews now display post-upgrade values (currently support mouse only).\n    - Added an indicator for the number of crystals required to unlock on the map selection page.\n\n3. [b]Gameplay Adjustments: [/b]Optimized the difficulty of levels on the first planet.\n\n4. [b]Bug fix:[/b] Attempted to resolve the issue where some users were unable to enter the game and received the \"Please Launch From Steam\" message.\n\n5. Minor bug fixes and performance optimizations."
+        },
+        {
+            "title": "Optimized Defense Turret Building Experience and Visual Improvements",
+            "date": "2024-07-22 12:11:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959979821958",
+            "content": "[b]1. Fixed the issue where players temporarily stop moving after constructing buildings.\n2. In Easy and Normal difficulty modes, building defense turrets will slow down time.\n3. Improved the visual effects of the Death Angel Frost Launcher.\n4. Reduced the number of enemies in the later stages of the first beginner level.\n5. Added automatic mining rewards. For every 30 minutes of gameplay, crystal rewards will be given based on the number of planets you have unlocked.\n6. Other 26 minor fixes.[/b]\n\n[img]{STEAM_CLAN_IMAGE}/44991943/50512bee95037b25d09c70b7ae79d8c9aa5d3d21.png[/img]\n"
+        },
+        {
+            "title": "Adjust UI Font Size and Optimize End-of-Game Calculations",
+            "date": "2024-07-19 12:25:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959968925601",
+            "content": "- Adjusted UI font size.\n- Improved end-of-game calculations; \n- Slightly adjusted the pricing for upgrading weapons and defense towers as crystals collected and mined will be brought back to the ship's hold together.\n- Other minor tweaks"
+        },
+        {
+            "title": "Fixed Issue with Save Corruption Leading to Missing Heroes",
+            "date": "2024-07-18 07:56:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959964598394",
+            "content": "An urgent fix has been implemented for the issue of save corruption causing heroes to disappear. No action is required on your part; simply update and start the game for an automatic fix. Your hero will be reset to the first hero by default. If you have unlocked other heroes, please manually change them back."
+        },
+        {
+            "title": "Crash Issue Fix Report - 18 July",
+            "date": "2024-07-18 02:59:39",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959963846344",
+            "content": "Due to the recent increase in crash incidents, which have significantly impacted your gaming experience, we have swiftly investigated the issues and released multiple updates over the past few days. [u]The issue is nearly resolved, but we are continuing to monitor it.[/u] We understand that we cannot undo the issues that have already occurred, but we hope this report can share some information and demonstrate our commitment to the player experience.\n\n[h2]Crash Stat:[/h2]\nVersions before July 12: Average crash rate - 0%\nVersions from July 12 to July 14: Average crash rate - 18.4%\nVersions from July 14 to July 16: Average crash rate - 32.1%\nVersion from July 17: Average crash rate - 14.1%\nVersion from July 18: Average crash rate - 0.025%\n[img]{STEAM_CLAN_IMAGE}/44991943/72dbbf1bf5bb7dff7a575b7b7681dc726651e821.png[/img]\n\n\nBased on anonymous cloud log reports, the recent crashes are caused by the following two issues:\n[h2]Issue 1:[/h2]\n[h3]In simple terms:[/h3]\nThis issue is caused by changes in the total number of buildings in the scene, particularly when reduced, leading to an out-of-bounds array query in the C++ code for querying buildings, resulting in a crash.\n\n[h3]The Boring Part:[/h3]\nWhen enemies patrol, they check for nearby heroes or buildings. If there are both buildings and heroes nearby, they prioritize attacking heroes; otherwise, they attack buildings. When the AI patrol system retrieves the building list, a change in the list during this process causes a null pointer issue in C++, leading to an out-of-bounds array query and a crash.\n\nThe occurrence probability of this issue is positively correlated with device performance. Due to the high performance of our development machines, we did not replicate the issue in our lab environment, delaying the fix.\n\n[h3]Solution:[/h3]\nWe have modified the code execution order and added boundary and pointer checks. Based on cloud logs, the patch released on July 18 has significantly reduced the occurrence of this issue, with no further occurrences reported. We are continuously monitoring the issue and will release further fix reports as needed.\n\n[h2]Issue 2:[/h2]\n[h3]In simple terms:[/h3]\nThis issue occurs when the turret's material is changed during tower construction, leading to a crash due to an incorrect material replacement.\n\n[h3]The Boring Part:[/h3]\nDuring tower construction, the turret's material is changed and a material animation is played. During this process, a low-level error might cause an attempt to access a non-existent material, resulting in the failure of setting the instance material or shader material parameters, leading to an OS crash.\n\n[h3]Solution:[/h3]\nThis issue has a relatively low occurrence probability. We have added boundary and pointer checks. Based on cloud logs, this issue has not reoccurred, but we will continue to monitor it.\n\nOur team has been working at full speed over the past few days to resolve these severe crashes. We apologize for the negative experience caused. If you no longer encounter crash issues after updating to the latest version, please feel free to let others know. If the problem persists, please continue to inform us. Thank you for your support and attention."
+        },
+        {
+            "title": "Reduce Crashes on Specific Devices",
+            "date": "2024-07-17 15:19:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959962073931",
+            "content": "- Continue reducing the likelihood of crashes occurring on certain devices.\n- Fixed landing ship shadow issue."
+        },
+        {
+            "title": "Sound Optimization and Minor Adjustments",
+            "date": "2024-07-17 12:37:20",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959961664111",
+            "content": "- Optimized the volume of background music and sound effects.\n- Enhanced the attack attributes of ranged enemies.\n- Improved the late-stage balance of certain levels.\n- Performance optimizations and other adjustments."
+        },
+        {
+            "title": "Crash Issue Has Been Fixed",
+            "date": "2024-07-16 22:42:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959959550332",
+            "content": "After thorough tracking, we identified a critical issue that caused the game to crash when players built defense towers. This was due to a series of erroneous C++ codes leading to a difficult-to-detect array out-of-bounds problem. By analyzing the cloud crash log data, we believe we have resolved the crash issues for most players. Please update to the latest version to ensure the best user experience. This fix also includes optimizations for some performance overheads.\n\nDue to the variability in hardware performance, we cannot completely rule out all crash issues. If you continue to encounter problems, please contact us. We deeply apologize for the poor experience during the initial release and hope for your understanding.\n\n[img]{STEAM_CLAN_IMAGE}/44991943/e4674b96f1a002192154225c506430e53136d033.png[/img]"
+        },
+        {
+            "title": "Important Update Fixes Crash Issue When Building Defense Towers",
+            "date": "2024-07-16 16:32:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704285038135",
+            "content": "After thorough tracking, we identified a critical issue that caused the game to crash when players built defense towers. This was due to a series of erroneous C++ codes leading to a difficult-to-detect array out-of-bounds problem. By analyzing the cloud crash log data, we believe we have resolved the crash issues for most players. Please update to the latest version to ensure the best user experience. This fix also includes optimizations for some performance overheads.\n\nWhile we have made significant efforts to greatly reduce the likelihood of crashes, we cannot entirely eliminate all crash issues due to variations in hardware performance. If you continue to encounter problems, please contact us. We deeply apologize for the poor experience during the initial release and hope for your understanding.\n\n[img]{STEAM_CLAN_IMAGE}/44991943/749ebad134493c1b69dc304e24ab8824cb7fe6b8.png[/img]"
+        },
+        {
+            "title": "Settings Option Added in Main Menu",
+            "date": "2024-07-16 04:14:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704283168470",
+            "content": "We've added a settings option to the main menu, making it easier for users to switch languages right from the home screen. For the best experience, we recommend  restarting the game after changing the language."
+        },
+        {
+            "title": "Reduce performance consumption and mitigate the occurrence of crashes",
+            "date": "2024-07-16 02:42:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704282937402",
+            "content": "Reduce performance consumption and mitigate the occurrence of crashes"
+        },
+        {
+            "title": "Fixed Issue with Tutorial Not Appearing",
+            "date": "2024-07-15 12:55:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704280844243",
+            "content": "This patch fixes an issue where the tutorial in the first level would not appear under certain circumstances."
+        },
+        {
+            "title": "Major Update: Enhanced Gameplay Experience with New Enemies and Improved Combat",
+            "date": "2024-07-11 12:58:05",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267361152418",
+            "content": "- New Enemy: Acid Spitter Spider - An annoying ranged attacker that spits splashing acid, damaging heroes.\n- New Enemy: Magma Smasher - A big guy with magma inside; upon death, it leaves behind magma that can harm heroes.\n- New Enemy: Giant Chameleon Moth - A hard-to-spot roaming creature made of Titan minerals. It doesn’t actively attack heroes.\n- The map screen now displays the highest star rating and difficulty level for completed rounds.\n- Thrust cooldown is now linked to hero level—the higher the hero level, the shorter the cooldown.\n- Combat Feedback: Added bone-crushing effects when enemies die.\n- Combat Feedback: Improved blood effects when enemy take damage.\n- Adjusted and optimized background music for the end of stages.\n- Added multi-channel audio settings in the options menu.\n- Fixed an issue where the number scroll on the stage results screen took too long."
+        },
+        {
+            "title": "Major Update on Defense Turret Construction System",
+            "date": "2024-07-01 02:26:17",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267323099134",
+            "content": "- Added defense turret inventory count\n- Adjusted turret construction cooldown\n- Adjusted enemy attributes\n- Added card reroll with crystals during upgrades"
+        },
+        {
+            "title": "Optimized Game Performance, Especially for Earlier Released Devices",
+            "date": "2024-06-25 07:52:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039994219127",
+            "content": "1. Improved overall game performance, especially on lower-spec devices. \n2. Fixed UI texture issues when switching between Turrets. \n3. Reduce the installation package size for easier downloads and more storage space."
+        },
+        {
+            "title": "Performance, Balance, and First-Time User Experience Enhancements",
+            "date": "2024-06-19 16:31:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039973660493",
+            "content": "1. Optimized texture quality to reduce VRAM usage.\n2. Enhanced UI Lighting performance.\n3. Improved performance of in-game assets and textures.\n4. Adjusted default graphics settings for first-time launch, enabling dynamic resolution by default.\n5. Reduced package size for more efficient downloading and installation.\n6. Improved game balance"
+        },
+        {
+            "title": "Fix Crash on GTX 10 Series When Changing Graphics Settings",
+            "date": "2024-06-16 13:19:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005360476619",
+            "content": "This update try to fixes the crash that occurs when changing graphic settings on GTX 10 series devices. \n\nThis is a patch attempting to address the issue, verified in our lab environment to resolve the problem. However, it does not guarantee a 100% crash-free experience on your machine. We are still actively monitoring user feedback. We recommend using a device with RTX 20 series or above for optimal performance."
+        },
+        {
+            "title": "Weapon Feedback and Visuals Update, Map Enhancements, Balance Tweaks and Bug Fix",
+            "date": "2024-06-14 02:25:52",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005351531564",
+            "content": "1. Updated visual and haptic feedback for the Voltstorm Lightning Rifle.\n2. Balanced stats and enhanced visual and haptic feedback for the Death Angel Frost Cannon.\n3. Improved visual and haptic feedback for the Wasteland Fire Launcher.\n4. Fixed issues where mining carts could deviate from their paths in certain scenarios.\n5. Increased variety of items in detection zones.\n6. Updated missile impact visuals for Missile Defense Turrets.\n7. Miscellaneous bug fixes and performance improvements.\n\nWe constantly update and polish our game for bug fixes and to enhance your game experience."
+        },
+        {
+            "title": "Astro Looter",
+            "date": "2024-06-13 12:25:09",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005349402674",
+            "content": "We will live stream Astro Looter Gameplay demo video.\n[img]{STEAM_CLAN_IMAGE}/44991943/c22f72f6994cdde1c84fac087ef07ccee6ce59d8.png[/img]"
+        },
+        {
+            "title": "Added Portuguese Language Support and Fixed Turret Price Issue",
+            "date": "2024-06-09 09:15:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972559809772",
+            "content": "- Added support for Portuguese in the interface.\n- Fixed an issue with the turret upgrade price.\n- Improved sound quality."
+        },
+        {
+            "title": "Reblance weapon and level system",
+            "date": "2024-06-09 07:33:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972559552538",
+            "content": "Rebalance weapon and level system"
+        },
+        {
+            "title": "Bux fix and performance improvement",
+            "date": "2024-06-07 13:41:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972553191987",
+            "content": "Bux fix and performance improvement"
+        },
+        {
+            "title": "Fi Laser Turrets",
+            "date": "2024-06-07 09:02:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972552487455",
+            "content": "Fi Laser Turrets"
+        },
+        {
+            "title": "Blood Color Customizable in Settings",
+            "date": "2024-06-07 05:26:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972551938522",
+            "content": "Players can now set the blood color to red, green, or grey in the settings interface."
+        },
+        {
+            "title": "Support Russian, performance improvement and bug fix",
+            "date": "2024-06-06 15:39:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972549844961",
+            "content": "Add language support for Russian, performance improvement and bug fix"
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+  "appId": "689580",
+  "count": 17,
+  "notes": [
+    {
+      "title": "TurnSignal 2.4.6 Released!",
+      "date": "2019-02-22 01:42:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2480825216191562923",
+      "content": "Heya Everybody!\r\n\r\nAfter being in testing for some time, the TurnSignal 2.4.6 update is going gold!\r\nSorry it took so long!\r\n\r\nNew features include:\r\n[list]\r\n[*] A new tracking algorithm that uses positions on a sphere to select the best axis for consistent rotational tracking, which looks to have reduced drift by a good margin vs previous methods.\r\n\r\n[*] Disabling SteamWorks should actually work now, using essentially the same method other apps do, so ( hopefully ) no more time tracking!\r\n\r\n[*] Better preference file handling.\r\n\r\n[*] Several other small improvements I can't remember.\r\n[/list]\r\n\r\nThanks for all your support, and as always, feel free to hit me up with your feedback / issues / questions!\r\n\r\n\r\nAs a side note, I'm currently for hire, and looking for work!\r\n\r\nIf you need a programmer with several years experience, please feel free to contact me, and I'll make sure to get my Resume out to you!\r\n\r\n([url=https://www.linkedin.com/in/benotter/] My LinkedIn[/url] )"
+    },
+    {
+      "title": "TurnSignal Beta 2.4.6 Update: Disable-able SteamWorks, Works!",
+      "date": "2018-10-20 19:39:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403126706524956356",
+      "content": "Heya Everyone!\r\n\r\nThere should be an update soon to the TurnSignal beta that includes, among others things, a working bypass for the Steam 'Currently Playing' issue that has been reported by so, so, many people!\r\n\r\nAfter the beta updates, if TurnSignal loads up the preference file and finds that SteamWorks is disabled, and also detects the argument '--steam' ( which is now given when launched from Steam by default ), it will launch a new instance then close itself using a method that lets it slip by Steam's auto-launch detection, and run un-tracked and unannounced, save for the unavoidable initial one on first launch ( I tried for every detection, but because Unity only executes after load, the time it takes is enough to be detected by Steam, sorry T>T ),\r\n\r\nThis also means that if the option is disabled, and its not launched through Steam, it should never attempt to connect until the option is enabled again,\r\n\r\nBesides that, I've made a few other ( hopefully good ) performance changes;\r\n[list]\r\n\r\n[*] The Menu is now only rendered once for both places its displayed, the frame is now copied instead of rendered for the Overlay, which saves memory and CPU/GPU cycles.\r\n\r\n[*] The floor Twister logic has been revisited and redone, the CPU / Memory bound math for the Bezier curves for the floor display has been rewritten to use Unity's 'Burst' compiler, which shakes down to assembly, taking its calculation time from around ~3.5ms to less than ~1ms ( on avg, on my system, numbers may vary )\r\n\r\n[*] Went all over everything again, trying to reduce memory and CPU footprint, went from ~1-3% CPU and 85MB Ram, to >0.5% CPU and 60MB Ram,\r\n\r\n[*] ( Not really a change )  Experimenting with the ILL2CPP compiler in Unity, have pretty much gotten it to work fully ( save for the tray Icon ), but performance is actually about the same, not a whole lot of work being done already, 90% of frame time is spent waiting as to not waste resources rendering above 90fps.\r\n\r\n[/list]\r\n\r\nI've finally carved out some time, and have actually tested out the current beta in Pavlov for a bit, and it seems to work well enough, so look for it very soon!\r\n\r\nThank you all for the support and communication, and remember, if you have any Feedback, Questions, Comments, or Issues with TurnSignal, please feel free to let me know!\r\n\r\n( PS: I've noted a lockup, only affecting TurnSignal itself, that I cannot seem to find the cause of. It happens seemingly randomly, I want to say it happens when you try and watch resource usage with Task Manager, but its hard to really know, since I do that about every launch when developing )"
+    },
+    {
+      "title": "Beta Update 2.4.6: Log Bomb Fix",
+      "date": "2018-09-29 16:51:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3167611029754685114",
+      "content": "Heya!\r\n\r\nPushing an update to the beta because I got reports that errors in the beta could grow the log file to insane sizes, due to me misconfiguring some stuff with the build,\r\n\r\nNew version should fix this and the underlying config problem, and now checks the log files size every 10 seconds to see if its grown above 10 mb, and if so, should clear it, as a just in case.\r\n\r\nThe update should be out asap, so look for it!\r\n\r\nAlso, super big thanks to Heathen and FireWaran for the quick turnaround on reporting issues!\r\n\r\n\r\nAs always, Thank You for the support, and if you have any issues / feedback / questions, please feel free to let me know!"
+    },
+    {
+      "title": "TurnSignal Beta 2.4.5; \"Late Anniversary Update\"!",
+      "date": "2018-09-25 01:39:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2450411965568837435",
+      "content": "Heya!\r\n\r\nSo, its been a bit, over a year in fact, since I first started development on TurnSignal, and about 9 months since it was last updated, ( I can't believe I missed the anniversary ),\r\n\r\nBut no longer will it be that long!\r\n\r\nI've been pulling super long nights to finally get time for development, and its finally payed off!\r\n\r\nIf you're brave and willing, and want to test the latest ( and hopefully greatest ) version of TurnSignal and its newest Turn Tracking algorithm, I've published a new build, [u]2.4.5[/u], under the 'Beta' branch in the beta's tab!\r\n\r\n[u]( You can find this by right clicking \"TurnSignal\" in steam, selecting properties, navigating to the BETAS tab, and selecting 'beta' from the drop-down list )[/u]\r\n\r\nThis new build may look and feel visually similar to previous ones, but I've essentially re-built the entire underlying app, piece by piece, to be a bit more efficient, straightforward, and easier to develop on,\r\n\r\nHere's a non-exhaustive list of changes;\r\n[list]\r\n\r\n[*] Refactored app code architecture; A major overhaul to the apps underlying code and logic.\r\n\r\n[*] Updated OpenVR Lib ( need to re-update it again ).\r\n\r\n[*] Updated Unity Version to latest non-beta (at time of writing this).\r\n\r\n[*] [u]Brand new tracking algorithm;[/u] no longer uses Gyro input, and should mathematically be more accurate ( maybe with some feedback tweaking ), save for the niche case of doing a \"stop-drop-and-roll\" procedure while wearing the headset.\r\n\r\n[*] Updated the location of the options file to be in user appdata folder instead of root directory.\r\n\r\n[*] [u]Made \"SteamWorks Optional\" function actually work,[/u] the app can now be launched outside of Steam when set. \r\n[b]Requires a restart to properly not-be-detected, and I still need to add a fix to disable it when launching from Steam.[/b]\r\n\r\n[*] [u]Completely rewrote OVRLay Unity Lib[/u], ( the underlying Overlay library I wrote for TurnSignal ) to be more modular and straightforward ( this has its own github page I will update ).\r\n\r\n[/list]\r\n\r\n... And more!\r\n\r\nLastly, Thank you all for the support thus far, any feedback you can give me from testing, or in general about the app, including if the tracking has improved or not, will only help make TurnSignal Better!\r\n\r\nThanks for reading!\r\n\r\nPS: The reason this is a beta, and not a full release update, is that I've yet to even test it in a game, pretty much 100% of my free time lately has been working at work, then working on TurnSignal. While I've tested throwing the headset around, and spinning circles in SteamVR Home, I have no idea how it might perform in niche situations or not, so until then, its a beta!"
+    },
+    {
+      "title": "TurnSignal Status Update!",
+      "date": "2018-05-04 14:15:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394104285099605232",
+      "content": "Heya Everyone!\r\n\r\nThis is just a small radio-burst to let you know that I'm still alive and kicking, and while I've been a bit busy lately with a new Job, Family stuff, the general mishmash of humanity we all face; \r\n\r\nTurnSignal is far from dead or abandoned, and I have heard and am doing my best to address the concerns and feedback the community (you guys!) have brought fourth, including (but not limited to, and in soft priority order);\r\n\r\n[list]\r\n\r\n[*] [b] WMR Support [/b] (This is actually a bug as they should function through SteamVR, but GOOD NEWS: I got a Lenovo Explorer just so I could test and fix this issue!),\r\n\r\n[*] [b] Drift [/b] (Inaccuracy that builds the longer you play),\r\n\r\n[*] [b] Accurately / Inaccurately showing usage / play time [/b] (Several people prefer it be silent in Steam game history), \r\n\r\n[*] [b] Performance [/b] (I'm having trouble pin-pointing an exact cause, it doesn't seem hardware based, which makes me think it\u2019s some sort of rare config or state that can nuke performance),\r\n\r\n[*] [b] More Options [/b] (More things you can change / edit in settings),\r\n\r\n[/list]\r\n\r\nAgain, this is not a complete, nor finalized priority, list, and most of these features / upgrades will probably be trickled out over several smaller updates (No reason to make people wait and to make testing harder),\r\n\r\nSo, yeah! Just a heads up I'm not dead, TurnSignal is not forgotten or unloved, and I really appreciate all the love and feedback you guys have given! Its more than I could have every hoped for, and you've made this whole project an amazing experience to work on!\r\n\r\nThank you!\r\n"
+    },
+    {
+      "title": "Update on Privacy!",
+      "date": "2017-11-15 21:45:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2486412956099889334",
+      "content": "Pushing out a build that is basically identical, because I'm an idiot.\r\n\r\nI didn't realize Unity Analytics was Activated, and for many, that's a privacy concern to have usage stats being beamed to some arbitrary server somewhere.\r\n\r\nSince I don't use it, and wasn't even really aware of it until it was brought up by user Amylion on the Discussion board, this build will have it disabled!\r\n\r\nI want to apologize to everyone for leaving it on, and I hope this lapse in responsibility and due-diligence towards making safe, secure software doesn't permanently dissuade you from use TurnSignal.\r\n\r\nIf it does, but you still think the software is useful, feel free to audit and compile your own version from the source code, found on my github.\r\n\r\nThank you for your time and patience!\r\n"
+    },
+    {
+      "title": "Update on Privacy!",
+      "date": "2017-11-15 21:45:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687741631",
+      "content": "Pushing out a build that is basically identical, because I'm an idiot.\r\n\r\nI didn't realize Unity Analytics was Activated, and for many, that's a privacy concern to have usage stats being beamed to some arbitrary server somewhere.\r\n\r\nSince I don't use it, and wasn't even really aware of it until it was brought up by user Amylion on the Discussion board, this build will have it disabled!\r\n\r\nI want to apologize to everyone for leaving it on, and I hope this lapse in responsibility and due-diligence towards making safe, secure software doesn't permanently dissuade you from use TurnSignal.\r\n\r\nIf it does, but you still think the software is useful, feel free to audit and compile your own version from the source code, found on my github.\r\n\r\nThank you for your time and patience!\r\n"
+    },
+    {
+      "title": "TurnSignal 2.3.4 Released!",
+      "date": "2017-10-14 23:50:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2139632606727081226",
+      "content": "TurnSignal has been updated to 2.3.4!\r\nThis time, actual improvements!\r\n\r\n[list]\r\n[*] Fixed Menu / Display Bugs!\r\n[*] Hopefully, Massive improvement to Turn Tracking ~ !\r\n[/list]\r\n\r\nI've decided to completely give up tracking the rotations via the absolute Y rotation, and have now switched over to tracking rotation based on angular velocity.\r\n\r\nSo far, it seems to be significantly more accurate then before, tracking turns even in the previously buggy task of looking up or down while turning!\r\n\r\nHope it works better for everyone.\r\n\r\nAs always, feel free to contact me for any Issues / Questions / Feedback you might have!"
+    },
+    {
+      "title": "TurnSignal 2.3.4 Released!",
+      "date": "2017-10-14 23:50:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687741953",
+      "content": "TurnSignal has been updated to 2.3.4!\r\nThis time, actual improvements!\r\n\r\n[list]\r\n[*] Fixed Menu / Display Bugs!\r\n[*] Hopefully, Massive improvement to Turn Tracking ~ !\r\n[/list]\r\n\r\nI've decided to completely give up tracking the rotations via the absolute Y rotation, and have now switched over to tracking rotation based on angular velocity.\r\n\r\nSo far, it seems to be significantly more accurate then before, tracking turns even in the previously buggy task of looking up or down while turning!\r\n\r\nHope it works better for everyone.\r\n\r\nAs always, feel free to contact me for any Issues / Questions / Feedback you might have!"
+    },
+    {
+      "title": "TurnSignal 2.3.2 Released!",
+      "date": "2017-09-26 00:04:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2149763711107497836",
+      "content": "Heya, \r\n\r\nHere's a quick one to improve QOL:\r\n[list]\r\n    [*] (Hopefully) Improved Turn Tracking Accuracy with new(ish) Algorithm!\r\n[/list]\r\n\r\nLet me know if it borks it or not, or if you want any features added!\r\n\r\nAs always, your Feedback / Questions / Concerns are welcome!"
+    },
+    {
+      "title": "TurnSignal 2.3.2 Released!",
+      "date": "2017-09-26 00:04:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687742067",
+      "content": "Heya, \r\n\r\nHere's a quick one to improve QOL:\r\n[list]\r\n    [*] (Hopefully) Improved Turn Tracking Accuracy with new(ish) Algorithm!\r\n[/list]\r\n\r\nLet me know if it borks it or not, or if you want any features added!\r\n\r\nAs always, your Feedback / Questions / Concerns are welcome!"
+    },
+    {
+      "title": "TurnSignal 2.3.0 Released!",
+      "date": "2017-09-05 06:01:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2095718613783918487",
+      "content": "TurnSignal has been Upgraded to 2.3.0!\r\n\r\nNew Features and Changes include:\r\n[list]\r\n\r\n[*] FINALLY Added the option to hide the main window!\r\n\r\n[*] Added a Tray Icon when main window is hidden that can show or close TurnSignal.\r\n\r\n[*] Made Main Window Mirror Settings instead of being a blank black window.\r\n\r\n[*] Reworked / (Hopefully) Fixed Preference Saving to prioritize local preference file, and update to newest copy if difference exists between SteamCloud and Local files!\r\n\r\n[*] Added in option to link the (not so much a) Floor Overlay to a controller, front or back ( Setting it to the back of a controller makes it so you have to turn the controller to see it, great for immersion! ) \r\n\r\n[/list]\r\n\r\nThis update is somewhat experimental, using a few things I don't know if Unity was built to support correctly, but in my testing, it seems to work fine,\r\n\r\nSo, As Always, Please feel free to Give Feeedback / Ask Questions / Report Issues!\r\n\r\nThank You all for your Support!\r\n\r\n( Please Note: The TurnSignal Menu is always fully accesible from the In-VR Steam Overlay as one of the app bubbles next to Steam and Desktop, even when the Main Window is Hidden! )\r\n"
+    },
+    {
+      "title": "TurnSignal 2.3.0 Released!",
+      "date": "2017-09-05 06:01:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687742162",
+      "content": "TurnSignal has been Upgraded to 2.3.0!\r\n\r\nNew Features and Changes include:\r\n[list]\r\n\r\n[*] FINALLY Added the option to hide the main window!\r\n\r\n[*] Added a Tray Icon when main window is hidden that can show or close TurnSignal.\r\n\r\n[*] Made Main Window Mirror Settings instead of being a blank black window.\r\n\r\n[*] Reworked / (Hopefully) Fixed Preference Saving to prioritize local preference file, and update to newest copy if difference exists between SteamCloud and Local files!\r\n\r\n[*] Added in option to link the (not so much a) Floor Overlay to a controller, front or back ( Setting it to the back of a controller makes it so you have to turn the controller to see it, great for immersion! ) \r\n\r\n[/list]\r\n\r\nThis update is somewhat experimental, using a few things I don't know if Unity was built to support correctly, but in my testing, it seems to work fine,\r\n\r\nSo, As Always, Please feel free to Give Feeedback / Ask Questions / Report Issues!\r\n\r\nThank You all for your Support!\r\n\r\n( Please Note: The TurnSignal Menu is always fully accesible from the In-VR Steam Overlay as one of the app bubbles next to Steam and Desktop, even when the Main Window is Hidden! )\r\n"
+    },
+    {
+      "title": "Update 2.2.2!",
+      "date": "2017-09-02 02:37:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2095718613772566745",
+      "content": "TurnSignal has been updated to Version 2.2.2!\r\n\r\nFor this version, I've added in a Height setting, as well as changed the way turns are tracked to hopefully Improve Turns Accuracy!\r\n\r\nIf you have any issues with the new build, the old build has been added as a beta branch, so you can revert until I get fixes out!\r\n\r\nTo go to the old build, right click TurnSignal in your Library and select properties, then select the Beta's tab, and finally select Old_Build from the dropdown list!\r\n\r\nAs always, if you have any Questions / Comments / Issues, feel free to contact me, or leave a comment!"
+    },
+    {
+      "title": "Update 2.2.2!",
+      "date": "2017-09-02 02:37:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687742276",
+      "content": "TurnSignal has been updated to Version 2.2.2!\r\n\r\nFor this version, I've added in a Height setting, as well as changed the way turns are tracked to hopefully Improve Turns Accuracy!\r\n\r\nIf you have any issues with the new build, the old build has been added as a beta branch, so you can revert until I get fixes out!\r\n\r\nTo go to the old build, right click TurnSignal in your Library and select properties, then select the Beta's tab, and finally select Old_Build from the dropdown list!\r\n\r\nAs always, if you have any Questions / Comments / Issues, feel free to contact me, or leave a comment!"
+    },
+    {
+      "title": "Just an Update; The DRM thing was a Joke!",
+      "date": "2017-08-28 16:46:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2094592080083226044",
+      "content": "Sorry for any confusion!\r\n\r\nWhen setting up the Steam Store page, It promted me to fill out any DRM I might be using, and I thought putting down 'Universal Atomic' with a limit on copies made \"Before Entropy Reaches 100%\" would be funny, because its \"technically\" true in the sense that you would not be able to create, 'activate', or otherwise interact with Any information, let alone a billions-year-old at that time program from the digital VR age.\r\n\r\nThe REAL, practical truth is there is no DRM, licensing beyong MIT / Valves, and its 100% free for use / copy / modifications!\r\n\r\nThe DRM notice has been removed, and I will do my best to refrain from using potentially confusion info for my own amusment from now on!"
+    },
+    {
+      "title": "Just an Update; The DRM thing was a Joke!",
+      "date": "2017-08-28 16:46:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687742391",
+      "content": "Sorry for any confusion!\r\n\r\nWhen setting up the Steam Store page, It promted me to fill out any DRM I might be using, and I thought putting down 'Universal Atomic' with a limit on copies made \"Before Entropy Reaches 100%\" would be funny, because its \"technically\" true in the sense that you would not be able to create, 'activate', or otherwise interact with Any information, let alone a billions-year-old at that time program from the digital VR age.\r\n\r\nThe REAL, practical truth is there is no DRM, licensing beyong MIT / Valves, and its 100% free for use / copy / modifications!\r\n\r\nThe DRM notice has been removed, and I will do my best to refrain from using potentially confusion info for my own amusment from now on!"
+    }
+  ]
+}

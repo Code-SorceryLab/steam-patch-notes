@@ -1,0 +1,12 @@
+{
+    "appId": "1306950",
+    "count": 1,
+    "notes": [
+        {
+            "title": "Beta optimisation update",
+            "date": "2020-06-16 17:07:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3309530667995237575",
+            "content": "The Steam page went public in early May, which was an important milestone. This nudged me to look under the hood (using hxScout) and fiddle with the engineering stuff.\n\nI managed to raise the framerate from 3 to 24 FPS for portions with a lot of mouse clicks and hero movement. There's still space for improvement (60 FPS is the gold standard) but I'm happy with the changes - and hope you'll feel the difference, too. \n\n[h1]Do shoot me a message / e-mail if you want to test the current beta version![/h1]\n\nMeanwhile I'll focus on gameplay improvements, new features, better UI and UX...\n\n[img]{STEAM_CLAN_IMAGE}/37627099/f341330663565c09d59b941f3379661c1efa0f23.gif[/img]\n\n[h2]For those who are interested in the technical bits, here's a list of major engineering tweaks:[/h2]\n[list]\n[*] Replaced Box2D physics and all collision events with coordinate detection.\n[*] All ambience sounds are pre-loaded on individual channels at scene initialisation.\n[*] Replaced \"always\" events with one-off custom events where possible, including all hero interactions on the map and combat logic, as well as animation switches, font switches and such.\n[*] Consolidated all mouse clicks and releases in one listener event.\n[*] Replaced OpenFL Textfields for button labels with more primitive (but faster) Stencyl \"drawing\" code.\n[*] Eliminated dynamic lookups for hashmap values.\n[*] Character death animations are now created dynamically using an \"eraser\" actor and image masks, instead of pre-loaded frame-by-frame spritesheets.\n[*] Implemented a dynamic tracker of opened windows and layers containing interactive elements.\n[/list]\n\n"
+        }
+    ]
+}

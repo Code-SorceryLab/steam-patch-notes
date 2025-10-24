@@ -1,0 +1,54 @@
+{
+  "appId": "2895600",
+  "count": 8,
+  "notes": [
+    {
+      "title": "Update and change from free trial to free to play",
+      "date": "2025-03-15 11:47:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528143973",
+      "content": "Gameplay Changes\n\n- Removed skill point limit for free accounts.\n- Added loot & XP bonus for paid accounts.\n\n- Increased base movement speed by 25%.\n- Increased stack size to 999.\n- Increased rare mob spawn rate by ~33%.\n- Changed resource spawning dynamics to improve accessibility across different tiers.\n- Removed physical essence requirement for crafting physical weapons.\n- Potions now restore a flat amount based on potion level instead of a static percentage.\n- Modified item mods.\n- Doubled the duration of buff/debuff skills.\n- Added new passives.\n- Something bad happens if you fall to 0 mana.\n\nCombat & Balance\n- Adjusted XP gain rules:\n  - XP is earned if `abs(professionLvl - targetLvl) \u2264 dw.constants.LEVEL_BUFFER`.\n  - Underlevel targets grant 19% less XP per level, while overlevel targets grant 5% more XP per level.\n- Entity spawn levels now match zone level.\n- Level requirement to set spawn is zone level + 5.\n- Reduced the damage of Projectile Nova.\n- Reworked Frenzy and Echo of Manashield.\n\nItem Changes\n- Renamed Critical and Status Effect stats to reduce tooltip width.\n- Set base critical multiplier to 2.\n- Removed Critical Multiplier and Elemental Chance Multiplier from weapons.\n- Removed item quality indefinitely.\n- Added six new enchants.\n- Reworked the \"Add Mod\" system:\n  - Now allows selecting a mod for an increased cost.\n  - Costs 5 white items instead of 1 green for white items.\n- Reduced the enchant cost of \"Remove Mod.\"\n- Crafting changes:\n  - Weapon & armor crafting costs reduced.\n  - Crafting resources now increase enchanting cost instead of affecting enchant success chance (buff).\n  - Crafting UI: Items are now sorted by profession instead of by station.\n\nEvent Updates\n- Added heart drops from monsters \u00b15 levels for the Saint Valentine's event.\n- Added a Heart Box craftable with hearts.\n- Ended the Saint Valentine's event.\n\nBug Fixes\n- Fixed a bug where the client didn't correctly update profession levels.\n- Fixed skill bar not updating correctly after switching from toolbar to skillbar.\n- Fixed a client crash when teleporting while using a shovel/sledgehammer.\n- Fixed a line-of-sight bug.\n- Fixed some resource nodes having incorrect sprites.\n- Fixed a bug where players could get bounced into trees and become stuck.\n- Fixed tooltips sometimes overflowing.\n- Fixed a crash related to missions.\n- Fixed a bug where the first projectile dealt reduced damage.\n- Fixed a bug where damage didn't roll on gloves, belts, or acid weapons.\n- Fixed a bug where inventory scrolled to the top when moving an item.\n\nAPI Changes\n- Removed:\n  - `fillItem`, `pourItem`, `enterCar`, `exitCar`, `moveCar`, `donate`.\n  - `fetchMissions` missionType param (return value fixed in docs).\n  - `startMission` missionType param (breaking change).\n  - `addTransmog`, `removeTransmog`, `toggleTransmog`.\n  - `modType` enum.\n- Added:\n  - `climb` to docs.\n  - `w`, `h`, `targetX`, `targetY`, `targetZ`, `targetId`, `duration` to projectiles.\n  - `dw.projectiles`.\n  - `dw.enums.Tag`.\n  - `item.imods` (implicit mods).\n- Changed gear slot names:\n  - `mainHand` \u2192 `hand1`, `shield` \u2192 `hand2`.\n  - `gloves` \u2192 `bracer1`, `belt` \u2192 `bracer2`.\n  - Old properties still reference new ones for backward compatibility.\n- Adjusted crafting options:\n  - `craftOpts`: Removed `stationType`, added `profession`.\n- Inventory & Item Adjustments:\n  - `gloves` \u2192 `bracer`, `belt` \u2192 `bracer`, weapons \u2192 `glove`.\n  - Mana efficiency added to armors.\n  - Removed recovery & dodge on armors.\n  - Gloves now have power/speed multipliers based on their material.\n\nQuality of Life Changes\n- Cosmetics System:\n  - Added a WIP cosmetics system replacing the old transmog table.\n- Shop & Inventory:\n  - Players can buy more inventory slots at the bank (25 slots for 4g).\n- Display & UI:\n  - Skill book items now display score instead of item level.\n\n- gnal"
+    },
+    {
+      "title": "Update 2025-02-02",
+      "date": "2025-02-02 09:52:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123181535",
+      "content": "- removed `.matTier`, the tier is `lvl/10` which will determine if it's copper, iron, etc\n- increased xp required to level up in early game\n- reworked crafting and enchanting costs\n- rarity of items cannot be modified (experiment)\n- `.ele` now ranges from -100 to 100 (this is the overall quality of the base)\n- set `.ele` of all existing items to 0 (can be modified via enchanting)\n- white mobs drop mainly white items\n- added some monster abilities\nAPI:\n- added functions `dw.getPartyMemberInfo` `dw.getCraftingRecipe`\n- added events `localChat` `globalChat` `partyChat` `tradeChat` `whisperChat`"
+    },
+    {
+      "title": "Update 2025-01-30",
+      "date": "2025-01-30 19:09:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123097955",
+      "content": "- monster regen ability is progressively more challenging instead of static\n- added collision to rock and mineral nodes\n- removed player names from real estate map to better view plots\n- fixed a bug where you can put dirt on stations 1 layer below\n- added `.craftingRes` to items\n- added numbers to rare mob names\n- code and notes are saved on server restart\n- fixed new tier seed names\n- added `dw.getPartyMemberInfo`\n- increased plant farming cycle to 22 hours (increased xp and loot accordingly)\n- areas should get less saturated with only high lvl resources over time\n- fixed a bug where mobs were sometimes protected against attacks due to LOS\n- fixed a bug where planted trees sometimes respawned on server restart"
+    },
+    {
+      "title": "Update 2025-01-27",
+      "date": "2025-01-28 09:45:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505470340",
+      "content": "- reduced max stacks on goo merge\n- buildings are destroyed when terrain respawns on them\n- portal scrolls are always lvl 1\n- added higher tier resource nodes in the world\n- fixed blessing and aoe interaction\nAPI:\n- .matType is now either wood, rock, metal, leather or cloth\n- added .matTier to entities\n- removed .terrain from resource entities\n- all tiers start a 0 and are named from 0\n- changed enums keys of Tier and Stage to reflect this change^"
+    },
+    {
+      "title": "Update 2025-01-25",
+      "date": "2025-01-25 18:52:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505385667",
+      "content": "{STEAM_CLAN_IMAGE}/45018071/fdca55754471cf89b4744f4a6910bbed4c209ec3.png\n- increased range of buff/debuff skills\n- reduced mp cost of instant heals and proj heals/attacks\n- reduced healing of proj heal/shield by 10%\n- fixed a bug where displayed required gathering lvl was wrong\n- fixed a bug where the skill bar ui broke when gaining a skill bar slot\n- fixed a bug where mace had 5% parry instead of status effect chance\n- fixed a bug where healing was reduced by armor"
+    },
+    {
+      "title": "update 1/21/2025",
+      "date": "2025-01-21 19:43:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505256037",
+      "content": "- skillbooks cannot be combined\n- added skillbook recipes\n- stations require resources to build instead of materials\n- increased weapon and armor recipes number of mats required\n- added more monster mods\n- rare mobs have a chance to drop their corresponding mods skillbooks\n- increased rare monster density\n- decreased mana cost of passives\n- rejected promises return an Error object instead of a string"
+    },
+    {
+      "title": "Client auto login fix",
+      "date": "2024-09-20 15:32:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536507267861",
+      "content": "Fixed a bug where the client wouldn't automatically try to reconnect when failing authentication"
+    },
+    {
+      "title": "Update notes for sept 7",
+      "date": "2024-09-07 10:36:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076604232156",
+      "content": "- Fixed a bug where sometimes you could get logged out when reloading the game"
+    }
+  ]
+}

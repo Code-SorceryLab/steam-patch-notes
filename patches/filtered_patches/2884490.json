@@ -1,0 +1,12 @@
+{
+  "appId": "2884490",
+  "count": 1,
+  "notes": [
+    {
+      "title": "V2.1.6 - Fixed 100% achievement firing too early",
+      "date": "2024-04-05 08:50:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364311718049",
+      "content": "[h3]Changelog:[/h3]\nFIXED - 100% achievement fires after completing level 4 (1 level still to go).\n\nCaused by:\n[quote]On completing a level, clicking the win screen 'next level' button updates the meta data for the *next* level (it's meant to update the *current* level, so the level selection screen will be updated to now show 100% for that level). \n\nBut the next level isn't loaded in yet, so this check errors, and for some reason the fallback for that is \"100%\".\n\nAt some point during development, I noticed that the meta data wasn't being updated after completing a level, so I added some code elsewhere to update the meta data for the current level.\n\nSo the achievement checker now thinks that all levels are completed, and releases the 100% achievement (early).[/quote]"
+    }
+  ]
+}

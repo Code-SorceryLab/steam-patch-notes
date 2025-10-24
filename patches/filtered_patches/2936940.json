@@ -1,0 +1,108 @@
+{
+  "appId": "2936940",
+  "count": 17,
+  "notes": [
+    {
+      "title": "Alpha playtest: Version 0.49. Last major update before public playtest release!",
+      "date": "2024-09-09 23:00:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076613404594",
+      "content": "improvements and bug fixes:\nRemoved the old spawn locations for bird sounds.\n\nAdjusted the glass material to be more realistic.\n\nLowered default mouse/joystick sensitivity by 60%.\n\nFixed the upscale resolution percentage falling back to 100% if the number input was invalid. Now, it falls back to the last valid render resolution, or 76% if there wasn't a valid render resolution input since last paused.\n\nAdded a % sign at the end of the render resolution percentage in the graphics menu.\n\nFixed various ray traced shadow problems related to nanite tessellation.\n\nLayout improvements and grammar improvements to settings menus.\n\nMinor CPU optimisations related to saving, changing, and loading options.\n\nFixed game needing to restart before deleting save file takes any affect.\n\nFixed motion blur being on despite motion blur settings saying its off.\n\nUpdated the dlss plugin from dlss 3.7.10 to 3.7.20 ( better edge stability and more effective anti-aliasing. )\n\nDeleted a few unused levels, which should lower overall game size.\n\nYou can now press right click while in the first part of the pause menu to un-pause... again. ( I removed the feature because it had a large bug I couldn't fix in the update that turned the options menu into its own widget instead of having 2 options menus for the main menu and pause menu )\n\n\n\n\nNew features:\nAdded an option in accessibility options for enabling and disabling world rendering while paused.\n\nAdded mouse/joystick sensitivity option in controls.\n\nAdded FSR 3.1 upscaling/anti-aliasing support!\n\nAdded Xe-SS 1.3.1 upscaling/anti-aliasing support!\n\nImplemented better performance and quality scaling with ray traced shadows. ( pretty much just added higher quality options and separated 2 of the settings that used to be applied together from 1 option )\n\nAdded the basics of a collectables system.\n\nCompletely rebuilt the save game system to add support for multiple save files and managing them in-game.\n\nAdded experimental options mode toggle, which basically removes some limitations on some options and adds the ability to type console commands.\n\nReplaced the timer based footstep system with a distance based system. This should make things feel and sound a bit more natural, and it might lower cpu usage.\n\nImplemented a function that checks if your GPU supports ray tracing, and if it doesn't\n\nAdded basic support for DLSS Ray Reconstruction ( proper support will come once nvidia updates the plugin )"
+    },
+    {
+      "title": "alpha playtest: version 0.48.8",
+      "date": "2024-07-16 23:05:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959959608091",
+      "content": "improvements and bug fixes:\n\nrefactored the code for saving the players character information ( location, health etc )\n\nfixed the bug where if you falling velocity was high enough, you wouldn't take any fall damage.\n\nincreased the max amount of fall damage you can take from 40% to 85%\n\ncontinued to optimise shader count and memory usage by replacing main materials with material instances\n\nmoved the objective text from the side of the screen to the top middle so the player is more likely to notice it\n\nfixed the bug where the pause menu wouldn't behave correctly if you used one of the 3 methods of closing it, and then used a different one ( for example, you pressed continue, reopened the pause menu, and then closed it with right mouse click. )\n\nseparated the options menu from the main menu and the pause menu, and now they both share a single options menu. this will mainly just make things less confusing for me as the developer, but for you as a player, it will make the options menu truly consistent, and will prevent many future bugs and issues.\n\nadded a lot more trees to the landscape of the first level. ( please test performance with this change. its definitely going to be slower in most areas of that level, but i need to make sure its not too much slower )"
+    },
+    {
+      "title": "alpha playtest: version 0.48.6",
+      "date": "2024-07-01 21:49:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267326044081",
+      "content": "improvements and bug fixes:\n\noptimised constant cpu usage by lowering the frequency the game checks if you can interact with things like doors ( things that cause the interact dot to show up when you can interact with something ). I lowered the frequency from every 0.1 secs to every 0.2 secs.\n\nimproved the effectiveness of saving and loading options.\n\nfixed the bug where the camera smoothness option didn't show you which one you had selected.\n\n\nnew features:\n\nmade the first minigame an actual minigame instead of just a new place.\n\nadded vignette for crouching and laying down.\n\nadded the 2nd level back in ( as a very early version ) now that its in a more accurate state to my vision of it"
+    },
+    {
+      "title": "alpha playtest: version 0.48.5",
+      "date": "2024-06-21 09:54:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039979945213",
+      "content": "improvements and bug fixes:\n\nrefactored inventory and equipped item code slightly\n\nlowered shader count by using just a few master materials, and using mainly instances of those materials instead of just using master materials for every single material. hopefully this also lowers vram and ram usage.\n\nimproved how bird sounds play, so now it is more optimised on the cpu and is much better in terms of locations the sounds play\n\nwhile indoors in the first level, bird sounds are prevented from playing, and when you are no longer indoors, they are allowed to play again\n\noptimised sprinting on the cpu ( there was some inefficient code related to \"checking if the sprint speed should be set to a lower value or not\" being executed while sprinting )\n\ntemporarily removed paths in the first level to make building the landscape simpler and quicker \n\n\nnew features:\n\nwhile paused, unless you are in the graphics or video options of the pause menu, the world will no longer render so your system isn't using lots of power while paused ( this will really help laptop players and players with bad system cooling )\n\nadded the skeleton of the first minigame. that's the main reason this update took so long btw ( the other reason is i was sick )"
+    },
+    {
+      "title": "alpha playtest: version 0.48.1 hotfix",
+      "date": "2024-06-07 20:22:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972554209430",
+      "content": "softened the grass textures mipmaps in the first level. this stops the anti aliasing and upscaling from having to work as hard, which reduces noise, artifacts, and softness. ( yes, softening textures can make it look sharper and less noisy when upscaling and using temporal anti-aliasing )\n\nadded specular reflection to the grass. ( i forgot i set it to 0 awhile ago, so... oopsy )\n\noptimised the mesh of light switches ( the curve had 4 unnecessary triangles )\n\ngave more detail to the first levels landscape so its less boring, and its easier for me to effectively plan out the gameplay.\n\nput the first levels sun and sky in a blueprint instead of persistent level so it is easier to change them. for players, this will be a CPU optimisation, because there's no longer code that checks a certain variable every 4 secs to decide whether the sun and sky should change. it just checks once-twice, when you first spawn into the level, and if you complete a certain objective.\n"
+    },
+    {
+      "title": "alpha playtest: version 0.48",
+      "date": "2024-06-06 18:55:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972550341275",
+      "content": "fixes and improvements:\nfixed the lighting issue in the facility building in the first level where the lighting would be unnaturally bright when hardware lumen is turned off ( the problem was the ceiling model wasn't being taken into consideration in the software lumen scene, so i just broke up the ceiling into cubes instead of having a single model for the entire ceiling. very slightly less performance optimised but its worth it for people who don't have ray tracing capable GPUs )\n\nlowered ultra quality upscaling setting from 78% to 76% ( it now matches DLSS ultra quality internal resolution percentage )\n\nremoved FXAA from the anti aliasing options ( it complicates editing the anti aliasing options and every other option is better than FXAA)\n\n\nnew features:\nadded fall damage.\n\nsome levels now have their own unique player save. This means that if your game saved at some point in the first level ( first level for example ), whenever you go back to the first level, you will spawn with the same health, location, and rotation you last saved with while in that level, even if you saved in another level before going back to the first one.\n\nif you hold down sprint and then crouch or laydown, you will now go down to the corresponding heights/positions faster.\n\nadded DLSS support! ( DLSS Super Resolution, DLAA, NIS, and DLSS frame generation. DLSS SR and FG versions are both 3.7.10 )\n\nsettings for controlling the camera smoothness ( basic version. i am aware of the bug where it doesn't show the selected option after closing the pause menu and re-opening it )"
+    },
+    {
+      "title": "patch for alpha playtest version 0.47.5",
+      "date": "2024-05-28 11:38:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105625852035",
+      "content": "fixed the exposure being incredibly bright in the first level\n\nfixed the secret level not working"
+    },
+    {
+      "title": "alpha playtest: version 0.47",
+      "date": "2024-05-17 21:16:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970423993738",
+      "content": "bug fixes and improvements:\nfixed the bug where objective shows up in main menu\n\nfixed the bug where the player can move around and interact with things aswell as the inventory when the inventory is up\n\nfixed the bug where vsync wouldnt save and apply when starting the game up again\n\ndramatically improved first levels landscape ( the first level is almost done, and considering how much progress i've made with the mechanics and everything going on in the background in the game, i'm over halfway to being able to release the demo!)"
+    },
+    {
+      "title": "alpha playtest: version 0.46",
+      "date": "2024-05-15 22:54:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970416950623",
+      "content": "bug fixes and improvements:\nfixed the bug where pausing while your inventory is up would cause the inventory to stay up while the pause menu is up, which would also cause problems when you unpause\n\nslightly lowered the amount the camera tilts up when jumping.\n\nonce again improved the first levels landscape.\n\n\n\nnew features: \nfirst iteration of a working inventory. its mostly level based, so you have different inventories per level, since you only need some items for specific levels, and the rest... well... you don't need those items for the rest.\n\nto use a specific item in your inventory, it has to be selected.\n\nnew objective.\n\nwhen completing some objectives, the game will now autosave."
+    },
+    {
+      "title": "alpha playtest: version 0.44.5",
+      "date": "2024-05-10 18:14:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435400634382",
+      "content": "bug fixes and improvements:\nfixed the bug where the jump animation would play if you pressed jump before landing. now it can only play once before landing.\n\nadded more controls to the controls menu.\n\ncontinued to make improvements on the first levels landscape.\n\n\nnew features:\nchanged health system from a numbers between 100 and 0 on screen to a vignette effect that gets stronger the closer to 0 your health is. ( currently no way to test it. there will be once i start properly working on the 2nd level )"
+    },
+    {
+      "title": "alpha playtest: version 0.44",
+      "date": "2024-05-10 13:19:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435399887867",
+      "content": "bug fixes and improvements:\nfixed a bug where is you pressed right click in the pause menu, it would unpause the game and give you back the control to your character, but the pause menu would stay up.\n\ncut a chunk off of the first levels landscape, which will improve performance slightly, reduce memory usage slightly, and have a slightly smaller file size. ( the landscape was unnecessarily big for everything i plan to have in this level )\n\nedited the first levels landscape ( not just making it smaller, but added more hills )\n\n\nnew features:\nadded camera shake when you land after jumping.\n\nadded camera shake when jumping.\n\nadded detection for if theres something above you when uncrouching or un-crawling. if there is, and if it has a risk of blocking you from standing up/if theres a risk of getting stuck, it wont let you uncrouch or un-crawl until there isnt something blocking you"
+    },
+    {
+      "title": "alpha playtest: version 0.43.2 ( small patch )",
+      "date": "2024-05-09 19:00:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435397104718",
+      "content": "bug fixes and improvements:\nfixed fps limit not saving\n\nfixed door handles acting weird every 2nd or 3rd time you open the door.\n\nfixed key in 2nd level not appearing until very close.\n\ngave front doors an opening sound.\n\nput the house in the first level in its permanent, intended location, added glass windows replacing the holes, stopped you it from being possible to go underneath the house, and finally stopped nanite tessellated grass from sticking through the carpet.\n\n\nnew features:\nnew objective."
+    },
+    {
+      "title": "alpha playtest: version 0.43",
+      "date": "2024-05-09 15:23:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435396554583",
+      "content": "bug fixes and improvements:\nfixed a bug where the next objective woulnt properly set and save if you left the game within 5 secs after the \" welcome back! \" text comes up in the first level, which would cause you to have no objective once you continued.\n\nimproved various pieces of text in options and objectives.\n\nfixed unintended behaviour with the objective from _#######_ that would show up if you interacted with the locked door before finding the keycard and before recieving the other version of the same objective from ****** in the first level.\n\nfixed you being able to receive the same goal over and over again by walking in and out of the trigger. ( look inside the house? goal )\n\nfixed the issue where if you saved the game after unlocking the door in the first level, leave and continue, the door is locked again and youre stuck inside.\n\nin the first level, specular lighting from the sun was decreased by 10X the intended amount ( i forgot i set it like that awhile ago because the grass was \" too shiny\" for my liking in that moment ) so that has been restored to the intended amount. it mostly benefits the visuals of leaves on trees and more glossy materials.\n\nincreased camera shake while sprinting and walking and improved immersion of the same camera shakes.\n\nfixed the bug where vsync would not be on by default on first load\n\nfixed the bug where the fps limit would not say its set to 120 on first load ( even though it is )\n\nfixed the bug where the lens flare would be low quality, and at the same time it would say its not on in the graphics settings\n\n\n\nnew features:\nwhen paused, the pause menu tells you your current objective.\n\nnew objectives.\n\ngame now automatically closes when you delete your main game save data \n\n\n\nnotes: im trying a new ( hopefully better ) objective system, so please test objectives in as many ways as you can think of, and report any bugs or issues in the pinned discussion. look out for set objectives not saving or loading properly, objectives being weird, etc. ( this new system should stop objectives interfering with eachother in ways that are unintended. with the old system, when i added more objectives, i noticed that when some objectives got completed, they caused other objectives to complete. anyway, i couldnt fix that issue while keeping the same system.\n\nFYI, when i say \" objectives\" i mean the system that tells you your next \" goal \" to progress through the main story, and also the system that manages and saves in your main save file which goals you have completed, which ones you dont, and what is allowed to happen in the level if those objectives have been completed or not."
+    },
+    {
+      "title": "alpha playtest version 0.42",
+      "date": "2024-05-08 14:14:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435392735787",
+      "content": "Added an async loading screen, so now when loading into levels, so now it doesnt just freeze while loading.\n\nhalf-made one of the houses in the first level."
+    },
+    {
+      "title": "patch for version 0.41",
+      "date": "2024-05-07 20:14:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435390000470",
+      "content": "added an early accessible inventory ( literally does nothing but show up on screen when you press tab yet )\n\npatched an option saving issue with FXAA antiailiasing and no antiailising ( setting those as your AA method would sometimes prevent other options from properly saving )"
+    },
+    {
+      "title": "playtest update 0.41",
+      "date": "2024-05-07 12:47:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999962376327",
+      "content": "primarily just general improvements to settings and options saving/loading"
+    },
+    {
+      "title": "fixed a few options related bugs and improved on the first levels landscape",
+      "date": "2024-05-03 14:33:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999948065592",
+      "content": "fixed the bug where you would get stuck in the audio settings in the main menu, because the back button didnt work\n\nfixed the bugs where the text and sliders for render resolution and fps limit would always say \" 0 \" no matter what when you open the game again"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+    "appId": "2560120",
+    "count": 6,
+    "notes": [
+        {
+            "title": "v1.210 (Local files)",
+            "date": "2024-03-11 06:51:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637666383509",
+            "content": "Hey @everyone, new update (v1.210)\n- You can now use local files in the VTT! Here is the tutorial that explains how it works:\n[previewyoutube=SYTxS64Bq0A;full][/previewyoutube]\n\nBecause I wanted it to be as light as possible during the game, all images are synchronized once when a player joins the game to prevent latency. Otherwise, every time the GM adds a token with a new portrait on the board, it would upload it to all players, and depending on each player's connection, it can take a few seconds for each image.\n\n- Fixed a bug where a player with no token assigned would see the entire map instead of none of the map.\nI've also added a text that tells a player when he has no token assigned, so he understands why the board is completely black.\n\n- On the ruler, ping or area, the portrait that was shown was the player's portrait and not the selected token, which was a bit confusing, so I changed it to the selected token.\nAlso, the ruler portrait didn't clear properly. I never found a way to reproduce this bug, but I changed a few things that should fix it. Let me know if you still get this bug.\n\n- When saving a map, VTT was loading the last map in the list. This has been fixed."
+        },
+        {
+            "title": "v1.200",
+            "date": "2024-03-02 09:48:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5688680204377676516",
+            "content": "New update!\n\n- Since I had to redo a lot of things for the last update, I also had to change the way I handled the vision system for the better. But I accidentally made it super laggy, so I fixed it and it is now clean and smooth!\n\n- I made the tuto to show how to start game modes with your players.\n\n- I added parameters to offset the map image so the GM can replace it to match the grid.\n\n- You can now snap doors to any wall point, not just the end points\n\n- You can now create tiny walls (they were previously limited to a minimum length of one cell). So you can now create walls to block the view of thin columns, for example.\n\n- I added a button to clear the dice roll log in the main menu and in the game modes."
+        },
+        {
+            "title": "v1.100",
+            "date": "2024-02-18 17:06:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544504765968",
+            "content": "Update v1.100\n\n- Some people had a weird bug where they couldn't see the UI, and it was apparently because of my Unity version. So I had to change the version, and it broke pretty much half of the game. So I had to fix a lot of things. Everything should be fine, but since I had to change so many things, please don't hesitate to report any bug, even small ones, especially if it was something that worked before.\nBut the invisible UI bug should be fixed!\n\n- I fixed the bug that kept the \"build map\" edit mode active even after the user switched menus without manually switching off the edit mode.\n\n- Since I had to fix a lot of things, I completely reworked the vision system. It shouldn't change much for the user, but code-wise it's a lot cleaner. Also, when team vision is disabled, each token now goes back with the cells it saw itself (before it kept the cells the team discovered, not just itself).\n\n- Same with the loading system for the game mode. Pretty much redo everything. Doesn't change much for the user, but much better code.\n\n- I added the fact that players can roll more than one die in game modes. Also players can now roll custom dice.\n\n- I changed the limit from 9 rolls at a time to 99.\n\n- I also fixed some minor bugs here and there.\n\n- Finally, since I'm starting to get a lot of requests and some bug reports, I've made a roadmap that you can check if you're curious and want to know what I'm going to work on next. The number of stars is just a priority indicator. I won't necessarily stick to it 100%.\n[url=Road Map]https://docs.google.com/spreadsheets/d/e/2PACX-1vQN7dKX3HrbGWEwSQJG0SNt4UuiU4IQu1BCGL5hyrLj0LbhR-ihP_Nx3F8hju9WwsvNHTj5ZXn-jvF9/pubhtml?gid=0&single=true[/url]"
+        },
+        {
+            "title": "v1.1020 Tutorials!",
+            "date": "2024-02-12 12:13:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109280410055",
+            "content": "Hey everyone, since a lot of people asked for tutorials, I just finished the first 3. They are available in the game, but also on youtube. (I also made a channel tutorials on the discord) \n[url=https://www.youtube.com/playlist?list=PLas0vV6_XDIBsqUaYzefmPVLdqPQ7pCBp]Tutorials youtube playlist[/url]\n\nI also added a slider to adjust the specular level of the map, because with darker maps the reflection can be too high, making the map hard to read sometimes."
+        },
+        {
+            "title": "v1.010",
+            "date": "2024-02-02 13:45:36",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074945273458",
+            "content": "Hey everyone, I'm slowly getting back at it with 2 new features:\n- The 3D dice finally roll on the board in game modes! It's actually quite fun to see the dice rolling on the board next to the tokens!\n- An option to automatically snap the cursor to the grid when creating walls. It makes the process much easier and faster."
+        },
+        {
+            "title": "v1.000 main feature complete !",
+            "date": "2024-01-11 13:11:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510120478255",
+            "content": "The VTT finally has all its main features, here are the last ones that were missing:\n\n- I did the disconnect/reconnect management and it's nice and clean. Now players can join a game mode at any time. So if someone gets disconnected, they can just reconnect.\n- What if the GM's devise crashes? It will shut down the lobby, of course, since the GM is the host, but the game automatically saves the game mode you are in every minute, so in the worst case you'll only lose 1 minute of gameplay.\n- Also the GM can save the game mode at any time, in case you need to stop a cession in the middle of a fight and in the middle of a round.\n- I also added a few little things like a new loading panel, sounds on some actions and a big optimisation for the pathfinding algorythm.\n\nIn order to do all these things, I had to change the way I save maps, characters, and groups. So if you have already made characters, groups and maps, you just have to load them one by one and save them to erase the old version.\n\nI think we can officially call it a V1.000 since we have all the main features! I have already released it on steam so you can update and try it, the game is now in your hands! \n\nThere are still probably some bugs and things that could be better and I'll fix them as we discover them, but for now I need a break from this project, according to steam I've spent more than 1000 hours on it haha.\n\nI've already noted a few features I'd like to add, if you have more ideas don't hesitate to tell me either through the form or in the #discussion channel:\n- Add tooltips for buttons or actions that aren't really clear.\n- Make short tuto videos for the main features of the VTT in the tutorials menu.\n- Since the GM sets doors manually when creating the map, add something that visually shows players during game modes where the doors are that their tokens can see.\n- Add sound for dice rolls.\n- Instead of the player's portrait, display the selected token's portrait on the rulers, pings, and areas.\n- Add states for tokens like sleeping, stunned, flying, on the ground, and any other state that can be useful to remember something specific about a token.\n- Area persistence. When creating areas, add a parameter that specifies how many round they'll show (0 by default).\n- When moving a token, show the area of all cells where the selected token can go with it's remaining move points."
+        }
+    ]
+}

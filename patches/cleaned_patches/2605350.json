@@ -1,0 +1,84 @@
+{
+  "appId": "2605350",
+  "count": 13,
+  "notes": [
+    {
+      "title": "0.7.1 A Cache and a Loading Screen",
+      "date": "2024-02-03 17:42:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074949516600",
+      "content": "Hello friends! Things have been pretty quiet here lately while I've been working away at artwork and narrative development, but TODAY we have an optimization and compatibility update.\n\nPLEASE LET ME KNOW IF THIS UPDATE AFFECTS PERFORMANCE NEGATIVELY FOR YOU!\n\nThis should be obvious in retrospect, but It turns out the Forward+ renderer in Godot leverages Vulkan and broke compatibility with some older hardware, so we've reverted back to the OpenGL renderer. OpenGL means no asynchronous shaders, which introduced micro freezes when activating the platform drop effect. To work around this, we now have a loading screen at the start to cache shaders.\n\nThe up side to all of this for EVERYONE is that I went ahead and built a particle effect cache as well! Which means driver updates and fresh installations of Hot Dog Reporter will no longer result in second+ long freezes when a new particle effect triggers.\n\nHere, have a changelog!\n\n\n Changed Godot renderer back to Compatibility again. GPU particles in Forward+ were breaking the game on older hardware with limited/no Vulkan support.\n Particle effects and shaders are now cached at launch to avoid in-game stuttering.\n Added loading screen at launch for cache creation."
+    },
+    {
+      "title": "0.7.0: New levels! New mechanics! New art!",
+      "date": "2023-11-26 04:56:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5382426458987546810",
+      "content": "Hello friends! We've got LOTS of changes in this update! Highlights include NEW LEVELS, Steam Deck verification, new mechanics (including moving hazards, updrafts, and breakable boxes), pettable cats, and new artwork!\n\nCheck out the full patch notes below:\n\n\n FULL DATA WIPE. This includes Save data, Options data, Input mapping data, and Ghost data. In addition to new levels, there\u2019s a new save directory structure to allow for multiple Steam users to have separate save files on the same computer.\n THREE NEW LEVELS!\n Hot Dog Reporter is officially Steam Deck verified!\n Updated engine to Godot 4.2 RC6! Is using a beta engine a good idea for a Steam release? Probably not but it fixed a lot of problems and got us Steam Deck verified! Lots of performance optimizations and bug fixes under the hood, but the most noticeable for some of you will be\u2026\n Fixed swapping between the d-pad and analog stick being extremely buggy! Controls now default to having both enabled.\n Updated tutorial with new mechanics\n Added moving hazards (sawblades go brrrr)\n Added updrafts (fly with the umbrella)\n Added breakable objects (run into them fast enough to break)\n Implemented rotating platforms (not yet used anywhere)\n Gravity reduced by half while sliding! This was intended to make sliding over two tile gaps more consistent, but as a bonus, it means that sliding and jumping on the same frame give you extra height\n You can pet the cat now\n More background art\n Added 2 hidden achievements\n Fixed a bug where player velocity would carry over from death to respawn\n Improved backflip timing (should trigger much more consistently along with the skid audio cue now)\n Added HALLOWEEN FOREVER mode, in case you missed out on the Halloween update or owe allegiance to the Pumpkin King\n Fixed Steam Cloud cross platform save compatibility\n Lamps and torches now flicker\n Fixed and embarrassingly long standing issue with the start menu not reloading when it was supposed to (after deleting save data, unlocking all levels, etc)\n Fixed fall impact triggering after using the umbrella to slow down"
+    },
+    {
+      "title": "Is Hot Dog Reporter the best game you suck at? It CAN be with YOUR help!",
+      "date": "2023-11-21 13:00:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5382426458970645381",
+      "content": "Hello friends! It's Steam Award season and I would be SO HAPPY if you considered Hot Dog Reporter for the Best Game You Suck At award!\n\n\n Is it the best game you suck at? Probably not!\n Is it the best game you suck at released in 2023? Possibly!\n Do we have ANY chance of winning? Practically zero!\n\nBUT, follow me here, nominations will put more eyeballs on Hot Dog Reporter. More eyeballs means more leaderboard competition. More leaderboard competition means a higher difficulty level.\n\nTherefore, the very act of nominating Hot Dog Reporter for the Best Game You Suck at award increases its validity in the category, thus making you, dear nomineer, an ARBITER OF TRUTH.\n\nThank you for your time. I hope you will join us in TRUTH TELLING!"
+    },
+    {
+      "title": "0.6.9.666: Surprise Halloween update!",
+      "date": "2023-10-31 00:02:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621592924239",
+      "content": "HELLOOooOOOoo FRIENDS! Ghost implementation got finished early and Halloween felt like a pretty good time to release it! Please enjoy this very slightly rushed (pleasedon\u2019tbebroken) update!\n\n\n Added speedrun ghosts! Run alongside a ghost of your best time in each level!\n Added an option to disable ghosts\n \u2026also added a couple of surprises if you play on Halloween"
+    },
+    {
+      "title": "0.6.9: Mostly cosmetic!",
+      "date": "2023-10-29 01:20:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621585832515",
+      "content": "Highlights in this release include some updated background art, a visual effect to indicate the platform drop state, button prompts in the tutorial, and a reset of the Mind the Gap level time to account for a previous bug.\n\n\n New particle effects and palette swap to indicate platform drop state\n Preload particle effects at runtime to reduce slowdown on initial load in game\n Updated some background art\n Added canopy at the top of the forest to make invisible ceilings less invisible\n Added button prompts to tutorial\n Added version to Leaderboard, Stats, and Level Select\n On first load of 0.6.9, checks to see if your Mind the Gap record was affected by an earlier bug and resets it to the theoretical current best possible time (3.4 seconds)\n Nice."
+    },
+    {
+      "title": "0.6.8: Backflips, gliders, and stats!",
+      "date": "2023-10-26 16:58:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621577273031",
+      "content": "Hello friends! Highlights for this release include backflips (jump out of a skid to cancel momentum), an umbrella glider (slower falling), and a stat screen.\n\n\n Added backflip - jumping while skidding cancels forward momentum and provides extra height and acceleration, useful for quick turnarounds. Thanks to shovelclaws for the suggestion!\n Skidding can now also be triggered while sliding so it\u2019s possible to backflip out of a slide\n Added umbrella glider - 25% fall speed while active. Default control is holding X (Xbox controller), but it may eventually get swapped with Platform Drop (Left Trigger) by default.\n Increased double jump height to match regular jump height (from 85% to 100%)\n Removed some platforms in 003\n Added Stats screen\n Added camera constraints to level 011, preventing it from panning away from the moving platforms if you jump too high during the first leg of the level\n Fixed some issues with getting stuck in geometry after crouching/sliding\n Reverted double jump collision behavior - shrinking the collision box on double jump had very few beneficial use cases and introduced a lot of visual bugs and physics complications\n New, more flexible scene transition system\n Changed focused button backgrounds to red to make focus state more obvious\n Fixed a couple of incorrect empty time displays (--:--:-- instead of \u2013:--.--)\n Made some text wiggle on the level end screens\n Increased player collision safe margin from 0.1px to 0.2px, should fix the stuck corner bug???"
+    },
+    {
+      "title": "0.6.7: Bugfixes",
+      "date": "2023-10-16 13:52:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944135797521",
+      "content": "Holding jump after a platform drop will now allow for a continuous platform drop\n Fixed hearts appearing empty on Ready prompt\n Fixed a condition where you could get stuck sliding after death\n Fixed not being able to wall slide while dropping through a platform"
+    },
+    {
+      "title": "0.6.6: Hotfix",
+      "date": "2023-10-13 02:38:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944123157848",
+      "content": "WHOOPS, the double jump collision change introduced a bug where you could get stuck in the ceiling. That has been FIXED!"
+    },
+    {
+      "title": "0.6.5: Hot Dog Skins, Linux Support, and QOL improvements",
+      "date": "2023-10-12 22:51:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944122582790",
+      "content": "Hello friends! Highlights for this version include SKINS for Frankie, theoretical Linux support (please let me know if you try to run it on a Steam Deck!), and a bunch of QOL improvements.\n\n\n Added Skin options for Frankie\n Added Linux support (UNTESTED, awaiting Steam Deck review)\n Adjusted double jump animation to better reflect the player collision box\n Added Ready Prompt at the start of each level\n Added a Gameplay Option to skip Ready Prompt\n Backing out of options now only prompts a save confirmation if changes were made\n Moving platforms now reset their cycles on death\n Leaderboard should load a little faster\n Fixed bug where you could get stuck sliding on respawn\n Fixed bug where the mouse cursor would disappear on the pause screen\n Fixed some bugs related to scrolling through the leaderboard\n Fixed a very rare level timer bug that probably doesn\u2019t invalidate the leaderboard that\u2019s going to get archived when new levels come out anyway"
+    },
+    {
+      "title": "0.6.4: Hotfix",
+      "date": "2023-10-10 04:28:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220292521198160942",
+      "content": "WHOOPS, broke a couple of things with the digital/analog workaround in the last update, so that particular bit has been rolled back. Until I figure something else out, be careful if you decide to switch back and forth between digital and analog movement!"
+    },
+    {
+      "title": "0.6.3: Controller and UI update",
+      "date": "2023-10-09 23:05:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220292521197344150",
+      "content": "Hello friends! We have a handful of requested features here related to controls and the interface!\n\n\n Added alternate gamepad key binding options. May cause issues if using a gamepad with 128+ buttons? (if this applies to you please send me a photo of that thing) ( EXISTING CUSTOM KEY BINDINGS RESET, SORRY!)\n Began implementing button icons (currently only in input options)\n Holding the slide button will now slide continuously. No more mashing required!\n Added confirmation popup when exiting options. This should prevent accidentally backing out of the Options menu without saving your changes.\n Fixed some wildly inaccurate labels on a handful of input bindings\n\n\nNOTE REGARDING DIGITAL AND ANALOG INPUTS: There\u2019s an engine bug when the same action is bound to a digital input and an analog input. I\u2019ve implemented a workaround that fixes it 95% of the time, but because it\u2019s not 100%, the input map still defaults to d-pad only. You can add an analog stick as an alternate input, but be aware that rapidly switching between the two MAY cause you to occasionally stop in your tracks or get stuck in a crouch. This will be fixed in Godot 4.2, which is nearing stable release, but that\u2019s probably still at least a month or two away."
+    },
+    {
+      "title": "Mega hot dogs, MacOS support, and bug fixes",
+      "date": "2023-10-08 22:16:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220292521193573068",
+      "content": "Hello friends! Highlights for this update include MEGA HOT DOGS and MacOS support.\n\nHot Dog Reporter 0.6.2 Changelog\n\n\n Added MacOS compatibility\n The remaining hot dog in a level now turn into a MEGA HOT DOG\n Made invisible ceilings less invisible\n Removed some floating grass\n Flipped the movement on the last two pairs of moving platforms in 011: AND YET IT MOVES making it possible to make it through the level without having to wait a cycle\n Updated Godot engine from 4.1.1 to 4.1.2\n Fixed particles jittering on pause\n Fixed bug with potentially getting stuck on input remapping"
+    },
+    {
+      "title": "Hot Dog Reporter 0.6.1",
+      "date": "2023-10-07 00:23:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220292521186606785",
+      "content": "Hi! Thank you for playing Hot Dot Reporter! Here's an with a change to an annoying level and some small physics and quality of life updates.\n\n\n 006: Mind the Gap is now slightly less infuriating\n Removed the Experimental Physics option and made them standard (physics now tick 120 times per second instead of 60)\n Added an FPS limit to the Video options\n Increased time before autoselecting buttons on game end screens to help avoid accidentally mashing through it\n Leaderboard now shows up to 50 entries instead of 10"
+    }
+  ]
+}

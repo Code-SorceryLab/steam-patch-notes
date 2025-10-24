@@ -1,0 +1,12 @@
+{
+  "appId": "1918330",
+  "count": 1,
+  "notes": [
+    {
+      "title": "IFAC UPDATE - Language Additions and bug fixes",
+      "date": "2023-02-03 10:09:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743883896589",
+      "content": "I'm pleased to announce this major update to IFAC which gives it new capabilities for you to have more power and flexibility in creating your adventures. At the same time, I've fixed a couple of visible problems and restructured some things internally.\n\nThere are two new Conditions and three new Instructions (Commands) for you to use:-\n\nConditions\n\nOBJ ItemID AT LocationID\nOBJ ItemID NOTAT LocationID\n\nAn improvement to the existing PRESENT condition. These two will test if an object is at a particluar location in the game (or NOT). This means you will no longer need to use Flags if you want the player to drop items in certain locations to solve a puzzle which will make logic clearer and simpler.\n\nInstructions\n\nCREATE ItemID AT LocationID\n\nAn improvement on the existing CREATE, this new one will allow you to create an Item in response to an Event at any Location in the game. Use it with a message to give the player a hint that they did something that changed the game in ways they cannot presently see.\n\nSETCHANCE FlagID\nSets the User Flag identified by the ID to a random percentage value - that is between 0 and 100. You're probably then going to use LT and GT on that flag to determine the outcome. The use of multiple User Flags together can make random events with many outcomes very easy. Three Flags split 50/50 can control eight outcomes. Three flags split 33/33/33 produces 27 outcomes.\nThere is a detailed post on the Community site explaining in detail the entries you need to make to do this.\n\nSETRAND FlagID UpperBound\nSimilar to the previous command except this time you control how high the random number goes that is assigned to the flag.\n\nFixes\nTAKE is now fully equivalent to GET as it has been promoted into the primary parser.\nAll System and User Flags are now always cleared on test or game start.\nSome typos.\n\nThanks to CriticalFailure for the feature request that resulted in the SETCHANCE and SETRAND instructions."
+    }
+  ]
+}

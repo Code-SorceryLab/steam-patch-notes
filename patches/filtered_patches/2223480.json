@@ -1,0 +1,12 @@
+{
+  "appId": "2223480",
+  "count": 1,
+  "notes": [
+    {
+      "title": "Dev Diary: My attempt at procedural gameplay",
+      "date": "2025-01-07 15:20:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1787858252886169",
+      "content": "I've been trying to generate gameplay (that's ideally fun) procedurally.\n\nAn initial idea was to set up an NP hard problem or two around the player (i.e. the knapsack problem and the travelling salesman problem) albeit within the context of the game's theme and then leave them to solve it in any one of many ways. On completion then I was thinking about simply ranking their solution according to some metrics (fuel expended, time taken, enemies destroyed, game people saved etc) on a leader board, but then I got distracted...\n\nWhilst setting up the systems for the above I started experimenting with a couple of simple ideas. Let's call them \"Gameplay Layers\" and \"Gameplay Cycles\":\n\n[list]\n[*][b]Gameplay Layer[/b]: A Gameplay layer is an approximately 200 lines of code that adds to the game some system or mechanic i.e. time of day, weather, defensive tower, refuelling rings, enemy waves etc\n[*][b]Gameplay Cycle[/b]: This is simply a timer that activates periodically (configurable), lasts for a configurable amount of time and then pauses for a configurable amount of time until the cycle then repeats.\n[/list]\n\nA Gameplay Layer is activated and deactivated according to a Gameplay Cycle.\n\nWith these two simple ideas I seem to be able to generate interesting events as the gameplay layers run out of phase with each other the resulting behaviour of which I haven't had to code explicitly.\n\nFor example, the time of day system is running out of phase with respect to the weather system so you can have a quiet foggy morning, or a lightning storm during the day or fog at night whilst being overrun by a wave of enemies or a clear night etc. \n\nFun for free?\n\nHere's a short video: \n\n[previewyoutube=vd32GcHYk1Q;leftthumb][/previewyoutube]"
+    }
+  ]
+}

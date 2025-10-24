@@ -1,0 +1,12 @@
+{
+    "appId": "2284480",
+    "count": 1,
+    "notes": [
+        {
+            "title": "DevLog #1: Using CoPilot to speed up development",
+            "date": "2023-01-20 02:52:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474413814683",
+            "content": "When Soar development started, after one weekend we had a solid prototype of the flight model scripted in blueprints. The next step was to move it to C++, as we eventually need to execute it as part of the physics substep / asynchronous tick. So the task is to rewrite the blueprint code to C++, something I wanted to test Copilot with.\n\n[img]{STEAM_CLAN_IMAGE}/43510207/85602d3e9b3822ea8584cb71f18dec338da8774a.png[/img]\n\nMy expectation? Be able to help with function names and correct syntax, something like Intellisense 2.0. Reality?\n\n[img]{STEAM_CLAN_IMAGE}/43510207/50dbe913385afe7036e3fe6ace9f8449f42544e4.gif[/img]\n\nI was seriously mindblown. At first by knowing by what an angle of attack is and how to calculate it. Secondly by understanding that wing is generating lift when angle of attack is below critical angle of attack (when above, the wing will enter a stall state, where it's no longer generating lift.\n\nThere is however one problem with the code - the local speed. It simply takes the speed in world coordinates instead of local, which is needed for lift and drag calculations. Despite this, the Angle of Attack is calculated correctly.\n\n[img]{STEAM_CLAN_IMAGE}/43510207/192c4807b7cafaec2c4161adc9c976940dbf4da6.gif[/img]\n\nI was interested what else it can do, so I let it write the lift function for me. It took the [url=https://www.grc.nasa.gov/www/k-12/rocket/lifteq.html]lift equation[/url] and tried to apply it our environment. It substituted the air density with the mass of the wing, which is an understandable mistake. Then it tried to apply lift in direction of forward vector, instead of up vector, which is a less understandable mistake.\n\nDoes Copilot generate bug free code that always makes sense? Far from it. \nBut can it greatly improve performance when used carefully? Absolutely\n\nIf you found this interesting, you can wishlist Soar to get more updates in the future. And if you're not a technical person, you can wishlist Soar anyway!"
+        }
+    ]
+}

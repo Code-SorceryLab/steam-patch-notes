@@ -1,0 +1,102 @@
+{
+  "appId": "1592670",
+  "count": 16,
+  "notes": [
+    {
+      "title": "2022/12/16 Patch Notes",
+      "date": "2022-12-16 06:05:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145754072341",
+      "content": "[h3][b]Level Editor[/b][/h3]\n[olist]\n[*][b]Parameter copy, paste and reset support:[/b]\n\n[img]{STEAM_CLAN_IMAGE}/40304504/524570b559917216e1a46b98d2fc48f9a709304a.png[/img]\n\n[list]\n[*]Transform parameters can be copied & pasted among all objects.\n[*]But pasting object exclusive parameter is only available among objects of the same type.\n[/list]\n\n[*]Improved object copying and pasting\uff1aIf there is a binding relationship between objects participating in copying, the pasted objects will be bound automatically according to the relationship.\n\n[img]{STEAM_CLAN_IMAGE}/40304504/935e3dad6831c851fb93c2171437c378e350343e.gif[/img]\n\n[*]Improved open histroy UI: Level file duplicate support & Added double confirmation for removing open history.\n[*]Added description for triggers, events and some essential objects. The contents can be seen on object property settings panel.\n[*]New event: Full Recovery, which can fully restore player's health and armor, and remove all negative states on player simultaneously.\n[/olist]\n\n[h3][b]Bug Fixes[/b][/h3]\n[olist]\n[*]Fixed an error when triggering Rotation event without assigned object.\n[*]Fixed an error when triggering Set Active event if assigned object has been killed.\n[*]Fixed issue that Material panel could not scroll to the top or bottom at a resolution with non 16:9 aspect ratio.\n[*]Fixed issue that undo could not perform as intended when using cut and paste.\n[*]Fixed an error when using transform and editing tools alternately in multi select mode.\n[/olist]"
+    },
+    {
+      "title": "2022/12/9 Patch Notes",
+      "date": "2022-12-09 06:03:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4980448574111931258",
+      "content": "[h3][b]Level Editor[/b][/h3]\n[olist]\n[*][b]Added Material Panel[/b]\n\n[img]{STEAM_CLAN_IMAGE}/40304504/586ca4519e2c51e71d49dd3431f971ebeeeaea1b.png[/img]\n\n[list]\n[*]Material setting is now available to ground and background wall.\n[*]A total of 66 materials are provided for player to choose.\n[*]A preset field is provided at the bottom of the panel, where you can save the currently selected material with using right mouse button.\n[/list]\n\n[*][b]UI Adjustments:[/b]\n\n[img]{STEAM_CLAN_IMAGE}/40304504/5dc4411f2f745d4a32717a48cfb727eba7c3db9c.png[/img]\n\n[list]\n[*]Added preset field for palette, which is similar to the material preset.\n[*]Removed confirm button for palette, clicking the \"X\" button at the top right of the palette will be equivalent to confirmation.\n[*]The palette will be displayed in the center for the first time, but its position will not be adjusted when it is opened later, unless the panel has an area beyond the display border.\n[*]Added \"Trigger\" category for Assets panel.\n[/list]\n\n[*][b]The checkpoint parameter \"Priority\" is replaced by \"In-Block Order\"[/b]\n\n[list]\n[*]This parameter is commonly used in a block which there are multiple checkpoints.\n[*]When player enters a level for the first time, the checkpoint with the lowest order value at the first block will be selected as the spawn point.\n[*]In addition, when player activates a checkpoint with higher order value in advance, checkpoints with lower order values are also activated.\n[*]The reason is that the description and performance of the \"Priority\" sometimes make confusion to player. This update can make the configuration more intuitive.\n[*]Players do not need to make any changes if they did not encounter any progress issue. The editor will automatically configure appropriate order for those checkpoints.\n[*]Players who have configured priority but have progress issues need to adjust the order according to the level design.\n[*]After this update, the editor will automatically assign the order value for the new checkpoint to avoid the problem of confused level progress.\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/40304504/d34db3014b799bffd8f67534386fb3f692499ca6.gif[/img]\n\n[*][b]Other Object Adjustments:[/b]\n\n[list]\n[*]Event: Move From To added movement type setting\uff0cincluding ease in out and linear.\n[*]Enabled z-axis rotation for Ground and Virtual Platform (White).\n[/list]\n[/olist]\n\n[h3][b]Bug Fix[/b][/h3]\n[olist]\n[*]Fix the layout error of the object list when switching blocks.\n[/olist]"
+    },
+    {
+      "title": "2022/12/2 Patch Notes",
+      "date": "2022-12-02 07:04:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4979322040020187975",
+      "content": "[h3][b]Level Editor[/b][/h3]\n[olist]\n[*][b]Snapping support:[/b]\n\n[list]\n[*]You will see the snapping toggles at the right side of transform toolkit.\n[*]Unit snapping is available for all transform tools, using [b]Shift[/b] key to enable/disable.\n[*]Vertex snapping only works for positioning, using [b]V[/b] key to enable/disable.\n[/list]\n[*]Added shortcut buttons for block switching.\n[*]New objects added: Relay Trigger, Counting Trigger, Interactive Trigger.\n[*][b]Object parameter adjustment:[/b]\n\n[list]\n[*]Added trigger delay setting for all triggers.\n[*]3-axis rotation setting is available for Virtual Platform (Black).\n[/list]\n[/olist]\n\n[h3][b]Bug Fixes[/b][/h3]\n[olist]\n[*]Fixed issue that some array properties would be exceptionally overwritten when editing multiple objects.\n[*]Fixed issue that some objects did not show up as intended after adding or removing block.\n[*]Fixed issue that the preview ray of the laser trap can pass through the platform.\n[/olist]"
+    },
+    {
+      "title": "2022/11/25 Patch Notes",
+      "date": "2022-11-25 05:52:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4836332027658698697",
+      "content": "[h3][b]Level Editor[/b][/h3]\n[olist]\n[*]Added beveling settings for ground and background wall so that the editor can provide more variants of platform.\n[*]Added Eliminate Enemy Trigger, which can invoke event when specific enemy die.\n[/olist]\n\n[h3][b]Bug Fixes[/b][/h3]\n[olist]\n[*]Fixed issue that player could not run the custom level which contains point light assigning to Move From To Event.\n[*]Fixed issue that some undo operations could not be recorded as intended.\n[/olist]"
+    },
+    {
+      "title": "2022/11/18 Patch Notes",
+      "date": "2022-11-18 05:26:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4789043687477245841",
+      "content": "[h3][b]Level Editor[/b][/h3]\n[olist]\n[*]Undo & Redo Support\n\n[list]\n[*]You can find them on the left side of transform toolkits,\n[*]or you can perform undo / redo by using combine key Ctrl+Z / Ctrl+Y.\n[*]This function is only valid for object related operations, including: selecting / creating / deleting objects, trasnform operations (setting visibility, position, rotation and scale), and object property modification.\n[*][b]Attention: Each time you open other level files, switch blocks, and perform block management, the system will restart recording operation, and the previous records will be cleared.[/b]\n[/list]\n[*]New Objects Added: Enemy Spawner, Enemy Spawn Point.\n[*]\"Invoke Event on Start\" toggle is added to all event objects.\n[*]Now player can attack sawblade in custom level, but no damage would make.\n[/olist]\n\n[h3][b]Bug Fix[/b][/h3]\n[olist]\n[*]Fixed issue that cloning object does not work when player is using context menu in the editor.\n[/olist]"
+    },
+    {
+      "title": "2022/11/11 Patch Notes",
+      "date": "2022-11-11 05:34:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6368680725424279612",
+      "content": "[h3][b]Level Editor[/b][/h3]\n[olist]\n[*]Multiple selection support\n\n[list]\n[*]You can select multiple objects by pressing Ctrl or Shift key at Object List.\n[*]You can also select multiple objects by pressing Ctrl key at scene, or perform box selection by dragging mouse pointer.\n[*]Multiple selection can help you to edit the parameters of multiple objects at the same time, or batch copy/delete objects.\n[/list]\n[*]New asset category: Events\n\n[list]\n[*]This category consists of level editor trigger and varied types of events.\n[*]The trigger drives the execution of events. It can be triggered by player or enemy. The timing can also be configured as needed.\n[*]The event will directly affect the level object, and the performance depends on event type.\n[*]This update introduces the following event types: Move from to, Set Active and Rotation. We will also bring other sort of triggers and events later.\n[/list]\n[*]New Objects: Virtual Platform (Black), Virtual Platform (White), Virtual Side Wall.\n[*]Added \"Invincible\" toggle for enemy.\n[*]Now you can override environment preset for blocks at Environment Settings.\n[/olist]\n\n[h3][b]Bug Fixes[/b][/h3]\n[olist]\n[*]Fixed issue where object's scale can be set via Rect Tool when scaling is disabled.\n[*]Fixed issue where the game camera would be at wrong position in some circumstances.\n[/olist]\n\n[h3][b]Emergency Fix[/b][/h3]\n[olist]\n[*]Fixed visual error of box selection in some resolution.\n[/olist]"
+    },
+    {
+      "title": "2022/11/04 Patch Notes",
+      "date": "2022-11-04 06:12:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4732747437205132782",
+      "content": "[h3][b]Level Editor[/b][/h3]\n[olist]\n[*] Added input mode configuration in the level settings. Designers now can assign a specific input mode for the subscribers.\n[*] Added Unlock All Items toggle to the level settings.\n[*] Designers are now able to run a level with Mouse/Keyboard mode.\n[*] Added range indications for point lights \n[*] Designers are able to configure the color of the Basic Platforms and Background Walls now.\n[*] Improved the interactions when assigning object type values\n[*] New props: Entrance and Exit with no graphics, Portal\n[/olist]\n\n[h3][b]Bug Fix[/b][/h3]\n[olist]\n[*] Fixed the issue that on some devices it's not possible to bind E key in the control settings.\n[/olist]"
+    },
+    {
+      "title": "Big update! Come try our brand new Level Editor and make levels of your own!",
+      "date": "2022-10-31 03:15:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4706851091186791417",
+      "content": "Greetings! Soda fans! We just brought you a big update!\nIf you feel that the game is not challenging enough, or you've got some ideas about creating the level, come try our brand new Level Editor and make levels of your own! \n\nThe levels you made can be shared through Steam Workshop. Time to challenge your friends with your creativity!\n\nIn the level editor, you can:\n- Create challenging level layout\n- Deploy enemies, and adjust their parameters\n- Make combinations of vast types of traps\n- Customize the character's abilities\n- Arrange all kinds of weapons and props in the levels\n- Choose looks of the scene \n- Use triggers to create suprises\n...\n\nWith these functionalities, you can event take control of the unlocks of the character's abilites to create a fully customized journey of yours!\n\nFor now this Level Editor is still in a early stage. We will bring more functions to it in the future to enable the levels you create to be more beautiful, more interesting, and more challenging.\n\nWithout further ado, update your Soda Crisis, and start creating your levels now!"
+    },
+    {
+      "title": "Minor Update 20220617",
+      "date": "2022-06-17 06:19:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6214419130142164541",
+      "content": "[olist]\n[*] Fixed the issue that the hook rope not being able to go back when being shot using joy-stick in all direction aiming mode.\n[*] Fixed the issue that the mouse position being limited within the window when using window mode.\n[*] Fixed the bug that player can reduce the record with checkpoints in the speed run challenge mode.\n[*] Fixed the issue that the sound keeps playing when player get off a zipline with dodge slide.\n[/olist]"
+    },
+    {
+      "title": "Minor Update 202206022133",
+      "date": "2022-06-02 09:34:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4469272893492629781",
+      "content": "[img]{STEAM_CLAN_IMAGE}/40304504/1f2ed9c513e80a649fd29c2959942f1bfd38a05e.jpg[/img]\n1\tAdded a \"Hard\" difficulty option. Enemies react faster, and are able to endure more damage in hard mode.\n2\tAdded Free Aiming Mode. You can use your mouse to aim now.\n3\tThe character can shoot while climbing walls now.\n4\tAdded a hidden item.\n5\tAdded a purchasable item.\n6\tImproved controls related to wall climbing. Now pressing down will make the character slide downward faster. Down+Jump detaches the character from the wall.\n7\tEmbedded Cheating functionalities. But the achivements won't be unlocked if cheat mode is on.\n8\tFixed the issue that sometimes the remaining amount of the tactical item being wrong on the HUD. \n9\tFixed the Shop interface display errors in some occasions.\n10\tFixed the issue that underwater sound effects keeps on after reloading a level.\n11\tMore optimizations on the issue where sandworms causing fps drop.\n12\tSome of the keyboard and mouse input indicators are now displayed as icons."
+    },
+    {
+      "title": "Minor update 202205281142",
+      "date": "2022-05-27 23:44:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4437747060832345513",
+      "content": "[img]{STEAM_CLAN_IMAGE}/40304504/1f2ed9c513e80a649fd29c2959942f1bfd38a05e.jpg[/img]\n1. Added a new hidden item some where.\n2. Fixed the issue that sometimes the character cannot respawn after falling off cliffs\n3. Lowered difficulty of the boss of Planet Guardian in easy mode.\n4. Simplified the tutorial.\n5. Solved the crashing issue in Windows 7 system. But when the game runs in Windows 7, the controller hapitcs feedback is not avaliable."
+    },
+    {
+      "title": "Minor Update 202205271249",
+      "date": "2022-05-27 00:52:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4437747060828876290",
+      "content": "[img]{STEAM_CLAN_IMAGE}/40304504/1f2ed9c513e80a649fd29c2959942f1bfd38a05e.jpg[/img]\n1. Fixed the saves corruption issue when game crashes\n2. Fixed the errors caused by Reflex related codes\n3. Added limitations to the super-ultra wide screen. (Now the widdest ratio you can get is 21:9)\n4. Added some UI control binding options\n5.Fixed the bugs caused by equipping and unequipping Counter Time (Constitution).\n6. Fixed the issue that some achievements cannot be unlocked. (to be tested)\n7. Fixed the the frame rate dropping issue caused by the sand worms."
+    },
+    {
+      "title": "May 25, 2022 Patch Notes\uff1aMainly Optimized for The Control",
+      "date": "2022-05-25 04:38:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4437747060822162412",
+      "content": "[img]{STEAM_CLAN_IMAGE}/40304504/1f60910993f230935afd3783be41715f45eb61ad.jpg[/img]\nHello dear gamers! Our game went live yesterday. In the past day, we\u2019ve got very positive reviews (83% of the reviews are positive). Also, we\u2019ve got a lot of feedbacks from our players. Some of these problems are mentioned multiple times, and we believe that solving these problems is important. So, we tried our best to do the optimizations as fast as possible. We improved quite a few mechanics and details of the control, while trying to keep the challenge and gameplay being fun. Such as, it\u2019s not an instant death when dropping into the depth; some optimizations on the interactions with the background wall are implemented, we added a bunch of different methods to trigger those actions; we also added auto sprint feature so that the gamers who prefer not pressing the sprint key all the time don\u2019t have to do that anymore, etc. The detailed improvements are listed down below.\n\n1.\tThe character won\u2019t die instantly when dropping off the cliffs. Instead the character will be transported to a safe place, and receive a 10 HP damage.\n2.\tSprint is now by default without having to press the sprint button. You can change it back to manual control in the options menu.\n3.\tPressing forward against the wall will make the character start climbing the wall automatically.\n4.\tNo knockbacks will be performed if the character is attached to a zipline.\n5.\tThe double jump prop is available earlier in the game.\n6.\tThe \u201cAttach\u201d action will interrupt the \u201cDodging\u201d action now.\n7.\tWhen dodging in the air, the falling speed is decreased more.\n8.\tWhen dodging on the side wall (background wall), the character won\u2019t fall downwards.\n9.\tAfter dodging, the character will attach to the side wall (background wall) automatically (if there is a side wall).\n10.\tCoyote time is added to the zipline. Jump input when coming off a zipline is more forgiving. \n\nWe hope these improvements can effectively make your experience better. Also, we want to say thanks to the gamers who gave us all of these valuable feedbacks. We believe that our game will be more and more awesome with your help. Thank you very much!\n"
+    },
+    {
+      "title": "Minor Update",
+      "date": "2022-05-24 05:36:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4292505348842992841",
+      "content": "[img]{STEAM_CLAN_IMAGE}/40304504/1d5c6cbf194004a7e81ebd4e3095c41fe6d06a0b.jpg[/img]\nGood afternoon Sodamen, have you had your daily Cola? It has been a day since the release of [Soda Crisis], we would like to take this chance to thank everyone who have shown us love and support. Meanwhile, we have also recieved many feedback about the game. We have prepared a mini patch to improve your gaming experience. We are also collecting your feedback and suggestions for future optimisation for your gaming experience.\n\n- Optimized the movement logic while attaching on the wall, the transition between attaching and detaching to the wall experience will be smoother now\n- Fixed damage collision for certain environments\n- Default fps(frame per second) have set to be 144fps, players can modify the setting under \u2018setting ->video\u2019"
+    },
+    {
+      "title": "Demo 20210902 Update",
+      "date": "2021-09-02 03:10:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099087318054",
+      "content": "1. Gameplay Adjustment\n2. Added languages: Korean, Japanese, Spanish, Russian, French, German."
+    },
+    {
+      "title": "Demo 2108051842 Update",
+      "date": "2021-08-05 06:53:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530940329926",
+      "content": "1. The remaining enemy count flashes when there player approaches the door. This will notify that the area still needs clearing.\n2. Binding the keys for movement is now avaliable for key boards.\n3. Deleted Log Viewer."
+    }
+  ]
+}

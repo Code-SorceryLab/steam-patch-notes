@@ -1,0 +1,60 @@
+{
+    "appId": "1865130",
+    "count": 9,
+    "notes": [
+        {
+            "title": "Game Update, 26 March 2022",
+            "date": "2022-03-26 04:57:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269514708602",
+            "content": "[b]New Features:[/b]\n[list]\n[*] Recent Colors row has been added to the Color Picker - the last few colors that have been used are now saved for easier access.\n[*] Creating rooms as Public or Private will now persist to the next room creations.\n[*] Characters assets have been significantly optimized to load much faster for first-time users (about 3 times as fast)\n[/list]\n\n[b]Bug Fixes:[/b]\n[list]\n[*] We have successfully located and fixed the source of the game crashes. \n[list]\n[*] Whenever someone would not draw anything in their round in some games (like Moving Pictures), our game servers would try to move their drawing to someone else but fail to do so.\n[*] This resulted in a small memory issue, which took some server resources that were never freed.\n[*] After several of these cases, the servers would stop responding due to a lack of resources.\n[*] The right monitoring has been added to make sure similar errors are spotted much faster in the future.\n[/list]\n[/list]\n\n"
+        },
+        {
+            "title": "Game Update, 19 March 2022",
+            "date": "2022-03-19 14:49:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535835656032",
+            "content": "[b]New Features:[/b]\n[list]\n[*] A new game mode has been added - Categories!\n[list]\n[*] The game is for 1+ players, so you can have fun with yourself or with your friends\n[*] Choose a letter, and draw things in the given categories that start with that letter\n[/list]\n[*] Improve monitoring on server errors and crashes\n[/list]\n\n[b]Bug Fixes:[/b]\n[list]\n[*] Fix old saved drawings with fills to work when loading them\n[/list]\n\n"
+        },
+        {
+            "title": "Game Update, 12 March 2022",
+            "date": "2022-03-12 05:03:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5631194088564975614",
+            "content": "[b]New Features:[/b]\n[list]\n[*] When setting the game to windowed mode, it will remember that and continue being windowed for the next visits\n[*] Add a small toolbar in windowed mode to allow moving the game\n[*] Chat History has been added! Click on the new icon in the chat input to see all the recent messages in the room\n[*] Profanity Filter\n[list]\n[*] A Profanity Filter has been added for room names and player names, to ensure a more clean language for all ages playing the game\n[*] An optional Profanity Filter setting has been added. Enable it to censor bad or sensitive words. For now, it defaults to disabled, but we will probably default it to be enabled in the future.\n[/list]\n[/list]\n\n[b]Bug Fixes:[/b]\n[list]\n[*] Send a small warning about the daily reset before it happens.\n[/list]\n\n"
+        },
+        {
+            "title": "Game Update, 26 February 2022",
+            "date": "2022-02-26 04:29:13",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832514844006",
+            "content": "[b]Bug Fixes:[/b]\n[list]\n[*] Fix Fill to work as expected\n[*] Upgrade our server engine, which should improve the game stability and reduce crashes\n[/list]"
+        },
+        {
+            "title": "Game Update, 19 February 2022",
+            "date": "2022-02-19 04:01:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335198899070833",
+            "content": "[b]New Features:[/b]\n[list]\n[*] Rooms can now be public!\n[list]\n[*] View public rooms in the lobby and join the ones you like\n[*] Room can be set to public both when creating a room, and from the room settings\n[*] Rooms that you cannot join (locked / full / banned) will not be displayed\n[/list]\n[*] There are a couple of new Limits in Limitless:\n[list]\n[*] No Undo\n[*] Blind\n[/list]\n[*] When nothing was entered in captions of Limitless and Moving Pictures, a random word will be chosen now, so the other people can still have fun drawing when people are AFK\n[*] The game servers will have their daily restart at a specific time now instead of randomly\n[list]\n[*] 1 am PT / 4 am EST / 9 am GMT\n[/list]\n[/list]\n\n[b]Bug Fixes:[/b]\n[list]\n[*] Fill has been rewritten to improve its performance:\n[list]\n[*] Old logic\n[list]\n[*] In another thread, find all the pixels that match the color of the clicked point, and fill them with the new color (aka Flood Fill)\n[*] Then, create an image from that and pass it back to the main thread\n[*] Then, this image is passed to the server which passes it back to the other players in the room\n[*] The old logic has multiple flaws, but the main one is that the larger the fill area - the slower each step takes\n[/list]\n[*] New logic\n[list]\n[*] In another thread, find all the *edge* pixels that match the color of the clicked point which are next to another color\n[*] Sort these points based on their proximity to each other\n[*] Remove all the redundant points in straight lines (this is the major optimization part)\n[*] Pass the points back to the main thread\n[*] Create a polygon shape from all the points and fill it with the new color\n[*] Pass it back to the server and to other players\n[/list]\n[*] This is a significant improvement to the performance of the fill tool, at a small cost of precision from time to time\n[/list]\n[*] Fix game stuck on loading when connection times out (happens after game server crashes)\n[*] Fix additional causes of game servers crashes\n[list]\n[*] We are still aware of the game servers crashing from time to time. We have already fixed multiple issues causing that, and are investigating other possible causes.\n[/list]\n[/list]\n\n[b]Future Updates:[/b]\n[list]\n[*] In the upcoming weeks, we want to focus on a few more game modes that will help the following groups:\n[list]\n[*] People who like to play alone or with a single friend\n[*] People who want to play as teams\n[*] Over 8 people in a single room\n[/list]\n[/list]"
+        },
+        {
+            "title": "Small Game Update, 15 February 2022",
+            "date": "2022-02-15 02:26:50",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6154735015631401441",
+            "content": "[b]Bug Fixes:[/b]\n[list]\n[*] After thorough investigations, we found the source issue of our servers crashes. The game servers should be much more stable now.\n[/list]"
+        },
+        {
+            "title": "Game Update, 12 February 2022",
+            "date": "2022-02-12 02:41:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6154735015620514369",
+            "content": "[b]New Features:[/b]\n[list]\n[*] We have fully translated both the game UI and the words in games for the following languages:\n[list]\n[*] Español\n[*] Deutsch\n[*] Português\n[*] Русский\n[*] Français\n[*] 简体中文\n[/list]\n[*] Changing the UI language is available through the game settings. Changing the language of words in games is available through room settings within rooms\n[*] We have a new Discord channel!\n[list]\n[*] https://discord.gg/stJQCW8hj5\n[/list]\n[/list]\n"
+        },
+        {
+            "title": "Game Update, 5 February 2022",
+            "date": "2022-02-05 05:35:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4235074931853969670",
+            "content": "[b]New Features:[/b]\n[list]\n[*] Add game-specific settings, to alter the drawing games at will, e.g. the amount of rounds in Moving Pictures\n[*] Add the ability to change backgrounds in a room\n[/list]\n\n[b]Bug Fixes:[/b]\n[list]\n[*] Improve the stability of the game, minimizing the amount of crashes\n[/list]\n\nWe are aware that games still crash from time to time, and we are working hard to reduce those crashes.\n"
+        },
+        {
+            "title": "Game Update, 29 January 2022",
+            "date": "2022-01-29 09:10:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104326922915",
+            "content": "[b]New Features:[/b]\n[list]\n[*] Ensure the client code matches the server version when joining a room\n[*] Add more Room Settings to each room, and organize them by categories:\n[list]\n[*] Maximum Room Participants setting\n[*] Lock Room setting\n[*] Add Admin actions on participants for the room admins\n[list]\n[*] Kick - kick someone from the room\n[*] Promote - make someone else admin as well\n[*] Ban - kick someone and prevent them from returning to the room\n[/list]\n[/list]\n[*] Show the room code in the room settings window (toggleable in steamer mode)\n[*] Default rooms to be in Admin Mode when the user is in Streamer Mode\n[*] Add more actions during several games:\n[list]\n[*] Give Up -when you don't want to continue guessing\n[*] Skip Turn - when you don't want to continue drawing\n[*] Force Skip Turn - for admins to skip other people's turns\n[*] Preview Drawing - to view the previous drawing during votes phases\n[*] Freetext - some places that you can choose a word, now have a freetext input\n[/list]\n[*] Submit the caption you were writing even if you didn't have the time to click Submit\n[*] Add a Create button to the lobby to make it easier to understand how to create rooms\n[*] Replace the Lime swap in the color picker to a more yellowish color\n[/list]\n\n[b]Bug Fixes:[/b]\n[list]\n[*] When setting a room to Only Custom Words, repeat the custom words instead of filling them with ordinary words\n[*] Fix reconnection error when changing to steamer mode in a room in specific scenarios\n[*] Fix games continuing to run even after aborting in specific scenarios\n[*] Rephrase several texts for better understanding\n[*] Connections are slightly more stable now\n[/list]"
+        }
+    ]
+}

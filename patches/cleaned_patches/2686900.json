@@ -1,0 +1,186 @@
+{
+  "appId": "2686900",
+  "count": 30,
+  "notes": [
+    {
+      "title": "Hotfix ad7dca2",
+      "date": "2025-09-18 03:48:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915384676",
+      "content": "Quick hotfix to address the camera issues that the latest updated introduced, thanks to everyone for reporting that one!\n\nChanged how the player character is treated when inside a breeding stand NPC to keep them separate from the NPC, this should fix the camera issues that were happening when said NPC was vored.\n\nUpdated the boss dragons possible interaction spots on the City map, this should prevent them getting stuck with nothing to do if there are no other NPC's nearby\n\nReplaced one of the breeding stand possums on the city map with a rat"
+    },
+    {
+      "title": "Update b8afc65",
+      "date": "2025-07-19 21:28:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065418472",
+      "content": "Hello agents, It's time for another update!\n\n\n\nToday we bring some long requested features to the game, a bunch of bug fixes and a music track thats been hidden for quite some time!\n\nBefore getting into the changelist we just wanted to give a special thank you to Fiszore who did the groundwork for the main feature of this update over on the Churn Vector SDK! You're wonderful!\n\n\n\nWith that said, todays main feature is that NPCs can now use breeding stands once they are done with their prey (this includes the player) meaning you can be recumbobulated and continue your mission instead of having to start over if you get caught by them!\n\nYou also have some mobility once churned so should you find yourself sitting far away in some empty room its time to roll over to the nearest worker and have them drag you to a recum machine!\n\nBeing able to roll around also opens up some interesting traversal options should you want to be deliberately caught...\n\n\n\nList of changes:\n\nPredator NPC's can now use breeding stands and will actively seek them out once full (Thanks Fiszore!)\n\nThe player now has the ability to roll themselves around after being left at a breeding stand\n\nA long lost audio track has returned and will now play once more should you complete your main objective while unseen\n\nAudio reverb zones, NPC groups and some object placements have been improved on the Tower, Station and Warehouse maps\n\nThe camera has been updated to fix some clipping issue that could occur in tight spaces\n\nList of bug fixes:\n\nRecumbobulated characters would have their physics disabled, this now updates on respawn\n\nThe primary objective completed music is back and now correctly plays when you do so undetected\n\nThe dragons on the Tower map no longer have broken orbs between their legs\n\nNPC's now forget the players last location when the player is churned\n\nBreeding stand usability now respects NPC groups, this includes the player"
+    },
+    {
+      "title": "Update 3d3158a3",
+      "date": "2025-03-08 03:33:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379432233",
+      "content": "Hello agents!\n\nToday's update is a bunch of audio enhancements and bug fixes! The games maps should now feel more alive with the addition of many point sounds and updated reverb zones as well as the return of the plapping audio effects!\n\nThe new audio component is available to mod makers in the SDK to help bring sounds to your maps without impacting performance when a large number of them are used, check out the Wiki on the SDK Github to learn about it!\n\nList of changes:\n\n Added ambient point sounds to all maps\n Added plapping and slimy sounds when using a penetrable\n Fixed some audio stingers not playing consistently or at all\n Fixed first use of penetrables sometimes not initializing properly\n Minor fixes to some interactable positions on Tower and Warehouse"
+    },
+    {
+      "title": "Patch 8a6f324b",
+      "date": "2025-01-04 18:29:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1787858252793970",
+      "content": "Happy 2025 agents! \n\nThis update (ontop of a bunch of bugfixes) includes a major change to how jiggle physics works under the hood which should hopefully result in a performance boost for anyone on lower end hardware.\n\n\n Added the finished icon artwork for the Maned Wolf and Muscle Dragon!\n Fixed issue where occlusion culling caused flickering. Solved by making the camera snap instantly to near obstacles rather than slowly lerp.\n Fixed issue with NPCs trying to run away and failing to sample the navmesh. This should prevent NPCs from preferring to panic in place.\n Fixed issue where NPCs might try to open a door that was already opened on Tower due to misplaced navmesh links.\n Fixed issue where getting tazed on Tower caused a softlock.\n Vastly improved performance of jiggle physics.\n Jiggle physics no longer solves if the renderer it represents is occluded or not on-screen.\n Jiggle physics no longer solves if the renderer is over 20 meters away. It's noticeable, but the performance gain is significant.\n\n\nModding Update\n\n\n MODDING: Fixed issue where perfectly valid penetrator data was considered invalid. Making it difficult to create unique penetrators.\n MODDING: Fixed issue where prefabs with penetrators would get modified during OnValidate, causing Unity errors and warnings.\n\n\nWe've also continued updating the modding documentation in the Churn Vector SDK!\nAll of the pages relevant to importing a custom character are now finished and the map making guide has had its FAQ section expanded on."
+    },
+    {
+      "title": "Hotfix 3f6828f",
+      "date": "2024-10-03 03:44:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003493370788",
+      "content": "Fixed poster materials that were rendering incorrectly in some maps\n Fixed NPC's clipping into the floor on the tower maps first floor\n Fixed the console prop, agents shouldn't get stuck in them now\n\n\nModding docs also got some TLC on the Churn Vector SDK repository!"
+    },
+    {
+      "title": "Hotfix 9ae07df1",
+      "date": "2024-08-16 23:48:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6909171012601527567",
+      "content": "Updated DPG, fixing various issues with penetrator analysis for modded characters."
+    },
+    {
+      "title": "Patch 188ab9db",
+      "date": "2024-07-14 21:28:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704278497287",
+      "content": "We have a small update for you all agents. This ones not a big content patch but it contains some new stuff and a lot of under the hood changes for better modding support (see the end for details)\n\nPatch Notes\n\n\n Added some new NPC animations for vending machines, computers and other electrical devices\n Fixed some existing animations not looping\n Corrected some NPC interaction points being offset from the floor or objects nearby\n Updated some breeding stations to better position the player\n Some minor tweaks with NPC starting positions and grouping\n\n\nModding changes\n\nSome of this updates changes are about fixing bugs that we found while making and helping others to make mods for CV. While we don't have an exhaustive list, some extra goodies have been added to the SDK and a bunch of problems modders were running into should now be solved.\n\nWe've also fixed the game itself as this was causing rendering issues with modded maps being loaded under the wrong graphics config.\n\nAnd lastly the modding wiki on github (naelstrof/ChurnVectorSDK/wiki) now contains a complete set of pages on how to make a custom map from start to finish, exactly the way that we made the original set of maps for the base game!\n\nIf you've ever wanted to get into making maps for unity, these docs cover everything from HDRP fog and lighting to localizing your cutscenes."
+    },
+    {
+      "title": "Hotfix c6688e38",
+      "date": "2024-05-16 02:33:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970417505449",
+      "content": "Fixed issue where penetrators could turn inside out. (Whoops!)"
+    },
+    {
+      "title": "Hotfix ee136835",
+      "date": "2024-05-16 02:07:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970417438650",
+      "content": "Penetrators now spawn their jiggle rig at the correct scale, even when armatures have non-neutral scales.\n (Modding) Foliage no longer requires Blender 4.1 to import."
+    },
+    {
+      "title": "Hotfix 61e24a03",
+      "date": "2024-05-14 16:34:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435414959346",
+      "content": "Fixed mods being built with clashing builtinshaders bundles, preventing them from being loaded properly.\n Fixed issue with Penetrators that weren't part of the \"root\" armature. (Fixes the Altea mod).\n Deleted an invalid audio file, and moved missing prefabs to the SDK. (Fixes some modding errors)."
+    },
+    {
+      "title": "Hotfix 889d3f56",
+      "date": "2024-05-07 22:23:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435390326709",
+      "content": "Fixed issue where the Dragon on City would automatically select the player as a usable and perfectly track them.\n Fixed elevator on tower having overlapping navmeshes.\n Fixed City being too bright in general.\n Fixed some idle stations on Tower being misplaced.\n Fixed button placement on tower upper floors.\n Fixed SDK missing the glory hole animation assets."
+    },
+    {
+      "title": "Spring update!",
+      "date": "2024-05-03 22:26:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999949263921",
+      "content": "Hello agents, it's spring time here and what better way to celebrate than with a new update!\nWe've been hard at work on some new content for you to sink your teeth into as well as a bunch of tweaks to how characters see and move within the game world.\n\nHappy spring hunting agents!\n\n{STEAM_CLAN_IMAGE}/44780357/0d65220d6eceff1ce3eea58edb9d3037c0e0a76d.png\n\n8d9b39de changes:\n\n Added a new map, Tower! (Surely this will be a simple mission, right?)\n Added a new pred enemy, the Maned Wolf! (Find them within the new map.)\n{STEAM_CLAN_IMAGE}/44780357/d397f87f51133017e8521ab07be0c54465b14bee.png\n Added foliage to some maps. It's spring!\n Added a new visibility indicator to the HUD.\n{STEAM_CLAN_IMAGE}/44780357/2af61873c2da7e7d76672fe106b344c1c1ad693a.png\n Visibility is now in discrete levels. From 1x to 4x. Sprinting while holding someone gives you max visibility. Having larger balls permanently increases your visibility.\n There is now a small buffer before NPCs begin to notice you. This prevents the audio/VFX \"tickling\" that happens when just briefly being visible.\n Minimum and maximum detection time for NPCs has been drastically shortened. To help overcome the buffer, and to make them more predictable.\n NPC count has been reduced for most maps because they are now much better at seeing the player\n Characters now face where they're sprinting rather than where they're looking.\n Moved the Player's spawn on City, and made the objective more obvious with some lighting.\n Fixed audio VFX from not spawning due to not being included in the build.\n Loading a level quickly renders 60 frames of various locations to reduce stutter while playing.\n Characters now lean into which way they're moving. This negatively affects FPS mode a bit, but overall feels worth it.\n Jumping no longer temporarily breaks NPC pathfinding.\n NPCs will now turn left and right while searching for the player.\n Fixed a few cases where NPCs would get softlocked trying to path to an unreachable area. (Staying at a high alert level.)\n Fixed issue with splurting inside of objects causing clipping.\n Fixed a bunch of broken NPC idle/sit stations on most maps\n\n\nWe know that some of you will be disappointed in the NPC count reduction and while we are still figuring out how to maximize the fun, we're hopeful this can be addressed in a future update."
+    },
+    {
+      "title": "Hotfix 61161dc5",
+      "date": "2024-04-16 16:01:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312200405598",
+      "content": "Fixed clothing rip VFX from not appearing in build.\n Fixed one of the player vore animations from not having any expressions."
+    },
+    {
+      "title": "Hotfix b4dc0622",
+      "date": "2024-04-11 05:06:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762993398272292357",
+      "content": "Fixed possums not moving and being in the floor."
+    },
+    {
+      "title": "Patch 146f3d32",
+      "date": "2024-04-10 18:05:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762993398270618553",
+      "content": "Fixed characters not properly getting inflated when they're capable of vore.\n Added some lighting tools to assist with map development for modders (Found under Tools->ChurnVector)."
+    },
+    {
+      "title": "Patch 99517f52",
+      "date": "2024-04-08 02:56:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364321753630",
+      "content": "Fixed shark being inflated by default."
+    },
+    {
+      "title": "Patch d5045fcb",
+      "date": "2024-04-05 00:26:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364310440490",
+      "content": "Fixed instances where characters could rotate when they weren't supposed to.\n Characters that don't specify a vore container type, or a vore type, will get generic versions assigned.\n Characters that don't specify any penetrables will get some automatically generated when necessary.\n Nerfed NPC detection speed by about 15%, as it was still overtuned."
+    },
+    {
+      "title": "Patch 2e5a24b3",
+      "date": "2024-04-04 04:14:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364307370956",
+      "content": "Added a water shader for modded maps.\n Bulges are no longer configurable, and are automatically configured via math.\n Removed a vast amount of redundant options for both materials and penetrator inputs for modding.\n Added some generics for vore types and vore containers. It's not quite ready yet but technically OV is possible with modding now."
+    },
+    {
+      "title": "Hotfix c0c69654",
+      "date": "2024-03-27 22:58:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331435404582",
+      "content": "Fixed issue where the modding category of levels failed to display, preventing custom levels from being playable.\n Added logs for when mods load."
+    },
+    {
+      "title": "Patch d948076a",
+      "date": "2024-03-26 14:26:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301736988676",
+      "content": "Fixed some animations having FootIK disabled.\n Fixed balls clipping through the floor due to trying to depenetrate from the player's collider on spawn.\n Breeding stations now analyze the model you have and attempts to place them with their penetrator aligned to the penetrable. This allows custom models to align better.\n You no longer need to penetrate deeper than a certain amount to get stimulated, this allows regular sized penetrators to just-- rub the outside of the hole to release.\n Fixed issue where you could build infinite hip velocity while using a controller, making penetration simulations feel laggy and unresponsive on the Steam Deck."
+    },
+    {
+      "title": "Hotfix 07bcfc4a",
+      "date": "2024-03-24 23:29:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301731069983",
+      "content": "Fixed issue where the game stalls attempting to download workshop items.\n Fixed issue where the game breaks when workshop items were deleted or moved.\n Removed defunct hand print option for balls shader."
+    },
+    {
+      "title": "Hotfix 61f59914",
+      "date": "2024-03-23 20:14:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301726932504",
+      "content": "Fixed issue where it became impossible to unload characters, causing them to spawn tiny condoms."
+    },
+    {
+      "title": "Hotfix 81948681",
+      "date": "2024-03-23 18:27:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301726662190",
+      "content": "Improved math on balls IK so that they don't collapse on certain rigs."
+    },
+    {
+      "title": "Hotfix e413c0b5",
+      "date": "2024-03-23 03:16:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301724356119",
+      "content": "Fixed issue where Glory Hole station users would get their limbs stuck.\n Fixed issue where all custom mods built to the same bundle, causing conflicts when enabling more than one. (Modders please pull these changes!)\n Fixed issue where feet would sometimes get stuck at the tip."
+    },
+    {
+      "title": "Hotfix af6ad920",
+      "date": "2024-03-23 01:55:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301724150424",
+      "content": "Fixed completing two levels in a row causing the completion cut-scene to get stuck.\n Fixed the city dragon's breasts deflating when they grabbed another character.\n Fixed naga plush from being invisible.\n Fixed player's head from permanently shrinking after pausing during FPS mode.\n Fixed condom placement objectives from being impossible to complete."
+    },
+    {
+      "title": "Hotfix 8c541ba3",
+      "date": "2024-03-23 00:13:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301723894067",
+      "content": "Fixed some instances of the new dragon incorrectly acting like a normal civilian.\n Game no longer permanently stalls when Steam isn't running."
+    },
+    {
+      "title": "The Workshop Update",
+      "date": "2024-03-22 23:12:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301723737872",
+      "content": "Hello everyone! We know its been quite a while since we released any updates to Churn Vector but for very good reason as we've been hard at work preparing it for today major update!\n\nWere thrilled to announce the Churn Vector modding update is out now!\n\nThis update comes with a lot of changes and fixes to the base game, the release of modding tools, steam workshop integration and a new friend to sneak past.\n\nModding support\n\n{STEAM_CLAN_IMAGE}/44780357/f6485ca3df5f539436652460dc4ba27fe43c8c95.png\n\nThe steam workshop integration will allow upload/download of modded characters and custom levels. We are super excited to see what you all come up with!\n\nThe modding SDK (which can be found here: https://github.com/naelstrof/ChurnVectorSDK/wiki ) has everything you need to make new maps and import your own character models into the game. You can even test your levels within the editor!\n\nGame Update\n\nNael and Raliv have been working hard on making a new technology called DPG. Dynamic Penetration for Games!\n\n\n Penetrations now involve both friction forces and knot forces.\n{STEAM_CLAN_IMAGE}/44780357/acf0171245265e853cbc7ce1eb9a16fb2810cc07.gif\n Penetrators now feature inherent curvature.\n Jiggle physics are now generated to match the length of the penetrators automatically.\n{STEAM_CLAN_IMAGE}/44780357/59431571e01e815df419b5e9132c365343ddcdee.gif\n Blendshapes now properly interact with friction and knot forces.\n Penetrables now have an effect on jiggle physics, causing them to \"flick out\" and wobble on removal.\n Added a back-projected spline point that improves bending for penetrators.\n{STEAM_CLAN_IMAGE}/44780357/6dda0de45e0d2852a1ae747770a802efcf2c5aba.png\n Penetrators and penetrables are deeply simplified, making it easy to set up!\n\n\nDPG has entirely replaced the old system. It's not battletested, but hopefully will make modders lives easier!\n\nFirst person mode\n\n{STEAM_CLAN_IMAGE}/44780357/b9258d0a695b168c7307c5a9917bf623d1d4ce0e.png\n\nYou can now play Churn Vector entirely from first person bringing a whole new challenge to the stealth aspect of the game. Just remember, just because you can't see them doesn't mean they can't see you!\n\nA new creature added to the world\n\n{STEAM_CLAN_IMAGE}/44780357/e686d21b1d8b95eaaf8bc3fe79839f9fe5a20308.png\n\nWith today's update were also introducing the first new character since release and this one presents a new threat to the player. Instead of running away this new character will chase you down and give you a taste of your own medicine!\n\nPatch 1807e40f Notes\n\n\n Modding support and Steam Workshop integration\n Replaced Penetration Tech with DPG, for ease of modding.\n Cop animation polish, they can aim, walk, and shoot without sliding around as much.\n Cops now properly predict your movement and clearly display where they're thinking of shooting.\n Replaced Shapes addon with regular images.\n Level selection now has categories, allowing users to organize their levels.\n Fixed bug where player's balls unintentionally started at 1.5x its intended scale.\n Fixed bug where NPCs couldn't detect you when using a need station.\n Feathered NPCs vision at the edges, now that they're much less distracted by need stations.\n New NPC, the maroon dragon.\n Corrected Archival's name from \"Archical\" in the credits.\n Lots of small map adjustments\n Many small bug fixes, many added bugs.\n\n\nPlease be patient with us as we roll out these changes! Much of the work spent in the last month has been to separate paid assets from the project to create an SDK. Many things were lost in the process, some things are totally broken, and there's a lack of polish all around. We're working on it I promise!"
+    },
+    {
+      "title": "Week 3 Patch",
+      "date": "2024-02-02 18:50:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074946044552",
+      "content": "Some minor bugfixes, SteamDeck support, and model pack!\n\nPatch b83ca484 notes\n\n Possum cook's detection circle no longer is inside their big hat.\n Added boobs and donut to the Dragon.\n NPCs falling off the navmesh no longer permanently move randomly.\n Added smooth damping to Camera movement. This should help with it flickering in tight spaces.\n Camera near clipping plane has been made smaller. This fixes the Camera thinking it's colliding with walls that the player is simply near.\n Fixed Buridan's donkey issue with NPCs trying to return two condoms.\n The player and NPCs now get flaccid over 48 seconds if nothing's going on.\n Fixed issue where the player would get softlocked when holding a condom that got recumbobulated.\n We've got full Steam Deck compatibility now!\n\n\n{STEAM_CLAN_IMAGE}/44780357/fd4b27043391596ef4d66e36dc9087856b1c7667.png\n\nWe've been getting a number of requests by users wanting their hands on the character models, and we couldn't help but oblige! You can download a large model pack of all the characters by going here: http://koboldkare.com/CVCharacters.zip (220mb)\n\nAs always, you can find more resources and other churn vector enthusiasts at our discord here https://discord.gg/3Mb65h5rb6"
+    },
+    {
+      "title": "Week 2 Patch",
+      "date": "2024-01-26 18:58:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046253585873",
+      "content": "Another week and we've been hard at work squashing bugs and getting ready for full steam deck support!\n\nPatch 1f2310b8 notes\n\n Returned the Dragons hunger for any and all characters.\n Fixed issue where dragon didn't have jiggle physics on their wiener.\n Adjusted possum's jiggle physics.\n Fixed rat priest's tail from vanishing with their clothes.\n Fixed bug where using the warehouse button twice would softlock the game.\n Fixed bug on SteamDeck where getting CV'd by the dragon would bring the game down to 5fps.\n Trying to recumbobulate a map-spawned condom no longer soft-locks the player. (It still doesn't accomplish anything though! This might change later.)\n Fixed lighting in warehouse offices from being unintentionally dark.\n Sitting points for NPC's now have hip-pinning, so that the variety of characters now sit properly.\n Fixed various path finding issues that could cause NPC's to become stuck or pass through objects\n Flaccid states no longer pull shafts down so aggressively.\n Save slot selection menu will now immediately show Xbox controls if you have a Gamepad plugged in.\n Fixed Station map from displaying an old game over screen with generic \"Jump\" prompts.\n Localization update.\n\n\nAs always, you can find more resources and other churn vector enthusiasts at our discord here https://discord.gg/3Mb65h5rb6"
+    },
+    {
+      "title": "Week 1 Patch and Developer Update",
+      "date": "2024-01-19 19:01:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213103193173",
+      "content": "Hello you hungry critters!\n\nIts been one week since CV officially launched and we are absolutely thrilled by the positive reception!  \n\nA lot of the feedback we have received revolves around additional content and we hear you. While we can't make any promises on what additional content we plan to deliver, at the very least we can confirm that modding support is on the way but with no concrete timeline on when it will be ready.\n\nOn the bug fixing front, we now have a public issue tracker over at: https://github.com/Archival1/CV-BugReporting that users can submit and discuss bugs they encounter. If you find a bug be sure to check it out and you might just see it appear in patch notes like this!\n\nPatch cef91e5c\n\n\n Buffed NPC detection rate by about 20%. (Minimum detection rate 8 -> 6.5 seconds, max detection rate 4 -> 3.5 seconds.) Non-authority NPCs still mostly ignore you if you're unladen and not being suspicious.\n Buffed NPC memory by 20%. It's only a few extra seconds, but it prevents them from walking out of the room and forgetting what just happened while still in sight of the player.\n Fixed bug where investigating NPCs would forget about you if it took more than 30 seconds to path to the search location.\n Fixed Navmesh bugs on City, Station, Warehouse. Should lessen the chance of NPCs becoming stuck on corners of objects.\n Buffed Dragon's speed by 20%. Should now have a much easier time getting around when \"under load\".\n Fixed Dragon being omniscient when deciding on a character to CV. Prevents them from just pathing to the player across the map. This is work to make pred characters more authorable, and we're not quite finished with it yet!\n Fixed receptionist Giraffe clothes clipping.\n Added Condom physics, they now wobble and splat like a real bag of fun.\n{STEAM_CLAN_IMAGE}/44780357/a88747af8071ea934247e93bc5144d4dfdd7e3a3.gif\n Fixed Npcs at glory holes thinking they are the boss of the City when freed.\n Added some wet floor signs.\n Reduced vocal volume for Possum characters by 50%.\n Improved animations for most character interactions (sitting, idle, vore)\n Fixed some chairs, and vending machines causing characters to hover when using them.\n Fixed light bleed on most maps' light bake.\n Fixed Thai fonts from having missing glyphs.\n Fixed smashed wine bottle fragments from lacking collision.\n Fixed bug where setting Hint Glyphs to Controller would disable breeding stands.\n Added a small cutscene to a button in the Warehouse to show what door it opens.\n Fixed dialogue getting stuck when leaving a glory hole station early.\n Fixed goop decals ignoring the giraffe.\n Fixed balls not teleporting to their owners on Recumbobulation. Should prevent the Dragon's balls getting stuck half-way across the map when taken to a Recumbobulator.\n Fixed worker Rats ignoring cumflation.\n Removed some generic glyphs (TAB, and JUMP) and replaced with proper controller-specific button prompts.\n Fixed the Game Over prompt from requiring a keyboard space bar press. It has been replaced by a \"Quick Restart\" prompt with the appropriate controller glyph and controls.\n Fixed getting multiple-game over states simultaneously from breaking menuing.\n Small various fixes.\n\n\nThis patch week was very carefully crafted so things don't break (we hope!). We're gearing up for bigger updates so stay tuned!\n\nWe're still in the process of platforming the Churn Vector community, here's a discord that's somewhat WIP: https://discord.gg/3Mb65h5rb6"
+    }
+  ]
+}

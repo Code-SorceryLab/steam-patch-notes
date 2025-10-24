@@ -1,0 +1,90 @@
+{
+  "appId": "3488900",
+  "count": 14,
+  "notes": [
+    {
+      "title": "Multiplayer Bots!",
+      "date": "2025-05-01 00:35:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487592288",
+      "content": "This has been a long time coming, so I appreciate y'all bearing with me!\n[list]\n[*] Added multiplayer bot support. Use the. \"bots = [0 through 3]\" command to set the server bot count\n[*] Assorted bugfixes.\n[/list]\n Previously some actions like peace-offer-withdrawals were not networked, allowing for pretty zany desync situations. Debt was improperly synchronized, leading to some economic desync as well, although this won't solve it entirely. \n\nAs always, please report bugs in the discord server's #bug-reporting channel!\n\nThanks, and have fun\n[I]-spacemann[/i]"
+    },
+    {
+      "title": "Editor Hotfix",
+      "date": "2025-03-31 19:38:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637963016",
+      "content": "There was a bug where improperly saved editor data could corrupt one of the menus, interrupting the loading process and causing each level to immediately shutdown. That has been fixed!\n\nI've also made sure that, at least until I add specific research tools into the editor, that states will load with the minimum research necessary to support the bases that you've given them. \n(If a state spawns with a silo, it will be given level 1 ICBM research.)\n\nThanks [i]Mr. Grimm[/i] and [i]goosboi [/i]for the bug reports!"
+    },
+    {
+      "title": "Custom Scenario Editor",
+      "date": "2025-03-30 18:11:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637928592",
+      "content": "A commonly requested feature was the option to design your own levels. \nI've gone ahead and added some tools to let you do this!\n\nThe new 'Editor' mode lets you:\n[list]\n[*] Cycle through map seeds until you find one you like\n[*] Set the number of players\n[*] Modify the fairness of the starting borders\n[*] Place down bases\n[/list]\n\nOnce you're happy with your new level, you can give it a unique name and description, then save it to the campaign! Custom levels will show up at the end of the normal campaign, on the second and third pages. \n\nThese tools are pretty limited, but if you have requests for additions, or things like workshop/multiplayer support for custom levels, post about it in the discord! If there's player support for ideas, I'll definitely consider adding them to the game. \nYou can find the discord here: https://discord.gg/XKNfPupCq6\n\n[i]\nHave fun! \n- spacemann[/i]\n"
+    },
+    {
+      "title": "Multiplayer Patch #5!",
+      "date": "2025-03-11 23:57:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794014851377319",
+      "content": "[h3]Update to v2.4.48[/h3]\nMore netcode bug-squashing!\n\n[list]\n[*] Fixed a number of RPC feedback-loops that often led to potentially massive chunks of bandwidth being dedicated to completely useless messages! \n[*] Drastically reduced the precision and frequency of network-transform updates, which was also hogging large amounts of bandwidth for no gain. (Sub-millimeter unit position updates aren't that valuable in a world-scale game)\n\nThese two fixes, in test scenarios, resulted a [i]huge[/i] reduction of bandwidth use. Hopefully this is the big fix for hosting larger servers!\n\n[*] Fixed a bug with sometimes being unable to disband your own troops\n[*] General streamlining of several common network messages\n[*] Improvements to disconnect/state death logic \n[/list]\n\nThanks for hanging in there with me with the netcode issues! Post bugs in the community discord!\n[i]-spacemann[/i]\n"
+    },
+    {
+      "title": "Multiplayer Patch #4",
+      "date": "2025-03-06 19:48:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379389042",
+      "content": "[h3]Update to 2.4.44[/h3]\nOne day, many years into the future, there wont be any more netcode bugs. This is not that day. \n\n[list]\n[*] Corrected Interpolation Settings (this should [i]really[/i] help with hosting large servers!)\n[*] Patched a game-breaking country defeat/disconnect bug that would freeze the map and cause all sorts of problems\n[*] Automatically clean unit information continuously (may cause minor performance impact, but is a safeguard against map-freezes!)\n[*] Fixed an issue where a disconnect would end the game for everyone\n[*] Fixed an issue where airbases wouldn't properly apply research in multiplayer\n[/list]\n\nHopefully not too many more of these will be needed! Please let me know if you run into any bugs! Best place to message is the community discord. \n- [i]spacemann[/i]\n\n\n"
+    },
+    {
+      "title": "Multiplayer Patch #3",
+      "date": "2025-03-05 00:23:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379329128",
+      "content": "[h3]Spectating Improvements[/h3]\n- Added 'Spectators', a unique player-type\nSet your name to \"spectator\" before the match starts, and you will be able to watch the game without playing. \n[I](Likely to have some bugs, let me know in the discord if you find stuff!)[/i]\n\n-Improved normal spectating!\nIf you lose a multiplayer match, you can now continue watching as a spectator, and leave without ending the game [i](unless you are the host)[/i]\n\n[h3]QOL Improvements![/h3]\n- Unique panels for each gamestate are now visible in the pause menu\n- Auto-lose scenarios are now reloaded (thanks FireWarp!)\n\n[h3]Multiplayer Bugfixes[/h3]\n- Research VFX and Sounds now work in multiplayer again!\n- Server or Client Disconnects are now handled, instead of previously causing undefined behavior\n- Addressed issue of not being able to spawn troops during war with non-adjacent nation\n- Hopefully resolved issue where units wouldn't path correctly to faraway destinations [i](caused by an errant 'optimization')[/i]\n- Resolved inaccurate score reporting\n- Removed some unnecessary recursion that could have caused host slowdown\n- Fixed a network race-condition in the multiplayer settings that sometimes caused whitescreen error (improper map load)\n\n[i][b]Please let me know of any bugs you find in the #bug-reporting channel in the discord! [/b]\n\nHave fun!\n-spacemann[/i]"
+    },
+    {
+      "title": "Multiplayer Patch #2",
+      "date": "2025-03-02 17:25:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526118690",
+      "content": "2.4.2\nThe war on bugs continues! \n[list]\n[*] New Desync checker on armies will hopefully catch up and fix army desync when it occurs. (not 100% effective, but it helps!)\n[*] Dropped multiplayer tickrate to give host machines a chance at handling large-server bandwidth\n[*] Added new (probably insequential) 'path sharing' optimization on neighboring units to attempt to reduce CPU load\n[*] Improved multiplayer spectating! (still not amazing)\n[*] Attempted to solve issues encountered when hosting sequential games (thanks sev!)\n[*] Added new end-screens for multiplayer matches, including spectating and victory screens (WIP)\n[*] Added a whole bunch of new and exciting bugs! \n[/list]\n\nThanks for bearing with me folks, this isn't over yet!"
+    },
+    {
+      "title": "Desync Patches, Color Selection",
+      "date": "2025-02-28 14:11:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526050797",
+      "content": "2.4.11\nSome users were experiencing severe multiplayer desync issues! Some steps have been taken to address this, like\n[list]\n[*] Verifying unit teams and positions from the host instead of trusting the local machine\n[*] Avoiding spawning units in contested regions (cities near the frontline)\n[*] Minor multiplayer fixes\n[/list]\nMultiplayer lobbies still have live bugs, but I just wanted to ship this patch in the meantime to hopefully get the gameplay into a more enjoyable state. If you're experiencing problems with setting up multiplayer lobbies, try typing \"shutdown\" to close your multiplayer connection, then try again.\n\nAlso, you can now pick your preferred (singleplayer) color by typing \n'color = [red, yellow, pink, blue, green]' (thanks Vel0city!)"
+    },
+    {
+      "title": "Improved Falken's Maze",
+      "date": "2025-02-27 13:51:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526016578",
+      "content": "2.4.0\n\t\u2043\tAdded new achievement \u201cA Strange Game\u2026\u201d to reward diplomatic solutions.\n\t\u2043\tImproved Falken\u2019s Maze...\n\t\u2043\tAdded more hints for new users to avoid stuck-spots in the learning curve.\n        -      Addressed a potential launch-option issue on the previous macOS build."
+    },
+    {
+      "title": "Widescreen Resolution Hotfix 2",
+      "date": "2025-02-23 22:01:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353309027",
+      "content": "Patch Notes:\n-Fixed field-of-view issue on widescreen monitors\n-Fixed game-breaking menu issue that the above patch caused! \n-Added missing decimal point in air defense"
+    },
+    {
+      "title": "Mini Patch, Achievement Fix!",
+      "date": "2025-02-23 14:50:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353299801",
+      "content": "2.3.7\n\t\u2043\tAdded victory sound\n\t\u2043\tFixed victory lights not flashing long enough\n\t\u2043\tMade the achievement \u2018Gigaton\u2019 into \u2018Half-Gigaton\u2019 because I don\u2019t honestly expect anyone to rack up that much playtime\n\t\u2043\tAdded MADness achievement for unlocking MIRVs!\n\t\u2043\tHighlighted the \u201cNew Base Unlocked\u201d message in green to match other research messages\n\t\u2043\tTweaked Tutorial growth values again"
+    },
+    {
+      "title": "Post-Launch Tweaks!",
+      "date": "2025-02-22 18:51:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353273521",
+      "content": "[h3]2/22/25, Update to version 2.3.6[/h3]\n\t\u2043\tAdded WOPR achievement\n\t\u2043\tSwitched PROXY and NATO to slow the learning curve\n\t\u2043\tEven more emphasis on victory offered! (thanks apples)\n\t\u2043\tAdded peace offers to war screen (thanks apples)\n\t\u2043\tAdjusted tutorial to cap growth/shrink rates on high-end computers\n\t\u2043\tHighlighted the \u201cError: this option is locked\u201d message in red, since some people weren\u2019t seeing it\n\t\u2043\tAdded hidden \u201cDEBUG\u201d toggle between 0 and 1 to show your FPS and current scenario + seed\n\t\u2043\tAdded syntax help with settings if people don\u2019t use an equals sign\n\t\u2043\tMinor bugfixes"
+    },
+    {
+      "title": "2.3.4 - Minor Changes",
+      "date": "2025-02-20 14:25:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353202845",
+      "content": "[h3][h1]2.3.4 Patch Notes[/h1][/h3]\n\t\u2043\tAdded CRT = 0 setting for eye problems\nThis setting disables all the scanline effects, the visual fuzz, and the lens distortion for all screens. Enable this setting by typing \"CRT = 0\" into any console. \n\n\t\u2043\tRemoved and replaced an unreasonably difficult achievement\n\"Teraton\" required the player to drop a completely unreasonable amount of nukes. Gigaton is difficult enough, I think.\nTeraton was replaced with a pretty obvious easter egg, because I thought it was cute. \n\n\t\u2043\tAdded non-scoring diplomatic endings (thanks Derek)\nThere were cases where the game had reached a natural conclusion, but victory wasn't being offered, which should now be addressed. \n\n\t\u2043\tRemoved the necessity of typing multiplayer while not actually forcing online connectivity\n\t\u2043\tFixed trying to store stats without steam connection\n\t\u2043\tRemoved FPS counter and seed display to declutter console\n\t\u2043\tDisallowed canceling tutorial research"
+    },
+    {
+      "title": "New Levels, Achievements, and Discord!",
+      "date": "2025-02-13 23:08:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791580425984397",
+      "content": "[h2]Discord![/h2]\n[i]This game is pretty hard, so we've launched a discord server for FAQ, tips and tricks, and multiplayer matchmaking! Feel free to drop in and say hello.[/i]\nhttps://discord.gg/WNP5jsUzmX\n\n[h2]New Levels[/h2]\n[h3]NATO[/h3]\n[i]This scenario imagines the player as part of a mutual-defense-pact against a larger and more technologically advanced enemy power[/i]\n[h3]NOFLY[/h3]\n[i]In NOFLY everyone has advanced air defense, so in order to bring your weapons to bear you'll need to take out the air defense sites with a ground invasion. [/i]\n[h3]WOPR[/h3]\n[i]WOPR (once ZEROSUM) is the classical cold war scenario, in which two technologically advanced nuclear powers face off. In this situation, there's \"winning\" but no *winning*.[/i]\n\n[h2]New Achievements and Stats![/h2]\n[h3]Yield[/h3]\n[i]From now on, every kiloton (explosive equivalent of a thousand tons of TNT) that you drop over enemy territory will be tracked, and used to unlock achievements. I'm just testing this out, and if its cool, I expect I'll add a couple more stats - missiles intercepted, megadeaths, survivors, etc.[/i]"
+    }
+  ]
+}

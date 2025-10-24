@@ -1,0 +1,24 @@
+{
+  "appId": "282400",
+  "count": 3,
+  "notes": [
+    {
+      "title": "PATCH NOTES SUPERPOWER 2 #1.5.2",
+      "date": "2018-08-13 14:41:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2454911758755727908",
+      "content": "Mainly, we did the following:\r\n- Added a validation to prevent tampering of original files;\r\n- Added a validation to ensure all players on a server are playing the same \r\n\r\nMODs, including the same version of DLLs to make sure that a player can\u2019t have tampered files that would give the player an advantage. As of now, everyone plays with the same MOD than the host.\r\n\r\n[b]Guide to MOD installation[/b]\r\n\r\nWhy the change?\r\n\r\nSuperPower 2 was originally designed with all the tools to allow players to generate their own scenarios. Almost every aspect of the game can be modified to create new interfaces, new rules and new maps.\r\nHaving a game that is easily moddable lead to some unintended consequences. Not only did the game support many mods, but some mods could also overwrite the original SP2 files. Malicious mods started circulating that would ruin the game experience for players on the receiving end of those mods.\r\n\r\nGolemLabs made some changes in how we deal with mods to make sure every player was using the same mods. We believe this will provide a better experience to players.\r\n\r\n[b]What has changed?[/b]\r\n\r\nWe added some validation for the files that the game uses, to ensure that the game\u2019s integrity can be maintained in multiplayer games. This means that when a server starts a game, it will look for mods and it will send this list to players connecting to the game. Connecting players will be able to join a game only if they use the same mods.\r\n\r\nFundamentally, it changes how mods must be installed. The original SP2 files can no longer be overwritten.\r\n\r\nAll mods must be in a separate folder under the \u201cSuperpower 2/MODS/\u201d folder. Mods still need to have an xml file that contains the name and version of the mod.\r\n\r\n[b]How are mods loaded[/b]\r\n\r\nWhen starting the game, it looks for a configuration file called Joshua.cfg located in the \u201c/Superpower 2\u201d folder. Here is an example of that file:\r\n\r\n[code]\r\n<MAIN_CONFIG>\r\n    <MOD>SP2</MOD>\r\n    <DEFAULT_MOD>SP2</DEFAULT_MOD>\r\n    <MODULE_PATH>.\\modules\\</MODULE_PATH>\r\n    <GRAPHICAL>\r\n        <WIDTH>1024</WIDTH>\r\n        <HEIGHT>768</HEIGHT>\r\n        <COLOR_DEPTH>32</COLOR_DEPTH>\r\n        <FULLSCREEN>FALSE</FULLSCREEN>\r\n        <ADAPTER>0</ADAPTER>\r\n        <REFRESH>60</REFRESH>\r\n    </GRAPHICAL>\r\n</MAIN_CONFIG>\r\n[/code]\r\n\r\nFor each mod you want to use, there must be an entry between a <MOD> </MOD> section. For example, if I want to play the HDM mod, I would edit the Joshua.cfg file like this:\r\n\r\n[code]\r\n<MAIN_CONFIG>\r\n    <MOD>HDM</MOD>\r\n    <MOD>SP2</MOD>\r\n    <DEFAULT_MOD>SP2</DEFAULT_MOD>\r\n    <MODULE_PATH>.\\modules\\</MODULE_PATH>\r\n    <GRAPHICAL>\r\n        <WIDTH>1024</WIDTH>\r\n        <HEIGHT>768</HEIGHT>\r\n        <COLOR_DEPTH>32</COLOR_DEPTH>\r\n        <FULLSCREEN>FALSE</FULLSCREEN>\r\n        <ADAPTER>0</ADAPTER>\r\n        <REFRESH>60</REFRESH>\r\n    </GRAPHICAL>\r\n</MAIN_CONFIG>\r\n[/code]\r\n\r\nThis would indicate to the game that there are 2 mods (SP2 itself is considered a MOD). Since \u201cHDM\u201d is the first in the list of MODs, the game will look for files in this folder before going to the next MOD (SP2 in this case).\r\n\r\nIf you need to install more MODs, simply add them to the list in order of preference.\r\n\r\nNow, have fun!"
+    },
+    {
+      "title": "Patch #1 Released",
+      "date": "2014-05-25 09:42:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3188858978020378047",
+      "content": "We just set the first update live.\r\n\r\nHere is the list of changes:\r\n- Fullscreen support added\r\n- MP phantom servers no longer displayed after game is terminated\r\n- MP connectivity errors better explained\r\n- small german localisation fixes\r\n\r\nEnjoy!"
+    },
+    {
+      "title": "Patch #1 Released",
+      "date": "2014-05-25 09:42:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572131156618",
+      "content": "We just set the first update live.\r\n\r\nHere is the list of changes:\r\n- Fullscreen support added\r\n- MP phantom servers no longer displayed after game is terminated\r\n- MP connectivity errors better explained\r\n- small german localisation fixes\r\n\r\nEnjoy!"
+    }
+  ]
+}

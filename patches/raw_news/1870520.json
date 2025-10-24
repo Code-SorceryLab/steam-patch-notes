@@ -1,0 +1,18 @@
+{
+    "appId": "1870520",
+    "count": 2,
+    "notes": [
+        {
+            "title": "Bombyx VR Controller Support",
+            "date": "2022-01-16 13:43:34",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931839668363",
+            "content": "Currently the game has native support for Oculus. There are a couple of ways to address SteamVR input support;\n\n'Legacy' key binding files. Users create these and can share their mappings. This should be possible with the current build, linked in this Event. Please attempt to create them.\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1545634111\n\n'Manifest' files, which read exposed events from the game. The build is actually shipped with a manifest file and from what I can tell, it should be valid. However this wasn't working well enough to pass Steamworks certification.\nhttps://github.com/ValveSoftware/openvr/wiki/SteamVR-Input\n\nI will take a look at manifest file support prior to granting access to this build, but these settings may need to change during play test of this or future builds in order to properly support SteamVR input. There are some inputs that need reworked in the game, a separate but related issue. One goal of this Edge Alpha test branch is to finalize this support prior to releasing a build on the main public demo branch."
+        },
+        {
+            "title": "Bombyx Launch Options (2d & VR modes)",
+            "date": "2022-01-16 13:23:54",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931839618619",
+            "content": "The game is currently uploaded as a singular build which is autodetecting state. I made an attempt to use launch flags within Steam but it's not functioning properly yet. I've left the launch options active so that it forces display of information regarding this issue.\n\n[u][b]Close the Oculus Driver FIRST or unplug the HMD prior to launching to force the game to enter 2D, full screen mode. If the game can find a HMD, it will autolaunch into VR mode, and it will only update the screen if the HMD detects a user present in the headset. [/b][/u]\n\nNote that the input modes (\"2D\" and VR) are still hot swappable at any time by pressing the 'P' key. The information panel in the Hub zone shows buttons to select an input mode.\n\nAll this needs to be improved with a proper title screen, more discrete mode selection, etc."
+        }
+    ]
+}

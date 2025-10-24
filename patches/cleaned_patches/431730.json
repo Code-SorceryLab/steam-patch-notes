@@ -1,0 +1,510 @@
+{
+  "appId": "431730",
+  "count": 84,
+  "notes": [
+    {
+      "title": "Aseprite v1.3.10 & v1.3.11-beta",
+      "date": "2024-11-22 18:19:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783872412029011",
+      "content": "Hi asepriters! This week we\u2019ve released Aseprite v1.3.10.1 and v1.3.11-beta2 with new major features.\n\nNew beta versions are going to be available only through Steam as it is easier to release quick fixes for important crashes/regressions. We\u2019re planning to release new features there and after a couple of weeks of beta testing, publishing it as the new stable version.\nWhat\u2019s new\nAseprite v1.3.11-beta1:\n  \nNew interactive Text tool with T key #28\n\n{STEAM_CLAN_IMAGE}/11891144/6114f78145ab67de59e7870f52b03ac81de10083.gif\n    \nNew diagonal symmetry #1171\n\n{STEAM_CLAN_IMAGE}/11891144/018fee40787473d8f811b4a15403fd83c4ef2c43.gif\n    \nNew drop files on timeline to import files as layers/frames/cels, works on Windows and macOS #131 #4636\n\n{STEAM_CLAN_IMAGE}/11891144/12e4c0708aaceda76fa5597d692418e5d9533c45.gif\n    \nAdded \u201cTransform\u201d checkbox to move slices with its content #4533\n\n{STEAM_CLAN_IMAGE}/11891144/a82485f9aab8749b1b41833510a2c62e328a502d.gif\n    Experimental: Compose layer groups separately from all other layers #3225 (thanks to @belchiorg and @gui-marc)          Enable this from Edit > Preferences > Experimental > Compose groups separately        Group buttons in the toolbar when the window is too small #4708  Duplicate tilemaps correctly when Sprite > Duplicate #4759  Replaced jpeglib with libjpeg-turbo to load/save JPEG files  Better text rendering using Skia (DirectWrite on Windows, Core Text on macOS) #4362  Lua API:          Added GraphicsContext for images: Image.context property #4330      Added ui/flatten/filename parameters to app.command.DuplicateSprite command #4755      \nAseprite v1.3.11-beta2:\n  Fixed crash dropping files on timeline in certain cases #4801  Fixed crash clicking the canvas when multiple layers/frames were selected in the timeline and the Edit > Preferences > Timeline > Keep Selection option was enabled #4809  Fixed some theme related problems with the font popup #3851 #4815  Windows: Minimize crashes related to buggy WinTab drivers #3358\nAseprite v1.3.10:\n  Published a couple of HD icons  Added support for JPEG image orientation adjustment from EXIF metadata #2525  Disable Brush Preview in Preview window by default #4721 (thanks to @S4HRKBOY), can be re-enabled from View > Preview > Brush Preview  Snap cels to grid on moving cel action #4027  Fixed slice tool when we are in tiles mode #4306  Fixed bug copying/moving cels with z-index #4779  Fixed issues with windows visibility when changing between \u201cHome\u201d tab and sprites #4546 #4789  Fixed Duplicate Sprite/Layer didn\u2019t duplicate z-indexes #4665  Fixed mouse issues making hard to resize floating windows #4240  Fixed UI issue scaling brush type icons #4386  Fixed crash clicking \u201cHide Other Layers\u201d when there is no preview window #4768  Lua API:          Update API version to 30      Added app.editor.zoom/scroll properties #4722      New option (Dialog:show{ hand=true }) to enable Hand tool in the active editor with a modal dialog (thanks to @lampysprites)      \nAseprite v1.3.10.1:\n  Fixed window flickering using \u201cDisable Snap to Grid\u201d button t/23912 #4805 Lua: Fixed broken Dialog:show{ bounds=Rectangle } API t/23917\nHow to update Aseprite\n\nHow to get the beta version\n\nDiscuss in the Community site"
+    },
+    {
+      "title": "Aseprite v1.3.9",
+      "date": "2024-10-02 11:32:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003490909955",
+      "content": "Today we're releasing Aseprite v1.3.9 with several bug fixes and a couple of new little features:\n\nNew Hungarian, Norwegian Nynorsk, Thai, and Ukrainian translations, thanks to the help of several contributorsImproved performance in \"Recover Files\" tab #4610New \"Reset\" page in Edit > Preferences #4432New \"Reset Symmetry to View Center\" option t/19185 #4638 (thanks to @S4HRKBOY)New criterias to match similar RGB colors with color palette entries t/9682 #2787Added \"Don't show this alert again\" when saving WebP files #4658Fixed \"Merge Down\" command when the merged cels have a special z-index t/22106 #4468Fixed bug where we weren't able to uninstall third party extensions #4622Fixed transparent color bugs converting between RGB  Indexed conversion #4370 #4438Fixed moving multiple tilemap layers at the same time #3144Fixed right click action with shading ink is selected #4520Fixed bug where the first mouse click after a Ctrl+Z was ignored if we had Ctrl key configured to drag the \"Brush Size\" t/22112 #4484Fixed duplicate items in keyboard shortcuts list #4387CLI: Fixed exporting Sprite Sheet with group names #4456Lua API:New app.fgTile/bgTile properties to get/set the foreground/background tile #4403Added Site.tilemapMode propertyAdded x and y params to app.command.Paste()Fixed app.command.Cut/Paste in -batch mode #4354Fixed app.command.Cancel() command when used from scriptsFixed default color/bgColor params in app.useTool()\n\nMore information: https://community.aseprite.org/t/aseprite-v1-3-9/23578/1"
+    },
+    {
+      "title": "Aseprite v1.3.3 released!",
+      "date": "2024-02-14 09:15:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5750603429272824394",
+      "content": "Hi Asepriters! Today we are releasing Aseprite v1.3.3 with several bug fixes and some improvements. You can check the release notes for more details.\n\nWhat's new\n\nNew range for opacity and alpha values in percentage. Now you will see opacity values from 0% to 100%, and alpha values from 0 to 255 by default:\n\n{STEAM_CLAN_IMAGE}/11891144/7c98906ae4848fd61700a8bd64dbe3e2ce31dc77.png\n\nYou can configure this from Edit > Preferences > Color > Alpha & Opacity:\n\n{STEAM_CLAN_IMAGE}/11891144/abcccc787ee1bd666840599b162abf2054c153d6.png\n\nAdded support to follow subtags/repetitions instructions when exporting animations:\n\n{STEAM_CLAN_IMAGE}/11891144/915bcad40fea2edf05a9cb6e3d8527489f54b5f5.png\n\nNew button to reload palette presets:\n\n{STEAM_CLAN_IMAGE}/11891144/380aaf0335572d09e8d6c640f1aa3eb8fb1bdd9f.png\n\nTranslations\n\nNew official translations included thanks to the help of several contributors:\n\n{STEAM_CLAN_IMAGE}/11891144/32a81eacdc36ba333cf72474378a8300d396aa4b.png\n\nThis is (and will be) a work-in-progress in Weblate. Any kind of help will be greatly appreciated!"
+    },
+    {
+      "title": "Aseprite v1.3",
+      "date": "2023-11-27 11:55:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5382426458992214369",
+      "content": "Welcome Asepriters! Today we are finally releasing Aseprite v1.3 as\nthe stable version replacing the previous v1.2.40. It is already live\non Steam and all our\nplatforms.\n\nIf you were already using v1.3 beta or a release candidate, you can\ncheck out the release notes\njust to check the latest fixes/features. If you came from v1.2, we\nrecommend you to check out the new features in this post.\n\nWhat\u2019s new\nThe main new feature on Aseprite v1.3 are tilemap layers:\n\n[previewyoutube=ukdxF8XgewI;full][/previewyoutube]\n\nA summary of other minor features you can find in v1.3 from v1.2:\n\n  Dark theme\n  Skew transformation\n  Text fields for the transformation\n  Resize tags dragging borders\n  Repeat field for tags\n  Pick colors from the desktop\n  Z-index to re-order layers in specific frames\n  New mouse/pen stabilizer\n  Global user data to sprites\n  Ctrl+Shift+Drag mouse Change brush size + drag values customization from Edit > Keyboard Shortcuts > Drag Value\n  Shift+F7: Hide other layers on Preview window\n  Space+X/Space+H (flip horizontally), Space+Y/Space+V (flip vertically), Space+D (flip diagonally), Space+R (rotate): Flip/rotate custom brushes or tiles\n  New scripting capabilities like the canvas widget and tabs\n\n\nMore information in our blog post"
+    },
+    {
+      "title": "Aseprite v1.3-rc4",
+      "date": "2023-05-19 10:57:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943309120625",
+      "content": "Hi asepriters! Today a new version is available with several new fixes and some little new improvements:\n\nAseprite v1.3-rc4\nFixed regression showing brush & selection preview\n\nAseprite v1.3-rc3\nAdded new z-index property to cels\nEnable panning and zooming for filter window\nNow F2 can rename a layer if a range of frames is not selected\nChange all selected cel properties when we select frames/layers\nAdded warning when loading unsupported property type and mark the file as read-only\nFixed webp export to export one tag correctly instead of all frames\nImproved message error when loading a sequence of png files whose color modes don\u2019t match\nExport Sprite Sheet: Now \u201cIgnore Empty\u201d option works for tilesets too\nFull screen preview hides the preview window if needed\n\nLua API changes"
+    },
+    {
+      "title": "Aseprite v1.3-rc2",
+      "date": "2023-03-29 11:03:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143714207947330809",
+      "content": "Hey there! Today we\u2019ve published the second release candidate v1.3-rc2 with the final fixes for a v1.3 to replace v1.2.40 and avoid as many surprises as possible (as we know that switching from v1.2.40 to v1.3 might bring some problems).\n\nA list of changes in this v1.3-rc2:\n\n\nPlay subtags + repeats by default. Now playback options are accessible through Frame > Playback submenu\nAdded pixel-art Cyrillic script and Maltenese Unicode chars\nAdded ability to press a mnemonic key (e.g. Y or N) without modifiers in alerts\nAdded frame duration warnings saving animated GIF files\nAllow recovering sessions from previous Aseprite versions\nFixed regression pasting images outside the canvas limits\nFixed rotation inaccuracy with 90\u00b0, 180\u00b0 or 270\u00b0 degrees\nFixed 8 Connected Fill escapes grid with \"Stop At Grid\" checked\nNow New Palette from Sprite creates colors when alpha is less than 16\nRemoved the marching ants effect from Timeline after paste\nFixed avoid changing grid settings from Edit > Preferences if they aren't modified\nFixed grid misalignment when zooming out\nFixed a rendering bug using Loop through tag frames option in Onion Skin\nFixed crash right-clicking play button if the preview window is hidden\nCLI: Fixed bug saving tags in file sequences using -save-as \"{tag}_1.png\"\nLua: New Plugin:newMenuGroup() and Plugin:newMenuSeparator() to organize plugin submenus\nLua: Added KeyEvent.repeatCount\nLua: New opacity/blend mode parameters in Image:drawImage()\nLua: More changes\nSeveral other crash fixes and minor UI issues\n\n\nMore details in the forum: https://community.aseprite.org/t/aseprite-v1-3-rc2/17564/1"
+    },
+    {
+      "title": "Aseprite v1.3-rc1",
+      "date": "2023-03-01 08:09:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176558483218",
+      "content": "Hello asepriters! :art: After several months we\u2019re preparing the first release candidate to finally move forward to v1.3 (and leave v1.2 behind :wave: ). If everything goes well (and probably with a couple of extra release candidates) we will finally put v1.3 in the main channel (and the beta channel will be used to bring new features quickly).\n\nRemember to get this update from the beta channel right now. A list of changes and fixes in this v1.3-rc1:\n\nPrefer native file dialog by default on Windows & macOS\nmacOS: Added a QuickLook plugin to generate thumbnails and previews\nmacOS: Fixed shortcuts for Edit actions when the native file dialog is displayed\nYou can switch back to the Aseprite file dialog unchecking the Edit > Preferences > Experimental > Use native file dialog option\nDisabled multiple UI windows by default\n\nYou can re-enable it from Edit > Preferences > General > User Interface or Edit > Preferences > Experimental > UI with multiple windows\n\nAdded support to load/save QOI files\nNew \u201cCopy Path\u201d option right-clicking a tab\nNew Repeat field to animation tags\nAdded option to play/preview with subtags & repetitions\nShow saved undo state in Edit > Undo History window\nCLI: Added support to save multiple files with --save-as\nNew tagname format (--tagname-format) to export JSON data\nAdded several missing strings to translate the UI to other languages\nOptimized save operation on files with several/huge tilesets\nmacOS: Fixed memory leak in the regular usage of the program\nFixed general look of the Dynamics popup + added more possibilities to customize themes\nFixed normal color wheel\nFixed incorrect BMP file size set during save command\nFixed generation of non-visible colors using \u201cNew Palette from Sprite\u201d\nAvoid color reindexing when duplicate colors in GIF file\nFixed uninstalling/updating extensions with subdirectories\nFixed bug where Advanced Mode disabled the Tilemap tool\nFixed bug when exporting from a sprite with layers that have the same name\nFixed bug where the FG color changes to the palette entry zero when the eyedropper picks a pixel of mask color\nFixed spray tool in Indexed mode not handling masked color as expected\nKeep/restore the timeline position for each sprite\nFixed {duration} field for filename format\nFixed update Preview Window after pasting Frame\nLua: New API objects like Dialog:canvas(), GraphicsContext, app.theme, and Timer\nLua: New API to save user & extension properties into objects\n\nThis version includes a lot of new scripting capabilities, like the Canvas widget, we hope this will bring new possibilities to extend Aseprite in a near future.\n\nMore details in the forum: https://community.aseprite.org/t/aseprite-v1-3-rc1/17224/1"
+    },
+    {
+      "title": "Aseprite update for Steam on macOS Ventura",
+      "date": "2022-11-10 08:52:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6368680725421135305",
+      "content": "Due a new issue with macOS Ventura, we've made some changes to Aseprite packages on Steam.\n\nIf you see the following popup when you try to run Aseprite on macOS, it's highly probably that you've updated your system to macOS 13.0 Ventura. Just press \"Move to Trash\" button:\n\n{STEAM_CLAN_IMAGE}/11891144/e5e85dcfbf96de4e57e0d9d6c48fd19416a877f0.png\n\nThen re-start Steam, and press the Launch button on Aseprite, you might see an error like this:\n\n{STEAM_CLAN_IMAGE}/11891144/333e9912d8fd5e1a1fdafc17121e57d6cff77d11.png\n\nBut in a second try launching Aseprite, Steam will re-install Aseprite:\n\n{STEAM_CLAN_IMAGE}/11891144/b1376110b4120345294133a7dd91d031c07ee208.png\n\nThat should be enough.\n\n[hr][/hr]\n\nIn any case, if you have Aseprite installed and the problem still persists, you can right-click Aseprite and select Manage > Browse local files and delete the Aseprite folder:\n\n{STEAM_CLAN_IMAGE}/11891144/f1b7f7e3625541fabcb8cf8d75b111af33b218be.png\n\nThen re-start Steam, and re-install Aseprite. Restarting Steam is important because that leads to re-downloading some metadata about the new version that is available on Steam.\n\n[hr][/hr]\n\nFor more details: https://community.aseprite.org/t/aseprite-update-for-steam-on-macos-ventura/16229"
+    },
+    {
+      "title": "Aseprite v1.2.31 and v1.3-beta8",
+      "date": "2022-01-12 09:03:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931824395418",
+      "content": "Today we\u2019re releasing Aseprite v1.2.31 and v1.3-beta8 with several bug fixing, macOS M1 chip support, and improved Linux support (e.g. drop files inside the window & several fixes to use multiple windows).\n\nAseprite v1.2.31\n\nWindows: Include aseprite-thumbnailer on Aseprite installer by default\nWindows: Added new icon for main window when Windows DPI=150%\nWindows: Fixed possible crashes at exit if some events are still queued when we close the app\nmacOS: New Universal binary (including Intel and M1 code in the same .app bundle)\nmacOS: Fixed glitch moving mouse\nLinux: Added support to drag-and-drop files from the File Manager to Aseprite\nLua: Fixed error iterating layers named with numbers\nLua: Fixed clipping when drawing a cel image into other image\nLua: Added filenamechange event to Sprite.events\nLua: Dialog:modify() supports combobox options\nAdded automatic crash reporting on Windows & macOS if the user wants to share them\n\nAseprite v1.3-beta8\n\nFixed Shift+N to add new layers in the correct place\nLinux: Fixed several bugs with some Window Managers\nLua: Fixed Dialog.bounds values when a dialog is closed on multiple windows UI\n\nMore information in the forum"
+    },
+    {
+      "title": "Aseprite v1.3",
+      "date": "2021-05-26 13:13:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544815353248917",
+      "content": "Today we are releasing the new Aseprite v1.3 which includes more than 3 years of work! Available in the beta branch on Steam.\n\n[previewyoutube=4emFL4aV9WM;full][/previewyoutube]\n\n\nNew Tilemap layers editor\nNew dark theme\nAdded skew to selection\nAdded text fields for the transformation\nAdded global user data to sprites\nAdded support to resize tags with drag & drop\nAdded support to pick colors from the desktop\nAdded F11 (\u21e7\u2318F on macOS) to toggle full screen mode\nAdded HSL palette gradients\nAdded support to move the Preview window outside the main window\nWindow resizing in real-time\nRewritten GIF encoder/decoder\n\n\nMore info in the community site of Aseprite."
+    },
+    {
+      "title": "Aseprite v1.2.27",
+      "date": "2021-04-19 10:56:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4570566565006613065",
+      "content": "Minor patch for Aseprite v1.2.26 fixing some regressions:\n\n\nFixed Shift+Rectangular Marquee doesn't start Square Aspect\nFixed reference layers cannot be moved/resized\nFixed \"Simple Crosshair\" cursor when switching to Eraser tool"
+    },
+    {
+      "title": "Aseprite v1.2.26",
+      "date": "2021-04-14 08:27:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4054904311338946591",
+      "content": "Today we've released a new stable v1.2 version with several bug fixes. This is not the tilemap editor version \u02d0steamsad\u02d0 but we are going to launch Aseprite v1.3 in the next weeks!\n\nChanges:\n\n\nAdded option to save palette presets easily\nFixed crash copying and pasting images from GameMaker 2 to Aseprite\nFixed problem with Error Console when the UI Screen Scaling is changed\nFixed painting with symmetry and dynamics\nFixed duplicate sprite: now it duplicates slices\nNow we can hold tool modifiers before start drawing\nFixed some bugs pressing Ctrl+Z while we are dragging a cel with the Move tool\nFixed several bugs modifying non-selected cels\nFixed bugs modifying the timeline selection when it's hidden\nClicking current cel with Move Tool will deselect the timeline\nFixed long standing bug where Marquee Rectangle, Lasso, etc. weren't showing the selection feedback\nAdded option to disable the \"open sequence of static files as an animation\" dialog\nLua: Added Sprite.pixelRatio\nLua: Added app.fs.makeDirectory, app.fs.makeAllDirectories, useful for export-aseprite-file script\nLua: Added app.command.ImportSpriteSheet()\n\n\nMore information in the forum"
+    },
+    {
+      "title": "Aseprite v1.2.25",
+      "date": "2020-08-18 09:47:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4828375451937215238",
+      "content": "A new minor release today with small fixes:\n\nFixed copying images from Firefox (red/blue channels swapped)\nFixed CLI export of groups metadata when a layer group is collapsed\n\nDiscuss in the Community site"
+    },
+    {
+      "title": "Aseprite v1.2.24",
+      "date": "2020-08-12 13:17:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3667572547701527793",
+      "content": "Hi asepriters! A new minor release today with several fixes, more stability for v1.2!\n\nWindows: Fixed copy & paste of 32-bpp images with alpha channel from/to other programs\nmacOS: Probable fix to black rectangles in some cases updating the display\nFixed problem starting playing animation on Preview window automatically\nFixed \"Replace current pallete\" option\n\nDiscuss in the Community site"
+    },
+    {
+      "title": "Aseprite v1.2.22",
+      "date": "2020-08-04 20:09:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3664194214732850336",
+      "content": "Hi asepriters! A new minor release today with several fixes, more stability for v1.2!\n\nAdded more options for brush preview\nAdded option to rescan the scripts folder (reloading File > Scripts menu)\nSupport to save .bmp files with 1bpp and 4bpp\nFixed cycling through palette indexes when Edit Mode is on\nFixed Preview playback of current tag when new frames are added\nFixed right and bottom auto cel guides when Ctrl (Command) key is pressed\nWindows: Fixed some crashes getting information from buggy Wintab drivers\nCLI: Fixed opening sequences of images several times from CLI\nLua: Changed ColorSpace{ sRGB=true } and Dialog:newrow{ always=true }\nLua: Fixed Dialog onclose event, now it's called when we close the app and the dialog is still opened\nLua: Fixed crash undoing Sprite:newCel() in background layer\nLua: Added ui and bounds parameters to app.command.CanvasSize\nLua: Fixed app.command.SetInkType to change ink type in customized ways (e.g. cycle them)\nFixed crash modifying cel opacity after a cel is deleted\nFixed crash clicking multiple times the same tab to close it without moving the mouse\n\nOfficial announcement"
+    },
+    {
+      "title": "Aseprite v1.2.21",
+      "date": "2020-06-17 19:21:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3384966595868121933",
+      "content": "Hi asepriters! This is a month of releases. There are several fixes in this version:\n\n\nAdded MSX1/MSX2 color palettes\nFixed new bug with timeline separator when its position is limited\nEdit > Insert Text now doesn\u2019t ignores the transparent color in indexed mode \nFixed crash using Selection:deselect() when there is no selection\nFixed some crashes generating thumbnails in the file selector in some special cases\n\n\nWe hope to have a stable v1.2 from now on, and keep fixing bugs in this branch. New features will be in the first v1.3 beta version.\n\nOfficial announcement"
+    },
+    {
+      "title": "Aseprite v1.2.20",
+      "date": "2020-06-11 18:10:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3309530667977324560",
+      "content": "Hello asepriters! we have a new little version with several bug fixes here and there:\n\n\nFixed preview brush size when dynamics is enabled\nNow we can take & share screenshots with F12 when Steam is running\nNew \u201cSwap Checkerboard Background Colors\u201d command\nAdded Minecraft color palette\nFixed crash related to handling multiple documents, the timeline, and undo/redo\nFixed memory leak drawing text with Unicode chars\nFixed --list-layers including all groups/layers in meta data when --split-layers is used\nFixed some situations where locking a layer doesn\u2019t lock the layer\nFixed slow performance with Magic Wand and Intersection mode\n\n\nOfficial announcement"
+    },
+    {
+      "title": "Aseprite v1.2.18",
+      "date": "2020-04-24 16:09:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3112493747271490295",
+      "content": "Hi asepriters! We hope you are taking care of yourself in these hard moments we all are living. Today we are releasing Aseprite v1.2.18 with important fixes and a little new feature which you can start playing with:\n\nAdded pen pressure sensitivity and dynamic parameters on Windows, macOS, and Linux\nAdded support to detect eraser tip on Linux\nAdded addition mode back for Hue/Saturation filter\nNew possibility to create extensions with scripts\nPossibility to scroll menus that are off the screen\nNow \u201cAuto Select Layer\u201d can be disabled even when we use the Ctrl/Command key shortcut\nSave \u201cExport File\u201d dialog position on preferences\nFixed regression with canvas border in the sprite editor\nFixed loading of some particular TGA files (multiple scanlines compressed, invalid alpha information, etc.)\nSupport to save compressed TGA files (and with 16/24/32 bpp)\nAdded Tag.color property\nAdded an option to \u201cFit to Screen\u201d automatically for new/open files\n\nHow to update Aseprite?\nOfficial announcement"
+    },
+    {
+      "title": "Aseprite v1.2.17",
+      "date": "2020-03-11 15:25:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2579938650946050163",
+      "content": "Hi asepriters! Today there is a new release with some bug fixes:\n\nAdded possibility to select multiple tiles with double-click + dragging mouse\nFixed custom brushes + tiled mode\nAdded app.fs object in Lua API\nAdded Dialog{ title=\"text\", onclose=function } constructor\nAdded Dialog:shades{} widget\nAdded Image:saveAs{ filename, palette } function\nNow we can use full paths in the file selector\nFixed Shift+Enter keyboard shortcut\nFixed bug zooming when we are drawing\nFixed pasting text on empty cel\nFixed Select > Color Range using colors with alpha < 255\nFixed crash exporting sprite sheets to .gif or .jpg formats\nFixed Palette:setColor() when alpha colors are specified\nFixed several bugs related to crash reports (thanks to all users reporting crashes!), the CLI, exporting sprite sheets, etc.\n\nCheck the official announcement here"
+    },
+    {
+      "title": "Aseprite v1.2.16",
+      "date": "2019-11-19 15:31:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3657415303185691178",
+      "content": "New version with several bug fixes and enhancements:\nAdded custom brushes + inks: custom brush with lock alpha mode (#2133), with eraser (#1408), with shading (#1615)Now links are preserved when copying cels between layers (Steam thread)Save grid bounds inside .aseprite files (#688)Sprite sheet changes:File > Export Sprite Sheet UI redesignedFile > Export Sprite Sheet includes the Packed sprite sheet type (like -sheet-pack), new \u201cSplit Layers/Tags\u201d options (like -split-layers/-split-tags)Include empty frames in JSON data when -ignore-empty is not specified (#2116)Removed duplicate frames/images output when -sheet packed is used (#1316)-sheet-type rows/columns can output one row/column for each layer/tag (-split-layers/-split-tags).Added -merge-duplicates to render just one frame in the output for linked cels as separated frames (this was added to replicate the old behavior, where linked cels where merged even for basic sprite sheets where one frame output is expected in the sprite sheet).Added option to reset the symmetry lines to the center of the sprite (#2195)Fixed loading/saving .png files with special user data chunks (#2153)Fixed progress bar when we apply filters (#2152)Fixed crash merging visible layers when all layers are hidden (bug report)Fixed other bugs and crashes: #1582, #2156, #2160, #2192\nCheck the official announcement here"
+    },
+    {
+      "title": "Aseprite v1.2.13",
+      "date": "2019-07-02 18:23:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440586355794",
+      "content": "Today we\u2019re releasing a new version with an important fix for a crash using reference layers (you should update your version), and a couple of new features:\r\nAdded new Edit > Paste Special options to paste the clipboard content into a new sprite or layer:Edit > Paste Special > Paste As New SpriteEdit > Paste Special > Paste As New Layer (Ctrl+Shift+V)Edit > Paste Special > Paste As New Reference LayerAdded Layer > New\u2026 > New Layer Via Copy/Cut options to convert the selection into a new layer (Ctrl+J/Ctrl+Shift+J)Fixed crashes using Reference Layer or Import Sprite Sheet (reported via email with several .dmp files, and Steam forum, etc.)macOS: Fixed showing file name extension on native file selectormacOS: Fixed Command+Z/X/C/V/A keyboard shortcuts on native file selector\r\nCheck the official announcement here"
+    },
+    {
+      "title": "Aseprite v1.2.12",
+      "date": "2019-06-10 18:49:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2411028931155760830",
+      "content": "Today we\u2019re releasing Aseprite v1.2.12, a minor version with some bug fixes and a way to restore files closed by mistake:\r\n\r\nNew Ctrl+Shift+T (\u21e7\u2318T) keyboard shortcut to reopen last closed file\r\nNow edited files are kept between sessions just to avoid losing information if something goes wrong (can be disabled unchecking Edit > Preferences > Files > Keep edited sprite data option)\r\nRestored default brush center behavior\r\nFixed eyedropper when zoom  Repeat Last Export command\r\nFixed bug where the zoom level in the status bar wasn\u2019t updated correctly when switching between sprites\r\nFixed crash with invalid grid bounds configuration\r\nFixed regression drawing pixel perfect straight lines\r\n\r\nFixed Blur tool: don\u2019t make the color darker when alpha < 255\r\nmacOS: Fixed issue updating screen immediately after undo\r\n\r\nCheck the official announcement here"
+    },
+    {
+      "title": "Aseprite v1.2.11",
+      "date": "2019-05-11 17:15:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2405396896217034861",
+      "content": "Today there are some fixes for regressions:\r\n\r\nFixed random crashes on Windows when the backup process started\r\nFixed bug with pixels outside the viewport when Shift+click were used\r\nFixed symmetry with even brush sizes\r\nFixed first pixel of contour tool"
+    },
+    {
+      "title": "Aseprite v1.2.10",
+      "date": "2019-05-09 14:23:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2405396896209375502",
+      "content": "Hi asepriters! Today we have good news and bad news:\r\n\r\nThe bad news is that the tilemap editor is not yet ready :'( The good news is that we have a new version of Aseprite v1.2.10 with some juicy stuff:\r\n\r\nFile selector dialog improvements\r\nAdded Shift+O to paint the outline of the layer automatically\r\nAdded radial gradient\r\nAdded option to disable the separation between palette entries\r\nAdded Floyd-Steinberg dithering to convert RGBA images to Indexed\r\nRecent files/folders improvements\r\nAdded Ctrl+C (\u2318C) in the Console to copy messages\r\nNew Padding option on Import Sprite Sheet\r\nNew Extrude and Trim by Grid options on Export Sprite Sheet\r\nAdded option to trim all the content outside the canvas on Canvas Size command\r\nAdded support 8-connected pixels on Paint Bucket tool\r\nAdded support for ACT palette format\r\nFixed rendering/persistence of non-normal blend modes\r\nFixed crash with huge ellipses\r\nFixed issues with macOS native file dialogs and the menu bar\r\nFixed several other issues\r\n\r\nCheck the official announcement here"
+    },
+    {
+      "title": "Aseprite v1.2.10-beta4",
+      "date": "2018-12-10 19:29:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416641943188388284",
+      "content": "New Aseprite v1.2.10-beta4 available in the beta channel:\r\nNew icon for .aseprite-extension file typeFixed regression with the Pixel-Perfect modeAdded TGA 2.0 footer for compatibility with other programsAdded --script-param argument and app.param in the scripting API to specify parameters for scripts from the CLI\r\nCheck the release notes for more information."
+    },
+    {
+      "title": "Aseprite v1.2.10-beta3",
+      "date": "2018-12-06 19:47:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416641943173980970",
+      "content": "New Aseprite v1.2.10-beta3 available in the beta channel:\r\n\r\nWindows and macOS: Fixed issues with color profiles and multiple monitors\r\nmacOS: Improved performance in general and specially when running onRetina display and color profiles with wide color, like Display P3Windows: Fixed performance regressionLinux: Fixed bug duplicating mouse wheel eventsNow --ignore-empty --save-as can be used together in the CLINew option to specify custom checked background grid sizeFixed a lot of bugs with the script API and added several new functions.Fixed several bugs.\r\nCheck the release notes for more information."
+    },
+    {
+      "title": "Aseprite v1.2.10-beta2",
+      "date": "2018-10-30 12:20:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403127338447577818",
+      "content": "New Aseprite v1.2.10-beta2 available today in the beta channel:\r\nAseprite v1.2.10-beta1\r\n\r\nAdded new File > Scripts menu to create .lua scripts. Check out the API documentation\r\nLinux/X11:\r\n\r\nAdded support for native cursors\r\nFix rendering issues moving windows inside the program\r\nNew backend to fix several issues on Linux (mainly performance improvement)\r\nTimeline now scrolls when we drag frames or cels\r\nAdded support for a lot of layers (more than 32767)\r\nNew palettes: BubbleGum16 by PineTreePizza, Zughy-32 by Marco \u201cZughy\u201d Amato, and AAP-RadiantXV by Adigun Polack.\r\nAdded a New Layer Below with Shift+Space+N keyboard shortcut\r\nAdded option to hide the tooltip that appears when we Undo/Redo an action\r\nAdded Shift modifier on Sprite > Canvas to change the same size on both sides\r\nAdded possibility to flatten visible or selected layers\r\nmacOS: Fixed loading fonts from user home ~/Library/Fonts directory\r\nFixed single click on selection with Add & Subtract modes\r\nFixed color palette scroll when we drag-and-drop colors\r\nFixed a couple of critical bugs/crashes\r\nAseprite v1.2.10-beta2\r\n\r\nNew Color management\r\nAdded new intersect selection mode to selection tools (Ctrl+Shift)\r\nAdded selection modes to Select > Color Range command\r\nAdded new right click option: Select Layer & Move\r\nAdded new commands to jump to first/last frame of active tags\r\nAdded basic support to save/export sprites to .svg files\r\nAdded support for {tagframe} in --filename-format when exporting JSON data with --data\r\nAdded new scripting functions to show dialogs or mini toolbars running on background\r\n\r\nCheck the release notes for more information"
+    },
+    {
+      "title": "Aseprite v1.2.9",
+      "date": "2018-07-25 10:41:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2462791699366847330",
+      "content": "New Aseprite v1.2.9 was just released! In these months we have been releasing some beta versions and now this release includes all the changes from betas + some extra features:\r\n\r\n\r\n  Default mouse wheel behavior changes:\r\n    \r\n      Ctrl+mouse wheel => changes brush size\r\n      Ctrl+Shift+mouse wheel => changes current animation frame\r\n      Updated the Quick Reference with these changes\r\n    \r\n  \r\n  Add mouse wheel customization for sprite editor\r\n  Add possibility to write math expression in number textboxes\r\n  Shift+Enter plays/stops the animation in the Preview window\r\n  Timeline changes:\r\n    \r\n      New UI to move frames inside or outside tags\r\n      New way to select timeline frames/layers + color bar entries Shift+click\r\n      Now the Timeline keeps the selected layers/frames/cels after undo/redo.\r\n      Alt+click to hide all layers\r\n    \r\n  \r\n  New way to render the canvas when zoom < 100%\r\n  Show duration of selected frames\r\n  Added F key to fill the selection and S key to create a stroke. (Old \u201cAdvanced Mode\u201d keyboard is Ctrl+F now.)\r\n  Show selection edges again when it\u2019s hidden and we use Ctrl+A or Cmd+A\r\n  Updated ARNE32 palette\r\n  Create intermediate directories when --save-as is used in the CLI\r\n  Windows Surface/tablet-like devices: Draw with one finger, pan/scroll with two fingers\r\n  Linux/X11: Added clipboard support. Now we can copy/paste text and images to/from other software like GIMP, Krita, etc.\r\n  Fixed issue using moving layer content and the active selection with Move tool\r\n  Fixed several bugs\r\n\r\n\r\nMore information in the Aseprite Community site."
+    },
+    {
+      "title": "Aseprite v1.2.8",
+      "date": "2018-04-03 19:56:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394101748792926484",
+      "content": "Aseprite v1.2.8 is available! Several bug fixes and some performance improvements:\r\n\r\nThe button to apply effects to the whole sprite is back\r\nAdded support to load/save animated .webp files\r\nAdded current color indicator with new color side to side on color editor\r\nImproved general performance drawing color selector/color wheel\r\nImproved general performance in animation playback\r\nFixed loading of tool names/tooltips when another translation is selected\r\nFixed order of cels when they are copied between files\r\nFixed bug with RGBA target buttons\r\nWindows: Fixed recent folder items using the native file dialog\r\nWindows: Fixed installing extensions from .zip files and the current user has an Unicode character in its name\r\nWindows: Fixed bug pasting screenshots on Windows Vista\r\n\r\nMore info"
+    },
+    {
+      "title": "Aseprite v1.2.8",
+      "date": "2018-04-03 19:56:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684108907",
+      "content": "Aseprite v1.2.8 is available! Several bug fixes and some performance improvements:\r\n\r\nThe button to apply effects to the whole sprite is back\r\nAdded support to load/save animated .webp files\r\nAdded current color indicator with new color side to side on color editor\r\nImproved general performance drawing color selector/color wheel\r\nImproved general performance in animation playback\r\nFixed loading of tool names/tooltips when another translation is selected\r\nFixed order of cels when they are copied between files\r\nFixed bug with RGBA target buttons\r\nWindows: Fixed recent folder items using the native file dialog\r\nWindows: Fixed installing extensions from .zip files and the current user has an Unicode character in its name\r\nWindows: Fixed bug pasting screenshots on Windows Vista\r\n\r\nMore info"
+    },
+    {
+      "title": "Aseprite v1.2.7",
+      "date": "2018-03-16 17:52:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2982945658356395023",
+      "content": "Aseprite v1.2.7 released!\r\n\r\nAdded new File > Export dialog with an Animation Direction option to export Forward/Reverse/Ping-Pong animations automatically\r\nAdded possibility to rotate ellipses and rectangles with Alt key\r\nAdded Ctrl+Click (or \u2318+Click) to select the layer (or cel) content in the canvas\r\nAdded Normal Map color wheel\r\n.aseprite is the new default extension for new files, and there is a new option to change it\r\nFixed the Adjust Hue/Saturation formula\r\nAdded HSV colorspace to Adjust Hue/Saturation\r\nAdded options to supress warning dialogs\r\nAdded options to change the number of recent files/folders and clear the list in Edit > Preferences > Files\r\nNow filters like Convolution Matrix, Adjust Hue/Saturation, Replace Color, etc. are applied to the selected range of cels in the timeline\r\nNow all message boxes/alert dialogs have the first button as the default one (Enter to confirm, Esc to cancel)\r\nDon\u2019t select other layer when clicking over play button\r\nFixed incorrect preview using linked cels\r\nFixed bug editing hex field on Palette Edit mode (F4 key)\r\nFixed bug using Unicode chars in translations files\r\nFixed bug with certain dimensions of ellipses\r\nFixed bug copying/pasting RGBA images from Aseprite to other apps like Chrome, Discord, etc. on Windows when the image contains semi-transparent pixels\r\nFixed bug where a .ase might be detected as a .bmp file\r\nFixed bug saving files with tags with an empty name\r\nNow unchecking the Preview button on filters dialogs will show the original image\r\nPossible fixes for Windows 10 problems:\r\n\r\nSaving files when turning off the computer\r\nMouse doesn\u2019t respond correctly\r\n\r\n\r\nFixed minor bugs\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.7",
+      "date": "2018-03-16 17:52:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109022",
+      "content": "Aseprite v1.2.7 released!\r\n\r\nAdded new File > Export dialog with an Animation Direction option to export Forward/Reverse/Ping-Pong animations automatically\r\nAdded possibility to rotate ellipses and rectangles with Alt key\r\nAdded Ctrl+Click (or \u2318+Click) to select the layer (or cel) content in the canvas\r\nAdded Normal Map color wheel\r\n.aseprite is the new default extension for new files, and there is a new option to change it\r\nFixed the Adjust Hue/Saturation formula\r\nAdded HSV colorspace to Adjust Hue/Saturation\r\nAdded options to supress warning dialogs\r\nAdded options to change the number of recent files/folders and clear the list in Edit > Preferences > Files\r\nNow filters like Convolution Matrix, Adjust Hue/Saturation, Replace Color, etc. are applied to the selected range of cels in the timeline\r\nNow all message boxes/alert dialogs have the first button as the default one (Enter to confirm, Esc to cancel)\r\nDon\u2019t select other layer when clicking over play button\r\nFixed incorrect preview using linked cels\r\nFixed bug editing hex field on Palette Edit mode (F4 key)\r\nFixed bug using Unicode chars in translations files\r\nFixed bug with certain dimensions of ellipses\r\nFixed bug copying/pasting RGBA images from Aseprite to other apps like Chrome, Discord, etc. on Windows when the image contains semi-transparent pixels\r\nFixed bug where a .ase might be detected as a .bmp file\r\nFixed bug saving files with tags with an empty name\r\nNow unchecking the Preview button on filters dialogs will show the original image\r\nPossible fixes for Windows 10 problems:\r\n\r\nSaving files when turning off the computer\r\nMouse doesn\u2019t respond correctly\r\n\r\n\r\nFixed minor bugs\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.6",
+      "date": "2017-12-14 13:28:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2442505391473059003",
+      "content": "A quick release with some important fixes:\r\n\r\nAdjust scroll correctly when tiled mode is changed\r\nFixed random crashes using Sprite > Color Mode menu options\r\nFixed possible crashes using the undo limit option.\r\nmacOS: Fixed Shift+2 on English keyboard layout (previous fix works only for Spanish-like layouts)\r\nLinux: Fixed crash on CLI mode\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.6",
+      "date": "2017-12-14 13:28:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109153",
+      "content": "A quick release with some important fixes:\r\n\r\nAdjust scroll correctly when tiled mode is changed\r\nFixed random crashes using Sprite > Color Mode menu options\r\nFixed possible crashes using the undo limit option.\r\nmacOS: Fixed Shift+2 on English keyboard layout (previous fix works only for Spanish-like layouts)\r\nLinux: Fixed crash on CLI mode\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.5",
+      "date": "2017-12-07 12:16:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2163281492518444721",
+      "content": "Hi asepriters! Aseprite v1.2.5 is available with several bug fixes:\r\n\r\nKeyboard shortcuts changes:\r\n\r\nShift+G: Selects the Gradient tool (so now G key selects the Paint Bucket tool only)\r\nCtrl+': Switches the Grid visibility (in previous version it was Shift+G)\r\nCtrl+Shift+': Switches the Pixel Grid visibility (in previous version it was Alt+Shift+G)\r\n\r\n\r\nFixed possibility to assign same key to several tools\r\nFixed Shift+2 keyboard shortcut on macOS\r\nFixed some glitches with the Editor crosshair when the brush size popup is open\r\nFixed application icon on Linux/X11\r\nNew Switch Nonactive Layers Opacity command available to turn on/off this experimental feature\r\n+Changes in v1.2.5-beta1 and v1.2.5-beta2\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.5",
+      "date": "2017-12-07 12:16:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109268",
+      "content": "Hi asepriters! Aseprite v1.2.5 is available with several bug fixes:\r\n\r\nKeyboard shortcuts changes:\r\n\r\nShift+G: Selects the Gradient tool (so now G key selects the Paint Bucket tool only)\r\nCtrl+': Switches the Grid visibility (in previous version it was Shift+G)\r\nCtrl+Shift+': Switches the Pixel Grid visibility (in previous version it was Alt+Shift+G)\r\n\r\n\r\nFixed possibility to assign same key to several tools\r\nFixed Shift+2 keyboard shortcut on macOS\r\nFixed some glitches with the Editor crosshair when the brush size popup is open\r\nFixed application icon on Linux/X11\r\nNew Switch Nonactive Layers Opacity command available to turn on/off this experimental feature\r\n+Changes in v1.2.5-beta1 and v1.2.5-beta2\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.5-beta2",
+      "date": "2017-12-01 17:06:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2152021858901269381",
+      "content": "A new little beta before the final v1.2.5 next week. This is available in the beta branch:\r\n\r\nFixed regression dragging colors in Color Bar\r\nF6 key to switch timeline thumbnails works as expected\r\nFixed drawing straight lines with Pencil tool and Shift+right button\r\nFixed several issues applying Flip/Rotate commands on range of cels with locked layers"
+    },
+    {
+      "title": "Aseprite v1.2.5-beta2",
+      "date": "2017-12-01 17:06:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109373",
+      "content": "A new little beta before the final v1.2.5 next week. This is available in the beta branch:\r\n\r\nFixed regression dragging colors in Color Bar\r\nF6 key to switch timeline thumbnails works as expected\r\nFixed drawing straight lines with Pencil tool and Shift+right button\r\nFixed several issues applying Flip/Rotate commands on range of cels with locked layers"
+    },
+    {
+      "title": "Aseprite v1.2.5-beta1",
+      "date": "2017-11-10 20:47:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2143012757616182938",
+      "content": "This little v1.2.5-beta1 is a preview for the next week version v1.2.5. Mainly \"tiled mode\" fixes (still need some work in some areas).\r\nThis is available in the beta branch:\r\n\r\nZoom timeline with Ctrl+mouse wheel (or \u2318+mouse wheel)\r\nSeveral fixes for Tiled Mode:\r\n\r\nFixed regression bug on v1.2.4\r\nCount extra tiles as the canvas size (so we can zoom in on it)\r\nBrush preview now works as expected\r\nFixed Gradient tool in tiled mode\r\n\r\nFixed exporting new layer blend modes to JSON files"
+    },
+    {
+      "title": "Aseprite v1.2.5-beta1",
+      "date": "2017-11-10 20:47:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109491",
+      "content": "This little v1.2.5-beta1 is a preview for the next week version v1.2.5. Mainly \"tiled mode\" fixes (still need some work in some areas).\r\nThis is available in the beta branch:\r\n\r\nZoom timeline with Ctrl+mouse wheel (or \u2318+mouse wheel)\r\nSeveral fixes for Tiled Mode:\r\n\r\nFixed regression bug on v1.2.4\r\nCount extra tiles as the canvas size (so we can zoom in on it)\r\nBrush preview now works as expected\r\nFixed Gradient tool in tiled mode\r\n\r\nFixed exporting new layer blend modes to JSON files"
+    },
+    {
+      "title": "Aseprite v1.2.4",
+      "date": "2017-11-03 13:26:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2140760316594150101",
+      "content": "Hi asepriters! Aseprite v1.2.4 is available with some bug fixes and performance improvements:\r\n\r\nGeneral performance improvements (will be mainly noticeable on macOS, but affects all platforms)\r\nNow themes can specify a non-installed TTF font\r\nUndo limit options now really works\r\nWindows 8/10: Added support for Surface Pro pen/eraser + touch gestures\r\nmacOS: Fixed Shift+mouse wheel to scroll horizontally on Timeline\r\nFixed several possibilities of random crashes (mainly when the Edit > Undo History window was visible)\r\nMinor improvements in the Edit > Keyboard Shortcuts dialog\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.4",
+      "date": "2017-11-03 13:26:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109597",
+      "content": "Hi asepriters! Aseprite v1.2.4 is available with some bug fixes and performance improvements:\r\n\r\nGeneral performance improvements (will be mainly noticeable on macOS, but affects all platforms)\r\nNow themes can specify a non-installed TTF font\r\nUndo limit options now really works\r\nWindows 8/10: Added support for Surface Pro pen/eraser + touch gestures\r\nmacOS: Fixed Shift+mouse wheel to scroll horizontally on Timeline\r\nFixed several possibilities of random crashes (mainly when the Edit > Undo History window was visible)\r\nMinor improvements in the Edit > Keyboard Shortcuts dialog\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.3",
+      "date": "2017-10-06 18:00:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2145261379789205727",
+      "content": "Today Aseprite v1.2.3 is available with some bug fixes:\r\n\r\nNew Edit > Adjustments > Brightness/Contrast menu option\r\nNew Layer > Lock Layers menu option\r\nRestored default behavior on \u201cAdd to selection\u201d\r\nFixed Switch Colors and Eyedropper behavior when the Edit palette mode is enabled\r\nFixed crash using negative numbers in Despeckle filter\r\nFixed problem inserting a digit/character in a text field with one digit/character\r\nFixed \u201cPaint Brush\u201d mode for custom brushes\r\nmacOS: Fixed Left/Right keys to move the selection\r\nmacOS: Fixed native file selector (don\u2019t show it again if we swich to another window with \u2318Tab\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.3",
+      "date": "2017-10-06 18:00:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109697",
+      "content": "Today Aseprite v1.2.3 is available with some bug fixes:\r\n\r\nNew Edit > Adjustments > Brightness/Contrast menu option\r\nNew Layer > Lock Layers menu option\r\nRestored default behavior on \u201cAdd to selection\u201d\r\nFixed Switch Colors and Eyedropper behavior when the Edit palette mode is enabled\r\nFixed crash using negative numbers in Despeckle filter\r\nFixed problem inserting a digit/character in a text field with one digit/character\r\nFixed \u201cPaint Brush\u201d mode for custom brushes\r\nmacOS: Fixed Left/Right keys to move the selection\r\nmacOS: Fixed native file selector (don\u2019t show it again if we swich to another window with \u2318Tab\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.2",
+      "date": "2017-09-28 16:12:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2175660043465632532",
+      "content": "More fixes on the way:\r\n\r\n Trigger \u201cNew Sprite\u201d double clicking tabs area\r\n If a theme has a preferred Screen/UI Scaling values, ask to the user before changing them automatically\r\n Fixed Ctrl+drag and drop to copy the selection content on Windows\r\n Fixed a crash using a theme with undefined styles\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.2",
+      "date": "2017-09-28 16:12:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109805",
+      "content": "More fixes on the way:\r\n\r\n Trigger \u201cNew Sprite\u201d double clicking tabs area\r\n If a theme has a preferred Screen/UI Scaling values, ask to the user before changing them automatically\r\n Fixed Ctrl+drag and drop to copy the selection content on Windows\r\n Fixed a crash using a theme with undefined styles\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.1",
+      "date": "2017-09-27 15:19:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2175660043461887077",
+      "content": "Aseprite v1.2.1 released with some bug fixes for v1.2:\r\n\r\n Don\u2019t save transparent information on full-opaque .png files\r\n Fixed crash using a frame tag at the end of the sprite with a long name\r\n Now you can Add/Subtract selection inside the selection\r\n macOS: Don\u2019t call global commands with F or T keys in Layer Properties dialog\r\n macOS: Fixed crash undoing/redoing when drawing\r\n Windows x64: Fixed GIF files encoding\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2.1",
+      "date": "2017-09-27 15:19:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684109930",
+      "content": "Aseprite v1.2.1 released with some bug fixes for v1.2:\r\n\r\n Don\u2019t save transparent information on full-opaque .png files\r\n Fixed crash using a frame tag at the end of the sprite with a long name\r\n Now you can Add/Subtract selection inside the selection\r\n macOS: Don\u2019t call global commands with F or T keys in Layer Properties dialog\r\n macOS: Fixed crash undoing/redoing when drawing\r\n Windows x64: Fixed GIF files encoding\r\n\r\nMore info in the blog"
+    },
+    {
+      "title": "Aseprite v1.2",
+      "date": "2017-09-25 16:25:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2149763711106345440",
+      "content": "Aseprite v1.2 is finally the new stable version.  If you were already using the beta version, you will not notice substancial changes. But if you were using Aseprite v1.1.13, there are a lot of new features for you (like pixel aspect ratio, layer groups, overlapping frame tags, gradients, reference layers, etc.).\r\n\r\nThis is a list of the changes from v1.2-beta12 to the final v1.2:\r\n\r\n  Added new Addition, Subtract, Divide blending modes\r\n  Added support to change theme and UI scaling without restarting\r\n  Disable transformation handles in the selection when a Shift or Shift+Alt are pressed by default\r\n  Fixed high CPU usage on Timeline when we copy layers/frames/cels\r\n  Fixed snap to grid bug with selection tool\r\n  Fixed crash closing all files & opening a new one when preview window was playing an animation\r\n  Windows: New x64 version (included in the installer and on Steam, it\u2019ll install the x64 version on x64 machines)\r\n  Windows: New --disable-wintab option to avoid loading wintab32.dll\r\n  Removed Windows XP support (Please contact us in case that you still need a previous version with Windows XP support.)\r\n  macOS: Use the native macOS menu bar\r\n  macOS: Now \u2318M and \u2318H will Minimize and Hide the window respectively. Use Ctrl+M for Color Curves, and Ctrl+H to change View > Show Extras options.\r\n  macOS: Fixed bug setting broken mouse cursors in some special cases\r\n  macOS: Retina support\r\n  Several other bugs\r\n\r\nMore information in the blog"
+    },
+    {
+      "title": "Aseprite v1.2",
+      "date": "2017-09-25 16:25:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110029",
+      "content": "Aseprite v1.2 is finally the new stable version.  If you were already using the beta version, you will not notice substancial changes. But if you were using Aseprite v1.1.13, there are a lot of new features for you (like pixel aspect ratio, layer groups, overlapping frame tags, gradients, reference layers, etc.).\r\n\r\nThis is a list of the changes from v1.2-beta12 to the final v1.2:\r\n\r\n  Added new Addition, Subtract, Divide blending modes\r\n  Added support to change theme and UI scaling without restarting\r\n  Disable transformation handles in the selection when a Shift or Shift+Alt are pressed by default\r\n  Fixed high CPU usage on Timeline when we copy layers/frames/cels\r\n  Fixed snap to grid bug with selection tool\r\n  Fixed crash closing all files & opening a new one when preview window was playing an animation\r\n  Windows: New x64 version (included in the installer and on Steam, it\u2019ll install the x64 version on x64 machines)\r\n  Windows: New --disable-wintab option to avoid loading wintab32.dll\r\n  Removed Windows XP support (Please contact us in case that you still need a previous version with Windows XP support.)\r\n  macOS: Use the native macOS menu bar\r\n  macOS: Now \u2318M and \u2318H will Minimize and Hide the window respectively. Use Ctrl+M for Color Curves, and Ctrl+H to change View > Show Extras options.\r\n  macOS: Fixed bug setting broken mouse cursors in some special cases\r\n  macOS: Retina support\r\n  Several other bugs\r\n\r\nMore information in the blog"
+    },
+    {
+      "title": "Aseprite v1.2-beta12",
+      "date": "2017-07-05 11:55:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2564086801883186783",
+      "content": "Minor release with bug fixes. The main change is that F4 key shows RGB/HSV/HSL sliders dialog again:\r\n\r\n  Added F4 key again to switch the color popup (#1527) and other commands\r\n  Added possibility to associate keyboard shortcuts to Clear/Link/Unlink cels (related to this discussion)\r\n  Fixed warning icon behavior on edit mode (#1525)\r\n  Windows: Fixed some issues with Wacom tablets"
+    },
+    {
+      "title": "Aseprite v1.2-beta12",
+      "date": "2017-07-05 11:55:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110127",
+      "content": "Minor release with bug fixes. The main change is that F4 key shows RGB/HSV/HSL sliders dialog again:\r\n\r\n  Added F4 key again to switch the color popup (#1527) and other commands\r\n  Added possibility to associate keyboard shortcuts to Clear/Link/Unlink cels (related to this discussion)\r\n  Fixed warning icon behavior on edit mode (#1525)\r\n  Windows: Fixed some issues with Wacom tablets"
+    },
+    {
+      "title": "Aseprite v1.2-beta11",
+      "date": "2017-06-29 17:16:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2564086801862310595",
+      "content": "A little new release with bug fixes:\r\n\r\n\r\n  Fixed critical bug: crash undoing a remove layer/flatten/or merge down commands with Ctrl+Z on a cel with auto-guides\r\n  Added X key to switch colors in Replace Color dialog (#1430)\r\n  Fixed issue using Ctrl+Shift to move a cel when we have Pencil tool selected\r\n  Don\u2019t depend on bcrypt.dll on Windows (#1520)\r\n  Fixed regression pasting clipboard in a new sprite with the clipboard size\r\n  Fixed #1465, #1500"
+    },
+    {
+      "title": "Aseprite v1.2-beta11",
+      "date": "2017-06-29 17:16:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110231",
+      "content": "A little new release with bug fixes:\r\n\r\n\r\n  Fixed critical bug: crash undoing a remove layer/flatten/or merge down commands with Ctrl+Z on a cel with auto-guides\r\n  Added X key to switch colors in Replace Color dialog (#1430)\r\n  Fixed issue using Ctrl+Shift to move a cel when we have Pencil tool selected\r\n  Don\u2019t depend on bcrypt.dll on Windows (#1520)\r\n  Fixed regression pasting clipboard in a new sprite with the clipboard size\r\n  Fixed #1465, #1500"
+    },
+    {
+      "title": "Aseprite v1.2-beta10",
+      "date": "2017-06-23 16:59:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2564086801840586868",
+      "content": "Hi asepriters! Today we are releasing Aseprite v1.2-beta10 with new features! You can get it from the beta channel.\r\n\r\n\r\n  Added gradient tool (issue 418, issue 479)\r\n  Added saturation and alpha sliders in the color bar\r\n  Added Edit > Hue/Saturation option (issue 1186)\r\n  Unified color selection and palette editor. Use A key or F4 to switch to edition mode (issue 1102)\r\n  Added initial support for extensions (issue 1403)\r\n  Added search field on palette popup\r\n  Added support to jump to a frame tag on Frame > Jump to > Go to Frame menu (Alt+G).\r\n  Improved Shift+click to draw straight lines with Pencil tool (issue 1387)\r\n  Better Color Mode conversion UI with Preview on Sprite > Color Mode > More Options\r\n  Added new palettes: Amstrad CPC, ENDESGA Studios\u2019 palettes, Javier Guerrero\u2019s palette\r\n  Fixed slice adjustments on Canvas Size and Sprite Size (issue 1470)\r\n  Fixed exporting slices information in JSON files on Export Sprite Sheet menu option\r\n  More changes"
+    },
+    {
+      "title": "Aseprite v1.2-beta10",
+      "date": "2017-06-23 16:59:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110333",
+      "content": "Hi asepriters! Today we are releasing Aseprite v1.2-beta10 with new features! You can get it from the beta channel.\r\n\r\n\r\n  Added gradient tool (issue 418, issue 479)\r\n  Added saturation and alpha sliders in the color bar\r\n  Added Edit > Hue/Saturation option (issue 1186)\r\n  Unified color selection and palette editor. Use A key or F4 to switch to edition mode (issue 1102)\r\n  Added initial support for extensions (issue 1403)\r\n  Added search field on palette popup\r\n  Added support to jump to a frame tag on Frame > Jump to > Go to Frame menu (Alt+G).\r\n  Improved Shift+click to draw straight lines with Pencil tool (issue 1387)\r\n  Better Color Mode conversion UI with Preview on Sprite > Color Mode > More Options\r\n  Added new palettes: Amstrad CPC, ENDESGA Studios\u2019 palettes, Javier Guerrero\u2019s palette\r\n  Fixed slice adjustments on Canvas Size and Sprite Size (issue 1470)\r\n  Fixed exporting slices information in JSON files on Export Sprite Sheet menu option\r\n  More changes"
+    },
+    {
+      "title": "Aseprite v1.2-beta8",
+      "date": "2017-04-14 16:20:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/75841595752248468",
+      "content": "Today we're releasing a new Aseprite beta version with new features:\r\n\r\nAdded slice tool (still a work-in-progress as animated slices need more UI work).Added automatic guides when moving cels/layersAdded possibility to move selection edgesAdded possibility to open multiples files at onceAdded horizontal/vertical symmetry at the same timeImproved handling of overlapping frame tags in the TimelineImproved Sprite > Canvas Size option: now we can drag the canvas and cornersShow Unicode filenames correctly (Chinese, Japanese, Korean, etc.)Added new keyboard shortcut Shift+E to open/close a layer groupNew command to switch \"Contiguous\" mode on Paint Bucket tool (no default shortcut yet)Improved performance previewing effects (like Replace Color, Convolution Matrix, etc.)New mail24 color palette (thanks to @Hyohnoo)New matriax8c color palette (thanks to @DavitMasia)Added a search field in the fonts popup.macOS: Fixed memory leaks on paint events and changing mouse cursorsmacOS: Fixed several keyboard issues (mainly on special non-US keyboard layouts, like \"Dvorak - QWERTY \u2318\")Fixed soft light layer blending mode to match the CSS-SVG definition.Fixed a problem resetting default grid settingsFixed delay problems playing animation on the active editor and the Preview window at the same timeFixed changing layer properties of several layers at the same time\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.2-beta8",
+      "date": "2017-04-14 16:20:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110436",
+      "content": "Today we're releasing a new Aseprite beta version with new features:\r\n\r\nAdded slice tool (still a work-in-progress as animated slices need more UI work).Added automatic guides when moving cels/layersAdded possibility to move selection edgesAdded possibility to open multiples files at onceAdded horizontal/vertical symmetry at the same timeImproved handling of overlapping frame tags in the TimelineImproved Sprite > Canvas Size option: now we can drag the canvas and cornersShow Unicode filenames correctly (Chinese, Japanese, Korean, etc.)Added new keyboard shortcut Shift+E to open/close a layer groupNew command to switch \"Contiguous\" mode on Paint Bucket tool (no default shortcut yet)Improved performance previewing effects (like Replace Color, Convolution Matrix, etc.)New mail24 color palette (thanks to @Hyohnoo)New matriax8c color palette (thanks to @DavitMasia)Added a search field in the fonts popup.macOS: Fixed memory leaks on paint events and changing mouse cursorsmacOS: Fixed several keyboard issues (mainly on special non-US keyboard layouts, like \"Dvorak - QWERTY \u2318\")Fixed soft light layer blending mode to match the CSS-SVG definition.Fixed a problem resetting default grid settingsFixed delay problems playing animation on the active editor and the Preview window at the same timeFixed changing layer properties of several layers at the same time\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.13 and v1.2-beta7",
+      "date": "2017-01-06 18:01:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/84839823701022890",
+      "content": "Minor release with some bug fixes:\r\n\r\nZoom tool can be used on animation playback\r\nFixed UI artifacts when moving splitters and other UI elements\r\nmacOS: Fixed `\u2318key` shortcuts on non-QWERTY keyboard layouts (e.g. DVORAK, AZERTY, etc.)\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.13 and v1.2-beta7",
+      "date": "2017-01-06 18:01:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110537",
+      "content": "Minor release with some bug fixes:\r\n\r\nZoom tool can be used on animation playback\r\nFixed UI artifacts when moving splitters and other UI elements\r\nmacOS: Fixed `\u2318key` shortcuts on non-QWERTY keyboard layouts (e.g. DVORAK, AZERTY, etc.)\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.12 and v1.2-beta6",
+      "date": "2016-12-29 13:29:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/91593954417559328",
+      "content": "Important bug fixes on Aseprite v1.2-beta6:\r\n\r\nAdded option to export (File > Save Copy As) with pixel aspect ratio\r\nFixed bug/crash moving a group inside itself\r\nFixed bug moving cels one pixel up or to the left\r\nFixed rendering artifacts\r\n+All changes in v1.1.12\r\n\r\nAseprite v1.1.12 fixes:\r\n\r\nAdded option to disable Home tab\r\nDon't ignore the initial frame number option in tag properties dialog\r\nFixed crash using focus-movement keys on certain strange UI states\r\nFixed other minor bugs\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.12 and v1.2-beta6",
+      "date": "2016-12-29 13:29:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110638",
+      "content": "Important bug fixes on Aseprite v1.2-beta6:\r\n\r\nAdded option to export (File > Save Copy As) with pixel aspect ratio\r\nFixed bug/crash moving a group inside itself\r\nFixed bug moving cels one pixel up or to the left\r\nFixed rendering artifacts\r\n+All changes in v1.1.12\r\n\r\nAseprite v1.1.12 fixes:\r\n\r\nAdded option to disable Home tab\r\nDon't ignore the initial frame number option in tag properties dialog\r\nFixed crash using focus-movement keys on certain strange UI states\r\nFixed other minor bugs\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.11 and v1.2-beta5",
+      "date": "2016-12-09 15:43:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/91592690494986712",
+      "content": "Important fixes for a couple of regressions introduced in Aseprite v1.1.10:\r\n\r\nFixed layout problems with UI Scaling > 100%\r\nmacOS: Fixed crash using Japanese (and other) keyboard layouts"
+    },
+    {
+      "title": "Aseprite v1.1.11 and v1.2-beta5",
+      "date": "2016-12-09 15:43:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110744",
+      "content": "Important fixes for a couple of regressions introduced in Aseprite v1.1.10:\r\n\r\nFixed layout problems with UI Scaling > 100%\r\nmacOS: Fixed crash using Japanese (and other) keyboard layouts"
+    },
+    {
+      "title": "Aseprite v1.1.10 and v1.2-beta4 update",
+      "date": "2016-12-08 10:48:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/91592690490632510",
+      "content": "Hi asepriters! Today we are releasing v1.1.10 and v1.2-beta4 with new features and several fixes.\r\n\r\nAseprite v1.1.10:\r\n\r\nSupport symmetry at the center of one pixel\r\nAdded keyboard shortcuts to change the layer opacity with Shift+1, Shift+2, Shift+3, and Shift+4.\r\nAdded option to use Rectangular Marquee and Lasso tools with right click\r\nAdded default grid options in preferences dialog\r\nAdded option to play all frames ignoring tags\r\nAdded option to disable auto-scroll\r\nAdded a tick mark next to the preset palette that matches the active one\r\nAdded visual indicator when Aseprite is saving data to recover files from a crash\r\nAdded an option to change the initial frame number on the Timeline\r\nImproved the dialog to open a sequence of files (frame1.png, frame2.png, etc.)\r\nmacOS: Smooth scroll with trackpad on list boxes and other widgets\r\nDetect the file format by its content instead of this extension when possible\r\nEsc key closes Layer/Cel properties dialog\r\nTab key cycle through RGB/HSV color text fields\r\nShow all tools/quicktools on keyboard shortcuts preferences\r\nFixed crashing when the user-defined theme doesn't exist anymore\r\nFixed bug which we can get stuck moving a cel\r\nFixed crash using \"Play Once\" option\r\nFixed several bugs & issues\r\n\r\nAseprite v1.2-beta4:\r\n\r\nNew option to add reference layers, useful for rotoscoping\r\nInitial support for Timeline thumbnails\r\nAdded new --oneframe CLI parameter to load just one frame\r\nFixed loading layer groups from .ase files with complex hierarchies/multiple levels\r\nFixed all commands related to the entire canvas (resize sprite, rotate sprite, flip sprite, etc.) when the sprite contains collapsed groups\r\n+All changes in v1.1.10\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.10 and v1.2-beta4 update",
+      "date": "2016-12-08 10:48:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110846",
+      "content": "Hi asepriters! Today we are releasing v1.1.10 and v1.2-beta4 with new features and several fixes.\r\n\r\nAseprite v1.1.10:\r\n\r\nSupport symmetry at the center of one pixel\r\nAdded keyboard shortcuts to change the layer opacity with Shift+1, Shift+2, Shift+3, and Shift+4.\r\nAdded option to use Rectangular Marquee and Lasso tools with right click\r\nAdded default grid options in preferences dialog\r\nAdded option to play all frames ignoring tags\r\nAdded option to disable auto-scroll\r\nAdded a tick mark next to the preset palette that matches the active one\r\nAdded visual indicator when Aseprite is saving data to recover files from a crash\r\nAdded an option to change the initial frame number on the Timeline\r\nImproved the dialog to open a sequence of files (frame1.png, frame2.png, etc.)\r\nmacOS: Smooth scroll with trackpad on list boxes and other widgets\r\nDetect the file format by its content instead of this extension when possible\r\nEsc key closes Layer/Cel properties dialog\r\nTab key cycle through RGB/HSV color text fields\r\nShow all tools/quicktools on keyboard shortcuts preferences\r\nFixed crashing when the user-defined theme doesn't exist anymore\r\nFixed bug which we can get stuck moving a cel\r\nFixed crash using \"Play Once\" option\r\nFixed several bugs & issues\r\n\r\nAseprite v1.2-beta4:\r\n\r\nNew option to add reference layers, useful for rotoscoping\r\nInitial support for Timeline thumbnails\r\nAdded new --oneframe CLI parameter to load just one frame\r\nFixed loading layer groups from .ase files with complex hierarchies/multiple levels\r\nFixed all commands related to the entire canvas (resize sprite, rotate sprite, flip sprite, etc.) when the sprite contains collapsed groups\r\n+All changes in v1.1.10\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.9 and v1.2-beta3 update",
+      "date": "2016-09-23 14:36:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/243582192029730349",
+      "content": "Minor bug fixes introduced in the last release: \r\n\r\nAseprite v1.1.9:\r\n\r\nFixed graphical glitches while painting\r\nFixed assigning keys to some menu items when we search for it in the Keyboard Shortcuts dialog\r\n\r\nAseprite v1.2-beta3:\r\n\r\nAdded --ignore-layer  CLI option\r\nAdded default keyboard shortcut Alt+Shift+N to create layer groups\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.9 and v1.2-beta3 update",
+      "date": "2016-09-23 14:36:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684110966",
+      "content": "Minor bug fixes introduced in the last release: \r\n\r\nAseprite v1.1.9:\r\n\r\nFixed graphical glitches while painting\r\nFixed assigning keys to some menu items when we search for it in the Keyboard Shortcuts dialog\r\n\r\nAseprite v1.2-beta3:\r\n\r\nAdded --ignore-layer  CLI option\r\nAdded default keyboard shortcut Alt+Shift+N to create layer groups\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.8 and v1.2-beta2 updates",
+      "date": "2016-09-20 14:12:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/243582077050203404",
+      "content": "New Aseprite v1.1.8 and v1.2-beta2 are available: \r\n\r\nhttp://66.media.tumblr.com/db7cc25822615075ddce25202036e5fc/tumblr_inline_odt4qe66k61qef3j3_500.gif\r\n\r\nAseprite v1.1.8 includes:\r\n\r\nNew option to put the Timeline at the left/right sides\r\nNew buttons in context bar to change zoom/scroll and fit sprite on screen\r\nMake Foreground/Background color selector dialogs resizable and save its position/pinned status between sessions\r\nF key is the new keyboard shortcut to switch between the normal mode and fullscreen mode.\r\nAdded two new palettes EDG16 and EDG32 by ENDESGA Studios\r\nAdded support to load/save palette from a list of hexadecimal values (.hex format)\r\nWindows and OS X: New mouse cursor options\r\nWindows and OS X: Use custom native cursor to improve mouse cursor movement\r\nWindows: Fixed issues copying-and-pasting 16bpp and 24bpp image in specific cases (e.g. from/to Photoshop)\r\nOS X: Popup animation options menu with Ctrl+click on \u201cPlay\u201d buttons\r\nOS X: Fixed right-click on Wacom tablets using the pen buttons (this problem might be related to a specific Wacom driver version)\r\nOS X: Fixed mouse wheel issues with USB mouse devices.\r\nOS X: General performance improvement\r\nFixed invalid selection after removing frames\r\nFixed exporting JSON data of frame tags when empty frames are ignored\r\nFixed cryptic error message using File > Repeat Sprite Sheet in some special cases\r\nFixed problem merging selected area when we use the \u201cHand\u201d tool\r\n\r\nAseprite v1.2-beta2 is available in the Steam beta branch:\r\n\r\nAdded layer groups\r\nTimeline: Select multiple non-adjacent layers or frames with Ctrl+click on Windows/Linux or Shift+click on OS X\r\nExport (Save Copy As) selected frames or frame tags\r\nCLI improvements:\r\n\r\nNow we can use --palette CLI option to change the sprite palette\r\nAdd support to use multiple times --layer to specify multiple layers\r\n\r\n\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.8 and v1.2-beta2 updates",
+      "date": "2016-09-20 14:12:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111080",
+      "content": "New Aseprite v1.1.8 and v1.2-beta2 are available: \r\n\r\nhttp://66.media.tumblr.com/db7cc25822615075ddce25202036e5fc/tumblr_inline_odt4qe66k61qef3j3_500.gif\r\n\r\nAseprite v1.1.8 includes:\r\n\r\nNew option to put the Timeline at the left/right sides\r\nNew buttons in context bar to change zoom/scroll and fit sprite on screen\r\nMake Foreground/Background color selector dialogs resizable and save its position/pinned status between sessions\r\nF key is the new keyboard shortcut to switch between the normal mode and fullscreen mode.\r\nAdded two new palettes EDG16 and EDG32 by ENDESGA Studios\r\nAdded support to load/save palette from a list of hexadecimal values (.hex format)\r\nWindows and OS X: New mouse cursor options\r\nWindows and OS X: Use custom native cursor to improve mouse cursor movement\r\nWindows: Fixed issues copying-and-pasting 16bpp and 24bpp image in specific cases (e.g. from/to Photoshop)\r\nOS X: Popup animation options menu with Ctrl+click on \u201cPlay\u201d buttons\r\nOS X: Fixed right-click on Wacom tablets using the pen buttons (this problem might be related to a specific Wacom driver version)\r\nOS X: Fixed mouse wheel issues with USB mouse devices.\r\nOS X: General performance improvement\r\nFixed invalid selection after removing frames\r\nFixed exporting JSON data of frame tags when empty frames are ignored\r\nFixed cryptic error message using File > Repeat Sprite Sheet in some special cases\r\nFixed problem merging selected area when we use the \u201cHand\u201d tool\r\n\r\nAseprite v1.2-beta2 is available in the Steam beta branch:\r\n\r\nAdded layer groups\r\nTimeline: Select multiple non-adjacent layers or frames with Ctrl+click on Windows/Linux or Shift+click on OS X\r\nExport (Save Copy As) selected frames or frame tags\r\nCLI improvements:\r\n\r\nNow we can use --palette CLI option to change the sprite palette\r\nAdd support to use multiple times --layer to specify multiple layers\r\n\r\n\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.7 and v1.2-beta1 updates",
+      "date": "2016-07-28 18:33:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/252584317723412220",
+      "content": "New Aseprite v1.1.7 and v1.2-beta1 are available:\r\n\r\nAseprite v1.1.7:\r\n\r\nNew option to hide full path in UI\r\nFixed theme configuration UI to show user/official folders and themes correctly\r\nFixed crash resizing to big sizes (show not enough memory if we cannot resize the sprite)\r\nFixed some issue in Import Sprite Sheet dialog\r\nFixed crash copying 8bpp images on Windows\r\n\r\nAseprite v1.2-beta1 is available in the Steam beta branch:\r\n\r\nAdd new pixel aspect ratio option so we can draw sprites with double-wide pixels\r\nCLI improvements:\r\n\r\n--frame-tag and --frame-range now can be used with --save-as\r\n--save-as now interprets {layer} in the given filename to automatic iterate through layers, so we can use --save-as output-{layer}.gif to save each layer in a different file.\r\nNew --split-tags to save each tag as .gif file, anyway you can use --save-as output-{tag}.gif as a shortcut.\r\n\r\n\r\n\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.7 and v1.2-beta1 updates",
+      "date": "2016-07-28 18:33:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111183",
+      "content": "New Aseprite v1.1.7 and v1.2-beta1 are available:\r\n\r\nAseprite v1.1.7:\r\n\r\nNew option to hide full path in UI\r\nFixed theme configuration UI to show user/official folders and themes correctly\r\nFixed crash resizing to big sizes (show not enough memory if we cannot resize the sprite)\r\nFixed some issue in Import Sprite Sheet dialog\r\nFixed crash copying 8bpp images on Windows\r\n\r\nAseprite v1.2-beta1 is available in the Steam beta branch:\r\n\r\nAdd new pixel aspect ratio option so we can draw sprites with double-wide pixels\r\nCLI improvements:\r\n\r\n--frame-tag and --frame-range now can be used with --save-as\r\n--save-as now interprets {layer} in the given filename to automatic iterate through layers, so we can use --save-as output-{layer}.gif to save each layer in a different file.\r\nNew --split-tags to save each tag as .gif file, anyway you can use --save-as output-{tag}.gif as a shortcut.\r\n\r\n\r\n\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.6 update",
+      "date": "2016-07-06 16:26:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/257086017095312475",
+      "content": "New Aseprite v1.1.6 is available with bug fixes and some minor improvements!\r\n\r\n\r\nRight-click can move layers/frames/cels in the timeline\r\nAdded right-click with Ctrl+click on OS X in some controls (timeline, tabs, text entries)\r\nFixed bug ignoring Space bar on Sprite Editor when it\u2019s used immediately after clicking in the Timeline\r\nAsk for saving each file on exit\r\nRight-click subtracts a selection area when we use it inside the sprite editor selection\r\nAdded option to include partial tiles in Import Sprite Sheet\r\nConfiguration is saved in ~/Library/Application Support/Aseprite on OS X now\r\nAdded forward compatibility for .ase files with groups\r\nAdded support to load Pixly (.anim) files\r\nExpand filename wildcards in command line on Windows\r\nFixed issues with some convolution matrices after inserting text\r\nFixed OS X keyboard modifiers when we switch apps using \u2318Tab (\u2318 isn\u2019t kept pressed)\r\n\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.6 update",
+      "date": "2016-07-06 16:26:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111277",
+      "content": "New Aseprite v1.1.6 is available with bug fixes and some minor improvements!\r\n\r\n\r\nRight-click can move layers/frames/cels in the timeline\r\nAdded right-click with Ctrl+click on OS X in some controls (timeline, tabs, text entries)\r\nFixed bug ignoring Space bar on Sprite Editor when it\u2019s used immediately after clicking in the Timeline\r\nAsk for saving each file on exit\r\nRight-click subtracts a selection area when we use it inside the sprite editor selection\r\nAdded option to include partial tiles in Import Sprite Sheet\r\nConfiguration is saved in ~/Library/Application Support/Aseprite on OS X now\r\nAdded forward compatibility for .ase files with groups\r\nAdded support to load Pixly (.anim) files\r\nExpand filename wildcards in command line on Windows\r\nFixed issues with some convolution matrices after inserting text\r\nFixed OS X keyboard modifiers when we switch apps using \u2318Tab (\u2318 isn\u2019t kept pressed)\r\n\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.5 update",
+      "date": "2016-05-04 14:46:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/255954406935980192",
+      "content": "New Aseprite version is available with a lot of bug fixes and a couple of new minor features:\r\n\r\nNew option for paint bucket to use all layers as reference\r\nAdded copy & paste support of images on OS X\r\nAdded Wacom eraser support on Windows and OS X\r\nImproved status bar\r\nDon't destroy custom brush when we use X key to switch colors\r\nImprove selection rectangle/shape feedback with a negative black/white color, so it's always visible\r\nFixed blurry graphics when Windows DPI scaling is greater than 100%\r\nFixed bug copying frames between sprites: now frame duration is preserved\r\nFixed regression bug with default folder for new files\r\nUse correct/configured Eraser brush size when Eraser is activated with right-click or as a quicktool (bug report on Steam)\r\nFixed brush size when we click on brush icon\r\nFixed crash pressing \u00ba key on keyboard configuration\r\nFixed crash when we press Del or Backspace keys while we are moving a cel\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.5 update",
+      "date": "2016-05-04 14:46:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111371",
+      "content": "New Aseprite version is available with a lot of bug fixes and a couple of new minor features:\r\n\r\nNew option for paint bucket to use all layers as reference\r\nAdded copy & paste support of images on OS X\r\nAdded Wacom eraser support on Windows and OS X\r\nImproved status bar\r\nDon't destroy custom brush when we use X key to switch colors\r\nImprove selection rectangle/shape feedback with a negative black/white color, so it's always visible\r\nFixed blurry graphics when Windows DPI scaling is greater than 100%\r\nFixed bug copying frames between sprites: now frame duration is preserved\r\nFixed regression bug with default folder for new files\r\nUse correct/configured Eraser brush size when Eraser is activated with right-click or as a quicktool (bug report on Steam)\r\nFixed brush size when we click on brush icon\r\nFixed crash pressing \u00ba key on keyboard configuration\r\nFixed crash when we press Del or Backspace keys while we are moving a cel\r\n\r\nMore information in Aseprite blog announcement."
+    },
+    {
+      "title": "Aseprite v1.1.4 update",
+      "date": "2016-04-12 12:44:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/260454846523438820",
+      "content": "New Aseprite version released with several bug fixes and some new features:\r\nNew backend on Windows and OS X. Improved trackpad support on OS X. This is the first step to improve the UX with wacom tablets, pressure, multiple-windows, etc. (issue 139)Now we can scale from center/pivot (issue 576) and flipping (issue 579)You can select a tile by double clicking over it (issue 939)Add View > Extras menu to hide the selection edges (issue 861)Mouse wheel rotate hue value when used above color selectors (issue 1012)New keyboard customization for tool modifiers (issue 1028)Fixed regression using --bach and --save-as with .png and other formats (issue 1018)Fixed several issues (issue 905, issue 914)\r\n\r\nMore information: http://blog.aseprite.org/post/142691906055/aseprite-v114"
+    },
+    {
+      "title": "Aseprite v1.1.4 update",
+      "date": "2016-04-12 12:44:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111478",
+      "content": "New Aseprite version released with several bug fixes and some new features:\r\nNew backend on Windows and OS X. Improved trackpad support on OS X. This is the first step to improve the UX with wacom tablets, pressure, multiple-windows, etc. (issue 139)Now we can scale from center/pivot (issue 576) and flipping (issue 579)You can select a tile by double clicking over it (issue 939)Add View > Extras menu to hide the selection edges (issue 861)Mouse wheel rotate hue value when used above color selectors (issue 1012)New keyboard customization for tool modifiers (issue 1028)Fixed regression using --bach and --save-as with .png and other formats (issue 1018)Fixed several issues (issue 905, issue 914)\r\n\r\nMore information: http://blog.aseprite.org/post/142691906055/aseprite-v114"
+    },
+    {
+      "title": "Aseprite v1.1.3 update",
+      "date": "2016-02-29 09:26:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/295354567848332543",
+      "content": "A new update has been released with several bug fixes and a couple of new features:\r\nAdded new color picker to quickly select different tints, shades, and tones of the current colorNow clicking foreground/background color will change the colors in a custom brush created with Edit > New BrushFixed crash creating a custom brush without \"Type\" parameter and restarting the applicationFixed bug resetting Screen Scaling valueFixed several bugs with grayscale imagesFixed a crash using Windows clipboard in special casesFixed Wacom tablet lag on Windows platformAdded more zoom levels"
+    },
+    {
+      "title": "Aseprite v1.1.3 update",
+      "date": "2016-02-29 09:26:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111579",
+      "content": "A new update has been released with several bug fixes and a couple of new features:\r\nAdded new color picker to quickly select different tints, shades, and tones of the current colorNow clicking foreground/background color will change the colors in a custom brush created with Edit > New BrushFixed crash creating a custom brush without \"Type\" parameter and restarting the applicationFixed bug resetting Screen Scaling valueFixed several bugs with grayscale imagesFixed a crash using Windows clipboard in special casesFixed Wacom tablet lag on Windows platformAdded more zoom levels"
+    },
+    {
+      "title": "Aseprite v1.1.2-rc14 and v1.1.2-beta14",
+      "date": "2016-02-16 18:01:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/295353300254846853",
+      "content": "A new patch for the next release v1.1.2 is available.\r\n\r\nIncluded fixes:\r\n\r\n\r\n Fixed scrolling artifacts (#963)\r\n Fixed frame duration after undoing \"Remove Frame\" action (#965)\r\n Fixed shading ink on RGBA sprites which have a palette with more than 256 colors (#965)\r\n Fixed loading of interlaced PNG files"
+    },
+    {
+      "title": "Aseprite v1.1.2-rc14 and v1.1.2-beta14",
+      "date": "2016-02-16 18:01:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111788",
+      "content": "A new patch for the next release v1.1.2 is available.\r\n\r\nIncluded fixes:\r\n\r\n\r\n Fixed scrolling artifacts (#963)\r\n Fixed frame duration after undoing \"Remove Frame\" action (#965)\r\n Fixed shading ink on RGBA sprites which have a palette with more than 256 colors (#965)\r\n Fixed loading of interlaced PNG files"
+    },
+    {
+      "title": "Aseprite v1.1.2-rc12 and v1.1.2-beta12",
+      "date": "2016-02-12 13:17:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/295353300239679915",
+      "content": "A new patch for the next release v1.1.2 is available.\r\n\r\nThe official branch (rc12) is a release candidate. It's like Aseprite v1.1.1 but with bug fixes and new features. The beta branch contains some special features and a complete new backend (a new way to handle mouse/keyboard events).\r\n\r\nThis patch includes some fixes from v1.1.2-beta11:\r\n\r\n\r\n Added unique zoom/position values in preview window per document (#959)\r\n Added RYB color wheel (#707)\r\n Fixed bug when moving selection with shift+arrow (#940)\r\n Fixed HSV  RGB conversion (#961)\r\n [beta] Fixed key modifiers (#954)"
+    },
+    {
+      "title": "Aseprite v1.1.2-rc12 and v1.1.2-beta12",
+      "date": "2016-02-12 13:17:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521684111913",
+      "content": "A new patch for the next release v1.1.2 is available.\r\n\r\nThe official branch (rc12) is a release candidate. It's like Aseprite v1.1.1 but with bug fixes and new features. The beta branch contains some special features and a complete new backend (a new way to handle mouse/keyboard events).\r\n\r\nThis patch includes some fixes from v1.1.2-beta11:\r\n\r\n\r\n Added unique zoom/position values in preview window per document (#959)\r\n Added RYB color wheel (#707)\r\n Fixed bug when moving selection with shift+arrow (#940)\r\n Fixed HSV  RGB conversion (#961)\r\n [beta] Fixed key modifiers (#954)"
+    }
+  ]
+}

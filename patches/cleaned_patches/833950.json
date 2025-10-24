@@ -1,0 +1,54 @@
+{
+  "appId": "833950",
+  "count": 8,
+  "notes": [
+    {
+      "title": "Version 1.1.1",
+      "date": "2021-03-28 17:14:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4026754911357178481",
+      "content": "Release Notes:\n1.) Re-adjusted ranking system by reducing penalties for taking damage & missed enemies making A-Ranks more attainable.\n2.) Raised the point ceiling for D-Rank\n3.) Adjusted/Rebalanced Boss behaviors, most notably the Mission 4 Boss (Shess)\n4.) Fixed an error when setting the Cutscene Skip setting in Game Settings which caused the changes to only take effect on the next play session."
+    },
+    {
+      "title": "Version 1.1.0 - Sky's End Update | Free DLC Now Live",
+      "date": "2019-07-23 02:03:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413284533109325287",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34920378/a7009b321123e6da08e8f25d289dcc71027a617f.jpg1.1.0 SKY'S END UPDATE (RELEASE DATE 2019-07-23)\r\n\r\n\r\n\r\nEXPANSION - Beating the game (any ending) now unlocks Trophaeum Mode, an endless test of skill where you can truly show off your ace pilot skills.\r\nFEATURE - A new game setting that allows you to skip cut scenes for more rapid restarts while you're chasing a high score.\r\nFEATURE - Tons of new leaderboards where you can compete to have the best scores and fastest boss kills for each mission.\r\nENHANCEMENT - Boss Difficulty has been softened.  Physically colliding with the boss no longer results in instant kills.  This was done to make completing missions more accessible to novice players without changing the score economy at the highest levels of play (it still kills your multiplier so truly high scores/ranks are not possible using that strategy).  \r\nBUG - Updated engine version to fix v-sync/framerate issues on Linux"
+    },
+    {
+      "title": "Linux Compatibility Expansion",
+      "date": "2019-05-31 16:21:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2400895196209380563",
+      "content": "After a lot of effort and some excellent insight from Sylvain Bertrand (thank you) we are now able to support a broader range of linux distributions with a few simple modifications/launch profiles.\r\n\r\nWe will be integrating these into the code/steam store as time allows but here is a summary of what we found:\r\n\r\n\r\n It is highly recommended that you set your monitor's refresh rate to 60hz.  We are working on a code fix for this and our engine vendor has a ticket open that should resolve it shortly but in the meantime, this change will make the game speed playable.\r\n The game's main directory needs to be added to the linux loader lookup paths.  This can be accomplished thusly:\r\n[code]LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH %command%[/code]\r\n\r\nA startup script containing the following will make this automatic:\r\n[code]\r\n#!/bin/sh\r\nLD_LIBRARY_PATH=.:$LD_LIBRARY_PATH\r\nexport LD_LIBRARY_PATH\r\nexec ./risksystem\r\n[/code]\r\n\r\nThis would be added as a file named something like risksystem.sh and executed.  This launch option will be added to the next production release if not sooner.\r\n It was discovered that one of the major points of failure was an attempt to send anonymous data to the game engine provider.  The curl implementation was not in the location expected leading to a hard crash.  This is no longer present.\r\n\r\n\r\nWe are very excited to have broadened the Linux support for the game and hope the community can try it out and let us know if these solutions work.  We know there is more to do and as long as people are trying to play Risk System, we'll do what we can to allow that to happen.  \r\n\r\nEnjoy!"
+    },
+    {
+      "title": "Version 1.0.4 - Git Gud Update Now Live",
+      "date": "2019-05-29 13:18:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2400895196201694193",
+      "content": "1.0.4 GIT GUD UPDATE (RELEASE DATE 2019-05-29)\r\n\r\nhttps://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34920378/f054f891142f7b8107eb19b0eef98a090a931542.jpg\r\n\r\n\r\nFEATURE - Added three achievements relating to early gameplay enhancement including \"Harder than it looks\", \"That was only my afterimage\" and \"It's the only way to be sure\" which address getting a D\tmission ranking, luring an enemy to destroy another enemy, and executing a \"hyper barrier breaker\" respectively.\r\nENHANCEMENT - Minor character portrait updates.\r\nENHANCEMENT - Refinement of rumble mechanism.\r\nENHANCEMENT - Revamping of rank criteria at the low end. \r\nBUG - Removed engine anonymous usage statistics ping that was undesirable and causing Linux issues"
+    },
+    {
+      "title": "Version 1.0.3 - ACEN-2019 Update Now Live",
+      "date": "2019-05-22 15:52:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408775863516513622",
+      "content": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34920378/f054f891142f7b8107eb19b0eef98a090a931542.jpg\r\n\r\nINCLUDED\r\n\t\r\n BUG - Incorrect S-Rank logic on Mission 6 (thanks to horheristo)\r\n BUG - Missing high score submission after Mission 5, 6 (thanks to horheristo)\r\n BUG - Disconnecting controller during Story Attract stopped responding to exit\r\n FEATURE - Add gamepad rumble and associated game settings\r\n FEATURE - Add high multiplier leaderboard\r\n FEATURE - Changed visuals & FX to greatly reduce flashing & easily keep track of your ship amidst the action (as requested many places)\r\n ENHANCEMENT - Modify ranking criteria to make A more attainable and D more likely (special thanks to our biggest fans at ACEN)\r\n ENHANCEMENT - Lower Shess's hitpoints somewhat to make defeat more attainable\r\n ENHANCEMENT - Deluxe Edition DLC owners will now see a menu item in the Files area to open the folder containing the DLC.   We are working on making this a native file explorer but the browser option will work for the moment. \r\n\r\nON DECK\r\n\t\r\n BUG - Minor overlay issue after return to title while Mission intro visible (thanks to ThunderBlade)\r\n BUG - Linux issues\r\n FEATURE - Super awesome secret Free-LC"
+    },
+    {
+      "title": "Patch Notes 1.0.2",
+      "date": "2019-05-15 16:32:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2405397525625552537",
+      "content": "This was a very minor patch with some data file modification and an update to the Leaderboard screens to keep the text on the screen.\r\n\r\nLeaderboards still have trouble with extended unicode characters and this will be addressed in a future update."
+    },
+    {
+      "title": "Known Issue: Ubuntu Framerate",
+      "date": "2019-05-14 11:36:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2405396896227023142",
+      "content": "There is a potential workaround recommended by a player. \r\n\r\n\r\n\r\n 1. Compile/install libstrangle https://github.com/milaq/libstrangle \u2026\r\n 2. Right click properties in Steam. Uncheck \"Enable the Steam Overlay\"\r\n 3. Click Set Launch Options and enter the following\r\n\r\n\r\nVSYNC=1 strangle 60 %command%\r\n\r\nEnjoy!\r\n\r\n\r\nNOTE:  We have not verified the entirety of this library so use at your own risk.  We will be checking it out more thoroughly in the near future but if you know/trust this library, it may solve your problem."
+    },
+    {
+      "title": "Risk System OP - \"Traces\"",
+      "date": "2019-05-10 13:11:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2405396896212808800",
+      "content": "We are thrilled to present our new anime OP trailer* for Risk System.  Check it out! \r\n\r\nhttps://www.youtube.com/watch?v=77ns1S_qV_4\r\n\r\n* This is not a gameplay trailer"
+    }
+  ]
+}

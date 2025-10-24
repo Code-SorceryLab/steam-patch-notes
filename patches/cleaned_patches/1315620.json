@@ -1,0 +1,72 @@
+{
+  "appId": "1315620",
+  "count": 11,
+  "notes": [
+    {
+      "title": "2.8.2 Update",
+      "date": "2024-01-07 07:29:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585191812305",
+      "content": "Hibiscus\n\n Display and performance issues caused by GDI handle leaks\n\n When getting TEXTMETRIC, SelectObject does not save the default handle and restore it on cleanup\n Filter method when handling format strings uses a NULL font handle, causing invalid caches to be created.\n GDI handle leak when getting DPI Scaling\n\n Typing effect does an extra out-of-bounds check for length when processing format control commands in text (although the length is exactly the length of the current display string when called, and it won't crash without checking, but looking at a dump file of a random crash says Access violation here, and it really doesn't validate the input, so it's better to protect it, and maybe it's running away somewhere! )\n When moving the installation path or using cloud archiving to another computer, voice files in the history are not played because they are saved as absolute paths\n Unlock Appreciation is now `/` compatible\n Debugging hierarchy information is now output in positive order\n Reading an illegal archive now goes back to the beginning of the chapter the archive is in.\n End of text display state is not reset when loading a new script, i.e. if you go back to the title page after the end of text display and restart the game, the text is still considered to be end of display, resulting in no text being displayed until you click the mouse\n Optimized memory usage estimation during garbage collection\n If the text starts with a line break, archive, read the archive and archive again, the archive message changes to #NULL.\n Can't skip performance using space & mouse wheel\n When continuous vibration is turned off, the shutdown animation also happens in fast-forward mode\n Zooming, rotating, and moving performances can now be skipped.\n Memory leak when saving images if the image to be saved is not legal\n command to reset fonts in font control doesn't work\n If save without recording a character and reading the save file after recording the character, the character's individual voice sequence ID is incorrectly calculated from zero\n Adjusted video processing logic when switching CGs\n\n\nEndlessShinyBlues\n\n When entering the save page, the default \"System will load save file #1\" will be displayed in the lower left corner before the mouse operation causes a refresh."
+    },
+    {
+      "title": "2.7.4 Update",
+      "date": "2023-12-12 04:34:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616812114643",
+      "content": "Hibiscus\n\nprotect if `LockBitmap` returns nullptr\nwhen you click mouse or space that will trigger page change during fast forwarding, will not exit fast forward if not clicked during display routine, which is hard to achieve in FF mode\nhistory reused text splitter but didn't protect it's original value, if you open history page, close, then save, the info in save data is not current line displayed\n`@Forward` / `@Backward` used param that only updated during performance routine during parsing routine, which causes order update error\nparse error if current line is not current language\nparse error if blank character follows the language prefix"
+    },
+    {
+      "title": "2.7.2 Update",
+      "date": "2023-10-13 09:28:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944124196363",
+      "content": "EndlessShinyBlues\n\n `FFJmp` parameter is not adapted, causing location-specific `/~` jumps in some chapters to not work correctly!\n \n\nHibiscus \n\n Empty names with commas are incorrectly displayed in `Screenshot Tag` when the role mapping does not exist and there are more than two non-existing gig objects\n Using the internal value handling hierarchy, objects now participate in sorting before the end of the destruction transition\n Sortable transitions are not destroyed when history jumps\n `PatternFade` does not take `KeepResize` into account\n String object Shader control\n `#OperationWait`, player operation wait"
+    },
+    {
+      "title": "2.5.2 Update",
+      "date": "2023-09-30 10:59:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220291886494622117",
+      "content": "EndlessShinyBlues\n\n Allow button clicks before the end of the title screen transition animation\n\n\nHibiscus\n\n Text consisting of line breaks only, incorrectly used parser internal text during escape phase\n Text disappeared when DPI scaling was not `100%`, `125%`, `150%`, `200%`\n Video playback with `@VideoWait` enabled now allows to specify if skipping is allowed or not, and a prompt is displayed when the player enters an action.\n The state specified by `@VideoWait` is now automatically reset after video playback ends.\n The three components of RGB overlay now change at a percentage rate.\n New RGB parameter control commands.\n `@Backward` and `@Forward` will not be executed when ignoring order parameters.\n Rotation parameters are not copied after transition is complete.\n Rotation is not updated based on back"
+    },
+    {
+      "title": "2.2.3 Update",
+      "date": "2023-09-09 10:25:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482916399194",
+      "content": "fix shake issues"
+    },
+    {
+      "title": "2.2.2 Update",
+      "date": "2023-09-07 10:50:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482909170676",
+      "content": "you can use mouse or keyboard to call an unclickable exit confirm in title before animation finishes\n[Debug]box viewer not ordered\n[Debug]box viewer now will be destroyed when history jump"
+    },
+    {
+      "title": "2.2.0 update",
+      "date": "2023-09-02 04:37:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355664202265",
+      "content": "Now you can use the side buttons to return to previous page. Note that it needs to send the message by WM_APPCOMMAND\nDue to legacy codes are not cleaned up, when starting / restarting applications, app will try to shut down steam, and may cause random crash sometimes.\nWhen moving to SDL Mixer as audio backend to support multi-instance playing of FFMpeg, forget to reset the finish flag of packet queue. When video is short enough, decode part will though it's finished by reading the flag, but loop condition will not be met as it checks the time stamp, which causes video will be paused incorrectly at the beginning after random times of loops."
+    },
+    {
+      "title": "2.1.0 update",
+      "date": "2023-08-28 02:25:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722340651804",
+      "content": "When changing resolution, title bar won't be moved out of all screens\nNow allows user to adjust the size of application, when user finish adjusting, app will auto make the ratio correct"
+    },
+    {
+      "title": "2.0.1 update",
+      "date": "2023-08-16 09:55:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289169372331",
+      "content": "fix resolution auto resizes to 720P on hi-resolution devices with big DPI scaling factors, e.g., 2K+ notebooks."
+    },
+    {
+      "title": "2.0.0 Update",
+      "date": "2023-08-13 11:41:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5839532486222113896",
+      "content": "TL;DR:\n\n\n Significant performance enhancement"
+    },
+    {
+      "title": "Bug fix and enhancement",
+      "date": "2021-08-14 18:00:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149063990989",
+      "content": "Happy Qi Xi Festival\uff01\nBug fix\n[olist]\n Set mouse position and lock mouse rect offset incorretly in fullscreen mode when running on non 16:9 monitors.\n Capture frame area (for saving and transitions) has black borders in fullscreen mode when running on non 16:9 monitors.\n Phone scales incorrectly in fullscreen mode when running on non 16:9 monitors.\n Sometimes switch fullscreen mode by hotkey (e.g. Ctrl+Enter&F11) dosen't work.\n Lock mouse option has no effect in fullscreen mode.\n Phone positons incorrectly in fullscreen mode.\n Phone will display in lock mode at the top-left when start game in fullscreen mode.\n In phone and mouse is not locked, using maximize button on window caption will not update phone display area.\n Exit game in phone will save an incorrect temp save file (for continue from title screen).\n Phone area is black in remote play.\n[/olist]\nGeneral enhancement\n[olist]\n Update otf fonts to ttf.\n Totally rewrite mouse lock, set mouse position, get window/client/frame rect, etc Win32 API logic.\n[/olist]"
+    }
+  ]
+}

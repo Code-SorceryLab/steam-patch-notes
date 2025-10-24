@@ -1,0 +1,120 @@
+{
+    "appId": "1730020",
+    "count": 19,
+    "notes": [
+        {
+            "title": "Whoops.... Hotfix",
+            "date": "2023-08-02 14:09:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124585319846301249",
+            "content": "AI targeting was completely broken because of a tiny slip-up. Whoops!\n\nFixed now."
+        },
+        {
+            "title": "Teamkill 0.1.6.7",
+            "date": "2023-08-02 13:49:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124585319846249558",
+            "content": "[b]CHANGES[/b]\n[list]\n[*] Added option in config file to allow imported .pck files in a \"mods\" folder to overwrite files in the game, off by default\n[*] Added some basic strafing & jumping behaviors to AI in combat, plus some minor tweaks. AI feels a little bit more competent than before, and function better on maps like Skylines than they used to\n[*] Added ability to kick bots from match (but they will be re-added between rounds, todo)\n[*] Admin panel refreshes after kicking players/bots\n[*] Changed \"Voice Volume\" option to say \"Dialogue Volume\" to clear up confusion about voice chat (there is none)\n[*] Host Game menu shows a status indicator when starting a game, to let people know what it's doing :)\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.6.6",
+            "date": "2023-05-07 19:18:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875091938416",
+            "content": "[i]Sighs[/i], another small patch that I've honestly been a little embarrassed to publish considering the time between now and last time, but adds a new song and fixes some bugs related to hosting lobbies. \n\n[h2]CHANGES[/h2]\n[list]\n[*]Added new song \"Hardly Know 'er\"\n[*]An attempt was made to make UPNP hosting work more reliably\n[*]Minor tweaks in how player physics are handled, hopefully increasing performance a smidge for higher player counts\n[/list]\n\n[h2]FIXES[/h2]\n[list]\n[*]Fixed occasional bug that would discard game rules immediately after hosting a lobby, throwing players back to menu when trying to play\n[*]Fixed lobby names sometimes not updating properly\n[*]\"Use UPNP\" tickbox now remembers previous setting when returning to lobby\n[*]Fixed mutators sometimes not applying when hosting\n[*]Bot team names should no longer be duplicates\n[*]Adjusting your aim using keyboard shouldn't use the controller sensitivity value anymore\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.6.5",
+            "date": "2022-09-21 12:35:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330728906946",
+            "content": "Just a few bugfixes :)\n\n[list]\n[*] Fixed game crash when returning to lobby if AI were present\n[*] Fixed game crash when playing with only 1 bot\n[*] AI shouldn't be aiming FASTER the further away a target is now, whoops. Should be fixed now.\n[*] Fixed issue with AI cheating in Hide & Seek by being able to run freely during the countdown as Seeker\n[*] Fixed railgun third person model being visible when spawned mid-match (Hide & Seek)\n[*] Game info now re-sent when mode is changed, should make crashes due to empty game info less likely to happen.\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.6.4",
+            "date": "2022-08-18 05:19:42",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4584121659780191726",
+            "content": "Howdy gamers, this update is mostly about making use of Godot 3.5's new features for some better performance, reworked AI and some minor stuff like players' heads following their aim.\n\nOh, it also removes the \"Kill\" mode, because it simply doesn't work very well if at all, may or may not come back as a \"enable player health\" option or something.\n\n[h2]CHANGES[/h2]\n[list]\n[*] TK uses Godot 3.5's physics interpolation now, plus lowered physics tick rate from 240 to 90. This might affect bunnyhopping a bit but otherwise movement has been tweaked to feel mostly the same as before, but significantly increasing performance (especially with bots)\n[*] AI reworked to use new pathfinding system included in Godot 3.5, and process movements in batches, rather than all at once\n[*] AI now tries to target nearest enemy instead of \"tunnel visioning\" onto just one. Also aim speed is now affected by distance to target.\n[*] Player model's head now looks towards where the player is aiming, instead of just straight ahead\n[*] Removed \"Kill\" gamemode for now\n[*] More messages for getting kills/killed and match ends\n[*] Replaced player nametags with new 3DLabel ones instead\n[*] Player models update animation blending at a fixed tickrate instead of each physics frame\n[*] Changed how weapon models are loaded in, and applied to player models. This one's really just for me though because it was a jank nightmare before and trying to make any  changes would just cause it to be backwards before for some reason... ANYWAY...\n[/list]\n\n[h2]FIXES[/h2]\n[list]\n[*] AI has a maximum amount of targets to keep track of now, currently set to 3 targets max\n[*] AI should now face where they're going, or who they're targeting a bit more properly\n[*] AI less likely to jump on steep slopes\n[*] Slightly improved the time it takes to spawn players\n[*] Fixed bug where bots wouldn't spawn when starting a new match after being returned to lobby\n[*] Steam Rich Presence doesn't claim you're on the team of a player who just spawned, anymore\n[*] Fixed some scripts running unnecessarily every physics frame\n[*] Fixed decimals being rounded to whole numbers when changing player speed values in the host menu\n[*] Teamguy's hand shouldn't stick out of the railgun anymore\n[*] Jank band-aid fix in the case the game starts without any gamemode rules set. Server [i]should[/i] now tell everyone to go back to lobby if this happens, and display a message in chat.\n[*] This doesn't matter at all but fixed Teampill's railgun model's scale and position to match the original prototype version of the game better\n[/list]\n\nWith that said, you'll probably still encounter performance issues with the AI, and the re-work meant losing some of the behaviors like keeping targets at a distance, that I haven't had time to re-do yet. Only temporary, though! :)\n"
+        },
+        {
+            "title": "Teamkill 0.1.6.3",
+            "date": "2022-07-27 15:54:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4587497456678208637",
+            "content": "[h2]CHANGES[/h2]\n[list]\n[*] \"Acceleration\" value is now a raw speed value rather than a multiplier\n[*] Mutators can now change variables on players outside of values used in game mode rules\n[*] Slight tweaks to Teampill movement speeds \n[*] Removed some unused code from player\n[*] WIP Spectator/dev camera\n[i]Controlled with the mouse to look, WASD keys to move around, and E/Q to control height.\nTurn on/off: CTRL+F1\nToggle player movement: CTRL+F2.\nHide/show HUD: CTRL+F3\nProper spectator camera implementation to come[/i]\n[/list]\n[h2]FIXES[/h2]\n[list]\n[*] Active mutators list should now update properly when returning to lobby/switching gamemode\n[*] Fixed error in Workshop upload tool when trying to retrieve info existing Workshop item\n[*] Fixed a bug that would occasionally cause you to go flying when walking into ramps/corners... and added a mutator to un-fix it [i](a lot of you liked this one! I'm not heartless!!)[/i]\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.6.2",
+            "date": "2022-07-15 14:46:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144689753862",
+            "content": "Hi again! This update is mostly focused on bug fixes, but also comes with the ability to rebind your buttons with keyboard & mouse inputs (no controller support yet).\n\n[h2]CHANGES[/h2]\n[list]\n[*] Added key rebinds for keyboard & mouse buttons\n[*] Improved performance for how TG model applies team colors\n[*] Made Teamguy's visor [i]transparent[/i], I think it looks neat :)\n[*] The game now re-checks its list of weapons after importing custom content\n[*] You can now auto-bunny hop by holding jump [i](I'm gonna be honest, this was an unintentional change but it might be a good one overall!)[/i]\n[/list]\n\n[h2]FIXES[/h2]\n[list]\n[*] Fixed a bug and possible crash with Team-Teamkill not able to find individual team settings when using different values per team\n[*] Teamguy model now receives lighting properly [i](this is most apparent in Skyline)[/i]\n[*] Fixed error in Teampill mutator due to trying to run IK on the Pill model\n[*] Fixed issue that caused a freeze on first team change[i] (though there still is an occasional freeze on the first shot fired)[/i]\n[*] Server will stop trying to change teams of, or otherwise handling hits/kills for players it doesn't think exist\n[*] Server now checks that a player exists before applying powerups to them\n[*] Unknown values/settings in the config file should now be removed from it\n[*] Player/team names are now checked locally on startup or when settings change\n[*] Player/team names are now escaped and sanitized\n[*] Made the map camera work with client-side hit detection and made it easier to hit\n[*] Bot team names shouldn't duplicate anymore\n[*] Respawn areas now keep track of who has entered/left them, so hopefully less team spamming when falling off maps\n[*] Disabled railgun's alt-fire that currently does nothing except play the shoot animation\n[*] Fixed TK.exe's icon being the Godot logo in most preview sizes [i](lmao)[/i]\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.6.1",
+            "date": "2022-07-11 10:32:07",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573885522",
+            "content": "Minor patch that fixes a few issues :)\n\n[h2]CHANGES[/h2]\n[list]\n[*] Removed some unused dev voice lines to reduce file size\n[/list]\n[h2]FIXES[/h2]\n[list]\n[*] Fixed game crash when performing hit registration from a weapon that doesn't exist\n[*] Fixed server browser filter distance & refresh buttons [i](lol)[/i]\n[*] Lowered global illumination probe count in Aperture, which was causing significant performance issues\n[*] Disabled Steam Workshop uploading tool when the game isn't connected to Steam\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.6.0 Hotfix 1",
+            "date": "2022-06-23 22:16:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295731783255",
+            "content": "Quick band-aid patch to fix a crash when trying to host with UPNP enabled, sorry about that"
+        },
+        {
+            "title": "Teamkill 0.1.6.0 - Bots!",
+            "date": "2022-06-23 13:07:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295730393930",
+            "content": "[h1]CHANGES[/h1]\n[list]\n[*] [h3]BOTS[/h3]\nFirst draft of multiplayer bots! They're dumb and performance can take a big hit for the host when adding many of them, but they can still run, shoot, spam taunts, use really dumb team names and fall off cliffs! \nThat's like.. 70% of a real player already!\n\nBot count can be adjusted in the server settings next to max players\n\n[*] [h3]MAP CHANGES[/h3]\nAperture has had an extension, giving a new route to the 2nd floor and accessibility ramps for the 3rd floor\n\nSkylines gained another song!\n\nAperture & Skylines' lists of randomly selected songs have been changed\n\n[*] [h3]OTHER SMALL STUFF[/h3]\nTeamguy's arm uses IK, it should be a little more obvious where players are looking while moving, though this needs work.\n\nSlight changes to how the game searches for custom content on startup and after downloading from Workshop\n\nDefault network tick rate has been lowered to 64, since hits are handled client-side. You can still set this back to 128 in the host settings, though.\n\nYou can press F4 to toggle between third/first person [i](this isn't actually new but shhhhhhhhh)[/i]\n[/list]\n\n[h1]FIXES[/h1]\n[list]\n[*] Fixed server sending player state for players while they're being spawned\n[*] Fixed crash during join-in-progress if a team change was called on a player that wasn't fully loaded\n[*] Fixed error spam when joining in progress due to movement sounds\n[*] Fixed error when trying to play announcer lines with no announcer sounds loaded\n[*] Fixed error when closing pause/escape menu between rounds\n[*] Fixed game trying hit detection while not being able to identify who the attacker is\n[*] Fixed maximum RNG roll being 99 instead of 100\n[*] Fixed possible crash when ending a killstreak between rounds\n[*] List of teams / player settings are now cleaned between rounds (this was causing an issue with bots)\n[*] Fixed [i]very important, utmost severe issue[/i] of the Teamkill logo having a seam on the end, due to being set as a repeating texture\n[/list]\n\n\n"
+        },
+        {
+            "title": "Teamkill 0.1.5.7",
+            "date": "2022-04-27 04:54:18",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348798430270198361",
+            "content": "[i]Don't mind the version skip, there was another build that only removed the April fools stuff, that wasn't published[/i]\n\nNothing exciting, just some fixes & hacks this time around.\n\nBeen making some progress towards being able to host dedicated servers, nothing to show for that quite yet but it's in the works!\n\n[b]CHANGES/ADDITIONS[/b]\n[list]\n[*] Hit detection is now handled [b]client-side[/b] to help the issue of higher-ping players having to lead their shots\n[*] April fools voice packs have been removed\n[*] Lowered graphics requirements (Mostly related to antialiasing and shadows/lighting) -- [i]graphics settings options still to-do, I'm sorry!![/i]\n[/list]\n\n[b]FIXES[/b]\n[list]\n[*] Server now sends latest world state to connecting players instead of oldest.\n[*] Server now tries to wait until all players have spawned before sending a world state.\n[*] Spawn protection is no longer a host-exclusive privilege -- [i]it should apply to [b]EVERYONE[/b] now[/i]\n[*] Hide & Seek mode no longer uses spawn protection\n[*] Fixed game-mode settings not applying properly if mode was changed from the lobby screen\n[*] Fixed matches lacking music if host is using custom music packs clients don't have\n[*] Some fixes related to pre-game setup that wouldn't normally occur during regular play, but were causing issues behind the scenes. [i]A LOT to fix here, still. Code is hard.[/i]\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.5.5 - Hotfix",
+            "date": "2022-04-01 10:07:03",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995464045836",
+            "content": "Hello again! \n\nJust a quick update to fix a few issues mostly introduced by the last update... whoops.\n\n[list]\n[*] You should now be able to apply the Teampill mutator from the lobby as well as the main menu\n[*] Fixed issue where modes other than Teamkill wouldn't load properly, sorry about that!\n[*] I've tried extending the spawn protection timer from 1.5 seconds to 2.5 seconds, hopefully this will help a little in the case of weird spawn points.\n[*] Falling to your \"death\" on Skylines in Team-Teamkill shouldn't try to punish you by putting you on your current team anymore\n[/list]\n"
+        },
+        {
+            "title": "Teamkill 0.1.5.5",
+            "date": "2022-03-31 20:33:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995461988608",
+            "content": "Hey guys, it's been a little bit since the last update, and making new things is hard, so I've decided to stop doing that so I can bring back the old.\n\n[b]CHANGES/ADDITIONS[/b]\n[list]\n\n[*] [b]TEAMPILL IS REAL![/b]\nAfter much consideration, I've decided to finally revert back to the good old days of pre-Steam Teamkill in the form of the [b]Teampill[/b] mutator plus new mutator system allowing for some changes to gameplay that don't warrant their own gamemodes, hopefully allowing for some more options down the line.\n\n[*][b]A TON of Teampill exclusive voice lines, [spoiler]from 3 new announcers and a new Teamguy voice this week only[/spoiler] [/b]\n[*][b]New music track, \"FF6C00\"[/b], by me, Niko :)\n[*] Made post-match cameras more exciting\n[*] Updated how player and announcer voices are handled\n[*] Credits updated\n[*] Confiscated Teamguy's grape soda\n[/list]\n\n[b]FIXES[/b]\n\n[list]\n[*] Fixed rare issue where server would send an invalid world state and crash clients\n[*] Fixed issue where Host Menu options would constantly refresh while entering changes\n[*] Fixed issue where new player information would be sent twice when changed, in lobbies\n[*] Fixed issue where the options menu wouldn't show the right values\n[*] Reversed weird backwards IP workaround thing, since the issue has been fixed\n[*] Current gamemode information/settings now clears when disconnecting from a server\n[*] Added some checks to make sure game resources aren't being cached twice at startup\n[*] (Hopefully) fixed lobby screen not updating properly when new players join\n[*] Replaced the locks on the Teampill cabinet\n[/list]\n\n\n\n\n\n\n\n"
+        },
+        {
+            "title": "Teamkill 0.1.5.4",
+            "date": "2022-03-05 02:47:00",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367436921875",
+            "content": "Small update once again, but an update nonetheless!\n\n[b]FIXES[/b]\nIt's ALL fixes this time around... but these were fairly important and also means some fun stuff is now working like the [b]achievements [/b] :)\n\n[list]\n[*] [b]ACHIEVEMENTS[/b] - All the achievements should now be working and unlockable [i]...finally... until I add new ones and magically break something, somehow...[/i]\n[*] Gamemode settings options [i]should[/i] work more reliably now\n[*] Game shouldn't crash when checking if an address is an IPv6 address anymore\n[*] Stopped server from spamming connecting players with information while loading/joining in progress\n[*] Stopped players from sending player information to server while loading\n[*] Kills, collaterals and teamkills [i](hehe)[/i] are now being tracked properly in rounds (and Steam stats!) \n[/list]\n\n\n"
+        },
+        {
+            "title": "Teamkill 0.1.5.3",
+            "date": "2022-02-24 13:08:02",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832508871416",
+            "content": "Another small update, but this time it has a smidge of content in it :)\n\n[b]WHAT'S NEW[/b]\n[list]\n[*] [b]Kill Mode[/b] - Very early game mode using a health system on players. Currently it's Teamkill mode, but with 5 lives per player before swapping teams. (this will be adjustable in-game soon)\n[*] [b]Health system[/b] - soon to be adjustable in the Host Menu, but currently in use for Kill Mode to act as \"lives\"\n[/list]\n[b]FIXES[/b]\n[list]\n[*] Game shouldn't crash when given IPv6 addresses in config file anymore\n[*] Game will now double-check the received IP when grabbing IP address automatically for hosting games\n[*] Server should only try to end spawn protection when firing, if they actually had spawn protection\n[*] Kill/Hit sound effects should change volume based on SFX instead of master volume\n\n\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.5.2 Hotfix-hotfix (this is embarassing)",
+            "date": "2022-02-19 13:54:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335198900571774",
+            "content": "Reverted to GodotSteam 3.12 because something weird was going on with game server IPs :)\n\nNew feature: Config file allows you to manually override IP address for hosting"
+        },
+        {
+            "title": "Teamkill 0.1.5.2 (hotfix 2: Electric Boogaloo)",
+            "date": "2022-02-19 12:53:47",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335198900417385",
+            "content": "Hi again!!\n\nHere's a few quick fixes, hopefully this will make things just a little bit smoother!\n\n[b]CHANGES[/b]\n[list]\n[*] Removed data compression from player states being sent to server to try to improve server performance\n[i](I think having to decompress tons of player states when packets were being lost was messing with things.. and I think there was a layer of compression on top of this ALREADY..)[/i]\n[*] Testing some super basic spawn protection for the first 2 seconds of round start, cancelled when someone shoots\n[/list]\n\n[b]FIXES[/b]\n[list]\n[*] Teamguy can be heard from further away\n[*] Fixed player info being sent to host even when changing unrelated settings\n[*] If host is using custom MusicPacks someone doesn't have, it should now pick a random track instead of being dead silent for that player\n[*] Host shouldn't have their music changed between rounds anymore\n[/list]"
+        },
+        {
+            "title": "Teamkill 0.1.5.1 (hotfix)",
+            "date": "2022-02-18 15:04:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335198897107519",
+            "content": "It's a very small set of changes, but here's some very quick fixes to try and improve performance just a little bit :)\n\n[b]FIXES[/b]\n[list]\n[*] Respawn should be a bit more consistent and shouldn't get you stuck at the bottom of Skyline\n[*] Commented out some very spammy print statements that were probably lagging things a little behind the scenes (sorry about that)\n[*] Hopefully, server shouldn't spam as many requests to change the player's team every time a team change happens\n[/list]\n\n\n"
+        },
+        {
+            "title": "TEAMKILL EARLY ACCESS",
+            "date": "2022-02-15 13:22:59",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6154735015633062060",
+            "content": "After SEVERAL months, Teamkill is finally launching in Early Access this Thursday 10 AM PST! I hope I get to see you destroy me at my own game, and inevitably find bugs aplenty!\n\n\n[url=https://discord.gg/g3Dt2HEMkc]By the way.. did you know there's a Teamkill Discord?[/url]"
+        }
+    ]
+}

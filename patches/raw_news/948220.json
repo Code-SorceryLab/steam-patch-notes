@@ -1,0 +1,96 @@
+{
+    "appId": "948220",
+    "count": 15,
+    "notes": [
+        {
+            "title": "Fix 07.04",
+            "date": "2022-12-05 21:11:37",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4979322040033263164",
+            "content": "- Fixed bug that would insert black into the remapping process even if there was no black in the palette.\n- Dither Overlay opacity now is set to 0.03 when first added to an image. Slider has been adjusted to make working with lower opacities more practical.\n- Alpha Threshold filter no longer has a opacity slider.\n- Internal update of the effects system that will make it easier to add new effects in the future."
+        },
+        {
+            "title": "Build 06 - Adobe Swatch Exchange format support",
+            "date": "2022-08-17 05:31:48",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4584121659776579760",
+            "content": "- Adobe Swatch Exchange (*.ase) files can now be imported and exported as palettes. These are mainly used for Adobe Illustrator and Affinity Designer."
+        },
+        {
+            "title": "Build 06 Fix",
+            "date": "2022-07-11 06:01:33",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4539082035573200576",
+            "content": "[list]\n[*] Add \"Alpha Threshold\" Effect\n[*] Add Open File and Open Location context menu\n[*] Fix black Image export\n[*] Fix Remap instances sharing dynamic remap settings\n[*] Prevent actions while Window is not focused\n[*] Dont trip img.load error message\n[*] Fix Deletion Undo\n[*] Fix trying to reacquire UDP socket every frame if it failed before\n[*] Round color values when exporting to palette file to stay consistent\n[*] Properly handle palette files with missing labels\n[*] Fix palette labels not getting exported\n[/list]"
+        },
+        {
+            "title": "Build 06 Patch 1",
+            "date": "2022-04-01 10:19:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995464078464",
+            "content": "- Fixed broken reference images in plain palettes (ColorGraph palettes were unaffacted)\n- Fixed \"Import Colors\" freezing the program in some cases\n- Reference images now properly save the position and size of their window as was intended"
+        },
+        {
+            "title": "Build 06 - Effect System Overhaul",
+            "date": "2022-03-21 06:37:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535841694668",
+            "content": "[img]{STEAM_CLAN_IMAGE}/33784061/239a21c72b3e3870c2ff6b6fcb52cca59c6219f5.png[/img]\n\nThe effect system for reference images has been completely revamped. Every effect can now be applied multiple times, has a opacity slider and the order of effects can be changed. Also all effects can be applied after remapping if so desired.\n\nThis is a huge change in the internals of ColorTool and paves the way for a major feature in the next release and other additions over time.\n\n[h3]New Effect: Rotate Hue[/h3]\n\nAllows you to adjust the hue of an image, and by adding an hue-multiplier to make an image overall more colorful, bringing out the hue-shifts more. This is intended to prepare otherwise rather monotone images to be remapped to more colorful palettes.\n\n[img]{STEAM_CLAN_IMAGE}/33784061/23453927566fc1380aa27d240c9812c9eef1081b.png[/img]\n\n[h3]New Effect: Replace Color[/h3]\n\nThere is two variants of this effect, the first replaces a single color in the picture with another. This is very useful to change the color of lights or shadows in an image.\n\n[img]{STEAM_CLAN_IMAGE}/33784061/bed685db79036cd3bddd03a8a70a709cd20cfb67.png[/img]\n\nThe second replaces a band of colors with a different band of colors and is intended for more specific tasks as changing the color of a material. It might be a bit tricky to use sometimes though since ColorTool doesn't have any masking capabilities.\n\n[img]{STEAM_CLAN_IMAGE}/33784061/a78169cee263132843c39210efc1c3552ea0d485.png[/img]\n\n[h3]New Effect: Preserve Lumiance[/h3]\n\nThis effect is meant to be used in conjunction with the Rotate Hue and Replace Color effects. Since changing the hue also changes the luminance of a color it can mess up the image. By using this filter you can reset the luminance to the luminance of the original image while preserving any hue changes.\n\n[h3]Quick Navigation dock[/h3]\n\n[img]{STEAM_CLAN_IMAGE}/33784061/add68a8cfdd5a26cd22d8ea42a4d6297d411f917.png[/img]\n\nAllows quickly navigating between multiple folders, making it easier to access your collection of reference images or palettes.\n\n[h3]Math expressions[/h3]\n\n[img]{STEAM_CLAN_IMAGE}/33784061/bf4769841f020aaceec78c106d58080838d10471.png[/img]\n\nSlider boxes (those red value input thingies) now accept common math expressions, such as multiplying or adding an value. Some mathematical functions are also available.\n\n[h3]Other Changes[/h3]\n[list]\n[*] Added the \"Paste Reference Image\" action to the context menu.\n[*] Fixed Paint.NET palette export bug.\n[*] Fixed crash when trying to import more colors than there are in a picture.\n[*] Remapping now automatically gets disabled if the palette has 0 colors.\n[*] Added a \"Report Bug\" entry in the \"Help\" menu. This opens the appropriate thread in the Steam Forums.\n[*] Added a option to enable/disable the automatic sorting of palette entries.\n[*] Added fallback fonts for non-latin writing systems, displaying them properly when used in filenames and as labels. (Chinese, Japanese, Arabic, Bengali, Gujarati, Gurmukhi, Hebrew, Tamil, Korean, Thai and more...)\n[/list]\n\n[h2]Roadmap to Version 1.0[/h2]\n\nWith this release ColorTool is inching much closer towards v1.0, e.g. the end of Early Access.\n\n[h3]Build 08[/h3]\n\nBuild 08 is planned to introduce the last major feature before release: Export Sets.\n\nExport sets will be a replacement for the old, buggy and frankly not very well thought out bulk export feature. They will allow importing several palettes and images into a single file, setting up effects for them and then exporting them in bulk. This is targeted at game developers who want to manage either color variations or just color coordination over a large amount of files. Think of JRPGs which have stronger or boss variants of common enemies, strategy games that use different color palettes for different players or fighting games with palette swaps.\n\nThis is heavily connected to the Effects system introduced in the current version and there will be a few additions and performance improvements too.\n\n[h3]Build 09 / Version 1.0[/h3]\n\nFinally Version 1.0 will clean up all the lose ends to make sure ColorTool is ready to use and will mark the end of the Early Access phase.\n\nThis means in particular:\n[list]\n[*] Add tool-tips giving basic information on most properties and functions.\n[*] Add context menus in all the places you would expect them to be and add overhaul the existing context menus.\n[*] Add some quality of life features.\n[*] Create at least one tutorial video to give people a general idea on how to use ColorTool.\n[*] Solve existing performance bottlenecks so it runs buttery smooth on a wide range of hardware.\n[*] Extensive testing and bug fixing.\n[/list]"
+        },
+        {
+            "title": "ColorTool Build 05 Fix",
+            "date": "2020-10-19 04:48:12",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5422856308625610777",
+            "content": "- Fixed a bug that frequently caused a crash when deleting objects.\n- Fixed a bug that occasionally caused a crash when generating a preview for exporting as palette.\n- Fixed ColorTool not showing the proper icon in the task bar.\n- Fixed ColorTool opening a console window when starting.\n- Added the option to create a new Palette document in the File menu.\n- When saving a Palette document it now shows the proper file endings."
+        },
+        {
+            "title": "Build 05 Hotfix",
+            "date": "2020-10-02 09:18:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3807188575852574394",
+            "content": "- Fixed a bug where ColorTool would crash when deleting colors"
+        },
+        {
+            "title": "ColorTool Build 05",
+            "date": "2020-09-25 08:35:31",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3715990047698025134",
+            "content": "Welcome to build 05. This version brings a slew of minor improvements that together, should turn ColorTool in a much more robust software.\n\n[h2]Performance Improvments[/h2]\n\nThe automatic palette sorting as well as the image analysis have been ported to C++. They should be up to 100 times as fast as before and delays within processing should be far less noticible.\n\n[h2]Copy & Paste[/h2]\n\nCopy and Paste functionality has arrived in ColorTool. You can copy nodes and colors from one document to the other.\n\nWhenever you copy colors from a palette it will also create, allowing you to very quickly import colors from ColorTool into your drawing application, just through copy & paste.\n\nPressing Ctrl+Shift+V will put whatever image you have in your clipboard and imports it as reference image.\n\nYou can also export a reference image directly to the clipboard rather than to disk.\n\n[h2]Copy Settings[/h2]\nTwo small icons have been added to the properties dock, they allow you to quickly copy the settings of a ramp or image to other ramps or images.\n\n[img]{STEAM_CLAN_IMAGE}/33784061/85502f2940d59bbffcba28260b278ddbad226460.png[/img]\n\n[h2]Native File Dialogs[/h2]\n\nAll file dialogs are now native, making navigating the file system a bit more familiar.\n\n[img]{STEAM_CLAN_IMAGE}/33784061/733770640636947c9ebcbdca83c6cfa4a7c8353e.png[/img]\n\nThis can be disabled in the settings.\n\n[h2]Import Colors[/h2]\n\nYou can now import from a image. This action can be found in the properties of a reference image.\n\n[img]{STEAM_CLAN_IMAGE}/33784061/a13b879e73d62cb5decc8373b7bab0c30bad5e9f.png[/img]\n\n[h2]High quality Lanczos interpolation for reference images[/h2]\n\nA new interpolation setting has been added to the \"Resize Image\" effect where you can use the high quality \"Lanczos\" interpolation which creates a much smoother image.\n\n[img]{STEAM_CLAN_IMAGE}/33784061/2c0530a94123ca4fedb3ee64bdc6766b42813d30.png[/img]\n\n[h3]Other changes[/h3]\n\n- New actions: Horizontal Flip (Ctrl+H), Vertical Flip (Ctrl+V).\n- ColorTool has been updated to use Godot 3.2.3\n- The accuracy of the Dynamic and Static remapping has been improved, so that if a image is remapped to it's own palette it won't actually change any of the colors.\n- Minor UI improvements.\n- Updated application icon on Mac, added Retina versions of icon.\n- Windows now uses the size-appropriate native icon in the toolbar.\n"
+        },
+        {
+            "title": "Build 04 - Undo Crash Hotfix",
+            "date": "2020-02-17 17:13:29",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3183419193843167371",
+            "content": "- Fixed A bug which caused ColorTool to crash when redoing creating a color or undoing deleting a color.l"
+        },
+        {
+            "title": "Build 04 Hotfix",
+            "date": "2020-01-26 18:15:58",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2597949245059470597",
+            "content": "- Fixed a bug where exporting a palette as image wasn't working properly"
+        },
+        {
+            "title": "ColorTool Build 04",
+            "date": "2019-12-21 11:16:45",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573855048250",
+            "content": "Welcome to Build 04. This build overhauls the way ColorTool handles and generates palettes, laying the groundwork for future releases.\n\n[h1]Curve-Settings Overhaul[/h1] [img]{STEAM_CLAN_IMAGE}/33784061/57ea0cc0b05ba66d076518b3f050cc7e2b18b07a.png[/img]\nThe curve settings were overhauled and are now much more powerful.\n\n[h1]Plain palette loading and editing[/h1] [img]{STEAM_CLAN_IMAGE}/33784061/8115645ef47160a14b68fa64f665120aee82df23.png[/img]\nYou can now load plain palettes such as .gpl or .aco files. This will give you a rudimentary way of editing these files, as well as using them for remapping images.\n\n[h1]Automatic Color Sorting[/h1] [img]{STEAM_CLAN_IMAGE}/33784061/c662206c1999ad794c37a05e717be52d452ceb37.png[/img]\nBefore, the colors would be added to the palette in the same order they were created.\n\nBuild 04 instead introduces a smart sorting algorithm that makes sure that similar colors are placed closely in the resulting palette.\n\n[h1]Palette-Arrangements[/h1] [img]{STEAM_CLAN_IMAGE}/33784061/a3514783155683a6f3bce1af582eb37384c1325d.png[/img]\nYou now have full control over where each ramp in the palette will end up in.\n\nYou can also give each color and each ramp a name. These will be used when exporting to a palette file\n\n[h1]Misc[/h1] - [b]Fixed[/b]: \"Grabbers\" for creating connections between nodes disappeared after they were used once.\n- [b]Fixed[/b]: Vertical Hue bar wasn't updating properly.\n- [b]Fixed[/b]: It was not possible to redo the most recent color change.\n- [b]Fixed[/b]: Undo steps for documents were created for every auto-save, even if the document itself wasn't changed.\n- [b]Fixed[/b]: Fixed a few bugs related to how effects where handled when loading and saving files.\n- [b]Improvement[/b]: There is now a limit to how many subfolders and entries the program will try to display in the directory view, which could have caused trouble when working with directories with many subfolders.\n- [b]Improvement[/b]: Added an option to open the destination folder after exporting.\n- [b]Wider Scrollbars[/b]: This should make it easier to navigate the UI using a Stylus.\n- Updated icon and splash screen.\n- Added a Discord button to the home screen.\n- Removed batch export functionality, sorry about that. It was a buggy, unreliable mess and needs to be redesigned from scratch."
+        },
+        {
+            "title": "ColorTool Build 03",
+            "date": "2019-05-25 05:16:43",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2408775863525760909",
+            "content": "6th Jun 2019:\r\n- Fixed: Crash when Moving/Rotating/Scaling things when the focused object was not part of the Selection\r\n- Fixed: Reference Image getting input even when invisible\r\n- Fixed: Mouse Cursor not correctly updating\r\n- Fixed: Really old .clrpal files could not be loaded properly\r\n\r\n27th May 2019:\r\n- Hotkeys on Mac now use Command key instead of Control key\r\n- Color picker can now be zoomed in up to 4x (was 2x)\r\n- HCY color picker now uses 2.4 gamma instead of 2.0\r\n- Fixed: Changing the color sliders from HSV to HCY wouldn't update the values of said sliders.\r\n\r\n25th May 2019:\r\n- Experimental Mac Support\r\n- Support for older Linux versions (Ubuntu 14.04 and up)\r\n- Internal: Ported from Godot 3.0 to 3.1\r\n- New color space: HCY (Hue, Chromaticity, Luminosity)\r\n- Color picker can now be switched between using HSV and HCY\r\n- Hotkey for Dragging Connections between colors. (c)\r\n- Fixed: Splitting a ramp would sometimes use the wrong color.\r\n- Fixed: Linear HSV color space wasn't working as intended."
+        },
+        {
+            "title": "ColorTool Build 02",
+            "date": "2019-04-24 08:25:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2432417221731979344",
+            "content": "- New Remapping Mode: Basic\r\n- Overhaul of the UI theme\r\n- Overhaul of the Reference Image UI\r\n- Minor UI tweaks\r\n- Internal: Effect System\r\n- Internal: Improvements to the file format that allows for better forward compatibility\r\n- Fixed: Typo that would save .pal as \"JASK\" files instead of \"JASC\"\r\n- Fixed: Bug that would unexpectedly change the color when changing the color space"
+        },
+        {
+            "title": "ColorTool Build 01",
+            "date": "2019-02-09 11:04:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368392506564",
+            "content": "- New Feature: Ability to \"Collapse\" nodes by pressing Ctrl+Delete\r\n- New Feature: Custom Dither Patterns"
+        },
+        {
+            "title": "Beta 1 Bugfix Release",
+            "date": "2018-11-08 10:49:53",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2423394805997189329",
+            "content": "[b]16 Nov 2018[/b]\r\n[list]\r\n[*] Fixed Batch Export functionality.\r\n[/list]\r\n\r\n[b]12 Nov 2018[/b]\r\n[list]\r\n[*] Fixed a bug which would cause changes to hotkeys not be saved properly.\r\n[/list]\r\n\r\n[b]8 Nov 2018[/b]\r\n[list]\r\n[*] Fixed a critical bug where multiple canvases stayed active even though their tab wasn't visible, causing unexpected behavior.\r\n[*] Fixed a bug where trying to Move, Rotate or Scale without a selection would result in a crash.\r\n[*] Fixed a bug where the dither strength would be reset to the default.\r\n[*] Fixed a bug where changing the color space of a ramp had no effect.\r\n[*] Fixed a bug where using the color picker didn't work properly in Pixel Art mode.\r\n[*] Fixed a bug where ColorTool failed to load a file if the extension contained uppercase characters.\r\n[*] Fixed a bug where document data stayed in memory after the associated tab was closed.\r\n[*] Adjusted some of the defaults to avoid confusion.\r\n[/list]"
+        }
+    ]
+}

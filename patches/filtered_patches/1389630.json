@@ -1,0 +1,90 @@
+{
+  "appId": "1389630",
+  "count": 14,
+  "notes": [
+    {
+      "title": "Update 1.4",
+      "date": "2025-06-16 04:51:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289685291",
+      "content": "[p]The main feature this update adds is gamepad support. The game can now be played using one and all the controls, prompts, menus and user interfaces in general have been adapted for that type of input device, including the in-game computers, that will show a virtual keyboard as part of their GUI in the command line interface to be able to enter commands.[/p][p][/p][carousel][img src=\"{STEAM_CLAN_IMAGE}/38478693/c29d67a6711320ce7bc3c19fa37c2595ef74fa01.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/960500798e5e77cfc61585667984ac2f05d4f01b.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/672ec10cc04403a34e815e3a694e661165d48694.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/0adc817af9fdb52a565b5d33d7ed3ba24d9865e6.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/3d65585413d36640f97940f239cc900d85f0b6c6.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/f80e6ff56e103ecefaecf270220d1d5273e0045c.jpg\"][/img][/carousel][p][/p][p]It's been a bit of work as originally, due to my lack of experience playing with controllers, especially FPS games, and the fact that the in-game computers required being able to type commands, I didn't give it much thought and decided the game would be keyboard and mouse only, so I didn't build things with gamepad in mind. But the last couple of years I've been playing mostly on my Steam Deck so I recently  decided to give it a try and implement gamepad support and a custom virtual keyboard and see how it felt... and I'm pretty happy with the results, hope you feel the same (and that I haven't broken anything / added new bugs :)).[/p][p][/p][carousel][img src=\"{STEAM_CLAN_IMAGE}/38478693/fbef9112b8e3a909d7f1cea47fc383f4f73cbc3b.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/b5ca8f77aba4061931e45b6f9019dab361210858.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/fc759e988347ccae7306703dface59965569ce51.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/0e05846e896f16061e08ab6f6faef03f9cf7a69f.jpg\"][/img][img src=\"{STEAM_CLAN_IMAGE}/38478693/eb465a252894310046ff88a17596e9b1ce985e71.jpg\"][/img][/carousel][p][/p][p]I've also included a bunch of new configuration options, some gamepad specific (dead zones, sensitivity curves, buttons mapping...) and others related to accessibility (image brightness and gamma correction, UIs scaling, toggle/hold options for running and aiming, separate audio levels for SFX and UI sounds...).[/p][p][/p][p]Hope you like it![/p][p]\u00c1lvaro[/p][p][/p][p]P.S.: I've added custom button prompts for Xbox, Dualshock and Steam Deck controllers but I have only tested the game with an Xbox 360 controller and the Steam Deck, as I don't own a more modern Xbox or Dualshock one and they are too expensive for me to buy just for testing so, although the correct ones should show depending on the type of controller, I haven't been able to test all possibilities with real hardware.[/p]"
+    },
+    {
+      "title": "Patch 1.3.6",
+      "date": "2025-05-02 05:09:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487630913",
+      "content": "- Fixed a door being unlocked in level 11 that shouldn't be (it leads to an empty room so it really wasn't that important).\n- Fixed part of the bathroom floor intersecting with the vents floor in level 9.\n- Fixed a few interactive objects' outline showing artifacts when the vertical FOV is set to high values."
+    },
+    {
+      "title": "Patch 1.3.5",
+      "date": "2025-04-27 07:16:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624555003",
+      "content": "- Made some changes to the level loading code to try to fix a rare bug that makes the global illumination not load correctly in some computers and only some times, making the levels appear very dark, not properly illuminated when that occurs (and just reloading the level would often fix it). This bug has been haunting me for a long time, was never able to reproduce it but kept seeing it rarely but from time to time in videos. I thought I had found a fix in version 1.3 based on some info I found, from developers describing similar issues, but I saw a video yesterday of it happening in version 1.3.4 so I've made some changes again to tweak a bit my old solution that I'm hoping will fix it (it at least fixes some strange error messages that I found in the logs that seemed related to the global illumination and pointed me to change the moment I make a call to recalculate the illumination during the load that is the base of the fix, so at least it did something). Let me know if that's not the case and it still happens to you.\n- Fixed 100% best scores from a version 1.2 save being replaced with lower scores in version 1.3 when a level that now has more objectives was completed with a lower score with the new version (you then had to complete it at least once again with a 100% score with the new version to get it back). The saves store your best number of objectives completed and the maximum number that can be completed, so if you previously had a 100% in the save (your best was equal to the maximum) and didn't complete all the objectives this time, when the save was updated the maximum number of objectives was being updated with the new value, which is now higher, and when your old best number was being compared to the updated maximum it no longer was considered a 100%. Now I previously check if the maximum has changed, which will mean it was saved with version 1.2, and if the best is equal to the stored maximum I assign the new maximum to both and the 100% should be respected. Sorry if you experienced this, I didn't think about it soon enough to have fixed it before I released version 1.3."
+    },
+    {
+      "title": "Patch 1.3.4",
+      "date": "2025-04-25 04:57:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624487127",
+      "content": "- Changed the position of one of the security cameras in level 9 so it doesn't have a direct view of the computer that can access it.\n- Disabled the command line interface in the generator computers by default.\n- Fixed some animations with root motion for the walking turrets and bots moving them slower than they should or not at all at very high framerates.\n- Fixed the computer's UI showing the icon for the disk drive, a:, in the desktop computers even if they didn't have one.\n- Fixed bottle shards not disappearing after a few seconds as they were supposed to.\n- Fixed the scissor lifts not running over the bots while moving in some circumstances.\n- Fixed a misaligned alarm light in level 13.\n- Fixed some misaligned wall and ceiling textures in the small room in level 7."
+    },
+    {
+      "title": "Patch 1.3.3",
+      "date": "2025-04-22 13:46:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861805708",
+      "content": "- Changed the symbol in the yellow 'NPC is suspicious' alert indicator from an exclamation mark to a question mark to further differentiate it from the red one used to indicate 'Enemy/Player detected'.\n- Fixed receiving fall damage when exiting a ladder from the bottom if it had been entered by grabbing it while falling from a big enough height."
+    },
+    {
+      "title": "Patch 1.3.2",
+      "date": "2025-04-19 05:08:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861698908",
+      "content": "- Tweaked the positions of the new hints in level 6.\n- Fixed being able to reach from the outside the buttons of the scissor lift from a certain angle in level 9."
+    },
+    {
+      "title": "Patch 1.3.1",
+      "date": "2025-04-18 04:25:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861665262",
+      "content": "- Tweaked the location and/or some of the hints for two of the origamis in level 6 to make them a bit easier to find."
+    },
+    {
+      "title": "Update 1.3",
+      "date": "2025-04-17 05:44:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861633923",
+      "content": "This update brings an extensive overhaul of many of the game's components: tweaks to all the levels to improve their design, visuals, the amount of different ways they can be completed and how they fit together progress-wise (with levels 1 and 15 redone from scratch); enhancements to how things work internally (interactions, enemy AI, performance...); changes to some of the models and the inventory, HUD and other user interfaces (including quality-of-life upgrades); edits and rewrites to all the tutorials and documents (and the way they're presented); fixes for some small issues and bugs, new achievements...\n\nIt's been quite a big undertaking but I'm really happy with how things have turned out. \n\nI've tested it as much as I've been able to but so many things have changed that I'm a bit afraid of having missed something. Please, let me know if there are any issues (I'll create a new topic in the discussions for this update for bug reports and feedback) and I'll try to fix them as soon as I can but, with a bit of luck, there won't be any disastrous bugs and people will be able to enjoy it.\n\nHope you like it!\n\n\u00c1lvaro\n\n[img]{STEAM_CLAN_IMAGE}/38478693/62a8aca07f96a5d687a5cbc5f60afbc80636e97d.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/38478693/795478ed454d57d7df59570420b658680056bcb9.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/38478693/171019bca37f720d291eea6ee61762ad1b0391ce.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/38478693/e70aa7e039c7e67b0251eccc4433e9b57052e48c.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/38478693/be77af53bccd47613e297185acd08867bd392083.jpg[/img]"
+    },
+    {
+      "title": "Dev Log: Working on Update 1.3",
+      "date": "2025-03-10 12:55:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379507149",
+      "content": "[img]{STEAM_CLAN_IMAGE}/38478693/d5ba3399f9919b15a2a598222295739624d6fa58.jpg[/img]\n\n[h2]I'm back at it[/h2]\n\nAfter having to put it aside for a long time, due to personal circumstances, lately I've started to get back into game development working on a new update for \u201cHigh Entropy: Challenges\u201d. Although it's going slowly and there's still work to do, I'm really happy with how it's shaping up and close enough to the final result that I feel like I should share here some info and work in progress screenshots of what will, hopefully, one day become update 1.3.\n\n[img]{STEAM_CLAN_IMAGE}/38478693/c212a879840b90e8b3123aeb1c44d44b88d5c2fc.jpg[/img]\n\n[h2]What\u2019s changing?[/h2]\n\nThis will be quite a comprehensive update of the current content, a lot having to do with how things work internally but also with some of the visuals and level design. I've been tweaking all the levels to improve their design, how they look and how they fit together progress-wise (and redoing levels 1 and 15 from scratch), adding more paths to some of them so most can be completed in different ways, enhancing some of the models and the inventory, HUD and other UIs design, fixing some small issues and bugs, improving/rewriting the tutorials and documents... \n\n[img]{STEAM_CLAN_IMAGE}/38478693/b6adda9f95043511825a93d30aa712f713eb28e9.jpg[/img]\n\n[h2]When will it be ready?[/h2]\n\nNo idea. I'm really eager to being able to share this update with everyone as soon as it\u2019s completed and, as I said, things are now close to what I envisioned for this update, but can't make any promises as to if or when that'll be possible, as I still don't know if at any time I'll have to stop again for a while or how long will it take me to finish what\u2019s left to do and test it all.\n\n[img]{STEAM_CLAN_IMAGE}/38478693/21a420001186f1e398a81e4d1321a5da5feba42d.jpg[/img]\n\n[h2]What about the full game?[/h2]\n\nI still dream about / plan on making \u201cHigh Entropy\u201d, the extended/commercial version of the game, a reality and some of the changes this update will introduce come from work I made and are making for that but, for now, I\u2019m trying to focus on making this update for \u201cChallenges\u201d as a way to get into the rhythm of things, gain confidence, and later on restart really working on it. We\u2019ll see what happens\u2026 First of all I need to finish this update :)\n\n[img]{STEAM_CLAN_IMAGE}/38478693/ff3fd55cbd5456ac8638eaef661a9a5d093f9073.jpg[/img]\n\n[h2]Thanks!![/h2]\n\nI just wanted to take this opportunity to give thanks to everyone that\u2019s tried the game and for all the kind, positive feedback and words of encouragement I\u2019ve gotten since release. I really, really appreciate it and truly helps me keep motivated.\n\nThanks a lot!\n\u00c1lvaro"
+    },
+    {
+      "title": "Patch 1.2.5",
+      "date": "2021-01-15 05:19:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4483864038805545653",
+      "content": "Besides the usual small improvements and bug fixes (you can check the [url=https://steamcommunity.com/app/1389630/discussions/0/4578439633197984961/]full changelog[/url] in the discussions), this version also includes a bunch of more significant updates, like modifications to the movement code to try to eliminate the stuttering some players were noticing and changes to the beginning and endings (especially ending B) to make them more visually unique and cohesive and add a few extra details, so they fit better with the changes I've been making so far for the story mode I'm working on.\n\nBut the most important one is a new experimental save system allowing to save the progress in a level (with some limitations). This save system is disabled by default (you can enable it from the settings>gameplay menu) as it still needs testing and future versions may make older saves incompatible if a fix requires it, but hopefully it will work fine as it is and it will only require some more testing and small bug fixes at best.\n\nOnce I make sure it works fine, my plan is to make it available by default in a future update, but in the meantime I've created a[url=https://steamcommunity.com/app/1389630/discussions/0/4578439633197964228/] topic in the discussions[/url] with more information and for people who want to help me test it to leave feedback. \n\nThanks for playing,\n\u00c1lvaro"
+    },
+    {
+      "title": "Patch 1.2.4",
+      "date": "2020-11-22 07:52:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3856732771964259440",
+      "content": "This update adds a new batch of bug fixes and improvements, the most interesting probably being the following: the computers now have a help command that opens a GUI with info about some basic commands, after reading an important document it's saved in the inventory and can be read again from there, a couple new setting options to help those with motion sickness, some adjustments to the enemies' hitboxes...\n\nYou can find the [url=https://steamcommunity.com/app/1389630/discussions/0/2971775284264436566/]full changelog[/url] in the discussions.\n\nThanks for playing,\n\u00c1lvaro\n\n"
+    },
+    {
+      "title": "Patch 1.2.3",
+      "date": "2020-10-21 05:52:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3895010671332941217",
+      "content": "Thank you so much for all the positive and constructive feedback (reviews, videos, topics in the discussions...) Helps me a lot to keep motivated and improving the game.\n\nThis update adds a bunch of bug fixes and improvements, the most important probably being a fix for a bug in the save system where, in some cases, if the player's windows username contained non-english characters the save file wasn't being created correctly. So, if your level unlocks and scores were not being saved and/or loaded before, hopefully it will now work.\n\nAlso loading and reloading levels from the menu is now slightly faster, there's a new settings' option to limit the frame rate...\n\nYou can find the [url=https://steamcommunity.com/app/1389630/discussions/0/3012305144364101923/]full changelog[/url] in the discussions.\n\nThanks for playing,\n\u00c1lvaro"
+    },
+    {
+      "title": "Patch 1.2.2",
+      "date": "2020-09-17 12:39:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206267981724",
+      "content": "A minor update to add some bug fixes and improvements. You can find the [url=https://steamcommunity.com/app/1389630/discussions/0/2951503378097612213/]changelog[/url] in the discussions.\n\nThanks for playing,\n\u00c1lvaro"
+    },
+    {
+      "title": "Patch 1.2.1",
+      "date": "2020-09-14 05:51:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521693137839",
+      "content": "Thanks a lot to everyone who made posts in the discussions section, reviews, youtube videos... since the release of the game. This update is based on all that feedback and encouragement and adds a bunch of bug fixes, tweaks and improvements. You can find the [url=https://steamcommunity.com/app/1389630/discussions/0/4158467629236657638/]changelog[/url] in the discussions.\n\nHope you like it,\n\u00c1lvaro"
+    }
+  ]
+}

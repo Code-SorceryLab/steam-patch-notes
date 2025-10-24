@@ -1,0 +1,18 @@
+{
+    "appId": "2005750",
+    "count": 2,
+    "notes": [
+        {
+            "title": "3.2 Widescreen, resolution settings, button remapping",
+            "date": "2022-08-26 17:17:41",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316500007550032",
+            "content": "Apparently most people have widescreen monitors and not 4:3 CRTS? Huh, ok.\n\nSo now there's screen settings within the options. These include resolution settings, so that you can play in a desired resolution when windowed, or in a fullscreen resolution if the auto polling isn't your desired resolution. There's also now a \"Fillscreen\" setting in there, which will make the game widescreen. Instead of just stretching everything though, it only stretches the backgrounds. Sprites for the player and the items go unstretched (text too, because that looks awful stretched), which might make collision a little worse in the x direction, but it tested fine for me. Though you can still turn stretched textures on too in the options.\n\nThere's button remapping in the options now too, though it only applies to gameplay. I was afraid letting it affect the menus too would make it so in some case the menu would somehow become inoperable.\n\nThis was done as a response to a negative review which mostly complained about the lack of these features, so if you want me to keel to your will all you have to do is leave a negative review!"
+        },
+        {
+            "title": "3.1 25% speed increase",
+            "date": "2022-06-27 21:41:40",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295746266790",
+            "content": "Upon going back and playing version 2.0 of the game, I immediately noticed the character was faster. I did think my character was going a little slow during dev, but I figured all the jumps were set so there wasn't anything I could do to change this. But upon seeing the character used to go faster, I wondered where I screwed up -- and of course it was in type conversion. \n\nCharacter speed was 2.5, but that was getting truncated to just 2. Not in the most obvious way either -- even looking back at the code it wasn't clear where I made the mistake, but it turns out I was doing an int conversion when I should have been flooring it. I guess when you have code that looks like (float)(int)(px - i), you probably did something wrong.\n\nThis should make jumps easier, as well as just getting to places faster in general. It probably unfortunately has the side effect of ruining some of my design in inverted or randomizer, but a speed increase makes the game feel so much better, it really does."
+        }
+    ]
+}

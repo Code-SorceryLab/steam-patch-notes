@@ -1,0 +1,24 @@
+{
+  "appId": "2958290",
+  "count": 3,
+  "notes": [
+    {
+      "title": "1.135",
+      "date": "2025-04-24 16:51:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624471148",
+      "content": "1.135 adds a new layer of polishing to source document sanitization. Which is to say, I've added some regular expression passes to the book processing that hunts down oddities like punctuation for italic text that's sitting outside italic tags (which can produce odd extraneous spaces, due to the text justification pulling apart anything that isn't in the same tag), or unnecessary empty paragraph tags left over from particularly troublesome source files.\n\nThis does mean that book the time it takes to process a book has probably gone up by a second or two, depending on the speed of your machine and the drive you're reading from, but the end result is a more polished product that should require less manual tweaking.\n\nThat is, assuming I haven't broken it entirely."
+    },
+    {
+      "title": "Version 1.13",
+      "date": "2025-01-24 15:38:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505350034",
+      "content": "New Font:\nThe Binder and Reader programs now use the \"Crimson Pro\" font - a neater, more consistent alternative to the Garamond variant that was used before. Additionally, a fix has been deployed for edge-cases involving unintended spaces at the start of paragraphs, and for italic text that might have been getting cut off at the edges of the screen.\n\nNew Features\nThe META_CHARCAP instruction has been added, allowing the user to set a character limit, beyond which a pagebreak will be automatically generated when binding a source file. This allows the user to easily process larger documents without having to manually place every single pagebreak. When the character cap is set, chapter and part headings will also cause an automatic pagebreak, ensuring that new chapters/sections appear on a new page.\n\nThe PGBR_OFF instruction has also been added, to turn off automatic pagebreaks at any point in the document, allowing for fine-tuning of page length.\n\nPlease review the Binder's provided documentation, and re-process your book(s) to benefit from the improvements to both the binder and the reader.\n\nAnd of course, let me know if you encounter any bugs."
+    },
+    {
+      "title": "1.12 - Extraneous space fix",
+      "date": "2024-10-16 09:01:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583172200830",
+      "content": "Added better detection for unwanted spaces at the start of paragraphs resulting from dubious source file formatting tags. Fixed a potential crash when modifying existing books in a package.\n\nPlease repackage your books from their source htmls to benefit from this change."
+    }
+  ]
+}

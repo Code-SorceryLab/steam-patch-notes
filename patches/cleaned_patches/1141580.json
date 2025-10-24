@@ -1,0 +1,336 @@
+{
+  "appId": "1141580",
+  "count": 55,
+  "notes": [
+    {
+      "title": "Update Notes for Build 8.27.2025.5",
+      "date": "2025-08-27 15:42:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871563060",
+      "content": "-Fixed issue where music layers were desynced at startup by the length of the loading screen\n-Fixed a small culling bug near Mine area"
+    },
+    {
+      "title": "Update Notes for Build 5.29.2025.2",
+      "date": "2025-05-29 17:43:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756323524",
+      "content": "-Changed the stick tutorial icons (unified with Switch)\n-Slowed tutorial animations to prevent the idea of hammering on the buttons\n-Fixed the fading behavior of a lantern in the Mine \n-Added some missing music layers in the Mine area"
+    },
+    {
+      "title": "Update Notes for Build 01.06.2025",
+      "date": "2025-01-06 16:36:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1787858252855021",
+      "content": "-Optimizations to marking particles, floor puzzles now use a simpler marking particle system (since it is easy to have many of them in that case)\n-Fixed marking particles on floor puzzles sometimes being rendered even though the puzzle was faded out\n-Fixed a temporal discontinuity in the tile marking pulse that happened every 1000 seconds\n-Fixed being able to click on floor puzzles even if the player character was not standing on them\n-Fixed potential graphics bugs at edge of screen when camera is very zoomed out and moving\n-Fixed map station puzzles sometimes being active for one frame when they come on screen\n-Fixed non-floor puzzles remaining active offscreen if the player was standing at them when they loaded an other save\n-Tweaked some camera zones in the Bonus area to avoid jerky camera motions\n-Tweaked the solve color on a few bonus area puzzles to not be the same as the white symbols\n-Tweaked the camera zoom intensity at the hub area so that cutscene there would be more aesthetic\n-Fixed small graphics error in the bottom right corner of the screen during 100% ending cutscene"
+    },
+    {
+      "title": "Update Notes for Build 12.19.2024.1",
+      "date": "2024-12-19 18:25:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930636146",
+      "content": "-Fixed zoom mode being broken on easternmost Mill area puzzle (which used panel.id #0, which we were erroneously treating as no panel)\n-Fixed fog particles sometimes being scaled down or missing when camera zooms in very close\n-Controls Listing widget no longer creates new material instances on language change"
+    },
+    {
+      "title": "Update Notes for Build 12.18.2024",
+      "date": "2024-12-18 11:34:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786409468847997",
+      "content": "-Zoom mode now triggers for unpowered floor puzzles, as this seems better than previous behavior\n-Fixed a null reference that could happen if the player toggled zoom while in the grace zone around a floor puzzle\n-Fixed ending graphics hiding prematurely under some circumstances as credits appear\n-Fixed a situation where reset tutorial wouldn't show when another solved floor puzzle was on screen\n-Tweaked zoom mode behavior slightly on eastern side of Gardens area"
+    },
+    {
+      "title": "Update Notes for Build 12.10.2024.6",
+      "date": "2024-12-10 18:41:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543473876",
+      "content": "-Fixed bug that would skip the first map unlock animation in each play session\n-Fixed spark particles in Ruins permanently disabling when the area is culled\n-Fixed smoke particles in Mine permanently disabling when the area is culled\n-Fixed area complete torch particles obviously starting their animation when coming on screen\n    (Still seems to happen sometimes, but I can't determine why)\n-Map was still rendering when inactive, if the player had not looked at the map yet this session\n-Orbiting bridges in Endgame area no longer updated when they are off-screen\n-Optimizations to rendering and CPU for the black ending\n-Fix a bit of flickering architecture in the Plateaus area\n-Fixed some collision in the dry river bed"
+    },
+    {
+      "title": "Update Notes for Build 12.09.2024.3",
+      "date": "2024-12-09 19:42:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795750355",
+      "content": "-Fix some culling and fadegroup issues with the ending cutscene (Apologies for so many builds today, but kind of an important bugfix)"
+    },
+    {
+      "title": "Update Notes for Build 12.09.2024.1",
+      "date": "2024-12-09 17:05:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795746853",
+      "content": "-Remove some debug log spam"
+    },
+    {
+      "title": "Update Notes for Build 12.09.2024",
+      "date": "2024-12-09 16:38:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795746397",
+      "content": "-Finalized Korean language translation (including storefront page and achievements)\n-Added a grace zone around pressure plates where zoom stays enabled to reduce weird camera movement between puzzles\n-Fix some small visual bugs in Orchard with sorting and incorrect puzzle scaling\n-Fix potential jittering graphics issues (only seen on Switch, so far) due to scaled or oddly aligned sprites"
+    },
+    {
+      "title": "Update Notes for Build 12.06.2024.4",
+      "date": "2024-12-06 21:26:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795656844",
+      "content": "-Machine Translated Korean language support (Proper translation is still WIP, didn't want to ship yet, but many other bugs needed fixing and it's easier to just ship it than cut it out)\n-Moving platform puzzles were _still_ interactable (been broken since June, my most embarrassing bug lifetime to date)\n-Fixed pre endgame ripple effects which had been broken by recent optimizations\n-Fixed culling being too slow in white ending (fixing the latching fast cull bug caused this one)\n-Fixed issue where camera could zoom out so far that the edges of the screen would be garbled\n-Fixed tutorial hints sometimes being cut off by the edge of the screen if in zoom mode\n-Fixed deculling issues in Ruins and Gardens\n-Fixed issue where floor puzzles could be culled when they were still slightly on the bottom edge of the screen (wasn't accounting for raised tiles in the bounds)"
+    },
+    {
+      "title": "Update Notes for Build 12.04.2024.9",
+      "date": "2024-12-04 18:04:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359223621",
+      "content": "-Fixed race conditions sometimes causing areas (notably Shrine) to fail to decull in ending cutscene\n-Some optimizations to culling behavior in the ending cutscene\n-Fixed 60 fps limit from the loading screen persisting into gameplay on first startup\n-Fixed fast cull state persisting after camera warps\n\nI somehow failed to post the build notes for the prior build (12.04.2024.2), so they are reproduced below:\n\n-Fix framerate limit not being applied at startup\n-Disable map completely when not visible (previously was still being submitted for rendering with 0 alpha)"
+    },
+    {
+      "title": "Update Notes for Build 12.03.2024.3",
+      "date": "2024-12-03 18:07:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359190976",
+      "content": "-Updated from Unity 2021.3.8 to Unity 2021.3.39 (most recent version that didn't run into a stuttering bug with the loading screen) Shouldn't have any particular effect, but was needed for Switch development\n-Optimizations to rendering of black ending effects\n-Fixed small visual deculling bug near Ruins\n-Fixed an issue that could cause the camera to move strangely when launching the game for the first time"
+    },
+    {
+      "title": "Update Notes for Build 11.19.2024.11",
+      "date": "2024-11-19 18:15:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783872411926579",
+      "content": "-Fixed issue where gamepad auto-aim was broken for endgame puzzles (sorry I missed this one since the puzzle panel optimizations in June T_T)\n-Fixed bug where some endgame effects were framerate dependent and would break at high framerates"
+    },
+    {
+      "title": "Update Notes for Build 11.14.2024.5",
+      "date": "2024-11-14 15:07:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125223243",
+      "content": "-Added indicator to load game menu showing endings the player has achieved (this will show nothing on old saves)\n-Fixed load times causing session playtime metric to go negative, which could also cause the pause menu to be inaccessible for many seconds.\n-Fixed a visual deculling bug between the Ruins and Hub areas\n-Fixed \"<<\" option being default selected the first time the load game menu is initialized"
+    },
+    {
+      "title": "Update Notes for Build 11.05.2024.8",
+      "date": "2024-11-05 16:35:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657174073827",
+      "content": "-Fixed bugs where the ending music and sound effects were tied the opposite volume setting\n-Most sound effects now duck gradually in volume when pausing (previously this happened instantly)\n-Fixed bug where locale would get incorrectly set to USA on new game, causing auto-select language to fail\n-Added a persistent Error.log, which will log any error messages permanently\n-Fixed some small bugs that were caused if the player opened the menu very shortly after starting a new game\n-Fixed a small click in some endgame audio\n-Fixed where I had accidentally enabled the cheap Z fade transition (meant for Switch only)"
+    },
+    {
+      "title": "Update Notes for Build 11.04.2024.1",
+      "date": "2024-11-04 22:14:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657174048260",
+      "content": "-Removed the Unity splash, which due to unfortunate interactions with the loading screen, was delaying loading the main scene\n-Fixed a gate in Mine which didn't close when unpowered\n-Various performance and rendering optimizations for the pause menu\n-Compressed some textures in the game, which might reduce startup time on slower hardware, but probably does nothing\n-Fixed a bug where the load game option was sometimes drawn in the incorrect location\n-Fixed an issue where 16:9 aspect ratio was not enforced after starting a new game\n-Fixed an issue where loading a game might skip the fade in animation on slower hardware \n-Fixed a small rendering bug in the black ending"
+    },
+    {
+      "title": "Update Notes for Build 10.29.2024",
+      "date": "2024-10-29 22:33:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173852057",
+      "content": "-Added a loading screen on startup or new game. Could be helpful for slower machines, and I had to make it for the Switch port anyway, so hey!\n-Improved readability of transition between the upper Mill area and the roof of the Production building\n-The death of version.txt! Build version information is now embedded in a ScriptableObject"
+    },
+    {
+      "title": "Update Notes for Build 9.10.2024",
+      "date": "2024-09-10 19:25:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6250522009507404520",
+      "content": "-Small improvement to zoom mode behavior around floor puzzles\n-Some under the hood changes to how save/load functions (hopefully shouldn't affect anything)"
+    },
+    {
+      "title": "Update Notes for Build 8.31.2024.4",
+      "date": "2024-08-31 10:22:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642461803461",
+      "content": "-Fixed one of the area maps not displaying correctly when in zoom mode\n-Tweaked the zoom behavior around floor puzzles in the Mine\n-Fixed a small deculling bug caused by zoom mode in Gardens area"
+    },
+    {
+      "title": "Update Notes for Build 8.31.2024",
+      "date": "2024-08-31 08:29:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642461518661",
+      "content": "-Fixed an issue with zoom mode and not following puzzles that move\n-Fixed an issue where marking tutorial hints were partly off-screen"
+    },
+    {
+      "title": "Update Notes for Build 8.30.2024.2",
+      "date": "2024-08-30 20:49:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642459747629",
+      "content": "-Added \"zoom mode\", which can be used to get a closer look at puzzles as needed\n-Improved general readability of tile marking visuals\n-Tiny camera tweak to optional Ruins puzzle\n-Fixed fast bloom quality setting, which was not having any effect\n-Fixed a small bug where tutorial hints might not show correctly\n-Fixed a bug where Gardens metapuzzle would play sounds when a save game was loaded"
+    },
+    {
+      "title": "Update Notes for Build 8.20.2024.3",
+      "date": "2024-08-20 23:07:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438683013286",
+      "content": "-Fix for some hub area collision that was blocking part of the endgame area erroneously"
+    },
+    {
+      "title": "Update Notes for Build 8.20.2024.2",
+      "date": "2024-08-20 22:56:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438682986222",
+      "content": "-Fix for random objects being disabled if culling was interrupted, which is more serious than it sounds and could produce game-breaking bugs"
+    },
+    {
+      "title": "Update Notes for Build 8.20.2024",
+      "date": "2024-08-20 14:14:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6909171012614654776",
+      "content": "-Fixed issue where player could get out of bounds near the hub\n-Fixed save/load bug where sometimes camera position wasn't loaded correctly\n-Fixed save/load bug where culled areas would not correctly skip animations for doors/metapuzzles"
+    },
+    {
+      "title": "Update Notes for Build 8.15.2024.2",
+      "date": "2024-08-15 18:13:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6909171012597034506",
+      "content": "-Fixed a large performance regression due to area culling having been disabled\n-Small optimizations to Z Fade Transitions\n-Removed music dB processing when not viewing debug info\n-Fixed endgame being visible when it shouldn't have been (possibly due to area culling issue)"
+    },
+    {
+      "title": "Update Notes for Build 7.31.2024.1",
+      "date": "2024-07-31 14:38:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728332320318",
+      "content": "-Fix a softlock bug with the Diamonds area elevator puzzles"
+    },
+    {
+      "title": "Update Notes for Build 6.20.2024.4",
+      "date": "2024-06-20 22:23:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039978197526",
+      "content": "-Fix some visual bugs in the ending"
+    },
+    {
+      "title": "Update Notes for Build 6.20.2024.3",
+      "date": "2024-06-20 18:07:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039977548971",
+      "content": "-Major optimizations to puzzle panel interactions (please report if you find bugs!)\n-Endgame and Bonus areas have now been properly integrated into the new more optimized culling system\n-Fixed some small graphical bugs around area culling being too slow\n-Fixed a bug where the last object in the list for area would sometimes not be culled/de-culled\n-Fixed a small bug where tile marking tutorial graphics would be glitched"
+    },
+    {
+      "title": "Update Notes for Build 6.12.2024",
+      "date": "2024-06-12 16:20:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747236506607794305",
+      "content": "-Fixed major issue where loading saves would not de-cull areas correctly\n-Fixed small sorting bug with footstep grass particles"
+    },
+    {
+      "title": "Update Notes for Build 6.10.2024.1",
+      "date": "2024-06-10 16:09:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972564505418",
+      "content": "-Fixed soft-lock bug where you could clip through the right side exit from Gardens into Orchard (if you were bitten by this bug, try to contact me and I can get your save fixed)\n-Areas are now culled over 2/3rds of a second instead of in one frame, which should reduce hitching (might introduce a bug, but haven't seen any)"
+    },
+    {
+      "title": "Update Notes for Build 6.3.2024.1",
+      "date": "2024-06-03 20:48:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639346412500",
+      "content": "-Fixed command buffers leaking onto the render stack every time the game is paused and a screenshot is taken (was a new bug introduced in 5.30.2024.2)\n-Reduced overscan when rendering, which should net a small performance win"
+    },
+    {
+      "title": "Update Notes for Build 5.31.2024.2",
+      "date": "2024-05-31 22:27:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639335729188",
+      "content": "-Fixed a visual discontinuity when fading out floor puzzles which had been introduced in the previous build"
+    },
+    {
+      "title": "Update Notes for Build 5.30.2024.2",
+      "date": "2024-05-30 17:53:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639331390402",
+      "content": "-Flipped some rows in the graveyard colony puzzles\nMany performance optimizations:\n-Player physics now always runs at 60hz and is interpolated to the final framerate, this should fix consistency problems at high framerates, and increase maximum framerates\n-Composite colliders in the intro islands do less unnecessary compositing\n-Fixed situations when puzzle panels or related graphics would be active when off-screen\n-Consolidated most sprites in the game into larger sprite atlases, for increased batching performance\n-Converted most sprites in the game to use the same shader, for increased batching performance\n-Optimized water material"
+    },
+    {
+      "title": "Update Notes for Build 2.23.2024",
+      "date": "2024-02-23 13:40:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065186389840",
+      "content": "-Added Estonian language support\n-Implemented some corrections to the Turkish translation"
+    },
+    {
+      "title": "Multi-Language Support Patch!",
+      "date": "2024-02-19 13:58:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544507937219",
+      "content": "{STEAM_CLAN_IMAGE}/36261289/01b8ad2ab69c5259361abf1723224dc1999fef17.png\n\n-Translated menus and credits into 10 new languages:\n\n Simplified and Traditional Chinese\n Russian\n Spanish - Spain\n Brazilian Portuguese\n German\n Japanese\n French\n Polish\n Turkish\n\n-Improved deadzoning behavior on thumbsticks\n-Analog movement is now only coerced towards cardinal directions when on floor puzzles\n-Added stick deadzone controls\n-Optimizations to Post-Processing\n-Fixed some small sorting bugs in Mill"
+    },
+    {
+      "title": "Update Notes for Build 5.20.2023",
+      "date": "2023-05-20 13:18:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943313122683",
+      "content": "-Added option to control whether music plays when the game is alt+tabbed and backgrounded\n-Changed default behavior to limit to 10fps when game is backgrounded\n-Fixed a bug where settings changes made right before quitting would not persist"
+    },
+    {
+      "title": "Update Notes for Build 4.14.2023",
+      "date": "2023-04-14 12:20:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519489648391",
+      "content": "-Changed the game to keep music playing when game is alt-tabbed"
+    },
+    {
+      "title": "Update Notes for Build 1.9.2022",
+      "date": "2023-01-09 23:59:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387704786671",
+      "content": "-Made small tweaks to music blending behavior in Shrine and Ruins"
+    },
+    {
+      "title": "Update Notes for Build 12.20.2022",
+      "date": "2022-12-22 12:23:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037443027632",
+      "content": "-Replaced music associated with \"White\" ending"
+    },
+    {
+      "title": "Update Notes for Build 11.25.2022.1",
+      "date": "2022-11-25 13:29:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4836332027659854935",
+      "content": "-Added option to toggle mouse acceleration or auto-detect the Windows system settings"
+    },
+    {
+      "title": "Update Notes for Build 11.24.2022",
+      "date": "2022-11-24 10:15:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4836332027655718946",
+      "content": "-Fixed some more issues with the bridges in the Gardens"
+    },
+    {
+      "title": "Update Notes for Build 11.23.2022",
+      "date": "2022-11-23 08:36:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4836332027651827338",
+      "content": "-Fixed an issue where several doors were not solid"
+    },
+    {
+      "title": "Update Notes for Build 11.19.2022",
+      "date": "2022-11-19 14:08:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4789043687482172909",
+      "content": "-Fixed an issue where a bridge would sometimes rotate the wrong way in the Gardens\n-Fixed an issue where loading into the endgame area would sometimes have the incorrect fade group state\n-Undid rollback of Build 11.12.2022, those changes relisted below:\n    -Fixed a few issues where you could end up out of bounds when loading in a save\n    -Fixed some issues with culling and the bonus/endgame areas\n    -Fixed some issues with openable gates sometimes loading in the incorrect state\n    -Extended some windchimes sounds"
+    },
+    {
+      "title": "Update Notes for Build 11.12.2022",
+      "date": "2022-11-12 10:43:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6368680725428705162",
+      "content": "-Fixed a few issues where you could end up out of bounds when loading in a save\n-Fixed some issues with culling and the bonus/endgame areas\n-Fixed some issues with openable gates sometimes loading in the incorrect state\n-Extended some windchimes sounds"
+    },
+    {
+      "title": "Update Notes for Build 10.21.2022",
+      "date": "2022-10-21 20:17:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4714731755417529840",
+      "content": "-Fixed a spot where a player could get out of bounds."
+    },
+    {
+      "title": "Update Notes for Build 10.19.2022",
+      "date": "2022-10-19 16:03:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4714731755409594506",
+      "content": "-Patched a corner in the Mine where the player could rapidly trigger the fade system\n-Fixed progress-based music playing incorrectly when a save is first loaded\n-Fixed some small issues with music in Shrine, Graveyard, and Mine\n-Fixed a door in the Mill which had incorrect collision when opened"
+    },
+    {
+      "title": "Hotfix 9.23.2022.1 (please update before playing)",
+      "date": "2022-09-23 00:23:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330734342578",
+      "content": "-Fix for some unwalkable platforms caused by attempted fix in previous build"
+    },
+    {
+      "title": "Update Notes for Build 9.22.2022",
+      "date": "2022-09-22 23:22:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330734186794",
+      "content": "-Small improvement to puzzle clue in Graveyard\n-Fix for an out of bounds bug in the Mill"
+    },
+    {
+      "title": "Update Notes for Build 9.21.2022.1",
+      "date": "2022-09-21 14:54:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330729259913",
+      "content": "-Fix for a sorting issue with a wire in the Mill\n-Fixed some gate colliders which were not getting enabled\n-Fix for another potential soft-lock"
+    },
+    {
+      "title": "Update Notes for Build 9.20.2022",
+      "date": "2022-09-20 21:24:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330726603367",
+      "content": "-Improvements to blending of music in Endgame area\n-Fix for panel rendering issue caused by legacy fix in previous build\n-Tweaks to visuals and camera motion around hub area to potentially encourage new players to go towards easier areas"
+    },
+    {
+      "title": "Update Notes for Build 9.17.2022.2",
+      "date": "2022-09-17 09:37:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6258337460550995280",
+      "content": "-Fixed some minor music and ambience errors around the Ruins area\n-Fixed some odd sorting/collision issues in the Orchard\n-Updated Steamworks implementation to latest version (might improve Proton compatibility?)\n-Fixed an issue with keys getting stuck \"pressed\" when Steam Overlay is opened\n-Tweaked ending music to be slightly quieter as it was clipping when in-game volume was maxed\n-Attempted mitigation for issue on some older mobile GPUs where panel symbols were not being drawn correctly"
+    },
+    {
+      "title": "Update Notes for Build 9.17.2022",
+      "date": "2022-09-17 01:11:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6258337460549716317",
+      "content": "-Fixed an out of bounds bug in Mill\n-Fixed an issue where synchronized music tracks were sometimes played out of sync\n-Small tweak to Mill tutorial puzzle wiring to improve onboarding\n-Added hooks for speed-running tools\n-Fixed a couple spots where the player could get stuck in a wall\n-Fixed some other small bugs"
+    },
+    {
+      "title": "Update Notes for Build 9.13.2022",
+      "date": "2022-09-13 23:23:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4705721386243072560",
+      "content": "-Fixed a possible softlock at the start of the game\n-Dozens of small revisions and improvements to the music throughout the game\n-Bulletproof fix against a ending bug already mitigated in previous patch"
+    },
+    {
+      "title": "Update Notes for Build 9.12.2022.4",
+      "date": "2022-09-12 13:27:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4606641560263630322",
+      "content": "-Fixed some areas where the incorrect music could be heard\n-Small tweaks and improvements to music in the Gallery\n-Changed the color of some late game puzzles which was confusing players"
+    },
+    {
+      "title": "Update Notes for Build 9.9.2022.4",
+      "date": "2022-09-09 22:03:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4606641560254010261",
+      "content": "-Fix for a couple small music related bugs"
+    }
+  ]
+}

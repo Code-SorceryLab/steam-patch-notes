@@ -1,0 +1,60 @@
+{
+  "appId": "3665840",
+  "count": 9,
+  "notes": [
+    {
+      "title": "20250915 update",
+      "date": "2025-09-15 03:18:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566538431",
+      "content": "1. Fixed a crash at game startup caused by stack overflow from oversized local objects.\n2. Implemented dynamic memory allocation for objects, reducing memory usage by 20%."
+    },
+    {
+      "title": "20250621 update",
+      "date": "2025-06-20 22:47:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906780943",
+      "content": "1. Added Relax Mode:\nYou can now enable this mode by clicking the icon in the \"About\" menu. As it's still in testing, it's currently available as a preview. Once enabled, the anti-cheat system activates\u2014achievements can't be earned, stats won't be recorded, and the game won't count towards the leaderboard.\nIn Relax Mode, the empty row at the top (i.e., the mask row) stays fixed. Players earn points for each cleared line, and a new line is automatically added. Conversely, when a line is added due to a mine trigger or full grid, points are deducted, but no new line is added and the game doesn't end.\n\n2. Fixed issue where mines in the top mask row were incorrectly triggered during consecutive line clears:\nThe game follows a \u201cadd line before clear\u201d logic. In some cases, both adding and clearing lines happen in succession. For example, clicking a mine causes all mines in that row to explode and be cleared. At the same time, a new line is added, which may trigger the auto-reveal of adjacent empty tiles (with value 0). If all non-mine tiles in the new line are revealed, more clearing and adding can follow.\nNew lines are created by copying the previous one. If the mask row is at the top and more than two consecutive clears happen, the two rows above it may not yet have mine data. If auto-reveal continues, these uninitialized tiles may open early, causing unintended mine triggers. This has been fixed by disabling auto-reveal of adjacent blanks in the top area, avoiding premature tile openings."
+    },
+    {
+      "title": "20250526 update",
+      "date": "2025-05-26 02:25:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164526162",
+      "content": "1. Changed the method used to seek WAV files to the beginning, reducing the likelihood of repeated playback.\n2. Now attempts to detect whether the system supports MIDI when loading MIDI files."
+    },
+    {
+      "title": "20250525 update",
+      "date": "2025-05-25 11:41:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164506953",
+      "content": "Fixed a potential black screen issue caused by not sending the WM_PAINT message to the window during drawing."
+    },
+    {
+      "title": "20250524 update",
+      "date": "2025-05-24 00:08:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164460409",
+      "content": "Reduce the amount of 'Total Mine Flagging' to just 10% of the original requirement."
+    },
+    {
+      "title": "20250508 update",
+      "date": "2025-05-07 16:33:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287810428",
+      "content": "Fixed an issue where scores in Hard mode were not recorded due to incorrect sorting settings. Players are now welcome to challenge for high scores!"
+    },
+    {
+      "title": "\ud83c\udfb5 Call for Background Music!",
+      "date": "2025-05-07 04:01:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287792558",
+      "content": "To make MineSweeper Rush even more enjoyable, we\u2019re once again inviting players to contribute background music for the game!\n\nIf you're interested, please send your music file to:\n[h2]ax_pokl@qq.com[/h2]\n\n\ud83c\udfbc Music requirements:\n[list]\n[*]Must be in MIDI (.mid) format\n[*]No copyright issues \u2014 original work preferred\n[*]Should be no longer than 3 minutes\n[*]The tone should be calm or cheerful, not too intense\n[*]May use multiple instruments or channels, but keep it simple and clean\n[/list]\nWe\u2019d love to hear your creations \u2014 your music might be featured in the game!\n\nThanks for being part of this project! \ud83d\ude4c"
+    },
+    {
+      "title": "20250425 update",
+      "date": "2025-04-24 21:04:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624476888",
+      "content": "1. Fixed an issue where the help menu incorrectly displayed mines instead of unopened tiles in custom mode.\n2. Updated the leaderboard refresh logic: leaderboard data is now refreshed in the background when opened, allowing players to return to the game or access other menus without waiting for the refresh to complete.\n3. Fixed a potential issue where concurrent drawing from multiple threads could result in incorrect graphics rendering or window size."
+    },
+    {
+      "title": "20250424 update",
+      "date": "2025-04-23 20:38:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624443115",
+      "content": "1. Added Steam Cloud support. When cloud saves are available, they will now take priority over local registry saves.\n2. Modified the anti-cheat logic: now when cheating is detected, game data will be immediately cleared and scores will not be uploaded."
+    }
+  ]
+}

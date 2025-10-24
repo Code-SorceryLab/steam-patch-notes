@@ -1,0 +1,180 @@
+{
+  "appId": "2552330",
+  "count": 29,
+  "notes": [
+    {
+      "title": "Patch September 11th 2025",
+      "date": "2025-09-11 21:20:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566433671",
+      "content": "I wrapped the transform stage into the onnx model to avoid cpu stuff I guess, along with some other minor improvements this should slightly increase performance on non nvidia GPU's"
+    },
+    {
+      "title": "Update July 1st",
+      "date": "2025-07-01 20:48:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891687693",
+      "content": "-added an option to disable changing the image while screen capture is active\n-added ability to load custom backgrounds\n-added ability to crop the screen capture boundary\n-fixed vr controller bindings for video seek left/right and play/pause not working (oops)"
+    },
+    {
+      "title": "Update June 25th",
+      "date": "2025-06-25 17:05:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891485676",
+      "content": "-Updated depth models and depth generation backend\n \nHopefully this doesn't break things even more for most people.\nBut this should give proper cuda support for 50 series GPUs, as well as less buggy support for AMD and others. If it doesn't just explode anyway.\nAlso the way depth resolution works has changed now so that the long edge of the image matches the set depth resolution. Before, the short edge would be used and the long edge would be scaled up proportional to the aspect ratio which could lead to really high resolution and vram usage for images with a really wide aspect ratio.\nAnyway all that to say you will have to increase the depth resolution to achieve the same quality as before.\n\nAlso, since models have changed (multiple times by now) and steam doesn't really delete the old files, you may delete all of the non .onnx models in the app folder under midas3/weights, if you want.\n\nAssuming all of this goes well, I should be able to do another round of QoL soon."
+    },
+    {
+      "title": "Patch March 23rd",
+      "date": "2025-03-23 09:12:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830910968311",
+      "content": "-Updated some backend stuff on the depth generator\n-Better GPU capability detection, should fix issues with certain cards/drivers\n-Hopefully grabbing the image with a VR controller should be more generous now and harder to get stuck etc.\n-Added keyboard shortcuts for image manipulation\n  --W,E,R controls position, rotation, scale when held\n  --Holding shift modifies the axis the same way right clicking the buttons does"
+    },
+    {
+      "title": "Smol Update February 23rd",
+      "date": "2025-02-23 20:07:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353306839",
+      "content": "-Added depth resolution and show window settings to video depth preprocessor\n-Video thumbnails in the image viewer should now work regardless of if ffmpeg is installed"
+    },
+    {
+      "title": "Hotfix February 3rd",
+      "date": "2025-02-03 02:34:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123203081",
+      "content": "-Fix issue causing images to be shown at a lower resolution\n-Also improved loading times for anything that isn't a rotated jpeg i guess"
+    },
+    {
+      "title": "Update January 27th",
+      "date": "2025-01-27 07:01:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505433972",
+      "content": "[list]\n[*] Added hue/saturation/brightness controls to the visualization tab in the toolbox\n[*] Added support for image alpha cutout in png/webp\n[*] Added a new tab to the toolbox with options to duplicate image displays so you can have more than one at a time\n[*] Added new hotkeys and optional controller bindings for video seeking and play/pause\n[*] VR height offset setting no longer also affects position of the image\n[*] Fixed jpeg orientation bug when exif rotation was set\n[*] Fixed an issue potentially preventing some image thumbnails from displaying\n[/list]"
+    },
+    {
+      "title": "Patch Dec 1st",
+      "date": "2024-12-01 18:28:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359124828",
+      "content": "-Fixed VR pointer line not rendering in front of the image\n-Fixed VR cursor dot disappearing\n-Probably fixed an issue with image orientation when opening/closing the menu\n-Fixed issues with certain resolutions when screen capturing\n-Changed the screen capture resolution limit to be a percentage instead of a fixed limit\n-Fixed bug that would break screen capture when a program entered exclusive fullscreen\n\n-Added option for screen capture to disable depth while the mouse is moving\n-Added option to change the screen capture cursor size"
+    },
+    {
+      "title": "Update Nov 28",
+      "date": "2024-11-28 15:57:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359024752",
+      "content": "-Added a new feature to the toolbox to cast a screen/monitor and depthify it.\n\nWoooo\nMore difficult than I thought to implement this. Individual parts aren't that hard but getting it all to come together seamlessly is tricky.\nI think I lied when I said it would run the same as the realtime video stuff.\nIt's just inherently more taxing to capture the screen, but more than that, frames can't really be buffered and batched together because you cannot simply look into the future to see what the next frame will be like you can with a video.\n\nI might revisit batching as a setting at the cost of extra latency but I just wanna get this feature out for the sale going on right now.\nI think there may be various performance pitfalls but eh, I get about 30 depth frames a second on my kinda older mid range system, so I think it's well enough for now.\nPart of the problem is just that without batching, the effect of turning down the depth model/resolution isn't really noticeable past a certain point because the performance bottleneck becomes one of just moving the data onto/off the GPU and scheduling less work, more often.\n\nAnyway, enough techno-rambling.\nEnjoy the screen casting, and let me know if you have any ideas to make it nicer to use.\nI think the holy grail would be being able to capture specific windows as well and be able to virtually send clicks so you dont have to tab between things, but that's wayyy too much work just to avoid some extra clicks.\nThough it may be possible to implement the virtual clicking part at least which may be useful for VR/second monitor situations.\nNot sure if that would increase the chances of antivirus programs flagging it falsely as malware.\nI'm already hoping that implementing screen capture libraries doesn't do that \ud83d\ude05\n\nAlso I will soon look into some other requested features now that this is done."
+    },
+    {
+      "title": "Update 10/27/2024",
+      "date": "2024-10-27 22:49:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911937484",
+      "content": "-Added a new tab to the toolbox with a bunch of neat visualization options.\n    -Show raw depth map\n    -Show surface normals\n    -Disable edge clipping to extend image edges infinitely, can create a pretty cool effect\n    -Controls for foreground/background clipping to isolate a section of the image"
+    },
+    {
+      "title": "Update 10/19/2024",
+      "date": "2024-10-20 00:28:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583185486044",
+      "content": "-I reworked how data is handled for realtime video\n  -Should be more stable now and transfer bottlenecks have been virtually eliminated, so you should be able to render video depth as fast as your system can handle\n  -Resolution and model has a much more drastic impact now, and lowering them can allow to reach high speeeeeds\n\n-Fixed a bug that caused everything to break when switching realtime video model/resolution while it was playing. (why did nobody report this??)"
+    },
+    {
+      "title": "Update 10/7/2024",
+      "date": "2024-10-07 08:44:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003508710091",
+      "content": "-Added support for new \"ML Depth Pro\" model in the advanced settings.\n  -Currently this model is locked to a 1536x1536 resolution, and is fairly detailed, though perhaps a bit slow. Hopefully someone will figure out how to unlock the resolution on it later so it can run faster.\n  -The pro model also performs worse for animated styles from my testing.\n\n-Added a slider in advanced settings to control number of preloaded images.\n\n-Added an optionally bindable button to the VR controller config for favoriting an image. (can be assigned from the steamvr controller settings menu.)\n\n-Improvements to image processing speed which should have general improvements and especially noticeable in realtime video. Though there's still a bottleneck there I think that is holding it back a lot and I will continue to try and fix that, but I wanted to push out this update with support for the pro model so, here we are.\n\n-Increased the maximum thumbnail limit in the browser to 2000."
+    },
+    {
+      "title": "Smol Update 8/26/2024",
+      "date": "2024-08-27 02:01:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438705323678",
+      "content": "-Added a slider to control the resolution for depth estimation under advanced settings.\nShould allow beefier PCs to crank out a bit more detail at the cost of estimation speed.\nMost people shouldn't really bother with this but if you feel inclined to tinker with it and test estimation speeds at certain resolutions and on different models, it's there for you.\n\n-Changed the way the model selector works slightly so that resolution is no longer factored into the model selection but rather taken from the aforementioned slider.\nThis also comes with being able to use the base Depth Anything V2 model instead of just the small and large. Does require a download if you don't already have it though.\n\n-Added a setting for the realtime video stuff that lets you set a default frame skip value to hopefully mostly avoid waiting for each video to just skip at least once.\n\n-Made sure the 'void' background is actually properly completely black oops."
+    },
+    {
+      "title": "Update July 8th",
+      "date": "2024-07-08 22:39:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267351687476",
+      "content": "Got some QoL here boys\n\nchangelog:\n-Pointer in VR now freezes when pulling the trigger to make clicking easier\n-Added a separate toggle for allowing GIFs, off by default\n-Browser now prioritizes loading thumbnails for visible content first\n-Thumbnails for videos are now taken from partway through the video to avoid black frames and such from intros\n-Wobble settings are now more detailed\n-Using the analog stick on a VR controller to change images should be less likely to adjust tool scale\n-Improved seek behavior for realtime video depth, should stay in sync now when seeking\n-Added an option to use the headset tilt when recentering to enable reclined viewing\n-Recentering is now delayed by a few seconds when clicking the recenter button\n-Added an option to show show a prompt on startup asking if you want the session to be sandboxed\n  --This loads a clean browser with no browsing history, playlists, favorites, etc\n  --Activity while sandboxed will not be saved\n\n-Fixed scroll list bounds sometimes not working\n-Fixed some flicker when changing images\n\n\nStill working on some stuff that should be good hopefully.\nThinking about adding a control for foreground/background clipping \ud83e\udd14\nNot sure if it's worth it as while neat it didn't seem to add much in my tests and I don't wanna add even more controls to mess with and make it more fiddly than it already can be."
+    },
+    {
+      "title": "Update June 17th",
+      "date": "2024-06-17 18:53:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005364968940",
+      "content": "-Changed default model to the new Depth Anything V2  small model and added support for downloading other V2 models\nThese models definitely have more detail in them and run about the same as the previous ones.\nI think the consistency is better as well for realtime video and such."
+    },
+    {
+      "title": "Update April 16",
+      "date": "2024-04-16 08:53:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312199320773",
+      "content": "-fix UI bugs causing duplicate folder appearances and persistent drive letter folders\n-fix playlist and favorites going outside of UI if list is too big\n-improved sorting by name when filenames have numbers in them (a bit slower to sort but eh)\n-add reset all button for image controls\n-add setting for alternative way to handle default image settings when using individual image settings\n-add height offset setting for VR\n-something fun"
+    },
+    {
+      "title": "Update Feb 10",
+      "date": "2024-02-10 14:58:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109273537524",
+      "content": "New feature. If you can find it.\nPlease don't inquire about it. I already know."
+    },
+    {
+      "title": "Update Jan 27",
+      "date": "2024-01-27 03:59:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046254955002",
+      "content": "-Add new default depth model implementing 'Depth Anything\"\nShould be better than base Midas was at the same speed while also supporting AMD cards hopefully.\nThe model mode was reset to auto so you'll have to reset it if you still want to use the ZoeDepth model."
+    },
+    {
+      "title": "Update Jan 14",
+      "date": "2024-01-15 00:59:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510133204459",
+      "content": "-add option to wait for videos in slideshow\n-can now right click (or 'interact' button on controller) the date sort to sort by last modified date rather than creation date\n-fixed bug showing video controls when clicking on an image from the browser\n-improved browser performance\n-some other fun stuff"
+    },
+    {
+      "title": "Update Jan 6",
+      "date": "2024-01-07 00:26:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585190740148",
+      "content": "-add WebP support\n-better detection if the camera is inside the image volume, should result in less weirdness when viewing off angle in most cases"
+    },
+    {
+      "title": "Patch Dec 11",
+      "date": "2023-12-11 19:00:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616810661232",
+      "content": "-fixed a bug causing depth videos to not play correctly and some other issues with videos\n-entering nothing into the address bar in the browser now properly clears and navigates to the root directory showing all drives instead of just adding the drives to the current folder, oops.\n-add gif support to video depth preprocessor\n-in video depth preprocessor hovering over items in the process list now shows the full path\n-fixed some bugs sometimes causing videos to error at the end of processing\n-improved log display in video depth preprocessor"
+    },
+    {
+      "title": "Patch Dec 9",
+      "date": "2023-12-09 20:01:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616803526691",
+      "content": "-add button to open videos without depth directly into the video depth preprocessor app\n-add option to video depth preprocessor to detect scene changes\n-add preview to video depth preprocessor\n-improved (hopefully) syncing of video depth with the color video"
+    },
+    {
+      "title": "Pirate Update Dec 6",
+      "date": "2023-12-07 00:34:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616793281972",
+      "content": "-video controls no longer show when browse menu is open\n-images that technically have the same name should no longer conflict when loading depth\n-add button to open currently browsed folder in windows explorer\n-refreshing in the browse menu no longer selects first image in that folder\n-opening and closing the menu while a video is playing should no longer restart the video\n-now properly opens last img even if it was a referenced img\n-fixed wonky depth showing on initial img load before depth generator initialized\n-fixed a render order bug"
+    },
+    {
+      "title": "Steam VR-Fest Update",
+      "date": "2023-12-04 22:09:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983677762480",
+      "content": "In arbitrary celebration of the Steam VR Fest sale, I've added a few things that I hope you enjoy.\n\nChangelog:\n[list]\n[*] add new metric depth model that can be selected in advanced settings\n[*] add control setting for perspective correction which makes images appear more natural\n[*] include a new standalone tool for pre-processing video depth\n[*] added video player controls\n[*] added ability to pause video and generate depth for current frame\n[*] add option to choose where to save data\n[*] add option to choose if favorite images are copied or referenced\n[*] add option to automatically scale depth based on depth map range\n[*] add option to require holding grip for manipulating image in vr\n[*] add ability to scroll when hovering over image control icons for extra controls\n[*] added thumbnails for videos if you have ffmpeg installed\n[*] now remembers last viewed image\n[*] fixed slidedshow bug\n[*] grabbing image in vr now requires the hand to be pointing at the image\n[*] changing depth quality now refreshes the current image's depth\n[*] shader optimizations\n[/list]\n\n\nHere's a few examples of the difference between the \"High\" quality depth model, and the new metric one:\n\nExample 1: [expand]\nHigh: [img]{STEAM_CLAN_IMAGE}/44508765/9fe20566a6c36efbdebdcd870232d6ec6acbf04c.png[/img]\nMetric: [img]{STEAM_CLAN_IMAGE}/44508765/9cceddc7baf2261a70534f395314c357e0bcd779.png[/img]\n[/expand]\nExample 2: [expand]\nHigh: [img]{STEAM_CLAN_IMAGE}/44508765/f529b84afc0216a041c2e698afd54c4a145aa0b1.png[/img]\nMetric: [img]{STEAM_CLAN_IMAGE}/44508765/ec4fb48dbeb39706909c6bf54ba791e232ce860a.png[/img]\n[/expand]\nExample 3: [expand]\nHigh: [img]{STEAM_CLAN_IMAGE}/44508765/5f1e55485d2d37c75376306fed717dbb55c46787.png[/img]\nMetric: [img]{STEAM_CLAN_IMAGE}/44508765/1e86080f2f155bdec31cb348e70d1338ecaf606d.png[/img]\n[/expand]\n\nAnd here's a bad gif of the output from the video depth tool:\n[img]{STEAM_CLAN_IMAGE}/44508765/4521fae4ee47551cf6e01b89d5e98aa04668b001.gif[/img]\n\n\nAnyway, have fun. Bye.\n"
+    },
+    {
+      "title": "Update November 13th",
+      "date": "2023-11-14 00:12:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486388015092837",
+      "content": "-Added a few export options to the toolbox\n-Misc fixes and changes"
+    },
+    {
+      "title": "Update November 8th",
+      "date": "2023-11-08 22:14:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486387996568691",
+      "content": "-Added ability to favorite individual images that will be copied to favorites folder (hotkey F)\n-Added refresh button"
+    },
+    {
+      "title": "Patch November 4",
+      "date": "2023-11-04 20:54:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5288974951215590067",
+      "content": "-fix issue preventing images with long file paths to load\n-tooltip fix\n-added option to turn off hover tooltips\n-added ui click sound\n-added small loading indicator when loading depth for image\n-fix bug with some settings not being respected on app launch\n-fix bug with browse menu scroll getting stuck when changing folders"
+    },
+    {
+      "title": "Patch October 29th",
+      "date": "2023-10-29 17:36:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621588301630",
+      "content": "-Hopefully fixed WMR controllers\n-Increased mouse range in VR\n-Added dark gray background\n-Fix depth gen pfm bug, should improve depth quality\n-More \"white\""
+    },
+    {
+      "title": "Hotfix Oct 28th",
+      "date": "2023-10-28 19:47:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621584988929",
+      "content": "[list]\n[*]Fix not being able to click space background\n[*]Switch depth generator to png to hopefully alleviate compatibility issues and help people who's depth isn't loading at all\n[/list]"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+    "appId": "2858200",
+    "count": 8,
+    "notes": [
+        {
+            "title": "[devblog] Seeing what's next",
+            "date": "2024-10-05 07:10:38",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003501183552",
+            "content": "Heya!\n\nAs some months passed since the last bigger update, I want to share the current status of Pixel Tennis with you.\n\nGame development is quite a journey for me as a side hobby and I’m doing it in no professional capacity. This also means, that some early design decisions, which looked great in the past, might become a burden in the future.\n\n[img]{STEAM_CLAN_IMAGE}/44986041/c43ab9530e1390a94ed2074e3d388ec19df64298.jpg[/img]\n\nOne example is the handling and networking of the match gameplay. With the intention of having a very lightweight server process, matches are not actually simulated on the server, as it is lacking the actual game engine or any kind of physics calculation. Instead, only a few key aspects of a match are validated and synced to the players. This works totally fine in the active playtest, but it also comes with some drawbacks. Especially regarding the planned additional game modes, which include spells, collectibles, ball targets and computer controlled opponents. All those things would need to be implemented twice. Once for the client, once for the “semi-blind” server to validate.\n\nI also heard, that people from non EU regions experience lag or at least some form of latency when playing online. Even, if 2 Americans play against each other, the match is still routed through a server in Germany. On the other hand, most people finding Pixel Tennis on Steam check out the single player mode and do not play online anyway. So maybe, the local or offline play should gain a bit more attention.\n\nSearching for potential solutions I also decided to check out the [url=https://godotengine.org/]Open Source game engine Godot[/url]. What should I say? It is week 3 now and I honestly fell a bit in love on how doing certain things is so much easier and more intuitive compared to Unity. I even could solve the networking hurdles with onboard tools. However, it would require a complete rebuild of Pixel Tennis, which is not a rash decision to make. So at the current stage, I am validating this idea by extensively testing Godot to find the pros and cons of a potential switch.\n\nFor now, this likely means there won’t be any functional updates for a while. However, the current playtest remains fully functional and if you found bugs, I will squash them! Any progress made in the game will be carried over, regardless of the game’s future direction.\n\nIf you have any questions or tips, feel free to share them here or at one of the many other communication channels.\n\nSee you on the court!"
+        },
+        {
+            "title": "v0.9.6.1",
+            "date": "2024-08-14 14:12:15",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875594803675051739",
+            "content": "Time for the tiniest update yet. It does not even require a client update. :o\n\n[b]Gameplay[/b]\nThe grey starter racket now comes with the [b]Power Shot[/b] equipped. This means, that you can use special shots without buying a racket from the shop. It should improve the gameplay experience for new players, as this core mechanic is now accessible from the very first match."
+        },
+        {
+            "title": "v0.9.6",
+            "date": "2024-08-04 05:57:23",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728345580718",
+            "content": "[b]Visuals[/b]\nFixed charge racket sparkle animation not always stopped on new match round\nImproved mansion court performance and floor reflection quality\n\n[b]Gameplay[/b]\nSlightly increased curve bonus per WIL attribute\nSlightly decreased movement speed bonus per DEX attribute\n\n[b]UI[/b]\nPlayer wins in a room are counted and displayed with a medal icon. Can be disabled. @aqin1\nRemove permanent version number overlay\n\n[b]Audio[/b]\nIncreased tempo of mansion court music by 20%\n\n[b]Misc[/b]\nUpdated game engine runtime and some libraries\nAdded build setting for MacOS release\n\nGameplay video published\n[previewyoutube=TZ1_0uqFMLc;full][/previewyoutube]"
+        },
+        {
+            "title": "v0.9.5",
+            "date": "2024-06-10 12:05:04",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972563885436",
+            "content": "It is bugfixing time\n\n[b]Gameplay[/b]\nFixed double hits resulted into desync for current match round\nFixed smash indicator circle showing up in the center, when the ball was too fast\nTurn smashes into GuardBreaks on lower charge level\nSlightly reduce special shot speeds"
+        },
+        {
+            "title": "v0.9.4 Mansion Court and Hair Physics",
+            "date": "2024-06-05 12:22:51",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972545701768",
+            "content": "Heya!\n\nIt's time for a mid-sized update! With version 0.9.4, [b]The Mansion[/b] is now available as the first indoor court in Pixel Tennis. It is the most detailed court yet and should set a baseline for the games graphical capabilities. You can select it in multiplayer mode or play it in singleplayer, after you reached a certain level.\n\n[img]{STEAM_CLAN_IMAGE}/44986041/8f19dc4344772e276d1c4417c2a4316eb5533dfe.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/44986041/826e8a04118178ef447bbe173f93010f90c6de5c.jpg[/img]\n\nIf you played Pixel Tennis for some time, you might have noticed one of the random loading screen texts, which said \"[i]Now with improved hair physics[/i]\". This was intended to be some nonsense, when the [url=https://pixeltennis.com/viewtopic.php?t=96]player models were basic pills[/url]. Now, the game actually supports hair physics - because... why not?\n\n[img]{STEAM_CLAN_IMAGE}/44986041/29abec42808601ef598fd54b8c9884a9a66fdb07.gif[/img]\n[i]*wiggle wiggle*[/i]\n\nDid you see this hair style? No? It is already available since the previous update. It is one of the special items, which has a secret unlock condition.\n\n[img]{STEAM_CLAN_IMAGE}/44986041/95d6868081c9f53b15c1c68ac4a888271f5ab18a.png[/img]\n\nAs there is - at the time of writing - only 1 player besides me, that unlocked it, I want to give a small hint:\n- Everyone can obtain this item right away\n- Everyone can see, that only 2 players (currently) fulfilled the unlock condition\nHappy hunting!\n\nLast, but not least a big THANKS to [b]Jan (S4ndf1re)[/b], who implemented a tennis rule, which was missing until now (and always bothered me for no real reason). Players now correctly change their court sides after every odd set!\n\nAs always, every feedback is welcome. If you find bugs or have a suggestion – don’t hesitate to let me know!"
+        },
+        {
+            "title": "v0.9.3",
+            "date": "2024-05-11 05:06:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435402283753",
+            "content": "Another smaller update, but with an important bugfix for multiplayer matches:\n\n[b]Character Design[/b]\nImproved visuals of clothing with non solid textures\n\n[b]Gameplay[/b]\nCharacter now attempts to jump towards the ball more often, when it is out of reach\n\n[b]UI[/b]\nReplaced shopping bag with shopping cart icon for better distinction\nFixed character attribute bar was empty, if value was 50 (str, sta, dex, wil)\n\n[b]Gameserver[/b]\nFixed server detecting serves as invalid in specific situations, which could crash the game after a few seconds (!)\nFixed \"Username or password wrong\" error when trying to link to a Steam account, which had no previous login\nImproved responsibility when player starts charging a hit\n(Hopefully) fixed an issue, where running animation did not play and character slid over the ground"
+        },
+        {
+            "title": "v0.9.2",
+            "date": "2024-04-30 10:50:27",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966683032669",
+            "content": "Minor fixes and QoL changes:\n\n[b]UI[/b]\nAutomatically hide mouse cursor while in match\nPotentially fixed a problem, where the main menu could disappear on back/esc press\nSwitch between chat types with TAB instead of CTRL to prevent accidental switching (e.g. when using keyboard shortcuts)\nUpdated French translation by faller-magie\nMade top icons during match clickable while match menu is opened, so that they can be access with the gamepad controlled virtual mouse cursor\nAllow opening match chat with the select button\nUpdated some more old references from pixeltennis.de to pixeltennis.com domain\nAdded link to [url=https://steamcommunity.com/app/2377430/discussions/]Steam Communityhub[/url] in the news for gathering player feedback\nWhen the loading screen randomly would show the text \"Your princess is on another court\" and the current user is named *Princess*, the text is replaced with \"The Princess is on this court!\" [url=\"https://discord.com/channels/315582630534053888/694239079797227561/1232767454883872819\"]reference[/url]\n\n[b]Misc[/b]\nImproved detection of gamepad types\nPrevent initializing the VirtualGamepad in builds when on-screen controls are not used"
+        },
+        {
+            "title": "v0.9.1",
+            "date": "2024-04-24 14:41:56",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966661747626",
+            "content": "Changelog:\n\n[b]Gameplay[/b]\nAdjusted CPU behavior to react \"less perfect\" to specific scenarios\nSlightly weakened serve return shots\n\n[b]UI[/b]\nAdded special bar fill animation\nUpdated credits with Romanian translation by Milov\nMake on screen joystick more sensitive by increasing the outer deadzone\n\n[b]Misc[/b]\nIncreased multiplayer match reward exp and gold"
+        }
+    ]
+}

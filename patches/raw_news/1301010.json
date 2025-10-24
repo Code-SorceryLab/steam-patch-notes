@@ -1,0 +1,42 @@
+{
+    "appId": "1301010",
+    "count": 6,
+    "notes": [
+        {
+            "title": "Patch notes - 2025.03.16",
+            "date": "2025-03-16 05:45:26",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528167599",
+            "content": "[list]\n[*]Fixed a crash when loading car mods with too long texture names. [i][original, but only consistently crashed in the latest CE update][/i]\n[/list]\n\nTo clarify: The latest patch introduced a safeguard against oversize texture names. Before this patch, and in the original WR2, the game didn't check for that and long texture names corrupted memory at will. The mod we investigated had texture names up to [b]68 characters[/b], which is over twice the original game's limit (32 characters) and 1.5x CE's bumped up limit (48 characters). For this patch, we've made two changes:\n\n[olist]\n[*]The length limit was bumped to 96 characters.\n[*]Textures with too long names (please don't!) now will have their names cut off, and will refuse to load instead of crashing.\n[/olist]"
+        },
+        {
+            "title": "Patch notes - 2025.03.11, Synetic Pack DLC",
+            "date": "2025-03-11 10:42:22",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379536386",
+            "content": "[list]\n[*] A free [b]World Racing 2 Champion Edition - Synetic Pack DLC[/b] is now available, bringing all the official Add-On cars and rims from Synetic back in a new CE style.\n[*] Multiple new Vinyls graciously provided by the community as part of the project [b]Vinyls Forever[/b] have been added.\n[*] Performance issues caused by the car deformation have been fixed. [i][original, but worse in CE][/i]\n[*] Collision detection against thin objects (like road barriers) has been improved. This should resolve issues where the car would \"teleport\" to the other side of the barrier whilst scraping against it. [i][original][/i]\n[*] Fixed a crash when loading vinyls with long (at least 22 characters) names from the [b]Autos[/b] directory. [i][original][/i]\n[/list]"
+        },
+        {
+            "title": "Patch notes - 2023.11.09",
+            "date": "2023-11-09 12:46:46",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486387998778064",
+            "content": "[list]\n[*]Fixed a minor issue introduced in the latest patch where some mod sceneries were left with untextured models, e.g. trees.\n[*]Fixed the gear change indicator in the UI not working with Damage disabled. [i][original][/i]\n[/list]"
+        },
+        {
+            "title": "Patch notes - 2023.10.25",
+            "date": "2023-10-25 15:13:49",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621573362408",
+            "content": "[list]\n[*] Sceneries have been updated to support file deduplication. Alongside [b]V1[/b], [b]V2[/b] and [b]V3[/b] subdirectories, a new [b]All[/b] subdirectory has been added that contains files shared by two or more versions of the same scenery. This reduces the game's download and installation size, and may drastically reduce the size of Steam Workshop mods once they are updated with support for this new system. [b]FOR MODDERS: To update your scenery to support file deduplication, simply re-run the Workshop Uploader's validation process, and submit an update to your mod(s). Workshop Uploader will handle the file deduplication automatically.[/b]\n[*] Fixed a Workshop Uploader bug mis-handling the Waypoint races. [b]FOR MODDERS: To fix your Workshop mods with glitched Waypoint races, simply re-run the Workshop Uploader's validation process, and submit an update to your mod(s).[/b]\n[*]Fixed add-on vinyls not loading from Steam Workshop mods if they were placed in the car directories. [i][new to CE][/i]\n[*] Fixed an issue where attempting to run the game in a window larger than the desktop resolution made the game window disappear. [i][original][/i]\n[*] Zoomed out the car selection viewport slightly to avoid cutting out the longest cars. [i][original][/i]\n[*] Fixed Alt+Enter squashing the car selection preview viewport. [i][new to CE][/i]\n[*] Fixed issues with saving and loading profiles with Unicode characters in names. [i][new to CE][/i]\n[/list]"
+        },
+        {
+            "title": "Patch notes - 2022.12.23",
+            "date": "2022-12-23 15:29:11",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037447142905",
+            "content": "Hello! A new patch has been pushed live, containing several bugfixes to original and new issues, and introduces a single input-related design change borrowed from later games from Synetic.\n\n[list]\n[*]Fixed [b]Racing Pays Off[/b] unlocking under slightly wrong conditions - before this patch, it unlocked upon winning a race with 100.000 Speedbucks in bank. With this patch, it unlocks after the race pushing the player's balance past the 100k mark, like the achievement description says. [i][new to CE][/i]\n[*]Renamed a Career event indirectly referring to legacy game licensed content, it now refers to CE's new content. [i][new to CE][/i]\n[*]Fixed a buffer overrun issue when an oversize \"Time Bonus\" text was about to be displayed on screen. Spanish localization's text was the only one long enough to trigger this issue, which caused a consistent crash at the beginning of the [b]Check It Out[/b] Career mission. [i][original, but only crashed consistently in CE due to miscellaneous code sanity improvements][/i]\n[*]Fixed scaling and positioning issues with several race UI elements at high resolutions, most notably the countdown text, \"Time Bonus\" text and direction arrows. [i][original][/i]\n[*]Changed the nitrous behaviour in combination with the manual transmission to more closely resemble how X360/PS3 era games from Synetic handled it - previously, holding a gear change key would engage nitrous and effectively make it impossible to shift gears while nitrous is engaged. This has now been removed, as with modern gamepads the nitrous button is easily accessible (unlike the original Xbox Black button) and gear change buttons may be freed up.\n[/list]\n\nThank you for your continued support and Merry Christmas!"
+        },
+        {
+            "title": "Patch notes - 2022.12.11",
+            "date": "2022-12-11 10:35:10",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4980448574119906067",
+            "content": "Hey there! A patch has been pushed live. This update contains both fixes for issues \"new to CE\", as well as original issues from the 2005 release:\n\n[list]\n[*]Disabled \"fast loading\" when a Discord overlay is injected to the process, as due to a possible bug in said overlay, users would encounter frequent crashes and/or freezes on loading screens. If you previously worked this issue around by disabling \"Advanced capture\" in Discord's video settings, it should now be safe to re-enable this option\n[*]Fixed terrain/road pixel shaders (model 1.4 only) blending textures wrongly, most noticeable in some mod sceneries (e.g. Japan)\n[*]Prevented [b]Schuminator[/b] from unlocking in KO races\n[*]Added Steam name sanitization for new user profiles, to prevent cases where that auto-filled profile name contains characters normally impossible to type. If you encountered a [b]Save operation failed![/b] issue when creating a new profile, this is why!\n[*]Fixed several issues preventing mod sceneries with non-ASCII characters in their names from loading\n[*]Miscellaneous texture fixes\n[/list]"
+        }
+    ]
+}

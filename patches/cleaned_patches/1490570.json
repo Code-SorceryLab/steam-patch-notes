@@ -1,0 +1,60 @@
+{
+  "appId": "1490570",
+  "count": 9,
+  "notes": [
+    {
+      "title": "v1.3.0 in Beta Branch",
+      "date": "2025-07-11 09:34:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1804977324448878",
+      "content": "Hey everyone! \n\nThe \"Quality of Life\" update was a rather large refactor of a lot of parts of git gud, however it adds a lot of features that were being requested such as tab completion, word wrapping, command chaining, and more. \n\nHowever, due to the nature of the update potentially causing issues I am currently putting it in the dev-branch that any of you can join now. \n\n\n\n[img src=\"{STEAM_CLAN_IMAGE}/45597201/87a3b0aee313ab00d498dd6a2d5f3e8a5d04f533.png\"]\n\nJust right click on git gud in the library and click Properties. Then go to Betas and you'll see a dropdown with the dev-branch available.   \n\n\nChanges in Beta:\n- Word Wrapping\n\n- Tab Auto-Complete\n\n- Massive Refactor to Command Flags\n\n- Custom History Handling\n\n- Updated the \"git help\" Command\n\n- Fixed validation for challenge 26 (thanks Epsilon Theta)\n\n\nReport any bugs while testing to the following Steam Discussion thread https://steamcommunity.com/app/1490570/discussions/0/596280128149944187/"
+    },
+    {
+      "title": "v1.2.1: RebaseValidator Hotfix",
+      "date": "2025-06-22 11:39:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906829855",
+      "content": "Hey guys,\n\n\n\nThis is just a very small hotfix. The Commit Ancestory Notation update yesterday caused some issues with a few validators in the RebaseValidator set. dminsky pointed this out in discord and I got to work refactoring the rebase validators to be a bit more flexible to different input scenarios. \n\nThese are some of the most complicated validators in the project, so hopefully we have now caught all the scenarios around them. \n\nSorry about that everyone!\n\n\n\nChangelog - 1.2.1\n\n- Fix for RebaseValidators (thanks dminsky)"
+    },
+    {
+      "title": "Patch v1.1.1",
+      "date": "2025-06-19 20:05:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906744818",
+      "content": "Another quick update of fixes for the bugs reported on the discussions page and the Discord.\n\nAnd just and update on bigger changes, the next addition to the game will likely be an \"Introduction to Git\" mode. There have been more players than I anticipated interested in the game that don't have much of a background in Git. \n\nThese will be simple challenges that inform the player about the basic concepts of Git, Repositories, and how to use the official documentation & help commands. Hopefully these will act as a \"tutorial\" that will lead you into playing the featured Challenge Mode and reduce the reliance on using hints. \n\nChangelog 1.1.1\n\n- Adjusted hints for challenge 4\n\n- Added HEAD reference syntax to Push command (thanks adamsogm)\n\n- Added support for branch --delete --force flag combination (thanks jazck & Cyril)\n\n- Fixed reset detection with commits squashed validator (thanks adamsogm)\n\n- Fixed syntax handling in Stash validators (thanks Pandasaurus_R)\n\n- Fixed stash default behaviour with flags (thanks Pandasaurus_R)\n\n- Fixed shorthand bisect start (thanks jazck & Pandasaurus_R)\n\n- Fixed --amend with no other flag not opening editor (thanks adamsogm)\n\n- Relaxed the validator requirements for challenge 31 (thanks adamsogm & jazck)"
+    },
+    {
+      "title": "New Menus & Day 1 Patch",
+      "date": "2025-06-17 23:39:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906683236",
+      "content": "Changelog - 1.1.0\n\n\n\n- Overhauled the menus\n\n- Overhauled display settings\n\n- Fixed a bug where restarting wouldn't resume to the next challenge\n\n- Fixed log --graph output styling\n\n- Fixed bug with restore with no source provided\n\n- Changed validators on Challenge 26"
+    },
+    {
+      "title": "Next Fest Update 4",
+      "date": "2025-06-16 12:38:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289696129",
+      "content": "Hey everyone,\n\nI have done a bunch of bug fixes and starting to ramp up to the release of 1.0 tomorrow. I'm trying to add in a lot of the foundation for features I have planned post-launch. I've resolved all the bug reports we've had so far now. Thank you all so much for reporting those in the Steam Discussions for me to fix!\n\nI can't wait for everyone to play the full game tomorrow and I hope you'll attempt to 100% the achievements as well; it won't be easy. \n\nNote to Linux users: I know a lot of you are playing on linux via Proton's emulation. A user has recently shown me what that looks like on the discord. There are challenges later in the game that won't be solvable with emulation unfortunately (I don't think, I could be wrong). \n\nI am going to be updating to a version of .Net that will allow me to build this for Windows and Linux, but that will require more testing. If you're willing to help with that please do join the discord. \n\n Join the Discord\n\n  Changelog - 0.4.0\n- Overhauled the Save\n\n- Added Steamworks\n\n- Added Achievements (will be in full release)\n\n- Refactored Status command\n\n- Added back the git help {command} feature\n\n- Fixed validators for challenge 8 (thanks Pwnage Block)\n\n- Multiple status bugs fixed (thanks Xudmud & 4LT)\n\n- Fixed bug in the MergeConflictResolved validator (thanks Myndale)\n\n- Fixed bug with branch deletion (thanks jazck)"
+    },
+    {
+      "title": "Next Fest Update 3 | Thank You Guys",
+      "date": "2025-06-15 05:37:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289654522",
+      "content": "A few people have requested Command Prompt / PowerShell / Linux commands for things like creating files, listing files, editing files, etc. So I've started to add em! \n\nAs well I've begun refactoring a lot of the commands in the game to not just include the solutions I've thought of for the challenges, but to have complete parity to the commands in Git. In this version of the demo you'll notice a lot more commands and flags exist now (rev list, merge base, clean, bisect, cherry pick, and more) as well additional flags on a lot of the basic commands you had already. \n\nMy hope is that soon after release I can make a \"sandbox\" environment. With it players will be able to build repositories and use them for their own custom challenges that will be used with Steam Workshop. The first step to that though will be full parity with Git & a range of validators for you all to use. \n\nAnd once again, I just want to say thank you to everyone who has played, wishlist, or provided feedback on the game. I appreciate you all taking time to try it! I hope everyone enjoys the full game when it comes out on the 17th. \n\nJoin the Discord\n\n  Changelog - 0.3.0\n- Refactored multiple commands for fuller Git parity\n\n- Added more git commands for full release\n\n- Added Command Prompt Command (start)\n\n- Added PowerShell Command (new-item, get-content, dir, invoke-item)\n\n- Added Linux Command (touch, cat, ls, xdg-open)\n\n- Added MacOS Command (open)\n\n- Reflog Command & Reflog Entry Tracking\n\n- Fixed git stash handling short commitIds (thanks nightshade nocturne)\n\n\n\n[img src=\"{STEAM_CLAN_IMAGE}/45597201/f8bc1780ee1ed859321ce3a3a1409861ccd7cc4e.png\"]\n\n[img src=\"{STEAM_CLAN_IMAGE}/45597201/4c7a302f34bd7476f66dff012c882fca0e0e175d.png\"]\n\n[img src=\"{STEAM_CLAN_IMAGE}/45597201/f953a312f31a6e683313234957efe06be51e7b09.png\"]"
+    },
+    {
+      "title": "Next Fest Update - Switch Command",
+      "date": "2025-06-12 22:10:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289580638",
+      "content": "It's another short update based on community feedback. I've made some minor adjustments for clarity on hints. But the major thing is adding switch and all the possible flags for branch. \n\nOriginally I was going to wait until release to update with the switch command but based on feedback from you guys I put in a few extra hours of testing to feel confident releasing it now during Next Fest. \n\nJoin the Discord  Changelog - 0.2.0\n- Added the switch command\n\n- Added every branch flag, this might have bugs as there is a lot new (thanks manfart2021)\n\n- Adjusted challenge 11 validator for new commands\n\n- Adjusted challenge 4 hints for clarity"
+    },
+    {
+      "title": "Next Fest Update 0.1.1",
+      "date": "2025-06-10 10:31:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199559086",
+      "content": "Hey everyone, I firstly just want to say thanks so much for playing git gud! Seeing so many people have downloaded and tried the game is fantastic to see as I didn't expect the game to appeal to many people as it is very niche (or so I thought). \n\n\n\nAnd a huge special thank you to the users below who reported bugs that I was able to quickly get fixed for everyone. \n\nI will note multiple people have reached out to me about Git 2.23 commands, mainly switch, missing from the simulation. This fault entirely lies on me. I was unaware how well adopted the 2.23 changes were and personally myself have always been taught and used the traditional checkout commands even though they are very overloaded. \n\nGit 2.23 features such as switch and restore will be coming soon and will certainly be included by the time the game releases on the 17th. \n\nJoin the Discord\n\nChangelog | 0.1.1\n- Demo now includes the full Git simulation and is only missing the levels\n\n- Fixed bug with hints showing out of order (thanks Darquesse27)\n\n- Fixed branch --no-merged being called --unmerged (thanks Alfonso Matador)\n\n- Fixed init not accepting a directory name (thanks RIMA)"
+    },
+    {
+      "title": "Steam Next Fest",
+      "date": "2025-06-09 11:56:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199527489",
+      "content": "Steam June Next Fest!\n\n\nThe wait is over \u2013 git gud is now live with a playable demo as part of Steam\u2019s June Next Fest!\n\nI\u2019m incredibly excited for you to finally get your hands on it. Whether you're brand new to Git or just looking to sharpen your command line skills, git gud is designed to make learning Git feel like a game\u2014because it is one!\n\nNow, let\u2019s be real: Git isn\u2019t exactly known for being beginner-friendly or \u201cfun.\u201d But that\u2019s exactly why I made this game. git gud gives you hands-on experience with a fully simulated Git environment, teaching you skills that go far beyond what GUI tools can offer.\n\nA quick heads-up: Git is massive, with countless commands and flags. There may be challenges with multiple valid solutions, or edge cases where your input isn\u2019t recognized\u2014yet. If something should work but doesn\u2019t, please hop over to the Bugs & Solutions forum on the Steam Discussions page and let me know!\n\nI've worked hard to make git gud as close to real Git as possible\u2014even simulating complex features like interactive rebasing. It's a passion project, and your feedback will help make it even better for full release.\n\nThanks so much for checking out git gud! I hope you enjoy the demo, and I\u2019ll see you again when the full game launches on June 17th.\n\nAlso join our Discord!"
+    }
+  ]
+}

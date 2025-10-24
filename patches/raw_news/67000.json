@@ -1,0 +1,120 @@
+{
+    "appId": "67000",
+    "count": 19,
+    "notes": [
+        {
+            "title": "Version 142",
+            "date": "2022-08-25 12:00:28",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316500003104559",
+            "content": "Even more minor changes to get rid of libiconv / libintl false positives for Babar [a supposed French spyware] with BitDefender. libiconv gets a false positive if it doesn't have debug information, and libintl gets a false positive if it has debug information.\n\nOr to paraphrase, libintl can't wear a beret or it gets mistaken for a French spy, and their friend libiconv has to wear a beret or it gets mistaken for a French spy."
+        },
+        {
+            "title": "Version 141 - minor update",
+            "date": "2022-08-24 22:37:16",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316500001072724",
+            "content": "Version 140 got accused of being a French spy, so I had to remove the beret and hide the baguette.\n\nTo be exact, BitDefender and a handful of other generally fairly obscure antiviruses had a false positive in libintl-8.dll for [url=https://www.vice.com/en/article/8qxkyg/meet-babar-a-new-malware-almost-certainly-created-by-france]Babar, a supposed French malware.[/url] . \n\nI seen false positives before, but never for anything with an interesting backstory. Thanks 死の天使 / Shinotenshi for bringing this to my attention.\n\nTested in [url=https://www.virustotal.com/gui/file/3aa90a503684a3e33e01977f419b9486dbf48f639a9a19631a291b6ecf75974b/detection]VirusTotal[/url], most high quality antiviruses don't flag it. \n\nFortunately, removing debug information from the dll makes it [url=https://www.virustotal.com/gui/file/774fcb7c110ad87088d9f6e15275a279aeebb69b23360785e7e3ef2390a24df1?nocache=1]test clean[/url] while also confirming that it is a false positive, since malware doesn't live inside debug information.\n\nLess fortunately removing debug information makes it harder to process crash reports.\n\nTo clarify, all my binaries in every release are cross-compiled from source under a Linux environment, where Windows-only malware like Barbar can not infect them.\n\nedit: well I'll be damned, another one from BitDefender for a closely related library libiconv-2.dll , except this one gets a false positive only if it does [i]not[/i] have debug information. I guess time for release 142"
+        },
+        {
+            "title": "Version 140 with backports from Polynomial 2",
+            "date": "2022-08-23 20:50:21",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316499997159143",
+            "content": "This update consists primarily of back-ported engine fixes from Polynomial 2 while keeping the gameplay unchanged.\n[list]\n[*]UI and system framework from Polynomial 2\n[*]Fixes for HiDPI scaling issues under Windows\n[*]Fixes for spinning screen issue under some Windows versions with HiDPI scaling\n[*]Compatibility with modern Linux distributions\n[*]Use steam Linux Runtime instead of custom libraries\n[*]Linux no-sound issue fixed\n[*]Improvements to \"add files\" dialog when in full screen mode\n[*]Fixed a bug with \"save image\" in fullscreen sometimes saving a black image\n[*]Updated SteamWorks SDK\n[*]Added 64 bit binaries for Windows\n[*]Linux 64 bit now supports achievements\n[/list]\n\nPlease report any regressions. If this update breaks something and you need to revert, you can right click on the game, \"Properties...\", and in Betas tab select \"old_version\" as a beta.\n\nMinor behavior changes: clicking outside the menu no longer unpauses the game, you need to press [esc] or click \"Play game\".\n\nKnown minor regressions: horizontal scroll bar in Scores panel may show incorrect position in the scroll bar even though the window scrolls correctly.\n"
+        },
+        {
+            "title": "Polynomial 2 has been released on Early Access!",
+            "date": "2016-06-01 10:09:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572127521838",
+            "content": "[url=http://store.steampowered.com/app/379420/][img]http://cdn.akamai.steamstatic.com/steam/apps/379420/header.jpg?t=1464789620[/img][/url]."
+        },
+        {
+            "title": "Polynomial 2 has been released on Early Access!",
+            "date": "2016-06-01 10:09:24",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/249201544481908374",
+            "content": "[url=http://store.steampowered.com/app/379420/][img]http://cdn.akamai.steamstatic.com/steam/apps/379420/header.jpg?t=1464789620[/img][/url]."
+        },
+        {
+            "title": "Polynomial 2 is coming soon to Early Access",
+            "date": "2016-05-25 18:49:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572127523246",
+            "content": "[url=http://store.steampowered.com/app/379420]The store page[/url]"
+        },
+        {
+            "title": "Polynomial 2 is coming soon to Early Access",
+            "date": "2016-05-25 18:49:44",
+            "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/255956312796739532",
+            "content": "[url=http://store.steampowered.com/app/379420]The store page[/url]"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2011-09-06 15:00:00",
+            "url": "http://store.steampowered.com/news/6210/",
+            "content": " \n<ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed deletion in playlist.<br><li>Fixed multiple crashes under OS X Lion (10.7)<br><li>Set the default folder for file dialogs under OS X<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "Daily Deal - The Polynomial 75% off!",
+            "date": "2011-08-30 13:02:00",
+            "url": "http://store.steampowered.com/news/6160/",
+            "content": " \nToday's Deal: Save 75% off <a href=\"http://store.steampowered.com/app/67000/\">The Polynomial</a>!<br><br>Look for the deals each day on the front page of Steam.  Or follow us on <a href=\"http://twitter.com/steam_games\">twitter</a> or <a href=\"http://www.facebook.com/Steam\">Facebook</a> for instant notifications wherever you are!<br><br><a href=\"http://store.steampowered.com/app/67000/\"><img src=\"http://storefront.steampowered.com/v/gfx/apps/67000/capsule_467x181.jpg\" style=\" float: left; margin-right: 12px; height: 181px; width: 467px;\"></a>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2011-08-17 17:09:00",
+            "url": "http://store.steampowered.com/news/6091/",
+            "content": " \n<ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed a bug in waves and super waves visualizer hang protection.<br><li>Improved performance when shooting at sun.<br><li>Fixed wormhole sequence loop bug.<br><li>Start with zero throttle so that the player can read instructions in the level 0.<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2011-07-04 12:31:00",
+            "url": "http://store.steampowered.com/news/5790/",
+            "content": " \nImproved animator compatibility with old graphics cards (GeForce 7 series).\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2011-05-13 19:32:00",
+            "url": "http://store.steampowered.com/news/5469/",
+            "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Impact markers on HUD to let you know where you're shot from<br><li>Controller improvements - <br><li>Dead zone parameter<br><li>Non-linearity to allow precise shooting<br><li>Relative throttle for gamepads<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2011-01-13 16:29:00",
+            "url": "http://store.steampowered.com/news/4880/",
+            "content": " \nUpdates to The Polynomias have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Windows: support for any audio format via DirectShow codecs; simply install system wide codecs in the usual way to play any format. Some types of internet streaming audio might also work now depending to the system configuration (OS X version already supports pretty much any format through system codecs)<br><li>Key bindings for next and previous song and song restart work correctly now<br><li>File chooser directories are remembered independently for different file chooser dialogs<br><li>Removed \"Merry Christmas\" from tutorial level (the Christmas tree remains in the Christmas level)<br><li>Moved Christmas themed music down in the default playlist<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2010-12-20 12:50:00",
+            "url": "http://store.steampowered.com/news/4815/",
+            "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Free Christmas-themed content.<br><li>Added a button to pause music.<br><li>Bugfixes for older ATI cards.<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2010-11-30 14:56:00",
+            "url": "http://store.steampowered.com/news/4711/",
+            "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed in-game help rendering on certain versions of Catalyst driver. With those versions, the in-game help was previously invisible, rendering the game somewhat incomprehensible. Some other objects were also affected.<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2010-11-26 16:11:00",
+            "url": "http://store.steampowered.com/news/4703/",
+            "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><b>New features:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Massive improvements to the music analyzer, now visualizes even better for larger variety of music types.<br><li>New music customization option: use a slider to choose between animation to the beat or animation to the melody (and voice), or any mix of beat and melody. As with any other parameters, the effects are immediately visible, letting you tune it just right for your taste.<br><li>Configurable controller binding <li>set up your game controller's sticks and buttons and sliders just the way you like, in Controls panel.<br><li>Enemy flight improved, better flight and attack patterns.<br><li>Enemies collide and bounce off each other.<br></ul><b>Fixes:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed crash/hang when adding music files in fullscreen (reported for ATI cards under Windows 7 64-bit).<br><li>Fixed 2 rare crash bugs during gameplay.<br><li>Fixed a bug that caused current playlist not to autosave when appending music from another playlist. <br><li>Fixed continuous asking for restart on some multiple-display setups.<br><li>\"Difficulty\" announcement active only in level 0 now.<br><li>Numerous game engine improvements for improved performance and stability.<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2010-10-19 14:44:00",
+            "url": "http://store.steampowered.com/news/4509/",
+            "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Leaderboards update frequency reduced to minimize server load. <br><li>Controller fixes (can set controller speed now with same slider as for mouse, and controller also works when in traditional shooter mode). <br><li>Can disable crosshair by pressing H one more time. <br><li>Crosshair drawing moved to Lua for user modifiability.<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "The Polynomial Update Released",
+            "date": "2010-10-18 15:51:00",
+            "url": "http://store.steampowered.com/news/4504/",
+            "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Support for GeForce 7 series . <br><li>Improved explanations of the gameplay.<br><li>Fixed incorrect level ordering.<br><li>Fixed audio effect glitch.<br></ul>\t\t\t\t"
+        },
+        {
+            "title": "New Release - The Polynomial",
+            "date": "2010-10-15 19:01:00",
+            "url": "http://store.steampowered.com/news/4499/",
+            "content": " \n<a href=\"http://http://store.steampowered.com/app/67000/\">The Polynomial - Space of the music</a> is now available on Steam!<br><br>Fly around, blast the enemies and rock out in the 3D universe created by the music of your choice!<br><br><a href=\"http://store.steampowered.com/app/67000/\"><img src=\"http://storefront.steampowered.com/v/gfx/apps/67000/capsule_467x181.jpg\" style=\" float: left; margin-right: 12px; height: 181px; width: 467px;\"></a>\t\t\t\t"
+        }
+    ]
+}
