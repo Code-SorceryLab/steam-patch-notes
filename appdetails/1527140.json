@@ -1,0 +1,107 @@
+{
+    "type": "game",
+    "name": "SC2KRender",
+    "steam_appid": 1527140,
+    "required_age": 0,
+    "is_free": true,
+    "detailed_description": "<strong>What is SC2KRender?</strong><br>SC2KRender is an open-source program that loads SimCity 2000\u2122 map files (*.sc2) and renders them in 3D. Over 180 unique models were reimagined so you can explore your metropolis like never before. Transforming the 2D world into 3D has limitations and things that just aren't feasible. These design limitations have been solved by studying 3D Maxis games of the early 90s which made use of the SC2 map file format. Please note this program is not endorsed, sponsored, or otherwise affiliated with Maxis or Electronic Arts and all assets (code and graphics) are original works.<br><br><strong>What game engine are you using?</strong><br>SC2KRender is an open-source project written using DirectX 11 and C++17, it does not use a game engine. A stripped-down version of DirectX ToolKit was used, which is a collection of helper classes and functions for DirectX. Some features of this homebrew include multisampling anti-aliasing, frustum culling, and Direct2D/DirectWrite integration for text rendering. <br><br><strong>How can I create my own maps?</strong><br>You will need to legally obtain a copy of SCURK or WinSCURK to create maps, or purchase SimCity 2000\u2122 and either load in your saved map or use the included copy of SCURK which comes with it. <br><br><strong>The Team:</strong><br>Aleksander Krimsky: Programming and Art<br>Thomas Nelson: Lead Artist<br><br>Various people who have helped along the way are included in the source files available on GitHub.<h2 class=\"bb_tag\"><i>Accomplished</i></h2><ul class=\"bb_ul\"><li>Decompress and parse map data<br></li><li>Render water, terrain, and building data<br></li><li>Fullscreen, borderless, and windowed mode<br></li><li>Steam release</li></ul><h2 class=\"bb_tag\"><i>Future Plans</i></h2><ul class=\"bb_ul\"><li>Textures for terrain and models<br></li><li>Lighting with day and night modes<br></li><li>Render underground data (tunnels, pipes)<br></li><li>Link power lines</li></ul><h2 class=\"bb_tag\"><i>Tentative/Stretch Goals</i></h2><ul class=\"bb_ul\"><li>Simulation with cars, boats, planes, etc.<br></li><li>Support for AR/VR</li></ul><h2 class=\"bb_tag\"><strong>Help Section</strong></h2><br><i>Why do objects &quot;flicker&quot; for me?</i><br>This can be due to MSAA struggling with some geometries on buildings that use triangular faces, try turning off MSAA to see if the issue is fixed. I will be looking into finding a more permanent fix in the future.<br><br><i>Why do objects <strong>still</strong> &quot;flicker&quot; for me?</i><br>This could be due to z-fighting if your camera is very far away from the scene. Try zooming into the scene and see if the issue is resolved. The problem may take a bit more effort to try and resolve.<br><br><i>Why is this thing so damn laggy?</i><br>The map size is 128 * 128 = 16384 possible models, not counting &quot;scenery&quot; objects. Frustum culling is a feature that prevents rendering objects that are not within your camera, so try going more to the ground-level of a city for better fps. Unfortunately the pipeline for graphics rendering is largely single threaded with the exception of &quot;command lists&quot; which is an NVidia only-feature.<br><br><i>What are you going to do about the performance?</i><br>The current goal is to work on a technique known as instancing, that should help performance a lot.",
+    "about_the_game": "<strong>What is SC2KRender?</strong><br>SC2KRender is an open-source program that loads SimCity 2000\u2122 map files (*.sc2) and renders them in 3D. Over 180 unique models were reimagined so you can explore your metropolis like never before. Transforming the 2D world into 3D has limitations and things that just aren't feasible. These design limitations have been solved by studying 3D Maxis games of the early 90s which made use of the SC2 map file format. Please note this program is not endorsed, sponsored, or otherwise affiliated with Maxis or Electronic Arts and all assets (code and graphics) are original works.<br><br><strong>What game engine are you using?</strong><br>SC2KRender is an open-source project written using DirectX 11 and C++17, it does not use a game engine. A stripped-down version of DirectX ToolKit was used, which is a collection of helper classes and functions for DirectX. Some features of this homebrew include multisampling anti-aliasing, frustum culling, and Direct2D/DirectWrite integration for text rendering. <br><br><strong>How can I create my own maps?</strong><br>You will need to legally obtain a copy of SCURK or WinSCURK to create maps, or purchase SimCity 2000\u2122 and either load in your saved map or use the included copy of SCURK which comes with it. <br><br><strong>The Team:</strong><br>Aleksander Krimsky: Programming and Art<br>Thomas Nelson: Lead Artist<br><br>Various people who have helped along the way are included in the source files available on GitHub.<h2 class=\"bb_tag\"><i>Accomplished</i></h2><ul class=\"bb_ul\"><li>Decompress and parse map data<br></li><li>Render water, terrain, and building data<br></li><li>Fullscreen, borderless, and windowed mode<br></li><li>Steam release</li></ul><h2 class=\"bb_tag\"><i>Future Plans</i></h2><ul class=\"bb_ul\"><li>Textures for terrain and models<br></li><li>Lighting with day and night modes<br></li><li>Render underground data (tunnels, pipes)<br></li><li>Link power lines</li></ul><h2 class=\"bb_tag\"><i>Tentative/Stretch Goals</i></h2><ul class=\"bb_ul\"><li>Simulation with cars, boats, planes, etc.<br></li><li>Support for AR/VR</li></ul><h2 class=\"bb_tag\"><strong>Help Section</strong></h2><br><i>Why do objects &quot;flicker&quot; for me?</i><br>This can be due to MSAA struggling with some geometries on buildings that use triangular faces, try turning off MSAA to see if the issue is fixed. I will be looking into finding a more permanent fix in the future.<br><br><i>Why do objects <strong>still</strong> &quot;flicker&quot; for me?</i><br>This could be due to z-fighting if your camera is very far away from the scene. Try zooming into the scene and see if the issue is resolved. The problem may take a bit more effort to try and resolve.<br><br><i>Why is this thing so damn laggy?</i><br>The map size is 128 * 128 = 16384 possible models, not counting &quot;scenery&quot; objects. Frustum culling is a feature that prevents rendering objects that are not within your camera, so try going more to the ground-level of a city for better fps. Unfortunately the pipeline for graphics rendering is largely single threaded with the exception of &quot;command lists&quot; which is an NVidia only-feature.<br><br><i>What are you going to do about the performance?</i><br>The current goal is to work on a technique known as instancing, that should help performance a lot.",
+    "short_description": "SC2KRender is a program that loads SimCity 2000\u2122 map files (*.sc2) and renders them in 3D.",
+    "supported_languages": "English",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/header.jpg?t=1612554217",
+    "capsule_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/capsule_231x87.jpg?t=1612554217",
+    "capsule_imagev5": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/capsule_184x69.jpg?t=1612554217",
+    "website": "https://github.com/alekasm/SC2KRender",
+    "pc_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li>Requires a 64-bit processor and operating system<br></li><li><strong>OS:</strong> Windows 10<br></li><li><strong>Processor:</strong> Intel\u00ae Core\u2122 i7-4790K<br></li><li><strong>Graphics:</strong> GEFORCE\u00ae GTX 970<br></li><li><strong>DirectX:</strong> Version 11<br></li><li><strong>Storage:</strong> 10 MB available space</li></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"><li>Requires a 64-bit processor and operating system</li></ul>"
+    },
+    "mac_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "linux_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "developers": [
+        "Aleksander Krimsky"
+    ],
+    "publishers": [
+        "Aleksander Krimsky"
+    ],
+    "package_groups": [],
+    "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+    },
+    "genres": [
+        {
+            "id": "23",
+            "description": "Indie"
+        },
+        {
+            "id": "57",
+            "description": "Utilities"
+        }
+    ],
+    "screenshots": [
+        {
+            "id": 0,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_b74e746654dbc47690cddbef5adb2e872afe9628.600x338.jpg?t=1612554217",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_b74e746654dbc47690cddbef5adb2e872afe9628.1920x1080.jpg?t=1612554217"
+        },
+        {
+            "id": 1,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_d64f4db3abffc3f2adab7754547a823ce47dbc21.600x338.jpg?t=1612554217",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_d64f4db3abffc3f2adab7754547a823ce47dbc21.1920x1080.jpg?t=1612554217"
+        },
+        {
+            "id": 2,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_2b965b991ab033e78bf4f55ebe7b607e7291826b.600x338.jpg?t=1612554217",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_2b965b991ab033e78bf4f55ebe7b607e7291826b.1920x1080.jpg?t=1612554217"
+        },
+        {
+            "id": 3,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_57f18a1f840b2c14d5c369804ee95c1c8207f8e5.600x338.jpg?t=1612554217",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_57f18a1f840b2c14d5c369804ee95c1c8207f8e5.1920x1080.jpg?t=1612554217"
+        },
+        {
+            "id": 4,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_066698b6c22602809305cc62e257a514edf093ca.600x338.jpg?t=1612554217",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1527140/ss_066698b6c22602809305cc62e257a514edf093ca.1920x1080.jpg?t=1612554217"
+        }
+    ],
+    "movies": [
+        {
+            "id": 256818537,
+            "name": "Steam Release",
+            "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/256818537/movie.293x165.jpg?t=1611068170",
+            "webm": {
+                "480": "http://video.akamai.steamstatic.com/store_trailers/256818537/movie480_vp9.webm?t=1611068170",
+                "max": "http://video.akamai.steamstatic.com/store_trailers/256818537/movie_max_vp9.webm?t=1611068170"
+            },
+            "mp4": {
+                "480": "http://video.akamai.steamstatic.com/store_trailers/256818537/movie480.mp4?t=1611068170",
+                "max": "http://video.akamai.steamstatic.com/store_trailers/256818537/movie_max.mp4?t=1611068170"
+            },
+            "highlight": true
+        }
+    ],
+    "release_date": {
+        "coming_soon": false,
+        "date": "5 Feb, 2021"
+    },
+    "support_info": {
+        "url": "https://discord.gg/Sb56RQF",
+        "email": ""
+    },
+    "background": "https://store.akamai.steamstatic.com/images/storepagebackground/app/1527140?t=1612554217",
+    "background_raw": "https://store.akamai.steamstatic.com/images/storepagebackground/app/1527140?t=1612554217",
+    "content_descriptors": {
+        "ids": [],
+        "notes": null
+    },
+    "ratings": null
+}

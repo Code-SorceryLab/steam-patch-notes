@@ -1,0 +1,262 @@
+{
+    "type": "game",
+    "name": "PixAnt Farm (Idle)",
+    "steam_appid": 2745340,
+    "required_age": 0,
+    "is_free": false,
+    "detailed_description": "<strong>Overview:</strong><br><br>Have you ever wanted your own virtual farm of pix-ants? Probably not yet, but now is your chance to do just that! Grow your colony of ants from the ground up and watch as they autonomously explore the screen, eating pellets as they encounter them, earning you the ability to unlock new ant colorations and upgrade their automatic feeder! If all that automatic feeding makes you feel too distant from your ants, you can always turn it off and feed them yourself. Not only that, but you can also give them names, manually move them around the farm with drag and drop, lead them with the mouse, or steer them with the keyboard. You can also build obstacles, mazes, housing areas, and draw shapes of all sorts for them to explore. This will keep your ants plenty entertained for hours to come, and they will enjoy exploring every accessible inch of your creations.<br><br><strong>Gameplay Objective:</strong><br><br>This idle game is intended to provide a low-stress and laid-back gameplay experience. There are no major calamities to be concerned with because the primary objectives of this game are enjoyment, creativity, and unlocking new features. This game is intended for everyone of all ages, especially the aspiring entomologist (who does not mind the biological inaccuracies of ants) or a kind caretaker that just likes the idea of small virtual insects as pets. Can you upgrade all the way to the 100th ant to unlock the queen? Start playing today to find out!<br><br><strong>In-Game Objectives:</strong><br><br> - Grow your ant farm to 100 ants!<br> - Fully upgrade all of your ants\u2019 base colors and stripe colors!<br> - Fully upgrade the automatic feeder!<br> - Have fun!<br> <br><strong>Automatic Saving:</strong><br><br>Apart from save state file corruption (see below), you never have to worry about saving your work! That is because this lightweight game automatically saves your progress as you grow your colony and as they eat food pellets. You can exit the game whenever you want and rest assured that everything, except the food pellets on the screen, will be restored on the next restart of the game (unless the option to restart the game from scratch is selected).<br><br><strong>Automatic Saving Occurs When:</strong><br> - A brand-new game state is fully initialized either without a preexisting save state file (like during the first startup) or the game progress is intentionally reset to its initial state. This ensures that the save state file is created or recreated in its initial state.<br> - Immediately after an ant is renamed. This ensures that the ant\u2019s new name is saved and will not be lost on exit.<br> - Immediately after buying a new upgrade such as an ant, a base color, a stripe color, or an auto-feeder speed enhancement. This ensures that the upgrade is saved and will not be lost on exit.<br> - Immediately after every animation frame. This ensures that the total eaten food pellet count and the ants\u2019 new locations are saved and will not be lost on exit.<br> - The upgrades window is closed or the ant selection is changed from within the upgrades window. This ensures that the newly-selected coloration for the last-selected ant is saved.<br><br><strong>Warnings:</strong><br><br><strong>Save State File Corruption Can Result in Loss of Game Progress:</strong><br><strong>Background Information:</strong> As the game application runs, it dynamically generates and saves its internal game state to a file known as the \u201csave state file\u201d in the same directory (folder) as the binary executable file of the application. This file contains all of the information that is persisted through restarts of the application and records the upgrade levels of the different ants, the upgrade levels of the auto-feeder, the locations of wall blocks and ants in the ant farm, the names of the ants, and other related information. Corruption of this file, which happens when data gets saved incorrectly or incompletely to the file, may result in the progress data of the user being lost either directly (when the corruption occurs) or when the file is reset by the application (when the corrupted file is detected to be invalid).<br><br><strong>Causes of Save State File Corruption:</strong> Save state file corruption can occur if the program is abruptly interrupted or terminated during the write-process of saving the game state file to disk. For example, a hard shutdown (i.e., a hard power off), a power outage, a power surge, a system error, a hardware failure, force-killing the application (e.g. with Task Manager), etc., while the game is actively running (particularly when it is saving its game state to its save file) can all cause corruption of the save state file. Additionally, some viruses, hardware faults, spontaneous bit errors, etc. can also be responsible for save state file corruption as well, which can occur even if the game is not actively running. This game is moderately susceptible to save state file corruption (as are many games) because during standard operation (i.e., when one or more ants are being animated in the ant farm), it saves the game state after each frame of animation to automatically track the number of eaten food pellets.<br><br><strong>Creating Checkpoints:</strong> To avoid losing all game progress due to save state file corruption, it is recommended to periodically and manually make duplicate copies of the valid save state file and back it up elsewhere. These copies of the save state file can be used to replace a corrupted save state file and allow the application to recover all of the progress up to the point when the duplicate save state file was created, essentially allowing the file to serve like a checkpoint for the game.<br><br><strong>Purchased Dropdown Menu Options Not Showing Up:</strong> A known defect (bug) in this application is that after upgrading an ant\u2019s base color and/or stripe color or buying a new ant, the newly purchased coloration option or ant number does not immediately show up in the corresponding drop-down lists of the ant in the upgrades window.<br>Workaround: A solution to temporarily fix this issue when it occurs is to exit and restart the application. A better solution has yet to be discovered because the specific cause for this error is unknown because the error cannot be reliably reproduced and debugged. It has only been encountered on three different occasions by the developer\u2019s testers. Even so, the first patch released for this game adds functionality that aims to eliminate this issue, which has yet to be observed since.<br><br><strong>A Non-Error Where Ants Appear to Be Missing After Upgrading:</strong> Immediately after purchasing multiple new ants, they should all appear in the top left corner of the ant farm in the primary window of the ant farm when the upgrades window is closed. If after a short while you still can\u2019t see all of the new ants, it is likely because some of them happen to be walking overtop of the others such that they are not all visible at the same time. To check if this is the case, you can either move the ants around by whatever means is preferred to uncover previously hidden ants, or go to the upgrades window and look for and select each of the new ants in the dropdown list.<br><br><strong>Upgrades:</strong><br><br>The cost functions <i>C</i> representing the total cost of an upgrade as a function of the total number of purchased upgrades <i>n</i> are given below.<br><br><strong>Color Upgrade Cost:</strong><br><br><i>C</i>[n]=<i>n</i>^2+10    where    <i>n</i>\u03f5[0,11]<br><br>In addition to the default (dark gray) color of the ant, there the other colors that may be upgraded to are shown below. For reference, the background color of the ant farm is (240, 210, 130), which has been darkened from its original color to reduce potential eyestrain while maintaining a sand-like color of an ant hill.<br><br><strong>Color Name and RGB (Red, Green, Blue) Values:</strong><br>(Default) / Dark Gray: (25, 25, 25)<br>Gray: (130, 130, 130)<br>Green: (0, 200, 0)<br>Blue: (0, 0, 255)<br>Red: (255, 0, 0)<br>Purple: (160, 30, 255)<br>Orange: (255, 160, 15)<br>Yellow: (255, 255, 30)<br>Pink: (255, 100, 210)<br>White: (255, 255, 255)<br>Turquoise: (64, 224, 208)<br><br><strong>Ant Upgrade Cost:</strong><br><br><i>C</i>[n]=(<i>n</i>-1)^2+100    where    <i>n</i>\u03f5[0,99]<br><br><strong>Auto-Feeder Upgrade Cost:</strong><br><br><i>C</i>[n]=10<i>n</i>^3+500    where    <i>n</i>\u03f5[0,18]<br><br><strong>Offline Earnings Cap Upgrade Cost:</strong><br><br><i>C</i>[n]=9<i>n</i>^3+500    where    <i>n</i>\u03f5[0,19]<br><br>Pellets are earned automatically at a rate of 1 pellet per minute for each whole hour spent offline up to one a maximum of one week (168 hours), if the offline earnings cap is fully-upgraded. The offline earnings cap in hours f given as a function of the upgrade count x:<br><br><i>f</i>[x]=floor((167/19)<i>n</i>+1)    where    <i>x</i>\u03f5[0,19]<br><br><strong>Graphical User Interface (GUI) Animation Settings:</strong><br><br>Along the top of the main/primary window of the application, there is a menu strip with several buttons that can be selected to access various features and options of the game. When the settings button is pressed, the settings window opens that provides two trackbars (colloquially known as sliders) with animation-related settings. These settings were added with direct access to enable users to tweak the animation and improve the visual experience of the game on whichever device they are using to play the game. Each time the game is restarted, the animation settings are defaulted back to the intended settings, but they may always be altered.<br> - The top trackbar allows the user to select the Milliseconds Per Frame (Animation Frame Rate). This is the amount of time in milliseconds that elapses between the display of each animation frame. Lower values make the animation appear faster and smoother while higher values make the animation appear slower and blockier. The range of permitted values is [100, 350] milliseconds.<br> - The top trackbar allows the user to select the Pixels Per Frame (Ant Walking Speed). This is the number of pixels across the ant farm (in the client area of the primary window) that the ant can move between each frame of animation. Lower values make the ants move slower and smoother across the screen while higher values make the ants move faster and blockier across the screen. The range of permitted values is [0, 10] pixels.<br><br><strong>Export As Bitmap:</strong><br><br>In the primary ant farm window, there is a button labeled \u201cExport as Bitmap\u201d that is located in the menu strip along the top of the screen. Clicking this button provides a convenient, fast, and hassle-free way to effectively screenshot the entire PixAnt farm game window with full resolution and no reliance on external screenshot tools. The screenshot image is automatically saved as a bitmap file in the game\u2019s installation directory (the same directory containing the application\u2019s executable file and save state file) and are never automatically deleted. The exact installation directory where these images are stored depends on how Steam is configured to install games, but it is typically a path like C:\\Program Files (x86)\\Steam\\steamapps\\common\\PixAnt Farm (Idle)\\. Notably, this screenshotting capability is rudimentary because it is a \u201cdemo\u201d feature and may be subject to refactoring or removal in a future update, depending on player feedback.<br><br><strong>Contact the Developer:</strong><br><br>For any questions, concerns, or bugs (besides ants), do not hesitate to contact the developer with as much detailed information as possible (like a complete error message or numerical return code if any are available or detailed steps to repeat any recurrent errors). Any recommendations for gameplay enhancements are also greatly appreciated, though no further updates are promised.",
+    "about_the_game": "<strong>Overview:</strong><br><br>Have you ever wanted your own virtual farm of pix-ants? Probably not yet, but now is your chance to do just that! Grow your colony of ants from the ground up and watch as they autonomously explore the screen, eating pellets as they encounter them, earning you the ability to unlock new ant colorations and upgrade their automatic feeder! If all that automatic feeding makes you feel too distant from your ants, you can always turn it off and feed them yourself. Not only that, but you can also give them names, manually move them around the farm with drag and drop, lead them with the mouse, or steer them with the keyboard. You can also build obstacles, mazes, housing areas, and draw shapes of all sorts for them to explore. This will keep your ants plenty entertained for hours to come, and they will enjoy exploring every accessible inch of your creations.<br><br><strong>Gameplay Objective:</strong><br><br>This idle game is intended to provide a low-stress and laid-back gameplay experience. There are no major calamities to be concerned with because the primary objectives of this game are enjoyment, creativity, and unlocking new features. This game is intended for everyone of all ages, especially the aspiring entomologist (who does not mind the biological inaccuracies of ants) or a kind caretaker that just likes the idea of small virtual insects as pets. Can you upgrade all the way to the 100th ant to unlock the queen? Start playing today to find out!<br><br><strong>In-Game Objectives:</strong><br><br> - Grow your ant farm to 100 ants!<br> - Fully upgrade all of your ants\u2019 base colors and stripe colors!<br> - Fully upgrade the automatic feeder!<br> - Have fun!<br> <br><strong>Automatic Saving:</strong><br><br>Apart from save state file corruption (see below), you never have to worry about saving your work! That is because this lightweight game automatically saves your progress as you grow your colony and as they eat food pellets. You can exit the game whenever you want and rest assured that everything, except the food pellets on the screen, will be restored on the next restart of the game (unless the option to restart the game from scratch is selected).<br><br><strong>Automatic Saving Occurs When:</strong><br> - A brand-new game state is fully initialized either without a preexisting save state file (like during the first startup) or the game progress is intentionally reset to its initial state. This ensures that the save state file is created or recreated in its initial state.<br> - Immediately after an ant is renamed. This ensures that the ant\u2019s new name is saved and will not be lost on exit.<br> - Immediately after buying a new upgrade such as an ant, a base color, a stripe color, or an auto-feeder speed enhancement. This ensures that the upgrade is saved and will not be lost on exit.<br> - Immediately after every animation frame. This ensures that the total eaten food pellet count and the ants\u2019 new locations are saved and will not be lost on exit.<br> - The upgrades window is closed or the ant selection is changed from within the upgrades window. This ensures that the newly-selected coloration for the last-selected ant is saved.<br><br><strong>Warnings:</strong><br><br><strong>Save State File Corruption Can Result in Loss of Game Progress:</strong><br><strong>Background Information:</strong> As the game application runs, it dynamically generates and saves its internal game state to a file known as the \u201csave state file\u201d in the same directory (folder) as the binary executable file of the application. This file contains all of the information that is persisted through restarts of the application and records the upgrade levels of the different ants, the upgrade levels of the auto-feeder, the locations of wall blocks and ants in the ant farm, the names of the ants, and other related information. Corruption of this file, which happens when data gets saved incorrectly or incompletely to the file, may result in the progress data of the user being lost either directly (when the corruption occurs) or when the file is reset by the application (when the corrupted file is detected to be invalid).<br><br><strong>Causes of Save State File Corruption:</strong> Save state file corruption can occur if the program is abruptly interrupted or terminated during the write-process of saving the game state file to disk. For example, a hard shutdown (i.e., a hard power off), a power outage, a power surge, a system error, a hardware failure, force-killing the application (e.g. with Task Manager), etc., while the game is actively running (particularly when it is saving its game state to its save file) can all cause corruption of the save state file. Additionally, some viruses, hardware faults, spontaneous bit errors, etc. can also be responsible for save state file corruption as well, which can occur even if the game is not actively running. This game is moderately susceptible to save state file corruption (as are many games) because during standard operation (i.e., when one or more ants are being animated in the ant farm), it saves the game state after each frame of animation to automatically track the number of eaten food pellets.<br><br><strong>Creating Checkpoints:</strong> To avoid losing all game progress due to save state file corruption, it is recommended to periodically and manually make duplicate copies of the valid save state file and back it up elsewhere. These copies of the save state file can be used to replace a corrupted save state file and allow the application to recover all of the progress up to the point when the duplicate save state file was created, essentially allowing the file to serve like a checkpoint for the game.<br><br><strong>Purchased Dropdown Menu Options Not Showing Up:</strong> A known defect (bug) in this application is that after upgrading an ant\u2019s base color and/or stripe color or buying a new ant, the newly purchased coloration option or ant number does not immediately show up in the corresponding drop-down lists of the ant in the upgrades window.<br>Workaround: A solution to temporarily fix this issue when it occurs is to exit and restart the application. A better solution has yet to be discovered because the specific cause for this error is unknown because the error cannot be reliably reproduced and debugged. It has only been encountered on three different occasions by the developer\u2019s testers. Even so, the first patch released for this game adds functionality that aims to eliminate this issue, which has yet to be observed since.<br><br><strong>A Non-Error Where Ants Appear to Be Missing After Upgrading:</strong> Immediately after purchasing multiple new ants, they should all appear in the top left corner of the ant farm in the primary window of the ant farm when the upgrades window is closed. If after a short while you still can\u2019t see all of the new ants, it is likely because some of them happen to be walking overtop of the others such that they are not all visible at the same time. To check if this is the case, you can either move the ants around by whatever means is preferred to uncover previously hidden ants, or go to the upgrades window and look for and select each of the new ants in the dropdown list.<br><br><strong>Upgrades:</strong><br><br>The cost functions <i>C</i> representing the total cost of an upgrade as a function of the total number of purchased upgrades <i>n</i> are given below.<br><br><strong>Color Upgrade Cost:</strong><br><br><i>C</i>[n]=<i>n</i>^2+10    where    <i>n</i>\u03f5[0,11]<br><br>In addition to the default (dark gray) color of the ant, there the other colors that may be upgraded to are shown below. For reference, the background color of the ant farm is (240, 210, 130), which has been darkened from its original color to reduce potential eyestrain while maintaining a sand-like color of an ant hill.<br><br><strong>Color Name and RGB (Red, Green, Blue) Values:</strong><br>(Default) / Dark Gray: (25, 25, 25)<br>Gray: (130, 130, 130)<br>Green: (0, 200, 0)<br>Blue: (0, 0, 255)<br>Red: (255, 0, 0)<br>Purple: (160, 30, 255)<br>Orange: (255, 160, 15)<br>Yellow: (255, 255, 30)<br>Pink: (255, 100, 210)<br>White: (255, 255, 255)<br>Turquoise: (64, 224, 208)<br><br><strong>Ant Upgrade Cost:</strong><br><br><i>C</i>[n]=(<i>n</i>-1)^2+100    where    <i>n</i>\u03f5[0,99]<br><br><strong>Auto-Feeder Upgrade Cost:</strong><br><br><i>C</i>[n]=10<i>n</i>^3+500    where    <i>n</i>\u03f5[0,18]<br><br><strong>Offline Earnings Cap Upgrade Cost:</strong><br><br><i>C</i>[n]=9<i>n</i>^3+500    where    <i>n</i>\u03f5[0,19]<br><br>Pellets are earned automatically at a rate of 1 pellet per minute for each whole hour spent offline up to one a maximum of one week (168 hours), if the offline earnings cap is fully-upgraded. The offline earnings cap in hours f given as a function of the upgrade count x:<br><br><i>f</i>[x]=floor((167/19)<i>n</i>+1)    where    <i>x</i>\u03f5[0,19]<br><br><strong>Graphical User Interface (GUI) Animation Settings:</strong><br><br>Along the top of the main/primary window of the application, there is a menu strip with several buttons that can be selected to access various features and options of the game. When the settings button is pressed, the settings window opens that provides two trackbars (colloquially known as sliders) with animation-related settings. These settings were added with direct access to enable users to tweak the animation and improve the visual experience of the game on whichever device they are using to play the game. Each time the game is restarted, the animation settings are defaulted back to the intended settings, but they may always be altered.<br> - The top trackbar allows the user to select the Milliseconds Per Frame (Animation Frame Rate). This is the amount of time in milliseconds that elapses between the display of each animation frame. Lower values make the animation appear faster and smoother while higher values make the animation appear slower and blockier. The range of permitted values is [100, 350] milliseconds.<br> - The top trackbar allows the user to select the Pixels Per Frame (Ant Walking Speed). This is the number of pixels across the ant farm (in the client area of the primary window) that the ant can move between each frame of animation. Lower values make the ants move slower and smoother across the screen while higher values make the ants move faster and blockier across the screen. The range of permitted values is [0, 10] pixels.<br><br><strong>Export As Bitmap:</strong><br><br>In the primary ant farm window, there is a button labeled \u201cExport as Bitmap\u201d that is located in the menu strip along the top of the screen. Clicking this button provides a convenient, fast, and hassle-free way to effectively screenshot the entire PixAnt farm game window with full resolution and no reliance on external screenshot tools. The screenshot image is automatically saved as a bitmap file in the game\u2019s installation directory (the same directory containing the application\u2019s executable file and save state file) and are never automatically deleted. The exact installation directory where these images are stored depends on how Steam is configured to install games, but it is typically a path like C:\\Program Files (x86)\\Steam\\steamapps\\common\\PixAnt Farm (Idle)\\. Notably, this screenshotting capability is rudimentary because it is a \u201cdemo\u201d feature and may be subject to refactoring or removal in a future update, depending on player feedback.<br><br><strong>Contact the Developer:</strong><br><br>For any questions, concerns, or bugs (besides ants), do not hesitate to contact the developer with as much detailed information as possible (like a complete error message or numerical return code if any are available or detailed steps to repeat any recurrent errors). Any recommendations for gameplay enhancements are also greatly appreciated, though no further updates are promised.",
+    "short_description": "This idle game allows you to simulate and grow a colony of pix-ants. You can watch as they autonomously explore the screen, eating pellets, and earning you new ant colorations and automatic feeder upgrades. You can also give the ants names, and interact with them in various ways.",
+    "supported_languages": "English",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/header.jpg?t=1717898780",
+    "capsule_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/capsule_231x87.jpg?t=1717898780",
+    "capsule_imagev5": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/capsule_184x69.jpg?t=1717898780",
+    "website": null,
+    "pc_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li>Requires a 64-bit processor and operating system<br></li><li><strong>OS:</strong> Windows 10 (64-bit)</li></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"><li>Requires a 64-bit processor and operating system<br></li><li><strong>OS:</strong> Windows 11 (64-bit)<br></li><li><strong>Processor:</strong> 2.3 GHz+<br></li><li><strong>Memory:</strong> 8 GB RAM<br></li><li><strong>Storage:</strong> 4 GB available space</li></ul>"
+    },
+    "mac_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "linux_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "developers": [
+        "Jacob Rastall"
+    ],
+    "publishers": [
+        "Jacob Rastall"
+    ],
+    "price_overview": {
+        "currency": "CAD",
+        "initial": 649,
+        "final": 649,
+        "discount_percent": 0,
+        "initial_formatted": "",
+        "final_formatted": "CDN$ 6.49"
+    },
+    "packages": [
+        982081
+    ],
+    "package_groups": [
+        {
+            "name": "default",
+            "title": "Buy PixAnt Farm (Idle)",
+            "description": "",
+            "selection_text": "Select a purchase option",
+            "save_text": "",
+            "display_type": 0,
+            "is_recurring_subscription": "false",
+            "subs": [
+                {
+                    "packageid": 982081,
+                    "percent_savings_text": " ",
+                    "percent_savings": 0,
+                    "option_text": "PixAnt Farm (Idle) - CDN$ 6.49",
+                    "option_description": "",
+                    "can_get_free_license": "0",
+                    "is_free_license": false,
+                    "price_in_cents_with_discount": 649
+                }
+            ]
+        }
+    ],
+    "platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+    },
+    "categories": [
+        {
+            "id": 2,
+            "description": "Single-player"
+        },
+        {
+            "id": 62,
+            "description": "Family Sharing"
+        }
+    ],
+    "genres": [
+        {
+            "id": "4",
+            "description": "Casual"
+        }
+    ],
+    "screenshots": [
+        {
+            "id": 0,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_60ea8f963ee1b886b79f623ec3915f429e4cf45e.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_60ea8f963ee1b886b79f623ec3915f429e4cf45e.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 1,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_8b96b1360351d5566280d3a2ef0978bfd3949b6a.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_8b96b1360351d5566280d3a2ef0978bfd3949b6a.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 2,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_cf4e5489eb2295aa6d490bfb6bdd1e5de174daef.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_cf4e5489eb2295aa6d490bfb6bdd1e5de174daef.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 3,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_666ebe1ae51a33a132159e8568440568f41617b6.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_666ebe1ae51a33a132159e8568440568f41617b6.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 4,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_405aea329f9bdd6205fa854620849b9b2e8ea0e2.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_405aea329f9bdd6205fa854620849b9b2e8ea0e2.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 5,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_2a8914bd16c8b05341b2231ebefb8dc7142702d0.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_2a8914bd16c8b05341b2231ebefb8dc7142702d0.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 6,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_a1e7f8f0f388655dfc580168e7bb2dab7d2fe56f.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_a1e7f8f0f388655dfc580168e7bb2dab7d2fe56f.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 7,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_d144ae3fdaf929bf525dbb260ce69995ce505c21.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_d144ae3fdaf929bf525dbb260ce69995ce505c21.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 8,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_51823cc28586838359740967d3392e676be5d4bd.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_51823cc28586838359740967d3392e676be5d4bd.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 9,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_c93a7341c36de5fd96b8ed0a1f212abe6886ed80.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_c93a7341c36de5fd96b8ed0a1f212abe6886ed80.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 10,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_6d4a34f549493f0027ec7b2bad6c6b147c6d4239.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_6d4a34f549493f0027ec7b2bad6c6b147c6d4239.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 11,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_1052efc1d574158f0b519ab16dc1a1dcbaaa0344.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_1052efc1d574158f0b519ab16dc1a1dcbaaa0344.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 12,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_bbdab0271aac1f68b217bd868bb3813e4918345e.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_bbdab0271aac1f68b217bd868bb3813e4918345e.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 13,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_d6c84b54a6511fc3060218a6c5a513271f7449f8.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_d6c84b54a6511fc3060218a6c5a513271f7449f8.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 14,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_553f17fead6005ebe8e2c3461878fbde0ef4b6da.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_553f17fead6005ebe8e2c3461878fbde0ef4b6da.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 15,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_446f518140ffa74fc3af202881d5640ab2d42fd2.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_446f518140ffa74fc3af202881d5640ab2d42fd2.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 16,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_82086c6ce7898a331ac475d40a3e81e408beafaa.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_82086c6ce7898a331ac475d40a3e81e408beafaa.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 17,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_f7a2102bfa8bd5a8f450b508aecc0acd0c9d1c04.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_f7a2102bfa8bd5a8f450b508aecc0acd0c9d1c04.1920x1080.jpg?t=1717898780"
+        },
+        {
+            "id": 18,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_a4cc5ae1572c67771395a9defcc5717ed422c5b7.600x338.jpg?t=1717898780",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2745340/ss_a4cc5ae1572c67771395a9defcc5717ed422c5b7.1920x1080.jpg?t=1717898780"
+        }
+    ],
+    "movies": [
+        {
+            "id": 257022719,
+            "name": "PixAnt Farm (Idle)",
+            "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257022719/movie.293x165.jpg?t=1716413968",
+            "webm": {
+                "480": "http://video.akamai.steamstatic.com/store_trailers/257022719/movie480_vp9.webm?t=1716413968",
+                "max": "http://video.akamai.steamstatic.com/store_trailers/257022719/movie_max_vp9.webm?t=1716413968"
+            },
+            "mp4": {
+                "480": "http://video.akamai.steamstatic.com/store_trailers/257022719/movie480.mp4?t=1716413968",
+                "max": "http://video.akamai.steamstatic.com/store_trailers/257022719/movie_max.mp4?t=1716413968"
+            },
+            "highlight": true
+        }
+    ],
+    "achievements": {
+        "total": 6,
+        "highlighted": [
+            {
+                "name": "Colony Builder",
+                "path": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/2745340/8d0daa301dc42d923ce6ad494deeda93d97be93c.jpg"
+            },
+            {
+                "name": "Automatic Caretaker",
+                "path": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/2745340/e99c0470a42827f4c7c3840d40952ecd7688b844.jpg"
+            },
+            {
+                "name": "Base Color Collector",
+                "path": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/2745340/9177756e636572f78504ce376a9689420db91c7e.jpg"
+            },
+            {
+                "name": "Stripe Color Collector",
+                "path": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/2745340/820f7b85a1de14394517313c4a6bb4480cd5cfc2.jpg"
+            },
+            {
+                "name": "Ant Farm Maximizer",
+                "path": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/2745340/bf1271cd72722c3f7799565c5bc3938f34351746.jpg"
+            },
+            {
+                "name": "Long Time No See",
+                "path": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/2745340/35041d54e1903d2bc06c357ca9a07fed8e333b6c.jpg"
+            }
+        ]
+    },
+    "release_date": {
+        "coming_soon": false,
+        "date": "5 Jun, 2024"
+    },
+    "support_info": {
+        "url": "",
+        "email": "jacobtheodorerastall@gmail.com"
+    },
+    "background": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2745340?t=1717898780",
+    "background_raw": "https://store.akamai.steamstatic.com/images/storepagebackground/app/2745340?t=1717898780",
+    "content_descriptors": {
+        "ids": [],
+        "notes": null
+    },
+    "ratings": {
+        "dejus": {
+            "rating_generated": "1",
+            "rating": "l",
+            "required_age": "0",
+            "banned": "0",
+            "use_age_gate": "0",
+            "descriptors": ""
+        },
+        "steam_germany": {
+            "rating_generated": "1",
+            "rating": "0",
+            "required_age": "0",
+            "banned": "0",
+            "use_age_gate": "0",
+            "descriptors": ""
+        }
+    }
+}

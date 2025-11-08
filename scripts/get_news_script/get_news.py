@@ -45,7 +45,8 @@ def fetch_patchnotes(appid, limit):
 def main():
     steam_max_limit = 99999999999
     #loading batches of appids
-    batch = load_batches.load_batches("raw_metadata_dataset",40)
+    #please always make a copy of appdetails folder, as the files will be deleted for keeping track of progress
+    batch = load_batches.load_batches("appdetails_copy",40) 
 
     for appid_lists, filenames in batch:
         processed_files = []

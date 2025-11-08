@@ -1,0 +1,130 @@
+{
+    "type": "game",
+    "name": "PuzzleScriptMIS",
+    "steam_appid": 3007840,
+    "required_age": 0,
+    "is_free": true,
+    "detailed_description": "PuzzleScriptMIS is a development tool for puzzle games that contains a level editor, a test mode, a solver and uniquely a transformer for PuzzleScript. The transformer functions as a new way for puzzle designers to find or refine levels for puzzle games.<br><br>How the transformer works:<br>Designers can specify transformation rules according to which a current level design is transformed. The transformation rules follow a similar syntax to PuzzleScript and should be very easy to pick up for anyone familiar with PuzzleScript. It extends the language by introducing the keyword choose.<br><br>choose 1 [Player | No Obstacle] -&gt; [|Player]<br><br>This chooses, with equal probability, any match of [Player | No Obstacle] (provided there is one) and replaces it with [ | Player] according to the normal rules of PuzzleScript. Notice that this can lead to multiple possible subsequent transformations. For example, the following level could be transformed into two different choices:<br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/2b5dc2140c2dbe8c4199703718ac6323.avif?t=1719935675\" width=616 height=112 /></span><br><br>The final outcomes are then ranked according to their difficulty and presented to the designer. In this very simple example, the level where the player is moved to the right is considered slightly more difficult than the level where the player is moved to the right. The difficulty metric is based on the number of states the fastest solver requires in order to find the solution, and does not always match human judgement. The transformer works best if the ratio of interesting levels is high in the search space and the levels need a moderately low number of steps to be solved. The following are example use cases of using a transformer for designing Sokoban puzzle games, but the techniques apply to other puzzle games.<br><br>Use case: Inspiration<br>In the following example, the designer restricts the transformer to only create 4x4 Sokoban levels with 4 crates and targets and no walls. The transformer takes as an input an initially empty 4x4 level and transforms it according to the following rule.<br><br>choose 1 [] -&gt; [Player]<br>choose 4 [No Crate][No Target] -&gt; [Crate][Target]<br>\t<br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/99a430cfc9e6c9b059c788a523012fd0.avif?t=1719935675\" width=616 height=192 /></span><br><br>Use case: Make it solvable when stuck<br>In the user study, most designers got stuck at some point when designing a level by introducing or removing an object which made the level unsolvable. Surprisingly, instead of figuring out a way to make the design solvable again, they posed this as a problem to the transformer. The transformer did generic operations on the level as follows:<br><br>( move players and crates around )<br>choose 20 [Player | No Obstacle] -&gt; [ | Player]<br>or [Crate | No Obstacle] -&gt; [ | Crate]<br>( randomly remove or add 10 walls with prob. 0.4 )<br>choose 5 option 0.5 [Wall] -&gt; []<br>choose 5 option 0.5 [No Obstacle] -&gt; [Wall]<br>( remove one crate/target pair if it exists and add one )<br>choose 1 [Crate][Target] -&gt; [][]<br>choose 1 [No Wall No Player No Crate][No Wall No Player No Target] -&gt; [Crate][Target]<br><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/4cac44a39595aa125326731c85933f4e.avif?t=1719935675\" width=616 height=252 /></span><br><br><br>Use case: Polish<br>The transformer can be used to polish certain things at the end, like finding the most difficult starting position of the player in a Sokoban level. Also, an often reoccurring problem is to know when to stop designing a level. The transformer can give you a level of confidence if it cannot find any simple transformations that would make the level significantly more interesting.<br><br>choose 1 [Player][No Wall No Crate] -&gt; [][Player]<br><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/e581608150ea820c02c9a643fe3331cf.avif?t=1719935675\" width=616 height=556 /></span><br><br>Use case: Backward design<br><br>The idea is to start with a solved level and transform the level using only valid moves (in reverse). For Sokoban you would write transform rules that pull the boxes instead of pushing them.<br><br>(add a placeholder to all crates)<br>[Crate] -&gt; [Crate Placeholder]<br>(move the player around and let him push crates)<br>choose 50 [Player | No Obstacle] -&gt; [ | Player]<br>or [Player | Crate | No Obstacle] -&gt; [ | Player | Crate]<br>(replace crates with targets and placeholders with crates)<br>[Crate] -&gt; [Target]<br>[Placeholder] -&gt; [Crate]",
+    "about_the_game": "PuzzleScriptMIS is a development tool for puzzle games that contains a level editor, a test mode, a solver and uniquely a transformer for PuzzleScript. The transformer functions as a new way for puzzle designers to find or refine levels for puzzle games.<br><br>How the transformer works:<br>Designers can specify transformation rules according to which a current level design is transformed. The transformation rules follow a similar syntax to PuzzleScript and should be very easy to pick up for anyone familiar with PuzzleScript. It extends the language by introducing the keyword choose.<br><br>choose 1 [Player | No Obstacle] -&gt; [|Player]<br><br>This chooses, with equal probability, any match of [Player | No Obstacle] (provided there is one) and replaces it with [ | Player] according to the normal rules of PuzzleScript. Notice that this can lead to multiple possible subsequent transformations. For example, the following level could be transformed into two different choices:<br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/2b5dc2140c2dbe8c4199703718ac6323.avif?t=1719935675\" width=616 height=112 /></span><br><br>The final outcomes are then ranked according to their difficulty and presented to the designer. In this very simple example, the level where the player is moved to the right is considered slightly more difficult than the level where the player is moved to the right. The difficulty metric is based on the number of states the fastest solver requires in order to find the solution, and does not always match human judgement. The transformer works best if the ratio of interesting levels is high in the search space and the levels need a moderately low number of steps to be solved. The following are example use cases of using a transformer for designing Sokoban puzzle games, but the techniques apply to other puzzle games.<br><br>Use case: Inspiration<br>In the following example, the designer restricts the transformer to only create 4x4 Sokoban levels with 4 crates and targets and no walls. The transformer takes as an input an initially empty 4x4 level and transforms it according to the following rule.<br><br>choose 1 [] -&gt; [Player]<br>choose 4 [No Crate][No Target] -&gt; [Crate][Target]<br>\t<br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/99a430cfc9e6c9b059c788a523012fd0.avif?t=1719935675\" width=616 height=192 /></span><br><br>Use case: Make it solvable when stuck<br>In the user study, most designers got stuck at some point when designing a level by introducing or removing an object which made the level unsolvable. Surprisingly, instead of figuring out a way to make the design solvable again, they posed this as a problem to the transformer. The transformer did generic operations on the level as follows:<br><br>( move players and crates around )<br>choose 20 [Player | No Obstacle] -&gt; [ | Player]<br>or [Crate | No Obstacle] -&gt; [ | Crate]<br>( randomly remove or add 10 walls with prob. 0.4 )<br>choose 5 option 0.5 [Wall] -&gt; []<br>choose 5 option 0.5 [No Obstacle] -&gt; [Wall]<br>( remove one crate/target pair if it exists and add one )<br>choose 1 [Crate][Target] -&gt; [][]<br>choose 1 [No Wall No Player No Crate][No Wall No Player No Target] -&gt; [Crate][Target]<br><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/4cac44a39595aa125326731c85933f4e.avif?t=1719935675\" width=616 height=252 /></span><br><br><br>Use case: Polish<br>The transformer can be used to polish certain things at the end, like finding the most difficult starting position of the player in a Sokoban level. Also, an often reoccurring problem is to know when to stop designing a level. The transformer can give you a level of confidence if it cannot find any simple transformations that would make the level significantly more interesting.<br><br>choose 1 [Player][No Wall No Crate] -&gt; [][Player]<br><br><span class=\"bb_img_ctn\"><img class=\"bb_img\" src=\"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/extras/e581608150ea820c02c9a643fe3331cf.avif?t=1719935675\" width=616 height=556 /></span><br><br>Use case: Backward design<br><br>The idea is to start with a solved level and transform the level using only valid moves (in reverse). For Sokoban you would write transform rules that pull the boxes instead of pushing them.<br><br>(add a placeholder to all crates)<br>[Crate] -&gt; [Crate Placeholder]<br>(move the player around and let him push crates)<br>choose 50 [Player | No Obstacle] -&gt; [ | Player]<br>or [Player | Crate | No Obstacle] -&gt; [ | Player | Crate]<br>(replace crates with targets and placeholders with crates)<br>[Crate] -&gt; [Target]<br>[Placeholder] -&gt; [Crate]",
+    "short_description": "Tool for creating puzzles interactively.",
+    "supported_languages": "English",
+    "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/header.jpg?t=1719935675",
+    "capsule_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/capsule_231x87.jpg?t=1719935675",
+    "capsule_imagev5": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/capsule_184x69.jpg?t=1719935675",
+    "website": "https://dekeyser.ch/puzzlescriptmis",
+    "pc_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li>Requires a 64-bit processor and operating system<br></li><li><strong>OS *:</strong> Windows 8<br></li><li><strong>Memory:</strong> 1024 MB RAM<br></li><li><strong>Storage:</strong> 30 MB available space</li></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"><li>Requires a 64-bit processor and operating system</li></ul>"
+    },
+    "mac_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"><li><strong>OS:</strong> 10.15<br></li><li><strong>Processor:</strong> Apple M1 or Intel Core M<br></li><li><strong>Memory:</strong> 1024 MB RAM<br></li><li><strong>Storage:</strong> 30 MB available space<br></li><li><strong>Additional Notes:</strong> The more working memory you have, the better the generator will run.</li></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "linux_requirements": {
+        "minimum": "<strong>Minimum:</strong><br><ul class=\"bb_ul\"></ul>",
+        "recommended": "<strong>Recommended:</strong><br><ul class=\"bb_ul\"></ul>"
+    },
+    "developers": [
+        "Kevin De Keyser"
+    ],
+    "publishers": [
+        "Kevin De Keyser"
+    ],
+    "package_groups": [],
+    "platforms": {
+        "windows": true,
+        "mac": true,
+        "linux": false
+    },
+    "categories": [
+        {
+            "id": 17,
+            "description": "Includes level editor"
+        }
+    ],
+    "genres": [
+        {
+            "id": "37",
+            "description": "Free To Play"
+        },
+        {
+            "id": "60",
+            "description": "Game Development"
+        }
+    ],
+    "screenshots": [
+        {
+            "id": 0,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_27da04029eabb2694678ce4adde9bc0535f756f4.600x338.jpg?t=1719935675",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_27da04029eabb2694678ce4adde9bc0535f756f4.1920x1080.jpg?t=1719935675"
+        },
+        {
+            "id": 1,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_2ce5d55a2b8c72264d5b840f89e0b5f822a8841f.600x338.jpg?t=1719935675",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_2ce5d55a2b8c72264d5b840f89e0b5f822a8841f.1920x1080.jpg?t=1719935675"
+        },
+        {
+            "id": 2,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_d1802b8a92e2caabe3d5fa4ac1c3acda655fae41.600x338.jpg?t=1719935675",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_d1802b8a92e2caabe3d5fa4ac1c3acda655fae41.1920x1080.jpg?t=1719935675"
+        },
+        {
+            "id": 3,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_535766ddff1326d74cd7ccea097d66f200801b2c.600x338.jpg?t=1719935675",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_535766ddff1326d74cd7ccea097d66f200801b2c.1920x1080.jpg?t=1719935675"
+        },
+        {
+            "id": 4,
+            "path_thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_e3ab64e867de2601289a248bb27c0087250fd3ec.600x338.jpg?t=1719935675",
+            "path_full": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3007840/ss_e3ab64e867de2601289a248bb27c0087250fd3ec.1920x1080.jpg?t=1719935675"
+        }
+    ],
+    "movies": [
+        {
+            "id": 257024539,
+            "name": "PuzzleScriptMIS Guide",
+            "thumbnail": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257024539/movie.293x165.jpg?t=1718729977",
+            "webm": {
+                "480": "http://video.akamai.steamstatic.com/store_trailers/257024539/movie480_vp9.webm?t=1718729977",
+                "max": "http://video.akamai.steamstatic.com/store_trailers/257024539/movie_max_vp9.webm?t=1718729977"
+            },
+            "mp4": {
+                "480": "http://video.akamai.steamstatic.com/store_trailers/257024539/movie480.mp4?t=1718729977",
+                "max": "http://video.akamai.steamstatic.com/store_trailers/257024539/movie_max.mp4?t=1718729977"
+            },
+            "highlight": true
+        }
+    ],
+    "release_date": {
+        "coming_soon": false,
+        "date": "2 Jul, 2024"
+    },
+    "support_info": {
+        "url": "https://dekeyser.ch/puzzlescriptmis",
+        "email": ""
+    },
+    "background": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3007840?t=1719935675",
+    "background_raw": "https://store.akamai.steamstatic.com/images/storepagebackground/app/3007840?t=1719935675",
+    "content_descriptors": {
+        "ids": [],
+        "notes": null
+    },
+    "ratings": {
+        "dejus": {
+            "rating_generated": "1",
+            "rating": "l",
+            "required_age": "0",
+            "banned": "0",
+            "use_age_gate": "0",
+            "descriptors": ""
+        },
+        "steam_germany": {
+            "rating_generated": "1",
+            "rating": "0",
+            "required_age": "0",
+            "banned": "0",
+            "use_age_gate": "0",
+            "descriptors": ""
+        }
+    }
+}

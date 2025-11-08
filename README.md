@@ -2,11 +2,9 @@
 
 ## Overview
 
-This project aims to analyze **game patch notes** to gain insights into how games evolve over time, how developers iterate on gameplay, and how user experience is affected by changes. 
-The first step in this project involves **selecting appropriate data sources** and **building a dataset** from them.
+This project aims to collect dataset of patchnotes for tiltles available of Steam and can be accessed by steamAPI. Metadata for **200,000+** titles from steam's API are collected and filtered. News for all the games is collected and filtered out to find **game patch notes** to make a large dataset of all the patchnotes for the respective games.
 
 ---
-
 # 1.  Data Source Selection
 
 ### 📌 Data Source: Steam Platform
@@ -18,7 +16,6 @@ We chose **Steam** as our only data source. Steam is a digital distribution plat
 * **High Engagement**: In 2021, the platform recorded **132 million monthly active users**.
 * Most **major games** are available on Steam.
 * The platform is **open to indie developers** (99% of games on steams are indie games), ensuring a broad representation of genres and development styles.
-
 
 ### Relevance for our study
 * It provides a **comprehensive sampling frame** of the gaming ecosystem.
@@ -49,7 +46,7 @@ We use the official **Steam Web API** to query data.
 | **Inconsistent Metadata**: Duplicate entries, changing appIDs  | Add validation and logging steps to identify inconsistencies                                |
 
 
-We plan to **build a local dataset** representing the Steam game catalog, from which we can later sample games for patch note analysis.
+We plan to **build a local dataset** representing the Steam game catalog, from which we can later sample games for collection of patch notes and analysis.
 
 ---
 
@@ -59,27 +56,27 @@ This step builds a local dataset of Steam games by querying the `appdetails` API
 
 1. **Initial App List Retrieval**
    * Download the full list of app IDs from the Steam endpoint (includes games and non-game apps).
-   * Save the list to [applist.json](./applist.json).
+   * Save the list to [applist.json](output/applist.json).
 
 2. **Filtering and Metadata Collection**
 
    * For each app ID in the list:
 
      * Query the `appdetails` API individually.
-     * Record every query in [queries.json](./queries.json) to prevent redundant calls.
+     * Record every query in [queries.json](.output/queries.json) to prevent redundant calls.
      * Check whether the app is categorized as a **game**.
      * If it is a game:
 
-       * Extract basic metadata and store it locally in the folder [./raw_metadata_dataset/](./raw_metadata_dataset/).
-       * Filenames follow the format: `{appid}__{name}.json`.
+       * Extract basic metadata and store it locally in the folder [appdetails/](appdetails/).
+       * Filenames follow the format: `{appid}.json`.
        * At this stage, only high-level metadata is collected (no patch notes or extended data).
 
-   * This step is implemented in a Jupyter notebook: [game_metadata_extraction.ipynb](./game_metadata_extraction.ipynb).
+   * This step is implemented in a Jupyter notebook: [game_metadata_extraction.ipynb](scripts/game_metadata_extraction.ipynb).
     > **Note:** Due to Steam API rate limits (100,000 calls/day, \~200 every 5 minutes), the script is designed to run incrementally over several days. It is intended to be launched once per app ID list.
 
 3. **Metadata Formatting**
 
-   * After metadata extraction, format the dataset as one CSV file: [games_metadata.csv](./games_metadata.csv)
+   * After metadata extraction, format the dataset as one CSV file: [games_metadata.csv](outputs/games_metadata.csv)
    * Each row represents a game, with the following metadata fields as columns:
      * _name,
      steam_appid,
@@ -106,86 +103,85 @@ This step builds a local dataset of Steam games by querying the `appdetails` API
    * The columns of the CSV file are analysed to have insights on their content
    * This is implemented in a Jupyter notebook: [dataset_overview.ipynb](./dataset_overview.ipynb).
 
+## B. Fetch News from SteamAPI
+This step fetches news for each Steam games by querying the steam API as per game id and storing them into a local structured dataset.
 
+1. Collecting IDs from **raw_metadat_dataset** 
+   * Collect IDs in the baches of 20-40 and pass them to the fetch call.
+2. Fetching the news
+   * Send IDs in small batches with time delays to not trigger steam's denial of service
+   * A single ID can fetch for as many as **99999999999** news at a time which is the limit that is used.
+3. Storing the data in JSON
+   * Data for news is stored as JSON in [raw_news](patches/raw_news/) for each ID 
+   * Filenames follow the format: `{appid}.json`.
+   * Structure used for JSON is as following:
+      ```
+      {
+         appId:
+         count:
+         notes:[
+            {
+               title:
+               date:
+               url:
+               content:
+            }
+            ...
+         ]
+      }
+      ```
+## C. Extract and Clean **Patch Notes**
+
+This stage filters and cleans patch notes extracted from Steam news. It consists of two substeps: (1) filtering relevant patch notes, and (2) cleaning their HTML content.
+
+1. Filtering Patch Notes
+
+For each game’s news file in [raw_news/](patches/raw_news/), titles and contents are scanned for relevant keywords. If matched, the news entry is considered a patch note and stored in [filtered_patches/](patches/filtered_patches/).
+
+**Parsing and Keyword Matching**
+* Parse all JSON files named **{appid}.json** in `raw_news/`
+* Match significant keywords in the `title` or `content` fields:
+  * patch(s), note(s), update, hotfix, release, added, changelog, change(s/ed),
+    improved, bug(s), fix(es/ed)
+* Matched entries are stored in the same JSON structure as `raw_news`
+
+2. Cleaning Patch Notes
+
+Patch note content retrieved from the Steam API often contains HTML tags and embedded code. These are cleaned to produce plain text data for analysis.
+
+**Process**
+* Parse all JSON files named **{appid}.json** in `filtered_patches/`
+* Strip HTML tags and formatting from the `content` field
+* Save cleaned data in [cleaned_patches/](patches/cleaned_patches/), preserving the same JSON structure as before
 
 ---
-# 2.  Dataset Structure
-The organization of our repository follows the implementation of
-the data extraction pipeline described above.
-## 2.1 Repository Organization
-This repository is structured as follows:   
-* raw_metadat_dataset/  
-&nbsp;&nbsp; {appid}.json 
-* steamspy_dataset/  
-&nbsp;&nbsp; {appid}.json 
-* patches/  
-&nbsp;&nbsp; raw_news/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {appid}.json    
-&nbsp;&nbsp; filtered_patches/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {appid}.json    
-&nbsp;&nbsp; cleaned_patches/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {appid}.json  
-&nbsp;&nbsp; flagged_patches/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {appid}.json  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; logs/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flagged_app_ids.txt  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total_flagged_notes.txt  
-* outputs/  
-&nbsp;&nbsp; applist.json  
-&nbsp;&nbsp; queries.json  
-&nbsp;&nbsp; game_metadata.csv  
-&nbsp;&nbsp; game_metadata_totals.csv  
-* scripts/  
-&nbsp;&nbsp; cleaning_script/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; files_handler.py    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; filter_patch_notes.py   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; game_data.py   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run_all.py  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strip_html.py   
-&nbsp;&nbsp; find_embedded_data/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; files_handler.py    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_embedded_data.py   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; game_data.py   
-&nbsp;&nbsp; get_news_script/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; logs/  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; skipped_files.txt  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output.log  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; create_json_files.py  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_patch_notes.py  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; load_batches.py  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; process_notes.py  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; session.py  
-&nbsp;&nbsp; Supporting_Script/   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add_totals_to_csv.py  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total_ patch_count.py 
-&nbsp;&nbsp; add_totals_to_csv.py  
-&nbsp;&nbsp; total_patch_count.py  
-&nbsp;&nbsp; appdetails_to_csv.ipynb  
-&nbsp;&nbsp; dataset_overview.ipynb  
-&nbsp;&nbsp; game_metadata_extraction.ipynb  
-&nbsp;&nbsp; steamspy_extraction.ipynb  
-<p>
-Each component is modular and can be reused or extended to
-support more detailed patch note collection and analysis in future
-work.
-</p>
+
+This results in a clean, structured dataset of patch notes suitable for further text analysis, sentiment study, or feature extraction.
 
 
-# Current Status and TODO
+### Data Pipeline Overview
+The following diagram illustrates the full overview of data pipeline.
+![Pipeline Flow](workflow_design/overview.png)
 
-* ✅ Initial app ID list retrieved (257,148 entries total)
-* ✅ Incremental filtering process implemented to extract game metadata
-* ✅ Metadata stored in structured JSON files for local use
-  * Aug 8, 2025: 27% of queries made
-  * Aug 15, 2025, 72% of queries made
-* ✅ Format selected metadata from individual JSON files into one csv
-* ✅ Script to analyze the selected metadata (descriptive stats)
 
-### 🛠️ TODO:
-* ⬜ Fetch complementary metadata for each game? (e.g., users, hours played)
-* ⬜ Write a short update script to refresh the dataset with **new entries** without re-fetching the entire list.
-* ⬜ Begin defining sampling strategy for selecting games from the dataset for patch note analysis.
+The following diagram illustrates the news collection filtering and cleaning pipeline
 
-### 🤔 Related questions:
-* 99% of games on Steam are indie games, but how much game time / size of user-base compared to AAA games?
-* Can we use the raw game metadata to identify game clusters (PCA)?
+![Pipeline Flow](workflow_design/full-flow.png)
+
+---
+
+## 📄 License
+
+This project is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** License.
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format  
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially  
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.  
+  You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.  
+
+🔗 **Full License Text:** [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+
+© 2025 *Game Patch Notes Project* — Created by [Your Name]

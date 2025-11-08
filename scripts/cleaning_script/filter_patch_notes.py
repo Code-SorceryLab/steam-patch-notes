@@ -4,16 +4,6 @@ import re
 from game_data import GameData
 from file_handler import FileHandler
 
-# def is_patch_note(title, content):
-#     if not content or content.strip() == "":
-#         return False
-    
-#     keywords = re.compile(r"\b(patch|update|hotfix|release|version|release notes?|changelog|changes|bug\s*fix(es)?)\b",re.IGNORECASE)
-                
-#     if keywords.search(title or ""):
-#         return True
-#     return bool(keywords.search(content) or re.search(r"(^|\n)\s*(?:- |\* |• )", content))
-
 def is_patch_note(title: str, content: str) -> bool:
     if not content or content.strip() == "":
         return False

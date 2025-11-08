@@ -50,7 +50,7 @@ def load_batches(folder, batch_size):
 # Delete processed files to track progress
 def delete_files(filenames):
     
-    folder_path = Path("raw_metadata_dataset")
+    folder_path = Path("appdetails_copy")
     for fname in filenames:
         try:
             file_path = folder_path / fname
