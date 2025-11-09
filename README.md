@@ -12,8 +12,8 @@ This project aims to collect dataset of patchnotes for tiltles available of Stea
 We chose **Steam** as our only data source. Steam is a digital distribution platform developed by Valve Corporation, and it's the **largest global platform for video games**.
 
 ### How representative and relevant is it?
-* **Massive Coverage**: As of 2021, Steam hosted over **30,000 games**, ranging from AAA titles to indie releases.
-* **High Engagement**: In 2021, the platform recorded **132 million monthly active users**.
+* **Massive Coverage**: As of 2025, Steam hosted over **247,000 games**, ranging from AAA titles to indie releases.
+* **High Engagement**: In 2025, the platform recorded **132 million monthly active users**.
 * Most **major games** are available on Steam.
 * The platform is **open to indie developers** (99% of games on steams are indie games), ensuring a broad representation of genres and development styles.
 
@@ -106,7 +106,7 @@ This step builds a local dataset of Steam games by querying the `appdetails` API
 ## B. Fetch News from SteamAPI
 This step fetches news for each Steam games by querying the steam API as per game id and storing them into a local structured dataset.
 
-1. Collecting IDs from **raw_metadat_dataset** 
+1. Collecting IDs from **appdetails/** 
    * Collect IDs in the baches of 20-40 and pass them to the fetch call.
 2. Fetching the news
    * Send IDs in small batches with time delays to not trigger steam's denial of service
