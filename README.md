@@ -1,4 +1,4 @@
-# Game Patch Notes Project
+# A Large Dataset of Video Game Patch Notes
 
 ## Overview
 
@@ -164,9 +164,9 @@ The following diagram illustrates the full overview of data pipeline.
 ![Pipeline Flow](workflow_design/overview.png)
 
 
-The following diagram illustrates the news collection filtering and cleaning pipeline
+The following diagram illustrates the news collection, filtering and cleaning pipeline (STAGE 2)
 
-![Pipeline Flow](workflow_design/full-flow.png)
+![STAGE 2 Flow](workflow_design/stage2.png)
 
 ---
 
@@ -184,4 +184,4 @@ Under the following terms:
 
 🔗 **Full License Text:** [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
 
-© 2025 *Game Patch Notes Project* — Created by [Your Name]
+© 2025 *A Large Dataset of Video Game Patch Notes* — Created by Saksham Tejpal, Cristiano Politowski and Jessie Galasso
