@@ -1,0 +1,2238 @@
+{
+  "appId": "1554220",
+  "count": 91,
+  "notes": [
+    {
+      "title": "Paleon Reinvented Devlog #0",
+      "date": "2025-06-03 13:40:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756479931",
+      "content": "[b]Chunk-Based Tilemap Architecture[/b]\n\nThe tilemap system in the game is based on a chunked layout, where the full tilemap is divided into multiple chunks depending on the tilemap dimensions and the configured chunk size.\nThis architectural choice significantly improves performance and memory efficiency, especially for large maps.\n\n[img]{STEAM_CLAN_IMAGE}/40199210/87b380f47dd2d07ed293064e91b7b18ba66bf984.png[/img]\n\nThe number of chunks depends on both the overall tilemap size and the chunk dimensions.\nFor example, a tilemap that is 128 \u00d7 128 tiles in size, with each chunk being 8 \u00d7 8 tiles, results in a grid of 16 \u00d7 16 chunks.\nEach chunk is internally represented as a render target texture (RenderTarget2D).\nWhenever a tile inside the chunk is modified, the corresponding chunk is marked as dirty and automatically re-rendered to its new texture and disposes the old one. \n\nTo optimize rendering performance:\n[list]\n[*] Empty chunks (chunks that contain no tiles) are skipped entirely and never rendered.\n[*] The tilemap system respects the camera\u2019s visible area. Chunks outside the current camera bounds are culled and not drawn at all.\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/40199210/a21b9d7ec5fac22f5d56c3b489721b5518988065.gif[/img]\n\n[b]Tile Connections System[/b]\n\nTile connection system that dynamically selects tile variants based on their surrounding neighbors. This helps create seamless terrain transitions without manual work.\nThere are three connection modes available:\n\n- Individual: Each tile is rendered independently, with no awareness of neighboring tiles. This mode is simple and used for non-terrain elements (items).\n[img]{STEAM_CLAN_IMAGE}/40199210/f3271d5cb4d2c100e2bbbbd88b8733ddf97eacd8.png[/img]\n\n- Sides: A tile checks its four direct neighbors (top, bottom, left, right) and selects the appropriate variant to blend with them. Ideal for terrain with simple transitions (paths, walls).[img]{STEAM_CLAN_IMAGE}/40199210/c9aa923930f66b4ecf6c8ceb86a672b5a7e41304.png[/img]\n\n- Sides and Corners: This advanced mode considers all eight surrounding tiles\u2014including diagonals\u2014allowing for smooth and detailed tile blending. Ideal for terrain with complext transitions (water, grass). It also enables the use of bitmasking for auto-tiling, similar to systems used in Godot and Tiled.\n[img]{STEAM_CLAN_IMAGE}/40199210/76350b464685a079fead7b3e995d2b67ededf81b.png[/img]\n\n[b]What\u2019s New Compared to the Original Paleon[/b]\n\nPaleon Reinvented introduces several visual and optimization improvements:\n[list]\n[*] Tiles that are located at the edges of the map are no longer visually cut off. They now connect seamlessly with the tilemap borders.\n[*] When a tile is completely surrounded by tiles of the same type, it can randomly use a decorative variation\n[*] In the original Paleon, each season had a separate, dedicated Tilemap. This meant managing multiple full maps for each seasonal state. In Paleon Reinvented, the system is much more elegant and efficient: I keep a single tilemap and simply swap its Tileset at runtime depending on the current season.\n[/list]\n\nPaleon (old):\n[img]{STEAM_CLAN_IMAGE}/40199210/4dd75565475fa9f29285011aae623a57b38e23f7.png[/img]\n\nPaleon Reinvented:\n[img]{STEAM_CLAN_IMAGE}/40199210/c1c51b7573966a19aed1515e1a469d70b3c9128f.png[/img]\n\nOur Discord server: https://discord.gg/bnGvx8mXyB\nSupport me on Boosty: https://boosty.to/ricktechnolithic",
+      "key": "1554220::3f365eceae3cb2b9100ad7ccb35a22b7196413a6",
+      "tags": [
+        {
+          "feature": "The tilemap system in the game is based on a chunked layout, where the full tilemap is divided into multiple chunks depending on the tilemap dimensions and the configured chunk size."
+        },
+        {
+          "feature": "Tile connection system that dynamically selects tile variants based on their surrounding neighbors."
+        },
+        {
+          "feature": "Tiles that are located at the edges of the map are no longer visually cut off."
+        },
+        {
+          "feature": "When a tile is completely surrounded by tiles of the same type, it can randomly use a decorative variation"
+        },
+        {
+          "feature": "In Paleon Reinvented, the system is much more elegant and efficient: I keep a single tilemap and simply swap its Tileset at runtime depending on the current season."
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.6.1 Multiple tools update",
+      "date": "2025-01-25 08:58:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505372371",
+      "content": "[b]Changes/Updates:[/b]\n[list]\n[*] Creatures can now carry multiple tools of different types with them at once\n[*] Settlers, while hunting, can use both melee and ranged weapons at the same time\n[*] Added a new tab to the creature UI where all equipped tools and clothing are displayed\n[*] Creatures can equip tools from tiles\n[*] Ability to manually remove equipment from creatures\n[*] Partial revision of localizations\n[/list]",
+      "key": "1554220::9a44512521989d0c4bd39b4220d042884e8e5811",
+      "tags": [
+        {
+          "feature": "Creatures can now carry multiple tools of different types with them at once"
+        },
+        {
+          "feature": "Settlers, while hunting, can use both melee and ranged weapons at the same time"
+        },
+        {
+          "feature": "Added a new tab to the creature UI where all equipped tools and clothing are displayed"
+        },
+        {
+          "feature": "Creatures can equip tools from tiles"
+        },
+        {
+          "feature": "Ability to manually remove equipment from creatures"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.6.0 Dry manure fuel, Treadmill and assigning settlers to the hut",
+      "date": "2025-01-11 11:01:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1788311419084646",
+      "content": "[b]Features:[/b]\n[list]\n[*] Dry manure fuel - a new type of fuel, used for heating housing and cooking\n[*] Manure drying area\n[*] Treadmill - used to generate mechanical energy by animals and settlers\n[*] Ability to assign settlers to a hut\n[/list]\n\n[b]Updates/Changes:[/b]\n[list]\n[*] Removal of the \"Equip weapon\" order (The mechanics of tools will be changed soon)\n[*] Wooden plow and copper reaper now have durability\n[*] Updated the cost of building walls and floors\n[*] Settlers stop working when they want to sleep\n[/list]\n\n[b]Fixes:[/b]\n[list]\n[*] Reworking the localization\n[/list]",
+      "key": "1554220::2bee3e377725efc968bb476d92defe177039e35b",
+      "tags": [
+        {
+          "feature": "Dry manure fuel - a new type of fuel, used for heating housing and cooking"
+        },
+        {
+          "feature": "Manure drying area"
+        },
+        {
+          "feature": "Treadmill - used to generate mechanical energy by animals and settlers"
+        },
+        {
+          "feature": "Ability to assign settlers to a hut"
+        },
+        {
+          "balance_change": "Removal of the \"Equip weapon\" order (The mechanics of tools will be changed soon)"
+        },
+        {
+          "balance_change": "Wooden plow and copper reaper now have durability"
+        },
+        {
+          "balance_change": "Updated the cost of building walls and floors"
+        },
+        {
+          "balance_change": "Settlers stop working when they want to sleep"
+        },
+        {
+          "bug": "Reworking the localization"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.5.3 New localizations and Improvements",
+      "date": "2024-08-28 01:20:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6240387642449495516",
+      "content": "[b]Updates/Changes:[/b]\n\n[list]\n[*] Renamed the \"Hut\" category to \"Settlement\"\n[*] Moved grave and dolmen to the \"Settlement\" building category\n[*] Removed the \"Religion\" building category\n[*] Added repeatable recipes for threshing floor and thresher with hay as the target product, allowing control of hay production through \"Production Limits\"\n[*] Included fuel in the recipes for clay oven, kiln, copper smithy, iron smithy, and hearth\n[/list]\n\n[b]Bug fix:[/b]\n\n[list]\n[*] Resolved an issue where only one animal would spawn when purchasing multiple animals of the same type\n[/list]\n\n[b]New localizations:[/b]\n\n[list]\n[*] Chinese (Simplified and Traditional) (Thanks to EJane)\n[*] Turkish (Thanks to :D)\n[/list]",
+      "key": "1554220::b8e30a2a679ba3d5e9553c60fcbd74dd5b522c21",
+      "tags": [
+        {
+          "bug": "Resolved an issue where only one animal would spawn when purchasing multiple animals of the same type"
+        },
+        {
+          "feature": "Added repeatable recipes for threshing floor and thresher with hay as the target product, allowing control of hay production through \"Production Limits\""
+        },
+        {
+          "feature": "Included fuel in the recipes for clay oven, kiln, copper smithy, iron smithy, and hearth"
+        },
+        {
+          "feature": "Chinese (Simplified and Traditional) (Thanks to EJane)"
+        },
+        {
+          "feature": "Turkish (Thanks to :D)"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.5.2 Hotfix",
+      "date": "2024-08-08 11:48:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363390874956",
+      "content": "Fixed game crash when trying to open the trade window",
+      "key": "1554220::90dbd371218733b7d65c79cdd05e418f06ed7fe4",
+      "tags": [
+        {
+          "bug": "Fixed game crash when trying to open the trade window"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.5.1 Animal fat, Oil lamp, Japanese localization!",
+      "date": "2024-08-08 04:52:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363389821752",
+      "content": "[b]Features:[/b]\n\n[list]\n[*] New item \"Animal Fat\", obtained from pigs and boars\n[*] New structure \"Oil Lamp\". Used for lighting, consumes animal fat as fuel\n[*] New food \"Pemmican\". Crafted from dried meat, animal fat, and berries\n[/list]\n\n[b]Updates/Changes:[/b]\n\n[list]\n[*] Old wild animals can now defend themselves too\n[*] Male mouflon has a 50% chance to attack a settler during hunting\n[*] Health of animal offspring reduced by 50%\n[*] Health of old animals reduced by 30%\n[*] A settler with critical health cannot hunt and will seek a hut for recovery. If the settler cannot find a hut, they will try to escape from the animal\n[/list]\n\n[b]Localization:[/b]\n\n[list]\n[*] Added Japanese localization. Many thanks to [b]\"Allgames-kari (Alis)\"[/b]\n[/list]",
+      "key": "1554220::ca9d7aba99ccf469867991ddaa71afeba379730b",
+      "tags": [
+        {
+          "feature": " New item \"Animal Fat\", obtained from pigs and boars"
+        },
+        {
+          "feature": " New structure \"Oil Lamp\". Used for lighting, consumes animal fat as fuel"
+        },
+        {
+          "feature": " New food \"Pemmican\". Crafted from dried meat, animal fat, and berries"
+        },
+        {
+          "balance_change": " Old wild animals can now defend themselves too"
+        },
+        {
+          "balance_change": " Male mouflon has a 50% chance to attack a settler during hunting"
+        },
+        {
+          "balance_change": " Health of animal offspring reduced by 50%"
+        },
+        {
+          "balance_change": " Health of old animals reduced by 30%"
+        },
+        {
+          "balance_change": " A settler with critical health cannot hunt and will seek a hut for recovery. If the settler cannot find a hut, they will try to escape from the animal"
+        },
+        {
+          "feature": " Added Japanese localization. Many thanks to \"Allgames-kari (Alis)\""
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.5.0 Purchasing animals and trading posts!",
+      "date": "2024-07-11 06:57:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267360239335",
+      "content": "[b]Features[/b]\n[list]\n[*] Possibility to buy animals\n[img]{STEAM_CLAN_IMAGE}/40199210/712444ac24d0ace0dd2414fbd163263c961eb8d6.png[/img]\n[*] Trading post (replacement of a merchant). Updates its assortment once a day\n[img]{STEAM_CLAN_IMAGE}/40199210/d9aea131c020eeacbf7e948c65811fd9d743431f.png[/img]\n[*] Now to grind flour you need to use a \"Mealing stone\" instead of a \"Mortar and pestle\"\n[img]{STEAM_CLAN_IMAGE}/40199210/92fbb559970e51909dd80e669f71595fa4611ef9.gif[/img]\n[/list]\n\n[b]Updates/Changes:[/b]\n[list]\n[*] Added sound when making a trade in the trade window\n[*] \"Mortar and pestle\" is now only used for grinding ores\n[*] Price adjustments for some items\n[/list]\n\n\n[b]Fixes:[/b]\n[list]\n[*] Localization fixes in the trade window\n[*] Trader can now sell hay\n[*] The exclamation mark did not disappear from the \u201cMortar and Pestle\u201d construction button\n[*] The duration of the effect displayed the number of days, along with the number of hours\n[/list]\n\n\n[b]Modding:[/b]\nA lot of work has been done in the field of modding, here are the main ones:\n[list]\n[*] Transferring all technologies to a json file\n[*] Separating animals of all ages into separate json files for ease of working with them\n[/list]",
+      "key": "1554220::a69e31448c390be2a6d033e9b622300d4d6549f5",
+      "tags": [
+        {
+          "feature": "Possibility to buy animals"
+        },
+        {
+          "feature": "Trading post (replacement of a merchant). Updates its assortment once a day"
+        },
+        {
+          "feature": "Now to grind flour you need to use a \"Mealing stone\" instead of a \"Mortar and pestle\""
+        },
+        {
+          "feature": "Added sound when making a trade in the trade window"
+        },
+        {
+          "feature": "Transferring all technologies to a json file"
+        },
+        {
+          "feature": "Separating animals of all ages into separate json files for ease of working with them"
+        },
+        {
+          "balance_change": "Price adjustments for some items"
+        },
+        {
+          "bug": "Localization fixes in the trade window"
+        },
+        {
+          "bug": "Trader can now sell hay"
+        },
+        {
+          "bug": "The exclamation mark did not disappear from the \u201cMortar and Pestle\u201d construction button"
+        },
+        {
+          "bug": "The duration of the effect displayed the number of days, along with the number of hours"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.4.1",
+      "date": "2024-06-29 10:11:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267316988599",
+      "content": "[b]Localization:[/b]\n[list]\n[*] Added string formatting using string.Format(\"{0} test {1}\", \"AAA\", \"BBB\") for increased localization flexibility.\n[/list]\n[b]Modding:[/b]\n[list]\n[*] Moved the definition of technologies and items that should be unlocked at the start of the game to a separate default_unlocks.json file. This simplifies modification of starting conditions and allows easy addition of new elements in the future.\n[/list]",
+      "key": "1554220::7076df3599756bb68c6d5942d4f3e0c68f1e726a",
+      "tags": [
+        {
+          "feature": " Added string formatting using string.Format(\"{0} test {1}\", \"AAA\", \"BBB\") for increased localization flexibility."
+        },
+        {
+          "feature": " Moved the definition of technologies and items that should be unlocked at the start of the game to a separate default_unlocks.json file. This simplifies modification of starting conditions and allows easy addition of new elements in the future."
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.4.0, Modding, Patreon",
+      "date": "2024-06-24 22:19:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039992768048",
+      "content": "[h2] Patreon [/h2]\nDear Paleon players!\n\nI have an important announcement to share with you. I recently started a Patreon page and it's opening up new opportunities for our community.\nWhy Patreon?\n[olist]\n[*] [b]Development support:[/b] Your support will help me devote more time and resources to Paleon development.\n[*] [b]Tutorials:[/b] Thanks to your support, I plan to create a series of lessons on developing colony simulators.\n[/olist]\nIt's important to note that support through Patreon is completely voluntary. Paleon will remain available to everyone, and your support will only help us grow faster and create more content for the community.\nIf you are interested in this opportunity, you can find my Patreon page at: https://www.patreon.com/paleodev\n\n\n[h2]Modding[/h2]\nBefore I tell you about the update, I want to share one more important information about Paleon. From the very beginning of development, the game was created with easy modification in mind. Already now you can independently add new buildings, plants and objects, as well as customize some game parameters. All data is stored in a convenient JSON format, which greatly simplifies the modding process.\n\nI continue to work hard to make modding even easier and more accessible. In the future, we plan to implement support for mods through the Steam Workshop, which will open up new horizons for the creativity of our community.\n\nIf you have ideas for mods and need help implementing them, feel free to contact us on the Discord channel. We are always ready to support your creative endeavors and provide the necessary opportunities to bring your ideas to life.\n\n[b]Discord channel of the game:[/b]\nhttps://discord.gg/Y4hy5DtmDM\n\n\n[h2]Update 1.4.0[/h2]\n\n[b]Updates/Changes:[/b]\n[list]\n[*] Each deposit now has 3 stages, each stage has its own sprite\n\n[img]{STEAM_CLAN_IMAGE}/40199210/30d55c95f0f126c4489952f672f323365d34cff3.png[/img]\n\n[*] To unlock the \"Copper Smelting\" technology, you now need to unlock the \"Pottery\" technology\n[/list]\n\n[b]Fixes:[/b]\n[list]\n[*] The game crashes when trying to scroll the list through the Scroll bar\n[*] The game crashes when you click on the button to open the save game folder\n[/list]\n\n[b]Localization:[/b]\n[list]\n[*] Updated French translation\n[/list]",
+      "key": "1554220::fdafdaff6a0255592500a9c78010800ba0bdaff7",
+      "tags": [
+        {
+          "feature": "Each deposit now has 3 stages, each stage has its own sprite"
+        },
+        {
+          "balance_change": "To unlock the \"Copper Smelting\" technology, you now need to unlock the \"Pottery\" technology"
+        },
+        {
+          "bug": "The game crashes when trying to scroll the list through the Scroll bar"
+        },
+        {
+          "bug": "The game crashes when you click on the button to open the save game folder"
+        }
+      ]
+    },
+    {
+      "title": "Paleon Reinvented",
+      "date": "2024-06-05 07:22:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972544941589",
+      "content": "[h2]The Return of Paleon: A New Chapter![/h2]\n\nHey everyone! I know, I've been gone for a while, but I haven't been idle. I have some great news: for the past two months, I've been working on a new game engine for Paleon! \"Why?\" you ask. I'll explain everything.\n\n[h3]Paleon Legacy[/h3]\n\nPaleon's journey began in early 2019 (already 5 years!). Initially, it was my hobby project, a way to hone my programming and game design skills. Through this game, I learned to code in C#, understood how to write code effectively and what not to do.\nHowever, over time, Paleon accumulated problems that needed refactoring. A massive amount of interconnected code made things difficult: a single change could disrupt vital parts of the game. This led to fewer and fewer updates. The idea of creating a new engine was lingering for a long time, but I was afraid of the workload. But I finally decided to \"reinvent\" Paleon.\n\n[h3]Paleon Reinvented[/h3]\n\nAs I mentioned, I've been working on the new engine for two months and have made great progress. I learned from all the mistakes of the past and laid the groundwork for easy expansion and long-term support for the game. But that's not all! My goal is not just to simplify development, but also to add a ton of new features:\n[list]\n[*] A huge number of cosmetic changes and animations.\n\n[img]{STEAM_CLAN_IMAGE}/40199210/a4734ea90855eae07e5037351327683f0aa8165a.gif[/img]\n[img]{STEAM_CLAN_IMAGE}/40199210/43a01fc8ab48707e5ade4cfde1b68c2c7e04d8b0.gif[/img]\n\n[*] Support for Linux and MacOS.\n[*] Revamped animal husbandry mechanics (say hello to donkeys and cats!) and farming.\n\n[img]{STEAM_CLAN_IMAGE}/40199210/6b1a908e2a24e32cb0ab14badd7b8c7f65c0ef56.gif[/img]\n\n[*] A revised trading system.\n[*] Settlers will now gain experience for their actions, affecting the overall settlement level and allowing them to unlock new technologies.\n[*] Sound and music.\n[*] A redesigned tech tree.\n[*] Achievements.\n[*] Tutorials.\n[*] The ability to resize the UI.\n\n[img]{STEAM_CLAN_IMAGE}/40199210/c8fa3e110f3c3b9a55d79325530be586f155e076.gif[/img]\n\n[/list]\nAnd much more!\n\n[h3]When Will The New Version of Paleon Be Ready?[/h3]\n\nThere's still a lot of work to do, but I plan to create the bare minimum needed for you to start testing the game. So you won't have to wait too long to experience it!",
+      "key": "1554220::cb377c1dbc2c92f5af298f5ddcd7faf2d22ece71",
+      "tags": [
+        {
+          "feature": "A huge number of cosmetic changes and animations."
+        },
+        {
+          "feature": "Support for Linux and MacOS."
+        },
+        {
+          "feature": "Revamped animal husbandry mechanics (say hello to donkeys and cats!) and farming."
+        },
+        {
+          "feature": "A revised trading system."
+        },
+        {
+          "feature": "Settlers will now gain experience for their actions, affecting the overall settlement level and allowing them to unlock new technologies."
+        },
+        {
+          "feature": "Sound and music."
+        },
+        {
+          "feature": "A redesigned tech tree."
+        },
+        {
+          "feature": "Achievements."
+        },
+        {
+          "feature": "Tutorials."
+        },
+        {
+          "feature": "The ability to resize the UI."
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.3.1 Hotfix",
+      "date": "2024-04-25 12:10:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759616966665008989",
+      "content": "[b]Bugfix:[/b]\n[list]\n[*] Fixed a soft lock when crafting an iron smithy required iron, which can only be produced in an iron smithy. Now the iron ingot can be crafted in the copper smithy.\n[/list]",
+      "key": "1554220::2d89e3d3d0333e7e1886936585c77c965ba45eb1",
+      "tags": [
+        {
+          "bug": "[*] Fixed a soft lock when crafting an iron smithy required iron, which can only be produced in an iron smithy. Now the iron ingot can be crafted in the copper smithy."
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.3.0",
+      "date": "2024-04-12 06:51:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312184431357",
+      "content": "[b]Features:[/b]\n[list]\n[*] New construction: \"Noria\": Used to lift water from wells, for further supply to irrigation canals.\n[*] New item: \"Iron Bloom\": Now, instead of iron ingots, the bloomery furnace produces iron blooms, which need to be reforged into iron ingots at the forge.\n[*] Dogs can now be assigned to settlers: The assigned dog will always follow the settler and assist them in hunting.\n[*] Added background music: Currently, there are 2 compositions.\n[/list]\n\n[b]Updates/Changes:[/b]\n[list]\n[*] Clothing no longer has a shelf life: It only deteriorates when worn by settlers.\n[/list]\n\n[b]Fixes:[/b]\n[list]\n[*] Items no longer get stuck in walls: They are moved to the nearest passable tile.\n[/list]",
+      "key": "1554220::0f4fb08bb114fe59925bc0ef976398bc977a450b",
+      "tags": [
+        {
+          "feature": "New construction: \"Noria\": Used to lift water from wells, for further supply to irrigation canals."
+        },
+        {
+          "feature": "New item: \"Iron Bloom\": Now, instead of iron ingots, the bloomery furnace produces iron blooms, which need to be reforged into iron ingots at the forge."
+        },
+        {
+          "feature": "Dogs can now be assigned to settlers: The assigned dog will always follow the settler and assist them in hunting."
+        },
+        {
+          "feature": "Added background music: Currently, there are 2 compositions."
+        },
+        {
+          "balance_change": "Clothing no longer has a shelf life: It only deteriorates when worn by settlers."
+        },
+        {
+          "bug": "Items no longer get stuck in walls: They are moved to the nearest passable tile."
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.2.0",
+      "date": "2023-11-20 04:44:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6560117310278205584",
+      "content": "[b]Features:[/b]\n- New food \"Pea soup\"\n- New resource \"Sheaf of Barley\"\n- New resource \"Bunch of Peas\"\n- New building \"Thresher\"\n    * Allows you to get barley seeds and hay from a sheaf of barley\n    * Allows you to get pea seeds and hay from a bunch of peas\n- New building \"Threshing floor\" (analogous to a \"Thresher\", but only animals can work in it)\n\n[b]Changes/Updates:[/b]\n- Planting plants no longer requires seeds\n- Pea sprite update\n- Reduced cheese crafting time from 300 to 50\n- Crafting flatbreads and raisin buns now requires a pot of water\n- To open the \"Grain Processing\" technology, you now need the \"Pottery\" technology\n- Changed barley growth rate from 12.5% to 10% per day\n- Change in pea growth rate from 8.33% to 12.5% per day\n- Now the UI with a general list of resources opens to the \"I\" button",
+      "key": "1554220::74a87d30bc2791e8248aba0b832d339351bb3951",
+      "tags": [
+        {
+          "feature": "- New food \"Pea soup\""
+        },
+        {
+          "feature": "- New resource \"Sheaf of Barley\""
+        },
+        {
+          "feature": "- New resource \"Bunch of Peas\""
+        },
+        {
+          "feature": "- New building \"Thresher\""
+        },
+        {
+          "feature": "- New building \"Threshing floor\" (analogous to a \"Thresher\", but only animals can work in it)"
+        },
+        {
+          "balance_change": "- Planting plants no longer requires seeds"
+        },
+        {
+          "balance_change": "- Reduced cheese crafting time from 300 to 50"
+        },
+        {
+          "balance_change": "- Crafting flatbreads and raisin buns now requires a pot of water"
+        },
+        {
+          "balance_change": "- To open the \"Grain Processing\" technology, you now need the \"Pottery\" technology"
+        },
+        {
+          "balance_change": "- Changed barley growth rate from 12.5% to 10% per day"
+        },
+        {
+          "balance_change": "- Change in pea growth rate from 8.33% to 12.5% per day"
+        },
+        {
+          "feature": "- Now the UI with a general list of resources opens to the \"I\" button"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.1.0",
+      "date": "2023-11-07 10:17:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5288974951225063775",
+      "content": "[b]Features:[/b]\n[list]\n[*] A window with the total number of resources, in which you can choose which resources to display in the general list\n[*] Ground tiles become overgrown with grass after a while\n[/list]\n\n[b]Updates/Changes:[/b]\n[list]\n[*] French localization updated\n[*] Bridges can now be built in deep water\n[*] Hive descriptions now display the reason for stopping work\n[/list]\n\n[b]Bugfixes:[/b]\n[list]\n[*] Sometimes buildings occupied an incorrect number of tiles\n[/list]",
+      "key": "1554220::16fed288b036c7e5908f2ac73b3e8febb22caee4",
+      "tags": [
+        {
+          "feature": "A window with the total number of resources, in which you can choose which resources to display in the general list"
+        },
+        {
+          "feature": "Ground tiles become overgrown with grass after a while"
+        },
+        {
+          "bug": "Sometimes buildings occupied an incorrect number of tiles"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.0.2 Hotfix",
+      "date": "2023-11-03 04:28:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5288974951209449761",
+      "content": "Fixed game crash when building a mine",
+      "key": "1554220::2d1ae2e5ff85cdd91eb6c50b21bd969f3b91f873",
+      "tags": [
+        {
+          "bug": "Fixed game crash when building a mine"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.0.1",
+      "date": "2023-10-29 07:17:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621586736560",
+      "content": "[list]\n[*] Display icons instead of numbers in the labor priority setting menu\n[*] Support for old saves\n[*] Bug fixes\n[/list]",
+      "key": "1554220::34e9ff57fffcaf855b10d0a172e7ab969e442801",
+      "tags": [
+        {
+          "feature": "Display icons instead of numbers in the labor priority setting menu"
+        },
+        {
+          "feature": "Support for old saves"
+        },
+        {
+          "bug": "Bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Paleon 1.0.0 RELEASE",
+      "date": "2023-10-27 11:28:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621580083603",
+      "content": "Dear friends and fans of my game,\n\nWith a heavy heart I had to make the decision to release the game after three years of its development. It was a tough decision, since I did not have enough funds to bring the project to its final form. However, I believe that this is only the very beginning of our journey, and there is hope that the future will give us more opportunities to improve and expand the game.\n\nDue to limited resources, some content had to be temporarily removed in order to release the game. But I would like to assure you that this is not the end. My plan is to not only bring back this content, but to make it even better, more detailed than ever.\n\nIn addition, I made another important decision. The Paleon game engine was written using Monogame, which is quite old and has a large number of shortcomings. It significantly slows down the game development process and prevents me from achieving a high-quality game. Thus, I have decided to transfer the game to the more modern and famous game engine Godot. This will allow me to implement many improvements and speed up development several times.\n\nNevertheless, this does not mean that I will stop updating or fixing bugs in the current version of the game; I plan to do this while simultaneously transferring the game to Godot.\n\nI would like to thank you for your eternal support and faith in the project. Without you, none of this would have been possible. We are moving forward, and I am confident that the future of our game will be bright and exciting. Thank you for staying with us, and rest assured, the best is yet to come.\n\nSincerely yours, Rick Technolithic.\n\n[b]Features:[/b]\n\n[list]\n[*] Unfired pot\n            - Crafted in the crafter\n            - Used to craft a ceramic pot\n[/list]\n[list]\n[*] Fish Trap:\n            - Crafted from baskets\n            - Has a number of uses\n            - Can catch wood or stone with some chance\n            - Progress bar is now displayed\n[/list]\n\n[b]Updates/Changes:[/b]\n\n[list]\n[*] Adding tooltips for time acceleration buttons\n[*] Reducing the size of the bloomery from 3x2 to 2x2\n[*] A tool is mandatory for fishing\n[*] Splitting the Farming job type into Harvesting and Planting\n[*] Notification when a nomad joins a settlement\n[*] Updated and animated knowledge table sprite\n[*] You need 3 wood to produce 2 coal\n[*] Coal is now directly needed to produce metals\n[*] Dried hide is now required to craft leather\n[*] Increased the spawning radius of a \u201cMine\u201c\n[*] Reducing the amount of experience needed to unlock the time machine\n[*] Adding a tooltip for the button to collect product from animals\n[*] Notifications about the need for tools to perform hunting and fishing activities\n[*] 2 hay drops from one barley at once\n[/list]\n\n[b]Removals:[/b]\n\n[list]\n[*] Removal of buildings and items of all \"Medieval\" and \"Industrial\" age technologies. Will be brought back in the future, after detailed development\n[/list]\n\n[b]Fixes:[/b]\n\n[list]\n[*] Plant settings were not being copied\n[*] Settlers did not stop working or drop tools (associated with that type of work) when the type of work was banned.\n[*] Settlers continued to chop trees even when the \"Chop\" job type was banned.\n[*] Localization fixes\n[/list]",
+      "key": "1554220::7bab938477a1c8ed921cc6f2fa790a030316da24",
+      "tags": [
+        {
+          "feature": " Unfired pot - Crafted in the crafter - Used to craft a ceramic pot"
+        },
+        {
+          "feature": " Fish Trap: - Crafted from baskets - Has a number of uses - Can catch wood or stone with some chance - Progress bar is now displayed"
+        },
+        {
+          "balance_change": " Adding tooltips for time acceleration buttons"
+        },
+        {
+          "balance_change": " Reducing the size of the bloomery from 3x2 to 2x2"
+        },
+        {
+          "balance_change": " A tool is mandatory for fishing"
+        },
+        {
+          "balance_change": " Splitting the Farming job type into Harvesting and Planting"
+        },
+        {
+          "balance_change": " Notification when a nomad joins a settlement"
+        },
+        {
+          "balance_change": " Updated and animated knowledge table sprite"
+        },
+        {
+          "balance_change": " You need 3 wood to produce 2 coal"
+        },
+        {
+          "balance_change": " Coal is now directly needed to produce metals"
+        },
+        {
+          "balance_change": " Dried hide is now required to craft leather"
+        },
+        {
+          "balance_change": " Increased the spawning radius of a \u201cMine\u201c"
+        },
+        {
+          "balance_change": " Reducing the amount of experience needed to unlock the time machine"
+        },
+        {
+          "balance_change": " Adding a tooltip for the button to collect product from animals"
+        },
+        {
+          "balance_change": " Notifications about the need for tools to perform hunting and fishing activities"
+        },
+        {
+          "balance_change": " 2 hay drops from one barley at once"
+        },
+        {
+          "bug": " Plant settings were not being copied"
+        },
+        {
+          "bug": " Settlers did not stop working or drop tools (associated with that type of work) when the type of work was banned."
+        },
+        {
+          "bug": " Settlers continued to chop trees even when the \"Chop\" job type was banned."
+        },
+        {
+          "bug": " Localization fixes"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.19.1",
+      "date": "2023-10-03 06:54:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220291886504934330",
+      "content": "[b]Features:[/b]\n[list]\n[*] Torch\n[*] Gas lamp\n[*] Gas retort - used to produce gas from coal\n[*] If there is no lighting at night, settlers will be subject to the \u201cLow light\u201d effect, which reduces the settlers\u2019 movement speed by 10%\n[/list]\n\n[b]Changes/Updates:[/b]\n[list]\n[*] To craft a clay oven you need 4 clay instead of 2\n[*] The crafting time for a ceramic pot and a brick has been increased from 50 to 75\n[*] Replacing a primitive school with a table of knowledge\n[/list]\n\n[b]Bugfixes:[/b]\n[list]\n[*] Forges do not emit light when working\n[/list]",
+      "key": "1554220::4588685723deed519f87e0f87b7227e4a421f367",
+      "tags": [
+        {
+          "feature": "Torch"
+        },
+        {
+          "feature": "Gas lamp"
+        },
+        {
+          "feature": "Gas retort - used to produce gas from coal"
+        },
+        {
+          "feature": "If there is no lighting at night, settlers will be subject to the \u201cLow light\u201d effect, which reduces the settlers\u2019 movement speed by 10%"
+        },
+        {
+          "balance_change": "To craft a clay oven you need 4 clay instead of 2"
+        },
+        {
+          "balance_change": "The crafting time for a ceramic pot and a brick has been increased from 50 to 75"
+        },
+        {
+          "feature": "Replacing a primitive school with a table of knowledge"
+        },
+        {
+          "bug": "Forges do not emit light when working"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.19.0",
+      "date": "2023-09-09 04:40:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5159491482915525395",
+      "content": "[b]Features:[/b]\n\n[list]\n[*] Sewing machine\n[*] Spinning frame\n[*] Loom (Industrial Age)\n[*] Mudbrick floor\n[*] Mudbrick wall\n[/list]\n\n[b]Updates/Changes:[/b]\n\n[list]\n[*] The efficiency of windmills depends on the wind speed\n[*] Clothes have an expiration date\n[*] Ability to build bridges over irrigation canals\n[*] Irrigation canals dry up if the source is blocked\n[*] Water in irrigation channels can only move up to 20 tiles from the source\n[*] Sort game saves by creation date\n[*] Displaying the date of the last save next to the save folder\n[/list]\n\n[b]Bugfixes:[/b]\n\n[list]\n[*] Some buildings could be built on an unfinished bridge\n[*] When minimizing the game, the camera moved to the upper left corner\n[/list]",
+      "key": "1554220::07ab8301a1e0a758c3b86a5005340ddb9bff4a5d",
+      "tags": [
+        {
+          "feature": "Sewing machine"
+        },
+        {
+          "feature": "Spinning frame"
+        },
+        {
+          "feature": "Loom (Industrial Age)"
+        },
+        {
+          "feature": "Mudbrick floor"
+        },
+        {
+          "feature": "Mudbrick wall"
+        },
+        {
+          "balance_change": "The efficiency of windmills depends on the wind speed"
+        },
+        {
+          "balance_change": "Clothes have an expiration date"
+        },
+        {
+          "feature": "Ability to build bridges over irrigation canals"
+        },
+        {
+          "balance_change": "Irrigation canals dry up if the source is blocked"
+        },
+        {
+          "balance_change": "Water in irrigation channels can only move up to 20 tiles from the source"
+        },
+        {
+          "feature": "Sort game saves by creation date"
+        },
+        {
+          "feature": "Displaying the date of the last save next to the save folder"
+        },
+        {
+          "bug": "Some buildings could be built on an unfinished bridge"
+        },
+        {
+          "bug": "When minimizing the game, the camera moved to the upper left corner"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.18.2",
+      "date": "2023-08-26 08:52:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722334343365",
+      "content": "Bugfix:\n- Fixed a crash when trying to build a large building on the edge of the map",
+      "key": "1554220::f368ea810263672d871d9ed82124ea0126f00af3",
+      "tags": [
+        {
+          "bug": "- Fixed a crash when trying to build a large building on the edge of the map"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.18.1",
+      "date": "2023-08-21 06:41:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289187103780",
+      "content": "[b]Features:[/b]\n- Added warning notifications (when products expire, when a settler dies, when a settler is poisoned)\n- Effect system:\n   [list]\n[*] When winter comes, creatures get the \"Winter cold\" effect (-150 heat per day)\n[*] If settlers have warm clothes, the effect \"Warm clothes\" is applied (+100 heat per day)\n[*] Now all huts apply the \"Cozy Hut\" effect to settlers\n[/list]\n- Poisoning:\n   [list]\n[*] Now settlers can get poisoned with some chance when eating raw food\n[*] When a settler is poisoned, the effect \"Food poisoning\" is applied (Decreases movement speed, May cause nausea)\n[/list]\n- Medicine:\n   [list]\n[*] New type of work \"Medicine\"\n[*] New building \"Herbalist's Table\"\n[*] New building category \"Medicine\"\n[*] New item \"Cure for food poisoning\" (Used to treat food poisoning)\n[/list]\n- Added a new parameter \"Productivity\" for tamed animals, responsible for the speed of production of products (wool, milk)\n- Animal productivity is affected by: pen cleanliness, satiety\n \n[b]Updates/Changes:[/b]\n- Now UI of creatures is constantly updated (previously you had to re-enter the UI to update the data)\n- Removing honey from the ration, now used as an ingredient for crafting \"Cure for food poisoning\"\n- New stone path sprite\n- Animal starvation rate increased from 40 to 80\n\n[b]Removal:[/b]\n- Stone hut\n\n[b]Bugfixes:[/b]\n- Animals do not wake up after filling up energy",
+      "key": "1554220::f4fd1bcd738d68ecbaf152fe552f6a38b25ea49a",
+      "tags": [
+        {
+          "feature": "- Added warning notifications (when products expire, when a settler dies, when a settler is poisoned)"
+        },
+        {
+          "feature": "- Effect system:"
+        },
+        {
+          "feature": "[*] When winter comes, creatures get the \"Winter cold\" effect (-150 heat per day)"
+        },
+        {
+          "feature": "[*] If settlers have warm clothes, the effect \"Warm clothes\" is applied (+100 heat per day)"
+        },
+        {
+          "feature": "[*] Now all huts apply the \"Cozy Hut\" effect to settlers"
+        },
+        {
+          "feature": "- Poisoning:"
+        },
+        {
+          "feature": "[*] Now settlers can get poisoned with some chance when eating raw food"
+        },
+        {
+          "feature": "[*] When a settler is poisoned, the effect \"Food poisoning\" is applied (Decreases movement speed, May cause nausea)"
+        },
+        {
+          "feature": "- Medicine:"
+        },
+        {
+          "feature": "[*] New type of work \"Medicine\""
+        },
+        {
+          "feature": "[*] New building \"Herbalist's Table\""
+        },
+        {
+          "feature": "[*] New building category \"Medicine\""
+        },
+        {
+          "feature": "[*] New item \"Cure for food poisoning\" (Used to treat food poisoning)"
+        },
+        {
+          "feature": "- Added a new parameter \"Productivity\" for tamed animals, responsible for the speed of production of products (wool, milk)"
+        },
+        {
+          "balance_change": "- Animal starvation rate increased from 40 to 80"
+        },
+        {
+          "bug": "- Animals do not wake up after filling up energy"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.18.0",
+      "date": "2023-07-12 23:52:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150180381201",
+      "content": "[b]Features:[/b]\n- New items: Wool, Wool yarn, Wool cloth\n- Displaying the building's area of effect during construction and selection\n- Ability to pre-set food rations for new settlers\n- New buildings: Brick house, Pit head winding gear\n- During a lightning strike, the map briefly lights up as if it were daytime\n- Lightning is displayed at a random point after being struck\n\n[b]Updates/Changes:[/b]\n- Crafting a bow now requires dry skin instead of yarn\n- Combining technologies \"Spinning\" and \"Weaving\"\n- The \"Wooden Gate\" building has been moved to the \"Defense\" technology\n- Updated fiber cloth sprite\n- Wool cloth is now needed to craft warm knitted clothes\n- Wool yarn can be crafted from wool in a drop spindle and a spinning wheel\n- Wool cloth is crafted from wool yarn in a loom\n- Shearing sheep now yields wool\n\n[b]Removal:[/b]\n- Adobe fence\n- Wooden fence\n- Two-storey adobe hut",
+      "key": "1554220::9dd9fbbf3ecf48158b5efd6cf072e5424bd28801",
+      "tags": [
+        {
+          "feature": "- New items: Wool, Wool yarn, Wool cloth"
+        },
+        {
+          "feature": "- Displaying the building's area of effect during construction and selection"
+        },
+        {
+          "feature": "- Ability to pre-set food rations for new settlers"
+        },
+        {
+          "feature": "- New buildings: Brick house, Pit head winding gear"
+        },
+        {
+          "feature": "- During a lightning strike, the map briefly lights up as if it were daytime"
+        },
+        {
+          "feature": "- Lightning is displayed at a random point after being struck"
+        },
+        {
+          "balance_change": "- Crafting a bow now requires dry skin instead of yarn"
+        },
+        {
+          "balance_change": "- Combining technologies \"Spinning\" and \"Weaving\""
+        },
+        {
+          "balance_change": "- The \"Wooden Gate\" building has been moved to the \"Defense\" technology"
+        },
+        {
+          "balance_change": "- Updated fiber cloth sprite"
+        },
+        {
+          "balance_change": "- Wool cloth is now needed to craft warm knitted clothes"
+        },
+        {
+          "balance_change": "- Wool yarn can be crafted from wool in a drop spindle and a spinning wheel"
+        },
+        {
+          "balance_change": "- Wool cloth is crafted from wool yarn in a loom"
+        },
+        {
+          "balance_change": "- Shearing sheep now yields wool"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.5",
+      "date": "2023-06-28 08:49:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150127072187",
+      "content": "[b]Features:[/b]\n[list]\n[*] Ability to rename settlers and domesticated animals\n[*] New food \"Raisin Bun\"\n[*] Ore deposits now automatically spawn around mines\n[/list]\n[b]Updates/Changes[/b]\n[list]\n[*] Cheese and bread are now only produced in the oven\n[*] Resources from deposits are now mined 2 times for 4 items\n[*] Changing the characteristics of all foods\n[*] Food shelf life is now displayed in days\n[*] Changed crafting time for dried hides from 300 to 200\n[/list]\n[b]Removal:[/b]\n[list]\n[*] Raisin\n[/list]\n[i]Minor fixes and refactoring[/i]",
+      "key": "1554220::ac93d19db07537151ad6f324f44c98df00922611",
+      "tags": [
+        {
+          "feature": " Ability to rename settlers and domesticated animals"
+        },
+        {
+          "feature": " New food \"Raisin Bun\""
+        },
+        {
+          "feature": " Ore deposits now automatically spawn around mines"
+        },
+        {
+          "balance_change": " Cheese and bread are now only produced in the oven"
+        },
+        {
+          "balance_change": " Resources from deposits are now mined 2 times for 4 items"
+        },
+        {
+          "balance_change": " Changing the characteristics of all foods"
+        },
+        {
+          "balance_change": " Food shelf life is now displayed in days"
+        },
+        {
+          "balance_change": " Changed crafting time for dried hides from 300 to 200"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.4a",
+      "date": "2023-06-11 08:54:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846349873839",
+      "content": "Fixes:\n- Game crashes when trying to create a world with peaceful mode",
+      "key": "1554220::e4ae44b376c1df32ab1a8112b0c8a60a9c3d5310",
+      "tags": [
+        {
+          "bug": "- Game crashes when trying to create a world with peaceful mode"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.4",
+      "date": "2023-06-09 05:11:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846342020806",
+      "content": "[b]Features:[/b]\n- New buildings:\n[list]\n[*] Brick floor\n[*] Brick wall\n[*] Haystack (Increases the shelf life of hay, has a capacity of 300 items)\n[*] Windlass (A hand-powered winding device for hauling ore up from mine)\n[*] New building category \"Mining\"\n[/list]\n- Selected settlers can now be disbanded using the \"Disband\" order\n\n[b]Updates/Changes:[/b]\n- Resources from heaps of stones and wood fall out immediately\n- Paleolithic technologies now cost 50 knowledge points instead of 100\n- Mesolithic technologies now cost 175 shackles instead of 250\n- Increased durability of spears\n- Increased the value of warm clothing made from skins from 4 to 6\n- Hay now has an expiration date\n- Moving technology \"Mine\" to the Mesolithic\n\n[b]Removal:[/b]\n- Removed \"Menhir\"\n\n[b]Fixes:[/b]\n- After the death of the creature, its UI was not closed",
+      "key": "1554220::4be5623c77b2ae99a39eef42f3557e0324e9648a",
+      "tags": [
+        {
+          "feature": "- New buildings:"
+        },
+        {
+          "feature": "[*] Brick floor"
+        },
+        {
+          "feature": "[*] Brick wall"
+        },
+        {
+          "feature": "[*] Haystack (Increases the shelf life of hay, has a capacity of 300 items)"
+        },
+        {
+          "feature": "[*] Windlass (A hand-powered winding device for hauling ore up from mine)"
+        },
+        {
+          "feature": "[*] New building category \"Mining\""
+        },
+        {
+          "feature": "- Selected settlers can now be disbanded using the \"Disband\" order"
+        },
+        {
+          "balance_change": "- Resources from heaps of stones and wood fall out immediately"
+        },
+        {
+          "balance_change": "- Paleolithic technologies now cost 50 knowledge points instead of 100"
+        },
+        {
+          "balance_change": "- Mesolithic technologies now cost 175 shackles instead of 250"
+        },
+        {
+          "balance_change": "- Increased durability of spears"
+        },
+        {
+          "balance_change": "- Increased the value of warm clothing made from skins from 4 to 6"
+        },
+        {
+          "balance_change": "- Hay now has an expiration date"
+        },
+        {
+          "balance_change": "- Moving technology \"Mine\" to the Mesolithic"
+        },
+        {
+          "bug": "- After the death of the creature, its UI was not closed"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.3b [Hotfix]",
+      "date": "2023-05-20 00:17:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943311146785",
+      "content": "Crash fixes",
+      "key": "1554220::ddc6fe407c451eca5312655390836242b3302171",
+      "tags": [
+        {
+          "bug": "Crash fixes"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.3a [Hotfix]",
+      "date": "2023-05-13 11:09:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386948814764",
+      "content": "Fixes:\n- Dogs bred too fast",
+      "key": "1554220::ecbb26fab2927c50553402cd8250658b7cede3a0",
+      "tags": [
+        {
+          "bug": "- Dogs bred too fast"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.3",
+      "date": "2023-05-13 06:06:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386948048253",
+      "content": "[b]Animals:[/b]\n[list]\n[*] Wolves can now be tamed using raw fish.\n[*] Each domesticated animal now has its own name.\n[*] Tamed wolves (dogs) no longer have a hunger bar.\n[/list]\n\n[b]Fixes:[/b]\n[list]\n[*] Settlers did not follow orders while attacking the enemy.\n[/list]\n\n[i]P.S. When loading old saves, all previously domesticated animals will be wild, so they need to be tamed again.[/i]",
+      "key": "1554220::e6bea5618f9a44addbff70313c7e4add3cb91501",
+      "tags": [
+        {
+          "feature": "Wolves can now be tamed using raw fish."
+        },
+        {
+          "feature": "Each domesticated animal now has its own name."
+        },
+        {
+          "bug": "Tamed wolves (dogs) no longer have a hunger bar."
+        },
+        {
+          "bug": "Settlers did not follow orders while attacking the enemy."
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.1",
+      "date": "2023-05-03 14:47:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875076674371",
+      "content": "Bugfix:\n- Unable to tame animals after loading a save",
+      "key": "1554220::94def47c510cd0147c4666eb24fe9ec52e6638e4",
+      "tags": [
+        {
+          "bug": "- Unable to tame animals after loading a save"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.17.0",
+      "date": "2023-05-03 02:28:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875074805430",
+      "content": "[img]{STEAM_CLAN_IMAGE}/40199210/96f519d56c8bc24832e0336f6f02cb10b2970a2b.png[/img]\n[b]Sudden attacks by wild animals:[/b]\n[list]\n[*] Once every few days, settlers or domesticated animals may be attacked by wild animals\n[*] The settler automatically attacks a wild animal if he sees it at a distance of 10 tiles\n[*] In the world settings, you can select \u201cPeaceful mode\u201c\n[/list]\n\n[b]New animal \"Wolf\":[/b]\n[list]\n[*] Once tamed, will protect settlers or pets from attack by wild animals\n[*] Spots enemies at a farther distance (20 tiles) than settlers\n[*] To tame wolves, you need to unlock the corresponding technology\n[/list]\n\n[b]Settler management:[/b]\n[list]\n[*] Added ability to select multiple settlers\n[*] Selected settlers can be sent to the tile, attack creatures and equip weapons\n[*] Settlers stop following orders after an hour of inactivity (25 seconds)\n[/list]\n\n[b]Notices:[/b]\n[list]\n[*] Notifications are divided into 2 types: \u201cDanger\u201d and \u201cInformation\u201d\n[*] Each notification has its own icon and sound\n[*] Added the ability to travel or follow the notification source (merchant, settler death, etc.)\n[/list]\n\n[b]Bones:[/b]\n[list]\n[*] Animals now drop bones\n[*] Added bone tools: bone sickle, bone spear, bone harpoon\n[*] To unlock bone tools, you need to unlock the technology\n[/list]\n\n[b]Iron production update:[/b]\n[list]\n[*] Removal of steel and steel tools\n[*] Iron tools now have the appearance and characteristics of steel\n[*] Blast furnace now produces pig iron\n[*] Added Finery forge, which is used for mass smelting pig iron into iron\n[*] At school, instead of steel, pig iron is studied\n[/list]\n\n[b]Plants:[/b]\n[list]\n[*] Plant hardness now depends on their growth percentage\n[*] Increased oak hardness from 30 to 90\n[*] Deceleration of oak growth time from 6.25% growth per day to 5.55% per day\n[/list]\n\nLime removal\n\nNow only children of animals can be domesticated\n\nDisplay an exclamation mark over the building buttons (in the build panel) if the building was just unlocked\n\nSettlers and animals are no longer shuffled in the lists and are always in the same order\n\nSeparation of weapons into a separate category of items\n\nAction icons are now colored to make them easier to distinguish in winter\n\nAdded sounds of nature: day, night, rain, thunder, winter\n\nLocalization fixes",
+      "key": "1554220::a8c8448d5bafb9d80777094241e7177df9b3206e",
+      "tags": [
+        {
+          "feature": "- Once every few days, settlers or domesticated animals may be attacked by wild animals"
+        },
+        {
+          "feature": "- The settler automatically attacks a wild animal if he sees it at a distance of 10 tiles"
+        },
+        {
+          "feature": "- In the world settings, you can select \u201cPeaceful mode\u201c"
+        },
+        {
+          "feature": "- New animal \"Wolf\":"
+        },
+        {
+          "feature": "- Once tamed, will protect settlers or pets from attack by wild animals"
+        },
+        {
+          "feature": "- Spots enemies at a farther distance (20 tiles) than settlers"
+        },
+        {
+          "feature": "- To tame wolves, you need to unlock the corresponding technology"
+        },
+        {
+          "feature": "- Added ability to select multiple settlers"
+        },
+        {
+          "feature": "- Selected settlers can be sent to the tile, attack creatures and equip weapons"
+        },
+        {
+          "feature": "- Settlers stop following orders after an hour of inactivity (25 seconds)"
+        },
+        {
+          "feature": "- Notifications are divided into 2 types: \u201cDanger\u201d and \u201cInformation\u201d"
+        },
+        {
+          "feature": "- Each notification has its own icon and sound"
+        },
+        {
+          "feature": "- Added the ability to travel or follow the notification source (merchant, settler death, etc.)"
+        },
+        {
+          "feature": "- Animals now drop bones"
+        },
+        {
+          "feature": "- Added bone tools: bone sickle, bone spear, bone harpoon"
+        },
+        {
+          "feature": "- To unlock bone tools, you need to unlock the technology"
+        },
+        {
+          "feature": "- Removal of steel and steel tools"
+        },
+        {
+          "feature": "- Blast furnace now produces pig iron"
+        },
+        {
+          "feature": "- Added Finery forge, which is used for mass smelting pig iron into iron"
+        },
+        {
+          "feature": "- At school, instead of steel, pig iron is studied"
+        },
+        {
+          "balance_change": "- Increased oak hardness from 30 to 90"
+        },
+        {
+          "balance_change": "- Deceleration of oak growth time from 6.25% growth per day to 5.55% per day"
+        },
+        {
+          "feature": "Now only children of animals can be domesticated"
+        },
+        {
+          "feature": "Display an exclamation mark over the building buttons (in the build panel) if the building was just unlocked"
+        },
+        {
+          "feature": "Separation of weapons into a separate category of items"
+        },
+        {
+          "feature": "Action icons are now colored to make them easier to distinguish in winter"
+        },
+        {
+          "feature": "Added sounds of nature: day, night, rain, thunder, winter"
+        },
+        {
+          "bug": "Localization fixes"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.16.3",
+      "date": "2023-03-25 09:37:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143713753735997289",
+      "content": "- Fixed a crash when an animal tries to deliver items to a building",
+      "key": "1554220::95499223d85e368ae7c272cfeb76559ea2c39e02",
+      "tags": [
+        {
+          "bug": "- Fixed a crash when an animal tries to deliver items to a building"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.16.2",
+      "date": "2023-03-23 07:12:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536879105889",
+      "content": "[b]Features:[/b]\n-Ability to set limits on the production of items in crafters (settlers will stop or start production upon reaching the limits)\n- Addition of hotkeys for orders\n\n[b]Changes/Updates:[/b]\n- Ability to slaughter animals using selection\n- Ability to hunt wild animals using selection\n- Instead of a settler turning their body during sleep, a straw bed will be displayed\n\n[b]Fixes:[/b]\n- Localization fixes",
+      "key": "1554220::d17f95494be9324b2ee8052f8a0ecaff77f30b84",
+      "tags": [
+        {
+          "feature": "-Ability to set limits on the production of items in crafters (settlers will stop or start production upon reaching the limits)"
+        },
+        {
+          "feature": "- Addition of hotkeys for orders"
+        },
+        {
+          "bug": "- Localization fixes"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.16.1",
+      "date": "2023-02-17 10:34:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268099240411487",
+      "content": "Added Ukrainian localization",
+      "key": "1554220::1f124b4d37f3b1f4f60fc080ba083cd507b9762b",
+      "tags": [
+        {
+          "feature": "Added Ukrainian localization"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.16.0",
+      "date": "2023-02-12 01:42:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277239446008",
+      "content": "[b]Features:[/b]\n- Animal pen. Used for feeding, breeding and resting animals. The animal filter allows you to separate them into different pens.\n- Mood system. All settlers now have a happiness level. At the moment, settlers' happiness levels are influenced by not many factors. From negative: sleeping on the ground, eating raw food. From positive: sleeping in a hut, eating delicious food, being close to decorative buildings (at the moment, the Mehir building is such a building, soon there will be many more). The settler leaves the settlement if his happiness level reaches zero\n- Two-storey mudbrick house. Accommodates up to 8 settlers.\n\n[b]Updates/Changes:[/b]\n- The ability to hide/show categories in the storage UI.\n- New settlers arrive every 3-5 days, instead of 10-16 days.\n- The text color of the total amount of food changes to orange if it is equal to 0.\n- All animals only eat hay.\n- The barn has been removed (replaced by a pen).\n- Decreased nourishment of raisins (from 30 to 20), dried fish (from 50 to 30), dried meat (from 50 to 30).",
+      "key": "1554220::cb030fe2ff4fe5e00fb48a1b399d71f8eb0b4951",
+      "tags": [
+        {
+          "feature": "- Animal pen. Used for feeding, breeding and resting animals. The animal filter allows you to separate them into different pens."
+        },
+        {
+          "feature": "- Mood system. All settlers now have a happiness level. At the moment, settlers' happiness levels are influenced by not many factors. From negative: sleeping on the ground, eating raw food. From positive: sleeping in a hut, eating delicious food, being close to decorative buildings (at the moment, the Mehir building is such a building, soon there will be many more). The settler leaves the settlement if his happiness level reaches zero"
+        },
+        {
+          "feature": "- Two-storey mudbrick house. Accommodates up to 8 settlers."
+        },
+        {
+          "feature": "- The ability to hide/show categories in the storage UI."
+        },
+        {
+          "balance_change": "- New settlers arrive every 3-5 days, instead of 10-16 days."
+        },
+        {
+          "feature": "- The text color of the total amount of food changes to orange if it is equal to 0."
+        },
+        {
+          "balance_change": "- All animals only eat hay."
+        },
+        {
+          "balance_change": "- The barn has been removed (replaced by a pen)."
+        },
+        {
+          "balance_change": "- Decreased nourishment of raisins (from 30 to 20), dried fish (from 50 to 30), dried meat (from 50 to 30)."
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.15.4a",
+      "date": "2023-02-03 10:38:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743883968883",
+      "content": "[b]Bugfixes:[/b]\n- The game crashes if a working animal gets old",
+      "key": "1554220::92aa6087bd3a53695e79d4f48664982b0502287e",
+      "tags": [
+        {
+          "bug": "- The game crashes if a working animal gets old"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.15.4",
+      "date": "2023-02-02 10:32:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743880310081",
+      "content": "[b]Features:[/b]\n- Animals have three stages of growing up: child, adult, old\n- When an animal reaches old age, it is automatically put to slaughter\n- Old animals cannot reproduce, stop producing resources and working\n- Older animals have a greyish texture",
+      "key": "1554220::19fdd0994a83c1354c3a70fc8f53cb796ecc7f77",
+      "tags": [
+        {
+          "feature": "- Animals have three stages of growing up: child, adult, old"
+        },
+        {
+          "feature": "- When an animal reaches old age, it is automatically put to slaughter"
+        },
+        {
+          "feature": "- Old animals cannot reproduce, stop producing resources and working"
+        },
+        {
+          "feature": "- Older animals have a greyish texture"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.15.3",
+      "date": "2023-02-02 04:48:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743879436471",
+      "content": "[b]Updates/Changes:[/b]\n- Plants winter variations\n\n[b]Fixes:[/b]\n- Camera zoom fix",
+      "key": "1554220::d1be69cc9217114289e95b7ee3faf4fd3f601a04",
+      "tags": [
+        {
+          "feature": "- Plants winter variations"
+        },
+        {
+          "bug": "- Camera zoom fix"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.15.2",
+      "date": "2023-01-13 07:12:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840534538539",
+      "content": "[b]Features:[/b]\n- Cold and hunger indicator\n\n[b]Updates/Changes:[/b]\n- \"Charcoal kiln\" and \"Coal\" are unlocked in the \"Copper smelting\" technology\n- Moving the \"Spinning wheel\" technology to the Bronze Age",
+      "key": "1554220::ef3d0f78163d6d3cb0cb7335f79b8e82f6208243",
+      "tags": [
+        {
+          "feature": "- Cold and hunger indicator"
+        },
+        {
+          "balance_change": "- \"Charcoal kiln\" and \"Coal\" are unlocked in the \"Copper smelting\" technology"
+        },
+        {
+          "balance_change": "- Moving the \"Spinning wheel\" technology to the Bronze Age"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.15.0",
+      "date": "2022-12-22 09:57:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037442655762",
+      "content": "[b]Features:[/b]\n- New animal \"Mammoth\"\n- New building \"Blast furnace\", used for mass production of steel\n- Ability to copy/paste creature work priority\n- New item \"Brick\", required for some buildings, produced in a kiln\n\n[b]Changes/Updates[/b]\n- Updated settler corpse sprite\n- After killing animals, meat and skins fall out again, instead of corpses\n- Removed butcher's table\n- Separation of adobe into a separate technology\n- More steel is now needed to build a time machine\n- Building a steam engine now requires a brick\n- Near buildings that consume mechanical energy, a gear is displayed that spins while the building is running\n\n[b]Bug fixes[/b]\n- Some new technologies could not be unlocked in old saves",
+      "key": "1554220::876ab588e727bb3f2fd26362684e1b95bb9666f3",
+      "tags": [
+        {
+          "feature": "- New animal \"Mammoth\""
+        },
+        {
+          "feature": "- New building \"Blast furnace\", used for mass production of steel"
+        },
+        {
+          "feature": "- Ability to copy/paste creature work priority"
+        },
+        {
+          "feature": "- New item \"Brick\", required for some buildings, produced in a kiln"
+        },
+        {
+          "balance_change": "- More steel is now needed to build a time machine"
+        },
+        {
+          "balance_change": "- Building a steam engine now requires a brick"
+        },
+        {
+          "bug": "- Some new technologies could not be unlocked in old saves"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.9",
+      "date": "2022-12-18 08:02:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5623338145761656675",
+      "content": "[b]Features:[/b]\n- Some buildings generate smoke\n- New building \"Food Storage Hut\", increases the shelf life of food stored in it\n\n[i]Bug fixes and other minor improvements[/i]",
+      "key": "1554220::b7f7d920591ecfbb68cc0a937bab9a02e85fa01d",
+      "tags": [
+        {
+          "feature": "- Some buildings generate smoke"
+        },
+        {
+          "feature": "- New building \"Food Storage Hut\", increases the shelf life of food stored in it"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.7",
+      "date": "2022-12-08 07:33:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4980448574108513674",
+      "content": "[b]Features[/b]\n- Hot key 'C' to cancel the construction of the selected building\n- Hot key 'Q' to clone the selected structure\n\n[b]Updates/Changes:[/b]\n- Animation for the building \"Mortar\"\n- Male mouflons now also produce wool\n- Settlers automatically collect resources from tamed and born animals\n\n[b]Bug fixes[/b]\n- The female tarpan does not spawn on the map",
+      "key": "1554220::ce965c0a99643682df9b427c39797971130d7427",
+      "tags": [
+        {
+          "feature": "- Hot key 'C' to cancel the construction of the selected building"
+        },
+        {
+          "feature": "- Hot key 'Q' to clone the selected structure"
+        },
+        {
+          "balance_change": "- Male mouflons now also produce wool"
+        },
+        {
+          "balance_change": "- Settlers automatically collect resources from tamed and born animals"
+        },
+        {
+          "bug": "- The female tarpan does not spawn on the map"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.6",
+      "date": "2022-11-18 05:22:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4789043687477236442",
+      "content": "[b]Updates/Changes:[/b]\n- Each building has its own construction time\n- Adding a black border for the sprites of the buildings: Water gathering place, Fishing place\n- Tooltips for items in the building inventory\n- Decreased clay mining time from deposit from 75 to 40\n\n[b]Bugfixes:[/b]\n- Settlers are not delivering fuel to some buildings",
+      "key": "1554220::3f3fec1eb4b07bc8ee1621186ff52dbc2a108426",
+      "tags": [
+        {
+          "balance_change": "Each building has its own construction time"
+        },
+        {
+          "feature": "Adding a black border for the sprites of the buildings: Water gathering place, Fishing place"
+        },
+        {
+          "feature": "Tooltips for items in the building inventory"
+        },
+        {
+          "balance_change": "Decreased clay mining time from deposit from 75 to 40"
+        },
+        {
+          "bug": "Settlers are not delivering fuel to some buildings"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.5",
+      "date": "2022-10-30 10:04:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4706851091184182948",
+      "content": "[b]Updates/Changes:[/b]\n- Update of the female boar sprite\n- Display the gender of the animal next to the name\n- Animal corpses now spoil\n\n[b]Bugfixes:[/b]\n- Sometimes animals stopped spawning",
+      "key": "1554220::8796ca345d6145c5f370a7ec5eb646a748511b6a",
+      "tags": [
+        {
+          "bug": "- Sometimes animals stopped spawning"
+        },
+        {
+          "feature": "- Update of the female boar sprite"
+        },
+        {
+          "feature": "- Display the gender of the animal next to the name"
+        },
+        {
+          "feature": "- Animal corpses now spoil"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.4",
+      "date": "2022-10-21 04:10:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4714731755415080386",
+      "content": "[b]Changes/Updates:[/b]\n- Added the cause of death to the death notification of a settler or domesticated animal",
+      "key": "1554220::8519f7c39583c8fd98b2bfbc6f36c0416a8e643c",
+      "tags": [
+        {
+          "feature": "- Added the cause of death to the death notification of a settler or domesticated animal"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.3",
+      "date": "2022-10-19 07:56:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4714731755408361951",
+      "content": "[b]Features:[/b]\n- Now you need seeds to grow plants\n- New item \"Dandelion Seeds\"\n- After harvesting, the plant has a 10% chance to drop an additional seed\n\n[b]Updates/Changes:[/b]\n- More understandable description for buttons in the order panel\n- Sort settlers and animals by name in the \"Ration\" and \"Priority\" UI\n- Now all plants are displayed in the buildings panel, in the \"Agriculture\" category\n\n[b]Bugfixes:[/b]\n- In the list of settlers of the \"Ration\" UI dead settlers are displayed\n- Animals give birth only to females",
+      "key": "1554220::cfcd6b58f0a873238b85913d1779eb6cde401136",
+      "tags": [
+        {
+          "feature": "- Now you need seeds to grow plants"
+        },
+        {
+          "feature": "- New item \"Dandelion Seeds\""
+        },
+        {
+          "feature": "- After harvesting, the plant has a 10% chance to drop an additional seed"
+        },
+        {
+          "bug": "- In the list of settlers of the \"Ration\" UI dead settlers are displayed"
+        },
+        {
+          "bug": "- Animals give birth only to females"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.2",
+      "date": "2022-10-10 05:06:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4613399405954132171",
+      "content": "[b]Features:[/b]\n- Animal breeding\n- Female tarpan\n\n[b]Updates/Changes:[/b]\n- Aurochs movement speed update from 3.7 to 3.5\n- Tarpan movement speed update from 4 to 4.2\n- Male Aurochs attack chance update from 0% to 100%",
+      "key": "1554220::c877b08c848fad1fd4cd6fc939cf95ede9fbf047",
+      "tags": [
+        {
+          "feature": "- Animal breeding"
+        },
+        {
+          "feature": "- Female tarpan"
+        },
+        {
+          "balance_change": "- Aurochs movement speed update from 3.7 to 3.5"
+        },
+        {
+          "balance_change": "- Tarpan movement speed update from 4 to 4.2"
+        },
+        {
+          "balance_change": "- Male Aurochs attack chance update from 0% to 100%"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.1",
+      "date": "2022-10-08 07:50:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4613399405947260758",
+      "content": "[b]Features:[/b]\n[list]\n[*]Ability to massively enable and disable food\n[/list]\n\n[b]Bugfixes:[/b]\n[list]\n[*]The animal could deliver fuel to buildings without a cart\n[*]Possibility to buy knowledge points from a merchant\n[*]Unable to copy and paste butcher's table and school settings\n[/list]\n",
+      "key": "1554220::0c2edc6974a4f4b9358c4ddcc55c0fa2ce2a8801",
+      "tags": [
+        {
+          "feature": "Ability to massively enable and disable food"
+        },
+        {
+          "bug": "The animal could deliver fuel to buildings without a cart"
+        },
+        {
+          "bug": "Possibility to buy knowledge points from a merchant"
+        },
+        {
+          "bug": "Unable to copy and paste butcher's table and school settings"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.14.0",
+      "date": "2022-09-19 09:46:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6258337460558303820",
+      "content": "[h1]Features[/h1]\n[list]\n[*]New building \"Skin Hut\", can accommodate up to 3 settlers\n[*]New building \"Primitive School\", used to generate knowledge points in exchange for resources\n[*]Ability to enable/disable camera scrolling along the edge of the screen\n[*]Ability to adjust the number of work slots in the crafter (if several settlers can work in the crafter at once)\n[*]Up to 3 settlers can now work in the mine\n[/list]\n\n[h1]Updates/Changes[/h1]\n[list]\n[*]Stone pieces are now generated everywhere to make them easier to find\n[*]Removal of gaining experience for actions\n[*]Replacing \"Experience Points\" with \"Knowledge Points\"\n[*]Updating the parameters of energy/life/heat recovery speed in all huts\n[*]Upgrading the capacity of the stick hut from 2 to 1\n[/list]\n\n[h1]Bugfixes[/h1]\n[list]\n[*]Crash when a settler tries to cut a mouflon\n[/list]",
+      "key": "1554220::c847d4a2bbc80728d642f9eac63d19b69c7f1df3",
+      "tags": [
+        {
+          "feature": "New building \"Skin Hut\", can accommodate up to 3 settlers"
+        },
+        {
+          "feature": "New building \"Primitive School\", used to generate knowledge points in exchange for resources"
+        },
+        {
+          "feature": "Ability to enable/disable camera scrolling along the edge of the screen"
+        },
+        {
+          "feature": "Ability to adjust the number of work slots in the crafter (if several settlers can work in the crafter at once)"
+        },
+        {
+          "feature": "Up to 3 settlers can now work in the mine"
+        },
+        {
+          "balance_change": "Upgrading the capacity of the stick hut from 2 to 1"
+        },
+        {
+          "bug": "Crash when a settler tries to cut a mouflon"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.13.1",
+      "date": "2022-09-15 11:50:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6258337460544044227",
+      "content": "[b]Features:[/b]\n- Edge scrolling camera\n\n[b]Changes/Updates:[/b]\n- Updated view of the winter variation of oak and grape bush\n\nBugfixes and other improvements",
+      "key": "1554220::9966c7c4966faf175d4209e50f1933412519c80d",
+      "tags": [
+        {
+          "feature": "- Edge scrolling camera"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.13.0",
+      "date": "2022-08-23 04:48:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4584122114609316335",
+      "content": "[b]Features[/b]\n[list]\n[*]Updated view of the crafter's recipe window, now all the necessary information and interaction with recipes are in one window\n[*]Corpses now drop from animals\n[*]Ability to select several recipes at once by holding the Shift button\n[*]Corpses of animals now need to be skinned on the butcher's table\n[*]Each food has its nutritional value\n[/list]\n\n[b]Updates/Changes[/b]\n[list]\n[*]Displaying the capacity of the hut in the description\n[*]Settlers can now fish with their bare hands\n[*]Settlers now starve 10% slower (was -50% per day, now -40% per day)\n[*]Updating Aurochs sprites\n[/list]",
+      "key": "1554220::903e3e19ca67cb32ea28ebb7b5a9878391110c2f",
+      "tags": [
+        {
+          "feature": "Updated view of the crafter's recipe window, now all the necessary information and interaction with recipes are in one window"
+        },
+        {
+          "feature": "Corpses now drop from animals"
+        },
+        {
+          "feature": "Ability to select several recipes at once by holding the Shift button"
+        },
+        {
+          "feature": "Corpses of animals now need to be skinned on the butcher's table"
+        },
+        {
+          "feature": "Each food has its nutritional value"
+        },
+        {
+          "balance_change": "Settlers now starve 10% slower (was -50% per day, now -40% per day)"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.12.3",
+      "date": "2022-08-09 14:52:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598757090469120177",
+      "content": "[h1]Updates/Changes[/h1]\n- Added tooltips for \"Turn music on/off\", \"Credits\", \"Open game data folder\", \"Windowed/Fullscreen\" buttons in the main menu\n- To delete saves, you must hold the delete button\n- Changed the color of the delete save button to red\n\n[h1]Fixes[/h1]\n- Some creatures were hard to click\n- Localization fixes",
+      "key": "1554220::07f130aed52e2279f14444ee30923f0994cff631",
+      "tags": [
+        {
+          "feature": "- Added tooltips for \"Turn music on/off\", \"Credits\", \"Open game data folder\", \"Windowed/Fullscreen\" buttons in the main menu"
+        },
+        {
+          "bug": "- Some creatures were hard to click"
+        },
+        {
+          "bug": "- Localization fixes"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.12.2",
+      "date": "2022-08-05 06:36:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598757090453398706",
+      "content": "[h3]Fixes[/h3]\n[list]\n[*] Creatures stopped walking if all types of work were prohibited for them\n[*] Game crash when creatures try to find a job\n[*] The game crashes if the building has not been built for a long time\n[/list]",
+      "key": "1554220::b10549a9dfac68eb789df194ce21a52985c257bb",
+      "tags": [
+        {
+          "bug": "Creatures stopped walking if all types of work were prohibited for them"
+        },
+        {
+          "bug": "Game crash when creatures try to find a job"
+        },
+        {
+          "bug": "The game crashes if the building has not been built for a long time"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.12.0",
+      "date": "2022-07-24 08:53:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598755821876042036",
+      "content": "[b]Features[/b]\n- Musical theme in the main menu\n- The Time Machine building and the ability to finish the game (Needs to be further improved, because at the moment the time machine returns home without a guest from the future, and only steel is needed for crafting)\n- Steam engine\n\n[b]Changes/Updates[/b]\n- A new way for mechanical crafters to access energy sources\n   * Each energy source has its own maximum power and range\n   * For mechanical crafters to work, you must place them in the area of energy sources\n   * Each mechanical crafter consumes a certain amount of energy.\n- Combining the bloomery and bellows into one building\n- Settler death notification",
+      "key": "1554220::ef666f851c4929d66f5aebb074ad996d5d398253",
+      "tags": [
+        {
+          "feature": "- Musical theme in the main menu"
+        },
+        {
+          "feature": "- The Time Machine building and the ability to finish the game (Needs to be further improved, because at the moment the time machine returns home without a guest from the future, and only steel is needed for crafting)"
+        },
+        {
+          "feature": "- Steam engine"
+        },
+        {
+          "feature": "- Settler death notification"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.11.0",
+      "date": "2022-07-05 07:21:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295773232100",
+      "content": "[b]Features:[/b]\n\n- Wild bee hive\n[list]\n[*] Generated randomly on the map in an amount from 1 to 2\n[*] In case the hive did not appear on the map, then every day there is a 5% chance of their appearance\n[*] Produces Honeycomb at a rate of 25% per day\n[*] Each flower around the hive increases honeycomb production speed by 1%\n[*] Does not produce honey in winter and rain\n[/list]\n- Bee hive (built)\n[list]\n[*] Produces Honeycomb at a rate of 50% per day\n[*] Each flower around the hive increases honeycomb production speed by 1%\n[*] Crafted from wood and honeycombs\n[*] Does not produce honey in winter and rain\n[/list]\n- New food \"Honeycombs\"\n- New drink \"Pot of mead\"\n- New plant \"Dandelion\"\n- Command line (Replacing Debug Panel, invoked by pressing ~)",
+      "key": "1554220::7d720b81223b4ef3fe097169cb681f278e273808",
+      "tags": [
+        {
+          "feature": "- Wild bee hive"
+        },
+        {
+          "feature": "- Bee hive (built)"
+        },
+        {
+          "feature": "- New food \"Honeycombs\""
+        },
+        {
+          "feature": "- New drink \"Pot of mead\""
+        },
+        {
+          "feature": "- New plant \"Dandelion\""
+        },
+        {
+          "feature": "- Command line (Replacing Debug Panel, invoked by pressing ~)"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.10.1",
+      "date": "2022-06-27 05:47:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295743853744",
+      "content": "[b]Changes/Updates:[/b]\n- Animals are now generated along the edges of the map and only on land\n- Updated look of the clay oven\n- Making a clay barn into a separate technology\n- Display in the description of the floor the speed of movement on it\n- Adding Outlined text\n\n[b]Bugfixes:[/b]\n- Ability to sell the corpses of settlers\n- Localization fixes",
+      "key": "1554220::f02e1c9a94bd65fd3e854ab23090205eea58d199",
+      "tags": [
+        {
+          "bug": "- Ability to sell the corpses of settlers"
+        },
+        {
+          "bug": "- Localization fixes"
+        },
+        {
+          "feature": "- Display in the description of the floor the speed of movement on it"
+        },
+        {
+          "feature": "- Adding Outlined text"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.10.0",
+      "date": "2022-05-25 07:52:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4437747060822653676",
+      "content": "[b]Features:[/b]\n- Fishing rod\n\u2013 Mechanical millstone\n\n[b]Updates/Changes:[/b]\n\u2014 Automation:\n[list]\n[*] Windmill is now a source of energy\n[*] Replacing a manual crusher with an automated one\n[/list]\n\n- Changes in the fishing system:\n[list]\n[*] Each fishing tool now has an efficiency parameter that affects the speed of catching fish\n[*] Removing the chance of catching fish\n[*] Only one fish will be displayed in the water area, which will indicate the presence of fish in this area\n[*] Hovering the mouse over the water will highlight the area of \u200b\u200bwater with fish and a hint with the number of fish\n[/list]\n\n- Restoring the ability to build \"Fishing Place\" and \"Water Gathering Place\" on bridges\n- After the destruction of the bridge, all buildings on it will be destroyed/canceled\n\n[b]Bugfixes:[/b]\n- Sometimes it was not possible to place a building if there was another building on the same tiles before",
+      "key": "1554220::3fccf74ce6a92f0b4c1fde370f07047bc59a6918",
+      "tags": [
+        {
+          "feature": "- Fishing rod"
+        },
+        {
+          "feature": "\u2013 Mechanical millstone"
+        },
+        {
+          "balance_change": "[*] Windmill is now a source of energy"
+        },
+        {
+          "balance_change": "[*] Replacing a manual crusher with an automated one"
+        },
+        {
+          "balance_change": "[*] Each fishing tool now has an efficiency parameter that affects the speed of catching fish"
+        },
+        {
+          "balance_change": "[*] Removing the chance of catching fish"
+        },
+        {
+          "balance_change": "[*] Only one fish will be displayed in the water area, which will indicate the presence of fish in this area"
+        },
+        {
+          "balance_change": "[*] Hovering the mouse over the water will highlight the area of \u200b\u200bwater with fish and a hint with the number of fish"
+        },
+        {
+          "balance_change": "- Restoring the ability to build \"Fishing Place\" and \"Water Gathering Place\" on bridges"
+        },
+        {
+          "balance_change": "- After the destruction of the bridge, all buildings on it will be destroyed/canceled"
+        },
+        {
+          "bug": "- Sometimes it was not possible to place a building if there was another building on the same tiles before"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.9.1",
+      "date": "2022-05-23 11:56:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4292505348840310343",
+      "content": "[b]Features:[/b]\n- Ability to copy crafter settings\n \nLocalization fixes",
+      "key": "1554220::d67d7ca46d4ab5ac496dcdbff232c8c433d496db",
+      "tags": [
+        {
+          "feature": "- Ability to copy crafter settings"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.9.0",
+      "date": "2022-04-28 11:47:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348798430274887037",
+      "content": "[b]Features:[/b]\n- Irrigation canals\n\n[b]Updates/Changes:[/b]\n- Animated spinning wheel\n\n[b]Bugfixes:[/b]\n- The camera could move out of the map\n- The spinning wheel disappeared when using it",
+      "key": "1554220::08d808ebe088ef4bd36c30dfdc78aa0ba9da28a4",
+      "tags": [
+        {
+          "feature": "- Irrigation canals"
+        },
+        {
+          "bug": "- The camera could move out of the map"
+        },
+        {
+          "bug": "- The spinning wheel disappeared when using it"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.8.3a",
+      "date": "2022-04-12 01:35:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4353300134242132747",
+      "content": "[b]Bugfixes:[/b]\n- Game crashes when trying to destroy a used crafter",
+      "key": "1554220::b0e002787711aac784c22f52066c1cfa7aafe196",
+      "tags": [
+        {
+          "bug": "- Game crashes when trying to destroy a used crafter"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.8.3",
+      "date": "2022-04-11 11:56:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4353300134240061158",
+      "content": "[b]Features:[/b]\n- New building: \"Tailor's workshop\"\n- In order not to freeze, the settlers go to warm themselves in huts\n- Fuel is required to heat the hut in winter\n- Tooltips for Technology UI, Ration UI, Priority UI buttons\n- Technology UI, Ration UI, Priority UI hotkeys\n",
+      "key": "1554220::785aaa92908981ef65567d707e5751a15e9f007d",
+      "tags": [
+        {
+          "feature": "- New building: \"Tailor's workshop\""
+        },
+        {
+          "feature": "- In order not to freeze, the settlers go to warm themselves in huts"
+        },
+        {
+          "feature": "- Fuel is required to heat the hut in winter"
+        },
+        {
+          "feature": "- Tooltips for Technology UI, Ration UI, Priority UI buttons"
+        },
+        {
+          "feature": "- Technology UI, Ration UI, Priority UI hotkeys"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.8.1",
+      "date": "2022-03-20 07:52:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535838243361",
+      "content": "[b]Features:[/b]\n- 4 new hairstyles for settlers\n- Changing the view and name of warm clothes\n\n[b]Changes/Updates:[/b]\n- The window with newly arrived nomads opens immediately, now you can only accept or reject, it is impossible to postpone this decision for a while\n- Reduced number of possible nomads from 3-7 to 1-3\n- Fish stop respawning in winter\n\n[b]Bugfixes:[/b]\n- Creatures no longer walk on water\n\n",
+      "key": "1554220::a54ac9f26f20e3f7b422de5ad4e3fd15b928aa97",
+      "tags": [
+        {
+          "feature": "- 4 new hairstyles for settlers"
+        },
+        {
+          "feature": "- Changing the view and name of warm clothes"
+        },
+        {
+          "balance_change": "- The window with newly arrived nomads opens immediately, now you can only accept or reject, it is impossible to postpone this decision for a while"
+        },
+        {
+          "balance_change": "- Reduced number of possible nomads from 3-7 to 1-3"
+        },
+        {
+          "balance_change": "- Fish stop respawning in winter"
+        },
+        {
+          "bug": "- Creatures no longer walk on water"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.8.0",
+      "date": "2022-03-16 10:00:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535824000830",
+      "content": "Features:\n- Added fish\n- The fishing place now has a 3x3 catch zone\n- Fish will automatically be caught if they swim near the fish trap\n- New system for generating deposits and underground caves:\n   * The map will have at least one underground cave from each type of resource\n   * Deposits are generated around underground caves\n   * Mines can only be placed on top of underground caves\n\nUpdates/Changes:\n- Dolmen capacity increase from 4 to 6\n- Increased the chance of catching fish of all harpoons by 10%\n\nBugfixes:\n- Ability to call a merchant by pressing the 'K' key\n- Ability to copy a farm plot from a wild plant when farming technology has not yet been unlocked",
+      "key": "1554220::14ebbe004ef89c54574d8fe8908962b9aaa8947f",
+      "tags": [
+        {
+          "feature": "- Added fish"
+        },
+        {
+          "feature": "- The fishing place now has a 3x3 catch zone"
+        },
+        {
+          "feature": "- Fish will automatically be caught if they swim near the fish trap"
+        },
+        {
+          "feature": "- New system for generating deposits and underground caves:"
+        },
+        {
+          "balance_change": "- Dolmen capacity increase from 4 to 6"
+        },
+        {
+          "balance_change": "- Increased the chance of catching fish of all harpoons by 10%"
+        },
+        {
+          "bug": "- Ability to call a merchant by pressing the 'K' key"
+        },
+        {
+          "bug": "- Ability to copy a farm plot from a wild plant when farming technology has not yet been unlocked"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.7.3",
+      "date": "2022-03-03 06:02:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367430131486",
+      "content": "[b]Features:[/b]\n- Added a merchant who will come every 3rd day\n- Ability to adjust the volume of sounds\n- Possibility to select an object located behind another object by repeated LMB click\n\n[b]Changes/Updates:[/b]\n- Removal of the building \"Primitive temple\"\n- Removal of the building \"Trading Post\"",
+      "key": "1554220::4f49dd862e56b6d5d177c56612690e9471f3f848",
+      "tags": [
+        {
+          "feature": "- Added a merchant who will come every 3rd day"
+        },
+        {
+          "feature": "- Ability to adjust the volume of sounds"
+        },
+        {
+          "feature": "- Possibility to select an object located behind another object by repeated LMB click"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.7.2a",
+      "date": "2022-02-05 00:52:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4235074931853255226",
+      "content": "Localization:\n- Portuguese Brazilian (Thank you Thiago Mania)\n\nFeatures:\n- Credits\n- Stone hut\n\nChanges/Updates:\n- Updated the algorithm for generating plants on the map",
+      "key": "1554220::a280104446b99c26509528fd139be41882f82fd4",
+      "tags": [
+        {
+          "feature": "- Credits"
+        },
+        {
+          "feature": "- Stone hut"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.7.1",
+      "date": "2022-01-31 01:44:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104333078399",
+      "content": "[b]Features:[/b]\n- Updated labor priority UI\n- Ability to freely resize the game window",
+      "key": "1554220::9c3656cc4e695b49f088d38ebb5e3abbf393ee3b",
+      "tags": [
+        {
+          "feature": "- Updated labor priority UI"
+        },
+        {
+          "feature": "- Ability to freely resize the game window"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.7.0d",
+      "date": "2022-01-21 02:11:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237325463674001303",
+      "content": "[b]Bugfixes:[/b]\n- The ability to copy deposits",
+      "key": "1554220::6d9f44680df73fc3ec4bde9202edca8395159170",
+      "tags": [
+        {
+          "bug": "- The ability to copy deposits"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.7.0c",
+      "date": "2022-01-18 10:30:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931846462044",
+      "content": "[b]Features:[/b]\n- Ability to clone buildings\n\nBugfixes",
+      "key": "1554220::d330c6e9cf4f2d81caca82b4cfea94dc6fc149c6",
+      "tags": [
+        {
+          "feature": "- Ability to clone buildings"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.7.0a",
+      "date": "2021-12-09 01:09:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936849649462998",
+      "content": "[b]Updates/Changes:[/b]\n- Display of water areas during the construction of fishing structures\n\n[b]Bugfixes:[/b]\n- The settlers after a while stopped building and producing",
+      "key": "1554220::3ddc26852b61af7997af1543d452f214abc15234",
+      "tags": [
+        {
+          "bug": "- The settlers after a while stopped building and producing"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.7.0",
+      "date": "2021-12-07 06:03:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936215401570681",
+      "content": "[b]Features:[/b]\n- Resource production limit system (now settlers stop mining and producing resources when the set limit is reached)\n- Adobe fence [Building]\n- Spinning wheel (for faster yarn crafting) [Crafter]\n- Displaying the total amount of food\n- Workshop [Crafter]\n[b]Changes/Updates:[/b]\n- New sprite for adobe hut\n- Increased crafting time in the drop spindle\n- Hay is now required to craft adobe\n- Updated adobe and clay icons\n- Settlers now come less frequently, but in groups of 3-7 people\n- The game starts with 5 settlers\n- Updated look of farm plots\n- Farming plots can now only be built on ground\n- Removed power transmission system and mechanisms",
+      "key": "1554220::92b34481a8ff1e0d5a144ac1558b8fb9ede7e00a",
+      "tags": [
+        {
+          "feature": "- Resource production limit system (now settlers stop mining and producing resources when the set limit is reached)"
+        },
+        {
+          "feature": "- Adobe fence [Building]"
+        },
+        {
+          "feature": "- Spinning wheel (for faster yarn crafting) [Crafter]"
+        },
+        {
+          "feature": "- Displaying the total amount of food"
+        },
+        {
+          "feature": "- Workshop [Crafter]"
+        },
+        {
+          "balance_change": "- Increased crafting time in the drop spindle"
+        },
+        {
+          "balance_change": "- Hay is now required to craft adobe"
+        },
+        {
+          "balance_change": "- Settlers now come less frequently, but in groups of 3-7 people"
+        },
+        {
+          "balance_change": "- The game starts with 5 settlers"
+        },
+        {
+          "balance_change": "- Farming plots can now only be built on ground"
+        },
+        {
+          "balance_change": "- Removed power transmission system and mechanisms"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.6.1",
+      "date": "2021-11-11 06:05:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4971405952700573843",
+      "content": "[b]Features[/ b]\n- Ability to prioritize warehouses",
+      "key": "1554220::c90ac7ab807dbab3238e864797d4adfb78d03587",
+      "tags": [
+        {
+          "feature": "- Ability to prioritize warehouses"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.6.0",
+      "date": "2021-11-09 02:42:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186653398787389971",
+      "content": "Old saves may not work correctly!\n\n[b]Features[/b]\n- Seasons\n- Each season lasts 10 in-game days\n- Grass and some plants change texture according to the season\n- Plants stop growing during the winter season\n- Food deteriorates 3 times slower in the winter season\n- Snowfall\n- Settlers have a temperature scale (in winter they can die of cold)\n- For protection from low temperatures, settlers can wear a second layer of clothing (on top of the main one) - capes (fur cape, woven cape), also the cape increases the protection parameter\n\n[b]Changes / Updates[/b]\n- Adding to the description of perishable products information about how fast they perish\n- Increase in plant growth time:\n* Barley - 12.5% \u200b\u200bper day\n* Oak - 6.25% per day\n* Grapes - 7.14% per day\n* Peas - 8.33% per day\n* Linen - 12.5% \u200b\u200bper day\n- Irrigation accelerates plant growth by 50%\n- Removal of the happiness system (since it did not affect anything anywhere, I will return to this later)\n- Experience for collecting and extracting resources from deposits\n\n[b]Bug fixes[/b]\n- Changing the price of a spear from 1 to 7",
+      "key": "1554220::f6eda8197714f7ab35639c0587dab683842863b4",
+      "tags": [
+        {
+          "feature": "- Seasons"
+        },
+        {
+          "feature": "- Each season lasts 10 in-game days"
+        },
+        {
+          "feature": "- Grass and some plants change texture according to the season"
+        },
+        {
+          "feature": "- Plants stop growing during the winter season"
+        },
+        {
+          "feature": "- Food deteriorates 3 times slower in the winter season"
+        },
+        {
+          "feature": "- Snowfall"
+        },
+        {
+          "feature": "- Settlers have a temperature scale (in winter they can die of cold)"
+        },
+        {
+          "feature": "- For protection from low temperatures, settlers can wear a second layer of clothing (on top of the main one) - capes (fur cape, woven cape), also the cape increases the protection parameter"
+        },
+        {
+          "balance_change": "* Barley - 12.5% \u200b\u200bper day"
+        },
+        {
+          "balance_change": "* Oak - 6.25% per day"
+        },
+        {
+          "balance_change": "* Grapes - 7.14% per day"
+        },
+        {
+          "balance_change": "* Peas - 8.33% per day"
+        },
+        {
+          "balance_change": "* Linen - 12.5% \u200b\u200bper day"
+        },
+        {
+          "balance_change": "- Irrigation accelerates plant growth by 50%"
+        },
+        {
+          "bug": "- Changing the price of a spear from 1 to 7"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.5.2b",
+      "date": "2021-11-01 13:30:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652357039266935",
+      "content": "[b]Updates/Changes[/b]\n- Changed the way of mining deposits",
+      "key": "1554220::11de90b4c954576cb4d9d61d357c4932d2818f2c",
+      "tags": [
+        {
+          "feature": "- Changed the way of mining deposits"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.5.2a",
+      "date": "2021-10-31 13:47:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4186652357035666954",
+      "content": "[b]Bugfixes[/b]\n- Fixed crashes",
+      "key": "1554220::a978785e9ab22ae6d0387db810159cc63c414158",
+      "tags": [
+        {
+          "bug": "- Fixed crashes"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.5.2",
+      "date": "2021-10-26 14:59:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4103335143124722319",
+      "content": "[b]Features:[/b]\n- Lightning in rainy days\n- Deep water\n- Division of lakes and rivers into regions, each region has the maximum number of fish (depending on the number of tiles), after catching fish in the regions, a timer is started to restore fish to the maximum number\n\n[b]Changes/Updates[/b]\n- Auto crafters now add experience too\n- Fish traps can only be set in shallow water",
+      "key": "1554220::341ababcc08fdfb36258cb9fdf136566ee26b9d3",
+      "tags": [
+        {
+          "feature": "- Lightning in rainy days"
+        },
+        {
+          "feature": "- Deep water"
+        },
+        {
+          "feature": "- Division of lakes and rivers into regions, each region has the maximum number of fish (depending on the number of tiles), after catching fish in the regions, a timer is started to restore fish to the maximum number"
+        },
+        {
+          "balance_change": "- Auto crafters now add experience too"
+        },
+        {
+          "balance_change": "- Fish traps can only be set in shallow water"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.5.1",
+      "date": "2021-10-18 07:13:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4698935641769474382",
+      "content": "[b]Old saves may not work correctly![/b]\n\n[b]Features:[/b]\n- Spoilage of resources\n- Dev mode\n\n[i]New buildings:[/i]\n- Limestone wall\n- Food dryer\n\n[i]New items:[/i]\n- Raisin\n- Dry meat\n- Dry fish\n\n[b]Changes/Updates[/b]\n- Mine moved to a separate technology\n- The mine only displays the resources below it\n- Notifications disappear after a while\n- The maximum storage capacity can now be changed using the slider\n- To unlock the technology, you need to hold down the mouse button\n\n[b]Bugfixes[/b]\n- Some saves were displayed in the wrong folders",
+      "key": "1554220::9d8683eb94760e53734b92aea2859a651d28e1c3",
+      "tags": [
+        {
+          "feature": "- Spoilage of resources"
+        },
+        {
+          "feature": "- Dev mode"
+        },
+        {
+          "feature": "- Limestone wall"
+        },
+        {
+          "feature": "- Food dryer"
+        },
+        {
+          "feature": "- Raisin"
+        },
+        {
+          "feature": "- Dry meat"
+        },
+        {
+          "feature": "- Dry fish"
+        },
+        {
+          "bug": "- Some saves were displayed in the wrong folders"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.4.1a",
+      "date": "2021-07-07 08:45:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032392655110989754",
+      "content": "[b]Changes/Updates[/b]\n- New tamed Tarpan sprite\n\n[b]Bugfixes[/b]\n- New nomads stopped coming",
+      "key": "1554220::c61f3a1d07e554f14ff6fbd3289312edfbdc3163",
+      "tags": [
+        {
+          "feature": "- New tamed Tarpan sprite"
+        },
+        {
+          "bug": "- New nomads stopped coming"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.4.1",
+      "date": "2021-06-30 08:16:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032392655085442052",
+      "content": "[b]Changes / Updates:[/ b]\n- Smooth zoom and camera movement\n- Changing the stone wall and palisade sprite\n\n[b] Bug fixes: [/ b]\n- Timemap was not displayed on some devices\n- Settlers constantly walked to the place where the fish trap used to be",
+      "key": "1554220::58764457e14352f60983d4a97e1cfb157939308e",
+      "tags": [
+        {
+          "feature": "- Smooth zoom and camera movement"
+        },
+        {
+          "feature": "- Changing the stone wall and palisade sprite"
+        },
+        {
+          "bug": "- Timemap was not displayed on some devices"
+        },
+        {
+          "bug": "- Settlers constantly walked to the place where the fish trap used to be"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.4.0",
+      "date": "2021-05-29 12:24:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544815364042040",
+      "content": "Old saves are no longer supported!\n\n[b]Features:[/b]\n- Added the ability to select the size of the world (128x128, 256x256)\n- Added windowed mode\n- Experience is required to unlock new technologies. Each technology requires a certain amount of experience\n- New category of buildings \"Mechanisms\"\n- New saving system\n\n[i]New buildings:[/i]\n- Windmill -  is now a source of mechanical energy. Produces 20 mechanical energy\n- Axle - used to transfer mechanical energy\n- Mechanical millstone - Used for automatic grinding of grain. Consumes 8 mechanical energy\n- Mechanical crusher - Used to crushing resources. Consumes 8 mechanical energy\n\n[i]New items:[/i]\n- Copper reaper - tool for animals, used for harvesting\n- Crushed copper ore, crushed iron ore, crushed tin ore - Now ores need to be crushed before smelting them into ingots\n\n[b]Changes/Updates[/b]\n- The ability to dig irrigation canals has been temporarily removed\n- Ores can be crushed in a mortar\n\n[b]Bugfixes[/b]\n- The settler sometimes disappears while hunting\n- Tools did not break when hunting, mining",
+      "key": "1554220::6791363ded4fc5e70d0793db347a82afd0239b93",
+      "tags": [
+        {
+          "feature": "- Added the ability to select the size of the world (128x128, 256x256)"
+        },
+        {
+          "feature": "- Added windowed mode"
+        },
+        {
+          "feature": "- Experience is required to unlock new technologies. Each technology requires a certain amount of experience"
+        },
+        {
+          "feature": "- New category of buildings \"Mechanisms\""
+        },
+        {
+          "feature": "- New saving system"
+        },
+        {
+          "feature": "- Windmill -  is now a source of mechanical energy. Produces 20 mechanical energy"
+        },
+        {
+          "feature": "- Axle - used to transfer mechanical energy"
+        },
+        {
+          "feature": "- Mechanical millstone - Used for automatic grinding of grain. Consumes 8 mechanical energy"
+        },
+        {
+          "feature": "- Mechanical crusher - Used to crushing resources. Consumes 8 mechanical energy"
+        },
+        {
+          "feature": "- Copper reaper - tool for animals, used for harvesting"
+        },
+        {
+          "feature": "- Crushed copper ore, crushed iron ore, crushed tin ore - Now ores need to be crushed before smelting them into ingots"
+        },
+        {
+          "bug": "- The settler sometimes disappears while hunting"
+        },
+        {
+          "bug": "- Tools did not break when hunting, mining"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.8b",
+      "date": "2021-05-18 05:34:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588128224028",
+      "content": "[b]Bugfixes[/b]\n- Crash when creatures try to deliver items to build a floor that is under an impassable structure",
+      "key": "1554220::a12ea61830f7cf35ebfb90b36f2ee21a8c3f216f",
+      "tags": [
+        {
+          "bug": "- Crash when creatures try to deliver items to build a floor that is under an impassable structure"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.8a",
+      "date": "2021-05-17 14:20:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588125912767",
+      "content": "[b]Bugfixes[/b]\n- Fixed crashes when loading old saves\n- Crash when trying to destruct bellows that are not connected to the bloomery\n- Some farm plots were not loading",
+      "key": "1554220::3e582eee19cbec17b6ee05c611e80ae119e97cfc",
+      "tags": [
+        {
+          "bug": "- Fixed crashes when loading old saves"
+        },
+        {
+          "bug": "- Crash when trying to destruct bellows that are not connected to the bloomery"
+        },
+        {
+          "bug": "- Some farm plots were not loading"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.8",
+      "date": "2021-05-17 04:48:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4767601588124468817",
+      "content": "[b]Features[/ b]\n- The new structure \"Mine\", allows you to endlessly extract minerals\n- New action \"Destruct floor\"\n- New category of buildings \"Metallurgy\"\n- Clay and limestone blocks\n- New type of gate (now has a size of 1x1)\n- New building \"Bellows\", speed up the crafting process in the bloomery\n\n[b]Changes/Updates [/ b]\n- Removal of deposits with resources\n- Removing the \"Log\" item\n- Increasing the Dolmen capacity up to 4\n- New animation for bloomery\n- Bloomery, copper forge and iron forge now only work on coal\n\n[b] Bug fixes [/ b]\n- Fixed crashes\n- Settlers don't supply/haul items\n",
+      "key": "1554220::61d8a9c24975aa1418d1a5e56ad296815f06457a",
+      "tags": [
+        {
+          "feature": "- The new structure \"Mine\", allows you to endlessly extract minerals"
+        },
+        {
+          "feature": "- New action \"Destruct floor\""
+        },
+        {
+          "feature": "- New category of buildings \"Metallurgy\""
+        },
+        {
+          "feature": "- Clay and limestone blocks"
+        },
+        {
+          "feature": "- New type of gate (now has a size of 1x1)"
+        },
+        {
+          "feature": "- New building \"Bellows\", speed up the crafting process in the bloomery"
+        },
+        {
+          "balance_change": "- Increasing the Dolmen capacity up to 4"
+        },
+        {
+          "balance_change": "- Bloomery, copper forge and iron forge now only work on coal"
+        },
+        {
+          "bug": "- Fixed crashes"
+        },
+        {
+          "bug": "- Settlers don't supply/haul items"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.7",
+      "date": "2021-05-09 09:47:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4072920612512719167",
+      "content": "[b]Features[/b]\n- New building \"Barn\" (Storage, \u0421apacity = 800)\n- New item \"Log\" (Fuel, crafting ingredient, building ingredient)\n\n[b]Changes/Updates[/b]\n- Trees give 4 logs and 4 sticks\n\n[b]Bugfixes[/b]\n- Game crash when creatures try to equip a tool",
+      "key": "1554220::9495693aedf4207ed15161e9758852333530150f",
+      "tags": [
+        {
+          "feature": "- New building \"Barn\" (Storage, \r\n\u0421apacity = 800)"
+        },
+        {
+          "feature": "- New item \"Log\" (Fuel, crafting ingredient, building ingredient)"
+        },
+        {
+          "balance_change": "- Trees give 4 logs and 4 sticks"
+        },
+        {
+          "bug": "- Game crash when creatures try to equip a tool"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.6",
+      "date": "2021-05-08 13:08:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4072920612509589542",
+      "content": "[b]Features[/b]\n- Trading system (New building \"Trading post\", the merchant will come every 3 days)\n- Ability to copy storage settings\n- Ability to set filters in storages by category\n\n[b]Changes/Updates[/b]\n- New flax texture\n\n[b]Bugfixes[/b]\n- Game crash (KeyNotFoundException)\n",
+      "key": "1554220::336f8878b52b46f41ec1f15454b9c729be9f5f1d",
+      "tags": [
+        {
+          "feature": "- Trading system (New building \"Trading post\", the merchant will come every 3 days)"
+        },
+        {
+          "feature": "- Ability to copy storage settings"
+        },
+        {
+          "feature": "- Ability to set filters in storages by category"
+        },
+        {
+          "bug": "- Game crash (KeyNotFoundException)"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.5",
+      "date": "2021-04-30 08:02:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045878075975819",
+      "content": "[b]Features[/b]\n- Ability to continuously install buildings while pressing down the left mouse button\n- Ability to copy farm plot settings\n\n[b]Changes/Updates[/b]\n- New sound when placing a building\n- Pressing the \"Repeat\" button again in the crafting recipe resets the value to 0\n- Ability to add/sub 5 or 10 (Ctrl + LBM = 10, Shift + LBM = 5)  in a crafting recipe\n- Displaying the actual amount of ingredients in a crafting recipe\n- Replacing seed icons with plant icons in Farm plot UI\n\n[b]Bugfixes[/b]\n- Correction of the names of deposits\n- Creatures stop taking items from storage",
+      "key": "1554220::f642d3d790cea11ae881859e4c2cbf147f315e6e",
+      "tags": [
+        {
+          "feature": "- Ability to continuously install buildings while pressing down the left mouse button"
+        },
+        {
+          "feature": "- Ability to copy farm plot settings"
+        },
+        {
+          "bug": "- Correction of the names of deposits"
+        },
+        {
+          "bug": "- Creatures stop taking items from storage"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.4b",
+      "date": "2021-04-29 09:44:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045878072595864",
+      "content": "[b]Changes/Updates[/b]\n- Replacing a musket with a handgonne\n- Settlers only choose the best food (with the highest happiness value)\n\n[b]Bugxies[/b]\n- Creatures put tools in storage without checking for free space and filters\n- Food does not affect happiness",
+      "key": "1554220::24009788b97a5de2ec11cb9a84f9db65292df752",
+      "tags": [
+        {
+          "balance_change": "- Replacing a musket with a handgonne"
+        },
+        {
+          "balance_change": "- Settlers only choose the best food (with the highest happiness value)"
+        },
+        {
+          "bug": "- Creatures put tools in storage without checking for free space and filters"
+        },
+        {
+          "bug": "- Food does not affect happiness"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.4a",
+      "date": "2021-04-28 08:44:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045878068805257",
+      "content": "[b]Bugfixes[/b]\n- Technologies were opened without having progress points",
+      "key": "1554220::5cb45edd548f1505b1e06e5212024ca25b478504",
+      "tags": [
+        {
+          "bug": "- Technologies were opened without having progress points"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.4",
+      "date": "2021-04-28 05:44:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045878068349199",
+      "content": "[b]Old saved may cause bugs![/b]\n\n[b]Features[/b]\n- New structures: Drop spindle (fiber -> yarn), Distillation cube (iron ore -> sulfur), Stone deposit, Iron ore deposit, Clay deposit, Limestone deposit, Tin ore deposit, Copper ore deposit\n- New items: Yarn, Gunpowder, Sulfur, Woven clothing, Musket\n- Random world generation\n\n[b]Changes/Updates[/b]\n- All items opened in storage\n- Filters of all items in storages open immediately\n- New texture for \"stone path\"\n- Interactive scrollbar\n- Each ranged weapon has its own projectile speed\n- New experience system. After receiving a progress point, the number of experiences required is calculated using the formula: new required exp = last required exp * 1.2\n- Stacking notifications\n\n[b]Bugfixes[/b]\n- Fiexd game crash (Given key was not present in the dictionary)",
+      "key": "1554220::c3a21c90e8251c981bdfc649cefd53d3ac2e27f2",
+      "tags": [
+        {
+          "feature": "- New structures: Drop spindle (fiber -> yarn), Distillation cube (iron ore -> sulfur), Stone deposit, Iron ore deposit, Clay deposit, Limestone deposit, Tin ore deposit, Copper ore deposit"
+        },
+        {
+          "feature": "- New items: Yarn, Gunpowder, Sulfur, Woven clothing, Musket"
+        },
+        {
+          "feature": "- Random world generation"
+        },
+        {
+          "balance_change": "- Each ranged weapon has its own projectile speed"
+        },
+        {
+          "balance_change": "- New experience system. After receiving a progress point, the number of experiences required is calculated using the formula: new required exp = last required exp * 1.2"
+        },
+        {
+          "bug": "- Fiexd game crash (Given key was not present in the dictionary)"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.3c",
+      "date": "2021-04-26 08:01:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045244018220782",
+      "content": "[b]Improvements[/b]\n- Division of items in storages into categories\n[img]https://i.imgur.com/Du3nkgy.png[/img]\n\n[b]Bug fixes[/b]\n- Creatures still flicker when trying to deliver items to an unfinished building",
+      "key": "1554220::3f609ab4c585a8b7b69b7783bd1e8d9c63e426ec",
+      "tags": [
+        {
+          "feature": "- Division of items in storages into categories"
+        },
+        {
+          "bug": "- Creatures still flicker when trying to deliver items to an unfinished building"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.3b",
+      "date": "2021-04-26 05:27:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045244017831048",
+      "content": "Improvements:\n- \"Food\" building category for buildings that produce food\n\nFixes:\n- Creatures do not take items from full storages\n- Creatures tries to deliver an item to an inaccessible structure",
+      "key": "1554220::ca1da9411859181d5196f3050207dbc63e33774f",
+      "tags": [
+        {
+          "feature": "- \"Food\" building category for buildings that produce food"
+        },
+        {
+          "bug": "- Creatures do not take items from full storages"
+        },
+        {
+          "bug": "- Creatures tries to deliver an item to an inaccessible structure"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.3",
+      "date": "2021-04-25 13:03:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045244015343857",
+      "content": "Bugfixes:\n- Missing crafting for chainmail, crossbow, steel\n- After a while, settlers stop delivering items to buildings\n- Flickering creatures (creatures tried to drink and eat at the same time)",
+      "key": "1554220::ec7bbbc38cfd815d00a15b19d87cab639491621d",
+      "tags": [
+        {
+          "bug": "- Missing crafting for chainmail, crossbow, steel"
+        },
+        {
+          "bug": "- After a while, settlers stop delivering items to buildings"
+        },
+        {
+          "bug": "- Flickering creatures (creatures tried to drink and eat at the same time)"
+        }
+      ]
+    },
+    {
+      "title": "Paleon pre-Alpha 1.3.1a",
+      "date": "2021-04-23 12:23:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045244007967526",
+      "content": "[b] Innovations [/ b]\n- Now you need to use the \"Kiln\" to craft ceramic pots\n- Settlers now automatically put on their own clothes (previously it was necessary to give an order)\n- Display of plant growth time in the \"seeds list\" of the farm plot\n- Farming plots no longer require seed delivery\n\n[b] Fixes / removal [/ b]\n- Removing the decor system\n- Removing the resources limit\n- Adjustment of the display of the list of technologies in the UI of the technology tree\n- Crashes after a long game",
+      "key": "1554220::9da54b635c679d5221f038b6ad234093daaface3",
+      "tags": [
+        {
+          "feature": "- Now you need to use the \"Kiln\" to craft ceramic pots"
+        },
+        {
+          "feature": "- Settlers now automatically put on their own clothes (previously it was necessary to give an order)"
+        },
+        {
+          "feature": "- Display of plant growth time in the \"seeds list\" of the farm plot"
+        },
+        {
+          "feature": "- Farming plots no longer require seed delivery"
+        },
+        {
+          "bug": "- Crashes after a long game"
+        }
+      ]
+    }
+  ]
+}

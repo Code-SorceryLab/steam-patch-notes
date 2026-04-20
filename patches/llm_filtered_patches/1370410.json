@@ -1,0 +1,801 @@
+{
+  "appId": "1370410",
+  "count": 28,
+  "notes": [
+    {
+      "title": "v0.09.2.0.c4 - Hotfix for Dagger Stab Skill Crit",
+      "date": "2025-06-30 09:19:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891638912",
+      "content": "As pointed out by a player on steam, the Dagger Stab Skill Crit functionality didnt work as intended and the player actually dealt less damage when dealing a critical hit.\n\n\nI was able to reproduce, locate and fix the error.\n\nAlso fixed an error in the damage display at the top, showing double of the actual damage of the weapon.\n\n\nIm working on and making progress on 0.10. The scope might become a bit smaller than initially thought, but i feel like i finally have a much more well defined and more achievable scope for 0.10\n\nI hope you are all doing well/getting better.\n\nKeep it up.\n\n",
+      "key": "1370410::0635fae8ed5ad8738f5b0da2264467a5b6ca2d15",
+      "tags": [
+        {
+          "bug": "As pointed out by a player on steam, the Dagger Stab Skill Crit functionality didnt work as intended and the player actually dealt less damage when dealing a critical hit."
+        },
+        {
+          "bug": "I was able to reproduce, locate and fix the error."
+        },
+        {
+          "bug": "Also fixed an error in the damage display at the top, showing double of the actual damage of the weapon."
+        }
+      ]
+    },
+    {
+      "title": "v0.09.2.c3 Hotfix",
+      "date": "2025-03-20 04:27:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528295316",
+      "content": "Fixed Spells not being draggable into auto-caster slots from the spell-book",
+      "key": "1370410::a7d89a7efa26d0d3ed4a71d6b730228eb4f54eed",
+      "tags": [
+        {
+          "bug": "Fixed Spells not being draggable into auto-caster slots from the spell-book"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.2.c2 Hotfix",
+      "date": "2025-02-02 06:16:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123176571",
+      "content": "Hey all,\n\n- Sinking Well: Added is_modified and was_equipped check to \"add all\" functionality\n\n\nReceived a report about the \"Add all\" in the sinking well not using the same logic as the inventory-discard, so i quickly made it use it as well. So now it should no longer automatically add items to the sinking well via the \"add all\" button. modified or equipped items can still be added directly via drag and drop or ctrl+ leftclick\n\nHave a great one!",
+      "key": "1370410::d67c18c5269974d5190e9be775f1afc5b6279455",
+      "tags": [
+        {
+          "bug": "- Sinking Well: Added is_modified and was_equipped check to \"add all\" functionality"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.2.c1 Hotfix",
+      "date": "2025-01-31 18:34:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123129560",
+      "content": "Hey all,\n\n- The Inventory limit of 200 will no longer discard items that have been modified (plus Roll, Equip Quality, gem sockets in slots) or have been equipped by the player at some point.\n\nI've got a report from a player today on discord that they lost an item from the Inventory-discard limit of 200. I investigated and found that a safe-guard I implemented in 0.10 and didnt implement in 0.09 yet.\nAnd it was also easy to backport that functionality, so here we go.\n\nTo also clarify: The discard limit will only apply when you close and reopen the game, as the discarding only happens when the inventory is being loaded from the save-file. This is to prevent extreme lag buildup over multiple sessions, because whenever a new item gets added the entire list of item gets reordered, which can take a bit at like 200+, at some point (at like 1000+) leading to unpleasent temporary freezes as the game gets back up to speed.\n\nSo as long as you dont close the game, you wont loose anything.\n\nMaybe it would be a good idea to add like a setting or so for it, so players can decide it for themselves. could make most sense.\n\nHave a great one!",
+      "key": "1370410::2cc61c75a65b8d56df73bb66b4f6dc4b9b2db500",
+      "tags": [
+        {
+          "bug": "- The Inventory limit of 200 will no longer discard items that have been modified (plus Roll, Equip Quality, gem sockets in slots) or have been equipped by the player at some point."
+        }
+      ]
+    },
+    {
+      "title": "State of Development v0.10",
+      "date": "2024-05-24 16:11:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105611961420",
+      "content": "Hey guys,\n\njust wanted to update you on the current State of Development in regards to 0.10\n\n[b]TL;DR: Still working on 0.10, after migrating the Engine Version of Godot from 3.5 to 4.2, its now slowly coming along. Working on some features and systems which i mention further down below.[/b]\n\nAfter releasing the maintenance version 0.09.2 in december and putting out some hotfixes, i started migrating the game from Godot Engine version 3.5 to 4.2.\n\nAfter overcoming those initial incompatabilities and migration problems, development is now chugging along as before.\nThe major version changed some core functionalities/internal scripting Objects that was heavily relied on. This required some manual changes and some bigger frustrations. But now its working well again. Its just not too much fun having to change like 400 code occurences bc. the way exports work were changed. \n\nThe new version brought a lot of improvements and changes to how the engine worked in general, which benefit the game in many ways and make development much easier in many aspects and fix some weird behaviours/bugs the game had previously.\n\n\n[b]Some new features coming in 0.10:[/b]\n\n- [b]Research[/b]: Research Artifacts/Books/Blueprints to unlock features and recipes for stronger items. (This should allow for a smoother unlocking experience, compared to 0.09.2)\n- [b]World 3[/b] : Desert: Slowly tackling the features/zones i want to add with 0.10.\n- [b]Ranged Weapon[/b]s: Adding additional ranged weapon types, like bows (and maybe some more) which will consume specific Ammo Items. Consuming Ammo will boost the power of your attacks even more. Ammo will come in different tiers and maybe some special Ammo with special effects will get added. The focus will be for the ammo to be a good bonus, but not an inherent necessities. Ranged weapons will still function without ammo (to be idle compatible)\n- [b]Gem Upgrade UI[/b]: Direct Craft: This is already functional in my current dev build. It allows the player to directly craft higher tier gems either for only raw resources or by also using lower tier gems that you might not need anymore.\n\n\nNo ETA for 0.10, as this is a free time hobby project for me. Im trying to get this game testable/playable as soon as possible, as player feedback is very important for me.\n\nIf you are interested in staying in touch, give critique/feedback/suggestions/ideas, or get irregularily regular updates, feel free to join us on [url=https://discord.com/invite/MmJrgYE]Discord[/url]\n\nI appreciate your time, interest, and thank you for playing the game!\n\nKeep it up!\nHave a great one!\n",
+      "key": "1370410::7cfe37e036dd9a508d064aaa4b28fbe6c6e9aafc",
+      "tags": [
+        {
+          "feature": "- Research: Research Artifacts/Books/Blueprints to unlock features and recipes for stronger items. (This should allow for a smoother unlocking experience, compared to 0.09.2)"
+        },
+        {
+          "feature": "- World 3 : Desert: Slowly tackling the features/zones i want to add with 0.10."
+        },
+        {
+          "feature": "- Ranged Weapons: Adding additional ranged weapon types, like bows (and maybe some more) which will consume specific Ammo Items. Consuming Ammo will boost the power of your attacks even more. Ammo will come in different tiers and maybe some special Ammo with special effects will get added. The focus will be for the ammo to be a good bonus, but not an inherent necessities. Ranged weapons will still function without ammo (to be idle compatible)"
+        },
+        {
+          "feature": "- Gem Upgrade UI: Direct Craft: This is already functional in my current dev build. It allows the player to directly craft higher tier gems either for only raw resources or by also using lower tier gems that you might not need anymore."
+        }
+      ]
+    },
+    {
+      "title": "v0.09.2.0.c hotfix",
+      "date": "2023-12-15 16:25:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219977479375",
+      "content": "- Fixed Holy_Spark crashing the game when cast in the village\n- Fixed Spell_School_Tooltip not showing on hovering a spell school",
+      "key": "1370410::d71bfb75bb4caaca6894481d8e7ea8d2acbc63dc",
+      "tags": [
+        {
+          "bug": "- Fixed Holy_Spark crashing the game when cast in the village"
+        },
+        {
+          "bug": "- Fixed Spell_School_Tooltip not showing on hovering a spell school"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.2.0.b",
+      "date": "2023-12-14 17:12:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219973955103",
+      "content": "Olla,\n\nwhen testing the game with friends, it seems that the wand wasnt tested properly yet and some crash-worthy stuff popped up.\n\n- Projectile_Weapon_Tooltip: Fixed crash\n- Holy Spark Blind: Fixed damage function causing crash\n- Projectile Weapon: Fixed Ammo crashing the game due to missing damage_type (mana ammo type for wands)",
+      "key": "1370410::82015aebe93c9dae20c3b25ceb3e5195321b5feb",
+      "tags": [
+        {
+          "bug": "- Projectile_Weapon_Tooltip: Fixed crash"
+        },
+        {
+          "bug": "- Holy Spark Blind: Fixed damage function causing crash"
+        },
+        {
+          "bug": "- Projectile Weapon: Fixed Ammo crashing the game due to missing damage_type (mana ammo type for wands)"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.2.0.a Hotfix - Fixing weapon items disappearing on equip",
+      "date": "2023-12-14 15:44:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219973732716",
+      "content": "Hellou,\nQuick fix for\n- Equipment_Slot_Weapon: Fixed Weapons disappearing on equipping new weapon\n- Fixed Spells not draggable from Skill bar button to auto-caster-slot",
+      "key": "1370410::48ead7dbe5a209c683a3f9a86ed07888e0cf1788",
+      "tags": [
+        {
+          "bug": "- Equipment_Slot_Weapon: Fixed Weapons disappearing on equipping new weapon"
+        },
+        {
+          "bug": "- Fixed Spells not draggable from Skill bar button to auto-caster-slot"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.2 Maintenance Release Patch Notes",
+      "date": "2023-12-13 19:03:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/7585814657458507469",
+      "content": "v0.09.2 Changelog:\n(Artwork by MetalPig)\n\nWhile working on the spells, i've gotten a serious case of motivation burnout on working on the game. This has happened in the past, where i got to a point to just release the stuff i have, instead of trying to just keep going and never finishing anything because i keep overscoping.\nBecause of this i will release the maintenance release as is, and push back the new spells etc. to version 0.10. Where hopefully the new topics and new systems i can add will give me back a lot of motivation. as it happened in the past. Back then i received a new boost of motivation due to the feedback and ideas i received.\nSo my hope is that it will work similar.\n\n\n\nI was focused on improving the UI and general QoL for the 0.09 maintenance release.\n\nContent:\n- Added 4 more Gem Tiers\n- Added up to Tier 4 for all Enchants (92 new enchants)\n\nReworks:\n\n- Moved Ressource Inventory and Crafting UI to Equipment UI\n- Moved Character_UI to Equipment UI\n- Moved Spell Book UI to the Masteries UI to reduce clutter and locate it in the place it is most relevant, as the spell book receives all its spells from the masteries + skill trees. This makes it easier for the player to immediately see newly added spells and the cause relationship when learning spells etc.\n- Masteries/Spell School: Reworked skill tree UI. No skill points necessary anymore, as those were kind of obsolete. Unlocking happens now depending on mastery level and you have to buy them with gold (outside of the starter spells of each tree). Also passives for spells now unlock to be buyable at a certain spell-level instead of mastery-level, to encourage and reward the leveling of spells. The UI Rework also takes less space and has less visual clutter than before.\n- Spell School UI: Reworked Checkbox based UI to Slot based UI, with right click and drag and drop of spell schools onto available slots.\n- Added new Font for improved readability (Will most likely expand this in the future to make it possible for players to add their own fonts)\n- Auto Caster: Auto caster no longer triggers or checks the normal spell cooldown and only uses its internal cooldown. This is meant to make auto-caster a parallel progression which doesnt take away anything for players that want to play the game actively.\n- With many of the sub-uis now being part of other bigger uis, i reordered/rearranged the side panel.\n\nImprovements/QoL:\n\n- The player now follows new paths on the world map.\n\n- Side Panel Buttons: Added Hotkey to tooltip. Changed displayed key bindings to positional physical buttons on the keyboard.\n- Town: Building: improved Upgrade Button visibility\n- Town: Gathering Building: Added side_panel notifications functionality when gathering-building has ressources to pick up\n\n- Equipment: Added Fist weapon permanence. This will be useful for adding base fist upgrading at a later point\n\n- Cooking: Added Cook Button Tooltip for next Recipe tier stats\n- Cooking: Added 6 food icons\n- Cooking: Added drop source description to Trout and Karp\n\n- Spell: Mana bubble: Added percentage exp gain depending on base damage received (which means before any reductions (armor, absorb, block))\n- Spell: when trying to cast spell but is not learned fail message: Improved \"spell is not learned\" message with more indepth information\n- Spell Upgrade Button: Now also changes color depending on if the player can afford.\n- Spell Book: removed forced adding to spell book, to reduce clutter. Spells now get added when the player initially learns them.\n- Skill Bar: Readded ability to add spells to spell bar on learning/allocating\n- Skill Bar: dragging spells/items between skill bar buttons now swaps the spells/items between the slots, instead of just overwriting them and deleting them in the originating slot for the drag.\n- Skill Tree: Added spells being casteable from skill tree UI\n\n- Masteries: Added Exp gain description text for each mastery explaining in detail from which activity each mastery receives experience\n\n- Achievements UI: added \"Hide completed\" checkbox to filter achievements that have already been completed\n- Character_UI: Changed stat toggle to click or close button\n- Character_UI: Added base + multiplier values to the stat tooltips\n- Statistics UI: Added Search bar\n- Armor Mastery UI: Added Stat bonuses from Armor Mastery Tree to Tooltip\n- Armor Mastery UI: Tooltip: Added current armor count to tooltip to make it easier visible\n- Equip_Quality UI: Added \"Total Stats gained\" to the detail display\n- Plus Roll UI: Added \"total Stats increase %\" to the detail display\n- Auto-Caster UI: Made scrollable so it doesnt explode the layout as it previously did\n- Auto Caster UI: Added Spell Book as collapsable UI to make adding spells to auto-caster much easier.\n- Enchanting UI: Added \"show unaffordable\" filter. Allows you to only show affordable in the list if deselected\n- Spell Book UI: Added \"only available\" and \"only upgradeable\" filter checkboxes\n- Sacrificial Altar UI: Added fail_message + reasons for why items cannot be sacrificed\n\n- Map: Added borders to the \"unlock arrows\" pointing at new zones to make them better visible to the background\n\n- Enchants: Added \"For Slot X\" to description\n\n- Option Menu: Added automatic saving when quitting the game via the \"quit game\" button\n\n- Gem-Slots: Improved readability/visibility by adding outlines and the sockets themselves becoming transparent when a gem is socketed\n\n- Tooltips: Added margins to the screen border to improve visibility/layout/looks when tooltips get pushed back into the viewport\n- Item Tooltip + Mastery Tooltip: Added Scrolling to tooltips when they get too long. Hold down shift to scroll inside the tooltip.\n- Equipment_Tooltip: Added Details by holding shift. For now shows only maximum of plus and quality\n\n- Cost: Added the name of the resource when listed as a cost, as to make it easier to understand what resource is needed/wanted, instead of having to guess/squint at the icon\n\n- Level Up Event messages now start to fade when the player distributes points in the character UI attribute screen\n\n- Settings: World Map: Added setting for \"hide_map_on_player_arrive\"\n- Settings: Fullscreen setting is now properly preserved between sessions\n\n\nFixes:\n\n- Fixed problem in random number calculation leading to random roll maximum beine exclusive. so for example 1-2 rolls would always hit 1, and 1-10 rolls would only hit 1-9 but never 10. This lead to fishing hut only giving 1 fish although it should have had the chance for 2\n- Gathering Buildings: Fixed production boost optimization above 5000 cycles, not actually working. Refactored the functionality, now its more reliable\n- Gathering Buildings: Fixed gathering_quantity_multiplier not applying to the idle reward production (this should lead to much bigger results from the mine/fishing hut with higher mastery)\n- Fishing Hut: Fixed donation loop of donating fried fish to the fishing hut, letting the player create an infinite amount of fish (exponential) by disallowing fried fish being donated to the fishing hut\n- Skill Tree Spell Node: Fixed spell complaining on clicking already active node\n- Monster title tooltip: Fixed wasp fly showing to be spawning in too many places\n- Ressource Cost: swapped order of current and total amount \n\n\n- Achievements: Fixed Powder Processor condition count from 30 -> 15\n- Achievements: Fixed \"Rock Bottom\" condition not triggering properly on unlocking the last stage of the hive dungeon\n\n\n- Resource Trader: Fixed being able to buy at least 1 resource although you didnt have enough money\n- Shop: Fixed buying stackable items like potions, creating weird behaviour with stack size and possible crashes\n- Shop: Fixed shop slot unlock logic (slots that should have been locked to be bought at next tier, were already buyable)\n- Shop: Fixed saving/loading of recipe drops when closing the game after having bought a recipe but not having it picked up\n\n- Enchants: Fixed offhand enchants being enchantable on non-weapons\n\n- Spells: Fixed many spells being able to level above level 10 although there were no improvements defined above level 10\n- Buff Spells: Fixed toggleable spells being cancelable during the cast cooldown/downtime, possibly making people cancle those spells by clicking too quickly.\n- Fixed Buff spells still casteable while on cooldown\n- Fire Armor: Fixed dealing 0 fire damage and retaliating full physical damage at player.\n- Mana Bubble: Fixed spells being casteable while not enough armor pieces of the required type is equipped\n- Holy Light: Removed misunderstandable WIP description part about \"lifesteal\" functionality that is not yet implemented\n- Food: Fixed Crunchy Seafood giving 0s gathering boosting time (now 20 s)\n- Earth Armor: Fixed armor stat calculation\n\n- Gem Upgrade UI: Fixed UI (availability and crafting count) not updating on crafting higher tier gems\n\n- Town: fixed not visible/active gathering buildings adding side panel notifications\n- Quests: removed \"(Not yet)\" Text for unlock access to world 2\n- Map: Removed \"The\" from the zone names\n- Monsters: Fixed monster descriptions for many monsters\n\n\nChanges:\n\n- Cooking: Food_Recipe: Changed leveling to per cooking not quantity cooked\n- Save Game Name: Limited the length of the save-game to 30 chars, to prevent problems with the OS file system.\n- Mastery: Shield: Changed exp gain to blocked damage only\n- Resource Inventory UI: Filter out food items (they are only relevant for cooking)\n- Wands: Now also consume 1 percent of current mana which also gets added to their damage\n- Crafting UI: All crafting trees are now bottom bound for a more homogenous look between tabs/trees\n- Shop: Added Berries to the loot pool\n- Shop: Increased pricing variance\n- Auto Caster: Added limitation to just 1 copy of a spell to prevent spamming 1 single spell with multiple auto-caster slots, due to the new \"no cooldown is triggered\" logic\n- Auto Caster: Added an auto_cast_cooldown cache to the Spell in the auto-caster slot, preventing the player from moving a spell between multiple slots after each cast, to still cast a spell in quick succession but forcing the player to do unfun activities for this optimization\n\n",
+      "key": "1370410::cdbd7e33147f4c9f21ecc967f6a375b11bb3fffd",
+      "tags": [
+        {
+          "feature": "- Added 4 more Gem Tiers"
+        },
+        {
+          "feature": "- Added up to Tier 4 for all Enchants (92 new enchants)"
+        },
+        {
+          "feature": "- Added new Font for improved readability (Will most likely expand this in the future to make it possible for players to add their own fonts)"
+        },
+        {
+          "feature": "- Equipment: Added Fist weapon permanence. This will be useful for adding base fist upgrading at a later point"
+        },
+        {
+          "feature": "- Cooking: Added 6 food icons"
+        },
+        {
+          "feature": "- Settings: World Map: Added setting for \"hide_map_on_player_arrive\""
+        },
+        {
+          "bug": "- Fixed problem in random number calculation leading to random roll maximum beine exclusive. so for example 1-2 rolls would always hit 1, and 1-10 rolls would only hit 1-9 but never 10. This lead to fishing hut only giving 1 fish although it should have had the chance for 2"
+        },
+        {
+          "bug": "- Gathering Buildings: Fixed production boost optimization above 5000 cycles, not actually working. Refactored the functionality, now its more reliable"
+        },
+        {
+          "bug": "- Gathering Buildings: Fixed gathering_quantity_multiplier not applying to the idle reward production (this should lead to much bigger results from the mine/fishing hut with higher mastery)"
+        },
+        {
+          "bug": "- Fishing Hut: Fixed donation loop of donating fried fish to the fishing hut, letting the player create an infinite amount of fish (exponential) by disallowing fried fish being donated to the fishing hut"
+        },
+        {
+          "bug": "- Skill Tree Spell Node: Fixed spell complaining on clicking already active node"
+        },
+        {
+          "bug": "- Monster title tooltip: Fixed wasp fly showing to be spawning in too many places"
+        },
+        {
+          "bug": "- Ressource Cost: swapped order of current and total amount"
+        },
+        {
+          "bug": "- Achievements: Fixed Powder Processor condition count from 30 -> 15"
+        },
+        {
+          "bug": "- Achievements: Fixed \"Rock Bottom\" condition not triggering properly on unlocking the last stage of the hive dungeon"
+        },
+        {
+          "bug": "- Resource Trader: Fixed being able to buy at least 1 resource although you didnt have enough money"
+        },
+        {
+          "bug": "- Shop: Fixed buying stackable items like potions, creating weird behaviour with stack size and possible crashes"
+        },
+        {
+          "bug": "- Shop: Fixed shop slot unlock logic (slots that should have been locked to be bought at next tier, were already buyable)"
+        },
+        {
+          "bug": "- Shop: Fixed saving/loading of recipe drops when closing the game after having bought a recipe but not having it picked up"
+        },
+        {
+          "bug": "- Enchants: Fixed offhand enchants being enchantable on non-weapons"
+        },
+        {
+          "bug": "- Spells: Fixed many spells being able to level above level 10 although there were no improvements defined above level 10"
+        },
+        {
+          "bug": "- Buff Spells: Fixed toggleable spells being cancelable during the cast cooldown/downtime, possibly making people cancle those spells by clicking too quickly."
+        },
+        {
+          "bug": "- Fixed Buff spells still casteable while on cooldown"
+        },
+        {
+          "bug": "- Fire Armor: Fixed dealing 0 fire damage and retaliating full physical damage at player."
+        },
+        {
+          "bug": "- Mana Bubble: Fixed spells being casteable while not enough armor pieces of the required type is equipped"
+        },
+        {
+          "bug": "- Holy Light: Removed misunderstandable WIP description part about \"lifesteal\" functionality that is not yet implemented"
+        },
+        {
+          "bug": "- Food: Fixed Crunchy Seafood giving 0s gathering boosting time (now 20 s)"
+        },
+        {
+          "bug": "- Earth Armor: Fixed armor stat calculation"
+        },
+        {
+          "bug": "- Gem Upgrade UI: Fixed UI (availability and crafting count) not updating on crafting higher tier gems"
+        },
+        {
+          "bug": "- Town: fixed not visible/active gathering buildings adding side panel notifications"
+        },
+        {
+          "bug": "- Quests: removed \"(Not yet)\" Text for unlock access to world 2"
+        },
+        {
+          "bug": "- Map: Removed \"The\" from the zone names"
+        },
+        {
+          "bug": "- Monsters: Fixed monster descriptions for many monsters"
+        },
+        {
+          "bug": "- Settings: Fullscreen setting is now properly preserved between sessions"
+        },
+        {
+          "balance_change": "- Cooking: Food_Recipe: Changed leveling to per cooking not quantity cooked"
+        },
+        {
+          "balance_change": "- Mastery: Shield: Changed exp gain to blocked damage only"
+        },
+        {
+          "balance_change": "- Wands: Now also consume 1 percent of current mana which also gets added to their damage"
+        },
+        {
+          "balance_change": "- Shop: Increased pricing variance"
+        },
+        {
+          "balance_change": "- Auto Caster: Added limitation to just 1 copy of a spell to prevent spamming 1 single spell with multiple auto-caster slots, due to the new \"no cooldown is triggered\" logic"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.1.1b.2 Hotfix - Sacrificial Altar \"Add All\" Button + sacrificing crash fix",
+      "date": "2023-08-10 16:09:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5839532486211861025",
+      "content": "Hey all,\n\nas the title states this is just a small hotfix:\n- make the sacrificing of items in the late-game easier \n- fixing a potential crash/hangup when sacrificing a large quantity of items (100+) \n\nthis happened because with each item being removed from the inventory it would do a sort of the entire inventory, which would already take a bit of time when performed once for 100+ items, \nAdditionally all item elements in the inventory UI would get informed about an item being removed from the sacrificial altar, creating an exponential growth in calculation power required.\nI fixed both these by making them more performant. Each item element now only listens to the \"removed_from_sacrificial_altar\" signal from its own item, not everyone's. and additionally when the sacrificial altar starts sacrificing items it will pause the inventory sorting and restart it after its done. This improved performance by around 10-50x for 200 items being sacrificied\n\n\nThe endgame in its current form is a temporary solution to give players a possibility to progress beyond the currently available story/world. This endgame will morph and change with each big release to get closer to the interesting and long lasting gameplay i have planned.\n\nIm currently working with a bit of different development approach which allows me for easier hotfix deployment/development while still working on the 0.09 maintenance release\n\nI hope everyone is doing well!\n\nKeep it up!",
+      "key": "1370410::5cfe2baf255c93ccb3bfde161a2414623c50981d",
+      "tags": [
+        {
+          "feature": "- make the sacrificing of items in the late-game easier"
+        },
+        {
+          "bug": "- fixing a potential crash/hangup when sacrificing a large quantity of items (100+)"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.1.1b.1 Hotfix - Reducing VRAM Usage",
+      "date": "2023-07-19 18:38:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051967584177",
+      "content": "Just a very small hotfix, to reduce the VRAM to enable the game to run on GPUs with 1 GB Vram\n\nThis was done by reducing the the size of the world map texture from 10000x10000 px to 1000x1000 px.\n\nSeems like although the actual texture as png is just like 2 MB when loaded into the GPU Vram it mostly depends on the pixel size.\nWith this change the necessary Vram went in the editor from 870 -> 465 MB\n\nKeep it up!",
+      "key": "1370410::d7816e1456ecff79e0b1a297f6b438a95f4494e1",
+      "tags": [
+        {
+          "balance_change": "This was done by reducing the the size of the world map texture from 10000x10000 px to 1000x1000 px."
+        }
+      ]
+    },
+    {
+      "title": "State of Development 2 for 0.09 Maintenance",
+      "date": "2023-07-17 15:07:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6079346804887088751",
+      "content": "Hey everyone,\n\nhere a small progress update for the 0.09 maintenance version:\n\nThe QoL and Feedback has been mostly processed and implemented. \nI now switched modes and started working on adding new spells/skills/functionality to spell-trees.\n\nThese include:\n\n- Dark Tree (Draw on dark powers to curse your enemies and blast them to hell)\n- Arcane Tree (Use the purest form of magic to blast your enemies with your mana)\n- Blood Tree (spend hp to cast spells or drain life from your foes)\n- Earth Tree (Use the physical prowess of the earth to bolster your defenses or smash your enemies)\n- Fire Tree (Burn everything to the ground)\n- Holy Tree (Use the power of the light to cast miracles and smite your foes)\n- Lightning Tree (Zip zap, ligthning is a speedy route to death for your enemies)\n- Ice Tree (Freezing cold, sharp ice crystals to fight at sub-zero temperatures)\n\n- Axe Tree (Hack away at your enemies)\n- Dagger Tree (Stab away in quick succession with a high chance to hit weakpoints)\n- Hammer Tree (Smash your enemies and the ground with the power of this brute force)\n- Shield Tree (Focus on defense and bulwark yourself, while having some utility in attack)\n- Stave Tree (Its a big heavy stick, BUT WITH MAGIC. Strike your oponents with your martial prowess, infused with magic)\n- Wand Tree (Blast away at your enemies with magic projectiles, utilizing your mana as ammo)\n- Unarmed Tree (Master your fist, so you can master your enemies)\n- Mace Tree (Smash your enemies with accuracy and spikes. There is a reason why its the favorite weapon of a Paladin)\n\n(Maybe some passives for the gathering-trees, but not sure yet, i think that might come most likely in 0.10)\n\nThe update will act as a foundation for these spell trees with around 2-3 spells per skill-tree and a couple of passives per tree that will change the behaviour of some spells. Some of those trees already had spells in 0.09 before maintenance update, and its mainly focusing on bringing the other spell-trees on a similar level (and maybe add some more to the ones that already had spells/passives)\n\nThese will also be the foundation for changes and new stuff coming in future updates (0.10 and onwards).\nMy hope is that those spell-trees etc. will add a feeling of a certain class fantasy to the game.\n\n\nIm working on 3 parts to make this happen:\n\n- Functionality of the spells\n- power of spells, upgrades, balancing\n- Add visual effects and icons for spells/skills etc.\n\nLooking forward to getting it in your hands to try and play.\n\nKeep it up!",
+      "key": "1370410::ff7406687d6f64b9800226f192b2f958df8d872d",
+      "tags": [
+        {
+          "feature": "- Dark Tree (Draw on dark powers to curse your enemies and blast them to hell)"
+        },
+        {
+          "feature": "- Arcane Tree (Use the purest form of magic to blast your enemies with your mana)"
+        },
+        {
+          "feature": "- Blood Tree (spend hp to cast spells or drain life from your foes)"
+        },
+        {
+          "feature": "- Earth Tree (Use the physical prowess of the earth to bolster your defenses or smash your enemies)"
+        },
+        {
+          "feature": "- Fire Tree (Burn everything to the ground)"
+        },
+        {
+          "feature": "- Holy Tree (Use the power of the light to cast miracles and smite your foes)"
+        },
+        {
+          "feature": "- Lightning Tree (Zip zap, ligthning is a speedy route to death for your enemies)"
+        },
+        {
+          "feature": "- Ice Tree (Freezing cold, sharp ice crystals to fight at sub-zero temperatures)"
+        },
+        {
+          "feature": "- Axe Tree (Hack away at your enemies)"
+        },
+        {
+          "feature": "- Dagger Tree (Stab away in quick succession with a high chance to hit weakpoints)"
+        },
+        {
+          "feature": "- Hammer Tree (Smash your enemies and the ground with the power of this brute force)"
+        },
+        {
+          "feature": "- Shield Tree (Focus on defense and bulwark yourself, while having some utility in attack)"
+        },
+        {
+          "feature": "- Stave Tree (Its a big heavy stick, BUT WITH MAGIC. Strike your oponents with your martial prowess, infused with magic)"
+        },
+        {
+          "feature": "- Wand Tree (Blast away at your enemies with magic projectiles, utilizing your mana as ammo)"
+        },
+        {
+          "feature": "- Unarmed Tree (Master your fist, so you can master your enemies)"
+        },
+        {
+          "feature": "- Mace Tree (Smash your enemies with accuracy and spikes. There is a reason why its the favorite weapon of a Paladin)"
+        }
+      ]
+    },
+    {
+      "title": "State of Development 0.09 Maintenance",
+      "date": "2023-06-18 04:47:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309849677784",
+      "content": "Hey everyone,\n\nafter a long, well needed hiatus and slow development on the game, things are picking up steam again and im again invested into Progress Game.\n\nIm currently making progress in regards to:\n\n- Incorporating Feedback and QoL\n- Fixing Bugs/Crashes (cant promise to fix all, as some are quite obfuscated/specific to the machines)\n- Some more Content (More enchants, more Gems. Next world will come with 0.10)\n- Adding missing art (Food-icons etc.)\n- Adding Spells/Skills and filling the skill trees with life.\n\nI hope everyone is doing well/getting better!\n\nKeep it up!",
+      "key": "1370410::99e59d9d969ec15fe28daabf5d8e6207e696f873",
+      "tags": [
+        {
+          "bug": "- Fixing Bugs/Crashes (cant promise to fix all, as some are quite obfuscated/specific to the machines)"
+        },
+        {
+          "feature": "- Some more Content (More enchants, more Gems. Next world will come with 0.10)"
+        },
+        {
+          "feature": "- Adding missing art (Food-icons etc.)"
+        },
+        {
+          "feature": "- Adding Spells/Skills and filling the skill trees with life."
+        }
+      ]
+    },
+    {
+      "title": "v0.09.1.1b Fixes",
+      "date": "2023-01-25 12:57:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109506382962",
+      "content": "V0.09.1.1b:\n\n- Fixed spellbook hotkey\n- cleaned up some nonexistant/obsolete signals and pointers (could maybe help with unspecified problems on certain os)\n- Fixed naming for relics t4-t6 (now just called \"Relic\")\n- Skill-Trees: Added unlock hints in the tooltip when hovering a node, which tells you what actions are possible (\"left click to buy\" \"left click to skill\", \"right click to unskill\"). Also Improved the displaying of the requirements to get access to certain nodes.\n- Character UI: Fixed tooltip description of wisdom\n- Character UI: Fixed disappearing of \"assign attribute\" buttons skewing the formatting\n- Map: Added name labels to be seen without hovering to improve initial orientation on the map. (on some pcs hovering the Zones on the map seems to not bring up the tooltip, or they dont register it as it is popping up delayed after 0.5 seconds)\n- Earth armor: Readded mana cost display to tooltip\n- Option Menu: Added Quit button (useful for if you are in full screen and cannot/dont know to use alt+f4)",
+      "key": "1370410::74d5f24c8c28f4aaf34dbe2371856afe3ae3bdf2",
+      "tags": [
+        {
+          "bug": "- Fixed spellbook hotkey"
+        },
+        {
+          "bug": "- cleaned up some nonexistant/obsolete signals and pointers (could maybe help with unspecified problems on certain os)"
+        },
+        {
+          "bug": "- Fixed naming for relics t4-t6 (now just called \"Relic\")"
+        },
+        {
+          "feature": "- Skill-Trees: Added unlock hints in the tooltip when hovering a node, which tells you what actions are possible (\"left click to buy\" \"left click to skill\", \"right click to unskill\"). Also Improved the displaying of the requirements to get access to certain nodes."
+        },
+        {
+          "bug": "- Character UI: Fixed tooltip description of wisdom"
+        },
+        {
+          "bug": "- Character UI: Fixed disappearing of \"assign attribute\" buttons skewing the formatting"
+        },
+        {
+          "feature": "- Map: Added name labels to be seen without hovering to improve initial orientation on the map. (on some pcs hovering the Zones on the map seems to not bring up the tooltip, or they dont register it as it is popping up delayed after 0.5 seconds)"
+        },
+        {
+          "feature": "- Earth armor: Readded mana cost display to tooltip"
+        },
+        {
+          "feature": "- Option Menu: Added Quit button (useful for if you are in full screen and cannot/dont know to use alt+f4)"
+        }
+      ]
+    },
+    {
+      "title": "v0.09.1.1a Hotfix",
+      "date": "2023-01-23 15:58:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474426737096",
+      "content": "\n\n- Player: Fixed attack animation not sped up by attack speed multiplier\n- Fishing Hut/Mine: Fixed mass donation not granting gathering mastery exp\n- Skull Ring can be sacrificed\n- Relics: The Relics of lower tiers than your highest tier relic can now be sacrificed. If you are already in tier 6 (red) you might have to unequip and equip the tier 6 relic once, to be able to sacrifice tier 5 (purple) relics.\n\nKeep it up!",
+      "key": "1370410::e59c40a925076ee7becc54a3370b6039e2d591b2",
+      "tags": [
+        {
+          "bug": "- Player: Fixed attack animation not sped up by attack speed multiplier"
+        },
+        {
+          "bug": "- Fishing Hut/Mine: Fixed mass donation not granting gathering mastery exp"
+        },
+        {
+          "feature": "- Skull Ring can be sacrificed"
+        },
+        {
+          "feature": "- Relics: The Relics of lower tiers than your highest tier relic can now be sacrificed. If you are already in tier 6 (red) you might have to unequip and equip the tier 6 relic once, to be able to sacrifice tier 5 (purple) relics."
+        }
+      ]
+    },
+    {
+      "title": "V0.09.1.1 Hotfixes",
+      "date": "2023-01-22 14:24:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474422853776",
+      "content": "[b][u]v0.09.1.1:[/u][/b]\n\n- Fixed double dipping for multipliers: If a player had 10 armor and 20% increase, correct would have been: 12 but it did 14.4 instead\n- Fixed Paladin Trait needing 4 armor pieces instead of 3\n- Added Armor requirements to armor tree node tooltips",
+      "key": "1370410::5f7508a4b3709fa50e3d209790f97304ba1c3076",
+      "tags": [
+        {
+          "bug": "- Fixed double dipping for multipliers: If a player had 10 armor and 20% increase, correct would have been: 12 but it did 14.4 instead"
+        },
+        {
+          "bug": "- Fixed Paladin Trait needing 4 armor pieces instead of 3"
+        },
+        {
+          "feature": "- Added Armor requirements to armor tree node tooltips"
+        }
+      ]
+    },
+    {
+      "title": "V0.09.1 Hotfixes",
+      "date": "2023-01-21 15:25:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474419364827",
+      "content": "Some small hotfixes:\n\nv0.09.1:\n- Added Hotkeys to side panel buttons (also added them to the tooltips)\n- Crafting Tree: Jewelery/gems: Changed unlock hint \"Find the jeweler Kit\" to \"Buy the jeweler Kit\"\n- Cloth Tree: Fixed \"spell mastery\" not unlockable\n- Town_UI: Fixed smith dialogue typo\n- Town_UI: Fixed \"unlock: Unlock X\" redundancy\n\nKeep it up!",
+      "key": "1370410::3e8ccac028b03a43c8e5cd7b96e61089af6e7b97",
+      "tags": [
+        {
+          "feature": "- Added Hotkeys to side panel buttons (also added them to the tooltips)"
+        },
+        {
+          "bug": "- Cloth Tree: Fixed \"spell mastery\" not unlockable"
+        },
+        {
+          "bug": "- Town_UI: Fixed smith dialogue typo"
+        },
+        {
+          "bug": "- Town_UI: Fixed \"unlock: Unlock X\" redundancy"
+        }
+      ]
+    },
+    {
+      "title": "0.09 Major Update Release",
+      "date": "2023-01-20 12:30:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474415278260",
+      "content": "Hey @everyone \nI know it has been a very long time since you've got good news from the game in this channel, but here it is:\n\n0.09 is out\n\nThank you for being patient and staying with us. I hope you will enjoy this new version.\nAnd a big thank you for everyone that helped by providing their feedback and ideas and those that helped playtesting the game!\n\nI will add more polish/content to the live version in the close future (more spells, spell schools, polish/improve assets)\n\nThe previous version 0.08 will be available in an extra branch as to preserve the experience and make it possible to be still played.\n\nAny feedback/ideas/critique is greatly appreciated!\n\nChanges:\n\n- Major UI overhaul\n- The game now consists of multiple zones within individual worls. For now there are 2 worlds, but with more to come\n- Added Item Enchanting: Add an enchant to your items to improve the aspects that you like for your character\n- Added Gathering Encounters: The Player will now mine after 2 successful fights\n- Added Quests\n- Added Spells + Auto Caster\n- Added mastery and spell school Trees\n- Added Town: Improve your buildings and unlock new features or gain resources\n- Added Shop: Buy recipes, items, food or sell surplus resources for a quick penny\n- Added Cooking: Cook Food resources to boost your power\n\nI hope everyone is well/getting better!\nKeep it up!",
+      "key": "1370410::5177ab66629e7eff6f136fde299188a52fc08810",
+      "tags": [
+        {
+          "feature": "- Major UI overhaul"
+        },
+        {
+          "feature": "- The game now consists of multiple zones within individual worls. For now there are 2 worlds, but with more to come"
+        },
+        {
+          "feature": "- Added Item Enchanting: Add an enchant to your items to improve the aspects that you like for your character"
+        },
+        {
+          "feature": "- Added Gathering Encounters: The Player will now mine after 2 successful fights"
+        },
+        {
+          "feature": "- Added Quests"
+        },
+        {
+          "feature": "- Added Spells + Auto Caster"
+        },
+        {
+          "feature": "- Added mastery and spell school Trees"
+        },
+        {
+          "feature": "- Added Town: Improve your buildings and unlock new features or gain resources"
+        },
+        {
+          "feature": "- Added Shop: Buy recipes, items, food or sell surplus resources for a quick penny"
+        },
+        {
+          "feature": "- Added Cooking: Cook Food resources to boost your power"
+        }
+      ]
+    },
+    {
+      "title": "V0.09 Teaser #2",
+      "date": "2022-11-21 11:24:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4789043687489016731",
+      "content": "Hey all,\n\nAfter posting the last [SOON] announcement, i noticed it might have made sense to add screenshots or other stuff to give a feeling for what to expect.\n\nLike mentioned in the last post, the game underwent a major overhaul. With the basic idea persisting but adding more complexity and ways to progress you character's power. (and more to come yet)\n\n\nThe First Dungeon in Progress Game:\nThe Hive:\n[img]{STEAM_CLAN_IMAGE}/38428232/d232981dcca9dbc5b45ddd47c50e74254773a3cf.png[/img]\n\nhere you can see a completely overhauled ui, with independent Windows for each System like \"Inventory, Crafting etc.\" Currently there is a bit of a struggle to make it less cluttery but im sure we will get there.\n\nEnchanting is here:\n[img]{STEAM_CLAN_IMAGE}/38428232/ff5f5ffc095e4821c3b2257e127053e7a8cef8dc.png[/img]\n\nWith enchanting you can add bonuses on your items depending on the type of item. Add some major stat boosts to your chest piece, or add a powerful trait to your amulet.\n\n\n\nFight in 2 new Worlds, with 3-4 Zones and ~40 monsters (some old and mostly new ones), like for example: \nMeet Factory Fish:\n[img]{STEAM_CLAN_IMAGE}/38428232/fbaa71795b8dd166233521c2f7d2b5fc1d483ef4.png[/img]\n\nHe is happy to be a productive part of marine life and give you a hard time, supporting his kinfolk the sea-slugs.\n\nSpell schools:\n[img]{STEAM_CLAN_IMAGE}/38428232/7dd64d30d7b459cc34be233eddebda6bdf901d08.png[/img]\n\nFor now there will be 3 active and available spell schools with certain spell-themes:\n- Holy: Smite thou enemy with the holy power\n- Earth: Throw boulders/sharp rocks and protect yourself with earthly elements\n- Fire: Burn your enemies to a crisp and warm yourself on the glow\n\nAll spell schools will be expanded heavily and more spell schools will be added:\n- Blood: Sacrifice and leech health from the enemies to damage them or reap benefits\n- Ice: Slow, freeze your enemy\n- Lightning: Turn up the voltage!\n- Dark: Curse your enemies and apply the dark forces on them\n- Arcane: A mana based spell school that uses and channels mana to deal high damage.\n\nThere are also weapon and armor mastery trees, which are currently pretty bare-bone, but i plan to add a lot more stuff to them that you can unlock and use.\n\nThere is a lot more systems that got added, but this will be it for now, maybe i will do another sneak peek.\n\nI hope this news finds you well!\nI hope you are well/getting better!\n\nKeep it up!",
+      "key": "1370410::2fc126be0c8f37ec1b46b4b2d170d79793522b46",
+      "tags": [
+        {
+          "feature": "here you can see a completely overhauled ui, with independent Windows for each System like "
+        },
+        {
+          "feature": "Enchanting is here:"
+        },
+        {
+          "feature": "With enchanting you can add bonuses on your items depending on the type of item."
+        },
+        {
+          "feature": "Fight in 2 new Worlds, with 3-4 Zones and ~40 monsters (some old and mostly new ones), like for example:"
+        },
+        {
+          "feature": "For now there will be 3 active and available spell schools with certain spell-themes:"
+        },
+        {
+          "feature": "All spell schools will be expanded heavily and more spell schools will be added:"
+        },
+        {
+          "feature": "There are also weapon and armor mastery trees, which are currently pretty bare-bone, but i plan to add a lot more stuff to them that you can unlock and use."
+        }
+      ]
+    },
+    {
+      "title": "v0.09 soon/Preview",
+      "date": "2022-10-19 04:00:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4714731755407764862",
+      "content": "Hey everyone,\n\nlong time no see. Just wanted to post an info about the next incoming version 0.09.\n\nI have been working on the playtest 7 for the last year, which adds more systems and has major improvements, including world 2.\n\nDue to the size of those changes and how different 0.08 is from the current development, i am planning to push this next playtest 7 as version 0.09 to live as i feel it is a big step into the direction which is much closer to my final vision of the game.\n\nThe current live 0.08 version will still be available in an exclusive branch, for people that prefer that state of the game or want to experience that version again.\n\n0.09 will entail:\n- World 2 (Dry Praerie): Discover the reason for some weird occurences and help out some friends and descend into the first iteration of a dungeon. \n- T3: Find recipes strewn around the new zones for stronger items that you can upgrade even further\n- More spells/skills including spell-schools (not too many right now, will add more over time)\n- Get exp for using your spells/skills and upgrade them for gold.\n- Spell Auto-Caster: Cast spells while you are away, including multiple spell cast slots \n- Relic item to boost the functionality of the auto-caster even more.\n- Food/Cooking: Cook Food to improve your mastery with the recipes and gain permanent bonuses. You can donate that food to the Mine/Fishing Hut to boost your resource production.\n- Passive resource income via Mine/Fishing Hut (build in town)\n- Shop: Buy Resources, recipes from the new Shop (build in town to access)\n- Enhancing: Add special effects/boosts/bonuses on your items (unlock by buying from the shop)\n- Gems: Socket gems that grant attributes into your items. Your items either have sockets from the start or get more empty sockets when upgrading their quality.\n- Plus-rolling: Gamble your resources and try to boost your equipment even more. Multiplicatively improves the stats on your items, so its a good synergy with the quality upgrades on an item.\n- Rings/Amulets: Craft Rings and Amulets that have a random combination of stats, giving you somewhat of a goal to get a good ring.\n- Readded attribute point allocation + reset for gold functionality\n\n\nThe features are functional and close to ready to be release on the live branch, and the game requires some balance passes from me and some assets are still missing. But i want to make it available as soon as possible.\n\nThe game will keep receiving polish and improvements, incorporating the feedback from you the players.\n\nWith 0.09 there were some major reworks for many backend systems, which now enables me to work in a more iterative approach and do changes to 0.09 without running the risk of bricking existing saves/progress.\n",
+      "key": "1370410::85205c71701e657e5969dde09ddfbc9acf3d6251",
+      "tags": [
+        {
+          "feature": "- World 2 (Dry Praerie): Discover the reason for some weird occurences and help out some friends and descend into the first iteration of a dungeon."
+        },
+        {
+          "feature": "- T3: Find recipes strewn around the new zones for stronger items that you can upgrade even further"
+        },
+        {
+          "feature": "- More spells/skills including spell-schools (not too many right now, will add more over time)"
+        },
+        {
+          "feature": "- Get exp for using your spells/skills and upgrade them for gold."
+        },
+        {
+          "feature": "- Spell Auto-Caster: Cast spells while you are away, including multiple spell cast slots "
+        },
+        {
+          "feature": "- Relic item to boost the functionality of the auto-caster even more."
+        },
+        {
+          "feature": "- Food/Cooking: Cook Food to improve your mastery with the recipes and gain permanent bonuses. You can donate that food to the Mine/Fishing Hut to boost your resource production."
+        },
+        {
+          "feature": "- Passive resource income via Mine/Fishing Hut (build in town)"
+        },
+        {
+          "feature": "- Shop: Buy Resources, recipes from the new Shop (build in town to access)"
+        },
+        {
+          "feature": "- Enhancing: Add special effects/boosts/bonuses on your items (unlock by buying from the shop)"
+        },
+        {
+          "feature": "- Gems: Socket gems that grant attributes into your items. Your items either have sockets from the start or get more empty sockets when upgrading their quality."
+        },
+        {
+          "feature": "- Plus-rolling: Gamble your resources and try to boost your equipment even more. Multiplicatively improves the stats on your items, so its a good synergy with the quality upgrades on an item."
+        },
+        {
+          "feature": "- Rings/Amulets: Craft Rings and Amulets that have a random combination of stats, giving you somewhat of a goal to get a good ring."
+        },
+        {
+          "feature": "- Readded attribute point allocation + reset for gold functionality"
+        }
+      ]
+    },
+    {
+      "title": "0.09 Playtest 6 is now available!",
+      "date": "2021-11-21 14:53:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4227186657152857277",
+      "content": "Hey everyone,\n\nPlaytest 6 is now available. \nYou can access it by right clicking on progress game -> properties -> Betas -> select \"playtest\" beta branch.\n\nYou will be able to play through the entire World 1. Things will most likely be changed/adapted/polished over time, but this should represent a stable foundation.\n\nThis playtest might not be as big as other ones, as here most of the work was with adding the saving/loading functionality. Here it was necessary to rework some parts of the game and cover a lot of corner-cases UI and save/loading wise.\n\nrough patch notes:\n\n- Added Saving/loading with a Save-game-UI in the options\n- Added Quest-UI and added 3 more quests\n- Added Fields zone\n- Added Slug Boss to beat\n- Added Food/Cooking System with ingredients that drop from enemies\n- Added Sinking well where you can sacrifice your items for a base-stat bonus\n- Added Quality upgrades for Tier 2 Items\n- Added lots of QoL\n\nHave a great one!\n\nKeep it up!",
+      "key": "1370410::153b17cf161c432e70ed963f9dce7cff46b5e603",
+      "tags": [
+        {
+          "feature": "- Added Saving/loading with a Save-game-UI in the options"
+        },
+        {
+          "feature": "- Added Quest-UI and added 3 more quests"
+        },
+        {
+          "feature": "- Added Fields zone"
+        },
+        {
+          "feature": "- Added Slug Boss to beat"
+        },
+        {
+          "feature": "- Added Food/Cooking System with ingredients that drop from enemies"
+        },
+        {
+          "feature": "- Added Sinking well where you can sacrifice your items for a base-stat bonus"
+        },
+        {
+          "feature": "- Added Quality upgrades for Tier 2 Items"
+        },
+        {
+          "feature": "- Added lots of QoL"
+        }
+      ]
+    },
+    {
+      "title": "0.09 Playtest 5 is now available!",
+      "date": "2021-08-24 09:27:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629329550658",
+      "content": "Hey guys,\n\nPlaytest 5 is now available. \nYou can access it by right clicking on progress game -> properties -> Betas -> select \"playtest\" beta branch.\n\nThis playtest is meant to create a foundation of the game:\n- simplified Gathering\n- Crafting (deeper scriptability with unlocks via building the smith and finding recipes)\n- weapon-masteries: weapon-masteries without the planned mastery-tree, but with updated scalings\n- Weapons now have stat-scalings, which let the damage of the weapon scale with a certain percentage of a stat\n- Tier 2 is now available: the balancing of these is meant to fill the hole that will be filled by equipment-upgrading at a later point (or it gets unlocked a bit later in the game)\n- Basic Skills: Every weapon-type now has a basic skill that dynamically changes depending on what weapon-type you have equippped. These skills get stronger by using them\n- New Zone: Ruins: Fight slugs in an adjacent destroyed part of the town.\n- basic concept for the Town + Building buildings\n- new monsters\n- revamped Monster-titles\n- Improved Tooltips for nearly everything\n- revamped achievements\n- You now have to manually turn in monster-title milestones and Achievements to be more idle friendly (and maybe make it more satisfying that you dont just get all the stuff automatically)\n\n\nHave a great time!",
+      "key": "1370410::e2f84ca62690e5a4ecb2931db608d45c150a18c0",
+      "tags": [
+        {
+          "feature": "- simplified Gathering"
+        },
+        {
+          "feature": "- Crafting (deeper scriptability with unlocks via building the smith and finding recipes)"
+        },
+        {
+          "feature": "- weapon-masteries: weapon-masteries without the planned mastery-tree, but with updated scalings"
+        },
+        {
+          "feature": "- Weapons now have stat-scalings, which let the damage of the weapon scale with a certain percentage of a stat"
+        },
+        {
+          "feature": "- Tier 2 is now available: the balancing of these is meant to fill the hole that will be filled by equipment-upgrading at a later point (or it gets unlocked a bit later in the game)"
+        },
+        {
+          "feature": "- Basic Skills: Every weapon-type now has a basic skill that dynamically changes depending on what weapon-type you have equippped. These skills get stronger by using them"
+        },
+        {
+          "feature": "- New Zone: Ruins: Fight slugs in an adjacent destroyed part of the town."
+        },
+        {
+          "feature": "- basic concept for the Town + Building buildings"
+        },
+        {
+          "feature": "- new monsters"
+        },
+        {
+          "feature": "- revamped Monster-titles"
+        },
+        {
+          "feature": "- Improved Tooltips for nearly everything"
+        },
+        {
+          "feature": "- revamped achievements"
+        },
+        {
+          "feature": "- You now have to manually turn in monster-title milestones and Achievements to be more idle friendly (and maybe make it more satisfying that you dont just get all the stuff automatically)"
+        }
+      ]
+    },
+    {
+      "title": "0.09 playtest-4 \"The Big Gathering/Crafting\" is available now!",
+      "date": "2021-05-01 06:55:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045878079446358",
+      "content": "Hey everyone!\n\nPlaytest-4 is now available on the [url=https://discord.com/invite/MmJrgYE]Discord[/url]! Discord Go to #roles and react to the Playtester message. With that you get access to the playtester-channels where you can download the playtest-version.\n\nin playtest-4 the focus is on adding the foundation of gathering, resources and crafting to the game. Additionally this implements and adds improvements over the last playtest version, like:\n[list]\n[*]Monsters cannot spawn 2 times in a row anymore\n[*]Certain stronger monsters now start spawning when the player reaches a certain lvl  (mushroom-soldier on lvl 3, floating rune stone on lvl 4)\n[*]Added Resource-Costs to crafting recipes\n[*]Reworked Crafting-Tooltip to show cost + resource goes red when you dont have enough\n[*]The player will encounter gathering-encounters (only iron for now) after a set amount of monsters defeated (after 2 combat victories)\n[*]Gathering Nodes have a limited timer with milestones where the player gets resources depending on his mastery-level in the according gathering-mastery. The further you get the higher the rewards from the mining-node.\n[*]Changed damage calculation to weapon-based from global damage (this will enable dual wield or special weapon scalings)\n[*]Did a rough balancing pass for monsters and items. Balancing is still temporary/placeholder.\n[*]Some improvements of the system-windows\n[*]Added Resource-drops to visualise and give feedback on the loot you get from monsters\n[/list]\n\n\nplaytest-5 \"Masteries: The Deepening\" will focus on adding weapon-skills and improving/deepening the Masteries.\n\nHave a great day/night everyone!",
+      "key": "1370410::436378db8d7f5a4bcd2d6f222f5025c84cf92b37",
+      "tags": [
+        {
+          "feature": "in playtest-4 the focus is on adding the foundation of gathering, resources and crafting to the game."
+        },
+        {
+          "bug": "Monsters cannot spawn 2 times in a row anymore"
+        },
+        {
+          "feature": "Certain stronger monsters now start spawning when the player reaches a certain lvl (mushroom-soldier on lvl 3, floating rune stone on lvl 4)"
+        },
+        {
+          "feature": "Added Resource-Costs to crafting recipes"
+        },
+        {
+          "feature": "Reworked Crafting-Tooltip to show cost + resource goes red when you dont have enough"
+        },
+        {
+          "feature": "The player will encounter gathering-encounters (only iron for now) after a set amount of monsters defeated (after 2 combat victories)"
+        },
+        {
+          "feature": "Gathering Nodes have a limited timer with milestones where the player gets resources depending on his mastery-level in the according gathering-mastery."
+        },
+        {
+          "feature": "Changed damage calculation to weapon-based from global damage (this will enable dual wield or special weapon scalings)"
+        },
+        {
+          "balance_change": "Did a rough balancing pass for monsters and items."
+        },
+        {
+          "feature": "Some improvements of the system-windows"
+        },
+        {
+          "feature": "Added Resource-drops to visualise and give feedback on the loot you get from monsters"
+        }
+      ]
+    },
+    {
+      "title": "Progress Update on 0.09",
+      "date": "2020-12-10 05:43:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3879252510630856835",
+      "content": "Hey guys!\n\nIt's been a long time since the last update and wanted to give all of you that dont follow on discord an update on how things are!\n\n[img]{STEAM_CLAN_IMAGE}/38428232/fef8a6efe06f633cc4bc41e0956b0c4be4c21036.png[/img]\n\nI did a lot of very fundamental changes to the game's backend/code whereas in consequence i retouched around 90% of the game's code, with the consequence that it gets easier to add more and more different mechanics, systems and content day by day.\n\nThe development is currently a slow-burn, but is making steady progress. Im planning on working on this game for many years to come, so i try to work on it as i feel inspired. Around 0.08 release i pushed myself on the development so hard i kind of got burnt out on the project and needed a couple of weeks before feeling motivated again. As this is a passion-project, preserving that passion is a big focus for me! This might mean that things take longer than they would for other developers (also since im working on the game by myself and on my spare-time).\n\nOne of the central themes is to reduce the stat-inflation in 0.08 and still have impactful felt progress. This will require a lot of fine-tuning and therefore a lot of feedback from you guys as soon as the 0.09 experimental is up.\n\nI will announce here as soon as there is an experimental build up and how to access it!\n\n\nHere a small overview of what is now in the game:\n- Enchanting: Find Enchants and add Buffs to your items which can range from stat-increases to traits or proccs\n- Armor-Classes: 3 different armor-classes: Plate (Bulky, enduring, physical), Leather (quick, elusive, damage), Cloth (caster-based)\n- Gathering-Encounters: Mine nodes, chop trees, gather herbs to get resources and gathering mastery experience\n- Partly done: Tutorial experience\n- Zones: The worls are now split into multiple zones, and you are working towards defeating the boss of the first world, to get access to the next world, which will unlock new systems/mechanics.\n- Partially Done: Power-score/Monster-tiers: Encounter new and stronger monsters depending on your performance in a zone.\n- Auto-Caster: Base functionality is implemented and you can cast spells while idle\n- The game now has moveable System-Windows, making it much easier to organize the UI, as you may need the Inventory for X of Systems, so instead of having to bloat each Option-Menu, the player can now open and adjust windows as he/she sees fit.\n\n\nWhat still has to be done:\n\n- Flesh out Town-UI and town-related mechanics\n- Add Spell-schools (Unlock more spells and modifiers for your spells by using spells of a certain school)\n- Add Perk-Trees (Modify the behaviour of your favorite perks to make them fit your playstyle better)\n- Add Weapon/Mastery Trees (Unlock Modifiers which enable different kinds of builds/fantasies, like Plate-wearing caster, brawling cloth-wearer etc.)\n- 2 hand/ dual wield Perk (change dual wield logic in the process)\n- Implement new Plus-Roll concept (use special materials for the plus-roll process)\n- Implement new Equip-Quality concept (The Blacksmith requires certain tools to upgrade the quality of your equipment, unlocking higher possible quality-upgrade-levels with each found tool)\n- Add Animations to gathering-encounters and gathering mastery interactions (increasing drop rate, rare resource-drops and faster mining/chopping/gathering)\n- Add Auto-Caster upgrades (More slots, faster cast-times, ,lower cooldowns)\n- Add Mana-Pool:\n- Deepen Armor-Class fantasy\n- Revamp World map (Art + UI)\n- Find Npcs throughout the zones to unlock new systems/mechanics/buildings\n- Add many more Skills/Spells to the game\n- Add many more monsters\n- And more things i may have forgotten about or will do spontaneously until 0.09\n\nHere a small video showcasing how the game looks now, with a lot more stuff to come/get added!\n\n[previewyoutube=JwJ45utnrQc;full][/previewyoutube]\n\nThe video doesnt show the reworked masteries (whoopsi). But i moved the perks/proccs the masteries had, to Perks, so you can much better combine what kind of playstyles you want and what kind of weapons/armor you prefer, so you can tailor the game around your playstyle!\n\nThank you for the very positive feedback, suggestions and such! Im completely floored by the playtime of some people, which played my game 60+ hours. The 0.08 playtime was around 3h max. So some of you playing the game over and over again or farming infinite burrow and consequently breaking the integer-barrier is a huge honor to me! And shows me that the game does something right and i want/plan/hope to build on top of that!\nThe attention 0.08 got was more than i ever expected. So i hope that 0.09 will be at least as much fun as 0.08 and offer more long-term fun!\nIm hyped to get the new changes into your hands and see how you experience them!",
+      "key": "1370410::e8c078d0f4a0d1aeadb84538e4c9505146c0e4e2",
+      "tags": [
+        {
+          "feature": "- Enchanting: Find Enchants and add Buffs to your items which can range from stat-increases to traits or proccs"
+        },
+        {
+          "feature": "- Armor-Classes: 3 different armor-classes: Plate (Bulky, enduring, physical), Leather (quick, elusive, damage), Cloth (caster-based)"
+        },
+        {
+          "feature": "- Gathering-Encounters: Mine nodes, chop trees, gather herbs to get resources and gathering mastery experience"
+        },
+        {
+          "feature": "- Zones: The worls are now split into multiple zones, and you are working towards defeating the boss of the first world, to get access to the next world, which will unlock new systems/mechanics."
+        },
+        {
+          "feature": "- Auto-Caster: Base functionality is implemented and you can cast spells while idle"
+        },
+        {
+          "feature": "- The game now has moveable System-Windows, making it much easier to organize the UI, as you may need the Inventory for X of Systems, so instead of having to bloat each Option-Menu, the player can now open and adjust windows as he/she sees fit."
+        }
+      ]
+    },
+    {
+      "title": "v0.08.c.4.1.2 - Maintenance",
+      "date": "2020-09-10 14:16:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130375314",
+      "content": "Hey guys,\n\ni got some cases now that lost their save-games after a crash. My idea is that this could be due to the game crashing during the saving-process. So the Save-file gets corrupted and cant be read on game-startup.\n\n- Auto-save interval is now 30 seconds (down from 10) because i had it at 10 seconds mainly due to the crashes on release\n- Save-Backup system added: The game is now saved in 2 files. So if the main-save-file gets corrupted by any means, the backup will be loaded instead. This should cover the simpler cases of save-file corruption.\n- Added Save-Export/Import File-Dialogue. Browsers still have the old copy-paste import/export due to browser-permissions not enabling the game to access the file-system of the computer.\n\n\nIm still actively working towards the first experimental build of 0.09. Join on [url=https://discord.com/invite/MmJrgYE]Discord[/url] to get a peek at the development updates!\n\nKeep it up!",
+      "key": "1370410::3f86d7c039a4b8a86643addb21aef2090112399a",
+      "tags": [
+        {
+          "balance_change": "- Auto-save interval is now 30 seconds (down from 10) because i had it at 10 seconds mainly due to the crashes on release"
+        },
+        {
+          "feature": "- Save-Backup system added: The game is now saved in 2 files. So if the main-save-file gets corrupted by any means, the backup will be loaded instead. This should cover the simpler cases of save-file corruption."
+        },
+        {
+          "feature": "- Added Save-Export/Import File-Dialogue. Browsers still have the old copy-paste import/export due to browser-permissions not enabling the game to access the file-system of the computer."
+        }
+      ]
+    },
+    {
+      "title": "Emergency Hotfix - v0.08.c.4.1.1",
+      "date": "2020-08-20 15:30:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3670950880879181843",
+      "content": "Hey guys,\n\nEmergency Hotfix (v0.08.c.4.1.1):\n\n- Fixed Infinite-Burrow 1 HP bug\n- Fixed \"cannot connect signal\" spam in console\n\nThe last patch accidentally broke infinite burrow for some players, where the player would drop to 1 hp. To prevent players healing I made it so, that the infinite Burrow would remember the damage the player had taken the last time he was in. But I forgot to clear the cached damage after it got applied, so it would reapply it every stage and accumulate it. So the player would be at 1 HP permanently and always one shot. Making infinite Burrow unplayable!\n\nKeep it up!",
+      "key": "1370410::0d7e7466c0dd764cdeadc5caddc1095190725a03",
+      "tags": [
+        {
+          "bug": "- Fixed Infinite-Burrow 1 HP bug"
+        },
+        {
+          "bug": "- Fixed \"cannot connect signal\" spam in console"
+        }
+      ]
+    },
+    {
+      "title": "Minor fixes - v0.08.c.4.1",
+      "date": "2020-08-20 05:03:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3670950880877608895",
+      "content": "Hey guys,\n\nim bringing you v0.08.c.4.1\n\n[img]{STEAM_CLAN_IMAGE}/38428232/e6e00c66071550af868261834f0a9fdf69c4e52f.png[/img]\nFanart by Wacky T. Bobcat\n\n\nsome small fixes:\n\n- The improved player-sprite is now in (I promise this time its for realz!)\n\n- Fixed the Enhancement-Slot tooltip appearing when hovering over a certain point on the screen although the Inventory/Enhancing Window was closed\n\n- Infinite-World: Added Stage persistence: The world will now remember the last stage (this will also be saved in your savegame) you have been on when swapping to other worlds when you maybe want to complete some monster-titles, but dont want to loose your progress in the infinite burrow. The hp you lost will also be saved.\n\n- Fixed the performance glitches/crashes in infinite-burrow by limiting the Character-button sparkles on level up to 1 and limiting the maximum event-messages to 50. All event-messages beyond that will be discarded. Here i just assume that people that have that many event-messages queued up, dont need/care for event-messages. The info for the events is still available in the notifications-option.\n\n\nKeep it up!",
+      "key": "1370410::358799d97b84a38852b68d53bf3aa0bc62f9b42a",
+      "tags": [
+        {
+          "feature": "- The improved player-sprite is now in (I promise this time its for realz!)"
+        },
+        {
+          "bug": "- Fixed the Enhancement-Slot tooltip appearing when hovering over a certain point on the screen although the Inventory/Enhancing Window was closed"
+        },
+        {
+          "feature": "- Infinite-World: Added Stage persistence: The world will now remember the last stage (this will also be saved in your savegame) you have been on when swapping to other worlds when you maybe want to complete some monster-titles, but dont want to loose your progress in the infinite burrow. The hp you lost will also be saved."
+        },
+        {
+          "bug": "- Fixed the performance glitches/crashes in infinite-burrow by limiting the Character-button sparkles on level up to 1 and limiting the maximum event-messages to 50. All event-messages beyond that will be discarded. Here i just assume that people that have that many event-messages queued up, dont need/care for event-messages. The info for the events is still available in the notifications-option."
+        }
+      ]
+    },
+    {
+      "title": "Update v0.08.c.4",
+      "date": "2020-08-18 05:29:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4828375451936568372",
+      "content": "Hey guys,\n\nim bringing you v0.08.c.4\n\nfirst patch after Steam-Release:\n\n- Fixed Tooltip in Echanting Slot showing the tooltip of the old item after dropping a different one into it\n- Fixed not being able to zoom out in the map when the game-screen was maximized or otherwise enlarged beyond its default size\n- Fixed a possible console spam by Tutorial_Dialogue\n- Fixed the Date-formatting for auto-saves in the console\n- The player sprite now is a bit more polished (it was one of the very first assets i drew for the game)\n\nAnd thank you for all the support and attention! Blows my mind!\n\nAwesome Fanart is by Wacky T. Bobcat! \n\nKeep it up!",
+      "key": "1370410::6d4127cd7f1360d3e9769ba7c903f345feeaa04f",
+      "tags": [
+        {
+          "bug": "- Fixed Tooltip in Echanting Slot showing the tooltip of the old item after dropping a different one into it"
+        },
+        {
+          "bug": "- Fixed not being able to zoom out in the map when the game-screen was maximized or otherwise enlarged beyond its default size"
+        },
+        {
+          "bug": "- Fixed a possible console spam by Tutorial_Dialogue"
+        },
+        {
+          "bug": "- Fixed the Date-formatting for auto-saves in the console"
+        }
+      ]
+    }
+  ]
+}

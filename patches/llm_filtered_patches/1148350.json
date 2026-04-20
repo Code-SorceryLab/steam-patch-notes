@@ -1,0 +1,165 @@
+{
+  "appId": "1148350",
+  "count": 3,
+  "notes": [
+    {
+      "title": "Version 99.3",
+      "date": "2025-02-21 22:01:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353246233",
+      "content": "- Fix gravity leaking through gravity wall for a frame when undoing\n- Fix infinite pressure / velocity bug in the bottom right corner\n- Fix missing elements and spurious warning in certain saves made between versions 78.1 and 96.0\n- Cap VIBR .tmp and explosion .temp\n- Fix prop sampling ignoring temperature scale\n- Fix !set commands defaulting to Kelvin, instead of to current temperature scale\n- Fix possible game crash when using invalid coordinates in !bubble\n- Fix rx/ry arguments to sim.toolBox\n- Fix compatibility sim.TOOL_* constants\n- Make gravity mask accessible from Lua\n- Fixed a typo in the rules (via ClayStan404 #994)\n\nSince there were so many bugfixes this month, we decided to do another minor release. Some of the bugs are very old, like gravity wall leaks while undoing, or an infinite pressure bug in the corner. Others are new, like elements being missing in certain older saves.",
+      "key": "1148350::824f17af2c4390d85b5733847a01e23d18171c5e",
+      "tags": [
+        {
+          "bug": "- Fix gravity leaking through gravity wall for a frame when undoing"
+        },
+        {
+          "bug": "- Fix infinite pressure / velocity bug in the bottom right corner"
+        },
+        {
+          "bug": "- Fix missing elements and spurious warning in certain saves made between versions 78.1 and 96.0"
+        },
+        {
+          "bug": "- Fix prop sampling ignoring temperature scale"
+        },
+        {
+          "bug": "- Fix !set commands defaulting to Kelvin, instead of to current temperature scale"
+        },
+        {
+          "bug": "- Fix possible game crash when using invalid coordinates in !bubble"
+        },
+        {
+          "bug": "- Fix rx/ry arguments to sim.toolBox"
+        },
+        {
+          "bug": "- Fix compatibility sim.TOOL_* constants"
+        },
+        {
+          "bug": "- Fixed a typo in the rules (via ClayStan404 #994)"
+        },
+        {
+          "feature": "- Make gravity mask accessible from Lua"
+        }
+      ]
+    },
+    {
+      "title": "Version 99.2",
+      "date": "2025-02-01 18:54:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123161589",
+      "content": "- Fix update check not processing when simulation is paused or when manually triggered\n- Fix PIPE rendering garbage data as elements when carrying PIPE with PIPE\n- Stop displaying 0 FPS when the sim is paused\n- Fix an issue where fire effects rapidly jump to their end results in high refresh rate monitors, when pausing\n- Fix some UI animations running faster in high refresh rate monitors\n\nThis is a small update to fix bugs from version 99.1. It brings the fps display back in line with how it was before, and fixes some other bugs on high refresh rate monitors",
+      "key": "1148350::b5e5fb7ef54eb20834ef0436bf8cb483ca7bf0cb",
+      "tags": [
+        {
+          "bug": "- Fix update check not processing when simulation is paused or when manually triggered"
+        },
+        {
+          "bug": "- Fix PIPE rendering garbage data as elements when carrying PIPE with PIPE"
+        },
+        {
+          "bug": "- Stop displaying 0 FPS when the sim is paused"
+        },
+        {
+          "bug": "- Fix an issue where fire effects rapidly jump to their end results in high refresh rate monitors, when pausing"
+        },
+        {
+          "bug": "- Fix some UI animations running faster in high refresh rate monitors"
+        }
+      ]
+    },
+    {
+      "title": "Powder Toy ver. 99.0",
+      "date": "2024-12-25 00:03:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930804802",
+      "content": "You wake up in the morning, and rush downstairs to your tree. Instead of wrapped presents, you find GLAS containers. What is this? DUST? WATeR? PLUTonium? And a stocking full of COAL?\n\nThat's right, it's a new version of The Powder Toy, just in time for the holidays.\n\nThis version adds some new options to the save browser to improve searching, and puts rendering into a separate thread, which can really boost the framerate in certain scenarios with fancy effects on. There's also now in-game credits, a new tools api for creating Lua tools, and various simulation / crash fixes. Full changelog below:\n\n- Add an option to render the simulation on a separate thread. This may increase framerate when fancy effects are in use\n- Add day/week/month/year selector in the search\n- Add documentation on new advanced search (press F1 in save browser)\n- Add credits UI (accessible from options menu)\n- RSST/RSSS now sets its .tmp from the .ctype of nearby BCLN/PBCN\n- Add !get console command\n\n- Improve heat convection in ambient heat\n- FIRE from HYGN+OXYG now creates WTRV, not DSTW (via jm211-tpt #979)\n- STOR can absorb radiation particles (via jm211-tpt #978)\n- Make BGLA PROP_DEADLY (via ChromicQuanta #964)\n- Add CtypeDraw for VOID / PVOD (via Onestay42 #953)\n- Make paste previews follow the current renderer settings\n- Clicking \"Submit\" comment with an empty textbox reloads comments\n- Show placeholder text in text fields even when focused\n- Don't complain about missing elements that aren't actually used\n- Ctrl+q - don't trigger quit dialog if alt is also held\n- Make global quit shortcut optional\n\n- Fix RSST/RSSS not respecting the CarriesCtypeIn field\n- Reset GEL's tmp field when it turns into RSST\n- Fix saves that abuse extreme spark effects to lag the game\n- Fix chance of NEUT spawning PHOT in GLAS and of PHOT multiplying in GLOW\n- Reaction bounds fixing for EMP and VIBR (via jm211-tpt #980)\n- CRMC low pressure - preserve .temp when breaking\n- Fix unnatural stacking near powers of 2 positions\n- Fix stamp browser refusing to show stamps sometimes\n- Stop scrolling in ScrollPanels on mousedown\n- Fix result of \"Large Screen\" dialog on first launch being ignored, causing scale to reset back to 1 on the second launch\n- Fix automatic HiDPI scaling, TPT is now in full control of its own scale (via dxgldotorg #956)\n- Fix crash when drag-and-dropping drives from My Computer into TPT\n- Fix crash involving invalid SOAP properties\n- Fix crash when navigating away from a save while voting on it\n\n- Implement Lua tools (tools. api)\n- Add sim.listDefaultGol\n- Expose sim.canMove constants\n- New property PROP_PHOTPASS that allows PHOT to pass through an element\n- Fix gfx.drawPixel being unable to draw in event.AFTERSIMDRAW\n- Fix NUM_PARTS being wrong almost all the time\n- Track custom elements inside SNOW/ICE ctype when saving\n- Remove CRACKER and CRACKER2 menusections",
+      "key": "1148350::728af1075607fea5087428707d093b51120560a8",
+      "tags": [
+        {
+          "feature": "- Add an option to render the simulation on a separate thread. This may increase framerate when fancy effects are in use"
+        },
+        {
+          "feature": "- Add day/week/month/year selector in the search"
+        },
+        {
+          "feature": "- Add documentation on new advanced search (press F1 in save browser)"
+        },
+        {
+          "feature": "- Add credits UI (accessible from options menu)"
+        },
+        {
+          "feature": "- Add !get console command"
+        },
+        {
+          "balance_change": "- Improve heat convection in ambient heat"
+        },
+        {
+          "balance_change": "- FIRE from HYGN+OXYG now creates WTRV, not DSTW (via jm211-tpt #979)"
+        },
+        {
+          "balance_change": "- STOR can absorb radiation particles (via jm211-tpt #978)"
+        },
+        {
+          "balance_change": "- Make BGLA PROP_DEADLY (via ChromicQuanta #964)"
+        },
+        {
+          "feature": "- Add CtypeDraw for VOID / PVOD (via Onestay42 #953)"
+        },
+        {
+          "bug": "- Fix RSST/RSSS not respecting the CarriesCtypeIn field"
+        },
+        {
+          "bug": "- Reset GEL's tmp field when it turns into RSST"
+        },
+        {
+          "bug": "- Fix saves that abuse extreme spark effects to lag the game"
+        },
+        {
+          "bug": "- Fix chance of NEUT spawning PHOT in GLAS and of PHOT multiplying in GLOW"
+        },
+        {
+          "bug": "- Reaction bounds fixing for EMP and VIBR (via jm211-tpt #980)"
+        },
+        {
+          "bug": "- CRMC low pressure - preserve .temp when breaking"
+        },
+        {
+          "bug": "- Fix unnatural stacking near powers of 2 positions"
+        },
+        {
+          "bug": "- Fix stamp browser refusing to show stamps sometimes"
+        },
+        {
+          "bug": "- Fix result of \"Large Screen\" dialog on first launch being ignored, causing scale to reset back to 1 on the second launch"
+        },
+        {
+          "bug": "- Fix automatic HiDPI scaling, TPT is now in full control of its own scale (via dxgldotorg #956)"
+        },
+        {
+          "bug": "- Fix crash when drag-and-dropping drives from My Computer into TPT"
+        },
+        {
+          "bug": "- Fix crash involving invalid SOAP properties"
+        },
+        {
+          "bug": "- Fix crash when navigating away from a save while voting on it"
+        },
+        {
+          "feature": "- Implement Lua tools (tools. api)"
+        },
+        {
+          "feature": "- Add sim.listDefaultGol"
+        },
+        {
+          "feature": "- Expose sim.canMove constants"
+        },
+        {
+          "feature": "- New property PROP_PHOTPASS that allows PHOT to pass through an element"
+        },
+        {
+          "bug": "- Fix gfx.drawPixel being unable to draw in event.AFTERSIMDRAW"
+        },
+        {
+          "bug": "- Fix NUM_PARTS being wrong almost all the time"
+        }
+      ]
+    }
+  ]
+}

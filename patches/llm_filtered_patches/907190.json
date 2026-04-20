@@ -1,0 +1,510 @@
+{
+  "appId": "907190",
+  "count": 26,
+  "notes": [
+    {
+      "title": "Version 0.4.2 Released",
+      "date": "2022-07-29 21:12:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4587497456686234752",
+      "content": "Turns out I didn't get the leaderboards right on the first try.  Dang.  The champ boards were storing the points, cars, and wheels from the last track instead of the sum of those from the championship.  It was a minor error in the secondary data, but it was worth a patch update sooner than later, especially since the other WIP could take some time to complete.\n\n[h3]Fixes:[/h3]\n[list]\n[*] Champ boards now store points, cars, and wheel sums from entire championship instead of just the last track.\n[/list][h3]Changes:[/h3]\n[list]\n[*] The share image now shows the laps total from the championship (because it may not be the max laps possible), and also now changes the text for an endurance race.\n[/list]",
+      "key": "907190::2060f4274cabb8d88dadfd0e737a207ef0dbd838",
+      "tags": [
+        {
+          "bug": "[*] Champ boards now store points, cars, and wheel sums from entire championship instead of just the last track."
+        },
+        {
+          "feature": "[*] The share image now shows the laps total from the championship (because it may not be the max laps possible), and also now changes the text for an endurance race."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.4.1 Released - A.I.-based Wodifiers",
+      "date": "2022-07-22 16:47:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598755821869957089",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/dc7ad2339951797456892b13dbd1ed495b8261c3.png[/img]\n\nBecause some weren't \"getting\" the perhaps-too-humanlike oddball A.I.s built into the game, and/or just thinking the A.I. was not well done because some of them crash around a lot (due to their intentional and varied personalities), I had the idea to use a couple of these personalities to create a couple more \"wods\" (Wacky Wodifiers/Leader Lamifiers) for the game.  Because the needed personalities were already built, it just took maybe only an hour or two to add and test these wods.  There was already a speed racer personality for the \"Bring it on\" racing wod.  And there was already a heat seeker personality for the \"King of the hill\" leader-lynching wod.  With a tweak of some of their settings to make them more interesting for their particular wods, and they were good to go.  I can always tune them a bit more later if needed.\n\nI must admit, it is [i]sometimes[/i] more enjoyable, when playing alone, to race against four racing A.I.s instead of just the one in the default group of A.I.s.  Although... they are pretty easy to beat on the tri-oval if you get an early lead and don't crash.  They do, however, get more interesting and challenging on more interesting tracks.\n\n[h3]New features:[/h3]\n[list]\n[*] Added the \"Bring it on (Racing A.I.)\" wacky wodifer.  Turns all A.I.s into racecar drivers.\n[*] Added the \"King of the hill\" leader lamifier.  Turns all A.I.s into leader lynchers (and, otherwise, overly aggressive drivers).\n[list][*] If both \"Bring it on\" and \"King of the hill\" are turned on, they spit the A.I.s between them.\n[/list][*] Added text to the leaderboard pages that shows which leaderboard you are looking at.\n[/list][h3]Changes:[/h3]\n[list]\n[*] Minor menu changes and other code changes.\n[/list]",
+      "key": "907190::cbd7a8edb331497ac73295bf3c6f5ab0277c5b9c",
+      "tags": [
+        {
+          "feature": "[*] Added the \"Bring it on (Racing A.I.)\" wacky wodifer.  Turns all A.I.s into racecar drivers."
+        },
+        {
+          "feature": "[*] Added the \"King of the hill\" leader lamifier.  Turns all A.I.s into leader lynchers (and, otherwise, overly aggressive drivers)."
+        },
+        {
+          "feature": "[*] If both \"Bring it on\" and \"King of the hill\" are turned on, they spit the A.I.s between them."
+        },
+        {
+          "feature": "[*] Added text to the leaderboard pages that shows which leaderboard you are looking at."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.4.0 Released - Leaderboards!",
+      "date": "2022-07-19 20:02:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598755821859520699",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/2e2341386ef29594b2b5c33534c29956e0ed17a6.png[/img]\n\nOne of the few remaining major basic features has finally been added to the game.  Leaderboards!  (Yeah.. only local leaderboards... sorry if you were hoping for online global as well.  Those will arrive only once enough sales come in to justify the expense.)  As you will see once you get into them, adding leaderboards to such a broad game primarily targeted at a variety of party play, was no small task.  I could have made a more simple (and rather lame) first attempt... but I'm a data engineer by day and couldn't help myself by doing it right no matter the complexity of it all (just like how I, perhaps over-zealously, tackled the physics, skidmarks, audio, and wacky A.I.).\n\nWith leaderboards also comes bonafide co-op play (we hear small cheers in the distance).  That is to say, part of the array of leaderboards is a 2-player time-trial leaderboard.  It follows basic team-time-trial rules of recording the laps/time of the second player to cross the line, instead of the first player.  So, in other words, work together to get both of you across the finish.  This is automatically tracked in 2-player games, whether you like it or not; ignore it or not.  If you like this feature and want to see it expanded to 3 and 4 players, let us know.\n\nAlso, besides Championship and Endurance leaderboards, there are also overall leaderboards for race times and fastest-lap times (regardless of game mode they were set in).  Furthermore, the game also tracks what I'm calling \"Maximum Mayhem\" or not.  That is, if you always add a \"wod\" and never remove one, it knows that and rewards you with a separate leaderboard for it.  And, finally, it also keeps separate boards for novice steering (for when I add that feature).  Basically, too-many-thousands of records to manage in the database.  We'll see if I handled it all correctly on the first try (I did test, but it's a lot to test).\n\nWith leaderboards finally done, I can now hopefully get back to filling out the content (tracks and wods) and upping the art, etc.\n\nOh, yeah, the \"Wods\" (Wacky Wodifiers) on the leaderboards are still cryptic.  Sorry.  Not sure when I'll get around to displaying the wods better.  So, until then, here's my code that shows what those numbers translate to:\n[code]\nMAYHEM_HIGHER_MAX_SPEED     = 1;\nMAYHEM_DUCK_CROSSING        = 3;\nMAYHEM_BUDDY_HOLLY_CROSSING = 4;\nMAYHEM_DISPOSABLE_CARS      = 5;\nMAYHEM_JOUSTING             = 6;\nMAYHEM_GREASED_CAR_SEATS    = 7;\nMAYHEM_BIG_WHEELS           = 20;\nMAYHEM_WIDE_WHEELS          = 21;\nMAYHEM_DUALIES              = 22;\nMAYHEM_SUPER_SHIELDS        = 30;\nMAYHEM_OPPOSITE_SHIELDS     = 31;\nMAYHEM_CARAVANS             = 40;\nMAYHEM_BOATS                = 41;\nMAYHEM_DRAG_CHUTES          = 42;\nMAYHEM_PACE_CAR             = 50;\nMAYHEM_PACE_RV              = 51;\nMAYHEM_FINISH_LINE_DONUTS   = 90;\nMAYHEM_LEADER_TRIKES        = 91;\nMAYHEM_LEADER_GREASIER      = 92;\n[/code]\n[b]Also note that I cannot guarantee that scores set during \"early access\" will still be displayed once a final release is made.[/b]  With tracks still being made and tweaked, it wouldn't be fair to contest scores from one version of a track (or tracks) against another.  Some scores might even disappear during early-access development (such as when I make two more tracks and add them to the 8-track champ lineup [which currently runs 8 tracks from 6 in this order: 1,2,3,4,5,6,1,2]).  Outdated scores won't be deleted from the database -- it's that I will likely not bother to find a way to display such multiple versions of scores even though I do indeed store them separately.  It would be too confusing for the players most likely, and a lot of work for little payoff.\n\nSimilarly, note that the demo version of the game uses the same database as the full version, and that demo scores from the \"Overall Leaderboards\" will indeed cross over.  Because, however, the demo's 4-track championship repeats the first two tracks twice, scores from this will not be displayed in the full version's 4-track championship boards (which uses 4 different tracks).  If you really want to see those demo scores after moving to the full version, run the demo and they'll still be there in the db.\n\n[h3]New features:[/h3]\n[list]\n[*] Local leaderboards including breakouts for: overall, solo, 2-player team time trial, championship, endurance, max mayhem, race laps, fastest lap, and novice steering.\n[/list][h3]Changes:[/h3]\n[list]\n[*] Updated Unity from 2017.4.30f1 to 2017.4.40f1.\n[*] Updated Rewired from v1.1.39.1 to v1.1.41.5 (which reports as v1.1.39.3 for some reason [likely due to Unity 2017]).  No new controller support to report here.\n[*] Very, very minor performance improvement along with a bit of game code refactoring.\n[*] Various minor menu tweaks along with some menu code refactoring.\n[/list]",
+      "key": "907190::8d11c380eb28b3ba4a3e860392723f824581b871",
+      "tags": [
+        {
+          "feature": "Local leaderboards including breakouts for: overall, solo, 2-player team time trial, championship, endurance, max mayhem, race laps, fastest lap, and novice steering."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.3.11 Released - Remote Play Together",
+      "date": "2021-04-24 03:58:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4074045244010330578",
+      "content": "These last two releases focus on Steam's feature: Remote Play Together.  At first, a long long time ago, that feature seamed to work with GRITS Racing.  Then, it didn't work so well.  Then, it didn't work at all, except with keyboard input.  With some updates from both Steam and Rewired, we finally took a dive back into this.  Turns out, the biggest problem was that one of us was running Steam's beta channel.  Anyhow, with that corrected and some of these other fixes in place, Remote Play Together seems to be working great.  (This, of course, was all on Windows and I suspect the Linux and Mac builds are easier to work out with Steam.)  Remote Play Together appears to be limited to 4 players... and we haven't tested this limit yet... or if more can be jacked in locally plus the 3 remotes (depending on controller types and Steam Input settings).\n\nThe car is a bit harder to control in low gear with the extra 0.1 to 0.2 seconds of lag with remote play, but the game is otherwise surprisingly playable.  This was with Steam's quality set to Auto or Fast.  It didn't work so well with higher quality settings.\n\n[b]IMPORTANT:[/b]  As part of this fix, to update for Steam Controllers and Steam's virtual Steam Input controllers, go into the Controller Settings menu and select the Restore Defaults button.  Well, that or map the car's Eject Wheels and Horn actions yourself to the Right and Left Stick Buttons yourself for each remote player connected (and/or for each Steam Input player or Steam Controller connected).\n\nThese were quick-fix releases.  If all goes as planned with \"real work,\" I hope to get back to working on new features and content soon.\n\n[h2]Version 0.3.11[/h2]\n\n[h3]Fixes:[/h3]\n[list]\n[*] Rewired wasn't mapping the two stick buttons correctly for the Steam Controller.  Fixed internally -- the fix will be sent to the Rewired dev for inclusion in future updates.\n[/list]\n[h3]Changes:[/h3]\n[list]\n[*] Various menu wording and order changes.  No significant new content.\n[/list]\n\n[h2]Version 0.3.10[/h2]\n\n[h3]Updates:[/h3]\n[list]\n[*] Updated Rewired from v1.1.29.4 to v1.1.39.1.  Most critically, this brings in some Steam virtual controller hotplug fixes.  As usual, this also adds support for more controllers.\n[/list]\n[h3]Changes:[/h3]\n[list]\n[*] Enlarged the spark particle sizes to make the sparks effect more visible.  Any larger and it starts to look more like flame than spark.\n[/list]",
+      "key": "907190::88df827dcccbcedd871a4206d0e786ee793c133d",
+      "tags": [
+        {
+          "bug": "[*] Rewired wasn't mapping the two stick buttons correctly for the Steam Controller.  Fixed internally -- the fix will be sent to the Rewired dev for inclusion in future updates."
+        },
+        {
+          "feature": "[*] Updated Rewired from v1.1.29.4 to v1.1.39.1.  Most critically, this brings in some Steam virtual controller hotplug fixes.  As usual, this also adds support for more controllers."
+        },
+        {
+          "balance_change": "[*] Enlarged the spark particle sizes to make the sparks effect more visible.  Any larger and it starts to look more like flame than spark."
+        }
+      ]
+    },
+    {
+      "title": "Prison Dodgecar is Back!",
+      "date": "2020-07-06 19:23:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3444640809413239071",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/0161358fc798c1943349064e64834fe479ceb2a0.png[/img]\n\nPrison Dodgecar minigame is back!  The best 6-8 player couch minigame on the planet!\n\nWas it gone?  Well, sort of.  While working on adding the team-selection feature, I noticed I had broken the primary feature of Prison Dodgecar some time ago.  Apparently, it broke when I added the feature that allows drivers to fall out of their cars in collisions (which is not used in Prison Dodgecar).  The feature I broke was the attachment of the Tesla Shields\u2122 to the car.  Without that, Prison Dodgecar is a pretty lame bumper-car game.  Boo!  Now, it's a TS-powered bumper-car game again!  Yay!\n\nIn other news, I was wrong in my prediction that the next feature added might be the leaderboards.  That one is a huge push as the leaderboards are not simple for this game.  Having a team selector for the minigames was another gaping hole in basic features and, being a much smaller feature to add, I chose to do it before getting to the leaderboards.  Bummer, eh?\n\n[h3]Version 0.3.9[/h3]\n\nFixes:\n[list]\n[*] Car-mounted Tesla Shields\u2122 in Prison Dodgecar are working again.\n[/list]\n\nNew features:\n[list]\n[*] Team-selector menu for the minigames.\n[/list]\n[url={STEAM_CLAN_IMAGE}/34431352/a93700c79345b4cd2af1f0334df61fc24fa5f1b7.png][img]{STEAM_CLAN_IMAGE}/34431352/5cbd52d9657e81bb08c8e4694834ca338f2446eb.png[/img][/url]",
+      "key": "907190::11ff6ee33707ed51daab03300936828b5c53d87c",
+      "tags": [
+        {
+          "bug": "Car-mounted Tesla Shields\u2122 in Prison Dodgecar are working again."
+        },
+        {
+          "feature": "Team-selector menu for the minigames."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.3.8 Released",
+      "date": "2020-06-15 20:49:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3309530667992178457",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/7d6d67d14f31948ac8812e5f20b86eb8baade6cc.png[/img]\n\n\nFeatures or content?  That is a tough question at times when choosing what to work on next.  This time, I chose features since many features that should make this game more attractive are still missing.  At long last, you can finally enter your own driver names.  Most of the Western European accent characters are also supported (use the X and Y buttons to change the keyboard key).  Names are saved for later easy selection.  100 names can be stored.  Saved names can be deleted with a tool found under the Game Options menu.\n\nThis was also a significant hurdle in the way of getting to the leaderboards feature.  I suspect I'll get to the leaderboards next as it is pretty important to those solo players.  Still so much to do.\n\nI had hoped to get to name entry sooner but it was no small amount of work to do it right.  Building menu features in Unity is a lot more work than just about any other tool.  Building menu features for the player punch-in windows is even more work since you lose what little help Unity gives you when building UI for simultaneous players and you have to build the event and focus system yourself.  I had a good foundation in place from the early punch-in windows... but it was still maybe 60 hours of work.  Time like that is hard to find in a world where you are desperate for work but somehow not cool enough to be hired by anybody anymore.\n\nNew features:\n[list]\n[*] Name selection and new name entry and storage.\n[/list]",
+      "key": "907190::70f14f2c72290755799d82072cc214ed0a0134bf",
+      "tags": [
+        {
+          "feature": "Name selection and new name entry and storage."
+        }
+      ]
+    },
+    {
+      "title": "Endurance Racing Pre-alpha Release",
+      "date": "2020-01-30 02:07:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2609208878379370409",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/10f5870e5ccde53f749b19b11dd3339dbfbb33f2.png[/img]\n\nWith 6 of the planned 24 tracks now built (well, prototyped) it seemed time to start fiddling with Endurance Racing mode so players can select their favorite track and hit it harder.  This is not really Endurance Racing as planned but it is sorta close.  The biggest missing feature is the yellow-flag one.  Currently, Endurance Racing is just a single-track championship run with more laps.  The yellow-flag feature is intended to take that one step further by pausing the race every 10 laps or so to allow one of the trailing players to change up the rules with the usual Wacky Wodifier selection.  Working out how to reconcile such changes mid-race, however, will take some time.  Thus, I chose not to wait for that before allowing entry into this mode.  (Besides, the menu work alone to get this working was a big enough lift [UI work in Unity is about 100x more work than it should be... and why we don't have better menus yet].)\n\nA quick A.I. cheat was also added to Endurance Racing until I have time to build the real solution (whatever that may be).  A.I. cars cannot (under most circumstances) lose more than 2 wheels in enduro mode.  This is to help keep them relevant longer.  Considering the A.I. smarts that still need to be built, this doesn't feel like much of a cheat yet.\n\nIt's tempting to call this a bigger update than I am calling it, but I don't want to call it bigger until I have time to build more interest into Endurance Racing.\n\nChanges:\n[list][*] Wandle track redux with traffic cones replacing many of the large tires\n[*] A lot of menu code refactored under the hood (it all looks the same)\n[/list]\nNew:\n[list][*] Endurance Racing pre-apha introduced\n[/list]",
+      "key": "907190::26a3fb4749814a648d3eedce18b1306eff9d5c6e",
+      "tags": [
+        {
+          "feature": "Endurance Racing pre-apha introduced"
+        },
+        {
+          "bug": "A.I. cars cannot (under most circumstances) lose more than 2 wheels in enduro mode. This is to help keep them relevant longer."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.3.6 Released",
+      "date": "2020-01-22 03:26:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2597949245042783637",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/2186f96956b89f4d98fa8425e8d2118a97089386.png[/img]\n\nThis update doesn't bring much many will care about but it brings something important for us: It allows us to the check the \"full controller support\" box in Steam for better exposure.  Previously, Unity's default game launcher window was disqualifying this tag because it requires a keyboard or mouse to navigate.  Thus, I finally added in-game screen and graphics settings to the Game Options menu and set the Unity launcher to only appear on request.  (If you are running on Mac and it is already set to appear from before this update, you can turn if off yourself with this checkbox in that window: [x] Only show this dialog if the option key is down.)\n\nOur massive Linux community will also be happy to be caught up on updates (namely, the new Italian Mini Prix track).\n\nThis also puts us in a better position for when the Atari VCS finally launches.  While console builds do not need graphics options like this, it is not yet clear how we may first launch on the Atari because they are being annoyingly quiet in communicating with developers.  So, if we can only run on the Atari through side loading, well, we're now set for a keyboard/mouse-free experience there (after install, I hope).\n\nNew features:\n[list][*] Screen and graphics options added to the Game Options menu.\n[/list]\nChanges:\n[list][*] Rewired updated to v1.1.29.4.  As far as GRITS Racing is concerned, this adds support for the Stadia controller, and some other minor fixes to a few other controllers.\n[/list]",
+      "key": "907190::22fb12ab8989338134401e69ea4e97ce0498e9b0",
+      "tags": [
+        {
+          "feature": "Screen and graphics options added to the Game Options menu."
+        },
+        {
+          "feature": "Rewired updated to v1.1.29.4. As far as GRITS Racing is concerned, this adds support for the Stadia controller, and some other minor fixes to a few other controllers."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.3.5 Released",
+      "date": "2020-01-18 21:36:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3690071589850312196",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/a741d64f99e20a70db37525c53e5a3f6ce1ed21b.png[/img]\n\nOn the heals of the last release which brought a small but fundamental change, here comes another small but fundamental change.  I have kicked the AI NPC cars out of the race when you are playing with several friends.  After all, playing against friends should be about playing against friends and not the AI.  And, well, it seems 6 cars is chaotic enough, which makes 12 cars just plain absurd.  This also allowed me to find a simple solution to the AI UI problem: the AI now have trucks with the usual lap counters (I had not done this previously because space is reserved for only 8 players here).  This also has the nice side effect that single-player mode feels more interactive.  AIs are still limited to 1 car each.  Anyhow, here's the rundown of when AI cars will appear:\n\n1-2 players = 4 AI cars\n3 players = 3 AI cars\n4 players = 2 AI cars\n5 players = 1 AI car\n6-8 players = 0 AI cars\n\nThe more aggressive AI personalities are eliminated first.\n\n0.3.5 changes:\n[list][*] Player count vs AI count changes.\n[*] Trucks and lap counting for AIs added.\n[*] Checkered flag added on win.\n[/list]",
+      "key": "907190::7a7d79732b92816912181b8be9b8c214deccc5a0",
+      "tags": [
+        {
+          "feature": "Trucks and lap counting for AIs added."
+        },
+        {
+          "feature": "Checkered flag added on win."
+        }
+      ]
+    },
+    {
+      "title": "The Italian Mini Prix has Arrived!",
+      "date": "2020-01-16 07:08:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3690071589840905631",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/7b36daf9ff5156afe1f28261411f9cbc8f5d93d6.png[/img]\n\nThe Rosa Camuna mini GP track is [i][b]finally[/b][/i] ready for testing (loosely based on a minified Monza).  It was a long haul in part due to some awesome tool writing to make this and future tracks easier to build.  I hope you all enjoy it as much as I do.  Certainly not a beginner's track (you can't full throttle all of it; and be careful with the funky grip on the concrete banking).  You'll currently find it at track 6 in an 8-track lineup.\n\nThis release also brings a big change to a basic mechanic: max speeds.  I noticed many players were very happy with the max speed of the fat-tire car setup.  Well, that setup is 17% slower than the base setup.  Thus, I did some testing that I should have done long ago to see just how slow I could tolerate the max speed and still feel fast and dangerous.  To skip the long story of the deep look I took at things, I landed at cutting the base max speed 15% from 200 kph to 170 kph (124 mph to 106 mph).  Conversely, I increased the max speed for the big-tire setups.  I didn't dig into the gearbox, so the torques should be the same as before.  I think this saner pace is a good move for the majority of players and is pretty close to final, if not final.\n\nNow, don't worry, speed freaks.  I then added a new wacky wodifier for a higher speed limit for all tire setups.  This wod increases the max speed 18% which kicks that 170 kph back up to 200.6 kph (just a smidge faster than the original setup).  I currently call the wod \"Speed limit for pros.\"\n\nSummary of changes wrapped up in this release:\n\nVersion 0.3.2:\n[list][*] Some small AI tweaks including new behavior in the pit lane.\n[*] Other minor changes such as curbs fixed.\n[/list]\nVersion 0.3.3:\n[list][*] New track: Rosa Camuna\n[*] New object type: traffic cones\n[/list]\nVersion 0.3.4:\n[list][*] Max speed redux.\n[*] New Wacky Wodifier: Speed limit for pros\n[*] New Leader Lamifier: Greasier car seat\n[*] Wods listbox now scrollable... no thanks to Unity's crazy UI tools!\n[*] Changed 4-track screenshot layout to a quad instead of a vertical strip.\n[/list]\n\nLinux should see a new build shortly, after I make a few more changes in this current hard push.",
+      "key": "907190::d9416059faa5b5e1232dd227cfd3340617ad49d8",
+      "tags": [
+        {
+          "feature": "New track: Rosa Camuna"
+        },
+        {
+          "feature": "New object type: traffic cones"
+        },
+        {
+          "balance_change": "cutting the base max speed 15% from 200 kph to 170 kph (124 mph to 106 mph)."
+        },
+        {
+          "balance_change": "increased the max speed for the big-tire setups."
+        },
+        {
+          "feature": "added a new wacky wodifier for a higher speed limit for all tire setups."
+        },
+        {
+          "feature": "New Wacky Wodifier: Speed limit for pros"
+        },
+        {
+          "feature": "New Leader Lamifier: Greasier car seat"
+        },
+        {
+          "feature": "Wods listbox now scrollable... no thanks to Unity's crazy UI tools!"
+        },
+        {
+          "feature": "Changed 4-track screenshot layout to a quad instead of a vertical strip."
+        },
+        {
+          "bug": "Other minor changes such as curbs fixed."
+        },
+        {
+          "balance_change": "Some small AI tweaks including new behavior in the pit lane."
+        }
+      ]
+    },
+    {
+      "title": "Linux Build Released",
+      "date": "2019-11-17 02:58:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3657414904098175084",
+      "content": "Admittedly, GRITS Racing is a small fish in a big pond... so... time to find out what it is like to be a small fish in a much smaller pond.  Thus, I took the plunge to run and release a build for Linux.  It was a bit of trouble -- and perhaps a waste of time -- but not that bad as most tools were ready to go for Linux.  Also, this paves the way for building for the Atari VCS when it arrives.  More on the Linux build further down.\n\n0.3.1 updates:\n[list][*] Wwise plugin updated from 2018.1.6 to 2018.1.10 to fix a bug in the Linux build.\n[/list]\nWindows and Mac will likely not see a build of version 0.3.1 since I see nothing else in the plugin update that would affect the game much on those platforms.\n\nIn other news (for my November update) I hope to start work on a new track soon even though my new job is sucking a lot out of me with their insanely-complex proprietary tools they build their simulator with.  We'll see.  I also see I need to move the game towards \"full controller support\" sooner than previously prioritized so I can jump on the new \"Remote Play on TV\" tag in Steam.  To do this, I need to expand the options menu to include settings currently handled by Unity's launcher.\n\nSteam tagged GRITS Racing for their new \"Remote Play Together\" feature but I haven't tested it yet.  But, for those asking for online multiplayer support, maybe this will work well enough for now.\n\n[h1]Linux[/h1]\nRegarding the Linux build, here's the excerpt from our readme:\n\nA Linux build has just been added to the OS offering.  Future Linux support is not guaranteed.  Currently, 64-bit Ubuntu 18.04 with Nvidia drivers is the only supported configuration, and is not yet considered a high priority.  At time of release, the Linux build has only been tested on Linux Mint 19.2 64-bit (Ubuntu 18.04 base).  This was on a pretty outdated mid-2010 Mac Mini with a 2.4 GHz Core 2 Duo and a GeForce 320M and performance was good with the \"Faster (2x AA)\" game option (8x AA was too slow).\n\nOpenGL 3.2 or later is required.  This would roughly include Nvidia since 2006 (GeForce 8), AMD since 2006 (Radeon HD 2000), and Intel since 2012 (HD 4000/IvyBridge).  Good luck with drivers other than Nvidia.\n\nThe SLD2 library must be installed if not already.  Hint:\n\n[code]sudo apt install libsdl2-2.0-0[/code]\n\nThe Unity Launcher may require other libraries such as libcanberra-gtk-?.  If having trouble, launch from the command line to see any messages.\n",
+      "key": "907190::df202f56b9d675cafb10142959e433112a8c4219",
+      "tags": [
+        {
+          "bug": "[*] Wwise plugin updated from 2018.1.6 to 2018.1.10 to fix a bug in the Linux build."
+        },
+        {
+          "feature": "A Linux build has just been added to the OS offering."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.3.0 Released",
+      "date": "2019-09-25 15:24:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2422298078080824195",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/debc060009fc69fb7214fc67c9ee549a455547ab.png[/img]\n\nVersion 0.3.0 doesn't add much that will be noticeable over the last 0.2.x version -- it is more of a wrap to all the 0.2.x edits.  That said, there was still a ton of hard work behind this update.  Most of that was on those barely-noticeable shadows.  The shadow controllers were rebuilt, and then rebuilt again, until I found the right setup for optimal performance with shadows on both static and dynamic objects as well as optimal track editing.  Thus, just about every object was updated (and updated again) even if not significantly so.\n\nNew features:\n[list][*] All objects (of any significant height) now have a shadow (of one sort or another).  This adds a [i]tiiiiiny[/i] bit more depth to the track.  Sometimes I think it works well... and sometimes I think it is silly looking and not worth the effort.  We'll see where it goes from here.\n[/list]\nFixes:\n[list][*] The larger/wider wheels now show the smoke and dust they generate (only the standard wheels were doing this correctly before).  The wheel shadow for the larger wheels was also on the wrong layer.  Not sure why these things weren't fixed much sooner.  I suspect I had noticed it during smoke/dust development, and then forgotten in some rush to publish.  But, I really can't remember.  Regardless, I can't believe it took me this long to notice and fix the smoke/dust problem.\n[*] Many, many, other minor tweaks and sprite updates not worth listing.\n[/list]",
+      "key": "907190::2acf5110c75bbb1a41da94ffc8d61286c3f9866e",
+      "tags": [
+        {
+          "feature": "[*] All objects (of any significant height) now have a shadow (of one sort or another).  This adds a [i]tiiiiiny[/i] bit more depth to the track.  Sometimes I think it works well... and sometimes I think it is silly looking and not worth the effort.  We'll see where it goes from here."
+        },
+        {
+          "bug": "[*] The larger/wider wheels now show the smoke and dust they generate (only the standard wheels were doing this correctly before).  The wheel shadow for the larger wheels was also on the wrong layer.  Not sure why these things weren't fixed much sooner.  I suspect I had noticed it during smoke/dust development, and then forgotten in some rush to publish.  But, I really can't remember.  Regardless, I can't believe it took me this long to notice and fix the smoke/dust problem."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.13 Released",
+      "date": "2019-09-17 19:30:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841122371044",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/ca94dae1a25730cac76a862ce27dbe86268e198a.png[/img]\n\nUpdates:\n[list]\n[*] The drag chute has finally received the attention to detail that pretty much everything else has.  This isn't final polish yet, but at least it is more than the quick test feature that it used to be.  There is new art and the chute inflates with motion.  The collider on the chute has finally been enabled after resolving most scenarios where the chute might get stuck on the wrong side of the track barriers.  This can still happen through no direct fault of the driver, but the precise scenario is extremely rare and, thus, dubbed part of the chaos of the game (don't get rear-ended while diagonally backed into a wall).  Anyhow, the chute can now get tangled on some objects such as other cars -- but this feature has been made to also be fairly forgiving and should untangle fairly easily.\n[/list]",
+      "key": "907190::2a2714822028b50241730591ea5142e53e59781c",
+      "tags": [
+        {
+          "feature": "The drag chute has finally received the attention to detail that pretty much everything else has.  This isn't final polish yet, but at least it is more than the quick test feature that it used to be.  There is new art and the chute inflates with motion."
+        },
+        {
+          "bug": "The collider on the chute has finally been enabled after resolving most scenarios where the chute might get stuck on the wrong side of the track barriers."
+        },
+        {
+          "feature": "Anyhow, the chute can now get tangled on some objects such as other cars -- but this feature has been made to also be fairly forgiving and should untangle fairly easily."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.12 Released",
+      "date": "2019-09-12 22:19:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3658535001293347845",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/4afe45e8eb196c185a9406b8255052f78751b8a6.png[/img]\n\nNew features:\n[list]\n[*] New Wacky Wodifier: Greased car seats.  This is my new favorite wod.  It's for those who think the drivers are a little too glued to their seats considering these jalopies have no seat belts.  I'm tempted to make this the only race mode and cancel all the other wods.  I won't... I don't think... well, not anytime soon.\n[/list]\nChanges:\n[list]\n[*] Wandle track (the figure-8) has been made a bit easier by moving the barrier tires 2 meters further back from the race line.\n[*] Some sprite updates and tweaks.\n[/list]",
+      "key": "907190::a2a8d1f8d9753bd08b1207f5fdba8dec7d0fc027",
+      "tags": [
+        {
+          "feature": "[*] New Wacky Wodifier: Greased car seats.  This is my new favorite wod.  It's for those who think the drivers are a little too glued to their seats considering these jalopies have no seat belts.  I'm tempted to make this the only race mode and cancel all the other wods.  I won't... I don't think... well, not anytime soon."
+        },
+        {
+          "balance_change": "[*] Wandle track (the figure-8) has been made a bit easier by moving the barrier tires 2 meters further back from the race line."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.11 Released",
+      "date": "2019-09-12 22:10:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3658535001293324479",
+      "content": "Some cleanup of things missed in all the work of the last release.\n\nFixes:\n[list]\n[*] Pedestrian cursor was being drawn on the wrong layer.\n[/list]\nOther minor sprite tweaks.",
+      "key": "907190::8b3e1902fe4da86d7aa8c28b52554558cb36a558",
+      "tags": [
+        {
+          "bug": "[list]\n[*] Pedestrian cursor was being drawn on the wrong layer.\n[/list]"
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.10 Released",
+      "date": "2019-09-08 03:32:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2413289226965035041",
+      "content": "[img]{STEAM_CLAN_IMAGE}/34431352/162d5292f36ea3ff57e95700f99363ec331ae323.png[/img]\n\nThis update brings some significant features and updates and -- if you haven't tried GRITS Racing in a while -- now would be a good time to try it again.\n\n[h1]Update summary:[/h1]\n\n0.2.9 new features:\n[list]\n[*] Drivers can now fall out of the car during hard collisions... BOOM!\n[*] AI agents can also fall out.  If their car is still workable they run to it.  If not, they run away until they hit a wall and jump over (really, they just disappear for now).\n[*] Tesla Shields remain on even when in your car (but it takes a close hit to the cockpit to trigger it).  This protects you from t-bones... but mostly helps to unstick the huggy types.\n[*] New car art and palette tweaking to improve color identification and car direction\n[/list]\n0.2.10 new features:\n[list]\n[*] \"Jousting lances\" Wacky Wodifier added\n[*] Wacky Wodifier selection now appears before the first track in addition to between tracks.  (Some players may not like this change but I need to try it out.  Let me know.)\n[/list]\n[h1]The backstory to the design work:[/h1]\n\nMost important to me with this update is that the base game is finally approaching the level of silliness I had first imagined for the game.  This was brought about by adding a feature that allows the driver to fall out of the car in hard collisions (and partly by leaving the Tesla Shield on while driving).  This is a feature that has been discussed for a long time but, honestly, I didn't give it enough weight before because I was hesitant to spend time on the technical challenge of it.  I felt other things were more important early on and that losing wheels would reach the level of silliness I was hoping for with this game.  I was wrong.  The loose wheels bring as much frustration as they do fun.  More fun chaos was needed... and I wasn't terribly sure what that should be.\n\nThe sequence of events that led me here is this:  I wanted Wodifier selection to start before the first track and not just between tracks (because many don't play the game long enough to discover this whole other level to the game).  To do that, I needed one more Wod to have 8 Wods for an 8-track race.  When looking at my todo list of Wods, I decided to go for the jousting lances next for whatever reason (it was a gut feel).  The original alpha plan for the lances was to maybe just trigger the Wheel-eject button when hitting a driver -- thus, forcing the driver out of the car soon after that.  But, while dwelling on this for a few days, I was continually bugged by the thought that literally unseating the driver instead sounds much more fun than knocking the wheels off.  So, after thinking through all the work that needed to be done to make this happen, I decided to go for it.  And, the first step for that was -- guess what? -- actually placing the driver object in the car object (instead of object replacement like I was cheating before) and making the driver unseatable with a breakable joint.  Hence, a driver that can also fall out during a hard collision.  It was a beautiful thing when first testing this, and I was sold.  D'uh!  I already had a feature of drivers on foot....  So why not just exploit that code more?  Should have been more obvious to me.\n\nI'm also extremely happy with the resulting code from the refactoring.  While some things are indeed more complicated with the new features, much of the code is now cleaner because some things are easier or more straight forward now that the driver object is always on screen for the duration of the race (unless you are an AI agent that chose to runaway after destroying your car).\n\nThis object-compilation change also triggered the long-awaited art changes to the car.  The new car art includes a hood that is slightly wider and is now much more close to what was originally envisioned.  A common complaint has been that the cars can get too hard to identify when things get messy.  So, even though the cars are tiny and will remain tiny, my hope was to improve color-identification of cars by 20% or so with more car-paint pixels.  I think I just might have accomplished that.  Yes, this is not a huge improvement but, hopefully, it will be enough of one.  Also, with a much-larger and much-more-realistic cockpit size, hopefully the front end of the car is also now more apparent.  The darker colors have also been lightened a bit (while still staying true to their international racing color origins).  The rest of the palette has also been tweaked to improve color saturation where shaded colors were desaturated for no good reason.  There are more sprite art tweaks coming, so stay tuned (not to mention the art overhaul at some unknown point).\n\nAfter all that, jousting lances could finally be added (not that it went down in that exact order -- there was a lot of parallel development).  The lances brought about plenty of their own game-design challenges.  They aren't as fun as they sound... and probably never will be.  Thus, it was tempting a few times to stop work on them.  The cars are simply too high speed and twitchy, and the world is too open, for formal jousting to happen well (and, thus, I call the Wod \"Jousting lances\" and not \"Jousting\").  I kept working it, however, until I found a design that makes me fairly happy with them.  Again, a lot of refactoring throughout the game to make them work as I eventually worked it out through much testing.  The end result is not terribly easy to use for unseating other drivers... but still fairly enjoyable with how they interact in the physics environment.  Expect maybe only one satisfying lance hit per race.  I have cheated the width of the glove on the end of the lance as wide as I feel I can get away with (about 50cm) for the style of this game... but I'm not terribly sure I won't tweak it wider later.  Note that hitting the driver with the glove is typically required to unseat the driver with the lance.  Hitting with the shaft of the lance typically won't do it -- nor sliding back on the shaft to hit with the glove -- the hit has to originate with the glove.  Also, I'm pretty confident the first request many will make for future lance work is to make them steerable.  Hmm... I'm thinking on how best to do this and am open to suggestions on how exactly they should steer... of the three or so options I currently see.\n",
+      "key": "907190::7cbcaa388db5e1974c30c79916ac8a81e69a9690",
+      "tags": [
+        {
+          "feature": "Drivers can now fall out of the car during hard collisions... BOOM!"
+        },
+        {
+          "feature": "AI agents can also fall out. If their car is still workable they run to it. If not, they run away until they hit a wall and jump over (really, they just disappear for now)."
+        },
+        {
+          "feature": "Tesla Shields remain on even when in your car (but it takes a close hit to the cockpit to trigger it). This protects you from t-bones... but mostly helps to unstick the huggy types."
+        },
+        {
+          "feature": "New car art and palette tweaking to improve color identification and car direction"
+        },
+        {
+          "feature": "\"Jousting lances\" Wacky Wodifier added"
+        },
+        {
+          "feature": "Wacky Wodifier selection now appears before the first track in addition to between tracks. (Some players may not like this change but I need to try it out. Let me know.)"
+        },
+        {
+          "feature": "This was brought about by adding a feature that allows the driver to fall out of the car in hard collisions (and partly by leaving the Tesla Shield on while driving)."
+        },
+        {
+          "feature": "I wanted Wodifier selection to start before the first track and not just between tracks (because many don't play the game long enough to discover this whole other level to the game)."
+        },
+        {
+          "feature": "The original alpha plan for the lances was to maybe just trigger the Wheel-eject button when hitting a driver -- thus, forcing the driver out of the car soon after that."
+        },
+        {
+          "feature": "literally unseating the driver instead sounds much more fun than knocking the wheels off."
+        },
+        {
+          "feature": "actually placing the driver object in the car object (instead of object replacement like I was cheating before) and making the driver unseatable with a breakable joint."
+        },
+        {
+          "feature": "Hence, a driver that can also fall out during a hard collision."
+        },
+        {
+          "feature": "I already had a feature of drivers on foot.... So why not just exploit that code more?"
+        },
+        {
+          "feature": "the new car art includes a hood that is slightly wider and is now much more close to what was originally envisioned."
+        },
+        {
+          "feature": "improve color-identification of cars by 20% or so with more car-paint pixels."
+        },
+        {
+          "feature": "with a much-larger and much-more-realistic cockpit size, hopefully the front end of the car is also now more apparent."
+        },
+        {
+          "feature": "The darker colors have also been lightened a bit (while still staying true to their international racing color origins)."
+        },
+        {
+          "feature": "The rest of the palette has also been tweaked to improve color saturation where shaded colors were desaturated for no good reason."
+        },
+        {
+          "feature": "jousting lances could finally be added (not that it went down in that exact order -- there was a lot of parallel development)."
+        },
+        {
+          "feature": "The end result is not terribly easy to use for unseating other drivers... but still fairly enjoyable with how they interact in the physics environment."
+        },
+        {
+          "feature": "I have cheated the width of the glove on the end of the lance as wide as I feel I can get away with (about 50cm) for the style of this game... but I'm not terribly sure I won't tweak it wider later."
+        },
+        {
+          "feature": "Note that hitting the driver with the glove is typically required to unseat the driver with the lance."
+        },
+        {
+          "feature": "Hitting with the shaft of the lance typically won't do it -- nor sliding back on the shaft to hit with the glove -- the hit has to originate with the glove."
+        },
+        {
+          "feature": "I'm thinking on how best to do this and am open to suggestions on how exactly they should steer... of the three or so options I currently see."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.8 Released... With a New Track!",
+      "date": "2019-08-21 06:43:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2416665403765611395",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34431352/30e49725a4f180760f6f2f9f0091e7c51262decf.png[/img]\r\n\r\nSay hello to the new Wandle figure-8 track!  (Based on the recently-demolished Wimbledon Stadium track in England -- and the same size as near as I could measure from satellite photos.)  I placed it at track 3 in the lineup and moved 3 to 5.  I hope ya'll like it as much as I do.  This track took quite a bit longer than hoped due to the additional features built for it and/or built for other tracks because of it.  About 200 hours.  It has simpler art than tracks before it but, hopefully, it is sufficient until we can come back and redo all the art.\r\n\r\n[url=https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34431352/37f2754762a9e52267df490b643ec5ef8c64158e.png][img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34431352/36deaf8b95ae6d6944e3329eae80dd11c2b75e74.png[/img][/url]\r\nAlso, included here, for the ultra curious, is a photo of some of the physics rigging (the green lines) that goes on behind the scenes in these tracks.  As you can see, it's no small amount of work to rig up a track for all the features the game offers.\r\n\r\nThis update skips v0.2.7 (the new track) and went to v0.2.8 due to the new features that came with the new track shebang.\r\n\r\nSome of the new features/fixes that add to making a mess:\r\n[list]\r\n[*] Breakable barriers!  Regarding barriers that are not critical for keeping the player on screen, or out of certain areas, many of these are now either no longer nailed down or are nailed down with breakable nails.  Not all tracks can make use of this feature but the one's that do should now be just a tiny bit more interesting to crash around on.\r\n[*] The lighter-weight track objects not nailed down (such as hay bales) now show their damage about as quick as everything else.  This was done by adding mass into the equation for damage on dynamic objects.\r\n[*] Tires used as barriers now show damage.  Currently, they \"lose their paint\" and get darker with damage.\r\n[*] Barrier tires now come in many more colors thanks to rewriting some stuff to make this both simpler and more flexible.  A win-win.\r\n[/list]\r\nFixes:\r\n[list]\r\n[*] The drop point for new cars is now adjusted according to width of tires attached (another happy side effect of refactoring stuff for this figure-8 track).  There should be no more pit wall crowding/entanglements when getting a new car with a wide tire setup.  Eventually, I hope to animate the new car event with car drawers and a crane.\r\n[/list]\r\n\r\nIn other news, still job hunting so time on this game is hard to guess and manage.  The next track will probably be a mini Suzuka but we'll see.  The current plan is to work on the remaining tracks in the same order as the order of colors/flags on the punch-in screen.  Thus, it could be a while before I finish minifying Monaco (the choice of Tootsie the Purple Privateer).  Before the next track, however, I need to build more Wodifiers and work out some other things holding things up.\r\n\r\nFinally, in case anyone is keeping track, this game update serves as the August news post.  I don't plan to write a separate news post in months where I expect to publish an update.\r\n\r\nAs always... Thanks for playing!... and party on!!!",
+      "key": "907190::a61f2dd6b7ba9963b6e78daf9ac8d3fd678d3c87",
+      "tags": [
+        {
+          "feature": "Breakable barriers! Regarding barriers that are not critical for keeping the player on screen, or out of certain areas, many of these are now either no longer nailed down or are nailed down with breakable nails. Not all tracks can make use of this feature but the one's that do should now be just a tiny bit more interesting to crash around on."
+        },
+        {
+          "feature": "The lighter-weight track objects not nailed down (such as hay bales) now show their damage about as quick as everything else. This was done by adding mass into the equation for damage on dynamic objects."
+        },
+        {
+          "feature": "Tires used as barriers now show damage. Currently, they \"lose their paint\" and get darker with damage."
+        },
+        {
+          "feature": "Barrier tires now come in many more colors thanks to rewriting some stuff to make this both simpler and more flexible. A win-win."
+        },
+        {
+          "bug": "The drop point for new cars is now adjusted according to width of tires attached (another happy side effect of refactoring stuff for this figure-8 track). There should be no more pit wall crowding/entanglements when getting a new car with a wide tire setup. Eventually, I hope to animate the new car event with car drawers and a crane."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.5 Released",
+      "date": "2019-05-16 04:16:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2905297189246784182",
+      "content": "\u200bNew features:\r\n[list]\r\n[*] 10 laps added as an option (retail version)\r\n[*] Tabletop Mode now rotates the Wacky Wodifiers menu 4 ways instead of just the 2 long edges\r\n[/list]\r\nIn other news, expect updates to come slower because the early-access release isn't selling well enough for any of us to remain full time on this project.  This game is begging for a console release but it's not clear how to get it there at the moment.  Meanwhile, please stay tuned for more tracks or whatever else comes next.",
+      "key": "907190::152583a7fd2a0a53e7c1a837330da6df01eb4e02",
+      "tags": [
+        {
+          "feature": "10 laps added as an option (retail version)"
+        },
+        {
+          "feature": "Tabletop Mode now rotates the Wacky Wodifiers menu 4 ways instead of just the 2 long edges"
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.4 Released",
+      "date": "2019-05-02 23:07:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2404270358324145982",
+      "content": "New features:\r\n[list]\r\n[*] Tabletop Mode!  Added by request.  Find it under Game Options.  This doesn't change any gameplay or mechanics (currently) but allows players during punch-in to set what side of the table they are viewing from, and it changes the controller accordingly.  Meant for venues with tabletop computers, those few individuals with tabletop computers, and those other people crazy enough to lay their TVs on their backs on the coffee table... or to hang projectors from the ceiling pointed at the floor.\r\n[*] The Controller Setup menu now saves changes to disk.\r\n[/list]\r\nFixes:\r\n[list]\r\n[*] Some pause menu funkiness with multiple players has been eliminated.\r\n[*] Controllers not associated with a punched-in player are now completely disabled during a game.\r\n[/list]",
+      "key": "907190::fa4bf39e5a8bd9f867a3793956c4f12007a40eda",
+      "tags": [
+        {
+          "feature": "Tabletop Mode! Added by request. Find it under Game Options. This doesn't change any gameplay or mechanics (currently) but allows players during punch-in to set what side of the table they are viewing from, and it changes the controller accordingly. Meant for venues with tabletop computers, those few individuals with tabletop computers, and those other people crazy enough to lay their TVs on their backs on the coffee table... or to hang projectors from the ceiling pointed at the floor."
+        },
+        {
+          "feature": "The Controller Setup menu now saves changes to disk."
+        },
+        {
+          "bug": "Some pause menu funkiness with multiple players has been eliminated."
+        },
+        {
+          "bug": "Controllers not associated with a punched-in player are now completely disabled during a game."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.3 Released",
+      "date": "2019-04-30 22:44:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2404270358316860594",
+      "content": "\u200b[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/33551612/7978e537ef81b15dcfb2a2451a4e5ac3e69c4faf.png[/img]\r\nNew features:\r\n[list]\r\n[*] Smoke and dust emitters added to the wheels.\r\n[*] Increased the spark emitters for 60% more sparks.\r\n[/list]\r\nYesterday I decided that I could probably finish up the smoke and dust effects by the end of the day.  And, so I did.  I had started work on them nearly a year ago but then they got shelved for whatever reason.  Not sure why it took me so long to come back around to it.  Maybe I wanted to build the other heavy performance stuff before committing to this many emitters.  Yesterday, I had planned to include them with another update in the queue but decided today this update was too fun to wait another couple days.",
+      "key": "907190::b6ed65758afb568849ca90e5493387bf4e297703",
+      "tags": [
+        {
+          "feature": "Smoke and dust emitters added to the wheels."
+        },
+        {
+          "balance_change": "Increased the spark emitters for 60% more sparks."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.2 Released",
+      "date": "2019-04-28 04:08:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2432417221745789479",
+      "content": "\u200bNew features:\r\n[list]\r\n[*] AI cars can now pitstop when needing repairs.  Not all AI personalities will choose to do so, however.  I can't say they're terribly smart about it yet... and it can be a bit humorous to watch them trying to figure it out with the wheels they have left.\r\n[/list]\r\nGiven that racing against just the AI seems to get most interesting after 15 laps, I'm considering opening up the longer race options on the demo version.  I haven't done so yet.  Just considering it.",
+      "key": "907190::ead02fe3de4256e224925857533dbf012ce238fe",
+      "tags": [
+        {
+          "feature": "[*] AI cars can now pitstop when needing repairs. Not all AI personalities will choose to do so, however. I can't say they're terribly smart about it yet... and it can be a bit humorous to watch them trying to figure it out with the wheels they have left."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2.1 Released",
+      "date": "2019-04-24 21:28:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2432417221733943523",
+      "content": "New features:\r\n[list]\r\n[*] AI drivers added to the Bubba Prizes and Championship Rankings when playing with less than 3 players.\r\n[*] AI drivers can now brake for hairpin turns (can't say they're good at hairpins yet... but at least they aren't hopeless on the Finger Lakes GP track now).\r\n[/list]\r\nIn other news, I believe I'll use the recently-demolished Wimbledon Stadium in London as the model for the final oval track (in figure-8 mode, of course) before moving on to the remaining 7 GP tracks.",
+      "key": "907190::af86f9d4a8908096b33662737026d6ca460ce475",
+      "tags": [
+        {
+          "feature": "[*] AI drivers added to the Bubba Prizes and Championship Rankings when playing with less than 3 players."
+        },
+        {
+          "feature": "[*] AI drivers can now brake for hairpin turns (can't say they're good at hairpins yet... but at least they aren't hopeless on the Finger Lakes GP track now)."
+        }
+      ]
+    },
+    {
+      "title": "A.I. Cars Unleashed!",
+      "date": "2019-04-22 21:32:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2434668385563542301",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/34431352/3828ebf3aa8f6c4424b7934def96df0a47483c19.png[/img]\r\n\r\nWelcome to GRITS Racing version 0.2.0!  The long-awaited AI has finally been added to our early-access game.  This is just the first round of the AI and, thus, it is not complete yet.  The 5 personalities I built for the 4 cars (one of the personalities changes depending on number of players) are behaving more or less as I had hoped.  You can expect more personality tweaking to come but, primarily, what is missing from the AI agents are pit stops and braking, to make them more competitive and/or interesting.\r\n\r\nThe AI agents know how to find the pit lane, when they choose to (which is rare at the moment), but they don't yet know when or how to make a pit stop.  The AI agents only get one car apiece, and that probably won't change.  Also, originally, I hadn't planned to program pit stops into the AI either (not intentional pit stops anyhow) -- they were originally specced to be more of the environment than the race -- but testing as a single player has shown that at least some of the AI agents should go for a pit stop when they need to -- particularly with a small number of players.  Otherwise, it is too easy to knock them out of the race to kill the competition... which is boring when playing alone, and maybe in two-player mode as well.\r\n\r\nThe AI currently knows how to let off the gas when over-committed to a turn... but this is not enough.  They really need to also know which turns to slow down for ahead of time, and by how much.  Thus, they are currently pretty stupid about turn 5 on the Finger Lakes grand prix track and will quickly destroy themselves on this track.\r\n\r\nEnough of what's missing, what about what [i]is[/i] included in this update?  Much like how I went overly crazy with the physics in the game, I did a similar thing with the AI.  I've mentioned before that I didn't want just another racing game with AI cars chasing a bunch of waypoints around the track.  And, so, I didn't do that.  I do have a few waypoints on each track because I need three or four just to keep the agents pointed in the right direction around the track.  After that, however, it's up to the AI agent to decide how best to get from one point to another, or how to best recover from a wreck.  To allow for this, I create a [url=https://en.wikipedia.org/wiki/Navigation_mesh]navigation mesh[/url] for each track with different navigation areas of different cost within that mesh.  Then, I use [url=https://en.wikipedia.org/wiki/A*_search_algorithm]A* pathfinding[/url] for long-distance navigation decisions and [url=https://andrewfray.wordpress.com/2013/02/20/steering-behaviours-are-doing-it-wrong/]context steering[/url] for local navigation decisions.  This gives the agents a lot of freedom to express their personalities, but also comes with a lot of settings to tweak and it could take a while to dial it all in.\r\n\r\nThe current AI personalities are these:\r\n[list]\r\n[*] Claude: a.k.a. \"Speed Racer\" against 1 player, medium \"Speed Racer\" against 2 players, and \"Traffic Ma'am\" against 3+\r\n[*] Bob: a.k.a. \"Student Driver\"\r\n[*] Rob: a.k.a. \"Wrong Way Ray\" occasionally gets turned around\r\n[*] Maud: a.k.a. \"Heat Seeker\" tries her best to follow the race leader without hitting the race leader (which is not always possible)[/list]\r\n\r\nThis update also brings a banked-turn feature.  Don't expect perfectly-calculated 3D banking, however.  I do a lot of faking when it comes to the third dimension in this 2D game to save on processing where it would not be terribly significant.  I do calculate speed-relative downforce increases on the individual wheels in a bank (\"Isn't that enough?\"), but banks are also mostly non-directional (that is, don't expect to roll downhill when sitting idle on a bank).  The banking feature was needed now versus later because it affects setting up the AI agents.  Currently, there is no visible indication of which turns are banked and by how much.  We'll get there.\r\n[list]\r\n[*] The major turns in the tri-oval are heavily banked and the finish-line turn is medium banked.  You can now drop the hammer in the tri-oval.  Yay!!!  Makes for a better novice-level entry track as well.\r\n[*] The red-clay oval has no banking.  (The real track it is based on is banked at only 4.3 degrees and is banked evenly throughout the track.)\r\n[*] The yellow-clay oval has light banking in the turns.\r\n[*] Turns 2 and 5 on the grand prix track are lightly banked.  (I perhaps cheated a bit on turn 5 versus the real track.)[/list]\r\n\r\nI had also planned to not include the AI agents much in the UI stuff but I feel I should change that soon.  This includes things like AI lap counters (not sure where to fit those in yet) and including the AI in Bubba Prizes and the championship standings with only one or two players.  Hopefully, these things will come shortly.  Then, it's on to finally implementing name entry and high-score storage.  Then, back to track making, I hope.\r\n\r\nLove 'em or hate 'em, let us know what you think of the AI personalities.  It's all trial-and-error at this early stage.",
+      "key": "907190::b52ae57b43a4d7011754caae532f0950ebe9102d",
+      "tags": [
+        {
+          "feature": "The long-awaited AI has finally been added to our early-access game."
+        },
+        {
+          "feature": "This update also brings a banked-turn feature."
+        }
+      ]
+    },
+    {
+      "title": "Demo v0.1.6 released",
+      "date": "2019-03-01 15:33:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2534869043308883894",
+      "content": "The new version of the demo doesn't bring any new features, just some fixes.\r\n\r\nFixes:\r\n[list]\r\n[*] Updated Rewired package from 1.1.22.2 to 1.1.24.0 to fix the gamepad hotplugging issues.\r\n[*] Minor tweaks to the gamepad keyboard mappings.\r\n[*] Better behavior with screens and windows that aren't 16:9.\r\n[/list]\r\n",
+      "key": "907190::b6d5b410e62e3c25701a4dede469a431cdbd3082",
+      "tags": [
+        {
+          "bug": "[list]\n[*] Updated Rewired package from 1.1.22.2 to 1.1.24.0 to fix the gamepad hotplugging issues."
+        },
+        {
+          "bug": "[list]\n[*] Minor tweaks to the gamepad keyboard mappings."
+        },
+        {
+          "bug": "[list]\n[*] Better behavior with screens and windows that aren't 16:9."
+        }
+      ]
+    },
+    {
+      "title": "Demo v0.1.5 released",
+      "date": "2019-02-21 21:26:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2480825216190921353",
+      "content": "The work on our first early-access retail release is done and pending approval.  In the mean time, we have updated the demo as well to match.\r\n\r\nNew features:\r\n[list]\r\n[*] Championship Standings screen added between races\r\n[*] New Leader Lamifier: Leader Trikes -- removes the lug nuts from one of the front wheels of the lead car (this should be a bit less harsh than the other lamifier: Finish-line Showboating Required)\r\n[/list]\r\nAlso includes tweaks to the Bubba Prizes and other minor changes.",
+      "key": "907190::2912d8bc64428dbcba0586bdb3e540037dd21654",
+      "tags": [
+        {
+          "feature": "[list]\n[*] Championship Standings screen added between races\n[*] New Leader Lamifier: Leader Trikes -- removes the lug nuts from one of the front wheels of the lead car (this should be a bit less harsh than the other lamifier: Finish-line Showboating Required)\n[/list]"
+        }
+      ]
+    },
+    {
+      "title": "Please update your demos to v0.1.4",
+      "date": "2019-02-06 16:42:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2461683368382514395",
+      "content": "Last night we found an issue that had pretty much broke half the game!  Basically, you couldn't go beyond the first track in Championship Racing.  Thus, please, update your demo download and check the Options > Credits menu and make sure it shows v0.1.4 or later.\r\n\r\nLong story:\r\n[list]\r\n[*] v0.1.0 worked fine -- we had tested a complete run through.\r\n[*] v0.1.1 (the first demo version on Steam) was an attempt to make the game play nicer on 16:10 Mac screens and part of this was changing all the cameras.\r\n[*] I (Matt) did a quick test of most of v0.1.1 and all seemed fine with the new camera settings.\r\n[*] Several days later, I'm playing through v0.1.1 and discover that the one scene I missed (a menu in this case) in my earlier quick test happens to also be the only one that is not okay with the new camera settings.  What are the odds?  Nothing particularly unusual about this scene but, apparently, the Unity game engine appears to have some sort of bug regarding camera settings and scrollable content views.  I don't know how else to explain what broke.\r\n[*] Reset the coordinates on the scroll content (I think the old camera setting had the bug and not the new one, since the new coords make more sense), build v0.1.4, and it's good to go.\r\n[/list]\r\n\r\nSo, anyhow, I've learned the hard way to always do a complete run through before releasing anything -- even if was just a change in some stupid little Unity setting that shouldn't have had hidden consequences beyond a quick test.\r\n",
+      "key": "907190::e5909bb150bced01fc99e140549f08e3902e7e03",
+      "tags": [
+        {
+          "bug": "Last night we found an issue that had pretty much broke half the game! Basically, you couldn't go beyond the first track in Championship Racing."
+        },
+        {
+          "bug": "Nothing particularly unusual about this scene but, apparently, the Unity game engine appears to have some sort of bug regarding camera settings and scrollable content views."
+        },
+        {
+          "bug": "I don't know how else to explain what broke."
+        },
+        {
+          "bug": "Reset the coordinates on the scroll content (I think the old camera setting had the bug and not the new one, since the new coords make more sense), build v0.1.4, and it's good to go."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "appId": "1985520",
+  "count": 4,
+  "notes": [
+    {
+      "title": "Devlog #4 - GAZ - Attachemnt system and more",
+      "date": "2023-12-23 14:55:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585138273900",
+      "content": "A brief update on the progress of work on GAZ.\n\n[h1]Attachment system[/h1]\n\nWe have the first basic version of the weapon attachment system ready. Each weapon in GAZ will have the possibility of several configurations, such as barrel, fire mode, and sight, for example. At this stage, the selection of attachments is done through a static menu, but we will soon change this to a menu that will allow a dynamic selection of attachments:\n\n[previewyoutube=t5sE9RILnKg;full][/previewyoutube]\n\n[h1]LMG gun[/h1]\n\nWe have added a new LMG model to the game, which is likely to replace the one used so far:\n\n[img]{STEAM_CLAN_IMAGE}/42355464/64aabc877414df03e8bf02e4d721fff8a3833a13.png[/img]\n\n[h1]Improved AI attack dynamics[/h1]\n\nOne of the game's primary axe-attacking enemies has become more dynamic, as it will now attack as soon as it approaches the player. In addition, a minor \"shake\" effect will be applied to the player's camera on a successful hit:\n\n[previewyoutube=mIgfPp5Qy9I;full][/previewyoutube]\n\n[h1]Working on the demo level[/h1]\n\nWe are still working on improving the details at the level that will be included in the demo. Level design is one of the things that gives us the most difficulty, so we want to release the demo to players as soon as possible and collect the feedback. Based on it, we will make appropriate changes.\n\n[img]{STEAM_CLAN_IMAGE}/42355464/b153531c00289af660d70477da4f8342829ff462.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/5c0eb828441c82deac06ec35fd5345b4be338848.png[/img]\n\n[h1]What are next steps?[/h1]\n\nPerhaps in the next devlog, we will be able to show you further progress on the attachment system, as well as the basic implementation for the vintage system of AI models.\n",
+      "key": "1985520::0e6cb772259f76bc99fececeb2e821a0e94ceafe",
+      "tags": [
+        {
+          "feature": "We have the first basic version of the weapon attachment system ready. Each weapon in GAZ will have the possibility of several configurations, such as barrel, fire mode, and sight, for example. At this stage, the selection of attachments is done through a static menu, but we will soon change this to a menu that will allow a dynamic selection of attachments:"
+        },
+        {
+          "feature": "We have added a new LMG model to the game, which is likely to replace the one used so far:"
+        },
+        {
+          "feature": "One of the game's primary axe-attacking enemies has become more dynamic, as it will now attack as soon as it approaches the player. In addition, a minor \"shake\" effect will be applied to the player's camera on a successful hit:"
+        }
+      ]
+    },
+    {
+      "title": "Devlog #3 - GAZ - Progress update",
+      "date": "2023-12-17 03:41:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219982834863",
+      "content": "Over the past months, work on GAZ has been going rather slowly. However, we managed to add a few elements that made the work on the game move forward. We are currently working on the first alpha and will soon be looking for a few people for closed testing.\n\n[h1]Visuals[/h1]\n\nWe changed the color scheme of the whole thing a bit, to emphasize the \"dirty and dark style\" more. We also added some smaller post-process effects and volumetric lighting. For the lighting, we are yet in the testing stage, as working with lighting requires a lot of patience:\n\n[img]{STEAM_CLAN_IMAGE}/42355464/f4bee0b20a512fb38502946d5fecc85a91724d35.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/4637725f50b710b4ba61f5d61e5b5afdf8c77e75.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/a80e9217c513b35dfedac8db3d55c21a708022ab.png[/img]\n\n[h1]AI models[/h1]\n\nWe also returned to the old enemy models. The ones we added recently, in our opinion, looked too realistic (they had too much detail) and didn't blend well with the graphic style in GAZ. We will use these more realistic models in our other prototype:\n\n[img]{STEAM_CLAN_IMAGE}/42355464/8251b3c2d04e8f93a9a806f27cfdfff673ca166c.png[/img]\n\n[h1]Weapon attachment system[/h1]\n\nThe system is at a very early stage of development. We want to give the player the option to customize his weapon. Customization will be done \"live\" during gameplay. Weapon add-ons will be purchasable with currency earned during level exploration or as a reward for well-played encounters with enemies. We will give you more details soon.\n\n[h1]What are next steps[/h1]\n\nWe will continue working on the weapon add-on system and adding new weapons to the game. We will definitely be able to share new information in the next devlog.\n",
+      "key": "1985520::997a2d73997635727213fd5589d784456230c30a",
+      "tags": [
+        {
+          "feature": "- We also added some smaller post-process effects and volumetric lighting."
+        },
+        {
+          "feature": "- We also returned to the old enemy models."
+        },
+        {
+          "feature": "- The system is at a very early stage of development. We want to give the player the option to customize his weapon. Customization will be done \"live\" during gameplay. Weapon add-ons will be purchasable with currency earned during level exploration or as a reward for well-played encounters with enemies."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #2 - GAZ - Working with AI",
+      "date": "2023-03-25 03:50:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143713753735118030",
+      "content": "[h1]Working with AI[/h1]\n\nIn our previous dev log, I mentioned that we undertook an attempt to rewrite the AI system for our game. We decided to use a simplified version of the GOAP system. At first, we wanted to write a framework from scratch, but in the Unity Asset Store, we found a tool called SGOAP, which turned out to meet all our needs. \n\nHowever, SGOAP is only a high-level tool, and we had to prepare all operations related to AI behavior (player detection, shooting, etc.) ourselves. Although in this case, we also decided to simplify implementation process. Instead of writing from scratch the logic responsible for the movement of agents in 3D space, we decided to rewrite a litle bit the Invector controller, which we used in the initial phase of the project. The combination of SGOAP and Invector resulted in a quite competent tool. \n\nThe animations seen in all the videos are temporary. Once we have all the AI details ready, we will buy some fancy animations from one of the asset stores (Unity, Unreal, Cg trader, etc.).\n\n\n[h1]Types of AI[/h1]\n\nAt this point, we have managed to prepare several types of AI. Below is a short list, along with short videos showing AI in action.\n\n\n[h2]Shotgun and Assault Rifle.[/h2]\n\n// The opponent with a shotgun will be equipped with more aggressive behavior, which means that most of the time he will try to get as close to the player as possible. Its attack range has been set between 5 and 25 meters, which means it can also attack the player from a greater distance if necessary. In addition, the agent moves in a mode that we refer to as ScootAndShoot. This means that after a shot is fired, the agent will try to find a new position for attack. This position will be calculated, among other things, based on the minimum/maximum range of movement expressed in degrees defining circular movement.\n\n// An opponent equipped with an automatic rifle will also move in ScootAndShoot mode. However, unlike the opponent with a shotgun, he will be equipped with more cautious behavior. He will have an increased attack range - a minimum of 15 meters and a maximum of 45 meters. In addition, the opponent with an automatic rifle will be equipped with grenades. When deciding to attack, the agent has been assigned a 50% probability of throwing a fragmentation grenade. It is worth noting here that the throwing force and distance are calculated by an algorithm. This means that the agent does not throw the grenade mindlessly in front of him:\n\n[previewyoutube=kHTtTURkyVc;full][/previewyoutube]\n\n// Here is an additional example, showing the behavior of agents in a larger group:\n\n[previewyoutube=_oAxic80Ta4;full][/previewyoutube]\n\n[h2]An opponent with axes[/h2]\n\n// The behavior of the opponent with axes will be similar to the behavior of the opponents from Serious Sam 4. Their main task will be to overwhelm the player, using a large number of attacking agents at the same time.\n\n[previewyoutube=pmEdrYjraTw;full][/previewyoutube]\n\n// Groups of agents may receive support in the form of soldiers equipped with automatic rifles. Agents of this type will additionally be able to throw a smoke or fragmentation grenade. The probability of throwing will be increased compared to a basic agent equipped with an automatic rifle and will be set at 65%:\n\n[previewyoutube=DsbZaEm1ecE;full][/previewyoutube]\n\n[h2]LMG soldier[/h2]\n\n// A soldier with a light machine gun will base his behavior on a simple cover system. After taking a defensive position, it will attack from an increased distance. In addition, the agent will change (at random time intervals) its position. When making decisions, it will take into account other agents using cover, as well as the cover available in the immediate environment.\n\n[previewyoutube=qCCVeX9Xuoc;full][/previewyoutube]\n\n[h1]What are the next steps?[/h1]\n\nIn our next devlog I will show you a couple of wepaons that will be available in GAZ.",
+      "key": "1985520::ea455555bfd8f3e8c104197fc46058ab727de8dc",
+      "tags": [
+        {
+          "feature": "The opponent with a shotgun will be equipped with more aggressive behavior, which means that most of the time he will try to get as close to the player as possible. Its attack range has been set between 5 and 25 meters, which means it can also attack the player from a greater distance if necessary. In addition, the agent moves in a mode that we refer to as ScootAndShoot. This means that after a shot is fired, the agent will try to find a new position for attack. This position will be calculated, among other things, based on the minimum/maximum range of movement expressed in degrees defining circular movement."
+        },
+        {
+          "balance_change": "An opponent equipped with an automatic rifle will also move in ScootAndShoot mode. However, unlike the opponent with a shotgun, he will be equipped with more cautious behavior. He will have an increased attack range - a minimum of 15 meters and a maximum of 45 meters. In addition, the opponent with an automatic rifle will be equipped with grenades. When deciding to attack, the agent has been assigned a 50% probability of throwing a fragmentation grenade. It is worth noting here that the throwing force and distance are calculated by an algorithm. This means that the agent does not throw the grenade mindlessly in front of him:"
+        },
+        {
+          "feature": "The behavior of the opponent with axes will be similar to the behavior of the opponents from Serious Sam 4. Their main task will be to overwhelm the player, using a large number of attacking agents at the same time."
+        },
+        {
+          "balance_change": "Agents of this type will additionally be able to throw a smoke or fragmentation grenade. The probability of throwing will be increased compared to a basic agent equipped with an automatic rifle and will be set at 65%:"
+        },
+        {
+          "feature": "A soldier with a light machine gun will base his behavior on a simple cover system. After taking a defensive position, it will attack from an increased distance. In addition, the agent will change (at random time intervals) its position. When making decisions, it will take into account other agents using cover, as well as the cover available in the immediate environment."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #1 - GAZ",
+      "date": "2023-03-10 02:10:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528810294855249",
+      "content": "[h1]Soft reboot[/h1]\n\nA few months ago, we sent the build of our game to several people (including one publisher) and there's no denying it - we got very negative feedback. So we took a step back and decided to design GAZ in several places from scratch. We call it a \"soft reboot\".\n\n[h1]Visual side[/h1]\n\nThe general visual setting remained unchanged (except for some models, as we will discuss in a moment). We continue to aim for a gray, gloomy atmosphere with limited colors.\n\n[h1]New enemy models[/h1]\n\nThe enemy models will be completely changed. For now, we have managed to add only one new model, but we will gradually change the others as well. Vehicle models have also been updated (some examples further down in the devlog):\n\n[img]{STEAM_CLAN_IMAGE}/42355464/357127eb5dd4748cddf66a8c3d94790500ac7ba9.png[/img]\n\n[h1]Artificial intelligence - GOAP system[/h1]\n\nAI of opponents is the element that has undergone the most thorough change. Until now, we used a simple implementation based on FSM (finite state machine). After the change, however, the AI works based on the GOAP (Goal-Oriented Action Planning) system. \n\nHowever, we must make it very clear here, that using GOAP does not mean that our AI will be at a level similar to that of F.E.A.R. This is not something our capabilities currently allow us to do. However, using GOAP allows us to introduce more differentiated behaviors, and working with GOAP is much more enjoyable than working with FSM (of course, you have to get familiar with the solution first).\n\nBy developing our knowledge related to GOAP, we will also be able to introduce more advanced AI at later stages of the project, as well as use already developed solutions in other projects. With the proper separation of dependencies, transferring GOAP-based AI between projects is relatively easy.\n\n[h1]Weapons design[/h1]\n\nAs for weapon models, there will be no change. However, we have added some new types. But this we will share when the time comes.\n\n[img]{STEAM_CLAN_IMAGE}/42355464/da988f585cdb9b8c632a0519a7c94bf34875ef6b.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/735e2c78b4220d8aef95ef6ddcb93b09a08bb43a.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/0ebe7cf72ec148c0daad4831122b606d229b002d.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/64e726f92883bdb508cae97a9a81748d52605cc8.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/dbebf9abd6b2953029cb059308ed5f20e10c41fd.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/dac03d19fec6ab978cbd077076ebc29f147a9ecf.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/bfedf2f644755f1dce265a508dcc857d45c1bced.png[/img]\n\n[h1]Dismemberment system\n[/h1]\n\nFor GAZ, we created a simple \"dismemberment\" system for enemies. The goal we had here was only one - to have fun. In addition to depriving opponents of limbs, the game will also include the option of destroying armor elements. Here is a small example. However, the video was recorded using old models, as we have yet to adjust the new ones accordingly:\n\n[previewyoutube=sGWgGTV7Tno;full][previewyoutube=sGWgGTV7Tno;leftthumb][/previewyoutube][/previewyoutube]\n\n\n[h1]Enemies in the game[/h1]\n\nWe have divided the opponents into three main types:\n\n[h2]Human[/h2]\n\nAt this point we have a few basic types dissected:\n\n> Enemy with a shotgun - with the ability to throw explosive grenades\n> Enemy with a light rifle - with the ability to throw explosive grenades\n> Enemy with LMG - with additional light armor.\n> Sniper - with the ability to throw smoke grenades\n> Enemy with a double UZI\n> Enemy with double UZI - with additional light armor\n> Gunner with LMG / Minigun - with heavy armor.\n> Engineer - with the ability to deploy mines or small autonomous vehicles\n> Pilots - equipped only with pistols\n> Enemy with RPG\n> Enemy with RPG - with additional light armor\n> Soldier with a light rifle/shotgun - with an oxygen cylinder on his back. Such a cylinder will be easily destroyed, causing an explosion\n> Soldier with a knife/axe - designed for fast combat at short distances\n> Soldier with knife/axe - with additional light armor\n\nThe above set will be our base, which we will expand and mix as needed.\n\n[h2]Ground armored vehicles[/h2]\n\nSuch vehicles will appear sporadically on the battlefield. In the initial phase, they will be static, but in later phases, they will get the ability to move around the scene. However, we do not want to make \"bullet sponges\" out of these vehicles, so it will be possible to destroy them using even an ordinary rifle. Some examples:\n\n[img]{STEAM_CLAN_IMAGE}/42355464/36753bac5c778f462aa00d44fa8919d40a2bfa73.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/9a8ce54c97562a76226defd4a0143a6fea92a4d4.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/f0cc07e6eae5a28f7a5e69bea9c2a2991348300c.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/4155271c5c91ef239ff1ab395c11d44a2db5b54b.png[/img]\n\n[h2]Flying vehicles[/h2]\nThese will mainly be helicopters. Similar to ground vehicles, they will be relatively easy to shoot down. Example models:\n\n[img]{STEAM_CLAN_IMAGE}/42355464/b8c47889b8396e1ed53176f21368831e1ef0b645.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/e1670dce735fbbf4251f93e51858758e9ff8e7bc.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/42355464/110c3d65e66e4b58614e6ae798549de54c518d59.png[/img]\n\n[h1]Design[/h1]\n\nThe design of the encounters with enemies and the game as a whole has undergone (along with the AI) the most extensive changes. In the end, we decided to draw inspiration from two titles - Serious Sam and CULTIC. We added some of our ideas to the whole.\n\n[h2]Serious Sam inspiration[/h2]\n\n> Roughly 2/3 of the encounters in GAZ will consist of fighting a large number of opponents simultaneously or opponents attacking in waves. We think the term \"all-out war\" fits very well here. Such clashes will take place in larger spaces.\n\n[h3]Tank control[/h3]\n\nThis feature will appear at very late stages of development. The player - following the example of Serious Sam 4 - will be able to play on levels in which he will control a tank.\n\n[h2]Inspired by CULTIC[/h2]\n\n> About 1/3 of the encounters will be more intimate, with a smaller group of opponents. An example here would be a narrow forest path, where a group of four opponents supported by a sniper will be waiting.\n\n> Gun feel - in our humble opinion CULTIC is one of the best shooters of recent years. What captivated us the most was the feeling that comes from using guns. Weapons are very responsive, and fighting enemies is very satisfying. That's why we will want to bring a similar gun feel to GAZ.\n\n> The player will have the ability to pick up some items and throw them at enemies. A good example here is an explosive barrel.\n\n> Small environmental puzzles - searching for keys to unlock further stages of levels.\n\n> The player will have the opportunity to find additional upgrades hidden in the levels. However, due to the number of weapons we want to add, these upgrades will probably improve the stats of the player himself, instead of individual weapons.\n\n[h2]Additional ideas[/h2]\n\n[h3]High-risk / high-reward zones[/h3]\n\nThe game will allow you to save your state at any time. However, there will be zones in the levels that will block the ability to make a save until they are completed. Such zones will be completely optional, and the reward for completing them will be an upgrade for the character or a new weapon.\n\n[h3]Slow motion[/h3]\n\nBy killing enemies, the player will recharge the adrenaline bar. Adrenaline reserves will be able to be used to trigger short slow motion:\n\n[previewyoutube=Ch2OskIhl3o;full][previewyoutube=Ch2OskIhl3o;leftthumb][/previewyoutube][/previewyoutube]\n\n[h3]Attacks / special tools[/h3]\n\nThis concept is only in the early stages of development, but we plan to add various kinds of tools to GAZ that will make fighting enemies more enjoyable. Examples include mines thrown under the feet of opponents, as well as signal grenades to call an artillery attack. The player will also be able to use stationary gun turrets.\n\n[h1]Migration to Unity URP[/h1]\n\nLittle significant from the player's point of view, but very important from the point of view of maintaining the project, was the switch from the Built-in engine to URP, within Unity. Thanks to this procedure, we won't have to worry (at least for a while) that our project will become outdated on the technical side. We will also have an easier task if we want to port GAS to consoles in the future.\n\n\n[h1]Cooperation with other development teams[/h1]\n\nInitially, the name Samurai Outcast referred to our small team of two people. Over the past few months, there has been some significant change here. \n\nWe have been joined by two development teams, each with two people. The important thing here is that we do not form one company. Each team operates separately and on its account (working on its games). More importantly, however, these teams share the same solutions (for example, a code base) and a general knowledge base.\n\nA good example of this is the aforementioned GOAP-based AI. If one team comes up with a cool solution and implements it, the other two teams can use it as well. A similar tactic will be adopted when operating in the marketing sphere. If one team concludes that a certain strategy is particularly effective (for example, Twitter advertising) it will share this knowledge with the other teams.\n\nYou may be wondering why such a division. At this stage, each team has its idea for the game and wants to implement it on its own. We don't want to throw ourselves into big projects right away. Instead, we want to slowly build up our knowledge base by pursuing projects that everyone enjoys. Another important aspect here is that all the people at Samurai Outcast have known each other personally for many years, so we have a very friendly atmosphere.\n\n[h1]What are the next steps?[/h1]\n\nWe are working on a pre-alpha for GAZ, which we will want to make available to a wider range of users. Only after such verification, we will be able to focus on the development of the main project.\n\n\n",
+      "key": "1985520::2198dbc75595c7002844ce6242bef055a098bc70",
+      "tags": [
+        {
+          "feature": "The enemy models will be completely changed. For now, we have managed to add only one new model, but we will gradually change the others as well. Vehicle models have also been updated (some examples further down in the devlog):"
+        },
+        {
+          "feature": "AI of opponents is the element that has undergone the most thorough change. Until now, we used a simple implementation based on FSM (finite state machine). After the change, however, the AI works based on the GOAP (Goal-Oriented Action Planning) system."
+        },
+        {
+          "feature": "However, using GOAP allows us to introduce more differentiated behaviors, and working with GOAP is much more enjoyable than working with FSM (of course, you have to get familiar with the solution first)."
+        },
+        {
+          "feature": "By developing our knowledge related to GOAP, we will also be able to introduce more advanced AI at later stages of the project, as well as use already developed solutions in other projects. With the proper separation of dependencies, transferring GOAP-based AI between projects is relatively easy."
+        },
+        {
+          "feature": "However, we have added some new types. But this we will share when the time comes."
+        },
+        {
+          "feature": "For GAZ, we created a simple \"dismemberment\" system for enemies. The goal we had here was only one - to have fun. In addition to depriving opponents of limbs, the game will also include the option of destroying armor elements. Here is a small example. However, the video was recorded using old models, as we have yet to adjust the new ones accordingly:"
+        },
+        {
+          "feature": "At this point we have a few basic types dissected:"
+        },
+        {
+          "feature": "Such vehicles will appear sporadically on the battlefield. In the initial phase, they will be static, but in later phases, they will get the ability to move around the scene. However, we do not want to make \"bullet sponges\" out of these vehicles, so it will be possible to destroy them using even an ordinary rifle. Some examples:"
+        },
+        {
+          "feature": "These will mainly be helicopters. Similar to ground vehicles, they will be relatively easy to shoot down. Example models:"
+        },
+        {
+          "feature": "The design of the encounters with enemies and the game as a whole has undergone (along with the AI) the most extensive changes. In the end, we decided to draw inspiration from two titles - Serious Sam and CULTIC. We added some of our ideas to the whole."
+        },
+        {
+          "feature": "Roughly 2/3 of the encounters in GAZ will consist of fighting a large number of opponents simultaneously or opponents attacking in waves. We think the term \"all-out war\" fits very well here. Such clashes will take place in larger spaces."
+        },
+        {
+          "feature": "This feature will appear at very late stages of development. The player - following the example of Serious Sam 4 - will be able to play on levels in which he will control a tank."
+        },
+        {
+          "feature": "About 1/3 of the encounters will be more intimate, with a smaller group of opponents. An example here would be a narrow forest path, where a group of four opponents supported by a sniper will be waiting."
+        },
+        {
+          "feature": "Gun feel - in our humble opinion CULTIC is one of the best shooters of recent years. What captivated us the most was the feeling that comes from using guns. Weapons are very responsive, and fighting enemies is very satisfying. That's why we will want to bring a similar gun feel to GAZ."
+        },
+        {
+          "feature": "The player will have the ability to pick up some items and throw them at enemies. A good example here is an explosive barrel."
+        },
+        {
+          "feature": "Small environmental puzzles - searching for keys to unlock further stages of levels."
+        },
+        {
+          "feature": "The player will have the opportunity to find additional upgrades hidden in the levels. However, due to the number of weapons we want to add, these upgrades will probably improve the stats of the player himself, instead of individual weapons."
+        },
+        {
+          "feature": "The game will allow you to save your state at any time. However, there will be zones in the levels that will block the ability to make a save until they are completed. Such zones will be completely optional, and the reward for completing them will be an upgrade for the character or a new weapon."
+        },
+        {
+          "feature": "By killing enemies, the player will recharge the adrenaline bar. Adrenaline reserves will be able to be used to trigger short slow motion:"
+        },
+        {
+          "feature": "This concept is only in the early stages of development, but we plan to add various kinds of tools to GAZ that will make fighting enemies more enjoyable. Examples include mines thrown under the feet of opponents, as well as signal grenades to call an artillery attack. The player will also be able to use stationary gun turrets."
+        },
+        {
+          "feature": "Little significant from the player's point of view, but very important from the point of view of maintaining the project, was the switch from the Built-in engine to URP, within Unity. Thanks to this procedure, we won't have to worry (at least for a while) that our project will become outdated on the technical side. We will also have an easier task if we want to port GAS to consoles in the future."
+        },
+        {
+          "feature": "We have been joined by two development teams, each with two people. The important thing here is that we do not form one company. Each team operates separately and on its account (working on its games). More importantly, however, these teams share the same solutions (for example, a code base) and a general knowledge base."
+        },
+        {
+          "feature": "A good example of this is the aforementioned GOAP-based AI. If one team comes up with a cool solution and implements it, the other two teams can use it as well. A similar tactic will be adopted when operating in the marketing sphere. If one team concludes that a certain strategy is particularly effective (for example, Twitter advertising) it will share this knowledge with the other teams."
+        },
+        {
+          "feature": "At this stage, each team has its idea for the game and wants to implement it on its own. We don't want to throw ourselves into big projects right away. Instead, we want to slowly build up our knowledge base by pursuing projects that everyone enjoys. Another important aspect here is that all the people at Samurai Outcast have known each other personally for many years, so we have a very friendly atmosphere."
+        },
+        {
+          "feature": "We are working on a pre-alpha for GAZ, which we will want to make available to a wider range of users. Only after such verification, we will be able to focus on the development of the main project."
+        }
+      ]
+    }
+  ]
+}

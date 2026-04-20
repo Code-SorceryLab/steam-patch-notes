@@ -1,0 +1,501 @@
+{
+  "appId": "3157410",
+  "count": 4,
+  "notes": [
+    {
+      "title": "OOPS BUGFIX",
+      "date": "2025-03-22 23:37:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830910956000",
+      "content": "Fixed the crash on open. My bad!",
+      "key": "3157410::75367201ff65fd97e0668cd1b55eea796254dec7",
+      "tags": [
+        {
+          "bug": "Fixed the crash on open. My bad!"
+        }
+      ]
+    },
+    {
+      "title": "LOOTPLOT: The COOL Update 8)",
+      "date": "2025-03-22 22:57:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830910955136",
+      "content": "Tonnes of changes!\n\n- 3 new starting items\n- New items\n- Rebalancing of existing slots/items\n- Added sapphire slot\n- Reworked diamond, gold, ruby slots\n- Simplified tutorial\n- Added 3 new backgrounds\n- Added unlocks for backgrounds and starting-items\n- Tonnes of small QoL fixes and balancing\n\nFor more information, join the discord. \nI am active there, and I want to hear your feedback/feelings about the game.",
+      "key": "3157410::d3113d35491725176334520090d81678b8180178",
+      "tags": [
+        {
+          "feature": "- 3 new starting items"
+        },
+        {
+          "feature": "- New items"
+        },
+        {
+          "balance_change": "- Rebalancing of existing slots/items"
+        },
+        {
+          "feature": "- Added sapphire slot"
+        },
+        {
+          "feature": "- Reworked diamond, gold, ruby slots"
+        },
+        {
+          "feature": "- Simplified tutorial"
+        },
+        {
+          "feature": "- Added 3 new backgrounds"
+        },
+        {
+          "feature": "- Added unlocks for backgrounds and starting-items"
+        },
+        {
+          "balance_change": "- Tonnes of small QoL fixes and balancing"
+        }
+      ]
+    },
+    {
+      "title": "BETA v0.0.2",
+      "date": "2025-03-02 00:42:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526096273",
+      "content": "\n- (((DONE))) Lootplot money-earned juice packets\n\n\n- (((DONE))) Quit button should instead say: \"Save and Quit\" \n\n\n- (((DONE))) Change sack-items: Make them spawn cloud-slots, have them FLOATY.\n^^^ These will ideally replace SHARDS.\n\n\n- (((DONE))) More treasure-items:\nInstead of spawning items, have more *direct* use-cases:\n- (((DONE))) Diamond-chest: On UNLOCK: Spawn diamond slots  (KING-1)\n- (((DONE))) Blue-chest: On UNLOCK: Give +20 points to all target items  (KING-1)\n\n\n\n\n## Shop-balance refactor: \n- (((DONE))) Make stone-fruit cheap and COMMON, null-slots easy to get.\n- Rework shop: \n    - (((DONE))) 2 food-shop slots\n    - (((DONE))) 4 normal shop slots\n- (((DONE))) Rare/Epic items can now spawn (INFREQUENTLY) in normal shop\n- (((DONE))) Sack-items now spawn in shop\n\n\n- (((DONE))) Make slot-spawner items rarer, and more expensive.\n\n\n- (((DONE))) Worldgen consistency: Make it so only golden-slots spawn\n\n\n- (((DONE))) Bug with cloud slots:\nIf you have negative money, you are unable to pick items from cloud slots\n\n\n### Bonus mechanism:\n- (((DONE))) Add `bonus` mechanism\n- (((DONE))) Create `lp.addBonus`, `lp.get/setBonus`, etc.\n- (((DONE))) Create `bonusGenerated` property + descriptions\n- (((DONE))) Put `+X BONUS` UI in `lootplot.main`, next to global-mult.\n- (((DONE))) use `lp.queue` to add bonus points. Its better for UX\n\n\n- (((DONE))) Remove mana systems\n- (((DONE))) Remove all `manaCost` items\n\n\n- (((DONE))) JUICE: when collecting coin-packets, make a \"ding\" sound\n\n\n- (((DONE))) Create mineral shovel-items (Give +1 bonus)\n\n\n- (((DONE))) Make Star background better-  \nback stars should be smaller and more transparent\n\n\n- (((DONE))) Change color of fog/clouds for different backgrounds\n\n\n- (((DONE))) Add cherry-background (Cloud-background, but pink)\n- (((DONE))) Add sunset-background (Cloud-background, but orange)\n\n\n- (((DONE))) Added Copper tools - activate on ROTATE\n\n\n- (((DONE))) Add animation/particles when fog is cleared (test w/ map)\n\n\n- (((DONE))) Make background select UI much nicer:\n- (((DONE))) Make proper cards for it\n- (((DONE))) Touch up the icons\n- (((DONE))) Touch up the arrow-buttons\n\n\n- (((DONE))) Instead of saying \"Round 7/6\", It should say \"LEVEL COMPLETE\"\n\n\n- (((DONE))) ITEM: Lone-sword:\nShape: Rook-5\nGive +3 mult\nDestroy all items. Give +X bonus\n\n- (((DONE))) ITEM:\nEarn $2\nGRUB-10\n\n- (((DONE-variation))) ITEM: \nIf money is less than $10, permanenly gain +8 points\nEarns 8 points\n\n- (((DONE-variation))) ITEM: Tumbling cat:\nSame as copycat, but UP-3\nRotates when activated\n\n- (((DONE-variation))) ITEM: Trigger = REROLL,PULSE\nPermanently Gain +5 points when REROLLed.\nEarns 5 points\n\n- (((DONE))) ITEM: golden knife\nDestroy target items.\nEarn $1 for each\n(shape: UP-1)\n\n- (((DONE))) ITEM: Red flag:\nIf mult is below 1, add 4 mult\n\n\n- (((DONE))) Gear: make it an RARE/EPIC item\n\n- (((DONE))) Records work with REROLL trigger, as well as ROTATE trigger\n\n\n- (((DONE))) Rename `lootplot.main` -> `lootplot.singleplayer`.\n- (((DONE))) Move `lootplot.s0.starting_items` --> `lootplot.s0`.\n- (((DONE))) Rename `lootplot.s0.content` --> `lootplot.s0`.\n- (((DONE))) Move doomclock, pulse-button, next-level-button to `lootplot.s0`\n- (((DONE))) Move tutorial to `lootplot.s0`\n^^^ WARNING: Will require refactors to attributes. \nPerhaps we need to allow attributes to have default-values?\n\n\n- (((DONE))) RESET items BEFORE Pulsing the plot. This ensures that REROLL archetype doesn't avoid activations.\nALSO: We will need to refactor how the round-increment works.\nCurrently, the round-increment works by listening to RESET trigger. But this will cause rounds to be incremented twice, which is nasty.\nFix this!\n\n\n- (((DONE))) Remove golden-cap. It's poorly designed. Remove other caps too...?\n\n\n- (((DONE))) Change hammer items --> scythe items\n- (((DONE))) Create NEW hammer items --> Earn points, lose BONUS\n\n- (((DONE))) Create bonus archetype folders\n\n\n\n- (((DONE))) Make negative-bonus display correctly.\nCurrently, it displays like:  `(+-2 bonus)`.\nMaybe change color to red too...?\n\n\n(((DONE))) Make BONUS more intuitive:  \n- (((DONE))) Seperate `pointsGenerated` callbacks into bonusPointsGenerated and normalPointsGenerated\n- (((DONE))) Text popup should be same color as BONUS_COLOR\n- (((DONE))) Sound should play when bonus points are generated\n\n- (((DONE))) Sound + popups for when `mult` increases/decreases\n\n- (((DONE))) Sound + popups for when `bonus` increases/decreases\n\n\n- (((DONE))) Have mult in tutorial. \n(specifically; explain that putting mult BEFORE points is good!)\n\n- (((DONE))) Have BONUS in tutorial.\n(specifically; explain that putting bonus BEFORE points is good!)\n\n- (((DONE))) Explain target-visuals in the tutorial\n\n- (((DONE))) Make custom pulse-button in tutorial.\n    - (((DONE))) Pulse-button shouldn't generate money\n    - (((DONE))) Points, mult, bonus should ALL be reset at the end of every round\n    - (((DONE))) Description should be better\n\n- (((DONE))) Have an end to the tutorial, (and maybe an exit-button?)\n\n\n\n- (((DONE))) Create diagonal-shapes\n\n- (((DONE))) Make spears activate items\n\n\n- (((DONE))) SHOVEL-ITEM CHANGES:\nif item has DESTROY trigger, destroy item\n\n\n- (((DONE))) Doomed-loaf:\nSpawn a food-shop-slot (shape=ON)\n\n\n- (((DONE))) Replace bonus-points sound with this one:\nA: https://freesound.org/people/Mafon2/sounds/371878/  \nB: https://freesound.org/people/rhodesmas/sounds/342759/?  \nI think I prefer A tho.\n\n- (((DONE))) ITEM:\nmultiplies mult by -1.5\n\n\n- (((DONE))) ITEM: Fortune cookie\nRandomizes items, preserving rarity.\n(Doesn't work on UNIQUE items)\n\n\n- (((DONE))) Orange die:\nOn Reroll:\nRotate items\nTrigger PULSE on items\n(archetype broadening)\n\n\n- (((DONE))) Mushroom refactors idea:\n- (((DONE))) Red mush: Give BONUS to slot \n- (((DONE))) Blue mush: Give MULT to slot\n- (((DONE))) Green mush: Give POINTS to slot\n- (((DONE))) Purple mush: Randomize slots\nKING-shape?\nThe reason this would work well, IMO, is because it would make the plot more interesting.\nInstead of just having slots with no properties, suddenly, slots have mult! Slots have Bonus! Its all very interesting \n\n\n- (((DONE))) Bonus visual for slots\n\n\n- (((DONE))) SLOT:\nrulebender slot: Item's properties are multiplied by -1\n(points, bonus, mult, moneyGenerated)\n\n\n- (((DONE))) ITEM:\nBonus brick:\nGive +20 bonus\nLose 2 bonus permanently when activated\n\n\n- (((DONE))) ITEM: Voidbox\nCost $3 to activate\nAdd +1 doomed to doomed-items\n\n\n(((DONE))) Scaling items:\n{\n    - (((DONE))) ITEM:\n    On LEVEL-UP, UNLOCK:  Add +1 bonus to items/slots (ROOK-3)\n    - (((DONE))) ITEM:\n    On LEVEL-UP, UNLOCK:  Add +0.2 mult to items/slots (ROOK-3)\n    - (((DONE))) ITEM:\n    On LEVEL-UP, UNLOCK:  Add +10 points to items/slots (ROOK-3)\n}\n\n- (((DONE))) ITEM: Salmon steak:\nTrigger BUY, LEVEL-UP, ROTATE, and REROLL on targetted items.\n\n\n- (((DONE))) ITEM: Boomerang (UNCOMMON)\nEarn 2 points 6 times\n\n- (((DONE))) ITEM: Bowl (UNCOMMON)\nOn Pulse, Reroll:\nRotates itself, and earns +2 bonus\n\n- (((DONE))) ITEM: Violin\nPulses items. Cost $1 to activate\n\n- (((DONE))) ITEM: Deathly helmet \nWhen a target item is destroyed, give items +10 points\n\n- (((DONE))) ITEM CLASS: Chestplates!!! (Shape: HORIZONTAL-3)\n- (((DONE))) Deathly chestplate: When an item is destroyed, give items +20 points and -1 bonus\n- (((DONE))) Golden chestplate: Cost $3 to activate. Earn $1 for every target item\n- (((DONE))) Copper chestplate: Cost $1 to activate. Increase price of items by $3. Rotate items.\n- (((DONE))) Iron chestplate: Cost $1 to activate. Give +1 bonus to items.\n- (((DONE))) Magical chestplate: Cost $2 to activate. Buff item points by the current bonus\n- (((DONE))) Ethereal chestplate: Cost $1 to activate. If item has negative-bonus, give item +1 mult\n\n\n- (((DONE))) ITEM REFACTOR: Anvil.\nOn Pulse:\nGive items +2 activations, and -1 bonus permanently\nshape: Union(NorthEast(1), NorthWest(1)) \n\n\n- (((DONE))) ITEM REFACTOR: Clover\nOn Reroll: Give items/slots +1 points permanently\n(shape: BISHOP-1)\n\n\n- (((DONE))) ITEM: Grass (RARE)\nOn Reroll: Give items +1 activations, and increase item prices by $2\nDOOMED-10\n(shape: UP-2)\n\n\n- (((DONE))) UX CHANGE:\nWhen purchasing off a cloud-slot, transform into a null-slot\n\n\n- (((DONE))) ITEM: spawns null-slots with random food-items on top\n\n\n- (((DONE))) ITEM: spawns null-slots that steal 10 points\n(price = $0) \n\n\n- (((DONE))) ITEM: Emerald bar\nActivates On Reroll:\nAfter 10 activations, spawns a Reroll button-slot\n\n\n- (((DONE))) Convert white-die to golden die.\n- (((DONE))) Then, White Die: On Reroll, trigger Reroll on items. (CIRCLE-2 shape)\n\n\n- (((DONE))) Add random-rotations to items (spear-items, crossbows, shovel-items.)\nThis makes the game just a bit more interesting.\n\n\n- (((DONE))) ITEM- Crimson leather:\nSubtract 4 mult.\nGive +0.5 mult to items with Destroy trigger.\n\n- (((DONE))) ITEM- Teal leather:\nSubtract 25 bonus\nGive +5 bonus to items with Destroy trigger.\n\n\n\n- (((DONE))) ITEM: Fish skeleton:\nSpawn free UNCOMMON items on dirt-slots.\nGive +3 bonus.\n\n\n- (((DONE))) ITEM ADJUSTMENT: Spanner:\nMake it earn +2 mult, as well as rotate items.\nThis makes it more broad, and more useful\n\n\n- (((DONE))) ITEM:\nOn Pulse:\nGive +2 bonus and +0.1 mult to dirt slots.\nSet money to $8. (<--- archetype broadening)\n\n\n- (((DONE))) ITEM: Prism\nIncrease points requirement by 50%\nDecrease round count by 1\n\n\n- (((DONE))) ITEM ADJUSTMENT- Gloves:\nGloves should earn points too.\nAlso, they should trigger on Reroll perhaps...?\n\n\n- (((DONE))) FOOD: Green Squash (DOOMED-1):\nGive slots Reroll trigger.\nSet money to $13.\n(useful when low on money. Useful for reroll-archetype too) \n\n\n- (((DONE))) ITEM: Furnace (UP-2)\nOn Reroll, Pulse:\nConvert items into clone-rocks.\nFor every item that was converted, earn $1\n\n\n- (((DONE))) ITEM:  Green ticket\nWhen an item is purchased, trigger Pulse on target slots.\n(shape: KING-2)\n(sticky)\n\n\n- (((DONE))) BALANCING: Buff 2-cent-ticket.\nA big issue with grubby-archetype is that you can't really afford expensive items.\nMake this less of an issue.\nEither we can increase the Grub money cap, OR, we can add grubby-infrastructure to allow purchasing of expensive items.\n\n\n- (((DEFERRED))) ITEM: Green necklace (sticky)\nWhen rerolled, earn $1\nWhen Pulsed, lose $1\n\n- (((DEFERRED))) ITEM: Blue necklace (sticky)\nWhen Pulsed, earn $1\nWhen Rerolled, lose $1\n\n\n- (((DONE))) New Mineral Class:\nGrubby-tools: Same as iron-tools, but grubby.\n\n- (((DONE))) New Mineral tool: GreatSword (EPIC)\nEarns points.\nComes with a 3x points multiplier\n\n\n- (((DONE))) ITEM: Magic wand:\n(shape: NorthEast-1)\nTransform items into a clone of an existing item on the plot.\n\n\n- (((DONE))) Make the game easier; Add an extra $2 or $3 per turn.\n(The game is honestly just, more *fun* when you have more money.)\n\n\n- (((DONE))) ITEM: Black olive\nGive Destroy trigger and Rotate trigger to items\n(^^^ Note: this synergizes EXTREMELY WELL with clone-rocks; since you can duplicate any item you want!)\n\n\n- (((DONE))) ITEM: snake-oil\nRandomize item prices between $0 and $15\n\n- (((DONE))) ITEM: pink-mushroom\nGive +6 lives to slots and trigger Pulse on slots.\n\n- (((DONE))) Make listen-system work for slots.\n\n- (((DONE))) ITEM: Monocle\nWhen a slot is destroyed, earn $3 and earn +200 points\n\n- (((DONE))) ITEM: Velvet cake: Add +0.1 mult to items/slots\n- (((DONE))) ITEM: Blue cake: Add +1 bonus to items/slots\n\n- (((DONE))) ITEM: Demon knife: (like moon-knife)\nSubtract -2 mult\nSubtracts -8 bonus\nGain +0.1 mult permanently\n\n- (((DONE))) ITEM: Ghost knife: (like moon-knife)\nSubtract -8 bonus\nGain +0.4 bonus permanently\n\n\n- (((DONE))) ITEM: Basilisks eye\nSet rarity of items to UNCOMMON\nEarn 20 points\n\n- (((DONE))) ITEM REFACTOR: Make key-bar COMMON, make it generate +0.2 mult\n\n\n- (((DONE))) ITEM: Ocarina (ROOK-1)\nReduce Bonus of items by 1.\nIncrease points of item by 15.\n(Cost $1 to activate)\n\n\n- (((DONE))) ITEM REFACTOR: Make bomb activate on action-button. Make it earn $2 per slot destroyed.\nRemove DOOMED from it! Bomb shouldn't be doomed.\n\n\n- (((DONE))) ITEM REFACTOR: Price-card\nDecrease the price of items below by $4\nIncrease the price of items above by $4\n(shape: VERTICAL-4)\n\n\n- (((DONE))) ITEM: Wooden-Television: (UNCOMMON)\nTrigger PULSE on RARE items\n(shape: KING-2)\n\n\n- (((DONE))) ITEM: Leather boots\nTrigger Pulse on slots\n\n\n- (((DONE))) Interest-slot art overhaul\nCurrently the interest-slot looks bad.\nMake it look more like the level-up button. Thx.\n\n\n- (((DONE))) ITEM: Toolbelt\nSpawn random items, and give them GRUB-10.\nCost $6 to activate\n(GRUB-10)\n(shape = HORIZONTAL-1)\n(NOTE: items that are spawned will be RARE or EPIC. They cannot be doomed) \n\n\n- (((DONE))) ITEM: Champion belt\nRemoves GRUBBY from items.\nThen, destroys items.\n\n\n- (((DONE))) ANTI BONUS ITEMS - 1:\n- (((DONE))) Gives +1.5 mult\n(Only works if bonus is negative!)\n- (((DONE))) Earns 100 points\n(Only works if bonus is negative!)\n\n\n- (((DONE))) Rotate-archetype also needs some love.\n- (((DONE))) Add copper-sword back.\n- (((DONE))) Add copper-greatsword\n- (((DONE))) Add copper-hammer\n- (((DONE))) Maybe add a new item: Copper-Bar...?\n\n\n- (((DONE))) Slot: Destroy slot (skull-logo?)\nOn Pulse,\nDestroys item 3 times.\nEarns 40 points each time. \n\n\n- (((DONE))) ITEM: Points shield\nIf points are negative, make points positive\n\n\n- (((DONE))) Create better infra for viewing items.\nInstead of just having `/spawnAllItems`, we should have:\n- (((DONE))) /spawnItems all\n- (((DONE))) /spawnItems clear\n- (((DONE))) /spawnItems grubby\n- (((DONE))) /spawnItems reroll\n- (((DONE))) /spawnItems rotate\n- (((DONE))) /spawnItems levelup\n- (((DONE))) /spawnItems unlock\n- (((DONE))) /spawnItems repeater\n- (((DONE))) /spawnItems listen\n- (((DONE))) /spawnItems money\n- (((DONE))) /spawnItems doomed\n- (((DONE))) /spawnItems shape  (items with a shape)\n\n\n- (((DONE))) ANTI-BONUS ITEMS - 2:\nInstead of always doing: \"Subtracts X bonus\",\nDo something like: \"Divides bonus by 2\".\n^^^ this is nice, since it works bad with +ve bonus, but GOOD for negative-bonus.\n\n\n- (((DONE))) Create rock items\n\n\n- (((DONE))) Random-ppos choosing API:\n- (((DONE))) Choose a random slot on the plot\n    --> (buttonSlots excluded?)\n- (((DONE))) Choose a random slot on the plot without an item\n- (((DONE))) Choose a random empty-space on the plot\n    --> (additional contraint: Must be within X spaces of slots)\n    --> eg distance=1 means that its NEXT to slots\n\n\n- (((DONE))) Get rid of dark-egg, it's bad and dumb. Replace with something better please-\nIDEA:\n- (((DONE))) \"Spawn 3 null-slots. Spawn a STUCK key somewhere random on the plot\"\n\n\n- (((DONE))) ITEM: Paperclip\nIf there are no other types of this slot on the plot, spawn a copy of this slot somewhere random\n\n\n- (((DONE))) ITEM: Ball of yarn\n(shape: King-1)\nIf targetting two items of the same type, give the items +10 points permanently.\n(^^^^ synergizes with copycat builds!)\n\n\n- (((DONE))) Refactor `lives` system, make it so that it doesn't spawn a new entity.\nWe should just prevent the `:delete()` operation from occuring\n--->\nLITMUS TEST:\n- ((PASSED)) Does REPEATER component work on rock items?\n- ((PASSED)) Does DOOMED cause the item to activate many times?\n\n\n- (((DONE))) Activations-cap:  \nLimit activations to 50 in base lootplot.  \nPerhaps have `lp.MAX_ACTIVATIONS_CAP = 50`  \n(so modders can change ^^^^ as they wish)\n\n\n- (((DONE))) Slot-visuals in tutorial;\nShowcase DOOMED-slots, mult-slots, point-slots, bonus-slots, glass-slot, dirt-slot, etc etc\nThen show one slot with ALL combined.\n\n- (((DONE))) Back-button in tutorial\nWe want to be able to go backwards to previous stages\n\n\n\n- (((DONE))) Sell slots:\nInstead of \n\"selling for half price, then destroy\"\nSell-slots should:\n\"Reduce item price by half, earn money equal to price of item, then destroy\"\n\n\n- (((DONE))) Dirt-slot visuals:\nWhen we scale a dirt-slot for variation, it also affects the slot-visuals.\nFix this!\nHonestly it's probably best to just create sprites that have been manually flipped in Aseprite.\n\n\n- (((DONE))) Glass slot QOL changes:\nMake it so glass slots dont die when they have a doomed item inside.\nIts frustrating.\n\n\n- (((DONE))) When quitting game:\nPut a screen that says \"QUITTING\".\nCurrently, the game appears to freeze when you click exit.\nI dont think there is a way to fix this directly, so instead we should just make the screen brown, and put \"QUITTING...\" text in the middle of the screen\n\n\n- (((DONE))) Fix Listener items on Null-slots still activating!\nListener-items still activate when in a null-slot/shop-slot.\nThis is confusing at best, bugged at worst.\n(fix this. Fix for shop-slots too!)\n(IMPORTANT:: Make sure that the `BUY` trigger still works for shop-items when purchased!!!)\n--\nSIMPLE IDEA: Just have a slot-component: `isItemListenBlocked = true`\n^^^ its very direct, very simple.\n\n\n\n- (((DONE))) Erik Idea:\nChest items spawn near your plot and if you don't get a slot under them in a couple rounds, they disappear.\nThe way we would implement them in practice is to make the chests STICKY, and put them on a DOOMED-4 slot or something\n^^^^ Make it part of the worldgen even?\n--------->\nOLI FINALIZED:\nIslands that are 3 or bigger: Spawn golden slots.\nIslands that are exactly 1 in size: Spawns a sticky-chest item (on a null slot) \n\n\n\n- (((DONE))) Rework listen-item descriptions\nWe shouldn't have descriptions be implicit; they should be explicit.\n\n\n- (((DONE))) Juice/Feedback when the point requirement is breached!!!!\nIf the player goes above the point quota, we should play a satisfying sound,\nplay a cool animation, and just make it JUICY and satisfying.\n(Idk what to do, just make it SATISFYING! :D)\n- (((DONE))) IDEA: Place it in LPState!\n- (((DONE))) Create a screen-space shockwave\n\n\n\n- (((DONE))) ITEM-REFACTOR: Sliced-apple refactor\n- (((DONE))) Instead of spawning a pulse-button, sliced-apple should spawn a random slot.\nThis adds variance, and it makes the game a bit more interesting.\nAlso, we should make sliced-apple UNCOMMON rarity.\n\n\n\n- (((DONE))) Speed up the pipeline-delays when there is a lot of stuff in the pipeline\nFor example, if there are 50 slots in the pipeline, pipeline-speed should be sped up.\n(This also means that you wont need to speed up when doing `/spawnItems all` either! Which is super nice)\n- (((DONE))) On second look; it seems like this isn't possible. Instead, we should speed up the pipeline based on how many slots there are.\n\n\nMatch3 shard refactor:\nIDEA: Shards should buff slots, then destroy themselves...?\n- (((DONE))) Coal shards: Add +0.7 mult, Subtract 6 bonus\n- (((DONE))) Iron shards: Add +6 bonus to slots, and spawn key items\n- (((DONE))) Emerald shards: Add +10 points, add Reroll trigger to slots\n- (((DONE))) Golden shards: Make slots earn $1, but steal 50 points\n--->  \nWe need to make sure we have Randomness tho!!!\n- IDEA: Spawn a random shard somewhere on the plot, make it STUCK\n- IDEA: Wildcard shards: Transform into target shard, and make it STUCK\n\n\n- (((DONE))) UNCOMMON treasure-sack\n($5 to buy?)\n\n- (((DONE))) Food treasure-sack\n($5 to buy?)\n\n\n\n- (((DONE))) ITEM: Pumpkin\n(shape: ROOK-1)\nIf item has Rotate trigger, transform into it.\nOtherwise, rotate items.\n\n\n- (((DONE))) CURSE VISUALS:\nPut some fire-like particles behind the curse-items.\nIt should be immediately obvious what items are curses, and what arent.\n- (((DONE))) TODO: we need to figure out how to discern a curse from a non-curse!\n- (((DONE))) Ideally, we want a simple `isCurse(itemEnt)`; no fudging with rarities or anything. \n- (((DONE))) In fact, we probably want to decouple curses/rarities anyway, right?\n\n\n- (((DONE))) ITEM REFACTOR:\nGold-compass: currently too basic.\nIt needs to do something else. How about this:\nIDEA: \"Set money to $13. Destroy 2 random curses\"\n\n\n- (((DONE))) Rework some boring items:\n- (((DONE))) Egg is pretty boring. (How about we have it generate -bonus instead of STICKY slots?)\n- (((DONE))) Hammer items are *boring.* Perhaps they should divide `bonus` by 2 instead...?\n- (Discover any other \"boring\" items- either purge them, or make them more *broad*.)\n\n\n- (((DONE/DEFERRED))) Change one-ball tutorial-text:\nInstead of appearing on top of slots, we should spawn a singular button + text.\n(Then, when the player is ready, they click the button, and the stuff spawns.)\n\n\n- (((DONE))) SLOT: Green slot:\n(looks like normal-slot, just tinted green)\nHas Reroll trigger instead of Pulse\n\n- (((DONE))) SLOT: Teal slot:\n(looks like normal slot, just tinted teal)\nHas Reroll, Pulse triggers\n\n\n- (((DONE))) ITEM: rusty plate:  When Rotated: Activate the below slot 6 times\n\n\n- (((DONE))) Activations:\nCurrently, there are many income-items that have 1/1 activations.\nI think we should change this! Give them 2/2 or 3/3 activations instead. It makes it more fun. Doesnt matter too much that its OP.\n(Maybe nerf one-ball to $1, but give it 3 activations?)\n\n\n\n- (((DONE))) ITEM:\nVampire fang:\nSteal 5 points from the slot.\nGain +5 points permanently.\n(works great with slots that destroy themselves/temporary slots!)\n\n\n- (((DONE))) Fix fog of war not being revealed for locked-slots\n\n\n- (((DONE))) Win screen + Prevent the player from playing infinitely \nhttps://www.reddit.com/r/balatro/comments/1g0o0ax/wow_not_caring_about_the_endless_mode_made_the/\n- (((DONE))) FINAL-IDEA: Put \"YOU WIN\" text after passing level-10. (Then, prevent next-level button from working)\n\n\n\n\n- (((DONE))) STONE SLOTS:\nOn Destroy, Unlock: Do (Something)\nLives = 4\n(^^^ Idea is, the player will try to destroy these slots)\n(Alternatively, if they manage to use Green-Squash on it, they can get BIG rewards)\nPickaxes should also target ITEM_OR_SLOT, instead of just item.\n======>  \n\n- (((DONE))) Swap shovels <--> pickaxes.\n\n\n- (((DONE))) Make mushrooms target their whole buff onto a random slot; \nthis will probably make stuff more interesting!\n\n\n- (((DONE))) Fix cloud-slots not being able to buy when low on money\n\n\n",
+      "key": "3157410::971ac0734c0f85c0e7c171065330be70ce3f5806",
+      "tags": [
+        {
+          "bug": "- Bug with cloud slots:\nIf you have negative money, you are unable to pick items from cloud slots"
+        },
+        {
+          "bug": "- Fix Listener items on Null-slots still activating!\nListener-items still activate when in a null-slot/shop-slot.\nThis is confusing at best, bugged at worst.\n(fix this. Fix for shop-slots too!)\n(IMPORTANT:: Make sure that the `BUY` trigger still works for shop-items when purchased!!!)\n--\nSIMPLE IDEA: Just have a slot-component: `isItemListenBlocked = true`"
+        },
+        {
+          "bug": "- Fix fog of war not being revealed for locked-slots"
+        },
+        {
+          "feature": "- Add `bonus` mechanism"
+        },
+        {
+          "feature": "- Create `lp.addBonus`, `lp.get/setBonus`, etc."
+        },
+        {
+          "feature": "- Create `bonusGenerated` property + descriptions"
+        },
+        {
+          "feature": "- Put `+X BONUS` UI in `lootplot.main`, next to global-mult."
+        },
+        {
+          "feature": "- use `lp.queue` to add bonus points. Its better for UX"
+        },
+        {
+          "feature": "- Create mineral shovel-items (Give +1 bonus)"
+        },
+        {
+          "feature": "- Add cherry-background (Cloud-background, but pink)"
+        },
+        {
+          "feature": "- Add sunset-background (Cloud-background, but orange)"
+        },
+        {
+          "feature": "- Added Copper tools - activate on ROTATE"
+        },
+        {
+          "feature": "- Add animation/particles when fog is cleared (test w/ map)"
+        },
+        {
+          "feature": "- Make background select UI much nicer:\n- Make proper cards for it\n- Touch up the icons\n- Touch up the arrow-buttons"
+        },
+        {
+          "feature": "- ITEM: Lone-sword:\nShape: Rook-5\nGive +3 mult\nDestroy all items. Give +X bonus"
+        },
+        {
+          "feature": "- ITEM:\nEarn $2\nGRUB-10"
+        },
+        {
+          "feature": "- ITEM: Tumbling cat:\nSame as copycat, but UP-3\nRotates when activated"
+        },
+        {
+          "feature": "- ITEM: Trigger = REROLL,PULSE\nPermanently Gain +5 points when REROLLed.\nEarns 5 points"
+        },
+        {
+          "feature": "- ITEM: golden knife\nDestroy target items.\nEarn $1 for each\n(shape: UP-1)"
+        },
+        {
+          "feature": "- ITEM: Red flag:\nIf mult is below 1, add 4 mult"
+        },
+        {
+          "feature": "- Gear: make it an RARE/EPIC item"
+        },
+        {
+          "feature": "- Records work with REROLL trigger, as well as ROTATE trigger"
+        },
+        {
+          "feature": "- Rename `lootplot.main` -> `lootplot.singleplayer`.\n- Move `lootplot.s0.starting_items` --> `lootplot.s0`.\n- Rename `lootplot.s0.content` --> `lootplot.s0`.\n- Move doomclock, pulse-button, next-level-button to `lootplot.s0`\n- Move tutorial to `lootplot.s0`\n^^^ WARNING: Will require refactors to attributes.\nPerhaps we need to allow attributes to have default-values?"
+        },
+        {
+          "feature": "- Remove golden-cap. It's poorly designed. Remove other caps too...?"
+        },
+        {
+          "feature": "- Change hammer items --> scythe items\n- Create NEW hammer items --> Earn points, lose BONUS"
+        },
+        {
+          "feature": "- Create bonus archetype folders"
+        },
+        {
+          "feature": "- Make negative-bonus display correctly.\nCurrently, it displays like:  `(+-2 bonus)`.\nMaybe change color to red too...?"
+        },
+        {
+          "feature": "- Make BONUS more intuitive:  \n- Seperate `pointsGenerated` callbacks into bonusPointsGenerated and normalPointsGenerated\n- Text popup should be same color as BONUS_COLOR\n- Sound should play when bonus points are generated"
+        },
+        {
+          "feature": "- Sound + popups for when `mult` increases/decreases"
+        },
+        {
+          "feature": "- Sound + popups for when `bonus` increases/decreases"
+        },
+        {
+          "feature": "- Have mult in tutorial. \n(specifically; explain that putting mult BEFORE points is good!)"
+        },
+        {
+          "feature": "- Have BONUS in tutorial.\n(specifically; explain that putting bonus BEFORE points is good!)"
+        },
+        {
+          "feature": "- Explain target-visuals in the tutorial"
+        },
+        {
+          "feature": "- Make custom pulse-button in tutorial.    - Pulse-button shouldn't generate money\n    - Points, mult, bonus should ALL be reset at the end of every round\n    - Description should be better"
+        },
+        {
+          "feature": "- Have an end to the tutorial, (and maybe an exit-button?)"
+        },
+        {
+          "feature": "- Create diagonal-shapes"
+        },
+        {
+          "feature": "- Make spears activate items"
+        },
+        {
+          "feature": "- SHOVEL-ITEM CHANGES:\nif item has DESTROY trigger, destroy item"
+        },
+        {
+          "feature": "- Doomed-loaf:\nSpawn a food-shop-slot (shape=ON)"
+        },
+        {
+          "feature": "- ITEM:\nmultiplies mult by -1.5"
+        },
+        {
+          "feature": "- ITEM: Fortune cookie\nRandomizes items, preserving rarity.\n(Doesn't work on UNIQUE items)"
+        },
+        {
+          "feature": "- Orange die:\nOn Reroll:\nRotate items\nTrigger PULSE on items\n(archetype broadening)"
+        },
+        {
+          "feature": "- Mushroom refactors idea:\n- Red mush: Give BONUS to slot \n- Blue mush: Give MULT to slot\n- Green mush: Give POINTS to slot\n- Purple mush: Randomize slots\nKING-shape?\nThe reason this would work well, IMO, is because it would make the plot more interesting. Instead of just having slots with no properties, suddenly, slots have mult! Slots have Bonus! Its all very interesting"
+        },
+        {
+          "feature": "- Bonus visual for slots"
+        },
+        {
+          "feature": "- SLOT:\nrulebender slot: Item's properties are multiplied by -1\n(points, bonus, mult, moneyGenerated)"
+        },
+        {
+          "feature": "- ITEM:\nBonus brick:\nGive +20 bonus\nLose 2 bonus permanently when activated"
+        },
+        {
+          "feature": "- ITEM: Voidbox\nCost $3 to activate\nAdd +1 doomed to doomed-items"
+        },
+        {
+          "feature": "Scaling items:\n{\n    - ITEM:\nOn LEVEL-UP, UNLOCK:  Add +1 bonus to items/slots (ROOK-3)\n    - ITEM:\nOn LEVEL-UP, UNLOCK:  Add +0.2 mult to items/slots (ROOK-3)\n    - ITEM:\nOn LEVEL-UP, UNLOCK:  Add +10 points to items/slots (ROOK-3)\n}"
+        },
+        {
+          "feature": "- ITEM: Salmon steak:\nTrigger BUY, LEVEL-UP, ROTATE, and REROLL on targetted items."
+        },
+        {
+          "feature": "- ITEM: Boomerang (UNCOMMON)\nEarn 2 points 6 times"
+        },
+        {
+          "feature": "- ITEM: Bowl (UNCOMMON)\nOn Pulse, Reroll:\nRotates itself, and earns +2 bonus"
+        },
+        {
+          "feature": "- ITEM: Violin\nPulses items. Cost $1 to activate"
+        },
+        {
+          "feature": "- ITEM: Deathly helmet \nWhen a target item is destroyed, give items +10 points"
+        },
+        {
+          "feature": "- ITEM CLASS: Chestplates!!! (Shape: HORIZONTAL-3)\n- Deathly chestplate: When an item is destroyed, give items +20 points and -1 bonus\n- Golden chestplate: Cost $3 to activate. Earn $1 for every target item\n- Copper chestplate: Cost $1 to activate. Increase price of items by $3. Rotate items.\n- Iron chestplate: Cost $1 to activate. Give +1 bonus to items.\n- Magical chestplate: Cost $2 to activate. Buff item points by the current bonus\n- Ethereal chestplate: Cost $1 to activate. If item has negative-bonus, give item +1 mult"
+        },
+        {
+          "feature": "- ITEM REFACTOR: Anvil.\nOn Pulse:\nGive items +2 activations, and -1 bonus permanently\nshape: Union(NorthEast(1), NorthWest(1))"
+        },
+        {
+          "feature": "- ITEM REFACTOR: Clover\nOn Reroll: Give items/slots +1 points permanently\n(shape: BISHOP-1)"
+        },
+        {
+          "feature": "- ITEM: Grass (RARE)\nOn Reroll: Give items +1 activations, and increase item prices by $2\nDOOMED-10\n(shape: UP-2)"
+        },
+        {
+          "feature": "- UX CHANGE:\nWhen purchasing off a cloud-slot, transform into a null-slot"
+        },
+        {
+          "feature": "- ITEM: spawns null-slots with random food-items on top"
+        },
+        {
+          "feature": "- ITEM: spawns null-slots that steal 10 points\n(price = $0)"
+        },
+        {
+          "feature": "- ITEM: Emerald bar\nActivates On Reroll:\nAfter 10 activations, spawns a Reroll button-slot"
+        },
+        {
+          "feature": "- Convert white-die to golden die.\n- White Die: On Reroll, trigger Reroll on items. (CIRCLE-2 shape)"
+        },
+        {
+          "feature": "- Add random-rotations to items (spear-items, crossbows, shovel-items.)\nThis makes the game just a bit more interesting."
+        },
+        {
+          "feature": "- ITEM- Crimson leather:\nSubtract 4 mult.\nGive +0.5 mult to items with Destroy trigger."
+        },
+        {
+          "feature": "- ITEM- Teal leather:\nSubtract 25 bonus\nGive +5 bonus to items with Destroy trigger."
+        },
+        {
+          "feature": "- ITEM: Fish skeleton:\nSpawn free UNCOMMON items on dirt-slots.\nGive +3 bonus."
+        },
+        {
+          "feature": "- ITEM ADJUSTMENT: Spanner:\nMake it earn +2 mult, as well as rotate items.\nThis makes it more broad, and more useful"
+        },
+        {
+          "feature": "- ITEM:\nOn Pulse:\nGive +2 bonus and +0.1 mult to dirt slots.\nSet money to $8. (<--- archetype broadening)"
+        },
+        {
+          "feature": "- ITEM: Prism\nIncrease points requirement by 50%\nDecrease round count by 1"
+        },
+        {
+          "feature": "- ITEM ADJUSTMENT- Gloves: Gloves should earn points too.\nAlso, they should trigger on Reroll perhaps...?"
+        },
+        {
+          "feature": "- FOOD: Green Squash (DOOMED-1):\nGive slots Reroll trigger.\nSet money to $13.\n(useful when low on money. Useful for reroll-archetype too)"
+        },
+        {
+          "feature": "- ITEM: Furnace (UP-2)\nOn Reroll, Pulse:\nConvert items into clone-rocks.\nFor every item that was converted, earn $1"
+        },
+        {
+          "feature": "- ITEM: Green ticket\nWhen an item is purchased, trigger Pulse on target slots.\n(shape: KING-2)\n(sticky)"
+        },
+        {
+          "feature": "- New Mineral Class:\nGrubby-tools: Same as iron-tools, but grubby."
+        },
+        {
+          "feature": "- New Mineral tool: GreatSword (EPIC)\nEarns points.\nComes with a 3x points multiplier"
+        },
+        {
+          "feature": "- ITEM: Magic wand:\n(shape: NorthEast-1)\nTransform items into a clone of an existing item on the plot."
+        },
+        {
+          "feature": "- Make the game easier; Add an extra $2 or $3 per turn.\n(The game is honestly just, more *fun* when you have more money.)"
+        },
+        {
+          "feature": "- ITEM: Black olive\nGive Destroy trigger and Rotate trigger to items\n(^^^ Note: this synergizes EXTREMELY WELL with clone-rocks; since you can duplicate any item you want!)"
+        },
+        {
+          "feature": "- ITEM: snake-oil\nRandomize item prices between $0 and $15"
+        },
+        {
+          "feature": "- ITEM: pink-mushroom\nGive +6 lives to slots and trigger Pulse on slots."
+        },
+        {
+          "feature": "- Make listen-system work for slots."
+        },
+        {
+          "feature": "- ITEM: Monocle\nWhen a slot is destroyed, earn $3 and earn +200 points"
+        },
+        {
+          "feature": "- ITEM: Velvet cake: Add +0.1 mult to items/slots"
+        },
+        {
+          "feature": "- ITEM: Blue cake: Add +1 bonus to items/slots"
+        },
+        {
+          "feature": "- ITEM: Demon knife: (like moon-knife)\nSubtract -2 mult\nSubtracts -8 bonus\nGain +0.1 mult permanently"
+        },
+        {
+          "feature": "- ITEM: Ghost knife: (like moon-knife)\nSubtract -8 bonus\nGain +0.4 bonus permanently"
+        },
+        {
+          "feature": "- ITEM: Basilisks eye\nSet rarity of items to UNCOMMON\nEarn 20 points"
+        },
+        {
+          "feature": "- ITEM REFACTOR: Make key-bar COMMON, make it generate +0.2 mult"
+        },
+        {
+          "feature": "- ITEM: Ocarina (ROOK-1)\nReduce Bonus of items by 1.\nIncrease points of item by 15.\n(Cost $1 to activate)"
+        },
+        {
+          "feature": "- ITEM REFACTOR: Make bomb activate on action-button. Make it earn $2 per slot destroyed.\nRemove DOOMED from it! Bomb shouldn't be doomed."
+        },
+        {
+          "feature": "- ITEM REFACTOR: Price-card\nDecrease the price of items below by $4\nIncrease the price of items above by $4\n(shape: VERTICAL-4)"
+        },
+        {
+          "feature": "- ITEM: Wooden-Television: (UNCOMMON)\nTrigger PULSE on RARE items\n(shape: KING-2)"
+        },
+        {
+          "feature": "- ITEM: Leather boots\nTrigger Pulse on slots"
+        },
+        {
+          "feature": "- Interest-slot art overhaul\nCurrently the interest-slot looks bad.\nMake it look more like the level-up button. Thx."
+        },
+        {
+          "feature": "- ITEM: Toolbelt\nSpawn random items, and give them GRUB-10.\nCost $6 to activate\n(GRUB-10)\n(shape = HORIZONTAL-1)\n(NOTE: items that are spawned will be RARE or EPIC. They cannot be doomed)"
+        },
+        {
+          "feature": "- ITEM: Champion belt\nRemoves GRUBBY from items.\nThen, destroys items."
+        },
+        {
+          "feature": "- ANTI BONUS ITEMS - 1:\n- Gives +1.5 mult\n(Only works if bonus is negative!)\n- Earns 100 points\n(Only works if bonus is negative!)"
+        },
+        {
+          "feature": "- Rotate-archetype also needs some love.\n- Add copper-sword back.\n- Add copper-greatsword\n- Add copper-hammer\n- Maybe add a new item: Copper-Bar...?"
+        },
+        {
+          "feature": "- Slot: Destroy slot (skull-logo?)\nOn Pulse,\nDestroys item 3 times.\nEarns 40 points each time."
+        },
+        {
+          "feature": "- ITEM: Points shield\nIf points are negative, make points positive"
+        },
+        {
+          "feature": "- Create better infra for viewing items.\nInstead of just having `/spawnAllItems`, we should have:\n- /spawnItems all\n- /spawnItems clear\n- /spawnItems grubby\n- /spawnItems reroll\n- /spawnItems rotate\n- /spawnItems levelup\n- /spawnItems unlock\n- /spawnItems repeater\n- /spawnItems listen\n- /spawnItems money\n- /spawnItems doomed\n- /spawnItems shape  (items with a shape)"
+        },
+        {
+          "feature": "- ANTI-BONUS ITEMS - 2:\nInstead of always doing: \"Subtracts X bonus\",\nDo something like: \"Divides bonus by 2\".\n^^^ this is nice, since it works bad with +ve bonus, but GOOD for negative-bonus."
+        },
+        {
+          "feature": "- Create rock items"
+        },
+        {
+          "feature": "- Random-ppos choosing API:\n- Choose a random slot on the plot\n    --> (buttonSlots excluded?)\n- Choose a random slot on the plot without an item\n- Choose a random empty-space on the plot\n    --> (additional contraint: Must be within X spaces of slots)\n    --> eg distance=1 means that its NEXT to slots"
+        },
+        {
+          "feature": "- Get rid of dark-egg, it's bad and dumb. Replace with something better please-\nIDEA:\n- \"Spawn 3 null-slots. Spawn a STUCK key somewhere random on the plot\""
+        },
+        {
+          "feature": "- ITEM: Paperclip\nIf there are no other types of this slot on the plot, spawn a copy of this slot somewhere random"
+        },
+        {
+          "feature": "- ITEM: Ball of yarn\n(shape: King-1)\nIf targetting two items of the same type, give the items +10 points permanently.\n(^^^^ synergizes with copycat builds!)"
+        },
+        {
+          "feature": "- Refactor `lives` system, make it so that it doesn't spawn a new entity.\nWe should just prevent the `:delete()` operation from occuring\n--->\nLITMUS TEST:\n- ((PASSED)) Does REPEATER component work on rock items?\n- ((PASSED)) Does DOOMED cause the item to activate many times?"
+        },
+        {
+          "feature": "- Activations-cap:  \nLimit activations to 50 in base lootplot.  \nPerhaps have `lp.MAX_ACTIVATIONS_CAP = 50`  \n(so modders can change ^^^^ as they wish)"
+        },
+        {
+          "feature": "- Slot-visuals in tutorial;\nShowcase DOOMED-slots, mult-slots, point-slots, bonus-slots, glass-slot, dirt-slot, etc etc\nThen show one slot with ALL combined."
+        },
+        {
+          "feature": "- Back-button in tutorial\nWe want to be able to go backwards to previous stages"
+        },
+        {
+          "feature": "- Sell slots:\nInstead of \n\"selling for half price, then destroy\"\nSell-slots should:\n\"Reduce item price by half, earn money equal to price of item, then destroy\""
+        },
+        {
+          "feature": "- Dirt-slot visuals:\nWhen we scale a dirt-slot for variation, it also affects the slot-visuals.\nFix this!\nHonestly it's probably best to just create sprites that have been manually flipped in Aseprite."
+        },
+        {
+          "feature": "- Glass slot QOL changes:\nMake it so glass slots dont die when they have a doomed item inside.\nIts frustrating."
+        },
+        {
+          "feature": "- When quitting game:\nPut a screen that says \"QUITTING\".\nCurrently, the game appears to freeze when you click exit.\nI dont think there is a way to fix this directly, so instead we should just make the screen brown, and put \"QUITTING...\" text in the middle of the screen"
+        },
+        {
+          "feature": "- Erik Idea:\nChest items spawn near your plot and if you don't get a slot under them in a couple rounds, they disappear.\nThe way we would implement them in practice is to make the chests STICKY, and put them on a DOOMED-4 slot or something\n^^^^ Make it part of the worldgen even?\n--------->\nOLI FINALIZED:\nIslands that are 3 or bigger: Spawn golden slots.\nIslands that are exactly 1 in size: Spawns a sticky-chest item (on a null slot)"
+        },
+        {
+          "feature": "- Rework listen-item descriptions\nWe shouldn't have descriptions be implicit; they should be explicit."
+        },
+        {
+          "feature": "- Juice/Feedback when the point requirement is breached!!!!\nIf the player goes above the point quota, we should play a satisfying sound,\nplay a cool animation, and just make it JUICY and satisfying.\n(Idk what to do, just make it SATISFYING! :D)\n- IDEA: Place it in LPState!\n- Create a screen-space shockwave"
+        },
+        {
+          "feature": "- ITEM-REFACTOR: Sliced-apple refactor\n- Instead of spawning a pulse-button, sliced-apple should spawn a random slot.\nThis adds variance, and it makes the game a bit more interesting.\nAlso, we should make sliced-apple UNCOMMON rarity."
+        },
+        {
+          "feature": "- Speed up the pipeline-delays when there is a lot of stuff in the pipeline\nFor example, if there are 50 slots in the pipeline, pipeline-speed should be sped up.\n(This also means that you wont need to speed up when doing `/spawnItems all` either! Which is super nice)\n- On second look; it seems like this isn't possible. Instead, we should speed up the pipeline based on how many slots there are."
+        },
+        {
+          "feature": "Match3 shard refactor:\nIDEA: Shards should buff slots, then destroy themselves...?\n- Coal shards: Add +0.7 mult, Subtract 6 bonus\n- Iron shards: Add +6 bonus to slots, and spawn key items\n- Emerald shards: Add +10 points, add Reroll trigger to slots\n- Golden shards: Make slots earn $1, but steal 50 points\n--->  \nWe need to make sure we have Randomness tho!!!\n- IDEA: Spawn a random shard somewhere on the plot, make it STUCK\n- IDEA: Wildcard shards: Transform into target shard, and make it STUCK"
+        },
+        {
+          "feature": "- UNCOMMON treasure-sack\n($5 to buy?)"
+        },
+        {
+          "feature": "- Food treasure-sack\n($5 to buy?)"
+        },
+        {
+          "feature": "- ITEM: Pumpkin\n(shape: ROOK-1)\nIf item has Rotate trigger, transform into it.\nOtherwise, rotate items."
+        },
+        {
+          "feature": "- CURSE VISUALS:\nPut some fire-like particles behind the curse-items.\nIt should be immediately obvious what items are curses, and what arent.\n- TODO: we need to figure out how to discern a curse from a non-curse!\n- Ideally, we want a simple `isCurse(itemEnt)`; no fudging with rarities or anything. \n- In fact, we probably want to decouple curses/rarities anyway, right?"
+        },
+        {
+          "feature": "- ITEM REFACTOR:\nGold-compass: currently too basic.\nIt needs to do something else. How about this:\nIDEA: \"Set money to $13. Destroy 2 random curses\""
+        },
+        {
+          "feature": "- Rework some boring items:\n- Egg is pretty boring. (How about we have it generate -bonus instead of STICKY slots?)\n- Hammer items are *boring.* Perhaps they should divide `bonus` by 2 instead...?\n- (Discover any other \"boring\" items- either purge them, or make them more *broad*.)"
+        },
+        {
+          "feature": "- Change one-ball tutorial-text:\nInstead of appearing on top of slots, we should spawn a singular button + text.\n(Then, when the player is ready, they click the button, and the stuff spawns.)"
+        },
+        {
+          "feature": "- SLOT: Green slot:\n(looks like normal-slot, just tinted green)\nHas Reroll trigger instead of Pulse"
+        },
+        {
+          "feature": "- SLOT: Teal slot:\n(looks like normal slot, just tinted teal)\nHas Reroll, Pulse triggers"
+        },
+        {
+          "feature": "- ITEM: rusty plate:  When Rotated: Activate the below slot 6 times"
+        },
+        {
+          "feature": "- Activations:\nCurrently, there are many income-items that have 1/1 activations.\nI think we should change this! Give them 2/2 or 3/3 activations instead. It makes it more fun. Doesnt matter too much that its OP.\n(Maybe nerf one-ball to $1, but give it 3 activations?)"
+        },
+        {
+          "feature": "- ITEM:\nVampire fang:\nSteal 5 points from the slot.\nGain +5 points permanently.\n(works great with slots that destroy themselves/temporary slots!)"
+        },
+        {
+          "feature": "- Win screen + Prevent the player from playing infinitely \nhttps://www.reddit.com/r/balatro/comments/1g0o0ax/wow_not_caring_about_the_endless_mode_made_the/ \n- FINAL-IDEA: Put \"YOU WIN\" text after passing level-10. (Then, prevent next-level button from working)"
+        },
+        {
+          "feature": "- STONE SLOTS:\nOn Destroy, Unlock: Do (Something)\nLives = 4\n(^^^ Idea is, the player will try to destroy these slots)\n(Alternatively, if they manage to use Green-Squash on it, they can get BIG rewards)\nPickaxes should also target ITEM_OR_SLOT, instead of just item.\n======>  \n- Swap shovels <--> pickaxes."
+        },
+        {
+          "feature": "- Make mushrooms target their whole buff onto a random slot;\nthis will probably make stuff more interesting!"
+        },
+        {
+          "feature": "- Fix cloud-slots not being able to buy when low on money"
+        },
+        {
+          "balance_change": "- Shop-balance refactor: \n- Make stone-fruit cheap and COMMON, null-slots easy to get.\n- Rework shop: \n    - 2 food-shop slots\n    - 4 normal shop slots\n- Rare/Epic items can now spawn (INFREQUENTLY) in normal shop\n- Sack-items now spawn in shop"
+        },
+        {
+          "balance_change": "- Make slot-spawner items rarer, and more expensive."
+        },
+        {
+          "balance_change": "- Worldgen consistency: Make it so only golden-slots spawn"
+        }
+      ]
+    },
+    {
+      "title": "BETA v0.0.1",
+      "date": "2024-11-16 02:30:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125271217",
+      "content": "- Balance changes!\n- Added a tonne of new items, and \"GRUBBY\" system.\n- Fixed many bugs",
+      "key": "3157410::1a772bf75ba82199c12f8be0f221354ab8f02578",
+      "tags": [
+        {
+          "balance_change": "- Balance changes!"
+        },
+        {
+          "feature": "- Added a tonne of new items, and \"GRUBBY\" system."
+        },
+        {
+          "bug": "- Fixed many bugs"
+        }
+      ]
+    }
+  ]
+}

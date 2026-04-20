@@ -1,0 +1,93 @@
+{
+  "appId": "1714360",
+  "count": 4,
+  "notes": [
+    {
+      "title": "New skip mode + Bugfixes",
+      "date": "2024-11-13 13:58:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125188436",
+      "content": "Hi all,\n\nWe've changed the way skip mode works and added an option to select how it behaves. Previously it skipped everything until the next story choice, but now it will also stop when you encounter a scene you haven't seen yet.\nIf you preferred the old skip mode you can select the old behaviour in the options menu. The list of visited scenes will be coutned only from this update forward, so the new mode will stop on scenes you visited prior to this update.\n\nIn addition, we fixed the following smaller bugs:\n- Captions being stuck on screen\n- Discord integration rarely crashing the game\n- Certain screen effects now fade in instead of suddenly appearing\n- Updated options descriptions\n\nThank you all for your continued support!",
+      "key": "1714360::40315bff016db0f0d36de7e97908836374f8abc4",
+      "tags": [
+        {
+          "feature": "We've changed the way skip mode works and added an option to select how it behaves."
+        },
+        {
+          "bug": "- Captions being stuck on screen"
+        },
+        {
+          "bug": "- Discord integration rarely crashing the game"
+        },
+        {
+          "bug": "- Certain screen effects now fade in instead of suddenly appearing"
+        },
+        {
+          "bug": "- Updated options descriptions"
+        }
+      ]
+    },
+    {
+      "title": "Clock sound + stuck choices fix",
+      "date": "2024-11-07 09:36:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801597552",
+      "content": "We've released another small update that fixes the following issues:\n- The clock winding sound would sometimes play after the puzzle is over\n- Choices would sometimes get stuck on screen",
+      "key": "1714360::0ce5be3042a46c80f95d396addcfa2eae98a31d2",
+      "tags": [
+        {
+          "bug": "- The clock winding sound would sometimes play after the puzzle is over"
+        },
+        {
+          "bug": "- Choices would sometimes get stuck on screen"
+        }
+      ]
+    },
+    {
+      "title": "VA + Clock Fix",
+      "date": "2024-11-06 21:54:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801581288",
+      "content": "We've released a small update that fixes the following issues:\n- Selecting \"None\" as your voice would result in the game freezing after the intro\n- The clock puzzle would not submit after pressing space, because it was bound to the wrong key",
+      "key": "1714360::46dfed9f3d8d39dc4325401f92c9457fc8e4381f",
+      "tags": [
+        {
+          "bug": "- Selecting \"None\" as your voice would result in the game freezing after the intro"
+        },
+        {
+          "bug": "- The clock puzzle would not submit after pressing space, because it was bound to the wrong key"
+        }
+      ]
+    },
+    {
+      "title": "Angel Wings: Endless Night - Developer Update III: Tech and Engine (August 2023)",
+      "date": "2023-08-31 14:32:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355658415769",
+      "content": "Hi everyone,\n\nWe're back again with some insight into the development process of [i]Endless Night[/i], written by our fabulous developer virusek20.\n\nThis time we will focus on the more technical aspects of development, talk about what's changed since the last game, and what to expect this time around.\n\n[h1]We switched to Unity[/h1]\n\n[i]Angel Wings[/i] used a mostly custom engine built on SFML (Simple and Fast Multimedia Library). This worked well enough for our purposes, but for [i]Endless Night[/i] we needed something that was quicker to develop with. With Unity we can skip writing our own rendering code, input handling and other aspects that would just eat up time that could be better spent on other things.\nWe had some alternative options like Godot but as we were the most familiar with Unity we decided to stick with the safer option.\nThis way we can support things like controllers or dynamically scaling UI without any extra effort and even speed up our development by writing custom editor plugins.\n\n[img]{STEAM_CLAN_IMAGE}/43151491/8ceb0f219fcbdfe9575546305b3a594382ee30cd.png[/img]\n\n[h1]Voice Acting and Audio[/h1]\n\nA major change is that we have full voice acting for [i]Endless Night[/i], meaning we had to rethink our approach to audio engineering. Previously, we simply played vorbis audio files, looped them for music and changed their volume depending on the scene, which limited our options. In the spirit of not reinventing the wheel, we decided to go for a well-established library - FMOD. \n\nThis allows us to organize and use the many audio files that we had for voice acting, as well as apply all sorts of effects for a more immersive experience. Currently we have several thousand audio files just for voice acting and another few hundred or so for music and sound effects, something that would be impossible to manage with our old engine.\n\n[img]{STEAM_CLAN_IMAGE}/43151491/43488aa9b6e8afd6a2ee3932b579a17b1edf13ad.png[/img]\n\n[h1]Visual effects[/h1]\n\nTo further justify the switch, we decided to implement dynamic lighting effects that would have been unfeasible with our old engine. With this addition, scenes should never feel too static and instead give an impression of a realistic environment. Right now, we included animated lights and particle effects, but there is nothing stopping us from implementing more advanced animations in future games.\n\n[previewyoutube=8AN4uaA1tho;full][/previewyoutube]\n\n\n[h1]Multiplatform Support[/h1]\n\nSince we are using Unity, we can technically publish to a wide variety of platforms, but we have decided to focus mostly on Windows for now to cut down on testing time. We have also performed cursory testing on Linux/Mac/Steam Deck as possible options in the future.\nNon-desktop platforms are mostly a theoretical possibility, although we would need to remake a decent chunk of the UI as well as decouple from steam for things like cloud saves.\n\n[img]{STEAM_CLAN_IMAGE}/43151491/0499610d105efe79e84589ab5d9b7349e436112a.png[/img]\n\n[h1]AMD Bug[/h1]\nBut what about the AMD texture bug in Angel Wings? Is it going to be fixed?\nWe are well aware of the rainbow texture bug in the old game, but unfortunately, we can't too much about it with our current situation. We have pieced together that it only happens on newer AMD cards, which makes debugging basically impossible for us since our entire team only has Nvidia cards. To make matters worse the bug suddenly appeared without us changing the game at all, which means we are doing something undefined in our OpenGL code that used to be ok, but some driver change broke it. The only way for us to fix it would be to get a PC with an AMD card, install all required tooling for building Angel Wings and figuring out what is wrong.\n\n\n[h1]Want to Help?[/h1]\nWe are slowly but surely approaching the release but since this is a hobby project sometimes real life gets in the way of development, slowing it down. We figured some of our fans want to help us develop the game, so if you know a thing or two about Unity and want to help us out, please join our Discord server and/or send us an email at angelwdev@gmail.com.\n\nThank you all for your continued support!\n-RumR Design Team (but mostly virusek)",
+      "key": "1714360::c347be88f9521a792533ca3e5490c1cacd73e874",
+      "tags": [
+        {
+          "feature": "We switched to Unity"
+        },
+        {
+          "feature": "A major change is that we have full voice acting for Endless Night, meaning we had to rethink our approach to audio engineering."
+        },
+        {
+          "feature": "This allows us to organize and use the many audio files that we had for voice acting, as well as apply all sorts of effects for a more immersive experience."
+        },
+        {
+          "feature": "To further justify the switch, we decided to implement dynamic lighting effects that would have been unfeasible with our old engine."
+        },
+        {
+          "feature": "With this addition, scenes should never feel too static and instead give an impression of a realistic environment."
+        },
+        {
+          "feature": "Right now, we included animated lights and particle effects, but there is nothing stopping us from implementing more advanced animations in future games."
+        },
+        {
+          "feature": "Since we are using Unity, we can technically publish to a wide variety of platforms, but we have decided to focus mostly on Windows for now to cut down on testing time."
+        },
+        {
+          "feature": "We have also performed cursory testing on Linux/Mac/Steam Deck as possible options in the future."
+        }
+      ]
+    }
+  ]
+}

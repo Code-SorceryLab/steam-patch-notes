@@ -1,0 +1,1623 @@
+{
+  "appId": "2279600",
+  "count": 16,
+  "notes": [
+    {
+      "title": "Raw Metal 1.2.3",
+      "date": "2025-07-20 21:59:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065450406",
+      "content": "[h3]New Features[/h3][list][*][p]Boss 3 now has an \u201caura\u201d visual effect that appears during the Standoff state to better clarify the distinction between states.[/p][/*][*][p]Added hit VFX when the player gets hit (yes, we really forgot to do this until now).[/p][/*][*][p]A message now appears when descending to the next Sublevel to notify the player that the Descent Modifier (a per-run bonus that increases the quality of looted gear) has increased (the message only appears if the Descent Modifier is set to be used in the difficulty settings, i.e. on the default progression preset).[/p][/*][*][p][spoiler]Tweaked the frequency at which Boss 4 enters stealth during its second phase, and it can now use concussion grenades to push the player back and enter stealth.[/spoiler][/p][/*][*][p]Updated demo to current version.[/p][/*][/list][h3]Adjustments[/h3][list][*][p]Moved the \u201cContinue\u201d button above \u201cNew Run\u201d in the main menu.[/p][/*][*][p]Changed the elevator \u201cReturn to Surface\u201d prompt to say \u201cExtract\u201d to better convey its purpose in the gameplay loop (also adjusted tips to match this wording).[/p][/*][*][p]Adjusted Lyla\u2019s double swing attack startup to match the startup duration of guards\u2019 attacks, in order to put more focus on dodging both the attack and its followup, rather than having to learn a new timing.[/p][/*][*][p]Boss 3\u2019s special parry will now immediately cause the Standoff state to end if it whiffs.[/p][/*][*][p]Boss 3 will now immediately exit the Standoff state if hit with a taser dart.[/p][/*][*][p]Boss 3 will now immediately exit the Standoff state when performing a dodging counterattack. However, the time to re-enter Standoff will be decreased if Standoff was exited early.[/p][/*][*][p]Various optimizations that should increase performance and make frame drops less frequent (static objects, VFX preloading and pooling, etc.).[/p][/*][*][p]Adjusted texture and audio file compression to reduce the game\u2019s file size and decrease memory usage.[/p][/*][*][p]Decreased camera shake inside the elevator to compensate for the camera\u2019s lower FOV. [/p][/*][/list][h3]Bug Fixes[/h3][list][*][p]Fixed an issue where filtering your gear by a type of gear you do not currently have would cause the menu to become stuck.[/p][/*][*][p]Fixed occasional pitch inconsistencies in audio clips.[/p][/*][*][p]Prevented acquiring the \u201cGhost\u201d achievement when extracting from a Sublevel unless the player has the access card that would allow them to descend (this was an issue when playing with \u201cRequire Keycard to Ascend\u201d turned off in the difficulty settings \u2013 you could literally get the achievement by loading into a Sublevel and immediately extracting).[/p][/*][*][p]Fixed Boss 2 getting stuck in place in certain situations when performing their grab attack.[/p][/*][*][p]Fixed a bug where the player would be unable to move if they used a Tear Module on themself right as the current Sublevel\u2019s scene was unloaded.[/p][/*][*][p]Fixed a bug where the elevator UI would not reappear when entering the elevator after viewing certain cutscenes.[/p][/*][*][p]Fixed some inconsistencies in how guard KOs were counted.[/p][/*][*][p]Fixed inconsistencies in how Boss 3\u2019s special parry triggered, preventing it from whiffing in situations where it was intended to hit, and added a vacuum effect to the first hit to ensure the player does not escape the combo.[/p][/*][*][p]Prevented the startup of Boss 3\u2019s \u201cFinal Gambit\u201d attack from being interrupted by wallsplats or tasers.[/p][/*][*][p]Corrected the wording of \u201ckeycard\u201d to \u201caccess card\u201d in the progression difficulty settings.[/p][/*][*][p]Made it so enemies play a hit sound effect when hit by another enemy.[/p][/*][*][p]Added an additional check to prevent a NavMesh check that sometimes occurred erroneously.[/p][/*][*][p]Fixed an error caused by entering the Forge in certain situations, in which the end of battle KO screen would play instead of the Forgekeeper\u2019s intro cutscene.[/p][/*][*][p]Fixed Lyla\u2019s attacks not being able to hit other guards.[/p][/*][*][p]Fixed a bug that caused Radar Guards and Elite Guards to not properly flash white while highlighted for a sneak attack.[/p][/*][*][p]Moved an incorrectly-placed combat start cutscene in Layer 3, Sublevel 2 that, if triggered, caused some geometry clipping.[/p][/*][*][p]Fixed overlapping text caused by certain messages, such as elevator terminal interaction notifications, appearing while the pickup list was still on screen.[/p][/*][*][p]Updated broken Twitter link on title screen (we changed our handle).[/p][/*][*][p]Other minor fixes.[/p][/*][/list]",
+      "key": "2279600::d6c542c23c94db211c60353f5a3518ddf4d87dfb",
+      "tags": [
+        {
+          "feature": "Boss 3 now has an \u201caura\u201d visual effect that appears during the Standoff state to better clarify the distinction between states."
+        },
+        {
+          "feature": "Added hit VFX when the player gets hit (yes, we really forgot to do this until now)."
+        },
+        {
+          "feature": "A message now appears when descending to the next Sublevel to notify the player that the Descent Modifier (a per-run bonus that increases the quality of looted gear) has increased (the message only appears if the Descent Modifier is set to be used in the difficulty settings, i.e. on the default progression preset)."
+        },
+        {
+          "feature": "Tweaked the frequency at which Boss 4 enters stealth during its second phase, and it can now use concussion grenades to push the player back and enter stealth."
+        },
+        {
+          "feature": "Updated demo to current version."
+        },
+        {
+          "balance_change": "Moved the \u201cContinue\u201d button above \u201cNew Run\u201d in the main menu."
+        },
+        {
+          "balance_change": "Changed the elevator \u201cReturn to Surface\u201d prompt to say \u201cExtract\u201d to better convey its purpose in the gameplay loop (also adjusted tips to match this wording)."
+        },
+        {
+          "balance_change": "Adjusted Lyla\u2019s double swing attack startup to match the startup duration of guards\u2019 attacks, in order to put more focus on dodging both the attack and its followup, rather than having to learn a new timing."
+        },
+        {
+          "balance_change": "Boss 3\u2019s special parry will now immediately cause the Standoff state to end if it whiffs."
+        },
+        {
+          "balance_change": "Boss 3 will now immediately exit the Standoff state if hit with a taser dart."
+        },
+        {
+          "balance_change": "Boss 3 will now immediately exit the Standoff state when performing a dodging counterattack. However, the time to re-enter Standoff will be decreased if Standoff was exited early."
+        },
+        {
+          "balance_change": "Various optimizations that should increase performance and make frame drops less frequent (static objects, VFX preloading and pooling, etc.)."
+        },
+        {
+          "balance_change": "Adjusted texture and audio file compression to reduce the game\u2019s file size and decrease memory usage."
+        },
+        {
+          "balance_change": "Decreased camera shake inside the elevator to compensate for the camera\u2019s lower FOV."
+        },
+        {
+          "bug": "Fixed an issue where filtering your gear by a type of gear you do not currently have would cause the menu to become stuck."
+        },
+        {
+          "bug": "Fixed occasional pitch inconsistencies in audio clips."
+        },
+        {
+          "bug": "Prevented acquiring the \u201cGhost\u201d achievement when extracting from a Sublevel unless the player has the access card that would allow them to descend (this was an issue when playing with \u201cRequire Keycard to Ascend\u201d turned off in the difficulty settings \u2013 you could literally get the achievement by loading into a Sublevel and immediately extracting)."
+        },
+        {
+          "bug": "Fixed Boss 2 getting stuck in place in certain situations when performing their grab attack."
+        },
+        {
+          "bug": "Fixed a bug where the player would be unable to move if they used a Tear Module on themself right as the current Sublevel\u2019s scene was unloaded."
+        },
+        {
+          "bug": "Fixed a bug where the elevator UI would not reappear when entering the elevator after viewing certain cutscenes."
+        },
+        {
+          "bug": "Fixed some inconsistencies in how guard KOs were counted."
+        },
+        {
+          "bug": "Fixed inconsistencies in how Boss 3\u2019s special parry triggered, preventing it from whiffing in situations where it was intended to hit, and added a vacuum effect to the first hit to ensure the player does not escape the combo."
+        },
+        {
+          "bug": "Prevented the startup of Boss 3\u2019s \u201cFinal Gambit\u201d attack from being interrupted by wallsplats or tasers."
+        },
+        {
+          "bug": "Corrected the wording of \u201ckeycard\u201d to \u201caccess card\u201d in the progression difficulty settings."
+        },
+        {
+          "bug": "Made it so enemies play a hit sound effect when hit by another enemy."
+        },
+        {
+          "bug": "Added an additional check to prevent a NavMesh check that sometimes occurred erroneously."
+        },
+        {
+          "bug": "Fixed an error caused by entering the Forge in certain situations, in which the end of battle KO screen would play instead of the Forgekeeper\u2019s intro cutscene."
+        },
+        {
+          "bug": "Fixed Lyla\u2019s attacks not being able to hit other guards."
+        },
+        {
+          "bug": "Fixed a bug that caused Radar Guards and Elite Guards to not properly flash white while highlighted for a sneak attack."
+        },
+        {
+          "bug": "Moved an incorrectly-placed combat start cutscene in Layer 3, Sublevel 2 that, if triggered, caused some geometry clipping."
+        },
+        {
+          "bug": "Fixed overlapping text caused by certain messages, such as elevator terminal interaction notifications, appearing while the pickup list was still on screen."
+        },
+        {
+          "bug": "Updated broken Twitter link on title screen (we changed our handle)."
+        },
+        {
+          "bug": "Other minor fixes."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal - Hotfix 1.2.2",
+      "date": "2025-01-22 19:35:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505288561",
+      "content": "[h2]Changelog[/h2]\n[h3]New Features[/h3]\n[list]\n[*]Added a \u201cReset All Bindings\u201d button to the control binding menu (only available when editing custom presets).\n[*]Control preset settings can now be changed when a non-customizable preset is selected. When doing this, the game will automatically switch to the first available custom preset that has no changes, overwriting it with the previous preset\u2019s settings and the new change. If all custom presets already have existing changes from the default, the player will be prompted to choose whether to overwrite the Custom A preset.\n[/list]\n[h3]Adjustments[/h3]\n[list]\n[*]Slightly adjusted one of the KO screen camera angles.\n[*]Updated control glyphs for PS menu/create and share buttons.\n[/list]\n[h3]Bug Fixes[/h3]\n[list]\n[*]When manually setting control prompts to PS or XB, \u201csubmit\u201d prompts now display the correct button.\n[*]Fixed a bug that caused the \u201cDraw!\u201d achievement to be unobtainable.\n[*]Automatic doors in Layer 3, Sublevel 3 will now open once all guards are defeated, even if Lyla is still present in the Sublevel.\n[*]Boss 2\u2019s health is now correctly set when changing to phase 2 or adjusting combat difficulty settings in Boss Training mode.\n[*]The control prompt to view/edit stealth difficulty settings now correctly displays for the rightmost two settings.\n[*]Deselecting an item in the inventory while discarding it now stops the discard process, even when using a mouse.\n[*]When wearing gear that decreases your max HP, armor points are no longer ignored.\n[*]Fixed a typo in the forge UI.\n[*]Lyla\u2019s super armor flash effect now always fades out completely.\n[*]Electromagnets no longer carve out a portion of the NavMesh, which caused a variety of issues.\n[*]Fixed a logic error that caused the condition for obtaining the \u201cTopped Off\u201d achievement to be inconsistent.\n[*]Adjusted the size of the trigger for Lyla\u2019s fight in Layer 3, Sublevel 3 to prevent starting combat in the forge room with another guard while Lyla is present.\n[*]The input for canceling a control rebinding is now dependent only on the currently active input device and not the type of device you are attempting to bind for.\n[/list]\n\nThanks for reading!\n- Crucible",
+      "key": "2279600::4a540872cfda6aa35ff9bb00a4d6306b4db64633",
+      "tags": [
+        {
+          "feature": "[*]Added a \u201cReset All Bindings\u201d button to the control binding menu (only available when editing custom presets)."
+        },
+        {
+          "feature": "[*]Control preset settings can now be changed when a non-customizable preset is selected. When doing this, the game will automatically switch to the first available custom preset that has no changes, overwriting it with the previous preset\u2019s settings and the new change. If all custom presets already have existing changes from the default, the player will be prompted to choose whether to overwrite the Custom A preset."
+        },
+        {
+          "balance_change": "[*]Slightly adjusted one of the KO screen camera angles."
+        },
+        {
+          "bug": "[*]When manually setting control prompts to PS or XB, \u201csubmit\u201d prompts now display the correct button."
+        },
+        {
+          "bug": "[*]Fixed a bug that caused the \u201cDraw!\u201d achievement to be unobtainable."
+        },
+        {
+          "bug": "[*]Automatic doors in Layer 3, Sublevel 3 will now open once all guards are defeated, even if Lyla is still present in the Sublevel."
+        },
+        {
+          "bug": "[*]Boss 2\u2019s health is now correctly set when changing to phase 2 or adjusting combat difficulty settings in Boss Training mode."
+        },
+        {
+          "bug": "[*]The control prompt to view/edit stealth difficulty settings now correctly displays for the rightmost two settings."
+        },
+        {
+          "bug": "[*]Deselecting an item in the inventory while discarding it now stops the discard process, even when using a mouse."
+        },
+        {
+          "bug": "[*]When wearing gear that decreases your max HP, armor points are no longer ignored."
+        },
+        {
+          "bug": "[*]Fixed a typo in the forge UI."
+        },
+        {
+          "bug": "[*]Lyla\u2019s super armor flash effect now always fades out completely."
+        },
+        {
+          "bug": "[*]Electromagnets no longer carve out a portion of the NavMesh, which caused a variety of issues."
+        },
+        {
+          "bug": "[*]Fixed a logic error that caused the condition for obtaining the \u201cTopped Off\u201d achievement to be inconsistent."
+        },
+        {
+          "balance_change": "[*]Adjusted the size of the trigger for Lyla\u2019s fight in Layer 3, Sublevel 3 to prevent starting combat in the forge room with another guard while Lyla is present."
+        },
+        {
+          "bug": "[*]The input for canceling a control rebinding is now dependent only on the currently active input device and not the type of device you are attempting to bind for."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal - Hotfix 1.2.1",
+      "date": "2024-12-20 03:15:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930648209",
+      "content": "[h2]Changelog[/h2]\n[list]\n[*]Fixed an error caused by switching targets in a fight where the enemy health bars are not visible.\n[*]Corrected the positioning of the scavenger\u2019s taser when loading into a run with gear equipped that would change its position.\n[*]Teleporting a guard out of combat then getting into a fight not including that guard no longer causes enemy health bars to display incorrectly.\n[*]Corrected Lyla\u2019s spawn chance in New Game+ from 75% to 50%.\n[*]Encountering Lyla on Layer 1 or 2 in New Game+ no longer softlocks the game if the appropriate tips have not yet been unlocked, instead unlocking said tips without interrupting gameplay and continuing as normal.\n[*]Potentially fixed a bug that would cause the opening cutscene to not play its camera animation.\n[*]As the input fixes in 1.2.0 resulted in an inadvertent change to when a hard attack\u2019s input can be released without changing it to a quick attack, we\u2019ve slightly raised the required time that you must hold an attack button to perform a hard attack.\n[*]Fixed a bug where the camera would get set to the wrong height after certain battles.\n[*]Fixed gear models appearing with lighting effects such as edge light/highlight in the inventory screen or hideout menu.\n[*]Skipping the tutorial while a tutorial popup is queued no longer displays the popup, and skipping the tutorial will always unlock the use of taser darts and the inventory.\n[*]The player can no longer be detected by radar guards while teleporting.\n[*]Corrected UI layering of health display.\n[*]Fixed a navmesh issue on Layer 3, Sublevel 1.\n[/list]",
+      "key": "2279600::7d9011e539e3e71d9f3cfe7556140b44eb7284ff",
+      "tags": [
+        {
+          "bug": "Fixed an error caused by switching targets in a fight where the enemy health bars are not visible."
+        },
+        {
+          "bug": "Corrected the positioning of the scavenger\u2019s taser when loading into a run with gear equipped that would change its position."
+        },
+        {
+          "bug": "Teleporting a guard out of combat then getting into a fight not including that guard no longer causes enemy health bars to display incorrectly."
+        },
+        {
+          "balance_change": "Corrected Lyla\u2019s spawn chance in New Game+ from 75% to 50%."
+        },
+        {
+          "bug": "Encountering Lyla on Layer 1 or 2 in New Game+ no longer softlocks the game if the appropriate tips have not yet been unlocked, instead unlocking said tips without interrupting gameplay and continuing as normal."
+        },
+        {
+          "bug": "Potentially fixed a bug that would cause the opening cutscene to not play its camera animation."
+        },
+        {
+          "balance_change": "As the input fixes in 1.2.0 resulted in an inadvertent change to when a hard attack\u2019s input can be released without changing it to a quick attack, we\u2019ve slightly raised the required time that you must hold an attack button to perform a hard attack."
+        },
+        {
+          "bug": "Fixed a bug where the camera would get set to the wrong height after certain battles."
+        },
+        {
+          "bug": "Fixed gear models appearing with lighting effects such as edge light/highlight in the inventory screen or hideout menu."
+        },
+        {
+          "bug": "Skipping the tutorial while a tutorial popup is queued no longer displays the popup, and skipping the tutorial will always unlock the use of taser darts and the inventory."
+        },
+        {
+          "bug": "The player can no longer be detected by radar guards while teleporting."
+        },
+        {
+          "bug": "Corrected UI layering of health display."
+        },
+        {
+          "bug": "Fixed a navmesh issue on Layer 3, Sublevel 1."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal 1.2.0",
+      "date": "2024-12-19 14:17:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930630012",
+      "content": "Hey Scavengers!\n\nWe've got an absolutely massive update for you today just in time for the Steam Winter Sale, for which Raw Metal is 30% off! In this update, we wanted to both bring the game closer to our ideal vision, and address much of the feedback we've received from our community so that we can make the game the best it can be.\n\nI've put together a devlog for this occasion, which highlights and breaks down all of the major changes you'll see in this update.\n\n[previewyoutube=0Xg9TQg5YKo;full][/previewyoutube]\n\n[h1]Difficulty/Progression[/h1]\nTo address tedium and frustration with paying grymite to skip levels and having to replay levels when low on funds, we've reworked the default progression of the game. In the new default progression mode (called Descent Mode), skipping previously cleared sublevels is free, but each time you descend without extracting, you'll get a stacking loot quality bonus that incentivizes longer runs, and retains some stakes in the game without worrying about too much grind or replaying of old levels.\n\nSince a significant number of players have found the game too difficult to enjoy, we've added several customizable difficulty settings for stealth and combat, allowing you to tweak your experience to your liking. Expand dodge/parry windows, modify what occurs upon being scrapped, increase your max health, etc. All Steam achievements are still unlockable regardless of difficulty.\n\nWe still recommend trying the game on the default difficulty on your first go round, and only lowering it if you feel it to be excessively difficult or not otherwise worth your time. Raw Metal is meant to be a challenge, but not a hair-ripping one!\n\n[h1]New Miniboss: Forgekeeper Lyla[/h1]\nYour use of the forges in Katabase 6 has drawn some unwanted attention from Forgekeeper Lyla, who aims to stop your meddling with her precious workstations.\n\nLyla serves as a bridge between the standard guard enemies of Raw Metal and the differently-challenging boss fights, preparing the player for the jump in difficulty between the two and reducing the frustration of being thrown into a full-on boss fight before being introduced to things like enemy combos. Once the player defeats Lyla at a forge, they'll gain access to it and she'll move down to the next layer. At each layer, she'll learn one new move that foreshadows the abilities of the next boss, and prepares the player for what's to come.\n\nWe're excited to introduce this fun new character into the game, and are happy with the rivalry (and brilliant performance by Ellie Maeve) she brings to the game!\n\n[h1]Expanded Options Menu and Rebinding[/h1]\nThe options menu has been totally reworked with several highly requested features, such as an eye-friendly mode that reduces bright/flashing effects, a slider to reduce camera shake (or increase it, if you're a psycho), manual camera controls, slow-mo disabling, and more.\n\nControls are now fully customizable, including two preset layouts and three custom layouts, as well as options to modify how hard attacks are executed. You can bind them to separate keys/buttons, or bind a hard attack modifier button that turns your quick attack inputs into hard attacks while held.\n\n[h1]New guard patrol animations, and more![/h1]\nGuards now interact with their environment while on patrol! Watch them type, take notes, crouch, and lean on tables and walls. Other features include various improvements to gear visuals, airborne guards knocking grounded guards back, taser parrying, and various quality-of-life features like skipping finisher screens and detailed gear effect descriptions.\n\n[h1]Full Changelog[/h1]\n[h3]Options Menu Overhaul[/h3]\n[list]\n[*]The options menu has been greatly expanded, organizing settings into tabs and adding many new options, including control rebinding, difficulty, and some accessibility features.\n[*]Graphics Tab: Settings that affect the game\u2019s rendering. This includes some previous options, as well as the following new ones:\n[list]\n[*]Bloom quality\n[*]Film grain intensity\n[*]Eye-friendly mode: This tones down bright/flashing effects to reduce eye strain. This has been a requested feature since launch, so we\u2019re glad to finally offer it!\n[/list]\n[*]Display Tab: All-new settings to adjust the camera and HUD:\n[list]\n[*]Camera shake intensity\n[*]Combat camera: Changes how the camera is controlled during combat. There are options for auto (the classic Raw Metal camera we all know and love), manual, and a combination of both, which is the new default \u2013 You can adjust the camera\u2019s position with the mouse/RS, and if you leave it alone for a few seconds the auto mode will take over again.\n[*]Enable/disable slow-motion effects that occur during combat\n[*]Lock-on indicator: Display a lock-on reticle to indicate which enemy is currently targeted. This can be set to display all the time, not at all, or only when changing targets. The indicator will not appear when engaged in a battle with only one enemy.\n[*]Enemy attack indicator: You can disable the attack warning indicator completely or set it to only appear for off-screen enemies.\n[*]Enemy sight indicator: Allows you to disable the eye-shaped enemy sight indicator. The detection ring serves the same purpose, so not much is lost from disabling it. However, it will remain on by default as it provides additional clarity for new players.\n[*]Gadget control prompts: Affects if/when gadget control prompts are displayed. This affects the prompts on the taser/gadget icons in the bottom left/right corners of the HUD, as well as the controls that appear while aiming. You can fully enable/disable these prompts, or you can choose to only have the aiming prompts display. All prompts still appear during the tutorial, regardless of this setting.\n[*]Show enemy HP number: Display the enemy\u2019s current HP value next to their health bar, like in Training mode. To avoid confusion, the \u201cDamage Display\u201d option in Training mode no longer affects this, and instead the HP values are always visible there.\n[*]Auto-skip finisher screen: Allows you to automatically skip the end-of-combat finisher screen. This does not apply to the \u201cScrapped\u201d screen.\n[/list]\n[*]Sound Tab: Contains the already-existing sound settings. The subtitle options have changed slightly:\n[list]\n[*]Instead of selecting a subtitle language, the \u201cSubtitles\u201d option is now just a toggle.\n[*]You can now turn on an option to display the speaking character\u2019s name as part of the subtitle text.\n[/list]\n[*]Controls Tab: In-depth control scheme customization:\n[list]\n[*]Unlock mouse cursor: This was a requested accessibility option, so we\u2019ve added the ability to keep the mouse cursor unlocked during gameplay.\n[*]Camera sensitivity\n[*]Aim sensitivity multiplier: A multiplier for the camera\u2019s default sensitivity that applies while aiming a taser or gadget.\n[*]Preset: Two official control schemes (Default and Tap Hard Attack) are built-in, and three custom slots are available for creating player-defined control schemes. Keyboard and gamepad bindings are edited separately. In accordance with the ability to rebind controls, button prompts now dynamically change to display the correct bindings.\n[*]Added optional bindings for hard punches, hard kicks, and a hard attack modifier. The first two allow binding hard attacks to tap inputs on separate buttons from quick attacks, while the hard attack modifier is a button that can be held down to turn any inputted quick attack into a hard attack.\n[*]Taser targeting: Set whether switching taser targeting modes is performed by holding or tapping Sprint (replaces the old \u201cHold Targeting\u201d toggle).\n[*]Sneaking: Set whether sneaking is performed by holding or tapping Sneak.\n[*]Sprinting: Set whether sprinting is performed by holding or tapping Sprint.\n[*]Hold to hard attack: Toggles the ability to perform a hard attack by holding the punch or kick button. You can turn this off when using separate bindings for hard attacks or the hard attack modifier to avoid accidentally inputting a hard attack when a quick attack was intended.\n[/list]\n[*]Difficulty Tab: Allows the game\u2019s difficulty to be adjusted on a granular level. You can customize the game to your liking, making it easier, harder, or just changing things up for a new save file!\n[list]\n[*]Progression: Set how the game\u2019s progression works.\n[list]\n[*]Descent (Default): We decided that certain aspects of the game\u2019s progression felt too frustrating and grindy, so we\u2019ve made some adjustments to the default progression:\n[list]\n[*]There is no grymite cost to skip levels.\n[*]Upgrading/replenishing/repairing gear is more expensive.\n[*]There is a cumulative Descent Modifier that increases each time you descend to the next Sublevel and resets when you end a run. This value makes the gear you find less likely to be broken, more likely to have weight and armor mods, and more likely to be a higher than average level \u2013 you are encouraged to push  your luck to get better items, but getting scrapped still means your gear will be sent to the contraband station and may get\u2026 roughed up in the process.\n[/list]\n[*]Classic: The previous default progression mode \u2014 Getting scrapped sends your items to the contraband station and returns you to the surface. Grymite must be spent to skip Sublevels.\n[*]Story Mode: A linear progression mode with minimal stakes. Getting scrapped lets you keep your items and resets you to the beginning of the Sublevel. You can return to the surface at any time with no risk of elevator ambushes, and you can skip to any unlocked Sublevel for free.\n[*]Custom: Allows you to adjust the progression settings individually:\n[list]\n[*]Require keycard to ascend: Whether a keycard is required to return to the surface.\n[*]Enable/disable elevator ambushes\n[*]When scrapped: Set whether you are reset to the beginning of the Sublevel, the Layer, or to the surface, as well as whether you lose your items when you get scrapped.\n[*]Level skip cost multiplier\n[*]Gear upgrade/replenish/repair cost multiplier\n[*]Descent modifier: Adjust how much is added to the Descent Modifier when descending to the next Sublevel.\n[/list]\n[/list]\n[*]Stealth difficulty: Adjust the difficulty of stealth gameplay.\n[list]\n[*]Easy, Normal, Hard: Presets that adjust the guards\u2019 detection range and rate, as well as the damage and bonus points of sneak attacks.\n[*]Custom: Allows you to adjust the stealth difficulty settings individually:\n[list]\n[*]Multipliers for detection rate and detection range.\n[*]Sneak attack damage\n[*]Sneak attack point multiplier\n[/list]\n[/list]\n[*]Combat difficulty: Adjust the difficulty of combat gameplay.\n[list]\n[*]Easy, Normal, Hard, Brutal: Presets that adjust values relevant to combat such as health and dodge/parry windows. Hard is the default and is the same as the previous version of the game.\n[*]Custom: Allows you to adjust the combat difficulty settings individually:\n[list]\n[*]Additional player HP\n[*]Guard & boss HP\n[*]Sliders for setting the default active duration of your dodge and parry\n[*]Auto dodge/auto parry: Set the game to automatically dodge or parry enemy attacks. You can set this to trigger always or only when the corresponding button is held.\n[*]Style points multiplier\n[*]Heat build multiplier: Affects how often enemies block/parry.\n[/list]\n[/list]\n[*]When selecting \u201cNew Game\u201d or \u201cNew Game+\u201d from the title screen, players will be prompted to select difficulty settings for progression, stealth, and combat.\n[*]Note: With the exception of progression, the default difficulty settings are the same as the previous version of the game.\n[/list]\n[*]The Data tab contains the options for skipping the tutorial and resetting data, and a new option to switch a New Game+ save back to normal.\n[/list]\n[h3]New Enemy: Forgekeeper Lyla[/h3]\n[list]\n[*]We\u2019ve found that bosses can be a significant roadblock for our players. They demand a change in playstyle due to their attack followups and unique mechanics, making the jump in difficulty from normal combat to the first boss fight quite large. To address this, we\u2019ve added a miniboss to teach the player how to deal with some of the things the bosses will throw at them that they might not be prepared for.\n[*]Forgekeeper Lyla (VA: Ellie Maeve) appears at the forge. Once defeated, she permanently moves down to the next Layer\u2019s forge, gaining new abilities to help prepare the player for the next boss fight.\n[*]Once defeated on Layer 3, Lyla will stay out of your way permanently, though you can still fight her in Training mode if you so desire.\n[*]In New Game+, Lyla has a random chance of appearing at any forge, and always has her full moveset.\n[*]Added new tips regarding the game mechanics Lyla showcases that are unlocked when fighting Lyla on each Layer.\n[*]Added combat music variations that play when fighting Lyla.\n[*]Updated final cutscene and credits to include Lyla.\n[/list]\n[h3]Other New Features[/h3]\n[list]\n[*]Added \u201cwork\u201d animations to show guards carrying out tasks during their patrols.\n[*]You can now skip the end-of-combat finisher screen by pressing Pause (you cannot skip the \u201cScrapped\u201d screen).\n[*]Enemy health bars now temporarily display their previous value in a darker color.\n[*]Added gear effect descriptions to make it more clear what certain effects do. These can be viewed by pressing R on keyboard, or the right trigger on gamepad. This tooltip display also shows the effect\u2019s max value, which can give you a better idea of what you\u2019re working toward or help you decide which gear to invest into.\n[*]Parrying enemy taser darts now deflects them in a random direction within an arc behind the Scavenger. If the taser dart is deflected toward an enemy or electronic device such as a light or camera, it will hit it. Any gear that changes the effects of your taser darts does not apply to deflected enemy taser darts.\n[*]Menus can now be navigated using WASD, with Enter to select/submit. This feature was necessitated by some other UI changes this update, but there are some instances where attempting to navigate menus this way may not work if no controls are currently highlighted. We plan to fix this in a future update.\n[*]Added a new button to the \u201cCheck Us Out\u201d section on the title screen, linking to our Bluesky profile.\n[*]Added a lens dirt effect when a concussion grenade explosion or wallsplat occurs near the camera.\n[*]Added a new KO screen camera angle from the opposite side. The game randomly chooses between the two angles when displaying the KO screen.\n[/list]\n[h3]Balance/Adjustments[/h3]\n[list]\n[*]Added a new effect to Grymite Gauntlets and Grymite Boots that grants a grymite bonus upon completing combat with a Raw rating, offsetting the cost of using these items.\n[*]Decreased the punch/kick costs of Grymite Gauntlets/Boots by 20%.\n[*]Decreased the base value of Adrenaline Mask\u2019s \u201cJuggle Effect\u201d multiplier from x1 to x0.95.\n[*]Slightly adjusted the appearance of certain gear pieces.\n[*]The invulnerable duration of both dodges and parries is now capped at .5 seconds.\n[*]Decreased the slow-motion effect time of a successful parry to .5 seconds.\n[*]Removed hitstop that occurred when an enemy hit another enemy to avoid causing timing inconsistencies in group fights.\n[*]Added some slight hitstop to the player\u2019s parry to give it extra impact.\n[*]Changed the gear info panel in the inventory to a tab view that makes it more clear that you can switch between the comparison view and the more detailed description view.\n[*]Adjusted some tips for clarity and to be up-to-date with other changes such as control rebinding.\n[*]Added additional background darkening to tutorial popups for higher text contrast.\n[*]Adjusted the positions of some voice message and access card interactables to reduce the likelihood of accidentally playing voice messages.\n[*]On Sublevels with a forge, elevator access cards now always appear in the forge.\n[*]Adjusted interrupt priorities for some boss voice lines.\n[*]Minor improvements to enemy behavior during combat, including adjustments to when and where guards decide to strafe, stopping guards from playing their walking animation when pushed up against the player, and so on.\n[*]When a launched enemy is Sent, they can now pass through other guards and will apply some knockback to any character they hit along the way.\n[*]Changed the sound effect that plays when banging on a door.\n[*]Changed the names of some gear effects to make them more concise or less confusing, or to add consistency between the way the same effect is described in multiple places. Some gear effect names have been made less descriptive in service of brevity, but this is compensated with the addition of detailed effect descriptions.\n[*]Slightly adjusted certain camera animations.\n[*]Adjusted the appearance of scrollbars in the UI to be more in line with the game\u2019s design language.\n[*]Slightly decreased the forward motion of enemies falling from an aerial wallsplat (in an effort to reduce the likelihood of landing in an unintended position and getting stuck).\n[*]Decreased grounded knockback of Running Punch and increased its forward movement to emphasize its utility for passing through enemies.\n[*]Optimization improvements.\n[/list]\n[h3]Bug Fixes[/h3]\n[list]\n[*]Holding the Run button while stationary no longer prevents you from attacking.\n[*]The second boss\u2019 max HP in their second phase now receives the 1.25x multiplier in New Game+.\n[*]Fixed the way that the \u201cMax HP\u201d gear effect is applied so that the player\u2019s \u201creal\u201d current health is maintained and not reduced by equipping these gear pieces. This also prevents the player from reducing their HP to 0 outside of combat in New Game+.\n[*]The player can now take damage from Electromagnets (using Static Overcharger) during stealth in New Game+.\n[*]Damage dealt by Electromagnets (using Static Overcharger) no longer depletes the Electromagnet\u2019s timer.\n[*]The achievement \u201cHazardous Materials\u201d can now be acquired by knocking a guard into a pitfall with a Concussion Grenade.\n[*]Prevented cutscenes from being played in slow-motion when Reflex Gear\u2019s effect is active.\n[*]Ensured that gear effects based around your current HP apply correctly when wearing gear that lowers your Max HP.\n[*]Corrected the height of guards\u2019 detection/radar rings so that they are fully visible even when the guard is standing in water.\n[*]When parrying, the Scavenger now always faces toward the parried enemy.\n[*]Parrying non-melee attacks now plays the parry sound & visual effects.\n[*]You must now tase a Taser Guard while they are aiming at you to acquire the \u201cDraw!\u201d achievement \u2014 previously, you could earn it by tasing them at any time.\n[*]The third boss\u2019 intro cutscene voice lines now play correctly upon re-fighting the boss after previously beating them.\n[*]Prevented the player from using gadgets in the tutorial level until all guards have been defeated, as it was previously possible to softlock using Tear Modules. Also adjusted the areas that you can teleport to in the tutorial level.\n[*]Prevented the player from teleporting into an unintended area of Layer 3, Sublevel B.\n[*]Fixed a bug where, if the third boss was defeated by reducing their max HP to 0 (rather than by reducing their HP to 0 and then finishing them with a Hard Attack), the end-of-battle cutscene would not play, softlocking the game.\n[*]Parrying enemy taser darts now counts toward the \u201cPlatypus\u201d achievement.\n[*]Fixed instances of the mouse cursor appearing for a single frame when opening certain menus when using a controller.\n[*]You can now always spawn Radar and Elite Guards in Training mode in New Game+, regardless of whether you have reached the Layers on which they appear.\n[*]Adjusted some environment colliders to prevent guards becoming stuck in tight gaps.\n[*]The emissive portions of light fixtures now get disabled when the light is shot out/disabled.\n[*]Fixed a bug that allowed a softlock in the tutorial level if the final combat encounter was initiated while too near the previous encounter\u2019s position.\n[*]Guards now have their baton swap to be in their hand with the proper timing in all sneak attack combat initiation cutscenes.\n[*]Fixed a bug where taser guards would sometimes run to an incorrect position after shooting the player.\n[*]Prevented taser guards from playing a voice line when entering the chase state after shooting the player.\n[*]Prevented guards who got trapped in an Electromagnet while engaged in a chase from immediately running to your position after breaking free.\n[*]Prevented guards from blocking Concussion Grenades.\n[*]Guards\u2019 batons now always reset to the hip position when returning to the patrol state, and taser guards no longer permanently have their batons in hand.\n[*]Prevented guards from getting stuck in an idle animation while patrolling.\n[*]Fixed a bug where if the currently highlighted interactable object was destroyed (i.e. unloaded) the interaction prompt would stay active and would not clean up certain callbacks in memory which would cause the player to be unable to interact with anything.\n[*]Fixed the timing of the music in the end cutscene, which previously appeared delayed on some machines.\n[*]Improved guard navigation/avoidance behaviors and fixed some navmesh problems.\n[*]Adjusted joystick sensitivity/dead zone for certain controls to prevent accidentally changing values when navigating vertically.\n[*]Adjusted button press sensitivity so that analog inputs (i.e. a half-press on an gamepad\u2019s trigger) register as button presses consistently and don\u2019t retrigger erroneously.\n[*]Fixed an issue with how slo-mo was applied on the \u201cScrapped\u201d screen when wearing certain gear.\n[*]Fixed a visual bug on Layer 2 where a black void was visible through the gap between the elevator and first room.\n[*]Prevented the player from taking damage after getting scrapped, which could cause the slo-mo effect to be canceled.\n[*]Bosses are now set to a consistent position when a cutscene is skipped, preventing them from clipping into objects.\n[*]You can no longer interact with interactables (including sneak attacking guards) while you are teleporting using a Tear Module. Also, guards can no longer be sneak attacked while they are being teleported.\n[*]Knocking out a guard currently in pursuit now properly registers that guard as no longer in pursuit (for the purpose of transitioning the music back to stealth).\n[*]Loading the title screen no longer creates an unnecessary extra loading screen object.\n[*]Discarding/scrapping/exchanging gear now removes it from memory.\n[*]Added a failsafe such that if an enemy becomes stuck in an invulnerable state (i.e. falling after an aerial wallsplat) for more than a few seconds, they will automatically be teleported to a valid location so the fight can resume.\n[*]Adjusted a collider in Layer 3, Sublevel B that an enemy commonly got stuck on.\n[*]Enlarged bulkhead colliders and wall colliders to overlap the ground and ceiling in an effort to prevent characters clipping through corners.\n[*]Added an iteration limit to attempt to fix a rare game freeze during Boss 2\u2019s fight.\n[*]Parrying Boss 2\u2019s grab now causes their attack to end, same as dodging.\n[*]The first combat section of \u201cExtraction\u201d (the elevator music) now transitions to the next section at the correct time.\n[*]Corrected the angle at which the taser is aimed to match the angle to the target.\n[*]Enemies no longer get stuck standing on tables or other objects after landing, instead tumbling off as intended or, as a failsafe, walking off and returning to normal.\n[*]Adjusted some combat start positions to prevent guards from starting combat with their colliders intersecting.\n[*]All gear now displays the edge light, shadow, and highlight effects correctly.\n[*]Initiating combat with a guard inside the elevator while outside the elevator no longer causes the game to stop rendering.\n[*]Guards now only run the code that checks for bodies to investigate when they aren\u2019t actively investigating something else or chasing the player, preventing unintended stuttering/sliding that could occur when making noise near a guard who was currently investigating a body.\n[*]The way enemies\u2019 colliders change size when launched has been adjusted to prevent unintended collisions when using Running Kick.\n[*]Fixed an animation transition error that occurred at the end of both running attacks and adjusted the rotation applied when transitioning out of said attacks so that no jittering occurs.\n[*]When ending a running attack, an additional check is performed to ensure that the player\u2019s colliders do not intersect with the enemies\u2019, and, if they do intersect, the player will be slightly moved to prevent the game\u2019s collision resolution system from pushing the player away at high speed.\n[*]Fixed a bug where inputting a quick attack within a brief window during the startup of a hard attack would cause the hard attack to be \u201cfeinted\u201d into the quick attack with the same position in the series.\n[/list]\n\n[h2]That's it for now![/h2]\nThanks to all of you for your unbelievable feedback and support, we couldn't have come this far without you. This will likely be the last major content update for Raw Metal, but we will continue supporting and patching the game as long as is needed.\n\nTake care, scavengers, and see you down there.\n- Crucible",
+      "key": "2279600::742c0f8431714689a7259d67d09ecf48e394b49b",
+      "tags": [
+        {
+          "feature": "Since a significant number of players have found the game too difficult to enjoy, we've added several customizable difficulty settings for stealth and combat, allowing you to tweak your experience to your liking. Expand dodge/parry windows, modify what occurs upon being scrapped, increase your max health, etc. All Steam achievements are still unlockable regardless of difficulty."
+        },
+        {
+          "feature": "We're excited to introduce this fun new character into the game, and are happy with the rivalry (and brilliant performance by Ellie Maeve) she brings to the game!"
+        },
+        {
+          "feature": "The options menu has been totally reworked with several highly requested features, such as an eye-friendly mode that reduces bright/flashing effects, a slider to reduce camera shake (or increase it, if you're a psycho), manual camera controls, slow-mo disabling, and more."
+        },
+        {
+          "feature": "Controls are now fully customizable, including two preset layouts and three custom layouts, as well as options to modify how hard attacks are executed. You can bind them to separate keys/buttons, or bind a hard attack modifier button that turns your quick attack inputs into hard attacks while held."
+        },
+        {
+          "feature": "Guards now interact with their environment while on patrol! Watch them type, take notes, crouch, and lean on tables and walls. Other features include various improvements to gear visuals, airborne guards knocking grounded guards back, taser parrying, and various quality-of-life features like skipping finisher screens and detailed gear effect descriptions."
+        },
+        {
+          "feature": "The options menu has been greatly expanded, organizing settings into tabs and adding many new options, including control rebinding, difficulty, and some accessibility features."
+        },
+        {
+          "feature": "Eye-friendly mode: This tones down bright/flashing effects to reduce eye strain. This has been a requested feature since launch, so we\u2019re glad to finally offer it!"
+        },
+        {
+          "feature": "Camera shake intensity"
+        },
+        {
+          "feature": "Combat camera: Changes how the camera is controlled during combat. There are options for auto (the classic Raw Metal camera we all know and love), manual, and a combination of both, which is the new default \u2013 You can adjust the camera\u2019s position with the mouse/RS, and if you leave it alone for a few seconds the auto mode will take over again."
+        },
+        {
+          "feature": "Enable/disable slow-motion effects that occur during combat"
+        },
+        {
+          "feature": "Lock-on indicator: Display a lock-on reticle to indicate which enemy is currently targeted. This can be set to display all the time, not at all, or only when changing targets. The indicator will not appear when engaged in a battle with only one enemy."
+        },
+        {
+          "feature": "Enemy attack indicator: You can disable the attack warning indicator completely or set it to only appear for off-screen enemies."
+        },
+        {
+          "feature": "Enemy sight indicator: Allows you to disable the eye-shaped enemy sight indicator. The detection ring serves the same purpose, so not much is lost from disabling it. However, it will remain on by default as it provides additional clarity for new players."
+        },
+        {
+          "feature": "Gadget control prompts: Affects if/when gadget control prompts are displayed. This affects the prompts on the taser/gadget icons in the bottom left/right corners of the HUD, as well as the controls that appear while aiming. You can fully enable/disable these prompts, or you can choose to only have the aiming prompts display. All prompts still appear during the tutorial, regardless of this setting."
+        },
+        {
+          "feature": "Show enemy HP number: Display the enemy\u2019s current HP value next to their health bar, like in Training mode. To avoid confusion, the \u201cDamage Display\u201d option in Training mode no longer affects this, and instead the HP values are always visible there."
+        },
+        {
+          "feature": "Auto-skip finisher screen: Allows you to automatically skip the end-of-combat finisher screen. This does not apply to the \u201cScrapped\u201d screen."
+        },
+        {
+          "feature": "Instead of selecting a subtitle language, the \u201cSubtitles\u201d option is now just a toggle."
+        },
+        {
+          "feature": "You can now turn on an option to display the speaking character\u2019s name as part of the subtitle text."
+        },
+        {
+          "feature": "Unlock mouse cursor: This was a requested accessibility option, so we\u2019ve added the ability to keep the mouse cursor unlocked during gameplay."
+        },
+        {
+          "feature": "Preset: Two official control schemes (Default and Tap Hard Attack) are built-in, and three custom slots are available for creating player-defined control schemes. Keyboard and gamepad bindings are edited separately. In accordance with the ability to rebind controls, button prompts now dynamically change to display the correct bindings."
+        },
+        {
+          "feature": "Added optional bindings for hard punches, hard kicks, and a hard attack modifier. The first two allow binding hard attacks to tap inputs on separate buttons from quick attacks, while the hard attack modifier is a button that can be held down to turn any inputted quick attack into a hard attack."
+        },
+        {
+          "feature": "Taser targeting: Set whether switching taser targeting modes is performed by holding or tapping Sprint (replaces the old \u201cHold Targeting\u201d toggle)."
+        },
+        {
+          "feature": "Sneaking: Set whether sneaking is performed by holding or tapping Sneak."
+        },
+        {
+          "feature": "Sprinting: Set whether sprinting is performed by holding or tapping Sprint."
+        },
+        {
+          "feature": "Hold to hard attack: Toggles the ability to perform a hard attack by holding the punch or kick button. You can turn this off when using separate bindings for hard attacks or the hard attack modifier to avoid accidentally inputting a hard attack when a quick attack was intended."
+        },
+        {
+          "feature": "Progression: Set how the game\u2019s progression works."
+        },
+        {
+          "feature": "Descent (Default): We decided that certain aspects of the game\u2019s progression felt too frustrating and grindy, so we\u2019ve made some adjustments to the default progression:"
+        },
+        {
+          "feature": "There is no grymite cost to skip levels."
+        },
+        {
+          "feature": "Upgrading/replenishing/repairing gear is more expensive."
+        },
+        {
+          "feature": "There is a cumulative Descent Modifier that increases each time you descend to the next Sublevel and resets when you end a run. This value makes the gear you find less likely to be broken, more likely to have weight and armor mods, and more likely to be a higher than average level \u2013 you are encouraged to push your luck to get better items, but getting scrapped still means your gear will be sent to the contraband station and may get\u2026 roughed up in the process."
+        },
+        {
+          "feature": "Classic: The previous default progression mode \u2014 Getting scrapped sends your items to the contraband station and returns you to the surface. Grymite must be spent to skip Sublevels."
+        },
+        {
+          "feature": "Story Mode: A linear progression mode with minimal stakes. Getting scrapped lets you keep your items and resets you to the beginning of the Sublevel. You can return to the surface at any time with no risk of elevator ambushes, and you can skip to any unlocked Sublevel for free."
+        },
+        {
+          "feature": "Custom: Allows you to adjust the progression settings individually:"
+        },
+        {
+          "feature": "Require keycard to ascend: Whether a keycard is required to return to the surface."
+        },
+        {
+          "feature": "Enable/disable elevator ambushes"
+        },
+        {
+          "feature": "When scrapped: Set whether you are reset to the beginning of the Sublevel, the Layer, or to the surface, as well as whether you lose your items when you get scrapped."
+        },
+        {
+          "feature": "Level skip cost multiplier"
+        },
+        {
+          "feature": "Gear upgrade/replenish/repair cost multiplier"
+        },
+        {
+          "feature": "Descent modifier: Adjust how much is added to the Descent Modifier when descending to the next Sublevel."
+        },
+        {
+          "feature": "Stealth difficulty: Adjust the difficulty of stealth gameplay."
+        },
+        {
+          "feature": "Easy, Normal, Hard: Presets that adjust the guards\u2019 detection range and rate, as well as the damage and bonus points of sneak attacks."
+        },
+        {
+          "feature": "Custom: Allows you to adjust the stealth difficulty settings individually:"
+        },
+        {
+          "feature": "Multipliers for detection rate and detection range."
+        },
+        {
+          "feature": "Sneak attack damage"
+        },
+        {
+          "feature": "Sneak attack point multiplier"
+        },
+        {
+          "feature": "Combat difficulty: Adjust the difficulty of combat gameplay."
+        },
+        {
+          "feature": "Easy, Normal, Hard, Brutal: Presets that adjust values relevant to combat such as health and dodge/parry windows. Hard is the default and is the same as the previous version of the game."
+        },
+        {
+          "feature": "Custom: Allows you to adjust the combat difficulty settings individually:"
+        },
+        {
+          "feature": "Additional player HP"
+        },
+        {
+          "feature": "Guard & boss HP"
+        },
+        {
+          "feature": "Sliders for setting the default active duration of your dodge and parry"
+        },
+        {
+          "feature": "Auto dodge/auto parry: Set the game to automatically dodge or parry enemy attacks. You can set this to trigger always or only when the corresponding button is held."
+        },
+        {
+          "feature": "Style points multiplier"
+        },
+        {
+          "feature": "Heat build multiplier: Affects how often enemies block/parry."
+        },
+        {
+          "feature": "When selecting \u201cNew Game\u201d or \u201cNew Game+\u201d from the title screen, players will be prompted to select difficulty settings for progression, stealth, and combat."
+        },
+        {
+          "feature": "The Data tab contains the options for skipping the tutorial and resetting data, and a new option to switch a New Game+ save back to normal."
+        },
+        {
+          "feature": "We\u2019ve found that bosses can be a significant roadblock for our players. They demand a change in playstyle due to their attack followups and unique mechanics, making the jump in difficulty from normal combat to the first boss fight quite large. To address this, we\u2019ve added a miniboss to teach the player how to deal with some of the things the bosses will throw at them that they might not be prepared for."
+        },
+        {
+          "feature": "Forgekeeper Lyla (VA: Ellie Maeve) appears at the forge. Once defeated, she permanently moves down to the next Layer\u2019s forge, gaining new abilities to help prepare the player for the next boss fight."
+        },
+        {
+          "feature": "Once defeated on Layer 3, Lyla will stay out of your way permanently, though you can still fight her in Training mode if you so desire."
+        },
+        {
+          "feature": "In New Game+, Lyla has a random chance of appearing at any forge, and always has her full moveset."
+        },
+        {
+          "feature": "Added new tips regarding the game mechanics Lyla showcases that are unlocked when fighting Lyla on each Layer."
+        },
+        {
+          "feature": "Added combat music variations that play when fighting Lyla."
+        },
+        {
+          "feature": "Updated final cutscene and credits to include Lyla."
+        },
+        {
+          "feature": "Added \u201cwork\u201d animations to show guards carrying out tasks during their patrols."
+        },
+        {
+          "feature": "You can now skip the end-of-combat finisher screen by pressing Pause (you cannot skip the \u201cScrapped\u201d screen)."
+        },
+        {
+          "feature": "Enemy health bars now temporarily display their previous value in a darker color."
+        },
+        {
+          "feature": "Added gear effect descriptions to make it more clear what certain effects do. These can be viewed by pressing R on keyboard, or the right trigger on gamepad. This tooltip display also shows the effect\u2019s max value, which can give you a better idea of what you\u2019re working toward or help you decide which gear to invest into."
+        },
+        {
+          "feature": "Parrying enemy taser darts now deflects them in a random direction within an arc behind the Scavenger. If the taser dart is deflected toward an enemy or electronic device such as a light or camera, it will hit it. Any gear that changes the effects of your taser darts does not apply to deflected enemy taser darts."
+        },
+        {
+          "feature": "Menus can now be navigated using WASD, with Enter to select/submit. This feature was necessitated by some other UI changes this update, but there are some instances where attempting to navigate menus this way may not work if no controls are currently highlighted. We plan to fix this in a future update."
+        },
+        {
+          "feature": "Added a new button to the \u201cCheck Us Out\u201d section on the title screen, linking to our Bluesky profile."
+        },
+        {
+          "feature": "Added a lens dirt effect when a concussion grenade explosion or wallsplat occurs near the camera."
+        },
+        {
+          "feature": "Added a new KO screen camera angle from the opposite side. The game randomly chooses between the two angles when displaying the KO screen."
+        },
+        {
+          "balance_change": "Added a new effect to Grymite Gauntlets and Grymite Boots that grants a grymite bonus upon completing combat with a Raw rating, offsetting the cost of using these items."
+        },
+        {
+          "balance_change": "Decreased the punch/kick costs of Grymite Gauntlets/Boots by 20%."
+        },
+        {
+          "balance_change": "Decreased the base value of Adrenaline Mask\u2019s \u201cJuggle Effect\u201d multiplier from x1 to x0.95."
+        },
+        {
+          "balance_change": "Slightly adjusted the appearance of certain gear pieces."
+        },
+        {
+          "balance_change": "The invulnerable duration of both dodges and parries is now capped at .5 seconds."
+        },
+        {
+          "balance_change": "Decreased the slow-motion effect time of a successful parry to .5 seconds."
+        },
+        {
+          "balance_change": "Removed hitstop that occurred when an enemy hit another enemy to avoid causing timing inconsistencies in group fights."
+        },
+        {
+          "balance_change": "Added some slight hitstop to the player\u2019s parry to give it extra impact."
+        },
+        {
+          "balance_change": "Changed the gear info panel in the inventory to a tab view that makes it more clear that you can switch between the comparison view and the more detailed description view."
+        },
+        {
+          "balance_change": "Adjusted some tips for clarity and to be up-to-date with other changes such as control rebinding."
+        },
+        {
+          "balance_change": "Added additional background darkening to tutorial popups for higher text contrast."
+        },
+        {
+          "balance_change": "Adjusted the positions of some voice message and access card interactables to reduce the likelihood of accidentally playing voice messages."
+        },
+        {
+          "balance_change": "On Sublevels with a forge, elevator access cards now always appear in the forge."
+        },
+        {
+          "balance_change": "Adjusted interrupt priorities for some boss voice lines."
+        },
+        {
+          "balance_change": "Minor improvements to enemy behavior during combat, including adjustments to when and where guards decide to strafe, stopping guards from playing their walking animation when pushed up against the player, and so on."
+        },
+        {
+          "balance_change": "When a launched enemy is Sent, they can now pass through other guards and will apply some knockback to any character they hit along the way."
+        },
+        {
+          "balance_change": "Changed the sound effect that plays when banging on a door."
+        },
+        {
+          "balance_change": "Changed the names of some gear effects to make them more concise or less confusing, or to add consistency between the way the same effect is described in multiple places. Some gear effect names have been made less descriptive in service of brevity, but this is compensated with the addition of detailed effect descriptions."
+        },
+        {
+          "balance_change": "Slightly adjusted certain camera animations."
+        },
+        {
+          "balance_change": "Adjusted the appearance of scrollbars in the UI to be more in line with the game\u2019s design language."
+        },
+        {
+          "balance_change": "Slightly decreased the forward motion of enemies falling from an aerial wallsplat (in an effort to reduce the likelihood of landing in an unintended position and getting stuck)."
+        },
+        {
+          "balance_change": "Decreased grounded knockback of Running Punch and increased its forward movement to emphasize its utility for passing through enemies."
+        },
+        {
+          "balance_change": "Optimization improvements."
+        },
+        {
+          "bug": "Holding the Run button while stationary no longer prevents you from attacking."
+        },
+        {
+          "bug": "The second boss\u2019 max HP in their second phase now receives the 1.25x multiplier in New Game+."
+        },
+        {
+          "bug": "Fixed the way that the \u201cMax HP\u201d gear effect is applied so that the player\u2019s \u201creal\u201d current health is maintained and not reduced by equipping these gear pieces. This also prevents the player from reducing their HP to 0 outside of combat in New Game+."
+        },
+        {
+          "bug": "The player can now take damage from Electromagnets (using Static Overcharger) during stealth in New Game+."
+        },
+        {
+          "bug": "Damage dealt by Electromagnets (using Static Overcharger) no longer depletes the Electromagnet\u2019s timer."
+        },
+        {
+          "bug": "The achievement \u201cHazardous Materials\u201d can now be acquired by knocking a guard into a pitfall with a Concussion Grenade."
+        },
+        {
+          "bug": "Prevented cutscenes from being played in slow-motion when Reflex Gear\u2019s effect is active."
+        },
+        {
+          "bug": "Ensured that gear effects based around your current HP apply correctly when wearing gear that lowers your Max HP."
+        },
+        {
+          "bug": "Corrected the height of guards\u2019 detection/radar rings so that they are fully visible even when the guard is standing in water."
+        },
+        {
+          "bug": "When parrying, the Scavenger now always faces toward the parried enemy."
+        },
+        {
+          "bug": "Parrying non-melee attacks now plays the parry sound & visual effects."
+        },
+        {
+          "bug": "You must now tase a Taser Guard while they are aiming at you to acquire the \u201cDraw!\u201d achievement \u2014 previously, you could earn it by tasing them at any time."
+        },
+        {
+          "bug": "The third boss\u2019 intro cutscene voice lines now play correctly upon re-fighting the boss after previously beating them."
+        },
+        {
+          "bug": "Prevented the player from using gadgets in the tutorial level until all guards have been defeated, as it was previously possible to softlock using Tear Modules. Also adjusted the areas that you can teleport to in the tutorial level."
+        },
+        {
+          "bug": "Prevented the player from teleporting into an unintended area of Layer 3, Sublevel B."
+        },
+        {
+          "bug": "Fixed a bug where, if the third boss was defeated by reducing their max HP to 0 (rather than by reducing their HP to 0 and then finishing them with a Hard Attack), the end-of-battle cutscene would not play, softlocking the game."
+        },
+        {
+          "bug": "Parrying enemy taser darts now counts toward the \u201cPlatypus\u201d achievement."
+        },
+        {
+          "bug": "Fixed instances of the mouse cursor appearing for a single frame when opening certain menus when using a controller."
+        },
+        {
+          "bug": "You can now always spawn Radar and Elite Guards in Training mode in New Game+, regardless of whether you have reached the Layers on which they appear."
+        },
+        {
+          "bug": "Adjusted some environment colliders to prevent guards becoming stuck in tight gaps."
+        },
+        {
+          "bug": "The emissive portions of light fixtures now get disabled when the light is shot out/disabled."
+        },
+        {
+          "bug": "Fixed a bug that allowed a softlock in the tutorial level if the final combat encounter was initiated while too near the previous encounter\u2019s position."
+        },
+        {
+          "bug": "Guards now have their baton swap to be in their hand with the proper timing in all sneak attack combat initiation cutscenes."
+        },
+        {
+          "bug": "Fixed a bug where taser guards would sometimes run to an incorrect position after shooting the player."
+        },
+        {
+          "bug": "Prevented taser guards from playing a voice line when entering the chase state after shooting the player."
+        },
+        {
+          "bug": "Prevented guards who got trapped in an Electromagnet while engaged in a chase from immediately running to your position after breaking free."
+        },
+        {
+          "bug": "Prevented guards from blocking Concussion Grenades."
+        },
+        {
+          "bug": "Guards\u2019 batons now always reset to the hip position when returning to the patrol state, and taser guards no longer permanently have their batons in hand."
+        },
+        {
+          "bug": "Prevented guards from getting stuck in an idle animation while patrolling."
+        },
+        {
+          "bug": "Fixed a bug where if the currently highlighted interactable object was destroyed (i.e. unloaded) the interaction prompt would stay active and would not clean up certain callbacks in memory which would cause the player to be unable to interact with anything."
+        },
+        {
+          "bug": "Fixed the timing of the music in the end cutscene, which previously appeared delayed on some machines."
+        },
+        {
+          "bug": "Improved guard navigation/avoidance behaviors and fixed some navmesh problems."
+        },
+        {
+          "bug": "Adjusted joystick sensitivity/dead zone for certain controls to prevent accidentally changing values when navigating vertically."
+        },
+        {
+          "bug": "Adjusted button press sensitivity so that analog inputs (i.e. a half-press on an gamepad\u2019s trigger) register as button presses consistently and don\u2019t retrigger erroneously."
+        },
+        {
+          "bug": "Fixed an issue with how slo-mo was applied on the \u201cScrapped\u201d screen when wearing certain gear."
+        },
+        {
+          "bug": "Fixed a visual bug on Layer 2 where a black void was visible through the gap between the elevator and first room."
+        },
+        {
+          "bug": "Prevented the player from taking damage after getting scrapped, which could cause the slo-mo effect to be canceled."
+        },
+        {
+          "bug": "Bosses are now set to a consistent position when a cutscene is skipped, preventing them from clipping into objects."
+        },
+        {
+          "bug": "You can no longer interact with interactables (including sneak attacking guards) while you are teleporting using a Tear Module. Also, guards can no longer be sneak attacked while they are being teleported."
+        },
+        {
+          "bug": "Knocking out a guard currently in pursuit now properly registers that guard as no longer in pursuit (for the purpose of transitioning the music back to stealth)."
+        },
+        {
+          "bug": "Loading the title screen no longer creates an unnecessary extra loading screen object."
+        },
+        {
+          "bug": "Discarding/scrapping/exchanging gear now removes it from memory."
+        },
+        {
+          "bug": "Added a failsafe such that if an enemy becomes stuck in an invulnerable state (i.e. falling after an aerial wallsplat) for more than a few seconds, they will automatically be teleported to a valid location so the fight can resume."
+        },
+        {
+          "bug": "Adjusted a collider in Layer 3, Sublevel B that an enemy commonly got stuck on."
+        },
+        {
+          "bug": "Enlarged bulkhead colliders and wall colliders to overlap the ground and ceiling in an effort to prevent characters clipping through corners."
+        },
+        {
+          "bug": "Added an iteration limit to attempt to fix a rare game freeze during Boss 2\u2019s fight."
+        },
+        {
+          "bug": "Parrying Boss 2\u2019s grab now causes their attack to end, same as dodging."
+        },
+        {
+          "bug": "The first combat section of \u201cExtraction\u201d (the elevator music) now transitions to the next section at the correct time."
+        },
+        {
+          "bug": "Corrected the angle at which the taser is aimed to match the angle to the target."
+        },
+        {
+          "bug": "Enemies no longer get stuck standing on tables or other objects after landing, instead tumbling off as intended or, as a failsafe, walking off and returning to normal."
+        },
+        {
+          "bug": "Adjusted some combat start positions to prevent guards from starting combat with their colliders intersecting."
+        },
+        {
+          "bug": "All gear now displays the edge light, shadow, and highlight effects correctly."
+        },
+        {
+          "bug": "Initiating combat with a guard inside the elevator while outside the elevator no longer causes the game to stop rendering."
+        },
+        {
+          "bug": "Guards now only run the code that checks for bodies to investigate when they aren\u2019t actively investigating something else or chasing the player, preventing unintended stuttering/sliding that could occur when making noise near a guard who was currently investigating a body."
+        },
+        {
+          "bug": "The way enemies\u2019 colliders change size when launched has been adjusted to prevent unintended collisions when using Running Kick."
+        },
+        {
+          "bug": "Fixed an animation transition error that occurred at the end of both running attacks and adjusted the rotation applied when transitioning out of said attacks so that no jittering occurs."
+        },
+        {
+          "bug": "When ending a running attack, an additional check is performed to ensure that the player\u2019s colliders do not intersect with the enemies\u2019, and, if they do intersect, the player will be slightly moved to prevent the game\u2019s collision resolution system from pushing the player away at high speed."
+        },
+        {
+          "bug": "Fixed a bug where inputting a quick attack within a brief window during the startup of a hard attack would cause the hard attack to be \u201cfeinted\u201d into the quick attack with the same position in the series."
+        }
+      ]
+    },
+    {
+      "title": "1.1.3 Patch Notes",
+      "date": "2024-07-22 19:13:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959980891265",
+      "content": "Hey Scavengers! We're releasing a new patch that reworks elevator ambushes and makes minor adjustments to bosses. Enjoy!\n\n[h3]Adjustments[/h3]\n[list]\n[*]Previously, the chance of an elevator ambush occurring was determined by an \u201caggression\u201d value that would increase when getting caught and increase slightly when initiating combat with a sneak attack. Due to the way this value was tracked and used, it was somewhat common to encounter a high number of elevator ambushes when ascending, which could become repetitive. The number of guards that could spawn in an elevator ambush was also based on the aggression value but involved a high level of randomness, and so you could end up getting a bunch of 1v1s in a row (boring) or end up fighting 3 guards at once, which could be unfair to a new player who might just be struggling to avoid getting caught. The randomness also made it difficult to get the \u201cGoing Up?\u201d achievement. In order to address these issues, we\u2019ve made some adjustments:\n[list][*]Aggression is now tracked per layer rather than per run, and only one elevator ambush can occur per layer that you ascend through, instead of there being a chance for an ambush to occur on every single sublevel. The chance for an ambush to occur is directly based on the layer\u2019s aggression value, but the chance is decreased when only part of the Layer is being traversed (i.e. ascending from Layer 1, Sublevel 2 has a smaller chance for an ambush while ascending from Layer 1, Sublevel B has a higher chance, since fewer sublevels are being passed through).\n[*]The number of guards that can spawn in an elevator ambush is limited to the highest number of enemies that the player has beaten in a single combat encounter on this save (this data is not reset when starting New Game+), and then capped at 4, or 5 if the player has a significant number of non-noisemaker gadgets. As this data was not tracked prior to this update, you won\u2019t see any ambushes until you beat some guards in a fight.\n[*]Randomness is removed from the equation when determining how many guards to spawn for an elevator ambush. The number is instead determined solely by the aggression value for the current Layer and then capped (if necessary).\n[*]The chance for an elevator ambush to occur is diminished by 25% if the player has not won a combat encounter against more than one enemy at once. This is to lower the likelihood that the player will encounter many 1v1s in a row and to add more leeway for inexperienced players.\n[*]Bodies of KO\u2019d guards from elevator ambushes won\u2019t despawn after combat and can be looted, but won\u2019t drop gear and have a slightly lower grymite drop rate than normal.\n[*]Slightly decreased the likelihood of guard variants (taser, radar, elite) spawning in an elevator ambush.[/list]\n[*]Slightly increased heat build for targeted enemies who can\u2019t see the player but are launched or wallsplatted.\n[*]The amount by which parrying decreases Boss 1\u2019s armor meter has been fairly heavily decreased, as it was previously far too easy to deplete his armor using this method. The armor damage from parrying should function more as a small bonus for performing a difficult action than an extremely powerful tactic that practically invalidates the boss\u2019 main mechanic.\n[*]Slightly increased the amount of Overload Boss 2 builds when getting hit with a taser dart.\n[*]Boss 3 can now continue certain attack chains after their first followup when dodging an attack with Slip during Standoff that they previously were unable to continue, making wildly swinging against them during Standoff a bit more punishing.\n[*]Made Boss 2\u2019s cooldown for Mitrik End only count down during phase 2.\n[*]Adjusted the chances for Boss 2 to use Mitrik End, including allowing chaining into it from more attacks, to make it slightly more likely to be used in general and much more likely to be used at least once in a fight.\n[*]Adjusted how it is determined whether Boss 2 is at \u201clow HP\u201d (this is used to determine the likelihood of certain attacks being used) to be relative to their max HP.\n[/list]\n[h3]Bug Fixes[/h3]\n[list]\n[*]Fixed a bug that prevented enemies from building heat when a running attack was initiated from farther than 2.5 meters away \u2014 this range has been increased to 4 meters, the same distance at which enemies attempt to defend against running attacks.\n[*]Boss 2\u2019s Overload sound effect loop no longer continues playing indefinitely when entering Phase 2 or resetting the battle.\n[*]Boss 2\u2019s Quantum Blink now resets the boss\u2019 wallsplattable timer (a value that determines whether a character can be wallsplatted when colliding with a wall; higher knockback attacks set the timer to a higher value), as previously it was possible for them to wallsplat themself by Quantum Blinking onto a wall shortly after being hit with an attack with a high knockback.\n[*]Fixed a bug that allowed Boss 2 to repeatedly use Mitrik End, ignoring its cooldown.\n[*]Prevented Boss 2\u2019s dodge cooldown from getting reset when getting hit while wallsplatted.\n[*]Prevented all enemies from having their wallsplattable timer set higher than 0 by attacks that hit them while they were wallsplatted.\n[*]Fixed a NavMesh issue on Layer 2, Sublevel 1 that caused guards to be unable to path into the lounge.\n[*]Fixed a bug that prevented the player from receiving loot from Boss 3 when skipping their victory cutscene.\n[*]Fixed a bug that caused Boss 3\u2019s super armor highlight effect to carry through into their cutscenes.\n[*]Prevented the player from teleporting into an unintended area in Layer 3, Sublevel B.\n[*]Fixed a UI layering issue where the player health display would display behind the inventory or other screens.\n[/list]",
+      "key": "2279600::1e58434edea6ce1609982df13e6e9b0008e33486",
+      "tags": [
+        {
+          "balance_change": "Slightly increased heat build for targeted enemies who can\u2019t see the player but are launched or wallsplatted."
+        },
+        {
+          "balance_change": "The amount by which parrying decreases Boss 1\u2019s armor meter has been fairly heavily decreased, as it was previously far too easy to deplete his armor using this method. The armor damage from parrying should function more as a small bonus for performing a difficult action than an extremely powerful tactic that practically invalidates the boss\u2019 main mechanic."
+        },
+        {
+          "balance_change": "Slightly increased the amount of Overload Boss 2 builds when getting hit with a taser dart."
+        },
+        {
+          "balance_change": "Boss 3 can now continue certain attack chains after their first followup when dodging an attack with Slip during Standoff that they previously were unable to continue, making wildly swinging against them during Standoff a bit more punishing."
+        },
+        {
+          "balance_change": "Made Boss 2\u2019s cooldown for Mitrik End only count down during phase 2."
+        },
+        {
+          "balance_change": "Adjusted the chances for Boss 2 to use Mitrik End, including allowing chaining into it from more attacks, to make it slightly more likely to be used in general and much more likely to be used at least once in a fight."
+        },
+        {
+          "balance_change": "Adjusted how it is determined whether Boss 2 is at \u201clow HP\u201d (this is used to determine the likelihood of certain attacks being used) to be relative to their max HP."
+        },
+        {
+          "bug": "Fixed a bug that prevented enemies from building heat when a running attack was initiated from farther than 2.5 meters away \u2014 this range has been increased to 4 meters, the same distance at which enemies attempt to defend against running attacks."
+        },
+        {
+          "bug": "Boss 2\u2019s Overload sound effect loop no longer continues playing indefinitely when entering Phase 2 or resetting the battle."
+        },
+        {
+          "bug": "Boss 2\u2019s Quantum Blink now resets the boss\u2019 wallsplattable timer (a value that determines whether a character can be wallsplatted when colliding with a wall; higher knockback attacks set the timer to a higher value), as previously it was possible for them to wallsplat themself by Quantum Blinking onto a wall shortly after being hit with an attack with a high knockback."
+        },
+        {
+          "bug": "Fixed a bug that allowed Boss 2 to repeatedly use Mitrik End, ignoring its cooldown."
+        },
+        {
+          "bug": "Prevented Boss 2\u2019s dodge cooldown from getting reset when getting hit while wallsplatted."
+        },
+        {
+          "bug": "Prevented all enemies from having their wallsplattable timer set higher than 0 by attacks that hit them while they were wallsplatted."
+        },
+        {
+          "bug": "Fixed a NavMesh issue on Layer 2, Sublevel 1 that caused guards to be unable to path into the lounge."
+        },
+        {
+          "bug": "Fixed a bug that prevented the player from receiving loot from Boss 3 when skipping their victory cutscene."
+        },
+        {
+          "bug": "Fixed a bug that caused Boss 3\u2019s super armor highlight effect to carry through into their cutscenes."
+        },
+        {
+          "bug": "Prevented the player from teleporting into an unintended area in Layer 3, Sublevel B."
+        },
+        {
+          "bug": "Fixed a UI layering issue where the player health display would display behind the inventory or other screens."
+        }
+      ]
+    },
+    {
+      "title": "1.1.2 Patch Notes",
+      "date": "2024-07-10 15:07:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267357833435",
+      "content": "Hey Scavengers, minor patch rolling out with some good ol' bug fixes.\n\n[h3]Adjustments[/h3]\n[list]\n[*] The game no longer runs in the background. Aside from being a sensible quality of life change, this should, in conjunction with some other bug fixes in this update, help stop certain bugs/softlocks associated with tabbing out of the game.[/list]\n[h3]Bug Fixes[/h3]\n[list]\n[*] Fixed a bug that would cause the mouse cursor to briefly flash on screen when pressing T.\n[*] Fixed a major issue caused by having 30 or more items in the hideout inventory, which could cause undefined behavior when attempting to open the hideout, start or continue a run, or open training mode because the game would try to unlock the \u201cWhat if I need them later?!\u201d achievement while no level was loaded, causing an error to be thrown.\n[*] Fixed a bug where, upon entering training mode for the first time, if the pause menu was opened immediately and then closed after a short time, the button to close the training tip popup would become unable to be selected.\n[*] Prevented the game from spawning guards for an elevator ambush/entering elevator combat while the game is paused. This should prevent a few softlocks that could arise when opening the inventory or pausing at certain times in the elevator.\n[*] Fixed a NavMesh problem that would cause guards to be unable to enter the elevator on Layer 2, Sublevel 3.\n[*] Prevented the player from teleporting to an unintended area in Layer 3, Sublevel B using a tear module.\n[/list]",
+      "key": "2279600::baaf36523c782095dc77e514f0a3079981ceb75a",
+      "tags": [
+        {
+          "bug": "The game no longer runs in the background. Aside from being a sensible quality of life change, this should, in conjunction with some other bug fixes in this update, help stop certain bugs/softlocks associated with tabbing out of the game."
+        },
+        {
+          "bug": "Fixed a bug that would cause the mouse cursor to briefly flash on screen when pressing T."
+        },
+        {
+          "bug": "Fixed a major issue caused by having 30 or more items in the hideout inventory, which could cause undefined behavior when attempting to open the hideout, start or continue a run, or open training mode because the game would try to unlock the \u201cWhat if I need them later?!\u201d achievement while no level was loaded, causing an error to be thrown."
+        },
+        {
+          "bug": "Fixed a bug where, upon entering training mode for the first time, if the pause menu was opened immediately and then closed after a short time, the button to close the training tip popup would become unable to be selected."
+        },
+        {
+          "bug": "Prevented the game from spawning guards for an elevator ambush/entering elevator combat while the game is paused. This should prevent a few softlocks that could arise when opening the inventory or pausing at certain times in the elevator."
+        },
+        {
+          "bug": "Fixed a NavMesh problem that would cause guards to be unable to enter the elevator on Layer 2, Sublevel 3."
+        },
+        {
+          "bug": "Prevented the player from teleporting to an unintended area in Layer 3, Sublevel B using a tear module."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal v1.1.0 - 20% off!",
+      "date": "2024-06-27 13:52:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267310256715",
+      "content": "[h1]Major update and Summer Sale![/h1]\nHey Scavengers!\n\nToday we've got our first major post-release update, rich with big changes that should massively improve your experience with Raw Metal! Also, the game is [b]20% off for the Steam Summer Sale[/b], and we've added a bundle deal to save 10% on getting the game, artbook, and soundtrack! If you haven't gotten the game yet, or know a friend or two who might like it, now's your chance!\n\n[h2]Boss Training[/h2]\nYou can now train against bosses you've encountered in the new Boss Training mode! If you're struggling against a boss, go to Training > Boss Training and practice before risking all your precious gear! We hope this will encourage you to bring gear into boss fights instead of scrapping it to afford skipping back to them.\n\n[img]{STEAM_CLAN_IMAGE}/43547741/0d00514ed2b0233a8589ad2576351d6264f1a42f.png[/img]\n\n[h2]Forge/Contraband Station Swap[/h2]\nIn order to overhaul the gameplay loop, we've decided to swap the locations of the Forge and the Contraband Station on every layer. This means that every Contraband Station will be on the second sublevel of the layer, and every Forge will be on the third sublevel. We feel this leads to a much more streamlined and fun gameplay loop for a number of reasons.\n\nFor instance, you can now retrieve your lost gear much sooner, and make the decision of whether you want to extract with it or push down an extra level (while most likely encumbered) to scrap or upgrade it. By that point, you're right next to the boss floor, so you can then decide whether you want to bring in your newly upgraded gear to that fight. If you lose, it won't be so difficult to retrieve anymore. We hope this will lead to a more interesting and less frustrating gameplay loop that still retains a sense of stakes when delving deeper into the facility.\n\n[h1]Full Changelog[/h1]\nHere is the full list of changes for 1.1.0:\n\n[h2]New Features[/h2]\n    - Added a boss training mode. We hope that this mode will alleviate some of the frustration of losing to bosses repeatedly and encourage players to use gear more rather than scrapping it to save up grymite for re-fighting bosses.\n        - When selecting \u201cTraining\u201d from the main menu, you are now given the choice of standard training or boss training.\n        - When selecting boss training, you can choose to practice against any boss you have encountered. The available phases of each fight are also limited to those you have encountered. Note that due to the addition of new save data to facilitate this feature, any boss whose second phase you have reached but whom you have not defeated will not have their second phase available for training until you play through the fight again in a normal run and reach the second phase.\n    - Added subtitles for all voice lines, including voicemails. When listening to a voicemail, its subtitles take priority, so other voice lines will not be displayed.\n    - Added a fullscreen toggle to the options menu.\n[h2]Balance[/h2]\n        - Added an additional heat penalty when using a running kick.\n        - Removed the additional 200 grymite cost to skip a boss level when starting a run.\n        - Swapped the position of the forge and contraband stations in all layers. Originally, the earlier position of the forge was meant to give players earlier access to upgrades and encourage players to engage with the game\u2019s extraction mechanic. However, this caused losing a run to be more punishing than intended \u2014 not only would you have to get all the way to the 3rd sublevel to retrieve your gear, but you also would have to extract and start a new run to repair or upgrade your newly retrieved items. We believe that swapping the positions of the forge and contraband station will provide a less frustrating and more rewarding experience by allowing players to retrieve lost gear earlier and giving them the ability to repair, scrap, and upgrade gear directly before facing a boss fight.\n[h3]Boss 1[/h3]\n        - Decreased the regeneration rate of Boss 1\u2019s armor meter. As a counterbalance, the armor damage of most attacks has been slightly reduced. The intent here is for it to take just slightly less time to deplete the armor meter, but to be more forgiving if the player stops attacking for a bit.\n        - Increased the cooldown of Boss 1\u2019s armor meter.\n        - Boss 1 now takes damage to their armor meter when getting parried. \n        - Slightly increased Boss 1\u2019s attack cooldown.\n        - Added a small chance for Boss 1 to end their attack chains earlier.\n        - Slightly decreased Boss 1\u2019s damage reduction when their armor meter is active.\n        - Slightly increased the delay of Boss 1\u2019s HP regeneration.\n[h3]Boss 2[/h3]\n        - Added a high chance for Boss 2 to dodge running attacks during the startup of most of their attacks, as repeatedly counter-hitting them with running kicks was previously too powerful.\n        - Increased the cooldown duration of Boss 2\u2019s dodge (this cooldown is applied when the boss is hit in order to grant the player some time to perform a combo).\n        - Added a small chance for Boss 2 to end their attack chains earlier.\n[h3]Boss 3[/h3]\n        - Slightly increased Boss 3\u2019s max HP.\n        - Increased the amount Boss 3 heals from using certain attacks. Boss 3\u2019s healing attacks now also heal a small amount of permanent HP.\n        - Slightly increased Boss 3\u2019s heat build multiplier.\n        - Added an additional parry follow-up for Boss 3 that focuses on dealing damage rather than healing.\n        - Boss 3 can now perform Advancing Step between the first and second attacks in a parry follow-up combo in order to close distance if the first attack missed.\n        - Added a sound cue and visual effect that plays when Boss 3 enters standoff.\n        - Boss 3 now has additional ways of entering standoff, and will attempt to enter standoff more frequently to force the player to play more patiently and engage in \u201cread-based gameplay.\u201d\n            - When Boss 3 has been out of standoff for a short time and is far enough from the player, they will immediately enter standoff.\n            - Boss 3 has a new Backstep move that they can use to retreat to a safe distance when entering standoff from a close or medium range.\n                - When Boss 3 has been out of standoff for a short time and is at medium range, they have a 50% chance to immediately enter standoff using Backstep.\n                - After Boss 3 uses Straight Kick, they will immediately enter standoff using Backstep (regardless of if the attack hit).\n        - Added a Super Armor effect (negates knockback/hitstun of attacks, but not damage) to the startup of Boss 3\u2019s kick attacks (excluding the non-damaging Straight Kick) and grab.\n[h2]Bug Fixes[/h2]\n    - Added a secondary collision check for detecting the position of a wallsplat that should prevent a bug that caused enemies to occasionally snap to a position not on the wall itself (this was most noticeable in Boss 2\u2019s fight).\n    - Fixed an oversight that caused the Rounding Error achievement to be unable to be unlocked when beating the game (as opposed to extracting in the elevator as normal).\n    - Fixed a bug that prevented grounded enemies from being wallsplatted while electrocuted.\n    - Fixed an animation bug that would occur when tasing an enemy as they entered an aerial wallsplat state.\n    - Fixed a light region in Layer 2, Sublevel 1 that caused a portion of the storage room to be considered lit when it was, in fact, in shadow.\n    - Fixed an issue on some levels where the elevator shaft lights were blocked from view by the level geometry.\n    - Fixed a bulkhead door in Layer 3, Sublevel 2 that was open when it was intended to be closed.\n    - Adjusted the positioning of title text in the pause menu to be properly centered in its enclosing container on all aspect ratios.\n    - Prevented Boss 1\u2019s armor meter value from going below zero.\n    - Fixed a bug that prevented enemies from blocking or dodging running attacks when the attack was initiated from farther than 2.25 meters away. This was especially noticeable in the fights with Boss 2 and 3, who could be defeated fairly easily by whittling away at their health with running kicks from a distance.\n    - Applied the appropriate voice filter to Boss 3\u2019s light hit grunt sounds.\n    - Fixed a bug that prevented Boss 3\u2019s hit/crit voice lines from being played.\n    - Fixed a bug that caused Boss 3\u2019s grab hit voice lines to be played a second time, which would often interrupt the first line.\n    - Fixed a bug that could cause enemies to enter a wall-glance state when colliding with a face whose normal vector pointed in the same direction as the enemy\u2019s velocity.\n    - Improved how floors are detected for the purposes of landing after being launched.\n    - Fixed a bug that could cause the player to be unable to move when continuing/starting a run after exiting to the title screen from the pause menu.\n    - Prevented fog from affecting the appearance of the player view model in the inventory.\n    - Prevented certain enemies from being targeted with the taser when they shouldn\u2019t be able to be targeted.\n    - Added colliders to certain environmental objects that were missing them.\n    - Made the \u201chover\u201d sound effect play when hovering over the data reset button (previously no sound would play).\n    - Fixed a bug that would cause Boss 3 to not run at the player when entering Final Gambit when airborne by making Boss 3 snap to the ground when entering this state.\n    - Prevented certain cutscenes from continuing to play audio and display subtitles after the cutscene has been skipped.\n    - Fixed a bug where exiting the Hideout menu on the title screen would highlight the Continue button rather than the Hideout button.\n    - Prevented guards from playing \u201cgrumble\u201d voice lines during cutscenes. This was not previously very noticeable but caused issues with subtitles.\n    - Fixed a bug that would cause a trapped guard to play a combat start cutscene animation when breaking out of an electromagnet during combat, which would cause them to be stuck in place with their collider displaced.\n    - Prevented guards trapped in electromagnets that intersect bulkheads (which are hidden during combat) from entering combat as they would be clipped into the wall and unable to move even after breaking free.\n[h2]Other Adjustments[/h2]\n    - Moved all title screen menu options up slightly to add more space between the Quit button and the social media links.\n    - Slightly optimized some shaders.\n    - Minor code clean-up.\n    - Adjusted colliders for environmental objects in all levels. Our goal with this is to make wallsplats more consistent, prevent enemies from getting stuck on objects as often, and keep the player and enemies from getting stuck in small corners that are boxed in by objects. Additionally, some collections of objects that previously were constructed with multiple colliders have been consolidated to improve physics system performance.\n\n\nThank you all for your patience with the release of this update, see you down there!\n- Crucible",
+      "key": "2279600::cdaede8bb62f25ba6afec93ac17fcaa580084660",
+      "tags": [
+        {
+          "feature": "- Added a boss training mode. We hope that this mode will alleviate some of the frustration of losing to bosses repeatedly and encourage players to use gear more rather than scrapping it to save up grymite for re-fighting bosses."
+        },
+        {
+          "feature": "- When selecting \u201cTraining\u201d from the main menu, you are now given the choice of standard training or boss training."
+        },
+        {
+          "feature": "- When selecting boss training, you can choose to practice against any boss you have encountered. The available phases of each fight are also limited to those you have encountered. Note that due to the addition of new save data to facilitate this feature, any boss whose second phase you have reached but whom you have not defeated will not have their second phase available for training until you play through the fight again in a normal run and reach the second phase."
+        },
+        {
+          "feature": "- Added subtitles for all voice lines, including voicemails. When listening to a voicemail, its subtitles take priority, so other voice lines will not be displayed."
+        },
+        {
+          "feature": "- Added a fullscreen toggle to the options menu."
+        },
+        {
+          "balance_change": "- Added an additional heat penalty when using a running kick."
+        },
+        {
+          "balance_change": "- Removed the additional 200 grymite cost to skip a boss level when starting a run."
+        },
+        {
+          "balance_change": "- Swapped the position of the forge and contraband stations in all layers. Originally, the earlier position of the forge was meant to give players earlier access to upgrades and encourage players to engage with the game\u2019s extraction mechanic. However, this caused losing a run to be more punishing than intended \u2014 not only would you have to get all the way to the 3rd sublevel to retrieve your gear, but you also would have to extract and start a new run to repair or upgrade your newly retrieved items. We believe that swapping the positions of the forge and contraband station will provide a less frustrating and more rewarding experience by allowing players to retrieve lost gear earlier and giving them the ability to repair, scrap, and upgrade gear directly before facing a boss fight."
+        },
+        {
+          "balance_change": "- Decreased the regeneration rate of Boss 1\u2019s armor meter. As a counterbalance, the armor damage of most attacks has been slightly reduced. The intent here is for it to take just slightly less time to deplete the armor meter, but to be more forgiving if the player stops attacking for a bit."
+        },
+        {
+          "balance_change": "- Increased the cooldown of Boss 1\u2019s armor meter."
+        },
+        {
+          "balance_change": "- Boss 1 now takes damage to their armor meter when getting parried."
+        },
+        {
+          "balance_change": "- Slightly increased Boss 1\u2019s attack cooldown."
+        },
+        {
+          "balance_change": "- Added a small chance for Boss 1 to end their attack chains earlier."
+        },
+        {
+          "balance_change": "- Slightly decreased Boss 1\u2019s damage reduction when their armor meter is active."
+        },
+        {
+          "balance_change": "- Slightly increased the delay of Boss 1\u2019s HP regeneration."
+        },
+        {
+          "balance_change": "- Added a high chance for Boss 2 to dodge running attacks during the startup of most of their attacks, as repeatedly counter-hitting them with running kicks was previously too powerful."
+        },
+        {
+          "balance_change": "- Increased the cooldown duration of Boss 2\u2019s dodge (this cooldown is applied when the boss is hit in order to grant the player some time to perform a combo)."
+        },
+        {
+          "balance_change": "- Added a small chance for Boss 2 to end their attack chains earlier."
+        },
+        {
+          "balance_change": "- Slightly increased Boss 3\u2019s max HP."
+        },
+        {
+          "balance_change": "- Increased the amount Boss 3 heals from using certain attacks. Boss 3\u2019s healing attacks now also heal a small amount of permanent HP."
+        },
+        {
+          "balance_change": "- Slightly increased Boss 3\u2019s heat build multiplier."
+        },
+        {
+          "balance_change": "- Added an additional parry follow-up for Boss 3 that focuses on dealing damage rather than healing."
+        },
+        {
+          "balance_change": "- Boss 3 can now perform Advancing Step between the first and second attacks in a parry follow-up combo in order to close distance if the first attack missed."
+        },
+        {
+          "balance_change": "- Added a sound cue and visual effect that plays when Boss 3 enters standoff."
+        },
+        {
+          "balance_change": "- Boss 3 now has additional ways of entering standoff, and will attempt to enter standoff more frequently to force the player to play more patiently and engage in \u201cread-based gameplay.\u201d"
+        },
+        {
+          "balance_change": "- When Boss 3 has been out of standoff for a short time and is far enough from the player, they will immediately enter standoff."
+        },
+        {
+          "balance_change": "- Boss 3 has a new Backstep move that they can use to retreat to a safe distance when entering standoff from a close or medium range."
+        },
+        {
+          "balance_change": "- When Boss 3 has been out of standoff for a short time and is at medium range, they have a 50% chance to immediately enter standoff using Backstep."
+        },
+        {
+          "balance_change": "- After Boss 3 uses Straight Kick, they will immediately enter standoff using Backstep (regardless of if the attack hit)."
+        },
+        {
+          "balance_change": "- Added a Super Armor effect (negates knockback/hitstun of attacks, but not damage) to the startup of Boss 3\u2019s kick attacks (excluding the non-damaging Straight Kick) and grab."
+        },
+        {
+          "bug": "- Added a secondary collision check for detecting the position of a wallsplat that should prevent a bug that caused enemies to occasionally snap to a position not on the wall itself (this was most noticeable in Boss 2\u2019s fight)."
+        },
+        {
+          "bug": "- Fixed an oversight that caused the Rounding Error achievement to be unable to be unlocked when beating the game (as opposed to extracting in the elevator as normal)."
+        },
+        {
+          "bug": "- Fixed a bug that prevented grounded enemies from being wallsplatted while electrocuted."
+        },
+        {
+          "bug": "- Fixed an animation bug that would occur when tasing an enemy as they entered an aerial wallsplat state."
+        },
+        {
+          "bug": "- Fixed a light region in Layer 2, Sublevel 1 that caused a portion of the storage room to be considered lit when it was, in fact, in shadow."
+        },
+        {
+          "bug": "- Fixed an issue on some levels where the elevator shaft lights were blocked from view by the level geometry."
+        },
+        {
+          "bug": "- Fixed a bulkhead door in Layer 3, Sublevel 2 that was open when it was intended to be closed."
+        },
+        {
+          "bug": "- Adjusted the positioning of title text in the pause menu to be properly centered in its enclosing container on all aspect ratios."
+        },
+        {
+          "bug": "- Prevented Boss 1\u2019s armor meter value from going below zero."
+        },
+        {
+          "bug": "- Fixed a bug that prevented enemies from blocking or dodging running attacks when the attack was initiated from farther than 2.25 meters away. This was especially noticeable in the fights with Boss 2 and 3, who could be defeated fairly easily by whittling away at their health with running kicks from a distance."
+        },
+        {
+          "bug": "- Applied the appropriate voice filter to Boss 3\u2019s light hit grunt sounds."
+        },
+        {
+          "bug": "- Fixed a bug that prevented Boss 3\u2019s hit/crit voice lines from being played."
+        },
+        {
+          "bug": "- Fixed a bug that caused Boss 3\u2019s grab hit voice lines to be played a second time, which would often interrupt the first line."
+        },
+        {
+          "bug": "- Fixed a bug that could cause enemies to enter a wall-glance state when colliding with a face whose normal vector pointed in the same direction as the enemy\u2019s velocity."
+        },
+        {
+          "bug": "- Improved how floors are detected for the purposes of landing after being launched."
+        },
+        {
+          "bug": "- Fixed a bug that could cause the player to be unable to move when continuing/starting a run after exiting to the title screen from the pause menu."
+        },
+        {
+          "bug": "- Prevented fog from affecting the appearance of the player view model in the inventory."
+        },
+        {
+          "bug": "- Prevented certain enemies from being targeted with the taser when they shouldn\u2019t be able to be targeted."
+        },
+        {
+          "bug": "- Added colliders to certain environmental objects that were missing them."
+        },
+        {
+          "bug": "- Made the \u201chover\u201d sound effect play when hovering over the data reset button (previously no sound would play)."
+        },
+        {
+          "bug": "- Fixed a bug that would cause Boss 3 to not run at the player when entering Final Gambit when airborne by making Boss 3 snap to the ground when entering this state."
+        },
+        {
+          "bug": "- Prevented certain cutscenes from continuing to play audio and display subtitles after the cutscene has been skipped."
+        },
+        {
+          "bug": "- Fixed a bug where exiting the Hideout menu on the title screen would highlight the Continue button rather than the Hideout button."
+        },
+        {
+          "bug": "- Prevented guards from playing \u201cgrumble\u201d voice lines during cutscenes. This was not previously very noticeable but caused issues with subtitles."
+        },
+        {
+          "bug": "- Fixed a bug that would cause a trapped guard to play a combat start cutscene animation when breaking out of an electromagnet during combat, which would cause them to be stuck in place with their collider displaced."
+        },
+        {
+          "bug": "- Prevented guards trapped in electromagnets that intersect bulkheads (which are hidden during combat) from entering combat as they would be clipped into the wall and unable to move even after breaking free."
+        }
+      ]
+    },
+    {
+      "title": "1.0.3 Patch Notes",
+      "date": "2024-04-01 00:27:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331450210123",
+      "content": "Hey everyone! Small patch going live with some bug fixes and an April Fools secret for those of you who've beaten the game.\n\n[h1]Changelog[/h1]\n[list]\n[*] Added/adjusted colliders in many areas to prevent clipping.\n[*] Prevented broken effects from currently equipped gear from being applied an extra time when continuing or starting a run.\n[*] Fixed a bug that prevented the \u201cRaw Metal Alchemist\u201d achievement from being acquired by starting a run with a full set of fully upgraded gear already equipped.\n[*] Fixed a bug where, in New Game+, elite guards would play the dazed animation but not enter the dazed state when parried, allowing them to still perform their follow-up attack (without actually playing the attack\u2019s animation).\n[*] Fixed a bug where an enemy would not play their attack animation if the attack began right as the enemy\u2019s animation was transitioning from the knockback animation to the dazed animation after being parried.\n[*] Fixed a bug where bosses would incorrectly play a knockback animation when landing or ending a wallsplat while broken.\n[*] Fixed a bug where elevator ambushes encountered on boss levels would have the boss bonus applied to the style meter.\n[*] Prevented characters from having their current hitstun canceled when being hit by a zero-hitstun attack. This also applies to the stun from a parry, allowing the player to land multiple quick attacks after a parry before the stun runs out.\n[*] Adjusted the rate at which an enemy\u2019s friction value is changed when becoming dazed to be immediate.\n[*] Adjusted the size of boss fight triggers to prevent the player from using a tear module to teleport into the boss room without triggering the boss fight.\n[*] Corrected some minor typos in a couple textures.\n[*] Pausing/opening the inventory while the elevator is moving now correctly keeps the game paused until the menu is closed. Additionally, the pause & inventory menus can now be opened earlier when starting a new run, continuing a run, or entering training mode.\n[*] When skipping the tutorial, tutorial controls and objectives are now hidden properly.\n[*] Fixed a bug that caused pause button press events to be fired twice after skipping the tutorial.\n[*] Adjusted how certain camera transitions work, which should fix a bug that would prevent the camera from properly transitioning out of its cutscene animation when skipping a boss\u2019 cutscene too quickly.\n[*] Added an April Fools\u2019 secret \u2014 Note: this will only apply if you have beaten the game at least once.\n[/list]",
+      "key": "2279600::31e5de26c69b4b33b2dc58a35d54617a5c30a35c",
+      "tags": [
+        {
+          "bug": "[*] Prevented broken effects from currently equipped gear from being applied an extra time when continuing or starting a run."
+        },
+        {
+          "bug": "[*] Fixed a bug that prevented the \u201cRaw Metal Alchemist\u201d achievement from being acquired by starting a run with a full set of fully upgraded gear already equipped."
+        },
+        {
+          "bug": "[*] Fixed a bug where, in New Game+, elite guards would play the dazed animation but not enter the dazed state when parried, allowing them to still perform their follow-up attack (without actually playing the attack\u2019s animation)."
+        },
+        {
+          "bug": "[*] Fixed a bug where an enemy would not play their attack animation if the attack began right as the enemy\u2019s animation was transitioning from the knockback animation to the dazed animation after being parried."
+        },
+        {
+          "bug": "[*] Fixed a bug where bosses would incorrectly play a knockback animation when landing or ending a wallsplat while broken."
+        },
+        {
+          "bug": "[*] Fixed a bug where elevator ambushes encountered on boss levels would have the boss bonus applied to the style meter."
+        },
+        {
+          "bug": "[*] Prevented characters from having their current hitstun canceled when being hit by a zero-hitstun attack. This also applies to the stun from a parry, allowing the player to land multiple quick attacks after a parry before the stun runs out."
+        },
+        {
+          "bug": "[*] Adjusted the size of boss fight triggers to prevent the player from using a tear module to teleport into the boss room without triggering the boss fight."
+        },
+        {
+          "bug": "[*] Corrected some minor typos in a couple textures."
+        },
+        {
+          "bug": "[*] Pausing/opening the inventory while the elevator is moving now correctly keeps the game paused until the menu is closed. Additionally, the pause & inventory menus can now be opened earlier when starting a new run, continuing a run, or entering training mode."
+        },
+        {
+          "bug": "[*] When skipping the tutorial, tutorial controls and objectives are now hidden properly."
+        },
+        {
+          "bug": "[*] Fixed a bug that caused pause button press events to be fired twice after skipping the tutorial."
+        },
+        {
+          "bug": "[*] Adjusted how certain camera transitions work, which should fix a bug that would prevent the camera from properly transitioning out of its cutscene animation when skipping a boss\u2019 cutscene too quickly."
+        },
+        {
+          "feature": "[*] Added an April Fools\u2019 secret \u2014 Note: this will only apply if you have beaten the game at least once."
+        }
+      ]
+    },
+    {
+      "title": "Post-Launch Announcements and Roadmap",
+      "date": "2024-03-23 18:13:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301726626105",
+      "content": "Hey Scavengers!\n\nThanks so much for the overwhelming support for the game since launch! You've blown us away and we couldn't be more happy.\n\nTo address some feedback and maintain open communication, we wanted to talk a bit about what we're planning on implementing going forward. We won't have any hard dates for any features mentioned here, so this is more of a priority list of what we'll be working on in the coming months.\n\n[h1]High Priority[/h1]\n\nThese are at the top of our list and will likely be implemented within the next two months.\n\n[h2]Boss Training[/h2]\n\nThe number one complaint we've had from players is that they find the bosses frustrating, since they can't get a handle on their movesets and patterns without being heavily punished before learning anything. To address this, we're going to be working on a boss training mode, selectable from the hideout. Players will be able to practice against bosses they've fought in the past, without worrying about having to grind back up to the boss because they were hit with something they didn't expect. Hopefully this will make the overall progression of the game more enjoyable and less like slamming into a brick wall over and over again.\n\n[h2]Boss Skip Cost Reduction[/h2]\n\nWe'll also be reducing the cost of skipping boss levels from the hideout. At the moment, skipping a boss level is twice the cost of skipping a regular level. This was intended to offset the added difficulty of the boss being skipped, but we failed to factor in the reward the player should get for beating the boss in the first place. Hopefully, after this change, beating a boss for the first time will feel more like a \"checkpoint\" since skipping them will be a bit more affordable.\n\n[h2]Late Game Rebalancing[/h2]\n\nAt the moment, the third boss feels a bit weak to us, so we'll be giving them a bit more offensive capability.\n\n[h1]Secondary Priority[/h1]\n\nThese are changes we'd like to get to once the high priority changes are in effect and we have a more solid foundation of the core game to build off of. We hope these will be in the game within the next 4 months.\n\n[h2]Alternate Progression Modes[/h2]\n\nWe hear you; not everyone was expecting (or wanted) a risk-reward extraction system with such a grueling punishment for failure. While this design choice is still core to the original intention of the game, we understand that there are a significant number of you who'd very much like to play the game more linearly, and we wouldn't want your experience to be hindered by these mechanics. So, we'll be working on some alternate progression modes. These are subject to change, but at the moment here are the two modes we want to add:\n\n[h3]Story Mode[/h3]\n\nFor players who want a fully linear progression system, with minimal stakes. Getting scrapped lets you keep your items, and resets you back to the beginning of the sublevel. Extract anytime with no risk of being ambushed, and skip to any unlocked sublevel for free.\n\n[h3]Descent Mode[/h3]\n\nFor players who want a linear progression system, but wish to retain some stakes in combat. If you're scrapped, the guard who scrapped you takes your inventory. Find the guard and take them down to get it back! Getting scrapped again before retrieving your items will send them to the Contraband Station. Skipping previously cleared layers is free, so you'll never have to pay a ton of grymite to skip to the later parts of the game. Extract anytime with no risk of ambush. Yes; this mode will essentially turn the game into a souls-like.\n\n[h2]Difficulty Modifiers[/h2]\n\nWe've always wanted the game to be challenging, but we never wanted it to feel like a brick wall for our players. For those of you who are struggling with stealth or combat to the point where the game isn't fun, we'll be adding some difficulty modifiers to assist with some aspects of the game. Such modifiers will include dodge/parry assist, extra health, and detection speed/range reduction. At the moment, we're planning on disabling relevant achievements while these modifiers are active.\n\n[h2]Accessibility/Quality of Life Features[/h2]\n\nThere are a number of ways we can make Raw Metal more of an enjoyable and comfortable experience for many of our players, so we want to implement some features to help with this:\n[list]\n[*]Full subtitles for guards, voice messages, and boss combat\n[*]\"Eye friendly\" mode that modifies certain visual effects to reduce eye strain and make the game more playable for photosensitive players (i.e. finisher screen)\n[*]Full button remapping\n[*]Alternate control scheme for players who don't like hold inputs\n[/list]\n\nThank you all again so much for all the support and feedback, we're so lucky to have such an awesome community!\n\n- Crucible",
+      "key": "2279600::f7d64473a99bf318e6a9fb5f6570099d90ba581c",
+      "tags": [
+        {
+          "feature": "To address this, we're going to be working on a boss training mode, selectable from the hideout."
+        },
+        {
+          "balance_change": "We'll also be reducing the cost of skipping boss levels from the hideout."
+        },
+        {
+          "balance_change": "At the moment, the third boss feels a bit weak to us, so we'll be giving them a bit more offensive capability."
+        },
+        {
+          "feature": "So, we'll be working on some alternate progression modes."
+        },
+        {
+          "feature": "For players who want a fully linear progression system, with minimal stakes."
+        },
+        {
+          "feature": "For players who want a linear progression system, but wish to retain some stakes in combat."
+        },
+        {
+          "feature": "we'll be adding some difficulty modifiers to assist with some aspects of the game."
+        },
+        {
+          "feature": "Full subtitles for guards, voice messages, and boss combat"
+        },
+        {
+          "feature": "\"Eye friendly\" mode that modifies certain visual effects to reduce eye strain and make the game more playable for photosensitive players (i.e. finisher screen)"
+        },
+        {
+          "feature": "Full button remapping"
+        },
+        {
+          "feature": "Alternate control scheme for players who don't like hold inputs"
+        }
+      ]
+    },
+    {
+      "title": "1.0.2 Patch Notes",
+      "date": "2024-03-22 16:47:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301722763826",
+      "content": "[list]\n[*] Added some colliders to certain areas to prevent guards from getting stuck behind tables and other objects.\n[*] Adjusted how guards detect the ground when airborne to prevent them from getting stuck in a falling state on certain objects.\n[*] Prevented some lights from turning off during cutscenes where they should stay enabled.\n[*] Fixed an issue where enemy health bars did not always display the leftmost part of their black outline.\n[*] Prevented characters from getting wallsplatted when in a cutscene, which should solve an issue where wallsplatting a boss on the same frame that their phase 2 cutscene began would cause them to play the cutscene animation from the wrong position and often resulted in a softlock.\n[*] Adjusted camera settings for boss fights to ensure the camera doesn\u2019t get too far away and gets a good view of the action.\n[*] Adjusted the camera path in the first boss fight to improve visibility and reduce unnecessary camera rotation/motion.\n[*] Adjusted some camera paths in Layer 1 Sublevel 3, Layer 2 Sublevel 1, Layer 2 Sublevel 2, & Layer 3 Sublevel 1 to fix areas where an object could obscure the camera\u2019s view to an excessive degree.\n[*] Prevented boss title cards from staying on screen when skipping a cutscene.\n[*] Fixed a bug where dequipping, scrapping, or discarding an equipped piece of gear with a multiplicative effect with a value of 0 (i.e. fully upgraded Tabi Shoes or Explosive Safety Gloves) would prevent the affected stat from being properly reset.\n[*] Fixed a bug where starting a new run directly from the title screen without using the standard New Run loadout menu (through either Quick Start or by pressing New Run when no gear or grymite is in the hideout) would not reset the tracked \u201cstarting grymite\u201d value, causing the conditions for the Rounding Error achievement to be increased if the player had brought in grymite on their previous run.\n[/list]",
+      "key": "2279600::e81b2099b46fd668ccbdf50512f247e1919b5696",
+      "tags": [
+        {
+          "feature": "[*] Added some colliders to certain areas to prevent guards from getting stuck behind tables and other objects."
+        },
+        {
+          "balance_change": "[*] Adjusted how guards detect the ground when airborne to prevent them from getting stuck in a falling state on certain objects."
+        },
+        {
+          "bug": "[*] Prevented some lights from turning off during cutscenes where they should stay enabled."
+        },
+        {
+          "bug": "[*] Fixed an issue where enemy health bars did not always display the leftmost part of their black outline."
+        },
+        {
+          "bug": "[*] Prevented characters from getting wallsplatted when in a cutscene, which should solve an issue where wallsplatting a boss on the same frame that their phase 2 cutscene began would cause them to play the cutscene animation from the wrong position and often resulted in a softlock."
+        },
+        {
+          "balance_change": "[*] Adjusted camera settings for boss fights to ensure the camera doesn\u2019t get too far away and gets a good view of the action."
+        },
+        {
+          "balance_change": "[*] Adjusted the camera path in the first boss fight to improve visibility and reduce unnecessary camera rotation/motion."
+        },
+        {
+          "balance_change": "[*] Adjusted some camera paths in Layer 1 Sublevel 3, Layer 2 Sublevel 1, Layer 2 Sublevel 2, & Layer 3 Sublevel 1 to fix areas where an object could obscure the camera\u2019s view to an excessive degree."
+        },
+        {
+          "bug": "[*] Prevented boss title cards from staying on screen when skipping a cutscene."
+        },
+        {
+          "bug": "[*] Fixed a bug where dequipping, scrapping, or discarding an equipped piece of gear with a multiplicative effect with a value of 0 (i.e. fully upgraded Tabi Shoes or Explosive Safety Gloves) would prevent the affected stat from being properly reset."
+        },
+        {
+          "bug": "[*] Fixed a bug where starting a new run directly from the title screen without using the standard New Run loadout menu (through either Quick Start or by pressing New Run when no gear or grymite is in the hideout) would not reset the tracked \u201cstarting grymite\u201d value, causing the conditions for the Rounding Error achievement to be increased if the player had brought in grymite on their previous run."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal 1.0.1",
+      "date": "2024-03-20 01:26:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301713139044",
+      "content": "[list]\n[*] Updated credits.\n[*] Fixed a bug in which attempting to start the tutorial immediately after getting scrapped would cause the screen to fade to black permanently.\n[*] Fixed an issue where the Windows version file size was twice as big as it should've been.\n[/list]",
+      "key": "2279600::23823e24a7922ff432881454846ce8c2a692fed3",
+      "tags": [
+        {
+          "bug": "[*] Fixed a bug in which attempting to start the tutorial immediately after getting scrapped would cause the screen to fade to black permanently."
+        },
+        {
+          "bug": "[*] Fixed an issue where the Windows version file size was twice as big as it should've been."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal a16.5 - Next Fest Update",
+      "date": "2024-02-05 10:02:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074955643781",
+      "content": "Hey, Scavengers!\n\nBuckle up, this is a big one: our last major update before our release on March 19th. This has been an amazing journey thus far, and we're extremely excited to share what we have in store for all of you today for Steam Next Fest. Let's dive into some of the new major features:\n\n[h1]Gear Visuals[/h1]\nAt long last, gear now has visuals. Any gear you equip will appear on your character, adding visual depth and expression to the game. By popular request, we're working on a system to allow players to earn the ability to swap visuals between pieces of gear, so in the full game you won't have to sacrifice style for function.\n\n[img]{STEAM_CLAN_IMAGE}/43547741/5958fd07b1868229da56c7ff0b5fdc30c7da0a0b.png[/img]\n[img]{STEAM_CLAN_IMAGE}/43547741/5e3ef178efa5e28dc5c11b5a40fe759b0a1f33e2.png[/img]\n[img]{STEAM_CLAN_IMAGE}/43547741/1d2d04a1e5b01a52f30a1dbba14da3ecf1f02329.png[/img]\n[img]{STEAM_CLAN_IMAGE}/43547741/e475a8b73a294a00f9d6f2caea85e63468a251e3.png[/img]\nWe've also added Scav to the hideout when you're gearing up, so you can see what you'll look like before heading out.\n\n[img]{STEAM_CLAN_IMAGE}/43547741/34d69aaeba3608cd4972de479274ccd0f9090733.png[/img]\n[h1]New Tutorial[/h1]\nWe've completely redone the tutorial from the ground up to more clearly teach new players certain core mechanics. It covers different kinds of attacks, launches, wallsplats, and even has a system to help with dodge and parry timing. We hope this will help newer players get a better foothold in the game before getting thrown in the deep end.\n\n[img]{STEAM_CLAN_IMAGE}/43547741/253a0ccb24a7242e28a6485a437c0370778ae171.png[/img]\n[h1]Training Mode[/h1]\nOn the topic of practice, we have a new training mode! Accessed from the main menu after your first raid, you can spawn guards, practice combos, and test out whatever gear you have in your stash without risking anything. We're looking forward to see what kind of crazy combos and strategies players will be labbing in the training area!\n\n[img]{STEAM_CLAN_IMAGE}/43547741/28617d4e662f1a58a36f2904048a6c049ccad069.png[/img]\n[h1]Full Changelog[/h1]\nWe have many other changes and features in this update, so here's the full changelog.\n\n[h2]Features[/h2]\n[list]\n[h3][*] Gear models!!! Gear now has visuals!!![/h3]\n[h3][*] Sneaking has been reworked:[/h3]\n[*] It is now a toggle input by pressing Left Control on keyboard/Click Left Stick on gamepad, rather than a hold/analog stick input\n[*] The amount that sneaking slows you by has been greatly reduced, and instead the camera now zooms in as both an indicator and a slight drawback of sneaking\n[*] The scavenger now uses the sneaking animation for this state rather than dynamically blending into it based on the proximity of enemies\n[*] Increased sound volume from walking at lower than maximum speeds to better encourage sneaking and increased scavenger\u2019s minimum walk speed when not sneaking\n[h3][*] Title screen changes:[/h3]\n[*] Added the Scavenger to the hideout! They will now appear when selecting gear to show a preview of what your loadout will look like\n[*] Added a \u201cQuick Start\u201d option on the title screen to quickly start a run with no gear\n[*] Added short descriptions for each button on the title screen\n[*] Added a proper loading screen for going between the title screen and a run\n[*] Decreased the fade out time after pressing the button to start a run\n[h3][*] The tutorial has been reworked:[/h3]\n[*] Made tutorial popups significantly simpler/less wordy\n[*] Added an \u201cobjective\u201d and checkpoint system to teach the player more specific concepts like sneaking and wallsplatting\n[*] New layout and design that teaches more concepts in a more engaging and less overwhelming way\n[*] Player health is hidden for duration of tutorial, then appears after to more intuitively communicate that you can\u2019t take damage during the tutorial\n[*] Replaying the tutorial will still show all the info popups, even if you have already seen them\n[*] Certain tutorial popups will now contextually appear outside the tutorial if you have not seen them yet\n[*] The \u201cInfo\u201d box will no longer appear during combat to avoid an information overload. Instead, the most recently queued info box will appear once combat is finished\n[h3][*] Added training mode:[/h3]\n[*] You can enter training mode from the title screen after completing or skipping the tutorial\n[*] In training mode, you can practice fighting guards. You can set the number of standard and taser guards, change their behavior, and adjust other settings from the pause menu.\n[*] Unlike during combat during a normal run, you can access your inventory during training mode to equip any gear you have in your hideout, allowing you to test out various setups. You also have access to infinite gadgets and taser darts\n[*] You can view damage data such as individual attack damage and DPS\n[*] You can turn on a timing assist to tell you when your dodges and parries are too early or too late\n[h3][*] Boss 1 balance changes[/h3]\n[*] He is now immune to the stun effects of taser darts when his armor meter is active, but they will now deal damage to the armor meter\n[*] It is now extremely rare for him to block attacks when his armor meter is active\n[*] The armor meter recharges slightly slower but has a slightly shorter cooldown and takes slightly less damage from attacks\n[*] Concussion grenades now deal damage to the armor meter and cause the boss to flash white to indicate the normal effect was prevented by the armor\n[h3][*] Other Features/Changes[/h3]\n[*] Running kick and quick kick 3 now act as OTGs, meaning they can be used to hit enemies who are in a grounded landing/getup state. Hitting an enemy with an OTG when they are in such a state causes the move to be unable to launch or wallsplat, and instead forces the enemy back into a standing state\n[*] Removed the twinkle that appears when an enemy is starting an attack, as many players assumed this effect indicated dodge or parry timing\n[*] Replaced this effect with a HUD warning effect that flashes faster as the attack is closer to coming out - this effect also appears for offscreen enemies, making situations with many combatants more fair\n[*] Guards now detect you more slowly when you are spotted while in shadow (except if they were alerted by a security camera), and do not track the player during shadowed detection, giving you a chance to get out of the way or slip by for a sneak attack. The distance and angle requirements for a guard catching you have also been made more strict to enable dodging out of the way to avoid getting caught\n[*] Floors are now referred to as \u201cSublevels\u201d\n[*] You can now spend grymite to start your run at any sublevel you have previously reached (at a cost of 200 per floor) by pressing A/D or Left/Right D-Pad before selecting \u201cNew Run\u201d or \u201cQuick Start.\u201d Players who have already reached floors past Layer 1 Sublevel 1 will need to reach those floors again in order to unlock the ability to skip to those levels, as this data was not previously saved\n[*] Added elevator UI that displays which floor you are currently on, as well as which floor is coming up next when you have the elevator access card\n[*] You can now select a type of control scheme to override control prompts, as Steam typically defaults all controllers to be detected as XBox controllers, which prevented control prompts from displaying correctly in some cases\n[*] Adjusted escape success screen to display full level names (i.e. \u201cLayer 1, Sublevel 1\u201d) rather than abbreviations (i.e. \u201cL1F1\u201d)\n[*] Adjusted running punch to be slightly easier to land when close to an enemy\n[*] Adjusted running kick to be slightly easier to land and to allow easier juggling after landing a hit\n[*] Added KO screen boom sound effects and made music cut out when getting scrapped\n[*] Added basic UI sound effects and looting sound effects - subject to change\n[*] Added sounds related to Boss 1\u2019s armor meter (armor hit, armor break, armor regen)\n[*] Added functionality for noisemakers in combat \u2014 when a noisemaker is activated in combat, the nearest guard who can act will immediately run up and attack the player. You can use this to bait guards into hitting each other or set up for an easy counter-hit hard attack\n[*] Adjusted Riot Armor\u2019s dodge knockback effect to be unblockable and interrupt enemy attacks\n[*] Removed Charge Braces, as they were an extremely strong gear piece that trivialized resource management and encouraged unwanted camping strategies during combat\n[*] Certain pieces of gear have been removed from the loot pool as they are designated to be obtained by non-standard means\n[*] Adjusted walk animation speeds to better match the physical movement speed\n[*] Added dead zones for analog sticks on gamepad (no settings for these yet)\n[*] Guards now play a hit animation before transitioning into the dazed animation when they are broken by the player\u2019s attack\n[*] Fog colors now fade smoothly between levels that have differing fog colors\n[*] Updated some tips with new information and images\n[*] Guards will now play a \u201clost sight\u201d animation when the player is in shadow for a time during combat, similarly to how Boss 1 works \u2013 this animation is also now used when a guard loses track of you during a chase\n[*] Guards no longer regenerate health or recover from the broken state when trapped, launched, wallsplatted, or electrocuted\n[*] The time a guard stays broken has been increased to 3 seconds\n[*] When a guard is highlighted for a sneak attack, all guards in the room will now be highlighted as well to display how many enemies will enter combat if the player sneak attacks\n[*] The room that combat starts in is now dependent on who initiated combat \u2013 if the player initiates combat, it will start in the room the attacked guard was in. If the guard initiates combat, it will start in the room the player was in. This was adjusted to better reflect the appearance of sneak attacks in stealth mode, especially when using gear that increases sneak attack range\n[*] Added a secondary attack animation for guards\n[*] Added a lock status indicator to gates and the elevator terminal that displays red when locked, yellow when the player has the required access card, and green when unlocked\n[*] Guards take even less heat when out of the player\u2019s attack range, and broken guards take none unless the player is in range\n[*] Guards now take a small amount of heat upon being wallsplatted, and are allowed to attack earlier after recovering from any vulnerable state (wallsplat, launch, electrocute, etc.)\n[*] Adjusted Chest Rig effect scaling to be a linear increase\n[*] Adjusted running attack hitboxes and timing slightly\n[*] When using gamepad, the left stick now acts the same as the right stick while aiming a taser or gadget\n[*] Added on-screen control prompts that display the inputs to use gadgets/tasers\n[*] Taser guards can now spawn for elevator ambushes, with a 1 in 6 chance on Sublevel 1, a 1 in 5 chance on Sublevel 2, and a 1 in 4 chance on Sublevel 3\n[*] Removed randomness from the duration of delays between level loads and slightly shortened delay times\n[*] Added support for screen resolutions up to 4K 4096x2304\n[h2]Fixes[/h2]\n[*] \u201cEffect Down\u201d broken gear effect now correctly applies\n[*] Gear that reduces max HP no longer incorrectly changes the order of health + armor pips\n[*] Fixed a bug where when wearing gear that reduces max HP, armor points would not be used when taking a hit at 1 health\n[*] Fixed a bug where, when reaching 0 HP while carrying two of the same piece of gear, the game would not play the \u201cScrapped\u201d screen and instead would allow the player to continue the fight\n[*] Corrected motion of camera when transitioning out of combat start cutscenes to avoid the camera looking down for a moment\n[*] Combat camera is now less likely to get stuck in a position where the target guard is not visible\n[*] Adjusted some camera paths to make low-visibility situations even less likely\n[*] The low HP \u201cCaution\u201d effect now correctly disappears when teleporting guards out of combat\n[*] Security camera sound effect now fades out when the game is paused\n[*] The elevator camera can no longer be triggered when outside the elevator during combat\n[*] Other minor fixes to camera triggers (should hopefully a few many camera-related issues)\n[*] Moves that change a character\u2019s collider size no longer apply to the environment collider, preventing the player (and hopefully guards) from clipping out of bounds\n[*] Additionally, character to character colliders have been sized up vertically to prevent launched characters from getting stuck on top of other characters\n[*] You can no longer exit the elevator while its door is closing\n[*] Sneak attacking a guard trapped in an electromagnet will no longer cause the guard\u2019s combat start cutscene animation to be delayed\n[*] Trevor\u2019s forward movement when throwing his pickaxe is now done physically rather than just through animation, preventing visual errors such as clipping\n[*] The game will no longer be prevented from loading if you pause right as you start or continue a run (as you can no longer pause the game during this time)\n[*] Taser guards will no longer incorrectly play a combat start cutscene animation when getting wallsplatted during combat if they were in the aiming state when combat started\n[*] Guards can no longer be teleported into locked rooms using tear modules (don\u2019t worry, the player still can)\n[*] Guards are now set to be inactive after being teleported out of a fight until the fight ends, which should prevent them from being visible on the KO screen\n[*] Other tiny tear module fixes that may have fixed a softlock? Maybe?\n[*] Guard heat indicator will no longer persist for a short time after a guard is KO\u2019d\n[*] Fixed a bug where the cost to replenish armor points would be incorrectly calculated if the armor was not completely depleted\n[*] Slightly adjusted guard parry timing to be more in line with its animation\n[*] The player no longer receives the \u201cDamaged [POINTS RESET]\u201d penalty when inflicting self-damage, such as with Warhead Gauntlets or Boots\n[*] You can no longer perfect chain attacks that hit an invulnerable guard, and attacks against invulnerable guards no longer register on the combo counter\n[*] Corrected access card interaction prompt text to read \u201cAccess Card\u201d instead of \u201cKeycard\u201d\n[*] Fixed a bug where pressing pause to view \u201cmore info\u201d for a tip would not properly select the tip if it had previously been unlocked\n[*] You can no longer pause the game when you are prompted to perform dodge or parry inputs in the tutorial to avoid time scale issues\n[*] The encumbrance meter no longer displays the exact weight value outside of menus and instead shows the weight rating (Weight OK, Encumbered, Overencumbered) as intended\n[*] Quitting to the title screen from the pause menu or getting scrapped now saves all unlocked tips and info\n[*] In the inventory, fixed a bug where pressing left on controller while a piece of gear was selected would sometimes not properly move to highlight the head slot\n[*] You can no longer target disabled security cameras with the taser\n[*] Guard hit sounds are no longer tied to animation and will now play properly when a guard is stuck in another animation\n[*] Removed a line of code that caused guards to attack less frequently when hit\n[*] Forge now correctly auto-selects the first consumable slot when scrapping your last piece of gear\n[*] You can no longer buffer a hold select action on forge action buttons by holding the select button while canceling and then reselecting the same gear or gadget and holding down the select button\n[*] Fixed visual bugs when discarding gear in the inventory that would cause the next selected gear to not appear as selected and for it to have a red highlight as if it were being discarded\n[*] Corrected a light region in L1F1\n[*] Fixed a problem where dust trail effects would persist after they should have stopped, in some situations. This bug is hard to test so it\u2019s possible that there are still some situations in which it may occur\n[*] When using keyboard + mouse, pressing the WASD keys while aiming a taser or gadget no longer will move the camera\n[*] Taser guards are now correctly highlighted when approaching for a sneak attack\n[*] The player\u2019s aggression rating is now saved correctly to prevent players exiting the game and continuing their run in order to reset this value\n[*] Fixed a layout issue that would cause certain menu button prompts to be positioned incorrectly\n[*] Encumbrance is now recalculated immediately upon retrieving items from the Contraband Station\n[*] Made certain character states that previously did not apply any friction value apply one, in order to avoid situations where the character can slide indefinitely\n[*] Upon activation, the Emergency Shock Rig now puts enemies in their \u201csent\u201d animation rather than the standard launch animation\n[*] Fixed a bug where characters could not enter their landing/tumbling states when landing after being launched if they were still in hitstun by making it so hitstun is canceled when landing\n[*] Guards can no longer see or hear you when you are in the process of descending or ascending in the elevator (except for guards spawned for elevator ambushes, of course) \u2013 this fix probably fixed the bug where guard hearing indicators would get stuck on screen between levels\n[*] Fixed a bug where dropdowns would have their text become hidden when exiting and re-opening their parent menu while highlighted\n[/list]\n\nAs always, thanks for all your support and good luck in the mines!\n- Crucible",
+      "key": "2279600::e7b802b2934a4670ed510bee82a1ea4afcfa8642",
+      "tags": [
+        {
+          "feature": "Gear models!!! Gear now has visuals!!!"
+        },
+        {
+          "feature": "Sneaking has been reworked:"
+        },
+        {
+          "feature": "It is now a toggle input by pressing Left Control on keyboard/Click Left Stick on gamepad, rather than a hold/analog stick input"
+        },
+        {
+          "feature": "The amount that sneaking slows you by has been greatly reduced, and instead the camera now zooms in as both an indicator and a slight drawback of sneaking"
+        },
+        {
+          "feature": "The scavenger now uses the sneaking animation for this state rather than dynamically blending into it based on the proximity of enemies"
+        },
+        {
+          "feature": "Increased sound volume from walking at lower than maximum speeds to better encourage sneaking and increased scavenger\u2019s minimum walk speed when not sneaking"
+        },
+        {
+          "feature": "Title screen changes:"
+        },
+        {
+          "feature": "Added the Scavenger to the hideout! They will now appear when selecting gear to show a preview of what your loadout will look like"
+        },
+        {
+          "feature": "Added a \u201cQuick Start\u201d option on the title screen to quickly start a run with no gear"
+        },
+        {
+          "feature": "Added short descriptions for each button on the title screen"
+        },
+        {
+          "feature": "Added a proper loading screen for going between the title screen and a run"
+        },
+        {
+          "feature": "Decreased the fade out time after pressing the button to start a run"
+        },
+        {
+          "feature": "The tutorial has been reworked:"
+        },
+        {
+          "feature": "Made tutorial popups significantly simpler/less wordy"
+        },
+        {
+          "feature": "Added an \u201cobjective\u201d and checkpoint system to teach the player more specific concepts like sneaking and wallsplatting"
+        },
+        {
+          "feature": "New layout and design that teaches more concepts in a more engaging and less overwhelming way"
+        },
+        {
+          "feature": "Player health is hidden for duration of tutorial, then appears after to more intuitively communicate that you can\u2019t take damage during the tutorial"
+        },
+        {
+          "feature": "Replaying the tutorial will still show all the info popups, even if you have already seen them"
+        },
+        {
+          "feature": "Certain tutorial popups will now contextually appear outside the tutorial if you have not seen them yet"
+        },
+        {
+          "feature": "The \u201cInfo\u201d box will no longer appear during combat to avoid an information overload. Instead, the most recently queued info box will appear once combat is finished"
+        },
+        {
+          "feature": "Added training mode:"
+        },
+        {
+          "feature": "You can enter training mode from the title screen after completing or skipping the tutorial"
+        },
+        {
+          "feature": "In training mode, you can practice fighting guards. You can set the number of standard and taser guards, change their behavior, and adjust other settings from the pause menu."
+        },
+        {
+          "feature": "Unlike during combat during a normal run, you can access your inventory during training mode to equip any gear you have in your hideout, allowing you to test out various setups. You also have access to infinite gadgets and taser darts"
+        },
+        {
+          "feature": "You can view damage data such as individual attack damage and DPS"
+        },
+        {
+          "feature": "You can turn on a timing assist to tell you when your dodges and parries are too early or too late"
+        },
+        {
+          "balance_change": "He is now immune to the stun effects of taser darts when his armor meter is active, but they will now deal damage to the armor meter"
+        },
+        {
+          "balance_change": "It is now extremely rare for him to block attacks when his armor meter is active"
+        },
+        {
+          "balance_change": "The armor meter recharges slightly slower but has a slightly shorter cooldown and takes slightly less damage from attacks"
+        },
+        {
+          "balance_change": "Concussion grenades now deal damage to the armor meter and cause the boss to flash white to indicate the normal effect was prevented by the armor"
+        },
+        {
+          "feature": "Running kick and quick kick 3 now act as OTGs, meaning they can be used to hit enemies who are in a grounded landing/getup state. Hitting an enemy with an OTG when they are in such a state causes the move to be unable to launch or wallsplat, and instead forces the enemy back into a standing state"
+        },
+        {
+          "feature": "Removed the twinkle that appears when an enemy is starting an attack, as many players assumed this effect indicated dodge or parry timing"
+        },
+        {
+          "feature": "Replaced this effect with a HUD warning effect that flashes faster as the attack is closer to coming out - this effect also appears for offscreen enemies, making situations with many combatants more fair"
+        },
+        {
+          "feature": "Guards now detect you more slowly when you are spotted while in shadow (except if they were alerted by a security camera), and do not track the player during shadowed detection, giving you a chance to get out of the way or slip by for a sneak attack. The distance and angle requirements for a guard catching you have also been made more strict to enable dodging out of the way to avoid getting caught"
+        },
+        {
+          "feature": "Floors are now referred to as \u201cSublevels\u201d"
+        },
+        {
+          "feature": "You can now spend grymite to start your run at any sublevel you have previously reached (at a cost of 200 per floor) by pressing A/D or Left/Right D-Pad before selecting \u201cNew Run\u201d or \u201cQuick Start.\u201d Players who have already reached floors past Layer 1 Sublevel 1 will need to reach those floors again in order to unlock the ability to skip to those levels, as this data was not previously saved"
+        },
+        {
+          "feature": "Added elevator UI that displays which floor you are currently on, as well as which floor is coming up next when you have the elevator access card"
+        },
+        {
+          "feature": "You can now select a type of control scheme to override control prompts, as Steam typically defaults all controllers to be detected as XBox controllers, which prevented control prompts from displaying correctly in some cases"
+        },
+        {
+          "feature": "Adjusted escape success screen to display full level names (i.e. \u201cLayer 1, Sublevel 1\u201d) rather than abbreviations (i.e. \u201cL1F1\u201d)"
+        },
+        {
+          "balance_change": "Adjusted running punch to be slightly easier to land when close to an enemy"
+        },
+        {
+          "balance_change": "Adjusted running kick to be slightly easier to land and to allow easier juggling after landing a hit"
+        },
+        {
+          "feature": "Added KO screen boom sound effects and made music cut out when getting scrapped"
+        },
+        {
+          "feature": "Added basic UI sound effects and looting sound effects - subject to change"
+        },
+        {
+          "feature": "Added sounds related to Boss 1\u2019s armor meter (armor hit, armor break, armor regen)"
+        },
+        {
+          "feature": "Added functionality for noisemakers in combat \u2014 when a noisemaker is activated in combat, the nearest guard who can act will immediately run up and attack the player. You can use this to bait guards into hitting each other or set up for an easy counter-hit hard attack"
+        },
+        {
+          "balance_change": "Adjusted Riot Armor\u2019s dodge knockback effect to be unblockable and interrupt enemy attacks"
+        },
+        {
+          "feature": "Removed Charge Braces, as they were an extremely strong gear piece that trivialized resource management and encouraged unwanted camping strategies during combat"
+        },
+        {
+          "feature": "Certain pieces of gear have been removed from the loot pool as they are designated to be obtained by non-standard means"
+        },
+        {
+          "balance_change": "Adjusted walk animation speeds to better match the physical movement speed"
+        },
+        {
+          "feature": "Added dead zones for analog sticks on gamepad (no settings for these yet)"
+        },
+        {
+          "feature": "Guards now play a hit animation before transitioning into the dazed animation when they are broken by the player\u2019s attack"
+        },
+        {
+          "feature": "Fog colors now fade smoothly between levels that have differing fog colors"
+        },
+        {
+          "feature": "Updated some tips with new information and images"
+        },
+        {
+          "feature": "Guards will now play a \u201clost sight\u201d animation when the player is in shadow for a time during combat, similarly to how Boss 1 works \u2013 this animation is also now used when a guard loses track of you during a chase"
+        },
+        {
+          "feature": "Guards no longer regenerate health or recover from the broken state when trapped, launched, wallsplatted, or electrocuted"
+        },
+        {
+          "balance_change": "The time a guard stays broken has been increased to 3 seconds"
+        },
+        {
+          "feature": "When a guard is highlighted for a sneak attack, all guards in the room will now be highlighted as well to display how many enemies will enter combat if the player sneak attacks"
+        },
+        {
+          "feature": "The room that combat starts in is now dependent on who initiated combat \u2013 if the player initiates combat, it will start in the room the attacked guard was in. If the guard initiates combat, it will start in the room the player was in. This was adjusted to better reflect the appearance of sneak attacks in stealth mode, especially when using gear that increases sneak attack range"
+        },
+        {
+          "feature": "Added a secondary attack animation for guards"
+        },
+        {
+          "feature": "Added a lock status indicator to gates and the elevator terminal that displays red when locked, yellow when the player has the required access card, and green when unlocked"
+        },
+        {
+          "balance_change": "Guards take even less heat when out of the player\u2019s attack range, and broken guards take none unless the player is in range"
+        },
+        {
+          "balance_change": "Guards now take a small amount of heat upon being wallsplatted, and are allowed to attack earlier after recovering from any vulnerable state (wallsplat, launch, electrocute, etc.)"
+        },
+        {
+          "balance_change": "Adjusted Chest Rig effect scaling to be a linear increase"
+        },
+        {
+          "balance_change": "Adjusted running attack hitboxes and timing slightly"
+        },
+        {
+          "feature": "When using gamepad, the left stick now acts the same as the right stick while aiming a taser or gadget"
+        },
+        {
+          "feature": "Added on-screen control prompts that display the inputs to use gadgets/tasers"
+        },
+        {
+          "feature": "Taser guards can now spawn for elevator ambushes, with a 1 in 6 chance on Sublevel 1, a 1 in 5 chance on Sublevel 2, and a 1 in 4 chance on Sublevel 3"
+        },
+        {
+          "feature": "Removed randomness from the duration of delays between level loads and slightly shortened delay times"
+        },
+        {
+          "feature": "Added support for screen resolutions up to 4K 4096x2304"
+        },
+        {
+          "bug": "\u201cEffect Down\u201d broken gear effect now correctly applies"
+        },
+        {
+          "bug": "Gear that reduces max HP no longer incorrectly changes the order of health + armor pips"
+        },
+        {
+          "bug": "Fixed a bug where when wearing gear that reduces max HP, armor points would not be used when taking a hit at 1 health"
+        },
+        {
+          "bug": "Fixed a bug where, when reaching 0 HP while carrying two of the same piece of gear, the game would not play the \u201cScrapped\u201d screen and instead would allow the player to continue the fight"
+        },
+        {
+          "bug": "Corrected motion of camera when transitioning out of combat start cutscenes to avoid the camera looking down for a moment"
+        },
+        {
+          "bug": "Combat camera is now less likely to get stuck in a position where the target guard is not visible"
+        },
+        {
+          "bug": "Adjusted some camera paths to make low-visibility situations even less likely"
+        },
+        {
+          "bug": "The low HP \u201cCaution\u201d effect now correctly disappears when teleporting guards out of combat"
+        },
+        {
+          "bug": "Security camera sound effect now fades out when the game is paused"
+        },
+        {
+          "bug": "The elevator camera can no longer be triggered when outside the elevator during combat"
+        },
+        {
+          "bug": "Other minor fixes to camera triggers (should hopefully a few many camera-related issues)"
+        },
+        {
+          "bug": "Moves that change a character\u2019s collider size no longer apply to the environment collider, preventing the player (and hopefully guards) from clipping out of bounds"
+        },
+        {
+          "bug": "Additionally, character to character colliders have been sized up vertically to prevent launched characters from getting stuck on top of other characters"
+        },
+        {
+          "bug": "You can no longer exit the elevator while its door is closing"
+        },
+        {
+          "bug": "Sneak attacking a guard trapped in an electromagnet will no longer cause the guard\u2019s combat start cutscene animation to be delayed"
+        },
+        {
+          "bug": "Trevor\u2019s forward movement when throwing his pickaxe is now done physically rather than just through animation, preventing visual errors such as clipping"
+        },
+        {
+          "bug": "The game will no longer be prevented from loading if you pause right as you start or continue a run (as you can no longer pause the game during this time)"
+        },
+        {
+          "bug": "Taser guards will no longer incorrectly play a combat start cutscene animation when getting wallsplatted during combat if they were in the aiming state when combat started"
+        },
+        {
+          "bug": "Guards can no longer be teleported into locked rooms using tear modules (don\u2019t worry, the player still can)"
+        },
+        {
+          "bug": "Guards are now set to be inactive after being teleported out of a fight until the fight ends, which should prevent them from being visible on the KO screen"
+        },
+        {
+          "bug": "Other tiny tear module fixes that may have fixed a softlock? Maybe?"
+        },
+        {
+          "bug": "Guard heat indicator will no longer persist for a short time after a guard is KO\u2019d"
+        },
+        {
+          "bug": "Fixed a bug where the cost to replenish armor points would be incorrectly calculated if the armor was not completely depleted"
+        },
+        {
+          "balance_change": "Slightly adjusted guard parry timing to be more in line with its animation"
+        },
+        {
+          "bug": "The player no longer receives the \u201cDamaged [POINTS RESET]\u201d penalty when inflicting self-damage, such as with Warhead Gauntlets or Boots"
+        },
+        {
+          "bug": "You can no longer perfect chain attacks that hit an invulnerable guard, and attacks against invulnerable guards no longer register on the combo counter"
+        },
+        {
+          "bug": "Corrected access card interaction prompt text to read \u201cAccess Card\u201d instead of \u201cKeycard\u201d"
+        },
+        {
+          "bug": "Fixed a bug where pressing pause to view \u201cmore info\u201d for a tip would not properly select the tip if it had previously been unlocked"
+        },
+        {
+          "bug": "You can no longer pause the game when you are prompted to perform dodge or parry inputs in the tutorial to avoid time scale issues"
+        },
+        {
+          "bug": "The encumbrance meter no longer displays the exact weight value outside of menus and instead shows the weight rating (Weight OK, Encumbered, Overencumbered) as intended"
+        },
+        {
+          "bug": "Quitting to the title screen from the pause menu or getting scrapped now saves all unlocked tips and info"
+        },
+        {
+          "bug": "In the inventory, fixed a bug where pressing left on controller while a piece of gear was selected would sometimes not properly move to highlight the head slot"
+        },
+        {
+          "bug": "You can no longer target disabled security cameras with the taser"
+        },
+        {
+          "bug": "Guard hit sounds are no longer tied to animation and will now play properly when a guard is stuck in another animation"
+        },
+        {
+          "bug": "Removed a line of code that caused guards to attack less frequently when hit"
+        },
+        {
+          "bug": "Forge now correctly auto-selects the first consumable slot when scrapping your last piece of gear"
+        },
+        {
+          "bug": "You can no longer buffer a hold select action on forge action buttons by holding the select button while canceling and then reselecting the same gear or gadget and holding down the select button"
+        },
+        {
+          "bug": "Fixed visual bugs when discarding gear in the inventory that would cause the next selected gear to not appear as selected and for it to have a red highlight as if it were being discarded"
+        },
+        {
+          "bug": "Corrected a light region in L1F1"
+        },
+        {
+          "bug": "Fixed a problem where dust trail effects would persist after they should have stopped, in some situations. This bug is hard to test so it\u2019s possible that there are still some situations in which it may occur"
+        },
+        {
+          "bug": "When using keyboard + mouse, pressing the WASD keys while aiming a taser or gadget no longer will move the camera"
+        },
+        {
+          "bug": "Taser guards are now correctly highlighted when approaching for a sneak attack"
+        },
+        {
+          "bug": "The player\u2019s aggression rating is now saved correctly to prevent players exiting the game and continuing their run in order to reset this value"
+        },
+        {
+          "bug": "Fixed a layout issue that would cause certain menu button prompts to be positioned incorrectly"
+        },
+        {
+          "bug": "Encumbrance is now recalculated immediately upon retrieving items from the Contraband Station"
+        },
+        {
+          "bug": "Made certain character states that previously did not apply any friction value apply one, in order to avoid situations where the character can slide indefinitely"
+        },
+        {
+          "bug": "Upon activation, the Emergency Shock Rig now puts enemies in their \u201csent\u201d animation rather than the standard launch animation"
+        },
+        {
+          "bug": "Fixed a bug where characters could not enter their landing/tumbling states when landing after being launched if they were still in hitstun by making it so hitstun is canceled when landing"
+        },
+        {
+          "bug": "Guards can no longer see or hear you when you are in the process of descending or ascending in the elevator (except for guards spawned for elevator ambushes, of course) \u2013 this fix probably fixed the bug where guard hearing indicators would get stuck on screen between levels"
+        },
+        {
+          "bug": "Fixed a bug where dropdowns would have their text become hidden when exiting and re-opening their parent menu while highlighted"
+        }
+      ]
+    },
+    {
+      "title": "a0.13.5 - The Mudman Update",
+      "date": "2023-12-20 17:17:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585127696093",
+      "content": "Happy Holidays, Scavengers!\n\nJames has taken it upon himself to build a new friend out of mud and spare parts in the mines. Drop by and say hello!\n\nPatch Notes\n[list]\n[*] Added Mudman (holiday prop)\n[*] Fixed elevator prompt to show proper access card name\n[/list]\n\nSmall stuff today, bigger stuff coming soon!\n- Crucible",
+      "key": "2279600::7792c69dac704dadc63b6cadf67c23d79fadb531",
+      "tags": [
+        {
+          "feature": "[*] Added Mudman (holiday prop)"
+        },
+        {
+          "bug": "[*] Fixed elevator prompt to show proper access card name"
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal Demo a0.13.4 Patch Notes",
+      "date": "2023-12-13 01:56:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5397065151385038452",
+      "content": "Hey Scavengers!\n\nWe've got a small patch for you guys today. Here are the changes:\n\n[h3]Features[/h3]\n[list]\n[*] Adjusted the wording of some tips to be more clear.\n[*] Elevator access cards now display as \u201cElevator Access Card\u201d instead of using the floor ID.\n[*] Security cameras now have their view area projections disabled during combat to signify that they don\u2019t do anything outside of stealth. The projection flickers back on after combat (and after the player is not inside the camera\u2019s view) to give the player some time to move away before the camera becomes active and starts rotating again.\n[*] Scav now defaults to a random voice on first time startup\n[/list]\n[h3]Fixes[/h3]\n[list]\n[*] Boss 1\u2019s grab followup (the launcher) now properly deals knockback instead of getting you stuck in place.\n[*] Taser guards are now visible on KO screens.\n[*] Flashing enemies should no longer appear as the same color as the background (without shadow) on KO screens.\n[*] State-bound effects are now able to persist correctly between multiple states (in layman\u2019s terms: guards\u2019 invulnerability no longer wears off prematurely when getting up after being launched - this prevents some animation errors).\n[*] Effects of equipped gear are now always applied at the correct level when continuing a run.\n[*] Security cameras no longer continue playing their movement sound during combat and will now properly start playing movement sounds again after combat ends.\n[*] Fixed a problem where if Boss 1 used his grab to send Scav into their 2nd phase, the camera animation for the Scav 2nd phase cutscene would not play.\n[*] Fixed an issue where the game would not launch on Mac due to searching for the wrong version number (oops).\n[/list]\n\nGood luck down there!\n- Crucible",
+      "key": "2279600::b54ce4e8d8857eff7d16f5c7264618f905c00ccf",
+      "tags": [
+        {
+          "feature": "Adjusted the wording of some tips to be more clear."
+        },
+        {
+          "feature": "Elevator access cards now display as \u201cElevator Access Card\u201d instead of using the floor ID."
+        },
+        {
+          "feature": "Security cameras now have their view area projections disabled during combat to signify that they don\u2019t do anything outside of stealth. The projection flickers back on after combat (and after the player is not inside the camera\u2019s view) to give the player some time to move away before the camera becomes active and starts rotating again."
+        },
+        {
+          "feature": "Scav now defaults to a random voice on first time startup"
+        },
+        {
+          "bug": "Boss 1\u2019s grab followup (the launcher) now properly deals knockback instead of getting you stuck in place."
+        },
+        {
+          "bug": "Taser guards are now visible on KO screens."
+        },
+        {
+          "bug": "Flashing enemies should no longer appear as the same color as the background (without shadow) on KO screens."
+        },
+        {
+          "bug": "State-bound effects are now able to persist correctly between multiple states (in layman\u2019s terms: guards\u2019 invulnerability no longer wears off prematurely when getting up after being launched - this prevents some animation errors)."
+        },
+        {
+          "bug": "Effects of equipped gear are now always applied at the correct level when continuing a run."
+        },
+        {
+          "bug": "Security cameras no longer continue playing their movement sound during combat and will now properly start playing movement sounds again after combat ends."
+        },
+        {
+          "bug": "Fixed a problem where if Boss 1 used his grab to send Scav into their 2nd phase, the camera animation for the Scav 2nd phase cutscene would not play."
+        },
+        {
+          "bug": "Fixed an issue where the game would not launch on Mac due to searching for the wrong version number (oops)."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal December Update",
+      "date": "2023-12-02 18:03:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983669851351",
+      "content": "[h3]Features[/h3]\n[list]\n[*] New scav voice, selectable from options menu\n[*] Added one liners for scav when defeating a boss\n[*] Two new guard voices\n[*] Some visual updates to the hideout, including the mining robot being visible\n[*] Introductory title text for the first boss\n[/list]\n[h3]Fixes[/h3]\n[list]\n[*] Dropdown buttons will no longer have the incorrect text color after a value is selected on keyboard\n[*] Fixed incorrect controller navigation in the options menu\n[*] Fixed dropdown options having incorrect/inconsistent controller navigation\n[*] Screen-wide visual effects such as the concussion grenade effect and speed lines will no longer persist onto the title screen if the player loses a run while the effect is active\n[*] Gear effect text on Charge Braces will no longer overlap when the gear has the \u201cEffect Down\u201d broken effect\n[*] The player can no longer clip into the corner of the small room on the left side of L1F2 and get stuck\n[*] In order to prevent save-scumming, the \u201cQuit\u201d option in the pause menu is now disabled during combat\n[*] Data is now saved immediately upon being scrapped, rather than after the screen fades to black, in order to prevent save-scumming by exiting the game on the scrapped screen.\n[/list]",
+      "key": "2279600::f7a2666d200caa2cd29e9aca8fce9af8b87406d4",
+      "tags": [
+        {
+          "feature": "[*] New scav voice, selectable from options menu"
+        },
+        {
+          "feature": "[*] Added one liners for scav when defeating a boss"
+        },
+        {
+          "feature": "[*] Two new guard voices"
+        },
+        {
+          "feature": "[*] Some visual updates to the hideout, including the mining robot being visible"
+        },
+        {
+          "feature": "[*] Introductory title text for the first boss"
+        },
+        {
+          "bug": "[*] Dropdown buttons will no longer have the incorrect text color after a value is selected on keyboard"
+        },
+        {
+          "bug": "[*] Fixed incorrect controller navigation in the options menu"
+        },
+        {
+          "bug": "[*] Fixed dropdown options having incorrect/inconsistent controller navigation"
+        },
+        {
+          "bug": "[*] Screen-wide visual effects such as the concussion grenade effect and speed lines will no longer persist onto the title screen if the player loses a run while the effect is active"
+        },
+        {
+          "bug": "[*] Gear effect text on Charge Braces will no longer overlap when the gear has the \u201cEffect Down\u201d broken effect"
+        },
+        {
+          "bug": "[*] The player can no longer clip into the corner of the small room on the left side of L1F2 and get stuck"
+        },
+        {
+          "bug": "[*] In order to prevent save-scumming, the \u201cQuit\u201d option in the pause menu is now disabled during combat"
+        },
+        {
+          "bug": "[*] Data is now saved immediately upon being scrapped, rather than after the screen fades to black, in order to prevent save-scumming by exiting the game on the scrapped screen."
+        }
+      ]
+    },
+    {
+      "title": "Raw Metal Alpha Demo Halloween Update!",
+      "date": "2023-10-31 11:34:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5229301621594677590",
+      "content": "Happy Halloween, Scavengers! This alpha demo update has some juicy new features for you to sink your teeth into! We also have a brand new trailer for the game, and have even announced a release date...\n\n[previewyoutube=t-f6_MCjOD0;full][/previewyoutube]\n[h1]Raw Metal will release on March 19, 2024![/h1]\n\nUntil then, we plan to continue updating the demo every so often, and will continue releasing monthly builds to our [url=https://www.patreon.com/rawmetal]Patreon![/url]\n\nFor now, take a look at what we have for this version of the demo...\n\n[h2]Changelog[/h2]\n[list]\n[*] New level (L1F3)\n[*] The first boss enters the fray! Fight him by descending past level 3.\n[*] New mechanic: the Contraband Station! Find it on level 3 to recover your lost items\n[*] Combat camera improvements\n[*] New animations for guards turning, so they don't snap around and spot you immediately\n[*] New animations for guards getting trapped in electromagnets\n[*] New Scavenger voice!\n[*] Parrying is now slightly easier\n[*] Visual fidelity improvements\n[*] Some spooky decor for the lounge\n[*] Plenty of bug fixes!\n[/list]\nThanks so much to all of you for your support thus far, it means the world to us.\n\nGood luck in the mines!\n- Crucible",
+      "key": "2279600::38d0416762ff5e26249dca2d2a636b6b9913127f",
+      "tags": [
+        {
+          "feature": "New level (L1F3)"
+        },
+        {
+          "feature": "The first boss enters the fray! Fight him by descending past level 3."
+        },
+        {
+          "feature": "New mechanic: the Contraband Station! Find it on level 3 to recover your lost items"
+        },
+        {
+          "feature": "Combat camera improvements"
+        },
+        {
+          "feature": "New animations for guards turning, so they don't snap around and spot you immediately"
+        },
+        {
+          "feature": "New animations for guards getting trapped in electromagnets"
+        },
+        {
+          "feature": "New Scavenger voice!"
+        },
+        {
+          "balance_change": "Parrying is now slightly easier"
+        },
+        {
+          "feature": "Visual fidelity improvements"
+        },
+        {
+          "feature": "Some spooky decor for the lounge"
+        },
+        {
+          "bug": "Plenty of bug fixes!"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+{
+  "appId": "2873620",
+  "count": 7,
+  "notes": [
+    {
+      "title": "Rasvyat 1.0.2 Public Test Build is live",
+      "date": "2025-09-14 10:44:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566516259",
+      "content": "[p]I haven't directly announced this on Steam until now (Only in the Discord previously), however I've been running some test builds for the 1.0.2 update, and the first mass scale one is now live on the public-test-build branch.\n\nIt should be noted that this is not the complete 1.0.2, it is still missing some features (namely the automatic regulator system that's going to be added in this update), however it does still include several new optimisations, quality of life changes, graphical improvements and reworks to other things in game.\n\nWith all that being said, please make sure to report any bugs you find in the community Discord server in order to improve the full 1.0.2.[/p][p][/p][h1]Wrenchy Productions[/h1][p][/p][p]As apart of a publisher deal with Wrenchy Productions, Rasvyat is partnering with them. This will not impact the creative direction of the game whatsoever, and moreso exists as a way to establish a partnership for future games (in which they'll have more of a hand).\n\nI will likely be doing a larger announcement with more details when it comes to the full release of Rasvyat 1.0.2, the main reason I'm doing this smaller announcement is to explain why it now mentions Wrenchy Productions on the startup screen.[/p][h1]\n1.0.2 (Public Test Build) Changelog[/h1][p][/p][h2]New Content[/h2][p][/p][list][*][p] Added the ability to \"unlock\" the mouse using the \"F\" key[/p][/*][*][p] Added new effects for when multiple channels rupture[/p][/*][*][p] Added some new background SFX[/p][/*][*][p] \"Additional AZ-5 Signal\" annunciator is now functional[/p][/*][/list][p][/p][h2]Gameplay Changes[/h2][p][/p][h3]AZS Rework[/h3][p][/p][list][*][p] AZS default mode renamed to \"AZSP\" (to better distinguish the mode from the system)[/p][/*][*][p] UZS default mode renamed to \"UZSP\" (to better distinguish the mode from the system)[/p][/*][*][p] AZSP period limit decreased to 10 (was 30)[/p][/*][*][p] AZSP accuracy is severely decreased over 110MWt[/p][/*][*][p] AZSR accuracy is severely decreased under 95MWt[/p][/*][*][p] The warning \"Reduction in UZSR\" annunciators now activate at a period of 60[/p][/*][*][p] The emergency \"Reduction in UZSR\" annunciators now activate at a period of 40[/p][/*][*][p] The warning \"Reduction in UZSP\" annunciators now activate at a period of 40[/p][/*][*][p] The emergency \"Reduction in UZSP\" annunciators now activate at a period of 20[/p][/*][*][p] UZSP will send a malfunction signal if active over 150 MWt[/p][/*][*][p] UZSR will send a malfunction signal if active under 90 MWt[/p][/*][*][p] If you go 10MWt outside of these limits (EG: over 160 MWt in UZSP mode or under 80 MWt in UZSR mode) an automatic AZ-5 signal will be sent\n[/p][/*][/list][h3]KOM Rework[/h3][p][/p][list][*][p] KOMs speed has been significantly increased until being reaching 3.5 meters (at which point it will move slightly below the usual speed)[/p][/*][*][p] KOM no longer drops the AR rods[/p][/*][*][p] KOM now completely locks all control rod movement for 10 seconds after being canceled[/p][/*][*][p] KOM now has an annunciator[/p][/*][*][p] KOM no longer selects control rods (the selsins still light up while in motion)[/p][/*][/list][p][/p][h3]AZM Rework[/h3][p][/p][list][*][p] The \"AZMM\" annunciator has been retired (Functionality moved to the \"AZM\" annunciator)[/p][/*][*][p] The AZM activation condition has been changed to only activate on thermal power going over 3450 MWt, along with AR(M) related trips[/p][/*][*][p] Swapped the AZM and AZMM annunciator positions for consistency[/p][/*][*][p] The \"Thermal Power\" automatic AZ-5 reason has been retired[/p][/*][/list][p][/p][h3]Other Changes[/h3][p][/p][list][*][p] Non-AZ control rods upwards movement is now locked until all AZ rods are withdrawn[/p][/*][*][p] Channel ruptures can now occur due to pressure caused by high reactivity situations and meltdowns[/p][/*][*][p] Xenon calculations have been completely revamped and now behave in a significantly more realistic fashion (Still sped up for gameplay)[/p][/*][*][p] AZS and AZM signals will now continue for 3 seconds (even after the root cause is no longer valid)[/p][/*][*][p] The rod control lever is no longer artificially locked during AZ-5[/p][/*][*][p] Changed the USP rods to be completely independent of AZ-5 allowing them to be manually moved during it[/p][/*][*][p] UZS(R) no longer randomly malfunctions[/p][/*][*][p] UZS(R) now malfunctions due to extremely low period, high reactivity and extremely high thermal power[/p][/*][*][p] Severe UZS(R) malfunctions can now cause the sensors to violently output erratic data[/p][/*][*][p] Improved temperature calculations significantly[/p][/*][*][p] Changed the SFKRE \"Overloaded\" state slightly [/p][/*][*][p] \"MCP Overheat\" automatic AZ-5 reason retired[/p][/*][*][p] \"Manual AZ-5\" automatic AZ-5 indicator removed due to redundency[/p][/*][*][p] All instances of \"MCP AZ\" changed to \"MCP Trip\"[/p][/*][*][p] Condensed the \"MCP Trip\" automatic AZ-5 reasons into 1 for each loop (was 8 total)[/p][/*][*][p] Added \"MCP Flow Low\" automatic AZ-5 reasons (one for each loop)[/p][/*][*][p] Added \"Channel Leak\" automatic AZ-5 reason (Triggered by channel ruptures and meltdowns)[/p][/*][*][p] Modified the reactor meltdown conditions[/p][/*][*][p] Modified the reactor explosion conditions[/p][/*][*][p] The reactor now updates every frame (Was originally at a fixed 0.05 seconds)[/p][/*][*][p] Changed the graphics of the pointer slightly[/p][/*][*][p] Remade the selsin code in order to be smoother and to avoid bugs[/p][/*][*][p] Changed all buttons to share the same SFX[/p][/*][*][p] Removed the heavy mouse smoothing effect[/p][/*][*][p] Adjusted the order of some annunciators and indicators[/p][/*][*][p] Renamed the \"PK-RR Out of zone\" indicator to \"PK-AZ Out Of Zone\"[/p][/*][*][p] Changed the \"PK-AZ Out Of Zone\" indicators color from red to yellow[/p][/*][*][p] Renamed a few indicators[/p][/*][*][p] Renamed a few of the automatic AZ-5 cause indicators[/p][/*][*][p] Updated the in-game music slightly[/p][/*][/list][p][/p][h2]Misc changes[/h2][p][/p][list][*][p] Redesigned the settings menu[/p][/*][*][p] Added the ability to filter password protected lobbies from the lobby browser[/p][/*][*][p] Selecting a lobby no longer blurs out the background (allowing you to click on other lobbies without having to press the \"cancel\" button)[/p][/*][*][p] Modified the menu music to change depending on which section you're in[/p][/*][*][p] Added a new overlay when joining a server is slow (Similar to the \"Spawning Player\" overlay removed in 1.0.1)[/p][/*][*][p] Challenge modifiers are now displayed when selecting a server[/p][/*][/list][p][/p][h2]Bug fixes[/h2][p][/p][list][*][p] Fixed an issue that caused the reactor to explode when it wasn't supposed to[/p][/*][*][p] Fixed an issue that occasionally caused the reactor thermal power to increase infinitely after a full shutdown[/p][/*][*][p] Fixed an issue that lead to inaccurate period values being displayed at higher power [/p][/*][*][p] Fixed the multiplayer optimisation issues[/p][/*][*][p] Fixed several multiplayer desync issues[/p][/*][*][p] Fixed a bug that sometimes caused all rods to appear as \"selected\" after canceling AZ-5[/p][/*][*][p] Fixed a bug that caused a bugged error string to appear when being disconnected from a server[/p][/*][/list]",
+      "key": "2873620::c0fcb981fce469bfd824e941dc39ca4ba6a8e636",
+      "tags": [
+        {
+          "feature": "Added the ability to \"unlock\" the mouse using the \"F\" key"
+        },
+        {
+          "feature": "Added new effects for when multiple channels rupture"
+        },
+        {
+          "feature": "Added some new background SFX"
+        },
+        {
+          "feature": "\"Additional AZ-5 Signal\" annunciator is now functional"
+        },
+        {
+          "balance_change": "AZS default mode renamed to \"AZSP\" (to better distinguish the mode from the system)"
+        },
+        {
+          "balance_change": "UZS default mode renamed to \"UZSP\" (to better distinguish the mode from the system)"
+        },
+        {
+          "balance_change": "AZSP period limit decreased to 10 (was 30)"
+        },
+        {
+          "balance_change": "AZSP accuracy is severely decreased over 110MWt"
+        },
+        {
+          "balance_change": "AZSR accuracy is severely decreased under 95MWt"
+        },
+        {
+          "balance_change": "The warning \"Reduction in UZSR\" annunciators now activate at a period of 60"
+        },
+        {
+          "balance_change": "The emergency \"Reduction in UZSR\" annunciators now activate at a period of 40"
+        },
+        {
+          "balance_change": "The warning \"Reduction in UZSP\" annunciators now activate at a period of 40"
+        },
+        {
+          "balance_change": "The emergency \"Reduction in UZSP\" annunciators now activate at a period of 20"
+        },
+        {
+          "balance_change": "UZSP will send a malfunction signal if active over 150 MWt"
+        },
+        {
+          "balance_change": "UZSR will send a malfunction signal if active under 90 MWt"
+        },
+        {
+          "balance_change": "If you go 10MWt outside of these limits (EG: over 160 MWt in UZSP mode or under 80 MWt in UZSR mode) an automatic AZ-5 signal will be sent"
+        },
+        {
+          "balance_change": "KOMs speed has been significantly increased until being reaching 3.5 meters (at which point it will move slightly below the usual speed)"
+        },
+        {
+          "balance_change": "KOM no longer drops the AR rods"
+        },
+        {
+          "balance_change": "KOM now completely locks all control rod movement for 10 seconds after being canceled"
+        },
+        {
+          "balance_change": "KOM now has an annunciator"
+        },
+        {
+          "balance_change": "KOM no longer selects control rods (the selsins still light up while in motion)"
+        },
+        {
+          "balance_change": "The \"AZMM\" annunciator has been retired (Functionality moved to the \"AZM\" annunciator)"
+        },
+        {
+          "balance_change": "The AZM activation condition has been changed to only activate on thermal power going over 3450 MWt, along with AR(M) related trips"
+        },
+        {
+          "balance_change": "Swapped the AZM and AZMM annunciator positions for consistency"
+        },
+        {
+          "balance_change": "The \"Thermal Power\" automatic AZ-5 reason has been retired"
+        },
+        {
+          "balance_change": "Non-AZ control rods upwards movement is now locked until all AZ rods are withdrawn"
+        },
+        {
+          "balance_change": "Channel ruptures can now occur due to pressure caused by high reactivity situations and meltdowns"
+        },
+        {
+          "balance_change": "Xenon calculations have been completely revamped and now behave in a significantly more realistic fashion (Still sped up for gameplay)"
+        },
+        {
+          "balance_change": "AZS and AZM signals will now continue for 3 seconds (even after the root cause is no longer valid)"
+        },
+        {
+          "balance_change": "The rod control lever is no longer artificially locked during AZ-5"
+        },
+        {
+          "balance_change": "Changed the USP rods to be completely independent of AZ-5 allowing them to be manually moved during it"
+        },
+        {
+          "balance_change": "UZS(R) no longer randomly malfunctions"
+        },
+        {
+          "balance_change": "UZS(R) now malfunctions due to extremely low period, high reactivity and extremely high thermal power"
+        },
+        {
+          "balance_change": "Severe UZS(R) malfunctions can now cause the sensors to violently output erratic data"
+        },
+        {
+          "balance_change": "Improved temperature calculations significantly"
+        },
+        {
+          "balance_change": "Changed the SFKRE \"Overloaded\" state slightly"
+        },
+        {
+          "balance_change": "\"MCP Overheat\" automatic AZ-5 reason retired"
+        },
+        {
+          "balance_change": "\"Manual AZ-5\" automatic AZ-5 indicator removed due to redundency"
+        },
+        {
+          "balance_change": "All instances of \"MCP AZ\" changed to \"MCP Trip\""
+        },
+        {
+          "balance_change": "Condensed the \"MCP Trip\" automatic AZ-5 reasons into 1 for each loop (was 8 total)"
+        },
+        {
+          "balance_change": "Added \"MCP Flow Low\" automatic AZ-5 reasons (one for each loop)"
+        },
+        {
+          "balance_change": "Added \"Channel Leak\" automatic AZ-5 reason (Triggered by channel ruptures and meltdowns)"
+        },
+        {
+          "balance_change": "Modified the reactor meltdown conditions"
+        },
+        {
+          "balance_change": "Modified the reactor explosion conditions"
+        },
+        {
+          "balance_change": "The reactor now updates every frame (Was originally at a fixed 0.05 seconds)"
+        },
+        {
+          "balance_change": "Changed the graphics of the pointer slightly"
+        },
+        {
+          "balance_change": "Remade the selsin code in order to be smoother and to avoid bugs"
+        },
+        {
+          "balance_change": "Changed all buttons to share the same SFX"
+        },
+        {
+          "balance_change": "Removed the heavy mouse smoothing effect"
+        },
+        {
+          "balance_change": "Adjusted the order of some annunciators and indicators"
+        },
+        {
+          "balance_change": "Renamed the \"PK-RR Out of zone\" indicator to \"PK-AZ Out Of Zone\""
+        },
+        {
+          "balance_change": "Changed the \"PK-AZ Out Of Zone\" indicators color from red to yellow"
+        },
+        {
+          "balance_change": "Renamed a few indicators"
+        },
+        {
+          "balance_change": "Renamed a few of the automatic AZ-5 cause indicators"
+        },
+        {
+          "balance_change": "Updated the in-game music slightly"
+        },
+        {
+          "feature": "Redesigned the settings menu"
+        },
+        {
+          "feature": "Added the ability to filter password protected lobbies from the lobby browser"
+        },
+        {
+          "feature": "Selecting a lobby no longer blurs out the background (allowing you to click on other lobbies without having to press the \"cancel\" button)"
+        },
+        {
+          "feature": "Modified the menu music to change depending on which section you're in"
+        },
+        {
+          "feature": "Added a new overlay when joining a server is slow (Similar to the \"Spawning Player\" overlay removed in 1.0.1)"
+        },
+        {
+          "feature": "Challenge modifiers are now displayed when selecting a server"
+        },
+        {
+          "bug": "Fixed an issue that caused the reactor to explode when it wasn't supposed to"
+        },
+        {
+          "bug": "Fixed an issue that occasionally caused the reactor thermal power to increase infinitely after a full shutdown"
+        },
+        {
+          "bug": "Fixed an issue that lead to inaccurate period values being displayed at higher power"
+        },
+        {
+          "bug": "Fixed the multiplayer optimisation issues"
+        },
+        {
+          "bug": "Fixed several multiplayer desync issues"
+        },
+        {
+          "bug": "Fixed a bug that sometimes caused all rods to appear as \"selected\" after canceling AZ-5"
+        },
+        {
+          "bug": "Fixed a bug that caused a bugged error string to appear when being disconnected from a server"
+        }
+      ]
+    },
+    {
+      "title": "Why did 1.0.1 take so long and what comes next?",
+      "date": "2025-03-05 00:35:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379329560",
+      "content": "Around a week ago I released the 1.0.1 update, and upon doing so many of you were probably disappointed by how little the update actually added in comparison to how long it took, so I thought I'd shed a little light on why it took so long, the rough history of the game, the development issues and what you can expect for future updates.\n\n[h1]Pre-release History[/h1]\n\nI started making this game in September 2022, in this stage of development, I was not going for realism, but rather for simplicity, the game only had a total of 3 buttons, those being \"Raise Control Rods\", \"Lower Control Rods\" and \"AZ-5\", there were no pumps, no water, no temperature, just the thermal power and incredibly basic rods, even the flux and thermal power was more simplified than what we have today, in that it was either always decreasing, stable or always increasing.\n\nAt some point in early 2023, I begun to shift my focus from simplicity to slightly more realism, around this time I implemented an extremely basic pump and water system (Far more reminiscent of a BWR than an RBMK), along with more annunciators for you to observe, at this stage the game still had very little basis on reality in regards to the controls, layout or anything else.\n\nOver the next year (2023 - 2024), I began to improve the game pretty regularly, by March of 2023 (Almost exactly 2 years ago at this point), I had created the basis of the control rod system that is still used today, this being the first system to be actually based on reality, by May I'd implemented the Narrow Profile Gauges and updated various models, making the game look closer to how it does today, by September of 2023 (1 year after I began), I laid out the foundation for moving the game from a singleplayer game to a multiplayer game and even did the first multiplayer test with 3 others, by November of 2023 I'd updated the physics of the reactor to behave far more closely to how it does today, no more of that either constantly increasing or decreasing system.\n\nFrom January of 2024 through to the initial release in July, I updated the models of the buttons and switches, I updated the lighting, and most importantly I hired my first developer to flush out the control room into a decent recreation of Chernobyl Unit 4.\n\n[h1]Development Struggles[/h1]\n\nDespite how much progress and success I experienced in the first year of development especially, by late 2023 and even moreso 2024, the cracks really started to show, it became more and more obvious that the game couldn't handle the amount of things being added to it, along with all the modifications of year old systems originally created when the goal was simplicity, however I tried to push through these issues.\n\nBy the time of June 2024, the project was near impossible to update easily, new features would break things untouched since 2022 and the performance was getting worse and worse, despite this I managed to get the FPS to a semi-stable 70, so I continued, but then came the control room update, this singular update managed to lower the FPS from 70, to 15, and at this point it was early July, 2 weeks until the already delayed release date, so I gutted several things graphically, along with doing my best to optimise the now 1 and a half year old codebase, due to this I managed to get the game up to around 30 FPS by the time of release, and I told everyone that I'd do my best to release some quality of life changes, bug fixes and performance updates in the coming weeks.\n\n[h1]1.0.0a[/h1]\n\nAt this point, I had begun work on the 1.0.0a update, I fixed several things from physics issues, to gameplay cheeses to obscure bugs, yet even a month later I couldn't seem to fix the spawning player bug, I searched and I searched to try and find any idea as to what could be causing it, and the only possible thing I found was that it was an issue with how much was being loaded at once, so I began to make some changes to the way things were loaded, and then Unreal Engine crashed, I tried to re-open the project and it gave me a vague and weird error, eventually though I managed to get back into the project a couple days later, and when I got in I found nearly the entire map completely corrupted, leading to the eventual abandonment of that update, as even the backups were screwed.\n\n\n[h1]1.0.1[/h1]\n\nAt this point I begun work on what would eventually be named the 1.0.1 update, this update was fully back to square one, using the original 1.0.0 source code as its base, and due to a combination of all of the previously mentioned development issues, I was able to fix nearly everything except for the spawning player bug, and eventually, after months of work I finally managed to modify the loading of the game and increase the optimization without breaking and corrupting half the game to the point multiplayer was working again and the game was running slightly better, I continued to try to optimise the project more, however this lead to a scare in which the project broke temporarily, however I managed to recover it this time as the corruption wasn't as severe.\n\nAnd after nearly 6 months following the 1.0.0a update being corrupted, I finally released the 1.0.1 update publicly.\n\n[h1]What comes next?[/h1]\n\nDue to all the aforementioned issues with the 2022 codebase, I've made the decision to move on from it, this does [b]not[/b] mean that I am abandoning the project, it does mean however that I will be [b]fully[/b] rebuilding the game from the ground up, this is [b]not[/b] a new game, merely a massive update under the hood, this means that the next update will take several months, however this will allow me to not only put out future updates faster, but to better optimise the game, and to allow far more complex systems to be implemented.\n\nThank you all for taking the time to read this and I hope it's helped explain the struggles of making this game, along with the future plans for this project :)\n\n(If you have any feedback, feel free to leave it in the discussion or community Discord server)",
+      "key": "2873620::14facedcc51d9bf2950e16796aa19f452e503d20",
+      "tags": [
+        {
+          "bug": "- I fixed several things from physics issues, to gameplay cheeses to obscure bugs, yet even a month later I couldn't seem to fix the spawning player bug"
+        },
+        {
+          "bug": "I fixed several things from physics issues, to gameplay cheeses to obscure bugs, yet even a month later I couldn't seem to fix the spawning player bug"
+        },
+        {
+          "bug": "I was able to fix nearly everything except for the spawning player bug"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.0.1 | Small Update",
+      "date": "2025-02-24 23:01:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353343987",
+      "content": "[h1]New content[/h1]\n\n[list]\n[*] Added an optional tutorial to also help newer players\n[*] Added optional challenge modifiers for players who have started the reactor at least once\n[*] Added various extra labels to help newer players\n[*] Added some extra annunciators to reduce some confusion\n[/list]\n\n[h1]Gameplay changes[/h1]\n\n[list]\n[*] Added an \"Anti-cheese\" to the AZ-5 malfunction system in order to prevent players from being able to force it with an auto-clicker\n[*] Added the \"System wear\" mechanic, a simple system that slowly increases the likelihood of a malfunction occurring the longer you go without one\n[*] Slowed the rate iodine decays into xenon slightly\n[*] Slowed the rate xenon decays from the reactor drastically\n[*] Slightly modified the conditions for control rod jamming\n[/list]\n\n[h1]Misc changes[/h1]\n\n[list]\n[*] Updated outdated UI elements to be more coherent with the game theme\n[*] Modified some annunciator text\n[*] Updated several music tracks used in game\n[*] Changed the colours of some game objects\n[*] Disabled some misleading indicators belonging to unused systems\n[*] Removed the \"friends only\" option when hosting a lobby due to issues\n[*] Added the ability to password protect lobbies\n[/list]\n\n[h1]Bug fixes[/h1]\n\n[list]\n[*] Fixed the spawning player bug\n[*] Fixed a bug that caused the USP selsins to not light up when fully withdrawn\n[*] Fixed a bug that caused the SIUB warning alarm to randomly activate\n[*] Fixed the centering of the text on some UI buttons\n[*] Fixed some switches using the wrong sound effects and models\n[*] Fixed most malfunctions accidently being disabled\n[*] Fixed an exploit with the KOM switch that allowed players to bypass the rod selection limit\n[/list]",
+      "key": "2873620::0a18e5ddfabaf505fa036200a5c48c71d2fdbd50",
+      "tags": [
+        {
+          "feature": "[*] Added an optional tutorial to also help newer players"
+        },
+        {
+          "feature": "[*] Added optional challenge modifiers for players who have started the reactor at least once"
+        },
+        {
+          "feature": "[*] Added various extra labels to help newer players"
+        },
+        {
+          "feature": "[*] Added some extra annunciators to reduce some confusion"
+        },
+        {
+          "feature": "[*] Added an \"Anti-cheese\" to the AZ-5 malfunction system in order to prevent players from being able to force it with an auto-clicker"
+        },
+        {
+          "feature": "[*] Added the \"System wear\" mechanic, a simple system that slowly increases the likelihood of a malfunction occurring the longer you go without one"
+        },
+        {
+          "feature": "[*] Added the ability to password protect lobbies"
+        },
+        {
+          "balance_change": "[*] Slowed the rate iodine decays into xenon slightly"
+        },
+        {
+          "balance_change": "[*] Slowed the rate xenon decays from the reactor drastically"
+        },
+        {
+          "balance_change": "[*] Slightly modified the conditions for control rod jamming"
+        },
+        {
+          "bug": "[*] Fixed the spawning player bug"
+        },
+        {
+          "bug": "[*] Fixed a bug that caused the USP selsins to not light up when fully withdrawn"
+        },
+        {
+          "bug": "[*] Fixed a bug that caused the SIUB warning alarm to randomly activate"
+        },
+        {
+          "bug": "[*] Fixed the centering of the text on some UI buttons"
+        },
+        {
+          "bug": "[*] Fixed some switches using the wrong sound effects and models"
+        },
+        {
+          "bug": "[*] Fixed most malfunctions accidently being disabled"
+        },
+        {
+          "bug": "[*] Fixed an exploit with the KOM switch that allowed players to bypass the rod selection limit"
+        }
+      ]
+    },
+    {
+      "title": "Final Progress Report Prior To Release",
+      "date": "2024-07-11 16:00:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267361615281",
+      "content": "[previewyoutube=e3QTsIbdNjc;rightthumb][/previewyoutube][h1]Preparing for release progress report[/h1]\n\nI have hired my first map builder to help out, Ade, because of Ade the release will have a fully flushed out control room.\n\nBeyond this, I have added several new things myself:\n\n[list]\n[*] A new pump system which will be finished at some point after release\n[*] New button and switch models to replace the old blocky placeholders\n[*] Basic xenon simulation\n[*] New alarm sounds\n[/list]\n\nUnfortunately, since I now have someone else working on the project with me, and because I will be hiring more developers in the future in order to rewrite several older parts of the game, plus getting out updates quicker, I have decided to make the game paid on day one. To make up for this, I will be giving away [b]30 [/b]free keys on launch day in my Discord server, along with this, I'm going to be making the game [b]40%[/b] off for the first week after launch.\n\nThank you all for sticking around with me for the past 2 years as I've developed this game, it's really been an awesome experience and I hope that you enjoy the game!",
+      "key": "2873620::d5f7e7767643424bf1370878d33374e500eb4ec9",
+      "tags": [
+        {
+          "feature": "A new pump system which will be finished at some point after release"
+        },
+        {
+          "feature": "New button and switch models to replace the old blocky placeholders"
+        },
+        {
+          "feature": "Basic xenon simulation"
+        },
+        {
+          "feature": "New alarm sounds"
+        }
+      ]
+    },
+    {
+      "title": "Version 0.12.4 | Bug fixes and malfunctions",
+      "date": "2024-05-13 06:35:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435409796653",
+      "content": "[h1]Content[/h1]\n\n[list]\n[*] Random Malfunctions, UZS and UZSR sensors, AR, and AZ-5 can now malfunction.\n[*] Added some new annunciators.\n[/list]\n\n[h1]Changes[/h1]\n\n[list]\n[*] Modified some annunciator functionality.\n[*] Changed blackouts to run on the same logic as malfunctions for consistency.\n[*] Changed EPS cover SFX.\n[/list]\n\n[h1]Bug Fixes[/h1]\n\n[list]\n[*] Fixed a bug that caused the reactor period sensors to become desynced on the client.\n[*] Fixed a bug that caused EPS cover positions to become desynced.\n[*] Fixed several issues with the selsyns.\n[*] Sprinting works again.\n[/list]",
+      "key": "2873620::beff7cbb8d9140db17365b715990fb7ac2e2c2cd",
+      "tags": [
+        {
+          "feature": "[*] Random Malfunctions, UZS and UZSR sensors, AR, and AZ-5 can now malfunction."
+        },
+        {
+          "feature": "[*] Added some new annunciators."
+        },
+        {
+          "balance_change": "[*] Modified some annunciator functionality."
+        },
+        {
+          "balance_change": "[*] Changed blackouts to run on the same logic as malfunctions for consistency."
+        },
+        {
+          "balance_change": "[*] Changed EPS cover SFX."
+        },
+        {
+          "bug": "[*] Fixed a bug that caused the reactor period sensors to become desynced on the client."
+        },
+        {
+          "bug": "[*] Fixed a bug that caused EPS cover positions to become desynced."
+        },
+        {
+          "bug": "[*] Fixed several issues with the selsyns."
+        },
+        {
+          "bug": "[*] Sprinting works again."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.12.3 | Bug fix, quality of life, and feature update.",
+      "date": "2024-05-09 03:22:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435394730413",
+      "content": "[h1]Content[/h1]\n\n[list]\n[*] Automatic shutdown systems are now re-enabled.\n[*] Pumps now wind down far slower.\n[*] Channel ruptures can now be heard from the control room.\n[*] Modified the conditions and worsened the affects of a channel rupture.\n[*] Added a new pause menu and settings menu.\n[*] VSync can now be enabled.\n[*] Your FPS limit can now be changed.\n[*] Added player nametags.\n[*] Added a new music system (Unfinished).\n[*] Added functionality to the annunciators on the SAOR panels.\n[/list]\n\n[h1]Bug Fixes[/h1]\n\n[list]\n[*] Reactor period sensors now work again.\n[*] Fixed various switches not working correctly on the hosts end.\n[*] Fixed various server backend functions.\n[*] Fixed many issues with voice chat, you should be able to speak in game again.\n[*] Fixed a bug that caused the players mouse to be in the wrong input mode in certain situations.\n[/list]",
+      "key": "2873620::9056e9429570cad1817f6b38d8d0a1068bbd1d98",
+      "tags": [
+        {
+          "feature": "[*] Automatic shutdown systems are now re-enabled."
+        },
+        {
+          "balance_change": "[*] Pumps now wind down far slower."
+        },
+        {
+          "feature": "[*] Channel ruptures can now be heard from the control room."
+        },
+        {
+          "balance_change": "[*] Modified the conditions and worsened the affects of a channel rupture."
+        },
+        {
+          "feature": "[*] Added a new pause menu and settings menu."
+        },
+        {
+          "feature": "[*] VSync can now be enabled."
+        },
+        {
+          "feature": "[*] Your FPS limit can now be changed."
+        },
+        {
+          "feature": "[*] Added player nametags."
+        },
+        {
+          "feature": "[*] Added a new music system (Unfinished)."
+        },
+        {
+          "feature": "[*] Added functionality to the annunciators on the SAOR panels."
+        },
+        {
+          "bug": "[*] Reactor period sensors now work again."
+        },
+        {
+          "bug": "[*] Fixed various switches not working correctly on the hosts end."
+        },
+        {
+          "bug": "[*] Fixed various server backend functions."
+        },
+        {
+          "bug": "[*] Fixed many issues with voice chat, you should be able to speak in game again."
+        },
+        {
+          "bug": "[*] Fixed a bug that caused the players mouse to be in the wrong input mode in certain situations."
+        }
+      ]
+    },
+    {
+      "title": "Game update / information",
+      "date": "2024-03-24 00:04:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301727515600",
+      "content": "This is a pretty small update for the game its self, there are very few things of note, however these are the changes:\n\nUpdated the login screen with a nice new animation and the actual game logo\nMade some changes to multiplayer to improve the server list\nRemoved debug buttons from the control room\nFixed player nametags\n\nImportant information:\n\nThe game isn't going to be receiving any updates on the main branch for a while, from now on smaller updates purely for testing that may break things will be posted to the private test branch, instructions on how to access this will be posted in the testers channel on my Discord server, if you are not in the Discord server, please DM me, my tag is thxtnt",
+      "key": "2873620::ab57b8838df5317bb937de82866605c729259026",
+      "tags": [
+        {
+          "feature": "Updated the login screen with a nice new animation and the actual game logo"
+        },
+        {
+          "feature": "Made some changes to multiplayer to improve the server list"
+        },
+        {
+          "bug": "Removed debug buttons from the control room"
+        },
+        {
+          "bug": "Fixed player nametags"
+        }
+      ]
+    }
+  ]
+}

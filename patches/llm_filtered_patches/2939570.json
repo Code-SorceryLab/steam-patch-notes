@@ -1,0 +1,276 @@
+{
+  "appId": "2939570",
+  "count": 14,
+  "notes": [
+    {
+      "title": "Update Trees and Ground",
+      "date": "2024-07-31 19:15:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728333021762",
+      "content": "0.9.5 is a visual update -- the trees are now 3D and the game is going back to using a flat grass ground instead of tiles and fog.",
+      "key": "2939570::80a6b68406dc48bfae83a4de78d9427b10c5fe6e",
+      "tags": [
+        {
+          "feature": "0.9.5 is a visual update -- the trees are now 3D and the game is going back to using a flat grass ground instead of tiles and fog."
+        }
+      ]
+    },
+    {
+      "title": "The Ilkhan and the Cherbi",
+      "date": "2024-07-28 03:35:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094358340235",
+      "content": "Version 0.9.4 introduces two new enemy types that only appear when their cards are in your hand.  When their cards are drawn in your hand, the next wave will include them as additional enemies.  If you have enough coins they can be avoided by drawing a new hand.\n\n[h1]Cherbi[/h1]\n[img]{STEAM_CLAN_IMAGE}/44983527/ac7a8fcc59557079e7a33492770d3d0953413997.png[/img]\nThe Cherbi is a light enemy, and increases its moving speed 5x when it is two steps away from the knight.\n\n[h1]Ilkhan[/h1]\n[img]{STEAM_CLAN_IMAGE}/44983527/d35393af0a771cc8a360bceda4ad79ca3a346603.png[/img]\nThe Ilkhan is a medium speed enemy, and has a tremendous amount of hp.\n\n",
+      "key": "2939570::a1caf468bb131e22caf9e9fbc4d22875dd5c9393",
+      "tags": [
+        {
+          "feature": "Version 0.9.4 introduces two new enemy types that only appear when their cards are in your hand. When their cards are drawn in your hand, the next wave will include them as additional enemies. If you have enough coins they can be avoided by drawing a new hand."
+        },
+        {
+          "feature": "The Cherbi is a light enemy, and increases its moving speed 5x when it is two steps away from the knight."
+        },
+        {
+          "feature": "The Ilkhan is a medium speed enemy, and has a tremendous amount of hp."
+        }
+      ]
+    },
+    {
+      "title": "Update world generation, improve deck building & graphics update",
+      "date": "2024-07-16 02:07:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704282848533",
+      "content": "This update improves world generation and gives the player 4 cards to choose from when a deck card is drawn, and updates the graphics quite a bit.\n\nThis update also improves the art style.",
+      "key": "2939570::435ce69432037029dc66aed80984e773da1a984b",
+      "tags": [
+        {
+          "feature": "This update improves world generation and gives the player 4 cards to choose from when a deck card is drawn, and updates the graphics quite a bit."
+        },
+        {
+          "feature": "This update also improves the art style."
+        }
+      ]
+    },
+    {
+      "title": "Significant Performance Optimization",
+      "date": "2024-06-27 05:02:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267308911457",
+      "content": "[h2]Overview[/h2]\nVersion 0.8.5 significantly improves graphics performance so that hundreds of enemies can be on screen with negligible impact on the game's fps.\n\n\n[h2]Tech Details[/h2]\nYou can read more, and see performance graphs at the following links:\n[url=https://x.com/STokatyan/status/1806209828785975457]Twitter[/url]\n[url=https://www.reddit.com/r/godot/comments/1dpkk5m/quad_billboard_material_seems_much_better_than/]Reddit[/url]",
+      "key": "2939570::d15a021a18ba65235c289ab786cddd12ed8ea148",
+      "tags": [
+        {
+          "feature": "Version 0.8.5 significantly improves graphics performance so that hundreds of enemies can be on screen with negligible impact on the game's fps."
+        }
+      ]
+    },
+    {
+      "title": "Texture Optimization for Enemy Characters",
+      "date": "2024-06-27 00:24:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267308208975",
+      "content": "[h2]Overview[/h2]\nThis update is a texture optimization that will make the game perform slightly better with larger waves.\n\nThis is a small update that might yield better performance for some users.  I am also working on a more significant optimization right now, but that optimization is going to take a bit more time.\n\n\n[h2]Tech Details[/h2]\nThe optimization for 0.8.4 is very simple: disable \"mipmaps\" for enemy character images.\nThe enemies in Tower Knight are just PNG images.  Game engines (in this case, Godot) use mipmaps to store an image at different sizes, so that the best resolution is used when needed.  Enabling mipmaps makes an image's imported size larger, which means when the game is displaying the image, more VRAM needs is used to display the images.  \n\nThis is a very minor improvement, but it should help a little bit.  The more significant optimization that I am looking into is to somehow use just one instance of an enemy image for all occurrences of that enemy in the 3D world.\n\n[h2]Godot Details[/h2]\nMy plan is to use a 2D plane in 3D space with a Shader Material that reads from the image -- as opposed to using a Sprite3D + Viewport for each enemy.  I have a hunch that by removing the need for a Viewport for each enemy occurrence there will be a huge improvement.  \n\nIf you've played the latest updates please share your thoughts in the discussions or reviews.  Your feedback is appreciated!",
+      "key": "2939570::03dc97c6f5d98f29bfee5a686ca4ccca0604b01e",
+      "tags": [
+        {
+          "feature": "This update is a texture optimization that will make the game perform slightly better with larger waves."
+        }
+      ]
+    },
+    {
+      "title": "New Deck Building System",
+      "date": "2024-06-24 21:50:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039992694744",
+      "content": "[h2]Overview[/h2]\nVersion 0.8 removed the suit system (where players had to play cards on tiles with matching suits to build their deck), and replaced it with an automatic deck building system (build your deck at the end of each wave).\n\nVersion 0.8.3 updates the deck building system by making it based on collecting roses.  \n\n[h2]Rose System[/h2]\n[olist]\n[*] Roses appear out of the ground adjacent to tiles that are placed.\n[*] Place a card on a tile, and collect the roses on that tile.\n[*] When 3 or more roses are collected, you get to add a new card to your deck (and the rose counter resets to 0)\n[/olist] \n\n[img]{STEAM_CLAN_IMAGE}/44983527/ddd6b7b7fae0166e7af5b58f173038946a9be699.gif[/img]",
+      "key": "2939570::c05c9b24dfb61d84bc9b0f0cfc3f20d748c074a3",
+      "tags": [
+        {
+          "feature": "Version 0.8 removed the suit system (where players had to play cards on tiles with matching suits to build their deck), and replaced it with an automatic deck building system (build your deck at the end of each wave)."
+        },
+        {
+          "feature": "Version 0.8.3 updates the deck building system by making it based on collecting roses."
+        }
+      ]
+    },
+    {
+      "title": "What's Next",
+      "date": "2024-06-17 00:36:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6890025005362190592",
+      "content": "[img]{STEAM_CLAN_IMAGE}/44983527/1ae24a4e2bb36d2c06c15814b852d5dc15f36670.gif[/img]\n[h2]v0.8.2[/h2]\nThe latest release contains a significant graphics update.  I'm happy with how the game is looking now, and future minor updates will start to add embellishments (sword trails, movement trails, dust, etc ...).\n\n[h1]What's Next[/h1]\n[h3]Campaign System[/h3]\nI plan to have a campaign system, where your knight has to travel along a map choosing between different types of challenges, until eventually having to fight some sort of a boss tower.  Challenges will be a mix of: Capture all enemy Towers, Wave survival, and Search and Destroy.  While progressing through challenges there will cards that can be added to your starting deck to help with future challenges.\n\n[h3]Deck Building System[/h3]\nBefore I start on the campaign system, I have to figure out how to make the deck building more strategic.  Currently, you get to pick a new card between each wave.  However, I think there is an opportunity to add more depth to the game by making some sort of a resource system that has to be \"filled up\" before  a new card can be drawn.\n\n[h3]More Enemy Types[/h3]\nOnce I get the deck building system figured out, I will start working on adding new enemies.  Some enemies will be unleashed when tower's reach a certain threshold, and some enemies will be found by building too far from your knight.  This idea is still a work in progress.\n\n[h1]Discord[/h1]\nIf you have any suggestions, or if you want to share your experience feel free to post on the Steam Discussions page, or to join the Discord: https://discord.com/invite/vMmVxYuYbg",
+      "key": "2939570::f726d804a0831a6f2b0a3f89500e27ca312bd8e9",
+      "tags": [
+        {
+          "feature": "The latest release contains a significant graphics update."
+        },
+        {
+          "feature": "future minor updates will start to add embellishments (sword trails, movement trails, dust, etc ...)."
+        },
+        {
+          "feature": "I plan to have a campaign system, where your knight has to travel along a map choosing between different types of challenges, until eventually having to fight some sort of a boss tower."
+        },
+        {
+          "feature": "Challenges will be a mix of: Capture all enemy Towers, Wave survival, and Search and Destroy."
+        },
+        {
+          "feature": "While progressing through challenges there will cards that can be added to your starting deck to help with future challenges."
+        },
+        {
+          "feature": "Currently, you get to pick a new card between each wave."
+        },
+        {
+          "feature": "However, I think there is an opportunity to add more depth to the game by making some sort of a resource system that has to be \"filled up\" before a new card can be drawn."
+        },
+        {
+          "feature": "Once I get the deck building system figured out, I will start working on adding new enemies."
+        },
+        {
+          "feature": "Some enemies will be unleashed when tower's reach a certain threshold, and some enemies will be found by building too far from your knight."
+        }
+      ]
+    },
+    {
+      "title": "Enemy Cards, Difficulty Modes, and Graphics Updates",
+      "date": "2024-06-11 00:12:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972565728865",
+      "content": "Version 0.8 has many changes.  Overall, the game looks better and is less based on luck when it comes to the locations of enemy towers.\n\n[h2]Graphics[/h2]\nI've updated the graphics -- I'll continue to iterate on the graphics as I approach 1.0, but 0.8 is the biggest graphics update so far.\n\n[h2]Game Mode Update[/h2]\nEnemy towers are no longer found by expanding.  So, feel free to build as much as you can without fearing the RNG of tower placement.\n\nThere is now an Enemy Card, which must be played when it is drawn.  So you get to choose where enemy towers are.\n\n[h2]New Cards[/h2]\n[list]\n[*] Health: Fully restore health when added to deck.\n[*] Bank: Gain 1 coin when drawn.\n[*] Medic: Heal 1 hp when drawn.\n[*] Enemy: An enemy tower, which must be placed when drawn.\n[*] Platform: Doubles the range of an attack tower.\n[*] Shoppe: Shoppe appears only when this card is in hand.\n[/list]\n\n[h2]Game Modes[/h2]\nThere are now 2 game modes: Squire and Knight (easy/hard).\n\nSquire mode starts the game with 1 enemy card in your deck, and Knight mode starts you off with 2 enemy cards.\n\n[h2]What's Next[/h2]\nWith this new Enemy Card System in place, I am now ready to work on a campaign mode.\n\nI'm still working on the idea, but I imagine there will be a campaign mode where 6 lands have to be captured.  In between each land, I would like an \"Enchanter\" Character to offer the player cards for their starting deck at the cost of de-buffs or new enemy types.\n\nI'd also like to add a unique objective for each land, so that lands can be won without having to capture all enemy towers.\n\nThank you all for the support -- your reviews and discussions really motivate me, and have helped me improve Tower Knight.",
+      "key": "2939570::2bdcfa323d51923e823bb85a6f32ceaac1407db0",
+      "tags": [
+        {
+          "feature": "There is now an Enemy Card, which must be played when it is drawn. So you get to choose where enemy towers are."
+        },
+        {
+          "feature": "[*] Health: Fully restore health when added to deck."
+        },
+        {
+          "feature": "[*] Bank: Gain 1 coin when drawn."
+        },
+        {
+          "feature": "[*] Medic: Heal 1 hp when drawn."
+        },
+        {
+          "feature": "[*] Enemy: An enemy tower, which must be placed when drawn."
+        },
+        {
+          "feature": "[*] Platform: Doubles the range of an attack tower."
+        },
+        {
+          "feature": "[*] Shoppe: Shoppe appears only when this card is in hand."
+        },
+        {
+          "feature": "There are now 2 game modes: Squire and Knight (easy/hard)."
+        },
+        {
+          "feature": "Squire mode starts the game with 1 enemy card in your deck, and Knight mode starts you off with 2 enemy cards."
+        }
+      ]
+    },
+    {
+      "title": "Fast Mode + Update Starting Deck",
+      "date": "2024-05-26 13:34:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105618854226",
+      "content": "This minor update does the following:\n\n[list]\n[*] Adds a Rampart Card to your starting deck.\n[*] Removes the Stones card (making room for a more meaningful card in a future update).\n[*] Adds a fast mode, which makes the simulation speed of each wave 75% faster when enabled.\n[/list]",
+      "key": "2939570::f4dccbb2f2cb7ec4e3947a200993d444b6a1454d",
+      "tags": [
+        {
+          "feature": "[*] Adds a Rampart Card to your starting deck."
+        },
+        {
+          "feature": "[*] Removes the Stones card (making room for a more meaningful card in a future update)."
+        },
+        {
+          "feature": "[*] Adds a fast mode, which makes the simulation speed of each wave 75% faster when enabled."
+        }
+      ]
+    },
+    {
+      "title": "High Scores System (now available in v0.7), and Roadmap",
+      "date": "2024-05-25 00:25:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105613212576",
+      "content": "[img]{STEAM_CLAN_IMAGE}/44983527/02f9220820bbc9ae5c37b1ad4c859a6e48a21e5b.gif[/img]\n[h1]Flags and High Scores[/h1]\nVersion 0.7 adds flags to Tower Knight -- plant flags on vacant tiles, Ramparts, or Scouts to increase your score.  Your high score will only update if you achieve victory, so you will need to balance expanding land and capturing enemy towers.\n\n[h1]What's Next?[/h1]\n[b]Version 0.7.#[/b]\nThe next update will include a control to fast forward enemy waves. I expect to make a few more minor updates to 0.7 to make the game systems more clear -- so if you have any quality of life requests now is a great time to let me know either on the discussions page or on Discord: https://discord.com/invite/vMmVxYuYbg\n\n\n[b]Version 0.8[/b]\nVersion 0.8 will introduce the next major graphics update.  In version 0.8 I plan to update all of the towers, the fountain, the treasure chest, and the terrain.  Version 0.8 will also include new images on the card, and a legend that shows which cards are Common, Uncommon, and Rare.  For those curious, the breakdown is:\nCommon: Archer, Cannon, Trees, Stones, Fountain, Chest, Extra Energy\nUncommon: Rampart, Scout\nRare: Dexterity, Health, Strength, Dexterity, Destroy, Flag\n\n[b]Version 0.9[/b]\nIn version 0.9 I plan to let the player configure their knight's stats and starting deck.  I plan to make it cost max health and max energy, and maybe even debt (negative coins) to purchase starting cards.\n\n[b]Version 0.10[/b]\nVersion 0.10 might be the last update before exiting early access and releasing 1.0.  In v0.10 I plan to add a save/load system, achievements, and Steam Leaderboards.\n\n[h1]Thank You[/h1]\nDeveloping Tower Knight has been a blast, and I can't wait to get the next batch of features out to you all.  I used to make mobile game on iOS, but I felt like my efforts were stumbling in a void.  On Steam, however, I get to hear from all of you.  Whether it is on Discord, the Steam Page discussions, or a review on the Steam Page, I really appreciate it all.",
+      "key": "2939570::976ea66ecbf53a1c25f25590279daaee081da21e",
+      "tags": [
+        {
+          "feature": "Version 0.7 adds flags to Tower Knight -- plant flags on vacant tiles, Ramparts, or Scouts to increase your score."
+        },
+        {
+          "feature": "The next update will include a control to fast forward enemy waves."
+        },
+        {
+          "feature": "Version 0.8 will introduce the next major graphics update."
+        },
+        {
+          "feature": "Version 0.8 will also include new images on the card, and a legend that shows which cards are Common, Uncommon, and Rare."
+        },
+        {
+          "feature": "In version 0.9 I plan to let the player configure their knight's stats and starting deck."
+        },
+        {
+          "feature": "In v0.10 I plan to add a save/load system, achievements, and Steam Leaderboards."
+        }
+      ]
+    },
+    {
+      "title": "Windowed Mode! (and what's next ...)",
+      "date": "2024-05-19 02:36:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970428446680",
+      "content": "Version 0.6 includes the following updates\n\n[img]{STEAM_CLAN_IMAGE}/44983527/04107ed070f9173bbffc1bbba07df969e0ef6a77.gif[/img]\n\n[h1]Windowed Mode[/h1]\nThis feature was requested by a user on the [url=https://steamcommunity.com/app/2939570/discussions/]discussions page[/url].  I was in the middle of working on the background graphics and art but I found a nice place to pause and squeeze this feature in.\n\n[h1]Background Art + Graphics[/h1]\nI think background art requires patience to get right.  The background is constantly seen by the player, so in order to be pleasing it needs to be subtle.  At the moment I am constantly implementing and removing new ideas and trying to select the aesthetic that feels right.  There is no formula for this, so it will just take time.\n\n[h1]What's Next?[/h1]\nVersion 0.7 will include the addition of the final card.  Let's just say we can't have a medieval themed tower defense game without flags :)",
+      "key": "2939570::a774a337863662bb9e7ab42007617559498c781a",
+      "tags": [
+        {
+          "feature": "Windowed Mode"
+        },
+        {
+          "feature": "Version 0.7 will include the addition of the final card."
+        }
+      ]
+    },
+    {
+      "title": "Update Notes for v0.5 (May 13)",
+      "date": "2024-05-14 02:38:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435412844023",
+      "content": "Version 0.5 makes the following updates and fixes:\n[list]\n[*] Update Trees asset to match the image on the Trees card\n[*] Update Stones asset to match image on the Stones card\n[*] Update range effect color to illustrate that tile height affects range\n[*] Map arrow audio and \"Wave intro music\" audio to the correct audio bus so their volumes can be controlled with the settings sliders.\n[/list]\n\nEnjoy!",
+      "key": "2939570::dcc5f4049e7d693779a19316f66817506c387ad0",
+      "tags": [
+        {
+          "bug": "- Map arrow audio and \"Wave intro music\" audio to the correct audio bus so their volumes can be controlled with the settings sliders."
+        },
+        {
+          "feature": "- Update Trees asset to match the image on the Trees card"
+        },
+        {
+          "feature": "- Update Stones asset to match image on the Stones card"
+        },
+        {
+          "feature": "- Update range effect color to illustrate that tile height affects range"
+        }
+      ]
+    },
+    {
+      "title": "Version 0.3 (skipping 0.2)",
+      "date": "2024-05-05 02:44:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999953559067",
+      "content": "Development on Version 0.3 went smoothly so I decided to skip 0.2 and release 0.3 early.\n\n0.3 Includes:\n[list]\n[*] Music\n[*] Sound Effects\n[*] Updated graphics\n[*] A new \"Destroy\" card\n[/list]\n\nEnjoy!",
+      "key": "2939570::f6f9c347f8e32fb5a43d1a49cd559161183a7ad0",
+      "tags": [
+        {
+          "feature": "[*] Music"
+        },
+        {
+          "feature": "[*] Sound Effects"
+        },
+        {
+          "feature": "[*] Updated graphics"
+        },
+        {
+          "feature": "[*] A new \"Destroy\" card"
+        }
+      ]
+    },
+    {
+      "title": "0.1 Released & 0.2 Coming Soon!",
+      "date": "2024-05-02 05:20:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999943019270",
+      "content": "[h2]Early Access Release[/h2]\nTower Knight is now available for download in Early Access!\n\n[h2]Important Note[/h2]\nVersion 0.1 does not include audio.  Version 0.2 will have audio (music + sound effects).\n\n[h2]What's Next[/h2]\nVersion 0.2 will release on May 7th.  Testing audio is a slow process, so I just need a bit more time tuning the audio.\n\nVersion 0.3 introduces tile elevation to boost tower range.  0.3 is currently in development, and is changing every day... but below is a preview of what's next:\n[img]{STEAM_CLAN_IMAGE}/44983527/70fa04410fab02ea53a18cdc867429ff71b4a165.gif[/img]",
+      "key": "2939570::a875fc524e8ae9b2593f7deb36f837522e4fbc43",
+      "tags": [
+        {
+          "feature": "Version 0.3 introduces tile elevation to boost tower range."
+        }
+      ]
+    }
+  ]
+}

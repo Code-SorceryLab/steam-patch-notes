@@ -1,0 +1,222 @@
+{
+  "appId": "3156360",
+  "count": 8,
+  "notes": [
+    {
+      "title": "The Big Update - Ship Systems",
+      "date": "2025-08-13 12:50:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807966710820772",
+      "content": "[p]This is Part Two of the series of articles discussing the upcoming changes to the game. [url=\"https://store.steampowered.com/news/app/3156360/view/538859686629212256?l=english\"]Read Part One here.[/url] This part is focused on the [b]SHIP SYSTEMS[/b]![/p][p][/p][hr][/hr][p]As an intro note to this post, I've been applying for a gamedev grant from the Australian government for the last couple of days and this has been [i]very, very[/i] onerous on my time. Who knew one could face such paperwork and live. We'll see what comes of it, but if I get the grant, it'll be [b]very[/b] good for the game. I have no idea what my chances are of getting it, but it really would be a godsend if I did, lol. Anyway, back to our regularly scheduled update on the new direction for the game![/p][hr][/hr][p][/p][p]Crew members can't do much if they can't interact with the ship they are crewing, and the ship's systems are how they do that! So I want to make those interactions as interesting as possible, and I don't think simply matching die was the best way to achieve that. So systems needed to change...[/p][p][/p][h1]Step 1[/h1][h2][i]Rethinking systems[/i][/h2][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45148448/a34860ad6930d1ebc3d1da269ac1202f3a85b7c3.png\"][/img][/p][p][i]The updated system UI, with two tier 1 slots at the top, and a tier 2 and tier 3 slot at the bottom. The die face shown above the slot lets you know what rolls will trigger the Subroutine.[/i][/p][p]Originally, systems had up to 4 die on them. Crew members would roll, die on ship systems would roll and then you could place a crew member on a system when the two rolls matched. This is an obvious design choice when working with die-based mechanics. Roll matching. However, after feedback and consideration, I feel like it was far too limiting.[/p][p]Too often the player ended up going through multiple turns just waiting for a match on a system they wanted (there were behind the scenes mechanics that limited this, but still...). Or alternatively, too often the players [b]and[/b] the enemy would just be placing die each turn and essentially cancelling each other out (you attack for 4 damage, the enemy negates that damage by placing die on shields, rinse and repeat).[/p][p]Another problem was lack of variety. Since each system essentially functioned as die repositories, it was too beneficial to just aim to get all your die on weapons every turn. There was no push and pull between systems, and as a result, little strategical benefit to, for example, placing crew members on the Oxygen system except for the when the Oxygen system was low. With only 3 (potentially 4) systems to place die on, this led to some systems being over-represented in die placement.[/p][p]To try to fix this, I've completely removed die from systems. Each system now has four [b]SYSTEM SLOTS[/b]. Two tier 1 slots (available from the start), and a Tier 2 and Tier 3 slot, which are unlockable via crew member roles.[/p][p]Each system slot has an attached [b]SUBROUTINE[/b]. This can be thought of as a bonus ability. The Subroutine has a roll requirement (perhaps a roll of 3 will trigger it, or all rolls below 4, etc). And when the crew member on the system rolls the correct face, the Subroutine will activate and some special thing will occur. This could be any number of things, from a simple increase in the amount of pips gained for the turn, to interactions with other systems (a Shield Slot Subroutine filling Weapons pips, for example).[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45148448/7ad227157a4b0ec3d2b8c660a2109ac7c9543818.png\"][/img][/p][p][i]An example Subroutine called SHOCK RESONANCE. If a crew member placed here rolls a 3, then there is a chance a random enemy system will be disabled for the turn.[/i][/p][p]Placing a crew member on a system slot now simply yields one pip as well, regardless of roll (well, [i]usually[/i] one pip).[/p][p]So a turn now plays out like this:[/p][p]The player places their crew members on some system slots. They do not know what the crew members will roll yet. After placement, they progress the turn. This locks the crew members to that slot for the rest of the turn, and now crew members will roll. After everyone has rolled, Subroutines that have been triggered by the roll get activated and those effects are applied. Then the ships attack each other and the turns reset.[/p][p]This maintains the \"randomness\" that makes dice mechanics fun, while allowing the player to make strategic choices about where to apply their die. Having Subroutines also makes it so that different systems can be useful [i]regardless[/i] of whether they directly need filling at that point in time. Life Support (previously named Oxygen) can have slots that heal crew members, or even apply damage. So you don't necessarily need to have low oxygen in order to want to fill Life Support at various points in the game.[/p][p][/p][h1]Step 2[/h1][h2][i]Pushing it further[/i][/h2][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45148448/5041d4694ae696b3589c0d0c07097f9aa2884e86.gif\"][/img][/p][p][/p][p]This already changes the way you think of filling systems as a player substantially, but it wasn't enough. I wanted [b]progression[/b]. This is why Tier 2 and Tier 3 slots exist. When a crew member gains enough experience to hit level 2 in a role (\"Gunner\", let's say), they'll unlock the Tier 2 Slot for the corresponding system (Weapons in this example). When this happens you get given a choice to pick between one of two randomly selected Subroutines for the slot. These Subroutines are all stronger than the ones for Tier 1 slots. The same thing happens when you hit level 4 in a role, Tier 3 slot becomes available and you pick from a random duo of stronger Subroutines.[/p][p]In order to prevent constantly filling a system slot, the slots also track how \"overheated\" they are. The more turns in a row a slot is filled, the more overheating accumulates. Once it is full, the slot is unavailable while the system cools down.[/p][p]In a throwback to our last update [url=\"https://store.steampowered.com/news/app/3156360/view/538859686629212256?l=english\"]The Big Update - Crew Members[/url], crew members have had the way they take damage changed. Now, as a crew member takes damage, they gradually lose access to random die faces. This isn't as crippling as it might seem, since no particular face is necessarily any more important than any other face.[/p][p]In other words, because your goal isn't [b]big[/b] rolls, instead it's the [b]right[/b] roll for the [b]right[/b] subroutine placement, you'll almost always have options for good slots to place the crew member on and even if you don't, they will still add a pip to whatever system they are placed on. However, if your gunner loses all the faces that trigger Weapons Subroutines, then you'll likely want to be placing them elsewhere and you'll lose access to their Gunner bonus! Once they've lost all their faces, they become mortally wounded and have a chance of dying each time they roll from that point on.[/p][p][/p][p]You can, at any point in time, place a crew member on the Medical Bay [img src=\"{STEAM_CLAN_IMAGE}/45148448/64193bb70baf98a49018f17a7a7879ed7afbf051.png\"][/img] (a permanent slot on the Life Support system), which will stabilise them while they are on it (i.e. they will no longer die from rolls if mortally wounded) and also give them a steadily increasing chance to heal on each roll.[/p][p][/p][h1]Step 3[/h1][h2][i]We must go even further![/i][/h2][p][/p][p]The final massive change in the coming update is that the Special system has been [i]completely removed[/i]. A Captain's chair now occupies the negative space left behind by it! What does that mean? Well, a new system called [b]COMMAND[/b] has been added to the game![/p][p]The Command system is unique compared to the other ship systems. It does not have pips at all. Instead, it has the [b]CAPTAINS ORDERS[/b], a rotating scroller of unique bonuses that have ship-wide effects. Every turn, the next order in the list rotates into play. Once you finish with your crew placement and everything is locked down, the order will trigger its effect.[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45148448/26d37e9349eaf0df8e07eaa6d079cbb2011c09b4.gif\"][/img][/p][p]You can place crew members on either of the two tier 1 slots of the Command system in order to go back to the previous order, or skip ahead to the next order (both trigger a cooldown, so pick your moments carefully). Now you can make truly decisive calls as the Captain of the ship at pivotal moments of play. As you explore, you will learn new orders that get added to your list, expanding your tactical options.[/p][p][/p][h1]Step 4[/h1][h2][i]Completing the damn update[/i][/h2][p][/p][p]As is the eternal problem with game development, it's taking me longer than I had hoped to complete the update. Firstly, I'm still in the \"preproduction\" kinda phase with this design pivot, with aspects of it being toyed with, thrown out, added back in, etc. There's a lot of flux going on right now, but I'm quite confident that the design changes I've talked about in this post and the last are locked in.[/p][p]As you can see from the gifs peppered throughout this post, a lot of the stuff mentioned so far is [i]already kinda[/i] in the game. And, as one might expect, there are a [b]lot[/b] of [i]tentacles[/i] that creep outward from such a large pivot in gameplay. The removal of specials requires a lot of backend work, new system functionality means a lot of UI work, which is always slow and painful. Galactic Bazaars have to have a lot of their codebase updated to reflect the changes when buying stuff, Events have to be rewritten or removed entirely depending on what the results of the event are, etc, etc.[/p][p]In many, many ways, I'm rewriting the game from scratch, and once I get past this ideation phase, and into the more \"prototypey testing\" phase, there'll likely be some changes to what I've outlined in these posts as well, but we'll have to see. In general, I'm feeling confident that these changes are [b]vastly[/b] better for the feel of the game and will make it a lot more fun and dynamic.[/p][p]So hang on for a bit longer, I'll get this demo out as soon as I can and then we can further enhance the game together as a community![/p]",
+      "key": "3156360::9b89c8d94621ac2502a362645beca8d8fcd03a7f",
+      "tags": [
+        {
+          "feature": "Each system now has four [b]SYSTEM SLOTS[/b]. Two tier 1 slots (available from the start), and a Tier 2 and Tier 3 slot, which are unlockable via crew member roles."
+        },
+        {
+          "feature": "Each system slot has an attached [b]SUBROUTINE[/b]. This can be thought of as a bonus ability. The Subroutine has a roll requirement (perhaps a roll of 3 will trigger it, or all rolls below 4, etc). And when the crew member on the system rolls the correct face, the Subroutine will activate and some special thing will occur. This could be any number of things, from a simple increase in the amount of pips gained for the turn, to interactions with other systems (a Shield Slot Subroutine filling Weapons pips, for example)."
+        },
+        {
+          "feature": "When a crew member gains enough experience to hit level 2 in a role (\"Gunner\", let's say), they'll unlock the Tier 2 Slot for the corresponding system (Weapons in this example). When this happens you get given a choice to pick between one of two randomly selected Subroutines for the slot. These Subroutines are all stronger than the ones for Tier 1 slots. The same thing happens when you hit level 4 in a role, Tier 3 slot becomes available and you pick from a random duo of stronger Subroutines."
+        },
+        {
+          "feature": "In order to prevent constantly filling a system slot, the slots also track how \"overheated\" they are. The more turns in a row a slot is filled, the more overheating accumulates. Once it is full, the slot is unavailable while the system cools down."
+        },
+        {
+          "bug": "In a throwback to our last update [url=\"https://store.steampowered.com/news/app/3156360/view/538859686629212256?l=english\"]The Big Update - Crew Members[/url], crew members have had the way they take damage changed. Now, as a crew member takes damage, they gradually lose access to random die faces. This isn't as crippling as it might seem, since no particular face is necessarily any more important than any other face."
+        },
+        {
+          "feature": "You can, at any point in time, place a crew member on the Medical Bay [img src=\"{STEAM_CLAN_IMAGE}/45148448/64193bb70baf98a49018f17a7a7879ed7afbf051.png\"][/img] (a permanent slot on the Life Support system), which will stabilise them while they are on it (i.e. they will no longer die from rolls if mortally wounded) and also give them a steadily increasing chance to heal on each roll."
+        },
+        {
+          "feature": "The final massive change in the coming update is that the Special system has been [i]completely removed[/i]. A Captain's chair now occupies the negative space left behind by it! What does that mean? Well, a new system called [b]COMMAND[/b] has been added to the game!"
+        },
+        {
+          "feature": "The Command system is unique compared to the other ship systems. It does not have pips at all. Instead, it has the [b]CAPTAINS ORDERS[/b], a rotating scroller of unique bonuses that have ship-wide effects. Every turn, the next order in the list rotates into play. Once you finish with your crew placement and everything is locked down, the order will trigger its effect."
+        },
+        {
+          "feature": "You can place crew members on either of the two tier 1 slots of the Command system in order to go back to the previous order, or skip ahead to the next order (both trigger a cooldown, so pick your moments carefully). Now you can make truly decisive calls as the Captain of the ship at pivotal moments of play. As you explore, you will learn new orders that get added to your list, expanding your tactical options."
+        }
+      ]
+    },
+    {
+      "title": "The Big Update - Crew Members!",
+      "date": "2025-07-16 16:20:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065313713",
+      "content": "[p]While the big update is steadily percolating towards a freshly brewed cup of gaming goodness, I wanted to spend some time discussing the changes that are being implemented and how they will radically change the gameplay of Dice Trek (for the better!).[/p][p]So I plan to do a series of update posts that each discuss a different aspect of how the game is being altered. This first entry in the series will be centered around [b]CREW MEMBERS[/b]![/p][p]Your crew are the ones holding the ship together by the sheer force of their will. They carry out your orders and put their lives on the line for you. However, I don't think that you [b][i]feel[/i][/b] this as you are play the game right now. I want this to change.[/p][p][/p][h1]Step 1[/h1][h2][i]The Visuals[/i][/h2][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45148448/936579dac0fc097a4661fdeb6742c4dfb38e4eb2.gif\"][/img][/p][p]To begin with, I've added more variations to the faces, as you can see from the gif above, as well as actual bodies, so they are no longer represented as floating heads, lol. I've also added their portrait to their station during gameplay, so they now exist as ever-present reminders of who you have fighting alongside you on your ship.[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45148448/b041d9dde0e4e78e3e7a392af9d338ace383b523.gif\"][/img][/p][p][i]Everybody loves Glornast![/i][/p][p]But, as cool as these things are, they are just visual changes. In order to build rapport with your crew, there needs to be consequential gameplay effects to the crew you have on your ship.[/p][p][/p][h1]Step 2[/h1][h2][i]Crew Roles[/i][/h2][p][/p][p]Before the update, crew members were fairly generic. They had XP and tracked a bunch of different things that they could level up in, but in terms of raw gameplay, the only thing that really changed between crew members was how many pips they could add to a system when placed on it, or maybe they could heal another crew member a bit better. This was not a very exciting way to add differences between crew members.[/p][p]To remedy this, I have add [b]CREW ROLES[/b]. Each crew member keeps track of what they've been doing in combat (and outside of combat). The more they achieve, the more they learn. After awhile, they'll adopt a role. This could be a \"Gunner\", or a \"Barrier Technician\", or a bunch of other things. This is their primary role.[/p][p]When they get a primary role, you'll be given a choice between two randomly selected abilities for that role. An ability could be \"When placed on the same slot multiple times, chances of high die rolls increase\", or \"+1 attacks on die rolls < 3\". As they level up in their role, you'll be given more abilities to choose from ([i]amongst other things, but I will go into that in the next update post[/i]). This means that, not only will crew members gain different abilities from other crew members based on their roles, but [b][i]two crew members in the very same role[/i][/b] will be different from each other![/p][p]This will allow you to craft a well-rounded unique team of individuals that all have their strengths and weaknesses. Losing a particular crew member will mean, not just a loss of a die to roll, but a loss of strategical options available to you and a loss of a friend![/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45148448/5a5a3bae1b4dfc43f21cd4cab0d3f8528e49bec4.png\"][/img][/p][p][/p][p]However that's not all.[/p][p][/p][h1]Step 3[/h1][h2][i]Synergies[/i][/h2][p][/p][p]Your crew members don't just attain primary roles and give up on their educations. They can also gain a secondary role. When this happens, you'll get a [b]SYNERGY ROLE[/b]. A synergy role is a combination of two roles that have unique effects. Perhaps your \"Gunner\" also spends a lot of time dealing with \"Life Support\". They could earn the synergy role of \"Biotech Tactician\" and gain access to bonuses that deal damage while dishing out healing. Each combination of roles has a synergy for you to discover, with powerful effects locked behind them.[/p][p][/p][h1]Step 4[/h1][h2][i]More options[/i][/h2][p][/p][p]Finally, I've updated the Galactic Bazaar to allow for hiring of crew members. This means that, not only can you get new crew members from random events, but each time you visit the shop, you'll have a selection of crew members to pick from. Some will be more experienced than others and you'll be able to exchange them for under-performing members of your crew, if you so wish...[/p][p][/p][h1]Step 5[/h1][h2][i]And more to come[/i][/h2][p] And that's that for crew members (mostly). There are a few tidbits I have left out, since they are related to future updates and I want to keep them in the pocket until then. Hopefully you'll feel a much greater sense of kinship and excitement when dealing with your crew after this update lands, which is as it should be. Without your crew, you're fighting a losing battle, and it really should feel that way![/p][p]The next update will be all about the changes to [b]SYSTEMS[/b], so stay tuned for that![/p][p][/p][p]Until then, live long and prosper![/p][p]RefresherTowel[/p]",
+      "key": "3156360::bb2eef9373d3b574b2ad90897a3ec43e4f4eaeca",
+      "tags": [
+        {
+          "feature": "To begin with, I've added more variations to the faces, as you can see from the gif above, as well as actual bodies, so they are no longer represented as floating heads, lol. I've also added their portrait to their station during gameplay, so they now exist as ever-present reminders of who you have fighting alongside you on your ship."
+        },
+        {
+          "feature": "To remedy this, I have add [b]CREW ROLES[/b]. Each crew member keeps track of what they've been doing in combat (and outside of combat). The more they achieve, the more they learn. After awhile, they'll adopt a role. This could be a \"Gunner\", or a \"Barrier Technician\", or a bunch of other things. This is their primary role."
+        },
+        {
+          "feature": "When they get a primary role, you'll be given a choice between two randomly selected abilities for that role. An ability could be \"When placed on the same slot multiple times, chances of high die rolls increase\", or \"+1 attacks on die rolls < 3\". As they level up in their role, you'll be given more abilities to choose from ([i]amongst other things, but I will go into that in the next update post[/i]). This means that, not only will crew members gain different abilities from other crew members based on their roles, but [b][i]two crew members in the very same role[/i][/b] will be different from each other!"
+        },
+        {
+          "feature": "Your crew members don't just attain primary roles and give up on their educations. They can also gain a secondary role. When this happens, you'll get a [b]SYNERGY ROLE[/b]. A synergy role is a combination of two roles that have unique effects. Perhaps your \"Gunner\" also spends a lot of time dealing with \"Life Support\". They could earn the synergy role of \"Biotech Tactician\" and gain access to bonuses that deal damage while dishing out healing. Each combination of roles has a synergy for you to discover, with powerful effects locked behind them."
+        },
+        {
+          "feature": "Finally, I've updated the Galactic Bazaar to allow for hiring of crew members. This means that, not only can you get new crew members from random events, but each time you visit the shop, you'll have a selection of crew members to pick from. Some will be more experienced than others and you'll be able to exchange them for under-performing members of your crew, if you so wish..."
+        }
+      ]
+    },
+    {
+      "title": "Update v1.0.1.0 (Demo)",
+      "date": "2025-06-15 14:07:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289665965",
+      "content": "[p]As this update contains the last of the currently known bugs, I'm gonna pull us into the next minor version with this one. Enemies have been made slightly better, specials have been balanced a bit more, and there's now a fairly comprehensive record keeping of the various events that you can view anytime by hovering a crew member or a system.[/p][list][*][p]FIXED: Double damage special was not applying the extra damage correctly, now it is.[/p][/*][*][p]FIXED: Filling the dicycler while it is aimed at the weapons system would result in a phantom, non-functional pip appearing in the enemies weapon system. This no longer happens.[/p][/*][*][p]FIXED: A situation which could occasionally result in enemy systems not being targeted has been corrected.[/p][/*][*][p]FIXED: An attribution error meant that enemy ship dice had their probabilities modified by the players ship instead of their own. This has been corrected.[/p][/*][*][p]FIXED(?): I have done more work around solving various issues with different resolutions. Hopefully this is at least another step towards solving all of them.[/p][/*][*][p]ADDED: A log of events for crew members and systems has been added. It appears next to the information popup when you hover them.[/p][/*][*][p]UPDATED: Tutorial has been slightly altered.[/p][/*][*][p]UPDATED: Plasma Scientists, Combat Veterans, Life Support Engineers, Weapons Master, Shields Technician, Life Support, Reskilling and Survival Skills have all had the required number of pips they need reduced, the effects should also trigger immediately when the special has been activated.[/p][/*][*][p]UPDATED: Kamikaze Drones have better target interception skills.[/p][/*][*][p]UPDATED: Hull Strength shop purchase has had its drop rate reduced.[/p][/*][*][p]UPDATED: Tutorial has been slightly updated.[/p][/*][*][p]UPDATED: Various graphics and tooltip text have also been changed a bit.[/p][/*][/list]",
+      "key": "3156360::95884fcac3023d52aa642c352ea4ab05a4b68185",
+      "tags": [
+        {
+          "bug": "[p]FIXED: Double damage special was not applying the extra damage correctly, now it is.[/p]"
+        },
+        {
+          "bug": "[p]FIXED: Filling the dicycler while it is aimed at the weapons system would result in a phantom, non-functional pip appearing in the enemies weapon system. This no longer happens.[/p]"
+        },
+        {
+          "bug": "[p]FIXED: A situation which could occasionally result in enemy systems not being targeted has been corrected.[/p]"
+        },
+        {
+          "bug": "[p]FIXED: An attribution error meant that enemy ship dice had their probabilities modified by the players ship instead of their own. This has been corrected.[/p]"
+        },
+        {
+          "bug": "[p]FIXED(?): I have done more work around solving various issues with different resolutions. Hopefully this is at least another step towards solving all of them.[/p]"
+        },
+        {
+          "feature": "[p]ADDED: A log of events for crew members and systems has been added. It appears next to the information popup when you hover them.[/p]"
+        },
+        {
+          "balance_change": "[p]UPDATED: Plasma Scientists, Combat Veterans, Life Support Engineers, Weapons Master, Shields Technician, Life Support, Reskilling and Survival Skills have all had the required number of pips they need reduced, the effects should also trigger immediately when the special has been activated.[/p]"
+        },
+        {
+          "balance_change": "[p]UPDATED: Kamikaze Drones have better target interception skills.[/p]"
+        },
+        {
+          "balance_change": "[p]UPDATED: Hull Strength shop purchase has had its drop rate reduced.[/p]"
+        }
+      ]
+    },
+    {
+      "title": "Update v1.0.0.5 (Demo)",
+      "date": "2025-06-10 15:01:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199565786",
+      "content": "[p]Yet more bugs squashed. My fly swatter is wearing thin.[/p][list][*][p]Fixed/Updated: Enemy pre-battle display updated to accurately reflect shields, plus their attached weapons are now shown.[/p][/*][*][p]Fixed: An off by 1 error in the Gain Crew Event was making it so that it wouldn't give you a crew member if you had 1 less than the max crew members for your chosen class of ship.[/p][/*][*][p]AI has been made slightly smarter yet again.[/p][/*][*][p]Fixed: If a crew member was in the middle of a boarding party when the enemy died, they would be permanently AFK. This should be fixed now.[/p][/*][*][p]Fixed: More tutorial bugs have been squashed, mainly around crew member damage [/p][/*][*][p]Fixed: Sabotage dice (from a boarding party) would roll one additional time after determining its result, meaning that the face would not match with the outcome. This no longer happens.[/p][/*][*][p]Fixed: Systems were not removing themselves as listeners for a boarding party ended signal, which meant the length of the signal list would grow eternally. This has been fixed, and I'm hoping this relates to the lengthy pause that could happen when launching a boarding party sometimes. I have not been able to trigger the pause since this fix was implemented.[/p][/*][/list]",
+      "key": "3156360::06086b8c397d79b00b2ac140b64ebdf58d26127b",
+      "tags": [
+        {
+          "bug": "Fixed/Updated: Enemy pre-battle display updated to accurately reflect shields, plus their attached weapons are now shown."
+        },
+        {
+          "bug": "Fixed: An off by 1 error in the Gain Crew Event was making it so that it wouldn't give you a crew member if you had 1 less than the max crew members for your chosen class of ship."
+        },
+        {
+          "balance_change": "AI has been made slightly smarter yet again."
+        },
+        {
+          "bug": "Fixed: If a crew member was in the middle of a boarding party when the enemy died, they would be permanently AFK. This should be fixed now."
+        },
+        {
+          "bug": "Fixed: More tutorial bugs have been squashed, mainly around crew member damage "
+        },
+        {
+          "bug": "Fixed: Sabotage dice (from a boarding party) would roll one additional time after determining its result, meaning that the face would not match with the outcome. This no longer happens."
+        },
+        {
+          "bug": "Fixed: Systems were not removing themselves as listeners for a boarding party ended signal, which meant the length of the signal list would grow eternally. This has been fixed, and I'm hoping this relates to the lengthy pause that could happen when launching a boarding party sometimes. I have not been able to trigger the pause since this fix was implemented."
+        }
+      ]
+    },
+    {
+      "title": "Update v1.0.0.4 (Demo)",
+      "date": "2025-06-10 01:31:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199546517",
+      "content": "[p]Good news everyone!\n[/p][p]After much kerfuffle and an excess of faffing about, I believe that I've fixed the resolution scaling issue. I've only got a 2560x1080 monitor to test it out on, so I can't be 100% sure it's fixed, but I've tried out every resolution I can and it looks like the fix correctly scales and positions the game window, while also killing the mouse offset problem that was happening alongside it.[/p][list][*][p]Fixed(?): Resolution scaling issues.[/p][/*][*][p]Fixed(?): Mouse coordinates were being incorrectly offset from the visual position.[/p][/*][/list][p]If you are still getting issues around game window scaling, positioning or mouse offsetting, [b]please[/b] let me know, with a description of your current resolution and how the game window is behaving! I appreciate the bug reports![/p]",
+      "key": "3156360::485e245db814db07227dbfe5d3b6ae96842bd48e",
+      "tags": [
+        {
+          "bug": "- Fixed(?): Resolution scaling issues."
+        },
+        {
+          "bug": "- Fixed(?): Mouse coordinates were being incorrectly offset from the visual position."
+        }
+      ]
+    },
+    {
+      "title": "Update v1.0.0.3 (Demo)",
+      "date": "2025-06-09 10:44:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199525928",
+      "content": "[p]Yet another patch coming down the pipeline. I've been focusing on trying to get the tutorial as robust as possible. There is still a bug in regards to monitors with large resolutions (I think especially ultrawide monitors) that I have yet to find a cause for, hopefully the fix for that will be in the next update (which may have to be tomorrow as it is 1am where I am). Anyway, here's the patch notes:[/p][list][*][p]Fixed: Armoured system taking damage did not play a sound correctly.[/p][/*][*][p]Fixed: Damage applied after the shield system was disabled did not bleed through to hull correctly.[/p][/*][*][p]Fixed/Updated: More edge case for the tutorial system have been discovered and corrected, plus the overall system has been made more robust and understandable, reminding players of the next action they have to take when the tutorial requires them to take an action to advance.[/p][/*][*][p]Fixed(?): Some dice would occasionally fail to stop rolling (this was just a visual bug as far as I can tell). I'm hoping this one is fixed, but I don't have a consistent way to trigger it happening which makes it hard to test whether the applied fixes worked properly.[/p][/*][/list][p]Again, apologies to the people who are being hit by the monitor bug, I've been doing my darndest to figure out the cause![/p]",
+      "key": "3156360::84570d66aabde15b43a758b1d2e0f2b44a2286f6",
+      "tags": [
+        {
+          "bug": "Fixed: Armoured system taking damage did not play a sound correctly."
+        },
+        {
+          "bug": "Fixed: Damage applied after the shield system was disabled did not bleed through to hull correctly."
+        },
+        {
+          "bug": "Fixed/Updated: More edge case for the tutorial system have been discovered and corrected, plus the overall system has been made more robust and understandable, reminding players of the next action they have to take when the tutorial requires them to take an action to advance."
+        },
+        {
+          "bug": "Fixed(?): Some dice would occasionally fail to stop rolling (this was just a visual bug as far as I can tell). I'm hoping this one is fixed, but I don't have a consistent way to trigger it happening which makes it hard to test whether the applied fixes worked properly."
+        }
+      ]
+    },
+    {
+      "title": "Update v1.0.0.2 (Demo)",
+      "date": "2025-06-09 02:51:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199514548",
+      "content": "[p]Bug reports are coming in thick and fast, lol. I'm a solo dev on a shoestring budget, so it's to be expected I guess. In any case, I'm squashing them as fast as possible. Here's the latest list of changes/corrections:[/p][list][*][p]When filling a system with crew members, the number of pips was being incorrectly calculated, especially in regards to \"overfilling\" the system (such as overfilling shields to negate damage for the next turn). This should be fixed now.[/p][/*][*][p]A number of edge cases has popped up in the tutorial which prevented progress or interacted weirdly. I think I've solved most, if not all, of these.[/p][/*][*][p]Game sometimes crashed if projectiles continued firing after an enemy had died. This should be fixed now.[/p][/*][*][p]Enemy AI for filling systems has been improved. It shouldn't spam fill system health so much now. More improvements will come later.[/p][/*][*][p]You can now clear your save file by going to the Options screen and pressing Ctrl + Shift + R. You should hear a mechanical sound play if it was successful. I recommend doing so before making much progress, as some of the prior bugs could have affected the save file.[/p][/*][*][p]Crew members were automatically ranked up to level 3 in all stats incorrectly. This has been reverted. Recommend cleaning the save file if this occurred during a playthrough.[/p][/*][*][p]Player and enemy have been made invincible for sections of the tutorial, in order to not have chaotic interactions. If invincibility doesn't end for some reason, firstly open the Escape menu by pressing Escape, and check the Tutorial Review. Make sure you've completed the last action on the list, as the game might be waiting for you to do something in order to progress. If you are sure you have, then please file a bug report.[/p][/*][*][p]Drawing of shield pips being wrong in some edge-cases has been corrected.[/p][/*][*][p]Max experience required for crew to level up has been increased.[/p][/*][/list]",
+      "key": "3156360::5b0e0e92bddefe4db6e5ef47fca31c20b28d6acf",
+      "tags": [
+        {
+          "bug": "When filling a system with crew members, the number of pips was being incorrectly calculated, especially in regards to \"overfilling\" the system (such as overfilling shields to negate damage for the next turn). This should be fixed now."
+        },
+        {
+          "bug": "A number of edge cases has popped up in the tutorial which prevented progress or interacted weirdly. I think I've solved most, if not all, of these."
+        },
+        {
+          "bug": "Game sometimes crashed if projectiles continued firing after an enemy had died. This should be fixed now."
+        },
+        {
+          "bug": "Enemy AI for filling systems has been improved. It shouldn't spam fill system health so much now. More improvements will come later."
+        },
+        {
+          "feature": "You can now clear your save file by going to the Options screen and pressing Ctrl + Shift + R. You should hear a mechanical sound play if it was successful. I recommend doing so before making much progress, as some of the prior bugs could have affected the save file."
+        },
+        {
+          "bug": "Crew members were automatically ranked up to level 3 in all stats incorrectly. This has been reverted. Recommend cleaning the save file if this occurred during a playthrough."
+        },
+        {
+          "bug": "Player and enemy have been made invincible for sections of the tutorial, in order to not have chaotic interactions. If invincibility doesn't end for some reason, firstly open the Escape menu by pressing Escape, and check the Tutorial Review. Make sure you've completed the last action on the list, as the game might be waiting for you to do something in order to progress. If you are sure you have, then please file a bug report."
+        },
+        {
+          "bug": "Drawing of shield pips being wrong in some edge-cases has been corrected."
+        },
+        {
+          "balance_change": "Max experience required for crew to level up has been increased."
+        }
+      ]
+    },
+    {
+      "title": "Update v1.0.0.1 (Demo)",
+      "date": "2025-06-08 23:07:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199509656",
+      "content": "[p]Just pushed a small update to the Dice Trek Demo with a number of critical crashing bugs.[/p][p][/p][p]- Fixed a crashing bug when a crew member hit level 3 and you filled a system dice with them.[/p][p]- Fixed a crashing bug on the ship selection screen where a font was being incorrectly referenced.[/p][p]- Attempted to fix a bug where pressing a key on the shop screen moved to the map screen (can't replicate it so unable to confirm the fix).[/p]",
+      "key": "3156360::23f5bc6a11ee48e531dd151f475c56890106dfeb",
+      "tags": [
+        {
+          "bug": "- Fixed a crashing bug when a crew member hit level 3 and you filled a system dice with them."
+        },
+        {
+          "bug": "- Fixed a crashing bug on the ship selection screen where a font was being incorrectly referenced."
+        },
+        {
+          "bug": "- Attempted to fix a bug where pressing a key on the shop screen moved to the map screen (can't replicate it so unable to confirm the fix)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,756 @@
+{
+  "appId": "719590",
+  "count": 18,
+  "notes": [
+    {
+      "title": "Welcome back - The future of Mesozoica",
+      "date": "2018-03-25 10:13:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2365952982539772041",
+      "content": "The purpose of this small blurb is to quickly and effectively explain the updates and the exciting news ahead for Mesozoica. The big topics that we are sure you want to see are TERRAFORMING, BETTER OPTIMIZATION, MORE AND BETTER SOUNDS and finally the news that were investing a great deal of the profits from the game into getting us help that we could have never received without your purchase/support. We are well aware of the impending release of several Jurassic related franchises and we have invested into creating something that Universal wouldn\u2019t touch. A risky endeavor in which focus on creating a world in which the player decides the fate of the setting and in which they create their own story.\r\n\r\nThank you for the patience and understanding, this is our baby as much as it is yours and were not stopping after a rough launch.\r\n\r\nFirst of all, thank you for giving this a read. Even if you are someone who has bought the game and refunded it/hasn\u2019t bought the game it means a great deal to us that you\u2019d follow along with our progress as a project. \r\n\r\nThe objective of this long post is to highlight what has kept us silent for a long period and hard at work. While from the outside it may look inactive, the inside gears have been churning. Let's take a look at what has been worked on and changed for the upcoming update to Mesozoica.\r\n\r\n[h1]Foliage System[/h1]\r\n\r\n[b]The Problem as defined by the Community[/b]\r\n\r\nPreviously we were using the build in foliage system that Unity provided. The problems we were facing with this system was that it was very heavy on the overall performance of the game and that it was extremely performance heavy to edit and adjust it on runtime. This made it so we weren't able to fully implement and finish terraforming. When terraforming the performance hit was so magnificent that at times it could take 5 - 8 seconds for the game to respond again. We found some workarounds that reduced the freeze to around 2 seconds (still not acceptable) but this meant that the game was becoming heavier overall. Eliminating the freezes completely meant that we had to remove the ground foliage (grass) and that didn't sound like a realistic solution. The only real solution we could find is not using the default unity foliage system and creating our own.\r\n\r\nThe downside to this was that creating such a system was going to be a very time consuming task, but in our eyes a necessary investment of time. Thank you for allowing us to take our caffeine addiction to unhealthy levels and get this investment of time completed.\r\n\r\n[b]What we fixed and what it does for YOU![/b]\r\n\r\nCreating a foliage system is very hard because you are dealing with rendering a lot of objects. We are talking about a couple hundred thousand, maybe even a million small objects in your screen, and this on top of everything that was already in the level like buildings, dinosaurs and other scenery. We have looked into many possibilities and systems that were made for other games and came to the conclusion that the only possible way to render so many objects was to cluster them into large batches. Using a special technique we were able to even render a lot of batches at the same time instead of rendering them separately. The performance difference gained from this technique on the CPU can best be visualized in a graph:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/437af82922369b6352d26f1831e2617ab1cec6bc.png[/img]\r\n\r\nIn this graph you can see how taxing the rendering of a number of objects is on the CPU. The higher the draw calls the heavier it is. You can see that our solution only uses a few draw calls to render a very large amount of objects compared to the default way of rendering (Note that this technique only takes a great deal of stress away from the CPU, the GPU will still have to deal with a lot of geometry as normal. So this is not a magic solution that allows us to render everything we want in insane quantities).\r\n\r\nEven Though this sounds awesome in terms of performance gained, it would not have been game development if this didn't have its downsides. Using this technique meant that we had to come up with a lot of creative solutions to still reach the level of diversity and freedom as that you would normally have if you treat everything as a seperate object.\r\n\r\nAnother requirement was that this system had to be very performant when it comes to making edits on runtime like terraforming and even removing and adding grass. This needed to be kept in mind during the whole development of the system and using our imagination we managed to move a lot of the runtime editing tasks that would normally be performed on the CPU (very heavy since the cpu is slow at handling large amounts of data) to the GPU (a lot faster cause of the way a GPU processes data).\r\n\r\nThese are a couple of the problems and solutions we had to deal with when we were creating this system, and the reason this task was such a nightmare.\r\nAs an extra for the technical people among you ill quickly list the things we have done to gain performance and if your not sure what these things mean, do not worry and feel free to skip this list:\r\n\r\n[list]\r\n    [*]GPU instancing\r\n    [*]Generating batches\r\n    [*]LOD system\r\n    [*]Distance culling\r\n    [*]Frustum culling\r\n    [*]Careful memory usage\r\n[/list]\r\n\r\nWhile it we can focus on the fact that it may or MAY not run Crysis the changes made also have visual updates as well.  Simply put because  of the performance gain we are able to render a lot more foliage. This results in denser and better looking ground foliage, show in the image below:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/d2c7a62233ddc6af2193383b7f1225be51a973c2.png[/img]\r\nOn the left you can see our new foliage system with 2 layers: Grass and rocks. On the right you can see our old solution with a grass layer. Here is a larger version of the image [url]https://ibb.co/iq5JvS[/url]\r\n\r\nWe hope you can see the difference in quality. The  difference should be noticeable  compared to the right image. To go even further to highlight this advancement we have recorded a small video to better highlight why we have invested so much time into the task. (please excuse the fps, we have not spent any money on upgrading our work rigs) : [url]https://streamable.com/og0dn[/url]\r\n\r\nWith a focus on the long term we have laid the foundation with several new features that allow us to build better and more efficiently. To go into detail on these items we have boxed out the items of importance. \r\n\r\n[b]Layers[/b]\r\n\r\nIn our new system we can add as many layers of different foliage as we see fit. This way we will be able to create ground foliage for complex jungle terrains, etc: \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/3e921f325c1279c44c57349d358956f593304a6f.png[/img]\r\n\r\nAs an example i made a comparison image between a single grass layer and a grass and flower layer:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/9795342b94d7d59443be172f591491433df9cca7.png[/img]\r\n\r\n[b]Precise wind settings[/b]\r\n\r\nOur wind simulation is very fast and can be tweaked in great detail. We added the following settings for artists to tweak: \r\n\r\nI made a video showcasing the result of tweaking these settings in engine (sorry for the low fps video my pc did not like the recording software): \r\n\r\n[url]https://streamable.com/mvtl9[/url]\r\n\r\n[b]Perlin noise distortion[/b]\r\n\r\nBased on perlin noise randomness we have been able to add nice looking randomness to the scale of the foliage. This can be tweaked per layer with a lot of freedom:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/9fa5ede1c881c138858d3320b68451d1d09a36c9.png[/img]\r\n[i]On the left we set the strength of the perlin noise to 50% and on the right its at 0%. We can also change the size of the noise to make larger or smaller patches[/i]\r\n\r\n[b]Random scale and rotations[/b]\r\n\r\nTo add even more variation we added the possibility to randomly rotate foliage based on perlin noise and a min/max range\r\n\r\n[b]Fake occlusion[/b]\r\n\r\nTo make the foliage look more grounded without a performance hit at all we managed to fake ambient occlusion for foliage:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/5fe39378e2db051fb0a6117e42bc736be2628712.png[/img]\r\n\r\n[b]Summary[/b]\r\n\r\nWell that was a lot of information about the foliage system, lets summarize it quickly to get a overview of what this new system means for the game:\r\n\r\n[list]\r\n    [*]Allows us to implement terraforming\r\n    [*]Denser and better looking ground foliage\r\n    [*]Complete artistic freedom to create stunning looking environments\r\n[/list]\r\n\r\n[h1]Terraforming[/h1]\r\n\r\nTerraforming is a very important feature that allows you to shape the landscape of your park the way you want to. Previously we weren't able to fully implement this feature like i explained in the previous section of this article.\r\n\r\nOur new terraforming system allows players to:\r\n\r\n[list]\r\n    [*]Raise terrain\r\n    [*]Lower terrain\r\n    [*]Flatten terrain\r\n    [*]Create lakes and rivers\r\n[/list]\r\n\r\nI made a small in engine video of the terraforming system for you to enjoy:\r\n\r\n[url]https://streamable.com/j11a1[/url]\r\n\r\nAs you can see the functionality behind the terraforming system is fully implemented. The task remaining is to make sure the terraforming works together with all the other systems. For example the terraforming should raise the dinosaurs and visitors up and down if you brush over them. And we have to figure out a way to make sure that you can't mess up your buildings and paths with terraforming.\r\n\r\n[h1]UI[/h1]\r\n\r\nUpon the release of the early access version of Mesozoica we got quite a lot of complaints about how our UI is very confusing and hard to get used to. WE have heard your voices about the UI and we took them very seriously and decided to completely make a new UI from scratch. To make sure we are doing it right at once we are developing our UI in iterations. We are currently working on iteration 4 and throughout the iterations the UI changed alot for the better. \r\n\r\nWe are going over all the different iterations to show you how the UI progressed:\r\n\r\n[b]Iteration 1[/b]\r\n\r\nThe first iteration was the initial setup of the UI. This version was meant to layout the base of the UI. Unfortunately we forgot to take pictures of the UI iteration progress so we had to look back in our chat history and could find some images (they aren't the best quality though).\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/ae8638eb6ef8f7fb6b49c07172b29f4fa230b2bf.png[/img]\r\n\r\nSo let's look at what we changed in our new UI design. Compared to our previous design that was mainly build up out of small windows, we wanted to make our UI more consistent in terms of layout, therefore we chose to use a static toolbar at the bottom of the screen that is used to open the side window you see on the left. We also added text to the right side of the buttons in the toolbar to make them easier to understand. The issue with our last UI was that we had a lot of icons that didn't really make sense, using text fixes that. On the left in the toolbar you the information that should always be available to the player, for example the amount of money you currently have and the dinosaur/visitor count.\r\n\r\nTo make sure that the large sidebar isn't in the way of your view we are going to offset the camera center when the sidebar is open:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/b82c889b5f961a3e40a3b31313d2ac231e325dcc.png[/img]\r\n[i]This way the UI is never in the way of what you are trying to look at.[/i]\r\n\r\n[b]Iteration 2[/b]\r\n\r\nIn our second iteration we wanted to blend the UI more with the game since we felt like the UI was to separate the the game itself. After trying out a couple ideas we came to the conclusion the blurring the game behind the UI and making the UI a bit transparent was the best solution. To make sure we could realise this without a significant performance hit we played with the idea in engine and came up with a performant way to blur the game behind UI elements. After that we went back to the drawing board to update the UI based on this idea. This is what we came up with:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/088cfd621e002a1433f1636057d84803708c2f29.png[/img]\r\n\r\n[b]Iteration 3 / 4[/b]\r\n\r\nIn iteration 3 and 4 we basically tried to design all the remaining windows and make sure all the information that should be available to the player is there. Let's look at a couple images from the UI (these images are NOT from ingame but are design concepts):\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/4c45da5d76721846c60d3911ac143775d8a1c792.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/4e591a2ebe1cbb7087497f6bebe6ce0683694490.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/4e6a3cf457355cfc02d192424dba1b7b2f14746f.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/ba82ad0e43efd761b57e8771588adfb2226f1d6d.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/7a87cbe6a5b2f9fb5bc42e45e88d72b78d905146.png[/img]\r\n\r\n[b]Iteration 5[/b]\r\n\r\nFor iteration 5 we want to involve the fans. We made a Google Form that you can use to comment on our UI design so far: \r\n\r\n[url]https://docs.google.com/forms/d/e/1FAIpQLSfrpb9APEwoGkdQbLVx_ZFJer-L3loONfJ3RmS2ebrK4WEnzQ/viewform[/url]\r\n\r\nBased on these comments we will make iteration 5 and showcase the result once its updated.\r\n\r\n[h1]Sound[/h1]\r\n\r\nWe have been working on improving the sounds of our dinosaurs and visitors. We started with the dinosaur audio since we felt like that was the most important task. Previously our dinosaurs only made sounds on events like attacking or intimidation, this of course is very unrealistic since animals of that size almost always make sounds. Think about sounds like: footsteps, breathing, growling, etc. We made a list of audio that every dinosaur should have:\r\n\r\n[list]\r\n    [*]One shot growl(s)\r\n    [*]Ambient breathing loop(s) \r\n    [*]Action audio\r\n    [*]Intimidation\r\n    [*]Attack\r\n    [*]Get hit\r\n    [*]Drink\r\n    [*]Eat\r\n    [*]Sleeping\r\n    [*]Get Hurt\r\n    [*]Footsteps\r\n[/list]\r\n\r\nWe think that with these audio files per dinosaur our dinosaurs will feel a lot more alive and natural. We put together a demo video with the new sounds: \r\n\r\n[url]https://drive.google.com/file/d/1E0iZEaKJmkuZWuvdSBFU5Kobn-tzZ8oa/view[/url]\r\n\r\nWe also put some audio on soundcloud to showcase audio: \r\n\r\n[url]https://soundcloud.com/user-640734854/mesozoica-dinosaur-calls-demo[/url]\r\n\r\nWe encourage you to comment on the audio here: \r\n\r\n[url]https://docs.google.com/forms/d/e/1FAIpQLSfMefS9Rif64Zyd4N09mHvGO677McZIFBX7KOJqDH73KoYp8Q/viewform[/url]\r\n\r\nAll the audio for the dinosaurs is created and ready to be implemented once we find the time. Next we will work on audio for our visitors, we will go over this in future posts.\r\n\r\n[h1]Concept art[/h1]\r\n\r\nWe decided to hire a concept artist since we felt that the experience and atmosphere that Mesozoica currently has was lacking. Because we felt that it was impossible to make a drawing with enough attention payed to both the dinosaur and visitor side of mesozoica we decided to split it up and make 2 drawings, with one drawing focusing on the dinosaurs and one on the visitors. After we found a concept artist we did a lot of polls to make sure we understand what our fans want in terms of experience and atmosphere. This document was the result of that: \r\n\r\n[url]https://drive.google.com/open?id=17Hi_2_-tW-vV4vc2kOIMroZphHxpPdKe[/url]\r\n\r\nBased on this document our concept artist came up with this sketch:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/3418514a30590e5cf9bf2342d1b9bfc4fbabb4e3.png[/img]\r\n\r\nEven though this sketch nails the atmosphere we felt that the camera angle and position were to close to the ground and dinosaurs. Based on these instructions our concept artist came up with this new sketch:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/45b5b6bd60521211a513c6e661f14b34ea2aeea6.png[/img]\r\n\r\nThis was a lot better, however we asked that he showed a bit less path and a used a wider field of view for the final image. Base upon the instructions and the last image the concept artist went and painted the final image and here it is:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/c1f66890bf5b9f88058ef2a340bed1b7c223d788.png[/img]\r\n[url]https://media.discordapp.net/attachments/407637136649748500/426762359592189964/dinosaur_section_updated2.jpg?width=2265&height=985[/url]\r\n\r\nWe feel like this is exactly the look we should aim for in the future since it nails all the aspects of our poll document.\r\n\r\nNow that we have the dinosaur concept art done we are currently working on the concept art for the visitors. Here is an image of the current state of the visitor/building image: \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/bf07d23b0ca2e08a3e0508b8f0d9a8f38512c883.png[/img]\r\n[url]https://media.discordapp.net/attachments/407637136649748500/427132427132076052/sketch.jpg[/url]\r\n\r\nSo what are we going to do with this concept art? In the past we have been struggling with not having a visual reference of how our game should look and feel. We kinda were working in the dark because we didn't have the funds to hire a concept artist. Now that we have funding from the early access we have the opportunity to visualize how we want our game to look. With this concept art we are going to try to change the look of our game to match the concept art. This may mean that we will have to create (note that we don't have the fundings yet to hire artists to make all of this, so we hope that we can find people that are willing to help us out of love for the project or that we raise enough money in the future to realize all this):\r\n\r\n[list]\r\n    [*]New terrain\r\n    [*]New nature assets\r\n    [*]New buildings and modular pieces\r\n    [*]New fences\r\n[/list]\r\n\r\n[b]Visitor concept art[/b]\r\n\r\nBeside the concept art for the atmosphere and buildings we decided to invest in creating concept art for new visitors. Currently we feel that our visitors are lacking personality and believability and the first step in solving this is designing how we want the visitors to look by creating visual reference. We will tell more about the concept art for the visitors in future posts.\r\n\r\n[b]Testing[/b]\r\n\r\nLooking back on the past we decided that we need to have longer test periods to avoid buggy releases. Previously we released versions that were tested just for a day, and that is way to short. Our now policy on releasing is that we don't release versions that havent been tested for at least a full week until no more game breaking bugs are found. This may take more time but should result in higher quality gameplay down the road.\r\n\r\n[h1]Future plans[/h1]\r\n\r\nWe quickly went over what we have been doing, but now let's talk about our future plans. Our short term goal is to update our game by adding the system discussed in this article, so:\r\n\r\n[list]\r\n    [*]Terraforming (Done)\r\n    [*]Creating rivers (Done)\r\n    [*]New foliage system (Done)\r\n    [*]Smoother dinosaur movement (Done)\r\n    [*]Bug fixes\r\n[/list]\r\n\r\nAs you can see we the only thing left for the new update is making sure the new system are correctly implemented and done cause bugs by testing. We need a couple days to make a testable version of the game. After that our minimum testing period of a week starts. Based on how the testing is going the release date of the next update will be determined. To avoid missing release dates we will determine the next update date once the game is running stable and we can pick a date with confidence.\r\n\r\n[b]UI update[/b]\r\n\r\nAfter the upcoming update the UI is next. We will based on the designs made, create a whole new UI system. This will make the UI look alot better and the game easier to play. Details on the new UI update will come after the upcoming update. In the meantime we will keep iterating through our UI until we are all satisfied with the way it looks.\r\n\r\n[b]Investments[/b]\r\n\r\nAs mentioned previously in this article we are investing heavily in concept art since we feel like concept art is the first step in fixing the visual problems of our game. You might wonder why invest in concept art and not in programmers, animators, modelers, etc. Well based on the amount of money we raised during the early access period of mesozoica we decided what is possible and what is not possible with the money we raised. We rather pay for resources that we would never have access to and spend more time ourselves working on the time heavy work than invest in quick/cheap ways to speed progress.  We felt like the visitors were the biggest visual problem (apart from the AI which we are going to fix ourselves). Meaning we are going to invest in:\r\n\r\n[list]\r\n    [*]Concept art for visitors / atmosphere and buildings\r\n    [*]3D modeler for visitors\r\n    [*]Animator for visitors\r\n[/list]\r\n\r\nHoping that the new updates and investments will raise enough money for future investments to realize the atmosphere and building concept art.\r\n\r\n[b]Polls[/b]\r\n\r\nWe also want to let you know that we are well aware of that the fans want improved. We did polls on this subject and can be seen in this document:  \r\n\r\n[url]https://drive.google.com/open?id=1rl_QgiE5IgSCMjak0r42rmMTu_8JD6TW[/url]\r\n\r\nWe aren't sure yet what and when we are going to tackle subjects, but we want to start with the biggest ones and work our way down.\r\n\r\nThank you,\r\nMesozoica\r\n\r\n\r\n",
+      "key": "719590::396347bee41120057cae99c2e3756fb19da1d16e",
+      "tags": [
+        {
+          "feature": "Creating a foliage system is very hard because you are dealing with rendering a lot of objects. We are talking about a couple hundred thousand, maybe even a million small objects in your screen, and this on top of everything that was already in the level like buildings, dinosaurs and other scenery. We have looked into many possibilities and systems that were made for other games and came to the conclusion that the only possible way to render so many objects was to cluster them into large batches. Using a special technique we were able to even render a lot of batches at the same time instead of rendering them separately. The performance difference gained from this technique on the CPU can best be visualized in a graph:"
+        },
+        {
+          "feature": "Even Though this sounds awesome in terms of performance gained, it would not have been game development if this didn't have its downsides. Using this technique meant that we had to come up with a lot of creative solutions to still reach the level of diversity and freedom as that you would normally have if you treat everything as a seperate object."
+        },
+        {
+          "feature": "Another requirement was that this system had to be very performant when it comes to making edits on runtime like terraforming and even removing and adding grass. This needed to be kept in mind during the whole development of the system and using our imagination we managed to move a lot of the runtime editing tasks that would normally be performed on the CPU (very heavy since the cpu is slow at handling large amounts of data) to the GPU (a lot faster cause of the way a GPU processes data)."
+        },
+        {
+          "feature": "As an extra for the technical people among you ill quickly list the things we have done to gain performance and if your not sure what these things mean, do not worry and feel free to skip this list:"
+        },
+        {
+          "feature": "While it we can focus on the fact that it may or MAY not run Crysis the changes made also have visual updates as well. Simply put because of the performance gain we are able to render a lot more foliage. This results in denser and better looking ground foliage, show in the image below:"
+        },
+        {
+          "feature": "On the left you can see our new foliage system with 2 layers: Grass and rocks. On the right you can see our old solution with a grass layer. Here is a larger version of the image [url]https://ibb.co/iq5JvS[/url]"
+        },
+        {
+          "feature": "With a focus on the long term we have laid the foundation with several new features that allow us to build better and more efficiently. To go into detail on these items we have boxed out the items of importance."
+        },
+        {
+          "feature": "In our new system we can add as many layers of different foliage as we see fit. This way we will be able to create ground foliage for complex jungle terrains, etc:"
+        },
+        {
+          "feature": "As an example i made a comparison image between a single grass layer and a grass and flower layer:"
+        },
+        {
+          "feature": "Our wind simulation is very fast and can be tweaked in great detail. We added the following settings for artists to tweak:"
+        },
+        {
+          "feature": "Based on perlin noise randomness we have been able to add nice looking randomness to the scale of the foliage. This can be tweaked per layer with a lot of freedom:"
+        },
+        {
+          "feature": "To add even more variation we added the possibility to randomly rotate foliage based on perlin noise and a min/max range"
+        },
+        {
+          "feature": "To make the foliage look more grounded without a performance hit at all we managed to fake ambient occlusion for foliage:"
+        },
+        {
+          "feature": "Allows us to implement terraforming"
+        },
+        {
+          "feature": "Denser and better looking ground foliage"
+        },
+        {
+          "feature": "Complete artistic freedom to create stunning looking environments"
+        },
+        {
+          "feature": "Terraforming is a very important feature that allows you to shape the landscape of your park the way you want to. Previously we weren't able to fully implement this feature like i explained in the previous section of this article."
+        },
+        {
+          "feature": "Our new terraforming system allows players to:"
+        },
+        {
+          "feature": "As you can see the functionality behind the terraforming system is fully implemented. The task remaining is to make sure the terraforming works together with all the other systems. For example the terraforming should raise the dinosaurs and visitors up and down if you brush over them. And we have to figure out a way to make sure that you can't mess up your buildings and paths with terraforming."
+        },
+        {
+          "feature": "Upon the release of the early access version of Mesozoica we got quite a lot of complaints about how our UI is very confusing and hard to get used to. WE have heard your voices about the UI and we took them very seriously and decided to completely make a new UI from scratch. To make sure we are doing it right at once we are developing our UI in iterations. We are currently working on iteration 4 and throughout the iterations the UI changed alot for the better."
+        },
+        {
+          "feature": "We are going over all the different iterations to show you how the UI progressed:"
+        },
+        {
+          "feature": "The first iteration was the initial setup of the UI. This version was meant to layout the base of the UI. Unfortunately we forgot to take pictures of the UI iteration progress so we had to look back in our chat history and could find some images (they aren't the best quality though)."
+        },
+        {
+          "feature": "So let's look at what we changed in our new UI design. Compared to our previous design that was mainly build up out of small windows, we wanted to make our UI more consistent in terms of layout, therefore we chose to use a static toolbar at the bottom of the screen that is used to open the side window you see on the left. We also added text to the right side of the buttons in the toolbar to make them easier to understand. The issue with our last UI was that we had a lot of icons that didn't really make sense, using text fixes that. On the left in the toolbar you the information that should always be available to the player, for example the amount of money you currently have and the dinosaur/visitor count."
+        },
+        {
+          "feature": "To make sure that the large sidebar isn't in the way of your view we are going to offset the camera center when the sidebar is open:"
+        },
+        {
+          "feature": "In our second iteration we wanted to blend the UI more with the game since we felt like the UI was to separate the the game itself. After trying out a couple ideas we came to the conclusion the blurring the game behind the UI and making the UI a bit transparent was the best solution. To make sure we could realise this without a significant performance hit we played with the idea in engine and came up with a performant way to blur the game behind UI elements. After that we went back to the drawing board to update the UI based on this idea. This is what we came up with:"
+        },
+        {
+          "feature": "In iteration 3 and 4 we basically tried to design all the remaining windows and make sure all the information that should be available to the player is there. Let's look at a couple images from the UI (these images are NOT from ingame but are design concepts):"
+        },
+        {
+          "feature": "For iteration 5 we want to involve the fans. We made a Google Form that you can use to comment on our UI design so far:"
+        },
+        {
+          "feature": "Based on these comments we will make iteration 5 and showcase the result once its updated."
+        },
+        {
+          "feature": "We have been working on improving the sounds of our dinosaurs and visitors. We started with the dinosaur audio since we felt like that was the most important task. Previously our dinosaurs only made sounds on events like attacking or intimidation, this of course is very unrealistic since animals of that size almost always make sounds. Think about sounds like: footsteps, breathing, growling, etc. We made a list of audio that every dinosaur should have:"
+        },
+        {
+          "feature": "We think that with these audio files per dinosaur our dinosaurs will feel a lot more alive and natural. We put together a demo video with the new sounds:"
+        },
+        {
+          "feature": "We also put some audio on soundcloud to showcase audio:"
+        },
+        {
+          "feature": "We encourage you to comment on the audio here:"
+        },
+        {
+          "feature": "All the audio for the dinosaurs is created and ready to be implemented once we find the time. Next we will work on audio for our visitors, we will go over this in future posts."
+        },
+        {
+          "feature": "We decided to hire a concept artist since we felt that the experience and atmosphere that Mesozoica currently has was lacking. Because we felt that it was impossible to make a drawing with enough attention payed to both the dinosaur and visitor side of mesozoica we decided to split it up and make 2 drawings, with one drawing focusing on the dinosaurs and one on the visitors. After we found a concept artist we did a lot of polls to make sure we understand what our fans want in terms of experience and atmosphere. This document was the result of that:"
+        },
+        {
+          "feature": "Based on this document our concept artist came up with this sketch:"
+        },
+        {
+          "feature": "Even though this sketch nails the atmosphere we felt that the camera angle and position were to close to the ground and dinosaurs. Based on these instructions our concept artist came up with this new sketch:"
+        },
+        {
+          "feature": "This was a lot better, however we asked that he showed a bit less path and a used a wider field of view for the final image. Base upon the instructions and the last image the concept artist went and painted the final image and here it is:"
+        },
+        {
+          "feature": "We feel like this is exactly the look we should aim for in the future since it nails all the aspects of our poll document."
+        },
+        {
+          "feature": "Now that we have the dinosaur concept art done we are currently working on the concept art for the visitors. Here is an image of the current state of the visitor/building image:"
+        },
+        {
+          "feature": "So what are we going to do with this concept art? In the past we have been struggling with not having a visual reference of how our game should look and feel. We kinda were working in the dark because we didn't have the funds to hire a concept artist. Now that we have funding from the early access we have the opportunity to visualize how we want our game to look. With this concept art we are going to try to change the look of our game to match the concept art. This may mean that we will have to create (note that we don't have the fundings yet to hire artists to make all of this, so we hope that we can find people that are willing to help us out of love for the project or that we raise enough money in the future to realize all this):"
+        },
+        {
+          "feature": "Beside the concept art for the atmosphere and buildings we decided to invest in creating concept art for new visitors. Currently we feel that our visitors are lacking personality and believability and the first step in solving this is designing how we want the visitors to look by creating visual reference. We will tell more about the concept art for the visitors in future posts."
+        },
+        {
+          "feature": "Looking back on the past we decided that we need to have longer test periods to avoid buggy releases. Previously we released versions that were tested just for a day, and that is way to short. Our now policy on releasing is that we don't release versions that havent been tested for at least a full week until no more game breaking bugs are found. This may take more time but should result in higher quality gameplay down the road."
+        },
+        {
+          "feature": "We quickly went over what we have been doing, but now let's talk about our future plans. Our short term goal is to update our game by adding the system discussed in this article, so:"
+        },
+        {
+          "feature": "As you can see we the only thing left for the new update is making sure the new system are correctly implemented and done cause bugs by testing. We need a couple days to make a testable version of the game. After that our minimum testing period of a week starts. Based on how the testing is going the release date of the next update will be determined. To avoid missing release dates we will determine the next update date once the game is running stable and we can pick a date with confidence."
+        },
+        {
+          "feature": "After the upcoming update the UI is next. We will based on the designs made, create a whole new UI system. This will make the UI look alot better and the game easier to play. Details on the new UI update will come after the upcoming update. In the meantime we will keep iterating through our UI until we are all satisfied with the way it looks."
+        },
+        {
+          "feature": "As mentioned previously in this article we are investing heavily in concept art since we feel like concept art is the first step in fixing the visual problems of our game. You might wonder why invest in concept art and not in programmers, animators, modelers, etc. Well based on the amount of money we raised during the early access period of mesozoica we decided what is possible and what is not possible with the money we raised. We rather pay for resources that we would never have access to and spend more time ourselves working on the time heavy work than invest in quick/cheap ways to speed progress. We felt like the visitors were the biggest visual problem (apart from the AI which we are going to fix ourselves). Meaning we are going to invest in:"
+        },
+        {
+          "feature": "Hoping that the new updates and investments will raise enough money for future investments to realize the atmosphere and building concept art."
+        },
+        {
+          "feature": "We also want to let you know that we are well aware of that the fans want improved. We did polls on this subject and can be seen in this document:"
+        },
+        {
+          "feature": "We aren't sure yet what and when we are going to tackle subjects, but we want to start with the biggest ones and work our way down."
+        },
+        {
+          "bug": "- Bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Welcome back - The future of Mesozoica",
+      "date": "2018-03-25 10:13:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687865497",
+      "content": "The purpose of this small blurb is to quickly and effectively explain the updates and the exciting news ahead for Mesozoica. The big topics that we are sure you want to see are TERRAFORMING, BETTER OPTIMIZATION, MORE AND BETTER SOUNDS and finally the news that were investing a great deal of the profits from the game into getting us help that we could have never received without your purchase/support. We are well aware of the impending release of several Jurassic related franchises and we have invested into creating something that Universal wouldn\u2019t touch. A risky endeavor in which focus on creating a world in which the player decides the fate of the setting and in which they create their own story.\r\n\r\nThank you for the patience and understanding, this is our baby as much as it is yours and were not stopping after a rough launch.\r\n\r\nFirst of all, thank you for giving this a read. Even if you are someone who has bought the game and refunded it/hasn\u2019t bought the game it means a great deal to us that you\u2019d follow along with our progress as a project. \r\n\r\nThe objective of this long post is to highlight what has kept us silent for a long period and hard at work. While from the outside it may look inactive, the inside gears have been churning. Let's take a look at what has been worked on and changed for the upcoming update to Mesozoica.\r\n\r\n[h1]Foliage System[/h1]\r\n\r\n[b]The Problem as defined by the Community[/b]\r\n\r\nPreviously we were using the build in foliage system that Unity provided. The problems we were facing with this system was that it was very heavy on the overall performance of the game and that it was extremely performance heavy to edit and adjust it on runtime. This made it so we weren't able to fully implement and finish terraforming. When terraforming the performance hit was so magnificent that at times it could take 5 - 8 seconds for the game to respond again. We found some workarounds that reduced the freeze to around 2 seconds (still not acceptable) but this meant that the game was becoming heavier overall. Eliminating the freezes completely meant that we had to remove the ground foliage (grass) and that didn't sound like a realistic solution. The only real solution we could find is not using the default unity foliage system and creating our own.\r\n\r\nThe downside to this was that creating such a system was going to be a very time consuming task, but in our eyes a necessary investment of time. Thank you for allowing us to take our caffeine addiction to unhealthy levels and get this investment of time completed.\r\n\r\n[b]What we fixed and what it does for YOU![/b]\r\n\r\nCreating a foliage system is very hard because you are dealing with rendering a lot of objects. We are talking about a couple hundred thousand, maybe even a million small objects in your screen, and this on top of everything that was already in the level like buildings, dinosaurs and other scenery. We have looked into many possibilities and systems that were made for other games and came to the conclusion that the only possible way to render so many objects was to cluster them into large batches. Using a special technique we were able to even render a lot of batches at the same time instead of rendering them separately. The performance difference gained from this technique on the CPU can best be visualized in a graph:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/437af82922369b6352d26f1831e2617ab1cec6bc.png[/img]\r\n\r\nIn this graph you can see how taxing the rendering of a number of objects is on the CPU. The higher the draw calls the heavier it is. You can see that our solution only uses a few draw calls to render a very large amount of objects compared to the default way of rendering (Note that this technique only takes a great deal of stress away from the CPU, the GPU will still have to deal with a lot of geometry as normal. So this is not a magic solution that allows us to render everything we want in insane quantities).\r\n\r\nEven Though this sounds awesome in terms of performance gained, it would not have been game development if this didn't have its downsides. Using this technique meant that we had to come up with a lot of creative solutions to still reach the level of diversity and freedom as that you would normally have if you treat everything as a seperate object.\r\n\r\nAnother requirement was that this system had to be very performant when it comes to making edits on runtime like terraforming and even removing and adding grass. This needed to be kept in mind during the whole development of the system and using our imagination we managed to move a lot of the runtime editing tasks that would normally be performed on the CPU (very heavy since the cpu is slow at handling large amounts of data) to the GPU (a lot faster cause of the way a GPU processes data).\r\n\r\nThese are a couple of the problems and solutions we had to deal with when we were creating this system, and the reason this task was such a nightmare.\r\nAs an extra for the technical people among you ill quickly list the things we have done to gain performance and if your not sure what these things mean, do not worry and feel free to skip this list:\r\n\r\n[list]\r\n    [*]GPU instancing\r\n    [*]Generating batches\r\n    [*]LOD system\r\n    [*]Distance culling\r\n    [*]Frustum culling\r\n    [*]Careful memory usage\r\n[/list]\r\n\r\nWhile it we can focus on the fact that it may or MAY not run Crysis the changes made also have visual updates as well.  Simply put because  of the performance gain we are able to render a lot more foliage. This results in denser and better looking ground foliage, show in the image below:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/d2c7a62233ddc6af2193383b7f1225be51a973c2.png[/img]\r\nOn the left you can see our new foliage system with 2 layers: Grass and rocks. On the right you can see our old solution with a grass layer. Here is a larger version of the image [url]https://ibb.co/iq5JvS[/url]\r\n\r\nWe hope you can see the difference in quality. The  difference should be noticeable  compared to the right image. To go even further to highlight this advancement we have recorded a small video to better highlight why we have invested so much time into the task. (please excuse the fps, we have not spent any money on upgrading our work rigs) : [url]https://streamable.com/og0dn[/url]\r\n\r\nWith a focus on the long term we have laid the foundation with several new features that allow us to build better and more efficiently. To go into detail on these items we have boxed out the items of importance. \r\n\r\n[b]Layers[/b]\r\n\r\nIn our new system we can add as many layers of different foliage as we see fit. This way we will be able to create ground foliage for complex jungle terrains, etc: \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/3e921f325c1279c44c57349d358956f593304a6f.png[/img]\r\n\r\nAs an example i made a comparison image between a single grass layer and a grass and flower layer:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/9795342b94d7d59443be172f591491433df9cca7.png[/img]\r\n\r\n[b]Precise wind settings[/b]\r\n\r\nOur wind simulation is very fast and can be tweaked in great detail. We added the following settings for artists to tweak: \r\n\r\nI made a video showcasing the result of tweaking these settings in engine (sorry for the low fps video my pc did not like the recording software): \r\n\r\n[url]https://streamable.com/mvtl9[/url]\r\n\r\n[b]Perlin noise distortion[/b]\r\n\r\nBased on perlin noise randomness we have been able to add nice looking randomness to the scale of the foliage. This can be tweaked per layer with a lot of freedom:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/9fa5ede1c881c138858d3320b68451d1d09a36c9.png[/img]\r\n[i]On the left we set the strength of the perlin noise to 50% and on the right its at 0%. We can also change the size of the noise to make larger or smaller patches[/i]\r\n\r\n[b]Random scale and rotations[/b]\r\n\r\nTo add even more variation we added the possibility to randomly rotate foliage based on perlin noise and a min/max range\r\n\r\n[b]Fake occlusion[/b]\r\n\r\nTo make the foliage look more grounded without a performance hit at all we managed to fake ambient occlusion for foliage:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/5fe39378e2db051fb0a6117e42bc736be2628712.png[/img]\r\n\r\n[b]Summary[/b]\r\n\r\nWell that was a lot of information about the foliage system, lets summarize it quickly to get a overview of what this new system means for the game:\r\n\r\n[list]\r\n    [*]Allows us to implement terraforming\r\n    [*]Denser and better looking ground foliage\r\n    [*]Complete artistic freedom to create stunning looking environments\r\n[/list]\r\n\r\n[h1]Terraforming[/h1]\r\n\r\nTerraforming is a very important feature that allows you to shape the landscape of your park the way you want to. Previously we weren't able to fully implement this feature like i explained in the previous section of this article.\r\n\r\nOur new terraforming system allows players to:\r\n\r\n[list]\r\n    [*]Raise terrain\r\n    [*]Lower terrain\r\n    [*]Flatten terrain\r\n    [*]Create lakes and rivers\r\n[/list]\r\n\r\nI made a small in engine video of the terraforming system for you to enjoy:\r\n\r\n[url]https://streamable.com/j11a1[/url]\r\n\r\nAs you can see the functionality behind the terraforming system is fully implemented. The task remaining is to make sure the terraforming works together with all the other systems. For example the terraforming should raise the dinosaurs and visitors up and down if you brush over them. And we have to figure out a way to make sure that you can't mess up your buildings and paths with terraforming.\r\n\r\n[h1]UI[/h1]\r\n\r\nUpon the release of the early access version of Mesozoica we got quite a lot of complaints about how our UI is very confusing and hard to get used to. WE have heard your voices about the UI and we took them very seriously and decided to completely make a new UI from scratch. To make sure we are doing it right at once we are developing our UI in iterations. We are currently working on iteration 4 and throughout the iterations the UI changed alot for the better. \r\n\r\nWe are going over all the different iterations to show you how the UI progressed:\r\n\r\n[b]Iteration 1[/b]\r\n\r\nThe first iteration was the initial setup of the UI. This version was meant to layout the base of the UI. Unfortunately we forgot to take pictures of the UI iteration progress so we had to look back in our chat history and could find some images (they aren't the best quality though).\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/ae8638eb6ef8f7fb6b49c07172b29f4fa230b2bf.png[/img]\r\n\r\nSo let's look at what we changed in our new UI design. Compared to our previous design that was mainly build up out of small windows, we wanted to make our UI more consistent in terms of layout, therefore we chose to use a static toolbar at the bottom of the screen that is used to open the side window you see on the left. We also added text to the right side of the buttons in the toolbar to make them easier to understand. The issue with our last UI was that we had a lot of icons that didn't really make sense, using text fixes that. On the left in the toolbar you the information that should always be available to the player, for example the amount of money you currently have and the dinosaur/visitor count.\r\n\r\nTo make sure that the large sidebar isn't in the way of your view we are going to offset the camera center when the sidebar is open:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/b82c889b5f961a3e40a3b31313d2ac231e325dcc.png[/img]\r\n[i]This way the UI is never in the way of what you are trying to look at.[/i]\r\n\r\n[b]Iteration 2[/b]\r\n\r\nIn our second iteration we wanted to blend the UI more with the game since we felt like the UI was to separate the the game itself. After trying out a couple ideas we came to the conclusion the blurring the game behind the UI and making the UI a bit transparent was the best solution. To make sure we could realise this without a significant performance hit we played with the idea in engine and came up with a performant way to blur the game behind UI elements. After that we went back to the drawing board to update the UI based on this idea. This is what we came up with:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/088cfd621e002a1433f1636057d84803708c2f29.png[/img]\r\n\r\n[b]Iteration 3 / 4[/b]\r\n\r\nIn iteration 3 and 4 we basically tried to design all the remaining windows and make sure all the information that should be available to the player is there. Let's look at a couple images from the UI (these images are NOT from ingame but are design concepts):\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/4c45da5d76721846c60d3911ac143775d8a1c792.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/4e591a2ebe1cbb7087497f6bebe6ce0683694490.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/4e6a3cf457355cfc02d192424dba1b7b2f14746f.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/ba82ad0e43efd761b57e8771588adfb2226f1d6d.png[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/7a87cbe6a5b2f9fb5bc42e45e88d72b78d905146.png[/img]\r\n\r\n[b]Iteration 5[/b]\r\n\r\nFor iteration 5 we want to involve the fans. We made a Google Form that you can use to comment on our UI design so far: \r\n\r\n[url]https://docs.google.com/forms/d/e/1FAIpQLSfrpb9APEwoGkdQbLVx_ZFJer-L3loONfJ3RmS2ebrK4WEnzQ/viewform[/url]\r\n\r\nBased on these comments we will make iteration 5 and showcase the result once its updated.\r\n\r\n[h1]Sound[/h1]\r\n\r\nWe have been working on improving the sounds of our dinosaurs and visitors. We started with the dinosaur audio since we felt like that was the most important task. Previously our dinosaurs only made sounds on events like attacking or intimidation, this of course is very unrealistic since animals of that size almost always make sounds. Think about sounds like: footsteps, breathing, growling, etc. We made a list of audio that every dinosaur should have:\r\n\r\n[list]\r\n    [*]One shot growl(s)\r\n    [*]Ambient breathing loop(s) \r\n    [*]Action audio\r\n    [*]Intimidation\r\n    [*]Attack\r\n    [*]Get hit\r\n    [*]Drink\r\n    [*]Eat\r\n    [*]Sleeping\r\n    [*]Get Hurt\r\n    [*]Footsteps\r\n[/list]\r\n\r\nWe think that with these audio files per dinosaur our dinosaurs will feel a lot more alive and natural. We put together a demo video with the new sounds: \r\n\r\n[url]https://drive.google.com/file/d/1E0iZEaKJmkuZWuvdSBFU5Kobn-tzZ8oa/view[/url]\r\n\r\nWe also put some audio on soundcloud to showcase audio: \r\n\r\n[url]https://soundcloud.com/user-640734854/mesozoica-dinosaur-calls-demo[/url]\r\n\r\nWe encourage you to comment on the audio here: \r\n\r\n[url]https://docs.google.com/forms/d/e/1FAIpQLSfMefS9Rif64Zyd4N09mHvGO677McZIFBX7KOJqDH73KoYp8Q/viewform[/url]\r\n\r\nAll the audio for the dinosaurs is created and ready to be implemented once we find the time. Next we will work on audio for our visitors, we will go over this in future posts.\r\n\r\n[h1]Concept art[/h1]\r\n\r\nWe decided to hire a concept artist since we felt that the experience and atmosphere that Mesozoica currently has was lacking. Because we felt that it was impossible to make a drawing with enough attention payed to both the dinosaur and visitor side of mesozoica we decided to split it up and make 2 drawings, with one drawing focusing on the dinosaurs and one on the visitors. After we found a concept artist we did a lot of polls to make sure we understand what our fans want in terms of experience and atmosphere. This document was the result of that: \r\n\r\n[url]https://drive.google.com/open?id=17Hi_2_-tW-vV4vc2kOIMroZphHxpPdKe[/url]\r\n\r\nBased on this document our concept artist came up with this sketch:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/3418514a30590e5cf9bf2342d1b9bfc4fbabb4e3.png[/img]\r\n\r\nEven though this sketch nails the atmosphere we felt that the camera angle and position were to close to the ground and dinosaurs. Based on these instructions our concept artist came up with this new sketch:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/45b5b6bd60521211a513c6e661f14b34ea2aeea6.png[/img]\r\n\r\nThis was a lot better, however we asked that he showed a bit less path and a used a wider field of view for the final image. Base upon the instructions and the last image the concept artist went and painted the final image and here it is:\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/c1f66890bf5b9f88058ef2a340bed1b7c223d788.png[/img]\r\n[url]https://media.discordapp.net/attachments/407637136649748500/426762359592189964/dinosaur_section_updated2.jpg?width=2265&height=985[/url]\r\n\r\nWe feel like this is exactly the look we should aim for in the future since it nails all the aspects of our poll document.\r\n\r\nNow that we have the dinosaur concept art done we are currently working on the concept art for the visitors. Here is an image of the current state of the visitor/building image: \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/bf07d23b0ca2e08a3e0508b8f0d9a8f38512c883.png[/img]\r\n[url]https://media.discordapp.net/attachments/407637136649748500/427132427132076052/sketch.jpg[/url]\r\n\r\nSo what are we going to do with this concept art? In the past we have been struggling with not having a visual reference of how our game should look and feel. We kinda were working in the dark because we didn't have the funds to hire a concept artist. Now that we have funding from the early access we have the opportunity to visualize how we want our game to look. With this concept art we are going to try to change the look of our game to match the concept art. This may mean that we will have to create (note that we don't have the fundings yet to hire artists to make all of this, so we hope that we can find people that are willing to help us out of love for the project or that we raise enough money in the future to realize all this):\r\n\r\n[list]\r\n    [*]New terrain\r\n    [*]New nature assets\r\n    [*]New buildings and modular pieces\r\n    [*]New fences\r\n[/list]\r\n\r\n[b]Visitor concept art[/b]\r\n\r\nBeside the concept art for the atmosphere and buildings we decided to invest in creating concept art for new visitors. Currently we feel that our visitors are lacking personality and believability and the first step in solving this is designing how we want the visitors to look by creating visual reference. We will tell more about the concept art for the visitors in future posts.\r\n\r\n[b]Testing[/b]\r\n\r\nLooking back on the past we decided that we need to have longer test periods to avoid buggy releases. Previously we released versions that were tested just for a day, and that is way to short. Our now policy on releasing is that we don't release versions that havent been tested for at least a full week until no more game breaking bugs are found. This may take more time but should result in higher quality gameplay down the road.\r\n\r\n[h1]Future plans[/h1]\r\n\r\nWe quickly went over what we have been doing, but now let's talk about our future plans. Our short term goal is to update our game by adding the system discussed in this article, so:\r\n\r\n[list]\r\n    [*]Terraforming (Done)\r\n    [*]Creating rivers (Done)\r\n    [*]New foliage system (Done)\r\n    [*]Smoother dinosaur movement (Done)\r\n    [*]Bug fixes\r\n[/list]\r\n\r\nAs you can see we the only thing left for the new update is making sure the new system are correctly implemented and done cause bugs by testing. We need a couple days to make a testable version of the game. After that our minimum testing period of a week starts. Based on how the testing is going the release date of the next update will be determined. To avoid missing release dates we will determine the next update date once the game is running stable and we can pick a date with confidence.\r\n\r\n[b]UI update[/b]\r\n\r\nAfter the upcoming update the UI is next. We will based on the designs made, create a whole new UI system. This will make the UI look alot better and the game easier to play. Details on the new UI update will come after the upcoming update. In the meantime we will keep iterating through our UI until we are all satisfied with the way it looks.\r\n\r\n[b]Investments[/b]\r\n\r\nAs mentioned previously in this article we are investing heavily in concept art since we feel like concept art is the first step in fixing the visual problems of our game. You might wonder why invest in concept art and not in programmers, animators, modelers, etc. Well based on the amount of money we raised during the early access period of mesozoica we decided what is possible and what is not possible with the money we raised. We rather pay for resources that we would never have access to and spend more time ourselves working on the time heavy work than invest in quick/cheap ways to speed progress.  We felt like the visitors were the biggest visual problem (apart from the AI which we are going to fix ourselves). Meaning we are going to invest in:\r\n\r\n[list]\r\n    [*]Concept art for visitors / atmosphere and buildings\r\n    [*]3D modeler for visitors\r\n    [*]Animator for visitors\r\n[/list]\r\n\r\nHoping that the new updates and investments will raise enough money for future investments to realize the atmosphere and building concept art.\r\n\r\n[b]Polls[/b]\r\n\r\nWe also want to let you know that we are well aware of that the fans want improved. We did polls on this subject and can be seen in this document:  \r\n\r\n[url]https://drive.google.com/open?id=1rl_QgiE5IgSCMjak0r42rmMTu_8JD6TW[/url]\r\n\r\nWe aren't sure yet what and when we are going to tackle subjects, but we want to start with the biggest ones and work our way down.\r\n\r\nThank you,\r\nMesozoica\r\n\r\n\r\n",
+      "key": "719590::c2bc28eec6c4b83d76c953add721b05a260a2d30",
+      "tags": [
+        {
+          "feature": "Creating a foliage system is very hard because you are dealing with rendering a lot of objects. We are talking about a couple hundred thousand, maybe even a million small objects in your screen, and this on top of everything that was already in the level like buildings, dinosaurs and other scenery. We have looked into many possibilities and systems that were made for other games and came to the conclusion that the only possible way to render so many objects was to cluster them into large batches. Using a special technique we were able to even render a lot of batches at the same time instead of rendering them separately. The performance difference gained from this technique on the CPU can best be visualized in a graph:"
+        },
+        {
+          "feature": "Even Though this sounds awesome in terms of performance gained, it would not have been game development if this didn't have its downsides. Using this technique meant that we had to come up with a lot of creative solutions to still reach the level of diversity and freedom as that you would normally have if you treat everything as a seperate object."
+        },
+        {
+          "feature": "Another requirement was that this system had to be very performant when it comes to making edits on runtime like terraforming and even removing and adding grass. This needed to be kept in mind during the whole development of the system and using our imagination we managed to move a lot of the runtime editing tasks that would normally be performed on the CPU (very heavy since the cpu is slow at handling large amounts of data) to the GPU (a lot faster cause of the way a GPU processes data)."
+        },
+        {
+          "feature": "As an extra for the technical people among you ill quickly list the things we have done to gain performance and if your not sure what these things mean, do not worry and feel free to skip this list:"
+        },
+        {
+          "feature": "While it we can focus on the fact that it may or MAY not run Crysis the changes made also have visual updates as well. Simply put because of the performance gain we are able to render a lot more foliage. This results in denser and better looking ground foliage, show in the image below:"
+        },
+        {
+          "feature": "On the left you can see our new foliage system with 2 layers: Grass and rocks. On the right you can see our old solution with a grass layer. Here is a larger version of the image [url]https://ibb.co/iq5JvS[/url]"
+        },
+        {
+          "feature": "With a focus on the long term we have laid the foundation with several new features that allow us to build better and more efficiently. To go into detail on these items we have boxed out the items of importance."
+        },
+        {
+          "feature": "In our new system we can add as many layers of different foliage as we see fit. This way we will be able to create ground foliage for complex jungle terrains, etc:"
+        },
+        {
+          "feature": "As an example i made a comparison image between a single grass layer and a grass and flower layer:"
+        },
+        {
+          "feature": "Our wind simulation is very fast and can be tweaked in great detail. We added the following settings for artists to tweak:"
+        },
+        {
+          "feature": "Based on perlin noise randomness we have been able to add nice looking randomness to the scale of the foliage. This can be tweaked per layer with a lot of freedom:"
+        },
+        {
+          "feature": "To add even more variation we added the possibility to randomly rotate foliage based on perlin noise and a min/max range"
+        },
+        {
+          "feature": "To make the foliage look more grounded without a performance hit at all we managed to fake ambient occlusion for foliage:"
+        },
+        {
+          "feature": "Allows us to implement terraforming"
+        },
+        {
+          "feature": "Denser and better looking ground foliage"
+        },
+        {
+          "feature": "Complete artistic freedom to create stunning looking environments"
+        },
+        {
+          "feature": "Terraforming is a very important feature that allows you to shape the landscape of your park the way you want to. Previously we weren't able to fully implement this feature like i explained in the previous section of this article."
+        },
+        {
+          "feature": "Our new terraforming system allows players to:"
+        },
+        {
+          "feature": "As you can see the functionality behind the terraforming system is fully implemented. The task remaining is to make sure the terraforming works together with all the other systems. For example the terraforming should raise the dinosaurs and visitors up and down if you brush over them. And we have to figure out a way to make sure that you can't mess up your buildings and paths with terraforming."
+        },
+        {
+          "feature": "Upon the release of the early access version of Mesozoica we got quite a lot of complaints about how our UI is very confusing and hard to get used to. WE have heard your voices about the UI and we took them very seriously and decided to completely make a new UI from scratch. To make sure we are doing it right at once we are developing our UI in iterations. We are currently working on iteration 4 and throughout the iterations the UI changed alot for the better."
+        },
+        {
+          "feature": "We are going over all the different iterations to show you how the UI progressed:"
+        },
+        {
+          "feature": "The first iteration was the initial setup of the UI. This version was meant to layout the base of the UI. Unfortunately we forgot to take pictures of the UI iteration progress so we had to look back in our chat history and could find some images (they aren't the best quality though)."
+        },
+        {
+          "feature": "So let's look at what we changed in our new UI design. Compared to our previous design that was mainly build up out of small windows, we wanted to make our UI more consistent in terms of layout, therefore we chose to use a static toolbar at the bottom of the screen that is used to open the side window you see on the left. We also added text to the right side of the buttons in the toolbar to make them easier to understand. The issue with our last UI was that we had a lot of icons that didn't really make sense, using text fixes that. On the left in the toolbar you the information that should always be available to the player, for example the amount of money you currently have and the dinosaur/visitor count."
+        },
+        {
+          "feature": "To make sure that the large sidebar isn't in the way of your view we are going to offset the camera center when the sidebar is open:"
+        },
+        {
+          "feature": "In our second iteration we wanted to blend the UI more with the game since we felt like the UI was to separate the the game itself. After trying out a couple ideas we came to the conclusion the blurring the game behind the UI and making the UI a bit transparent was the best solution. To make sure we could realise this without a significant performance hit we played with the idea in engine and came up with a performant way to blur the game behind UI elements. After that we went back to the drawing board to update the UI based on this idea. This is what we came up with:"
+        },
+        {
+          "feature": "In iteration 3 and 4 we basically tried to design all the remaining windows and make sure all the information that should be available to the player is there. Let's look at a couple images from the UI (these images are NOT from ingame but are design concepts):"
+        },
+        {
+          "feature": "For iteration 5 we want to involve the fans. We made a Google Form that you can use to comment on our UI design so far:"
+        },
+        {
+          "feature": "Based on these comments we will make iteration 5 and showcase the result once its updated."
+        },
+        {
+          "feature": "We have been working on improving the sounds of our dinosaurs and visitors. We started with the dinosaur audio since we felt like that was the most important task. Previously our dinosaurs only made sounds on events like attacking or intimidation, this of course is very unrealistic since animals of that size almost always make sounds. Think about sounds like: footsteps, breathing, growling, etc. We made a list of audio that every dinosaur should have:"
+        },
+        {
+          "feature": "We think that with these audio files per dinosaur our dinosaurs will feel a lot more alive and natural. We put together a demo video with the new sounds:"
+        },
+        {
+          "feature": "We also put some audio on soundcloud to showcase audio:"
+        },
+        {
+          "feature": "We encourage you to comment on the audio here:"
+        },
+        {
+          "feature": "All the audio for the dinosaurs is created and ready to be implemented once we find the time. Next we will work on audio for our visitors, we will go over this in future posts."
+        },
+        {
+          "feature": "We decided to hire a concept artist since we felt that the experience and atmosphere that Mesozoica currently has was lacking. Because we felt that it was impossible to make a drawing with enough attention payed to both the dinosaur and visitor side of mesozoica we decided to split it up and make 2 drawings, with one drawing focusing on the dinosaurs and one on the visitors. After we found a concept artist we did a lot of polls to make sure we understand what our fans want in terms of experience and atmosphere. This document was the result of that:"
+        },
+        {
+          "feature": "Based on this document our concept artist came up with this sketch:"
+        },
+        {
+          "feature": "Even though this sketch nails the atmosphere we felt that the camera angle and position were to close to the ground and dinosaurs. Based on these instructions our concept artist came up with this new sketch:"
+        },
+        {
+          "feature": "This was a lot better, however we asked that he showed a bit less path and a used a wider field of view for the final image. Base upon the instructions and the last image the concept artist went and painted the final image and here it is:"
+        },
+        {
+          "feature": "We feel like this is exactly the look we should aim for in the future since it nails all the aspects of our poll document."
+        },
+        {
+          "feature": "Now that we have the dinosaur concept art done we are currently working on the concept art for the visitors. Here is an image of the current state of the visitor/building image:"
+        },
+        {
+          "feature": "So what are we going to do with this concept art? In the past we have been struggling with not having a visual reference of how our game should look and feel. We kinda were working in the dark because we didn't have the funds to hire a concept artist. Now that we have funding from the early access we have the opportunity to visualize how we want our game to look. With this concept art we are going to try to change the look of our game to match the concept art. This may mean that we will have to create (note that we don't have the fundings yet to hire artists to make all of this, so we hope that we can find people that are willing to help us out of love for the project or that we raise enough money in the future to realize all this):"
+        },
+        {
+          "feature": "Beside the concept art for the atmosphere and buildings we decided to invest in creating concept art for new visitors. Currently we feel that our visitors are lacking personality and believability and the first step in solving this is designing how we want the visitors to look by creating visual reference. We will tell more about the concept art for the visitors in future posts."
+        },
+        {
+          "feature": "Looking back on the past we decided that we need to have longer test periods to avoid buggy releases. Previously we released versions that were tested just for a day, and that is way to short. Our now policy on releasing is that we don't release versions that havent been tested for at least a full week until no more game breaking bugs are found. This may take more time but should result in higher quality gameplay down the road."
+        },
+        {
+          "feature": "We quickly went over what we have been doing, but now let's talk about our future plans. Our short term goal is to update our game by adding the system discussed in this article, so:"
+        },
+        {
+          "feature": "As you can see we the only thing left for the new update is making sure the new system are correctly implemented and done cause bugs by testing. We need a couple days to make a testable version of the game. After that our minimum testing period of a week starts. Based on how the testing is going the release date of the next update will be determined. To avoid missing release dates we will determine the next update date once the game is running stable and we can pick a date with confidence."
+        },
+        {
+          "feature": "After the upcoming update the UI is next. We will based on the designs made, create a whole new UI system. This will make the UI look alot better and the game easier to play. Details on the new UI update will come after the upcoming update. In the meantime we will keep iterating through our UI until we are all satisfied with the way it looks."
+        },
+        {
+          "feature": "As mentioned previously in this article we are investing heavily in concept art since we feel like concept art is the first step in fixing the visual problems of our game. You might wonder why invest in concept art and not in programmers, animators, modelers, etc. Well based on the amount of money we raised during the early access period of mesozoica we decided what is possible and what is not possible with the money we raised. We rather pay for resources that we would never have access to and spend more time ourselves working on the time heavy work than invest in quick/cheap ways to speed progress. We felt like the visitors were the biggest visual problem (apart from the AI which we are going to fix ourselves). Meaning we are going to invest in:"
+        },
+        {
+          "feature": "Hoping that the new updates and investments will raise enough money for future investments to realize the atmosphere and building concept art."
+        },
+        {
+          "feature": "We also want to let you know that we are well aware of that the fans want improved. We did polls on this subject and can be seen in this document:"
+        },
+        {
+          "feature": "We aren't sure yet what and when we are going to tackle subjects, but we want to start with the biggest ones and work our way down."
+        },
+        {
+          "bug": "- Bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Update on Project T",
+      "date": "2018-02-05 11:49:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363696743814269331",
+      "content": "Hello everyone! \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/26caa41afdd48412961ea51b645c10d8e92af329.jpg[/img]\r\n\r\nApologies for the silence, \r\n\r\nWe have been working primarily on making sure progression is stable and consistent! \r\n\r\nAdding companies brings variety and player choice.\r\n\r\nAdding employees generates players quests that they must choose from. Morality over money? \r\n\r\nNew GUI bring more info to the player. More info harder tasks. \r\n\r\nHowever all of these new items dont bring progression which is why we have been taking so long on fixing PROGRESSION above all else. \r\n\r\nYour company will limit you to the number of dinosaurs you are allowed to have as a safe guard (we dont give start up tons of money unless they prove it). How you increase your cap space which will eventually be infinite is by leveling up your relationship with your company! \r\n\r\nThe leveling up process is very direct and simple to follow however forces the player to make tough quest decisions (morality) which have rewards/consequences. \r\n\r\nAgain thanks for the patience, were working on support for different screen resolutions and continually fixing performance bugs.\r\n\r\nWE FEEL as if we have truly fixed the issues with AI. We will soon see if that is the case or not! \r\n\r\n",
+      "key": "719590::fff81c52aced8ea5ae008b636a84186d1eec4d18",
+      "tags": [
+        {
+          "feature": "Adding companies brings variety and player choice."
+        },
+        {
+          "feature": "Adding employees generates players quests that they must choose from. Morality over money?"
+        },
+        {
+          "feature": "New GUI bring more info to the player. More info harder tasks."
+        },
+        {
+          "bug": "continually fixing performance bugs."
+        }
+      ]
+    },
+    {
+      "title": "Update on Project T",
+      "date": "2018-02-05 11:49:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687865719",
+      "content": "Hello everyone! \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/26caa41afdd48412961ea51b645c10d8e92af329.jpg[/img]\r\n\r\nApologies for the silence, \r\n\r\nWe have been working primarily on making sure progression is stable and consistent! \r\n\r\nAdding companies brings variety and player choice.\r\n\r\nAdding employees generates players quests that they must choose from. Morality over money? \r\n\r\nNew GUI bring more info to the player. More info harder tasks. \r\n\r\nHowever all of these new items dont bring progression which is why we have been taking so long on fixing PROGRESSION above all else. \r\n\r\nYour company will limit you to the number of dinosaurs you are allowed to have as a safe guard (we dont give start up tons of money unless they prove it). How you increase your cap space which will eventually be infinite is by leveling up your relationship with your company! \r\n\r\nThe leveling up process is very direct and simple to follow however forces the player to make tough quest decisions (morality) which have rewards/consequences. \r\n\r\nAgain thanks for the patience, were working on support for different screen resolutions and continually fixing performance bugs.\r\n\r\nWE FEEL as if we have truly fixed the issues with AI. We will soon see if that is the case or not! \r\n\r\n",
+      "key": "719590::00aeb542b074b828496b2d146b2f29dd5f591566",
+      "tags": [
+        {
+          "feature": "Adding companies brings variety and player choice."
+        },
+        {
+          "feature": "Adding employees generates players quests that they must choose from. Morality over money?"
+        },
+        {
+          "feature": "New GUI bring more info to the player. More info harder tasks."
+        },
+        {
+          "bug": "continually fixing performance bugs."
+        }
+      ]
+    },
+    {
+      "title": "Project T Update / Community Feedback!",
+      "date": "2018-01-16 14:32:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2747626897949506007",
+      "content": "We cannot stress enough how grateful we are for the patience shown by the community and the continued support post our rough launch! \r\n\r\nWe wanted to post a progress WIP update to show that we are not only listening to community feedback, but we're taking action on it.\r\n\r\nTo Start GUI: \r\nGui arguably was the most significant turn off for players and ex-players. To fix this, we stripped our old GUI down and remastered it to be more friendly and to decrease the number of clicks it took to get to what you want. We also increased the amount of visible information given to the player. A great deal of this information was not shown out of simplicity however that was obviously a mistake post review of community feedback.\r\n\r\nAttached is a WIP meaning Work In Progress image of our current HUD, meaning it could change pending some final changes and feedback!  We heard your guy's complaints on the original hud, and hopefully, you guys can see were making drastic changes.\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/a2bbc36a98bdf560cc602ec6ae41a142805c3f03.jpg[/img]\r\n\r\nAnother drastic change other than the GUI that we talked about was visitors. We've decided that going for a more low poly route than something hyper-realistic would play more into what the game is about! Attached below are the first 20 people were going to implement to replace our janky original models. We have also replaced the gangster walk with something more lifelike and engaging. Again this shot to the top of our list of improvements due to community feedback thanks to you! \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/b6e6978f25e12d250e423d639a819a1e75b27ed2.jpg[/img]\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/f88d8b573e0135b6c9db331e914131956c2c0ee9.jpg[/img]\r\n\r\nFinally, we decided to take a good hard look at our AI which needed a great deal of love and attention. Not only have we looked at ways to improve/end the bloodthirsty herbivores but we have looked into adding eating from trees and bushes to provide a more lifelike experience for AI. Attached is a little clip of just that happening excuse the death animation at the start! This is combined with our new outlook on feeding animals both herbivore and carnivore as we are ALSO adding lowpoly feeder animals to make better creating carnivore habitats engaging and fun! We are currently looking at adding a Cow/Goat combo and testing to see how those two first animals are used and if there are any bugs involved. \r\n\r\nhttps://gyazo.com/5a458a511747dd0210d8c5955ac0c1d7\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/62ba0a231e7195ac844d2bdf551451ee75c37230.jpg[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/c4ff578c2fdc804825640c6efb23e3ba3a40f7fb.jpg[/img]\r\n\r\n\r\n\r\nThe quality of life improvements will be followed by significant bug fixes to the Blueprint system causing massive amounts of lag and adding additional setting to the settings menu to allow for more tinkering with your computer to better run/showcase the game! \r\n\r\nOur next major update will be focused more on the game and adding in any additional features core to the gameplay and is titled Operation Jericho! We are actively seeking to improve the game and constantly looking get more feedback on what we can improve and change! \r\n\r\n[url=http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/2092bc3e7bcde927f42d2aa614c184da099ae2a0.jpg][img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/04e5e104e22c7b9839b0382d7f33cfd8ac48afca.jpg[/img][/url][img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/2092bc3e7bcde927f42d2aa614c184da099ae2a0.jpg[/img]",
+      "key": "719590::6932fa75328b383e7720796530397654008f1c74",
+      "tags": [
+        {
+          "feature": "To fix this, we stripped our old GUI down and remastered it to be more friendly and to decrease the number of clicks it took to get to what you want. We also increased the amount of visible information given to the player."
+        },
+        {
+          "feature": "We've decided that going for a more low poly route than something hyper-realistic would play more into what the game is about! Attached below are the first 20 people were going to implement to replace our janky original models. We have also replaced the gangster walk with something more lifelike and engaging."
+        },
+        {
+          "feature": "Not only have we looked at ways to improve/end the bloodthirsty herbivores but we have looked into adding eating from trees and bushes to provide a more lifelike experience for AI."
+        },
+        {
+          "feature": "This is combined with our new outlook on feeding animals both herbivore and carnivore as we are ALSO adding lowpoly feeder animals to make better creating carnivore habitats engaging and fun!"
+        },
+        {
+          "bug": "The quality of life improvements will be followed by significant bug fixes to the Blueprint system causing massive amounts of lag"
+        },
+        {
+          "feature": "and adding additional setting to the settings menu to allow for more tinkering with your computer to better run/showcase the game!"
+        }
+      ]
+    },
+    {
+      "title": "Project T Update / Community Feedback!",
+      "date": "2018-01-16 14:32:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687866014",
+      "content": "We cannot stress enough how grateful we are for the patience shown by the community and the continued support post our rough launch! \r\n\r\nWe wanted to post a progress WIP update to show that we are not only listening to community feedback, but we're taking action on it.\r\n\r\nTo Start GUI: \r\nGui arguably was the most significant turn off for players and ex-players. To fix this, we stripped our old GUI down and remastered it to be more friendly and to decrease the number of clicks it took to get to what you want. We also increased the amount of visible information given to the player. A great deal of this information was not shown out of simplicity however that was obviously a mistake post review of community feedback.\r\n\r\nAttached is a WIP meaning Work In Progress image of our current HUD, meaning it could change pending some final changes and feedback!  We heard your guy's complaints on the original hud, and hopefully, you guys can see were making drastic changes.\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/a2bbc36a98bdf560cc602ec6ae41a142805c3f03.jpg[/img]\r\n\r\nAnother drastic change other than the GUI that we talked about was visitors. We've decided that going for a more low poly route than something hyper-realistic would play more into what the game is about! Attached below are the first 20 people were going to implement to replace our janky original models. We have also replaced the gangster walk with something more lifelike and engaging. Again this shot to the top of our list of improvements due to community feedback thanks to you! \r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/b6e6978f25e12d250e423d639a819a1e75b27ed2.jpg[/img]\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/f88d8b573e0135b6c9db331e914131956c2c0ee9.jpg[/img]\r\n\r\nFinally, we decided to take a good hard look at our AI which needed a great deal of love and attention. Not only have we looked at ways to improve/end the bloodthirsty herbivores but we have looked into adding eating from trees and bushes to provide a more lifelike experience for AI. Attached is a little clip of just that happening excuse the death animation at the start! This is combined with our new outlook on feeding animals both herbivore and carnivore as we are ALSO adding lowpoly feeder animals to make better creating carnivore habitats engaging and fun! We are currently looking at adding a Cow/Goat combo and testing to see how those two first animals are used and if there are any bugs involved. \r\n\r\nhttps://gyazo.com/5a458a511747dd0210d8c5955ac0c1d7\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/62ba0a231e7195ac844d2bdf551451ee75c37230.jpg[/img]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/c4ff578c2fdc804825640c6efb23e3ba3a40f7fb.jpg[/img]\r\n\r\n\r\n\r\nThe quality of life improvements will be followed by significant bug fixes to the Blueprint system causing massive amounts of lag and adding additional setting to the settings menu to allow for more tinkering with your computer to better run/showcase the game! \r\n\r\nOur next major update will be focused more on the game and adding in any additional features core to the gameplay and is titled Operation Jericho! We are actively seeking to improve the game and constantly looking get more feedback on what we can improve and change! \r\n\r\n[url=http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/2092bc3e7bcde927f42d2aa614c184da099ae2a0.jpg][img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/04e5e104e22c7b9839b0382d7f33cfd8ac48afca.jpg[/img][/url][img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/2092bc3e7bcde927f42d2aa614c184da099ae2a0.jpg[/img]",
+      "key": "719590::7812441492a4c49418ad1a48f55860e0499cfe0b",
+      "tags": [
+        {
+          "feature": "To fix this, we stripped our old GUI down and remastered it to be more friendly and to decrease the number of clicks it took to get to what you want. We also increased the amount of visible information given to the player."
+        },
+        {
+          "feature": "We've decided that going for a more low poly route than something hyper-realistic would play more into what the game is about! Attached below are the first 20 people were going to implement to replace our janky original models. We have also replaced the gangster walk with something more lifelike and engaging."
+        },
+        {
+          "feature": "Not only have we looked at ways to improve/end the bloodthirsty herbivores but we have looked into adding eating from trees and bushes to provide a more lifelike experience for AI."
+        },
+        {
+          "feature": "This is combined with our new outlook on feeding animals both herbivore and carnivore as we are ALSO adding lowpoly feeder animals to make better creating carnivore habitats engaging and fun!"
+        },
+        {
+          "bug": "The quality of life improvements will be followed by significant bug fixes to the Blueprint system causing massive amounts of lag"
+        },
+        {
+          "feature": "and adding additional setting to the settings menu to allow for more tinkering with your computer to better run/showcase the game!"
+        }
+      ]
+    },
+    {
+      "title": "Operation Tourist | First Major Update to Mesozoica",
+      "date": "2018-01-08 22:37:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949574059187",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/ff404372c17e07ed460059e15d030c3dd21ad658.jpg[/img]\r\n\r\n                                                    Operation Tourist \r\n\r\nOur first major update to mesozoica is not based around the dinosaurs in-game (while they will get some love) our significant primary expenditure of time and effort post-launch will be on a mini milestone we are going to call Operation Tourist. Operation tourist is pretty basic when we break it down. \r\n\r\nThe first and primary focus I'm sure most of you can guess is the visitors. While not very lovely to look at the back end for advanced Ai is there as well as interactions. We have 40 new visitor variations and models that will be uploaded with Operation Tourist. This is combined with brand new animations for both male and female guests. The purpose of this primary focus is to bring back the fundamental resource of tycoon games \"visitors.\" Lawyers to feed your animals will SOON follow. \r\n\r\nWhile the new 40 visitors an entirely new visitor animations are the highlights we are confident that some of you are going to be glad to hear that we are doing a very HEAVY GUI overhaul along with Operation Tourist. We will be laying the groundwork for the tycoon features many of you will expect but will probably not be able to guess the complexity. While we won't post the initial designs once they bypass the final Kickstarter testers approval, we will post the new gui HERE to do the last check. \r\n\r\nOther improvements will be to the Dinosaurs which will be more social and use more sounds/animations rather than cycle the three primary barbaric function of 1) Sleep 2) Eat 3) Kill. The new sounds will open up a new door for immersion as we're focusing on footsteps and other \"animal noises.\" Ai will be a constant theme as we continually seek to fix bugs and add to the AI to make it more believable. Another unique item we plan on adding is the COW, yes a cow that serves as the first moving food source for carnivores.\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/f31da64b080c04ecdeac66d9b339588fa0dceac6.jpg[/img] \r\n\r\nSo we have three main topics of Operation Tourist 1) New visitors/animations 2) New GUI 3) New sounds/better Ai. \r\n\r\nHowever, we wouldn't feel accomplished unless this FIRST big update had FOUR new dinosaurs with it as well. We are not counting the Stryaco as we removed it in a bug and hopefully will add it shortly.  So you theoretically can expect five animals. \r\n\r\nWe want to thank everyone for the patience and understanding that this is our baby and are not done with her. We will continue to update the game and add support for as long as we plausibly can.\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/1482c4ca5d4bab643430e61677729602a30a0f06.jpg[/img]",
+      "key": "719590::b282be14eb080fed52a7b05cd2dd7f2eeafaf6b0",
+      "tags": [
+        {
+          "feature": "We have 40 new visitor variations and models that will be uploaded with Operation Tourist. This is combined with brand new animations for both male and female guests."
+        },
+        {
+          "feature": "we are doing a very HEAVY GUI overhaul along with Operation Tourist."
+        },
+        {
+          "feature": "Other improvements will be to the Dinosaurs which will be more social and use more sounds/animations rather than cycle the three primary barbaric function of 1) Sleep 2) Eat 3) Kill."
+        },
+        {
+          "bug": "We are not counting the Stryaco as we removed it in a bug and hopefully will add it shortly."
+        },
+        {
+          "feature": "Another unique item we plan on adding is the COW, yes a cow that serves as the first moving food source for carnivores."
+        },
+        {
+          "feature": "However, we wouldn't feel accomplished unless this FIRST big update had FOUR new dinosaurs with it as well."
+        }
+      ]
+    },
+    {
+      "title": "Operation Tourist | First Major Update to Mesozoica",
+      "date": "2018-01-08 22:37:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687866226",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/ff404372c17e07ed460059e15d030c3dd21ad658.jpg[/img]\r\n\r\n                                                    Operation Tourist \r\n\r\nOur first major update to mesozoica is not based around the dinosaurs in-game (while they will get some love) our significant primary expenditure of time and effort post-launch will be on a mini milestone we are going to call Operation Tourist. Operation tourist is pretty basic when we break it down. \r\n\r\nThe first and primary focus I'm sure most of you can guess is the visitors. While not very lovely to look at the back end for advanced Ai is there as well as interactions. We have 40 new visitor variations and models that will be uploaded with Operation Tourist. This is combined with brand new animations for both male and female guests. The purpose of this primary focus is to bring back the fundamental resource of tycoon games \"visitors.\" Lawyers to feed your animals will SOON follow. \r\n\r\nWhile the new 40 visitors an entirely new visitor animations are the highlights we are confident that some of you are going to be glad to hear that we are doing a very HEAVY GUI overhaul along with Operation Tourist. We will be laying the groundwork for the tycoon features many of you will expect but will probably not be able to guess the complexity. While we won't post the initial designs once they bypass the final Kickstarter testers approval, we will post the new gui HERE to do the last check. \r\n\r\nOther improvements will be to the Dinosaurs which will be more social and use more sounds/animations rather than cycle the three primary barbaric function of 1) Sleep 2) Eat 3) Kill. The new sounds will open up a new door for immersion as we're focusing on footsteps and other \"animal noises.\" Ai will be a constant theme as we continually seek to fix bugs and add to the AI to make it more believable. Another unique item we plan on adding is the COW, yes a cow that serves as the first moving food source for carnivores.\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/f31da64b080c04ecdeac66d9b339588fa0dceac6.jpg[/img] \r\n\r\nSo we have three main topics of Operation Tourist 1) New visitors/animations 2) New GUI 3) New sounds/better Ai. \r\n\r\nHowever, we wouldn't feel accomplished unless this FIRST big update had FOUR new dinosaurs with it as well. We are not counting the Stryaco as we removed it in a bug and hopefully will add it shortly.  So you theoretically can expect five animals. \r\n\r\nWe want to thank everyone for the patience and understanding that this is our baby and are not done with her. We will continue to update the game and add support for as long as we plausibly can.\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/1482c4ca5d4bab643430e61677729602a30a0f06.jpg[/img]",
+      "key": "719590::8139fbacbab5e9a807db706aeee0502c9c1e352e",
+      "tags": [
+        {
+          "feature": "We have 40 new visitor variations and models that will be uploaded with Operation Tourist. This is combined with brand new animations for both male and female guests."
+        },
+        {
+          "feature": "we are doing a very HEAVY GUI overhaul along with Operation Tourist."
+        },
+        {
+          "feature": "Other improvements will be to the Dinosaurs which will be more social and use more sounds/animations rather than cycle the three primary barbaric function of 1) Sleep 2) Eat 3) Kill."
+        },
+        {
+          "bug": "We are not counting the Stryaco as we removed it in a bug and hopefully will add it shortly."
+        },
+        {
+          "feature": "Another unique item we plan on adding is the COW, yes a cow that serves as the first moving food source for carnivores."
+        },
+        {
+          "feature": "However, we wouldn't feel accomplished unless this FIRST big update had FOUR new dinosaurs with it as well."
+        }
+      ]
+    },
+    {
+      "title": "Development map has been finalized - Will be published shortly",
+      "date": "2018-01-07 13:02:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949569002525",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/1e8012e014168bccccf6493453b205b696f2a1c6.jpg[/img]\r\n\r\nOver the next couple days, we will be making a development map for everyone following the project to better explain the improvements to Mesozoica over the course of Early Access. We have spent the time post-launch fixing bugs and will continue to do so, however with the map officially passed by the entire team comes a change in priorities. We will be looking to make significant changes to the game and adding new features not yet announced to round better out what the game is supposed to be! \r\n\r\nThank you for your continued feedback as we believe the comments we have gotten have shaped our outlook on the game a great deal and better allows us to create a superior game.\r\n\r\n- Big changes include interactive menus for all core pieces\r\n- Total GUI Overhaul \r\n- New visitors models and animations \r\n- Steam Workshop Integration\r\n- Visitor management \r\n- Dinosaur management \r\n- Company selection and employee management\r\n- Board Confidence / Marketing Feature\r\n- Economy Management \r\n- Safety and security management",
+      "key": "719590::191adf0d9cefab0816a6d7d3f9dccd781dbf2849",
+      "tags": [
+        {
+          "feature": "- Big changes include interactive menus for all core pieces"
+        },
+        {
+          "feature": "- Total GUI Overhaul "
+        },
+        {
+          "feature": "- New visitors models and animations "
+        },
+        {
+          "feature": "- Steam Workshop Integration"
+        },
+        {
+          "feature": "- Visitor management "
+        },
+        {
+          "feature": "- Dinosaur management "
+        },
+        {
+          "feature": "- Company selection and employee management"
+        },
+        {
+          "feature": "- Board Confidence / Marketing Feature"
+        },
+        {
+          "feature": "- Economy Management "
+        },
+        {
+          "feature": "- Safety and security management"
+        }
+      ]
+    },
+    {
+      "title": "Development map has been finalized - Will be published shortly",
+      "date": "2018-01-07 13:02:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687866326",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/31506912/1e8012e014168bccccf6493453b205b696f2a1c6.jpg[/img]\r\n\r\nOver the next couple days, we will be making a development map for everyone following the project to better explain the improvements to Mesozoica over the course of Early Access. We have spent the time post-launch fixing bugs and will continue to do so, however with the map officially passed by the entire team comes a change in priorities. We will be looking to make significant changes to the game and adding new features not yet announced to round better out what the game is supposed to be! \r\n\r\nThank you for your continued feedback as we believe the comments we have gotten have shaped our outlook on the game a great deal and better allows us to create a superior game.\r\n\r\n- Big changes include interactive menus for all core pieces\r\n- Total GUI Overhaul \r\n- New visitors models and animations \r\n- Steam Workshop Integration\r\n- Visitor management \r\n- Dinosaur management \r\n- Company selection and employee management\r\n- Board Confidence / Marketing Feature\r\n- Economy Management \r\n- Safety and security management",
+      "key": "719590::2f7bade25a25dd4ec72b4124592739ef0bfc9bee",
+      "tags": [
+        {
+          "feature": "- Big changes include interactive menus for all core pieces"
+        },
+        {
+          "feature": "- Total GUI Overhaul "
+        },
+        {
+          "feature": "- New visitors models and animations "
+        },
+        {
+          "feature": "- Steam Workshop Integration"
+        },
+        {
+          "feature": "- Visitor management "
+        },
+        {
+          "feature": "- Dinosaur management "
+        },
+        {
+          "feature": "- Company selection and employee management"
+        },
+        {
+          "feature": "- Board Confidence / Marketing Feature"
+        },
+        {
+          "feature": "- Economy Management "
+        },
+        {
+          "feature": "- Safety and security management"
+        }
+      ]
+    },
+    {
+      "title": "Early Access 1.1.2- Patch Notes",
+      "date": "2018-01-05 20:43:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949562933220",
+      "content": "After going through a lot of the feedback we received on the game, we are pushing today's update which includes tweaks to the AI to make dinosaurs friendlier and more. \r\n\r\n- Added Triceratops horridus\r\n- Added Styracosaurus albertensis\r\n- Fixed Parasaurolophus walkeri only having one eyeball. Bye bye pirate!\r\n- Made herbivores a bit more friendly and carnivores tougher ;)\r\n- Made the unlocking sound shorter and blend better with the DNA World Map \r\nsoundtrack\r\n- Updated LOD's of certain dinosaurs to increase performance in your park\r\n- Changed size of herbivore food LOD's\r\n- Spelling checks\r\n- Added brand new default blueprints which you can use to decorate your park.",
+      "key": "719590::8a5bd7b8dc0ccceaec8111035adfbc46f67c1340",
+      "tags": [
+        {
+          "feature": "- Added Triceratops horridus"
+        },
+        {
+          "feature": "- Added Styracosaurus albertensis"
+        },
+        {
+          "bug": "- Fixed Parasaurolophus walkeri only having one eyeball. Bye bye pirate!"
+        },
+        {
+          "balance_change": "- Made herbivores a bit more friendly and carnivores tougher ;)"
+        },
+        {
+          "feature": "- Added brand new default blueprints which you can use to decorate your park."
+        }
+      ]
+    },
+    {
+      "title": "Early Access 1.1.2- Patch Notes",
+      "date": "2018-01-05 20:43:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687866434",
+      "content": "After going through a lot of the feedback we received on the game, we are pushing today's update which includes tweaks to the AI to make dinosaurs friendlier and more. \r\n\r\n- Added Triceratops horridus\r\n- Added Styracosaurus albertensis\r\n- Fixed Parasaurolophus walkeri only having one eyeball. Bye bye pirate!\r\n- Made herbivores a bit more friendly and carnivores tougher ;)\r\n- Made the unlocking sound shorter and blend better with the DNA World Map \r\nsoundtrack\r\n- Updated LOD's of certain dinosaurs to increase performance in your park\r\n- Changed size of herbivore food LOD's\r\n- Spelling checks\r\n- Added brand new default blueprints which you can use to decorate your park.",
+      "key": "719590::601f49728d170740786ed43c37135e5b5a6efe4f",
+      "tags": [
+        {
+          "feature": "- Added Triceratops horridus"
+        },
+        {
+          "feature": "- Added Styracosaurus albertensis"
+        },
+        {
+          "bug": "- Fixed Parasaurolophus walkeri only having one eyeball. Bye bye pirate!"
+        },
+        {
+          "balance_change": "- Made herbivores a bit more friendly and carnivores tougher ;)"
+        },
+        {
+          "feature": "- Added brand new default blueprints which you can use to decorate your park."
+        }
+      ]
+    },
+    {
+      "title": "Blue Print Patch/ Two New Dinosaurs? Hotfix for some AI issues! Day 4 or 5 Patch.",
+      "date": "2018-01-05 09:51:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949561296842",
+      "content": "What we found is that our blueprint system is precisely what we wanted it to be! It gives anyone with the right skill set the ability to create very literally everything and anything they want (yes even a Burger King and Mcdonalds)\r\n\r\nHowever, that type of freedom and ability to create isn't for everyone. This is entirely fine I'm the definition of blueprint challenged. \r\n\r\nTo solve this immediately, we are uploading all if not 99% of the custom blueprints from the community to put in the game. Your submissions above are the keystone to what will make mesozoica great. The ability to add what the community builds and dreams up is the first step towards showing people what one of the strengths mesozoica has. \r\n\r\nThis patch will either come today or tomorrow(pending confirmation on a hotfix) and not only host blueprint updates but also include two new dinosaurs! Yes, we weren't kidding about having all the dinosaurs ready......  We are adding them gradually to test and make sure they aren't a complete mess. Think of it as gently opening the faucet to drops at a time instead of a full blast from 0% to 100%.\r\n\r\nWe are focusing on AI at the moment, quick fixes for dinosaurs getting stuck BUT also more individual sounds and better/more realistic interactions! Your reports ARE KEY to this process, please don't stop recording and typing out the bomb reports we have been getting on GitHub. Those reports are the reason why we can progress quickly and get hotfixes into the game as best we can! \r\n\r\nIf we can continue to develop and get feedback from the community week one will go down as arguably the most influential week of the game in a long time! \r\n\r\nThank you for not giving up on the project. We're going to match and beat any invested time/energy you put into this community with development time/effort.\r\n\r\nSincerely,\r\n\r\nThe mesozoica Team",
+      "key": "719590::eb3677bd340cfa7fdf870612804c2319f48926f7",
+      "tags": [
+        {
+          "feature": "This patch will either come today or tomorrow(pending confirmation on a hotfix) and not only host blueprint updates but also include two new dinosaurs!"
+        },
+        {
+          "bug": "We are focusing on AI at the moment, quick fixes for dinosaurs getting stuck"
+        },
+        {
+          "feature": "BUT also more individual sounds and better/more realistic interactions!"
+        }
+      ]
+    },
+    {
+      "title": "Blue Print Patch/ Two New Dinosaurs? Hotfix for some AI issues! Day 4 or 5 Patch.",
+      "date": "2018-01-05 09:51:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687866542",
+      "content": "What we found is that our blueprint system is precisely what we wanted it to be! It gives anyone with the right skill set the ability to create very literally everything and anything they want (yes even a Burger King and Mcdonalds)\r\n\r\nHowever, that type of freedom and ability to create isn't for everyone. This is entirely fine I'm the definition of blueprint challenged. \r\n\r\nTo solve this immediately, we are uploading all if not 99% of the custom blueprints from the community to put in the game. Your submissions above are the keystone to what will make mesozoica great. The ability to add what the community builds and dreams up is the first step towards showing people what one of the strengths mesozoica has. \r\n\r\nThis patch will either come today or tomorrow(pending confirmation on a hotfix) and not only host blueprint updates but also include two new dinosaurs! Yes, we weren't kidding about having all the dinosaurs ready......  We are adding them gradually to test and make sure they aren't a complete mess. Think of it as gently opening the faucet to drops at a time instead of a full blast from 0% to 100%.\r\n\r\nWe are focusing on AI at the moment, quick fixes for dinosaurs getting stuck BUT also more individual sounds and better/more realistic interactions! Your reports ARE KEY to this process, please don't stop recording and typing out the bomb reports we have been getting on GitHub. Those reports are the reason why we can progress quickly and get hotfixes into the game as best we can! \r\n\r\nIf we can continue to develop and get feedback from the community week one will go down as arguably the most influential week of the game in a long time! \r\n\r\nThank you for not giving up on the project. We're going to match and beat any invested time/energy you put into this community with development time/effort.\r\n\r\nSincerely,\r\n\r\nThe mesozoica Team",
+      "key": "719590::2ae07789a8193a2d86c5d8974ca75565d8050e1b",
+      "tags": [
+        {
+          "feature": "This patch will either come today or tomorrow(pending confirmation on a hotfix) and not only host blueprint updates but also include two new dinosaurs!"
+        },
+        {
+          "bug": "We are focusing on AI at the moment, quick fixes for dinosaurs getting stuck"
+        },
+        {
+          "feature": "BUT also more individual sounds and better/more realistic interactions!"
+        }
+      ]
+    },
+    {
+      "title": "Early Access 1.1 - Patch Notes",
+      "date": "2018-01-04 01:47:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949556468580",
+      "content": "For today's patch we have focused on some important bugs and added 4 additional dinosaurs to the roster. Keep an eye open for more updates very soon!\r\n\r\n- Fixed bench ghost duplicates\r\n- Fixed visitors sitting on invisible benches\r\n- Fixed rendering glich in transparent mesh outline\r\n- Fixed bug when placing blueprint with core piece causing objects to be non \r\n  interactable\r\n- Fixed null pointer in scene emotions when buying dinosaur in DNA menu\r\n- Fixed dinosaurs stuck in drinking state\r\n- Fixed dinosaurs keep switching between drinking and eating\r\n- Fixed specific dinosaur size bug in DNA menu\r\n- Added Dakotaraptor\r\n- Added Kentrosaurus\r\n- Added Maiasaura\r\n- Added Pachycephalosaurus\r\n",
+      "key": "719590::4d8e4bfd4e70ce4da481e20636bc6175795a061e",
+      "tags": [
+        {
+          "bug": "- Fixed bench ghost duplicates"
+        },
+        {
+          "bug": "- Fixed visitors sitting on invisible benches"
+        },
+        {
+          "bug": "- Fixed rendering glich in transparent mesh outline"
+        },
+        {
+          "bug": "- Fixed bug when placing blueprint with core piece causing objects to be non \n  interactable"
+        },
+        {
+          "bug": "- Fixed null pointer in scene emotions when buying dinosaur in DNA menu"
+        },
+        {
+          "bug": "- Fixed dinosaurs stuck in drinking state"
+        },
+        {
+          "bug": "- Fixed dinosaurs keep switching between drinking and eating"
+        },
+        {
+          "bug": "- Fixed specific dinosaur size bug in DNA menu"
+        },
+        {
+          "feature": "- Added Dakotaraptor"
+        },
+        {
+          "feature": "- Added Kentrosaurus"
+        },
+        {
+          "feature": "- Added Maiasaura"
+        },
+        {
+          "feature": "- Added Pachycephalosaurus"
+        }
+      ]
+    },
+    {
+      "title": "Early Access 1.1 - Patch Notes",
+      "date": "2018-01-04 01:47:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687866643",
+      "content": "For today's patch we have focused on some important bugs and added 4 additional dinosaurs to the roster. Keep an eye open for more updates very soon!\r\n\r\n- Fixed bench ghost duplicates\r\n- Fixed visitors sitting on invisible benches\r\n- Fixed rendering glich in transparent mesh outline\r\n- Fixed bug when placing blueprint with core piece causing objects to be non \r\n  interactable\r\n- Fixed null pointer in scene emotions when buying dinosaur in DNA menu\r\n- Fixed dinosaurs stuck in drinking state\r\n- Fixed dinosaurs keep switching between drinking and eating\r\n- Fixed specific dinosaur size bug in DNA menu\r\n- Added Dakotaraptor\r\n- Added Kentrosaurus\r\n- Added Maiasaura\r\n- Added Pachycephalosaurus\r\n",
+      "key": "719590::001e1fb84b93dd44a55aa4e6ee9190244499add2",
+      "tags": [
+        {
+          "bug": "- Fixed bench ghost duplicates"
+        },
+        {
+          "bug": "- Fixed visitors sitting on invisible benches"
+        },
+        {
+          "bug": "- Fixed rendering glich in transparent mesh outline"
+        },
+        {
+          "bug": "- Fixed bug when placing blueprint with core piece causing objects to be non \n  interactable"
+        },
+        {
+          "bug": "- Fixed null pointer in scene emotions when buying dinosaur in DNA menu"
+        },
+        {
+          "bug": "- Fixed dinosaurs stuck in drinking state"
+        },
+        {
+          "bug": "- Fixed dinosaurs keep switching between drinking and eating"
+        },
+        {
+          "bug": "- Fixed specific dinosaur size bug in DNA menu"
+        },
+        {
+          "feature": "- Added Dakotaraptor"
+        },
+        {
+          "feature": "- Added Kentrosaurus"
+        },
+        {
+          "feature": "- Added Maiasaura"
+        },
+        {
+          "feature": "- Added Pachycephalosaurus"
+        }
+      ]
+    },
+    {
+      "title": "Day 1 patch delayed a couple hours!",
+      "date": "2018-01-03 23:11:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949556076414",
+      "content": "Hello, everyone, we are delighted to say we are on pace for a beautiful little day one gift or rather an \"early\" day two gift. We had had to push back the day one free content patch a couple of hours to test a final bug that came up when we were building and playing it.\r\n\r\nWe are pleased to say this patch will contain hotfixes to general issues, an Icon change and more importantly FOUR new animals added to the game! \r\n\r\nWe will continue to add content along with content in hopes that our progression allows us to update the game on a bi-daily if not weekly basis! \r\n\r\nThank you for the great feedback and the excellent blueprint creations found in our steam discussions! \r\n\r\nHeres excited for the future as we patch/fix the glaring needs and add more fun stuff to play with!",
+      "key": "719590::6ed2c56fac8324d7d3f21ccf008beb94ca9f610c",
+      "tags": [
+        {
+          "bug": "- We had had to push back the day one free content patch a couple of hours to test a final bug that came up when we were building and playing it."
+        },
+        {
+          "feature": "- an Icon change and more importantly FOUR new animals added to the game!"
+        }
+      ]
+    },
+    {
+      "title": "Day 1 patch delayed a couple hours!",
+      "date": "2018-01-03 23:11:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687866756",
+      "content": "Hello, everyone, we are delighted to say we are on pace for a beautiful little day one gift or rather an \"early\" day two gift. We had had to push back the day one free content patch a couple of hours to test a final bug that came up when we were building and playing it.\r\n\r\nWe are pleased to say this patch will contain hotfixes to general issues, an Icon change and more importantly FOUR new animals added to the game! \r\n\r\nWe will continue to add content along with content in hopes that our progression allows us to update the game on a bi-daily if not weekly basis! \r\n\r\nThank you for the great feedback and the excellent blueprint creations found in our steam discussions! \r\n\r\nHeres excited for the future as we patch/fix the glaring needs and add more fun stuff to play with!",
+      "key": "719590::720519a6282cc2a26405b0cc38b1c72e6ffaf9cd",
+      "tags": [
+        {
+          "bug": "- We had had to push back the day one free content patch a couple of hours to test a final bug that came up when we were building and playing it."
+        },
+        {
+          "feature": "- an Icon change and more importantly FOUR new animals added to the game!"
+        }
+      ]
+    }
+  ]
+}

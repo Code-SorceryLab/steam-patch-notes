@@ -1,0 +1,1311 @@
+{
+  "appId": "2165810",
+  "count": 14,
+  "notes": [
+    {
+      "title": "We Hired a Player?! | Dev Blog 2: Chunks",
+      "date": "2025-08-27 12:30:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871558410",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43039829/82d90a76224f1eca446f5e9ed391ee865bf1acfa.gif[/img]\n[h2][b][i]Heya, Rogues,[/i][/b][/h2]\n[i]Antishyr here, the community manager of [b]Streets of Rogue 2[/b]. In this devblog, I'd like to offer you a peek at dungeons, show you how we handcraft interiors for the game, and talk about how Matt, the dev, hired a player to help him construct \"chunks.\" Who is that guy? And wtf's a chunk? Let's find out.[/i]\n\n\n[h1][b]DEVBLOG 2: CHUNKS[/b][/h1]\n[h3][b]BUILDING THE STREETS[/b][/h3]\n[quote][img]{STEAM_CLAN_IMAGE}/43039829/819c0a818424177fb7cbd443e3e48f84e766ff0d.png[/img][/quote]\n[i][b]SoR 2[/b][/i] is an ambitious open-world game, which means everybody expects its environments to be immersive and diverse. Matt Dabrowski, the sole programmer/designer of the game, created a system that generates a whole island country with cities/towns, rivers, and forests when you start a new save. However, for every piece of the game world, large and small, there's always a looming question: \"Is it worth spending time writing a system to generate this procedurally, or would the results be better (and, potentially, more efficient) if I just made this myself?\"  Generally, Streets of Rogue 2 follows a similar formula to the original game: Procedurally generate the maps, while handcrafting the individual pieces of those maps. Those \"pieces\" are classified as \"chunks\".\n\n[code]Chunk [t\u0283\u028c\u014bk], noun: a section of the Streets of Rogue 2's map in the form of a building interior, park, road intersection, you name it.[/code]\nHere's an example of an interior office chunk:\n\n[img]{STEAM_CLAN_IMAGE}/43039829/203b3bdaa7ffbea54d6c7abe9be3b10db80eaaa2.png[/img]\n\nIn the open world of [i][b]SoR 2[/b][/i], regions are the largest form of measurement. Then there are chunks, and the smallest form is a tile. The smallest regions are comprised of 4x4 normal-sized chunks, while the largest are 16x16. A normal-sized chunk has 16x16 tiles, while the smallest has 8x8 tiles, and the largest has 64x64 tiles, making it the size of the smallest region. A greatly expanded version of the level editor from [i][b]SoR 1[/b][/i] is used to create chunks.\n\n[img]{STEAM_CLAN_IMAGE}/43039829/c03f1ae3a0090882e22bcdd7e3520436e5d6fb5c.gif[/img]\n\nBy the way, if you want to learn even more about how chunks are developed, check out this [url=https://youtu.be/i_HA855WzdI?t=629]video devlog[/url] by Matt.\n\nCompared to [i][b]Streets 1[/b][/i], [i][b]SoR 2[/b][/i] will have a much bigger variety of chunk sizes. The inclusion of smaller chunks comes in handy when Matt fills the world with small filler locations:\n\n[table equalcells=1]\n    [tr]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/aa7f411fcfc0eed15b2f4b3e9580f052be7dabf9.png[/img][/th]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/194c25d0931c09365e4b7aa7b0e5e0387b3538b6.png[/img][/th]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/6c4b27c7abdc7eb39919695c98b7ff93eb0629b6.png[/img][/th]\n    [/tr]\n[/table][img]{STEAM_CLAN_IMAGE}/43039829/f805a0d3e031aa204d375e088fecc2bcc87a9d35.png[/img]\n[h3][b]\ud83d\udda5\ufe0f FROM PLAYER TO DEV[/b][/h3]\nInitially, Matt wanted to create all the chunks by hand before realizing it was an enormous amount of work that would, before long, drive him crazy if added to an already extensive solodev list of various tasks.\n\nEnter [b]Cyan_Light[/b], real name: Clay\u2014a [i][b]SoR[/b][/i] player and a prominent modder who has contributed countless incredible workshop items to the first game's community. He and Matt decided to join forces, and the rest is history: Clay has already crafted thousands (!) of chunks for the sequel. I'm not kidding. Here are some of the examples of his most recent works:\n\n[table equalcells=1]\n    [tr]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/c689e22a7d2c3941a2b9517fbc3ad4fd3e3c7c3f.png[/img][/th]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/09cfba1a2fe113b59ef4bc484219b81eaab41c54.png[/img][/th]\n    [/tr]\n    [tr]\n        [td]Movie theater: editor[/td]\n        [td]Movie theater: in-game[/td]\n    [/tr]\n[/table]\n[table equalcells=1]\n    [tr]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/3165266b367539cdb1a89e72ad3417d9304fd289.png[/img][/th]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/d897ce94603b4a51b209297c581c68042ae07df2.png[/img][/th]\n    [/tr]\n    [tr]\n        [td]Ice rink: editor[/td]\n        [td]Ice rink: in-game[/td]\n    [/tr]\n[/table]\n[table equalcells=1]\n    [tr]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/cf97cc0b482db69cec789e7c123fabbc0c870abc.png[/img][/th]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/e43f09ca93e87db93af059fd58f9c9b5ffd5e71e.png[/img][/th]\n    [/tr]\n    [tr]\n        [td]Lab: editor[/td]\n        [td]Lab: in-game[/td]\n    [/tr]\n[/table]\nTo make Cyan_Light's work less time-consuming, Matt designed the editor in such a way that it attempts to improve efficiency and minimize human errors as much as possible without limiting creativity. For example, if you place a locked door on a wall, the game will determine which direction the door should be facing to ensure that it's locked from the correct side. Or, if you place a generic chair, the game will determine if chair variants exist for the specific type of chunk you're creating (i.e., Police Station or Suburban Home), and display one of those variants. On top of that, you can now randomize other elements like the amount of damage on objects\u2014a table in the President's office would be in mint condition, while one in a drug den... maybe not so much?\n\nWhen it comes to deciding where to put quest objects in a chunk, Clay drops a marker that the game obediently populates with a randomized item\u2014a chest, a safe, a kidnapped person. It all depends on the requirements of the quest. Some pieces, like vending machines, may be thrown in randomly, but others, like, say, augmentation booths, will abide by common sense: You'll see an aug booth near a hospital. You can also tweak the spawn chance of objects for more variety:\n\n[img]{STEAM_CLAN_IMAGE}/43039829/453eeb170a39587b62a8d7854f8bd48fb1c9077b.png[/img]\n\nQuality-of-life features like those I listed above help with the pace of pumping out chunks: One takes 10-15 minutes to cook, larger ones\u2014up to an hour. \n\n[h3][b]\ud83d\udc63 LEVEL DESIGN[/b][/h3]\nWhen putting chunks together for missions, Clay makes sure there are always multiple ways to approach a quest. Here's a vent to put syringes into, and there's a PC to hack, and a bunch of windows to crack and climb through. Maybe a conveniently placed 1500-lb overheated generator in one of the backrooms.\n\nWhen it comes to choosing how to complete a quest, the material a building is made of is important. You can blast through wood and brick to get inside a building (or even ride through it if your vehicle is souped-up enough). Steel buildings might prove to be more of a challenge. Naturally, you'll see more structures made of sturdier materials in high-level game areas.\n\nA lot of attention is paid to designing dungeons. E.g., mayor's offices are huge chunks that require a meticulous approach from the design standpoint.\n\n[h3][b]\ud83e\udd87 SPEAKING OF DUNGEONS...[/b][/h3]\n...I know you've been waiting for more details on this feature. Work is being put into it as we speak; in addition to wild caves and office dungeons we talked about above, [b]cannibal hideouts[/b] and [b]house basements[/b] are in the works, as well as other types of dungeon biomes we'll reveal later.\n\nOne thing to note: While dungeon levels like the ones you see here are entirely handcrafted, procedurally generated dungeon maps comprised of smaller chunks are also planned. Much of the programming for these has been completed, but Matt has opted to hold off on further development of these until after the Early Access launch because, in Matt's words, \"the game should probably ship at some point... yeah, that would be ideal\".\n\n[table equalcells=1]\n    [tr]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/881b888c4618918654c22e47f1f92aee2dacecc4.png[/img][/th]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/721c026e00f140bbd0fbbee20901cbcad4f315a4.png[/img][/th]\n    [/tr]\n    [tr]\n        [td]House basement: editor[/td]\n        [td]House basement: in-game[/td]\n    [/tr]\n[/table]\n[img]{STEAM_CLAN_IMAGE}/43039829/90c21fb57cee4664ae2e0c87f6a1ab91f908c0da.gif[/img]\n[i]Having a swimming pool in your basement is some luxury sh*t, ngl.\u261d\ufe0f[/i]\n\n\nHere's a look at a mostly-completed cave dungeon chunk. I say \"mostly\" because diagonal walls are currently getting an overhaul and thus are missing from this revision of the chunk. It's also missing some extra cave flourishes that were just recently added, notably cave lakes.\n\n[img]{STEAM_CLAN_IMAGE}/43039829/250463216020fbc07e1b2722279896746c922267.png[/img]\n\n[h3][b]\ud83d\udee0\ufe0f LEVEL EDITOR & WORKSHOP SUPPORT[/b][/h3]\n[i] \"Do I get to do all these fun things in the level editor, too?\"[/i], you may ask. The short and definitive answer is \"Yes.\" All tools that Cyan_Light has at his disposal should become accessible to the community in the future with the release of the level editor\u2014that one is planned to be rolled out at some time after the early access launch. Players will be able to create new chunks and entire levels for the game, as was possible in the original game.\n\nThe level editor is already packed with tiles, wall types, animals, melee weapons, and firearms to play around with, with more coming in the future. Interestingly, adding abundant content to a game is not the biggest grind an indie dev can undertake:\n\n[img]{STEAM_CLAN_IMAGE}/43039829/180088f969ee9849ec1c7ce0a423b9cb050811d5.png[/img]\n\nAs you can see from this tweet, Matt's currently focused on better floor tile mixing and sorting out diagonal wall issues. As soon as that's in the books, he'll be working primarily on design Implementation and balance tasks. Following that, he'll be completing the local co-op mode. For more info, check out the game's [url=https://sor2.notion.site/]Roadmap[/url]. I'll share more details when I have them!\n\n[hr][/hr]\nAs always, thanks for your support, all. Comment your thoughts on the devblog below and wishlist/follow [i][b]Streets of Rogue 2[/b][/i] to stay updated:\n\nhttps://store.steampowered.com/app/2165810/Streets_of_Rogue_2/\nRead previous dev blogs:\n[url=https://steamcommunity.com/games/2165810/announcements/detail/500579345320904552]Devblog I: Vehicles[/url]\n\n[b]Watch video devlogs:[/b]\n[url=https://www.youtube.com/watch?v=gcSK1YYUvBo]Devlog 1: How I Approach World-Building? \ud83c\udf0e[/url]\n[url=https://www.youtube.com/watch?v=i_HA855WzdI]Devlog 2: Creating an Open World Solo \ud83d\uddfa\ufe0f[/url]\n[url=https://www.youtube.com/watch?v=auYaF_NCdFE]Devlog 3: Games That Inspired SoR 2 \ud83d\udca1[/url]\n[url=https://www.youtube.com/watch?v=4BcpVvcxAp8]Devlog 4: New Release ETA, Roadmap \ud83d\uddfa\ufe0f[/url]\n[hr][/hr]Join the community on Discord: \n[url=\"https://discord.gg/streetsofrogue\"][b]\ud83d\udd17DISCORD[/b][/url]\n\nFollow [i][b]Streets of Rogue 2[/b][/i] on social media:\n[url=\"https://twitter.com/streetsofrogue\"][b]\ud83d\udd17TWITTER (X)[/b][/url]\n[url=\"https://www.tiktok.com/@streetsofrogue\"][b]\ud83d\udd17TIKTOK[/b][/url]\n[url=\"https://www.youtube.com/@StreetsofRogue2\"][b]\ud83d\udd17YOUTUBE[/b][/url]\n[url=\"https://www.reddit.com/r/streetsofrogue/\"][b]\ud83d\udd17REDDIT[/b][/url]",
+      "key": "2165810::dc5990ff413e0e761007ed4651c32461111d7fad",
+      "tags": [
+        {
+          "feature": "As you can see from this tweet, Matt's currently focused on better floor tile mixing and sorting out diagonal wall issues."
+        },
+        {
+          "feature": "As soon as that's in the books, he'll be working primarily on design Implementation and balance tasks."
+        },
+        {
+          "feature": "Following that, he'll be completing the local co-op mode."
+        }
+      ]
+    },
+    {
+      "title": "Streets of Rogue 2 | Dev Blog 1: Vehicles",
+      "date": "2025-07-29 12:00:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758775464",
+      "content": "[img src=\"{STEAM_CLAN_IMAGE}/43039829/7290600ed8cb7320f71c05063153d7a60bbbcc39.gif\"][/img][h2][b][i]Hey there, Rogues![/i][/b][/h2]\n[i]Antishyr here, the game's community manager. Now, you might be wondering: \"Where's the next devlog?\" Well, I agree it's about time we released one, so Matt Dabrowski, the game's dev, and I decided to bring you a behind-the-scenes in the form of this [b]dev blog[/b].\n\nThis article will focus on motor vehicles\u2014one of the main open-world features of [b]Streets of Rogue 2[/b]. We sat down with Matt to outline the main aspects of motor driving we wanted to highlight for you guys, and here's the result. Hope you enjoy it![/i]\n\n\n[h1][b]DEVBLOG 1: VEHICLES[/b][/h1]\n[h3][b]DESIGNING CHAOS ON FOUR WHEELS[/b][/h3]\n[quote][img src=\"{STEAM_CLAN_IMAGE}/43039829/bcbbfdf98d8fce7d5087f2f31e3472d5b8fa1999.png\"][/img][/quote]Since the early days of the [i][b]GTA[/b][/i] series, it's been hard to imagine open-world games without cruising the streets in a cool-looking whip. [i][b]Streets of Rogue 2[/b][/i] is no different, allowing you to explore the procedurally generated island nation on four wheels\u2014or on the waves, for that matter. Just like any video game mechanic, allowing the player to drive vehicles comes with its fair share of challenges. Let's dive into some of them.\n\n[h3][b]\ud83e\udded NAVIGATION[/b][/h3]In an open world, getting from point A to point B has to be practical, prompt, and, most of all, entertaining. Introducing vehicles was a no-brainer at the concept stage\u2014I mean, it's a modern-day city, and the days of using horses are kinda behind us (though the game does have rideable horses!) Overall, you'll be doing a lot of driving in [i][b]SoR 2[/b][/i]. \n\nIn addition to that, phone booths [img src=\"{STEAM_CLAN_IMAGE}/43039829/922288ed9eb0885ca018f9c82b6897afc7250f29.png\"][/img] will be installed across the world, meant for teleportation. The balance between driving and teleportation is still being determined, which will take some time. In the Alpha Demo currently available on Steam, you barely have any teleport options, which may lead to too much driving at times, and ultimately too much downtime between activities. Matt's plan? Fix that by letting you grab missions over [b]the phone[/b] rather than returning to questgivers, and adding a \u201ctown portal\u201d-style teleport mechanic in the future.\n\n[h3][b]\ud83c\udfae CONTROLS & PHYSICS[/b][/h3]It takes Matt a lot of messing around with different values to nail the feel of a car. [i]\"If I make things 10 times more slippery, how will it feel?\"; \"What is the right amount of bounciness?\"[/i] The answers to these questions lie in spending time in the engine and adjusting the physics. Check out this short video that demonstrates that process:\n[dynamiclink href=\"https://www.youtube.com/watch?v=Cs9OgqOodgc\"][/dynamiclink]\n[h3][b]\u26d0 DRIVER AI[/b][/h3]Perhaps more than any other system in the game, AI is a constant, never-ending work-in-progress.  Driver AI is particularly tricky, largely due to the fact that vehicles are essentially giant hitboxes-of-death that move quickly and aren't capable of turning on a dime.\n\nAs you may have noticed, there are no traffic lights in the game. To (partially) avoid complete chaos on those rogue streets, cars obey a \"first-come, first-served\" law at intersections. According to this internal queue system, autos drive through one at a time to avoid collisions.\n\nWhile NPCs typically stick to fixed paths and simple driving rules, Matt has set up special behaviors for things like turning onto other roads, so that drivers don\u2019t crash into each other or stop unnecessarily when there\u2019s no real danger. If something unusual happens\u2014like, say, the player is standing in the middle of the road\u2014a car switches to a more flexible driving mode that allows it to deviate from its normal road behavior, reach its intended destination, and ultimately, get back to the standard path.  During these periods, the car may \"cheat\" a little, perhaps turning a bit more quickly than the player would be able to if they were driving the vehicle, or coming to a stop more quickly when need be.  This is all in the service of avoiding too many collisions and, of course, ridiculous traffic jams.\n\n[img src=\"{STEAM_CLAN_IMAGE}/43039829/7358b095956bbf7f8b7fa69d3c75698e1df046d4.gif\"][/img]\n\n[h3][b]\ud83d\ude97 DESIGN[/b][/h3]Most automobile designs are based on real-life car types, such as minivans, sports cars, trucks, and some decrepit rides. A basic 3D car model usually takes around 3-5 hours to create, and then the model is saved at 24 different angles.  Next, pixel artists essentially \"paint over\" each of these angles, to bring model into line with the game's aesthetic.  Finally, subtle 8-frame animations are created for each angle to express motion -- wheels turning, the car bobbing slightly up and down, etc.\n\nThe chassis created for each vehicle are stored as separate art assets, allowing us to enhance visual variety by re-coloring different pieces of the car.\n\n[img src=\"{STEAM_CLAN_IMAGE}/43039829/389bd672a02ce73e5f601bdfe8cc178604ac6e0d.gif\"][/img]\n\n[img src=\"{STEAM_CLAN_IMAGE}/43039829/02e67471b6270fbe9ea5834f823a0544bbd4d4e0.png\"][/img]\n[i]Police Car: Base & Chassis \u2191[/i]\n\n[img src=\"{STEAM_CLAN_IMAGE}/43039829/5bd6aea2cc00034f6223700fdc6e9540f220a176.png\"][/img]\n[i]Cheap Sedan (Damaged): Base & Chassis \u2191[/i]\n\n\n[img]{STEAM_CLAN_IMAGE}/43039829/ba4c4d34eec7b21d69c6eaae0420abbe4d8bcf63.png[/img]\n[i]Cheap Sedan (Damaged): Final 3D Model \u2191[/i]\n\n\nThe headlight sprites are also stored separately so that they can appear bright at night while the rest of the car does not. Water overlays are necessary to keep the car looking correct at all angles when submerged in water.\n\n[img src=\"{STEAM_CLAN_IMAGE}/43039829/96fda81028879809e5829b3cc9a0a4bac77a9336.png\"][/img]\n\n[h3][b]\ud83d\udea4 BOATS[/b][/h3]Navigating the waters is also a part of [b][i]Streets of Rogue 2.[/i][/b] Boats are primarily useful for reaching islands that would be otherwise inaccessible to the player. In future development, boats may also become useful as a means of traversing rivers to reach locations that would be dangerous to attempt by land. On top of that, Matt is thinking of implementing an \"underwater dungeon\" and incorporating cargo transport sometime after the early access launch. This stuff is, according to him, inspired by [b][i]Sid Meier's Pirates![/i][/b] (2004). Believe it or not, the creator of [i][b]SoR 2[/b][/i] has an idea of a mutator for a water-based world, composed primarily of islands, for greater use of boats. If you've been to/lived in the Philippines or watched [i][b]Waterworld[/b][/i], you'll understand.\n\n[img src=\"{STEAM_CLAN_IMAGE}/43039829/68fd47875c5945c2079bdb9fb7259f7871ace704.gif\"][/img]\nMilitary boats? Perhaps. Kind of early to talk about it. Police boats will be there, though, rest assured.\ud83d\udc6e\n\n[img src=\"{STEAM_CLAN_IMAGE}/43039829/39aff825ed0cdf96423387a77171ab037eebe120.png\"][/img]\n\n\n[h3][b]\ud83d\uddfa\ufe0f FUTURE PLANS FOR VEHICLES[/b][/h3]\n[list]\n[*]\ud83d\udca8 More variation in turning, speed, and acceleration for different types of vehicles. Making some vehicles go faster (e.g., sports cars) is in the plans.\n[*]\ud83d\udea7 If you remember a [b][url=\"https://www.tiktok.com/@streetsofrogue/video/7418611026519657771\"]viral video[/url][/b] about destructible environments that we posted on social media the other day, you might be wondering if you'll be allowed to crash through buildings like a madman.  This will depend on factors such as the type of vehicle, the strength of the wall, and modifications added to the vehicle.  Most cars will make short work of a small wooden fence or even the walls of makeshift housing found in shanty towns.  However, modifications to the strength of a car's exterior might be necessary to bust down a brick wall.  Besides that, a \"destruction\" mutator is set to be added at some point, modifying the overall fragility of environments. For those not in the know, \"mutators\" are game modifiers that can change the gameplay conditions of a run.\n[*]\ud83c\udfa8 An option to respray cars for cosmetic purposes. (Of course, that's in addition to all of the other gameplay-oriented car modifications!)\n[*]\u2696\ufe0f Bug fixing & balancing. For instance, car health and how much damage a vehicle takes when you bump it into objects. The end goal is to allow players to drive with a healthy dose of carelessness while still ensuring you face consequences if you act like a headless chicken on wheels.[/list]\n\n[i]QUICK NOTE: To be upfront about the plans above: while we have a roadmap, not everything you see there is guaranteed or meant to arrive all at once. Think of it as a peek at what we want to do.[/i]\n[hr][/hr][img src=\"{STEAM_CLAN_IMAGE}/43039829/0dc75422057126e7f938b6469b34ec631fca3dd0.gif\"][/img]\n\nJust as usual, let me say a huge \"Thank you\" for the support you provide. Share your feedback on how intuitive you find the car controls to be, offer any suggestions you see fit, and comment away about what you think of this devblog, and, of course, wishlist & follow [i][b]Streets of Rogue 2[/b][/i] to stay up to date on the game:\n\nhttps://store.steampowered.com/app/2165810/Streets_of_Rogue_2/[b]Watch video devlogs:[/b]\n[url=https://www.youtube.com/watch?v=gcSK1YYUvBo]Devlog 1: How I Approach World-Building? \ud83c\udf0e[/url]\n[url=https://www.youtube.com/watch?v=i_HA855WzdI]Devlog 2: Creating an Open World Solo \ud83d\uddfa\ufe0f[/url]\n[url=https://www.youtube.com/watch?v=auYaF_NCdFE]Devlog 3: Games That Inspired SoR 2 \ud83d\udca1[/url]\n[url=https://www.youtube.com/watch?v=4BcpVvcxAp8]Devlog 4: New Release ETA, Roadmap \ud83d\uddfa\ufe0f[/url]\n[hr][/hr]Join the community on Discord: \n[url=\"https://discord.gg/streetsofrogue\"][b]\ud83d\udd17DISCORD[/b][/url]\n\nFollow [i][b]Streets of Rogue 2[/b][/i] on social media:\n[url=\"https://twitter.com/streetsofrogue\"][b]\ud83d\udd17TWITTER (X)[/b][/url]\n[url=\"https://www.tiktok.com/@streetsofrogue\"][b]\ud83d\udd17TIKTOK[/b][/url]\n[url=\"https://www.youtube.com/@StreetsofRogue2\"][b]\ud83d\udd17YOUTUBE[/b][/url]\n[url=\"https://www.reddit.com/r/streetsofrogue/\"][b]\ud83d\udd17REDDIT[/b][/url]",
+      "key": "2165810::a16ea14d97ea8cdb2265b195535f35d3034c9c7a",
+      "tags": [
+        {
+          "balance_change": "Making some vehicles go faster (e.g., sports cars) is in the plans."
+        },
+        {
+          "balance_change": "Bug fixing & balancing. For instance, car health and how much damage a vehicle takes when you bump it into objects."
+        },
+        {
+          "balance_change": "The end goal is to allow players to drive with a healthy dose of carelessness while still ensuring you face consequences if you act like a headless chicken on wheels."
+        }
+      ]
+    },
+    {
+      "title": "New Trailer Dropped at tinyBuild Connect 2025! | Demo Patch v31a",
+      "date": "2025-05-27 13:15:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164574290",
+      "content": "[p][img src=\"{STEAM_CLAN_IMAGE}/43039829/cd607f1164f35ae55fe49c72e2b3e7a3c7857b6d.gif\"][/img][/p][h1][b]Hey, rogues,[/b][/h1][p][/p][h3][b]A new trailer has dropped at the tinyBuild Connect 2025 publisher showcase.[/b][/h3][p][/p][p][b]The vid shows the progress [i]Streets of Rogue 2[/i] has made in the past couple of months. Check it out:[/b][/p][p][/p][previewyoutube=\"KxG7e96WRYg;full\"][/previewyoutube][p][/p][p][b]The trailer offers a quick look at:[/b][/p][p]- The worldbuilding progress (new biomes, chunks)[/p][p]- New animals[/p][p]- Improved UI[/p][p]- More crazy-ass situations that will be possible in the game[/p][p]...and more.[/p][p][/p][p]Regarding the release date, we know you want it; however, we're still putting the pieces together. As soon as we're ready, you'll know when the game will drop. Meanwhile, you can follow the development here on Steam and take a peek at the [url=\"https://sor2.notion.site/\"][b]Roadmap[/b][/url].[/p][p][/p][p]------------[/p][p][/p][p]I\u2019ve updated the [i][b]Streets of Rogue 2[/b][/i] [b]Alpha Demo[/b] with a pretty sizable number of changes.  As with the previous couple of updates, these mostly fall under polish and bug fixes.  The series of major design and balance improvements that I\u2019ve been planning for a while are still in the works.  Plenty of work has been done on this internally, but I want to hold off on adding these changes to the demo until my work on this design pass is more or less finished.[/p][p][/p][p]I had hoped to update the demo every month or so until the Early Access release, but I ended up not sticking to that schedule for this update because\u2026 well frankly I couldn\u2019t stop working on this thing for long enough to actually create and properly test a new demo build.  So anyways, enjoy, but be aware that the demo is still by and large a sandbox where balance is in short supply.[/p][p][/p][p]- Matt D[/p][hr][/hr][p][b]Patch Notes | v31a[/b]\n[/p][list][*][p][b]New Features[/b]\n[/p][list][*][p]Object button prompts - When standing near usable objects, NPCs etc., you\u2019ll see text and a button prompt indicating how you can interact with the object. This feature can be turned off in the Gameplay Settings menu.[/p][/*][/list][p]\n[/p][/*][*][p]Graphics\n[/p][list][*][p]All instances of fire now use animation frames instead of particle effects[/p][/*][*][p]Particle effects appear when people, items and cars fall into water[/p][/*][*][p]Alleviated shimmering at the edges of indoor lighting[/p][/*][*][p]Fix for floor decals not appearing on the ground after blood explosions[/p][/*][*][p]Fix for wreckage sprites not conforming to pixel grid[/p][/*][*][p]Fix for wreckage sprites appearing above NPCs and objects after restoring saved game[/p][/*][*][p]Fix for NPCs in certain non-standing positions not conforming to pixel grid[/p][/*][*][p]Fixed occasional z-sorting issues on headwear defined as Masks[/p][/*][*][p]Fix for vehicles\u2019 shadow and alignment circles appearing above the floor layer[/p][/*][*][p]Electricity animations on damaged objects are now fulbright when playing in dark areas[/p][/*][*][p]Stoves light up when used[/p][/*][*][p]Certain animations will ignore slow motion affecting the rest of the world[/p][/*][*][p]Toned down the intensity of the lights that appear on objects, items and NPCs to avoid them feeling too bright or washed-out[/p][/*][*][p]Light on doors disappears when door is opened[/p][/*][*][p]Car headlights shine properly on objects, NPCs and items[/p][/*][*][p]Fix for item held on NPCs\u2019 backs not having an outline[/p][/*][*][p]Fix for depth mask issues with certain animals[/p][/*][*][p]Adjusted attack animation positioning for a number of animals[/p][/*][*][p]Alignment circles underneath animals are properly sized[/p][/*][*][p]Short grass sprites are now considered part of the floor layer[/p][/*][/list][p]\n[/p][/*][*][p]Objects[/p][p][/p][list][*][p]Player can sit on chairs, benches etc.[/p][/*][*][p]Added a bunch of new objects[/p][/*][*][p]Improved/fixed a number of object sprites and animations[/p][/*][*][p]Added a bunch of new wreckage sprites[/p][/*][*][p]Small fixes to object placement[/p][/*][*][p]Changes to collision in a bunch of objects to prevent pathfinding issues[/p][/*][*][p]Fix for instances of Flaming Barrels not displaying their fire animation when indoors, and also playing at wrong frame rate[/p][/*][*][p]Fix for objects that are intended to be lit on fire (such as torches) not saving their \u201con fire\u201d status correctly all the time[/p][/*][*][p]Fix for some doors appearing locked when they are not and vice versa[/p][/*][*][p]Fix for certain tall doors having incorrect lighting at the top[/p][/*][*][p]Interior locked doors can be made from materials other than Steel (previously any locked door would get marked as being impenetrable)[/p][/*][*][p]Do Not Enter doors are consistently made of Steel[/p][/*][*][p]Prisons have Do Not Enter doors on them consistently[/p][/*][*][p]Fix for instances of single doors appearing as double doors or garage doors[/p][/*][*][p]Fix for locked Glass and \u201cNo Entry\u201d doors being impenetrable despite not bearing that appearance[/p][/*][*][p]Crates are destroyed when opening with Crowbar rather than becoming invisible[/p][/*][*][p]Fix for objects with fires not displaying Damaged frames after their fire is extinguished[/p][/*][*][p]Fix for issues lighting fires in Fireplaces[/p][/*][*][p]All environmental objects that are intended to be lit on fire (such as torches) can be lit on fire using any means the player has[/p][/*][*][p]Small fences have more appropriately sized colliders[/p][/*][/list][p]\n\n[/p][/*][*][p]Items\n[/p][list][*][p]Fix for inventory items not being able to be combined using the mouse[/p][/*][*][p]Fix for quick-use health item button from SOR1 still working on gamepad (this is removed from the game in SOR2)[/p][/*][*][p]Fix for cases of items on the ground being highlighted when the player is interacting with other objects[/p][/*][*][p]Fix for Shopkeepers outside of towns in strip malls sometimes not having appropriate inventories for their shops[/p][/*][*][p]Fix for thrown weapons being interactable for a split second after the player throws them[/p][/*][/list][p]\n\n[/p][/*][*][p]Buildings/Environments\n[/p][list][*][p]Added a bunch of new floor textures[/p][/*][*][p]Added a bunch of new chunks[/p][/*][*][p]Added a new type of fence[/p][/*][*][p]Added a number of new rugs[/p][/*][*][p]Rain particle direction during heavy wind is consistent with object animations[/p][/*][/list][p]\n\n[/p][/*][*][p]Non-Playable Characters\n[/p][list][*][p]Added new NPC type: Ranger[/p][/*][/list][p]\n\n[/p][/*][*][p]Animals\n[/p][list][*][p]Added new animals: Raccoon, Crocodile[/p][/*][/list][p]\n\n[/p][/*][*][p]Vehicles\n[/p][list][*][p]Added new cars: Minivan, Vintage Car[/p][/*][*][p]Added wreckage sprites for all vehicles[/p][/*][*][p]Vehicles now have properly sized colliders, whereas previously all cars were using the same size collider[/p][/*][*][p]Fix for car colliders being much too high when the car entered water[/p][/*][*][p]Fix for being able to squeeze a car through some 1-tile-wide spaces[/p][/*][*][p]Art fixes for a number of vehicles[/p][/*][*][p]Car headlight sprites appear lit when headlights turn on[/p][/*][/list][p]\n\n[/p][/*][*][p]Interface / Controls\n[/p][list][*][p]Interface now resembles a phone[/p][/*][*][p]Loads of fixes and improvements to tooltips and in-game menus to help communicate information clearly and concisely. Many of these aren\u2019t covered here, but there\u2019s a TON of them.[/p][/*][*][p]All right-side menus have been altered to not include multiple scrollbars, so that they can be operated properly via gamepad in all circumstances[/p][/*][*][p]Context menus can be scrolled up and down if the number of choices available gets too long to fit on the screen[/p][/*][*][p]Map marker filters are functional, though not in-game yet (just waiting on art assets to enable them)[/p][/*][*][p]Icons added to tooltips, and general tooltip rework. Still work in progress.[/p][/*][*][p]Build Mode is now accessed on gamepad by holding the inventory button, since the right stick button is now dedicated to responding to NPCs[/p][/*][*][p]Object sprites in Shop interface appear properly sized[/p][/*][*][p]Speech bubbles contain the name of the NPC who is talking[/p][/*][*][p]Dirt roads now appear on close-up map[/p][/*][*][p]Menu scrollbar handle size is clamped so they can\u2019t become too small[/p][/*][*][p]When certain NPCs\u2019 names are displayed, the name of the location at which they work is also displayed. Currently happens for Clerk, Shopkeeper, Bouncer, and Goons.[/p][/*][*][p]Fix for Consumables tab in Personal Chest not working properly[/p][/*][*][p]Fix for item details remaining in the menu when the last item is removed from the player\u2019s personal chest[/p][/*][*][p]Fix for cases of durability bars on item slots being mismatched to their item or nonexistent[/p][/*][*][p]Fix for mouse target highlighting objects when the player is using the gamepad[/p][/*][*][p]Fix for gamepad target and quest-related icons appearing beneath some tall objects[/p][/*][*][p]Fix for NPC map icons often appearing at the NPC\u2019s home location rather than their current location[/p][/*][*][p]Speech bubbles and other similar elements are sorted properly on the z-axis[/p][/*][*][p]Key/button references within tutorials now reference the correct mappings, and may display images in place of text[/p][/*][*][p]Mousewheel is now used to change the direction of objects in Build Mode, since F is now used as the \u201cRespond to NPCs\u201d button[/p][/*][*][p]Support for animated instruction text glyphs[/p][/*][*][p]Spacing fixes for instruction text button glyphs[/p][/*][*][p]Fix for incorrect instruction text appearing when viewing certain inventory filters[/p][/*][*][p]Fix for specific cases of white outlines around NPCs and objects not disappearing as the player walks past[/p][/*][*][p]Fix for white outline sometimes remaining on animals after the player mouses over them[/p][/*][*][p]All buildable objects are now capable of being viewed in the crafting and shop interfaces[/p][/*][*][p]Buildable objects with multiple variants are properly sorted in various menu lists[/p][/*][/list][p]\n\n[/p][/*][*][p]Menus\n[/p][list][*][p]Updated title screen art[/p][/*][*][p]When using gamepad, initial selections will default to your most recent character and world[/p][/*][/list][p]\n\n[/p][/*][*][p]Special Abilities\n[/p][list][*][p]Fix for hacking (and other times player attempts to target far-away objects) sometimes causing errors on gamepad[/p][/*][/list][p]\n\n[/p][/*][*][p]Sound[/p][list][*][p]Various new sound effects[/p][/*][*][p]Alleviation of some sounds taking a short time to load the first time they play[/p][/*][/list][p]\n\n[/p][/*][*][p]Artificial Intelligence\n[/p][list][*][p]Water-based animals such as Sharks will jump repeatedly when they are on land[/p][/*][*][p]Water-based animals do not move more slowly in the water, as humans do[/p][/*][*][p]Fix for NPCs sometimes not being able to walk through closed unlocked doors to visit venues[/p][/*][*][p]Fix for NPCs getting stuck between objects and the wall to their south[/p][/*][*][p]Fix for NPCs sometimes not being able to leave their beds to go to work[/p][/*][*][p]NPC leashing is defined much better than it was previously[/p][/*][*][p]Fix for NPCs sometimes facing the wrong direction while sitting[/p][/*][*][p]Fix for cases of NPCs attempting to path to tiny cramped locations that they couldn\u2019t actually get to[/p][/*][*][p]Fix for instances of NPCs sometimes not having a vocal response when they don't want to speak with you due to being Annoyed with you[/p][/*][*][p]Fix for NPCs sometimes standing next to chairs, benches etc. instead of sitting down[/p][/*][*][p]Fix for chairs not always being properly associated with the table or desk next to them, resulting in more difficulties for NPCs trying to sit[/p][/*][*][p]Fix for home base not being marked as an area that wandering NPCs should avoid (note that at least for the time being, you\u2019ll need to place a floor for NPCs to avoid)[/p][/*][*][p]NPCs are better about not attempting to path through homes and businesses that they do not own[/p][/*][*][p]Further fixes for NPCs taking jobs at locations they were not meant to[/p][/*][*][p]Fix for object/floor placement issue that could cause NPCs to receive an incorrect ownership ID and not treat property as their own[/p][/*][*][p]Fix for certain cases of cars getting stuck on the road[/p][/*][*][p]Fix for NPCs not being able to path through Fence doors[/p][/*][*][p]Fix for NPCs often having difficulty pathing to larger objects[/p][/*][/list][p]\n\n[/p][/*][*][p]World Generation\n[/p][list][*][p]Objects are capable of spawning only on certain days of the week[/p][/*][*][p]Fix for instances of pavement edges appearing in the middle of grass[/p][/*][*][p]Fix for NPCs being placed in Prisons when they were not meant to if the prison was in the direct center of the building[/p][/*][*][p]Dirt walking paths now properly connect to concrete roads[/p][/*][*][p]Dirt walking paths within unique chunks now properly connect to standard dirt walking paths[/p][/*][*][p]Fix for world generation crash involving building placement[/p][/*][*][p]Fix for error introduced in previous build that caused NPCs to appear at incorrect locations after the player sleeps to advance time[/p][/*][*][p]Unimportant wanderer NPCs are prevented from spawning in a chunk when there is no viable spot for them, and have improved checking for potential spots to appear[/p][/*][*][p]Fix for cases of NPCs being assigned \u201cjob positions\u201d in tiny cramped spaces that they couldn\u2019t get out from, between their assigned object and a wall[/p][/*][*][p]Wall width is taken into account when environmental objects are shifted slightly after being placed near walls[/p][/*][*][p]Fix for floating point errors when determining whether or not to shift an object toward a nearby wall[/p][/*][*][p]Fix for NPCs occupying nonexistent beds if the bed was not spawned due to its randomized spawn chance not being met[/p][/*][*][p]Fix for cases of city border walls appearing in the middle of buildings[/p][/*][*][p]Fix for instances of windows not being considered part of a wall within certain game systems, leading to issues with nearby objects and NPCs[/p][/*][*][p]Fix for building placed directly outside of cities not displaying pavement when appropriate[/p][/*][*][p]Fix for player being able to slip behind counters when directly next to the wall in certain cases[/p][/*][*][p]Fix for walking path transition issues going into Forest biome[/p][/*][*][p]Fix for some biome transition tiling issues[/p][/*][*][p]Forest grass appears properly when beneath the edges of city pavement[/p][/*][*][p]Fix for pavement corners at the very edge of cities sometimes not appearing[/p][/*][*][p]Fixed an issue with the sand texture\u2019s noise patterns not generating as intended[/p][/*][*][p]Fix for entrances in city wall borders not appearing[/p][/*][*][p]Fix for cases of city wall border corners not appearing[/p][/*][/list][p]\n\n[/p][/*][*][p]Engine\n[/p][list][*][p]Updated Unity to version 2022.3.60[/p][/*][*][p]Updated Astar Pathfinding plugin to newest version[/p][/*][/list][p]\n\n[/p][/*][*][p]Optimization\n[/p][list][*][p]Better performance updating minimap[/p][/*][*][p]Minimap is less likely to display black \u201cunloaded\u201d squares[/p][/*][/list][p]\n\n[/p][/*][*][p]Internal (\u2757NOT VISIBLE IN THE DEMO\u2757)\n[/p][list][*][p]Added level editor support for \u201clight\u201d off-limits areas, such as the player walking behind a counter, where the penalties may not be as harsh as entering a strictly-off-limits area[/p][/*][*][p]Added ability to randomize the biome texture of individual objects within the level editor[/p][/*][*][p]Various small level editor improvements and fixes[/p][/*][*][p]Work on Disguises system[/p][/*][*][p]Work on Rat Ocarina and rat swarm functionality[/p][/*][*][p]Hats and Masks can be worn at the same time, rather than both filling the \u201cheadwear\u201d slot[/p][/*][*][p]Free Items debug UI now uses the new menu system rather than the SOR1 menu system[/p][/*][*][p]New Feature: Respond to NPC - Previously, in order to interact with an NPC, the player would need to walk up to the NPC and press the Interact button. Now, NPCs (and potentially objects) have the capability to ask the player for a response through a UI prompt. At this point, the player can press the \u201cRespond to NPC\u201d button (F on keyboard, Right Stick Button on gamepad) to directly respond to the NPC regardless of their location.[/p][/*][/list][/*][/list][p]\n[/p][p][i]Until next time![/i][/p][p][/p][hr][/hr][p][img src=\"{STEAM_CLAN_IMAGE}/43039829/0e5373d7b5abf2b76df0ea90f94ce17a32c18724.gif\"][/img][/p][p][/p][p][url=\"https://www.reddit.com/r/streetsofrogue/\"][b]\ud83d\udd17REDDIT[/b][/url][/p][p][url=\"https://twitter.com/streetsofrogue\"][b]\ud83d\udd17TWITTER (X)[/b][/url][/p][p][url=\"https://www.tiktok.com/@streetsofrogue\"][b]\ud83d\udd17TIKTOK[/b][/url][/p]",
+      "key": "2165810::43a71aebf618d51ccf01e129c108e6e94845ac26",
+      "tags": [
+        {
+          "feature": "Object button prompts - When standing near usable objects, NPCs etc., you\u2019ll see text and a button prompt indicating how you can interact with the object. This feature can be turned off in the Gameplay Settings menu."
+        },
+        {
+          "bug": "Fix for floor decals not appearing on the ground after blood explosions"
+        },
+        {
+          "bug": "Fix for wreckage sprites not conforming to pixel grid"
+        },
+        {
+          "bug": "Fix for wreckage sprites appearing above NPCs and objects after restoring saved game"
+        },
+        {
+          "bug": "Fix for NPCs in certain non-standing positions not conforming to pixel grid"
+        },
+        {
+          "bug": "Fixed occasional z-sorting issues on headwear defined as Masks"
+        },
+        {
+          "bug": "Fix for vehicles\u2019 shadow and alignment circles appearing above the floor layer"
+        },
+        {
+          "bug": "Fix for item held on NPCs\u2019 backs not having an outline"
+        },
+        {
+          "bug": "Fix for depth mask issues with certain animals"
+        },
+        {
+          "bug": "Player can sit on chairs, benches etc."
+        },
+        {
+          "feature": "Added a bunch of new objects"
+        },
+        {
+          "bug": "Improved/fixed a number of object sprites and animations"
+        },
+        {
+          "feature": "Added a bunch of new wreckage sprites"
+        },
+        {
+          "bug": "Small fixes to object placement"
+        },
+        {
+          "bug": "Changes to collision in a bunch of objects to prevent pathfinding issues"
+        },
+        {
+          "bug": "Fix for instances of Flaming Barrels not displaying their fire animation when indoors, and also playing at wrong frame rate"
+        },
+        {
+          "bug": "Fix for objects that are intended to be lit on fire (such as torches) not saving their \u201con fire\u201d status correctly all the time"
+        },
+        {
+          "bug": "Fix for some doors appearing locked when they are not and vice versa"
+        },
+        {
+          "bug": "Fix for certain tall doors having incorrect lighting at the top"
+        },
+        {
+          "bug": "Interior locked doors can be made from materials other than Steel (previously any locked door would get marked as being impenetrable)"
+        },
+        {
+          "bug": "Do Not Enter doors are consistently made of Steel"
+        },
+        {
+          "bug": "Prisons have Do Not Enter doors on them consistently"
+        },
+        {
+          "bug": "Fix for instances of single doors appearing as double doors or garage doors"
+        },
+        {
+          "bug": "Fix for locked Glass and \u201cNo Entry\u201d doors being impenetrable despite not bearing that appearance"
+        },
+        {
+          "bug": "Crates are destroyed when opening with Crowbar rather than becoming invisible"
+        },
+        {
+          "bug": "Fix for objects with fires not displaying Damaged frames after their fire is extinguished"
+        },
+        {
+          "bug": "Fix for issues lighting fires in Fireplaces"
+        },
+        {
+          "bug": "All environmental objects that are intended to be lit on fire (such as torches) can be lit on fire using any means the player has"
+        },
+        {
+          "bug": "Small fences have more appropriately sized colliders"
+        },
+        {
+          "bug": "Fix for inventory items not being able to be combined using the mouse"
+        },
+        {
+          "bug": "Fix for quick-use health item button from SOR1 still working on gamepad (this is removed from the game in SOR2)"
+        },
+        {
+          "bug": "Fix for cases of items on the ground being highlighted when the player is interacting with other objects"
+        },
+        {
+          "bug": "Fix for Shopkeepers outside of towns in strip malls sometimes not having appropriate inventories for their shops"
+        },
+        {
+          "bug": "Fix for thrown weapons being interactable for a split second after the player throws them"
+        },
+        {
+          "feature": "Added a bunch of new floor textures"
+        },
+        {
+          "feature": "Added a bunch of new chunks"
+        },
+        {
+          "feature": "Added a new type of fence"
+        },
+        {
+          "feature": "Added a number of new rugs"
+        },
+        {
+          "bug": "Rain particle direction during heavy wind is consistent with object animations"
+        },
+        {
+          "feature": "Added new NPC type: Ranger"
+        },
+        {
+          "feature": "Added new animals: Raccoon, Crocodile"
+        },
+        {
+          "feature": "Added new cars: Minivan, Vintage Car"
+        },
+        {
+          "feature": "Added wreckage sprites for all vehicles"
+        },
+        {
+          "bug": "Vehicles now have properly sized colliders, whereas previously all cars were using the same size collider"
+        },
+        {
+          "bug": "Fix for car colliders being much too high when the car entered water"
+        },
+        {
+          "bug": "Fix for being able to squeeze a car through some 1-tile-wide spaces"
+        },
+        {
+          "bug": "Art fixes for a number of vehicles"
+        },
+        {
+          "bug": "Car headlight sprites appear lit when headlights turn on"
+        },
+        {
+          "feature": "Interface now resembles a phone"
+        },
+        {
+          "bug": "Loads of fixes and improvements to tooltips and in-game menus to help communicate information clearly and concisely. Many of these aren\u2019t covered here, but there\u2019s a TON of them."
+        },
+        {
+          "bug": "All right-side menus have been altered to not include multiple scrollbars, so that they can be operated properly via gamepad in all circumstances"
+        },
+        {
+          "bug": "Context menus can be scrolled up and down if the number of choices available gets too long to fit on the screen"
+        },
+        {
+          "bug": "Map marker filters are functional, though not in-game yet (just waiting on art assets to enable them)"
+        },
+        {
+          "bug": "Icons added to tooltips, and general tooltip rework. Still work in progress."
+        },
+        {
+          "bug": "Build Mode is now accessed on gamepad by holding the inventory button, since the right stick button is now dedicated to responding to NPCs"
+        },
+        {
+          "bug": "Object sprites in Shop interface appear properly sized"
+        },
+        {
+          "bug": "Speech bubbles contain the name of the NPC who is talking"
+        },
+        {
+          "bug": "Dirt roads now appear on close-up map"
+        },
+        {
+          "bug": "Menu scrollbar handle size is clamped so they can\u2019t become too small"
+        },
+        {
+          "bug": "When certain NPCs\u2019 names are displayed, the name of the location at which they work is also displayed. Currently happens for Clerk, Shopkeeper, Bouncer, and Goons."
+        },
+        {
+          "bug": "Fix for Consumables tab in Personal Chest not working properly"
+        },
+        {
+          "bug": "Fix for item details remaining in the menu when the last item is removed from the player\u2019s personal chest"
+        },
+        {
+          "bug": "Fix for cases of durability bars on item slots being mismatched to their item or nonexistent"
+        },
+        {
+          "bug": "Fix for mouse target highlighting objects when the player is using the gamepad"
+        },
+        {
+          "bug": "Fix for gamepad target and quest-related icons appearing beneath some tall objects"
+        },
+        {
+          "bug": "Fix for NPC map icons often appearing at the NPC\u2019s home location rather than their current location"
+        },
+        {
+          "bug": "Speech bubbles and other similar elements are sorted properly on the z-axis"
+        },
+        {
+          "bug": "Key/button references within tutorials now reference the correct mappings, and may display images in place of text"
+        },
+        {
+          "bug": "Mousewheel is now used to change the direction of objects in Build Mode, since F is now used as the \u201cRespond to NPCs\u201d button"
+        },
+        {
+          "bug": "Support for animated instruction text glyphs"
+        },
+        {
+          "bug": "Spacing fixes for instruction text button glyphs"
+        },
+        {
+          "bug": "Fix for incorrect instruction text appearing when viewing certain inventory filters"
+        },
+        {
+          "bug": "Fix for specific cases of white outlines around NPCs and objects not disappearing as the player walks past"
+        },
+        {
+          "bug": "Fix for white outline sometimes remaining on animals after the player mouses over them"
+        },
+        {
+          "bug": "All buildable objects are now capable of being viewed in the crafting and shop interfaces"
+        },
+        {
+          "bug": "Buildable objects with multiple variants are properly sorted in various menu lists"
+        },
+        {
+          "bug": "Updated title screen art"
+        },
+        {
+          "bug": "When using gamepad, initial selections will default to your most recent character and world"
+        },
+        {
+          "bug": "Fix for hacking (and other times player attempts to target far-away objects) sometimes causing errors on gamepad"
+        },
+        {
+          "feature": "Various new sound effects"
+        },
+        {
+          "bug": "Alleviation of some sounds taking a short time to load the first time they play"
+        },
+        {
+          "bug": "Water-based animals such as Sharks will jump repeatedly when they are on land"
+        },
+        {
+          "bug": "Water-based animals do not move more slowly in the water, as humans do"
+        },
+        {
+          "bug": "Fix for NPCs sometimes not being able to walk through closed unlocked doors to visit venues"
+        },
+        {
+          "bug": "Fix for NPCs getting stuck between objects and the wall to their south"
+        },
+        {
+          "bug": "Fix for NPCs sometimes not being able to leave their beds to go to work"
+        },
+        {
+          "bug": "NPC leashing is defined much better than it was previously"
+        },
+        {
+          "bug": "Fix for NPCs sometimes facing the wrong direction while sitting"
+        },
+        {
+          "bug": "Fix for cases of NPCs attempting to path to tiny cramped locations that they couldn\u2019t actually get to"
+        },
+        {
+          "bug": "Fix for instances of NPCs sometimes not having a vocal response when they don't want to speak with you due to being Annoyed with you"
+        },
+        {
+          "bug": "Fix for NPCs sometimes standing next to chairs, benches etc. instead of sitting down"
+        },
+        {
+          "bug": "Fix for chairs not always being properly associated with the table or desk next to them, resulting in more difficulties for NPCs trying to sit"
+        },
+        {
+          "bug": "Fix for home base not being marked as an area that wandering NPCs should avoid (note that at least for the time being, you\u2019ll need to place a floor for NPCs to avoid)"
+        },
+        {
+          "bug": "NPCs are better about not attempting to path through homes and businesses that they do not own"
+        },
+        {
+          "bug": "Further fixes for NPCs taking jobs at locations they were not meant to"
+        },
+        {
+          "bug": "Fix for object/floor placement issue that could cause NPCs to receive an incorrect ownership ID and not treat property as their own"
+        },
+        {
+          "bug": "Fix for certain cases of cars getting stuck on the road"
+        },
+        {
+          "bug": "Fix for NPCs not being able to path through Fence doors"
+        },
+        {
+          "bug": "Fix for NPCs often having difficulty pathing to larger objects"
+        },
+        {
+          "bug": "Objects are capable of spawning only on certain days of the week"
+        },
+        {
+          "bug": "Fix for instances of pavement edges appearing in the middle of grass"
+        },
+        {
+          "bug": "Fix for NPCs being placed in Prisons when they were not meant to if the prison was in the direct center of the building"
+        },
+        {
+          "bug": "Dirt walking paths now properly connect to concrete roads"
+        },
+        {
+          "bug": "Dirt walking paths within unique chunks now properly connect to standard dirt walking paths"
+        },
+        {
+          "bug": "Fix for world generation crash involving building placement"
+        },
+        {
+          "bug": "Fix for error introduced in previous build that caused NPCs to appear at incorrect locations after the player sleeps to advance time"
+        },
+        {
+          "bug": "Unimportant wanderer NPCs are prevented from spawning in a chunk when there is no viable spot for them, and have improved checking for potential spots to appear"
+        },
+        {
+          "bug": "Fix for cases of NPCs being assigned \u201cjob positions\u201d in tiny cramped spaces that they couldn\u2019t get out from, between their assigned object and a wall"
+        },
+        {
+          "bug": "Wall width is taken into account when environmental objects are shifted slightly after being placed near walls"
+        },
+        {
+          "bug": "Fix for floating point errors when determining whether or not to shift an object toward a nearby wall"
+        },
+        {
+          "bug": "Fix for NPCs occupying nonexistent beds if the bed was not spawned due to its randomized spawn chance not being met"
+        },
+        {
+          "bug": "Fix for cases of city border walls appearing in the middle of buildings"
+        },
+        {
+          "bug": "Fix for instances of windows not being considered part of a wall within certain game systems, leading to issues with nearby objects and NPCs"
+        },
+        {
+          "bug": "Fix for building placed directly outside of cities not displaying pavement when appropriate"
+        },
+        {
+          "bug": "Fix for player being able to slip behind counters when directly next to the wall in certain cases"
+        },
+        {
+          "bug": "Fix for walking path transition issues going into Forest biome"
+        },
+        {
+          "bug": "Fix for some biome transition tiling issues"
+        },
+        {
+          "bug": "Forest grass appears properly when beneath the edges of city pavement"
+        },
+        {
+          "bug": "Fix for pavement corners at the very edge of cities sometimes not appearing"
+        },
+        {
+          "bug": "Fixed an issue with the sand texture\u2019s noise patterns not generating as intended"
+        },
+        {
+          "bug": "Fix for entrances in city wall borders not appearing"
+        },
+        {
+          "bug": "Fix for cases of city wall border corners not appearing"
+        },
+        {
+          "bug": "Updated Unity to version 2022.3.60"
+        },
+        {
+          "bug": "Updated Astar Pathfinding plugin to newest version"
+        },
+        {
+          "bug": "Better performance updating minimap"
+        },
+        {
+          "bug": "Minimap is less likely to display black \u201cunloaded\u201d squares"
+        },
+        {
+          "feature": "Added level editor support for \u201clight\u201d off-limits areas, such as the player walking behind a counter, where the penalties may not be as harsh as entering a strictly-off-limits area"
+        },
+        {
+          "feature": "Added ability to randomize the biome texture of individual objects within the level editor"
+        },
+        {
+          "bug": "Various small level editor improvements and fixes"
+        },
+        {
+          "feature": "Work on Disguises system"
+        },
+        {
+          "feature": "Work on Rat Ocarina and rat swarm functionality"
+        },
+        {
+          "bug": "Hats and Masks can be worn at the same time, rather than both filling the \u201cheadwear\u201d slot"
+        },
+        {
+          "bug": "Free Items debug UI now uses the new menu system rather than the SOR1 menu system"
+        },
+        {
+          "feature": "New Feature: Respond to NPC - Previously, in order to interact with an NPC, the player would need to walk up to the NPC and press the Interact button. Now, NPCs (and potentially objects) have the capability to ask the player for a response through a UI prompt. At this point, the player can press the \u201cRespond to NPC\u201d button (F on keyboard, Right Stick Button on gamepad) to directly respond to the NPC regardless of their location."
+        }
+      ]
+    },
+    {
+      "title": "Alpha Demo Patch 30a: Major Jank Reduction",
+      "date": "2025-03-20 17:40:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528313766",
+      "content": "In the previous update, I wrote the following about my intentions for the current update:\n\n[i]\u201cThe focus is intended to be design and balance changes with in-game UI updates sprinkled in. Unless I get sidetracked again!\u201d[/i]\n\nWant to take a wild guess what happened??\n\nWhat started as an earnest attempt to do the \u201cbig design/balance pass\u201d ended with me going down some truly gnarly bug-fix rabbit holes.  After a painful few weeks, I\u2019m happy to say that a whole bunch of the major remaining bugs that I\u2019d categorize as \u201cvery important\u201d have been fixed, and the game is feeling a lot more stable for it.\n\nWhile I did actually manage to do a decent amount of work on gameplay and balance changes, I\u2019ve decided to disable these additions for the time being, as they're not exactly in a shippable state yet.  I'd rather save the new changes for a big gameplay revision update, rather than trickling them out.  So if you played an earlier iteration of the demo and were waiting for big gameplay changes to happen, this probably isn\u2019t the right time to jump back in.  But, lots of necessary progress was indeed made, and I'm very happy to put a lot of this work behind me!\n\nAs always, you can keep an eye on SOR2's progress as we inch closer to the Early Access release by checking out the [url=https://sor2roadmap.notion.site/Streets-of-Rogue-2-Roadmap-1539f3dc3191805c841def6ca78d212d][b]roadmap[/b][/url].\n\n- Matt D\n[hr][/hr]\n[b]Patch Notes | v30a[/b]\n[list]\n[b][*]Vehicles[/b]\n[list]\n[*]New Car: Cheap Sedan (I may rename this)\n[*]Cars now have a proper acceleration rate, which will eventually vary based on the type of car and the player\u2019s modifications.  Currently, it will take a bit more time to reach top speed than before.\n[*]Change to how cars handle drifting that should make them feel a bit less floaty\n[*]Projectiles shot from vehicles will gradually lose any added momentum that the vehicle has provided, fixing issues like rockets moving extremely slowly when shot out the back of a fast-moving car\n[*]Camera zoom-in while driving has been made much less aggressive\n[*]Interactions between cars and walls/objects have been adjusted such that more objects and walls are destructible when traveling at appropriate speeds\n[*]Cars react realistically when hit with banana peels\n[*]Positions of abandoned cars are saved under more specific circumstances to reduce old car clutter\n[*]Fix for cases where the player could randomly drive faster than they previously could due to the game determining the player was a panicked NPC and allowing them to drive faster\n[/list]\n\n[b][*]Music[/b]\n[list]\n[*]Added two new \u201caction\u201d variants of existing music tracks\n[*]Fix for music tracks ending early when the application was not in focus for a period of time\n[/list]\n\n[b][*]Art[/b]\n[list]\n[*]LOADS of new object animations added.  Many of these are very subtle but should add a bit more movement and life to the game world.\n[*]Foliage no longer plays its \u201cwindy\u201d animations by default, as before.  These animations will be reserved for certain periods of time such as during a storm, while a more subtle set of animations are now applied for the remainder of the time.\n[/list]\n\n[b][*]Graphics[/b]\n[list]\n[*]Fix for Bullets appearing under blades of grass, chest-high objects and bodies\n[*]Fix for Water Explosion sprites rendering as completely black\n[*]Fix for certain outfits that were meant to show skin (i.e. crop top) showing an invisible body\n[*]Fix for certain instances of shadows not appearing next to small Fences\n[*]Fix for Fence doors not having shadows to their bottom right\n[*]Fix for shadows sometimes not appearing next to Counters\n[*]Fix for certain hairstyles clipping through the top of hats\n[*]Fix for players\u2019 and NPCs\u2019 tall hair and hats appearing underneath the top of walls\n[*]Fix for car chassis not always appearing as the intended colors\n[*]Fix for shadows not appearing on certain objects in the world\n[*]Fix for objects not always appearing in a pixel-perfect position, which could result in the objects feeling just slightly unstable\n[*]Fix for some objects not having outlines around them when highlighted\n[/list]\n\n[b][*]Objects[/b]\n[list]\n[*]Did a major pass on world objects, with a particular focus on how they are placed into the environment.  Numerous fixes relating to the positioning of objects in the game world, fixing issues like objects clipping through walls, some pathing problems, etc.\n[*]New Bush variants added\n[*]All electronic objects now have proper \u201cpower on/off\u201d mechanics\n[*]Proper \u201cWall Strength\u201d values added to all wall varieties\n[*]Proper \u201cflammability\u201d values added to all wall varieties\n[*]Players cannot sleep in beds when there is danger nearby\n[*]Fixes for object lighting on tall objects that extend beyond the top of walls\n[*]Fix for Double Doors and Garage Doors placed inside buildings sometimes having the collider of a single door.\n[*]Objects used in quests (i.e. \u201cDestroy\u201d quests) are not replaced by Butler Bots\n[*]Fix for certain objects that got damaged appearing pristine when the player quickly leaves the area and returns\n[*]Fix for Doors sometimes appearing to be built with the incorrect material (i.e. Wood doors appearing as Steel doors)\n[*]Business doors will be locked if the business is intended to be open, but there is no NPC to cover that shift\n[*]Fix for certain objects not being spawned in the world when they should have been\n[*]Fix for the player being able to attempt to make speeches at random Podiums throughout the world\n[*]Fix for Sign object appearing invisible when facing certain angles\n[*]Fix for Killer Plant head disappearing when hit while snapping\n[*]Fix for Camera and Turret using incorrect sprites\n[*]Fix for a number of types of chairs appearing too far away from their accompanying desk or table, sometimes resulting in NPCs not sitting down properly\n[*]Fix for certain objects placed by the player in Build Mode appearing above the player on the Z axis when the player is in front of them on the Y axis\n[*]Certain objects can be moused over that previously could not\n[/list]\n\n[b][*]Buildings/Environments[/b]\n[list]\n[*]Job Center door is always unlocked\n[/list]\n\n[b][*]Non-Playable Characters[/b]\n[list]\n[*]NPCs and the player no longer always carry weapons in their hands when they are not in a dangerous situation.  The weapon may appear on their back instead, much like Keys.  I may adjust how this looks visually in the future.\n[/list]\n\n[b][*]Animals[/b]\n[list]\n[*]Animals react realistically when hit with banana peels\n[/list]\n\n[b][*]UI / Controls[/b]\n[list]\n[*]Damage number text that appears in rapid succession is separated more to be more readable\n[*]Fix for gamepad button images (glyphs) not appearing for certain gamepads, namely PS4\n[*]Game auto-detects Xbox, PS4 and Switch gamepads when choosing \u201crecommended\u201d glyphs in settings\n[*]Fix for cases where the player was not able to select anything using the gamepad on the main menu\n[*]Fix for the game going in slow motion if the player pressed Cancel on the main menu while \u201cfocusing\u201d on tutorial messages with the gamepad\n[*]Input fields on the title menus are alphanumeric-only, preventing players from creating impossible filenames\n[*]Brighter frames for input text on title menus, as they were extremely hard to see on certain screens\n[*]Fix for large numbers of purchasable objects not having associated images in the Shop interface\n[*]Blank spaces are trimmed from the beginning and end of filenames entered by the player to avoid errors\n[*]Better error checking for Resume Game to avoid cases where games load with incorrect/buggy elements intact\n[*]Fix for Resume button being selectable on the title screen when it should not be\n[*]When mousing over Keys on the map, information about the building will appear\n[*]Fix for map markers sometimes displaying incorrect text when viewed with a gamepad\n[*]Fix for quest markers sometimes shifting positions frequently on the minimap\n[*]Fix for certain important map icons (such as Mayor Building) disappearing from the map\n[*]Fix for target going haywire when aiming a throwable object while driving your car in keyboard/mouse mode\n[*]Various small title menu fixes\n[/list]\n\n[b][*]Items[/b]\n[list]\n[*]Shops are now capable of restocking their inventory.  Currently, they do this at 5 AM every day and restore the entirety of their inventory, but this will vary a lot more once I give this a proper balance pass.\n[*]Banana peels are no longer considered Lethal\n[*]Land Mines no longer bounce off cars\n[/list]\n\n[b][*]Sound[/b]\n[list]\n[*]Fix for collision sound effect playing when the player hits small objects with their car, such as foliage\n[/list]\n\n[b][*]Missions[/b]\n[list]\n[*]Fix for internal quest-giver error that could manifest itself in various ways\n[/list]\n\n[b][*]Artificial Intelligence[/b]\n[list]\n[*]Fixed a major error that had been present in the last couple of releases that was causing many NPCs to not get assigned to the jobs they were meant to take.  This resulted in businesses often being much less populated than they should have been.\n[*]Fix for NPC homeowners who catch the player sleeping in their bed not immediately facing the player and telling them to leave.\n[*]Adjustments to NPCs\u2019 pathing locations when pathing to objects, preventing some instances of them getting stuck.  Some instances still exist, currently looking into that.\n[*]Fixed an error where NPCs assumed many objects were blocked by walls on the left or right sides, preventing proper pathing\n[*]Fixed a pathing issue where NPCs would sometimes walk into walls when trying to reach a bed near the wall\n[*]Fix for NPCs who move into homes to replace old NPCs moving in inconsistently in homes with more than one person\n[*]Fix for NPCs who move into homes to replace old NPCs having very low health\n[*]Fix for error in algorithm assigning NPCs to jobs in locations outside of cities\n[*]Corrected some cases of NPCs working at buildings at which they were not meant to (i.e. Cop appearing at a military outpost)\n[*]Fix for NPCs who live and work at the same location not going to their job properly if their bed was behind a locked door\n[/list]\n\n[b][*]World Streaming[/b]\n[list]\n[*]Chunks of the game world are now loaded more quickly when necessary to greatly alleviate black squares appearing due to not-yet-loaded sections of the game world.\n[*]Adjusted the frequency of minimap updates to alleviate cases where not-yet-loaded parts of the map would appear\n[*]Fix for minimap sometimes displaying incorrect pieces when the player moves quickly across the map.  In cases where chunks have not yet loaded, black squares will appear.\n[*]Cleanup and small fixes for new chunk sizes introduced in the previous build\n[*]Fix for cases of player teleporting after resting in a bed or getting stuck in a black void\n[*]Fix for weird issues stemming from the game sometimes getting data from the wrong \u201cchunks\u201d of the world when loading new chunks\n[/list]\n\n[b][*]Engine[/b]\n[list]\n[*]Updated Unity version to 2022.3.57\n[/list]\n\n[b][*][b][*]Internal (\u2757NOT VISIBLE IN THE DEMO\u2757)[/b][/b]\n[list]\n[*]It is now possible to call quest-givers in the UI to receive new quests instead of physically visiting them.\n[*]Major changes to the in-game menu UI: The number of tabs has been reduced to 3, with the less important menus being selectable from the first tab.\n[*]Objects react differently to different weapons, i.e. your bare fists won't knock down a tree (unless you're remarkably strong), and while you can technically shoot down a tree with a shotgun, it's probably not worth the cost of the bullets.\n[*]Dirt paths, roads, etc., can be extended from one chunk to another very easily, allowing more natural connections to roads.\n[*]New vehicle added: Armored Boat\n[*]New Animal: Hermit Crab\n[*] A bunch of new wall varieties added\n[*]Several new crops added\n[*]2 New \u201cDisaster\u201d music tracks\n[*]Method for viewing every variant of every game object simultaneously from the level editor\n[*]Female Gorillas!\n[/list]\n[/list]",
+      "key": "2165810::7c41103e44aedbeef60a20614e0532a930deb729",
+      "tags": [
+        {
+          "feature": "New Car: Cheap Sedan (I may rename this)"
+        },
+        {
+          "balance_change": "Cars now have a proper acceleration rate, which will eventually vary based on the type of car and the player\u2019s modifications.  Currently, it will take a bit more time to reach top speed than before."
+        },
+        {
+          "balance_change": "Change to how cars handle drifting that should make them feel a bit less floaty"
+        },
+        {
+          "balance_change": "Projectiles shot from vehicles will gradually lose any added momentum that the vehicle has provided, fixing issues like rockets moving extremely slowly when shot out the back of a fast-moving car"
+        },
+        {
+          "balance_change": "Camera zoom-in while driving has been made much less aggressive"
+        },
+        {
+          "balance_change": "Interactions between cars and walls/objects have been adjusted such that more objects and walls are destructible when traveling at appropriate speeds"
+        },
+        {
+          "balance_change": "Cars react realistically when hit with banana peels"
+        },
+        {
+          "bug": "Positions of abandoned cars are saved under more specific circumstances to reduce old car clutter"
+        },
+        {
+          "bug": "Fix for cases where the player could randomly drive faster than they previously could due to the game determining the player was a panicked NPC and allowing them to drive faster"
+        },
+        {
+          "feature": "Added two new \u201caction\u201d variants of existing music tracks"
+        },
+        {
+          "bug": "Fix for music tracks ending early when the application was not in focus for a period of time"
+        },
+        {
+          "feature": "LOADS of new object animations added.  Many of these are very subtle but should add a bit more movement and life to the game world."
+        },
+        {
+          "balance_change": "Foliage no longer plays its \u201cwindy\u201d animations by default, as before.  These animations will be reserved for certain periods of time such as during a storm, while a more subtle set of animations are now applied for the remainder of the time."
+        },
+        {
+          "bug": "Fix for Bullets appearing under blades of grass, chest-high objects and bodies"
+        },
+        {
+          "bug": "Fix for Water Explosion sprites rendering as completely black"
+        },
+        {
+          "bug": "Fix for certain outfits that were meant to show skin (i.e. crop top) showing an invisible body"
+        },
+        {
+          "bug": "Fix for certain instances of shadows not appearing next to small Fences"
+        },
+        {
+          "bug": "Fix for Fence doors not having shadows to their bottom right"
+        },
+        {
+          "bug": "Fix for shadows sometimes not appearing next to Counters"
+        },
+        {
+          "bug": "Fix for certain hairstyles clipping through the top of hats"
+        },
+        {
+          "bug": "Fix for players\u2019 and NPCs\u2019 tall hair and hats appearing underneath the top of walls"
+        },
+        {
+          "bug": "Fix for car chassis not always appearing as the intended colors"
+        },
+        {
+          "bug": "Fix for shadows not appearing on certain objects in the world"
+        },
+        {
+          "bug": "Fix for objects not always appearing in a pixel-perfect position, which could result in the objects feeling just slightly unstable"
+        },
+        {
+          "bug": "Fix for some objects not having outlines around them when highlighted"
+        },
+        {
+          "bug": "Did a major pass on world objects, with a particular focus on how they are placed into the environment.  Numerous fixes relating to the positioning of objects in the game world, fixing issues like objects clipping through walls, some pathing problems, etc."
+        },
+        {
+          "feature": "New Bush variants added"
+        },
+        {
+          "feature": "All electronic objects now have proper \u201cpower on/off\u201d mechanics"
+        },
+        {
+          "feature": "Proper \u201cWall Strength\u201d values added to all wall varieties"
+        },
+        {
+          "feature": "Proper \u201cflammability\u201d values added to all wall varieties"
+        },
+        {
+          "bug": "Players cannot sleep in beds when there is danger nearby"
+        },
+        {
+          "bug": "Fixes for object lighting on tall objects that extend beyond the top of walls"
+        },
+        {
+          "bug": "Fix for Double Doors and Garage Doors placed inside buildings sometimes having the collider of a single door."
+        },
+        {
+          "bug": "Objects used in quests (i.e. \u201cDestroy\u201d quests) are not replaced by Butler Bots"
+        },
+        {
+          "bug": "Fix for certain objects that got damaged appearing pristine when the player quickly leaves the area and returns"
+        },
+        {
+          "bug": "Fix for Doors sometimes appearing to be built with the incorrect material (i.e. Wood doors appearing as Steel doors)"
+        },
+        {
+          "bug": "Business doors will be locked if the business is intended to be open, but there is no NPC to cover that shift"
+        },
+        {
+          "bug": "Fix for certain objects not being spawned in the world when they should have been"
+        },
+        {
+          "bug": "Fix for the player being able to attempt to make speeches at random Podiums throughout the world"
+        },
+        {
+          "bug": "Fix for Sign object appearing invisible when facing certain angles"
+        },
+        {
+          "bug": "Fix for Killer Plant head disappearing when hit while snapping"
+        },
+        {
+          "bug": "Fix for Camera and Turret using incorrect sprites"
+        },
+        {
+          "bug": "Fix for a number of types of chairs appearing too far away from their accompanying desk or table, sometimes resulting in NPCs not sitting down properly"
+        },
+        {
+          "bug": "Fix for certain objects placed by the player in Build Mode appearing above the player on the Z axis when the player is in front of them on the Y axis"
+        },
+        {
+          "bug": "Certain objects can be moused over that previously could not"
+        },
+        {
+          "bug": "Job Center door is always unlocked"
+        },
+        {
+          "balance_change": "NPCs and the player no longer always carry weapons in their hands when they are not in a dangerous situation.  The weapon may appear on their back instead, much like Keys.  I may adjust how this looks visually in the future."
+        },
+        {
+          "balance_change": "Animals react realistically when hit with banana peels"
+        },
+        {
+          "balance_change": "Damage number text that appears in rapid succession is separated more to be more readable"
+        },
+        {
+          "bug": "Fix for gamepad button images (glyphs) not appearing for certain gamepads, namely PS4"
+        },
+        {
+          "feature": "Game auto-detects Xbox, PS4 and Switch gamepads when choosing \u201crecommended\u201d glyphs in settings"
+        },
+        {
+          "bug": "Fix for cases where the player was not able to select anything using the gamepad on the main menu"
+        },
+        {
+          "bug": "Fix for the game going in slow motion if the player pressed Cancel on the main menu while \u201cfocusing\u201d on tutorial messages with the gamepad"
+        },
+        {
+          "bug": "Input fields on the title menus are alphanumeric-only, preventing players from creating impossible filenames"
+        },
+        {
+          "bug": "Brighter frames for input text on title menus, as they were extremely hard to see on certain screens"
+        },
+        {
+          "bug": "Fix for large numbers of purchasable objects not having associated images in the Shop interface"
+        },
+        {
+          "bug": "Blank spaces are trimmed from the beginning and end of filenames entered by the player to avoid errors"
+        },
+        {
+          "bug": "Better error checking for Resume Game to avoid cases where games load with incorrect/buggy elements intact"
+        },
+        {
+          "bug": "Fix for Resume button being selectable on the title screen when it should not be"
+        },
+        {
+          "bug": "When mousing over Keys on the map, information about the building will appear"
+        },
+        {
+          "bug": "Fix for map markers sometimes displaying incorrect text when viewed with a gamepad"
+        },
+        {
+          "bug": "Fix for quest markers sometimes shifting positions frequently on the minimap"
+        },
+        {
+          "bug": "Fix for certain important map icons (such as Mayor Building) disappearing from the map"
+        },
+        {
+          "bug": "Fix for target going haywire when aiming a throwable object while driving your car in keyboard/mouse mode"
+        },
+        {
+          "bug": "Various small title menu fixes"
+        },
+        {
+          "feature": "Shops are now capable of restocking their inventory.  Currently, they do this at 5 AM every day and restore the entirety of their inventory, but this will vary a lot more once I give this a proper balance pass."
+        },
+        {
+          "balance_change": "Banana peels are no longer considered Lethal"
+        },
+        {
+          "bug": "Land Mines no longer bounce off cars"
+        },
+        {
+          "bug": "Fix for collision sound effect playing when the player hits small objects with their car, such as foliage"
+        },
+        {
+          "bug": "Fix for internal quest-giver error that could manifest itself in various ways"
+        },
+        {
+          "bug": "Fixed a major error that had been present in the last couple of releases that was causing many NPCs to not get assigned to the jobs they were meant to take.  This resulted in businesses often being much less populated than they should have been."
+        },
+        {
+          "bug": "Fix for NPC homeowners who catch the player sleeping in their bed not immediately facing the player and telling them to leave."
+        },
+        {
+          "balance_change": "Adjustments to NPCs\u2019 pathing locations when pathing to objects, preventing some instances of them getting stuck.  Some instances still exist, currently looking into that."
+        },
+        {
+          "bug": "Fixed an error where NPCs assumed many objects were blocked by walls on the left or right sides, preventing proper pathing"
+        },
+        {
+          "bug": "Fixed a pathing issue where NPCs would sometimes walk into walls when trying to reach a bed near the wall"
+        },
+        {
+          "bug": "Fix for NPCs who move into homes to replace old NPCs moving in inconsistently in homes with more than one person"
+        },
+        {
+          "bug": "Fix for NPCs who move into homes to replace old NPCs having very low health"
+        },
+        {
+          "bug": "Fix for error in algorithm assigning NPCs to jobs in locations outside of cities"
+        },
+        {
+          "bug": "Corrected some cases of NPCs working at buildings at which they were not meant to (i.e. Cop appearing at a military outpost)"
+        },
+        {
+          "bug": "Fix for NPCs who live and work at the same location not going to their job properly if their bed was behind a locked door"
+        },
+        {
+          "balance_change": "Chunks of the game world are now loaded more quickly when necessary to greatly alleviate black squares appearing due to not-yet-loaded sections of the game world."
+        },
+        {
+          "balance_change": "Adjusted the frequency of minimap updates to alleviate cases where not-yet-loaded parts of the map would appear"
+        },
+        {
+          "bug": "Fix for minimap sometimes displaying incorrect pieces when the player moves quickly across the map.  In cases where chunks have not yet loaded, black squares will appear."
+        },
+        {
+          "bug": "Cleanup and small fixes for new chunk sizes introduced in the previous build"
+        },
+        {
+          "bug": "Fix for cases of player teleporting after resting in a bed or getting stuck in a black void"
+        },
+        {
+          "bug": "Fix for weird issues stemming from the game sometimes getting data from the wrong \u201cchunks\u201d of the world when loading new chunks"
+        },
+        {
+          "bug": "Updated Unity version to 2022.3.57"
+        },
+        {
+          "feature": "It is now possible to call quest-givers in the UI to receive new quests instead of physically visiting them."
+        },
+        {
+          "feature": "Major changes to the in-game menu UI: The number of tabs has been reduced to 3, with the less important menus being selectable from the first tab."
+        },
+        {
+          "balance_change": "Objects react differently to different weapons, i.e. your bare fists won't knock down a tree (unless you're remarkably strong), and while you can technically shoot down a tree with a shotgun, it's probably not worth the cost of the bullets."
+        },
+        {
+          "feature": "Dirt paths, roads, etc., can be extended from one chunk to another very easily, allowing more natural connections to roads."
+        },
+        {
+          "feature": "New vehicle added: Armored Boat"
+        },
+        {
+          "feature": "New Animal: Hermit Crab"
+        },
+        {
+          "feature": "A bunch of new wall varieties added"
+        },
+        {
+          "feature": "Several new crops added"
+        },
+        {
+          "feature": "2 New \u201cDisaster\u201d music tracks"
+        },
+        {
+          "feature": "Method for viewing every variant of every game object simultaneously from the level editor"
+        },
+        {
+          "feature": "Female Gorillas!"
+        }
+      ]
+    },
+    {
+      "title": "Alpha Demo Patch 29: Improved Save System, Reworked City Generation, UI Overhaul",
+      "date": "2025-01-31 14:51:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123124628",
+      "content": "The latest version of the Streets of Rogue 2 alpha demo is here!  My primary focuses since the previous version have been improvements to city generation, a greatly expanded save system, and solidifying the frontend UI\u2019s functionality.\n\nAstute readers of the roadmap might remember that I had planned to add Cell Phone functionality this month.  I got a bit sidetracked with the world generation improvements, but I had been planning to take care of these before Early Access release anyway.  The Cell Phone will probably fit in better with the next update, on which the focus is intended to be design and balance changes with in-game UI updates sprinkled in.  Unless I get sidetracked again!\n\nAs a reminder, I\u2019ll be keeping quiet about SOR2's release date until I\u2019m 100% certain about a specific date.  In the meantime, you can track my current progress on the [url=https://sor2roadmap.notion.site/Streets-of-Rogue-2-Roadmap-1539f3dc3191805c841def6ca78d212d][b]roadmap[/b][/url].\n\n[b]Patch Notes | v29b[/b]\n[list]\n[*][b]Save System Overhaul[/b]\n[list]\n[*]The game now stores your last 10 auto-saves.\n[*]The game can be saved manually from the title menu.\n[*]Saves can be deleted and copied from within the game\u2019s UI.\n[*]Your most recent game can be resumed with a single button press by clicking Resume on the title screen.\n[*]Saved game menus load much more quickly if the player has a lot of files.\n[*]More information about saved worlds and characters is available through the menu system.[/list]\n[*][b]Frontend UI Overhaul[/b] - Many of the frontend menus were previously using the old Streets of Rogue 1 system.  Everything has now been updated to SOR2\u2019s system, which will make it much easier for me to add new menus and menu items going forward.  While there is still room for improvement on the visual front, functionality-wise these are getting to be very solid.\n[*][b]New \"chunks\"[/b] - Hundreds of new chunks have been added to the pool.  Anyone who messed around with SOR1\u2019s level editor will know that \u201cchunks\u201d are the building blocks of the world, and can contain buildings, roads and other features of the world.\n[*][b]New \u201cchunk\u201d sizes[/b] - Four new sizes of these have been added to help flesh out the world, bringing the total to 12.  For comparison, SOR1 had 3 sizes.\n[*][b]Denser Cities[/b] - One of the common complaints about previous versions was that cities tended to have too much open space.  This has largely been solved through the use of new types of chunks meant to fill out these spaces without creating an overload of insignificant buildings.  City generation will continue to receive improvements throughout development.\n[*][b]World Generation Versioning[/b] - Previously, any updated to the world generation would cause problems for existing saved games.  Now, the game will identify which version of world generation your saved game was using and revert to that version when loading the saved game.  In addition, you can choose which world gen version you want to use when starting a new game.\n[*][b]Wreckage sprites[/b] - 1,000+ new wreckage sprites have been added, meaning nearly every object in the world should have its own wreckage sprites.\n[*][b]A new music track has been added[/b], in addition to new \u2018action\u2019 versions of several existing music tracks, which will play during higher intensity moments.\n\n[*][b]Bug Fixes[/b]\n[list]\n[*][b]World Generation Bug Fixes[/b] - A number of world gen issues from previous versions have been cleaned up.\n[*]Player cannot command NPC employees to stand in deep water\n[*]Fixes for various issues relating to drowned NPCs\n[*]Visual fixes for city edges when other notable buildings were close by\n[*]Status text improvements to avoid text/visual clutter\n[*]Bunch of fixes relating to claiming land\n[*]Bunch of small improvements and optimizations to map displays\n[*]Fix for magnetized items being non-interactable if the player did not have room for them in their inventory\n[*]Items will not initially magnetize toward player if they have no space in their inventory\n[*]Fix for incorrect sound effect often playing for magnetized items\n[*]Fix for player-built objects sometimes appearing far too bright\n[*]Camera no longer zooms in abruptly when driving through objects\n[*][b]Lots more minor bug fixes[/b] that I didn\u2019t bother to track properly!\n[/list]\n[*][b]Internal (not visible in the demo):[/b]\n[list]\n[*]Several new animals added\n[*]A bunch of new crops added\n[*]A couple of new vehicles added\n[*]Broken-down variant art for all vehicles, and functionality for these\n[/list]\n[/list]",
+      "key": "2165810::71d3f299d38a4b555f2e4c0b4b5f3d9671c7c3ed",
+      "tags": [
+        {
+          "feature": "The game now stores your last 10 auto-saves."
+        },
+        {
+          "feature": "The game can be saved manually from the title menu."
+        },
+        {
+          "feature": "Saves can be deleted and copied from within the game\u2019s UI."
+        },
+        {
+          "feature": "Your most recent game can be resumed with a single button press by clicking Resume on the title screen."
+        },
+        {
+          "feature": "Saved game menus load much more quickly if the player has a lot of files."
+        },
+        {
+          "feature": "More information about saved worlds and characters is available through the menu system."
+        },
+        {
+          "feature": "Everything has now been updated to SOR2\u2019s system, which will make it much easier for me to add new menus and menu items going forward."
+        },
+        {
+          "feature": "Hundreds of new chunks have been added to the pool."
+        },
+        {
+          "feature": "Four new sizes of these have been added to help flesh out the world, bringing the total to 12."
+        },
+        {
+          "feature": "This has largely been solved through the use of new types of chunks meant to fill out these spaces without creating an overload of insignificant buildings."
+        },
+        {
+          "feature": "Now, the game will identify which version of world generation your saved game was using and revert to that version when loading the saved game."
+        },
+        {
+          "feature": "In addition, you can choose which world gen version you want to use when starting a new game."
+        },
+        {
+          "feature": "1,000+ new wreckage sprites have been added, meaning nearly every object in the world should have its own wreckage sprites."
+        },
+        {
+          "feature": "A new music track has been added, in addition to new \u2018action\u2019 versions of several existing music tracks, which will play during higher intensity moments."
+        },
+        {
+          "bug": "A number of world gen issues from previous versions have been cleaned up."
+        },
+        {
+          "bug": "Player cannot command NPC employees to stand in deep water"
+        },
+        {
+          "bug": "Fixes for various issues relating to drowned NPCs"
+        },
+        {
+          "bug": "Visual fixes for city edges when other notable buildings were close by"
+        },
+        {
+          "bug": "Status text improvements to avoid text/visual clutter"
+        },
+        {
+          "bug": "Bunch of fixes relating to claiming land"
+        },
+        {
+          "bug": "Bunch of small improvements and optimizations to map displays"
+        },
+        {
+          "bug": "Fix for magnetized items being non-interactable if the player did not have room for them in their inventory"
+        },
+        {
+          "bug": "Items will not initially magnetize toward player if they have no space in their inventory"
+        },
+        {
+          "bug": "Fix for incorrect sound effect often playing for magnetized items"
+        },
+        {
+          "bug": "Fix for player-built objects sometimes appearing far too bright"
+        },
+        {
+          "bug": "Camera no longer zooms in abruptly when driving through objects"
+        },
+        {
+          "bug": "Lots more minor bug fixes that I didn\u2019t bother to track properly!"
+        },
+        {
+          "feature": "Several new animals added"
+        },
+        {
+          "feature": "A bunch of new crops added"
+        },
+        {
+          "feature": "A couple of new vehicles added"
+        },
+        {
+          "feature": "Broken-down variant art for all vehicles, and functionality for these"
+        }
+      ]
+    },
+    {
+      "title": "Devlog #4: New Release ETA, Dev Roadmap, Controller Support for the Demo",
+      "date": "2024-12-19 14:57:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930631044",
+      "content": "[h1][b]Hi, rogues,[/b][/h1]\n\nIt's been a minute, but I have a few new items of interest for you today!\n\n[h3][b]\ud83c\udf9e\ufe0f Devlog #4[/b][/h3]\nPerhaps you're wondering what's going on with the game, and why the missed release dates this year?  All is explained in this video!  Spoilers, though, it's nothing remotely scandalous :(\n\nAnd a quick clarification about the release date:\n\n[quote][h3][b]The Early Access release will be happening in 2025[/b].[/h3][/quote]\nThe exact date will only be revealed once we're 100% sure of that date.  That's all I'll be saying about release dates until the time comes :) Until then, check the Devlog out:\n\n[previewyoutube=4BcpVvcxAp8;full][/previewyoutube]\n\n[h3][b]\ud83d\uddfa\ufe0f Roadmap[/b][/h3]\nOctober's release of the Streets of Rogue 2 Alpha Demo generated a lot of questions from players.  In response, I present to you a living public Roadmap!  Click the button below to check it out. \n\nThe Roadmap should give you a solid idea of my plans for the game throughout its pre-Early Access and Early Access periods.  A warning: it's pretty lengthy, and I wouldn't recommend reading it from start to finish.  Think of it more as a reference guide to look at if you're curious about some specific aspect of the game.  And feel free to let me know if you think anything is missing from this!\n\n[url=https://sor2.notion.site/ style=button]Streets of Rogue 2 Development Roadmap[/url]\n\n[h3][b]\ud83c\udfae New Alpha Demo Patch: Full Gamepad Support Added[/b][/h3]\nThe previous iteration of the demo had very basic, hacked-in gamepad support.  This new patch has proper gamepad support so that essentially everything that can be done with a mouse and keyboard can now be done with a gamepad.  I've held off on gameplay changes for this patch to work exclusively on gamepad support, so you've already seen and done everything; it may not be the time to dive back just in.  But with this particular mountain overcome, future demo patches will focus on new mechanics, design, and balance issues.  So stay tuned!\n\n[b]Patch Notes | v28c[/b]\n[list]\n[*][b]\ud83c\udfae Full gamepad support[/b] for all aspects of the demo\n[*]Almost all actions are now properly remappable\n[*]Proper help text displaying button glyphs has been added to numerous pieces of UI\n[*]Fixed for the player being able to create duplicate items in their inventory\n[*]Fix for crafting material locations being set to spawn within cities and only being able to spawn toward the bottom left of large cities\n[*]Fix for menu-based sound effects sometimes not playing\n[*]Screen shake and controller rumble no longer occur when viewing most menus\n[*]Fix for car headlight jittering that sometimes occurred when traveling forward\n[*]Fix for player being able to sell Mayor Hat\n[*]Lots of other small fixes made while implementing gamepad support that I didn't properly track\n[/list]\n[hr][/hr]\nAs always, thanks for your support. Let us know in the comments what you think about this devlog entry. Also, a reminder: [i][b]Streets of Rogue 2[/b][/i] is coming to Steam next year as an Early Access title; wishlist & follow the game to keep yourself updated with the latest news:\n\nhttps://store.steampowered.com/app/2165810/Streets_of_Rogue_2/\n\n[quote][b]Watch the previous devlogs:[/b]\n[url=https://www.youtube.com/watch?v=gcSK1YYUvBo]Devlog 1: How I Approach World-Building? \ud83d\uddfa\ufe0f[/url]\n[url=https://www.youtube.com/watch?v=i_HA855WzdI]Devlog 2: Creating an Open World Solo \ud83d\uddfa\ufe0f[/url]\n[url=https://www.youtube.com/watch?v=auYaF_NCdFE]Devlog 3: Games That Inspired SoR 2 \ud83d\udca1[/url]\n[/quote]\n[hr][/hr]\nJoin the community on Discord: \n[url=https://discord.gg/streetsofrogue][b]\ud83d\udd17DISCORD[/b][/url]\n\nFollow [i][b]Streets of Rogue 2[/b][/i] on social media:\n[url=https://twitter.com/streetsofrogue][b]\ud83d\udd17TWITTER (X)[/b][/url]\n[url=https://www.tiktok.com/@streetsofrogue][b]\ud83d\udd17TIKTOK[/b][/url]\n[url=https://www.reddit.com/r/streetsofrogue/][b]\ud83d\udd17REDDIT[/b][/url]",
+      "key": "2165810::ce9d39e4c912de8226a1579d44b5c907ea339c17",
+      "tags": [
+        {
+          "feature": "[b]\ud83c\udfae Full gamepad support[/b] for all aspects of the demo"
+        },
+        {
+          "bug": "Fixed for the player being able to create duplicate items in their inventory"
+        },
+        {
+          "bug": "Fix for crafting material locations being set to spawn within cities and only being able to spawn toward the bottom left of large cities"
+        },
+        {
+          "bug": "Fix for menu-based sound effects sometimes not playing"
+        },
+        {
+          "bug": "Screen shake and controller rumble no longer occur when viewing most menus"
+        },
+        {
+          "bug": "Fix for car headlight jittering that sometimes occurred when traveling forward"
+        },
+        {
+          "bug": "Fix for player being able to sell Mayor Hat"
+        },
+        {
+          "bug": "Lots of other small fixes made while implementing gamepad support that I didn't properly track"
+        }
+      ]
+    },
+    {
+      "title": "Alpha Demo Patch 27h: More crucial bug fixes",
+      "date": "2024-11-05 17:02:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657174074271",
+      "content": "At this point, most of the substantial bugs present in the demo have been dealt with.  In future updates, I'll be pushing forward with features like full gamepad support and local co-op.\n\nI've been reading all your feedback, and rest assured that the game will be going through some pretty hefty gameplay and balance changes in the near future.  The demo needed to be released on a particular timeline for Steam Next Fest, which unfortunately didn't give me the opportunity to implement a big chunk of my planned designs, or do any sort of balance pass.  I've been focusing on bug fixes since the demo launch, but that focus will shift soon.\n\nStay tuned, as I'm planning to release a detailed roadmap pretty soon, which should hopefully clear up any confusion about the state of the game!\n\n[h3][b]v27h[/b][/h3]\n[list]\n[*]New Textures for various objects depending on the type of building they were spawned in.  Internally a whole bunch of new objects were added that won't yet be visible in the game world.\n[*]Fix for timing-based potential crash in load sequence at 92%\n[*]Fixed a soft lock error relating to object spawns\n[*]Fix for soft-lock attempting to spawn certain types of roadside buildings\n[*]Fix for player faction starting locations not always appearing on the map if they were too far from the player's initial starting point\n[*]Improvements to help ensure NPCs not get stuck between chairs/bed and wall\n[*]Fix for further cases of cars driven by NPCs getting stuck and facing the wrong angle\n[*]Fixed a couple of city-to-nature texture transitions where city pavement edges were shown at inappropriate spots.\n[*]Fix for doors inside apartment buildings not always being locked from the correct side\n[*]Fix for effects of Confused carrying over when loading a saved game\n[*]Well Rested carries over when loading a saved game\n[*]Fix for water explosion particle effects not appearing\n[*]Internally made several key map generation fixes, which you'll see in a future build.  I'll be releasing all this at once, as this will likely screw up existing saved worlds.\n[/list]",
+      "key": "2165810::f499e51f4a31fe035aaed37ad526e09756d11fc8",
+      "tags": [
+        {
+          "feature": "[*]New Textures for various objects depending on the type of building they were spawned in. Internally a whole bunch of new objects were added that won't yet be visible in the game world."
+        },
+        {
+          "bug": "[*]Fix for timing-based potential crash in load sequence at 92%"
+        },
+        {
+          "bug": "[*]Fixed a soft lock error relating to object spawns"
+        },
+        {
+          "bug": "[*]Fix for soft-lock attempting to spawn certain types of roadside buildings"
+        },
+        {
+          "bug": "[*]Fix for player faction starting locations not always appearing on the map if they were too far from the player's initial starting point"
+        },
+        {
+          "bug": "[*]Improvements to help ensure NPCs not get stuck between chairs/bed and wall"
+        },
+        {
+          "bug": "[*]Fix for further cases of cars driven by NPCs getting stuck and facing the wrong angle"
+        },
+        {
+          "bug": "[*]Fixed a couple of city-to-nature texture transitions where city pavement edges were shown at inappropriate spots."
+        },
+        {
+          "bug": "[*]Fix for doors inside apartment buildings not always being locked from the correct side"
+        },
+        {
+          "bug": "[*]Fix for effects of Confused carrying over when loading a saved game"
+        },
+        {
+          "bug": "[*]Well Rested carries over when loading a saved game"
+        },
+        {
+          "bug": "[*]Fix for water explosion particle effects not appearing"
+        },
+        {
+          "bug": "[*]Internally made several key map generation fixes, which you'll see in a future build. I'll be releasing all this at once, as this will likely screw up existing saved worlds."
+        }
+      ]
+    },
+    {
+      "title": "Alpha Demo Patch 27g: Loads of bug fixes",
+      "date": "2024-10-28 13:46:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911958701",
+      "content": "[h3][b]v27g[/b][/h3]\n[list]\n[*]Adjusted \u201ctank controls\u201d driving handling to conform more easily to 90-degree angles\n[*]Fix for some oddities resulting from the player returning to the main menu and entering a new world\n[*]Pressing switches creates a small noise audible by NPCs a short distance away\n[*]Fix for player-built floors appearing with incorrect texture upon when the player leaves and returns\n[*]Fix for players having \u201c1/1\u201d stats when entering the game\n[*]Fix for player-built walls placed on sand causing the surrounding sand to disappear\n[*]Buffs from food are now kept when loading a saved game\n[*]When loading a saved game, status effect timers do not start until the gameplay actually starts\n[*]Fix for locations failing to appear at times due to being \u201coverlapped\u201d by a dirt path\n[*]Fix for Safe sometimes needing to be destroyed for a Destroy quest\n[*]Fix for cases where NPCs could get stuck trying to enter Police Boxes\n[*]Fix for cases where NPC gang members would teleport to the player if the player had imprisoned a fellow gang member\n[*]Fix for NPC prisoners still technically remaining in the player's party if the player brought them to a Police Box\n[*]Imprisoned NPCs will be properly replaced in their homes and jobs\n[*]Fix for giblets appearing near Police Boxes upon leaving and returning to the game\n[*]Fix for Flower Bed Plants being interactable\n[*]Fix for Prison doors that led directly outdoors being unlocked during the daytime for businesses\n[*]Fix for NPCs not being interactable while on toilet and bench\n[*]Certain floor textures (such as parking lot lines) will not appear if the building placed on grass rather than pavement\n[*]Buildings in the wilderness will not sit on pavement unless it\u2019s explicitly required\n[*]Fix for chests appearing to be non-interactable if they were opened prior to a quest item being placed into them\n[*]Fix for trees and other environmental objects sometimes appearing on pavement at the edge of cities\n[*]Fix for quest flavor text translations not falling back to English translation when text doesn't exist\n[*]Fix for quests that involved arresting multiple people completing if only 1 NPC was brought to a Police Box\n[*]If the player is driving a prisoner, they will wait until the car slows down and they can jump out to become mutinous\n[*]Fix for odd barrel icon appearing on map\n[*]Fix for NPCs not being interactable while on toilet and bench\n[*]Fix for cases of questgiver NPCs appearing with incorrect facial features on UI\n[*]Modifications to Cop quest locations\n[*]Fix for cases where objects for quests would spawn on top of each other\n[*]Fix for certain quest type variants not being generated\n[*]Fix for NPCs sometimes spawning more than one of a particular key\n[*]Fix for status effect icons not always appearing after loading a saved game\n[*]Fixed graphical issues with Shack rooftop\n[/list]",
+      "key": "2165810::cf74f9c523cba193b91b8b9c22a31f05a3f66789",
+      "tags": [
+        {
+          "balance_change": "[*]Adjusted \u201ctank controls\u201d driving handling to conform more easily to 90-degree angles"
+        },
+        {
+          "bug": "[*]Fix for some oddities resulting from the player returning to the main menu and entering a new world"
+        },
+        {
+          "feature": "[*]Pressing switches creates a small noise audible by NPCs a short distance away"
+        },
+        {
+          "bug": "[*]Fix for player-built floors appearing with incorrect texture upon when the player leaves and returns"
+        },
+        {
+          "bug": "[*]Fix for players having \u201c1/1\u201d stats when entering the game"
+        },
+        {
+          "bug": "[*]Fix for player-built walls placed on sand causing the surrounding sand to disappear"
+        },
+        {
+          "feature": "[*]Buffs from food are now kept when loading a saved game"
+        },
+        {
+          "feature": "[*]When loading a saved game, status effect timers do not start until the gameplay actually starts"
+        },
+        {
+          "bug": "[*]Fix for locations failing to appear at times due to being \u201coverlapped\u201d by a dirt path"
+        },
+        {
+          "bug": "[*]Fix for Safe sometimes needing to be destroyed for a Destroy quest"
+        },
+        {
+          "bug": "[*]Fix for cases where NPCs could get stuck trying to enter Police Boxes"
+        },
+        {
+          "bug": "[*]Fix for cases where NPC gang members would teleport to the player if the player had imprisoned a fellow gang member"
+        },
+        {
+          "bug": "[*]Fix for NPC prisoners still technically remaining in the player's party if the player brought them to a Police Box"
+        },
+        {
+          "bug": "[*]Imprisoned NPCs will be properly replaced in their homes and jobs"
+        },
+        {
+          "bug": "[*]Fix for giblets appearing near Police Boxes upon leaving and returning to the game"
+        },
+        {
+          "bug": "[*]Fix for Flower Bed Plants being interactable"
+        },
+        {
+          "bug": "[*]Fix for Prison doors that led directly outdoors being unlocked during the daytime for businesses"
+        },
+        {
+          "bug": "[*]Fix for NPCs not being interactable while on toilet and bench"
+        },
+        {
+          "bug": "[*]Certain floor textures (such as parking lot lines) will not appear if the building placed on grass rather than pavement"
+        },
+        {
+          "bug": "[*]Buildings in the wilderness will not sit on pavement unless it\u2019s explicitly required"
+        },
+        {
+          "bug": "[*]Fix for chests appearing to be non-interactable if they were opened prior to a quest item being placed into them"
+        },
+        {
+          "bug": "[*]Fix for trees and other environmental objects sometimes appearing on pavement at the edge of cities"
+        },
+        {
+          "bug": "[*]Fix for quest flavor text translations not falling back to English translation when text doesn't exist"
+        },
+        {
+          "bug": "[*]Fix for quests that involved arresting multiple people completing if only 1 NPC was brought to a Police Box"
+        },
+        {
+          "bug": "[*]If the player is driving a prisoner, they will wait until the car slows down and they can jump out to become mutinous"
+        },
+        {
+          "bug": "[*]Fix for odd barrel icon appearing on map"
+        },
+        {
+          "bug": "[*]Fix for NPCs not being interactable while on toilet and bench"
+        },
+        {
+          "bug": "[*]Fix for cases of questgiver NPCs appearing with incorrect facial features on UI"
+        },
+        {
+          "bug": "[*]Modifications to Cop quest locations"
+        },
+        {
+          "bug": "[*]Fix for cases where objects for quests would spawn on top of each other"
+        },
+        {
+          "bug": "[*]Fix for certain quest type variants not being generated"
+        },
+        {
+          "bug": "[*]Fix for NPCs sometimes spawning more than one of a particular key"
+        },
+        {
+          "bug": "[*]Fix for status effect icons not always appearing after loading a saved game"
+        },
+        {
+          "bug": "[*]Fixed graphical issues with Shack rooftop"
+        }
+      ]
+    },
+    {
+      "title": "Alpha Demo Patch 27e: Major World Generation Performance Improvements",
+      "date": "2024-10-23 15:16:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212245217911797832",
+      "content": "[h3][b]v27e[/b][/h3]\n[list]\n[*]Reduced RAM usage by a bit, but a more sizeable reduction will be coming in a future update.  I didn't add it to this one because its effects on world generation would invalidate existing saved worlds.  I'll be working toward a solution of keeping existing worlds intact when such changes are made to world gen.\n[*]World generation loading has a consistently decent frame rate without any massive spikes.  This will hopefully solve issues some players had with the game crashing during world gen.\n[*]Reduced world generation time by about 50%\n[*]Fix for chunks loading a second time when the player returns to the title screen, resulting in increased RAM usage.\n[*]Fix for cases where world generation could get stuck at 30% due to issues with placement of large cities\n[*]Fix for black void appearing upon loading certain saved games, due to quest-related error\n[*]Fix for keys and safe combinations not always being loaded properly when the player quits the game and returns\n[*]Fix for Mayor Hat being un-retrievable if the Mayor fell down a hole, it will teleport out of the hole (this will be dealt with in some other way in the future)\n[*]Fix for gang members getting teleported out of the player's view when their fellow gang members leave the play area.  This was also responsible for cars getting stuck when driving with certain NPCs.\n[*]Fix for quest location icons not zooming in and out on the map if the player had previously discovered that location\n[*]Fix for player not being able to drag and drop inventory items in keyboard/mouse mode\n[*]Fix for Hacker NPC not properly hacking Car for the player to drive\n[*]Fix for player stat boosts carrying over permanently when saved games are loaded\n[*]Fix for Trash Cans and other environmental objects appearing next to homes that the player has built\n[*]Fix for a bunch of animal interactions being possible that didn't make sense\n[*]Fix for incorrect website link on title screen\n[*]Recipes for which the player has crafting ingredients appear at the top of the crafting list\n[/list]\n\n[h3][b]v27f[/b][/h3]\n[list]\n[*]Fix for timing-related issue that caused players to start the game stranded in the middle of the ocean\n[*]Fix for players being able to access coop menus via the gamepad (it didn't work by the way, no need to save your old builds).\n[/list]",
+      "key": "2165810::f021c508622045d4ee72c14ed1eea7a892345dea",
+      "tags": [
+        {
+          "balance_change": "-Reduced RAM usage by a bit, but a more sizeable reduction will be coming in a future update.  I didn't add it to this one because its effects on world generation would invalidate existing saved worlds.  I'll be working toward a solution of keeping existing worlds intact when such changes are made to world gen."
+        },
+        {
+          "balance_change": "-Reduced world generation time by about 50%"
+        },
+        {
+          "bug": "-Fix for chunks loading a second time when the player returns to the title screen, resulting in increased RAM usage."
+        },
+        {
+          "bug": "-Fix for cases where world generation could get stuck at 30% due to issues with placement of large cities"
+        },
+        {
+          "bug": "-Fix for black void appearing upon loading certain saved games, due to quest-related error"
+        },
+        {
+          "bug": "-Fix for keys and safe combinations not always being loaded properly when the player quits the game and returns"
+        },
+        {
+          "bug": "-Fix for Mayor Hat being un-retrievable if the Mayor fell down a hole, it will teleport out of the hole (this will be dealt with in some other way in the future)"
+        },
+        {
+          "bug": "-Fix for gang members getting teleported out of the player's view when their fellow gang members leave the play area.  This was also responsible for cars getting stuck when driving with certain NPCs."
+        },
+        {
+          "bug": "-Fix for quest location icons not zooming in and out on the map if the player had previously discovered that location"
+        },
+        {
+          "bug": "-Fix for player not being able to drag and drop inventory items in keyboard/mouse mode"
+        },
+        {
+          "bug": "-Fix for Hacker NPC not properly hacking Car for the player to drive"
+        },
+        {
+          "bug": "-Fix for player stat boosts carrying over permanently when saved games are loaded"
+        },
+        {
+          "bug": "-Fix for Trash Cans and other environmental objects appearing next to homes that the player has built"
+        },
+        {
+          "bug": "-Fix for a bunch of animal interactions being possible that didn't make sense"
+        },
+        {
+          "bug": "-Fix for incorrect website link on title screen"
+        },
+        {
+          "feature": "- Recipes for which the player has crafting ingredients appear at the top of the crafting list"
+        },
+        {
+          "bug": "-Fix for timing-related issue that caused players to start the game stranded in the middle of the ocean"
+        },
+        {
+          "bug": "-Fix for players being able to access coop menus via the gamepad (it didn't work by the way, no need to save your old builds)."
+        }
+      ]
+    },
+    {
+      "title": "The First Alpha Demo Patch: Partial Controller Support, Bug Fixes",
+      "date": "2024-10-21 07:09:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6212244583190144502",
+      "content": "[h3][b]v27c[/b][/h3]\n[list]\n[*] Partial gamepad support added - Gamepad is usable for most aspects of the game, with the exception of home-building and most content in the menu system\n[*] Loads of localization fixes all over the place, all Chinese and Russian font issues should be fixed\n[*] Fix for not being able to delete characters\n[*] Fix for the player being able to teleport their car into Mayor's Office (I may add this back in as a special skill)\n[*] Fix for Keycard to Mayor Office elevator not always working\n[*] Fix for issues with people who are arrested and sent to Police Boxes not being fully \"cleared\" from the game\n[*] Fix for NPCs refusing to exit car when brought too close to the outdoor Police Box\n[*] Certain items no longer appear in shops. I'm talking about items that the player really shouldn\u2019t have \n[*] Animals no longer animate while frozen\n[*] Fix for title screen image not appearing when the player returns to the main menu\n[*] Fix for error when speaking to upper-level Clerk in Mayor\u2019s Office\n[*] NPC Enforcers will not attack an NPC that the player (also an Enforcer) has tased or made dizzy\n[*] Fix for NPC hostility issue based on an incorrect assumption that player is hostile toward someone\n[*] Fix for player being able to interact with NPCs on the ground as if they were alive\n[*] Fix for player being able to Imprison dead NPCs\n[*] Fix for certain in-game sprites not appearing within text meshes\n[*] Various tooltip text fixes\n[*] Fix for ammo count not appearing at the top of the screen\n[*] Fix for error relating to NPCs getting out of cars\n[*] Fix for NPCs sometimes gaining a shop inventory that they weren't supposed to have\n[*] Various art fixes and changes\n[*] Credits list added\n[/list]\n[h3][b]v27d[/b][/h3]\n[list]\n[*] Fix for food recipes not appearing properly\n[*] Fix for Korean text not appearing properly\n[/list]",
+      "key": "2165810::2fc6b89208a8b0e4b9e185c546c543b191c66f96",
+      "tags": [
+        {
+          "feature": "Partial gamepad support added - Gamepad is usable for most aspects of the game, with the exception of home-building and most content in the menu system"
+        },
+        {
+          "bug": "Loads of localization fixes all over the place, all Chinese and Russian font issues should be fixed"
+        },
+        {
+          "bug": "Fix for not being able to delete characters"
+        },
+        {
+          "bug": "Fix for the player being able to teleport their car into Mayor's Office (I may add this back in as a special skill)"
+        },
+        {
+          "bug": "Fix for Keycard to Mayor Office elevator not always working"
+        },
+        {
+          "bug": "Fix for issues with people who are arrested and sent to Police Boxes not being fully \"cleared\" from the game"
+        },
+        {
+          "bug": "Fix for NPCs refusing to exit car when brought too close to the outdoor Police Box"
+        },
+        {
+          "bug": "Certain items no longer appear in shops. I'm talking about items that the player really shouldn\u2019t have"
+        },
+        {
+          "bug": "Animals no longer animate while frozen"
+        },
+        {
+          "bug": "Fix for title screen image not appearing when the player returns to the main menu"
+        },
+        {
+          "bug": "Fix for error when speaking to upper-level Clerk in Mayor\u2019s Office"
+        },
+        {
+          "bug": "NPC Enforcers will not attack an NPC that the player (also an Enforcer) has tased or made dizzy"
+        },
+        {
+          "bug": "Fix for NPC hostility issue based on an incorrect assumption that player is hostile toward someone"
+        },
+        {
+          "bug": "Fix for player being able to interact with NPCs on the ground as if they were alive"
+        },
+        {
+          "bug": "Fix for player being able to Imprison dead NPCs"
+        },
+        {
+          "bug": "Fix for certain in-game sprites not appearing within text meshes"
+        },
+        {
+          "bug": "Various tooltip text fixes"
+        },
+        {
+          "bug": "Fix for ammo count not appearing at the top of the screen"
+        },
+        {
+          "bug": "Fix for error relating to NPCs getting out of cars"
+        },
+        {
+          "bug": "Fix for NPCs sometimes gaining a shop inventory that they weren't supposed to have"
+        },
+        {
+          "bug": "Various art fixes and changes"
+        },
+        {
+          "feature": "Credits list added"
+        },
+        {
+          "bug": "Fix for food recipes not appearing properly"
+        },
+        {
+          "bug": "Fix for Korean text not appearing properly"
+        }
+      ]
+    },
+    {
+      "title": "Demo Out Now! \ud83c\udfae An Update on the Release Date \ud83d\udcc5",
+      "date": "2024-10-14 09:54:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6211118320237970636",
+      "content": "[img]https://i.imgur.com/yiajCmF.gif[/img]\n\n[h1][b]Hey everybody, [/b][/h1]\n\nMatt here, and I\u2019ve got some development news about [i][b]Streets of Rogue 2[/b][/i].\n\n[list]\n[*] [h3] \ud83c\udfae The [i][b]Streets of Rogue 2[/b][/i] [b]Island Alpha Demo[/b] is [b]OUT NOW[/b], just in time for Steam Next Fest![/h3]\n[quote][h3]Download it from the game's [url=https://store.steampowered.com/app/2165810/Streets_of_Rogue_2/][b]\ud83d\udc49Steam page\ud83d\udc48[/b][/url][/h3][/quote][*] \ud83d\udcc5 [i][b]Streets of Rogue 2[/b][/i]\u2019s Early Access release is [b]moving from October 22 to some other point in the near future[/b]. Keyword \u201cnear\u201d, we don\u2019t intend for this to be an enormous wait. The exact date will be announced closer to launch.\n[/list]\nWe had previously announced a large-scale playtest of the game. [b]The demo release will essentially be replacing that[/b] since it includes the same content that I was planning for the playtest.\n\nSo first off, why the delays? Well, the TL;DR is [b]\u201cBig Open-Ended Game + Solo Programmer = Unpredictable Timeline.\u201d[/b] October 22 seemed like a viable date back in July, but ultimately despite my best efforts, I felt [b]the game needed a bit more time in the oven[/b].  My sincere apologies for the delays, I fully understand how annoying it can be to look forward to something only to have the rug pulled.  That\u2019s why we won\u2019t be announcing any more specific dates until it\u2019s a 100% lock. \n\n\nAll that said, [b]you can play the alpha demo right now[/b]! Here\u2019s what to expect from it:\n\n[img]{STEAM_CLAN_IMAGE}/43039829/14924c8a65f7e05bb235043b8fb25c8dd36a0d31.png[/img][list]\n[*] The demo includes a small chunk of the game world featuring content that may or may not be included in the full release.  You\u2019ll be playing on [b]an island away from the main landmass[/b] where the game takes place.\n[*] The goal of the demo is to [b]take down the Mayor[/b] or otherwise gain their favor.  However, you\u2019re free to pursue other goals if you please.\n[img]{STEAM_CLAN_IMAGE}/43039829/8c25c817d714398840bc236b1807ff0a4d66f72c.png[/img]\n\n[*] You\u2019ll have access to a small selection of [b]character classes[/b], allowing you to tackle the content from multiple angles.\n[img]{STEAM_CLAN_IMAGE}/43039829/a9937a60c263106ffe26cfac4eb2b3ea37472f72.png[/img]\n[*] The world is [b]randomly generated[/b], though the key features of the island will be similar on each playthrough.\n[*] I will try to slip in some [b]mutators[/b] before release or shortly after.\n[*] [b]The demo has partial controller support[/b], full support will be implemented in the demo later.\n[*] [b]Local co-op support is also not in the demo[/b] initially but will be added after release.\n[*] [b]Online multiplayer is also not available in this demo[/b].\n[*] I\u2019ll continue updating the demo up to the Early Access release based on feedback from players and other changes that I\u2019m making to the full game.\n[/list]\nPrior to the Early Access launch of the original [i][b]Streets of Rogue[/b][/i], the game had been available for free, which allowed me to take in community feedback and launch the game in a state that I felt very confident about.  I\u2019ve long felt the absence of this back-and-forth during SOR2\u2019s development, but given how much larger and more complex of a game SOR2 is, I feel like much of the feedback would have been something to the effect of [i]\u201cI launched the game and was immediately sucked into a black void where I was eaten by Cannibals who are missing their eyeball textures. Then my graphics card blew up, and you owe me for my ER visit.\u201d[/i]  In essence, it wouldn\u2019t have been much fun for anybody.\n\nAt this point in development, I\u2019d consider the game to be [b]a lot closer to being Early Access-ready[/b], as the game\u2019s foundations are pretty solid.  However, polish is still needed in order to bring the core game loop and progression system to where they need to be, and bugs are still a little too prevalent for my liking.  For me, that\u2019s a very exciting place to be.  There are just enough not-super-well-defined elements in the game that I feel like pre-release community feedback would be very beneficial.\n\nSo basically, [b]consider this demo to be a fairly rough (but hopefully pretty fun)[/b] taste of what\u2019s to come that will give you a sense of the systemic/gameplay possibilities of SOR2.  But also, don\u2019t be surprised if the initial questgiver gets mauled by a bear \ud83d\udc3b before you can get your bearings (no pun intended) because they decided to spawn on the beach where you start the game for some reason.  (To be fair, I fixed that one last night, but you get the idea!)\n\n[b]Thanks again for your patience, and stay tuned![/b]\n\n[i][b]Matt D[/b][/i]\n\n[hr][/hr][url=https://discord.gg/streetsofrogue][img]{STEAM_CLAN_IMAGE}/43039829/0e5373d7b5abf2b76df0ea90f94ce17a32c18724.gif[/img][/url]\n\n[url=https://www.reddit.com/r/streetsofrogue/][b]\ud83d\udd17REDDIT[/b][/url]\n[url=https://twitter.com/streetsofrogue][b]\ud83d\udd17TWITTER (X)[/b][/url]\n[url=https://www.tiktok.com/@streetsofrogue][b]\ud83d\udd17TIKTOK[/b][/url]",
+      "key": "2165810::bac1a3fef5305d7fb5bf62b5342537471471cb89",
+      "tags": [
+        {
+          "feature": "- The demo has partial controller support, full support will be implemented in the demo later."
+        },
+        {
+          "feature": "- Local co-op support is also not in the demo initially but will be added after release."
+        },
+        {
+          "feature": "- Online multiplayer is also not available in this demo"
+        },
+        {
+          "bug": "(To be fair, I fixed that one last night, but you get the idea!)"
+        }
+      ]
+    },
+    {
+      "title": "Playable Classes Overview Trailer Dropped, Check it Out!",
+      "date": "2024-09-26 15:28:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370182952621",
+      "content": "[img]{STEAM_CLAN_IMAGE}/43039829/ec3ed61d450a3e5ec90f4d829dce90d53dfc044c.gif[/img]\n\n[img]{STEAM_CLAN_IMAGE}/43039829/5e2ff73370490c0173ba0b625ae04b2486a30e86.png[/img]\n\n[h1][b]Hey, rogues,[/b][/h1]\n\nIn our fresh trailer, which just dropped at Convergence Games Showcase, we've introduced a rundown of future classes you will choose from. Check it out:\n\n[previewyoutube=oUou-ww78dM;full][/previewyoutube]\n[h3][b]HIGHLIGHTS[/b][/h3]\n\n[table noborder=1]\n    [tr]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/9753bf5dc92a86f42640305d3f2520d0a26db625.png[/img]\n[b]Cultist (New Class)[/b][/th]\n        [th][quote]\u2190 They are many, and their churches are plentiful.[/quote][/th]\n    [/tr]\n\n    [tr]\n        [td][img]{STEAM_CLAN_IMAGE}/43039829/08d918c76ab17d732ab3c676d1d69bdb670e9d5c.png[/img]\n[b]Farmer (New Class)[/b][/td]\n        [td][quote][b]\u2190 Set up a farm and grow crops, thus gaining power in the world.[/b][/quote][/td]\n    [/tr]\n\n    [tr]\n        [td][img]{STEAM_CLAN_IMAGE}/43039829/98740402941ff9d790b8c1af54602d1f380575d3.png[/img]\n[b]Gorilla[/b] (Returning)[/td]\n        [td][quote][b]\u2190 Brute force. Doesn't understand human language but can talk to other apes.[/b]\u3164[/quote][/td]\n    [/tr]\n\n    [tr]\n        [td][img]{STEAM_CLAN_IMAGE}/43039829/f43b0f563890977640e1c091670a118050ad037d.png[/img]\n[b]Soldier[/b] (Returning)[/td]\n        [td][quote][b]\u2190 An expert in ranged weaponry. Has increased accuracy.[/b][/quote][/td]\n    [/tr]\n[/table]\n\nKeep in mind, though, that not all classes will be available from the get-go when the game enters Early Access\u2014playable characters will be added gradually throughout the EA development phase.\n\n[table equalcells=1 noborder=1]\n    [tr]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/ac29b8c93c307860e1133eba7abb0d4ed9637331.png[/img][/th]\n        [th][img]{STEAM_CLAN_IMAGE}/43039829/d451cf880436288067bf36d5c6f6d7644225575f.png[/img][/th]\n    [/tr]\n    [tr]\n        [td][img]{STEAM_CLAN_IMAGE}/43039829/d4a83dbfa0f220d6e9075550510a4708e6336fcf.png[/img][/td]\n        [td][img]{STEAM_CLAN_IMAGE}/43039829/a13f174251d693ac369a68fa0523daea4df7fd4d.png[/img][/td]\n    [/tr]\n[/table]\n[hr][/hr]\nDon't forget that [i][b]Streets of Rogue 2[/b][/i] is coming out on Steam in Early Access on [b]October 22nd[/b]. Be sure to wishlist it now, rogues:\n\nhttps://store.steampowered.com/app/2165810/Streets_of_Rogue_2/\n\n[img]{STEAM_CLAN_IMAGE}/43039829/b0a5f934e87aaa7563c4f521f0d39214d0a611ed.png[/img]\n\n[hr][/hr]\n[url=https://discord.gg/streetsofrogue][img]{STEAM_CLAN_IMAGE}/43039829/0e5373d7b5abf2b76df0ea90f94ce17a32c18724.gif[/img][/url]\n\n[url=https://www.reddit.com/r/streetsofrogue/][b]\ud83d\udd17REDDIT[/b][/url]\n[url=https://twitter.com/streetsofrogue][b]\ud83d\udd17TWITTER (X)[/b][/url]\n[url=https://www.tiktok.com/@streetsofrogue][b]\ud83d\udd17TIKTOK[/b][/url]",
+      "key": "2165810::919bedbe284895a18f591adccb6184dde03cb888",
+      "tags": [
+        {
+          "feature": "Cultist (New Class)"
+        },
+        {
+          "feature": "Farmer (New Class)"
+        },
+        {
+          "balance_change": "\u2190 An expert in ranged weaponry. Has increased accuracy."
+        }
+      ]
+    },
+    {
+      "title": "\u201cGo Rogue!\u201d Community Contest: Winners Announced!",
+      "date": "2023-08-21 09:00:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289187456779",
+      "content": "[img]{STEAM_CLAN_IMAGE}/26482945/42c67008acb424339ac5d342794e806143fa34f6.png[/img]\n\n[h1][b]Hey, everybody![/b][/h1]\n\nFirst off, I really, really appreciate how people were willing to take the time to write up and submit their ideas on our [url=https://discord.gg/streetsofrogue]Discord server[/url] and these two topics: [url=https://steamcommunity.com/games/512900/announcements/detail/3669919470492221810]1[/url], [url=https://steamcommunity.com/games/2165810/announcements/detail/3690185668813288961]2[/url]. I read every single one of them, and I\u2019d guesstimate it was in the range of [b]7,500 ideas[/b]. That\u2019s way beyond what I expected, and it took FOREVER to get through these, but it was well worth it. So much great stuff in there, just an absolute embarrassment of riches.\n\nTruth be told, even if you\u2019re not one of the winners, there\u2019s a decent chance that some variation of an idea you provided might make it into the game at some point. Or it might have given me a germ of an idea that will result in something else cool. So many of these ideas got me thinking outside the box, or thinking about what the game could be in new ways that I hadn\u2019t considered before. Even in a game as open-ended as SOR, some of these ideas made me realize areas where my focus was maybe a little too narrow. This was a genuinely eye-opening odyssey of a read-through.\n\n[h3][b]Anyways, some info on how I chose the winners:[/b][/h3]\n[list]\n[*] It had to be something that I wasn\u2019t already planning to implement. This actually narrowed things down by a sizable amount. I think a lot of people are going to be pleasantly surprised when they get their hands on the game that their ideas did indeed make an appearance.\n[*] It had to be something that\u2019s actually viable to implement and wouldn\u2019t add 2 years of development time.\n[*] It had to be something that I knew for 90% sure I\u2019ll want to add, based on where the game is at this point in development and where I think it\u2019s headed. There were tons of amazing ideas that sadly fell into the column of \u201cI really like this but I\u2019m not sure at this point if it\u2019ll fit into the game, maybe in 6 months I\u2019ll have a clearer idea\u201d. I can\u2019t even say with absolute 100% certainty that all of the winning entries will ultimately make the final cut, but I was sure to choose winners that I felt had a very strong chance of being viable.\n[*] It had to fit in well with the Streets of Rogue universe. Granted SOR is kind of a hodgepodge of ridiculousness, but there are certain types of suggestions that I feel aren\u2019t a good match. Notably, I received a lot of suggestions that felt too grim in tone or things that really belong in a medieval fantasy universe.\n[*] The poster had to follow the rules :) While I appreciate the effort put forth by many of you, the rules stipulated that suggestions should be kept to around a paragraph each. So anything that had a novel\u2019s worth of text had to be disqualified.\n[*] This is all incredibly subjective and more than a little bit random, so please don\u2019t feel slighted if you didn\u2019t win a category.\n[/list][h3][b]Some other things I noted:[/b][/h3]\n[list]\n[*] A surprising number of submitters weren\u2019t aware that SOR2 is an open-world game now. To be clear, it 100% is! :D  Check out the [url=https://store.steampowered.com/app/2165810/Streets_of_Rogue_2/]Steam store page[/url] and [url=https://steamcommunity.com/app/2165810/discussions/0/3387294407393324124/]FAQ in the SOR2 Steam discussion forum[/url] for a good idea of what to expect.\n[*] The most common class suggestions I received were: Influencer, Beekeeper, Cultist/Cult Leader, Necromancer, Druid, Cowboy, Ghost, Wizard/Magician, Knight, Samurai, Vigilante, Hunter, Clown, Larper, Eldritch anything, Plague Doctor, and the Grim Reaper.\n[*] Will you finally get to read emails? I dunno, but there\u2019s clearly an ungodly high amount of demand for it!\n[/list]\n\n[h2][b]\ud83c\udfc6 THE LIST OF CONTEST WINNERS \ud83c\udfc6[/b][/h2]\n\n[table equalcells=1]\n    [tr]\n        [th][h3][b]Winner Name[/b][/h3][/th]\n        [th][h3][b]Category[/b][/h3][/th]\n        [th][h3][b]Title[/b][/h3][/th]\n        [th][h3][b]Description[/b][/h3][/th]\n        [th][h3][b]Dev's Comments[/b][/h3][/th]\n    [/tr]\n    [tr]\n        [th][url=https://discord.com/channels/187414758536773632/1130080680915775598]BreadyBoi (Discord)[/url][/th]\n        [th]Class[/th]\n        [th]Politician[/th]\n        [th]The general idea is a character that tries to recruit people (similar to the comedian/joke mechanic from SoR1) however, in order to recruit people and garner popularity, they have to make 'promises', which would be little mini-quests such as \"Remove drug dealers from my city\" or \"Get the shops to lower prices\". There's also a lot of versatility and can allow for different playstyles, depending if you want to generally steer clear of the more combat-heavy NPCs and try and garner popularity with the common folk.[/th]\n        [th]While this may not be implemented specifically as a class, I really liked the underlying idea of the player doing things to improve a city, and subsequently earning the votes of its population.  This seems like it should be super obvious, but it actually never crossed my mind.  There's tons of potential here for the random generation system to introduce negative aspects to cities and require budding politicians to solve them.[/th]\n    [/tr]\n    [tr]\n        [th][url=https://discord.com/channels/187414758536773632/1132299223858155541]Colobm(\u30df\u30aa\u30f3\u30b9\u30ad\u30fc) (Discord)[/url][/th]\n        [th]Mutator[/th]\n        [th]Road Trip[/th]\n        [th]This mode gives you a car and one Objective (reach to destination, concert? resort? I don't know)\nYou just need to follow the road, beat everything blocked you, get new friends, eat food, earn money, rest at a motel\nJust don't die and reach the goal[/th]\n        [th]The primary planned \"win state\" of the game is to become the president.  Much of the game's design will support this specific journey, but I love the idea of allowing for completely different journeys through the world as well.  Thanks to SOR2's new open-world structure, there are a ton of possibilities that I haven't remotely considered.  For example, this one!  Completely different from the game's default goal and structure, but I'll bet it could be done with some key shifts to the game mechanics specific to this mutator.  I think it'll be fun to try and pull it off.[/th]\n    [/tr]\n    [tr]\n        [th][url=https://discord.com/channels/187414758536773632/1133592822377873459]SirNosWar (Discord)[/url][/th]\n        [th]Location[/th]\n        [th]The Pit[/th]\n        [th]Could be a pit with a giant creature that Cultists worship - A giant, seemingly bottomless pit located somewhere in the forest. \"The perfect place to dump your unwanted belongings! These could include, but are not limited to: pointless garbage you've accumulated, your humungous pile of unused wealth, or corpses! We wouldn't want Him to go hungry, would we? He prefers live humans the most, but He will accept any offerings you grant Him! Who knows, He might even grant you an extra reward for your dedication, such as an artifact lost to time, a lovely, grotesque, new physique (that has its own benefits, I might add!), or He might even let you glance upon Him, if He deems you worthy! So, come on down and visit Ye Olde Bottomless Pit today![/th]\n        [th]\"Cultist\" is one of the most common suggestions I've gotten throughout the development of both SOR and SOR2.  I'd been trying to figure out just what it is these folks are all about, and the idea of them worshipping some (possibly super goofy-looking) monster in a big pit just struck a chord with me.[/th]\n    [/tr]\n    [tr]\n        [th][url=https://steamcommunity.com/app/2165810/eventcomments/3800525036432093563?ctp=12#c3800527029403326012]Fritzmaster (Steam)[/url][/th]\n        [th]Quest[/th]\n        [th]Specific Neutralize[/th]\n        [th]A form of neutralize mission that gives specifics in regard to the cause of neutralization.\nPerhaps it is simple as wanting the target to be shot or something limited and using a banana peel inside a restroom.\nDue to the more challenging nature of the mission, payout/XP will be greater.\nPossibly treated as optional, leading to greater payout/XP.\"[/th]\n        [th]Falls into the \"how did I never think of this?\" category.  Receiving bonus money/XP for neutralizing someone in a very specific way seems like a really awesome fit for the game.[/th]\n    [/tr]\n    [tr]\n        [th][url=https://steamcommunity.com/app/2165810/eventcomments/3800525036432093563?snr=1_5_9_&ctp=8#c3806155261060081636]eltermh (Steam)[/url][/th]\n        [th]Object[/th]\n        [th]Display Case[/th]\n        [th]In shops you can break them, which would set off the alarm/ security, and have various high-value items( depending on the shop)[/th]\n        [th]Items in Streets of Rogue are generally contained in chests, and you have no idea what you'll be getting until you actually open it.  But what if...... you DID???  The player might take on challenges that they normally wouldn't because they just have to have the cool thing in the fancy case.  I could also foresee there being different types of cases -- some with alarms, some not, some extremely hard to break or open.[/th]\n    [/tr]\n    [tr]\n        [th][url=https://steamcommunity.com/app/2165810/eventcomments/3800525036432093563?snr=1_5_9_&ctp=12#c3800527029402740162]accusrulz (Steam)[/url][/th]\n        [th]Mechanic[/th]\n        [th]Product Sales[/th]\n        [th]On occasion shop owners could place a random item from their inventory on sale. The sale item would be highlighted inside its own box, perhaps gold or blue, with an attached timer that would count down to the time the item would come off sale again (something of a \"get it before it's gone!\" marketing strategy).[/th]\n        [th]I can't remember the last time I saw this in a game, and I have no idea why.  Much like the \"display case\" entry, it could get you to try something you might have normally ignored.[/th]\n    [/tr]\n    [tr]\n        [th][url=https://steamcommunity.com/app/512900/eventcomments/3805028677410448951?snr=1_2108_9__2107&ctp=47#c3801651661443240853]Roaringburn (Steam)[/url][/th]\n        [th]Trait/Ability[/th]\n        [th]Good Neighbor[/th]\n        [th]Neighbors help each other out, and now that you can own your own home, I think it'd be neat if you could become a tight-knit member of a small community. With this ability, as long as you are not hostile to them or their faction already, all property owners in a radius around your home are aligned with you. Additionally, if you are attacked or hostiles approach your property, allied property owners will come to your aid, as if they had their own property intruded on.\n\nGreat for those who aren't the best in combat themselves, those who are dealing in....less than legal activities, those being hunted down by the mob, or even just someone who lives near powerful allies.[/th]\n        [th]I'd like the location in which the player chooses to make their home to be a somewhat important decision.  The idea of your neighbors having an impact on that decision could add a nice bit of additional depth.  The aid that they provide wouldn't necessarily have to be limited to combat, either.[/th]\n    [/tr]\n    [tr]\n        [th][url=https://discord.com/channels/187414758536773632/1130664749663784982]LangBang (Discord)[/url][/th]\n        [th]Item[/th]\n        [th]Tracker[/th]\n        [th]An item that the PI starts with, but is obtainable by all characters. It can be placed on NPC's cars to track where they go, with an icon of the tracker being displayed on the map. It can also be placed directly onto NPCs, in a similar way to how the Thief would pick-pocket an NPC in the first game. If the NPC sees you put it on them, then they get hostile and break it. The same goes if the owner of a vehicle sees you. Additionally, with the use of crafting, you can combine the tracker with most items. Give the item to an NPC, plant the item in their house, or wait for a thief to steal it and track them down![/th]\n        [th]I had been planning on adding some sort of investigator/detective/journalist character, and this seems like a good fit.  While important NPCs are typically tracked on the map already much like in SOR1, I like the idea of attaching something to an NPC and having it provide access that wasn't previously available.  Maybe it acts as a bug.  Maybe has the capability of de-attaching and turning into a tiny drone.  Or maybe you just want to attach it to some random NPC and keep tabs on them, because why not?  There are a lot of possibilities here.[/th]\n    [/tr]\n[/table]\n\n[h3][b]Thanks again folks, and a major congratulations to all the winners![/b][/h3]\nYou will receive your prizes\u2014[b]\ud83c\udfc6digital Steam copies of[/b] [i][b]Streets of Rogue 2[/b][/i]\ud83c\udfc6\u2014when the game releases.\n\n\n[b]And another prize is already here\u2014a video I've recorded as a sign of appreciation:[/b]\n\n[previewyoutube=SSvZ_05Kp-Q;full][/previewyoutube]\nMy current plan is to implement these either before or during the game\u2019s Early Access period. As mentioned earlier I can\u2019t 100% guarantee everything will make it into the game in its 1.0 form, but I\u2019m certainly going to try!\n\n-Matt D\n\n[hr][/hr]\n[b]As always, don't forget to wishlist[/b] [i][b]Streets of Rogue 2[/b][/i]:\n\nhttps://store.steampowered.com/app/2165810/Streets_of_Rogue_2/\n\n\n[b]JOIN THE ROGUE COMMUNITY:[/b]\n\n[b][url=https://discord.gg/streetsofrogue]DISCORD[/url]\n[url=https://www.reddit.com/r/streetsofrogue/]REDDIT[/url]\n[url=https://twitter.com/streetsofrogue]TWITTER (X)[/url][/b]",
+      "key": "2165810::cd8798814f4fb0d24c980d0ab5297f58f34fd40a",
+      "tags": [
+        {
+          "feature": "The general idea is a character that tries to recruit people (similar to the comedian/joke mechanic from SoR1) however, in order to recruit people and garner popularity, they have to make 'promises', which would be little mini-quests such as \"Remove drug dealers from my city\" or \"Get the shops to lower prices\". There's also a lot of versatility and can allow for different playstyles, depending if you want to generally steer clear of the more combat-heavy NPCs and try and garner popularity with the common folk."
+        },
+        {
+          "feature": "This mode gives you a car and one Objective (reach to destination, concert? resort? I don't know)\nYou just need to follow the road, beat everything blocked you, get new friends, eat food, earn money, rest at a motel\nJust don't die and reach the goal"
+        },
+        {
+          "feature": "Could be a pit with a giant creature that Cultists worship - A giant, seemingly bottomless pit located somewhere in the forest. \"The perfect place to dump your unwanted belongings! These could include, but are not limited to: pointless garbage you've accumulated, your humungous pile of unused wealth, or corpses! We wouldn't want Him to go hungry, would we? He prefers live humans the most, but He will accept any offerings you grant Him! Who knows, He might even grant you an extra reward for your dedication, such as an artifact lost to time, a lovely, grotesque, new physique (that has its own benefits, I might add!), or He might even let you glance upon Him, if He deems you worthy! So, come on down and visit Ye Olde Bottomless Pit today!"
+        },
+        {
+          "feature": "A form of neutralize mission that gives specifics in regard to the cause of neutralization.\nPerhaps it is simple as wanting the target to be shot or something limited and using a banana peel inside a restroom.\nDue to the more challenging nature of the mission, payout/XP will be greater.\nPossibly treated as optional, leading to greater payout/XP."
+        },
+        {
+          "feature": "In shops you can break them, which would set off the alarm/ security, and have various high-value items( depending on the shop)"
+        },
+        {
+          "feature": "On occasion shop owners could place a random item from their inventory on sale. The sale item would be highlighted inside its own box, perhaps gold or blue, with an attached timer that would count down to the time the item would come off sale again (something of a \"get it before it's gone!\" marketing strategy)."
+        },
+        {
+          "feature": "Neighbors help each other out, and now that you can own your own home, I think it'd be neat if you could become a tight-knit member of a small community. With this ability, as long as you are not hostile to them or their faction already, all property owners in a radius around your home are aligned with you. Additionally, if you are attacked or hostiles approach your property, allied property owners will come to your aid, as if they had their own property intruded on.\n\nGreat for those who aren't the best in combat themselves, those who are dealing in....less than legal activities, those being hunted down by the mob, or even just someone who lives near powerful allies."
+        },
+        {
+          "feature": "An item that the PI starts with, but is obtainable by all characters. It can be placed on NPC's cars to track where they go, with an icon of the tracker being displayed on the map. It can also be placed directly onto NPCs, in a similar way to how the Thief would pick-pocket an NPC in the first game. If the NPC sees you put it on them, then they get hostile and break it. The same goes if the owner of a vehicle sees you. Additionally, with the use of crafting, you can combine the tracker with most items. Give the item to an NPC, plant the item in their house, or wait for a thief to steal it and track them down!"
+        }
+      ]
+    },
+    {
+      "title": "Wishlist Streets of Rogue 2 Now!",
+      "date": "2023-07-11 13:00:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150175084968",
+      "content": "[h3][b]The Streets of Rogue sequel finally has a Steam page, screenshots, and an actual title: [b][i]Streets of Rogue 2[/i][/b]! I know, super creative, right??[/b][/h3]\n\n[url=https://store.steampowered.com/app/2165810/Streets_of_Rogue_2/][h1][b][u]Wishlist Streets of Rogue 2![/u][/b][/h1][/url]\n\nhttps://store.steampowered.com/app/2165810/Streets_of_Rogue_2/\n\n[i][b]Streets of Rogue 2[/b][/i] is the open-world sequel to [i][b]Streets of Rogue[/b][/i], planned for Early Access release in 2024.  It features such new additions as:\n[list]\n[*]A huge, persistent and seamless open world\n[*]Vehicles\n[*]Animals\n[*]Building\n[*]Crafting\n[*]Farming\n[*]A faction and reputation system\n[*]Completely revamped character development\n[*]Lots more quest variety\n[*]A day/night cycle with AI that follows a daily schedule\n[*]Diagonal walls (I know, kinda boring, but this was a bigger pain to implement than just about everything else I've mentioned.  So yeah, it makes the list!)\n[*]Your wildest dreams\n[/list]\n\n[h3][b]First Screenshots![/b][/h3]\n\nWhile having a fancy new Steam page is nice, today's biggest piece of new content in the Streets of Rogue 2 info drip is the game's very first set of screenshots.  All of SOR2's art has been created by [url=https://twitter.com/cyangmou]Thomas \"Cyangmou\" Feichtmeir[/url].  You may have seen his work in games like [i]Songs of Conquest[/i], [i]Blasphemous[/i], [i]The Mummy Demastered[/i], and [i]Tower 57[/i].  Thomas isn't just an S-Tier pixel artist, but he's also been an S-Tier collaborator, and I'm ridiculously lucky to have him onboard.  Bringing this new art style to the world of Streets of Rogue has been a massive undertaking for us, and we hope you enjoy the results!\n\nHere are a couple of shots -- [url=https://store.steampowered.com/app/2165810/Streets_of_Rogue_2/][b]check out the Steam page[/b][/url] for more!\n\n[img]{STEAM_CLAN_IMAGE}/26482945/ce5029f8c63b5e6d960e42d8fdd775534c2e4f09.png[/img]\n[img]{STEAM_CLAN_IMAGE}/26482945/72f2ad1e695353dc8184907002d9a141bd9fa053.png[/img]\n\n\n[b]More Info![/b]\n[list]\n[*]I've [url=https://steamcommunity.com/app/2165810/discussions/0/3387294407393324124/]written a FAQ[/url] with all your... frequently asked questions.\n[*]For my previous postings about Streets of Rogue 2's development, [url=https://steamcommunity.com/app/512900/allnews/]check out my recent news updates[/url].\n[*]And of course, for more details, check out the [url=https://store.steampowered.com/app/2165810/Streets_of_Rogue_2/]new Steam page[/url].\n[/list]\nAs always, I'm happy to answer any questions you have in the comments on this post!\n\n-Matt D",
+      "key": "2165810::39683920e0a014aef53bd2470c6465211d92c4a4",
+      "tags": [
+        {
+          "feature": "- A huge, persistent and seamless open world"
+        },
+        {
+          "feature": "- Vehicles"
+        },
+        {
+          "feature": "- Animals"
+        },
+        {
+          "feature": "- Building"
+        },
+        {
+          "feature": "- Crafting"
+        },
+        {
+          "feature": "- Farming"
+        },
+        {
+          "feature": "- A faction and reputation system"
+        },
+        {
+          "feature": "- Completely revamped character development"
+        },
+        {
+          "feature": "- Lots more quest variety"
+        },
+        {
+          "feature": "- A day/night cycle with AI that follows a daily schedule"
+        },
+        {
+          "feature": "- Diagonal walls (I know, kinda boring, but this was a bigger pain to implement than just about everything else I've mentioned. So yeah, it makes the list!)"
+        },
+        {
+          "feature": "- Your wildest dreams"
+        }
+      ]
+    }
+  ]
+}

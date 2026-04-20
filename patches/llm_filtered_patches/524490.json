@@ -1,0 +1,1149 @@
+{
+  "appId": "524490",
+  "count": 29,
+  "notes": [
+    {
+      "title": "Version 1.4.3 changelog",
+      "date": "2021-06-13 12:43:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5019805792172507886",
+      "content": "[list]\n[*] When autoreload is enabled, changing an included file will now trigger it as well.\n[*] Fixed a bug that sometimes prevented sampling of other members within a feedback group.\n[*] Fixed a bug in the JIT compiler involving multi-dimensional array assignments.\n[*] Added #ifextension directive for conditional extension enablement.\n[*] Fixed the behavior of expression variable when a runtime error arises during its evaluation.\n[*] The entire script can now be paused or restarted from within secondary windows.\n[*] Exporting has been optimized to avoid re-computing results that are already available.\n[*] Multiple export declarations can now be made in a single statement, separated by commas.\n[*] Fixed certain interactions of resizable windows.\n[*] Other minor fixes and improvements.\n[/list]",
+      "key": "524490::89e9f7f976d67978d927f48a4609718e30e819e9",
+      "tags": [
+        {
+          "feature": "[*] When autoreload is enabled, changing an included file will now trigger it as well."
+        },
+        {
+          "bug": "[*] Fixed a bug that sometimes prevented sampling of other members within a feedback group."
+        },
+        {
+          "bug": "[*] Fixed a bug in the JIT compiler involving multi-dimensional array assignments."
+        },
+        {
+          "feature": "[*] Added #ifextension directive for conditional extension enablement."
+        },
+        {
+          "bug": "[*] Fixed the behavior of expression variable when a runtime error arises during its evaluation."
+        },
+        {
+          "feature": "[*] The entire script can now be paused or restarted from within secondary windows."
+        },
+        {
+          "balance_change": "[*] Exporting has been optimized to avoid re-computing results that are already available."
+        },
+        {
+          "feature": "[*] Multiple export declarations can now be made in a single statement, separated by commas."
+        },
+        {
+          "bug": "[*] Fixed certain interactions of resizable windows."
+        }
+      ]
+    },
+    {
+      "title": "Version 1.4.2 changelog",
+      "date": "2021-01-31 04:56:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4050393736348608849",
+      "content": "[list]\n[*] Extensions are now available in the Mac OS version\n[*] Fixed a severe bug that prevented custom initialization and update events from being triggered during exports\n[*] Macros are now correctly expanded in all preprocessor directives\n[*] Preprocessor updated to handle certain special cases in a manner consistent with the C preprocessor\n[*] Whole parameters' values may now be copied to clipboard by Ctrl-clicking them\n[*] Vertex lists may now be specified with nested braces\n[*] Minor improvements and bug fixes\n[/list]",
+      "key": "524490::90c492f49946bf7bf340a3b265be967bfbf08b2a",
+      "tags": [
+        {
+          "feature": "[*] Extensions are now available in the Mac OS version"
+        },
+        {
+          "bug": "[*] Fixed a severe bug that prevented custom initialization and update events from being triggered during exports"
+        },
+        {
+          "feature": "[*] Macros are now correctly expanded in all preprocessor directives"
+        },
+        {
+          "feature": "[*] Preprocessor updated to handle certain special cases in a manner consistent with the C preprocessor"
+        },
+        {
+          "feature": "[*] Whole parameters' values may now be copied to clipboard by Ctrl-clicking them"
+        },
+        {
+          "feature": "[*] Vertex lists may now be specified with nested braces"
+        },
+        {
+          "bug": "[*] Minor improvements and bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.4.1 changelog",
+      "date": "2020-10-25 17:56:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3895010671349218502",
+      "content": "[list]\n[*] Fixed several bugs and issues caused by the previous update\n[*] Expression variables may now depend on state variables\n[*] Certain cosmetic properties of elements (e.g. appearance of transparent background) can now be set by pragma hint directives (see documentation)\n[*] Ctrl-clicking a watch value will now copy it to the clipboard\n[*] Added <cross2> library file (2D cross product) and updated the <crop> library\n[*] Minor update to the extension API\n[*] macOS: Association with .shadron files declared in application manifest\n[/list]",
+      "key": "524490::bad7a2de45c6d5b623dd1654414bd67e5e96ef4e",
+      "tags": [
+        {
+          "bug": "[*] Fixed several bugs and issues caused by the previous update"
+        },
+        {
+          "feature": "[*] Expression variables may now depend on state variables"
+        },
+        {
+          "feature": "[*] Certain cosmetic properties of elements (e.g. appearance of transparent background) can now be set by pragma hint directives (see documentation)"
+        },
+        {
+          "feature": "[*] Ctrl-clicking a watch value will now copy it to the clipboard"
+        },
+        {
+          "feature": "[*] Added <cross2> library file (2D cross product) and updated the <crop> library"
+        },
+        {
+          "feature": "[*] Minor update to the extension API"
+        },
+        {
+          "feature": "[*] macOS: Association with .shadron files declared in application manifest"
+        }
+      ]
+    },
+    {
+      "title": "Shadron 1.4 is here",
+      "date": "2020-08-09 20:02:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3667572003471010210",
+      "content": "After a hiatus, I have returned to work on Shadron. This is a version I've been working on for quite some time, but only have been able to finalize it to my satisfaction today. It is the biggest update yet - it greatly enhances the capabilities and performance of the non-GLSL runtime and adds many new features, including a dark UI skin. A notable change is that \"glsl\" is no longer used as a prefix to functions, however, backwards compatibility is of course preserved. As always, the full list of changes follows.\n\n[list]\n[*] Internal runtime engine has been fully reworked\n[*] Non-GLSL runtime now uses a custom just-in-time (JIT) compiler, vastly improving performance of generators\n[*] The glsl keyword has been deprecated, functions and structures may now be declared directly\n[*] Structures and arrays can now be used in functions and generators, and as constant and variable types\n[*] Added support for all basic GLSL types (uint, double, bvecN, uvecN, dvecN, matNxM, dmatN, dmatNxM)\n[*] Templates are now supported for non-GLSL functions and generators and can be overloaded\n[*] Added a dark mode GUI theme (enabled via appropriate system setting)\n[*] Tessellation shaders now supported\n[*] Adjacency primitive types now supported\n[*] Shader fragment data type restrictions lifted (for models, particle systems)\n[*] Added the concept of expression variables (keywords: let, defer), allowing for backwards dimensions dependencies\n[*] Undo / redo functionality now available in the main window GUI for parameter control\n[*] Parameter sliders may now have discrete steps (step size set as optional third range, logrange argument)\n[*] Generators may now be overloaded by vertex data type alone\n[*] Generator local variables are no longer required to be declared at the beginning\n[*] Non-GLSL functions now support output arguments, Shadron constants, switch statements, and additional built-in GLSL functions\n[*] Images and cubemaps may now be created from Base64-encoded image files\n[*] Model and particle system fragment_data type no longer has to be specified explicitly, different types may be used for additional shader stages\n[*] Model modifiers vertex_animated, fragment_animated, and geometry_animated have been replaced by a single modifier animated(true/false)\n[*] Events may now be limited to a specific object window\n[*] Event procedures may now be defined directly in the event declaration\n[*] State variables are now reset on hard reload\n[*] Auto-reload may now be enabled for input image files (Alt+F5 in their windows)\n[*] Hidden input images are now automatically reloaded if their source path changes\n[*] Conditional operator can now be used with generator calls\n[*] Export input file modifiers now supported for extension objects\n[*] Image, animation, and feedback shader position argument may now be of ivec2 type (pixel coordinate)\n[*] A solid color value (vec4) may now be passed as feedback object initializer instead of a shader function\n[*] A generator may now be specified as a call with arguments in models, particle systems, and exports\n[*] Watch declaration can be combined with state variable or expression variable declaration\n[*] Fixed a rare diagonal seam artifact for glsl images, animations, and feedbacks\n[*] Fixed geometry shaders to work with strip, loop, and fan primitive types\n[*] Open file with Shadron functionality now works properly on macOS\n[*] Fixed window size bugs for high-DPI displays on macOS\n[*] Unary negation operator now correctly always outputs a boolean value\n[*] Improved error reporting regarding shader function interfaces\n[*] Many other bug fixes and improvements\n[/list]\n",
+      "key": "524490::94febce5dd11de2349a99accecf451aecd7be50a",
+      "tags": [
+        {
+          "feature": "Added support for all basic GLSL types (uint, double, bvecN, uvecN, dvecN, matNxM, dmatN, dmatNxM)"
+        },
+        {
+          "feature": "Templates are now supported for non-GLSL functions and generators and can be overloaded"
+        },
+        {
+          "feature": "Added a dark mode GUI theme (enabled via appropriate system setting)"
+        },
+        {
+          "feature": "Tessellation shaders now supported"
+        },
+        {
+          "feature": "Adjacency primitive types now supported"
+        },
+        {
+          "feature": "Shader fragment data type restrictions lifted (for models, particle systems)"
+        },
+        {
+          "feature": "Added the concept of expression variables (keywords: let, defer), allowing for backwards dimensions dependencies"
+        },
+        {
+          "feature": "Undo / redo functionality now available in the main window GUI for parameter control"
+        },
+        {
+          "feature": "Parameter sliders may now have discrete steps (step size set as optional third range, logrange argument)"
+        },
+        {
+          "feature": "Generators may now be overloaded by vertex data type alone"
+        },
+        {
+          "feature": "Generator local variables are no longer required to be declared at the beginning"
+        },
+        {
+          "feature": "Non-GLSL functions now support output arguments, Shadron constants, switch statements, and additional built-in GLSL functions"
+        },
+        {
+          "feature": "Images and cubemaps may now be created from Base64-encoded image files"
+        },
+        {
+          "feature": "Model and particle system fragment_data type no longer has to be specified explicitly, different types may be used for additional shader stages"
+        },
+        {
+          "feature": "Model modifiers vertex_animated, fragment_animated, and geometry_animated have been replaced by a single modifier animated(true/false)"
+        },
+        {
+          "feature": "Events may now be limited to a specific object window"
+        },
+        {
+          "feature": "Event procedures may now be defined directly in the event declaration"
+        },
+        {
+          "feature": "State variables are now reset on hard reload"
+        },
+        {
+          "feature": "Auto-reload may now be enabled for input image files (Alt+F5 in their windows)"
+        },
+        {
+          "feature": "Hidden input images are now automatically reloaded if their source path changes"
+        },
+        {
+          "feature": "Conditional operator can now be used with generator calls"
+        },
+        {
+          "feature": "Export input file modifiers now supported for extension objects"
+        },
+        {
+          "feature": "Image, animation, and feedback shader position argument may now be of ivec2 type (pixel coordinate)"
+        },
+        {
+          "feature": "A solid color value (vec4) may now be passed as feedback object initializer instead of a shader function"
+        },
+        {
+          "feature": "A generator may now be specified as a call with arguments in models, particle systems, and exports"
+        },
+        {
+          "feature": "Watch declaration can be combined with state variable or expression variable declaration"
+        },
+        {
+          "bug": "Fixed a rare diagonal seam artifact for glsl images, animations, and feedbacks"
+        },
+        {
+          "bug": "Fixed geometry shaders to work with strip, loop, and fan primitive types"
+        },
+        {
+          "bug": "Open file with Shadron functionality now works properly on macOS"
+        },
+        {
+          "bug": "Fixed window size bugs for high-DPI displays on macOS"
+        },
+        {
+          "bug": "Unary negation operator now correctly always outputs a boolean value"
+        },
+        {
+          "bug": "Improved error reporting regarding shader function interfaces"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.3.2 changelog",
+      "date": "2018-11-11 12:14:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2423394806008242173",
+      "content": "[list]\r\n[*]Error messages now displayed in the main window, so that they can be seen without switching applications\r\n[*]Feedback buffers may now be aggregated into synchronized feedback groups\r\n[*]Added library files <quaternion>, <complex>, <bezier>, and <sqr>\r\n[*]Added support for GLSL ES versions (100 and 300)\r\n[*]Background and wireframe modifiers of models and particle systems can now be specified using parameters\r\n[*]Feedback synchronize modifier deprecated in favor of feedback groups\r\n[*]Parameter controls can now be specified for constants and will be ignored (to simplify switching between the two)\r\n[*]Animation time now displayed correctly during export\r\n[*]Fixed a bug that caused feedback buffers to desynchronize after loading an appendix\r\n[*]Minor bug fixes and improvements\r\n[/list]",
+      "key": "524490::633555987e6502323ecebb9798e1084a0b150326",
+      "tags": [
+        {
+          "feature": "[*]Error messages now displayed in the main window, so that they can be seen without switching applications"
+        },
+        {
+          "feature": "[*]Feedback buffers may now be aggregated into synchronized feedback groups"
+        },
+        {
+          "feature": "[*]Added library files <quaternion>, <complex>, <bezier>, and <sqr>"
+        },
+        {
+          "feature": "[*]Added support for GLSL ES versions (100 and 300)"
+        },
+        {
+          "feature": "[*]Background and wireframe modifiers of models and particle systems can now be specified using parameters"
+        },
+        {
+          "feature": "[*]Feedback synchronize modifier deprecated in favor of feedback groups"
+        },
+        {
+          "feature": "[*]Parameter controls can now be specified for constants and will be ignored (to simplify switching between the two)"
+        },
+        {
+          "bug": "[*]Fixed a bug that caused feedback buffers to desynchronize after loading an appendix"
+        },
+        {
+          "bug": "[*]Minor bug fixes and improvements"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.3.1 changelog",
+      "date": "2018-09-08 12:57:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447032995773579980",
+      "content": "This version introduces 64-bit version for Windows, mainly because of the FFmpeg extension, which sometimes crashed due to exceeding the 2 GB memory limit. If you switch to the 64-bit version, make sure to redownload your extensions.\r\n\r\n[list]\r\n[*]Added 64-bit version for Windows\r\n[*]Modifiers such as srgb, dimensions, hidden can now be applied to plain models and particle systems\r\n[*]Fixed a couple of rare bugs involving template functions\r\n[*]Fixed an annoying GUI bug that caused a parameter to change after typing in its value\r\n[*]Other minor bug fixes and improvements\r\n[/list]\r\n",
+      "key": "524490::20c7caa6429b413a51cbcee794d07afa1397260a",
+      "tags": [
+        {
+          "feature": "[*]Added 64-bit version for Windows"
+        },
+        {
+          "feature": "[*]Modifiers such as srgb, dimensions, hidden can now be applied to plain models and particle systems"
+        },
+        {
+          "bug": "[*]Fixed a couple of rare bugs involving template functions"
+        },
+        {
+          "bug": "[*]Fixed an annoying GUI bug that caused a parameter to change after typing in its value"
+        },
+        {
+          "bug": "[*]Other minor bug fixes and improvements"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.3.0 changelog",
+      "date": "2018-07-23 14:22:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412125660649571432",
+      "content": "This new update brings several major new features, most notably recursive vertex generators and interactivity through event handlers, which also allow to create simple games. Other new features, namely sRGB mode and geometry shaders have been added per request. The full list follows.\r\n\r\n[list]\r\n[*]Introducing recursive generators for model construction\r\n[*]Introducing event handlers that enable creation of interactive scripts\r\n[*]Added ShadronPlayer.exe, a redistributable viewer for Shadron scripts\r\n[*]Added feedback image, a variant of the feedback object that produces a static image\r\n[*]Added support for geometry shaders\r\n[*]Added support for hardware sRGB color mode\r\n[*]Functions and procedures may now be defined, which can be called even in non-GLSL expressions\r\n[*]Added \"watch\" sections to monitor expression values\r\n[*]Added \"comment\" sections that are printed among parameters\r\n[*]Added basic time controls to the GUI (restart and pause buttons and current time)\r\n[*]Improved compatibility with WINE\r\n[*]Image sequence export generalized for non-animated objects via a control parameter\r\n[*]Vertex list export now also applicable to vertex_lists and generators\r\n[*]New library files: rng, srgb, camera_view, event_utils\r\n[*]Fixed relative paths in included source files\r\n[*]Fixed matrix constants and parameters that were being incorrectly transposed\r\n[*]Generated GLSL code optimized\r\n[*]Improved appearance of matrix and boolean parameters in the GUI\r\n[*]Added load script button in place of refresh button when no script is loaded\r\n[*]Added a keyboard shortcut to bring all child windows to foreground (Alt+F)\r\n[*]Fixed matrix initialization by scalar value in non-GLSL expressions\r\n[*]Fixed parsing of forward declarations of GLSL functions\r\n[*]Fixed off-by-one error in line number due to differences between GLSL versions\r\n[*]File name now reported in GLSL compile errors if supported by OpenGL implementation\r\n[*]Improved static checking of non-GLSL expressions\r\n[*]Some example files updated, added triangle-generator example\r\n[*]Minor improvements and bug fixes\r\n[/list]",
+      "key": "524490::a56a8bcc624c16a2cfa71a230034220fa982e14d",
+      "tags": [
+        {
+          "feature": "[*]Introducing recursive generators for model construction"
+        },
+        {
+          "feature": "[*]Introducing event handlers that enable creation of interactive scripts"
+        },
+        {
+          "feature": "[*]Added ShadronPlayer.exe, a redistributable viewer for Shadron scripts"
+        },
+        {
+          "feature": "[*]Added feedback image, a variant of the feedback object that produces a static image"
+        },
+        {
+          "feature": "[*]Added support for geometry shaders"
+        },
+        {
+          "feature": "[*]Added support for hardware sRGB color mode"
+        },
+        {
+          "feature": "[*]Functions and procedures may now be defined, which can be called even in non-GLSL expressions"
+        },
+        {
+          "feature": "[*]Added \"watch\" sections to monitor expression values"
+        },
+        {
+          "feature": "[*]Added \"comment\" sections that are printed among parameters"
+        },
+        {
+          "feature": "[*]Added basic time controls to the GUI (restart and pause buttons and current time)"
+        },
+        {
+          "feature": "[*]Image sequence export generalized for non-animated objects via a control parameter"
+        },
+        {
+          "feature": "[*]Vertex list export now also applicable to vertex_lists and generators"
+        },
+        {
+          "feature": "[*]New library files: rng, srgb, camera_view, event_utils"
+        },
+        {
+          "bug": "[*]Fixed relative paths in included source files"
+        },
+        {
+          "balance_change": "[*]Generated GLSL code optimized"
+        },
+        {
+          "feature": "[*]Added load script button in place of refresh button when no script is loaded"
+        },
+        {
+          "feature": "[*]Added a keyboard shortcut to bring all child windows to foreground (Alt+F)"
+        },
+        {
+          "bug": "[*]Fixed matrix initialization by scalar value in non-GLSL expressions"
+        },
+        {
+          "bug": "[*]Fixed parsing of forward declarations of GLSL functions"
+        },
+        {
+          "bug": "[*]Fixed off-by-one error in line number due to differences between GLSL versions"
+        },
+        {
+          "bug": "[*]File name now reported in GLSL compile errors if supported by OpenGL implementation"
+        }
+      ]
+    },
+    {
+      "title": "macOS version released!",
+      "date": "2018-01-06 11:36:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949565173445",
+      "content": "After a period of beta testing, where it was only available as a standalone (non-Steam) version, the macOS port has been published on Steam as well!\r\n\r\nVersion 1.2.0 changelog:\r\n[list]\r\n[*]macOS version released\r\n[*]Improved the preprocessor so that the #include directive can be placed anywhere\r\n[*]Minor bug fixes\r\n[/list]",
+      "key": "524490::2cd689c00b96c1b240aabc12602046152ad034e5",
+      "tags": [
+        {
+          "feature": "macOS version released"
+        },
+        {
+          "feature": "Improved the preprocessor so that the #include directive can be placed anywhere"
+        },
+        {
+          "bug": "Minor bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "macOS version released!",
+      "date": "2018-01-06 11:36:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737070",
+      "content": "After a period of beta testing, where it was only available as a standalone (non-Steam) version, the macOS port has been published on Steam as well!\r\n\r\nVersion 1.2.0 changelog:\r\n[list]\r\n[*]macOS version released\r\n[*]Improved the preprocessor so that the #include directive can be placed anywhere\r\n[*]Minor bug fixes\r\n[/list]",
+      "key": "524490::0a98fff88074910e57d1109cd4606aeec747c9c0",
+      "tags": [
+        {
+          "feature": "macOS version released"
+        },
+        {
+          "feature": "Improved the preprocessor so that the #include directive can be placed anywhere"
+        },
+        {
+          "bug": "Minor bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.6 changelog",
+      "date": "2017-11-09 13:12:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2143012757611426985",
+      "content": "This update is a hotfix for a serious bug that has appeared in the previous version and caused images to not have any mipmaps.\r\n\r\n[list]\r\n[*]Fixed an error introduced in version 1.1.5 that disabled mipmap generation\r\n[*]Minor bug fixes and performance optimizations\r\n[/list]",
+      "key": "524490::8a815ee28ab9146b6fdc84f7367b55e659a37419",
+      "tags": [
+        {
+          "bug": "[*]Fixed an error introduced in version 1.1.5 that disabled mipmap generation"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.6 changelog",
+      "date": "2017-11-09 13:12:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737198",
+      "content": "This update is a hotfix for a serious bug that has appeared in the previous version and caused images to not have any mipmaps.\r\n\r\n[list]\r\n[*]Fixed an error introduced in version 1.1.5 that disabled mipmap generation\r\n[*]Minor bug fixes and performance optimizations\r\n[/list]",
+      "key": "524490::720f5f80adfedfe59fe4cb8887be0315cd508ac9",
+      "tags": [
+        {
+          "bug": "[*]Fixed an error introduced in version 1.1.5 that disabled mipmap generation"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.5 changelog",
+      "date": "2017-10-23 05:17:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3111284858384842418",
+      "content": "[list]\r\n[*]Corrected an error in <affine_transform> library, which caused perspective projection to use smaller FOV angle than specified\r\n[*]Added vertical FOV variants of perspective projection library functions\r\n[*]Fixed tiff and tiff_foreach exports, which due to an error generated files in PNG format\r\n[*]Fixed full range mode for particle systems\r\n[*]Significantly improved macro expansion logic of the preprocessor\r\n[*]Lowered memory usage\r\n[*]Font size of text images can now be passed as a parametrized expression\r\n[*]Minor improvements and bug fixes\r\n[/list]\r\n\r\n[b]Warning:[/b] Due to the first item, any scripts using perspective projection will be rendered with a different field of view, but this error has been deemed important to fix. To preserve the appearance of your renders, convert your FOV angle using this formula: [code]2.0*atan(0.5*tan(0.5*fov))[/code]",
+      "key": "524490::2f31193a89efa3e5b9c2efb608e074a5d204d5a4",
+      "tags": [
+        {
+          "bug": "[*]Corrected an error in <affine_transform> library, which caused perspective projection to use smaller FOV angle than specified"
+        },
+        {
+          "feature": "[*]Added vertical FOV variants of perspective projection library functions"
+        },
+        {
+          "bug": "[*]Fixed tiff and tiff_foreach exports, which due to an error generated files in PNG format"
+        },
+        {
+          "bug": "[*]Fixed full range mode for particle systems"
+        },
+        {
+          "feature": "[*]Significantly improved macro expansion logic of the preprocessor"
+        },
+        {
+          "balance_change": "[*]Lowered memory usage"
+        },
+        {
+          "feature": "[*]Font size of text images can now be passed as a parametrized expression"
+        },
+        {
+          "bug": "[*]Minor improvements and bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.5 changelog",
+      "date": "2017-10-23 05:17:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737344",
+      "content": "[list]\r\n[*]Corrected an error in <affine_transform> library, which caused perspective projection to use smaller FOV angle than specified\r\n[*]Added vertical FOV variants of perspective projection library functions\r\n[*]Fixed tiff and tiff_foreach exports, which due to an error generated files in PNG format\r\n[*]Fixed full range mode for particle systems\r\n[*]Significantly improved macro expansion logic of the preprocessor\r\n[*]Lowered memory usage\r\n[*]Font size of text images can now be passed as a parametrized expression\r\n[*]Minor improvements and bug fixes\r\n[/list]\r\n\r\n[b]Warning:[/b] Due to the first item, any scripts using perspective projection will be rendered with a different field of view, but this error has been deemed important to fix. To preserve the appearance of your renders, convert your FOV angle using this formula: [code]2.0*atan(0.5*tan(0.5*fov))[/code]",
+      "key": "524490::fbcbe4f0ca4e9e4bb8d7c09da3267ad8b6dcbe06",
+      "tags": [
+        {
+          "bug": "[*]Corrected an error in <affine_transform> library, which caused perspective projection to use smaller FOV angle than specified"
+        },
+        {
+          "feature": "[*]Added vertical FOV variants of perspective projection library functions"
+        },
+        {
+          "bug": "[*]Fixed tiff and tiff_foreach exports, which due to an error generated files in PNG format"
+        },
+        {
+          "bug": "[*]Fixed full range mode for particle systems"
+        },
+        {
+          "feature": "[*]Significantly improved macro expansion logic of the preprocessor"
+        },
+        {
+          "balance_change": "[*]Lowered memory usage"
+        },
+        {
+          "feature": "[*]Font size of text images can now be passed as a parametrized expression"
+        },
+        {
+          "bug": "[*]Minor improvements and bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.4 changelog",
+      "date": "2017-09-04 15:21:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2095718613781709216",
+      "content": "[list]\r\n[*]Vertex lists can now be defined as arrays of vertex data and used as vertex shader input\r\n[*]Extension initialization is now delayed until first usage in order to improve startup performance\r\n[*]New builtin value shadron_CameraView, a 4x4 matrix that can be used to move through the scene\r\n[*]A windowing function can now be selected for sounds, which affects their computed spectrum\r\n[*]In each animated window, framerate can now be displayed by pressing F8\r\n[*]The rules for redrawing objects due to parameter changes have been slightly tweaked\r\n[*]The builtin mouse and camera view parameters can now be reset when no other parameters are present\r\n[*]Minor bug fixes and optimizations\r\n[/list]",
+      "key": "524490::ace93ab97c960d028bff1273721e4020966919ca",
+      "tags": [
+        {
+          "feature": "[*]Vertex lists can now be defined as arrays of vertex data and used as vertex shader input"
+        },
+        {
+          "feature": "[*]Extension initialization is now delayed until first usage in order to improve startup performance"
+        },
+        {
+          "feature": "[*]New builtin value shadron_CameraView, a 4x4 matrix that can be used to move through the scene"
+        },
+        {
+          "feature": "[*]A windowing function can now be selected for sounds, which affects their computed spectrum"
+        },
+        {
+          "feature": "[*]In each animated window, framerate can now be displayed by pressing F8"
+        },
+        {
+          "balance_change": "[*]The rules for redrawing objects due to parameter changes have been slightly tweaked"
+        },
+        {
+          "feature": "[*]The builtin mouse and camera view parameters can now be reset when no other parameters are present"
+        },
+        {
+          "bug": "[*]Minor bug fixes and optimizations"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.4 changelog",
+      "date": "2017-09-04 15:21:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737471",
+      "content": "[list]\r\n[*]Vertex lists can now be defined as arrays of vertex data and used as vertex shader input\r\n[*]Extension initialization is now delayed until first usage in order to improve startup performance\r\n[*]New builtin value shadron_CameraView, a 4x4 matrix that can be used to move through the scene\r\n[*]A windowing function can now be selected for sounds, which affects their computed spectrum\r\n[*]In each animated window, framerate can now be displayed by pressing F8\r\n[*]The rules for redrawing objects due to parameter changes have been slightly tweaked\r\n[*]The builtin mouse and camera view parameters can now be reset when no other parameters are present\r\n[*]Minor bug fixes and optimizations\r\n[/list]",
+      "key": "524490::39b6e0b3e56ecacb804d11713dc3aacdb0bcb6da",
+      "tags": [
+        {
+          "feature": "[*]Vertex lists can now be defined as arrays of vertex data and used as vertex shader input"
+        },
+        {
+          "feature": "[*]Extension initialization is now delayed until first usage in order to improve startup performance"
+        },
+        {
+          "feature": "[*]New builtin value shadron_CameraView, a 4x4 matrix that can be used to move through the scene"
+        },
+        {
+          "feature": "[*]A windowing function can now be selected for sounds, which affects their computed spectrum"
+        },
+        {
+          "feature": "[*]In each animated window, framerate can now be displayed by pressing F8"
+        },
+        {
+          "balance_change": "[*]The rules for redrawing objects due to parameter changes have been slightly tweaked"
+        },
+        {
+          "feature": "[*]The builtin mouse and camera view parameters can now be reset when no other parameters are present"
+        },
+        {
+          "bug": "[*]Minor bug fixes and optimizations"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.3 with extensions",
+      "date": "2017-05-14 19:05:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2423345440417527985",
+      "content": "Shadron now supports extensions. See https://www.arteryengine.com/shadron/extensions/\r\n\r\nChangelog:\r\n[list]\r\n[*]Introducing the extension system\r\n[*]Sampling of animated objects from non-animated ones now disabled as originally intended\r\n[*]Preview timing mode can now be set for each script (see #pragma directive documentation)\r\n[*]New library files: blending and linearstep\r\n[*]Added new blending modes for model and particle_system objects (see documentation)\r\n[*]Cubemap animation modifiers now match animation modifiers\r\n[*]Added missing documentation for cubemap animations\r\n[*]The default value of the repeat property is now false for animations\r\n[*]Shadron now also searches for library files in application data directory (/Shadron/library)\r\n[*]Fixed a bug where changing a parameter would incorrectly advance particle system or feedback buffer\r\n[*]Fixed several bugs involving paused feedback buffers\r\n[*]Other bug fixes and minor improvements\r\n[/list]",
+      "key": "524490::b28c7da1434ecc7238446209cf896369276c4df7",
+      "tags": [
+        {
+          "feature": "Shadron now supports extensions. See https://www.arteryengine.com/shadron/extensions/"
+        },
+        {
+          "feature": "[*]Introducing the extension system"
+        },
+        {
+          "feature": "[*]Sampling of animated objects from non-animated ones now disabled as originally intended"
+        },
+        {
+          "feature": "[*]Preview timing mode can now be set for each script (see #pragma directive documentation)"
+        },
+        {
+          "feature": "[*]New library files: blending and linearstep"
+        },
+        {
+          "feature": "[*]Added new blending modes for model and particle_system objects (see documentation)"
+        },
+        {
+          "feature": "[*]Cubemap animation modifiers now match animation modifiers"
+        },
+        {
+          "feature": "[*]Added missing documentation for cubemap animations"
+        },
+        {
+          "feature": "[*]The default value of the repeat property is now false for animations"
+        },
+        {
+          "feature": "[*]Shadron now also searches for library files in application data directory (/Shadron/library)"
+        },
+        {
+          "bug": "[*]Fixed a bug where changing a parameter would incorrectly advance particle system or feedback buffer"
+        },
+        {
+          "bug": "[*]Fixed several bugs involving paused feedback buffers"
+        },
+        {
+          "bug": "[*]Other bug fixes and minor improvements"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.3 with extensions",
+      "date": "2017-05-14 19:05:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737586",
+      "content": "Shadron now supports extensions. See https://www.arteryengine.com/shadron/extensions/\r\n\r\nChangelog:\r\n[list]\r\n[*]Introducing the extension system\r\n[*]Sampling of animated objects from non-animated ones now disabled as originally intended\r\n[*]Preview timing mode can now be set for each script (see #pragma directive documentation)\r\n[*]New library files: blending and linearstep\r\n[*]Added new blending modes for model and particle_system objects (see documentation)\r\n[*]Cubemap animation modifiers now match animation modifiers\r\n[*]Added missing documentation for cubemap animations\r\n[*]The default value of the repeat property is now false for animations\r\n[*]Shadron now also searches for library files in application data directory (/Shadron/library)\r\n[*]Fixed a bug where changing a parameter would incorrectly advance particle system or feedback buffer\r\n[*]Fixed several bugs involving paused feedback buffers\r\n[*]Other bug fixes and minor improvements\r\n[/list]",
+      "key": "524490::2eade2a31cf60aeabe21eb8579a08f1ec543f616",
+      "tags": [
+        {
+          "feature": "Shadron now supports extensions. See https://www.arteryengine.com/shadron/extensions/"
+        },
+        {
+          "feature": "[*]Introducing the extension system"
+        },
+        {
+          "feature": "[*]Sampling of animated objects from non-animated ones now disabled as originally intended"
+        },
+        {
+          "feature": "[*]Preview timing mode can now be set for each script (see #pragma directive documentation)"
+        },
+        {
+          "feature": "[*]New library files: blending and linearstep"
+        },
+        {
+          "feature": "[*]Added new blending modes for model and particle_system objects (see documentation)"
+        },
+        {
+          "feature": "[*]Cubemap animation modifiers now match animation modifiers"
+        },
+        {
+          "feature": "[*]Added missing documentation for cubemap animations"
+        },
+        {
+          "feature": "[*]The default value of the repeat property is now false for animations"
+        },
+        {
+          "feature": "[*]Shadron now also searches for library files in application data directory (/Shadron/library)"
+        },
+        {
+          "bug": "[*]Fixed a bug where changing a parameter would incorrectly advance particle system or feedback buffer"
+        },
+        {
+          "bug": "[*]Fixed several bugs involving paused feedback buffers"
+        },
+        {
+          "bug": "[*]Other bug fixes and minor improvements"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.2 changelog",
+      "date": "2017-04-08 05:10:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/75840229408118290",
+      "content": "[list]\r\n[*]Sounds can now be sampled within GLSL shaders using shadron_Waveform and shadron_Spectrum functions\r\n[*]Sounds can now be loaded from files. The supported formats are WAV, OGG, and FLAC\r\n[*]Fixed a bug that made it impossible to use texture inputs in sound generating shaders\r\n[*]Sounds may now use full_range and repeat modifiers\r\n[*]New parameter control type, color, which provides a color picker for vec3 and vec4 parameters\r\n[*]New texture mapping mode clamp_to_border and border color setting\r\n[*]A macro, SHADRON_VERSION, is now available to detect the program's version. Keep in mind this is undefined prior to 1.1.2\r\n[*]The preprocessor now supports the #error directive\r\n[*]Fixed an issue that sometimes prevented frames of paused animations from being saved\r\n[*]Fixed input reloading logic and added Ctrl+F5 to load the originally declared file\r\n[*]Fixed an issue with shadron_Mouse changes sometimes not triggering a redraw\r\n[*]Failing to load an animation file sequence now produces the correct error message\r\n[/list]",
+      "key": "524490::1278d5ebd6798474d677bdecb7154a8addd8e94a",
+      "tags": [
+        {
+          "feature": "Sounds can now be sampled within GLSL shaders using shadron_Waveform and shadron_Spectrum functions"
+        },
+        {
+          "feature": "Sounds can now be loaded from files. The supported formats are WAV, OGG, and FLAC"
+        },
+        {
+          "bug": "Fixed a bug that made it impossible to use texture inputs in sound generating shaders"
+        },
+        {
+          "feature": "Sounds may now use full_range and repeat modifiers"
+        },
+        {
+          "feature": "New parameter control type, color, which provides a color picker for vec3 and vec4 parameters"
+        },
+        {
+          "feature": "New texture mapping mode clamp_to_border and border color setting"
+        },
+        {
+          "feature": "A macro, SHADRON_VERSION, is now available to detect the program's version. Keep in mind this is undefined prior to 1.1.2"
+        },
+        {
+          "feature": "The preprocessor now supports the #error directive"
+        },
+        {
+          "bug": "Fixed an issue that sometimes prevented frames of paused animations from being saved"
+        },
+        {
+          "bug": "Fixed input reloading logic and added Ctrl+F5 to load the originally declared file"
+        },
+        {
+          "bug": "Fixed an issue with shadron_Mouse changes sometimes not triggering a redraw"
+        },
+        {
+          "bug": "Failing to load an animation file sequence now produces the correct error message"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.2 changelog",
+      "date": "2017-04-08 05:10:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737690",
+      "content": "[list]\r\n[*]Sounds can now be sampled within GLSL shaders using shadron_Waveform and shadron_Spectrum functions\r\n[*]Sounds can now be loaded from files. The supported formats are WAV, OGG, and FLAC\r\n[*]Fixed a bug that made it impossible to use texture inputs in sound generating shaders\r\n[*]Sounds may now use full_range and repeat modifiers\r\n[*]New parameter control type, color, which provides a color picker for vec3 and vec4 parameters\r\n[*]New texture mapping mode clamp_to_border and border color setting\r\n[*]A macro, SHADRON_VERSION, is now available to detect the program's version. Keep in mind this is undefined prior to 1.1.2\r\n[*]The preprocessor now supports the #error directive\r\n[*]Fixed an issue that sometimes prevented frames of paused animations from being saved\r\n[*]Fixed input reloading logic and added Ctrl+F5 to load the originally declared file\r\n[*]Fixed an issue with shadron_Mouse changes sometimes not triggering a redraw\r\n[*]Failing to load an animation file sequence now produces the correct error message\r\n[/list]",
+      "key": "524490::16e82f3b3fdf58e9b8d5ec510b4c41d294c3b538",
+      "tags": [
+        {
+          "feature": "Sounds can now be sampled within GLSL shaders using shadron_Waveform and shadron_Spectrum functions"
+        },
+        {
+          "feature": "Sounds can now be loaded from files. The supported formats are WAV, OGG, and FLAC"
+        },
+        {
+          "bug": "Fixed a bug that made it impossible to use texture inputs in sound generating shaders"
+        },
+        {
+          "feature": "Sounds may now use full_range and repeat modifiers"
+        },
+        {
+          "feature": "New parameter control type, color, which provides a color picker for vec3 and vec4 parameters"
+        },
+        {
+          "feature": "New texture mapping mode clamp_to_border and border color setting"
+        },
+        {
+          "feature": "A macro, SHADRON_VERSION, is now available to detect the program's version. Keep in mind this is undefined prior to 1.1.2"
+        },
+        {
+          "feature": "The preprocessor now supports the #error directive"
+        },
+        {
+          "bug": "Fixed an issue that sometimes prevented frames of paused animations from being saved"
+        },
+        {
+          "bug": "Fixed input reloading logic and added Ctrl+F5 to load the originally declared file"
+        },
+        {
+          "bug": "Fixed an issue with shadron_Mouse changes sometimes not triggering a redraw"
+        },
+        {
+          "bug": "Failing to load an animation file sequence now produces the correct error message"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.1 changelog",
+      "date": "2017-03-03 05:22:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/75837698140825005",
+      "content": "[list]\r\n[*]Parameter values can now be inputted as text\r\n[*]Stricter enforcement of \"declaration before usage\" rule to prevent cyclic dependencies\r\n[*]Fixed a bug where paused animations would still be updated by their inputs\r\n[*]Fixed several major bugs in text image rendering, caused by heavy changes in text rasterizer in version 1.1.0\r\n[*]Added support for grayscale floating point TIFF files\r\n[*]The preprocessor now supports stringize operator\r\n[*]Minor improvements and bug fixes\r\n[/list]\r\n",
+      "key": "524490::2c5f33a0b71c5fd3b99e85ba11df97f318e4cd3b",
+      "tags": [
+        {
+          "feature": "[*]Parameter values can now be inputted as text"
+        },
+        {
+          "feature": "[*]Stricter enforcement of \"declaration before usage\" rule to prevent cyclic dependencies"
+        },
+        {
+          "bug": "[*]Fixed a bug where paused animations would still be updated by their inputs"
+        },
+        {
+          "bug": "[*]Fixed several major bugs in text image rendering, caused by heavy changes in text rasterizer in version 1.1.0"
+        },
+        {
+          "feature": "[*]Added support for grayscale floating point TIFF files"
+        },
+        {
+          "feature": "[*]The preprocessor now supports stringize operator"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.1 changelog",
+      "date": "2017-03-03 05:22:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737803",
+      "content": "[list]\r\n[*]Parameter values can now be inputted as text\r\n[*]Stricter enforcement of \"declaration before usage\" rule to prevent cyclic dependencies\r\n[*]Fixed a bug where paused animations would still be updated by their inputs\r\n[*]Fixed several major bugs in text image rendering, caused by heavy changes in text rasterizer in version 1.1.0\r\n[*]Added support for grayscale floating point TIFF files\r\n[*]The preprocessor now supports stringize operator\r\n[*]Minor improvements and bug fixes\r\n[/list]\r\n",
+      "key": "524490::04b627e8982b15ccd557b121a48222a6944caf23",
+      "tags": [
+        {
+          "feature": "[*]Parameter values can now be inputted as text"
+        },
+        {
+          "feature": "[*]Stricter enforcement of \"declaration before usage\" rule to prevent cyclic dependencies"
+        },
+        {
+          "bug": "[*]Fixed a bug where paused animations would still be updated by their inputs"
+        },
+        {
+          "bug": "[*]Fixed several major bugs in text image rendering, caused by heavy changes in text rasterizer in version 1.1.0"
+        },
+        {
+          "feature": "[*]Added support for grayscale floating point TIFF files"
+        },
+        {
+          "feature": "[*]The preprocessor now supports stringize operator"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.0 changelog",
+      "date": "2017-02-19 15:20:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/75836429552957061",
+      "content": "[list]\r\n[*]The program's inner architecture has been overhauled\r\n[*]Introducing command line mode (Shadrun.exe)\r\n[*]Input image files can now be specified for exports\r\n[*]New export mode - image for each input file\r\n[*]Starting an export while holding Ctrl will make Shadron overwrite output files without asking\r\n[*]New global value float shadron_Aspect\r\n[*]The program window is now per-monitor DPI-aware\r\n[*]Fullscreen mode now opens on the current monitor\r\n[*]Improved support for Unicode characters (UTF-8 encoding required)\r\n[*]A new script will unload the previous one even if it has errors\r\n[*]An error state is now indicated by red color of the refresh button\r\n[*]Heavy mode is now more reliable and displays partial results\r\n[*]Blending of models and particles made consistent\r\n[*]Fixed a bug that caused text images of certain width to be corrupt\r\n[*]Fixed an issue with #include directives within GLSL blocks\r\n[*]Minor improvements and bug fixes\r\n[/list]",
+      "key": "524490::da768127b2ba2606c4772ae4f3c438770870d875",
+      "tags": [
+        {
+          "feature": "Introducing command line mode (Shadrun.exe)"
+        },
+        {
+          "feature": "Input image files can now be specified for exports"
+        },
+        {
+          "feature": "New export mode - image for each input file"
+        },
+        {
+          "feature": "Starting an export while holding Ctrl will make Shadron overwrite output files without asking"
+        },
+        {
+          "feature": "New global value float shadron_Aspect"
+        },
+        {
+          "feature": "The program window is now per-monitor DPI-aware"
+        },
+        {
+          "feature": "Fullscreen mode now opens on the current monitor"
+        },
+        {
+          "feature": "Improved support for Unicode characters (UTF-8 encoding required)"
+        },
+        {
+          "feature": "A new script will unload the previous one even if it has errors"
+        },
+        {
+          "feature": "An error state is now indicated by red color of the refresh button"
+        },
+        {
+          "bug": "Fixed a bug that caused text images of certain width to be corrupt"
+        },
+        {
+          "bug": "Fixed an issue with #include directives within GLSL blocks"
+        },
+        {
+          "bug": "Minor improvements and bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.1.0 changelog",
+      "date": "2017-02-19 15:20:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686737905",
+      "content": "[list]\r\n[*]The program's inner architecture has been overhauled\r\n[*]Introducing command line mode (Shadrun.exe)\r\n[*]Input image files can now be specified for exports\r\n[*]New export mode - image for each input file\r\n[*]Starting an export while holding Ctrl will make Shadron overwrite output files without asking\r\n[*]New global value float shadron_Aspect\r\n[*]The program window is now per-monitor DPI-aware\r\n[*]Fullscreen mode now opens on the current monitor\r\n[*]Improved support for Unicode characters (UTF-8 encoding required)\r\n[*]A new script will unload the previous one even if it has errors\r\n[*]An error state is now indicated by red color of the refresh button\r\n[*]Heavy mode is now more reliable and displays partial results\r\n[*]Blending of models and particles made consistent\r\n[*]Fixed a bug that caused text images of certain width to be corrupt\r\n[*]Fixed an issue with #include directives within GLSL blocks\r\n[*]Minor improvements and bug fixes\r\n[/list]",
+      "key": "524490::9eb28612f87a4ad12d949c7df71ce1cdceb111ed",
+      "tags": [
+        {
+          "feature": "Introducing command line mode (Shadrun.exe)"
+        },
+        {
+          "feature": "Input image files can now be specified for exports"
+        },
+        {
+          "feature": "New export mode - image for each input file"
+        },
+        {
+          "feature": "Starting an export while holding Ctrl will make Shadron overwrite output files without asking"
+        },
+        {
+          "feature": "New global value float shadron_Aspect"
+        },
+        {
+          "feature": "The program window is now per-monitor DPI-aware"
+        },
+        {
+          "feature": "Fullscreen mode now opens on the current monitor"
+        },
+        {
+          "feature": "Improved support for Unicode characters (UTF-8 encoding required)"
+        },
+        {
+          "feature": "A new script will unload the previous one even if it has errors"
+        },
+        {
+          "feature": "An error state is now indicated by red color of the refresh button"
+        },
+        {
+          "bug": "Fixed a bug that caused text images of certain width to be corrupt"
+        },
+        {
+          "bug": "Fixed an issue with #include directives within GLSL blocks"
+        },
+        {
+          "bug": "Minor improvements and bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.0.6 changelog",
+      "date": "2016-12-05 18:08:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/91592053121009980",
+      "content": "[list]\r\n[*]New global value shadron_Mouse, which can be used to control the output with the mouse. Several examples modified to utilize this\r\n[*]Images, animations, and feedback buffers can now be made resizable with the new resizable modifier\r\n[*]New library files: icosphere and icosahedron, defining the geometry of the respective meshes\r\n[*]New example: winter.shadron\r\n[*]A particle system is now always reinitialized if the particle count changes\r\n[*]Added missing shadron_Dimensions and shadron_PixelSize to particle initialize and update shaders\r\n[*]Fixed a bug in the parser that prevented bit shift operators to be recognized in expressions outside GLSL\r\n[/list]",
+      "key": "524490::40c062d4f0b4e5566135ac0858e3de09daab7600",
+      "tags": [
+        {
+          "feature": "[*]New global value shadron_Mouse, which can be used to control the output with the mouse. Several examples modified to utilize this"
+        },
+        {
+          "feature": "[*]Images, animations, and feedback buffers can now be made resizable with the new resizable modifier"
+        },
+        {
+          "feature": "[*]New library files: icosphere and icosahedron, defining the geometry of the respective meshes"
+        },
+        {
+          "feature": "[*]New example: winter.shadron"
+        },
+        {
+          "feature": "[*]A particle system is now always reinitialized if the particle count changes"
+        },
+        {
+          "feature": "[*]Added missing shadron_Dimensions and shadron_PixelSize to particle initialize and update shaders"
+        },
+        {
+          "bug": "[*]Fixed a bug in the parser that prevented bit shift operators to be recognized in expressions outside GLSL"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.0.6 changelog",
+      "date": "2016-12-05 18:08:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686738014",
+      "content": "[list]\r\n[*]New global value shadron_Mouse, which can be used to control the output with the mouse. Several examples modified to utilize this\r\n[*]Images, animations, and feedback buffers can now be made resizable with the new resizable modifier\r\n[*]New library files: icosphere and icosahedron, defining the geometry of the respective meshes\r\n[*]New example: winter.shadron\r\n[*]A particle system is now always reinitialized if the particle count changes\r\n[*]Added missing shadron_Dimensions and shadron_PixelSize to particle initialize and update shaders\r\n[*]Fixed a bug in the parser that prevented bit shift operators to be recognized in expressions outside GLSL\r\n[/list]",
+      "key": "524490::0e92670437e635ea135a12135d6661fdc34506d3",
+      "tags": [
+        {
+          "feature": "[*]New global value shadron_Mouse, which can be used to control the output with the mouse. Several examples modified to utilize this"
+        },
+        {
+          "feature": "[*]Images, animations, and feedback buffers can now be made resizable with the new resizable modifier"
+        },
+        {
+          "feature": "[*]New library files: icosphere and icosahedron, defining the geometry of the respective meshes"
+        },
+        {
+          "feature": "[*]New example: winter.shadron"
+        },
+        {
+          "feature": "[*]A particle system is now always reinitialized if the particle count changes"
+        },
+        {
+          "feature": "[*]Added missing shadron_Dimensions and shadron_PixelSize to particle initialize and update shaders"
+        },
+        {
+          "bug": "[*]Fixed a bug in the parser that prevented bit shift operators to be recognized in expressions outside GLSL"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.0.5 changelog",
+      "date": "2016-11-21 11:50:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/127619582133800678",
+      "content": "[list]\r\n[*]Animations can now be loaded from image sequences (see documentation)\r\n[*]The program's main window can now be controlled with the keyboard\r\n[*]Export declarations now allow you to set any subset of parameters for that export only\r\n[*]Parameters may now be declared as hidden, similar to images and other constructs\r\n[*]Preprocessor now supports variadic macros\r\n[*]Shadron can now load images in TGA format\r\n[*]A feedback buffer may now be synchronized with another to facilitate more complex interactions\r\n[*]Feedback buffers may now be exported as a PNG or TIFF image sequence\r\n[*]Image sequence export no longer outputs an image for the end timepoint if it has zero duration\r\n[*]Animations may now be exported as a single image (the initial frame)\r\n[*]Relative filenames in ad hoc scripts no longer point to the working directory, but the user's home directory\r\n[*]Fixed an issue where lag would snowball if the GPU couldn't keep up with the declared update rate\r\n[*]Fixed a stack overflow error in the preprocessor in case a macro contains itself in its definition\r\n[*]Several minor bug fixes\r\n[/list]",
+      "key": "524490::0dad0464270ab72ae8384a91f98a92b3d5c1cb48",
+      "tags": [
+        {
+          "feature": "Animations can now be loaded from image sequences (see documentation)"
+        },
+        {
+          "feature": "The program's main window can now be controlled with the keyboard"
+        },
+        {
+          "feature": "Export declarations now allow you to set any subset of parameters for that export only"
+        },
+        {
+          "feature": "Parameters may now be declared as hidden, similar to images and other constructs"
+        },
+        {
+          "feature": "Preprocessor now supports variadic macros"
+        },
+        {
+          "feature": "Shadron can now load images in TGA format"
+        },
+        {
+          "feature": "A feedback buffer may now be synchronized with another to facilitate more complex interactions"
+        },
+        {
+          "feature": "Feedback buffers may now be exported as a PNG or TIFF image sequence"
+        },
+        {
+          "feature": "Image sequence export no longer outputs an image for the end timepoint if it has zero duration"
+        },
+        {
+          "feature": "Animations may now be exported as a single image (the initial frame)"
+        },
+        {
+          "feature": "Relative filenames in ad hoc scripts no longer point to the working directory, but the user's home directory"
+        },
+        {
+          "bug": "Fixed an issue where lag would snowball if the GPU couldn't keep up with the declared update rate"
+        },
+        {
+          "bug": "Fixed a stack overflow error in the preprocessor in case a macro contains itself in its definition"
+        },
+        {
+          "bug": "Several minor bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.0.5 changelog",
+      "date": "2016-11-21 11:50:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686738114",
+      "content": "[list]\r\n[*]Animations can now be loaded from image sequences (see documentation)\r\n[*]The program's main window can now be controlled with the keyboard\r\n[*]Export declarations now allow you to set any subset of parameters for that export only\r\n[*]Parameters may now be declared as hidden, similar to images and other constructs\r\n[*]Preprocessor now supports variadic macros\r\n[*]Shadron can now load images in TGA format\r\n[*]A feedback buffer may now be synchronized with another to facilitate more complex interactions\r\n[*]Feedback buffers may now be exported as a PNG or TIFF image sequence\r\n[*]Image sequence export no longer outputs an image for the end timepoint if it has zero duration\r\n[*]Animations may now be exported as a single image (the initial frame)\r\n[*]Relative filenames in ad hoc scripts no longer point to the working directory, but the user's home directory\r\n[*]Fixed an issue where lag would snowball if the GPU couldn't keep up with the declared update rate\r\n[*]Fixed a stack overflow error in the preprocessor in case a macro contains itself in its definition\r\n[*]Several minor bug fixes\r\n[/list]",
+      "key": "524490::99c9daf4d1a6127053bc608e511ce3239eb132c7",
+      "tags": [
+        {
+          "feature": "Animations can now be loaded from image sequences (see documentation)"
+        },
+        {
+          "feature": "The program's main window can now be controlled with the keyboard"
+        },
+        {
+          "feature": "Export declarations now allow you to set any subset of parameters for that export only"
+        },
+        {
+          "feature": "Parameters may now be declared as hidden, similar to images and other constructs"
+        },
+        {
+          "feature": "Preprocessor now supports variadic macros"
+        },
+        {
+          "feature": "Shadron can now load images in TGA format"
+        },
+        {
+          "feature": "A feedback buffer may now be synchronized with another to facilitate more complex interactions"
+        },
+        {
+          "feature": "Feedback buffers may now be exported as a PNG or TIFF image sequence"
+        },
+        {
+          "feature": "Image sequence export no longer outputs an image for the end timepoint if it has zero duration"
+        },
+        {
+          "feature": "Animations may now be exported as a single image (the initial frame)"
+        },
+        {
+          "feature": "Relative filenames in ad hoc scripts no longer point to the working directory, but the user's home directory"
+        },
+        {
+          "bug": "Fixed an issue where lag would snowball if the GPU couldn't keep up with the declared update rate"
+        },
+        {
+          "bug": "Fixed a stack overflow error in the preprocessor in case a macro contains itself in its definition"
+        },
+        {
+          "bug": "Several minor bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.0.2 changelog",
+      "date": "2016-10-14 04:18:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/241332296597257727",
+      "content": "[list]\r\n[*]Alt+F1 now opens the examples directory\r\n[*]Full range (32-bit floating point) images (and cubemaps) can now be loaded and exported as TIFF files (see full_range modifier)\r\n[*]Images (and cubemaps) can now also be loaded from TIFF and GIF files.\r\n[*]New modifier: hidden - for intermediate outputs that don't need to be displayed\r\n[*]The required API of GLSL generator functions has been relaxed to allow omitting some arguments and different return types\r\n[*]New example: multipass - demonstrates how rendering may be performed in multiple steps\r\n[*]Fixed the appearance of the program when run with high DPI settings\r\n[*]Improved compatibility with some AMD drivers that don't implement OpenGL correctly\r\n[*]Improved handling of file access conflicts with autorefresh and certain editors\r\n[*]Switch statement eliminated from library functions as it's not considered a part of GLSL specification\r\n[*]sizeof now works correctly when used on a cubemap and returns int\r\n[*]Fixed specification of cubemap by filename\r\n[*]Fixed a bug that prevented reloading of input images if the filename was specified in the script\r\n[*]Fixed a crash that would occur when attempting to load an unreasonably large file\r\n[*]Images and animations can no longer have zero width or height or exceed the GPU's maximum texture size\r\n[*]Improved performance of exporting PNG images\r\n[*]Several minor bug fixes\r\n[/list]",
+      "key": "524490::c8410e82df91463b1a0cc7c6f02fc6ccc5a488a5",
+      "tags": [
+        {
+          "feature": "[*]Alt+F1 now opens the examples directory"
+        },
+        {
+          "feature": "[*]Full range (32-bit floating point) images (and cubemaps) can now be loaded and exported as TIFF files (see full_range modifier)"
+        },
+        {
+          "feature": "[*]Images (and cubemaps) can now also be loaded from TIFF and GIF files."
+        },
+        {
+          "feature": "[*]New modifier: hidden - for intermediate outputs that don't need to be displayed"
+        },
+        {
+          "feature": "[*]The required API of GLSL generator functions has been relaxed to allow omitting some arguments and different return types"
+        },
+        {
+          "feature": "[*]New example: multipass - demonstrates how rendering may be performed in multiple steps"
+        },
+        {
+          "bug": "[*]Fixed the appearance of the program when run with high DPI settings"
+        },
+        {
+          "bug": "[*]Improved compatibility with some AMD drivers that don't implement OpenGL correctly"
+        },
+        {
+          "bug": "[*]Improved handling of file access conflicts with autorefresh and certain editors"
+        },
+        {
+          "bug": "[*]Switch statement eliminated from library functions as it's not considered a part of GLSL specification"
+        },
+        {
+          "bug": "[*]sizeof now works correctly when used on a cubemap and returns int"
+        },
+        {
+          "bug": "[*]Fixed specification of cubemap by filename"
+        },
+        {
+          "bug": "[*]Fixed a bug that prevented reloading of input images if the filename was specified in the script"
+        },
+        {
+          "bug": "[*]Fixed a crash that would occur when attempting to load an unreasonably large file"
+        },
+        {
+          "bug": "[*]Images and animations can no longer have zero width or height or exceed the GPU's maximum texture size"
+        },
+        {
+          "balance_change": "[*]Improved performance of exporting PNG images"
+        },
+        {
+          "bug": "[*]Several minor bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Version 1.0.2 changelog",
+      "date": "2016-10-14 04:18:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521686738225",
+      "content": "[list]\r\n[*]Alt+F1 now opens the examples directory\r\n[*]Full range (32-bit floating point) images (and cubemaps) can now be loaded and exported as TIFF files (see full_range modifier)\r\n[*]Images (and cubemaps) can now also be loaded from TIFF and GIF files.\r\n[*]New modifier: hidden - for intermediate outputs that don't need to be displayed\r\n[*]The required API of GLSL generator functions has been relaxed to allow omitting some arguments and different return types\r\n[*]New example: multipass - demonstrates how rendering may be performed in multiple steps\r\n[*]Fixed the appearance of the program when run with high DPI settings\r\n[*]Improved compatibility with some AMD drivers that don't implement OpenGL correctly\r\n[*]Improved handling of file access conflicts with autorefresh and certain editors\r\n[*]Switch statement eliminated from library functions as it's not considered a part of GLSL specification\r\n[*]sizeof now works correctly when used on a cubemap and returns int\r\n[*]Fixed specification of cubemap by filename\r\n[*]Fixed a bug that prevented reloading of input images if the filename was specified in the script\r\n[*]Fixed a crash that would occur when attempting to load an unreasonably large file\r\n[*]Images and animations can no longer have zero width or height or exceed the GPU's maximum texture size\r\n[*]Improved performance of exporting PNG images\r\n[*]Several minor bug fixes\r\n[/list]",
+      "key": "524490::46a5089ba0d0aa91d27bb3bb4be30e7cea7a7dcf",
+      "tags": [
+        {
+          "feature": "[*]Alt+F1 now opens the examples directory"
+        },
+        {
+          "feature": "[*]Full range (32-bit floating point) images (and cubemaps) can now be loaded and exported as TIFF files (see full_range modifier)"
+        },
+        {
+          "feature": "[*]Images (and cubemaps) can now also be loaded from TIFF and GIF files."
+        },
+        {
+          "feature": "[*]New modifier: hidden - for intermediate outputs that don't need to be displayed"
+        },
+        {
+          "feature": "[*]The required API of GLSL generator functions has been relaxed to allow omitting some arguments and different return types"
+        },
+        {
+          "feature": "[*]New example: multipass - demonstrates how rendering may be performed in multiple steps"
+        },
+        {
+          "bug": "[*]Fixed the appearance of the program when run with high DPI settings"
+        },
+        {
+          "bug": "[*]Improved compatibility with some AMD drivers that don't implement OpenGL correctly"
+        },
+        {
+          "bug": "[*]Improved handling of file access conflicts with autorefresh and certain editors"
+        },
+        {
+          "bug": "[*]Switch statement eliminated from library functions as it's not considered a part of GLSL specification"
+        },
+        {
+          "bug": "[*]sizeof now works correctly when used on a cubemap and returns int"
+        },
+        {
+          "bug": "[*]Fixed specification of cubemap by filename"
+        },
+        {
+          "bug": "[*]Fixed a bug that prevented reloading of input images if the filename was specified in the script"
+        },
+        {
+          "bug": "[*]Fixed a crash that would occur when attempting to load an unreasonably large file"
+        },
+        {
+          "bug": "[*]Images and animations can no longer have zero width or height or exceed the GPU's maximum texture size"
+        },
+        {
+          "balance_change": "[*]Improved performance of exporting PNG images"
+        },
+        {
+          "bug": "[*]Several minor bug fixes"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "appId": "686870",
+  "count": 6,
+  "notes": [
+    {
+      "title": "Lost Items v. 0.7.0.0820 is live !",
+      "date": "2017-08-20 08:53:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2709332890281432695",
+      "content": "Less than an hour ago, the new update of Lost Items has been uploaded and has been set live. Here is the 0.7.0.0820 changelog !\r\n\r\nBefore anything, please note that the CHANGELOG file into the installation folder is not updated, neither is the version.txt file. I forgot to update them for the 64 bits version of the game. Nothing important, but I prefer to warn you in case you're curious enough to look at the installation folder.\r\n\r\nYesterday, I posted an announcement on Twitter and Facebook. The Facebook post got a few informations about this version. So... what's important in this version ?\r\n\r\n[b]The movement system has been reworked.[/b]\r\n[i]Have you ever felt like you were too slow too fast ?[/i]\r\nI couldn't play the game more than 5 minutes because I was easily bored of the slow thing. I needed to change it.\r\n\r\nNow, the slow is less important [b]but[/b] you can't carry more than 7 items (9 items for the Looter). More informations about it at the end of the post.\r\n\r\n[b]An important bug has been solved with the ghosts[/b]\r\nI realized the Ghosts were kinda active and were almost always turning. Try to turn at 90\u00b0 every second, you'll see you will easily become sick of the movement. That was not natural.\r\n\r\nIt was a bug into the code that I could easily spot when redoing the whole thing (I'm currently working to rewrite the whole code). Now it works properly, the Ghosts randomly walk in a direction for 2-6 tiles. Which is better than 1-2, and very rarely 3.\r\n\r\n[b]The item drop has been reworked[/b]\r\nHave you ever wondered why sometimes, when you put the item on the ground, it was put behind the wall and not behind you ?\r\n\r\nOkay, don't judge me, it was just a very bad idea. When you pressed the key to put it back on the ground, it tried to find a place where to put it near you. But when you were moving (which is 90% of the case), it was like \"sometimes it works, sometimes it doesn't, so put it somewhere else\". Because the movement was so strange for the code, sometimes it decided not to put it behind you but far away, because behind you, the game thought there was a wall because you didn't completely finished your movement. Yeah, it's weird, and it's not normal.\r\n\r\nSo now, I corrected this bug too, and the item is now put at your feet. It needs a bit of improvement as it is sometimes quite weird, but at least it works correctly.\r\n\r\n[i]Known bug :[/i]\r\nSometimes, if you try to put your items into the box, it will put the item on the ground. Move somewhere, come back to your box, you'll get your item back. Then press the box carrying key (space by default) and move the box. You can now put the items into the box. I don't know why it happens, but sometimes the box no longer exists for the player.\r\n\r\n[b]The jump.[/b]\r\nAs always, this character comes with a lot of bugs or bad things. This one wasn't a bug, it was \"intended\" (not exactly intended, but let's assume it was). When you press the jump key, you jump where you look. If you're moving and you press the jump key while moving, it will jump in the same direction than your movement.\r\n\r\nFor example, if you move to the right and press the jump key, but before the end of the movement you press the up arrow, it will jump on the right. Why ? [strike]Because I don't know how to make a game[/strike] Because I didn't tell the game to check if another key was pressed. Now it's corrected. For the same example, you will jump in towards the top. Better, no ?\r\n\r\nAlso, I don't know if this was corrected in the last version, but there was a bug when you were jumping while the camera was moving. But it's corrected now. Maybe was it in the last version, but I can't see anything in the changelog. So let's assume it was corrected in this version.\r\n\r\n[i]Known bug :[/i]\r\nSometimes, the camera doesn't move enough, so when you reach the top of the maze, there are around two pixels which are hidden. I'm trying to fix this one. It's a minor bug, as you can still play even with this bug. Just tell me if it goes wrong and hides more pixels than I said. If there is half a tile hidden, it's not normal, do not hesitate to report it to losdingtro@gmail.com\r\n\r\n[b]So this is all for the important changes. Here is the full changelog[/b]\r\n[code]+ The player now have a limit items they can carry. It's up to 7.\r\n+ The looter can carry up to 9 items.\r\n* The slow created by the items is reduced.\r\n* The box slows less than before.\r\n* Pressing a new key while moving right before jumping now determines the direction of the jump.\r\n* The items now drop at the feet and not behind the character.\r\n* The looter now has 45 seconds of infrared sights instead of 60 seconds.\r\n* Reorganization of the res/ folder.\r\n* Corrected a bug that made the ghosts move in a very strange way.\r\n- The box no longer slows differently the fast character.[/code]\r\n\r\n[b]And about the movement system ?[/b]\r\nI saw someone complaining about the fact that the slow system was hidden. So today, I decided to give you informations about it. If you want it to stay a secret, just [b]DO NOT[/b] hover the black part. It's a spoiler containing all the informations !\r\n\r\n[spoiler]For all the characters, each line contains the number of characters carried and the time needed to go from one tile to another. :\r\n- 0 items: 0.295 seconds.\r\n- 1 item: 0.304 seconds.\r\n- 2 items: 0.313 seconds.\r\n- 3 items: 0.323 seconds.\r\n- 4 items: 0.335 seconds.\r\n- 5 items: 0.346 seconds.\r\n- 6 items: 0.357 seconds.\r\n- 7, 8, 9 items (8 and 9 for the Looter only): 0.368 seconds.\r\n\r\nAs you can see, when the Looter carries its 8th and 9th items, it is not slower than with 7 items carries.\r\n\r\nFor the speed character:\r\n- 0 items: 0.250 seconds.\r\n- 1 item: 0.257 seconds.\r\n- 2 items: 0.265 seconds.\r\n- 3 items: 0.272 seconds.\r\n- 4 items: 0.280 seconds.\r\n- 5 items: 0.287 seconds.\r\n- 6 items: 0.294 seconds.\r\n- 7 items: 0.304 seconds.\r\n\r\n[b]CAREFUL : These values may be changed in the future, and are probably not exact. Depending on your CPU, it may vary a little. The better the CPU, the lower the difference.[/b][/spoiler]\r\n\r\nEnjoy the new version !",
+      "key": "686870::7677c38f8f8b859240240e8cc86e37d96e6f4913",
+      "tags": [
+        {
+          "bug": "- An important bug has been solved with the ghosts"
+        },
+        {
+          "bug": "It was a bug into the code that I could easily spot when redoing the whole thing (I'm currently working to rewrite the whole code). Now it works properly, the Ghosts randomly walk in a direction for 2-6 tiles. Which is better than 1-2, and very rarely 3."
+        },
+        {
+          "bug": "So now, I corrected this bug too, and the item is now put at your feet. It needs a bit of improvement as it is sometimes quite weird, but at least it works correctly."
+        },
+        {
+          "bug": "Known bug :\nSometimes, if you try to put your items into the box, it will put the item on the ground. Move somewhere, come back to your box, you'll get your item back. Then press the box carrying key (space by default) and move the box. You can now put the items into the box. I don't know why it happens, but sometimes the box no longer exists for the player."
+        },
+        {
+          "bug": "Now it's corrected. For the same example, you will jump in towards the top. Better, no ?"
+        },
+        {
+          "bug": "Also, I don't know if this was corrected in the last version, but there was a bug when you were jumping while the camera was moving. But it's corrected now. Maybe was it in the last version, but I can't see anything in the changelog. So let's assume it was corrected in this version."
+        },
+        {
+          "bug": "Known bug :\nSometimes, the camera doesn't move enough, so when you reach the top of the maze, there are around two pixels which are hidden. I'm trying to fix this one. It's a minor bug, as you can still play even with this bug. Just tell me if it goes wrong and hides more pixels than I said. If there is half a tile hidden, it's not normal, do not hesitate to report it to losdingtro@gmail.com"
+        },
+        {
+          "bug": "* Corrected a bug that made the ghosts move in a very strange way."
+        },
+        {
+          "feature": "+ The player now have a limit items they can carry. It's up to 7."
+        },
+        {
+          "feature": "+ The looter can carry up to 9 items."
+        },
+        {
+          "balance_change": "* The slow created by the items is reduced."
+        },
+        {
+          "balance_change": "* The box slows less than before."
+        },
+        {
+          "balance_change": "* Pressing a new key while moving right before jumping now determines the direction of the jump."
+        },
+        {
+          "balance_change": "* The items now drop at the feet and not behind the character."
+        },
+        {
+          "balance_change": "* The looter now has 45 seconds of infrared sights instead of 60 seconds."
+        },
+        {
+          "balance_change": "- The box no longer slows differently the fast character."
+        }
+      ]
+    },
+    {
+      "title": "Lost Items v. 0.7.0.0820 is live !",
+      "date": "2017-08-20 08:53:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687732908",
+      "content": "Less than an hour ago, the new update of Lost Items has been uploaded and has been set live. Here is the 0.7.0.0820 changelog !\r\n\r\nBefore anything, please note that the CHANGELOG file into the installation folder is not updated, neither is the version.txt file. I forgot to update them for the 64 bits version of the game. Nothing important, but I prefer to warn you in case you're curious enough to look at the installation folder.\r\n\r\nYesterday, I posted an announcement on Twitter and Facebook. The Facebook post got a few informations about this version. So... what's important in this version ?\r\n\r\n[b]The movement system has been reworked.[/b]\r\n[i]Have you ever felt like you were too slow too fast ?[/i]\r\nI couldn't play the game more than 5 minutes because I was easily bored of the slow thing. I needed to change it.\r\n\r\nNow, the slow is less important [b]but[/b] you can't carry more than 7 items (9 items for the Looter). More informations about it at the end of the post.\r\n\r\n[b]An important bug has been solved with the ghosts[/b]\r\nI realized the Ghosts were kinda active and were almost always turning. Try to turn at 90\u00b0 every second, you'll see you will easily become sick of the movement. That was not natural.\r\n\r\nIt was a bug into the code that I could easily spot when redoing the whole thing (I'm currently working to rewrite the whole code). Now it works properly, the Ghosts randomly walk in a direction for 2-6 tiles. Which is better than 1-2, and very rarely 3.\r\n\r\n[b]The item drop has been reworked[/b]\r\nHave you ever wondered why sometimes, when you put the item on the ground, it was put behind the wall and not behind you ?\r\n\r\nOkay, don't judge me, it was just a very bad idea. When you pressed the key to put it back on the ground, it tried to find a place where to put it near you. But when you were moving (which is 90% of the case), it was like \"sometimes it works, sometimes it doesn't, so put it somewhere else\". Because the movement was so strange for the code, sometimes it decided not to put it behind you but far away, because behind you, the game thought there was a wall because you didn't completely finished your movement. Yeah, it's weird, and it's not normal.\r\n\r\nSo now, I corrected this bug too, and the item is now put at your feet. It needs a bit of improvement as it is sometimes quite weird, but at least it works correctly.\r\n\r\n[i]Known bug :[/i]\r\nSometimes, if you try to put your items into the box, it will put the item on the ground. Move somewhere, come back to your box, you'll get your item back. Then press the box carrying key (space by default) and move the box. You can now put the items into the box. I don't know why it happens, but sometimes the box no longer exists for the player.\r\n\r\n[b]The jump.[/b]\r\nAs always, this character comes with a lot of bugs or bad things. This one wasn't a bug, it was \"intended\" (not exactly intended, but let's assume it was). When you press the jump key, you jump where you look. If you're moving and you press the jump key while moving, it will jump in the same direction than your movement.\r\n\r\nFor example, if you move to the right and press the jump key, but before the end of the movement you press the up arrow, it will jump on the right. Why ? [strike]Because I don't know how to make a game[/strike] Because I didn't tell the game to check if another key was pressed. Now it's corrected. For the same example, you will jump in towards the top. Better, no ?\r\n\r\nAlso, I don't know if this was corrected in the last version, but there was a bug when you were jumping while the camera was moving. But it's corrected now. Maybe was it in the last version, but I can't see anything in the changelog. So let's assume it was corrected in this version.\r\n\r\n[i]Known bug :[/i]\r\nSometimes, the camera doesn't move enough, so when you reach the top of the maze, there are around two pixels which are hidden. I'm trying to fix this one. It's a minor bug, as you can still play even with this bug. Just tell me if it goes wrong and hides more pixels than I said. If there is half a tile hidden, it's not normal, do not hesitate to report it to losdingtro@gmail.com\r\n\r\n[b]So this is all for the important changes. Here is the full changelog[/b]\r\n[code]+ The player now have a limit items they can carry. It's up to 7.\r\n+ The looter can carry up to 9 items.\r\n* The slow created by the items is reduced.\r\n* The box slows less than before.\r\n* Pressing a new key while moving right before jumping now determines the direction of the jump.\r\n* The items now drop at the feet and not behind the character.\r\n* The looter now has 45 seconds of infrared sights instead of 60 seconds.\r\n* Reorganization of the res/ folder.\r\n* Corrected a bug that made the ghosts move in a very strange way.\r\n- The box no longer slows differently the fast character.[/code]\r\n\r\n[b]And about the movement system ?[/b]\r\nI saw someone complaining about the fact that the slow system was hidden. So today, I decided to give you informations about it. If you want it to stay a secret, just [b]DO NOT[/b] hover the black part. It's a spoiler containing all the informations !\r\n\r\n[spoiler]For all the characters, each line contains the number of characters carried and the time needed to go from one tile to another. :\r\n- 0 items: 0.295 seconds.\r\n- 1 item: 0.304 seconds.\r\n- 2 items: 0.313 seconds.\r\n- 3 items: 0.323 seconds.\r\n- 4 items: 0.335 seconds.\r\n- 5 items: 0.346 seconds.\r\n- 6 items: 0.357 seconds.\r\n- 7, 8, 9 items (8 and 9 for the Looter only): 0.368 seconds.\r\n\r\nAs you can see, when the Looter carries its 8th and 9th items, it is not slower than with 7 items carries.\r\n\r\nFor the speed character:\r\n- 0 items: 0.250 seconds.\r\n- 1 item: 0.257 seconds.\r\n- 2 items: 0.265 seconds.\r\n- 3 items: 0.272 seconds.\r\n- 4 items: 0.280 seconds.\r\n- 5 items: 0.287 seconds.\r\n- 6 items: 0.294 seconds.\r\n- 7 items: 0.304 seconds.\r\n\r\n[b]CAREFUL : These values may be changed in the future, and are probably not exact. Depending on your CPU, it may vary a little. The better the CPU, the lower the difference.[/b][/spoiler]\r\n\r\nEnjoy the new version !",
+      "key": "686870::1a50e7d677726f59821d39d14c293abba4ab07a7",
+      "tags": [
+        {
+          "bug": "- An important bug has been solved with the ghosts"
+        },
+        {
+          "bug": "It was a bug into the code that I could easily spot when redoing the whole thing (I'm currently working to rewrite the whole code). Now it works properly, the Ghosts randomly walk in a direction for 2-6 tiles. Which is better than 1-2, and very rarely 3."
+        },
+        {
+          "bug": "So now, I corrected this bug too, and the item is now put at your feet. It needs a bit of improvement as it is sometimes quite weird, but at least it works correctly."
+        },
+        {
+          "bug": "Known bug :\nSometimes, if you try to put your items into the box, it will put the item on the ground. Move somewhere, come back to your box, you'll get your item back. Then press the box carrying key (space by default) and move the box. You can now put the items into the box. I don't know why it happens, but sometimes the box no longer exists for the player."
+        },
+        {
+          "bug": "Now it's corrected. For the same example, you will jump in towards the top. Better, no ?"
+        },
+        {
+          "bug": "Also, I don't know if this was corrected in the last version, but there was a bug when you were jumping while the camera was moving. But it's corrected now. Maybe was it in the last version, but I can't see anything in the changelog. So let's assume it was corrected in this version."
+        },
+        {
+          "bug": "Known bug :\nSometimes, the camera doesn't move enough, so when you reach the top of the maze, there are around two pixels which are hidden. I'm trying to fix this one. It's a minor bug, as you can still play even with this bug. Just tell me if it goes wrong and hides more pixels than I said. If there is half a tile hidden, it's not normal, do not hesitate to report it to losdingtro@gmail.com"
+        },
+        {
+          "bug": "* Corrected a bug that made the ghosts move in a very strange way."
+        },
+        {
+          "feature": "+ The player now have a limit items they can carry. It's up to 7."
+        },
+        {
+          "feature": "+ The looter can carry up to 9 items."
+        },
+        {
+          "balance_change": "* The slow created by the items is reduced."
+        },
+        {
+          "balance_change": "* The box slows less than before."
+        },
+        {
+          "balance_change": "* Pressing a new key while moving right before jumping now determines the direction of the jump."
+        },
+        {
+          "balance_change": "* The items now drop at the feet and not behind the character."
+        },
+        {
+          "balance_change": "* The looter now has 45 seconds of infrared sights instead of 60 seconds."
+        },
+        {
+          "balance_change": "- The box no longer slows differently the fast character."
+        }
+      ]
+    },
+    {
+      "title": "Lost Items, how is the development going ?",
+      "date": "2017-08-14 17:13:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2093464278198105169",
+      "content": "Hello everyone !\r\nI'm writing this news so you can make sure the game isn't dying, is still developed and that I'm still trying to improve it.\r\n\r\nBecause yeah, it's been a few days since I released the last update, and I haven't been really active.\r\n\r\nSo, what's going on, for the development part ?\r\nIt's quite hard, because I'm trying to add new features to give you some updates but I also have to rewrite the whole code because it's messy and hard to optimise.\r\n\r\nSo I'm reading every line in the code to improve it and reorganise it. That's why I can't make a new update yet. Some changes in the code broke some important parts of the game. I'm working on a fix asap, and I'll be able to put a new update live soon.\r\n\r\nSo what's will be available in the next update ?\r\n- A fresh code for the Player part. It was extremely messy and bad designed. But you don't care about it, do you ?\r\n- A reorganisation of the res folder. It doesn't directly impact the game, but the res folder now has a subfolder holding all the player skins. It's now easier for me to change it and add new skins. And of course, it's easier for you to change the skins as you want, but I don't recommend it as you can break the game if you don't know what you're doing.\r\n- A new moving system. You are still slowed down if you carry too much, but in a much lighter way. Because you are now faster, you also have a carrying limit: 7 items for all the characters, 9 for the looter.\r\n\r\nThat's the major changes of the next update. For now I only planned these changes, but I'm still thinking of a nerf on the looter, because it is now way too powerful. And I don't want it to be that powerful. So I'll either reduce the range of the infrared or reduce the time she can use it.\r\n\r\nThat's all ! I hope this update will be live asap and that you'll enjoy it !",
+      "key": "686870::769e4dc1276e9513893177d8056843373cf30ef5",
+      "tags": [
+        {
+          "bug": "Some changes in the code broke some important parts of the game. I'm working on a fix asap, and I'll be able to put a new update live soon."
+        },
+        {
+          "feature": "A new moving system. You are still slowed down if you carry too much, but in a much lighter way. Because you are now faster, you also have a carrying limit: 7 items for all the characters, 9 for the looter."
+        },
+        {
+          "balance_change": "And I don't want it to be that powerful. So I'll either reduce the range of the infrared or reduce the time she can use it."
+        }
+      ]
+    },
+    {
+      "title": "Lost Items, how is the development going ?",
+      "date": "2017-08-14 17:13:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687733010",
+      "content": "Hello everyone !\r\nI'm writing this news so you can make sure the game isn't dying, is still developed and that I'm still trying to improve it.\r\n\r\nBecause yeah, it's been a few days since I released the last update, and I haven't been really active.\r\n\r\nSo, what's going on, for the development part ?\r\nIt's quite hard, because I'm trying to add new features to give you some updates but I also have to rewrite the whole code because it's messy and hard to optimise.\r\n\r\nSo I'm reading every line in the code to improve it and reorganise it. That's why I can't make a new update yet. Some changes in the code broke some important parts of the game. I'm working on a fix asap, and I'll be able to put a new update live soon.\r\n\r\nSo what's will be available in the next update ?\r\n- A fresh code for the Player part. It was extremely messy and bad designed. But you don't care about it, do you ?\r\n- A reorganisation of the res folder. It doesn't directly impact the game, but the res folder now has a subfolder holding all the player skins. It's now easier for me to change it and add new skins. And of course, it's easier for you to change the skins as you want, but I don't recommend it as you can break the game if you don't know what you're doing.\r\n- A new moving system. You are still slowed down if you carry too much, but in a much lighter way. Because you are now faster, you also have a carrying limit: 7 items for all the characters, 9 for the looter.\r\n\r\nThat's the major changes of the next update. For now I only planned these changes, but I'm still thinking of a nerf on the looter, because it is now way too powerful. And I don't want it to be that powerful. So I'll either reduce the range of the infrared or reduce the time she can use it.\r\n\r\nThat's all ! I hope this update will be live asap and that you'll enjoy it !",
+      "key": "686870::6ddad379648574643621ad9a265fd817b5edf880",
+      "tags": [
+        {
+          "bug": "Some changes in the code broke some important parts of the game. I'm working on a fix asap, and I'll be able to put a new update live soon."
+        },
+        {
+          "feature": "A new moving system. You are still slowed down if you carry too much, but in a much lighter way. Because you are now faster, you also have a carrying limit: 7 items for all the characters, 9 for the looter."
+        },
+        {
+          "balance_change": "And I don't want it to be that powerful. So I'll either reduce the range of the infrared or reduce the time she can use it."
+        }
+      ]
+    },
+    {
+      "title": "Lost Items v. 0.6.2.0805 is live !",
+      "date": "2017-08-05 12:52:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2093464278164930613",
+      "content": "After reading all your reviews, I saw what the main problem was : the game wasn't clear enough.\r\n\r\nSo this new version adds needed content : some explanations at the beginning of the game. Even though this tutorial is not yet interactive, it's enough for you to start the game correctly, and it lets me focus on the more important things.\r\n\r\n[b]Changelog :[/b]\r\n+ Added an icon to executable file\r\n+ The initial speed of the fast character is higher than normal.\r\n+ A list of explanations show up when the game starts.\r\n* Corrected a bug where the Jumping character couldn't pick-up items after jumping.\r\n* Improved performances on the higher levels.\r\n* Edited the moving system. Now, the last key pressed is the direction where you go. It is no longer Up Right Down Left order.\r\n* Corrected a bug where the items would appear on the top left of the map when put into the box.\r\n* Moved the Sliders in the Audio settings.\r\n* Corrected the mistake telling the cooldown of the jump were only 30 seconds instead of 45.\r\n* Corrected a bug that showed the wrong key in the settings if the \"Cancel\" button was pressed after a saved change.\r\n\r\nI hope you'll enjoy the new update !",
+      "key": "686870::6d7fdda8a900741189347364f7c75cfe2ddf2961",
+      "tags": [
+        {
+          "feature": "+ Added an icon to executable file"
+        },
+        {
+          "balance_change": "+ The initial speed of the fast character is higher than normal."
+        },
+        {
+          "feature": "+ A list of explanations show up when the game starts."
+        },
+        {
+          "bug": "* Corrected a bug where the Jumping character couldn't pick-up items after jumping."
+        },
+        {
+          "bug": "* Corrected a bug where the items would appear on the top left of the map when put into the box."
+        },
+        {
+          "balance_change": "* Corrected the mistake telling the cooldown of the jump were only 30 seconds instead of 45."
+        },
+        {
+          "bug": "* Corrected a bug that showed the wrong key in the settings if the \"Cancel\" button was pressed after a saved change."
+        }
+      ]
+    },
+    {
+      "title": "Lost Items v. 0.6.2.0805 is live !",
+      "date": "2017-08-05 12:52:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687733122",
+      "content": "After reading all your reviews, I saw what the main problem was : the game wasn't clear enough.\r\n\r\nSo this new version adds needed content : some explanations at the beginning of the game. Even though this tutorial is not yet interactive, it's enough for you to start the game correctly, and it lets me focus on the more important things.\r\n\r\n[b]Changelog :[/b]\r\n+ Added an icon to executable file\r\n+ The initial speed of the fast character is higher than normal.\r\n+ A list of explanations show up when the game starts.\r\n* Corrected a bug where the Jumping character couldn't pick-up items after jumping.\r\n* Improved performances on the higher levels.\r\n* Edited the moving system. Now, the last key pressed is the direction where you go. It is no longer Up Right Down Left order.\r\n* Corrected a bug where the items would appear on the top left of the map when put into the box.\r\n* Moved the Sliders in the Audio settings.\r\n* Corrected the mistake telling the cooldown of the jump were only 30 seconds instead of 45.\r\n* Corrected a bug that showed the wrong key in the settings if the \"Cancel\" button was pressed after a saved change.\r\n\r\nI hope you'll enjoy the new update !",
+      "key": "686870::ff912593bc38c408d24a4ec42eebe602b1fcbe97",
+      "tags": [
+        {
+          "feature": "+ Added an icon to executable file"
+        },
+        {
+          "balance_change": "+ The initial speed of the fast character is higher than normal."
+        },
+        {
+          "feature": "+ A list of explanations show up when the game starts."
+        },
+        {
+          "bug": "* Corrected a bug where the Jumping character couldn't pick-up items after jumping."
+        },
+        {
+          "bug": "* Corrected a bug where the items would appear on the top left of the map when put into the box."
+        },
+        {
+          "balance_change": "* Corrected the mistake telling the cooldown of the jump were only 30 seconds instead of 45."
+        },
+        {
+          "bug": "* Corrected a bug that showed the wrong key in the settings if the \"Cancel\" button was pressed after a saved change."
+        }
+      ]
+    }
+  ]
+}

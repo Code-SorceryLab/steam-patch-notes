@@ -1,0 +1,78 @@
+{
+  "appId": "3285390",
+  "count": 3,
+  "notes": [
+    {
+      "title": "AI behavior, Detection Meter, March/April Progress",
+      "date": "2025-04-23 05:52:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624422692",
+      "content": "Hey folks,\n\nDuring March and April we've been working on:\n[list]\n[*]shooting\n[*]picking up and moving bodies\n[*]enemy AI\n[/list]\n\n[h1][b]Shooting[/b][/h1]\n\nDespite how easy it might sound, these are the things we had to take care of:\n[list]\n[*]is it trace or projectile?\n[*]how to make a big weapon not clip with the character model\n[*]should the trace go from the actual muzzle or from the third person camera\n[*]what about a camera shake for impact\n[*]what about vfx (and why doesn't it work properly?)\n[*]should you go into melee combat while having a gun when the enemy gets to close, and if yes - what happens to the gun\n[/list]\netc\n\nSo far the technical side of the shooting works, what's left is to add hit reactions. Without them it's hard to understand if it's a hit or miss.\n\nEarly iterations:\n[img]{STEAM_CLAN_IMAGE}/45289355/6a0326c115b21175f87e300381fa35d2dec6e6ee.gif[/img]\n[img]{STEAM_CLAN_IMAGE}/45289355/787bfaa5a05df1f9346b1346a5197809e3603ec7.gif[/img]\n\nLater iterations:\n[img]{STEAM_CLAN_IMAGE}/45289355/64294b459645b9423fe2ddf28a6149869f346f35.gif[/img]\n\n\n\n[h1][b]Picking up bodies[/b][/h1]\n\nWe did it. And then we decided to switch to a universal animation library for all the characters, and it broke the feature completely. So we'll have to do it again.\n\n[img]{STEAM_CLAN_IMAGE}/45289355/f55b6fca61be0f1544141cfe73e078c759eab857.gif[/img]\n\n[img]{STEAM_CLAN_IMAGE}/45289355/b587bbc5f417dcb5cd6428049ccc45ef5ed15a0d.gif[/img]\n\nAt early stages of development it looked hilarious.\n[img]{STEAM_CLAN_IMAGE}/45289355/fc0fa157f89001477e0ca031798115da96070b82.gif[/img]\n\n\n\n[h1][b]Enemy AI[/b][/h1]\n\nOne of the biggest systems we worked on so far is the AI re-make. \n\nWe did have an AI module before via UE blackboards, that already had sight and sound detection. However, we encountered some inflexibility of the system (and bugs) that didn't allow us to implement a more complex AI behavior. \n\nSo we switched to a State Tree:\n[img]{STEAM_CLAN_IMAGE}/45289355/4fe37838df822fe3ccfe068588e67aa68e851e36.png[/img]\n\n\n[h3] Detection Meter [/h3]\n\n[img]{STEAM_CLAN_IMAGE}/45289355/81ccbd342b7bbfd72fe35e865db1a9477edebad8.png[/img]\n\nThe scheme above is an NPC guard's field of vision in Kvasir, represented by colored zones and associated states:\n\n[b]Alerted State:[/b] Closest to the NPC is a small red zone indicating the \"Alerted\" state. If the player enters this zone, the NPC becomes immediately aware of the player's presence.\n\n[b]Investigation State:[/b] Beyond the red zone, there is a larger yellow zone that triggers the \"Investigation\" state when the player enters it. This state is likely less aggressive than the \"Alerted\" state, suggesting the NPC is suspicious but has not yet confirmed the player's presence.\n\n[b]Investigation Gauge:[/b] At the periphery of the NPC's vision is the green threshold, which is the trigger point for the \"Investigation Gauge\" to begin filling. This suggests a mechanic where the NPC becomes gradually more suspicious the longer the player stays in this area. The closer the player is to the yellow zone, the faster the Investigation Gauge fills up, increasing the risk of detection.\n\n[b]Visibility Impacts NPC Thresholds:[/b] factors like lighting or the player's stance (standing, sitting, running, etc.) would affect how easily the NPC notices the player.\n\nThis is how it ended looking under the hood:\n[img]{STEAM_CLAN_IMAGE}/45289355/6e2ae5dd8b05b23c7caf8cc114d13b44967de96d.gif[/img]\n\n\nOur early mockup of state visualization for enemies (when a certain state is active):\n[img]{STEAM_CLAN_IMAGE}/45289355/4c5c8a2245571251566509b270411ca7b5756dfc.png[/img]\n\nAnd the in-game implementation. It's pretty cool that we can now play animation on switching states - as in this case the guard let's out a small ghasp.\n[img]{STEAM_CLAN_IMAGE}/45289355/8c99f0669f9673abfd184d4682aae287a02396fd.gif[/img]\n\n\n\n[h3] Waking up stunned opponents [/h3]\n\nAnother thing we did in this iteration is the guards are finally able to wake up each other (placeholder animations).\n\n[img]{STEAM_CLAN_IMAGE}/45289355/b352951758db35d23447d2d223197cf8eae39e3a.gif[/img]\n\nWe studied player feedback on MGS and Splinter Cell AI complexity, and we're looking forward to making AIs smarter in how they react to threats, also based on their class in future iterations.\n\n[img]{STEAM_CLAN_IMAGE}/45289355/d561431a8344adaead0a34ec22229c19c41b1ec5.png[/img]\n\nThat's all for now. Stay tuned for more updates next month!",
+      "key": "3285390::4a0023f1d3712a56f6e36cfd850df67fc86103f8",
+      "tags": [
+        {
+          "bug": "However, we encountered some inflexibility of the system (and bugs) that didn't allow us to implement a more complex AI behavior."
+        },
+        {
+          "feature": "So we switched to a State Tree:"
+        },
+        {
+          "feature": "The scheme above is an NPC guard's field of vision in Kvasir, represented by colored zones and associated states:"
+        },
+        {
+          "feature": "Another thing we did in this iteration is the guards are finally able to wake up each other (placeholder animations)."
+        }
+      ]
+    },
+    {
+      "title": "February Progress",
+      "date": "2025-03-08 04:32:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379433537",
+      "content": "This is what we were working on for the past month.\n\n1. We finally got our weapon wheel working:\n\n[previewyoutube=VSQg9Fb8h5c;full][/previewyoutube]\n\n2. We also finished rigging the last of the demo's opponents - the Heavy.\n\n [previewyoutube=Z1OEn0obOaA;full][/previewyoutube]\n\n3. The UI heart is now beating when enemies are close. The distance needs to be tweaked after level design tests.\n\n[previewyoutube=SHRNoZiB6Hk;full][/previewyoutube]\n\n4. You can hide in bushes and become semi-transparent when in crouch. \n\n[previewyoutube=7uHscZCINao;full][/previewyoutube]\n\nFor the demo level we have plans to include a mini garden into an office premise. But in future we plan to have much more greenery, so this should come in handy.\n\n[img]{STEAM_CLAN_IMAGE}/45289355/f025a3789f8ef4012cf18b4cf69bbfb01a2fb510.gif[/img]\n\n5. Level blockout in progress:\n\n[img]{STEAM_CLAN_IMAGE}/45289355/5713220a88444db6cf274ffe19addc564544605c.png[/img]\n[img]{STEAM_CLAN_IMAGE}/45289355/3754d5c5d9c39df2bb6b2d22a0c48e5b856d3cc8.png[/img]\n\n\nWe're now working on: \n[list]\n[*]shooting\n[*]picking up and moving bodies\n[*]enemy AI\n[*]level design\n[/list]",
+      "key": "3285390::6c4b3a943b8dc2434053c904c0a68ccf5498d3a6",
+      "tags": [
+        {
+          "feature": "1. We finally got our weapon wheel working:"
+        },
+        {
+          "feature": "2. We also finished rigging the last of the demo's opponents - the Heavy."
+        },
+        {
+          "feature": "3. The UI heart is now beating when enemies are close. The distance needs to be tweaked after level design tests."
+        },
+        {
+          "feature": "4. You can hide in bushes and become semi-transparent when in crouch."
+        },
+        {
+          "feature": "For the demo level we have plans to include a mini garden into an office premise. But in future we plan to have much more greenery, so this should come in handy."
+        },
+        {
+          "feature": "5. Level blockout in progress:"
+        }
+      ]
+    },
+    {
+      "title": "Core Loop: Stealth Meters",
+      "date": "2025-01-25 15:00:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505380481",
+      "content": "KVASIR is heavily inspired by stealth adventure games like Metal Gear Solid and Splinter Cell. And one of the coolest mechanics we noticed there that was so rarely use elsewhere is the \"environmental awareness\". Meaning how much you blend in and how easy/hard it is to spot you.\n\nHere's an example from Splinter Cell that we used in our documentation:\n\n[img]{STEAM_CLAN_IMAGE}/45289355/e420f9466bdeea047c94dc0c1f3ab3ec34b32714.png[/img]\n\n[h1][b]1. VISIBILITY METER[/b][/h1]\n\nIn KVASIR, the visibility meter (aka light indicator) reveals how visible you are in the environment. \n\nAt first it was just how much light are you under right now (hence \"light indicator\" title). But then we realized that player's visibility should depend not just on the light around you but also on your opponent's sight radius. \n\nAnd different opponents will have different sight radius and reaction time. So you'll need to stay in the shadows to outsmart them.\n\n[previewyoutube=OmiRsIRYGug;full][/previewyoutube]\n\nWe also have a couple of shorts on the youtube channel, made for the single purpose of adding vids to our steam posts. But turns out Steam doesn't support shorts. So I'll just drop the link to the playlist (but you also can  [url=https://www.tiktok.com/@kvasir_game]follow us onTikTok[/url]):\n\n[previewyoutube=dblQznC-T2o;full][/previewyoutube]\n\nSince we already made the technical component to track visibility, next we'll have to painfully tune it in every single location. \n\nThe challenge here is make the intuitive visibility equal the component's state. E.g. there should be no cases, where the player's sure they are standing in the shadows, but the visibility meter is half-full etc.\n\n[h1][b]2. SOUND METER[/b][/h1]\n\nJust like with light, we also incorporated sound detection. Of course, the opponents will react to sound, so the speed with which you move and the surface matters. \n\nIn our original concept, sound meter shows two values:\n[olist]\n[*]     player's sound level\n[*]     background sound level \n[/olist] Background noise = any noise that is NOT made by the player, having less weight the more distant it is to them.\n\nAs long as the player\u2019s sound is not higher than the background - they will not be heard. The rest also depends on opponents hearing radius.\n\nIt took us quite some time to figure out how to use the wavy visualizer that we wanted in UE - the one you can see on the vids. So right now it only shows how much sound the player makes. And based on our playtests we'll see if we even need the added complexity of background sound level.\n\nThat's all for now. \nYou can [url=https://ko-fi.com/projectkvasir]support us on ko-fi[/url] and make the release date a bit closer.\n\nYour balkan dad wishes you a good weekend! \n[i]meanwhile dad himself: [/i]\n[img]{STEAM_CLAN_IMAGE}/45289355/e5733cf04cb0b7d45ab9443d3b234cd899b85de3.png[/img]",
+      "key": "3285390::c1c29252171ee67a1b5ea23094d3b8689bb9fe27",
+      "tags": [
+        {
+          "feature": "In KVASIR, the visibility meter (aka light indicator) reveals how visible you are in the environment."
+        },
+        {
+          "feature": "We also have a couple of shorts on the youtube channel, made for the single purpose of adding vids to our steam posts. But turns out Steam doesn't support shorts. So I'll just drop the link to the playlist (but you also can follow us onTikTok):"
+        },
+        {
+          "feature": "Just like with light, we also incorporated sound detection. Of course, the opponents will react to sound, so the speed with which you move and the surface matters."
+        },
+        {
+          "feature": "In our original concept, sound meter shows two values:\nplayer's sound level\nbackground sound level \nBackground noise = any noise that is;%%20%not made by the player, having less weight the more distant it is to them."
+        },
+        {
+          "feature": "So right now it only shows how much sound the player makes. And based on our playtests we'll see if we even need the added complexity of background sound level."
+        }
+      ]
+    }
+  ]
+}

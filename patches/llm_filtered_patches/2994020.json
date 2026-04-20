@@ -1,0 +1,1062 @@
+{
+  "appId": "2994020",
+  "count": 13,
+  "notes": [
+    {
+      "title": "Puck: Build 202",
+      "date": "2025-06-09 06:33:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199519704",
+      "content": "Long awaited Puck B202 is finally here! For this update, no gameplay changes have been made, though a big effort has been made to make modding easy & streamlined both for the players & developers.\n\n[h1]Changes & additions:[/h1]\n[list]\n[*]Switched script backend for the whole project from IL2CPP to Mono which allows for more transparency and ease of mod development\n[*]Added official mod support allowing mod developers to create and inject their own .dlls into the game process allowing full access to the game's internals\n[*]Added plugin support which essentially serves the same purpose as mods, though Plugins do not have to be obtained from the Steam Workshop which will be useful for mod development or proprietary server-sided mods\n[*]Added full Steam Workshop integration allowing for easy mod download an installation directly within the game or through the Steam Workshop itself\n[*]Added mod support for servers which allows server owners to configure:\n- Server mods: Mods that will be run by the server affecting the main game loop, physics, server commands and much more\n- Client mods: Server can configure mods that will be automatically downloaded by any connecting clients allowing for mod synchronization across all connected clients\n[*]Added a Mods menu (accessed via the main menu) where all installed mods & plugins can be enabled or disabled\n[*]Added logging support, meaning all logs produced by the game client or servers can be accessed within the local install folder of the game (Logs/Puck.log)\n[*]Added Steam's URL launch support allowing clients to launch the game directly from their browser. For example, running [b]steam://run/2994020//+ipAddress 127.0.0.1 +port 7777 +password myPassword/[/b] ([b]+password[/b] being optional) in your browser will connect you to the specified IP and port combination. This now works also for cases when the game client is already running!\n[*]Refactored toast notification system & moved notifications to bottom right\n[*]Updated Unity's Netcode for GameObjects to version 2.3.0\n[/list]\n\n[h2]For server owners:[/h2]\nWith the introduction of Steam API support on dedicated Linux servers, this requires additional .dlls to be loaded in order for the server to have access to the Steam API. The Steam API .dll is shipped together with the Linux dedicated server, but requires the server to be launched via the [b]start_server.sh[/b] instead of the previously used [b]Puck.x86_64[/b] executable. All CLI arguments passed to [b]start_server.sh[/b] will still be taken into consideration by Puck, so no further action, other than launching a different executable is needed.\n\nIn order to add server-side or client-side mods to your server, a new [b]mods[/b] configuration parameter was introduced. Example use case:\n[code]\"mods\": [\n  {\n    \"id\": 3493628417,\n    \"enabled\": false,\n    \"clientRequired\": true\n  },\n  {\n    \"id\": 3491056040,\n    \"enabled\": true,\n    \"clientRequired\": false\n  }\n][/code]\n\nThis configuration will add [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3493628417]Toaster's Crispy Shadows[/url] (3493628417) as a client-sided mod and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3491056040]GAFURIX' Custom MOTD[/url] (3491056040) as a server-sided mod to your server.\n\n[h2]For clients:[/h2]\nConnecting to a modded server is no different than connecting to a vanilla server. When the connection to a modded server is started, all required mods will be downloaded & installed automatically [b]without[/b] requiring you to restart your game. After all mods are downloaded and installed, your will be connected to the server seamlessly. Upon disconnecting, the downloaded mods will be disabled, but will remain installed (cached).",
+      "key": "2994020::f378f60b8ad7ad8afca69e672ba7c4b21eef1c83",
+      "tags": [
+        {
+          "feature": "Switched script backend for the whole project from IL2CPP to Mono which allows for more transparency and ease of mod development"
+        },
+        {
+          "feature": "Added official mod support allowing mod developers to create and inject their own .dlls into the game process allowing full access to the game's internals"
+        },
+        {
+          "feature": "Added plugin support which essentially serves the same purpose as mods, though Plugins do not have to be obtained from the Steam Workshop which will be useful for mod development or proprietary server-sided mods"
+        },
+        {
+          "feature": "Added full Steam Workshop integration allowing for easy mod download an installation directly within the game or through the Steam Workshop itself"
+        },
+        {
+          "feature": "Added mod support for servers which allows server owners to configure:\n- Server mods: Mods that will be run by the server affecting the main game loop, physics, server commands and much more\n- Client mods: Server can configure mods that will be automatically downloaded by any connecting clients allowing for mod synchronization across all connected clients"
+        },
+        {
+          "feature": "Added a Mods menu (accessed via the main menu) where all installed mods & plugins can be enabled or disabled"
+        },
+        {
+          "feature": "Added logging support, meaning all logs produced by the game client or servers can be accessed within the local install folder of the game (Logs/Puck.log)"
+        },
+        {
+          "feature": "Added Steam's URL launch support allowing clients to launch the game directly from their browser. For example, running [b]steam://run/2994020//+ipAddress 127.0.0.1 +port 7777 +password myPassword/[/b] ([b]+password[/b] being optional) in your browser will connect you to the specified IP and port combination. This now works also for cases when the game client is already running!"
+        },
+        {
+          "feature": "Refactored toast notification system & moved notifications to bottom right"
+        },
+        {
+          "feature": "Updated Unity's Netcode for GameObjects to version 2.3.0"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 185",
+      "date": "2025-04-22 08:01:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861797474",
+      "content": "Yet another Puck update has arrived! This update introduces a lot of QOL features along with some physics changes which will affect competitive play. See the full changelog below.\n\n[h1]Changes & additions:[/h1]\n[list]\n[*]Reworked goals & nets:\n- Completely remodeled goals to closer match their real life counterparts\n- Introduced physics to goal nets which react to puck impacts\n- Pucks impacting the net will be dampened, mimicking a real net interaction\n[*]Improved A/D sway to be more responsive and less floaty\n[*]Improved stick:\n- Added stick dragging across the ice sounds\n- Added stick tapping the ice sounds\n[*]Changed stick angle rotation pivot to the bottom center of the blade, which has a few benefits:\n- Stick -> board collisions will react more predictably at certain angles, where previously reverse velocity would be applied even if the stick would not visually contact the boards\n- Puck will leave the stick blade at a more predictable trajectory with any angle above or below 0\n[*]Improved puck:\n- Added slightly more weight to the puck\n- Added custom physics solver to calculate the exit trajectory of the puck when it is hit\n[*]Improved puck visibility:\n- Added puck elevation indicator showing a ring & line on the ice while the puck is mid-air (toggle in settings)\n- Added puck outline to help with puck visibility specifically on black sticks/tapes (toggle in settings)\n[*]Improved player body colliders:\n- Reworked all player body colliders to match the visual mesh 1:1\n- Raised the player crouch height just enough so the puck can pass underneath the player\n[*]Improved minimap:\n- Fixed minimap markings not matching the updated rink markings\n- Added background opacity adjustments (slider in settings)\n- Added positional adjustments (slider in settings)\n- Added scale adjustments (slider in settings)\n[*]Improved chat:\n- Chat messages will now gradually fade out after a specific amount of time\n- Added animation for new chat messages to slide in gradually\n- Added separate team & all chats (T for team chat, Y for all chat by default)\n- Added quick chat messages (used with 1, 2, 3 & 4 keys)\n- Added rate limiting for chat messages to avoid chat spam\n- Added scale adjustments (slider in settings)\n- Fixed chat not being scrollable\n- Fixed chat losing focus when trying to select text within it\n[*]Added 2nd assist player when a goal is scored\n[*]Added possibility to sprint backwards\n[*]Added number & name labels on top of players heads (toggle in settings)\n[*]Added camera angle adjustment, allowing you to adjust the camera downwards angle (slider in settings)\n[*]Added possibility to disable profanity filters (toggle in settings)\n[*]Added `/start` and `/warmup` admin commands to force Face Off or Warmup phases\n[*]Improved shadow visibility at longer distances\n[*]Improved shadow contrast further\n[*]Swapped default debug shortcut key from F12 to F8 (to avoid Steam's screenshot shortcut)\n[*]Network Smoothing setting will now be off by default for new players\n[*]Raised slide height slightly to allow for easier 5 hole shots\n[*]Improved goal announcements formatting (specifically goal player and assist players)\n[*]Improved goalie leg pad animations stuttering if pressed rapidly\n[/list]\n\n[h1]Bugfixes:[/h1]\n[list]\n[*]Fixed server browser still failing to show some servers in certain cases\n[*]Fixed scroll wheel input for some specific mice, especially with linear scroll wheel\n[*]Clients will now be prompted for password input when joining a server via Steam invite\n[*]Fixed board colliders causing the puck to sometimes shoot off in a random direction\n[*]Fixed body checking sometimes causing the target player to be launched across the rink\n[*]Optimized client network synchronization saving 1kB/s per-player\n[*]Split game settings into two sub-categories - GAMEPLAY and USER INTERFACE\n[*]Fixed left handedness not being perfectly mirrored from right handedness\n[*]Fixed exploit allowing for multiple Goalies to be spawned in the same team\n[*]Fixed floating point error causing player input delays on long running servers\n[*]Fixed a skating speed exploit caused by stick & board interactions\n[*]Fixed replays freezing before play when the match has been ongoing for longer periods of time with a lot of players\n[*]Fixed an issue where self-hosted servers would ignore the port number input field resulting in always launching on port 7777\n[*]Fixed Goalie pads stuttering during animation\n[/list]",
+      "key": "2994020::367fce93766319382dab441248fcb1d17ecb290f",
+      "tags": [
+        {
+          "feature": "- Completely remodeled goals to closer match their real life counterparts"
+        },
+        {
+          "feature": "- Introduced physics to goal nets which react to puck impacts"
+        },
+        {
+          "feature": "- Pucks impacting the net will be dampened, mimicking a real net interaction"
+        },
+        {
+          "feature": "- Added stick dragging across the ice sounds"
+        },
+        {
+          "feature": "- Added stick tapping the ice sounds"
+        },
+        {
+          "feature": "- Added slightly more weight to the puck"
+        },
+        {
+          "feature": "- Added custom physics solver to calculate the exit trajectory of the puck when it is hit"
+        },
+        {
+          "feature": "- Added puck elevation indicator showing a ring & line on the ice while the puck is mid-air (toggle in settings)"
+        },
+        {
+          "feature": "- Added puck outline to help with puck visibility specifically on black sticks/tapes (toggle in settings)"
+        },
+        {
+          "feature": "- Reworked all player body colliders to match the visual mesh 1:1"
+        },
+        {
+          "feature": "- Raised the player crouch height just enough so the puck can pass underneath the player"
+        },
+        {
+          "feature": "- Added background opacity adjustments (slider in settings)"
+        },
+        {
+          "feature": "- Added positional adjustments (slider in settings)"
+        },
+        {
+          "feature": "- Added scale adjustments (slider in settings)"
+        },
+        {
+          "feature": "- Chat messages will now gradually fade out after a specific amount of time"
+        },
+        {
+          "feature": "- Added animation for new chat messages to slide in gradually"
+        },
+        {
+          "feature": "- Added separate team & all chats (T for team chat, Y for all chat by default)"
+        },
+        {
+          "feature": "- Added quick chat messages (used with 1, 2, 3 & 4 keys)"
+        },
+        {
+          "feature": "- Added rate limiting for chat messages to avoid chat spam"
+        },
+        {
+          "feature": "- Added scale adjustments (slider in settings)"
+        },
+        {
+          "feature": "- Added 2nd assist player when a goal is scored"
+        },
+        {
+          "feature": "- Added possibility to sprint backwards"
+        },
+        {
+          "feature": "- Added number & name labels on top of players heads (toggle in settings)"
+        },
+        {
+          "feature": "- Added camera angle adjustment, allowing you to adjust the camera downwards angle (slider in settings)"
+        },
+        {
+          "feature": "- Added possibility to disable profanity filters (toggle in settings)"
+        },
+        {
+          "feature": "- Added `/start` and `/warmup` admin commands to force Face Off or Warmup phases"
+        },
+        {
+          "bug": "- Fixed minimap markings not matching the updated rink markings"
+        },
+        {
+          "bug": "- Fixed chat not being scrollable"
+        },
+        {
+          "bug": "- Fixed chat losing focus when trying to select text within it"
+        },
+        {
+          "bug": "- Fixed server browser still failing to show some servers in certain cases"
+        },
+        {
+          "bug": "- Fixed scroll wheel input for some specific mice, especially with linear scroll wheel"
+        },
+        {
+          "bug": "- Clients will now be prompted for password input when joining a server via Steam invite"
+        },
+        {
+          "bug": "- Fixed board colliders causing the puck to sometimes shoot off in a random direction"
+        },
+        {
+          "bug": "- Fixed body checking sometimes causing the target player to be launched across the rink"
+        },
+        {
+          "bug": "- Fixed left handedness not being perfectly mirrored from right handedness"
+        },
+        {
+          "bug": "- Fixed exploit allowing for multiple Goalies to be spawned in the same team"
+        },
+        {
+          "bug": "- Fixed floating point error causing player input delays on long running servers"
+        },
+        {
+          "bug": "- Fixed a skating speed exploit caused by stick & board interactions"
+        },
+        {
+          "bug": "- Fixed replays freezing before play when the match has been ongoing for longer periods of time with a lot of players"
+        },
+        {
+          "bug": "- Fixed an issue where self-hosted servers would ignore the port number input field resulting in always launching on port 7777"
+        },
+        {
+          "bug": "- Fixed Goalie pads stuttering during animation"
+        },
+        {
+          "balance_change": "- Raised slide height slightly to allow for easier 5 hole shots"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 174.2",
+      "date": "2025-03-18 18:15:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528249184",
+      "content": "The long requested key bind re-mapping is here! In addition to that, some additional QOL improvements have been made, like additional filters for the server browser, Puck Dedicated Server for Windows, the ability to host a server directly from the game client and more bug fixes!\n\nHere is the full changelog:\n[list]\n[*] Added [b]key bind re-mapping[/b] which allows:\n - [b]CONTINUOUS[/b] & [b]TOGGLE[/b] modes for instant actions\n - [b]PRESS[/b], [b]RELEASE[/b], [b]DOUBLE PRESS[/b] & [b]HOLD[/b] modes for continuous actions\n[*] Added [b]RESET TO DEFAULT[/b] button in settings\n[*] Added full server, empty server and maximum ping filters to server browser\n[*] Added additional [b]SELF HOSTED[/b] tab to the New Server menu which allows to host servers directly on client's machine\n - Puck will attempt to automatically forward the needed ports with uPnP, though it might not be successful on some routers or internet providers\n[*] Added all available admin commands in `/help`\n[*] Added [b]Puck Dedicated Server Windows[/b] build which allows any Windows machine to launch a dedicated Puck server directly from Steam\n[*] Fixed server browser list jitter when refreshing the server list\n[*] Fixed server ping being invisible when a server is hovered in the server browser\n[*] Fixed security issue where uPnP ports would be forwarded by Puck even in Practice sessions\n[*] Fixed server connection validation for self hosted servers (players would be able to connect if banned, if server is full, etc.)\n[/list]\n\nGood luck and have fun!",
+      "key": "2994020::63fb6d3b6a1eaebd582f24413c135e59487f1e00",
+      "tags": [
+        {
+          "feature": "[*] Added [b]key bind re-mapping[/b] which allows:\n - [b]CONTINUOUS[/b] & [b]TOGGLE[/b] modes for instant actions\n - [b]PRESS[/b], [b]RELEASE[/b], [b]DOUBLE PRESS[/b] & [b]HOLD[/b] modes for continuous actions"
+        },
+        {
+          "feature": "[*] Added [b]RESET TO DEFAULT[/b] button in settings"
+        },
+        {
+          "feature": "[*] Added full server, empty server and maximum ping filters to server browser"
+        },
+        {
+          "feature": "[*] Added additional [b]SELF HOSTED[/b] tab to the New Server menu which allows to host servers directly on client's machine\n - Puck will attempt to automatically forward the needed ports with uPnP, though it might not be successful on some routers or internet providers"
+        },
+        {
+          "feature": "[*] Added all available admin commands in `/help`"
+        },
+        {
+          "feature": "[*] Added [b]Puck Dedicated Server Windows[/b] build which allows any Windows machine to launch a dedicated Puck server directly from Steam"
+        },
+        {
+          "bug": "[*] Fixed server browser list jitter when refreshing the server list"
+        },
+        {
+          "bug": "[*] Fixed server ping being invisible when a server is hovered in the server browser"
+        },
+        {
+          "bug": "[*] Fixed security issue where uPnP ports would be forwarded by Puck even in Practice sessions"
+        },
+        {
+          "bug": "[*] Fixed server connection validation for self hosted servers (players would be able to connect if banned, if server is full, etc.)"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 174",
+      "date": "2025-03-14 06:29:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528103970",
+      "content": "It's time for another Puck update! This one brings a lot of improvements for Steam integration along with some cosmetic elements and other QOL improvements.\n\n[h1]Changes & additions:[/h1]\n[list]\n[*]Added settings options for selecting a target display along with target resolution and refresh rate\n[*]Player names and numbers are now saved in the Puck database and can only be changed once every 7 days\n[*]Dedicated servers got a few new configuration keys such as:\n- [b]sleepTimeout[/b] seconds after which idle players will be kicked (60 by default)\n- [b]joinMidMatchDelay[/b] seconds after which players are allowed to join an existing match (10 by default)\n- [b]clientTickRate[/b] the rate at which players send input updates to the server (200 by default, was 100 previously - should improve input lag)\n- [b]startPaused[/b] servers will start with the game state paused (off by default and will start a server in Warmup if toggled on)\n- [b]allowVoting[/b] toggles all voting commands\n[*]The server browser will now respect the isPublic configuration toggle and not display the server at all if set to false\n[*]Players can now join a game mid-match with a pre-configured timeout\n[*]Server browser will fallback to showing a server anyways if no pong was received (ping will be ?)\n[*]Full implementation of Steam Rich Presence:\n- Players will show a status based on what position and team they are playing on in Steam status\n- You can invite friends to your server via Steam and accepting the invite will join the user to your server (will open the game also if closed)\n- Your Steam friends can Join Game on you and they will join your server (will open the game also if closed)\n[*]Players will be kicked from servers for being idle for too long\n[*]Updated local player design in the minimap\n[*]Added new popup notification system\n- Confirmation window will be shown when trying to exit the game\n- Being muted or banned will also show a popup telling you the reason and unmute/unban datetime\n- Setting your identity will show a confirmation window informing you of 7 day namechange timeout\n[*]Dedicated server configuration path is now configurable with [b]--serverConfigurationPath[/b] launch argument\n[*]Dedicated server ban list is now configurable with [b]--bannedSteamIdsPath[/b] launch argument\n[*]Dedicated server configuration and ban list will now be formatted with JSON indents when generated from scratch\n[*]Increased rink size by 20%\n[*]Refactored all stick shaders\n[*]Refactored all tape shaders\n[*]Added Apex, Carbon & Reinforcer lines of sticks for Skater\n[*]Added Havoc & Vapor lines of sticks for Goalie\n[*]Reworked the classic skin to be a part of the Classic line of sticks which will be expanded at a later date\n[*]Added Classic stick to Goalie\n[*]Added dark gray, green, light blue, lime, magenta, navy, orange, pink, purple and teal stick tape colors\n[*]All existing skins are now part of Covert line which is no longer available for purchase, though existing owners will be able to select & use them\n[*]Updated the design of the puck\n[*]Updated the texture for the rink to match the size increase and fix some alignment issues with the existing texture\n[*]Lowered the global brightness of the rink slightly and increased shadow intensity for all objects in the rink\n[*]Added console chat logging for dedicated servers\n[/list]\n\n[h1]Bugfixes:[/h1]\n[*]Fixed backend issues causing constant restarts\n[*]Fixed the stick jittering when leading the puck on the very tip of the blade\n[*]Fixed the stick jittering when colliding with any other stick\n[*]Fixed the stick rotating the player if the force on stick -> stick collision is too high\n[*]Fixed the stick collider containing a slippery collider on the heel part of the blade\n[*]Fixed shadows disappearing at further distances\n[*]Fixed an issue where the Goalie's leg pads would be stuck open after toggling slide while dashing\n[*]Fixed players jittering on high tickrate servers with network smoothing enabled\n[*]Fixed an issue where doing /resume multiple times would increase the game state tick speed\n[*]Fixed team blue using the torso texture for the groin for the default skin\n[*]Fixed server metrics printing FPS incorrectly",
+      "key": "2994020::e64b407015f26f3b698a26c3058219fd6d683b76",
+      "tags": [
+        {
+          "feature": "[*]Added settings options for selecting a target display along with target resolution and refresh rate"
+        },
+        {
+          "feature": "[*]Player names and numbers are now saved in the Puck database and can only be changed once every 7 days"
+        },
+        {
+          "feature": "[*]Dedicated servers got a few new configuration keys such as:\n- [b]sleepTimeout[/b] seconds after which idle players will be kicked (60 by default)\n- [b]joinMidMatchDelay[/b] seconds after which players are allowed to join an existing match (10 by default)\n- [b]clientTickRate[/b] the rate at which players send input updates to the server (200 by default, was 100 previously - should improve input lag)\n- [b]startPaused[/b] servers will start with the game state paused (off by default and will start a server in Warmup if toggled on)\n- [b]allowVoting[/b] toggles all voting commands"
+        },
+        {
+          "feature": "[*]The server browser will now respect the isPublic configuration toggle and not display the server at all if set to false"
+        },
+        {
+          "feature": "[*]Players can now join a game mid-match with a pre-configured timeout"
+        },
+        {
+          "feature": "[*]Server browser will fallback to showing a server anyways if no pong was received (ping will be ?)"
+        },
+        {
+          "feature": "[*]Full implementation of Steam Rich Presence:\n- Players will show a status based on what position and team they are playing on in Steam status\n- You can invite friends to your server via Steam and accepting the invite will join the user to your server (will open the game also if closed)\n- Your Steam friends can Join Game on you and they will join your server (will open the game also if closed)"
+        },
+        {
+          "feature": "[*]Players will be kicked from servers for being idle for too long"
+        },
+        {
+          "feature": "[*]Updated local player design in the minimap"
+        },
+        {
+          "feature": "[*]Added new popup notification system\n- Confirmation window will be shown when trying to exit the game\n- Being muted or banned will also show a popup telling you the reason and unmute/unban datetime\n- Setting your identity will show a confirmation window informing you of 7 day namechange timeout"
+        },
+        {
+          "feature": "[*]Dedicated server configuration path is now configurable with [b]--serverConfigurationPath[/b] launch argument"
+        },
+        {
+          "feature": "[*]Dedicated server ban list is now configurable with [b]--bannedSteamIdsPath[/b] launch argument"
+        },
+        {
+          "feature": "[*]Dedicated server configuration and ban list will now be formatted with JSON indents when generated from scratch"
+        },
+        {
+          "balance_change": "[*]Increased rink size by 20%"
+        },
+        {
+          "feature": "[*]Refactored all stick shaders"
+        },
+        {
+          "feature": "[*]Refactored all tape shaders"
+        },
+        {
+          "feature": "[*]Added Apex, Carbon & Reinforcer lines of sticks for Skater"
+        },
+        {
+          "feature": "[*]Added Havoc & Vapor lines of sticks for Goalie"
+        },
+        {
+          "feature": "[*]Reworked the classic skin to be a part of the Classic line of sticks which will be expanded at a later date"
+        },
+        {
+          "feature": "[*]Added Classic stick to Goalie"
+        },
+        {
+          "feature": "[*]Added dark gray, green, light blue, lime, magenta, navy, orange, pink, purple and teal stick tape colors"
+        },
+        {
+          "feature": "[*]All existing skins are now part of Covert line which is no longer available for purchase, though existing owners will be able to select & use them"
+        },
+        {
+          "feature": "[*]Updated the design of the puck"
+        },
+        {
+          "feature": "[*]Updated the texture for the rink to match the size increase and fix some alignment issues with the existing texture"
+        },
+        {
+          "balance_change": "[*]Lowered the global brightness of the rink slightly and increased shadow intensity for all objects in the rink"
+        },
+        {
+          "feature": "[*]Added console chat logging for dedicated servers"
+        },
+        {
+          "bug": "[*]Fixed backend issues causing constant restarts"
+        },
+        {
+          "bug": "[*]Fixed the stick jittering when leading the puck on the very tip of the blade"
+        },
+        {
+          "bug": "[*]Fixed the stick jittering when colliding with any other stick"
+        },
+        {
+          "bug": "[*]Fixed the stick rotating the player if the force on stick -> stick collision is too high"
+        },
+        {
+          "bug": "[*]Fixed the stick collider containing a slippery collider on the heel part of the blade"
+        },
+        {
+          "bug": "[*]Fixed shadows disappearing at further distances"
+        },
+        {
+          "bug": "[*]Fixed an issue where the Goalie's leg pads would be stuck open after toggling slide while dashing"
+        },
+        {
+          "bug": "[*]Fixed players jittering on high tickrate servers with network smoothing enabled"
+        },
+        {
+          "bug": "[*]Fixed an issue where doing /resume multiple times would increase the game state tick speed"
+        },
+        {
+          "bug": "[*]Fixed team blue using the torso texture for the groin for the default skin"
+        },
+        {
+          "bug": "[*]Fixed server metrics printing FPS incorrectly"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 171",
+      "date": "2025-02-21 20:14:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353244039",
+      "content": "Regular Puck update is here, and I think you'll really enjoy this one. The big addition this time is [b]network smoothing[/b] along with a ton of other additions and changes. Enjoy and have fun!\n\n[h2]Changes & additions:[/h2]\n[list]\n[*] Re-wrote the Puck backend (yes, I know, again...) to Node.js\n[*] Created UI dashboard for Puck backend system\n[*] Implemented SSL certificates for backend\n[*] Moved backend from 8080 port to secure 443 port\n[*] Added uPnP support for [i]/debug[/i]'s host server feature\n[*] Implemented administration system for dedicated servers (more on this at the bottom)\n[*] Exposed most game control variables to dedicated server configuration (more on this at the bottom)\n[*] Replaced server configuration CLI arguments with dedicates configuration [i].json[/i]\n[*] Added banned SteamIDs configuration file to dedicated servers\n[*] Added prevention of dedicated server admins from being [i]/votekick[/i]ed from their own servers\n[*] Added [i]/pause[/i], [i]/resume[/i] for dedicated server admins to pause current game state or resume it\n[*] Added [i]/kick[/i], [i]/ban[/i], [i]/bansteamid[/i] and [i]/unbansteamid[/i] for dedicated server admins\n[*] Kicked players will now be timed out for 5 minutes before being allowed to join the same server\n[*] Implemented network smoothing :mega:! (you can toggle the smoothing in the game settings and adjust the intensity to 3 individual levels)\n[*] Goalie's leg pads will kick the opposite way of dashing while in butterfly position\n[*] Goalie's slide drag is now the same as Skater's\n[*] Refactored player controller for both Skater and Goalie to support network smoothing\n[*] Refactored jumping to be less weighted and allow for slightly more air time\n[*] Refactored bodychecking (this fixes cases where sometimes falling over would cause your to pop back up instantly)\n[*] Refactored leaning (leaning into turns should now be smoother and more consistent with angular velocity)\n[*] Refactored sequence of events when bodychecked (player bodies will now be required to fall over completely before starting to get back up)\n[*] Refactored get up sequence to be less bouncy (player bodies will now straighten themselves in 5 seconds and push themselves off the ground after a short period)\n[*] Refactored double-tap spinning to be more skill focused as now you have to catch yourself to land a perfect 180 (thanks @bojarzin for the idea)\n[*] Refactored VOIP to use Steam's Voice API (10x reduction in bandwidth and 3x improvement in streamed voice quality)\n[*] Refactored player body soft collisions (now soft collisions are triggered not only for the boards, but also for other players)\n[*] Improved network compression of both inbound and outbound packets (almost 2x improvement in bandwidth consumption for both client and server)\n[*] Replaced puck collider with a simple cylinder shape\n[*] Raised puck -> board bounce\n[*] Player bodies are now 20% slimmer to avoid constant clumping of bodies\n[/list]\n\n[h2]Bugfixes:[/h2]\n[list]\n[*] Fixed an issue where the player body would jitter when fallen over\n[*] Fixed puck camera stuttering for servers that have been running for longer periods of time\n[*] Fixed goals being registered when puck impacts the net at high speed\n[*] Fixed ghost collisions for the puck\n[*] Fixed puck feeling feather light when leading it\n[*] Fixed puck passing through boards in certain cases\n[*] Fixed stick inertia causing the stick to spin in circles with high enough mouse sensitivity\n[*] Fixed an issue where server names would be only partially rendered in the scoreboard\n[*] Fixed an issue where some or most servers would not display in the server browser\n[*] Fixed server browser displaying all servers at once after refresh (now servers are displayed as soon as a [i]pong[/i] is received)\n[*] Fixed incorrectly baked lighting shadows in the changing room\n[*] Fixed incorrectly baked lighting shadows in the rink\n[*] Fixed exploit of players modifying registry to set custom usernames & player numbers\n[*] Fixed Unity's Rich Text exploit for usernames, player numbers, chat & scoreboard\n[*] Fixed an issue where player's flag would default to Latvia if the game was launched for the first time\n[*] Fixed an issue where some regions would get [i]<united>1.234</united>[/i] printed in the chat on goal score\n[/list]",
+      "key": "2994020::e44f8a888ed725c10d67f4514a06567a1e598290",
+      "tags": [
+        {
+          "feature": "- Re-wrote the Puck backend (yes, I know, again...) to Node.js"
+        },
+        {
+          "feature": "- Created UI dashboard for Puck backend system"
+        },
+        {
+          "feature": "- Implemented SSL certificates for backend"
+        },
+        {
+          "feature": "- Moved backend from 8080 port to secure 443 port"
+        },
+        {
+          "feature": "- Added uPnP support for [/debug]'s host server feature"
+        },
+        {
+          "feature": "- Implemented administration system for dedicated servers (more on this at the bottom)"
+        },
+        {
+          "feature": "- Exposed most game control variables to dedicated server configuration (more on this at the bottom)"
+        },
+        {
+          "feature": "- Replaced server configuration CLI arguments with dedicates configuration /.json/"
+        },
+        {
+          "feature": "- Added banned SteamIDs configuration file to dedicated servers"
+        },
+        {
+          "feature": "- Added prevention of dedicated server admins from being /votekick/ed from their own servers"
+        },
+        {
+          "feature": "- Added /pause/, /resume/ for dedicated server admins to pause current game state or resume it"
+        },
+        {
+          "feature": "- Added /kick/, /ban/, /bansteamid/ and /unbansteamid/ for dedicated server admins"
+        },
+        {
+          "feature": "- Kicked players will now be timed out for 5 minutes before being allowed to join the same server"
+        },
+        {
+          "feature": "- Implemented network smoothing :mega:! (you can toggle the smoothing in the game settings and adjust the intensity to 3 individual levels)"
+        },
+        {
+          "feature": "- Goalie's leg pads will kick the opposite way of dashing while in butterfly position"
+        },
+        {
+          "feature": "- Goalie's slide drag is now the same as Skater's"
+        },
+        {
+          "feature": "- Refactored player controller for both Skater and Goalie to support network smoothing"
+        },
+        {
+          "feature": "- Refactored jumping to be less weighted and allow for slightly more air time"
+        },
+        {
+          "feature": "- Refactored bodychecking (this fixes cases where sometimes falling over would cause your to pop back up instantly)"
+        },
+        {
+          "feature": "- Refactored leaning (leaning into turns should now be smoother and more consistent with angular velocity)"
+        },
+        {
+          "feature": "- Refactored sequence of events when bodychecked (player bodies will now be required to fall over completely before starting to get back up)"
+        },
+        {
+          "feature": "- Refactored get up sequence to be less bouncy (player bodies will now straighten themselves in 5 seconds and push themselves off the ground after a short period)"
+        },
+        {
+          "feature": "- Refactored double-tap spinning to be more skill focused as now you have to catch yourself to land a perfect 180 (thanks @bojarzin for the idea)"
+        },
+        {
+          "feature": "- Refactored VOIP to use Steam's Voice API (10x reduction in bandwidth and 3x improvement in streamed voice quality)"
+        },
+        {
+          "feature": "- Refactored player body soft collisions (now soft collisions are triggered not only for the boards, but also for other players)"
+        },
+        {
+          "feature": "- Improved network compression of both inbound and outbound packets (almost 2x improvement in bandwidth consumption for both client and server)"
+        },
+        {
+          "feature": "- Replaced puck collider with a simple cylinder shape"
+        },
+        {
+          "feature": "- Raised puck -> board bounce"
+        },
+        {
+          "feature": "- Player bodies are now 20% slimmer to avoid constant clumping of bodies"
+        },
+        {
+          "bug": "- Fixed an issue where the player body would jitter when fallen over"
+        },
+        {
+          "bug": "- Fixed puck camera stuttering for servers that have been running for longer periods of time"
+        },
+        {
+          "bug": "- Fixed goals being registered when puck impacts the net at high speed"
+        },
+        {
+          "bug": "- Fixed ghost collisions for the puck"
+        },
+        {
+          "bug": "- Fixed puck feeling feather light when leading it"
+        },
+        {
+          "bug": "- Fixed puck passing through boards in certain cases"
+        },
+        {
+          "bug": "- Fixed stick inertia causing the stick to spin in circles with high enough mouse sensitivity"
+        },
+        {
+          "bug": "- Fixed an issue where server names would be only partially rendered in the scoreboard"
+        },
+        {
+          "bug": "- Fixed an issue where some or most servers would not display in the server browser"
+        },
+        {
+          "bug": "- Fixed server browser displaying all servers at once after refresh (now servers are displayed as soon as a /pong/ is received)"
+        },
+        {
+          "bug": "- Fixed incorrectly baked lighting shadows in the changing room"
+        },
+        {
+          "bug": "- Fixed incorrectly baked lighting shadows in the rink"
+        },
+        {
+          "bug": "- Fixed exploit of players modifying registry to set custom usernames & player numbers"
+        },
+        {
+          "bug": "- Fixed Unity's Rich Text exploit for usernames, player numbers, chat & scoreboard"
+        },
+        {
+          "bug": "- Fixed an issue where player's flag would default to Latvia if the game was launched for the first time"
+        },
+        {
+          "bug": "- Fixed an issue where some regions would get </united>1.234</united> printed in the chat on goal score"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 163",
+      "date": "2025-01-31 20:09:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123131806",
+      "content": "This one might be a bit controversial, as there are quite a few changes to both the stick feel and player movement. Be assured though, they are all made with competitive play in mind.\n\n[h2]Here's what's changed:[/h2]\n[list]\n[*] Added additional colliders for both Blue and Red goals so players can no longer be pushed inside and get stuck\n[*] Added additional server logs to track player progress during phase changes\n[*] Converted all Rigidbodies to Speculative collision detection (this will solve the puck seemingly passing through stick & leg pads at high speed)\n[*] Reworked stick ray logic which now makes the stick more accurate when sliding, also extending it's reach\n[*] Reworked stick -> board collision logic\n[*] Reworked all player colliders which is especially important for goalies, making saving shots easier\n[*] Reworked puck collider to be less rounded, hopefully improving shooting accuracy\n[*] Reduced collider poly count massively by separating & simplifying collider models\n[*] Reduced bounciness of boards by 50%\n[*] Reduced base turn speed and slide turn speed to midpoint between last update and current\n[*] Reduced drag and weight of the puck to midpoint between last update and current\n[*] Increased stamina drain while sprinting\n[*] Increased sprint acceleration\n[*] Server name & player count is now visible in the scoreboard\n[*] Your local player will be shown in a lighter team color in the minimap instead of white\n[*] Standardized all team colors in the UI\n[*] Remove restriction on special letters from chat (such as cryllic, and other language specific letters)\n[*] Set chat input limit to 128 characters\n[*] Adjusted physical goal frame colors to match UI color scheme\n[*] Minimap will now always render the puck on top the players\n[*] Added `/vs`, `/vw` and `/vk` shortcuts for chat commands\n[*] Fixed all remaining memory leaks\n[*] Fixed an issue where self-hosting a Puck server would not allow LAN connections to join\n[*] Fixed issue with 8888 port being taken by Fanatec (and other) apps, therefore server browser was unavailable\n[*] Fixed a few errors in the server browser causing some servers to not show up\n[*] Fixed a `/votekick` exploit where players could rejoin the server to cast additional votes (now votes are unique by Steam ID)\n[*] Fixed an issue where the player score in the scoreboard would not be cleared when starting a new game with `/votestart`\n[*] Fixed a bug where pucks wouldn't spawn in practice mode sometimes\n[*] Fixed an issue where pressing T while entering a server password would open the chat\n[*] Artificially increased visual representation of global stick sensitivity to make transition from last update less jarring\n[/list]",
+      "key": "2994020::88ff7f8a49fc90e2eb901381ea4016fdf8613979",
+      "tags": [
+        {
+          "feature": "[*] Added additional colliders for both Blue and Red goals so players can no longer be pushed inside and get stuck"
+        },
+        {
+          "feature": "[*] Added additional server logs to track player progress during phase changes"
+        },
+        {
+          "feature": "[*] Converted all Rigidbodies to Speculative collision detection (this will solve the puck seemingly passing through stick & leg pads at high speed)"
+        },
+        {
+          "feature": "[*] Reworked stick ray logic which now makes the stick more accurate when sliding, also extending it's reach"
+        },
+        {
+          "feature": "[*] Reworked stick -> board collision logic"
+        },
+        {
+          "feature": "[*] Reworked all player colliders which is especially important for goalies, making saving shots easier"
+        },
+        {
+          "feature": "[*] Reworked puck collider to be less rounded, hopefully improving shooting accuracy"
+        },
+        {
+          "feature": "[*] Reduced collider poly count massively by separating & simplifying collider models"
+        },
+        {
+          "balance_change": "[*] Reduced bounciness of boards by 50%"
+        },
+        {
+          "balance_change": "[*] Reduced base turn speed and slide turn speed to midpoint between last update and current"
+        },
+        {
+          "balance_change": "[*] Reduced drag and weight of the puck to midpoint between last update and current"
+        },
+        {
+          "balance_change": "[*] Increased stamina drain while sprinting"
+        },
+        {
+          "balance_change": "[*] Increased sprint acceleration"
+        },
+        {
+          "feature": "[*] Server name & player count is now visible in the scoreboard"
+        },
+        {
+          "feature": "[*] Your local player will be shown in a lighter team color in the minimap instead of white"
+        },
+        {
+          "feature": "[*] Standardized all team colors in the UI"
+        },
+        {
+          "feature": "[*] Remove restriction on special letters from chat (such as cryllic, and other language specific letters)"
+        },
+        {
+          "feature": "[*] Set chat input limit to 128 characters"
+        },
+        {
+          "feature": "[*] Adjusted physical goal frame colors to match UI color scheme"
+        },
+        {
+          "feature": "[*] Minimap will now always render the puck on top the players"
+        },
+        {
+          "feature": "[*] Added `/vs`, `/vw` and `/vk` shortcuts for chat commands"
+        },
+        {
+          "bug": "[*] Fixed all remaining memory leaks"
+        },
+        {
+          "bug": "[*] Fixed an issue where self-hosting a Puck server would not allow LAN connections to join"
+        },
+        {
+          "bug": "[*] Fixed issue with 8888 port being taken by Fanatec (and other) apps, therefore server browser was unavailable"
+        },
+        {
+          "bug": "[*] Fixed a few errors in the server browser causing some servers to not show up"
+        },
+        {
+          "bug": "[*] Fixed a `/votekick` exploit where players could rejoin the server to cast additional votes (now votes are unique by Steam ID)"
+        },
+        {
+          "bug": "[*] Fixed an issue where the player score in the scoreboard would not be cleared when starting a new game with `/votestart`"
+        },
+        {
+          "bug": "[*] Fixed a bug where pucks wouldn't spawn in practice mode sometimes"
+        },
+        {
+          "bug": "[*] Fixed an issue where pressing T while entering a server password would open the chat"
+        },
+        {
+          "feature": "[*] Artificially increased visual representation of global stick sensitivity to make transition from last update less jarring"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 155",
+      "date": "2025-01-29 16:12:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123061091",
+      "content": "[h1][b]Hello, community![/b][/h1]\n\nIt's been quite a journey since Puck was released on Steam. We've had a lot of issues, bugs and mishaps, but we've also reached a peak of [b]1337[/b] (cool, I know) players and we're also at [b]80%[/b] positive review rate on this platform!\n\nThank you everyone for playing and participating, I really appreciate it.\n\nI'm not being nearly as active as I should be here on Steam, but if you're interested, we have a very active and friendly [url=https://discord.gg/DyMqsw7CRd]Discord community[/url] where you can find out more about the game.\n\nHere's some of the more notable changes in the last few updates:\n[list]\n[*]Introduced separate control button for sharp stopping: ALT\n[*]Stick to barrier collisions will now counteract each other with more force\n[*]Added goal crease markers to help goalies orient themselves\n[*]Stick pivot point moved closer to player's body\n[*]Puck now has less friction and more weight\n[*]Bounciness is now equal across all parts of the board\n[*]Base turn speed of both Skater and Goalie have been increased\n[*]Friction of the Skater during sliding has been reduced\n[*]Turn speed of both Skater and Goalie while sliding has been increased\n[*]Increased stability of Skater and Goalie while sliding\n[*]Stamina drain for 180s decreased to 1/8th of the stamina bar\n[*]Stamina drain for jumping decreased to 1/8th of the stamina bar\n[*]VOIP is now enabled as a toggle feature for community servers! (server owners please see README.txt for changes to launch arguments)\n[*]Backend server migrated fully to a different host with much more performant hardware\n[*]Completely replaced ICMP pinging with separate UDP sockets for servers\n[*]Added /debug chat command which enabled developer tools on the main menu\n[*]Refactored the whole player customization system which now allows you to:\n[list][*]Set your player's visor for each team and role separately\n\t[*]Set your player's stick blade tape and handle tape for each team and role separately\n\t[*]Set your player's stick skin for each team and role separately\n\t[*]Set your player's jersey for each team and role separately[/list]\t\n[*]Added microtransaction system which integrates with Steam\n[*]Raised required CPU power for 10 player servers\n[*]Servers will now terminate themselves instantly after reaching a player count of 0\n[*]Servers will stay online for 1 minute after launching before terminating\n[*]Backend service will reject connections who fail to authenticate with Steam\n[*]Backend service will reject duplicate connections originating from the same Steam ID\n[*]Added Linux server build of Puck (available under puck_server in the game's install folder)\n[*]Removed input randomizer developer tool from release build\n\n[*]Fixed an issue where opening the game would sometimes lead to Steam authentication error\n[*]Fixed an issue where intermission phase change would cause the game to freeze for long periods of time\n[*]Fixed several memory leaks for servers\n[*]Fixed an issue where deployed servers would not terminate themselves if unable to connect to backend\n[*]Reduced the freezing that occurs when a replay is started (full fix requires more development time)\n[*]Updated Unity to latest version (6000.0.33f1)\n[/list]\n\nHope you enjoy this update and have fun!",
+      "key": "2994020::5a04f6a24177daaeffca24c4c7895199cb7c4e90",
+      "tags": [
+        {
+          "feature": "Introduced separate control button for sharp stopping: ALT"
+        },
+        {
+          "balance_change": "Stick to barrier collisions will now counteract each other with more force"
+        },
+        {
+          "feature": "Added goal crease markers to help goalies orient themselves"
+        },
+        {
+          "balance_change": "Stick pivot point moved closer to player's body"
+        },
+        {
+          "balance_change": "Puck now has less friction and more weight"
+        },
+        {
+          "balance_change": "Bounciness is now equal across all parts of the board"
+        },
+        {
+          "balance_change": "Base turn speed of both Skater and Goalie have been increased"
+        },
+        {
+          "balance_change": "Friction of the Skater during sliding has been reduced"
+        },
+        {
+          "balance_change": "Turn speed of both Skater and Goalie while sliding has been increased"
+        },
+        {
+          "balance_change": "Increased stability of Skater and Goalie while sliding"
+        },
+        {
+          "balance_change": "Stamina drain for 180s decreased to 1/8th of the stamina bar"
+        },
+        {
+          "balance_change": "Stamina drain for jumping decreased to 1/8th of the stamina bar"
+        },
+        {
+          "feature": "VOIP is now enabled as a toggle feature for community servers! (server owners please see README.txt for changes to launch arguments)"
+        },
+        {
+          "feature": "Backend server migrated fully to a different host with much more performant hardware"
+        },
+        {
+          "feature": "Completely replaced ICMP pinging with separate UDP sockets for servers"
+        },
+        {
+          "feature": "Added /debug chat command which enabled developer tools on the main menu"
+        },
+        {
+          "feature": "Refactored the whole player customization system which now allows you to:"
+        },
+        {
+          "feature": "Set your player's visor for each team and role separately"
+        },
+        {
+          "feature": "Set your player's stick blade tape and handle tape for each team and role separately"
+        },
+        {
+          "feature": "Set your player's stick skin for each team and role separately"
+        },
+        {
+          "feature": "Set your player's jersey for each team and role separately"
+        },
+        {
+          "feature": "Added microtransaction system which integrates with Steam"
+        },
+        {
+          "balance_change": "Raised required CPU power for 10 player servers"
+        },
+        {
+          "feature": "Servers will now terminate themselves instantly after reaching a player count of 0"
+        },
+        {
+          "feature": "Servers will stay online for 1 minute after launching before terminating"
+        },
+        {
+          "feature": "Backend service will reject connections who fail to authenticate with Steam"
+        },
+        {
+          "feature": "Backend service will reject duplicate connections originating from the same Steam ID"
+        },
+        {
+          "feature": "Added Linux server build of Puck (available under puck_server in the game's install folder)"
+        },
+        {
+          "feature": "Removed input randomizer developer tool from release build"
+        },
+        {
+          "bug": "Fixed an issue where opening the game would sometimes lead to Steam authentication error"
+        },
+        {
+          "bug": "Fixed an issue where intermission phase change would cause the game to freeze for long periods of time"
+        },
+        {
+          "bug": "Fixed several memory leaks for servers"
+        },
+        {
+          "bug": "Fixed an issue where deployed servers would not terminate themselves if unable to connect to backend"
+        },
+        {
+          "bug": "Reduced the freezing that occurs when a replay is started (full fix requires more development time)"
+        },
+        {
+          "feature": "Updated Unity to latest version (6000.0.33f1)"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 103",
+      "date": "2024-12-19 14:46:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930630948",
+      "content": "[h1]Puck Build 103 is here!  \ud83c\udf89 This one's a big one, so let's go through it.[/h1]\n\n[img]{STEAM_CLAN_IMAGE}/45192226/341fc257c6559bd0796ed122b7bc0147017eac89.png[/img]\n\n[h2]What's new:[/h2]\n[list]\n[*]Added puck aerodynamics and removed puck hard speed limit. (this was most noticeable when shooting hard and the puck would stick to the stick)\n[*]Added a Replay system, which will replay the last 10 seconds of gameplay after a goal is scored (more improvements coming soon)\n[*]Added stick hand switching which can be toggled via the settings\n[*]Added new helmet model for attacker role\n[*]Added spectators who cheer when a goal is scored and track the puck during play\n[*]Added screen transitions when respawning or changing currently active camera\n[*]Added rudimentary native controller support\n[*]Added graphics quality settings\n[*]Added the option to toggle motion blur in the settings\n[*]Added player numbers displaying on the minimap\n[*]Added voting system\n[*]Added /votestart and /votewarmup chat commands\n[*]Added VOIP which is active only for spawned players and can be activated with the C key\n[*]Added voice volume slider in the settings\n[*]Added new player impact sounds\n[*]Added new spectator cheering sounds\n[*]Added physical scoreboards to the hangar just above each goal\n[*]Added puck outline when obstructed by any other object\n[*]Added puck outline toggle to settings\n[*]Added changing room where players can change the look of their character\n[*]Added visor variations to changing room\n[*]Added mustache variations to changing room\n[*]Added beard variations to changing room\n[*]Added country flags to changing room\n[*]Added jerseys to changing room\n[*]Added 14 more locations where server can be deployed\n[*]Added possibility to invite others to play Puck via Steam friends\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/45192226/0e38f69719d3fb8097e57b186b5b09120a860152.png[/img]\n\n[h2]What's changed:[/h2]\n[list]\n[*]Body checking is now easier and dependant on angle of attack\n[*]Network synchronization optimizations leading to smoother gameplay and less stuttering on poor connections\n[*]Client inputs are no longer sent to the server based on client's FPS, but a constant 240 ticks per second\n[*]Players now face the center of the rink when spawning in Face Off phase\n[*]Each player independently updates their ping value in the scoreboard\n[*]Entire codebase refactor to use MVC design pattern\n[*]During Warmup phase, players will focus on the last puck they touched\n[*]Raised backwards skating speed limit (now only 5~ slower than skating forwards)\n[*]Overtimes are now endless and games can no longer end in a Draw\n[*]Goalies can now kick out their leg pads with Q and E\n[*]Refactored the way collision impact sounds are generated\n[*]Double tapping either A or D while mid air will spin the player 180 degrees\n[*]Players now have adjustable traction which will break during collisions (this will help with players sticking together after collisions)\n[*]The puck is now slowed when entering the goal at high speed to mimic hitting the net (more improvements coming soon)\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/45192226/e2256e8fe45882a4f121f6ab63078e378430d962.png[/img]\n\n[h2]What's fixed:[/h2]\n[list]\n[*]Fixed goal or assist players being displayed incorrectly when a goal is scored\n[*]Fixed position selection sometimes breaking making it impossible to select a position\n[*]Fixed an issue where puck would be unfocusable if you join the server mid-game\n[*]Fixed macro exploit for jumping\n[*]Fixed units setting displaying the incorrect unit when the game is launched\n[*]Fixed a micro-stutter when a goal is scored\n[*]Fixed an issue where the speed displayed on the UI would not reset after respawning\n[*]Fixed audio still playing even after disconnecting from a server\n[*]Fixed audio NOT playing when joining a server with active audio\n[*]Fixed stuttery puck tracking and free look for players\n[*]Fixed the main menu still being clickable with server browser or settings opened\n[/list]",
+      "key": "2994020::17120c01bf9e237d6b89d6348f9b43e9b16a1f9e",
+      "tags": [
+        {
+          "feature": "[*]Added puck aerodynamics and removed puck hard speed limit. (this was most noticeable when shooting hard and the puck would stick to the stick)"
+        },
+        {
+          "feature": "[*]Added a Replay system, which will replay the last 10 seconds of gameplay after a goal is scored (more improvements coming soon)"
+        },
+        {
+          "feature": "[*]Added stick hand switching which can be toggled via the settings"
+        },
+        {
+          "feature": "[*]Added new helmet model for attacker role"
+        },
+        {
+          "feature": "[*]Added spectators who cheer when a goal is scored and track the puck during play"
+        },
+        {
+          "feature": "[*]Added screen transitions when respawning or changing currently active camera"
+        },
+        {
+          "feature": "[*]Added rudimentary native controller support"
+        },
+        {
+          "feature": "[*]Added graphics quality settings"
+        },
+        {
+          "feature": "[*]Added the option to toggle motion blur in the settings"
+        },
+        {
+          "feature": "[*]Added player numbers displaying on the minimap"
+        },
+        {
+          "feature": "[*]Added voting system"
+        },
+        {
+          "feature": "[*]Added /votestart and /votewarmup chat commands"
+        },
+        {
+          "feature": "[*]Added VOIP which is active only for spawned players and can be activated with the C key"
+        },
+        {
+          "feature": "[*]Added voice volume slider in the settings"
+        },
+        {
+          "feature": "[*]Added new player impact sounds"
+        },
+        {
+          "feature": "[*]Added new spectator cheering sounds"
+        },
+        {
+          "feature": "[*]Added physical scoreboards to the hangar just above each goal"
+        },
+        {
+          "feature": "[*]Added puck outline when obstructed by any other object"
+        },
+        {
+          "feature": "[*]Added puck outline toggle to settings"
+        },
+        {
+          "feature": "[*]Added changing room where players can change the look of their character"
+        },
+        {
+          "feature": "[*]Added visor variations to changing room"
+        },
+        {
+          "feature": "[*]Added mustache variations to changing room"
+        },
+        {
+          "feature": "[*]Added beard variations to changing room"
+        },
+        {
+          "feature": "[*]Added country flags to changing room"
+        },
+        {
+          "feature": "[*]Added jerseys to changing room"
+        },
+        {
+          "feature": "[*]Added 14 more locations where server can be deployed"
+        },
+        {
+          "feature": "[*]Added possibility to invite others to play Puck via Steam friends"
+        },
+        {
+          "balance_change": "[*]Body checking is now easier and dependant on angle of attack"
+        },
+        {
+          "balance_change": "[*]Network synchronization optimizations leading to smoother gameplay and less stuttering on poor connections"
+        },
+        {
+          "balance_change": "[*]Client inputs are no longer sent to the server based on client's FPS, but a constant 240 ticks per second"
+        },
+        {
+          "balance_change": "[*]Players now face the center of the rink when spawning in Face Off phase"
+        },
+        {
+          "balance_change": "[*]Each player independently updates their ping value in the scoreboard"
+        },
+        {
+          "balance_change": "[*]Entire codebase refactor to use MVC design pattern"
+        },
+        {
+          "balance_change": "[*]During Warmup phase, players will focus on the last puck they touched"
+        },
+        {
+          "balance_change": "[*]Raised backwards skating speed limit (now only 5~ slower than skating forwards)"
+        },
+        {
+          "balance_change": "[*]Overtimes are now endless and games can no longer end in a Draw"
+        },
+        {
+          "balance_change": "[*]Goalies can now kick out their leg pads with Q and E"
+        },
+        {
+          "balance_change": "[*]Refactored the way collision impact sounds are generated"
+        },
+        {
+          "balance_change": "[*]Double tapping either A or D while mid air will spin the player 180 degrees"
+        },
+        {
+          "balance_change": "[*]Players now have adjustable traction which will break during collisions (this will help with players sticking together after collisions)"
+        },
+        {
+          "balance_change": "[*]The puck is now slowed when entering the goal at high speed to mimic hitting the net (more improvements coming soon)"
+        },
+        {
+          "bug": "[*]Fixed goal or assist players being displayed incorrectly when a goal is scored"
+        },
+        {
+          "bug": "[*]Fixed position selection sometimes breaking making it impossible to select a position"
+        },
+        {
+          "bug": "[*]Fixed an issue where puck would be unfocusable if you join the server mid-game"
+        },
+        {
+          "bug": "[*]Fixed macro exploit for jumping"
+        },
+        {
+          "bug": "[*]Fixed units setting displaying the incorrect unit when the game is launched"
+        },
+        {
+          "bug": "[*]Fixed a micro-stutter when a goal is scored"
+        },
+        {
+          "bug": "[*]Fixed an issue where the speed displayed on the UI would not reset after respawning"
+        },
+        {
+          "bug": "[*]Fixed audio still playing even after disconnecting from a server"
+        },
+        {
+          "bug": "[*]Fixed audio NOT playing when joining a server with active audio"
+        },
+        {
+          "bug": "[*]Fixed stuttery puck tracking and free look for players"
+        },
+        {
+          "bug": "[*]Fixed the main menu still being clickable with server browser or settings opened"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 41",
+      "date": "2024-09-19 19:58:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536504296309",
+      "content": "Hey Puckers!\n\nAnother Puck update is here. Here's what's changed:\n\n[list]\n[*] Adjusted stick control feel at full reach (there should be a smoother transition between the stick touching the ice and being lifted)\n[*] Completed the game loop by introducing overtime\n[*] Added sound effect when the puck hits a goal post\n[*] Added team win message announcements when the game ends\n[*] Added a setting to show/hide the game UI to allow for cleaner montage and general video capture\n[*] Added separate horizontal and vertical stick sensitivity sliders to settings\n[*] All settings sliders now have adjacent input boxes which represent the slider value\n[/list]",
+      "key": "2994020::c3811dfa028461d986efa6437986000ba93ac1f8",
+      "tags": [
+        {
+          "balance_change": "- Adjusted stick control feel at full reach (there should be a smoother transition between the stick touching the ice and being lifted)"
+        },
+        {
+          "feature": "- Completed the game loop by introducing overtime"
+        },
+        {
+          "feature": "- Added sound effect when the puck hits a goal post"
+        },
+        {
+          "feature": "- Added team win message announcements when the game ends"
+        },
+        {
+          "feature": "- Added a setting to show/hide the game UI to allow for cleaner montage and general video capture"
+        },
+        {
+          "feature": "- Added separate horizontal and vertical stick sensitivity sliders to settings"
+        },
+        {
+          "feature": "- All settings sliders now have adjacent input boxes which represent the slider value"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 40",
+      "date": "2024-09-17 23:09:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536497490335",
+      "content": "Regular update of Puck! A lot of bugs have been fixed, and some gameplay features have changed. Here's what's up:\n\n[h2]Changes & additions:[/h2]\n[list]\n[*] Player bodies are now able to collide with pucks\n[*] Added dedicated Spectator mode which can be selected via the team select menu\n[*] Increased stick size by 20%\n[*] Increased focus (LMB) and look (RMB) maximum angle from 90 to 135\n[*] Added reverb zones throughout the rink providing more realistic sound effects\n[*] Pucks now emit wind noise at high speeds\n[*] Pucks colliding with the yellow barrier will now bounce more\n[*] Adjusted goal model to more accurately represent a real hockey goal\n[*] Goals and assists are now reset after every game\n[*] After a game ends, a new one will begin after a 30 second warmup period\n[*] Switched to hard edged shadows to make it easier to see what blade angle you have set\n[*] Server deployment locations are now alphabetically sorted in server launcher\n[*] Decreased network bandwidth which should improve stutter issues on slower connections\n[/list]\n\n[h2]Bugfixes:[/h2]\n[list]\n[*] Fixed an issue where FOV would not save after game restarts\n[*] Fixed Settings window overlaying pause menu\n[*] Fixed free camera mode being too slow in certain situations & added elevation controls\n[*] Fixed pucks always spawning on their side (they will now always spawn with the flat face down)\n[*] Fixed stick colliders being out of bounds of the actual model\n[*] Fixed an issue where the stick would be unable to reach into goals\n[*] Fixed air horn sound jitter during goals and intermissions\n[*] Fixed the center of the rink being slightly offset from the world center position\n[*] Fixed puck texture being mirrored on the bottom\n[*] Fixed an issue where setting your FOV to 0 would permanently break the camera\n[*] Fixed inconsistent puck hit & player grunt sounds\n[*] Fixed a game crash after joining and leaving a game server multiple times\n[*] Fixed an issue of the minimap toggle setting would not work in-game\n[*] Fixed a synchronization issue where player model colors and names would not update\n[*] Fixed an issue where a point would sometimes be scored by the puck from behind the goal\n[/list]",
+      "key": "2994020::0ad55b370ecc41d457d2bfa3f5694255637c1772",
+      "tags": [
+        {
+          "bug": "Fixed an issue where FOV would not save after game restarts"
+        },
+        {
+          "bug": "Fixed Settings window overlaying pause menu"
+        },
+        {
+          "bug": "Fixed free camera mode being too slow in certain situations & added elevation controls"
+        },
+        {
+          "bug": "Fixed pucks always spawning on their side (they will now always spawn with the flat face down)"
+        },
+        {
+          "bug": "Fixed stick colliders being out of bounds of the actual model"
+        },
+        {
+          "bug": "Fixed an issue where the stick would be unable to reach into goals"
+        },
+        {
+          "bug": "Fixed air horn sound jitter during goals and intermissions"
+        },
+        {
+          "bug": "Fixed the center of the rink being slightly offset from the world center position"
+        },
+        {
+          "bug": "Fixed puck texture being mirrored on the bottom"
+        },
+        {
+          "bug": "Fixed an issue where setting your FOV to 0 would permanently break the camera"
+        },
+        {
+          "bug": "Fixed inconsistent puck hit & player grunt sounds"
+        },
+        {
+          "bug": "Fixed a game crash after joining and leaving a game server multiple times"
+        },
+        {
+          "bug": "Fixed an issue of the minimap toggle setting would not work in-game"
+        },
+        {
+          "bug": "Fixed a synchronization issue where player model colors and names would not update"
+        },
+        {
+          "bug": "Fixed an issue where a point would sometimes be scored by the puck from behind the goal"
+        },
+        {
+          "feature": "Player bodies are now able to collide with pucks"
+        },
+        {
+          "feature": "Added dedicated Spectator mode which can be selected via the team select menu"
+        },
+        {
+          "feature": "Added reverb zones throughout the rink providing more realistic sound effects"
+        },
+        {
+          "feature": "Pucks now emit wind noise at high speeds"
+        },
+        {
+          "feature": "Switched to hard edged shadows to make it easier to see what blade angle you have set"
+        },
+        {
+          "feature": "Server deployment locations are now alphabetically sorted in server launcher"
+        },
+        {
+          "balance_change": "Increased stick size by 20%"
+        },
+        {
+          "balance_change": "Increased focus (LMB) and look (RMB) maximum angle from 90 to 135"
+        },
+        {
+          "balance_change": "Pucks colliding with the yellow barrier will now bounce more"
+        },
+        {
+          "balance_change": "Adjusted goal model to more accurately represent a real hockey goal"
+        },
+        {
+          "balance_change": "Goals and assists are now reset after every game"
+        },
+        {
+          "balance_change": "After a game ends, a new one will begin after a 30 second warmup period"
+        },
+        {
+          "balance_change": "Decreased network bandwidth which should improve stutter issues on slower connections"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 32",
+      "date": "2024-09-16 04:20:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6250522009526985184",
+      "content": "Hey!\n\nThis update addresses some server infrastructure issues faced with Puck. Here's what's changed:\n[list]\n[*] Constantly running dedicated servers have been removed\n[*] Introduced Steam authentication with the Puck backend service\n[*] Players running the game via Steam can now launch their own servers in any region\n[*] Unoccupied servers will auto-destruct after 5 minutes\n[*] Players are limited to launching 1 server at a time\n[*] Adjusted size and scaling of UI elements (specifically server browser and settings window)\n[/list]\n\nEven though this update does not directly impact the gameplay, it will however allow for easier future additions of features like player achievements, stats, lobbies, direct Steam invites (inviting friends to a server you're on), and other cool Steam features.\n\nHave fun!",
+      "key": "2994020::2712ee0fe83b691d3f1643f7b38105c670e2b41a",
+      "tags": [
+        {
+          "feature": "[*] Introduced Steam authentication with the Puck backend service"
+        },
+        {
+          "feature": "[*] Players running the game via Steam can now launch their own servers in any region"
+        },
+        {
+          "feature": "[*] Unoccupied servers will auto-destruct after 5 minutes"
+        },
+        {
+          "feature": "[*] Players are limited to launching 1 server at a time"
+        },
+        {
+          "balance_change": "[*] Adjusted size and scaling of UI elements (specifically server browser and settings window)"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 24",
+      "date": "2024-09-14 20:13:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6250522009522109251",
+      "content": "Hello!\n\nSome features and bugs that were preventing competitive play have been addressed. Here's what's new:\n\n[list]\n[*] Minimap has been added, along with some settings related to it\n[*] Added user interface scale setting\n[*] Fixed goal an assist counting\n[*] Improved visibility of goal announcements\n[*] Improved visibility of player chat messages\n[*] Fixed an issue where goal announcements would overlay the pause (escape) menu\n[*] Fixed a bug where after a player team switch or disconnect, one of the face off players would be missing\n[*] Reworked WebSocket integration\n[/list]",
+      "key": "2994020::20c902cbf5f5088449d285720d1ad377665aef47",
+      "tags": [
+        {
+          "feature": "[*] Minimap has been added, along with some settings related to it"
+        },
+        {
+          "feature": "[*] Added user interface scale setting"
+        },
+        {
+          "bug": "[*] Fixed goal an assist counting"
+        },
+        {
+          "bug": "[*] Improved visibility of goal announcements"
+        },
+        {
+          "bug": "[*] Improved visibility of player chat messages"
+        },
+        {
+          "bug": "[*] Fixed an issue where goal announcements would overlay the pause (escape) menu"
+        },
+        {
+          "bug": "[*] Fixed a bug where after a player team switch or disconnect, one of the face off players would be missing"
+        },
+        {
+          "feature": "[*] Reworked WebSocket integration"
+        }
+      ]
+    },
+    {
+      "title": "Puck: Build 19",
+      "date": "2024-09-09 21:22:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076613154915",
+      "content": "Today's patch introduces some major backend changes that will allow for easier implementation of client features. Let's see what's new:\n\n[list]\n[*] Improved server coverage across Europe and North America\n[*] Server browser now displays up-to-date server data, specifically regarding player count\n[*] Server maximum players limits are now introduced (a maximum of 10 players per server)\n[*] Backend service received a major update which allows for remote server monitoring, deployment and shutdown\n[*] Implemented server -> backend authentication to allow for safe player statistics gathering\n[*] Fixed a bug where the horn sound would not play during Game Over phase\n[/list]",
+      "key": "2994020::1f5ab2976de95bab4167d53187614c636b890136",
+      "tags": [
+        {
+          "feature": "Server maximum players limits are now introduced (a maximum of 10 players per server)"
+        },
+        {
+          "feature": "Backend service received a major update which allows for remote server monitoring, deployment and shutdown"
+        },
+        {
+          "feature": "Implemented server -> backend authentication to allow for safe player statistics gathering"
+        },
+        {
+          "bug": "Fixed a bug where the horn sound would not play during Game Over phase"
+        }
+      ]
+    }
+  ]
+}

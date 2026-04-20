@@ -1,0 +1,156 @@
+{
+  "appId": "940920",
+  "count": 5,
+  "notes": [
+    {
+      "title": "BlastFX 1.2.3 Released",
+      "date": "2020-08-03 13:10:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3664193578974728004",
+      "content": "Just a small update:\n\n[list]\n[*] +/- keys can be used to zoom\n[*] Added two new examples, a bullet impact/spark and an explosion that uses subtractive blending\n[*] Fixed the node graph load button being hidden behind the graph zoom input box\n[*] Changed the general font so that the application can be used at smaller window sizes, not ideal, but still usable\n[*] Added a new effect node 'Fix Alpha Edges' - this will correct the dark edges that can be seen on soft-edged particles\n[/list]",
+      "key": "940920::4aad5f13f8800faeeb8d5c17926f7274345cd6de",
+      "tags": [
+        {
+          "feature": "[*] +/- keys can be used to zoom"
+        },
+        {
+          "feature": "[*] Added two new examples, a bullet impact/spark and an explosion that uses subtractive blending"
+        },
+        {
+          "bug": "[*] Fixed the node graph load button being hidden behind the graph zoom input box"
+        },
+        {
+          "balance_change": "[*] Changed the general font so that the application can be used at smaller window sizes, not ideal, but still usable"
+        },
+        {
+          "feature": "[*] Added a new effect node 'Fix Alpha Edges' - this will correct the dark edges that can be seen on soft-edged particles"
+        }
+      ]
+    },
+    {
+      "title": "BlastFX 1.2.2 Released",
+      "date": "2019-06-25 16:49:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2436926440560822064",
+      "content": "Another small update:\r\n\r\n[list]\r\n[*] Moved from Godot Engine 3.0 to 3.1, this might fix some crash issues for some people (maybe)\r\n[*] Fixed some shader issues from switching over to 3.1\r\n[*] Fixed an issue with loading GPL colour palette files, the values were being read in incorrectly\r\n[*] PAL palette saving was also broken in some cases, but this should be fixed now\r\n[*] Render settings are now saved with each project, yay!\r\n[*] There's probably some other stuff I forgot about... but it would be minor things anyway.\r\n[/list]\r\n",
+      "key": "940920::d89c5b215da15fa819bfb23838c2199ff427abca",
+      "tags": [
+        {
+          "bug": "[*] Fixed some shader issues from switching over to 3.1"
+        },
+        {
+          "bug": "[*] Fixed an issue with loading GPL colour palette files, the values were being read in incorrectly"
+        },
+        {
+          "bug": "[*] PAL palette saving was also broken in some cases, but this should be fixed now"
+        },
+        {
+          "feature": "[*] Render settings are now saved with each project, yay!"
+        }
+      ]
+    },
+    {
+      "title": "BlastFX 1.2.1",
+      "date": "2018-11-06 16:19:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2407631646391072334",
+      "content": "Just a small update today:\r\n\r\n[list]\r\n[*] Fixed issue with curve min/max values resetting when an emitter was selected, which was probably rather annoying!\r\n[*] Fixed issue where the visibility of an emitter wasn't saved with the project\r\n[*] Made the emitter name text a bit easier to read in the viewport. Light text on light particles is difficult to see, so there's a bit of a drop shadow now\r\n[*] Added the ability to lock emitters! Now you don't have to worry about clicking and accidentally moving an emitter that you've put in... just... the right... place. Locked emitters will have a little padlock icon shown next to their name in the emitter list, and also in the viewport\r\n[/list]",
+      "key": "940920::8624046f303445006d78cb7a019dfd11a770cf08",
+      "tags": [
+        {
+          "bug": "[*] Fixed issue with curve min/max values resetting when an emitter was selected, which was probably rather annoying!"
+        },
+        {
+          "bug": "[*] Fixed issue where the visibility of an emitter wasn't saved with the project"
+        },
+        {
+          "feature": "[*] Made the emitter name text a bit easier to read in the viewport. Light text on light particles is difficult to see, so there's a bit of a drop shadow now"
+        },
+        {
+          "feature": "[*] Added the ability to lock emitters! Now you don't have to worry about clicking and accidentally moving an emitter that you've put in... just... the right... place. Locked emitters will have a little padlock icon shown next to their name in the emitter list, and also in the viewport"
+        }
+      ]
+    },
+    {
+      "title": "BlastFX 1.2 Released",
+      "date": "2018-10-27 10:17:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2403127338436429204",
+      "content": "Hey everyone!\r\n\r\nIt's been a while, but I've been chipping away and trying to fix and improve as much stuff as I can. \r\n\r\nHere's a list of bug fixes in this update:\r\n\r\n[list]\r\n[*] Fixed a bug with the calculation of the max render size/max frame count which caused frames to disappear\r\n\r\n[*] Fixed bug with emitter delays running independently to the main frame update of the particles. This became an issue when rendering as it would go out of sync and behave incorrectly.\r\n\r\n[*] Fixed posterize effect node not saving its value\r\n\r\n[*] Fixed pixellate effect node not applying values correctly when ratio lock was enabled\r\n\r\n[*] Fixed palette map effect node not applying the saved dither/alpha values when it initially loads\r\n\r\n[*] Fixed issue where the save render button was partially obstructed when the preview animation was a certain frame size\r\n\r\n\r\nHere's new stuff or things that have changed:\r\n\r\n[*] Added particle pivot/center point property. Now particles can rotate around a user-defined center point, yay!\r\n\r\n[*] Added Particle colour hue variation curve + randomness, this will increase/decrease the current colour's hue value over the course of the particles lifetime. Useful for adding some randomness to a particles colour.\r\n\r\n[*] Increased zoom min/max so it easier to fit large particle effects into the frame\r\n\r\n[*] Added node saving/loading. You can now save and load the node effect configurations you make so they can easily be brought into other projects.\r\n\r\n[*] Increased FPS render limit to 200. Some people have very fast monitors apparently, I don't, but this is for them.\r\n\r\n[*] Added ability to save & load gradients. Gradients saved in the <installation dir>/gradients folder will appear in the popup preset list\r\n\r\n[*] Added drop down list to Palette map node to easily select preset palettes\r\n\r\n[*] Improved the texture selection dialog by allowing folders to be navigated. Not perfect but getting there. It may still be slow when browsing a folder with large images or many files, I'm still trying to improve this.\r\n[/list]\r\n\r\n\r\nThat's all for this update, enjoy!",
+      "key": "940920::08a9040520a3d7a24876f9c145ab6ed89d720ace",
+      "tags": [
+        {
+          "bug": "[*] Fixed a bug with the calculation of the max render size/max frame count which caused frames to disappear"
+        },
+        {
+          "bug": "[*] Fixed bug with emitter delays running independently to the main frame update of the particles. This became an issue when rendering as it would go out of sync and behave incorrectly."
+        },
+        {
+          "bug": "[*] Fixed posterize effect node not saving its value"
+        },
+        {
+          "bug": "[*] Fixed pixellate effect node not applying values correctly when ratio lock was enabled"
+        },
+        {
+          "bug": "[*] Fixed palette map effect node not applying the saved dither/alpha values when it initially loads"
+        },
+        {
+          "bug": "[*] Fixed issue where the save render button was partially obstructed when the preview animation was a certain frame size"
+        },
+        {
+          "feature": "[*] Added particle pivot/center point property. Now particles can rotate around a user-defined center point, yay!"
+        },
+        {
+          "feature": "[*] Added Particle colour hue variation curve + randomness, this will increase/decrease the current colour's hue value over the course of the particles lifetime. Useful for adding some randomness to a particles colour."
+        },
+        {
+          "balance_change": "[*] Increased zoom min/max so it easier to fit large particle effects into the frame"
+        },
+        {
+          "feature": "[*] Added node saving/loading. You can now save and load the node effect configurations you make so they can easily be brought into other projects."
+        },
+        {
+          "balance_change": "[*] Increased FPS render limit to 200. Some people have very fast monitors apparently, I don't, but this is for them."
+        },
+        {
+          "feature": "[*] Added ability to save & load gradients. Gradients saved in the <installation dir>/gradients folder will appear in the popup preset list"
+        },
+        {
+          "feature": "[*] Added drop down list to Palette map node to easily select preset palettes"
+        },
+        {
+          "feature": "[*] Improved the texture selection dialog by allowing folders to be navigated. Not perfect but getting there. It may still be slow when browsing a folder with large images or many files, I'm still trying to improve this."
+        }
+      ]
+    },
+    {
+      "title": "Fixes & Examples",
+      "date": "2018-10-05 14:31:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2447035533298923544",
+      "content": "Just a small update, but it adds a few new things and fixes a few bugs too. Here's the list of changes:\r\n\r\nAdded some example projects. These can be found in your steam installation directory, under common/BlastFX/examples\r\n\r\nAdded a reset option for curves, just right-click on a curve and you'll see it in the pop-up menu\r\n\r\nAdded visibility toggle for emitters\r\n\r\nYou can now  set the maximum amount of frames per row in the exported sprite sheet.  Originally sprite sheets would try and fit everything on one row until the texture hit a width of 16384, and then it would add a new row. \r\n\r\nThe current frame of animation can now be saved as an individual image.\r\nJust select \"Current Frame\" in the preview window after you've rendered an animation. The frame saved will be whatever is currently displayed, you can change this by stopping the animation and using the scrubbing control to flick through the frames.\r\n\r\nResizing the window will now scale the GUI, not perfect but at least makes it somewhat usable on some lower resolutions\r\n\r\nFixed bug where duration property wasn't working correctly\r\n\r\nFixed bug with the spread angle cone flickering at some zoom levels",
+      "key": "940920::899adb8dc1afefafb7b6fe7f567df2d193f820fc",
+      "tags": [
+        {
+          "feature": "Added some example projects. These can be found in your steam installation directory, under common/BlastFX/examples"
+        },
+        {
+          "feature": "Added a reset option for curves, just right-click on a curve and you'll see it in the pop-up menu"
+        },
+        {
+          "feature": "Added visibility toggle for emitters"
+        },
+        {
+          "feature": "You can now  set the maximum amount of frames per row in the exported sprite sheet.  Originally sprite sheets would try and fit everything on one row until the texture hit a width of 16384, and then it would add a new row."
+        },
+        {
+          "feature": "The current frame of animation can now be saved as an individual image. Just select \"Current Frame\" in the preview window after you've rendered an animation. The frame saved will be whatever is currently displayed, you can change this by stopping the animation and using the scrubbing control to flick through the frames."
+        },
+        {
+          "feature": "Resizing the window will now scale the GUI, not perfect but at least makes it somewhat usable on some lower resolutions"
+        },
+        {
+          "bug": "Fixed bug where duration property wasn't working correctly"
+        },
+        {
+          "bug": "Fixed bug with the spread angle cone flickering at some zoom levels"
+        }
+      ]
+    }
+  ]
+}

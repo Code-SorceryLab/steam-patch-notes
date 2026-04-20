@@ -1,0 +1,75 @@
+{
+  "appId": "3668260",
+  "count": 2,
+  "notes": [
+    {
+      "title": "UV Lanterns and Matchmaking using Firebase",
+      "date": "2025-04-24 14:39:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624468063",
+      "content": "[h2]Echoes of Fellow Swimmers[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/45584862/9274b34df3e890f8a2e0713009ff0f9ee04bf6f7.gif[/img]\n\nFor this week's devlog, we want to talk about some new mechanics we have added. Essentially, we had this idea of having really subtle community-based puzzles that maintain the single-player aspects, while also feeling like some players are in the game [i]somewhere[/i]. In the past week, we have achieved this!\n\n[h3]The Lantern[/h3]\n\nWe created a shader that can swap between textures based on a positional coordinate to determine what part of an object's UV map should be \"revealed\". This means that we can essentially create a black-light effect that allows the player to reveal secret writing. This lantern is in a very dark, and very hard-to-reach level and will be used for a few puzzles, that I won't spoil. But one of these puzzles is our first community-type puzzle! This leads us to our other big topic:\n\n[h3]Database Integration[/h3]\n\nWe have also implemented a fairly robust database system to do a ton of fun things. First, it will record player stats such as deaths per level, time spent in shade, time spent swimming upstream vs downstream, etc. Right now, we don't know if this specific information will be available for the player, as it is mainly intended for research outcomes and determining if players are learning the more educational goals we have as pertains to Salmon conservation. However, we are also using the database as a \"server\" for community puzzles. Right now we upload the player's location, what puzzle they are \"participating in\" and a string that we can use to determine progress in the puzzle. This means we can do a lot of things, such as detecting how many players are in a specified area and using that to give players hidden collectibles. Another thing we did which we are super proud of, is we used the string to perform a \"network handshake\" over the database to pair players up. So if a puzzle requires 2 people exactly, and 10 people in the area could potentially participate, the puzzle will be able to pick two players and mutually match them. This means that the players both send data to the database and both know each other's location. I might also add a 16-bit short to use as a bit-string for a little extra leeway as far as what we can do. If we went in this direction, the player might be able to even play tic-tac-toe with a mystery player. On top of all that, the data collection is entirely optional, and the only thing the player loses out on, are these specific features. \n\nAnyway, I hope this has made you guys as excited as we are. We believe all these little features will build up to being a cool and unique final product, and we are so stoked to have you guys play it. Also, finally, we are at 24 out of the 100 unlockable fish we are trying to add before the release. This may sound kind of low, but considering that 7 of those were added in the last week, and the system as a whole is a fairly new one in our development process, we are pretty happy with this progress.\n\nCheers, Blood Sweat and Beer",
+      "key": "3668260::5dee42a7e55b641475e2b309572b88f0a2ed37f9",
+      "tags": [
+        {
+          "feature": "- We created a shader that can swap between textures based on a positional coordinate to determine what part of an object's UV map should be \"revealed\"."
+        },
+        {
+          "feature": "- We have also implemented a fairly robust database system to do a ton of fun things."
+        },
+        {
+          "feature": "- First, it will record player stats such as deaths per level, time spent in shade, time spent swimming upstream vs downstream, etc."
+        },
+        {
+          "feature": "- However, we are also using the database as a \"server\" for community puzzles."
+        },
+        {
+          "feature": "- Right now we upload the player's location, what puzzle they are \"participating in\" and a string that we can use to determine progress in the puzzle."
+        },
+        {
+          "feature": "- This means we can do a lot of things, such as detecting how many players are in a specified area and using that to give players hidden collectibles."
+        },
+        {
+          "feature": "- Another thing we did which we are super proud of, is we used the string to perform a \"network handshake\" over the database to pair players up."
+        },
+        {
+          "feature": "- So if a puzzle requires 2 people exactly, and 10 people in the area could potentially participate, the puzzle will be able to pick two players and mutually match them."
+        },
+        {
+          "feature": "- I might also add a 16-bit short to use as a bit-string for a little extra leeway as far as what we can do."
+        },
+        {
+          "feature": "- If we went in this direction, the player might be able to even play tic-tac-toe with a mystery player."
+        },
+        {
+          "feature": "- Also, finally, we are at 24 out of the 100 unlockable fish we are trying to add before the release."
+        },
+        {
+          "feature": "- considering that 7 of those were added in the last week, and the system as a whole is a fairly new one in our development process, we are pretty happy with this progress."
+        }
+      ]
+    },
+    {
+      "title": "Introducing: Gadoof the Wand Stroker",
+      "date": "2025-04-16 21:56:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797185861623516",
+      "content": "[h2]I am Gandoof... and Gadoof means... ME![/h2]\n\n[img]{STEAM_CLAN_IMAGE}/45584862/08a8280163a1af1473750144978df6f639c059d2.gif[/img]\n\nStarting today, our team is going to attempt to do weekly devlogs to keep people updated on ongoing features and general progress on the game. Today I'd like to introduce our new quest giver, Gandoof. He is a totally orignal wizard originating from Leftish Earth. We decided that some of the secrets in the game are so far hidden, that Gandoof was needed to give hints and point swimmers in the right direction. In addition, he also will have a quest that involves delivering a questionable tape back to a blockbuster!\n\nMore Updates:\n[list]\n[*] We are attempting to add a total of 100 unlockable fish for our initial release, all with unique unlock conditions\n[*] Major progress has been done on a level that takes place after the underworld\n[*]     Major progress has been done on a level that takes place after the underworld\n    Initial work on a database that will allow for community based puzzles, that are networked based (more on this later)\n[/list]\n\nCheers, Blood Sweat and Beer",
+      "key": "3668260::c1a19eb80f3280a52d9ab42619d45440ceefbb40",
+      "tags": [
+        {
+          "feature": "Starting today, our team is going to attempt to do weekly devlogs to keep people updated on ongoing features and general progress on the game. Today I'd like to introduce our new quest giver, Gandoof. He is a totally orignal wizard originating from Leftish Earth. We decided that some of the secrets in the game are so far hidden, that Gandoof was needed to give hints and point swimmers in the right direction. In addition, he also will have a quest that involves delivering a questionable tape back to a blockbuster!"
+        },
+        {
+          "feature": "We are attempting to add a total of 100 unlockable fish for our initial release, all with unique unlock conditions"
+        },
+        {
+          "feature": "Major progress has been done on a level that takes place after the underworld"
+        },
+        {
+          "feature": "Major progress has been done on a level that takes place after the underworld"
+        },
+        {
+          "feature": "Initial work on a database that will allow for community based puzzles, that are networked based (more on this later)"
+        }
+      ]
+    }
+  ]
+}

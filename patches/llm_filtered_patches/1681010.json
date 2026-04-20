@@ -1,0 +1,99 @@
+{
+  "appId": "1681010",
+  "count": 6,
+  "notes": [
+    {
+      "title": "Update 1.0.6",
+      "date": "2024-06-12 07:22:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747236506606432054",
+      "content": "Here's a small update! Mainly some under-the-hood changes, but there are two things you might notice.\n\n[olist]\n[*] If using a controller, the tutorial bird will now spit out button graphics instead of letters.\n[*] I've added a new achievement.\n[/olist]\n\nThe achievement is actually the main reason for this update, as it's a birthday present to my best childhood friend. Feel free to try and unlock it on your own, but since it's easier to stumble upon for new players, here's what you need to do: [spoiler]At the start of a level, press left before you press right. Do this in three levels, and you'll unlock the achievement! This is in reference to my buddy, who religiously always checks the left side of the screen before actually proceeding through the levels...and honestly, so do I most of the time. I mean, one game once hid a secret there, so there might be another one![/spoiler]\n\nIf you haven't read the spoiler, here's a at least a hint: Be curious, suspicious, and think of a place where 2D platformer designers like to hide stuff, then check that place in multiple levels.\n\nAnyway, happy birthday Greg!\n\n-Ando",
+      "key": "1681010::2f9a32ded2a3078774bc2656b4122d695846ad9c",
+      "tags": [
+        {
+          "feature": "If using a controller, the tutorial bird will now spit out button graphics instead of letters."
+        },
+        {
+          "feature": "I've added a new achievement."
+        }
+      ]
+    },
+    {
+      "title": "Go! Go! Version 1.0.5",
+      "date": "2022-08-23 21:31:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316499997263291",
+      "content": "Time for another update! This time it's just a bug fix, but it's a pretty big one.\n\n[list]\n[*] Fixed a memory leak related to the timer\n[/list]\n\nTurns out, for some reason the new timer was leaking memory, meaning it kept using more and more memory but it didn't release any. This, of course, isn't a good thing, because it could cause the game to lag or even crash if you kept it running for long enough.\n\nWhile I wasn't able to entirely figure out why it happens (it's something buried deep within the HaxeFlixel/OpenFL/Lime libs) I found a way around it. And hey, in gamedev, that's usually good enough...\n\nThanks for all the support, everybody!\n\n-Ando",
+      "key": "1681010::fae7cb0c1437ba846a122074064a7e263f50878b",
+      "tags": [
+        {
+          "bug": "[*] Fixed a memory leak related to the timer"
+        }
+      ]
+    },
+    {
+      "title": "Go! Go! Version 1.0.4",
+      "date": "2022-05-12 08:35:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5849624375818060252",
+      "content": "I've once again fiddled with the game. Here's what changed:\n\n[list]\n[*] An issue with disappearing sound has (hopefully) been fixed\n[*] The game should now start in fullscreen when using Big Picture mode\n[*] Added three new achievements\n[/list]\n\nThanks as always for your support, and let me know if anything else breaks!\n\n-Ando",
+      "key": "1681010::90e786571c655b092f516f4e50ba5cd53af0a80e",
+      "tags": [
+        {
+          "bug": "An issue with disappearing sound has (hopefully) been fixed"
+        },
+        {
+          "feature": "The game should now start in fullscreen when using Big Picture mode"
+        },
+        {
+          "feature": "Added three new achievements"
+        }
+      ]
+    },
+    {
+      "title": "Go! Go! Version 1.0.3",
+      "date": "2022-02-15 09:44:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6154735015632508961",
+      "content": "Time for another update! One thing many people have asked me about is some sort of timer functionality in the game, so that they could try to speedrun it a little easier. So that's what I added! I also fixed a bug where an achievement wouldn't unlock. Those things are tricky.\n\n[b]New features[/b]\n\n[list]\n[*] A timer now tracks and saves your times for every level, so get speedrunning! Don't want to feel pressured? Just turn it off in the options!\n[/list]\n\n[b]Bugfixes[/b]\n\n[list]\n[*] Fixed an issue where the Humanitarian Pogo achievement couldn't be unlocked. If you have beaten the game already, this achievement should now automatically unlock when you enter the level select screen.\n[/list]\n\nThank you for the continued support, you guys rock!\n-Ando",
+      "key": "1681010::78fcc4305dd4c24e334e666dbe939fdb12c2dd22",
+      "tags": [
+        {
+          "feature": "A timer now tracks and saves your times for every level, so get speedrunning! Don't want to feel pressured? Just turn it off in the options!"
+        },
+        {
+          "bug": "Fixed an issue where the Humanitarian Pogo achievement couldn't be unlocked. If you have beaten the game already, this achievement should now automatically unlock when you enter the level select screen."
+        }
+      ]
+    },
+    {
+      "title": "Go! Go! Version 1.0.2",
+      "date": "2022-01-29 15:46:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104327925265",
+      "content": "Hey there, I've been working around the clock since release to fix the remaining bugs found by you. I hope I succeeded!\n\n[list]\n[*] Fixed an issue where PogoGirl and other sprites would be invisible for some users\n[*] Fixed an issue where the CRT filter would turn the screen black for some users\n[*] Fixed an issue where some achievements didn't unlock\n[/list]\n\nThe issue with the invisible PogoGirl was obviously the most pressing one. It took me a while to find the cause, but I managed to track it down to the shaders. PogoGirl has a shader applied to her to make her flash in certain instances. However, the way I wrote the shader wasn't 100% compatible with all graphics cards, and it seems like especially integrated Intel cards just weren't having it and outright refused to render the sprite at all (instead of, you know, giving an error message one might use to debug *cough*). This also meant that the screen-wide CRT shader would basically prevent the rendering of...well, anything.\n\nSo I dug through the shaders and cleaned them up, and it should be working now! If you are still having this issue, please let me know and post your graphics card details along with it. I'll see what I can do.\n\nSorry about this issue, I'm a solo dev and sometimes feel like I don't know what I'm doing. Hope you enjoy the game!\n\nMany thanks to CheekyLions, half, Nathan Altice and Carls493 for helping me track down and fix the shader bug!\n\n-Ando",
+      "key": "1681010::365d51faea11fec84a2434054aa2878e8139611f",
+      "tags": [
+        {
+          "bug": "Fixed an issue where PogoGirl and other sprites would be invisible for some users"
+        },
+        {
+          "bug": "Fixed an issue where the CRT filter would turn the screen black for some users"
+        },
+        {
+          "bug": "Fixed an issue where some achievements didn't unlock"
+        }
+      ]
+    },
+    {
+      "title": "Update Notes Ver. 1.0.1",
+      "date": "2022-01-27 16:08:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104320697974",
+      "content": "Hey everyone, first of all thank you for the phenomenal reception of Go! Go! PogoGirl! So far the game has received nothing but love, and that makes me really happy.\n\nOf course, a few bugs were bound to pop up, so today I uploaded version 1.0.1 of the game. It contains the following fixes:\n\n[list]\n[*] Fixed an issue where the pause menu would disappear immediately after opening when using a controller\n[*] The explicit tutorial messages now show the input depending on what input device was most recently used\n[/list]\n\n\u200bThere have also been reports by a small number of users that PogoGirl and/or other sprites are invisible during gameplay. [b]If you have encountered this issue, please reach out to me![/b] I'm currently gathering data so that I can start figuring out what's causing it and how to fix it. I'll keep you posted.\n\n\u200bThanks for your support, and happy bouncing!\n-Ando\n\n\u200b",
+      "key": "1681010::56349208c5cf7b95d645c96b4ffddd558d1a37a7",
+      "tags": [
+        {
+          "bug": "[*] Fixed an issue where the pause menu would disappear immediately after opening when using a controller"
+        },
+        {
+          "feature": "[*] The explicit tutorial messages now show the input depending on what input device was most recently used"
+        }
+      ]
+    }
+  ]
+}

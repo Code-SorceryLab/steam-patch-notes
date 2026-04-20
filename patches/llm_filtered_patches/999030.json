@@ -1,0 +1,150 @@
+{
+  "appId": "999030",
+  "count": 7,
+  "notes": [
+    {
+      "title": "Update and Discount",
+      "date": "2019-05-10 02:26:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2405396896211189323",
+      "content": "Thank you for your purchase and support. Although the specific amount cannot be disclosed, the total profit of gamepad massage is now reaching the publishing cost of the game (100$).\r\nThank you very much.\r\n-------------------------------------------------- --------------------------------------------------\r\nAs you can see, I have updated the game several times in the past few weeks without writing any update reports. The updates themselves do not seem to affect the game content too much, except for performance improvements.\r\n\r\nIn fact, over the past few months I have focused on the development and update of the cyan_potion game engine without putting much updates to the game itself.\r\nThis is because:\r\n1. The purpose of the game is to guide the player to learn how to write code to control the vibration. The current version of the level design is sufficient to meet this need.\r\n2. I think putting more levels won't bring a better gaming experience, because according to predictions, the content provided is enough for players to play for 20+ hours, and most players would loses interest within that time.\r\n3. Refineing of the engine itself can significantly improve the gaming experience. For example, in the current version, the time required to load a font at the beginning has been reduced to about half of the original version.\r\n-------------------------------------------------- --------------------------------------------------\r\nBut the facts tell me that my prediction may not be perfect.\r\nI analyzed the player achievement statistics, which showed that most players passed the game far more quickly than I expected.\r\nInteresting.\r\nTherefore, in future versions, we will update more levels.\r\n(and add more achievements.)\r\nWe plan to offer 8-16 additional levels in the next month.\r\n-------------------------------------------------- --------------------------------------------------\r\nRecently, I received some suggestions. For example, this game cannot be defined as a game, but should be defined as software.\r\nIn this regard, I accept it with humility.\r\nIt is expected that the production plan for the next game will be released later this year.\r\nThis will be a financial simulation game and will be a real game.\r\nInformally named [about how I earned a suite from Tianwang Tianying Financial Platform in four months].\r\nThe game content will be very interesting.\r\nPlease look forward to it.\r\n-------------------------------------------------- --------------------------------------------------\r\nIn addition, given that the current version (0.135.0) of the cyan_potion game engine has completed the third round of code refactoring and seems to be available (although the major version number is still 0, meaning it is possible to make changes that are not backward compatible at any time) I decided to open source and freely provide all the modules of the cyan_potion game engine so far (following the MIT protocol).\r\nAnyone who needs it can go to [url=https://github.com/cyanpotion/cyan_potion]https://github.com/cyanpotion/cyan_potion[/url] to download and use it according to the agreement.\r\nNote that this code only contains the source code of the cyan_potion engine itself, not the source code of the game gamepad massage.\r\nObviously, this is due to the consideration of the player's interests. If the source code of the gamepad massage is released at this time (only four months after the release), then all purchased players suffer a loss.\r\nWe are considering opening the source code for gamepad massage later (perhaps 5 years later).\r\nAnyway, I welcome and hope that you can download and use the cyan_potion game engine to make your own games (or other software).\r\nI also hope that you can contribute your codes/issues to the cyan_potion game engine.\r\nthank you very much.\r\n-------------------------------------------------- --------------------------------------------------\r\nIn addition, given that the third major code refactoring has been completed today, we will open a 14-day discount event. From May 18th to June 1st, gamepad massage will receive a -42% discount.\r\n(42 is really a convenient number... in any sense)\r\nFinally, I wish you a happy holiday.\r\n\r\n-----XenoAmess",
+      "key": "999030::b43fd39b49c62f1dc6084645436cac9f9572d4ef",
+      "tags": [
+        {
+          "feature": "We plan to offer 8-16 additional levels in the next month."
+        },
+        {
+          "feature": "(and add more achievements.)"
+        },
+        {
+          "feature": "In addition, given that the current version (0.135.0) of the cyan_potion game engine has completed the third round of code refactoring and seems to be available (although the major version number is still 0, meaning it is possible to make changes that are not backward compatible at any time) I decided to open source and freely provide all the modules of the cyan_potion game engine so far (following the MIT protocol)."
+        },
+        {
+          "feature": "We are considering opening the source code for gamepad massage later (perhaps 5 years later)."
+        }
+      ]
+    },
+    {
+      "title": "Engine Update",
+      "date": "2019-03-12 13:13:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2530366080614048809",
+      "content": "1.jvm changed from AdoptOpenJDK to AdoptOpenJRE\r\nI asked them things about publishing OpenJRE on github several months ago,\r\n\uff08https://github.com/AdoptOpenJDK/openjdk-build/issues/801\uff09\r\nand now they published OpenJRE,so we can change to OpenJRE safely.\r\nIf you are still wondering about \"what are the difference between JDK and JRE\", just google it yourself.Thx.\r\nBriefly, you can just think we delete some things you will never use to free your disk.\r\nThanks a lot, AdoptOpenJDK organization.\r\n\r\n2.garbage collection system.\r\nIn former version of the engine, we can only load the resources and release the resource by bare hands,.\r\nThat means the programmers using this engine must be very careful to make sure not causing any trouble.(unload a currently used resource might cause fatal error)\r\nThat works, because as a fact that 2D pixel game hardly ever can take over more memory than a modern PC (if resources are well pre-compressed), so we can just load them during the game, and unload all resources just before closing the game.\r\nBut that is too ugly, so I just add a garbage collector into the engine.\r\nI wish there be no more bugs but I can't promise it.\r\n\r\n3. change log utility from homemade LogUtil to slf4j+log4j\r\nAs you can see I am always trying to use as less codes from others as possible .\r\nBut there always be some reasons to force me rely on others.\r\nBtw first version of this engine is even not using lwjgl (I used Swing then).\r\nAnd of cause we meet severe performance problems so we have to change to lwjgl.\r\nNow we face a similar problem on logs: the output log file is too ugly for the health of my eyes.\r\nAs there be large amout of editors/plugins to deal with slf4j format log,and they are coloful, they are shiny, they are beautiful, blablabla, so I decided to change to slf4j for logging.\r\nI hope this is good for bug track.\r\nI wish there be no more bugs but I can't promise it.\r\nThanks a lot, slf4 and log4j.\r\n\r\n4.suport 32 bit windows\r\nI fixed some codes in my engine so theoreticly we shall be able to run this engine on 32 bit windows now.\r\nBut we still strongly suggest you use 64 bit windows to run this engine, to avoid any strange troubles.\r\nThanks a lot, AdoptOpenJDK organization.(Again.)\r\n\r\n5.Others\r\nMaybe you are curious about what I did during the last month.\r\nYep, I played through far cry 4, and  primal,and 5\r\nAlthough I cannot kill [the father] but still, praise the ubisoft!  \r\n\r\nI also suffers lunar new year(or, spring festival)\r\nAs is know to all spring festival is a very important event to we Chinese, and if someone doesn't perform well in spring festival, He will be sliced to several pieces by angry relatives using a thing looks like red envelope or card knife or something.\r\nJust joking, they never do such things, forgive me mom:aos2sham:\r\n\r\nI also find some time for a script language.\r\nYeah you know that all game engines (if not toys) have one (or even several) script language runtime, which makes game developers easier during work.\r\nOf cause we can use nashorn lib in jvm to invoke javascript code, but narshorn is too complex/black-box , and we cannot 100% control it.\r\nand I HATE JAVASCRIPT!!!!\r\nWren is a strange script language ,and I see its potential.\r\nI wanna change it a lot and then put it into our engine.\r\nWell we already finished the modification of the language rule and I just named it Wren#\r\nThe next thing is implement a Wren# vm in java.\r\nMaybe I just overdo it and change too much things, some of my new grammars cannot be dealed with the current  Wren vm code.\r\nSo we have to rewrite it to make it usable.\r\nThat is the reason why I didn't update it for soooo long.\r\nBy the way far cry is really good game series.\r\nBut I hate Hurk. He say too much words. Just like me. I hate him.",
+      "key": "999030::238ae6e47aae93519b2d9fbb1f1d1662a416bdfb",
+      "tags": [
+        {
+          "feature": "1.jvm changed from AdoptOpenJDK to AdoptOpenJRE"
+        },
+        {
+          "feature": "2.garbage collection system."
+        },
+        {
+          "feature": "3. change log utility from homemade LogUtil to slf4j+log4j"
+        },
+        {
+          "bug": "I wish there be no more bugs but I can't promise it."
+        },
+        {
+          "bug": "I wish there be no more bugs but I can't promise it."
+        },
+        {
+          "feature": "4.suport 32 bit windows"
+        },
+        {
+          "feature": "Yeah you know that all game engines (if not toys) have one (or even several) script language runtime, which makes game developers easier during work."
+        },
+        {
+          "feature": "Wren is a strange script language ,and I see its potential."
+        },
+        {
+          "feature": "I wanna change it a lot and then put it into our engine."
+        },
+        {
+          "feature": "Well we already finished the modification of the language rule and I just named it Wren#"
+        },
+        {
+          "bug": "So we have to rewrite it to make it usable."
+        }
+      ]
+    },
+    {
+      "title": "Update",
+      "date": "2019-01-21 08:40:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2426778849030433706",
+      "content": "Update:\r\n1.Refine input function of the input box.\r\nNow we use text input in GLFW for input box, not key input anymore.\r\nThis means we can input other languages than English now.\r\n2.Fix a bug that will cause position false if the cursor is behind a space in input box.\r\n\r\nEngine Update\uff1a\r\n1.Refine event process logic in GameWindowComponent class.\r\nNow we can register and manage event processor more conveniently.",
+      "key": "999030::4e9dceb23d07537b400605e97a7121dd031504fe",
+      "tags": [
+        {
+          "feature": "1.Refine input function of the input box.\nNow we use text input in GLFW for input box, not key input anymore.\nThis means we can input other languages than English now."
+        },
+        {
+          "bug": "2.Fix a bug that will cause position false if the cursor is behind a space in input box."
+        },
+        {
+          "feature": "1.Refine event process logic in GameWindowComponent class.\nNow we can register and manage event processor more conveniently."
+        }
+      ]
+    },
+    {
+      "title": "Update",
+      "date": "2019-01-02 10:11:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111330799298",
+      "content": "Game Update:\r\n1.Add numeric keypad support for all input boxes.\r\n2.Reduce check points from 1000 points/s to 50 points/s to reduce crash on some computers.\r\n\r\nEngine Update:\r\nPhysics engine completed.(not in this game)\r\nRPG engine module update(not in this game)\r\n",
+      "key": "999030::f4a4c46e07743940a3f84c0a7c3c01d32785ece9",
+      "tags": [
+        {
+          "feature": "1.Add numeric keypad support for all input boxes."
+        },
+        {
+          "balance_change": "2.Reduce check points from 1000 points/s to 50 points/s to reduce crash on some computers."
+        }
+      ]
+    },
+    {
+      "title": "Update",
+      "date": "2018-12-26 13:24:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111305988378",
+      "content": "1.engine update.\r\n2.change the font type due to Copyright issue.",
+      "key": "999030::c9fd2830b1638c98c47914d2538594188edd610c",
+      "tags": [
+        {
+          "feature": "change the font type due to Copyright issue."
+        }
+      ]
+    },
+    {
+      "title": "update",
+      "date": "2018-12-25 16:24:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111302827195",
+      "content": "Add word-wrap for text box.Some language will need it.\r\nAdd more achievements.\r\nAdd EULA.\r\nAdd more levels.",
+      "key": "999030::4ff4b861430e459a8e2477f7a4b600280ab4d3b4",
+      "tags": [
+        {
+          "feature": "- Add word-wrap for text box.Some language will need it."
+        },
+        {
+          "feature": "- Add more achievements."
+        },
+        {
+          "feature": "- Add EULA."
+        },
+        {
+          "feature": "- Add more levels."
+        }
+      ]
+    },
+    {
+      "title": "Update,and news.",
+      "date": "2018-12-22 17:34:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2417769111292162341",
+      "content": "Did performance analyse today.\r\n1.Fix a bug that will cause memory leak in some extreme situations.\r\n2.Rewrite some codes for better performance.(No need to go detail here, but generally it is about render, or draw functions. It could be used before, but now it is better.)\r\n3.Add some safety codes (a bunch of catch or something) for better stability.\r\n\r\n----------------------------------------------------------------------------------------------------\r\n\r\nAlthought it is initially just a demo (and test) of my home-made game engine [cyan_potion] (which is a 2D game engine based on LWJGL), the Gamepad Massage has been enlarged into a real game, which have three modes for people to play(or in other words, use).\r\n\r\nBut we just find out that there be a overlooked problem recently.\r\nI am a coder myself, and actually a pretty devoted one. And nearly all my close friends are coders.So sometimes I just forget that not all people are programmer.That's why there is far less instructions than needed in this game, because if you are a programmer, you can easily figure them out, but I forget that is far harder when coming to ordinary users.\r\n\r\nIt seems neccessary to write a user guide book.I will do that before the selling begins. The guide will be put along with the game(or , program),so people will get a clearer clue about what is this thing. \r\n\r\nThe Gamepad Massage would be on sale at 1.10.2019 as planed.\r\nI hope it can bring you some fun,and (I hope) you will like it.\r\nThanks for you all.\r\n-----XenoAmess",
+      "key": "999030::a152f830dac011778b072b0ac644de16e97dde28",
+      "tags": [
+        {
+          "bug": "1.Fix a bug that will cause memory leak in some extreme situations."
+        },
+        {
+          "feature": "3.Add some safety codes (a bunch of catch or something) for better stability."
+        }
+      ]
+    }
+  ]
+}

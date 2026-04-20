@@ -1,0 +1,366 @@
+{
+  "appId": "1939210",
+  "count": 11,
+  "notes": [
+    {
+      "title": "DEMoCap 1.5 Release",
+      "date": "2025-09-16 09:56:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566580990",
+      "content": "[list][*][p]Modified teleport to show in remote camera for better lining up.[/p][/*][*][p]Improved shoulder rotation handling for auto human motion transfer.[/p][/*][*][p]Fixed VR hands showing while recording which they should not.[/p][/*][*][p]Modified input device window to be full screen (and on large VR menu) in VR as well as providing a close button in VR.[/p][/*][*][p]Modified teleport movement to show actor with a stronger ghost skin which is easier to see. Furthermore if there is no model a placeholder teleport model is shown.[/p][/*][*][p]Improved VR menu placement for characters with relocated arms and head located far in front of body.[/p][/*][*][p]Improving handling of arm IK for characters without shoulder.[/p][/*][*][p]Add support to disable motion transfers. Avoids the need to duplicate configurations to test out motion transfers.[/p][/*][*][p]Added support to disable spine twist in auto human motion transfer.[/p][/*][*][p]Fixed duplicate/copy/cut/decompose motion transfer did not save edited values causing unedited values to be used.[/p][/*][/list][p][/p][previewyoutube=\"lTBmprYszNk;full\"][/previewyoutube]",
+      "key": "1939210::2fc7e19583c3264c17391e0013cc082b8204370f",
+      "tags": [
+        {
+          "bug": "[*][p]Fixed VR hands showing while recording which they should not.[/p][/*]"
+        },
+        {
+          "feature": "[*][p]Add support to disable motion transfers. Avoids the need to duplicate configurations to test out motion transfers.[/p][/*]"
+        },
+        {
+          "feature": "[*][p]Added support to disable spine twist in auto human motion transfer.[/p][/*]"
+        },
+        {
+          "bug": "[*][p]Fixed duplicate/copy/cut/decompose motion transfer did not save edited values causing unedited values to be used.[/p][/*]"
+        }
+      ]
+    },
+    {
+      "title": "Game engine update",
+      "date": "2025-04-06 15:32:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897429742",
+      "content": "Game engine updated to 1.24.4 including (besides others):\n[list]\n[*]Basic Crash Recovery: Added support to store mini-dumps (*.dmp) files on windows to improve post-crash support.\n[*]Windows Input: Fix for segfault if gamepad is used for which Windows GDK returns null-pointer for battery state.\n[/list]\n",
+      "key": "1939210::c6e36630b4899c0dac76d7a8dc8e41b112e3abc1",
+      "tags": [
+        {
+          "feature": "Basic Crash Recovery: Added support to store mini-dumps (*.dmp) files on windows to improve post-crash support."
+        },
+        {
+          "bug": "Windows Input: Fix for segfault if gamepad is used for which Windows GDK returns null-pointer for battery state."
+        }
+      ]
+    },
+    {
+      "title": "DEMoCap 1.3 Released",
+      "date": "2025-03-22 18:53:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830910949941",
+      "content": "<center>\n[h1]DEMoCap 1.3 Release[/h1]\n\nThis release focuses on three main additions: Waist control, feet-to-ground, head shifting and XML behavior element class support.\n\n[b]Waist Control[/b] offers 3 ways to handle hip motion transfer for human and creature type characters: direct, relative and relocation. Direct is what other apps are using (attach hip directly to your hip) and has various problems especially for creature rigs. Relative is useful for doing sitting type motion capture where it is important the character hip is exactly where your hip is. Relocation is the new mode which pulls the actor hips towards the feet to move it closer to the character hip. This is as if the actor becomes a short legged person. The relocation mode fixes a couple of problems of hip motion transfer.\n\n[b]Feet-to-ground[/b] adds to this solution by pulling the hips further towards the feet if the legs would not touch the ground. Instead of trying to compensate for length mismatch DEMoCap fixes the problem by moving the actor downwards. This fixes feet for various types of rigs compared to other systems. The final adjustment is done for logs by allowing for [b]Limited Over-Stretching[/b]. This slightly enlarges IK feet targets to make sure feet always touch the ground. This works best for beast type legs which usually have a certain amount of over-stretch potential while still looking good.\n\n[b]Head shifting[/b] add support to track head shifting forward and backward and translates them to characters using artist defined shift animation. Similar to artist driven up-down animation this gives high control over how the motion captured neck movement should look like. Neck shifting adds these small to subtle neck and head movements which make your character captures much more vivid than conventional systems.\n\n[previewyoutube=6lmEKcs-1Ho;full][/previewyoutube]\n\nLast but not least [b]XML Behavior Element Class Support[/b] has been added. This allows using the Drag[en]gine [url=https://developer.dragondreams.ch/wiki/doku.php/dragengine:modules:dragonscript:behavior_elements#xml_element_classes]XML Behavior Elements[/url] together with the new Drag[en]gine support to add behaviors directly in *.deeclass files. You can now define element classes for your capture projects directly in your project data directory as *.deeclass files. By using the new GenericBehaviorElement as base class and adding all required behaviors in the XML file you can create all kinds of element classes without touch script code. The details you can read on the [url=https://developer.dragondreams.ch/wiki/doku.php/democap:elementclasses]Wiki Page about XML Behavior Element Classes[/url].\n\nFurthermore these improvements and fixes are contained:\n[list]\n[*]Fixed wrong reset physics animator in getter.[/*]\n[*]Added video player behavior.[/*]\n[*]Added support to show in main view a remote camera for easier recording using video capture software.[/*]\n[*]Added debug bones support.[/*]\n[*]Fixed Dragonroo character and improved ik reach limit calculation for better pull to ground support.[/*]\n[*]Fixed incorrect tracker to slot assignement if more trackers than slots are used.[/*]\n[*]Fixed left knee not assigned correctly.[/*]\n[*]Added support to visualize trackers.[/*]\n[*]Fixed no chest tracker situation handling with bending moves used.[/*]\n[*]Fixed wrong twist axis calculation.[/*]\n[*]Blender: Added support for copying bone matrices subtracted (difference copy) and pasting bone matrices replacing or overlaying the current pose.[/*]\n[*]Forgot to switch autotransform of leg IK chains base tracker to match waist.[/*]\n[*]Fixed import rig in blender scripts incorrectly using animation import instead of rig import.[/*]\n[*]Unreal plugin: Updated to engine version 5.4.[/*]\n[*]Allow mouse to move out of game window.[/*]\n[/list]",
+      "key": "1939210::ce1d3a2341947b71805cf7903cda5f7b02ad2c20",
+      "tags": [
+        {
+          "feature": "Waist Control offers 3 ways to handle hip motion transfer for human and creature type characters: direct, relative and relocation."
+        },
+        {
+          "feature": "Feet-to-ground adds to this solution by pulling the hips further towards the feet if the legs would not touch the ground."
+        },
+        {
+          "feature": "Head shifting add support to track head shifting forward and backward and translates them to characters using artist defined shift animation."
+        },
+        {
+          "feature": "XML Behavior Element Class Support has been added."
+        },
+        {
+          "bug": "Fixed wrong reset physics animator in getter."
+        },
+        {
+          "feature": "Added video player behavior."
+        },
+        {
+          "feature": "Added support to show in main view a remote camera for easier recording using video capture software."
+        },
+        {
+          "feature": "Added debug bones support."
+        },
+        {
+          "bug": "Fixed Dragonroo character and improved ik reach limit calculation for better pull to ground support."
+        },
+        {
+          "bug": "Fixed incorrect tracker to slot assignement if more trackers than slots are used."
+        },
+        {
+          "bug": "Fixed left knee not assigned correctly."
+        },
+        {
+          "feature": "Added support to visualize trackers."
+        },
+        {
+          "bug": "Fixed no chest tracker situation handling with bending moves used."
+        },
+        {
+          "bug": "Fixed wrong twist axis calculation."
+        },
+        {
+          "feature": "Blender: Added support for copying bone matrices subtracted (difference copy) and pasting bone matrices replacing or overlaying the current pose."
+        },
+        {
+          "bug": "Forgot to switch autotransform of leg IK chains base tracker to match waist."
+        },
+        {
+          "bug": "Fixed import rig in blender scripts incorrectly using animation import instead of rig import."
+        },
+        {
+          "feature": "Unreal plugin: Updated to engine version 5.4."
+        },
+        {
+          "feature": "Allow mouse to move out of game window."
+        }
+      ]
+    },
+    {
+      "title": "Game engine update",
+      "date": "2024-12-13 17:09:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543571095",
+      "content": "Updated game engine to version 1.24",
+      "key": "1939210::85190eb154497fa2a7c79d787164714661b56ca9",
+      "tags": [
+        {
+          "feature": "Updated game engine to version 1.24"
+        }
+      ]
+    },
+    {
+      "title": "DEMoCap 1.2 Release",
+      "date": "2024-09-06 09:31:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076600420245",
+      "content": "This release adds the following major additions and improvements:\n[list]\n[*]Game engine updated to 1.23\n[*]Support for Mod.io (modifications) added. See https://developer.dragondreams.ch/wiki/doku.php/democap:modding#modding\n[*]Added support for mocap operator to trigger calibration process for actor\n[*]Complex hand tracking support\n[*]Added support to show camera feed view at camera position facing user. This allows to see how the user looks like on camera in real time\n[/list]\n\nModding Support:\n[previewyoutube=5NSTGzwcQyI;full][/previewyoutube]\n\nMoCap Operator Calibration:\n[previewyoutube=hlFRF8SNgJ4;full][/previewyoutube]\n\nAs well as these improvements and fixes:\n[list]\n[*]Modified trigger handling in calibrate (start with click, not abort if released)\n[*]Fixed bug in CPECoordinateSystem\n[*]Added support for invalid/broken element handling\n[*]Modified saving and settings panel to be fullscreen in VR menu\n[*]Enhanced retracted handling in IK motion transfer to support move with length to define a custom blending between stretched and retracted pose. A single frame move uses the old behavior.\n[*]Fixed null pointer exception in VRMenu PanelTweaking due to missing to remove listener on dispose\n[*]Blender extension updated to support blender 4.1 extension system\n[*]Fixing calibration and physics bones problems\n[*]Added icons to menus for better readability\n[*]Added \"component.enableGI=false\" for all interaction elements to avoid them affecting GI\n[*]Added support for custom world files to define camera parameters file to use instead of default one\n[*]Fixed StartGame not remapping texture skin path\n[*]Modified interaction handle skins to use faint emissivity in case user has a scarcly lit world loaded\n[*]Updated camera handling by using *.decamera files to store the parameters. Modified RemoteCamera UI class to support changing camera parameter file to load. This allows to have special parameters for different remote cameras\n[*]Fixed load character profile not handling empty path string correctly\n[*]Fixed missing UI translation\n[*]Added support for narrow vr menu to make it easier to use (same ratio as main menu)\n[*]Fixed file listing entries not being sorted\n[*]Added support to allow editing stage directions from VR. By default disabled now instead of enabled\n[*]Added proper handling of project specific XML element classes\n[*]Fixed exception if character is activated while loading a new project\n[*]Added support to browse both global and project characters and character models from the character menu\n[/list]",
+      "key": "1939210::2c567d2483ead4b00e485c7f6b151505d4a04e4a",
+      "tags": [
+        {
+          "feature": "[*]Game engine updated to 1.23"
+        },
+        {
+          "feature": "[*]Support for Mod.io (modifications) added. See https://developer.dragondreams.ch/wiki/doku.php/democap:modding#modding"
+        },
+        {
+          "feature": "[*]Added support for mocap operator to trigger calibration process for actor"
+        },
+        {
+          "feature": "[*]Complex hand tracking support"
+        },
+        {
+          "feature": "[*]Added support to show camera feed view at camera position facing user. This allows to see how the user looks like on camera in real time"
+        },
+        {
+          "bug": "[*]Fixed bug in CPECoordinateSystem"
+        },
+        {
+          "feature": "[*]Added support for invalid/broken element handling"
+        },
+        {
+          "bug": "[*]Fixed null pointer exception in VRMenu PanelTweaking due to missing to remove listener on dispose"
+        },
+        {
+          "feature": "[*]Blender extension updated to support blender 4.1 extension system"
+        },
+        {
+          "bug": "[*]Fixing calibration and physics bones problems"
+        },
+        {
+          "feature": "[*]Added icons to menus for better readability"
+        },
+        {
+          "feature": "[*]Added \"component.enableGI=false\" for all interaction elements to avoid them affecting GI"
+        },
+        {
+          "feature": "[*]Added support for custom world files to define camera parameters file to use instead of default one"
+        },
+        {
+          "bug": "[*]Fixed StartGame not remapping texture skin path"
+        },
+        {
+          "balance_change": "[*]Modified interaction handle skins to use faint emissivity in case user has a scarcly lit world loaded"
+        },
+        {
+          "feature": "[*]Updated camera handling by using *.decamera files to store the parameters. Modified RemoteCamera UI class to support changing camera parameter file to load. This allows to have special parameters for different remote cameras"
+        },
+        {
+          "bug": "[*]Fixed load character profile not handling empty path string correctly"
+        },
+        {
+          "bug": "[*]Fixed missing UI translation"
+        },
+        {
+          "feature": "[*]Added support for narrow vr menu to make it easier to use (same ratio as main menu)"
+        },
+        {
+          "bug": "[*]Fixed file listing entries not being sorted"
+        },
+        {
+          "feature": "[*]Added support to allow editing stage directions from VR. By default disabled now instead of enabled"
+        },
+        {
+          "feature": "[*]Added proper handling of project specific XML element classes"
+        },
+        {
+          "bug": "[*]Fixed exception if character is activated while loading a new project"
+        },
+        {
+          "feature": "[*]Added support to browse both global and project characters and character models from the character menu"
+        }
+      ]
+    },
+    {
+      "title": "DEMoCap 1.1 Released",
+      "date": "2023-11-23 12:05:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5382426458977777240",
+      "content": "DEMoCap received two main improvements in this release.\n\n[h1]Language Support[/h1]\nDEMoCap has now full language support. The user interface can be easily switched between English and German.\n\nMore languages can be easily added by everybody. Simply download the [url=https://github.com/LordOfDragons/democap/blob/main/data/content/langpacks/en.delangpack]English Language Pack[/url] and adjust the translations. Send it back to us (EMail, PasteBin or a git pull request) to get it included.\n\n[h1]Improved Project Management[/h1]\nThe second big change is the modification of the project management. Now the projects are self-contained. Characters, Worlds and Objects can be fully stored inside the project. It is no more required to use global characters and worlds. This allows to easily transfer MoCap projects to other developers in your team as well as simplifying creating backups.\n\n[previewyoutube=88wUENHup0w;full][/previewyoutube]",
+      "key": "1939210::6bb0eb63575ae744f7ae9372f4d743473500368d",
+      "tags": [
+        {
+          "feature": "DEMoCap has now full language support. The user interface can be easily switched between English and German."
+        },
+        {
+          "feature": "Now the projects are self-contained. Characters, Worlds and Objects can be fully stored inside the project. It is no more required to use global characters and worlds. This allows to easily transfer MoCap projects to other developers in your team as well as simplifying creating backups."
+        }
+      ]
+    },
+    {
+      "title": "FBX Import patch",
+      "date": "2022-10-04 16:49:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4613399405934049257",
+      "content": "Fixes dead-loop on importing certain FBX models",
+      "key": "1939210::feff5dcac9cb3ec445454df821405fcc20860d63",
+      "tags": [
+        {
+          "bug": "Fixes dead-loop on importing certain FBX models"
+        }
+      ]
+    },
+    {
+      "title": "DEMoCap 0.9 Release",
+      "date": "2022-09-03 16:54:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4621277624699291182",
+      "content": "[list]\n[*]Blender Live-Connection Add-On. See [url=https://developer.dragondreams.ch/wiki/doku.php/democap:blender_democaplive]Wiki-Page[/url] for instructions.\n[*]Modified *.demca saving to use relative path (relative to *.demca file not project file). Importers try first path relative to *.demca file and if not found relative to project file.\n[*]Added support to import/export stage directions *.stagedirs.xml file.\n[*]Fixed potential null pointer exception if trying to record with uncalibrated character.\n[*]Added support to change object class.\n[*]Improved project panel performance while selecting objects.\n[*]Improving overall UI performance.\n[*]Added loading-character model to better tell the user he has to wait for character resources to be loaded.\n[*]Improved world spawn character handling.\n[*]Fixed recreating object (due to stub property changes) deleting attachments.\n[*]Improved GrabAttach behavior to support disabling colliding with actor limbs, prevent actor grabing object and locking hand rotation while grabbing.\n[*]Added support to reset position, orientation and velocities for physics simulated objects.\n[*]Added some more hand poses for GrabAttach behavior. Use Component behavior panel to select models to closer resemble the grab motion the actor has to perform.\n[*]Added support to auto-load project by adding it to the command line. Path has to be relative to DEMoCap config directory.\n[/list]\n\n[previewyoutube=ZI6EMBuLxsc;full][/previewyoutube]\n",
+      "key": "1939210::a042bead71f35a31bc283afc24160fc0d25895a1",
+      "tags": [
+        {
+          "feature": "[*]Blender Live-Connection Add-On. See [url=https://developer.dragondreams.ch/wiki/doku.php/democap:blender_democaplive]Wiki-Page[/url] for instructions."
+        },
+        {
+          "feature": "[*]Modified *.demca saving to use relative path (relative to *.demca file not project file). Importers try first path relative to *.demca file and if not found relative to project file."
+        },
+        {
+          "feature": "[*]Added support to import/export stage directions *.stagedirs.xml file."
+        },
+        {
+          "bug": "[*]Fixed potential null pointer exception if trying to record with uncalibrated character."
+        },
+        {
+          "feature": "[*]Added support to change object class."
+        },
+        {
+          "feature": "[*]Improved project panel performance while selecting objects."
+        },
+        {
+          "feature": "[*]Improving overall UI performance."
+        },
+        {
+          "feature": "[*]Added loading-character model to better tell the user he has to wait for character resources to be loaded."
+        },
+        {
+          "feature": "[*]Improved world spawn character handling."
+        },
+        {
+          "bug": "[*]Fixed recreating object (due to stub property changes) deleting attachments."
+        },
+        {
+          "feature": "[*]Improved GrabAttach behavior to support disabling colliding with actor limbs, prevent actor grabing object and locking hand rotation while grabbing."
+        },
+        {
+          "feature": "[*]Added support to reset position, orientation and velocities for physics simulated objects."
+        },
+        {
+          "feature": "[*]Added some more hand poses for GrabAttach behavior. Use Component behavior panel to select models to closer resemble the grab motion the actor has to perform."
+        },
+        {
+          "feature": "[*]Added support to auto-load project by adding it to the command line. Path has to be relative to DEMoCap config directory."
+        }
+      ]
+    },
+    {
+      "title": "DEMoCap 0.8 Release",
+      "date": "2022-08-14 11:57:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4607764924161401618",
+      "content": "[list]\n[*]Improved stereo rendering performance for modern GPUs. Two optimizations are automatically used depending on GPU support (\"Dual Rendering\", \"Geometry Shader Duplication\"). More performance improvements to come in the future.\n[*]Added \"GrabObject\" object class to make objects grabbable from the UI. See [url=https://developer.dragondreams.ch/wiki/doku.php/democap:ocls_grabobject]Wiki Page[/url] and video below.\n[*]Added interaction bubble support. Gives quick access to important actions and properties. See [url=https://developer.dragondreams.ch/wiki/doku.php/democap:interactions#interaction_bubbles]Wiki Page[/url].\n[*]Removed the requirement to select CapturedObject to record to. Now you can select the \"Capturable\" object from combo box in the Session panel. This decouples the selection state from the capturable state improving workflow.\n[*]Added support to record over existing animations breaking playback once interacting with objects.\n[*]Camera option \"Enable GI\" is now disabled by default to improve performance.\n[*]Added support to automatically stop recording if the end of the existing recording is hit.\n[*]Various bug fixes.\n[/list]\n\nUnreal Engine Live-Link Plugin now officially available in market place too: [url=https://www.unrealengine.com/marketplace/en-US/product/democap-live-link]DEMoCap Live-Link Plugin[/url].\n\n[previewyoutube=4L8bOlZISug;full][/previewyoutube]",
+      "key": "1939210::9f4205423e98bc395ce1e673ea9896e9dc358882",
+      "tags": [
+        {
+          "feature": "Improved stereo rendering performance for modern GPUs. Two optimizations are automatically used depending on GPU support (\"Dual Rendering\", \"Geometry Shader Duplication\"). More performance improvements to come in the future."
+        },
+        {
+          "feature": "Added \"GrabObject\" object class to make objects grabbable from the UI. See [url=https://developer.dragondreams.ch/wiki/doku.php/democap:ocls_grabobject]Wiki Page[/url] and video below."
+        },
+        {
+          "feature": "Added interaction bubble support. Gives quick access to important actions and properties. See [url=https://developer.dragondreams.ch/wiki/doku.php/democap:interactions#interaction_bubbles]Wiki Page[/url]."
+        },
+        {
+          "feature": "Removed the requirement to select CapturedObject to record to. Now you can select the \"Capturable\" object from combo box in the Session panel. This decouples the selection state from the capturable state improving workflow."
+        },
+        {
+          "feature": "Added support to record over existing animations breaking playback once interacting with objects."
+        },
+        {
+          "balance_change": "Camera option \"Enable GI\" is now disabled by default to improve performance."
+        },
+        {
+          "feature": "Added support to automatically stop recording if the end of the existing recording is hit."
+        },
+        {
+          "bug": "Various bug fixes."
+        }
+      ]
+    },
+    {
+      "title": "DEMoCap 0.7 Release",
+      "date": "2022-07-14 16:26:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144686363915",
+      "content": "See the [url=https://developer.dragondreams.ch/wiki/doku.php/democap:blender_democaptools]DEMoCap Wiki[/url] for the installation instructions and usage description of the tool.\n\nUpdates in DEMoCap 0.7:\n[list]\n[*]Drag[en]gine updated to version 1.13.2 including various bug fixes and improvements\n[*]UI improvements\n[*]Blender script improvements\n[*]Prevent application closing on broken character resources\n[*]Network access support to stream motion capture data\n[*]Unreal Live Link plugin to connect to DEMoCap to receive motion capture data\n[*]Support to capture actor transform (position, orientation, moving actor)\n[*]Support for object capturing (bones and transform)\n[*]Support to temporarily disable recording for characters/objects\n[*]Support to grab physics objects in live mode and recording mode\n[/list]\n\nThe [url=https://www.unrealengine.com/marketplace/en-US/product/democap-live-link]Unreal Live Link Plugin[/url] will be available soon (technical problems with market place). Documentation for the plugin usage you can find here: [url=https://developer.dragondreams.ch/wiki/doku.php/democap:plugin_unreallivelink]Wiki Page[/url]\n\nObject Capture Support\n[previewyoutube=Bl7C3yAVfb4;full][/previewyoutube]\n\nUnreal Live Link Support\n[previewyoutube=v4Hdfiv3_UY;full][/previewyoutube]",
+      "key": "1939210::bf1d27237ad28ab70adedec8016b4cd7a2b677ad",
+      "tags": [
+        {
+          "bug": "- Prevent application closing on broken character resources"
+        },
+        {
+          "feature": "- Network access support to stream motion capture data"
+        },
+        {
+          "feature": "- Unreal Live Link plugin to connect to DEMoCap to receive motion capture data"
+        },
+        {
+          "feature": "- Support to capture actor transform (position, orientation, moving actor)"
+        },
+        {
+          "feature": "- Support for object capturing (bones and transform)"
+        },
+        {
+          "feature": "- Support to temporarily disable recording for characters/objects"
+        },
+        {
+          "feature": "- Support to grab physics objects in live mode and recording mode"
+        }
+      ]
+    },
+    {
+      "title": "DEMoCap Blender Tools",
+      "date": "2022-04-22 06:28:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348797798078589718",
+      "content": "[url=https://github.com/LordOfDragons/democap/releases/download/v0.6/blender-democap-tools-0.6.zip]DEMoCap Blender Tools Download[/url]\n\nSee the [url=https://developer.dragondreams.ch/wiki/doku.php/democap:blender_democaptools]DEMoCap Wiki[/url] for the installation instructions and usage description of the tool.\n\nUsing this tool you can:\n[list]\n[*]Browse DEMoCap motion captures (*.demca)\n[*]Show capture informations like Character Profile, Character Configuration and more\n[*]Import captured animation, captured device rig and captured device animations from the panel\n[*]Add correction bones to post process animations\n[*]Align capture bones with previously copied bone state to ensure perfect blending between base animation and motion captured animation\n[/list]\n\nThe video shows the usage of correction bones.\n[previewyoutube=tlp5mZsl66Y;leftthumb][/previewyoutube]",
+      "key": "1939210::9440fbd0e4e785069a7dbf40885394321a743417",
+      "tags": [
+        {
+          "feature": "- Browse DEMoCap motion captures (*.demca)"
+        },
+        {
+          "feature": "- Show capture informations like Character Profile, Character Configuration and more"
+        },
+        {
+          "feature": "- Import captured animation, captured device rig and captured device animations from the panel"
+        },
+        {
+          "feature": "- Add correction bones to post process animations"
+        },
+        {
+          "feature": "- Align capture bones with previously copied bone state to ensure perfect blending between base animation and motion captured animation"
+        }
+      ]
+    }
+  ]
+}

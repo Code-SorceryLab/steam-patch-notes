@@ -1,0 +1,1398 @@
+{
+  "appId": "248170",
+  "count": 22,
+  "notes": [
+    {
+      "title": "#MadeWithFusion game Outbuddies released",
+      "date": "2019-10-17 14:00:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2404285581861487972",
+      "content": "[previewyoutube=h2dlQJyOLu8;full][/previewyoutube]\n\n#MadeWithFusion game Outbuddies released this week on Steam, GOG and other PC platforms! Clickteam is also helping to bring it Consoles as well! \n\nAbout the game\n\nEnter Bahlam, a sunken fortress of the Old Gods, located deep in the South Atlantic Ocean. Maritime archaeologist and adventurer Nikolay Bernstein and his life support droid Buddy must combine their unique skills to overcome Bahlam\u2019s hostile creatures, uncover its secrets and find their way home. \n\nFeatures\n\n[list]\n[*] Explore an open vibrant fantasy world\n[*] Real Metroidvania gameplay with lots of gear, puzzles and Easter eggs\n[*] Unique dual-hero scheme with local Co-Op support\n[*] Epic boss battles & believable enemy AIs\n[*] Intriguing narrative and memorable characters\n[/list]\n\nSteam: https://store.steampowered.com/app/1083310/OUTBUDDIES/\n\n",
+      "key": "248170::8277d40ec9724d14e1afa494f9c798e1f92ad292",
+      "tags": [
+        {
+          "feature": "Explore an open vibrant fantasy world"
+        },
+        {
+          "feature": "Real Metroidvania gameplay with lots of gear, puzzles and Easter eggs"
+        },
+        {
+          "feature": "Unique dual-hero scheme with local Co-Op support"
+        },
+        {
+          "feature": "Epic boss battles & believable enemy AIs"
+        },
+        {
+          "feature": "Intriguing narrative and memorable characters"
+        }
+      ]
+    },
+    {
+      "title": "Memory Performance Update - Build 291.5",
+      "date": "2018-06-28 13:30:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2499943313656026659",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/5306341/7e7398f192260db4485bb0e8a3e6a65cf346c230.jpg[/img]\r\n\r\nBuild 291.5 brings with it a huge performance boost in how we handle memory & a ton of other fixes! Don't forget Fusion and all of it's DLC is up to 66% off for the Steam Summer sale as well!\r\n\r\n\r\nBuild 291.5 - Change log\r\n\r\nEditor\r\n\r\n- General: memory is now automatically purged more often, this may help for editing big applications.\r\n- Frame editor: incorrect font size when you edit a string object and the zoom coefficient is not 100%.\r\n- Event editor: when you edit a collision between objects condition, the previously selected objects are now always displayed even if their name don't match the search string.\r\n- Behavior/Global events: when editing a Create Object action the Layer combo box was limited to 10.\r\n- Picture editor: when you export an animation as sprite sheet the \"to/from\" frame numbers were ignored.\r\n- Date & Time object: the minimum size (in the Frame editor) was not updated when the clock type was modified.\r\n- Counter object: global horizontal bar counters not updated correctly in other frames.\r\n- Less memory used at build time for HTML5 and UWP build types.\r\n\r\n\r\nWindows runtime\r\n\r\n- New \"Number of back buffers\" option (in the Runtime / Display properties of the application, in Direct3D9 mode only) that allows you to get a better performance if v-sync is selected. Back buffers are hidden screens waiting for being shown on screen. By default old applications use one back buffer. Set this number to 2 or 3 to increase the number of screen buffers. Pros: this should reduce micro-stuttering. Cons: this uses more memory (8 Mb of video RAM per buffer on a HD screen) and increases the latency (1 frame delay per buffer, i.e. a change will be displayed on screen 1 or 2 frames later).\r\n- New \"Use high performance GPU\" (in the Windows properties of the application) for stand-alone applications (no effect when you run the application from CF 2.5). When this option is selected, if you run your stand-alone app on a machine with 2 graphic cards (for example laptops using both a standard Intel HD card and a NVidia/ATI dedicated card), in theory your application will use the GPU that has the better performance. If this option is not selected, the graphic driver may decide to use the default GPU, this can cause performance issues for big applications.\r\n- Better memory handling for applications that use lot of video RAM.\r\n- Active object: the Force Animation Frame action is now protected against invalid frame numbers.\r\n- Active object: images could be swapped in some cases after executing a Load image into animation frame action and then jumping to a frame with the same object.\r\n- Active Picture object: protection against long filenames.\r\n- Force Animation Frame is now protected against invalid frame numbers.\r\n- Datagrid object: now correctly resized when the \"resize display to fill window size\" option is selected.\r\n- Datagrid object: Load Ascii and Save Ascii now support the input/output character encoding options of the application.\r\n- Edit box object: refresh issue in scrolling apps when other controls are used in the same frame.\r\n- Get object (and any object triggering events from multiple threads): triggered events could cause a crash if the object is in a sub-application.\r\n- Get object: crash if you use the Set Timeout function and exit the frame before the specified time.\r\n- INI object: couldn't write to INI file after loading a frame position.\r\n- Layer object: active objects misplaced after Set X/Y Coefficient actions.\r\n- Layer object: crash in Get Level expression when the frame contains a Rope and Chain object.\r\n- Physics Particle: For Each Particle action could corrupt memory.\r\n- Physics Rope and Chain object: crash when you close the application if a Rope and Chain object was created and the application was paused at the same time.\r\n- Sub-app object: the mouse cursor is no longer shown when you pause the sub-application (unless it contains an object with a mouse movement).\r\n- Window control object: content window not centered after you use the Set Frame Window Height function.\r\n- Memory leak in Mosaic transition.\r\n- In frames with lots of objects, the memory used by the initialisation of the event engine at start of frame could be high.\r\n- Crash at runtime if an Android object is used in a sub-application.\r\n\r\n\r\nAll runtimes\r\n\r\n- Physics Rope And Chain object: position of elements not updated when the engine is paused.\r\n\r\n\r\nAll non-Windows runtimes\r\n\r\n- Static movement: collisions weren't updated at the end of an animation, causing a delay for some collisions.\r\n\r\n\r\nAndroid runtime\r\n\r\n- You can now select API's 26 and 27 as target APIs.\r\n- New version of Google Play Lib, 11.0.2\r\n- Improved sound routines for new devices.\r\n- Active/Background System Box objects: now support multi/single line and ellipsis options.\r\n- AdMob object: now supports rewarded videos\r\n- Admob object: protection to avoid a crash when you do not set the campaign ID and request for an Ads.\r\n- AndroidPlus: now supports toast messages and expressions to get action bar height and color.\r\n- Android Object: new functions to handle and detect Game controllers\r\n- Android Object: new functions to disable and enable main menu, allows to prevent menu shortcut from being triggered by controllers.\r\n- Android Object: re-coded phone ID to avoid crash on some devices.\r\n- Android object: rooted device detection was updated to new ways of rooting (thanks StingRay).\r\n- Android OBB object: may fail on some devices if write/read permission are not set.\r\n- Charboost Object: updated to SDK v7.01\r\n- Date and Time object: Compare to time is now working correctly at start.\r\n- Edit Object: better size.\r\n- File Object: protection when directory does not exist.\r\n- GPG object: from the build 291 you no longer need to have \"save game\" set in game services to make the GPG object to work. Use it only when you use the cloud object and really need to save information.\r\n- GPG Connect object: new Disable GPG autoconnect function.\r\n- InApp Android object: fixed purchase product error (http://bugbox.clickteam.com/issues/4628).\r\n- InputType object: new actions for a better control of type of keyboard and IME, see help of this object. Note: both keyboard type and IME options must be defined if you use these new actions.\r\n- Leadbolt Object: updated to SDK 8.3\r\n- Lives object: no negative lives allowed anymore. \r\n- Microphone Object: was recoded to handle correctly events during process (available in Clickstore).\r\n- Multiple Touch object: nopw remembers the last touch even after you release it (http://bugbox.clickteam.com/issues/4704)\r\n- Video Android object: new condition \"On Video Prepared\", triggered when there is enough data to start playing (do not confuse this with \"On Video at start\").\r\n- The Android runtime now works on NVIDIA SHIELD and regular devices with the Android Controller object available in Clickstore.\r\n- Supports extensions with space characters in their names.\r\n\r\n\r\niOS runtime\r\n\r\n- Conflict between scrolling actions and other actions that refresh the screen like Set Frame Background Color.\r\n- Active objects out of the window could be incorrectly deactivated in some cases.\r\n- AdMob object: now supports rewarded videos, please use the latest iOS SDK.\r\n- Admob object: protection to avoid a crash when you do not set the campaign ID and request for an Ads.\r\n- Edit Box object: Set focus now works correctly.\r\n- Get Object: added detection of non server connection due to hardware in device.\r\n- iOS Plus object: new Rate application action (available in Clickstore)\r\n- iOS Store object: fixed a comparison that caused issues (http://bugbox.clickteam.com/issues/4583, http://bugbox.clickteam.com/issues/4575)\r\n- iOS Store object: changed the transaction identifier to store receipt as suggested by AppStore Validating Receipts\r\n- Layer object: objects cut off or disappearing when you move a layer.\r\n- List object: Get Line Data didn't work correctly.\r\n- Multiple Touch object: hot spot not taken into account for extensions.\r\n- SubApp object: \"Stretch frame to object size\" didn't work correctly (http://bugbox.clickteam.com/issues/4731)\r\n- SubApp object: incorrect position during scrollings (http://bugbox.clickteam.com/issues/4618)\r\n- Sub-app object: problem with \"stretch\" option.\r\n- Webview object: was not hidden/shown when used in a sub-application, also fixed optical zoom and improvement in Get Text from ID and Classes. \r\n\r\n\r\nHTML5 runtime\r\n\r\n- HWML5 apps using mosaic images per frame: the build process should be faster and the generated HTML5 app should be smaller.\r\n- Bouncing Ball movement: problem with coordinates less than zero (this problem is caused by a fix made in the build 290).\r\n- \"Anti-aliasing when resizing\" ignored in preloader frames.\r\n- Combobox and List objects: Get Line Data now returns a number instead of a string.\r\n- HTML5 Video object: Set Volume not working.\r\n- Get Object: added missing timeout feature. \r\n- INI object: UTF-8 option not correctly managed.\r\n- Combo Box object: Insert function broken.\r\n- List object: Find String was case sensitive unlike the Windows runtime and Find String Exact didn't work unless the parameter string was lower case.\r\n- List object: Get Text now returns simple text instead of HTML text.\r\n- Multiple Touch object: didn't work with Microsoft Edge.\r\n- Subapp object: \"modal\" option not handled.\r\n- System Box objects: crash when using the container / attach to container options.\r\n- The \"iOS: wait for a touch to enable sounds\" option was ignored, i.e. the text was always displayed on iOS devices. If you unselect this option, the text is not displayed anymore, but you have to either tell users they have to touch the screen, or force them to do so before your app plays sounds. Sounds are enabled in both cases as soon as the user touches the screen.\r\n- Chrome policy change: sounds are now disabled by default and can be enabled only from a user gesture. In this build sounds are automatically enabled when the user clicks in the frame, or clicks a button. In your applications, you'll have to either add a button to \"do something\" (like go to the next frame), or add a text that says \"Please click to hear sounds\". Note: Chrome has semi-canceled this new policy but it will be back at some point.\r\n\r\nUWP runtime\r\n\r\n- New XboxConnect object: allows you to connect your app to Xbox Live for Xbox app submissions.\r\n- UWP apps using mosaic images per frame: the build process should be faster and the generated UWP app should be smaller.\r\n- Bouncing Ball movement: problem with coordinates less than zero (this problem is caused by a fix made in the build 290).\r\n- Combobox and List objects: Get Line Data now returns a number instead of a string.\r\n- Combo Box object: Insert function broken.\r\n- List object: Find String was case sensitive unlike the Windows runtime and Find String Exact didn't work unless the parameter string was lower case.\r\n- List object: Get Text now returns simple text instead of HTML text.\r\n- List object: Get Line Data didn't work unless the list was hidden.\r\n- HTML5 Video object: Set Volume not working.\r\n- Quick Backdrop object: random black lines between tiles when the window is resized.\r\n- Subapp object: \"modal\" option not handled.\r\n- System Box objects: crash when using the container / attach to container options.\r\n- Xbox Gamepad: on Xbox One, button B was causing the application to quit.\r\n- Xbox Gamepad: not working in sub-apps.\r\n\r\n\r\nSWF runtime\r\n\r\n- Object positions messed up when you scroll more than 32768 pixels.\r\n- Get Object: added missing timeout feature. \r\n\r\n\r\nMac runtime\r\n\r\n- \"No thick frame\" option not correctly handled.\r\n- Is Channel Playing / Paused didn't work for channel #1.\r\n- Crash with Ogg sounds.\r\n- Active objects out of the window could be incorrectly deactivated in some cases.\r\n- Conflict between scrolling actions and other actions that refresh the screen like Set Frame Background Color.\r\n- ComboBox and List objects: enable/disable didn't work.\r\n- ComboBox and List objects: incorrect current line index if no selection\r\n- ComboBox and List objects: Set Current Line didn't work correctly with negative indexes.\r\n- ComboBox and List objects: FindString didn't work correctly with an empty string.\r\n- ComboBox and List objects: Get Line Data didn't work correctly.\r\n- Layer object: objects cut off or disappearing when you move a layer.\r\n- Sub-app object: problem with \"stretch\" option.\r\n- Window control object: crash in smoe cases with sub-apps.",
+      "key": "248170::180a492cab443931fa3bbe2ae0671acd6d72b703",
+      "tags": [
+        {
+          "bug": "- Frame editor: incorrect font size when you edit a string object and the zoom coefficient is not 100%."
+        },
+        {
+          "bug": "- Event editor: when you edit a collision between objects condition, the previously selected objects are now always displayed even if their name don't match the search string."
+        },
+        {
+          "bug": "- Behavior/Global events: when editing a Create Object action the Layer combo box was limited to 10."
+        },
+        {
+          "bug": "- Picture editor: when you export an animation as sprite sheet the \"to/from\" frame numbers were ignored."
+        },
+        {
+          "bug": "- Date & Time object: the minimum size (in the Frame editor) was not updated when the clock type was modified."
+        },
+        {
+          "bug": "- Counter object: global horizontal bar counters not updated correctly in other frames."
+        },
+        {
+          "bug": "- Less memory used at build time for HTML5 and UWP build types."
+        },
+        {
+          "bug": "- Active object: the Force Animation Frame action is now protected against invalid frame numbers."
+        },
+        {
+          "bug": "- Active object: images could be swapped in some cases after executing a Load image into animation frame action and then jumping to a frame with the same object."
+        },
+        {
+          "bug": "- Active Picture object: protection against long filenames."
+        },
+        {
+          "bug": "- Force Animation Frame is now protected against invalid frame numbers."
+        },
+        {
+          "bug": "- Datagrid object: now correctly resized when the \"resize display to fill window size\" option is selected."
+        },
+        {
+          "bug": "- Datagrid object: Load Ascii and Save Ascii now support the input/output character encoding options of the application."
+        },
+        {
+          "bug": "- Edit box object: refresh issue in scrolling apps when other controls are used in the same frame."
+        },
+        {
+          "bug": "- Get object (and any object triggering events from multiple threads): triggered events could cause a crash if the object is in a sub-application."
+        },
+        {
+          "bug": "- Get object: crash if you use the Set Timeout function and exit the frame before the specified time."
+        },
+        {
+          "bug": "- INI object: couldn't write to INI file after loading a frame position."
+        },
+        {
+          "bug": "- Layer object: active objects misplaced after Set X/Y Coefficient actions."
+        },
+        {
+          "bug": "- Layer object: crash in Get Level expression when the frame contains a Rope and Chain object."
+        },
+        {
+          "bug": "- Physics Particle: For Each Particle action could corrupt memory."
+        },
+        {
+          "bug": "- Physics Rope and Chain object: crash when you close the application if a Rope and Chain object was created and the application was paused at the same time."
+        },
+        {
+          "bug": "- Sub-app object: the mouse cursor is no longer shown when you pause the sub-application (unless it contains an object with a mouse movement)."
+        },
+        {
+          "bug": "- Window control object: content window not centered after you use the Set Frame Window Height function."
+        },
+        {
+          "bug": "- Memory leak in Mosaic transition."
+        },
+        {
+          "bug": "- In frames with lots of objects, the memory used by the initialisation of the event engine at start of frame could be high."
+        },
+        {
+          "bug": "- Crash at runtime if an Android object is used in a sub-application."
+        },
+        {
+          "bug": "- Physics Rope And Chain object: position of elements not updated when the engine is paused."
+        },
+        {
+          "bug": "- Static movement: collisions weren't updated at the end of an animation, causing a delay for some collisions."
+        },
+        {
+          "bug": "- You can now select API's 26 and 27 as target APIs."
+        },
+        {
+          "bug": "- New version of Google Play Lib, 11.0.2"
+        },
+        {
+          "bug": "- Improved sound routines for new devices."
+        },
+        {
+          "bug": "- Active/Background System Box objects: now support multi/single line and ellipsis options."
+        },
+        {
+          "bug": "- AdMob object: now supports rewarded videos"
+        },
+        {
+          "bug": "- Admob object: protection to avoid a crash when you do not set the campaign ID and request for an Ads."
+        },
+        {
+          "bug": "- AndroidPlus: now supports toast messages and expressions to get action bar height and color."
+        },
+        {
+          "bug": "- Android Object: new functions to handle and detect Game controllers"
+        },
+        {
+          "bug": "- Android Object: new functions to disable and enable main menu, allows to prevent menu shortcut from being triggered by controllers."
+        },
+        {
+          "bug": "- Android Object: re-coded phone ID to avoid crash on some devices."
+        },
+        {
+          "bug": "- Android object: rooted device detection was updated to new ways of rooting (thanks StingRay)."
+        },
+        {
+          "bug": "- Android OBB object: may fail on some devices if write/read permission are not set."
+        },
+        {
+          "bug": "- Charboost Object: updated to SDK v7.01"
+        },
+        {
+          "bug": "- Date and Time object: Compare to time is now working correctly at start."
+        },
+        {
+          "bug": "- Edit Object: better size."
+        },
+        {
+          "bug": "- File Object: protection when directory does not exist."
+        },
+        {
+          "bug": "- GPG object: from the build 291 you no longer need to have \"save game\" set in game services to make the GPG object to work. Use it only when you use the cloud object and really need to save information."
+        },
+        {
+          "bug": "- GPG Connect object: new Disable GPG autoconnect function."
+        },
+        {
+          "bug": "- InApp Android object: fixed purchase product error (http://bugbox.clickteam.com/issues/4628)."
+        },
+        {
+          "bug": "- InputType object: new actions for a better control of type of keyboard and IME, see help of this object. Note: both keyboard type and IME options must be defined if you use these new actions."
+        },
+        {
+          "bug": "- Leadbolt Object: updated to SDK 8.3"
+        },
+        {
+          "bug": "- Lives object: no negative lives allowed anymore."
+        },
+        {
+          "bug": "- Microphone Object: was recoded to handle correctly events during process (available in Clickstore)."
+        },
+        {
+          "bug": "- Multiple Touch object: nopw remembers the last touch even after you release it (http://bugbox.clickteam.com/issues/4704)"
+        },
+        {
+          "bug": "- Video Android object: new condition \"On Video Prepared\", triggered when there is enough data to start playing (do not confuse this with \"On Video at start\")."
+        },
+        {
+          "bug": "- The Android runtime now works on NVIDIA SHIELD and regular devices with the Android Controller object available in Clickstore."
+        },
+        {
+          "bug": "- Supports extensions with space characters in their names."
+        },
+        {
+          "bug": "- Conflict between scrolling actions and other actions that refresh the screen like Set Frame Background Color."
+        },
+        {
+          "bug": "- Active objects out of the window could be incorrectly deactivated in some cases."
+        },
+        {
+          "bug": "- AdMob object: now supports rewarded videos, please use the latest iOS SDK."
+        },
+        {
+          "bug": "- Admob object: protection to avoid a crash when you do not set the campaign ID and request for an Ads."
+        },
+        {
+          "bug": "- Edit Box object: Set focus now works correctly."
+        },
+        {
+          "bug": "- Get Object: added detection of non server connection due to hardware in device."
+        },
+        {
+          "bug": "- iOS Plus object: new Rate application action (available in Clickstore)"
+        },
+        {
+          "bug": "- iOS Store object: fixed a comparison that caused issues (http://bugbox.clickteam.com/issues/4583, http://bugbox.clickteam.com/issues/4575)"
+        },
+        {
+          "bug": "- iOS Store object: changed the transaction identifier to store receipt as suggested by AppStore Validating Receipts"
+        },
+        {
+          "bug": "- Layer object: objects cut off or disappearing when you move a layer."
+        },
+        {
+          "bug": "- List object: Get Line Data didn't work correctly."
+        },
+        {
+          "bug": "- Multiple Touch object: hot spot not taken into account for extensions."
+        },
+        {
+          "bug": "- SubApp object: \"Stretch frame to object size\" didn't work correctly (http://bugbox.clickteam.com/issues/4731)"
+        },
+        {
+          "bug": "- SubApp object: incorrect position during scrollings (http://bugbox.clickteam.com/issues/4618)"
+        },
+        {
+          "bug": "- Sub-app object: problem with \"stretch\" option."
+        },
+        {
+          "bug": "- Webview object: was not hidden/shown when used in a sub-application, also fixed optical zoom and improvement in Get Text from ID and Classes."
+        },
+        {
+          "bug": "- HWML5 apps using mosaic images per frame: the build process should be faster and the generated HTML5 app should be smaller."
+        },
+        {
+          "bug": "- Bouncing Ball movement: problem with coordinates less than zero (this problem is caused by a fix made in the build 290)."
+        },
+        {
+          "bug": "- \"Anti-aliasing when resizing\" ignored in preloader frames."
+        },
+        {
+          "bug": "- Combobox and List objects: Get Line Data now returns a number instead of a string."
+        },
+        {
+          "bug": "- HTML5 Video object: Set Volume not working."
+        },
+        {
+          "bug": "- Get Object: added missing timeout feature."
+        },
+        {
+          "bug": "- INI object: UTF-8 option not correctly managed."
+        },
+        {
+          "bug": "- Combo Box object: Insert function broken."
+        },
+        {
+          "bug": "- List object: Find String was case sensitive unlike the Windows runtime and Find String Exact didn't work unless the parameter string was lower case."
+        },
+        {
+          "bug": "- List object: Get Text now returns simple text instead of HTML text."
+        },
+        {
+          "bug": "- Multiple Touch object: didn't work with Microsoft Edge."
+        },
+        {
+          "bug": "- Subapp object: \"modal\" option not handled."
+        },
+        {
+          "bug": "- System Box objects: crash when using the container / attach to container options."
+        },
+        {
+          "bug": "- The \"iOS: wait for a touch to enable sounds\" option was ignored, i.e. the text was always displayed on iOS devices. If you unselect this option, the text is not displayed anymore, but you have to either tell users they have to touch the screen, or force them to do so before your app plays sounds. Sounds are enabled in both cases as soon as the user touches the screen."
+        },
+        {
+          "bug": "- Chrome policy change: sounds are now disabled by default and can be enabled only from a user gesture. In this build sounds are automatically enabled when the user clicks in the frame, or clicks a button. In your applications, you'll have to either add a button to \"do something\" (like go to the next frame), or add a text that says \"Please click to hear sounds\". Note: Chrome has semi-canceled this new policy but it will be back at some point."
+        },
+        {
+          "bug": "- New XboxConnect object: allows you to connect your app to Xbox Live for Xbox app submissions."
+        },
+        {
+          "bug": "- UWP apps using mosaic images per frame: the build process should be faster and the generated UWP app should be smaller."
+        },
+        {
+          "bug": "- Bouncing Ball movement: problem with coordinates less than zero (this problem is caused by a fix made in the build 290)."
+        },
+        {
+          "bug": "- Combobox and List objects: Get Line Data now returns a number instead of a string."
+        },
+        {
+          "bug": "- Combo Box object: Insert function broken."
+        },
+        {
+          "bug": "- List object: Find String was case sensitive unlike the Windows runtime and Find String Exact didn't work unless the parameter string was lower case."
+        },
+        {
+          "bug": "- List object: Get Text now returns simple text instead of HTML text."
+        },
+        {
+          "bug": "- List object: Get Line Data didn't work unless the list was hidden."
+        },
+        {
+          "bug": "- HTML5 Video object: Set Volume not working."
+        },
+        {
+          "bug": "- Quick Backdrop object: random black lines between tiles when the window is resized."
+        },
+        {
+          "bug": "- Subapp object: \"modal\" option not handled."
+        },
+        {
+          "bug": "- System Box objects: crash when using the container / attach to container options."
+        },
+        {
+          "bug": "- Xbox Gamepad: on Xbox One, button B was causing the application to quit."
+        },
+        {
+          "bug": "- Xbox Gamepad: not working in sub-apps."
+        },
+        {
+          "bug": "- Object positions messed up when you scroll more than 32768 pixels."
+        },
+        {
+          "bug": "- Get Object: added missing timeout feature."
+        },
+        {
+          "bug": "- \"No thick frame\" option not correctly handled."
+        },
+        {
+          "bug": "- Is Channel Playing / Paused didn't work for channel #1."
+        },
+        {
+          "bug": "- Crash with Ogg sounds."
+        },
+        {
+          "bug": "- Active objects out of the window could be incorrectly deactivated in some cases."
+        },
+        {
+          "bug": "- Conflict between scrolling actions and other actions that refresh the screen like Set Frame Background Color."
+        },
+        {
+          "bug": "- ComboBox and List objects: enable/disable didn't work."
+        },
+        {
+          "bug": "- ComboBox and List objects: incorrect current line index if no selection"
+        },
+        {
+          "bug": "- ComboBox and List objects: Set Current Line didn't work correctly with negative indexes."
+        },
+        {
+          "bug": "- ComboBox and List objects: FindString didn't work correctly with an empty string."
+        },
+        {
+          "bug": "- ComboBox and List objects: Get Line Data didn't work correctly."
+        },
+        {
+          "bug": "- Layer object: objects cut off or disappearing when you move a layer."
+        },
+        {
+          "bug": "- Sub-app object: problem with \"stretch\" option."
+        },
+        {
+          "bug": "- Window control object: crash in smoe cases with sub-apps."
+        },
+        {
+          "feature": "- General: memory is now automatically purged more often, this may help for editing big applications."
+        },
+        {
+          "feature": "- Less memory used at build time for HTML5 and UWP build types."
+        },
+        {
+          "feature": "- New \"Number of back buffers\" option (in the Runtime / Display properties of the application, in Direct3D9 mode only) that allows you to get a better performance if v-sync is selected. Back buffers are hidden screens waiting for being shown on screen. By default old applications use one back buffer. Set this number to 2 or 3 to increase the number of screen buffers. Pros: this should reduce micro-stuttering. Cons: this uses more memory (8 Mb of video RAM per buffer on a HD screen) and increases the latency (1 frame delay per buffer, i.e. a change will be displayed on screen 1 or 2 frames later)."
+        },
+        {
+          "feature": "- New \"Use high performance GPU\" (in the Windows properties of the application) for stand-alone applications (no effect when you run the application from CF 2.5). When this option is selected, if you run your stand-alone app on a machine with 2 graphic cards (for example laptops using both a standard Intel HD card and a NVidia/ATI dedicated card), in theory your application will use the GPU that has the better performance. If this option is not selected, the graphic driver may decide to use the default GPU, this can cause performance issues for big applications."
+        },
+        {
+          "feature": "- Better memory handling for applications that use lot of video RAM."
+        },
+        {
+          "feature": "- Datagrid object: Load Ascii and Save Ascii now support the input/output character encoding options of the application."
+        },
+        {
+          "feature": "- GPG object: from the build 291 you no longer need to have \"save game\" set in game services to make the GPG object to work. Use it only when you use the cloud object and really need to save information."
+        },
+        {
+          "feature": "- InputType object: new actions for a better control of type of keyboard and IME, see help of this object. Note: both keyboard type and IME options must be defined if you use these new actions."
+        },
+        {
+          "feature": "- Multiple Touch object: nopw remembers the last touch even after you release it (http://bugbox.clickteam.com/issues/4704)"
+        },
+        {
+          "feature": "- Video Android object: new condition \"On Video Prepared\", triggered when there is enough data to start playing (do not confuse this with \"On Video at start\")."
+        },
+        {
+          "feature": "- The Android runtime now works on NVIDIA SHIELD and regular devices with the Android Controller object available in Clickstore."
+        },
+        {
+          "feature": "- Supports extensions with space characters in their names."
+        },
+        {
+          "feature": "- AdMob object: now supports rewarded videos, please use the latest iOS SDK."
+        },
+        {
+          "feature": "- iOS Plus object: new Rate application action (available in Clickstore)"
+        },
+        {
+          "feature": "- iOS Store object: changed the transaction identifier to store receipt as suggested by AppStore Validating Receipts"
+        },
+        {
+          "feature": "- Webview object: was not hidden/shown when used in a sub-application, also fixed optical zoom and improvement in Get Text from ID and Classes."
+        },
+        {
+          "feature": "- HWML5 apps using mosaic images per frame: the build process should be faster and the generated HTML5 app should be smaller."
+        },
+        {
+          "feature": "- Get Object: added missing timeout feature."
+        },
+        {
+          "feature": "- List object: Get Text now returns simple text instead of HTML text."
+        },
+        {
+          "feature": "- New XboxConnect object: allows you to connect your app to Xbox Live for Xbox app submissions."
+        },
+        {
+          "feature": "- UWP apps using mosaic images per frame: the build process should be faster and the generated UWP app should be smaller."
+        },
+        {
+          "feature": "- List object: Get Text now returns simple text instead of HTML text."
+        },
+        {
+          "feature": "- Get Object: added missing timeout feature."
+        },
+        {
+          "balance_change": "- General: memory is now automatically purged more often, this may help for editing big applications."
+        },
+        {
+          "balance_change": "- Less memory used at build time for HTML5 and UWP build types."
+        },
+        {
+          "balance_change": "- New \"Number of back buffers\" option (in the Runtime / Display properties of the application, in Direct3D9 mode only) that allows you to get a better performance if v-sync is selected. Back buffers are hidden screens waiting for being shown on screen. By default old applications use one back buffer. Set this number to 2 or 3 to increase the number of screen buffers. Pros: this should reduce micro-stuttering. Cons: this uses more memory (8 Mb of video RAM per buffer on a HD screen) and increases the latency (1 frame delay per buffer, i.e. a change will be displayed on screen 1 or 2 frames later)."
+        },
+        {
+          "balance_change": "- New \"Use high performance GPU\" (in the Windows properties of the application) for stand-alone applications (no effect when you run the application from CF 2.5). When this option is selected, if you run your stand-alone app on a machine with 2 graphic cards (for example laptops using both a standard Intel HD card and a NVidia/ATI dedicated card), in theory your application will use the GPU that has the better performance. If this option is not selected, the graphic driver may decide to use the default GPU, this can cause performance issues for big applications."
+        },
+        {
+          "balance_change": "- Better memory handling for applications that use lot of video RAM."
+        },
+        {
+          "balance_change": "- Datagrid object: Load Ascii and Save Ascii now support the input/output character encoding options of the application."
+        },
+        {
+          "balance_change": "- GPG object: from the build 291 you no longer need to have \"save game\" set in game services to make the GPG object to work. Use it only when you use the cloud object and really need to save information."
+        },
+        {
+          "balance_change": "- InputType object: new actions for a better control of type of keyboard and IME, see help of this object. Note: both keyboard type and IME options must be defined if you use these new actions."
+        },
+        {
+          "balance_change": "- Multiple Touch object: nopw remembers the last touch even after you release it (http://bugbox.clickteam.com/issues/4704)"
+        },
+        {
+          "balance_change": "- Video Android object: new condition \"On Video Prepared\", triggered when there is enough data to start playing (do not confuse this with \"On Video at start\")."
+        },
+        {
+          "balance_change": "- The Android runtime now works on NVIDIA SHIELD and regular devices with the Android Controller object available in Clickstore."
+        },
+        {
+          "balance_change": "- Supports extensions with space characters in their names."
+        },
+        {
+          "balance_change": "- AdMob object: now supports rewarded videos, please use the latest iOS SDK."
+        },
+        {
+          "balance_change": "- iOS Plus object: new Rate application action (available in Clickstore)"
+        },
+        {
+          "balance_change": "- iOS Store object: changed the transaction identifier to store receipt as suggested by AppStore Validating Receipts"
+        },
+        {
+          "balance_change": "- Webview object: was not hidden/shown when used in a sub-application, also fixed optical zoom and improvement in Get Text from ID and Classes."
+        },
+        {
+          "balance_change": "- HWML5 apps using mosaic images per frame: the build process should be faster and the generated HTML5 app should be smaller."
+        },
+        {
+          "balance_change": "- Get Object: added missing timeout feature."
+        },
+        {
+          "balance_change": "- List object: Get Text now returns simple text instead of HTML text."
+        },
+        {
+          "balance_change": "- New XboxConnect object: allows you to connect your app to Xbox Live for Xbox app submissions."
+        },
+        {
+          "balance_change": "- UWP apps using mosaic images per frame: the build process should be faster and the generated UWP app should be smaller."
+        },
+        {
+          "balance_change": "- List object: Get Text now returns simple text instead of HTML text."
+        },
+        {
+          "balance_change": "- Get Object: added missing timeout feature."
+        }
+      ]
+    },
+    {
+      "title": "Anahita - Made With Fusion",
+      "date": "2017-12-26 22:06:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2284879949527006160",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/5306341/3198a62b19694df5b6cc905f761faa39b3d242d8.jpg[/img]\r\n\r\nClickteam is proud to bring to iOS, Android and Steam \"Anahita\" from #MadeWithFusion developer Mehrdad Rezaei! This light hearted hand drawn adventure game comes from the highly creative Iranian game development community. Mehrdad has worked hard to craft a excellent adventure game and would love to hear any feedback you may have!\r\n\r\nhttp://store.steampowered.com/app/707110/Anahita/\r\n\r\nAnahita loves her doll. Its been her best friend as long as she can remember. One morning Anahita awoke to find that someone stranger had stolen her precious doll! She has to find this thief and retrieve her cute and beloved doll. Help Anahita as she traverses multiple traps and puzzles in this fully hand drawn and animated adventure game. Beautiful cut scenes narrate the story as it unfolds.\r\n\r\nhttps://www.youtube.com/watch?v=98jzAlNnoM8\r\n\r\n[b]Features[/b]\r\n\r\n- 4 worlds to explore\r\n- Hand crafted smooth animations\r\n- Cartoon cutscenes\r\n- Adventure style gameplay\r\n\r\n",
+      "key": "248170::80e87193495cbb13958ddcc1aee965bfddd74389",
+      "tags": [
+        {
+          "feature": "- 4 worlds to explore"
+        },
+        {
+          "feature": "- Hand crafted smooth animations"
+        },
+        {
+          "feature": "- Cartoon cutscenes"
+        },
+        {
+          "feature": "- Adventure style gameplay"
+        }
+      ]
+    },
+    {
+      "title": "Anahita - Made With Fusion",
+      "date": "2017-12-26 22:06:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130600837",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/5306341/3198a62b19694df5b6cc905f761faa39b3d242d8.jpg[/img]\r\n\r\nClickteam is proud to bring to iOS, Android and Steam \"Anahita\" from #MadeWithFusion developer Mehrdad Rezaei! This light hearted hand drawn adventure game comes from the highly creative Iranian game development community. Mehrdad has worked hard to craft a excellent adventure game and would love to hear any feedback you may have!\r\n\r\nhttp://store.steampowered.com/app/707110/Anahita/\r\n\r\nAnahita loves her doll. Its been her best friend as long as she can remember. One morning Anahita awoke to find that someone stranger had stolen her precious doll! She has to find this thief and retrieve her cute and beloved doll. Help Anahita as she traverses multiple traps and puzzles in this fully hand drawn and animated adventure game. Beautiful cut scenes narrate the story as it unfolds.\r\n\r\nhttps://www.youtube.com/watch?v=98jzAlNnoM8\r\n\r\n[b]Features[/b]\r\n\r\n- 4 worlds to explore\r\n- Hand crafted smooth animations\r\n- Cartoon cutscenes\r\n- Adventure style gameplay\r\n\r\n",
+      "key": "248170::8e37de0f83ca2eacc41807346003036003cdcd7e",
+      "tags": [
+        {
+          "feature": "- 4 worlds to explore"
+        },
+        {
+          "feature": "- Hand crafted smooth animations"
+        },
+        {
+          "feature": "- Cartoon cutscenes"
+        },
+        {
+          "feature": "- Adventure style gameplay"
+        }
+      ]
+    },
+    {
+      "title": "VTA - Made With Fusion",
+      "date": "2017-02-21 18:16:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/75836429560625397",
+      "content": "[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/8258ce5fb82d3a2bd5ce008ea7cf9435faf0041f.jpg[/img]\r\n\r\nVincere Totus Astrum finally releases on Steam!\r\n\r\nhttp://store.steampowered.com/app/314610/\r\n\r\n[h1]ABOUT THIS GAME[/h1]\r\n\r\n\"Five empires have risen from the genetic pools of the galaxy poised to claim the stars as their own. Only one empire will prevail, will you be strong enough to \"Conquer all stars\"?\"\r\n\r\nTo Conquer all Stars is what we like to call a \"Casual 4x Strategy Game\". Prepare to conquer the known galaxy in this easy to pick fast paced game of galactic intrigue! \r\n\r\nhttps://www.youtube.com/watch?v=xA8a9uxthP0\r\n\r\nBlending galaxy conquering with quick and easy gameplay. Pick one of five races and set out to expand your one world into a vast empire. Research new techs, build colony ships, and begin to spread out, but be careful you aren't the only race on the rise. The Universe is a small place and you will have to either negotiate, trade or battle other empires into submission. Four different play modes ensure multiple ways to conduct your own galactic conquesting.\r\n\r\n[h1]FEATURES[/h1]\r\n\r\n-5 Different races to play\r\n-Fast paced research tree\r\n-Trade and diplomacy simplified\r\n-4 awesome play modes\r\n\r\n",
+      "key": "248170::cb910338dd861583f18548750a2952c62ea33e7d",
+      "tags": [
+        {
+          "feature": "-5 Different races to play"
+        },
+        {
+          "feature": "-Fast paced research tree"
+        },
+        {
+          "feature": "-Trade and diplomacy simplified"
+        },
+        {
+          "feature": "-4 awesome play modes"
+        }
+      ]
+    },
+    {
+      "title": "VTA - Made With Fusion",
+      "date": "2017-02-21 18:16:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130601744",
+      "content": "[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/8258ce5fb82d3a2bd5ce008ea7cf9435faf0041f.jpg[/img]\r\n\r\nVincere Totus Astrum finally releases on Steam!\r\n\r\nhttp://store.steampowered.com/app/314610/\r\n\r\n[h1]ABOUT THIS GAME[/h1]\r\n\r\n\"Five empires have risen from the genetic pools of the galaxy poised to claim the stars as their own. Only one empire will prevail, will you be strong enough to \"Conquer all stars\"?\"\r\n\r\nTo Conquer all Stars is what we like to call a \"Casual 4x Strategy Game\". Prepare to conquer the known galaxy in this easy to pick fast paced game of galactic intrigue! \r\n\r\nhttps://www.youtube.com/watch?v=xA8a9uxthP0\r\n\r\nBlending galaxy conquering with quick and easy gameplay. Pick one of five races and set out to expand your one world into a vast empire. Research new techs, build colony ships, and begin to spread out, but be careful you aren't the only race on the rise. The Universe is a small place and you will have to either negotiate, trade or battle other empires into submission. Four different play modes ensure multiple ways to conduct your own galactic conquesting.\r\n\r\n[h1]FEATURES[/h1]\r\n\r\n-5 Different races to play\r\n-Fast paced research tree\r\n-Trade and diplomacy simplified\r\n-4 awesome play modes\r\n\r\n",
+      "key": "248170::ad0ec4c2273136f09bbde65e48da130b4f92046d",
+      "tags": [
+        {
+          "feature": "-5 Different races to play"
+        },
+        {
+          "feature": "-Fast paced research tree"
+        },
+        {
+          "feature": "-Trade and diplomacy simplified"
+        },
+        {
+          "feature": "-4 awesome play modes"
+        }
+      ]
+    },
+    {
+      "title": "Less then 24 hours left",
+      "date": "2016-10-10 17:40:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130602276",
+      "content": "[img]http://www.clickteam.com/images/other/hb2016ctflyer.jpg[/img]\r\n\r\nWe got less then 24 hours left of what will be the greatest sell EVER on Clickteam Fusion 2.5 and most of it's DLC. If you have already grabbed it, then thank you. Share the news with your friend and families. Hell tell your enemies. Below is a complete list of what you get on each tier!\r\n\r\nhttps://www.humblebundle.com/clickteam-fusion-bundle\r\n\r\nWe will have something new (Not Fusion 3) for you in November or December so keep you eyes peeled. Intill then thanks for you continued support of the worlds easiest development tool!\r\n\r\n\r\nIncludes the following!\r\n\r\n[b]Pay what you want[/b]\r\n[list]\r\n[*]Clickteam Fusion 2.5 Standard Steam\r\n[*]50.00 Coupon for Dev on Steam\r\n[*]Rock Rock Rocket Source\r\n[*]Oniken\r\n[*]Plantera\r\n[*]Tick Tock Isle\r\n[*]Necromonads + Source\r\n[/list]\r\n[b]Beat the average[/b]\r\n[list]\r\n[*]Universal Windows Platform Exporter\r\n[*]The Yawhg\r\n[*]Five Night's at Freddy's 3\r\n[*]Quadle (Steam & Android) + Source\r\n[*]Room 13 + Source\r\n[/list]\r\n[b]Pay 15.00 to unlock[/b]\r\n[list]\r\n[*]Clickteam Fusion 2.5 Mac Editor\r\n[*]Clickteam Fusion 2.5 Developer DLC\r\n[*]Concrete Jungle\r\n[*]Html5 Exporter\r\n[*]Saucer Squad source\r\n[*]Fusion Shapes Source\r\n[*]Enviormental Station Alpha\r\n[*]Install Creator Pro\r\n[*]iOS Exporter\r\n[*]Android Exporter\r\n[/list]",
+      "key": "248170::de2f9859df3707799a282742d1f01f1d008adc9e",
+      "tags": [
+        {
+          "feature": "We will have something new (Not Fusion 3) for you in November or December so keep you eyes peeled."
+        }
+      ]
+    },
+    {
+      "title": "Less then 24 hours left",
+      "date": "2016-10-10 17:40:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/243583460814831241",
+      "content": "[img]http://www.clickteam.com/images/other/hb2016ctflyer.jpg[/img]\r\n\r\nWe got less then 24 hours left of what will be the greatest sell EVER on Clickteam Fusion 2.5 and most of it's DLC. If you have already grabbed it, then thank you. Share the news with your friend and families. Hell tell your enemies. Below is a complete list of what you get on each tier!\r\n\r\nhttps://www.humblebundle.com/clickteam-fusion-bundle\r\n\r\nWe will have something new (Not Fusion 3) for you in November or December so keep you eyes peeled. Intill then thanks for you continued support of the worlds easiest development tool!\r\n\r\n\r\nIncludes the following!\r\n\r\n[b]Pay what you want[/b]\r\n[list]\r\n[*]Clickteam Fusion 2.5 Standard Steam\r\n[*]50.00 Coupon for Dev on Steam\r\n[*]Rock Rock Rocket Source\r\n[*]Oniken\r\n[*]Plantera\r\n[*]Tick Tock Isle\r\n[*]Necromonads + Source\r\n[/list]\r\n[b]Beat the average[/b]\r\n[list]\r\n[*]Universal Windows Platform Exporter\r\n[*]The Yawhg\r\n[*]Five Night's at Freddy's 3\r\n[*]Quadle (Steam & Android) + Source\r\n[*]Room 13 + Source\r\n[/list]\r\n[b]Pay 15.00 to unlock[/b]\r\n[list]\r\n[*]Clickteam Fusion 2.5 Mac Editor\r\n[*]Clickteam Fusion 2.5 Developer DLC\r\n[*]Concrete Jungle\r\n[*]Html5 Exporter\r\n[*]Saucer Squad source\r\n[*]Fusion Shapes Source\r\n[*]Enviormental Station Alpha\r\n[*]Install Creator Pro\r\n[*]iOS Exporter\r\n[*]Android Exporter\r\n[/list]",
+      "key": "248170::90b77bf1a861832dd2429d323cf05835f25f0649",
+      "tags": [
+        {
+          "feature": "We will have something new (Not Fusion 3) for you in November or December so keep you eyes peeled."
+        }
+      ]
+    },
+    {
+      "title": "Clickteam News 06-16-2016",
+      "date": "2016-06-16 14:11:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130603153",
+      "content": "We wanted to pass on some exciting news about your favorite program authoring tool today! \r\n\r\n[h1][b]Clickteam Fusion 2.5 Free Edition Released on Steam[/b]![/h1]\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/7dfe92b6e633d8f72fc7eea4d33f3ccb34b33f4d.jpg[/img]\r\n\r\nWe have finally brought the free version of Fusion today to Steam. If you haven't tried Fusion yet and want to see what it's all about give it a try here. If you have Fusion already tell you friends who have yet to jump in about it. The free version has no time limits but is feature limited. For a complete comparision visit this page...\r\n\r\nhttp://www.clickteam.com/compare-versions\r\n\r\n[h1][b]Steam Workshop Tool updated![/b][/h1]\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/bdd4c7fc12a4768e2721f7b8ed25ded8e94e178e.jpg[/img]\r\n\r\nAfter a seriously ridiculous delay, We are very proud and excited to present to you a brand new Workshop tool. This one will auto download items you have subscribed to and give you access to them. It will also allow you to upload, simply click Windows/publish to access the interface. \r\n\r\nThe new tool is available in your Tools option inside of Fusion and is part of the new 285.8 update. We hope you guys like the new Workshop tool and we look forward to seeing some awesome content on our Workshop. Visit the forums if you have any questions!\r\n\r\n[h1][b]UWP Exporter coming soon![/b][/h1]\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/7df19c8fcedd2ffbcd77ff28b6629fe399d360d9.png[/img]\r\n\r\nIn conjunction with Microsoft we are proud to announce the forthcoming release of a new exporter. The Universal Windows Platform App exporter will allow users to build projects for Visual Studio that will compile apps for the Windows 10 Store Eco system and for Xbox One. \r\n\r\nStay tuned for more information on this exporter, release is coming REAL soon. \r\n\r\n[h1][b]#IWantToCreate contest voting[/b][/h1]\r\n\r\nThe entry period for the #IWantToCreate contest is over and voting has begun. Visit https://itch.io/jam/iwanttocreate to check out the 35 entries submitted by Fusion users and make your vote count. \r\n\r\nWinner gets the new UWP exporter, Developer and a Xbox One!\r\n\r\n#MadeWithFusion #IWantToCreate\r\n\r\n",
+      "key": "248170::064a9ae2b0b38b0b226bc541098d0aa9648b1b8c",
+      "tags": [
+        {
+          "feature": "We have finally brought the free version of Fusion today to Steam. If you haven't tried Fusion yet and want to see what it's all about give it a try here. If you have Fusion already tell you friends who have yet to jump in about it. The free version has no time limits but is feature limited. For a complete comparision visit this page..."
+        },
+        {
+          "feature": "After a seriously ridiculous delay, We are very proud and excited to present to you a brand new Workshop tool. This one will auto download items you have subscribed to and give you access to them. It will also allow you to upload, simply click Windows/publish to access the interface."
+        },
+        {
+          "feature": "The new tool is available in your Tools option inside of Fusion and is part of the new 285.8 update. We hope you guys like the new Workshop tool and we look forward to seeing some awesome content on our Workshop. Visit the forums if you have any questions!"
+        },
+        {
+          "feature": "In conjunction with Microsoft we are proud to announce the forthcoming release of a new exporter. The Universal Windows Platform App exporter will allow users to build projects for Visual Studio that will compile apps for the Windows 10 Store Eco system and for Xbox One."
+        }
+      ]
+    },
+    {
+      "title": "Clickteam News 06-16-2016",
+      "date": "2016-06-16 14:11:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/250328813697080174",
+      "content": "We wanted to pass on some exciting news about your favorite program authoring tool today! \r\n\r\n[h1][b]Clickteam Fusion 2.5 Free Edition Released on Steam[/b]![/h1]\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/7dfe92b6e633d8f72fc7eea4d33f3ccb34b33f4d.jpg[/img]\r\n\r\nWe have finally brought the free version of Fusion today to Steam. If you haven't tried Fusion yet and want to see what it's all about give it a try here. If you have Fusion already tell you friends who have yet to jump in about it. The free version has no time limits but is feature limited. For a complete comparision visit this page...\r\n\r\nhttp://www.clickteam.com/compare-versions\r\n\r\n[h1][b]Steam Workshop Tool updated![/b][/h1]\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/bdd4c7fc12a4768e2721f7b8ed25ded8e94e178e.jpg[/img]\r\n\r\nAfter a seriously ridiculous delay, We are very proud and excited to present to you a brand new Workshop tool. This one will auto download items you have subscribed to and give you access to them. It will also allow you to upload, simply click Windows/publish to access the interface. \r\n\r\nThe new tool is available in your Tools option inside of Fusion and is part of the new 285.8 update. We hope you guys like the new Workshop tool and we look forward to seeing some awesome content on our Workshop. Visit the forums if you have any questions!\r\n\r\n[h1][b]UWP Exporter coming soon![/b][/h1]\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/5306341/7df19c8fcedd2ffbcd77ff28b6629fe399d360d9.png[/img]\r\n\r\nIn conjunction with Microsoft we are proud to announce the forthcoming release of a new exporter. The Universal Windows Platform App exporter will allow users to build projects for Visual Studio that will compile apps for the Windows 10 Store Eco system and for Xbox One. \r\n\r\nStay tuned for more information on this exporter, release is coming REAL soon. \r\n\r\n[h1][b]#IWantToCreate contest voting[/b][/h1]\r\n\r\nThe entry period for the #IWantToCreate contest is over and voting has begun. Visit https://itch.io/jam/iwanttocreate to check out the 35 entries submitted by Fusion users and make your vote count. \r\n\r\nWinner gets the new UWP exporter, Developer and a Xbox One!\r\n\r\n#MadeWithFusion #IWantToCreate\r\n\r\n",
+      "key": "248170::bc7bab93dba4c06808fe9cf93b6f4aab7067a43a",
+      "tags": [
+        {
+          "feature": "We have finally brought the free version of Fusion today to Steam. If you haven't tried Fusion yet and want to see what it's all about give it a try here. If you have Fusion already tell you friends who have yet to jump in about it. The free version has no time limits but is feature limited. For a complete comparision visit this page..."
+        },
+        {
+          "feature": "After a seriously ridiculous delay, We are very proud and excited to present to you a brand new Workshop tool. This one will auto download items you have subscribed to and give you access to them. It will also allow you to upload, simply click Windows/publish to access the interface."
+        },
+        {
+          "feature": "The new tool is available in your Tools option inside of Fusion and is part of the new 285.8 update. We hope you guys like the new Workshop tool and we look forward to seeing some awesome content on our Workshop. Visit the forums if you have any questions!"
+        },
+        {
+          "feature": "In conjunction with Microsoft we are proud to announce the forthcoming release of a new exporter. The Universal Windows Platform App exporter will allow users to build projects for Visual Studio that will compile apps for the Windows 10 Store Eco system and for Xbox One."
+        }
+      ]
+    },
+    {
+      "title": "AVG Compatbility Issue",
+      "date": "2016-05-19 14:42:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130603362",
+      "content": "[img]http://www.clickteam.com/images/risk-icon.png[/img]\r\n\r\n[b]AVG Compatibility Issue[/b]\r\n\r\nSeveral users have reported a crash recently. After some investgation it seems to be related to AVG antivirus and Steam Client. \r\n\r\nhttp://forums.steampowered.com/forums/showthread.php?t=2137625\r\nhttp://www.ehow.com/how_8346363_run-steam-avg.html\r\n\r\nWe reached out to Valve to resolve the issue. In the mean time users are reporting success with these three solutions. \r\n\r\n[list]\r\n[*]Add a exception for Fusion in AVG[/*]\r\n[*]Disable AVG antivirus, This solution is 100% successful[/*]\r\n[*]Run Fusion in Admin mode, This solution is currently reported about 80% successful[/*]\r\n[/list]\r\n\r\nWill keep you advised once we hear back from AVG or Valve. Please feel free to post questions or concerns in the Steam community forums, in the sticky thread made for this issue. \r\n\r\nThanks!\r\n\r\n-Kisguri",
+      "key": "248170::b755bf7a04a78c388472a4dd3a2e272ee30571d2",
+      "tags": [
+        {
+          "bug": "Several users have reported a crash recently."
+        }
+      ]
+    },
+    {
+      "title": "AVG Compatbility Issue",
+      "date": "2016-05-19 14:42:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/255955672057142766",
+      "content": "[img]http://www.clickteam.com/images/risk-icon.png[/img]\r\n\r\n[b]AVG Compatibility Issue[/b]\r\n\r\nSeveral users have reported a crash recently. After some investgation it seems to be related to AVG antivirus and Steam Client. \r\n\r\nhttp://forums.steampowered.com/forums/showthread.php?t=2137625\r\nhttp://www.ehow.com/how_8346363_run-steam-avg.html\r\n\r\nWe reached out to Valve to resolve the issue. In the mean time users are reporting success with these three solutions. \r\n\r\n[list]\r\n[*]Add a exception for Fusion in AVG[/*]\r\n[*]Disable AVG antivirus, This solution is 100% successful[/*]\r\n[*]Run Fusion in Admin mode, This solution is currently reported about 80% successful[/*]\r\n[/list]\r\n\r\nWill keep you advised once we hear back from AVG or Valve. Please feel free to post questions or concerns in the Steam community forums, in the sticky thread made for this issue. \r\n\r\nThanks!\r\n\r\n-Kisguri",
+      "key": "248170::91e81c0ea3f9722c01e163478a2d510b5ddf62e6",
+      "tags": [
+        {
+          "bug": "Several users have reported a crash recently."
+        }
+      ]
+    },
+    {
+      "title": "Necromonads - Made with Fusion",
+      "date": "2015-10-27 14:33:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/371904442469554074",
+      "content": "[img]http://gamesare.com/games/necromonads/Necromonads.jpg[/img]\r\n\r\nClickteamLLC brings a \"what could have been\" arcade classic Necromonads to Steam today! Enjoy a unique twist on the arcade shooters of yester yore in the frantically paced game. \r\n\r\nhttp://store.steampowered.com//app/391630/\r\n\r\nThe Necromonads are at it again!! Colonists must in a orderly fashion proceed to the nearest shelter while the highly trained star pilot provides cover. Inspired by classic arcade shooters but with a twist. Captured colonists become infected and spread it to others. stop the Necromonads infection invasion now!\r\n\r\n[h1]Features[/h1]\r\n\r\nBlistering Arcade Action \r\nKeyboard or Joystick Control \r\nLasers, and yes that's right, Bombs! \r\nMultiple Enemy types \r\nSteam Leaderboards & Steam Achievements \r\nSpace Zombies\r\n\r\n[h1]Gameplay[/h1]\r\n\r\nEach level of Necromonads consists of a number of Colonists and Infection shelters that the colonists try to run to. The Necromonads will attempt to capture and infect the fleeing colonists. To accomplish this they upduct them as the flee and bring them to the top of the screen. Once to the top of the screen the colonist becomes infected and dropped back down them. \r\n\r\nOnce infected they spit virus bile to nearby colonists causing the infection to spread. Your job as Star Pilot is to stop the Necros long enough for the colonists to get to the shelters, Moving to the next level occurs when all colonists are accounted for and more then 50% of the remaining colonists are safe in the shelter. The Necros will send various different forms after you to stop you as you progress.\r\n\r\nhttps://www.youtube.com/watch?v=nA4JXoq0Tjs\r\n\r\n\r\n\r\n\r\n",
+      "key": "248170::d35abce9e8358efd178d97b9caa514471de8a12b",
+      "tags": [
+        {
+          "feature": "Steam Leaderboards & Steam Achievements"
+        }
+      ]
+    },
+    {
+      "title": "Necromonads - Made with Fusion",
+      "date": "2015-10-27 14:33:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130604318",
+      "content": "[img]http://gamesare.com/games/necromonads/Necromonads.jpg[/img]\r\n\r\nClickteamLLC brings a \"what could have been\" arcade classic Necromonads to Steam today! Enjoy a unique twist on the arcade shooters of yester yore in the frantically paced game. \r\n\r\nhttp://store.steampowered.com//app/391630/\r\n\r\nThe Necromonads are at it again!! Colonists must in a orderly fashion proceed to the nearest shelter while the highly trained star pilot provides cover. Inspired by classic arcade shooters but with a twist. Captured colonists become infected and spread it to others. stop the Necromonads infection invasion now!\r\n\r\n[h1]Features[/h1]\r\n\r\nBlistering Arcade Action \r\nKeyboard or Joystick Control \r\nLasers, and yes that's right, Bombs! \r\nMultiple Enemy types \r\nSteam Leaderboards & Steam Achievements \r\nSpace Zombies\r\n\r\n[h1]Gameplay[/h1]\r\n\r\nEach level of Necromonads consists of a number of Colonists and Infection shelters that the colonists try to run to. The Necromonads will attempt to capture and infect the fleeing colonists. To accomplish this they upduct them as the flee and bring them to the top of the screen. Once to the top of the screen the colonist becomes infected and dropped back down them. \r\n\r\nOnce infected they spit virus bile to nearby colonists causing the infection to spread. Your job as Star Pilot is to stop the Necros long enough for the colonists to get to the shelters, Moving to the next level occurs when all colonists are accounted for and more then 50% of the remaining colonists are safe in the shelter. The Necros will send various different forms after you to stop you as you progress.\r\n\r\nhttps://www.youtube.com/watch?v=nA4JXoq0Tjs\r\n\r\n\r\n\r\n\r\n",
+      "key": "248170::7b53ca8da7a745918bd3d586d90c24ce0eee07a6",
+      "tags": [
+        {
+          "feature": "Steam Leaderboards & Steam Achievements"
+        }
+      ]
+    },
+    {
+      "title": "Quadle - Made With Fusion",
+      "date": "2015-07-23 14:10:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/423687491903754447",
+      "content": "Clickteam LLC is excited to present \"Quadle\" a excellent Jumping Arcade Puzzler game #MadewithFusion!\r\n\r\n[img]http://www.clickteam.com/wp-content/uploads/935x350.png[/img]\r\n\r\n[h1]About the Game[/h1]\r\n\r\nA brand new arcade puzzler from Gamesare Studios, Invoking the memory of classic arcade cabinet games but adding a new twist. Jump on the blocks as the titular character Quadle, changing the block colors till they are red. Once red they fall away. Eliminate all blocks on the screen to go to the next level. Be careful not to corner yourself into a situation where you can jump to the next block. \r\n\r\nhttp://store.steampowered.com/app/384210\r\n\r\nWith three worlds and a initial offering of 96 levels there is plenty of arcade puzzle action to frustrate I mean to enjoy. Of course just when you think you g0t the hang of it, Quadle is introduced to new suprises, like switch panels, spring beams, drop blocks and more. Can you get through all 96 levels? \r\n\r\nFor those of you wanting more punishment er I mean challenge, use the Steam Workshop level editor to design your own boards and share them with friends via Steam Workshop, and check out the puzzles they create!\r\n\r\n[h1]Features[/h1]\r\n[list][*]96 levels of arcade puzzle action \r\n[*]3 worlds featuring the amazing musical and artistic talents of Ilker Esen \r\n[*]numerous puzzle challenges change through out, spring panels, teleports and shrinking bricks to name a few \r\n[*]Full controller support \r\n[*]Finish on special panel for bonus points \r\n[*]Build your own levels with the editor and upload them to Steam Workshop \r\n[*]Download other user created levels \r\n[*]Guaranteed to frustrate I mean sorry, please you\r\n[/list]\r\n\r\nhttps://www.youtube.com/watch?v=enBKbY1dC34\r\n\r\nQuadle is built with the same engine \"Clickteam Fusion 2.5\" used to make other popular games like Five Nights at Freddy's 4, Freedom Planet and The Escapists to name a few, Click the MadewithFusion logo below to learn more!\r\n\r\n[url=http://store.steampowered.com/app/248170/]#MadewithFusion[/url]",
+      "key": "248170::92569fdfe3cfb9287900a9f18a3551bcd8fb07ec",
+      "tags": [
+        {
+          "feature": "Build your own levels with the editor and upload them to Steam Workshop"
+        },
+        {
+          "feature": "Download other user created levels"
+        }
+      ]
+    },
+    {
+      "title": "Quadle - Made With Fusion",
+      "date": "2015-07-23 14:10:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130604758",
+      "content": "Clickteam LLC is excited to present \"Quadle\" a excellent Jumping Arcade Puzzler game #MadewithFusion!\r\n\r\n[img]http://www.clickteam.com/wp-content/uploads/935x350.png[/img]\r\n\r\n[h1]About the Game[/h1]\r\n\r\nA brand new arcade puzzler from Gamesare Studios, Invoking the memory of classic arcade cabinet games but adding a new twist. Jump on the blocks as the titular character Quadle, changing the block colors till they are red. Once red they fall away. Eliminate all blocks on the screen to go to the next level. Be careful not to corner yourself into a situation where you can jump to the next block. \r\n\r\nhttp://store.steampowered.com/app/384210\r\n\r\nWith three worlds and a initial offering of 96 levels there is plenty of arcade puzzle action to frustrate I mean to enjoy. Of course just when you think you g0t the hang of it, Quadle is introduced to new suprises, like switch panels, spring beams, drop blocks and more. Can you get through all 96 levels? \r\n\r\nFor those of you wanting more punishment er I mean challenge, use the Steam Workshop level editor to design your own boards and share them with friends via Steam Workshop, and check out the puzzles they create!\r\n\r\n[h1]Features[/h1]\r\n[list][*]96 levels of arcade puzzle action \r\n[*]3 worlds featuring the amazing musical and artistic talents of Ilker Esen \r\n[*]numerous puzzle challenges change through out, spring panels, teleports and shrinking bricks to name a few \r\n[*]Full controller support \r\n[*]Finish on special panel for bonus points \r\n[*]Build your own levels with the editor and upload them to Steam Workshop \r\n[*]Download other user created levels \r\n[*]Guaranteed to frustrate I mean sorry, please you\r\n[/list]\r\n\r\nhttps://www.youtube.com/watch?v=enBKbY1dC34\r\n\r\nQuadle is built with the same engine \"Clickteam Fusion 2.5\" used to make other popular games like Five Nights at Freddy's 4, Freedom Planet and The Escapists to name a few, Click the MadewithFusion logo below to learn more!\r\n\r\n[url=http://store.steampowered.com/app/248170/]#MadewithFusion[/url]",
+      "key": "248170::af540e6e760c8dcb015fd4c1aa4f53e29cbbd794",
+      "tags": [
+        {
+          "feature": "Build your own levels with the editor and upload them to Steam Workshop"
+        },
+        {
+          "feature": "Download other user created levels"
+        }
+      ]
+    },
+    {
+      "title": "Tiny Trek - Made with Fusion",
+      "date": "2015-02-24 14:10:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/515997419768632351",
+      "content": "[h1]Tiny Trek is now in Early Access[/h1]\r\n\r\nhttp://store.steampowered.com/app/328740/\r\n\r\nTiny Trek is the latest Steam game released that is created using Clickteam Fusion. Tiny Trek creates a ton of procedually generated content using nothing more then excellent use of the event editor. The game makes unique planets, surfaces, aliens and ships on the fly. The final product should play as a open sand box universe with procedually generated episodes that hark back to classic sci fi television shows. Its also available on the Humble Store, https://www.humblebundle.com/store/p/tinytrek_storefront\r\n\r\nCheck it out. More info below.\r\n\r\nhttps://www.youtube.com/watch?v=jCtDexTbjSs\r\n\r\n[h1]Are you ready to sit in the Captain\u2019s Chair?[/h1]\r\n\r\nFrom the creators of Vincere Totus Astrum comes a universe of exploration and adventure. As the Captain of your own Starship begin your trek of literally endless worlds by first selecting and editing your randomly generated race and ship, then set out for the stars.\r\n\r\nEncounter alien races and exotic locations as you travel in an endlessly procedurally generated galaxy. No two game are the same. As you explore, randomly generated \u201cEpisodes\u201d will have you fighting hostile ships, helping aliens and exploring the surface of new planets.\r\n\r\nHow long can you survive the deep of space? How far can you travel? Who knows what is waiting for you! Your trek begins now! \r\n\r\n\r\n[h1]Features[/h1]\r\n\r\nGalaxy is big And when I say big I mean really big like a never ending Galaxy with stars, planets, nebula and other space phenomenon.\r\n\r\nDo you have that ship in a different color? Yes we can do that with our procedural generation algorithms. Everything from the planets and stars to ships and races is created on the fly. And then to take it step further we provide you tools to edit your Ship and your race.\r\n\r\nLets fire blue particle cannons full... Engage in battles of one on up to three enemy vessels. Cool thing is with the Mission Matrix, a ship might jump out of battle and you may get the option to chase them, once you catch up you may finish them off or two of his friends might be waiting for you.\r\n\r\nYou think they have apples on an alien planet? I don't know if apples will be there, but the idea is that you can explore endless alien worlds and conduct various away missions. Planets will contain unique items that your science officer can scan, and your engineer can collect to bring back to the ship for trade.\r\n\r\nMaking Friends will be important Talk, trade and assisting other spacefarers will benefit you as each race you encounter will store an enemy, neutral or friend status. That will effect how your next encounter with them will be.\r\n\r\nEpisodes for everyone! In Tiny Trek we have worked on creating a generator that creates randomized missions or as we call it, episodes. Each episode last around 3-8 minutes on average and include everything from search and rescue, transport, battles and more. Imagine receiving a distress signal, then approaching a ship to discover it's a trap. After defeating them and searching the ship discover that the stranded crew is on a nearby planet. The unique Mission Matrix generates over a 100 different \"episode\" types and puts them together.\r\n\r\nStuff is cool... Player will be able to collect and store unique plants, materials and relics you discover on your journey. And trade them for other resources or information.",
+      "key": "248170::5ae4c15013c3c79158ad4dcd46ee72276282ece6",
+      "tags": [
+        {
+          "feature": "Galaxy is big And when I say big I mean really big like a never ending Galaxy with stars, planets, nebula and other space phenomenon."
+        },
+        {
+          "feature": "Do you have that ship in a different color? Yes we can do that with our procedural generation algorithms. Everything from the planets and stars to ships and races is created on the fly. And then to take it step further we provide you tools to edit your Ship and your race."
+        },
+        {
+          "feature": "Lets fire blue particle cannons full... Engage in battles of one on up to three enemy vessels. Cool thing is with the Mission Matrix, a ship might jump out of battle and you may get the option to chase them, once you catch up you may finish them off or two of his friends might be waiting for you."
+        },
+        {
+          "feature": "You think they have apples on an alien planet? I don't know if apples will be there, but the idea is that you can explore endless alien worlds and conduct various away missions. Planets will contain unique items that your science officer can scan, and your engineer can collect to bring back to the ship for trade."
+        },
+        {
+          "feature": "Making Friends will be important Talk, trade and assisting other spacefarers will benefit you as each race you encounter will store an enemy, neutral or friend status. That will effect how your next encounter with them will be."
+        },
+        {
+          "feature": "Episodes for everyone! In Tiny Trek we have worked on creating a generator that creates randomized missions or as we call it, episodes. Each episode last around 3-8 minutes on average and include everything from search and rescue, transport, battles and more. Imagine receiving a distress signal, then approaching a ship to discover it's a trap. After defeating them and searching the ship discover that the stranded crew is on a nearby planet. The unique Mission Matrix generates over a 100 different \"episode\" types and puts them together."
+        },
+        {
+          "feature": "Stuff is cool... Player will be able to collect and store unique plants, materials and relics you discover on your journey. And trade them for other resources or information."
+        }
+      ]
+    },
+    {
+      "title": "Tiny Trek - Made with Fusion",
+      "date": "2015-02-24 14:10:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130605849",
+      "content": "[h1]Tiny Trek is now in Early Access[/h1]\r\n\r\nhttp://store.steampowered.com/app/328740/\r\n\r\nTiny Trek is the latest Steam game released that is created using Clickteam Fusion. Tiny Trek creates a ton of procedually generated content using nothing more then excellent use of the event editor. The game makes unique planets, surfaces, aliens and ships on the fly. The final product should play as a open sand box universe with procedually generated episodes that hark back to classic sci fi television shows. Its also available on the Humble Store, https://www.humblebundle.com/store/p/tinytrek_storefront\r\n\r\nCheck it out. More info below.\r\n\r\nhttps://www.youtube.com/watch?v=jCtDexTbjSs\r\n\r\n[h1]Are you ready to sit in the Captain\u2019s Chair?[/h1]\r\n\r\nFrom the creators of Vincere Totus Astrum comes a universe of exploration and adventure. As the Captain of your own Starship begin your trek of literally endless worlds by first selecting and editing your randomly generated race and ship, then set out for the stars.\r\n\r\nEncounter alien races and exotic locations as you travel in an endlessly procedurally generated galaxy. No two game are the same. As you explore, randomly generated \u201cEpisodes\u201d will have you fighting hostile ships, helping aliens and exploring the surface of new planets.\r\n\r\nHow long can you survive the deep of space? How far can you travel? Who knows what is waiting for you! Your trek begins now! \r\n\r\n\r\n[h1]Features[/h1]\r\n\r\nGalaxy is big And when I say big I mean really big like a never ending Galaxy with stars, planets, nebula and other space phenomenon.\r\n\r\nDo you have that ship in a different color? Yes we can do that with our procedural generation algorithms. Everything from the planets and stars to ships and races is created on the fly. And then to take it step further we provide you tools to edit your Ship and your race.\r\n\r\nLets fire blue particle cannons full... Engage in battles of one on up to three enemy vessels. Cool thing is with the Mission Matrix, a ship might jump out of battle and you may get the option to chase them, once you catch up you may finish them off or two of his friends might be waiting for you.\r\n\r\nYou think they have apples on an alien planet? I don't know if apples will be there, but the idea is that you can explore endless alien worlds and conduct various away missions. Planets will contain unique items that your science officer can scan, and your engineer can collect to bring back to the ship for trade.\r\n\r\nMaking Friends will be important Talk, trade and assisting other spacefarers will benefit you as each race you encounter will store an enemy, neutral or friend status. That will effect how your next encounter with them will be.\r\n\r\nEpisodes for everyone! In Tiny Trek we have worked on creating a generator that creates randomized missions or as we call it, episodes. Each episode last around 3-8 minutes on average and include everything from search and rescue, transport, battles and more. Imagine receiving a distress signal, then approaching a ship to discover it's a trap. After defeating them and searching the ship discover that the stranded crew is on a nearby planet. The unique Mission Matrix generates over a 100 different \"episode\" types and puts them together.\r\n\r\nStuff is cool... Player will be able to collect and store unique plants, materials and relics you discover on your journey. And trade them for other resources or information.",
+      "key": "248170::bfd82cecef54d66e4a383f5f21fbd1700ae3ce46",
+      "tags": [
+        {
+          "feature": "Galaxy is big And when I say big I mean really big like a never ending Galaxy with stars, planets, nebula and other space phenomenon."
+        },
+        {
+          "feature": "Do you have that ship in a different color? Yes we can do that with our procedural generation algorithms. Everything from the planets and stars to ships and races is created on the fly. And then to take it step further we provide you tools to edit your Ship and your race."
+        },
+        {
+          "feature": "Lets fire blue particle cannons full... Engage in battles of one on up to three enemy vessels. Cool thing is with the Mission Matrix, a ship might jump out of battle and you may get the option to chase them, once you catch up you may finish them off or two of his friends might be waiting for you."
+        },
+        {
+          "feature": "You think they have apples on an alien planet? I don't know if apples will be there, but the idea is that you can explore endless alien worlds and conduct various away missions. Planets will contain unique items that your science officer can scan, and your engineer can collect to bring back to the ship for trade."
+        },
+        {
+          "feature": "Making Friends will be important Talk, trade and assisting other spacefarers will benefit you as each race you encounter will store an enemy, neutral or friend status. That will effect how your next encounter with them will be."
+        },
+        {
+          "feature": "Episodes for everyone! In Tiny Trek we have worked on creating a generator that creates randomized missions or as we call it, episodes. Each episode last around 3-8 minutes on average and include everything from search and rescue, transport, battles and more. Imagine receiving a distress signal, then approaching a ship to discover it's a trap. After defeating them and searching the ship discover that the stranded crew is on a nearby planet. The unique Mission Matrix generates over a 100 different \"episode\" types and puts them together."
+        },
+        {
+          "feature": "Stuff is cool... Player will be able to collect and store unique plants, materials and relics you discover on your journey. And trade them for other resources or information."
+        }
+      ]
+    },
+    {
+      "title": "Update Released - 283.5",
+      "date": "2014-11-27 17:03:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/522745035965505382",
+      "content": "A new update has been published for Clickteam Fusion 2.5. Update 283.5 brings a ton of new fixes across all exporters and the core product. Read on for details!\r\n\r\nBuild 283.5 - Change log\r\n------------------------\r\n\r\n[b]Editor[/b]\r\n\r\n- Editor: images were no longer compressed when you load a MMF2 MFA file and save it twice\r\n- Editor: when loading a MFA the missing file dialog was displayed if a Flash preloader file didn't exist even if the preloader option was unchecked\r\n- Editor: the editor toolbar was incorrectly positioned if it was on the left of another toolbar ans you switch between different editors.\r\n- Editor: if the property window had a different size than the default one, its size could change when switching between various editors.\r\n- Editor: tabbed toolbars were disabled after running the application\r\n- Editor: when you save a project file (.mfw) and by mistake set the extension to .mfa, CF now forces the .mfw extension to avoid you to overwrite a mfa file\r\n- Build issues when external sub-apps are automatically built when you build the main application\r\n- Properties: the edit text property has been improved (Ctrl+A can select everything and it has an horizontal scroling bar).\r\n- Properties: you couldn't just add or remove space characters from value names when you rename them.\r\n- Properties: the HTML5 Preloader Type property was not immediately re-enabled when you select the \"Include preloader\" option\r\n- Event editor: the names of the alterable values and strings of objects are now diplayed in their behaviors, as well as the names of their custom animations.\r\n- Event editor: the event line number was clipped if there was more than 10000 events\r\n- Event editor: the Animation selector is now resizable\r\n- Event editor: the file selector for file parameters is now resizable and the Use Expression button is now correctly sized and positionned\r\n- Event editor: the frame name is now displayed in the text of the Jump to frame action\r\n- Event editor: crash when you open 2 event editors on 2 different frames, open 2 action editors and close one.\r\n- Event editor / Physics Engine object: incorrect text for \"Prismatic joint / Joint two objects at position\" action.\r\n- Event editor: the names of the custom animations weren't displayed in the behaviors.\r\n- Event editor: Internal Application Error on MacOS under Wine with the latest version of Wine when you paste text in the expression editor.\r\n- Event editor: when you select a movement with an expression the title now says \"Enter an index between 0 and 1023\" (instead of 1 and 1024). Also the movement names in the frame editor start at Movement #0 (in new movements only, not easy to change them in existing movements).\r\n- Event List editor: vertical scrollbar problems when the frame contains more than 1000 or 2000 events.\r\n- Event List editor: crash when an event line contains the maximum number of actions (128).\r\n- Expression editor: crash when you press the Format button in Compare With Global Value dialog box.\r\n- Expression editor: wrong colored syntax when the expression contains line breaks\r\n- Workspace window: now automatically scrolls when you move an object.\r\n- Workspace window: object icon now updated when you undo resizing or rotating the object in the frame editor.\r\n- Picture editor: in alpha channel editing mode the fill tool was not using the exact selected color.\r\n- Picture editor: text was cleared when you click the bold/italic/underline buttons after the edit box is closed.\r\n- Picture editor: controls are now disabled when the animation preview is open\r\n- Picture editor: now displays an \"unknown format\" message if you drag & drop an unsupported graphic file to this editor.\r\n- Picture editor: bug in undo selection resizing\r\n- Picture editor: you can now move the selection with the arrow keys (press Shift for a faster move)\r\n- Picture editor: the old MMF quick shortcut keys for the hotspot and action points are restored (press C for the center of mass)\r\n- Picture editor: scrolling with the spacebar was too fast when zoomed in\r\n- Animation editor: the animation speed in the preview window should be a little more accurate, although it can't be identical to the animation speed in the runtime as this one depends on the instant movement speed.\r\n- Physics Engine object: its \"Create before frame fadein transition\" option is now forced.\r\n- Physical objects/movements: the maximum value for the friction has been increased to 300.\r\n- Physical objects/movements: the maximum value for the density has been increased to 200.\r\n- Path movement: conversion issue from MMF 2.0 applications, the movement structure was not correctly terminated causing issues with the Reverse command (note: editing the movement fixes the issue for already converted apps)\r\n\r\n\r\n[b]Fixes in 3rd party extensions, available in the extension manager[/b]\r\n\r\n- Advanced Menu object: various fixes\r\n- Calendar object: display issues in the frame editor in Picker mode\r\n- Color Selector object: was not displayed in the frame editor in Direct3D mode\r\n- IconView object: Unselect Icon now works, as well as the Find expression (you have to edit the expression and replace Find by ivFind or delete and recreate the expression)\r\n- Masked Edit object: was not displayed in the frame editor in Direct3D mode\r\n- Progress Bar object: was not displayed in the frame editor in Direct3D mode\r\n\r\n\r\n[b]Windows runtime[/b]\r\n\r\n- Windows runtime: incorrect thick frame after restoring a maximized application with the \"no thick frame\" and \"resize to screen\" options.\r\n- Windows runtime: if the \"Resize display to fill window size\" option is selected and the \"Keep screen ratio\" is not selected, then the runtime can now go to full screen even if the largest resolution available on the monitor is lower than the resolution of the application.\r\n- Windows runtime: if the Language property of the application is set to Neutral Language, the texts sent to and retrieved from non-Unicode extensions are converted using the language settings of the current user.\r\n- Windows runtime: crash when you add a backdrop and delete the active object if the active object has a shader.\r\n- Windows runtime: distance expressions give wrong result when coordinate differences are huge.\r\n- Windows runtime: the VSync Off action now works correctly\r\n- Windows runtime: performance issue in standard graphic mode if you set an angle to 0 with high quality.\r\n- Windows runtime: collisions with backdrops remain active in the physical world even if the backdrop is destroyed.\r\n- Windows runtime: the text returned by the key$ expression no longer contains garbage at the end when used in expressions.\r\n- Windows runtime: collision with backdrop issues in some cases when you resize the frame at runtime.\r\n- Windows runtime: incorrect clipping in maximized mode if the \"heading\" option is selected and the \"heading in maximized mode\" is not selected.\r\n- Windows runtime: on a secondary monitor the application couldn't be maximized at a size greater than the size of the main monitor.\r\n- Windows runtime: objects with extension movements like Circular or Vector could disappear at coordinates above 32767.\r\n- Windows runtime: some objects were duplicated during one frame in Direct3D mode when a layer was wrapping.\r\n- Crash when you create backdrop objects in the physical world and you jump to another frame\r\n- Active Backdrop object (Windows runtime): the object was not correctly located in scrolling apps\r\n- Active/Background System Box objects (Windows runtime): border not displayed in Sub-Applications with the Display As Sprite option.\r\n\r\n\r\nComplete list at http://community.clickteam.com/threads/89823-New-Update-Released-283-5?p=648107#post648107",
+      "key": "248170::15546be18a237b102df1aa4419799ea4455954ab",
+      "tags": [
+        {
+          "bug": "- Editor: images were no longer compressed when you load a MMF2 MFA file and save it twice"
+        },
+        {
+          "bug": "- Editor: when loading a MFA the missing file dialog was displayed if a Flash preloader file didn't exist even if the preloader option was unchecked"
+        },
+        {
+          "bug": "- Editor: the editor toolbar was incorrectly positioned if it was on the left of another toolbar ans you switch between different editors."
+        },
+        {
+          "bug": "- Editor: if the property window had a different size than the default one, its size could change when switching between various editors."
+        },
+        {
+          "bug": "- Editor: tabbed toolbars were disabled after running the application"
+        },
+        {
+          "bug": "- Editor: when you save a project file (.mfw) and by mistake set the extension to .mfa, CF now forces the .mfw extension to avoid you to overwrite a mfa file"
+        },
+        {
+          "bug": "- Build issues when external sub-apps are automatically built when you build the main application"
+        },
+        {
+          "bug": "- Properties: the edit text property has been improved (Ctrl+A can select everything and it has an horizontal scroling bar)."
+        },
+        {
+          "bug": "- Properties: you couldn't just add or remove space characters from value names when you rename them."
+        },
+        {
+          "bug": "- Properties: the HTML5 Preloader Type property was not immediately re-enabled when you select the \"Include preloader\" option"
+        },
+        {
+          "bug": "- Event editor: the names of the alterable values and strings of objects are now diplayed in their behaviors, as well as the names of their custom animations."
+        },
+        {
+          "bug": "- Event editor: the event line number was clipped if there was more than 10000 events"
+        },
+        {
+          "bug": "- Event editor: the Animation selector is now resizable"
+        },
+        {
+          "bug": "- Event editor: the file selector for file parameters is now resizable and the Use Expression button is now correctly sized and positionned"
+        },
+        {
+          "bug": "- Event editor: the frame name is now displayed in the text of the Jump to frame action"
+        },
+        {
+          "bug": "- Event editor: crash when you open 2 event editors on 2 different frames, open 2 action editors and close one."
+        },
+        {
+          "bug": "- Event editor / Physics Engine object: incorrect text for \"Prismatic joint / Joint two objects at position\" action."
+        },
+        {
+          "bug": "- Event editor: the names of the custom animations weren't displayed in the behaviors."
+        },
+        {
+          "bug": "- Event editor: Internal Application Error on MacOS under Wine with the latest version of Wine when you paste text in the expression editor."
+        },
+        {
+          "bug": "- Event editor: when you select a movement with an expression the title now says \"Enter an index between 0 and 1023\" (instead of 1 and 1024). Also the movement names in the frame editor start at Movement #0 (in new movements only, not easy to change them in existing movements)."
+        },
+        {
+          "bug": "- Event List editor: vertical scrollbar problems when the frame contains more than 1000 or 2000 events."
+        },
+        {
+          "bug": "- Event List editor: crash when an event line contains the maximum number of actions (128)."
+        },
+        {
+          "bug": "- Expression editor: crash when you press the Format button in Compare With Global Value dialog box."
+        },
+        {
+          "bug": "- Expression editor: wrong colored syntax when the expression contains line breaks"
+        },
+        {
+          "bug": "- Workspace window: now automatically scrolls when you move an object."
+        },
+        {
+          "bug": "- Workspace window: object icon now updated when you undo resizing or rotating the object in the frame editor."
+        },
+        {
+          "bug": "- Picture editor: in alpha channel editing mode the fill tool was not using the exact selected color."
+        },
+        {
+          "bug": "- Picture editor: text was cleared when you click the bold/italic/underline buttons after the edit box is closed."
+        },
+        {
+          "bug": "- Picture editor: controls are now disabled when the animation preview is open"
+        },
+        {
+          "bug": "- Picture editor: now displays an \"unknown format\" message if you drag & drop an unsupported graphic file to this editor."
+        },
+        {
+          "bug": "- Picture editor: bug in undo selection resizing"
+        },
+        {
+          "bug": "- Picture editor: you can now move the selection with the arrow keys (press Shift for a faster move)"
+        },
+        {
+          "bug": "- Picture editor: the old MMF quick shortcut keys for the hotspot and action points are restored (press C for the center of mass)"
+        },
+        {
+          "bug": "- Picture editor: scrolling with the spacebar was too fast when zoomed in"
+        },
+        {
+          "bug": "- Animation editor: the animation speed in the preview window should be a little more accurate, although it can't be identical to the animation speed in the runtime as this one depends on the instant movement speed."
+        },
+        {
+          "bug": "- Physics Engine object: its \"Create before frame fadein transition\" option is now forced."
+        },
+        {
+          "bug": "- Path movement: conversion issue from MMF 2.0 applications, the movement structure was not correctly terminated causing issues with the Reverse command (note: editing the movement fixes the issue for already converted apps)"
+        },
+        {
+          "bug": "- Advanced Menu object: various fixes"
+        },
+        {
+          "bug": "- Calendar object: display issues in the frame editor in Picker mode"
+        },
+        {
+          "bug": "- Color Selector object: was not displayed in the frame editor in Direct3D mode"
+        },
+        {
+          "bug": "- IconView object: Unselect Icon now works, as well as the Find expression (you have to edit the expression and replace Find by ivFind or delete and recreate the expression)"
+        },
+        {
+          "bug": "- Masked Edit object: was not displayed in the frame editor in Direct3D mode"
+        },
+        {
+          "bug": "- Progress Bar object: was not displayed in the frame editor in Direct3D mode"
+        },
+        {
+          "bug": "- Windows runtime: incorrect thick frame after restoring a maximized application with the \"no thick frame\" and \"resize to screen\" options."
+        },
+        {
+          "bug": "- Windows runtime: if the \"Resize display to fill window size\" option is selected and the \"Keep screen ratio\" is not selected, then the runtime can now go to full screen even if the largest resolution available on the monitor is lower than the resolution of the application."
+        },
+        {
+          "bug": "- Windows runtime: if the Language property of the application is set to Neutral Language, the texts sent to and retrieved from non-Unicode extensions are converted using the language settings of the current user."
+        },
+        {
+          "bug": "- Windows runtime: crash when you add a backdrop and delete the active object if the active object has a shader."
+        },
+        {
+          "bug": "- Windows runtime: distance expressions give wrong result when coordinate differences are huge."
+        },
+        {
+          "bug": "- Windows runtime: the VSync Off action now works correctly"
+        },
+        {
+          "bug": "- Windows runtime: performance issue in standard graphic mode if you set an angle to 0 with high quality."
+        },
+        {
+          "bug": "- Windows runtime: collisions with backdrops remain active in the physical world even if the backdrop is destroyed."
+        },
+        {
+          "bug": "- Windows runtime: the text returned by the key$ expression no longer contains garbage at the end when used in expressions."
+        },
+        {
+          "bug": "- Windows runtime: collision with backdrop issues in some cases when you resize the frame at runtime."
+        },
+        {
+          "bug": "- Windows runtime: incorrect clipping in maximized mode if the \"heading\" option is selected and the \"heading in maximized mode\" is not selected."
+        },
+        {
+          "bug": "- Windows runtime: on a secondary monitor the application couldn't be maximized at a size greater than the size of the main monitor."
+        },
+        {
+          "bug": "- Windows runtime: objects with extension movements like Circular or Vector could disappear at coordinates above 32767."
+        },
+        {
+          "bug": "- Windows runtime: some objects were duplicated during one frame in Direct3D mode when a layer was wrapping."
+        },
+        {
+          "bug": "- Crash when you create backdrop objects in the physical world and you jump to another frame"
+        },
+        {
+          "bug": "- Active Backdrop object (Windows runtime): the object was not correctly located in scrolling apps"
+        },
+        {
+          "bug": "- Active/Background System Box objects (Windows runtime): border not displayed in Sub-Applications with the Display As Sprite option."
+        },
+        {
+          "balance_change": "- Physical objects/movements: the maximum value for the friction has been increased to 300."
+        },
+        {
+          "balance_change": "- Physical objects/movements: the maximum value for the density has been increased to 200."
+        }
+      ]
+    },
+    {
+      "title": "Update Released - 283.5",
+      "date": "2014-11-27 17:03:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130606777",
+      "content": "A new update has been published for Clickteam Fusion 2.5. Update 283.5 brings a ton of new fixes across all exporters and the core product. Read on for details!\r\n\r\nBuild 283.5 - Change log\r\n------------------------\r\n\r\n[b]Editor[/b]\r\n\r\n- Editor: images were no longer compressed when you load a MMF2 MFA file and save it twice\r\n- Editor: when loading a MFA the missing file dialog was displayed if a Flash preloader file didn't exist even if the preloader option was unchecked\r\n- Editor: the editor toolbar was incorrectly positioned if it was on the left of another toolbar ans you switch between different editors.\r\n- Editor: if the property window had a different size than the default one, its size could change when switching between various editors.\r\n- Editor: tabbed toolbars were disabled after running the application\r\n- Editor: when you save a project file (.mfw) and by mistake set the extension to .mfa, CF now forces the .mfw extension to avoid you to overwrite a mfa file\r\n- Build issues when external sub-apps are automatically built when you build the main application\r\n- Properties: the edit text property has been improved (Ctrl+A can select everything and it has an horizontal scroling bar).\r\n- Properties: you couldn't just add or remove space characters from value names when you rename them.\r\n- Properties: the HTML5 Preloader Type property was not immediately re-enabled when you select the \"Include preloader\" option\r\n- Event editor: the names of the alterable values and strings of objects are now diplayed in their behaviors, as well as the names of their custom animations.\r\n- Event editor: the event line number was clipped if there was more than 10000 events\r\n- Event editor: the Animation selector is now resizable\r\n- Event editor: the file selector for file parameters is now resizable and the Use Expression button is now correctly sized and positionned\r\n- Event editor: the frame name is now displayed in the text of the Jump to frame action\r\n- Event editor: crash when you open 2 event editors on 2 different frames, open 2 action editors and close one.\r\n- Event editor / Physics Engine object: incorrect text for \"Prismatic joint / Joint two objects at position\" action.\r\n- Event editor: the names of the custom animations weren't displayed in the behaviors.\r\n- Event editor: Internal Application Error on MacOS under Wine with the latest version of Wine when you paste text in the expression editor.\r\n- Event editor: when you select a movement with an expression the title now says \"Enter an index between 0 and 1023\" (instead of 1 and 1024). Also the movement names in the frame editor start at Movement #0 (in new movements only, not easy to change them in existing movements).\r\n- Event List editor: vertical scrollbar problems when the frame contains more than 1000 or 2000 events.\r\n- Event List editor: crash when an event line contains the maximum number of actions (128).\r\n- Expression editor: crash when you press the Format button in Compare With Global Value dialog box.\r\n- Expression editor: wrong colored syntax when the expression contains line breaks\r\n- Workspace window: now automatically scrolls when you move an object.\r\n- Workspace window: object icon now updated when you undo resizing or rotating the object in the frame editor.\r\n- Picture editor: in alpha channel editing mode the fill tool was not using the exact selected color.\r\n- Picture editor: text was cleared when you click the bold/italic/underline buttons after the edit box is closed.\r\n- Picture editor: controls are now disabled when the animation preview is open\r\n- Picture editor: now displays an \"unknown format\" message if you drag & drop an unsupported graphic file to this editor.\r\n- Picture editor: bug in undo selection resizing\r\n- Picture editor: you can now move the selection with the arrow keys (press Shift for a faster move)\r\n- Picture editor: the old MMF quick shortcut keys for the hotspot and action points are restored (press C for the center of mass)\r\n- Picture editor: scrolling with the spacebar was too fast when zoomed in\r\n- Animation editor: the animation speed in the preview window should be a little more accurate, although it can't be identical to the animation speed in the runtime as this one depends on the instant movement speed.\r\n- Physics Engine object: its \"Create before frame fadein transition\" option is now forced.\r\n- Physical objects/movements: the maximum value for the friction has been increased to 300.\r\n- Physical objects/movements: the maximum value for the density has been increased to 200.\r\n- Path movement: conversion issue from MMF 2.0 applications, the movement structure was not correctly terminated causing issues with the Reverse command (note: editing the movement fixes the issue for already converted apps)\r\n\r\n\r\n[b]Fixes in 3rd party extensions, available in the extension manager[/b]\r\n\r\n- Advanced Menu object: various fixes\r\n- Calendar object: display issues in the frame editor in Picker mode\r\n- Color Selector object: was not displayed in the frame editor in Direct3D mode\r\n- IconView object: Unselect Icon now works, as well as the Find expression (you have to edit the expression and replace Find by ivFind or delete and recreate the expression)\r\n- Masked Edit object: was not displayed in the frame editor in Direct3D mode\r\n- Progress Bar object: was not displayed in the frame editor in Direct3D mode\r\n\r\n\r\n[b]Windows runtime[/b]\r\n\r\n- Windows runtime: incorrect thick frame after restoring a maximized application with the \"no thick frame\" and \"resize to screen\" options.\r\n- Windows runtime: if the \"Resize display to fill window size\" option is selected and the \"Keep screen ratio\" is not selected, then the runtime can now go to full screen even if the largest resolution available on the monitor is lower than the resolution of the application.\r\n- Windows runtime: if the Language property of the application is set to Neutral Language, the texts sent to and retrieved from non-Unicode extensions are converted using the language settings of the current user.\r\n- Windows runtime: crash when you add a backdrop and delete the active object if the active object has a shader.\r\n- Windows runtime: distance expressions give wrong result when coordinate differences are huge.\r\n- Windows runtime: the VSync Off action now works correctly\r\n- Windows runtime: performance issue in standard graphic mode if you set an angle to 0 with high quality.\r\n- Windows runtime: collisions with backdrops remain active in the physical world even if the backdrop is destroyed.\r\n- Windows runtime: the text returned by the key$ expression no longer contains garbage at the end when used in expressions.\r\n- Windows runtime: collision with backdrop issues in some cases when you resize the frame at runtime.\r\n- Windows runtime: incorrect clipping in maximized mode if the \"heading\" option is selected and the \"heading in maximized mode\" is not selected.\r\n- Windows runtime: on a secondary monitor the application couldn't be maximized at a size greater than the size of the main monitor.\r\n- Windows runtime: objects with extension movements like Circular or Vector could disappear at coordinates above 32767.\r\n- Windows runtime: some objects were duplicated during one frame in Direct3D mode when a layer was wrapping.\r\n- Crash when you create backdrop objects in the physical world and you jump to another frame\r\n- Active Backdrop object (Windows runtime): the object was not correctly located in scrolling apps\r\n- Active/Background System Box objects (Windows runtime): border not displayed in Sub-Applications with the Display As Sprite option.\r\n\r\n\r\nComplete list at http://community.clickteam.com/threads/89823-New-Update-Released-283-5?p=648107#post648107",
+      "key": "248170::728fb6e8746089e3f85e9d8d048b3d3f0d9758c5",
+      "tags": [
+        {
+          "bug": "- Editor: images were no longer compressed when you load a MMF2 MFA file and save it twice"
+        },
+        {
+          "bug": "- Editor: when loading a MFA the missing file dialog was displayed if a Flash preloader file didn't exist even if the preloader option was unchecked"
+        },
+        {
+          "bug": "- Editor: the editor toolbar was incorrectly positioned if it was on the left of another toolbar ans you switch between different editors."
+        },
+        {
+          "bug": "- Editor: if the property window had a different size than the default one, its size could change when switching between various editors."
+        },
+        {
+          "bug": "- Editor: tabbed toolbars were disabled after running the application"
+        },
+        {
+          "bug": "- Editor: when you save a project file (.mfw) and by mistake set the extension to .mfa, CF now forces the .mfw extension to avoid you to overwrite a mfa file"
+        },
+        {
+          "bug": "- Build issues when external sub-apps are automatically built when you build the main application"
+        },
+        {
+          "bug": "- Properties: the edit text property has been improved (Ctrl+A can select everything and it has an horizontal scroling bar)."
+        },
+        {
+          "bug": "- Properties: you couldn't just add or remove space characters from value names when you rename them."
+        },
+        {
+          "bug": "- Properties: the HTML5 Preloader Type property was not immediately re-enabled when you select the \"Include preloader\" option"
+        },
+        {
+          "bug": "- Event editor: the names of the alterable values and strings of objects are now diplayed in their behaviors, as well as the names of their custom animations."
+        },
+        {
+          "bug": "- Event editor: the event line number was clipped if there was more than 10000 events"
+        },
+        {
+          "bug": "- Event editor: the Animation selector is now resizable"
+        },
+        {
+          "bug": "- Event editor: the file selector for file parameters is now resizable and the Use Expression button is now correctly sized and positionned"
+        },
+        {
+          "bug": "- Event editor: the frame name is now displayed in the text of the Jump to frame action"
+        },
+        {
+          "bug": "- Event editor: crash when you open 2 event editors on 2 different frames, open 2 action editors and close one."
+        },
+        {
+          "bug": "- Event editor / Physics Engine object: incorrect text for \"Prismatic joint / Joint two objects at position\" action."
+        },
+        {
+          "bug": "- Event editor: the names of the custom animations weren't displayed in the behaviors."
+        },
+        {
+          "bug": "- Event editor: Internal Application Error on MacOS under Wine with the latest version of Wine when you paste text in the expression editor."
+        },
+        {
+          "bug": "- Event editor: when you select a movement with an expression the title now says \"Enter an index between 0 and 1023\" (instead of 1 and 1024). Also the movement names in the frame editor start at Movement #0 (in new movements only, not easy to change them in existing movements)."
+        },
+        {
+          "bug": "- Event List editor: vertical scrollbar problems when the frame contains more than 1000 or 2000 events."
+        },
+        {
+          "bug": "- Event List editor: crash when an event line contains the maximum number of actions (128)."
+        },
+        {
+          "bug": "- Expression editor: crash when you press the Format button in Compare With Global Value dialog box."
+        },
+        {
+          "bug": "- Expression editor: wrong colored syntax when the expression contains line breaks"
+        },
+        {
+          "bug": "- Workspace window: now automatically scrolls when you move an object."
+        },
+        {
+          "bug": "- Workspace window: object icon now updated when you undo resizing or rotating the object in the frame editor."
+        },
+        {
+          "bug": "- Picture editor: in alpha channel editing mode the fill tool was not using the exact selected color."
+        },
+        {
+          "bug": "- Picture editor: text was cleared when you click the bold/italic/underline buttons after the edit box is closed."
+        },
+        {
+          "bug": "- Picture editor: controls are now disabled when the animation preview is open"
+        },
+        {
+          "bug": "- Picture editor: now displays an \"unknown format\" message if you drag & drop an unsupported graphic file to this editor."
+        },
+        {
+          "bug": "- Picture editor: bug in undo selection resizing"
+        },
+        {
+          "bug": "- Picture editor: you can now move the selection with the arrow keys (press Shift for a faster move)"
+        },
+        {
+          "bug": "- Picture editor: the old MMF quick shortcut keys for the hotspot and action points are restored (press C for the center of mass)"
+        },
+        {
+          "bug": "- Picture editor: scrolling with the spacebar was too fast when zoomed in"
+        },
+        {
+          "bug": "- Animation editor: the animation speed in the preview window should be a little more accurate, although it can't be identical to the animation speed in the runtime as this one depends on the instant movement speed."
+        },
+        {
+          "bug": "- Physics Engine object: its \"Create before frame fadein transition\" option is now forced."
+        },
+        {
+          "bug": "- Path movement: conversion issue from MMF 2.0 applications, the movement structure was not correctly terminated causing issues with the Reverse command (note: editing the movement fixes the issue for already converted apps)"
+        },
+        {
+          "bug": "- Advanced Menu object: various fixes"
+        },
+        {
+          "bug": "- Calendar object: display issues in the frame editor in Picker mode"
+        },
+        {
+          "bug": "- Color Selector object: was not displayed in the frame editor in Direct3D mode"
+        },
+        {
+          "bug": "- IconView object: Unselect Icon now works, as well as the Find expression (you have to edit the expression and replace Find by ivFind or delete and recreate the expression)"
+        },
+        {
+          "bug": "- Masked Edit object: was not displayed in the frame editor in Direct3D mode"
+        },
+        {
+          "bug": "- Progress Bar object: was not displayed in the frame editor in Direct3D mode"
+        },
+        {
+          "bug": "- Windows runtime: incorrect thick frame after restoring a maximized application with the \"no thick frame\" and \"resize to screen\" options."
+        },
+        {
+          "bug": "- Windows runtime: if the \"Resize display to fill window size\" option is selected and the \"Keep screen ratio\" is not selected, then the runtime can now go to full screen even if the largest resolution available on the monitor is lower than the resolution of the application."
+        },
+        {
+          "bug": "- Windows runtime: if the Language property of the application is set to Neutral Language, the texts sent to and retrieved from non-Unicode extensions are converted using the language settings of the current user."
+        },
+        {
+          "bug": "- Windows runtime: crash when you add a backdrop and delete the active object if the active object has a shader."
+        },
+        {
+          "bug": "- Windows runtime: distance expressions give wrong result when coordinate differences are huge."
+        },
+        {
+          "bug": "- Windows runtime: the VSync Off action now works correctly"
+        },
+        {
+          "bug": "- Windows runtime: performance issue in standard graphic mode if you set an angle to 0 with high quality."
+        },
+        {
+          "bug": "- Windows runtime: collisions with backdrops remain active in the physical world even if the backdrop is destroyed."
+        },
+        {
+          "bug": "- Windows runtime: the text returned by the key$ expression no longer contains garbage at the end when used in expressions."
+        },
+        {
+          "bug": "- Windows runtime: collision with backdrop issues in some cases when you resize the frame at runtime."
+        },
+        {
+          "bug": "- Windows runtime: incorrect clipping in maximized mode if the \"heading\" option is selected and the \"heading in maximized mode\" is not selected."
+        },
+        {
+          "bug": "- Windows runtime: on a secondary monitor the application couldn't be maximized at a size greater than the size of the main monitor."
+        },
+        {
+          "bug": "- Windows runtime: objects with extension movements like Circular or Vector could disappear at coordinates above 32767."
+        },
+        {
+          "bug": "- Windows runtime: some objects were duplicated during one frame in Direct3D mode when a layer was wrapping."
+        },
+        {
+          "bug": "- Crash when you create backdrop objects in the physical world and you jump to another frame"
+        },
+        {
+          "bug": "- Active Backdrop object (Windows runtime): the object was not correctly located in scrolling apps"
+        },
+        {
+          "bug": "- Active/Background System Box objects (Windows runtime): border not displayed in Sub-Applications with the Display As Sprite option."
+        },
+        {
+          "balance_change": "- Physical objects/movements: the maximum value for the friction has been increased to 300."
+        },
+        {
+          "balance_change": "- Physical objects/movements: the maximum value for the density has been increased to 200."
+        }
+      ]
+    },
+    {
+      "title": "Update Released - 282.0",
+      "date": "2014-07-14 12:42:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/567768347837138345",
+      "content": "Over the weekend we released to you our valued users a update to Clickteam Fusion 2.5. Build 282.00 ads some new features and provides a bunch of fixes, check them out below!\r\n\r\nBuild 282.0 - Change log\r\n------------------------\r\n- Editor: fixed a crash on Steam when you select the Windows Explorer tool\r\n- Editor: fixed a conversion issue for MMF 1 applications\r\n- iOS: fixed a bug causing some objects to be deleted in the previous build - note: this might \"unfix\" a bug that was supposedly fixed, but I don't know which one.\r\n- The Xbox Gamepad object is now included in the main product\r\n\r\n\r\nBuild 281.9 - Change log\r\n------------------------\r\n- iOS Store object / Windows runtime: crash in comparisons with the LastErrorString and LastErrorNumber expressions\r\n- iOS: Fixed crash in iOS store object\r\n\r\n- iOS: Fixed \u201cDestroy if too far from frame area\u201d option kill-zone\r\n\r\n- iOS: Fixed fast loops being triggered twice if the frame had a fade-in transition\r\n\r\n- iOS: Fixed multiple touch crash if touching the screen many times during a transition\r\n- iOS: Fixed backdrops on the bottom layer not showing up in a transition if a scroll event was used at the start of the frame\r\n\r\n- iOS: Fixed compiler issues on pre-iOS7 SDK\u2019s (GameController)\r\n\r\n- iOS: Fixed crash in physics system\r\n\r\n- iOS: Added missing numeric version of Easing object \u2018Move object\u2019 action\r\n\r\n\r\n\r\nBuild 281.8 - Change log\r\n------------------------\r\n- Editor: when you create a new path movement, the initial speed was set to 0 (since the build 281.4)\r\n- All runtimes: crash when you launch objects with a physical movement and you quit the frame or application before those objects are deleted\r\n- Android: Fix in platform movement, moving to left was slower than moving to right.\r\n\r\n\r\nBuild 281.7 - Change log\r\n------------------------\r\n- Editor: links in the welcome page are now opened in the default browser.\r\n- Editor: Fix in new All Boxed Up tutorial\r\n- Editor: FGL Html5 object didn't appear in the object list on some machines\r\n- Editor: FGL Flash object caused compilation errors\r\n- Editor / Android: an old version of the Android object was installed by the previous beta versions, causing crashes in the event editor\r\n- Editor / SWF: Mochiads options have been removed and the 'Use Mochiads' option is automatically unchecked when you load a MFA.\r\n- Android: new fix in accelerometer\r\n\r\n\r\nBuild 281.6 - Change log\r\n------------------------\r\n- General UI: can't open help from the new startup screen\r\n- Windows stand-alone apps: removed a debug message box forgotten in the build 281.5\r\n\r\n\r\nBuild 281.5 - Change log\r\n------------------------\r\n- General UI: crash at start on some machines due to the welcome page\r\n- Action list editor: you are no longer allowed to paste full events (conditions + actions) or groups\r\n- Windows runtime: in frames with more than 8192 \"real\" event lines (other than comments) the first event lines were overwritten but the lines above 8191 at runtime\r\n- Windows Runtime / Developer version: language not written to the EXE file properties when \"Compress the runtime\" is not selected\r\n- Android: fix in accelerometer\r\n\r\nSee complete list here: http://www.clickteam.com/webftp/files/mmf2/ChangeLogs/282.0.txt",
+      "key": "248170::5dc5d60c567fbd5d127784e3621bfa41dc9fc6d6",
+      "tags": [
+        {
+          "bug": "- Editor: fixed a crash on Steam when you select the Windows Explorer tool"
+        },
+        {
+          "bug": "- Editor: fixed a conversion issue for MMF 1 applications"
+        },
+        {
+          "bug": "- iOS: fixed a bug causing some objects to be deleted in the previous build - note: this might \"unfix\" a bug that was supposedly fixed, but I don't know which one."
+        },
+        {
+          "bug": "- iOS Store object / Windows runtime: crash in comparisons with the LastErrorString and LastErrorNumber expressions"
+        },
+        {
+          "bug": "- iOS: Fixed crash in iOS store object"
+        },
+        {
+          "bug": "- iOS: Fixed \u201cDestroy if too far from frame area\u201d option kill-zone"
+        },
+        {
+          "bug": "- iOS: Fixed fast loops being triggered twice if the frame had a fade-in transition"
+        },
+        {
+          "bug": "- iOS: Fixed multiple touch crash if touching the screen many times during a transition"
+        },
+        {
+          "bug": "- iOS: Fixed backdrops on the bottom layer not showing up in a transition if a scroll event was used at the start of the frame"
+        },
+        {
+          "bug": "- iOS: Fixed compiler issues on pre-iOS7 SDK\u2019s (GameController)"
+        },
+        {
+          "bug": "- iOS: Fixed crash in physics system"
+        },
+        {
+          "bug": "- Editor: when you create a new path movement, the initial speed was set to 0 (since the build 281.4)"
+        },
+        {
+          "bug": "- All runtimes: crash when you launch objects with a physical movement and you quit the frame or application before those objects are deleted"
+        },
+        {
+          "bug": "- Android: Fix in platform movement, moving to left was slower than moving to right."
+        },
+        {
+          "bug": "- Editor: links in the welcome page are now opened in the default browser."
+        },
+        {
+          "bug": "- Editor: Fix in new All Boxed Up tutorial"
+        },
+        {
+          "bug": "- Editor: FGL Html5 object didn't appear in the object list on some machines"
+        },
+        {
+          "bug": "- Editor: FGL Flash object caused compilation errors"
+        },
+        {
+          "bug": "- Editor / Android: an old version of the Android object was installed by the previous beta versions, causing crashes in the event editor"
+        },
+        {
+          "bug": "- Editor / SWF: Mochiads options have been removed and the 'Use Mochiads' option is automatically unchecked when you load a MFA."
+        },
+        {
+          "bug": "- Android: new fix in accelerometer"
+        },
+        {
+          "bug": "- General UI: can't open help from the new startup screen"
+        },
+        {
+          "bug": "- Windows stand-alone apps: removed a debug message box forgotten in the build 281.5"
+        },
+        {
+          "bug": "- General UI: crash at start on some machines due to the welcome page"
+        },
+        {
+          "bug": "- Action list editor: you are no longer allowed to paste full events (conditions + actions) or groups"
+        },
+        {
+          "bug": "- Windows runtime: in frames with more than 8192 \"real\" event lines (other than comments) the first event lines were overwritten but the lines above 8191 at runtime"
+        },
+        {
+          "bug": "- Windows Runtime / Developer version: language not written to the EXE file properties when \"Compress the runtime\" is not selected"
+        },
+        {
+          "bug": "- Android: fix in accelerometer"
+        },
+        {
+          "feature": "- The Xbox Gamepad object is now included in the main product"
+        },
+        {
+          "feature": "- Added missing numeric version of Easing object \u2018Move object\u2019 action"
+        }
+      ]
+    },
+    {
+      "title": "Update Released - 282.0",
+      "date": "2014-07-14 12:42:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572130608006",
+      "content": "Over the weekend we released to you our valued users a update to Clickteam Fusion 2.5. Build 282.00 ads some new features and provides a bunch of fixes, check them out below!\r\n\r\nBuild 282.0 - Change log\r\n------------------------\r\n- Editor: fixed a crash on Steam when you select the Windows Explorer tool\r\n- Editor: fixed a conversion issue for MMF 1 applications\r\n- iOS: fixed a bug causing some objects to be deleted in the previous build - note: this might \"unfix\" a bug that was supposedly fixed, but I don't know which one.\r\n- The Xbox Gamepad object is now included in the main product\r\n\r\n\r\nBuild 281.9 - Change log\r\n------------------------\r\n- iOS Store object / Windows runtime: crash in comparisons with the LastErrorString and LastErrorNumber expressions\r\n- iOS: Fixed crash in iOS store object\r\n\r\n- iOS: Fixed \u201cDestroy if too far from frame area\u201d option kill-zone\r\n\r\n- iOS: Fixed fast loops being triggered twice if the frame had a fade-in transition\r\n\r\n- iOS: Fixed multiple touch crash if touching the screen many times during a transition\r\n- iOS: Fixed backdrops on the bottom layer not showing up in a transition if a scroll event was used at the start of the frame\r\n\r\n- iOS: Fixed compiler issues on pre-iOS7 SDK\u2019s (GameController)\r\n\r\n- iOS: Fixed crash in physics system\r\n\r\n- iOS: Added missing numeric version of Easing object \u2018Move object\u2019 action\r\n\r\n\r\n\r\nBuild 281.8 - Change log\r\n------------------------\r\n- Editor: when you create a new path movement, the initial speed was set to 0 (since the build 281.4)\r\n- All runtimes: crash when you launch objects with a physical movement and you quit the frame or application before those objects are deleted\r\n- Android: Fix in platform movement, moving to left was slower than moving to right.\r\n\r\n\r\nBuild 281.7 - Change log\r\n------------------------\r\n- Editor: links in the welcome page are now opened in the default browser.\r\n- Editor: Fix in new All Boxed Up tutorial\r\n- Editor: FGL Html5 object didn't appear in the object list on some machines\r\n- Editor: FGL Flash object caused compilation errors\r\n- Editor / Android: an old version of the Android object was installed by the previous beta versions, causing crashes in the event editor\r\n- Editor / SWF: Mochiads options have been removed and the 'Use Mochiads' option is automatically unchecked when you load a MFA.\r\n- Android: new fix in accelerometer\r\n\r\n\r\nBuild 281.6 - Change log\r\n------------------------\r\n- General UI: can't open help from the new startup screen\r\n- Windows stand-alone apps: removed a debug message box forgotten in the build 281.5\r\n\r\n\r\nBuild 281.5 - Change log\r\n------------------------\r\n- General UI: crash at start on some machines due to the welcome page\r\n- Action list editor: you are no longer allowed to paste full events (conditions + actions) or groups\r\n- Windows runtime: in frames with more than 8192 \"real\" event lines (other than comments) the first event lines were overwritten but the lines above 8191 at runtime\r\n- Windows Runtime / Developer version: language not written to the EXE file properties when \"Compress the runtime\" is not selected\r\n- Android: fix in accelerometer\r\n\r\nSee complete list here: http://www.clickteam.com/webftp/files/mmf2/ChangeLogs/282.0.txt",
+      "key": "248170::d814e7c7f75d20788ed6a6036c5c0c023d333863",
+      "tags": [
+        {
+          "bug": "- Editor: fixed a crash on Steam when you select the Windows Explorer tool"
+        },
+        {
+          "bug": "- Editor: fixed a conversion issue for MMF 1 applications"
+        },
+        {
+          "bug": "- iOS: fixed a bug causing some objects to be deleted in the previous build - note: this might \"unfix\" a bug that was supposedly fixed, but I don't know which one."
+        },
+        {
+          "bug": "- iOS Store object / Windows runtime: crash in comparisons with the LastErrorString and LastErrorNumber expressions"
+        },
+        {
+          "bug": "- iOS: Fixed crash in iOS store object"
+        },
+        {
+          "bug": "- iOS: Fixed \u201cDestroy if too far from frame area\u201d option kill-zone"
+        },
+        {
+          "bug": "- iOS: Fixed fast loops being triggered twice if the frame had a fade-in transition"
+        },
+        {
+          "bug": "- iOS: Fixed multiple touch crash if touching the screen many times during a transition"
+        },
+        {
+          "bug": "- iOS: Fixed backdrops on the bottom layer not showing up in a transition if a scroll event was used at the start of the frame"
+        },
+        {
+          "bug": "- iOS: Fixed compiler issues on pre-iOS7 SDK\u2019s (GameController)"
+        },
+        {
+          "bug": "- iOS: Fixed crash in physics system"
+        },
+        {
+          "bug": "- Editor: when you create a new path movement, the initial speed was set to 0 (since the build 281.4)"
+        },
+        {
+          "bug": "- All runtimes: crash when you launch objects with a physical movement and you quit the frame or application before those objects are deleted"
+        },
+        {
+          "bug": "- Android: Fix in platform movement, moving to left was slower than moving to right."
+        },
+        {
+          "bug": "- Editor: links in the welcome page are now opened in the default browser."
+        },
+        {
+          "bug": "- Editor: Fix in new All Boxed Up tutorial"
+        },
+        {
+          "bug": "- Editor: FGL Html5 object didn't appear in the object list on some machines"
+        },
+        {
+          "bug": "- Editor: FGL Flash object caused compilation errors"
+        },
+        {
+          "bug": "- Editor / Android: an old version of the Android object was installed by the previous beta versions, causing crashes in the event editor"
+        },
+        {
+          "bug": "- Editor / SWF: Mochiads options have been removed and the 'Use Mochiads' option is automatically unchecked when you load a MFA."
+        },
+        {
+          "bug": "- Android: new fix in accelerometer"
+        },
+        {
+          "bug": "- General UI: can't open help from the new startup screen"
+        },
+        {
+          "bug": "- Windows stand-alone apps: removed a debug message box forgotten in the build 281.5"
+        },
+        {
+          "bug": "- General UI: crash at start on some machines due to the welcome page"
+        },
+        {
+          "bug": "- Action list editor: you are no longer allowed to paste full events (conditions + actions) or groups"
+        },
+        {
+          "bug": "- Windows runtime: in frames with more than 8192 \"real\" event lines (other than comments) the first event lines were overwritten but the lines above 8191 at runtime"
+        },
+        {
+          "bug": "- Windows Runtime / Developer version: language not written to the EXE file properties when \"Compress the runtime\" is not selected"
+        },
+        {
+          "bug": "- Android: fix in accelerometer"
+        },
+        {
+          "feature": "- The Xbox Gamepad object is now included in the main product"
+        },
+        {
+          "feature": "- Added missing numeric version of Easing object \u2018Move object\u2019 action"
+        }
+      ]
+    }
+  ]
+}

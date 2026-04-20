@@ -1,0 +1,387 @@
+{
+  "appId": "723390",
+  "count": 8,
+  "notes": [
+    {
+      "title": "July blog: where we're at + looking for team members!",
+      "date": "2023-07-03 06:10:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150144894259",
+      "content": "[h3]Hey all![/h3][p]\nIt's been a hot minute since our last blog post, so I\u2019ll get on with it already. We\u2019ve got some important news, along with a literally game-changing one! For those looking for a TL;DR I\u2019ll list them at the top here but for those more interested in all the details, scroll down to find out more.\n\nWe\u2019re taking a step back and examining the game as a whole in preparation for continued work\nMetro/subway and canal maps during the 7hr war have gotten big changes with entirely new sections and entirely new music!\nBink video is replaced with webm (like CSGO and Source 2) and has successfully freed up 5.7GB of space\nWork on the soundtrack is continuing, along with some videos to showcase it!\nPBR is being rewritten and improved, featuring bent normals for better shadowing, subsurface scattering for better skin, sheen for rendering leather and fabrics, and vector layers for dynamic snow coverage!\nPreviews of some new firearm models and a bit of an explanation about our switch from v_arms to c_arms\nA new Combine Soldier model is in development\nWe\u2019re also looking for team members! Primarily 3D modelers, animators and texture artists, but also AI programmers, sound designers, and web developers\n[/p][hr][/hr][h2]Writing the bible[/h2][p]As mentioned before, the work on HDTF has been fairly small for the past few years following its release - but within the past year the team has grown significantly and with that, there have been some growing pains. Improving HDTF is going to become difficult and vague when so many different team members have conflicting ideas on what needs to be improved and smoothed out - and so things need to be set in stone and made clear to prevent confusion. This might involve writing a GDD (Game Design Document) but as of now, we are still planning everything out. As an example we\u2019ll be taking a look at how the game was released - its shortcomings in gameplay, story, and tech - and how we can improve on them.\n\nThis is still very subject to change and there's nothing we can show for it at the moment, but it's going to be a decent amount of work and personally, I\u2019m very excited to see how this talented team can execute a new vision.\n[/p][hr][/hr][h2]Changes to Metro[/h2][p]After months of work comes a significant reworking of the metro levels! While some areas may seem familiar, they have received at least a bit of love from the mappers and developers on our team. The mappers currently working on these sections are Gregg and \u0420\u043e\u043c\u0443\u0441 so I\u2019ll let them explain\n\n\u201cI'm redoing some levels from scratch, as well as improving and addressing optimization issues. I would like to talk about the metro_1 and metro_1a levels, which I recently finished working on.\n\nOn the metro_1 map (originally designed by Kalcifer in 2021, with some assistance from FaberGirl for art-passing), I focused on enhancing the gameplay and visuals. Now, players need to utilize parkour in this map. Additionally, with the help of Dabzik, I created a brand new metro map.\n\nThe most challenging aspect of working on this level is identifying gameplay issues, adding details and props to the location, and optimizing performance. Optimization has been a significant problem with the levels in the game, but we are committed to resolving it over time.\n\nTo give this level a unique touch, our teammate \u0420\u043e\u043c\u0443\u0441 composed a lot of new music specifically for the metro levels!\" - Gregg[img src=\"{STEAM_CLAN_IMAGE}/31675198/65868b25a6c603121ab26df96cdb96276cb7acd4.png\"][/img]\u0420\u043e\u043c\u0443\u0441 is a level designer and composer on the team who joined a few months ago and has been working alongside Gregg. He's also working on a mod of his own titled City 52 so go check that out if you\u2019re interested!\n\n\u201cI made changes to the entrance room by adding new details and removing some light, creating a darker atmosphere and encouraging the player to use night vision more often. I also increased the level of damage to interiors and added things like holes to reveal the sky and a falling car.\n\nRegarding the issues, I encountered significant problems with map leaks, optimization, and, most importantly, the zombie AI. Initially, their behavior was problematic and had a negative impact on gameplay, but I overcame that as the map came together.\" - \u0420\u043e\u043c\u0443\u0441[img src=\"{STEAM_CLAN_IMAGE}/31675198/db0879d625e935f4d99e87f38f4da33b69fe84f0.png\"][/img]\n[b]Something worth noting is that metro levels are playable in the owf_staging_prep branch on Steam, which we use to prepare updates to the main game, but these levels are not completely finished yet! Also, here's a little sneak peek of the work on canals[/b]\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/2ccf495c1ad5850755f8d748cf8253b0fa467d09.png\"][/img][/p][hr][/hr][h2]Soundtrack[/h2][p]Among other things, our composer Romus has been hard at work on the new soundtrack for Hunt Down the Freeman, as the original main composer Paul Humphrey isn\u2019t able to be contacted. The plan is also to split parts of the music up into separate components, so we can utilize FMOD to dynamically ramp up the music during combat! Gregg has also been animating new menu backgrounds themed around each act, one of which is visible as the background for some videos showing off the new soundtrack:\n\n[dynamiclink href=\"https://youtu.be/EJQK20u7woo\"][/dynamiclink]\n[dynamiclink href=\"https://youtu.be/Zp1o_Xw-ey0\"][/dynamiclink]\n[dynamiclink href=\"https://youtu.be/9KQO_U0L6FE\"][/dynamiclink]\n[dynamiclink href=\"https://youtu.be/Zq8T9PBbGjI\"][/dynamiclink]\n\n[/p][hr][/hr][h2]Goodbye Bink, hello webm![/h2][p]For the majority of Source 1\u2019s existence, video has been handled by the RAD game tools/Bink video - a standard that has been in use for many years. But as of late newer video formats have come up that provide better quality at a smaller file size - most recently being the .webm video format. CSGO uses webm for its video playback nowadays and Source 2 scrapped Bink/RAD entirely in favor of it, so we\u2019ve made a similar move thanks to a talented programmer on our team, Nooodles!\n\nAnd because of webm playback being added, we\u2019ve managed to cut approximately 5.8GB off the game\u2019s filesize in video files alone, without visible reductions to their quality!\n[/p][hr][/hr][h2]The chronicles of PBR[/h2][p]The story of PBR and shaders is a long and winding road, a gift that keeps on giving if you will - and while PBR in-game is currently looking very\u2026 bright, that doesn\u2019t mean there hasn\u2019t been any progress to show off! \n\nPhysically Based Rendering has been significantly refactored and is now functional on models, brush geometry, and displacements\n\nMicroshadows have been added as an optional feature for material artists to improve shadowing on bumpy surfaces\nSheen has been implemented to display cloth and leather materials in a more realistic way\nBent normals also joins the shader, to better simulate shadowing and ambient occlusion - which should help reduce any glowing corners on models\nParallax-Corrected Cubemaps for improved reflections is back!\nSubsurface Scattering is also back and more functional - ready to dramatically improve the quality of skins and plastics\nBut arguably one of the coolest is vector layers! With this feature, we can accumulate snow, dirt, sand or blood on top of models and simulate how much or how little it affects the sides of it, which we hope to use in Alaska once our updated PBR is ready\nOther things on the to-do list for our shader programmer WhiteRedDragons include alpha dithering for transparencies and PBR glass - but in future, we would also like to dabble with post-process shader effects such as Screen-Space Ambient Occlusion, Depth Of Field, or lens flares\n[/p][hr][/hr][h2]New gun models and c_arms![/h2][p]As an update to the weapon models situation, there has been work on upping the quality and accuracy of weapon visuals in the game - and while we can make new textures for pre-existing weapons as an Australian I\u2019ve never even held a gun in my life, so I can\u2019t do much in terms of modeling accurate firearms. But fortunately, there's someone on the team who does: Aperture Aerospace is our resident gun enjoyer and has been providing a litany of weapons to choose from, and we\u2019ve made some choices!\n\nWe\u2019d like to present our updated M9, Remington 870, M16, MP5, AR2, and AKMS models! The plan is to keep overhauling weapons in-future until we have a fully remade arsenal animated by yours truly and our main animator Bogdanchik!\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/5d6e705614fe5d6a641808c0cd451cc2b93ec01f.png\"][/img][img src=\"{STEAM_CLAN_IMAGE}/31675198/215489ceceb5ab28950a5c7eb1d03382a5d34d03.png\"][/img][img src=\"{STEAM_CLAN_IMAGE}/31675198/6a1c363f8cf3426708314b9242fedbdf6c392e01.png\"][/img]\n\n[/p][h2]Discussing c_arms[/h2][p]Up until games like TF2, Valve used a system commonly referred to as v_arms, which combined the player's arms and weapon into a single model (e.g. v_shotgun, v_smg). Not only was this limiting but also took up unnecessary amounts of space as each gun would have its own arms, making for a lot of duplicated assets. But more annoyingly, it also made things more complicated, as any change to one weapon\u2019s arms would require the same change to be made to all the others - which in the case of HDTF would be at least 20 different arm models.\n\nLike Valve has done, we've switched over to a new system called c_arms, where there is only one set of arms and the two are combined in real-time. This leaves the arms and weapons decoupled.\n\nThe issue we've faced at the moment with making this switch is that there were multiple first-person animators working on HDTF and they used different rigs. As such, switching over to c_arms has broken the arms - so until we have remade the animations for the player's arsenal, you likely won't see this change.\n[/p][hr][/hr][h2]New Combine?[/h2][p]As some people on the Discord server might know, I (Minerkey/Sol) have been taking an advanced diploma in 3D game art - and as part of one of my final assignments, I was tasked with creating a game character. As such, I sought to kill two birds with one stone and create a new Combine Soldier model for HDTF!\n\nThere is still much work to be done before it will appear in-game, as all it\u2019s animations will either need to be re-targeted to its new rig, or re-animated from scratch.\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/463aed028e8af2fe575b17043e76b8622d10cded.png\"][/img]\nWith the way this model has been created, its helmet and armor are also somewhat customizable, as I had wanted to create a base soldier which can be visually modified to suit different roles (shotgunners, medics, etc)\n[/p][hr][/hr][h2]We\u2019re looking for team members![/h2][p]As you can see, we\u2019re doing a lot of work on this game to make it fun to play and a far superior experience to the original 2018 version that was unleashed onto Steam way back when\n\nBut we can\u2019t do it alone! Our team is lacking in some areas and we\u2019re looking to fill those gaps with like-minded people interested in helping us fix the game. Such roles we\u2019re looking for include:\n\n[i]Note that this list is shown from highest to lowest priority. [/i]\n\n[b]3D modelers[/b] will be helping to create models and props, could be brand new ones or it could be recreating already-existing models to bring them up to a higher standard while ensuring they run well in-game.\n\n[b]3D animators[/b] will be helping to animate and bring our world to life. While we are mainly looking for animators who focus on animating characters/NPCs or creatures - we're also open to the idea of bringing on additional viewmodel/first-person animators\n\n[b]Texture artists[/b] will be creating textures for the models, along with textures and materials to use in our maps. This could include making new snow textures, concrete, tiles, sand or combine surfaces (note if you\u2019re a 3D modeler and a texture artist that works well!)\n\n[b]Particle/VFX artists[/b] will be responsible for creating new particle effects or overhauling pre-existing ones. This could involve new smoke or explosions, new gunshot or rain effects, etc to improve visual fidelity or player feedback!\n\n[b]Web developers[/b] will be helping create a website with the team and managing it - this will include our pages documenting features for modders and other team members to reference back to\n\n[b]AI programmers[/b] will be helping to improve our enemy and NPC AI or add new \nbehaviors and quality-of-life additions. Half-Life 2\u2019s Combine soldiers aren\u2019t exactly known for having the greatest of AI, and as part of improving the game, we would like to greatly improve the experience of fighting enemies or hanging around NPCs.\n\nAnd finally [b]sound designers[/b]. As a sound designer, your role will involve replacing or improving the sound effects of HDTF. This could include creating new sound effects for new content, replacing stock sounds with better ones, or beefing up weapon and explosion sounds.\n\n3D modelers and texture artists are especially important right now as our art team is small and the workload ahead of us is considerably larger - so having more members onboard to create assets would be a big weight off our shoulders. Things like AI design are also crucial to creating a good experience and improving the game.\n\n[b][url=\"https://forms.gle/xQ72mT1SKp7w85Kq8\"]The application form for those looking to apply can be found here![/url][/b]\n\nIf you have the skills to help out, don\u2019t hesitate! And if you know anyone who might be interested in working on the project it\u2019d be much appreciated if you could send them our way!\n[/p][hr][/hr][p]To wrap up, we\u2019d like to thank you all for the support you\u2019ve shown over the time the OWF build has been in the works! It's been great hanging out with the community that's been building up and among other things it helps keep us motivated to finish it!\n\nYou can interact with the team and our community via our [url=\"https://discord.com/invite/hdtf\"]Discord server[/url]\nSee our occasional updates, but mostly memes, on the [url=\"https://twitter.com/Royal_Rudius\"]official Twitter[/url]\ntrack our to-do list in real time on our [url=\"https://trello.com/b/Fgt9UUPE/operation-whiskey-freedom\"]Trello board[/url]\nAlong with checking out our new [url=\"https://www.youtube.com/@HDTFdev\"]Youtube channel[/url]\nOr donate to our recently republished [url=\"https://www.patreon.com/HDTF/\"]Patreon if you\u2019d like to help support the team![/url]\nAnd finally, the game is now on sale at a 75% off discount! You can do with that information what you will\n[/p][h3]Operation Whisky Freedom[/h3]",
+      "key": "723390::b3d67adf8fa589ca358e4d43b488cc8aaf846d7a",
+      "tags": [
+        {
+          "feature": "Metro/subway and canal maps during the 7hr war have gotten big changes with entirely new sections and entirely new music!"
+        },
+        {
+          "feature": "Bink video is replaced with webm (like CSGO and Source 2) and has successfully freed up 5.7GB of space"
+        },
+        {
+          "bug": "\u201cI\u2019m redoing some levels from scratch, as well as improving and addressing optimization issues. I would like to talk about the metro_1 and metro_1a levels, which I recently finished working on."
+        },
+        {
+          "bug": "Optimization has been a significant problem with the levels in the game, but we are committed to resolving it over time."
+        },
+        {
+          "bug": "\u201cI made changes to the entrance room by adding new details and removing some light, creating a darker atmosphere and encouraging the player to use night vision more often. I also increased the level of damage to interiors and added things like holes to reveal the sky and a falling car."
+        },
+        {
+          "bug": "Regarding the issues, I encountered significant problems with map leaks, optimization, and, most importantly, the zombie AI. Initially, their behavior was problematic and had a negative impact on gameplay, but I overcame that as the map came together.\""
+        },
+        {
+          "feature": "The plan is also to split parts of the music up into separate components, so we can utilize FMOD to dynamically ramp up the music during combat!"
+        },
+        {
+          "feature": "For the majority of Source 1\u2019s existence, video has been handled by the RAD game tools/Bink video - a standard that has been in use for many years. But as of late newer video formats have come up that provide better quality at a smaller file size - most recently being the .webm video format. CSGO uses webm for its video playback nowadays and Source 2 scrapped Bink/RAD entirely in favor of it, so we\u2019ve made a similar move thanks to a talented programmer on our team, Nooodles!"
+        },
+        {
+          "feature": "And because of webm playback being added, we\u2019ve managed to cut approximately 5.8GB off the game\u2019s filesize in video files alone, without visible reductions to their quality!"
+        },
+        {
+          "feature": "Physically Based Rendering has been significantly refactored and is now functional on models, brush geometry, and displacements"
+        },
+        {
+          "feature": "Microshadows have been added as an optional feature for material artists to improve shadowing on bumpy surfaces"
+        },
+        {
+          "feature": "Sheen has been implemented to display cloth and leather materials in a more realistic way"
+        },
+        {
+          "feature": "Bent normals also joins the shader, to better simulate shadowing and ambient occlusion - which should help reduce any glowing corners on models"
+        },
+        {
+          "feature": "Parallax-Corrected Cubemaps for improved reflections is back!"
+        },
+        {
+          "feature": "Subsurface Scattering is also back and more functional - ready to dramatically improve the quality of skins and plastics"
+        },
+        {
+          "feature": "But arguably one of the coolest is vector layers! With this feature, we can accumulate snow, dirt, sand or blood on top of models and simulate how much or how little it affects the sides of it, which we hope to use in Alaska once our updated PBR is ready"
+        },
+        {
+          "feature": "Other things on the to-do list for our shader programmer WhiteRedDragons include alpha dithering for transparencies and PBR glass - but in future, we would also like to dabble with post-process shader effects such as Screen-Space Ambient Occlusion, Depth Of Field, or lens flares"
+        },
+        {
+          "feature": "We\u2019d like to present our updated M9, Remington 870, M16, MP5, AR2, and AKMS models! The plan is to keep overhauling weapons in-future until we have a fully remade arsenal animated by yours truly and our main animator Bogdanchik!"
+        },
+        {
+          "feature": "Like Valve has done, we've switched over to a new system called c_arms, where there is only one set of arms and the two are combined in real-time. This leaves the arms and weapons decoupled."
+        },
+        {
+          "bug": "The issue we've faced at the moment with making this switch is that there were multiple first-person animators working on HDTF and they used different rigs. As such, switching over to c_arms has broken the arms - so until we have remade the animations for the player's arsenal, you likely won't see this change."
+        },
+        {
+          "feature": "As such, I sought to kill two birds with one stone and create a new Combine Soldier model for HDTF!"
+        },
+        {
+          "feature": "With the way this model has been created, its helmet and armor are also somewhat customizable, as I had wanted to create a base soldier which can be visually modified to suit different roles (shotgunners, medics, etc)"
+        },
+        {
+          "feature": "3D modelers will be helping to create models and props, could be brand new ones or it could be recreating already-existing models to bring them up to a higher standard while ensuring they run well in-game."
+        },
+        {
+          "feature": "3D animators will be helping to animate and bring our world to life. While we are mainly looking for animators who focus on animating characters/NPCs or creatures - we're also open to the idea of bringing on additional viewmodel/first-person animators"
+        },
+        {
+          "feature": "Texture artists will be creating textures for the models, along with textures and materials to use in our maps. This could include making new snow textures, concrete, tiles, sand or combine surfaces (note if you\u2019re a 3D modeler and a texture artist that works well!)"
+        },
+        {
+          "feature": "Particle/VFX artists will be responsible for creating new particle effects or overhauling pre-existing ones. This could involve new smoke or explosions, new gunshot or rain effects, etc to improve visual fidelity or player feedback!"
+        },
+        {
+          "feature": "Web developers will be helping create a website with the team and managing it - this will include our pages documenting features for modders and other team members to reference back to"
+        },
+        {
+          "feature": "AI programmers will be helping to improve our enemy and NPC AI or add new behaviors and quality-of-life additions. Half-Life 2\u2019s Combine soldiers aren\u2019t exactly known for having the greatest of AI, and as part of improving the game, we would like to greatly improve the experience of fighting enemies or hanging around NPCs."
+        },
+        {
+          "feature": "And finally sound designers. As a sound designer, your role will involve replacing or improving the sound effects of HDTF. This could include creating new sound effects for new content, replacing stock sounds with better ones, or beefing up weapon and explosion sounds."
+        }
+      ]
+    },
+    {
+      "title": "December Blog: current progress",
+      "date": "2022-12-29 20:04:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037469699263",
+      "content": "[h2]Hey all![/h2][p]\nThere's many things to jump into so I'll get straight into it. Over the past year the HDTF team has grown from about 5 people to 20 - including weapon animators, modelers, shader programmers, VFX artists and more. As such we can now afford to become more ambitious with our overhaul of Hunt Down the Freeman! As the team has grown, we\u2019ve also ditched the old name: M3SA Team and the M3SA build are no more - Operation Whisky Freedom is ready to go!\n\n[b]Something to note is that since I am on the art side of the team, this blog post will mainly focus on art/graphics-related content, but there is a ton of mapping and gameplay work being done still[/b]\n\nWith our sweeping changes to the game, we\u2019re adding a ton of new features we can\u2019t wait to utilize, and for the TL;DR I\u2019ll list them here, but if you want more detail its down below\n\nPhysically-Based Rendering\nUpdated VFX\nFMOD Studio for dynamic music\nParallax-Corrected Cubemaps\nDepth Of Field\nOverhauled weapon animations\nPlans for overhauled Black Mesa section\nReworks to Albuquerque\nNew weapon models and materials\nBullsquid & Houndeye\nWorkshop support\n [i](note: all content shown may change during development, it's all work-in-progress)[/i]\n\n\n\n[/p][h2]Shaders & visuals[/h2][p]The source engine uses a specular setup for its materials, a method that isn\u2019t often supported by newer software and hasn\u2019t really been used in games for a decade. PBR (physically-based-rendering) is now the industry standard, utilizing metallic, roughness and ambient occlusion maps and gives a different look to metal surfaces compared to the typical specular shading system. PBR also simplifies our workflow and is the main rendering method of modern tools such as Substance - allowing our artists and modders to more-easily create content. Another benefit of PBR is that it only uses greyscale (black = off, white = on) allowing for more compression without drastic changes to visual quality\n\nSubsurface-scattering is also a feature of our PBR shader, allowing us to emulate the way light affects materials such as skin and plastic on NPCs and models.\n\nAlong with that, PCC (parallax-corrected cubemaps) is integrated into our shader. Source engine cubemaps often do a good job but break-down in motion, they appear to move with the player and are very inaccurate in most situations. Using parallax-correction, cubemaps are able to take on the shape of a boxy room, allowing cubemaps to warp and distort according to the player\u2019s location. While this system is implemented in the game, it has yet to be used in our maps. Theres also talk of implementing screen-space reflection as well to accommodate realtime effects and non-boxy areas which cannot use PCC - but thats just an idea.\n\n[url=\"https://youtu.be/H35QWMuoF3Y\"]An excellent example of this PCC is showcased by Tripmine Studios and their implementation of it[/url]\n\nSomething to note with our current PBR+SSS+PCC shader is that it is in the process of being rewritten, as it has some issues. Along with this, it is currently not functioning properly with cubemaps, which results in metallic materials becoming incredibly dark - as can be seen on PBR surfaces across the board such as the Hardballer/1911, AR2, AK, etc.\n\nAnother addition in the works is DOF (Depth of Field) which blurs parts of the screen. When aiming down sights in games you may notice the gun is blurred to allow the player to focus on what they\u2019re aiming at, and this is something we\u2019re going to be replicating. Of course this is planned to be an option in the menu you can disable. Only issue is that right now it isn\u2019t functioning on AMD cards, which we\u2019re hoping to resolve but currently has our shader artists very confused.\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/75ebafa08ffb5f1aa98d8a2f54befbeea0f5a43a.png\"][/img]\n[/p][h2]Animation[/h2][p]Along with me, a new animator - Manimal - has joined the team to work on first-person animation. Currently, the MP7, knife, 1911, AR2, USP, Spas-12, pills and Remington have been reanimated and implemented into the game, and we plan to give all the player\u2019s weapons the same treatment! Camera shake has also been implemented (though currently unused) to complement the new animations - similar to how the feature is utilized in games like Modern Warfare 2019.\n\nManimal has also posted video of their animations as they are completed, which can be found [url=\"https://www.youtube.com/@Manimal1920/videos\"]here on their channel[/url]\n\n[/p][previewyoutube=\"Bi34oRqC35g;full\"][/previewyoutube][p]There are also plans for small first-person animations when interacting with the environment, such as getting off the hospital bed in the Albuquerque hospital.\n\nand as a last-minute addition, we are also working to bring support for staged reloads - so if you reload and switch weapons before it finishes, upon switching back it will continue from there, rather than restarting the whole reload animation from scratch. Its done at the qc level as opposed to game code, so its not a permanent change and those who don't like it can revert it\n\n[/p][previewyoutube=\"T3gaPpjdyCM;full\"][/previewyoutube][p] [/p][h2]Weapons[/h2][p]Weapons have been a large focus of our small art team, and as such have of course been receiving new animations. New materials are also in development for our guns and after bringing on Aperture Aerospace to help - some of the more problematic weapons have been getting new models, such as the AR2 and 1911! Our next models include new AK, USP and M16 models as they could do with overhauls, especially the last two.\n[i](Note: as our PBR shader isn\u2019t functioning correctly, these images are rendered using Cycles)[/i]\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/ecd07c194d9e8d5601d6b004bedd48e2eef3d514.png\"][/img]\n\n[/p][h2]AR2[/h2][p]If you've tried out the AR2 in the past month you might notice that it's been completely remade! With help from myself, our lead M3SA and Gamedev, the AR2 has received a brand new model and materials that better fit the original design, along with new animations by none other than Manimal! Our VFX artist Justyn also has plans for new particle effects to add to the weapon.\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/bc00732cefa65d249c5aba6c4d89349b684a896d.png\"][/img]\n\n[/p][h2]VFX[/h2][p]Thanks to another member of the team, Justyn, particles have been improved for Hunt Down The Freeman. Expect smoke to come from the barrels of guns after firing along with smoking empty shells to come flying out and hit the ground!\n\n[i](note: this is old footage and as such doesn't include the custom smoke particle we've made, you can see it in-game now!)[/i]\n\n[/p][previewyoutube=\"lSrJgNUHX6c;full\"][/previewyoutube][p]\n\n[/p][h2]FMOD[/h2][p]You might\u2019ve seen FMOD on the splash screens of many modern games, and now we have it too! FMOD is a Third Party Audio Middleware that allows us to play a range of audio files, while also allowing us to make dynamic music or sounds that can be affected by the game\u2019s code with the use of FMOD Studio.\n\nWe have currently implemented the entire API and have it working in-game, but have yet to implement it into any of our maps for the time being. We hope that in the future mappers and modders will be able to utilize it to make more engaging maps with dynamic music and even more\n\n[i](note: FMOD .bank files are map based and should be stored inside \u201csound/fmod/desktop/<Map name here>\u201d plus FMOD Studio bank files can be stored inside VPKs)[/i]\n\n\n[/p][h2]Workshop[/h2][p]Workshop support has been in the works for some months now, and is still chugging along somewhat. While our current dev responsible for its implementation has been interrupted by other things (living in Russia), it is coming along nicely. It currently supports the usual, such as material, sound, particle and model replacements along with being able to add new weapons.\n\n\n[/p][h2]NPCs[/h2][p]While NPCs have not received many visual changes (outside of Physically-Based materials for Combine and rebels), new dialogue has been in the works for quite some time. Our current Combine dialogue is voiced by our team lead M3SA, but the new voice we've been working on is voiced by one of our mappers - Mr KalcifeR!\n\nMore work is also being done on rebels and their models, but for starters, clothing is now randomized\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/10ec40acb08bc8c2637e91d0cdb009b751180873.png\"][/img]\nIt is also with a heavy heart, that I am informing you all of our choice to replace the rebel and crewmate voice lines. Pyrocynical\u2019s old lines will be replaced with more fitting lines of dialogue and a new voice. Along with this, we do have plans to update the faces of rebels and crewmates, and we\u2019re looking to do so using Character Creator 3/4 as it is leagues ahead Fuse which was originally used.\n\n[i](For the record, as we do not have the source files for the cutscenes, Pyrocynical's voice can only be removed from gameplay, not cutscenes)[/i]\n\n\n[/p][h2]Multiplayer[/h2][p]While we would like to allow people to experience the emotional masterpiece that is HDtF\u2019s campaign together - it's been very low on the priority list. While we have moved over to the multiplayer branch of the source engine, we haven\u2019t worked on getting multiplayer up and running at all as of late, as there are bigger things that require our attention at the moment. One benefit of moving to that branch however, is we have access to map compression tools so we can reduce the size maps take up!\n\n\n[/p][h2]Black Mesa[/h2][p]Black Mesa (formally Black Messa) is the first area of the game, and as such sets the tone. The idea of overhauling the Black Mesa levels has been in the background for quite some time as we focus on more pressing issues, but it's still in some level of planning! We're thinking of extending the section along with adding classic enemies like the Houndeye and Bullsquid (done by yours truly) which are coming along quite nicely!\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/3af1eb61ae0606a4297e5e60c140d9863a2b0775.png\"][/img][img src=\"{STEAM_CLAN_IMAGE}/31675198/66e0929299b8fbabd14bc157bb4430c7ceddc44d.png\"][/img]\nSome ideas include the addition of Xen plants and puzzles, though creating Xen models will likely take quite some time to create. As an example of what one of our main mappers, Kalcifer, can create - heres an example of what an expanded Black Mesa could be like\n\n[/p][previewyoutube=\"2qDNbUfjovg;full\"][/previewyoutube][p]\n\n[/p][h2]Commentary update[/h2][p]The main focus for our next major update is the addition of developer commentary from our team, featuring voices ranging from lead developers to mappers, animators and technical artists working on our shaders. The bulk of that work is script writing and recording, but heres a snippet of what has been done so far. Of course, that commentary update will also bring further changes such as the ones currently in the beta build (new weapons, animations, map changes, etc)\n\n[/p][previewyoutube=\"ETPvISupMfY;full\"][/previewyoutube][p]\n\n[/p][h2]Patreon[/h2][p]It is probably well-known that the team has not received any payment from Berkan, nor do we receive any money from Steam sales. I have attempted to reach out to Berkan on that front but have gotten no response. In the meantime, we recommend holding off on anyone buying the game unless a sale or discount is going on, as unfortunately we cannot even generate keys for Patreon supporters.\n\nSpeaking of Patreon, [url=\"http://www.patreon.com/HDTF\"]you can help fund the team here if you want![/url]\n\n\n[/p][h2]Conclusion[/h2][p]Overall, progress is chugging along and a large amount of work is being done! We're determined to keep working and adding new features to improve Hunt Down the Freeman more and more. Another aspect we're hoping to focus on is sound design, though we don't have a dedicated team member for that role and many of us are already taking on enough jobs as-is.\n\nIf you want to check out content as its added, it can be found in the Operation Whisky Freedom build, accessible by right clicking the game in your library and going into properties > betas\n\nAlso, expect combine soldiers and other NPCs to look more festive up until Jan 1st, so have fun!\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/f4c92642d7bb9b3b275dabcda1be9ef0e5a3fa00.png\"][/img]\nand a new crystal model is in the works for the Albuquerque section\n\n[img src=\"{STEAM_CLAN_IMAGE}/31675198/dd2aa2b50be218f8db2ccf2848850f5d2698444c.png\"][/img]\n\nYou can also interact with the team and our community via the [url=\"https://discord.com/invite/hdtf\"]Discord server[/url]\nSee our occasional updates, but mostly memes, on the [url=\"https://twitter.com/Royal_Rudius\"]official Twitter[/url]\nOr track our to-do list in [url=\"https://trello.com/b/Fgt9UUPE/operation-whiskey-freedom\"]real-time on our trello board[/url]\n\n\n[/p][h2]Hope you all have a happy new year, and we look forward to continuing in 2023![/h2][p]\nOperation Whisky Freedom\n\n\n[/p]",
+      "key": "723390::7b0bf3bd37f2eba4a3005afd52588c56340e593b",
+      "tags": [
+        {
+          "feature": "Physically-Based Rendering"
+        },
+        {
+          "feature": "Updated VFX"
+        },
+        {
+          "feature": "FMOD Studio for dynamic music"
+        },
+        {
+          "feature": "Parallax-Corrected Cubemaps"
+        },
+        {
+          "feature": "Depth Of Field"
+        },
+        {
+          "feature": "Overhauled weapon animations"
+        },
+        {
+          "feature": "Plans for overhauled Black Mesa section"
+        },
+        {
+          "feature": "Reworks to Albuquerque"
+        },
+        {
+          "feature": "New weapon models and materials"
+        },
+        {
+          "feature": "Bullsquid & Houndeye"
+        },
+        {
+          "feature": "Workshop support"
+        },
+        {
+          "bug": "Something to note with our current PBR+SSS+PCC shader is that it is in the process of being rewritten, as it has some issues."
+        },
+        {
+          "bug": "Along with this, it is currently not functioning properly with cubemaps, which results in metallic materials becoming incredibly dark - as can be seen on PBR surfaces across the board such as the Hardballer/1911, AR2, AK, etc."
+        },
+        {
+          "bug": "Only issue is that right now it isn\u2019t functioning on AMD cards, which we\u2019re hoping to resolve but currently has our shader artists very confused."
+        },
+        {
+          "feature": "Camera shake has also been implemented (though currently unused) to complement the new animations - similar to how the feature is utilized in games like Modern Warfare 2019."
+        },
+        {
+          "feature": "There are also plans for small first-person animations when interacting with the environment, such as getting off the hospital bed in the Albuquerque hospital."
+        },
+        {
+          "feature": "and as a last-minute addition, we are also working to bring support for staged reloads - so if you reload and switch weapons before it finishes, upon switching back it will continue from there, rather than restarting the whole reload animation from scratch."
+        },
+        {
+          "feature": "New materials are also in development for our guns and after bringing on Aperture Aerospace to help - some of the more problematic weapons have been getting new models, such as the AR2 and 1911!"
+        },
+        {
+          "feature": "Our next models include new AK, USP and M16 models as they could do with overhauls, especially the last two."
+        },
+        {
+          "feature": "If you've tried out the AR2 in the past month you might notice that it's been completely remade!"
+        },
+        {
+          "feature": "With help from myself, our lead M3SA and Gamedev, the AR2 has received a brand new model and materials that better fit the original design, along with new animations by none other than Manimal!"
+        },
+        {
+          "feature": "Our VFX artist Justyn also has plans for new particle effects to add to the weapon."
+        },
+        {
+          "feature": "Thanks to another member of the team, Justyn, particles have been improved for Hunt Down The Freeman."
+        },
+        {
+          "feature": "Expect smoke to come from the barrels of guns after firing along with smoking empty shells to come flying out and hit the ground!"
+        },
+        {
+          "feature": "You might\u2019ve seen FMOD on the splash screens of many modern games, and now we have it too!"
+        },
+        {
+          "feature": "FMOD is a Third Party Audio Middleware that allows us to play a range of audio files, while also allowing us to make dynamic music or sounds that can be affected by the game\u2019s code with the use of FMOD Studio."
+        },
+        {
+          "feature": "We have currently implemented the entire API and have it working in-game, but have yet to implement it into any of our maps for the time being."
+        },
+        {
+          "feature": "We hope that in the future mappers and modders will be able to utilize it to make more engaging maps with dynamic music and even more"
+        },
+        {
+          "feature": "Workshop support has been in the works for some months now, and is still chugging along somewhat."
+        },
+        {
+          "feature": "It currently supports the usual, such as material, sound, particle and model replacements along with being able to add new weapons."
+        },
+        {
+          "feature": "While NPCs have not received many visual changes (outside of Physically-Based materials for Combine and rebels), new dialogue has been in the works for quite some time."
+        },
+        {
+          "feature": "Our current Combine dialogue is voiced by our team lead M3SA, but the new voice we've been working on is voiced by one of our mappers - Mr KalcifeR!"
+        },
+        {
+          "feature": "More work is also being done on rebels and their models, but for starters, clothing is now randomized"
+        },
+        {
+          "feature": "It is also with a heavy heart, that I am informing you all of our choice to replace the rebel and crewmate voice lines."
+        },
+        {
+          "feature": "Pyrocynical\u2019s old lines will be replaced with more fitting lines of dialogue and a new voice."
+        },
+        {
+          "feature": "Along with this, we do have plans to update the faces of rebels and crewmates, and we\u2019re looking to do so using Character Creator 3/4 as it is leagues ahead Fuse which was originally used."
+        },
+        {
+          "feature": "While we would like to allow people to experience the emotional masterpiece that is HDtF\u2019s campaign together - it's been very low on the priority list."
+        },
+        {
+          "feature": "While we have moved over to the multiplayer branch of the source engine, we haven\u2019t worked on getting multiplayer up and running at all as of late, as there are bigger things that require our attention at the moment."
+        },
+        {
+          "feature": "One benefit of moving to that branch however, is we have access to map compression tools so we can reduce the size maps take up!"
+        },
+        {
+          "feature": "The idea of overhauling the Black Mesa levels has been in the background for quite some time as we focus on more pressing issues, but it's still in some level of planning!"
+        },
+        {
+          "feature": "We're thinking of extending the section along with adding classic enemies like the Houndeye and Bullsquid (done by yours truly) which are coming along quite nicely!"
+        },
+        {
+          "feature": "Some ideas include the addition of Xen plants and puzzles, though creating Xen models will likely take quite some time to create."
+        },
+        {
+          "feature": "The main focus for our next major update is the addition of developer commentary from our team, featuring voices ranging from lead developers to mappers, animators and technical artists working on our shaders."
+        },
+        {
+          "feature": "The bulk of that work is script writing and recording, but heres a snippet of what has been done so far."
+        },
+        {
+          "feature": "Of course, that commentary update will also bring further changes such as the ones currently in the beta build (new weapons, animations, map changes, etc)"
+        },
+        {
+          "feature": "Overall, progress is chugging along and a large amount of work is being done!"
+        },
+        {
+          "feature": "We're determined to keep working and adding new features to improve Hunt Down the Freeman more and more."
+        },
+        {
+          "feature": "Another aspect we're hoping to focus on is sound design, though we don't have a dedicated team member for that role and many of us are already taking on enough jobs as-is."
+        },
+        {
+          "feature": "If you want to check out content as its added, it can be found in the Operation Whisky Freedom build, accessible by right clicking the game in your library and going into properties > betas"
+        },
+        {
+          "feature": "Also, expect combine soldiers and other NPCs to look more festive up until Jan 1st, so have fun!"
+        },
+        {
+          "feature": "and a new crystal model is in the works for the Albuquerque section"
+        }
+      ]
+    },
+    {
+      "title": "Happy National Video Games Day Update!",
+      "date": "2022-09-12 02:04:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4606641560261901402",
+      "content": "Hello all you avid Hunt Down the Freeman fans! We have some pretty exciting news for you all that you might like to hear.\n\nAfter the downpour of support that we had following the release of the sudden April 1st update, our little team expanded from about five people to over twenty.\n\nWhat does this mean? It means that we\u2019ve been able to add a bunch of improvements to the code, game levels, overall performance, models, particles, rendering systems and whatever else I\u2019m forgetting at the moment.\n\nWe are releasing an update that\u2019s going to fix some of the stuff we didn\u2019t catch in the April 1st update, as well as add in a bunch of new map fixes, some performance boosts for Alaska maps, a few reworked maps like Ravenholm, fixes to the parkour system and just general issues like cubemaps cutting themselves off in some maps.\n\nGame tech was included but isn\u2019t being used yet, for example PBR, Depth of Field, and FMOD Studio. We added both PBR and FMOD and have them working in game, but we only have one or two people that can make PBR textures and it\u2019s a slow going process. Depth of field is giving us more of a headache then we thought it would, so we decided not to include it in this update.\n\nThe game has switched to the multiplayer version of Source SDK 2013, which enables us to compress the game levels to take up less space, and we\u2019ve also updated the project to Visual Studio 2022, which has the benefit of better performance in game due to a more recent compiler.\n\nWe have plans to further expand on Black Mesa, expanding it from one level to about five or so, as well as redoing much of Act 3 so there\u2019s more content to be had. It\u2019s going to be awhile before any of this happens because we are working on redoing parts of Act 1 and another map in Act 3, but we only have a handful of level designers that can create a level from start to finish.\n\nI want to thank all the people that joined our discord to offer help, and I want to thank especially the busy people who have joined our dev team. There\u2019s been a lot of time and effort expended into working on the source engine and getting it up to modern standards.\n\nIf you want to support us and allow us to buy things for the project and/or support my Funko POP addiction, you can give money to our [url=https://www.patreon.com/HDTF]Patreon[/url].\n\n[url=https://discord.com/invite/hdtf]Join our discord[/url] to see what we are working on. If you want to opt-in to our development build, select the weekly release in the Beta properties, just be warned that things will break from time to time.\n",
+      "key": "723390::06d9f1aac5030a62b6cb211d38ba406fde431c6f",
+      "tags": [
+        {
+          "bug": "We are releasing an update that\u2019s going to fix some of the stuff we didn\u2019t catch in the April 1st update, as well as add in a bunch of map fixes, some performance boosts for Alaska maps, a few reworked maps like Ravenholm, fixes to the parkour system and just general issues like cubemaps cutting themselves off in some maps."
+        },
+        {
+          "feature": "The game has switched to the multiplayer version of Source SDK 2013, which enables us to compress the game levels to take up less space, and we\u2019ve also updated the project to Visual Studio 2022, which has the benefit of better performance in game due to a more recent compiler."
+        }
+      ]
+    },
+    {
+      "title": "Fixed M3SA Build Update",
+      "date": "2022-06-01 18:41:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4469272893490371311",
+      "content": "the source code was update to vs2022 and the default settings is debug and i forgot to change it, it's fixed now sorry. i keep forgetting that hdtf gained traction and there's more than five people on the m3sa branch uwu sorry lmao",
+      "key": "723390::b23771399086c1ef9021709488454313b846390d",
+      "tags": [
+        {
+          "bug": "the default settings is debug and i forgot to change it, it's fixed now sorry."
+        }
+      ]
+    },
+    {
+      "title": "Important Update 002",
+      "date": "2018-03-21 18:01:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2365952982526493968",
+      "content": "Hello Everyone. We'd like to inform everyone that we lowered the price a few days ago in an effort to make our game more available to our global community. A lot of friends we've made couldn't play the game because of the price, and so we agreed for many reasons why it needed to go down.\r\n\r\nWe've received a ton of feedback and advice both on our Discord, as well as the Steam Forums. RRE would like to personally thank everyone who has been trying to help us improve. It really means a lot to some of us on the team because we've given up other opportunities to work on Hunt Down The Freeman, working as hard as we could on it. You guys are awesome, thank you.",
+      "key": "723390::0c618f02e5640fc52206c9924fa3df2c115ceaed",
+      "tags": [
+        {
+          "balance_change": "we lowered the price a few days ago in an effort to make our game more available to our global community."
+        }
+      ]
+    },
+    {
+      "title": "Important Update 001",
+      "date": "2018-03-14 21:02:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363700548701214360",
+      "content": "Hello everyone. We pushed a pretty big update a few days ago to the game and made it playable. We've listened to all of you and we've reworked some of the combat on a few levels, improved loading times for 83% of the levels, and fixed a good deal of bugs. Stay tuned and expect more updates in the future.",
+      "key": "723390::d98508fd78b0a8b5e6047508e42ed2b1b7955308",
+      "tags": [
+        {
+          "balance_change": "- reworked some of the combat on a few levels"
+        },
+        {
+          "balance_change": "- improved loading times for 83% of the levels"
+        },
+        {
+          "bug": "- fixed a good deal of bugs"
+        }
+      ]
+    },
+    {
+      "title": "HDTF - DAY 1 PATCH",
+      "date": "2018-02-24 10:12:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2361446846773718507",
+      "content": "Hello everyone, more updates are coming! Please, continue giving us feedback!\r\n\r\nBug Fixes:\r\n\r\n-Cutscenes are now downloadable.\r\n-Dev texture brush on metro removed.\r\n-Alaska cubemaps fixed.\r\n-Missing textures fixed.\r\n-Missing ending levels are now downloadable.\r\n-Adam's mysterious twin brother is no more in the metro.\r\n-Missing keyboard texture\r\n-Flickering model textures in urban fight level fixed(for trucks and tents).\r\n\r\nHave fun!",
+      "key": "723390::b1549dbc1e0038b27fe5d8563cbfd6b195342ac1",
+      "tags": [
+        {
+          "feature": "-Cutscenes are now downloadable."
+        },
+        {
+          "bug": "-Dev texture brush on metro removed."
+        },
+        {
+          "bug": "-Alaska cubemaps fixed."
+        },
+        {
+          "bug": "-Missing textures fixed."
+        },
+        {
+          "feature": "-Missing ending levels are now downloadable."
+        },
+        {
+          "bug": "-Adam's mysterious twin brother is no more in the metro."
+        },
+        {
+          "bug": "-Missing keyboard texture"
+        },
+        {
+          "bug": "-Flickering model textures in urban fight level fixed(for trucks and tents)."
+        }
+      ]
+    },
+    {
+      "title": "HDTF - DAY 1 PATCH",
+      "date": "2018-02-24 10:12:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521688119106",
+      "content": "Hello everyone, more updates are coming! Please, continue giving us feedback!\r\n\r\nBug Fixes:\r\n\r\n-Cutscenes are now downloadable.\r\n-Dev texture brush on metro removed.\r\n-Alaska cubemaps fixed.\r\n-Missing textures fixed.\r\n-Missing ending levels are now downloadable.\r\n-Adam's mysterious twin brother is no more in the metro.\r\n-Missing keyboard texture\r\n-Flickering model textures in urban fight level fixed(for trucks and tents).\r\n\r\nHave fun!",
+      "key": "723390::e9c918920fc7e72cbda198bef311a71b756d5cff",
+      "tags": [
+        {
+          "feature": "-Cutscenes are now downloadable."
+        },
+        {
+          "bug": "-Dev texture brush on metro removed."
+        },
+        {
+          "bug": "-Alaska cubemaps fixed."
+        },
+        {
+          "bug": "-Missing textures fixed."
+        },
+        {
+          "feature": "-Missing ending levels are now downloadable."
+        },
+        {
+          "bug": "-Adam's mysterious twin brother is no more in the metro."
+        },
+        {
+          "bug": "-Missing keyboard texture"
+        },
+        {
+          "bug": "-Flickering model textures in urban fight level fixed(for trucks and tents)."
+        }
+      ]
+    }
+  ]
+}

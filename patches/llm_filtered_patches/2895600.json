@@ -1,0 +1,360 @@
+{
+  "appId": "2895600",
+  "count": 8,
+  "notes": [
+    {
+      "title": "Update and change from free trial to free to play",
+      "date": "2025-03-15 11:47:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528143973",
+      "content": "[h3]Gameplay Changes[/h3]\n[b]\n- Removed skill point limit for free accounts.\n- Added loot & XP bonus for paid accounts.\n[/b]\n- Increased base movement speed by 25%.\n- Increased stack size to 999.\n- Increased rare mob spawn rate by ~33%.\n- Changed resource spawning dynamics to improve accessibility across different tiers.\n- Removed physical essence requirement for crafting physical weapons.\n- Potions now restore a flat amount based on potion level instead of a static percentage.\n- Modified item mods.\n- Doubled the duration of buff/debuff skills.\n- Added new passives.\n- Something bad happens if you fall to 0 mana.\n\n[h3]Combat & Balance[/h3]\n- Adjusted XP gain rules:\n  - XP is earned if `abs(professionLvl - targetLvl) \u2264 dw.constants.LEVEL_BUFFER`.\n  - Underlevel targets grant 19% less XP per level, while overlevel targets grant 5% more XP per level.\n- Entity spawn levels now match zone level.\n- Level requirement to set spawn is zone level + 5.\n- Reduced the damage of Projectile Nova.\n- Reworked Frenzy and Echo of Manashield.\n\n[h3]Item Changes[/h3]\n- Renamed Critical and Status Effect stats to reduce tooltip width.\n- Set base critical multiplier to 2.\n- Removed Critical Multiplier and Elemental Chance Multiplier from weapons.\n- Removed item quality indefinitely.\n- Added six new enchants.\n- Reworked the \"Add Mod\" system:\n  - Now allows selecting a mod for an increased cost.\n  - Costs 5 white items instead of 1 green for white items.\n- Reduced the enchant cost of \"Remove Mod.\"\n- Crafting changes:\n  - Weapon & armor crafting costs reduced.\n  - Crafting resources now increase enchanting cost instead of affecting enchant success chance (buff).\n  - Crafting UI: Items are now sorted by profession instead of by station.\n\n[h3]Event Updates[/h3]\n- Added heart drops from monsters \u00b15 levels for the Saint Valentine's event.\n- Added a Heart Box craftable with hearts.\n- Ended the Saint Valentine's event.\n\n[h3]Bug Fixes[/h3]\n- Fixed a bug where the client didn't correctly update profession levels.\n- Fixed skill bar not updating correctly after switching from toolbar to skillbar.\n- Fixed a client crash when teleporting while using a shovel/sledgehammer.\n- Fixed a line-of-sight bug.\n- Fixed some resource nodes having incorrect sprites.\n- Fixed a bug where players could get bounced into trees and become stuck.\n- Fixed tooltips sometimes overflowing.\n- Fixed a crash related to missions.\n- Fixed a bug where the first projectile dealt reduced damage.\n- Fixed a bug where damage didn't roll on gloves, belts, or acid weapons.\n- Fixed a bug where inventory scrolled to the top when moving an item.\n\n[h3]API Changes[/h3]\n- Removed:\n  - `fillItem`, `pourItem`, `enterCar`, `exitCar`, `moveCar`, `donate`.\n  - `fetchMissions` missionType param (return value fixed in docs).\n  - `startMission` missionType param (breaking change).\n  - `addTransmog`, `removeTransmog`, `toggleTransmog`.\n  - `modType` enum.\n- Added:\n  - `climb` to docs.\n  - `w`, `h`, `targetX`, `targetY`, `targetZ`, `targetId`, `duration` to projectiles.\n  - `dw.projectiles`.\n  - `dw.enums.Tag`.\n  - `item.imods` (implicit mods).\n- Changed gear slot names:\n  - `mainHand` \u2192 `hand1`, `shield` \u2192 `hand2`.\n  - `gloves` \u2192 `bracer1`, `belt` \u2192 `bracer2`.\n  - Old properties still reference new ones for backward compatibility.\n- Adjusted crafting options:\n  - `craftOpts`: Removed `stationType`, added `profession`.\n- Inventory & Item Adjustments:\n  - `gloves` \u2192 `bracer`, `belt` \u2192 `bracer`, weapons \u2192 `glove`.\n  - Mana efficiency added to armors.\n  - Removed recovery & dodge on armors.\n  - Gloves now have power/speed multipliers based on their material.\n\n[h3]Quality of Life Changes[/h3]\n- Cosmetics System:\n  - Added a WIP cosmetics system replacing the old transmog table.\n- Shop & Inventory:\n  - Players can buy more inventory slots at the bank (25 slots for 4g).\n- Display & UI:\n  - Skill book items now display score instead of item level.\n\n- gnal",
+      "key": "2895600::b935cb9dafd76ec980d3aacd2c6c11aa58389a11",
+      "tags": [
+        {
+          "feature": "- Added loot & XP bonus for paid accounts."
+        },
+        {
+          "balance_change": "- Increased base movement speed by 25%."
+        },
+        {
+          "balance_change": "- Increased stack size to 999."
+        },
+        {
+          "balance_change": "- Increased rare mob spawn rate by ~33%."
+        },
+        {
+          "balance_change": "- Changed resource spawning dynamics to improve accessibility across different tiers."
+        },
+        {
+          "balance_change": "- Removed physical essence requirement for crafting physical weapons."
+        },
+        {
+          "balance_change": "- Potions now restore a flat amount based on potion level instead of a static percentage."
+        },
+        {
+          "balance_change": "- Modified item mods."
+        },
+        {
+          "balance_change": "- Doubled the duration of buff/debuff skills."
+        },
+        {
+          "feature": "- Added new passives."
+        },
+        {
+          "balance_change": "- Adjusted XP gain rules:\n  - XP is earned if `abs(professionLvl - targetLvl) \u2264 dw.constants.LEVEL_BUFFER`.\n  - Underlevel targets grant 19% less XP per level, while overlevel targets grant 5% more XP per level."
+        },
+        {
+          "balance_change": "- Entity spawn levels now match zone level."
+        },
+        {
+          "balance_change": "- Level requirement to set spawn is zone level + 5."
+        },
+        {
+          "balance_change": "- Reduced the damage of Projectile Nova."
+        },
+        {
+          "balance_change": "- Reworked Frenzy and Echo of Manashield."
+        },
+        {
+          "balance_change": "- Renamed Critical and Status Effect stats to reduce tooltip width."
+        },
+        {
+          "balance_change": "- Set base critical multiplier to 2."
+        },
+        {
+          "balance_change": "- Removed Critical Multiplier and Elemental Chance Multiplier from weapons."
+        },
+        {
+          "balance_change": "- Removed item quality indefinitely."
+        },
+        {
+          "feature": "- Added six new enchants."
+        },
+        {
+          "balance_change": "- Reworked the \"Add Mod\" system:\n  - Now allows selecting a mod for an increased cost.\n  - Costs 5 white items instead of 1 green for white items."
+        },
+        {
+          "balance_change": "- Reduced the enchant cost of \"Remove Mod.\""
+        },
+        {
+          "balance_change": "- Weapon & armor crafting costs reduced."
+        },
+        {
+          "balance_change": "- Crafting resources now increase enchanting cost instead of affecting enchant success chance (buff)."
+        },
+        {
+          "balance_change": "- Crafting UI: Items are now sorted by profession instead of by station."
+        },
+        {
+          "feature": "- Added heart drops from monsters \u00b15 levels for the Saint Valentine's event."
+        },
+        {
+          "feature": "- Added a Heart Box craftable with hearts."
+        },
+        {
+          "bug": "- Fixed a bug where the client didn't correctly update profession levels."
+        },
+        {
+          "bug": "- Fixed skill bar not updating correctly after switching from toolbar to skillbar."
+        },
+        {
+          "bug": "- Fixed a client crash when teleporting while using a shovel/sledgehammer."
+        },
+        {
+          "bug": "- Fixed a line-of-sight bug."
+        },
+        {
+          "bug": "- Fixed some resource nodes having incorrect sprites."
+        },
+        {
+          "bug": "- Fixed a bug where players could get bounced into trees and become stuck."
+        },
+        {
+          "bug": "- Fixed tooltips sometimes overflowing."
+        },
+        {
+          "bug": "- Fixed a crash related to missions."
+        },
+        {
+          "bug": "- Fixed a bug where the first projectile dealt reduced damage."
+        },
+        {
+          "bug": "- Fixed a bug where damage didn't roll on gloves, belts, or acid weapons."
+        },
+        {
+          "bug": "- Fixed a bug where inventory scrolled to the top when moving an item."
+        },
+        {
+          "feature": "- Added `climb` to docs."
+        },
+        {
+          "feature": "- Added `w`, `h`, `targetX`, `targetY`, `targetZ`, `targetId`, `duration` to projectiles."
+        },
+        {
+          "feature": "- Added `dw.projectiles`."
+        },
+        {
+          "feature": "- Added `dw.enums.Tag`."
+        },
+        {
+          "feature": "- Added `item.imods` (implicit mods)."
+        },
+        {
+          "balance_change": "- Changed gear slot names:\n  - `mainHand` \u2192 `hand1`, `shield` \u2192 `hand2`.\n  - `gloves` \u2192 `bracer1`, `belt` \u2192 `bracer2`.\n  - Old properties still reference new ones for backward compatibility."
+        },
+        {
+          "balance_change": "- Adjusted crafting options:\n  - `craftOpts`: Removed `stationType`, added `profession`."
+        },
+        {
+          "balance_change": "- Inventory & Item Adjustments:\n  - `gloves` \u2192 `bracer`, `belt` \u2192 `bracer`, weapons \u2192 `glove`.\n  - Mana efficiency added to armors.\n  - Removed recovery & dodge on armors.\n  - Gloves now have power/speed multipliers based on their material."
+        },
+        {
+          "feature": "- Added a WIP cosmetics system replacing the old transmog table."
+        },
+        {
+          "feature": "- Players can buy more inventory slots at the bank (25 slots for 4g)."
+        },
+        {
+          "feature": "- Skill book items now display score instead of item level."
+        }
+      ]
+    },
+    {
+      "title": "Update 2025-02-02",
+      "date": "2025-02-02 09:52:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123181535",
+      "content": "- removed `.matTier`, the tier is `lvl/10` which will determine if it's copper, iron, etc\n- increased xp required to level up in early game\n- reworked crafting and enchanting costs\n- rarity of items cannot be modified (experiment)\n- `.ele` now ranges from -100 to 100 (this is the overall quality of the base)\n- set `.ele` of all existing items to 0 (can be modified via enchanting)\n- white mobs drop mainly white items\n- added some monster abilities\nAPI:\n- added functions `dw.getPartyMemberInfo` `dw.getCraftingRecipe`\n- added events `localChat` `globalChat` `partyChat` `tradeChat` `whisperChat`",
+      "key": "2895600::79d5197e12264a86bca83e0c0f0ffcd99c69bd45",
+      "tags": [
+        {
+          "balance_change": "- removed `.matTier`, the tier is `lvl/10` which will determine if it's copper, iron, etc"
+        },
+        {
+          "balance_change": "- increased xp required to level up in early game"
+        },
+        {
+          "balance_change": "- reworked crafting and enchanting costs"
+        },
+        {
+          "balance_change": "- rarity of items cannot be modified (experiment)"
+        },
+        {
+          "balance_change": "- `.ele` now ranges from -100 to 100 (this is the overall quality of the base)"
+        },
+        {
+          "balance_change": "- set `.ele` of all existing items to 0 (can be modified via enchanting)"
+        },
+        {
+          "balance_change": "- white mobs drop mainly white items"
+        },
+        {
+          "feature": "- added some monster abilities"
+        },
+        {
+          "feature": "- added functions `dw.getPartyMemberInfo` `dw.getCraftingRecipe`"
+        },
+        {
+          "feature": "- added events `localChat` `globalChat` `partyChat` `tradeChat` `whisperChat`"
+        }
+      ]
+    },
+    {
+      "title": "Update 2025-01-30",
+      "date": "2025-01-30 19:09:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123097955",
+      "content": "- monster regen ability is progressively more challenging instead of static\n- added collision to rock and mineral nodes\n- removed player names from real estate map to better view plots\n- fixed a bug where you can put dirt on stations 1 layer below\n- added `.craftingRes` to items\n- added numbers to rare mob names\n- code and notes are saved on server restart\n- fixed new tier seed names\n- added `dw.getPartyMemberInfo`\n- increased plant farming cycle to 22 hours (increased xp and loot accordingly)\n- areas should get less saturated with only high lvl resources over time\n- fixed a bug where mobs were sometimes protected against attacks due to LOS\n- fixed a bug where planted trees sometimes respawned on server restart",
+      "key": "2895600::93341e41d70ed083d9de9339fb94228492bbd498",
+      "tags": [
+        {
+          "balance_change": "- monster regen ability is progressively more challenging instead of static"
+        },
+        {
+          "feature": "- added collision to rock and mineral nodes"
+        },
+        {
+          "feature": "- removed player names from real estate map to better view plots"
+        },
+        {
+          "bug": "- fixed a bug where you can put dirt on stations 1 layer below"
+        },
+        {
+          "feature": "- added `.craftingRes` to items"
+        },
+        {
+          "feature": "- added numbers to rare mob names"
+        },
+        {
+          "feature": "- code and notes are saved on server restart"
+        },
+        {
+          "bug": "- fixed new tier seed names"
+        },
+        {
+          "feature": "- added `dw.getPartyMemberInfo`"
+        },
+        {
+          "balance_change": "- increased plant farming cycle to 22 hours (increased xp and loot accordingly)"
+        },
+        {
+          "balance_change": "- areas should get less saturated with only high lvl resources over time"
+        },
+        {
+          "bug": "- fixed a bug where mobs were sometimes protected against attacks due to LOS"
+        },
+        {
+          "bug": "- fixed a bug where planted trees sometimes respawned on server restart"
+        }
+      ]
+    },
+    {
+      "title": "Update 2025-01-27",
+      "date": "2025-01-28 09:45:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505470340",
+      "content": "- reduced max stacks on goo merge\n- buildings are destroyed when terrain respawns on them\n- portal scrolls are always lvl 1\n- added higher tier resource nodes in the world\n- fixed blessing and aoe interaction\nAPI:\n- .matType is now either wood, rock, metal, leather or cloth\n- added .matTier to entities\n- removed .terrain from resource entities\n- all tiers start a 0 and are named from 0\n- changed enums keys of Tier and Stage to reflect this change^",
+      "key": "2895600::91add8cedd8c57df24189bc084938c3713e1a58f",
+      "tags": [
+        {
+          "balance_change": "- reduced max stacks on goo merge"
+        },
+        {
+          "bug": "- portal scrolls are always lvl 1"
+        },
+        {
+          "feature": "- added higher tier resource nodes in the world"
+        },
+        {
+          "bug": "- fixed blessing and aoe interaction"
+        },
+        {
+          "feature": "- added .matTier to entities"
+        },
+        {
+          "balance_change": "- all tiers start a 0 and are named from 0"
+        }
+      ]
+    },
+    {
+      "title": "Update 2025-01-25",
+      "date": "2025-01-25 18:52:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505385667",
+      "content": "[img]{STEAM_CLAN_IMAGE}/45018071/fdca55754471cf89b4744f4a6910bbed4c209ec3.png[/img]\n- increased range of buff/debuff skills\n- reduced mp cost of instant heals and proj heals/attacks\n- reduced healing of proj heal/shield by 10%\n- fixed a bug where displayed required gathering lvl was wrong\n- fixed a bug where the skill bar ui broke when gaining a skill bar slot\n- fixed a bug where mace had 5% parry instead of status effect chance\n- fixed a bug where healing was reduced by armor",
+      "key": "2895600::2db4c0f02b56ef14c20b4258fceb15ee13794f6d",
+      "tags": [
+        {
+          "balance_change": "- increased range of buff/debuff skills"
+        },
+        {
+          "balance_change": "- reduced mp cost of instant heals and proj heals/attacks"
+        },
+        {
+          "balance_change": "- reduced healing of proj heal/shield by 10%"
+        },
+        {
+          "bug": "- fixed a bug where displayed required gathering lvl was wrong"
+        },
+        {
+          "bug": "- fixed a bug where the skill bar ui broke when gaining a skill bar slot"
+        },
+        {
+          "bug": "- fixed a bug where mace had 5% parry instead of status effect chance"
+        },
+        {
+          "bug": "- fixed a bug where healing was reduced by armor"
+        }
+      ]
+    },
+    {
+      "title": "update 1/21/2025",
+      "date": "2025-01-21 19:43:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789580505256037",
+      "content": "- skillbooks cannot be combined\n- added skillbook recipes\n- stations require resources to build instead of materials\n- increased weapon and armor recipes number of mats required\n- added more monster mods\n- rare mobs have a chance to drop their corresponding mods skillbooks\n- increased rare monster density\n- decreased mana cost of passives\n- rejected promises return an Error object instead of a string",
+      "key": "2895600::3f7a7f91c259fc4982949f6a2be351f325ec31e6",
+      "tags": [
+        {
+          "bug": "- rejected promises return an Error object instead of a string"
+        },
+        {
+          "feature": "- added skillbook recipes"
+        },
+        {
+          "feature": "- added more monster mods"
+        },
+        {
+          "balance_change": "- stations require resources to build instead of materials"
+        },
+        {
+          "balance_change": "- increased weapon and armor recipes number of mats required"
+        },
+        {
+          "balance_change": "- increased rare monster density"
+        },
+        {
+          "balance_change": "- decreased mana cost of passives"
+        }
+      ]
+    },
+    {
+      "title": "Client auto login fix",
+      "date": "2024-09-20 15:32:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536507267861",
+      "content": "Fixed a bug where the client wouldn't automatically try to reconnect when failing authentication",
+      "key": "2895600::3e55dd62d3e80a3cbb4b5a27ab47032c2b849db3",
+      "tags": [
+        {
+          "bug": "Fixed a bug where the client wouldn't automatically try to reconnect when failing authentication"
+        }
+      ]
+    },
+    {
+      "title": "Update notes for sept 7",
+      "date": "2024-09-07 10:36:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076604232156",
+      "content": "- Fixed a bug where sometimes you could get logged out when reloading the game",
+      "key": "2895600::eb53c58596d6614f16e223b4a313f6b24615f495",
+      "tags": [
+        {
+          "bug": "- Fixed a bug where sometimes you could get logged out when reloading the game"
+        }
+      ]
+    }
+  ]
+}

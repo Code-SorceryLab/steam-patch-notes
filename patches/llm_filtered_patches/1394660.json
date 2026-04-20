@@ -1,0 +1,1875 @@
+{
+  "appId": "1394660",
+  "count": 11,
+  "notes": [
+    {
+      "title": "Demo Code Complete!",
+      "date": "2022-09-14 22:01:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4705721386246507823",
+      "content": "[h1]Demo Code Completion - 100%[/h1]\nHey peeps! So as  the title says, the Demo is now 100% Code Complete, meaning that I have all the features I needed implemented into the game. Now I can finally start building the Demo!\n\nBig thanks to everyone who's stuck around and wishlisted the game! It means a lot to still have support, even if I didn't really have much visually to show for it.\n\nHowever, the wait is over, and soon I'll be posting official gameplay clips, and then soon, the teaser trailer for the Demo!\n\nHere are the final devlogs and bug fixes.\n\nIf you want to know how far development on the Demo is going, go ahead and check out my personal site, it has the official checklist. The site is still in beta so it's not pretty, but the checklist works\n[url=https://legendary-l.com/In-Development/frame-of-mind.html]Isometric World: Frame of Mind Progress[/url]\n\nIn total, during the development phase, I've made...\n[b]2 years, 22 weeks, and 4 days worth of devlogs\n250 bug fixes[/b]\n\nSee you all soon in the Demo!\n\n- L\n\n[h1]FINAL DEVELOPMENT LOGS[/h1]\n[b]9/1/22 - 8/3/22[/b]\n- Slightly adjusted the sizing of Physics Stats to be a bit bigger\n- Added in Breakables\n- Posted the first development video showing Controller Physics being tested on my personal site\n- Continued adding in the final components for features\n\n[b]9/4/22 - 9/9/22[/b]\n- Added in Edge Hoisting on interactable edges\n- Added in new icons to allow the player to know what objects they can and can't interact with in the environment\n- Updated the architecture of edges, making them either multipurpose (gripping & manual control) or hoist only\n- Changed the architecture of interactable, making them easier to have and much more lightweight\n- Added an upgrade to moveable objects, making them both lightweight, and having the exact some functionality needed\n\n[b]9/10/22 - 9/13/22[/b]\n- Implemented Edge Gripping\n- Implemented Edge Hoisting\n- Implemented Edge Dropping\n- Added in new icons for Grippable Edges, Newton Buttons, and Breakable objects\n- Finished implementing Breakable objects\n- Added in text for Newton Buttons, to show how much weight they require to work, and how much is currently on them\n- Updated Controller Stepping to be able to calm and smooth\n- Adjusted the easing for lowering and hoisting over an edge, providing a nice curve and avoiding accidental phasing\n- Tweaked the stepping interpolation speed to be based on minmax and distance calculation\n- Updated the colors for each interactable object\n- Added in Edge Shifting Limiting, which means you can only move a certain amount of distance within the bounds of the edge\n- Updated the story and, creating the final version, and updated on Steam\n- Updated Stamina depletion to now be controlled by different rates based on actions, giving nicer and better control\n- Tweaked the speed capabilities for Edge Shifting, making the Rushing speed slower than the standard running speed\n\n[b]Finished bug fixing the base mechanics, marking the Code Completion of the Demo[/b]\n\n[h1]FINAL BUG FIXES[/h1]\n- Fixed a bug where Cole would miscount slopes as steps, causing him to move, then get stuck\n- Fixed a bug where Cole would get stuck of he collided with a vertical object while moving up a slope\n- Fixed incorrect Physics display and calculating, resulting in update calculations vs fixed update, nothing needs rebuilding though, everything's good\n- Fixed a bug where the Trajectory Visualizer would flash red, even though the jump was being performed and all conditions are acceptable\n- Fixed a bug where Sprinting on a controller would get stuck and keeping being active, despite no input being set from a stick\n- Fixed a bug where the Trajectory Visualizer would stay white instead of red when the player isn't trying to move Cole\n- Fixed a bug where if you stood on an unusable Iso-Rotation Pad, then rotated, it would cause conflict and make the Quadrant Function Dial show 2 quadrants faced instead of one at a time\n- Fixed a bug where the interaction outlines and icons would interpolate incorrectly\n- Fixed a bug where interactable objects would not be reset correctly, causing the player to get caught in an interaction loop\n- Fixed a bug where Cole would be able to ram through moveable objects, despite him no longer being permitted to move\n- Fixed a bug where Cole would get stuck on a hoistable surface, due to gravity still having influence on him\n- Fixed a bug where Cole would launch himself if the player chose to hoist themselves over a multipurpose ledge\n- Fixed a bug where the player have to press the interaction button twice to reactivate a used multi-purpose ledge\n- Fixed a bug where Trajectory Visualizer would be drawn, if the player jumped to reach a Grippable Edge\n- Fixed issues in the Stepping architecture that would cause Cole to be launched when he was stepping over an object\n- Fixed a bug where Breakable objects would not calculate the force a rigidbody acted on it once collision occurred\n- Fixed a bug where the interaction outline for Newton Buttons would not fade in correctly\n- Fixed a bug where the Breakable Interaction Identifier would not disappear once the breakable object was destroyed\n- Fixed a bug where Ledge Shifting would not limit its start point, and cause it to interpolate towards end point\n- Fixed a bug where having a Gripping Edge active would prevent altering Cole's rigidbody component\n- Fixed a bug where if the player dropped from a gripped ledge, the ledge would not be usable again",
+      "key": "1394660::450735a83cae053922f97aa5d34b28e79e9fd8c3",
+      "tags": [
+        {
+          "balance_change": "- Slightly adjusted the sizing of Physics Stats to be a bit bigger"
+        },
+        {
+          "feature": "- Added in Breakables"
+        },
+        {
+          "feature": "- Added in Edge Hoisting on interactable edges"
+        },
+        {
+          "feature": "- Added in new icons to allow the player to know what objects they can and can't interact with in the environment"
+        },
+        {
+          "feature": "- Updated the architecture of edges, making them either multipurpose (gripping & manual control) or hoist only"
+        },
+        {
+          "feature": "- Changed the architecture of interactable, making them easier to have and much more lightweight"
+        },
+        {
+          "feature": "- Added an upgrade to moveable objects, making them both lightweight, and having the exact some functionality needed"
+        },
+        {
+          "feature": "- Implemented Edge Gripping"
+        },
+        {
+          "feature": "- Implemented Edge Hoisting"
+        },
+        {
+          "feature": "- Implemented Edge Dropping"
+        },
+        {
+          "feature": "- Added in new icons for Grippable Edges, Newton Buttons, and Breakable objects"
+        },
+        {
+          "feature": "- Finished implementing Breakable objects"
+        },
+        {
+          "feature": "- Added in text for Newton Buttons, to show how much weight they require to work, and how much is currently on them"
+        },
+        {
+          "feature": "- Updated Controller Stepping to be able to calm and smooth"
+        },
+        {
+          "balance_change": "- Adjusted the easing for lowering and hoisting over an edge, providing a nice curve and avoiding accidental phasing"
+        },
+        {
+          "balance_change": "- Tweaked the stepping interpolation speed to be based on minmax and distance calculation"
+        },
+        {
+          "feature": "- Updated the colors for each interactable object"
+        },
+        {
+          "feature": "- Added in Edge Shifting Limiting, which means you can only move a certain amount of distance within the bounds of the edge"
+        },
+        {
+          "feature": "- Updated the story and, creating the final version, and updated on Steam"
+        },
+        {
+          "balance_change": "- Updated Stamina depletion to now be controlled by different rates based on actions, giving nicer and better control"
+        },
+        {
+          "balance_change": "- Tweaked the speed capabilities for Edge Shifting, making the Rushing speed slower than the standard running speed"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would miscount slopes as steps, causing him to move, then get stuck"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would get stuck of he collided with a vertical object while moving up a slope"
+        },
+        {
+          "bug": "- Fixed incorrect Physics display and calculating, resulting in update calculations vs fixed update, nothing needs rebuilding though, everything's good"
+        },
+        {
+          "bug": "- Fixed a bug where the Trajectory Visualizer would flash red, even though the jump was being performed and all conditions are acceptable"
+        },
+        {
+          "bug": "- Fixed a bug where Sprinting on a controller would get stuck and keeping being active, despite no input being set from a stick"
+        },
+        {
+          "bug": "- Fixed a bug where the Trajectory Visualizer would stay white instead of red when the player isn't trying to move Cole"
+        },
+        {
+          "bug": "- Fixed a bug where if you stood on an unusable Iso-Rotation Pad, then rotated, it would cause conflict and make the Quadrant Function Dial show 2 quadrants faced instead of one at a time"
+        },
+        {
+          "bug": "- Fixed a bug where the interaction outlines and icons would interpolate incorrectly"
+        },
+        {
+          "bug": "- Fixed a bug where interactable objects would not be reset correctly, causing the player to get caught in an interaction loop"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would be able to ram through moveable objects, despite him no longer being permitted to move"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would get stuck on a hoistable surface, due to gravity still having influence on him"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would launch himself if the player chose to hoist themselves over a multipurpose ledge"
+        },
+        {
+          "bug": "- Fixed a bug where the player have to press the interaction button twice to reactivate a used multi-purpose ledge"
+        },
+        {
+          "bug": "- Fixed a bug where Trajectory Visualizer would be drawn, if the player jumped to reach a Grippable Edge"
+        },
+        {
+          "bug": "- Fixed issues in the Stepping architecture that would cause Cole to be launched when he was stepping over an object"
+        },
+        {
+          "bug": "- Fixed a bug where Breakable objects would not calculate the force a rigidbody acted on it once collision occurred"
+        },
+        {
+          "bug": "- Fixed a bug where the interaction outline for Newton Buttons would not fade in correctly"
+        },
+        {
+          "bug": "- Fixed a bug where the Breakable Interaction Identifier would not disappear once the breakable object was destroyed"
+        },
+        {
+          "bug": "- Fixed a bug where Ledge Shifting would not limit its start point, and cause it to interpolate towards end point"
+        },
+        {
+          "bug": "- Fixed a bug where having a Gripping Edge active would prevent altering Cole's rigidbody component"
+        },
+        {
+          "bug": "- Fixed a bug where if the player dropped from a gripped ledge, the ledge would not be usable again"
+        }
+      ]
+    },
+    {
+      "title": "August 2022 Development Logs",
+      "date": "2022-09-03 04:42:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4621277624697439651",
+      "content": "[h1]Development Logs[/h1]\n[b]8/1/22 - 8/12/22[/b]\n- Added in Platform Interactable Types\n- Updated damage from falling to now be referred to as Kinematic Damage\n- Got a new domain for my personal site which will contain all to know about me and devlogs for my projects\n- Continued with controls for moveable objects\n- Updated Camera Dynamics to provide more of a bounce / bob based on motion and velocity\n- Added in movement restrictions for Movable Objects, allowing the possibility to have track based interactions\n- Updated input axis detection to be mathematically correct, even when Velocity is 0'ed\n- Updated Deadzone Detection to account for all 4 directions for Movable Objects, preventing ramming\n- Continued working on my personal site\n\n[b]8/12/22 - 8/24/22[/b]\n- Released my personal site to the public, to show updates in realtime on game development, along with an About Me\n- Added in Newton Buttons\n- Added in Step Detection for the controller\n- Added in new controls for temporary usage of continuous velocity for Physics actions\n- Upgraded deadzone detection to better handle upper hits, above what Cole will be able to step over\n- Upgraded deadzone detection to be less computationally expensive, and attempted follow Newton's Third Law of Motion\n- Removed Newton's Third Law as the collision detection upgrade was already working, and Force really didn't do anything\n- Updated the deadzone architecture to properly calculate collisions on a lightweight level and much more reliable behavior\n- Updated the Player Physics Collider to a reusable component for interactable objects\n- Restructured the Physics Collider to now be able to handle collisions correctly\u2026 FINALLY!\n- Updated Cubic Collisions\u2026 again, so now they work as intended\n\n[b]8/24/22 - 8/27/22[/b]\n- Added in rotational calculation for moving interactable objects around\n- Began restructuring the controller architecture after finding inefficacies, resulting in bad Physics behaviors, including collisions\n- Restored all Locomotive and Physics System components, now mathematically correct and lightweight without the need for any complicated calculations or tweaks\n\n[b]8/27/22 - 8/31/22[/b]\n- Updated jumping to now allow the player to charge their jumps ahead of time, but only perform the jump if they move\n- Made the Trajectory Visualizer turn red if the player doesn't move and charges their jump, showing that they can't jump unless they move\n- Updated Force to be Physically correct, so Force Level is now Net Force based on weight and velocity: (Net Force = Normal Force + Gravity Force)\n- Adjusted state checking for the controller, allowing correct control and interface\n- Attempted a few theories and methods for controller stepping\n- Reconstructed the Physics Collision component to handle ground states and stepping\n- FINALLY got controller stepping to be smooth and minimally structured\n\n[h1]Bug Fixes[/h1]\n- Fixed a collision detection issue with the controller where extra flag bits would be add, despite the area of collision not meeting the proper conditions\n- Fixed a bug where axis restrictions would prevent mixing axes, preventing special Movable Object track types\n- Fixed a bug where deadzone detection of Movable Objects would not have their vectors in the right directions\n- Fixed a bug where deadzone detection would not work correctly if Cole faced Quadrants other than 1\n- Fixed a bug where Moveable Objects would have their positions update on player rotation, instead of staying in their original spots\n- Fixed a bug where deadzone detection wouldn't handle corners correctly, allowing the player to ram through walls\n- Fixed a bug where the step detection would not detect a viable surface if the ground floor was tilted\n- Fixed a bug where stepping over obstacles would keep Cole moving continuously, despite already being on the ground and needing the player to handle input manually\n- Fixed a bug where Cole would hit a surface, and then even after he turned away, he would halt in place multiple times\n- Fixed a bug where Cole would not detect an upper surface keeping him from moving, despite there actually being one he's interacting with\n- Fixed a bug where Newton's Third Law was over calculated, causing Cole to launch instead of feeling recoil\n- Fixed calculation issues with collision angles and deadzones, making interactions unstable\n- Fixed a bug where Physics Collisions would not calculate the closest point, preventing the proper accountability of deadzones\n- Fixed a bug where the Dot Product of collisions would not return the proper value\n- Fixed a bug where Cole would still ram through the wall even though a collision occurred that's supposed to stop his velocity\n- Fixed a bug where Cole would be able to ram and phase interactable objects through walls, despite a collision happening, preventing movement, and then for some reason disabling the halt\n- Fixed a bug where interaction halting would not occur, despite Cole being in the proper scenario\n- Fixed a bug where ground checking would be incorrectly unflagged, despite the ground still being below Cole\n- Fixed an architectural issue where collision calculation would case cubic collisions to still cause temporary halting, then phasing if movement was still continued in the direction of the collision\n- Fixed a bug where the Trajectory Visualizer would not reset if Cole fell before the player could move and release the jump button\n- Fixed a bug where Cole would remain stuck on a wall if he jumped and crashed into one\n- Fixed a bug where Cole would face the wrong direction if the player rotated perspective\n- Fixed a bug where Cole would stop jumping after the player released the jump button, after charging their jump and tried to run\n- Fixed a bug where Cole would freeze in place when trying to step over objects\n- Fixed a bug where a slight jitter would occur when Cole is trying to step over a platform\n- Fixed a bug where Cole would get stuck in place on a wall if the player was on the ground, charged a jump, tried to sprint, and tried to jump\n- Fixed a bug where Force would build up, even though conditions would not allow Velocity to get above 0, such as trying to ram a wall\n- Fixed a test build mishap where the layout, settings, and physics calculations would pretty much not run and just flat out disappear",
+      "key": "1394660::76ff25d1a9b1f75b17694b30a24b85cd5fb7ff19",
+      "tags": [
+        {
+          "feature": "- Added in Platform Interactable Types"
+        },
+        {
+          "feature": "- Added in movement restrictions for Movable Objects, allowing the possibility to have track based interactions"
+        },
+        {
+          "feature": "- Added in Newton Buttons"
+        },
+        {
+          "feature": "- Added in Step Detection for the controller"
+        },
+        {
+          "feature": "- Added in new controls for temporary usage of continuous velocity for Physics actions"
+        },
+        {
+          "feature": "- Added in rotational calculation for moving interactable objects around"
+        },
+        {
+          "feature": "- Made the Trajectory Visualizer turn red if the player doesn't move and charges their jump, showing that they can't jump unless they move"
+        },
+        {
+          "bug": "- Fixed a collision detection issue with the controller where extra flag bits would be add, despite the area of collision not meeting the proper conditions"
+        },
+        {
+          "bug": "- Fixed a bug where axis restrictions would prevent mixing axes, preventing special Movable Object track types"
+        },
+        {
+          "bug": "- Fixed a bug where deadzone detection of Movable Objects would not have their vectors in the right directions"
+        },
+        {
+          "bug": "- Fixed a bug where deadzone detection would not work correctly if Cole faced Quadrants other than 1"
+        },
+        {
+          "bug": "- Fixed a bug where Moveable Objects would have their positions update on player rotation, instead of staying in their original spots"
+        },
+        {
+          "bug": "- Fixed a bug where deadzone detection wouldn't handle corners correctly, allowing the player to ram through walls"
+        },
+        {
+          "bug": "- Fixed a bug where the step detection would not detect a viable surface if the ground floor was tilted"
+        },
+        {
+          "bug": "- Fixed a bug where stepping over obstacles would keep Cole moving continuously, despite already being on the ground and needing the player to handle input manually"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would hit a surface, and then even after he turned away, he would halt in place multiple times"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would not detect an upper surface keeping him from moving, despite there actually being one he's interacting with"
+        },
+        {
+          "bug": "- Fixed a bug where Newton's Third Law was over calculated, causing Cole to launch instead of feeling recoil"
+        },
+        {
+          "bug": "- Fixed calculation issues with collision angles and deadzones, making interactions unstable"
+        },
+        {
+          "bug": "- Fixed a bug where Physics Collisions would not calculate the closest point, preventing the proper accountability of deadzones"
+        },
+        {
+          "bug": "- Fixed a bug where the Dot Product of collisions would not return the proper value"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would still ram through the wall even though a collision occurred that's supposed to stop his velocity"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would be able to ram and phase interactable objects through walls, despite a collision happening, preventing movement, and then for some reason disabling the halt"
+        },
+        {
+          "bug": "- Fixed a bug where interaction halting would not occur, despite Cole being in the proper scenario"
+        },
+        {
+          "bug": "- Fixed a bug where ground checking would be incorrectly unflagged, despite the ground still being below Cole"
+        },
+        {
+          "bug": "- Fixed an architectural issue where collision calculation would case cubic collisions to still cause temporary halting, then phasing if movement was still continued in the direction of the collision"
+        },
+        {
+          "bug": "- Fixed a bug where the Trajectory Visualizer would not reset if Cole fell before the player could move and release the jump button"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would remain stuck on a wall if he jumped and crashed into one"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would face the wrong direction if the player rotated perspective"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would stop jumping after the player released the jump button, after charging their jump and tried to run"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would freeze in place when trying to step over objects"
+        },
+        {
+          "bug": "- Fixed a bug where a slight jitter would occur when Cole is trying to step over a platform"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would get stuck in place on a wall if the player was on the ground, charged a jump, tried to sprint, and tried to jump"
+        },
+        {
+          "bug": "- Fixed a bug where Force would build up, even though conditions would not allow Velocity to get above 0, such as trying to ram a wall"
+        },
+        {
+          "bug": "- Fixed a test build mishap where the layout, settings, and physics calculations would pretty much not run and just flat out disappear"
+        }
+      ]
+    },
+    {
+      "title": "July 2022 Development Logs",
+      "date": "2022-08-08 19:23:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4598757090466163090",
+      "content": "[h1]Development Logs[/h1]\n[b]7/1/22 - 7/9/22[/b]\n- Updated LVIS to better handle Lighting and Shadows with the help of time and math\n- Spent the 2nd up to the 4th for my 21st birthday\n- Returned to development, ready and armed with higher gears and mojo\n- Added in Manual Jumping into the game, allowing small jumps or charged ones, but only when moving\n- Added in an icon indicator to show if the player can interact with an object or area with Physical actions\n- Added in a new responsive design for objectives and tasks, allowing ease of adding and updating tasks\n- Improved the controls for Sprinting, allowing better ease of motions for controllers (Currently only PS5 controller supported)\n- Added a new basis for Interaction UI\n- Updated Cole's Running animation to imply better motion and visual appeal\n- Finished mapping out the keybinds for the game\n- Updated the Stamina display to use math instead of incrementing and decrementing, resulting in possible accuracy issues\n\n[b]7/10/22[/b]\n- Spent the whole day repairing and rebuilding the lighting data by having to transfer all assets to a new Unity project, which thankfully all works as it should without issue\n\n[b]7/11/22 - 7/23/22[/b]\n- Added in Storypoint and Task UI to show the current chapter and what to do, given the current situation\n- Started designing a new pause menu to have a cleaner interface and architecture\n- Created a new style to add into the \"Mechanical\" look for the\n- Updated more Hexagonal UI to make halves contain height and consistent slants\n- Finished the basis for the Audio settings, creating a mixing board instead of purely sliders\n- Finished creating the functionality of the Audio Settings\n- Updated settings to use Unity's built in Playerprefs for options, making them easier to access and much more lightweight than just reusing Custom Binary Formatting for file saving\n- Created the interface for Screen & Display Settings\n- Finished creating the new settings interface and pause menu, giving a nicer feel and look\n- Created transition animations for the Pause Menu\n- Wrote the template for a new script to have improved dialogue and progression\n- Updated interaction prompts to have control over a shared single interaction instance, and only when needed\n- Added in a new animation for popping up action prompts\n- Updated the settings screen to display the correct information for Window Docking\n- Game input schematics will be updated to support Steam Decks instead of PS5 controllers as PSN licensing and partnership is fairly complicated to get without having your own office space\u2026 and Wi-Fi\u2026 that your parents don't pay for because you're an adult in school and still live with them\n- Updated the schematics to now support Generalized Gamepads, theoretically allowing the Steam Deck and any other controllers that can be used via USB\n\t\n[b]7/24/22 - 7/31/22[/b]\n- Created EQ fixes for some sounds in the game\n- Exported certain audio files to .mp3 from .wav to reduce their size, unless they were loops\n- Removed old font files from the game\n- Created a temporary design for a trajectory visualizer\n- Scrapped the temporary visualizer to a new arc once the math was created\n- Added in a visual arc to show how far and high Cole will travel based on velocity and jump power\n- Spent a whole lot of time and chaos trying to get the math write on Trajectory Calculation\n- Updated the Trajectory Visualizer to now be accurate and a line renderer, showing how far you'll travel and how high\n- Added the proper rules needed to restrict Jumping logically, meaning that Cole will only be able to jump, given the context is correct\n- Updated the Trajectory Visualizer to now have a dashed pattern, and disappear the closer you get to the end point\n- Updated Jump build up to be influenced by weights, causing dampening that can make jumping at higher levels harder to achieve\n- Added in fall damage, giving bigger incentive to be careful with actions as Cole will face quite the damage\n- Adjusted Force to now use Forward and Vertical Force to determine Base Force Level\n- Added an adjustment to Fall Damage, making sure airtime is properly accounted for, instead of just Force Level\n- Continued with finish the main components for the Interaction System\n\n[h1]Bug Fixes[/h1]\n- Fixed a bug where Vectorial Calculations would run again, despite only needing them to run once to calculate the proper data\n- Fixed a bug where Neutral Vectorial Data would not reset if Cole stepped on an Iso-Rotation Pad\n- Fixed a bug where Scrollable Panels would not prevent locomotive animations from playing\n- Fixed a bug where Scrollable Panels would not prevent rotation and movement from player input\n- Fixed game breaking issues with lighting that either resulted in no lighting being applied, or all materials being rendered as black on build\n- Fixed a bug where the Pause UI would prevent the user from using the available options due to input system issues\n- Fixed calculation issues when upgrading the Stamina meter to be math based instead of time based\n- Fixed calculation issues with the peak meters in the audio settings by spending 5 hours of insanity learning math\n- Fixed volume display issues after the math done to show the peaks at their maximum height was incorrect\n- Fixed an issue where post processing mixes would not load correctly if only the data was needed, but not the UI elements\n- Fixed an issue where multiple interactable designators would be activated, when only the closest one should be active\n- Fixed an issue where setting the window type would cause UI to have inaccurate interaction with certain elements\n- Fixed a curve accuracy issue where the expected trajectory and the actual performed force would be off by a few meters\n- Fixed a bug where the Trajectory Visualizer would have its points set to incorrect spots\n- Fixed a directional issue where going diagonally would cause the Trajectory Visualizer to have incorrect range\n- Fixed a bug where Force Build Up would exceed towards the maximum Gravity Force, if the player held down the run button while in the air after jumping\n- Fixed a bug where Ground Force would be retained when only fresh Gravity Force should be used\n- Fixed a bug where Jumping and hitting a wall would cause Cole to get stuck\n- Fixed a bug where Deadzone Detection would not prevent the player's collider from ramming through another one via brute force",
+      "key": "1394660::53260af8213bc81f27a65920d30aa7b928fc3fb0",
+      "tags": [
+        {
+          "feature": "- Added in Manual Jumping into the game, allowing small jumps or charged ones, but only when moving"
+        },
+        {
+          "feature": "- Added in an icon indicator to show if the player can interact with an object or area with Physical actions"
+        },
+        {
+          "feature": "- Added in a new responsive design for objectives and tasks, allowing ease of adding and updating tasks"
+        },
+        {
+          "feature": "- Added a new basis for Interaction UI"
+        },
+        {
+          "feature": "- Added in Storypoint and Task UI to show the current chapter and what to do, given the current situation"
+        },
+        {
+          "feature": "- Added in a new animation for popping up action prompts"
+        },
+        {
+          "feature": "- Added in a visual arc to show how far and high Cole will travel based on velocity and jump power"
+        },
+        {
+          "feature": "- Added in fall damage, giving bigger incentive to be careful with actions as Cole will face quite the damage"
+        },
+        {
+          "bug": "- Fixed a bug where Vectorial Calculations would run again, despite only needing them to run once to calculate the proper data"
+        },
+        {
+          "bug": "- Fixed a bug where Neutral Vectorial Data would not reset if Cole stepped on an Iso-Rotation Pad"
+        },
+        {
+          "bug": "- Fixed a bug where Scrollable Panels would not prevent locomotive animations from playing"
+        },
+        {
+          "bug": "- Fixed a bug where Scrollable Panels would not prevent rotation and movement from player input"
+        },
+        {
+          "bug": "- Fixed game breaking issues with lighting that either resulted in no lighting being applied, or all materials being rendered as black on build"
+        },
+        {
+          "bug": "- Fixed a bug where the Pause UI would prevent the user from using the available options due to input system issues"
+        },
+        {
+          "bug": "- Fixed calculation issues when upgrading the Stamina meter to be math based instead of time based"
+        },
+        {
+          "bug": "- Fixed calculation issues with the peak meters in the audio settings by spending 5 hours of insanity learning math"
+        },
+        {
+          "bug": "- Fixed volume display issues after the math done to show the peaks at their maximum height was incorrect"
+        },
+        {
+          "bug": "- Fixed an issue where post processing mixes would not load correctly if only the data was needed, but not the UI elements"
+        },
+        {
+          "bug": "- Fixed an issue where multiple interactable designators would be activated, when only the closest one should be active"
+        },
+        {
+          "bug": "- Fixed an issue where setting the window type would cause UI to have inaccurate interaction with certain elements"
+        },
+        {
+          "bug": "- Fixed a curve accuracy issue where the expected trajectory and the actual performed force would be off by a few meters"
+        },
+        {
+          "bug": "- Fixed a bug where the Trajectory Visualizer would have its points set to incorrect spots"
+        },
+        {
+          "bug": "- Fixed a directional issue where going diagonally would cause the Trajectory Visualizer to have incorrect range"
+        },
+        {
+          "bug": "- Fixed a bug where Force Build Up would exceed towards the maximum Gravity Force, if the player held down the run button while in the air after jumping"
+        },
+        {
+          "bug": "- Fixed a bug where Ground Force would be retained when only fresh Gravity Force should be used"
+        },
+        {
+          "bug": "- Fixed a bug where Jumping and hitting a wall would cause Cole to get stuck"
+        },
+        {
+          "bug": "- Fixed a bug where Deadzone Detection would not prevent the player's collider from ramming through another one via brute force"
+        }
+      ]
+    },
+    {
+      "title": "June 2022 Development Logs",
+      "date": "2022-07-05 19:47:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295775118840",
+      "content": "[h1]Development Logs[/h1]\n[b]6/1/22 - 6/2/22[/b]\n- Added in new adjustments for rotation and force behavior\n- Force System restabilized\n- Restored the Health System\n\n[b]6/4/22 - 6/14/22[/b]\n- Created an input map to help reorganize keybinds and their purpose\n- Rewrote the input structure to fix overlapping inputs\n- Rewrote the theory for reconstructing the new Isometric System: Isometric System++\n- Wrote out some algebra to help clean up any calculations within Isometric System++\n- Restored the Isometric System\n- Upgraded the Camera Pivot controls to retain smoothing during Perspective usage\n- Added curve control for Perspective Rotation, allowing better ease of effect\n- Updated surface detection in Isometric System++\n- Continued to repair and update multi-agent data architecture for Isometric System++\n- Added a new Perspective Obstacle: One-Way Points\n- Updated rendering to respond to have better distance based responses\n- Updated shadow rendering to respond to Perspective Rotation, only needing to render when in the right direction\n- Redesigned and upgraded Shadow Rendering in Isometric System++ to be twice as efficient and make use of shaders\n- Finished rebuilding, redesigning, and fixing Isometric System++\n- Added further dynamics to the Shadow Rendering system in Isometric System++, allowing further detail into the Iso-Rotation Plate's lore\n- Created some new visual effects for Perspective rotation\n\n[b]6/15/22 - 6/20/22[/b]\n- Updated the SFX for Perspective Rotation\n- Updated interpolation control for animating Cole based on input actions\n- Updated Cole's Walking and Running animations to have better playback speed and keyframe values\n- Wasted 2 days trying to create a rotation filling effect for a new Radial Dial for Perspective, only to be simplified into something nicer and less complex\n- Added in a new Radial Dial that appears when you rotate, allowing you to see which Quadrant you are facing\n- Created icons for the Radial Dial to show possible Quadrant Functions when a puzzle allows it\n- Came up with a new concept for Iso-Rotation Pads to show what Quadrant Function it'll perform when stepped on\n- Updated the scaling and positioning for Quadrant Function icons on top of the Iso-Rotation Plate state icon on the bottom left corner of the screen\n- Updated Distance calculation in Isometric System++ to allow versatility with distance boundaries\n- Created a new logo animation, along with an upgrade to the Logo Jingle to make the logo look nicer visually and audio wise\n\n6/21/22 - 6/27/22\n- Began work on adding multiple functionality to Perspective, allowing multiple Quadrant Functions\n- Added a new Bit Flag control for triggers to allow me to edit Enum flags\n- Added in conceptual designs for the new Iso-Rotation Pads\n- Touched up the textures for the Rotation Pads, giving them a very\u2026 interesting design\n- Created icons for Pads when Quadrant Functions are Neutral or Specific\n- Added in the functionality of the Iso-Rotation Pads, allowing the ability to change Quadrants just by stepping on them\n- Updated the Main Menu theme mastering to sound louder and clearer\n- Redesigned the game's text font to look nicer and more consistent\n- Added in the new text font and adjusted the styling\n- Added in new controls to triggers to allow sound to play through a controller if plugged in and has a built in speaker\n- Finished creating the Iso-Rotation Pads, now they will be in their \"Solid State\" when Cole is already facing the intended Quadrant, and will be in their \"Useable State\" if Cole isn't\n\n[b]6/28/22 - 6/30/22[/b]\n- Created a new architecture for the new Isometric System after further tests indicated that Isometric System++ is not well equipped for shadow rendering\n- Created a working base for the new Isometric System, the Vectorial Isometric System (VIS)\n- Finished creating the functionality of the new Isometric System, now called L's Vectorial Isometric System (LVIS, and yes it's pronounced \"Elvis\")\n\n[h1]Bug Fixes[/h1]\n- Fixed a collision flag mishap where directions would not track the correct orientation\n- Fixed a logical mishap where Cole would build up Force, even when he was just standing doing nothing\n- Fixed a mishap where Force would not interpolate to 0, which would cause unnatural results\n- Fixed a bug where Cole would no longer build up Force, even if he's supposed to build up Force due to gravity, even if any other conditions such as Stamina are zeroed\n- Fixed a logical mishap where even after repairing the Force logic, Force level instantly jumped to 0\n- Fixed a bug where no input would result in Cole turning to his right\n- Fixed a bug where target positioning would be improperly calculated when using Perspective\n- Fixed a bug where shadow rendering would tear when objects in translation needed them\n- Fixed a bug where rotating in one direction, then back to the previous one will cause shadows to flicker in the Isometric System\n- Fixed a bug where Collision Flags would not set the correct flags due to direction issues\n- Fixed a bug where shadow rendering would shift, causing artifacts such as tearing\n- Fixed an accuracy issue where going backwards to a higher platform would cause lag, breaking the seamless interaction with Isometric System++\n- Fixed a shadow rendering issue where data agent states would make shadows spaz and flicker\n- Fixed a bug where Perspective would cause shadows to stay solid forward, while backwards had a noticeable flicker\n- Fixed an issue where shadows would not stop rendering when they're supposed to be gone\n- Fixed a visual issue where Cole's feet would pass through the ground instead of being above the surface\n- Fixed an architecture flaw where Perspective Quadrants would be active when the player's Perspective is towards the intended Quadrant\n- Fixed a graphical issue where the Quadrant Function icon size would be inconsistent in positioning, even when kept within the same aspect ratios\n- Fixed an architectural mishap where if the game had a frame drop, Directional Perspective would be incomplete and have all objects misaligned\n- Fixed a precision issue with Isometric System++ where directional difference would not flag if Cole is moving towards or away from a point\n- Fixed a shadow rendering issue where Shadows would be chopped at edges, which would ruin Perspective\n- Fixed distance checking to now track NEGATIVE distance as standard Distance formulas only return positive\n- Fixed some Physics Matrix mishaps when renaming and reordering Layer Masks\n- Fixed a bug where the Iso-Rotation Pads would not display their correct textures when Cole was either facing the target Quadrant, or wouldn't revert back to normal once he wasn't\n- Fixed a bug where the last used Iso-Rotation Pad would not play its animation when activated\n- Fixed a bug where Isometric System++ would cause Cole's force build up level to temporarily deplete\n- Fixed a bug where Isometric System++ would cause Cole's force build up level to be counted as within the bounds of Gravity Influenced Force, exceeding the maximum base level to 5 instead of 3\n- Fixed a bug where Isometric Vector data would not reset once transition was complete",
+      "key": "1394660::a905db304c681cea25e4b24b8721936c48a1d799",
+      "tags": [
+        {
+          "feature": "- Added in new adjustments for rotation and force behavior"
+        },
+        {
+          "feature": "- Created an input map to help reorganize keybinds and their purpose"
+        },
+        {
+          "feature": "- Added a new Perspective Obstacle: One-Way Points"
+        },
+        {
+          "feature": "- Added further dynamics to the Shadow Rendering system in Isometric System++, allowing further detail into the Iso-Rotation Plate's lore"
+        },
+        {
+          "feature": "- Created some new visual effects for Perspective rotation"
+        },
+        {
+          "feature": "- Added in a new Radial Dial that appears when you rotate, allowing you to see which Quadrant you are facing"
+        },
+        {
+          "feature": "- Created icons for the Radial Dial to show possible Quadrant Functions when a puzzle allows it"
+        },
+        {
+          "feature": "- Came up with a new concept for Iso-Rotation Pads to show what Quadrant Function it'll perform when stepped on"
+        },
+        {
+          "feature": "- Created a new logo animation, along with an upgrade to the Logo Jingle to make the logo look nicer visually and audio wise"
+        },
+        {
+          "feature": "- Added a new Bit Flag control for triggers to allow me to edit Enum flags"
+        },
+        {
+          "feature": "- Added in conceptual designs for the new Iso-Rotation Pads"
+        },
+        {
+          "feature": "- Created icons for Pads when Quadrant Functions are Neutral or Specific"
+        },
+        {
+          "feature": "- Added in the functionality of the Iso-Rotation Pads, allowing the ability to change Quadrants just by stepping on them"
+        },
+        {
+          "feature": "- Added in the new text font and adjusted the styling"
+        },
+        {
+          "feature": "- Added in new controls to triggers to allow sound to play through a controller if plugged in and has a built in speaker"
+        },
+        {
+          "feature": "- Finished creating the Iso-Rotation Pads, now they will be in their \"Solid State\" when Cole is already facing the intended Quadrant, and will be in their \"Useable State\" if Cole isn't"
+        },
+        {
+          "feature": "- Created a new architecture for the new Isometric System after further tests indicated that Isometric System++ is not well equipped for shadow rendering"
+        },
+        {
+          "feature": "- Created a working base for the new Isometric System, the Vectorial Isometric System (VIS)"
+        },
+        {
+          "feature": "- Finished creating the functionality of the new Isometric System, now called L's Vectorial Isometric System (LVIS, and yes it's pronounced \"Elvis\")"
+        },
+        {
+          "bug": "- Fixed a collision flag mishap where directions would not track the correct orientation"
+        },
+        {
+          "bug": "- Fixed a logical mishap where Cole would build up Force, even when he was just standing doing nothing"
+        },
+        {
+          "bug": "- Fixed a mishap where Force would not interpolate to 0, which would cause unnatural results"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would no longer build up Force, even if he's supposed to build up Force due to gravity, even if any other conditions such as Stamina are zeroed"
+        },
+        {
+          "bug": "- Fixed a logical mishap where even after repairing the Force logic, Force level instantly jumped to 0"
+        },
+        {
+          "bug": "- Fixed a bug where no input would result in Cole turning to his right"
+        },
+        {
+          "bug": "- Fixed a bug where target positioning would be improperly calculated when using Perspective"
+        },
+        {
+          "bug": "- Fixed a bug where shadow rendering would tear when objects in translation needed them"
+        },
+        {
+          "bug": "- Fixed a bug where rotating in one direction, then back to the previous one will cause shadows to flicker in the Isometric System"
+        },
+        {
+          "bug": "- Fixed a bug where Collision Flags would not set the correct flags due to direction issues"
+        },
+        {
+          "bug": "- Fixed a bug where shadow rendering would shift, causing artifacts such as tearing"
+        },
+        {
+          "bug": "- Fixed an accuracy issue where going backwards to a higher platform would cause lag, breaking the seamless interaction with Isometric System++"
+        },
+        {
+          "bug": "- Fixed a shadow rendering issue where data agent states would make shadows spaz and flicker"
+        },
+        {
+          "bug": "- Fixed a bug where Perspective would cause shadows to stay solid forward, while backwards had a noticeable flicker"
+        },
+        {
+          "bug": "- Fixed an issue where shadows would not stop rendering when they're supposed to be gone"
+        },
+        {
+          "bug": "- Fixed a visual issue where Cole's feet would pass through the ground instead of being above the surface"
+        },
+        {
+          "bug": "- Fixed an architecture flaw where Perspective Quadrants would be active when the player's Perspective is towards the intended Quadrant"
+        },
+        {
+          "bug": "- Fixed a graphical issue where the Quadrant Function icon size would be inconsistent in positioning, even when kept within the same aspect ratios"
+        },
+        {
+          "bug": "- Fixed an architectural mishap where if the game had a frame drop, Directional Perspective would be incomplete and have all objects misaligned"
+        },
+        {
+          "bug": "- Fixed a precision issue with Isometric System++ where directional difference would not flag if Cole is moving towards or away from a point"
+        },
+        {
+          "bug": "- Fixed a shadow rendering issue where Shadows would be chopped at edges, which would ruin Perspective"
+        },
+        {
+          "bug": "- Fixed distance checking to now track NEGATIVE distance as standard Distance formulas only return positive"
+        },
+        {
+          "bug": "- Fixed some Physics Matrix mishaps when renaming and reordering Layer Masks"
+        },
+        {
+          "bug": "- Fixed a bug where the Iso-Rotation Pads would not display their correct textures when Cole was either facing the target Quadrant, or wouldn't revert back to normal once he wasn't"
+        },
+        {
+          "bug": "- Fixed a bug where the last used Iso-Rotation Pad would not play its animation when activated"
+        },
+        {
+          "bug": "- Fixed a bug where Isometric System++ would cause Cole's force build up level to temporarily deplete"
+        },
+        {
+          "bug": "- Fixed a bug where Isometric System++ would cause Cole's force build up level to be counted as within the bounds of Gravity Influenced Force, exceeding the maximum base level to 5 instead of 3"
+        },
+        {
+          "bug": "- Fixed a bug where Isometric Vector data would not reset once transition was complete"
+        }
+      ]
+    },
+    {
+      "title": "May 2022 Development Logs",
+      "date": "2022-06-01 04:32:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4469272893488221842",
+      "content": "[h1]Development Logs[/h1]\n[b]5/1/22 - 5/3/22[/b]\n- A new restriction has been added to Push/Pull objects, creating an area of viable interaction\n- Had a happy accident, now doing a sharp turn will deplete your Force, but then build back up\n- Began refactoring the Dialogue System to update efficiency and ops\n- Turned the Dialogue System into a layer based one, allowing fewer data sets and shorter memory space\n- Updated the Dialogue structure to be able to include multiple functionalities using flags\n- Added in the ability to automatically move to other lines if need be for audio or animations\n- Completed refactoring the text features to be easier to handle\n- Added in a delay for continuation prompts to have pauses for dynamics\n\t\n[b]5/4/22[/b]\n- Updated the engine to 2021.3.f1 LTS, marking the end of updating the engine now that 2021 is in LTS\n- Created an updated style for the Dialogue System\n- Completed refactoring of the entire Dialogue System\n\n[b]5/5/22 - 5/8/22[/b]\n- Updated the protocol for Push/Pull interactives, now a limit to how close the player can to the object get has been set\n- Created Cole's Idle animation\n- Updated Cole's animation imports to fill in some missing data\n- Created a new system for making animations\n- Updated Cole's Animator and parameters to only keep relevance as creation of the new Physics System requires it\n- Implemented animated behavior based on actions\n- Created Cole's Walking animation\n\n[b]5/15/22 - 5/23/22[/b]\n- Created UI for Cole's health\n- Updated box UI to make the edges nicer to work with\n- Added in a temporary low push animation for Cole\n- Updated the layering and parameters of Cole's animator\n- Added in visual changes to show how much pain Cole is in when his health depletes\n- Updated the input schematics, allowing use of the new Input System in Unity, bringing support for multiple controllers\n- Started restructuring the interactives after further tests showed that upgrades to the new input system showed architectural issues\n- Further improved and regrouped certain input bindings\n- Updated the key binds to be functionally equivalent to Unity's built in GetKeyDown/GetButtonDown\n- Updated the input system to now use a new Focus Mode, allowing only specific key binds to be active given the current situation\n- Created a functional virtual cursor console players to navigate UI with ease\n- Added visual improvements to virtual cursor, showing neutral and clickable elements\n- Created responsive icons for controller inputs that will update in real-time if inputs are changed (EX: Keyboard to controller, and vice versa)\n- Moved all virtual cursor code into its own script, making it easier to control and manage and preventing any input mishaps\n\t\n[b]5/24/22 - 5/25/22[/b]\n- Started doing some design markup for the game's official website page\n- Spent most of the day trying to recover the functionality of Omnisharp after VS Code decided to kill itself\n- Updated Cole's 2D design, removing an issue where his sideburn strands where too unevenly scaled\n- Rerendered the current finished lines for Minor Puzzle 4\n- Updated health to now show the meter interpolating from the current health level to the new one once points are either gained or lost\n\n[b]5/25/22 - 5/31/22[/b]\n- Created a poll to test some style changes with the animation system\n- Continued work on repairing the interaction system after it broke\n- Created Cole's running animation\n- Began work refactoring the controller code into a physics based one after further research proved to be better equipped\n- Restored the Locomotive System\n- Restored the Stamina System\n- Restored the Physics Stats\n- Added a new setting to allow users to edit the V-Sync\n- Added a new setting to allow users to set Texture Resolution\n- Improved the physics controller collision to handle velocity ramming prevention\n- Adjusted force build up to be more natural\n- Restored the Force Mechanic\n\n[h1]Bug Fixes:[/h1]\n- Fixed an issue where Cole would be able to build up Force if he ran into a wall\n- Fixed a bug where if you interacted with an object at an angle, Cole would move continuously in the wrong direction\n- Fixed a mishap with time layering that would automatically reset the current message when there was a delay before displaying the next line if the dialogue line mode was set to continue without input\n- Fixed an issue where when swapped back to user input, the text would not reset due to the time delay being read incorrectly\n- Fixed a bug where the continue prompt would appear, despite the write mode being in continuous\n- Fixed an issue where audio flags would play twice if they were set to play before any typing was set\n- Fixed a bug where if the player interacted close with a Push/Pull object, force would never build up, even if they were moving forward\n- Fixed a mishap where interactable of type Push/Pull will keep its bounds active, despite it being affected by Physics or disabling interactive focus\n- Fixed a bug where the Physics Stats would show if the player held Left Shift, but didn't move\n- Fixed a bug where interaction prompts would show up for objects that are affected by static motion, despite the fact that they aren't supposed to be interacted with other than ramming into them\n- Fixed a mishap during file moving where the settings and data scripts were blank\n- Fixed a bug where physical stats would remain off, despite no values being changed once health was implemented\n- Fixed an issue where once the supported devices types were added, the mouse would no longer function\n- Fixed a bug where the input master would not be detected by the virtual controller\n- Fixed a bug where if the player interacted with an object and stopped interacting with it, it would allow the pause menu to open\n- Fixed a bug where the virtual cursor would keep both the hardware mouse with stay active, despite the schematics being switched\n- Fixed a bug where the virtual cursor would stop working once the schematics were divided\n- Fixed a bug where input based triggers would not reset input reading delay if explicitly cast\n- Fixed a bug where dragging with the virtual cursor would case elements like sliders to remain in control, despite the dragging being halted\n- Fixed a bug where moving the cursor way from draggable UI would cause it to interact with other elements, even when the cursor is nowhere near the element vicinity\n- Fixed a bug where continuous motion would cause Cole to spin in circles\n- Fixed a bug with Cole's continuous movement which made him move in directions 90 degrees perpendicular to the intended forward direction\n- Fixed an issue where falling would not allow Kinematic Force to build up\n- Fixed a bug where depleting Stamina would freeze once the current amount is less than the max, and the player stopped and then tried to perform an action again\n- Fixed an issue where the player could ram Cole through objects, even if he's not supposed to be able to move due to the object being an obstacle\n",
+      "key": "1394660::61f2fb74e1498a00d96cf213cb87ec70cc610094",
+      "tags": [
+        {
+          "feature": "- A new restriction has been added to Push/Pull objects, creating an area of viable interaction"
+        },
+        {
+          "feature": "- Turned the Dialogue System into a layer based one, allowing fewer data sets and shorter memory space"
+        },
+        {
+          "feature": "- Updated the Dialogue structure to be able to include multiple functionalities using flags"
+        },
+        {
+          "feature": "- Added in the ability to automatically move to other lines if need be for audio or animations"
+        },
+        {
+          "feature": "- Created an updated style for the Dialogue System"
+        },
+        {
+          "feature": "- Created Cole's Idle animation"
+        },
+        {
+          "feature": "- Created a new system for making animations"
+        },
+        {
+          "feature": "- Implemented animated behavior based on actions"
+        },
+        {
+          "feature": "- Created Cole's Walking animation"
+        },
+        {
+          "feature": "- Created UI for Cole's health"
+        },
+        {
+          "feature": "- Added in a temporary low push animation for Cole"
+        },
+        {
+          "feature": "- Added in visual changes to show how much pain Cole is in when his health depletes"
+        },
+        {
+          "feature": "- Updated the input schematics, allowing use of the new Input System in Unity, bringing support for multiple controllers"
+        },
+        {
+          "feature": "- Updated the input system to now use a new Focus Mode, allowing only specific key binds to be active given the current situation"
+        },
+        {
+          "feature": "- Created a functional virtual cursor console players to navigate UI with ease"
+        },
+        {
+          "feature": "- Added visual improvements to virtual cursor, showing neutral and clickable elements"
+        },
+        {
+          "feature": "- Created responsive icons for controller inputs that will update in real-time if inputs are changed (EX: Keyboard to controller, and vice versa)"
+        },
+        {
+          "feature": "- Created Cole's running animation"
+        },
+        {
+          "feature": "- Added a new setting to allow users to edit the V-Sync"
+        },
+        {
+          "feature": "- Added a new setting to allow users to set Texture Resolution"
+        },
+        {
+          "balance_change": "- Had a happy accident, now doing a sharp turn will deplete your Force, but then build back up"
+        },
+        {
+          "balance_change": "- Updated the protocol for Push/Pull interactives, now a limit to how close the player can to the object get has been set"
+        },
+        {
+          "balance_change": "- Adjusted force build up to be more natural"
+        },
+        {
+          "bug": "- Fixed an issue where Cole would be able to build up Force if he ran into a wall"
+        },
+        {
+          "bug": "- Fixed a bug where if you interacted with an object at an angle, Cole would move continuously in the wrong direction"
+        },
+        {
+          "bug": "- Fixed a mishap with time layering that would automatically reset the current message when there was a delay before displaying the next line if the dialogue line mode was set to continue without input"
+        },
+        {
+          "bug": "- Fixed an issue where when swapped back to user input, the text would not reset due to the time delay being read incorrectly"
+        },
+        {
+          "bug": "- Fixed a bug where the continue prompt would appear, despite the write mode being in continuous"
+        },
+        {
+          "bug": "- Fixed an issue where audio flags would play twice if they were set to play before any typing was set"
+        },
+        {
+          "bug": "- Fixed a bug where if the player interacted close with a Push/Pull object, force would never build up, even if they were moving forward"
+        },
+        {
+          "bug": "- Fixed a mishap where interactable of type Push/Pull will keep its bounds active, despite it being affected by Physics or disabling interactive focus"
+        },
+        {
+          "bug": "- Fixed a bug where the Physics Stats would show if the player held Left Shift, but didn't move"
+        },
+        {
+          "bug": "- Fixed a bug where interaction prompts would show up for objects that are affected by static motion, despite the fact that they aren't supposed to be interacted with other than ramming into them"
+        },
+        {
+          "bug": "- Fixed a mishap during file moving where the settings and data scripts were blank"
+        },
+        {
+          "bug": "- Fixed a bug where physical stats would remain off, despite no values being changed once health was implemented"
+        },
+        {
+          "bug": "- Fixed an issue where once the supported devices types were added, the mouse would no longer function"
+        },
+        {
+          "bug": "- Fixed a bug where the input master would not be detected by the virtual controller"
+        },
+        {
+          "bug": "- Fixed a bug where if the player interacted with an object and stopped interacting with it, it would allow the pause menu to open"
+        },
+        {
+          "bug": "- Fixed a bug where the virtual cursor would keep both the hardware mouse with stay active, despite the schematics being switched"
+        },
+        {
+          "bug": "- Fixed a bug where the virtual cursor would stop working once the schematics were divided"
+        },
+        {
+          "bug": "- Fixed a bug where input based triggers would not reset input reading delay if explicitly cast"
+        },
+        {
+          "bug": "- Fixed a bug where dragging with the virtual cursor would case elements like sliders to remain in control, despite the dragging being halted"
+        },
+        {
+          "bug": "- Fixed a bug where moving the cursor way from draggable UI would cause it to interact with other elements, even when the cursor is nowhere near the element vicinity"
+        },
+        {
+          "bug": "- Fixed a bug where continuous motion would cause Cole to spin in circles"
+        },
+        {
+          "bug": "- Fixed a bug with Cole's continuous movement which made him move in directions 90 degrees perpendicular to the intended forward direction"
+        },
+        {
+          "bug": "- Fixed an issue where falling would not allow Kinematic Force to build up"
+        },
+        {
+          "bug": "- Fixed a bug where depleting Stamina would freeze once the current amount is less than the max, and the player stopped and then tried to perform an action again"
+        },
+        {
+          "bug": "- Fixed an issue where the player could ram Cole through objects, even if he's not supposed to be able to move due to the object being an obstacle"
+        }
+      ]
+    },
+    {
+      "title": "April 2022 Development Logs",
+      "date": "2022-05-02 06:52:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348798430288709305",
+      "content": "[h1]Development Logs[/h1]\n[b]4/1/22 - 4/2/22[/b]\n- Wrote the idea and progression for the Demo teaser\n- Created a new major logo for the game\n- Created one of the needed models for the teaser\n- Redesigned the major logo\n- Color corrected some of the logo\n- Composed more of the new song used in the teaser\n- Recorded the first clip of the teaser\n- Did some optimization for the settings\n- Restored the original system for change reversing settings as they were better equipped and still very fast\n \n[b]4/2/22 - 4/7/22[/b]\n- Translated the new major logo into PSD as it was originally made in the game engine for teaser purposes\n- Updated timing and transitions of events in the teaser\n- Created a new shader for some projection tricks and simplified effects\n- Created a workaround with projection to be direct to control\n- Added further detail into some of the remaining OSTs\n- Updated the style for in-game windows\n- Changed the opacity of the pause menu, giving it a nicer overlay balance\n \n[b]4/8/22[/b]\n- Received equipment for music production\n- Finished the Pause Menu functionality, completing the major UI needed\n \n[b]4/9/22 - 4/18/22[/b]\n- Began refactoring the trigger event to obtain better efficiency to allow better control over operations and execution time\n- Rechecked the new system to confirm the efficiency\n- Finished writing the remaining components for data saving and loading, completing one of the major internal components\n- Finished creating the main components in the new event system\n- Began translating the old triggers into the new ones\n- Benchmarks proved new system is faster, marking an end to the old system's life cycle\n- Updated the editor icons to allow easier navigation and organization of the components that make up the new event system, now called Virtual Events\n- Did some further remastering on one of the soundtracks to make it louder and cleaner\n- Updated the new trigger structure, making it into 2 components instead of 3, and only 1 is optional\n- Finished converting all triggers needed to the new event system\n- Resumed work on creating Cole's clothing, originally avoided due to other tasks needing completion and to avoid insanity\n- Started texture mapping Cole's shirt\n- Repaired the water shader\n- Changed one of the menu options to Extras instead of Settings as settings are no longer a part of the Main Menu\n- Finished texturing Cole's gloves\n- Added in a new event category for variable events\n- Added a new timing method to have events run after a new frame has been rendered\n- Added in working warning windows for when settings are going to be reset, or have unsaved changes\n \n[b]4/18/22 - 4/25/22[/b]\n- Created a new shader for some special effects\n- Started a concept for more of Cole's outfits as some pieces are missing\n- Created a draft for Cole's footwear, but scrapped it\n- Changed Cole's footwear from sneakers to boots, to both avoid convolution and better fit the areas he'll be traversing, and also lore reasons\n- Created the base mesh for Cole's boots\n- Created the rough texture map for Cole's boots, but then lost it and had to start over\u2026 thanks a lot Blender -_-\n- Created Cole's boot textures, marking the completion of his footwear\n- Updated some of the deforms on Cole's rig\n- Tweaked some weights on Cole's upper body to prevent unnatural bends\n- Created the base mesh for Cole's pants\n- Finished the rough texture map for Cole's pants\n- Created and completed the weight paints for Cole's shoes\n- Created and completed the weight paints for Cole's gloves\n- Created and completed the weights for Cole's shirt\n- Rewrote some progression in the game to have a nicer flow and experience\n- Created and completed the weights for Cole's pants, marking the end of development needed on Cole's 3D model!\n \n[b]4/26/22 - 4/27/22[/b]\n- Began updating some of the architecture in the controller\n- Created a new editor for the controller to better handle changes and parameters\n- Updated the physics system to have better control over ability restrictions\n- Began work on planning out the Force mechanic in the Physics System\n \n[b]4/28/22[/b]\n- Fundamental tests of the Force mechanic have been retouched, resulting in the weight mechanic needed for completion\n- Added in an update to the weight component in the Physics System mechanic, now weight will have its needed negative effects\n- Overflow of external weight has been added\n- Stamina depletion from excessive weight has been added\n- Weight mechanics functionally complete\n- Falling will create force and will have more power based on weight overflow\n- Force Level mechanic is functionally complete\n- Created new UI to house the Force, Weight, and Stamina stats\n- Added some nice color decoration and behaviors to each Physics stat\n \n[b]4/29/22 - 4/30/22[/b]\n- Added real-time transitioning to only show the Physics Stats when needed\n- Adjusted the coloring of the Force arrows to be a nicer gradient\n- Began adding in the Push/Pull interactive mechanic\n- Added in directional facing to keep Cole correctly oriented\n- Added a new approach behavior to Cole, now he will turn and walk towards an object he can interact with\n- Updated the Interactives to now be able to have multiple properties, instead of just one\n- Updated the triggers in the game to now be able to use flags to execute multiple instructions, instead of stacked event layers\n- Translated every trigger to the new flag system with ease\n- Updated Cole's physical and interaction states to now use bit flags instead of booleans to affect multiple states\n- Updated the interaction script to alter properties via adding or subtracting bits\n- Added the ability to apply Force build up on objects, completing the Force Mechanic\n\n[h1]Bug Fixes[/h1]\n- Fixed an issue with memory storing in file loading\n- Fixed an issue where the settings would not revert changes, even if you reset to default\n- Fixed a bug where the game would not apply settings changes if a new level was created\n- Fixed a bug where screen settings would cause strange post processing results\n- Fixed a bug where the in game setting would not load correctly\n- Fixed an issue with the new trigger architecture that would prevent disable triggers to run any operations\n- Fixed a bug where independent events would not run on enable\n- Fixed an issue where variable blocks would not run in virtual events\n- Fixed an issue where audio graphs would not adjust the volume level of the first point to keep volume consistency\n- Fixed an issue with signal resetting, now triggers can correctly reset when needed for multiple use\n- Fixed an issue during cleaning up some animation data in the engine\n- Fixed a lighting issue with matrix textured materials\n- Fixed a timing issue with animation event actions\n- Fixed an issue with variable manipulation events that would case\n- Fixed a bug where the Force arrows would take a while to deplete, even if the player stopped moving\n- Fixed a bug where if Stamina ran out, Force would not reset to 0\n- Fixed a bug where if your weight limit overflowed, Force would build up\n- Fixed a bug where an interactive Push/Pull object would not track Cole's position correctly\n- Fixed an issue with rotation calculations which would keep Cole facing either one or no directions correctly\n- Fixed a bug where if the player interacted with a Push/Pull object, walking backwards would jitter to where it would be as if they were blocked\n- Fixed a bug where if the player walked right up to a Push/Pull object, and interacted with it, the player wouldn't be able to move forward\n- Fixed an issue where the interact prompts for Push/Pull object would stay active, despite the interaction already happening",
+      "key": "1394660::3279f21e48a5edec1f65d4b8f5bb5ce653107124",
+      "tags": [
+        {
+          "feature": "- Restored the original system for change reversing settings as they were better equipped and still very fast"
+        },
+        {
+          "feature": "- Created a new shader for some projection tricks and simplified effects"
+        },
+        {
+          "feature": "- Created a workaround with projection to be direct to control"
+        },
+        {
+          "feature": "- Finished the Pause Menu functionality, completing the major UI needed"
+        },
+        {
+          "feature": "- Finished writing the remaining components for data saving and loading, completing one of the major internal components"
+        },
+        {
+          "feature": "- Finished creating the main components in the new event system"
+        },
+        {
+          "feature": "- Updated the editor icons to allow easier navigation and organization of the components that make up the new event system, now called Virtual Events"
+        },
+        {
+          "feature": "- Updated the new trigger structure, making it into 2 components instead of 3, and only 1 is optional"
+        },
+        {
+          "feature": "- Added in a new event category for variable events"
+        },
+        {
+          "feature": "- Added a new timing method to have events run after a new frame has been rendered"
+        },
+        {
+          "feature": "- Added in working warning windows for when settings are going to be reset, or have unsaved changes"
+        },
+        {
+          "feature": "- Created a new shader for some special effects"
+        },
+        {
+          "feature": "- Created a new editor for the controller to better handle changes and parameters"
+        },
+        {
+          "feature": "- Updated the physics system to have better control over ability restrictions"
+        },
+        {
+          "feature": "- Added in an update to the weight component in the Physics System mechanic, now weight will have its needed negative effects"
+        },
+        {
+          "feature": "- Overflow of external weight has been added"
+        },
+        {
+          "feature": "- Stamina depletion from excessive weight has been added"
+        },
+        {
+          "feature": "- Weight mechanics functionally complete"
+        },
+        {
+          "feature": "- Falling will create force and will have more power based on weight overflow"
+        },
+        {
+          "feature": "- Force Level mechanic is functionally complete"
+        },
+        {
+          "feature": "- Created new UI to house the Force, Weight, and Stamina stats"
+        },
+        {
+          "feature": "- Added some nice color decoration and behaviors to each Physics stat"
+        },
+        {
+          "feature": "- Added real-time transitioning to only show the Physics Stats when needed"
+        },
+        {
+          "feature": "- Added in directional facing to keep Cole correctly oriented"
+        },
+        {
+          "feature": "- Added a new approach behavior to Cole, now he will turn and walk towards an object he can interact with"
+        },
+        {
+          "feature": "- Updated the Interactives to now be able to have multiple properties, instead of just one"
+        },
+        {
+          "feature": "- Updated the triggers in the game to now be able to use flags to execute multiple instructions, instead of stacked event layers"
+        },
+        {
+          "feature": "- Updated Cole's physical and interaction states to now use bit flags instead of booleans to affect multiple states"
+        },
+        {
+          "feature": "- Updated the interaction script to alter properties via adding or subtracting bits"
+        },
+        {
+          "feature": "- Added the ability to apply Force build up on objects, completing the Force Mechanic"
+        },
+        {
+          "bug": "- Fixed an issue with memory storing in file loading"
+        },
+        {
+          "bug": "- Fixed an issue where the settings would not revert changes, even if you reset to default"
+        },
+        {
+          "bug": "- Fixed a bug where the game would not apply settings changes if a new level was created"
+        },
+        {
+          "bug": "- Fixed a bug where screen settings would cause strange post processing results"
+        },
+        {
+          "bug": "- Fixed a bug where the in game setting would not load correctly"
+        },
+        {
+          "bug": "- Fixed an issue with the new trigger architecture that would prevent disable triggers to run any operations"
+        },
+        {
+          "bug": "- Fixed a bug where independent events would not run on enable"
+        },
+        {
+          "bug": "- Fixed an issue where variable blocks would not run in virtual events"
+        },
+        {
+          "bug": "- Fixed an issue where audio graphs would not adjust the volume level of the first point to keep volume consistency"
+        },
+        {
+          "bug": "- Fixed an issue with signal resetting, now triggers can correctly reset when needed for multiple use"
+        },
+        {
+          "bug": "- Fixed an issue during cleaning up some animation data in the engine"
+        },
+        {
+          "bug": "- Fixed a lighting issue with matrix textured materials"
+        },
+        {
+          "bug": "- Fixed a timing issue with animation event actions"
+        },
+        {
+          "bug": "- Fixed an issue with variable manipulation events that would case"
+        },
+        {
+          "bug": "- Fixed a bug where the Force arrows would take a while to deplete, even if the player stopped moving"
+        },
+        {
+          "bug": "- Fixed a bug where if Stamina ran out, Force would not reset to 0"
+        },
+        {
+          "bug": "- Fixed a bug where if your weight limit overflowed, Force would build up"
+        },
+        {
+          "bug": "- Fixed a bug where an interactive Push/Pull object would not track Cole's position correctly"
+        },
+        {
+          "bug": "- Fixed an issue with rotation calculations which would keep Cole facing either one or no directions correctly"
+        },
+        {
+          "bug": "- Fixed a bug where if the player interacted with a Push/Pull object, walking backwards would jitter to where it would be as if they were blocked"
+        },
+        {
+          "bug": "- Fixed a bug where if the player walked right up to a Push/Pull object, and interacted with it, the player wouldn't be able to move forward"
+        },
+        {
+          "bug": "- Fixed an issue where the interact prompts for Push/Pull object would stay active, despite the interaction already happening"
+        },
+        {
+          "balance_change": "- Changed the opacity of the pause menu, giving it a nicer overlay balance"
+        },
+        {
+          "balance_change": "- Repaired the water shader"
+        },
+        {
+          "balance_change": "- Changed one of the menu options to Extras instead of Settings as settings are no longer a part of the Main Menu"
+        },
+        {
+          "balance_change": "- Changed Cole's footwear from sneakers to boots, to both avoid convolution and better fit the areas he'll be traversing, and also lore reasons"
+        },
+        {
+          "balance_change": "- Adjusted the coloring of the Force arrows to be a nicer gradient"
+        }
+      ]
+    },
+    {
+      "title": "March 2022 Development Logs",
+      "date": "2022-04-01 05:33:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995463353080",
+      "content": "[h2]Development Logs[/h2]\n[b]3/1/22 - 3/2/22[/b]\n- Started updating the compositions for the official OSTs\n- Did some tests for clothing rigging and adjustments\n- Wrote up more of the help prompts for the in-game mechanics\n\t\n[b]3/4/22[/b]\n- Continued writing more of the story progression to fill in some missing parts\n- Finished the needed animations for a special mechanic :).\n\n[b]3/4/22 - 3/10/22[/b]\n- Finished composing Beyond The Mind\n- Start creating the layout for the new composition of the Major Puzzle Theme\n- Updated sprite slicing on a few images to retain their shape without needing small values\n- Continued writing the progressions, all the way up to Major Puzzle 1\n- Separated the Altitude Progression files into separate documents\n- Updated the startup screen to now use groups to control opacity and reduce animation data\n- Updated the controller structures to now use Linear Algebra to determine angle directions instead of preset angles based on conditions\n\n[b]3/11/22[/b]\n- Continued working on upgrading the controller upgrades\n- Finished upgrading the controller, now the size is reduced and much more efficient\n\n[b]3/11/22 - 3/21/22[/b]\n- Upgraded the rotation Controls to be reduced in size\n- Finished composing Above The Skyline\n- Finished writing the progression for Section 1 of Altitude A\n- Finished writing the information panels for most features in the game\n- Tested and updated behavior on some physics features in the game\n- Created a new pause menu design as the old one was pretty janky\n- Created a new settings menu\n- Created a new focus based system for UI settings\n\n[b]3/21/22 - 4/1/22[/b]\n- Continued with the design for the Pause Menu\n- Created transitions for swapping between panels in the Pause Menu\n- Decided to make the settings strictly in the Pause Menu to prevent convoluted systems\n- Updated value storing for the focus system\n- Reduced ops for value updating to up speed and performance\n- Started the new saving and loading system\n- Finished the remaining components needed in the settings\n- Settings system v2 is now complete!\n- File Saving and Loading v3 are now operational!\n\n[h2]BUG FIXES[/h2]\n- Fixed an issue where the UI elements would not run their animations anymore once they were updated\n- Fixed directional issues with the new input axis angle calculation\n- Fixed a directional issue that caused the Auto Jump system to miscalculate direction\n- Fixed an issue where rotation would still be calculated from input instead of being left untouched during Auto Jumping\n- Fixed an issue where the Auto Jumping detector would not reset if it reached the end of its scan distance and found nothing\n- Fixed an issue where text values would not update once settings were loaded\nFixed a mishap where the settings data would not store data\u2026 at all\n",
+      "key": "1394660::7217319b4b5e766accceb67241dd995ec115f58e",
+      "tags": [
+        {
+          "bug": "- Fixed an issue where the UI elements would not run their animations anymore once they were updated"
+        },
+        {
+          "bug": "- Fixed directional issues with the new input axis angle calculation"
+        },
+        {
+          "bug": "- Fixed a directional issue that caused the Auto Jump system to miscalculate direction"
+        },
+        {
+          "bug": "- Fixed an issue where rotation would still be calculated from input instead of being left untouched during Auto Jumping"
+        },
+        {
+          "bug": "- Fixed an issue where the Auto Jumping detector would not reset if it reached the end of its scan distance and found nothing"
+        },
+        {
+          "bug": "- Fixed an issue where text values would not update once settings were loaded"
+        },
+        {
+          "bug": "Fixed a mishap where the settings data would not store data\u2026 at all"
+        }
+      ]
+    },
+    {
+      "title": "February 2022 Development Logs",
+      "date": "2022-03-03 12:45:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367431151866",
+      "content": "[h2]Development Logs[/h2]\n[b]2/1/22 - 2/7/22[/b]\n- Upgraded to Unity 2021.2\n- Continued with creating and polishing some more UI assets\n- Created work for another feature as part of the lore and progress\n- Continued with finishing the composition of the Main Menu theme\n- Finished the Main Menu Recomposed\n- Updated some UI in the Main Menu to be more convenient\n- Began work on a special feature that will be revealed soon in due time\n- Created animations for said feature\n- Added in some new eye controls for Cole 2D\n- Added in some new facial details for Cole 2D to expand his appearance possibilities\n- Wrote the game progression out more and fixed issues, allowing a possible extension and upgrade to the game's features\n- Created the ideas for the story and level design, allowing much more fun and exciting concept\n- Started to restructure the Physics system after it broke\n- Updated the labeling and Isometric system to be more structurally easy to read\n- Repaired and upgraded the Stamina system to be more optimized and versatile\n- Repaired and upgraded the Auto Jump system to not only be more optimized but to also contain new factors and behaviors, allowing for more of what I planned to have in terms of Cole's capabilities and behavior\n\n[b]2/8/22[/b]\n- Updated the fix for the continuous motion issue to be virtually accurate\n- Updated the Auto Jump system again, allowing Cole to detect any surface instead of just surfaces that have been marked\n- Reduced the in-game tag count to make it less cluttered\n\n[b]2/8/22 - 2/12/22[/b]\n- Updated the Stamina system to now show a meter depleting behind the number of seconds you have left for a more accurate depiction\n- Did some UV tests on 3D Cole\n- Touched up Cole's topology and moved some facial parts to now be texture-based instead of completely modeled\n- Added in a new panel UI type to make it easier to display information in a way that makes it easy to take in small or large amounts of information\n- Updated the game's text font to contain some new mouse control glyphs\n- Removed unused sprites from the game's UI library\n- Added in vertical scrolling and controls for the new panel scrubbing UI\n- Added in control action response updating to let the player know what actions scrolling will do\n- Added in closing by scrolling past the last panel in a scrubbing group\n\n[b]2/13/22[/b]\n- Finished creating Cole's hair\n- Finished creating Cole's eye textures\n- Finished creating Cole's base textures\n- Finished creating Cole's mouth and hair textures\n\n[b]2/13/22 - 2/27/22[/b]\n- Took a small break to blow off some steam with something small, and also adjust to getting back to physical classes.\n- Finished creating Cole's new rig\n- Reorganized and polished some folders to make them easier to read and keep short\n- Renamed some files to make their purpose less of a puzzle to remember\n\n[b]2/28/22[/b]\n- Created some updates to the site\n- Started Cole's weight painting\n\n[h2]BUG FIXES[/h2]\n- Fixed an issue with Stamina calculation where values would turn negative instead of retaining positive values\n- Fixed a bug where Stamina would not refill, even if it wasn't maxed out\n- Fixed a bug where the Auto Jump system would incorrectly calculate forward distance\n- Fixed an issue where the Auto Jump system make Cole jump due to accidentally flagging ground that could be reached by falling as far\n- Fixed an issue where the Auto Jump system would not reset its detection after a surface was found\n- Fixed a bug where the Auto Jump system would not use maximum jump height\n- Fixed a bug where continuous motion would not move at the correct speed due to the element of user input missing\n- Fixed an issue where the Stamina meter would not retain itself at full when maxed out after regenerating\n- Fixed a bug where Cole would still be able to move and rotate when controller input is set to locked\n- Fixed a bug where the Stamina meter would not show how much depletion is left after some UI styles had an update\n",
+      "key": "1394660::cb549b25dbd7e8e2445c586709bef2075f6a0947",
+      "tags": [
+        {
+          "bug": "- Started to restructure the Physics system after it broke"
+        },
+        {
+          "bug": "- Repaired and upgraded the Stamina system to be more optimized and versatile"
+        },
+        {
+          "bug": "- Repaired and upgraded the Auto Jump system to not only be more optimized but to also contain new factors and behaviors, allowing for more of what I planned to have in terms of Cole's capabilities and behavior"
+        },
+        {
+          "bug": "- Updated the fix for the continuous motion issue to be virtually accurate"
+        },
+        {
+          "bug": "- Fixed an issue with Stamina calculation where values would turn negative instead of retaining positive values"
+        },
+        {
+          "bug": "- Fixed a bug where Stamina would not refill, even if it wasn't maxed out"
+        },
+        {
+          "bug": "- Fixed a bug where the Auto Jump system would incorrectly calculate forward distance"
+        },
+        {
+          "bug": "- Fixed an issue where the Auto Jump system make Cole jump due to accidentally flagging ground that could be reached by falling as far"
+        },
+        {
+          "bug": "- Fixed an issue where the Auto Jump system would not reset its detection after a surface was found"
+        },
+        {
+          "bug": "- Fixed a bug where the Auto Jump system would not use maximum jump height"
+        },
+        {
+          "bug": "- Fixed a bug where continuous motion would not move at the correct speed due to the element of user input missing"
+        },
+        {
+          "bug": "- Fixed an issue where the Stamina meter would not retain itself at full when maxed out after regenerating"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would still be able to move and rotate when controller input is set to locked"
+        },
+        {
+          "bug": "- Fixed a bug where the Stamina meter would not show how much depletion is left after some UI styles had an update"
+        }
+      ]
+    },
+    {
+      "title": "January 2022 Development Logs",
+      "date": "2022-02-01 03:24:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104336973459",
+      "content": "[b]1/1/21 - 1/13/21[/b]\n[list]\n[*] - Began work on animating some scenes for 2D Cole\n[*] - Updated organization for animating 2D Cole to reduce animation amounts\n[*] - Updated the reference sheet for Cole to create a flat side view\n[*] - Created a head for 3D Cole v4.2\n[*] - Animated dialogue lines 1 & 2\n[*] - Imported Lines 1 & 2 into the game\n[*] - Began updating the dialogue system and some UI\n[*] - Rewrote a list to keep a much more detailed look at what needs to be done\n[*] - Updated the template scene to fix some layer & render issues\n[*] - Began planning an overhaul for getting content to roll out\n[*] - Created a doc containing the new details of the game's main features\n[*] - Started work on updating the website to showcase only the game\n[*] - Went back and forth on some new design changes and upgrades to the site interface\n[*] - Created a repository to preserve the main site to keep things from being overwritten\n[*] - Reorganized the Discord server to remove unused channels and keep it easier to find info on the game\n[*] - Posted every log and bug fix in the server to show all the progress that's been made since the game's start\n[/list]\n\n[b]1/13/21 - 1/16/21[/b]\n[list]\n[*] - Rolled out the content overhaul for Steam, Twitter, and Instagram\n[*] - Instagram is now back online with the ability to post to desktop being available\n[*] - Updated the Steam update frequency to know to be prepared to show monthly logs, so logs have been better tracked\n[*] - Adding a new feature to the game to show the story series the game is a part of\n[*] - Wrote some notes to help track layer order rendering in the game\n[*] - Continued work on updating the soundtracks to the game\n[*] - Updated the Main Menu theme to now have a better intro and fixes on the soft progression\n[/list]\n\n[b]1/16/21 - 1/21/21[/b]\n[list]\n[*] - Brief intermission to get some housework done [Unavoidable]\n[/list]\n\n[b]1/21/21 - 1/24/21[/b]\n[olist]\n[*] - Created some new icons for the upgrade tree\n[*] - Resized the sizes to make them be multiples of 4\n[*] - Continued working on Cole 3D 4.2, adjusting his mesh for errors in topology\n[*] - Reorganized some hierarchy naming and categorizing\n[*] - Began working on restructuring the game page on the site\n[*] - Rewrote the game's quick description to be more accurate\n[*] - Created the template design for the game's online page\n[*] - Began translating the designs to the web\n[/olist]\n\n[b]1/25/21 - 1/26/21[/b]\n[list]\n[*] - Finished creating the base components, including some animation, audio, and the game's logo\n[*] - Updated the audio files to better match what the hex navigation buttons are titled as\n[*] - Optimized some structure of the site to make it both easier and more performant\n[*] - Added in real-time and fluid transitions for some nice dynamics\n[*] - Updated the design once again to change the order of showcasing features and the description of the game\n[*] - Added in some responsive behavior to make it appear nicer on tablet dimensions\n[*] - Touched up and added in some missing information from elements on the site\n[/list]\n\n[b]1/26/21 - 1/30/21[/b]\n[list]\n[*] - Added in some readjustments to the order of panels for the site\n[*] - Added in some more audio cues for the site for there to be messages from peeps who had a role in the game (which in reality is just me, a voice actor friend, and my childhood friend who I asked for help with some math bits for a section of the game)\n[*] - Created some new art for a few characters to see eventually in the series\n[*] - Continued to bounce back to work on Cole's 3D\n[*] - Made some adjustments to Cole's head to make it look more accurate to the character sheet\n[*] - Fixed some proportion issues with Cole's posture and legs\n[/list]\n\n[b]1/31/21[/b]\n[list]\n[*] - Added in some adjustments to Cole's body some more\n[*] - Adding in the missing pieces of Cole's base model\n[*] - Temporarily added in 3D Cole 4.2 into the game to see height comparison with 4.0 to determine value adjustments for the physics system\n[*] - Continued work on the first group of lines for the first animated dialogue\n[*] - Added a missing control for 2D Cole's tongue\n[/list]",
+      "key": "1394660::4541a43b5db530ea7bf6f9e0a3866108f5ac30dc",
+      "tags": [
+        {
+          "bug": "- Updated the template scene to fix some layer & render issues"
+        },
+        {
+          "feature": "- Adding a new feature to the game to show the story series the game is a part of"
+        },
+        {
+          "bug": "- Continued working on Cole 3D 4.2, adjusting his mesh for errors in topology"
+        },
+        {
+          "bug": "- Fixed some proportion issues with Cole's posture and legs"
+        },
+        {
+          "bug": "- Added a missing control for 2D Cole's tongue"
+        }
+      ]
+    },
+    {
+      "title": "2021 Development Logs & Bug Fixes",
+      "date": "2022-01-14 14:27:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931832497830",
+      "content": "[h1]DEVELOPMENT LOGS[/h1]\n[h1]EARLY MARCH - EARLY APRIL 2021[/h1]\n[b]3/13/21[/b]\n- Updated the performance display, now it can display VRAM (GPU) and Memory\n- Began work on creating the performance display an option in-game\n\n[b]3/14/21[/b]\n- Performance monitor can now be turned on or off and be saved in the game\u2019s saved option file\n- Updated the progress manager in-game to swap between achievement and normal save files\n- Added a new screen before the warning to let the player know about the use of headphones\n- Reverted Cole\u2019s original walking speed from the one recently set\n\n[b]3/15/21[/b]\n- Retouched the loading screen audio loop to remove any popping\n- Redid the main menu loop to remove a popping issue\n\n[b]3/16/21[/b]\n- Updated the minimal requirements for the game after learning that one of the testers was not able to play due to shader material issues\n\n[b]3/17/21[/b]\n- Finalized the first bugfix test and confirmed it official\n\n[b]3/18/21[/b]\n- Upgraded the Unity Engine to 2020.3.0 f1 LTS\n\n[b]3/19/21[/b]\n- Updated Cole\u2019s character reference to show him in complete side view\n- Designed more clothing for Cole and updated the names of a few\n- Moved the project files over to an external hard drive as the master file to work on the go if needed\n\n[b]3/21/21[/b]\n- Drew out the next few segments of Altitude A\n- Retouching the tutorial progression to have a better progression\n\n[b]3/22/21 - 4/11/21[/b]\n- Added clouds to the game which may only appear in Altitude A & B\n- Cole Design v3 completed in 2D\n- Cole v3 model progress completed\n- Added typing sfx to the dialogue system to add more detail\n- Updated the scripts to use indents instead of spaces which was bugging me for a while\n- Updated Coles animation system to now use Blend Trees\n- Readjusted Cole\u2019s proportions, leaving him looking more like a chibi and upgrading him to v3.1\n- Updated the rendering order in the game, now I can place facial creatures on front of Cole\u2019s face like a comic book layer\n- Got a 2nd monitor installed and can now multitask to keep better focus\n- Updated and optimized a bit of the camera script\n- Created the UI design for the Upgrade Tree system\n- Updated the skybox rendering to allow UI GFX to transition with ease\n- Balanced out the math of Major and Minor Puzzles in every Altitude (World)\n- Cole v3.1 complete with a full IK rig and will be soon be animated\n- Added in detailed UI for the upgrade system\n- Cole v3.1 is now rigged and ready to be animated\n\n[h1]EARLY APRIL - LATE AUGUST 2021[/h1]\n[b]4/12/21[/b]\n- Updated the tier names and their descriptions\n- Added in the lock and unlock system in the upgrade tree\n- Added in the progress tracking and interaction system for the upgrade tree\n\n[b]4/13/21[/b]\n- Readjusted the weights that influence Cole\u2019s body\n- Added tooltips into the editor to allow any reminders of the functionality of certain scripts\n- Updated the Upgrade Tree to be able to include 2 types of blue lock requirements together instead of only 1\n- Updated the structure of the tree to now group nodes into categories\n\n[b]4/14/21[/b]\n- Forgot to add the tier tracking in the Upgrade Tree, but now it\u2019s there\n- Finished adding in every main upgrade tree node & tier\n- Updated the tree script to be able to lock tiers levels without the need for requirement locks to have them be sequential\n- Added any remaining nodes I forgot to add\n\n[b]4/15/21[/b]\n- Cole Reanimation\n- Redid the animation events for Cole\u2019s footsteps\n- Added some Bevel to the Iso-Rotation Plate\n\n[b]4/16/21[/b]\n- Updated the detail of the structures in-game\n- Redid and adjusted the UV mapping of certain structures to create a better color progression\n- Retouched some of the animation poses to be more pleasing\n- Updated the accuracy of the opacity dithering to cover more area instead of a single ray\n\n[b]4/17/21[/b]\n- Touched up Cole\u2019s walking animation one more time\n- Updated internal numeric values to be more specific and keep a better accuracy\n- Adjusted the animation speed in Cole\u2019s animator blend tree\n- Updated the polygon structure of cattails and structures\n- Began work on constructing something very important\n- Updated the font atlas to include new text characters\n- Finished the notes for something special \ud83d\ude42\n- Began some work on an input text parser\n\n[b]4/18/21 - 4/20/21[/b]\n- Added a few more points for vegetation in Altitude A\n- Began work on updating the trigger script to use a new system instead of the current one\n- Lost some sketches of Altitude A, so I have to recall from memory\n- Updated the structure of the triggers to have better control and visibility\n- Finished the structure of the triggers with better functionality\n- Updated every trigger from the warning screen to the loading screen\n- Finished any missing types from the new trigger system\n\n[b]4/21/21 - 8/21/21[/b]\n- Fixed the text sizing on the page based dialogue system in Altitude A\n- Designing the layout and details of Altitude A\n- Every Minor and Major puzzle for Altitude A has been written\n- Added new UI for Minor Puzzle introductions\n- Reorganized the folders to keep animations tidied up\n- Updated a few triggers in the tutorial along with an upgrade on the controller\n- Updated a couple of grammatical mistakes\n- Updated the bug fix count on the list, it was off the total by 8\n- Updated the pushable interactive type to restrict movement to 1 axis depending on the direction being pushed\n- Updated the physics system to require the player to press a button when initiating the hoist and climbing commands\n- Updated the footstep sound detection to improve accuracy\n- Translated some of the old triggers to the new ones\n- Finished slicing and organizing the mass majority of audio files in the game\n- Upgraded the engine to 2021 to fix a file writing issue\n- Deleted the old trigger system and optimized the Iso-Rotation animations\n- Filled missing faces from certain objects\n- Updated Cole\u2019s color bitmap to adjust the tones of his hair and eyes\n- Updated the warning screen to give a \u201cDo NOT Try This At Home\u201d warning\n- Updated the Isometric System, now it can calculate points in real-time!\n- Balanced more detail and decoration in Altitude A\n- Added some new special effects to give more of a natural feeling\n- Updated the prefabs of certain puzzle bases to make them easier to slap in\n- Updated some UI flaws and some trigger mishaps after the input detection was updated\n- Created a new testing field to build and flesh out features\n- Optimized the Isometric System and retouched its editor\n- Added a new rule to perspective, Light Path Compatibility\n- Updated and minimized the camera stack\n- Uploaded a new mechanic teaser with up to date details\n- Updated the isometric shadow system to be reduced to 2 lines and no new objects\n- Updated the editor to show the difference between player and object translation\n- Updated the shadow rendering again to cover less ground during Isometric Translation\n- Isometric System restructured and optimized from v3 Revision 11 to v4 Revision 0\n- Lowered the time step value in the Fixed Update to run at a faster iteration without much consequence for other features\n- Updated the system to run only in the Fixed Update is it\u2019s able to run faster than the framerate\n- Updated the system to v4 Revision 2, still working as well as Revision 0 so no need to restart the system playtest\n- Repaired the Main Menu UI after some input triggers got messed up\n- Retouched Cole\u2019s walking animation to fix the foot and limb IKs to remove some stiff movement\n- Added use of the Scene Template package to streamline the process of creating sections and levels\n- Made some more progress on the official OST\n- Updated the checklist to be more detailed\n- Readjusted and updated some of the tier names and points in the Upgrade Tree\n- Adjusted the stair-step sizing\n- Updated the water shader to use noise as faux refraction\n- Isometric System v4 test concluded, the system is stable and in working order!\n- Added in arrow animations and sprite updates in the Upgrade Tree UI\n- Added in arrow navigation into the Upgrade Tree\n- Added in Requirement(s) display in the Upgrade Tree, showing the node locks before the tiers\n- Optimized and renamed some of the code that makes up the Upgrade Tree\n- Removed Node Locks as the selection arrow will be locked in a certain range and the player will get a notification of a newly available node in the upgrade tree \n- Added in animation based on node selection and input, allowing the player to hold down the cycle buttons without issues\n- Added in state saving to keep the state of the upgrade tree per save file\n- Added lock visual detection for saving the state of the tiers and progress\n- Updated arrow restriction selection and lock cycling\n- Finished the remaining functionality needed for the Upgrade Tree\n- Updated the structure of the upgrade tree to allow it to be saved and loaded\n- Continued further composition work for \u201cIteration After Iteration\u201d\n- Updated the Upgrade Tree to be integrated with the same order as the Pause Menu\n- Renamed and redid the achievements\n- Updated the progress saving control editor to be more neat and easy to handle\n- Updated the main menu animation to have a nice zooming effect\n- Updated the warning screen to display a better version of Cole wearing headphones\n- Updated the main menu starting animation to be more dynamic\n- Continued work on a few more teaser clips\n- Published a new screenshot and the Main Menu Theme audio spectrum\n- Reorganized the folders and removed any unused assets in the project to clean up the size\n- Updated the engine to the newest 2021 build\n- Tweaked the main menu animation to have better color and brightness control\n- Updated the loading screen with fixed hexagon opacity and tip styling\n- Updated stair designs to have wooden rails underneath to keep them connected\n- Updated Cole\u2019s footstep detection to have a higher and more realistic accuracy\n- Updated the visualizing of the opacity translator\n- Updated the box colliders for stairs and structures\n- Continued making adjustments and details for Altitude A\n- Designed Cole one more time to match the comic book style, however, no new model was made\n- Updated the character alias files\n- Added some minor details to the main menu to add more dynamics to it\n- Updated the screenshots on the official steam page to show more of the game, even if it\u2019s not showing much of Altitude A\n- Updated Cole\u2019s colormap to have a better collection of colors and ease of adjustment with UV\u2019s\n- Retouched the footstep one more time to fix some accuracy issues\n- Reduced collision detection on objects that don\u2019t need them\n- Began a new draft of the Major Puzzle theme\n- Drew another major character in the series that will be shown later in the game\n- Fixed some proportion issues I found in Cole\u2019s character sheet\n- Updated the UI for notifications and adjusted the loading screen colors\n- Updated the start-up sequence for the main menu\n- Updated the hero image for steam\n- Change the editor windows for creating more level design faster and efficiently\n- Continuing graphical updates and tweaking to improve the game\u2019s presentation\n- Added new images to the official indev website\n- Tweaked the opacity dithering speed to be more smooth\n- Finished the new graphical assets for the Steam page\n- Initiated a new major UI update to have the style match the new cover and header\n- Retouching the files to reduce the size\n- Added Visual Logs to the official Discord server [Server Link, still in construction but interactable]\n- Added a fun new detail to the Warning screen to make it more entertaining to look at in a way\n- Created new SFX to give dynamics to the UI\n- Finished the Warning screen UI design\n- Restructured the Main Menu scene\n- Sorted audio tracks to mixers for easier control when it\u2019s time to implement options\n- Created the style sets to produce the UI faster\n- Created new dynamic and interactive UI animations\n- Created new methods of fading out multiple objects with only 1 property instance\n- Started a design for a settings menu as before, the game didn\u2019t have one\n- Added in a slight bevel detail into the hex UI to fit the in-game lighting and style\n- Added in a new use of Audio Mixers and Snapshots to create new effects and clean up the board\n- Increased controls to the settings to be able to have more internal control and numeric accuracy\n- Updated file saving to be more optimized and handle any new file types I need to add\n- Updated the pre-existing options class to have the capabilities needed to work with both the Pause and Main Menu\n- Added in better file integrity for progress tracking in-game and linking to Steam\n- Broke 150+ lifetime wishlists on Steam!\n- Finished the internal structure for the options saving/loading\n- Created and organized some layout templates\n- Optimized lines in file saving that were duplicates of others\n- Added in the UI for setting the in-game performance stats\n- Finished the UI for the options menu\n- Finished the remaining functionality needed for options\n- Added a special secret \ud83d\ude42\n- Redid the transitions for Bolt Node [Blue Hex] UI to be reusable and easy to edit\n- Utilized Sliders more to reduce the need for position interpolation\n- Updated the template scene for creating levels faster\n- Continued work on translating the site design to HTML\n- Restricted saving in the DEMO as it\u2019s not needed\n- Updated the SFX for rotation\n- Updated the introduction for when you start a new game\n- Removed any unused audio files\n- Updated the animation that plays depending on the state of the Iso-Rotation Plate\n\n[h2]LATE AUGUST 2021[/h2]\n[b]8/21/21 - 8/28/21[/b]\n- Finished the structure for the basic UI on the official website\n- Completed the needed internal structures for the new site\u2019s home page\n- Created a template to slap in whenever I need to make new content\n- Created the concept and structure for the Projects page\n- Began work on fixing Cole\u2019s body proportions on his reference sheet\n- Recomposing one of the new soundtracks for the Demo\n- Updated the font adjustments when resizing a desktop window\n\n[b]8/29/21[/b]\n- Optimized assets to speed up background loading\n- Published the website to public beta\n\n[b]8/31/21[/b]\n- Finished fixing Cole's proportions on his reference sheet\n- Updated the Main Menu UI to be more organized\n- Created a new LED glow in-game\n- Created the new Start sequence for the main menu\n\n[h2]SEPTEMBER 2021[/h2]\n[b]9/1/21[/b]\n- Finished the Main Menu startup sequence\n- Finished adjusting some of Cole's clothing\n- Created a new dynamic background for the Main Menu\n- Finished Hex Node UI pop up animations\n- Adjusted the speed of the floating hex icons in the background\n\n[b]9/2/21[/b]\n- Restructured the file saving protocol to be much more optimized\n- Updated the loading control to load the correct scene that was last played or needs to be played\n- Adjusted the startup sequence to show more detail\n- Added a new detail to the dynamic background\n- Finished creating the new Pause Menu\n- Added in the functionality of the new Main Menu\n- Updated the order of scenes in the project\n- Began work on creating the new Dialogue System UI\n\n[b]9/3/21[/b]\n- Restructuring of the intro for the story has begun\n- Fixed some broken bits from the Dialogue System\n- Finished the new style for Page Dialogue systems\n\n[b]9/4/21[/b]\n- Finished restructuring the introduction\n- Created the new style for regular in-game Dialogue boxes\n- Renamed the categories of certain objects in-game\n\n[b]9/5/21[/b]\n- Finished writing the script for the introduction to Minor Puzzle 4\n- Updated the controls for the dialogue system\n- Translated each line into the new Dialogue Box system\n- Updated the template for level creation\n- Created the starting point for the transition from the story plot to the actual level\n\n[b]9/8/21[/b]\n- Started recording the lines needed for Minor Puzzle 4\n- Created a rig and fixes for a new possible Cole v4 model\n\n[b]9/9/21[/b]\n- Began sequencing the introduction for Minor Puzzle 4\n\n[b]9/9/21 - 9/18/21[/b]\n- Began work on fleshing out Cole v4 in 3D space\n- Began work on creating something for a server I co-own with my little brother [Will NOT impede development]\n- Continued posting to Twitter once again\n- Finished creating the new hair for Cole v4\n- Added Sprite Controls for dialogue\n- Fixed 2D Cole's \"Tired\" expression\n\n[b]9/19/21 - 9/20/21[/b]\n- Finished recording the needed lines for the introduction for Minor Puzzle 4\n- Finished Cole's rig and weight paints\n\n[b]9/21/21 - 9/22/21[/b]\n- Gave Cole his gloves, shirt, and pants\n- Updated Cole's model transformations and mesh to be cleaner\n- Updated Cole's hierarchy of parent and child objects\n- Redid Cole's colormap for his body and clothing\n- Updated the skybox and camera controls in-game to satisfy Cole v4\n- Updated the dialogue system to now handle run on events\n- Updated the physics and controller values to better suit Cole v4\n- Updated the level template\n- Continued further construction on the introduction sequences\n\n[b]9/22/21 - 9/27/21[/b]\n- Finished Cole's clothing\n- Continued with some missing functionality in the pause menu\n- Continued work on animating Cole\n- Updated the development logs to know be written using Revue\n- Released a new audio preview for one of the soundtracks\n- Updated the clips on Steam, Twitter, and YouTube\n- Updated the clips on YouTube to now link the game's credentials on YouTube Gaming\n- Updated the banner for the YouTube channel and the watermarks\n- Adjusted Cole's rig to fix an issue regarding the bend and shape of his... tuchus\n- Updated the clips and pics on the Steam page to show some up to date items which will be replaced with better ones once gameplay is possible\n- Adjusted the weight paints on clothing near the waistline to prevent unnatural curves\n- Readjusted Cole's walking animation\n\n[b]9/28/21 - 9/30/21[/b]\n- Finished optimizing Cole's hair, reducing the polygon count by more than half\n- Updated the Isometric Perspective system to adjust to Cole's new changes\n- Updated the Isometric Shadow rendering methods to a more reliable structure\n- Updated the footstep detection system to respond to ground per foot better\n- Created a temporary running animation for Cole\n- Continued composition for completing \"Beyond The Mind\"\n- Updated the trigger system to clean up some structures\n\n[h2]OCTOBER 2021[/h2]\n[b]10/1/21 - 10/12/21[/b]\n- Upgraded from Windows 10 to Windows 11\n- Began work on restructuring the website to be mobile compatible\n- Continued work on the Major Puzzle Theme\n- Finished adding website flexibility to cater more than just mobile devices\n- Restyled every content element on the site to be more vibrant\n- Adjusted the footstep detection to now not play a sound when a foot isn't on the ground\n- Adjusted some of the structures of the triggers to remove some redundancy\n- Updated the graphical assets on the steam store to have a better background\n- Finished sequencing dialogue for the introduction to Minor Puzzle 4\n- Released some new clips on the official YouTube channel\n- Updated the credits to keep usernames up to date\n- Adjusted some components of the introduction to Minor Puzzle 4\n\n- Began translating Cole into animated 2D space\n- Continued further work on soundtracks, including \"Iteration After Iteration\" and \"Perplexing Puzzles\"\n- Created a special... bonus draft for something to be heard in-game\n- Finished creating the base for 2D Cole\n- Created a simple rig for the eyes, continuing on to the eyebrows and other facial features\n- Created a few tests to check the flexibility of the face rig\n- Reorganized the scene hierarchy in-game\n- Did an EQ and render on a few audio assets to fix any issues\n- Restructured some UI in terms of render order\n- Created a simplistic face rig, excluding the mouth and nose\n\n[b]10/21/21 - 10/28/21[/b]\n- Added a special bonus track that you'll hear soon \ud83d\ude42\n- Created a new shader for handling Video to UI display\n- Began work on creating Cole's 2D animations\n- Optimized Cole's rig and 2D base\n- Added a new mouth system to Cole's rig\n- Have a new theory for a real-time in-game audio editor to control instrument tracks\n- Finished Cole's 2D rig\n- Updated the movements to the first clip in the introduction\n- Reorganized a few UI hierarchies\n- Updated a few instrumentations for \"Beyond The Mind\"\n- Reorganized audio projects to be easier to surf and edit\n- Added new controls for animation and dialogue continuing\n- Added a couple of new UI animations\n- Updated the movements to the first clip in the introduction\n\n[h2]LATE OCTOBER - LATE NOVEMBER 2021[/h2] \n[b]10/21/21 - 11/13/21[/b]\n- Restyled solo window and vertical window UI\n- Updated Cole's rig to contain a better mouth with a tongue\n- Added a new Video to UI shader for animated clips\n- Added a new video control to dialogue\n- Added a delay control for when input will be sent during dialogue\n- Created some new structures for better efficiency with Video to UI translation\n- Created a new version for Beyond The Mind as a bonus\n- Finally acquired a new laptop to keep up with regular work speed and emulate my desktop power\n- Lines 1 through 8 have been animated and placed in-game\n- Almost at 200 lifetime wishlists!\n- Lines 9 - 32 in progress\n\n[b]11/13/21 - 11/27/21[/b]\n- Surpassed 200 lifetime wishlists!\n- Began work on creating a new and physically efficient controller\n- Updated the camera controls to be able to have no dynamic edits\n- Updated handling of the Perspective System to be more efficient in rotation control\n- Updated the handling of controller input and set up to remove issues from the old controller\n- Implemented better use of kinematic equations for physics calculations and actions\n- Added in the bases for the physics interaction involving Cole walking, jumping, hoisting, or climbing over an obstacle\n- Began work on recomposing the Main Menu theme to have a better atmosphere, composition, and mastering mix\n- Created a new auto jump system for Cole to dynamically check if he can reach an area or not\n- Began writing some information text for the player to see when they begin to learn about the physics system, among a few other things\n- Updated the auto jump system to work with physical interaction, allowing further areas to be reached creatively\n- Recompiled the auto jump system to let Cole know when to not jump to reach an area due to gravity being enough\n- Updated the auto jump system to better handle ground and platform detection- Updated a few variables in the system to be able to allow Cole to cover more ranges if the player later upgrades his physical stats\n- Updated the auto jump system to have Cole either run when he needs to, either at the speed needed to reach the area or at his current maximum running speed\n- Updated the auto jump locomotive velocity control to not change if Cole is running when he needs to walk\n\n[h2]LATE NOVEMBER - DECEMBER 2021 [/h2]\n[b]11/27/21 - 11/31/21[/b]\n- Finished classes and can now continue working on the game at a better pace\n- Wrote new info text and categories for mechanics\n- Created a new official wiki for the game\n- Continued adding to the official wiki to give more information and details about Cole\n- Began work on redesigning Cole to v4.2 for a better look and creation\n- Created more artwork of Cole 4.2 for design and concept reasons\n- Updated the cover art for the game\n- Began work on creating Cole 4.2 in 2D\n- Cole 4.2 2D has now been translated and created\n- Created a new 2D rig for Cole 4.2, now he has a lot more expressive capabilities\n- The 3D version of Cole 4.2 has been started\n- Created a new method for streamlining rigged models\n- Including a new standard of detail and graphic design for objects to now be textured instead of colored via a bitmap\n- The base model for 3D Cole is complete, just needs a few more touches\n- Created a new official wiki for the game\n- Added in a new animation for the main menu\n- Rewrote the progression for Altitude A to make it easier to read and sort\n- Updated the premises and goals of some Minor Puzzles\n- Created a new official wiki for the game\n- Updated some structures in the game's new physics system\n- Added in some new artwork into the cycle gallery\n- Started a new animation organization system to help control the amount of work needed for clips and to keep everything shorter\n\n[h1]BUG FIXES[/h1]\n- Fixed a bug that would prevent the player from being able to pause after the page dialogue system was used\n- Fixed a problem with FPS capping where over 60 would cause loading to take too long and dialogue syncing would be too fast\n- Fixed a bug that would cause Cole to move continuously if the player unpaused or hit the ground again\n- Fixed a bug that would cause issues with detecting the ground which would prevent the player from being able to send input\n- Fixed a bug where if the player spammed pause, they\u2019d still be able to move Cole around\n- Fixed a bug where clicking the Resume Adventure button in the pause menu would allow the player to spam and break the menu\n- Fixed a bug where input would not reset after the triggers were updated to read multiple keys\n- Fixed a bug where the gallery would have problems swapping and enabling/disabling content\n- Fixed a rotation speed issue with the direction Cole is facing when rotating your Perspective\n- Fixed some velocity still being maintained if Cole stopped moving during interactions\n- Fixed shadow rendering when Cole\u2019s render layer was changed\n- Fixed an issue with shadows in Isometric Perspective, they now complete themselves to prevent the system from being broken visually\n- Fixed an issue with shadow artifacts and accidental incomplete shadows being rendered in the Isometric System\n- Fixed a bug where the isometric renderer would still be active, even after it was supposed to be shut off to prevent accidental render layer issues\n- Fixed scaling issues with shadows, they now return to their normal values instead of it being all 1\u2019s\n- Fixed a bug where standing at a translation point, rotating, then rotating back to that point would cause the isometric shadows to render incorrectly\n- Fixed a bug where like before, rotating would cause issues, except if you moved before you rotated, the shadow would spaz before stabilizing\n- Fixed a bug where the isometric shadows would jitter instead of following smoothly\n- Fixed a bug where the isometric shadows would not follow Cole\u2019s animator, which would cause animation jumping\n- Fixed a bug where the shadows would have trouble being in the correct places and visibility if more than 1 point were active in the same direction group\n- Fixed a bug where delayed shadows would exist if you were rotated to a new direction and were in the vicinity of a point\n- Fixed a bug in System v4 where the shadow would still be active if you spammed rotation\n- Fixed and reduced the rate of a slightly noticeable shifting issue when positioning shadows in v4\n- Fixed a rotation issue in v4 where if you rotate, moved, and rotated at the same time and were near a point, the shadow would have a delay before matching Cole\u2019s rotation\n- Fixed a well-hidden bug where the shadows in v4 would still be active if you were a certain distance from the point and not within the same ground level\n- Fixed a bug where the selection arrow wouldn\u2019t lock in place correctly, causing it to freeze when displaying information about another node\n- Fixed a bug where the arrow updating would cause incorrect id targeting of categories and nodes\n- Fixed an issue where the before and after tier upgrade along with the requirement prompt text would cycle through the previous tier levels and locks instead of showing the current ones instantly\n- Fixed a bug where the lock check cycle would clear tier locks, even if the requirements to unlock it weren\u2019t met yet\n- Fixed a bug where node locks would be ignored if the first tier\u2019s lock requirements were already met\n- Fixed a bug where the tree would break if a node was maxed out\n- Fixed a bug where the tree would not update tiers if it saved and loaded the last state the tree was in\n- Fixed a bug where the pause menu would no longer read input after the scene to scene translator was updated\n- Fixed an issue where the \u201cQuit To Main Menu\u201d wouldn\u2019t load the Main Menu- Fixed an issue with stair rails not being rotated correctly on the import\n- Fixed and removed an annoying warning for the shadow rendering not having an audio footstep signal\n- Fixed a bug in the Audio triggers that would count the transition as clear if the value surpassed 2 decimal places\n- Fixed a bug with file integrity that would cause save files to accidentally delete when no flag to delete them was set\n- Fixed a bug where the file creation and loading would be stuck in a loop, creating and deleting existing files\n- Fixed an accuracy issue where Cole\u2019s foot would still play the incorrect sound despite the surface his feet take-up\n- Fixed an issue where the file creation would break if options UI is empty\n- Fixed an issue where loading would erase and reset the file integrity system\n- Fixed an issue where audio channels would not update when the game loaded in the settings in the warning screen\n- Fixed an issue where the Menu Iso-Rotation plate would stay active despite the introduction no longer playing\n- Fixed an issue where the Main Menu buttons would reset their animations once a new game was about to start\n- Fixed an issue where the Dialogue Page System would break if the page triggers index was equal to the page count\n- Fixed a graphical issue with Cole v4's import, he no longer has improper faces due to scaling\n- Fixed a bug where the Dialogue Page System would incorrectly trigger run on events\n- Fixed an issue where the controller physics would not act accordingly once it was updated for v4\n- Fixed a bug where animations would no longer play once the new animations were imported and placed into the current animator controller\n- Fixed an issue where the pause menu would only close the main panel if a secondary window was opened\n- Fixed an issue where Cole's hair would not track his head bone correctly\n- Fixed an issue where the renderer responsible for making sure Cole is visible during translation would make his projection abnormally large\n- Fixed a calculation issue where shadows would remain broken in the Isometric Perspective system if the player were at the point of interest\n- Fixed a shadow translation issue where the shadows would spaz if the player walked back and forth on a Perspective point\n- Fixed an issue where an error would be thrown with trigger tags\n- Fixed sequencing issue where even after dialogues were finished, they would reset\n- Fixed an issue where the animation to UI rendering would result in a noticeable black screen\n- Fixed an issue with the Perspective system where translation points would stop working if turned on, but continue if turned off\n- Fixed an old rotation lag issue where if you rotated and moved, Cole would have some delay instead of moving in the correct direction immediately\n- Fixed a bug where the shadow rendering in Perspective would not render correctly once the new control setup was in place\n- Fixed a bug where Cole would continuously bounce despite him still being on the ground to move on, or him not being close enough to the ledge\n- Fixed a bug where Cole would bounce if the player ran and stepped off a platform they just landed on after landing on it\n- Fixed a physics calculation that would leave Cole stuck in continuous locomotion\n- Fixed a bug where Cole didn't run at the appropriate speed needed to reach a platform farther and taller than him, yet still, be able to reach farther and lower ones\n- Fixed a bug that caused Cole to jump over obstacles that were lower and closer to him, despite the fact that he can just fall and he'd land safely\n- Fixed issues with Cole being incorrectly influenced by weights, even if his weights were set to be very light\n- Fixed an issue where the auto jump system would stop working if there",
+      "key": "1394660::dcff25416a5ebfc4b8c06682d5084f6109d59a7f",
+      "tags": [
+        {
+          "feature": "- Updated the performance display, now it can display VRAM (GPU) and Memory"
+        },
+        {
+          "feature": "- Performance monitor can now be turned on or off and be saved in the game\u2019s saved option file"
+        },
+        {
+          "feature": "- Updated the progress manager in-game to swap between achievement and normal save files"
+        },
+        {
+          "feature": "- Added a new screen before the warning to let the player know about the use of headphones"
+        },
+        {
+          "bug": "- Retouched the loading screen audio loop to remove any popping"
+        },
+        {
+          "bug": "- Redid the main menu loop to remove a popping issue"
+        },
+        {
+          "feature": "- Added clouds to the game which may only appear in Altitude A & B"
+        },
+        {
+          "feature": "- Added typing sfx to the dialogue system to add more detail"
+        },
+        {
+          "feature": "- Updated the rendering order in the game, now I can place facial creatures on front of Cole\u2019s face like a comic book layer"
+        },
+        {
+          "feature": "- Created the UI design for the Upgrade Tree system"
+        },
+        {
+          "feature": "- Updated the skybox rendering to allow UI GFX to transition with ease"
+        },
+        {
+          "feature": "- Added in detailed UI for the upgrade system"
+        },
+        {
+          "feature": "- Added in the lock and unlock system in the upgrade tree"
+        },
+        {
+          "feature": "- Added in the progress tracking and interaction system for the upgrade tree"
+        },
+        {
+          "feature": "- Added tooltips into the editor to allow any reminders of the functionality of certain scripts"
+        },
+        {
+          "feature": "- Updated the Upgrade Tree to be able to include 2 types of blue lock requirements together instead of only 1"
+        },
+        {
+          "feature": "- Updated the structure of the tree to now group nodes into categories"
+        },
+        {
+          "feature": "- Forgot to add the tier tracking in the Upgrade Tree, but now it\u2019s there"
+        },
+        {
+          "feature": "- Finished adding in every main upgrade tree node & tier"
+        },
+        {
+          "feature": "- Updated the tree script to be able to lock tiers levels without the need for requirement locks to have them be sequential"
+        },
+        {
+          "feature": "- Added any remaining nodes I forgot to add"
+        },
+        {
+          "bug": "- Fixed the text sizing on the page based dialogue system in Altitude A"
+        },
+        {
+          "feature": "- Added new UI for Minor Puzzle introductions"
+        },
+        {
+          "feature": "- Updated the pushable interactive type to restrict movement to 1 axis depending on the direction being pushed"
+        },
+        {
+          "feature": "- Updated the physics system to require the player to press a button when initiating the hoist and climbing commands"
+        },
+        {
+          "bug": "- Upgraded the engine to 2021 to fix a file writing issue"
+        },
+        {
+          "feature": "- Updated the warning screen to give a \u201cDo NOT Try This At Home\u201d warning"
+        },
+        {
+          "feature": "- Updated the Isometric System, now it can calculate points in real-time!"
+        },
+        {
+          "feature": "- Added some new special effects to give more of a natural feeling"
+        },
+        {
+          "feature": "- Created a new testing field to build and flesh out features"
+        },
+        {
+          "feature": "- Added a new rule to perspective, Light Path Compatibility"
+        },
+        {
+          "bug": "- Repaired the Main Menu UI after some input triggers got messed up"
+        },
+        {
+          "bug": "- Retouched Cole\u2019s walking animation to fix the foot and limb IKs to remove some stiff movement"
+        },
+        {
+          "feature": "- Added use of the Scene Template package to streamline the process of creating sections and levels"
+        },
+        {
+          "feature": "- Added in arrow animations and sprite updates in the Upgrade Tree UI"
+        },
+        {
+          "feature": "- Added in arrow navigation into the Upgrade Tree"
+        },
+        {
+          "feature": "- Added in Requirement(s) display in the Upgrade Tree, showing the node locks before the tiers"
+        },
+        {
+          "feature": "- Removed Node Locks as the selection arrow will be locked in a certain range and the player will get a notification of a newly available node in the upgrade tree "
+        },
+        {
+          "feature": "- Added in animation based on node selection and input, allowing the player to hold down the cycle buttons without issues"
+        },
+        {
+          "feature": "- Added in state saving to keep the state of the upgrade tree per save file"
+        },
+        {
+          "feature": "- Added lock visual detection for saving the state of the tiers and progress"
+        },
+        {
+          "feature": "- Updated the structure of the upgrade tree to allow it to be saved and loaded"
+        },
+        {
+          "feature": "- Updated the main menu animation to have a nice zooming effect"
+        },
+        {
+          "feature": "- Updated the warning screen to display a better version of Cole wearing headphones"
+        },
+        {
+          "feature": "- Updated the main menu starting animation to be more dynamic"
+        },
+        {
+          "feature": "- Updated the loading screen with fixed hexagon opacity and tip styling"
+        },
+        {
+          "bug": "- Retouched the footstep one more time to fix some accuracy issues"
+        },
+        {
+          "bug": "- Fixed some proportion issues I found in Cole\u2019s character sheet"
+        },
+        {
+          "feature": "- Updated the UI for notifications and adjusted the loading screen colors"
+        },
+        {
+          "feature": "- Updated the start-up sequence for the main menu"
+        },
+        {
+          "feature": "- Updated the hero image for steam"
+        },
+        {
+          "feature": "- Change the editor windows for creating more level design faster and efficiently"
+        },
+        {
+          "feature": "- Added new images to the official indev website"
+        },
+        {
+          "feature": "- Initiated a new major UI update to have the style match the new cover and header"
+        },
+        {
+          "feature": "- Added Visual Logs to the official Discord server [Server Link, still in construction but interactable]"
+        },
+        {
+          "feature": "- Added a fun new detail to the Warning screen to make it more entertaining to look at in a way"
+        },
+        {
+          "feature": "- Created new SFX to give dynamics to the UI"
+        },
+        {
+          "feature": "- Finished the Warning screen UI design"
+        },
+        {
+          "feature": "- Restructured the Main Menu scene"
+        },
+        {
+          "feature": "- Sorted audio tracks to mixers for easier control when it\u2019s time to implement options"
+        },
+        {
+          "feature": "- Created the style sets to produce the UI faster"
+        },
+        {
+          "feature": "- Created new dynamic and interactive UI animations"
+        },
+        {
+          "feature": "- Created new methods of fading out multiple objects with only 1 property instance"
+        },
+        {
+          "feature": "- Started a design for a settings menu as before, the game didn\u2019t have one"
+        },
+        {
+          "feature": "- Added in a slight bevel detail into the hex UI to fit the in-game lighting and style"
+        },
+        {
+          "feature": "- Added in a new use of Audio Mixers and Snapshots to create new effects and clean up the board"
+        },
+        {
+          "feature": "- Added in better file integrity for progress tracking in-game and linking to Steam"
+        },
+        {
+          "feature": "- Finished the internal structure for the options saving/loading"
+        },
+        {
+          "feature": "- Created and organized some layout templates"
+        },
+        {
+          "feature": "- Added in the UI for setting the in-game performance stats"
+        },
+        {
+          "feature": "- Finished the UI for the options menu"
+        },
+        {
+          "feature": "- Finished the remaining functionality needed for options"
+        },
+        {
+          "feature": "- Added a special secret \ud83d\ude42"
+        },
+        {
+          "feature": "- Redid the transitions for Bolt Node [Blue Hex] UI to be reusable and easy to edit"
+        },
+        {
+          "feature": "- Utilized Sliders more to reduce the need for position interpolation"
+        },
+        {
+          "feature": "- Updated the template scene for creating levels faster"
+        },
+        {
+          "feature": "- Updated the introduction for when you start a new game"
+        },
+        {
+          "feature": "- Created a new LED glow in-game"
+        },
+        {
+          "feature": "- Created the new Start sequence for the main menu"
+        },
+        {
+          "feature": "- Finished the Main Menu startup sequence"
+        },
+        {
+          "feature": "- Created a new dynamic background for the Main Menu"
+        },
+        {
+          "feature": "- Finished Hex Node UI pop up animations"
+        },
+        {
+          "feature": "- Finished creating the new Pause Menu"
+        },
+        {
+          "feature": "- Added in the functionality of the new Main Menu"
+        },
+        {
+          "bug": "- Fixed some broken bits from the Dialogue System"
+        },
+        {
+          "feature": "- Finished the new style for Page Dialogue systems"
+        },
+        {
+          "feature": "- Finished restructuring the introduction"
+        },
+        {
+          "feature": "- Created the new style for regular in-game Dialogue boxes"
+        },
+        {
+          "feature": "- Created a rig and fixes for a new possible Cole v4 model"
+        },
+        {
+          "feature": "- Added Sprite Controls for dialogue"
+        },
+        {
+          "bug": "- Fixed 2D Cole's \"Tired\" expression"
+        },
+        {
+          "feature": "- Updated the dialogue system to now handle run on events"
+        },
+        {
+          "feature": "- Added a special bonus track that you'll hear soon \ud83d\ude42"
+        },
+        {
+          "feature": "- Created a new shader for handling Video to UI display"
+        },
+        {
+          "feature": "- Added a new mouth system to Cole's rig"
+        },
+        {
+          "feature": "- Added a new Video to UI shader for animated clips"
+        },
+        {
+          "feature": "- Added a new video control to dialogue"
+        },
+        {
+          "feature": "- Added a delay control for when input will be sent during dialogue"
+        },
+        {
+          "feature": "- Created some new structures for better efficiency with Video to UI translation"
+        },
+        {
+          "feature": "- Created a new version for Beyond The Mind as a bonus"
+        },
+        {
+          "feature": "- Added in the bases for the physics interaction involving Cole walking, jumping, hoisting, or climbing over an obstacle"
+        },
+        {
+          "feature": "- Created a new auto jump system for Cole to dynamically check if he can reach an area or not"
+        },
+        {
+          "feature": "- Began writing some information text for the player to see when they begin to learn about the physics system, among a few other things"
+        },
+        {
+          "feature": "- Updated the auto jump system to work with physical interaction, allowing further areas to be reached creatively"
+        },
+        {
+          "feature": "- Recompiled the auto jump system to let Cole know when to not jump to reach an area due to gravity being enough"
+        },
+        {
+          "feature": "- Updated the auto jump system to better handle ground and platform detection- Updated a few variables in the system to be able to allow Cole to cover more ranges if the player later upgrades his physical stats"
+        },
+        {
+          "feature": "- Updated the auto jump system to have Cole either run when he needs to, either at the speed needed to reach the area or at his current maximum running speed"
+        },
+        {
+          "feature": "- Updated the auto jump locomotive velocity control to not change if Cole is running when he needs to walk"
+        },
+        {
+          "feature": "- Wrote new info text and categories for mechanics"
+        },
+        {
+          "feature": "- Created a new official wiki for the game"
+        },
+        {
+          "feature": "- Created more artwork of Cole 4.2 for design and concept reasons"
+        },
+        {
+          "feature": "- Updated the cover art for the game"
+        },
+        {
+          "feature": "- Cole 4.2 2D has now been translated and created"
+        },
+        {
+          "feature": "- Created a new 2D rig for Cole 4.2, now he has a lot more expressive capabilities"
+        },
+        {
+          "feature": "- The 3D version of Cole 4.2 has been started"
+        },
+        {
+          "feature": "- Created a new method for streamlining rigged models"
+        },
+        {
+          "feature": "- Including a new standard of detail and graphic design for objects to now be textured instead of colored via a bitmap"
+        },
+        {
+          "feature": "- The base model for 3D Cole is complete, just needs a few more touches"
+        },
+        {
+          "feature": "- Created a new official wiki for the game"
+        },
+        {
+          "feature": "- Added in a new animation for the main menu"
+        },
+        {
+          "feature": "- Created a new official wiki for the game"
+        },
+        {
+          "feature": "- Added in some new artwork into the cycle gallery"
+        },
+        {
+          "feature": "- Started a new animation organization system to help control the amount of work needed for clips and to keep everything shorter"
+        },
+        {
+          "bug": "- Fixed a bug that would prevent the player from being able to pause after the page dialogue system was used"
+        },
+        {
+          "bug": "- Fixed a problem with FPS capping where over 60 would cause loading to take too long and dialogue syncing would be too fast"
+        },
+        {
+          "bug": "- Fixed a bug that would cause Cole to move continuously if the player unpaused or hit the ground again"
+        },
+        {
+          "bug": "- Fixed a bug that would cause issues with detecting the ground which would prevent the player from being able to send input"
+        },
+        {
+          "bug": "- Fixed a bug where if the player spammed pause, they\u2019d still be able to move Cole around"
+        },
+        {
+          "bug": "- Fixed a bug where clicking the Resume Adventure button in the pause menu would allow the player to spam and break the menu"
+        },
+        {
+          "bug": "- Fixed a bug where input would not reset after the triggers were updated to read multiple keys"
+        },
+        {
+          "bug": "- Fixed a bug where the gallery would have problems swapping and enabling/disabling content"
+        },
+        {
+          "bug": "- Fixed a rotation speed issue with the direction Cole is facing when rotating your Perspective"
+        },
+        {
+          "bug": "- Fixed some velocity still being maintained if Cole stopped moving during interactions"
+        },
+        {
+          "bug": "- Fixed shadow rendering when Cole\u2019s render layer was changed"
+        },
+        {
+          "bug": "- Fixed an issue with shadows in Isometric Perspective, they now complete themselves to prevent the system from being broken visually"
+        },
+        {
+          "bug": "- Fixed an issue with shadow artifacts and accidental incomplete shadows being rendered in the Isometric System"
+        },
+        {
+          "bug": "- Fixed a bug where the isometric renderer would still be active, even after it was supposed to be shut off to prevent accidental render layer issues"
+        },
+        {
+          "bug": "- Fixed scaling issues with shadows, they now return to their normal values instead of it being all 1\u2019s"
+        },
+        {
+          "bug": "- Fixed a bug where standing at a translation point, rotating, then rotating back to that point would cause the isometric shadows to render incorrectly"
+        },
+        {
+          "bug": "- Fixed a bug where like before, rotating would cause issues, except if you moved before you rotated, the shadow would spaz before stabilizing"
+        },
+        {
+          "bug": "- Fixed a bug where the isometric shadows would jitter instead of following smoothly"
+        },
+        {
+          "bug": "- Fixed a bug where the isometric shadows would not follow Cole\u2019s animator, which would cause animation jumping"
+        },
+        {
+          "bug": "- Fixed a bug where the shadows would have trouble being in the correct places and visibility if more than 1 point were active in the same direction group"
+        },
+        {
+          "bug": "- Fixed a bug where delayed shadows would exist if you were rotated to a new direction and were in the vicinity of a point"
+        },
+        {
+          "bug": "- Fixed a bug in System v4 where the shadow would still be active if you spammed rotation"
+        },
+        {
+          "bug": "- Fixed and reduced the rate of a slightly noticeable shifting issue when positioning shadows in v4"
+        },
+        {
+          "bug": "- Fixed a rotation issue in v4 where if you rotate, moved, and rotated at the same time and were near a point, the shadow would have a delay before matching Cole\u2019s rotation"
+        },
+        {
+          "bug": "- Fixed a well-hidden bug where the shadows in v4 would still be active if you were a certain distance from the point and not within the same ground level"
+        },
+        {
+          "bug": "- Fixed a bug where the selection arrow wouldn\u2019t lock in place correctly, causing it to freeze when displaying information about another node"
+        },
+        {
+          "bug": "- Fixed a bug where the arrow updating would cause incorrect id targeting of categories and nodes"
+        },
+        {
+          "bug": "- Fixed an issue where the before and after tier upgrade along with the requirement prompt text would cycle through the previous tier levels and locks instead of showing the current ones instantly"
+        },
+        {
+          "bug": "- Fixed a bug where the lock check cycle would clear tier locks, even if the requirements to unlock it weren\u2019t met yet"
+        },
+        {
+          "bug": "- Fixed a bug where node locks would be ignored if the first tier\u2019s lock requirements were already met"
+        },
+        {
+          "bug": "- Fixed a bug where the tree would break if a node was maxed out"
+        },
+        {
+          "bug": "- Fixed a bug where the tree would not update tiers if it saved and loaded the last state the tree was in"
+        },
+        {
+          "bug": "- Fixed a bug where the pause menu would no longer read input after the scene to scene translator was updated"
+        },
+        {
+          "bug": "- Fixed an issue where the \u201cQuit To Main Menu\u201d wouldn\u2019t load the Main Menu- Fixed an issue with stair rails not being rotated correctly on the import"
+        },
+        {
+          "bug": "- Fixed and removed an annoying warning for the shadow rendering not having an audio footstep signal"
+        },
+        {
+          "bug": "- Fixed a bug in the Audio triggers that would count the transition as clear if the value surpassed 2 decimal places"
+        },
+        {
+          "bug": "- Fixed a bug with file integrity that would cause save files to accidentally delete when no flag to delete them was set"
+        },
+        {
+          "bug": "- Fixed a bug where the file creation and loading would be stuck in a loop, creating and deleting existing files"
+        },
+        {
+          "bug": "- Fixed an accuracy issue where Cole\u2019s foot would still play the incorrect sound despite the surface his feet take-up"
+        },
+        {
+          "bug": "- Fixed an issue where the file creation would break if options UI is empty"
+        },
+        {
+          "bug": "- Fixed an issue where loading would erase and reset the file integrity system"
+        },
+        {
+          "bug": "- Fixed an issue where audio channels would not update when the game loaded in the settings in the warning screen"
+        },
+        {
+          "bug": "- Fixed an issue where the Menu Iso-Rotation plate would stay active despite the introduction no longer playing"
+        },
+        {
+          "bug": "- Fixed an issue where the Main Menu buttons would reset their animations once a new game was about to start"
+        },
+        {
+          "bug": "- Fixed an issue where the Dialogue Page System would break if the page triggers index was equal to the page count"
+        },
+        {
+          "bug": "- Fixed a graphical issue with Cole v4's import, he no longer has improper faces due to scaling"
+        },
+        {
+          "bug": "- Fixed a bug where the Dialogue Page System would incorrectly trigger run on events"
+        },
+        {
+          "bug": "- Fixed an issue where the controller physics would not act accordingly once it was updated for v4"
+        },
+        {
+          "bug": "- Fixed a bug where animations would no longer play once the new animations were imported and placed into the current animator controller"
+        },
+        {
+          "bug": "- Fixed an issue where the pause menu would only close the main panel if a secondary window was opened"
+        },
+        {
+          "bug": "- Fixed an issue where Cole's hair would not track his head bone correctly"
+        },
+        {
+          "bug": "- Fixed an issue where the renderer responsible for making sure Cole is visible during translation would make his projection abnormally large"
+        },
+        {
+          "bug": "- Fixed a calculation issue where shadows would remain broken in the Isometric Perspective system if the player were at the point of interest"
+        },
+        {
+          "bug": "- Fixed a shadow translation issue where the shadows would spaz if the player walked back and forth on a Perspective point"
+        },
+        {
+          "bug": "- Fixed an issue where an error would be thrown with trigger tags"
+        },
+        {
+          "bug": "- Fixed sequencing issue where even after dialogues were finished, they would reset"
+        },
+        {
+          "bug": "- Fixed an issue where the animation to UI rendering would result in a noticeable black screen"
+        },
+        {
+          "bug": "- Fixed an issue with the Perspective system where translation points would stop working if turned on, but continue if turned off"
+        },
+        {
+          "bug": "- Fixed an old rotation lag issue where if you rotated and moved, Cole would have some delay instead of moving in the correct direction immediately"
+        },
+        {
+          "bug": "- Fixed a bug where the shadow rendering in Perspective would not render correctly once the new control setup was in place"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would continuously bounce despite him still being on the ground to move on, or him not being close enough to the ledge"
+        },
+        {
+          "bug": "- Fixed a bug where Cole would bounce if the player ran and stepped off a platform they just landed on after landing on it"
+        },
+        {
+          "bug": "- Fixed a physics calculation that would leave Cole stuck in continuous locomotion"
+        },
+        {
+          "bug": "- Fixed a bug where Cole didn't run at the appropriate speed needed to reach a platform farther and taller than him, yet still, be able to reach farther and lower ones"
+        },
+        {
+          "bug": "- Fixed a bug that caused Cole to jump over obstacles that were lower and closer to him, despite the fact that he can just fall and he'd land safely"
+        },
+        {
+          "bug": "- Fixed issues with Cole being incorrectly influenced by weights, even if his weights were set to be very light"
+        },
+        {
+          "bug": "- Fixed an issue where the auto jump system would stop working if there"
+        }
+      ]
+    },
+    {
+      "title": "2020 Development Logs & Bug Fixes",
+      "date": "2022-01-14 14:08:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931832450697",
+      "content": "[h1]DEVELOPMENT LOGS[/h1]\n[h2]MAY 2020[/h2]\n[b]5/13/20[/b]\n- Project started\n- Added in the basic controller movements\n- Isometric System is now in development\n\n[b]5/14/20[/b]\n- Isometric System Attempt 1 & 2 failed\n- Added better adjustments to the camera view\n- Changed controller set up to better handle input\n\n[b]5/16/20[/b]\n- A successful Isometric System has now been made\n- Began testing for transitions in the system\n- Game story has been created\n\n[b]5/18/20[/b]\n- Added in the main character\n- Made new adjustments to the Isometric System to handle setup now that the main character is in place\n- Changed properties in the character controller and added camera rotation\n- Updated URP to 7.3.1 to have access to the new Camera Stack feature to fix rendering\n- Updated object layers to better separate and group objects in the scene\n\n[b]5/20/20[/b]\n- Level design research has begun\n- Story events, outcomes, and connections have been made\n\n[b]5/24/20[/b]\n- Updated the main character\u2019s animations and appearance, now they rotate towards direction based on player input\n- Set up a new order for the Camera Stack, now it requires 2 cameras instead of 3\n- Set the Post Processing stack to the default URP instead of the package version\n- Level design has been started, but not very successful for the first attempt\n\n[b]5/26/20[/b]\n- Changed the lighting options of the scene to Color instead of Skybox\n- Updated Post Processing effects to adjust the color and exposure better\n- Added Motion blur and slight Film Grain\n- Added new UI animations Timeline clips\n\n[b]5/27/20[/b]\n- Attempted to use the new Input Manager Package system but quickly reverted back\n- Checked further controller inspection to find any input or calculation errors\n\n[b]5/28/20 - 5/29/20[/b]\n- Added better refinery to design and internal workings\n\n[h2]JUNE 2020 - EARLY MARCH 2021[/h2]\n[b]6/1/20 - 6/21/20[/b]\n- Added backward connections to the Isometric System as they were only tested in forwarding motion\n- Added a new tool to better align segments and transitions\n- Added new color palettes to the UI\n- Added a developer notice to the main menu screen\n- Added Camera zooming with ease should I need to use it at any time\n- Updated UI to have better customization\n- Added sequencing notes when the Timeline Editor is used\n\n[b]6/21/20 - 3/12/21[/b]\n- Finalized a major component in the Isometric System\n- Added a new UI hex pattern\n- Rendered a new logo animation to play in-game\n- Added a new main menu visualizer\n- Added a loading screen\n- Cole's model has been redone some more and a bit more detail\n- Added animation events for SFX\n- Implemented support for Steam Achievements\n- 2 Soundtracks were completed and implemented\n- Voice actor for Cole has been found\n- 2 of Altitude A's dialogue recorded\n- Added a new dialogue system into the game\n- Added facial expressions on Cole\n- Added refinery to the physical interactive system\n- Made revisions to Altitude A to now contain better detail\n- Created the official Steam page\n- Added simple shaders to create effects like wind and swaying\n- Added new structure types and island creation\n- Added Pushable interactive objects into the game\n- Added the Circuit Perspective puzzle types into the game\n- Added a new design for Help Prompts\n- Updated the puzzle script to know be the interaction master\n- Added Weight Button interaction objects\n- Added a Gallery to the game\n- Added a new animation for swapping between the Gallery and Main Menu\n- Added a new option to the Start Adventure main menu option\n- Created a concept for the combat system\n- Updated the UI design for the information windows\n- Added and updated some of the Credits in-game\n- Added a flowchart for the Upgrade Tree\n- Reorganized the audio and animation files in-game\n- Added new SFX for UI interaction and physical interactions\n- Updated Cole's 2D design\n- Created special designs for unlockables and content\n- Added the Pulley Systems in to the game\n- Updated animation event SFX to be compatible with different ground types\n- Updated the bitmaps for Altitude A and Cole's model\n\n[h1]BUG FIXES[/h1]\n- Fixed a positioning issue when the Isomeric transition is being made\n- Fixed rendering issues that would cause post-processing effects to not render on the player or have their visual appearance accidentally minimized\n- Fixed issue where when the time scale is set to 0, if you were on an Isometric System trigger, the transition would execute by accident\n- Fixed issue with syncing the camera rotation lerping in real-time\n- Fixed issue where an Isomeric transition would take place if the correct events took place, but not in the proper direction\n- Fixed the player render order when during transition and non-transitions\n- Fixed issue with time scaling when the camera is rotating and the player is not supposed to move around until the rotation is complete\n- Fixed issues with using the Isometric System back and forth which would cause the player to be incorrectly positioned\n- Fixed a bug that would cause the loading screen tips to repeat the same tip during randomization\n- Fixed an issue with opacity dithering of Cole was behind an object, but wasn't faded out enough\n- Fixed a bug that would cause Cole to continuously move even if his move speed was set to 0\n- Fixed a bug that would cause audio transitions to stop prematurely\n- Fixed an issue with the Major Puzzle Prompts where they would be affected by in-game time instead of real-time\n- Fixed an issue with music swapping on certain UI screens\n- Fixed a bug that would cause the camera from other levels to transport to the main menu, which would cause rendering issues and crashes\n- Fixed a bug that would cause the pause menu to appear while Cole was busy with an action\n- Fixed a bug that would cause the new stamina calculation to mess with its visualization in-game\n- Fixed a bug that would cause the player to accidentally exit out of interaction if they hit the exit button\n- Fixed a bug that would cause the game to not keep Cole's \"busy with action\" state on when he was still on an interactable\n- Fixed a bug where spamming the \u201cEnter\u201d key on Help Prompts cause the dialogue to unnecessarily cause extra characters to be added\n- Fixed a bug that prevented Cole from looking towards an intended angle while standing still and the player was not allowed to send input\n- Fixed gravity calculation continuing to continue even if Cole was still and the player was not allowed to send input\n- Fixed some text size issues after the recent update with some atlas fonts\n- Fixed an accidental trigger type shifts after the \u201cOn Inactive\u201d mode was added\n- Fixed a datacast issue with file management which prevented the achievement file from being made or accessed\n- Fixed an issue that would cause the options file to not save\n- Fixed a bug with Pulley Systems where Cole would still be labeled as \u201cBusy with an action\u201d despite leaving the interactive which prevented the player from pausing the game\n- Fixed a bug with dithering where any object blocking the players view that were in a short distance or series from each other would be at the same opacity level instead of returning to solid\n- Fixed a bug with dithering where if the player had rotated after being obscured and another object was in the way shortly before the other objects could finish, the previous objects would maintain their current opacity level instead of being solid\n- Fixed a calculation issue found with opacity dithering where sometimes it would dither 2 objects together instead of only 1 at a time\n- Fixed an audio footstep issue after updating the animation system- Fixed an issue in the upgrade tree where the targeted stat parameters would not update\n- Fixed a logic issue with red locks in the upgrade tree, now they are able to target different nodes instead of the one the selected tier is parented to\n- Fixed an accidental goof where the upgrade tree would allow an upgrade even if the player had no more upgrade points\n- Fixed a bug where tiers without any requirements would not allow you to unlock them, even if you had a point to spend\n- Fixed a visual issue where some strands of Cole\u2019s hair were inverted while the normals were facing outward\n- Fixed a rotation issue when inching Cole forward by hitting the movement keys quickly\n- Fixed an issue with the audio slave processor in Unity, now it no longer throws an error when compensating for a random start time in dialogue SFX\n- Fixed an issue with execution order where if input was used and/or had input delay, it would still fire\n- Fixed a bug with audio interpolation in the new trigger system where the value would instantly move to the target volume instead of interpolating by speed\n- Fixed an issue with interpolation timing with volume control which would cause higher values to slow down each while iteration\n- Fixed a bug that would cause trigger actions to execute if the player entered the collider, even if it were on a different execution type\n- Fixed a bug with Multivariable Manipulative triggers, now they can actually target any script parameter\n- Fixed an issue with pushable objects that would cause Cole to interact with the object as an obstacle instead of an object he can move around\n- Fixed an issue where a pushable interactive would still be parented to Cole when it\u2019s supposed to be left alone\n- Fixed an issue where Cole would still be able to look at any other direction when the axis rotation is restricted\n- Fixed an issue where Cole would still be able to play his walking animation when he was being blocked by something\n- Fixed a tuning issue with physical interactions to be more precise with Cole\u2019s new model and prevent issues with rigidbody objects parented to Cole from launching themselves\n- Fixed a bug where the dialogue sequencer would throw an error if a typing SFX wasn\u2019t used\n",
+      "key": "1394660::c7a5e6dea73e7cfd4e28cb4c1a1fa5e16c5aee63",
+      "tags": [
+        {
+          "feature": "- Project started"
+        },
+        {
+          "feature": "- Added in the basic controller movements"
+        },
+        {
+          "feature": "- Isometric System is now in development"
+        },
+        {
+          "feature": "- Added better adjustments to the camera view"
+        },
+        {
+          "feature": "- Changed controller set up to better handle input"
+        },
+        {
+          "feature": "- A successful Isometric System has now been made"
+        },
+        {
+          "feature": "- Began testing for transitions in the system"
+        },
+        {
+          "feature": "- Game story has been created"
+        },
+        {
+          "feature": "- Added in the main character"
+        },
+        {
+          "feature": "- Made new adjustments to the Isometric System to handle setup now that the main character is in place"
+        },
+        {
+          "feature": "- Changed properties in the character controller and added camera rotation"
+        },
+        {
+          "feature": "- Updated URP to 7.3.1 to have access to the new Camera Stack feature to fix rendering"
+        },
+        {
+          "feature": "- Updated object layers to better separate and group objects in the scene"
+        },
+        {
+          "feature": "- Level design research has begun"
+        },
+        {
+          "feature": "- Story events, outcomes, and connections have been made"
+        },
+        {
+          "feature": "- Updated the main character\u2019s animations and appearance, now they rotate towards direction based on player input"
+        },
+        {
+          "feature": "- Set up a new order for the Camera Stack, now it requires 2 cameras instead of 3"
+        },
+        {
+          "feature": "- Set the Post Processing stack to the default URP instead of the package version"
+        },
+        {
+          "feature": "- Level design has been started, but not very successful for the first attempt"
+        },
+        {
+          "feature": "- Changed the lighting options of the scene to Color instead of Skybox"
+        },
+        {
+          "feature": "- Updated Post Processing effects to adjust the color and exposure better"
+        },
+        {
+          "feature": "- Added Motion blur and slight Film Grain"
+        },
+        {
+          "feature": "- Added new UI animations Timeline clips"
+        },
+        {
+          "feature": "- Attempted to use the new Input Manager Package system but quickly reverted back"
+        },
+        {
+          "feature": "- Checked further controller inspection to find any input or calculation errors"
+        },
+        {
+          "feature": "- Added better refinery to design and internal workings"
+        },
+        {
+          "feature": "- Added backward connections to the Isometric System as they were only tested in forwarding motion"
+        },
+        {
+          "feature": "- Added a new tool to better align segments and transitions"
+        },
+        {
+          "feature": "- Added new color palettes to the UI"
+        },
+        {
+          "feature": "- Added a developer notice to the main menu screen"
+        },
+        {
+          "feature": "- Added Camera zooming with ease should I need to use it at any time"
+        },
+        {
+          "feature": "- Updated UI to have better customization"
+        },
+        {
+          "feature": "- Added sequencing notes when the Timeline Editor is used"
+        },
+        {
+          "feature": "- Finalized a major component in the Isometric System"
+        },
+        {
+          "feature": "- Added a new UI hex pattern"
+        },
+        {
+          "feature": "- Rendered a new logo animation to play in-game"
+        },
+        {
+          "feature": "- Added a new main menu visualizer"
+        },
+        {
+          "feature": "- Added a loading screen"
+        },
+        {
+          "feature": "- Cole's model has been redone some more and a bit more detail"
+        },
+        {
+          "feature": "- Added animation events for SFX"
+        },
+        {
+          "feature": "- Implemented support for Steam Achievements"
+        },
+        {
+          "feature": "- 2 Soundtracks were completed and implemented"
+        },
+        {
+          "feature": "- Voice actor for Cole has been found"
+        },
+        {
+          "feature": "- 2 of Altitude A's dialogue recorded"
+        },
+        {
+          "feature": "- Added a new dialogue system into the game"
+        },
+        {
+          "feature": "- Added facial expressions on Cole"
+        },
+        {
+          "feature": "- Added refinery to the physical interactive system"
+        },
+        {
+          "feature": "- Made revisions to Altitude A to now contain better detail"
+        },
+        {
+          "feature": "- Created the official Steam page"
+        },
+        {
+          "feature": "- Added simple shaders to create effects like wind and swaying"
+        },
+        {
+          "feature": "- Added new structure types and island creation"
+        },
+        {
+          "feature": "- Added Pushable interactive objects into the game"
+        },
+        {
+          "feature": "- Added the Circuit Perspective puzzle types into the game"
+        },
+        {
+          "feature": "- Added a new design for Help Prompts"
+        },
+        {
+          "feature": "- Updated the puzzle script to know be the interaction master"
+        },
+        {
+          "feature": "- Added Weight Button interaction objects"
+        },
+        {
+          "feature": "- Added a Gallery to the game"
+        },
+        {
+          "feature": "- Added a new animation for swapping between the Gallery and Main Menu"
+        },
+        {
+          "feature": "- Added a new option to the Start Adventure main menu option"
+        },
+        {
+          "feature": "- Created a concept for the combat system"
+        },
+        {
+          "feature": "- Updated the UI design for the information windows"
+        },
+        {
+          "feature": "- Added and updated some of the Credits in-game"
+        },
+        {
+          "feature": "- Added a flowchart for the Upgrade Tree"
+        },
+        {
+          "feature": "- Reorganized the audio and animation files in-game"
+        },
+        {
+          "feature": "- Added new SFX for UI interaction and physical interactions"
+        },
+        {
+          "feature": "- Updated Cole's 2D design"
+        },
+        {
+          "feature": "- Created special designs for unlockables and content"
+        },
+        {
+          "feature": "- Added the Pulley Systems in to the game"
+        },
+        {
+          "feature": "- Updated animation event SFX to be compatible with different ground types"
+        },
+        {
+          "feature": "- Updated the bitmaps for Altitude A and Cole's model"
+        },
+        {
+          "bug": "- Fixed a positioning issue when the Isomeric transition is being made"
+        },
+        {
+          "bug": "- Fixed rendering issues that would cause post-processing effects to not render on the player or have their visual appearance accidentally minimized"
+        },
+        {
+          "bug": "- Fixed issue where when the time scale is set to 0, if you were on an Isometric System trigger, the transition would execute by accident"
+        },
+        {
+          "bug": "- Fixed issue with syncing the camera rotation lerping in real-time"
+        },
+        {
+          "bug": "- Fixed issue where an Isomeric transition would take place if the correct events took place, but not in the proper direction"
+        },
+        {
+          "bug": "- Fixed the player render order when during transition and non-transitions"
+        },
+        {
+          "bug": "- Fixed issue with time scaling when the camera is rotating and the player is not supposed to move around until the rotation is complete"
+        },
+        {
+          "bug": "- Fixed issues with using the Isometric System back and forth which would cause the player to be incorrectly positioned"
+        },
+        {
+          "bug": "- Fixed a bug that would cause the loading screen tips to repeat the same tip during randomization"
+        },
+        {
+          "bug": "- Fixed an issue with opacity dithering of Cole was behind an object, but wasn't faded out enough"
+        },
+        {
+          "bug": "- Fixed a bug that would cause Cole to continuously move even if his move speed was set to 0"
+        },
+        {
+          "bug": "- Fixed a bug that would cause audio transitions to stop prematurely"
+        },
+        {
+          "bug": "- Fixed an issue with the Major Puzzle Prompts where they would be affected by in-game time instead of real-time"
+        },
+        {
+          "bug": "- Fixed an issue with music swapping on certain UI screens"
+        },
+        {
+          "bug": "- Fixed a bug that would cause the camera from other levels to transport to the main menu, which would cause rendering issues and crashes"
+        },
+        {
+          "bug": "- Fixed a bug that would cause the pause menu to appear while Cole was busy with an action"
+        },
+        {
+          "bug": "- Fixed a bug that would cause the new stamina calculation to mess with its visualization in-game"
+        },
+        {
+          "bug": "- Fixed a bug that would cause the player to accidentally exit out of interaction if they hit the exit button"
+        },
+        {
+          "bug": "- Fixed a bug that would cause the game to not keep Cole's \"busy with action\" state on when he was still on an interactable"
+        },
+        {
+          "bug": "- Fixed a bug where spamming the \u201cEnter\u201d key on Help Prompts cause the dialogue to unnecessarily cause extra characters to be added"
+        },
+        {
+          "bug": "- Fixed a bug that prevented Cole from looking towards an intended angle while standing still and the player was not allowed to send input"
+        },
+        {
+          "bug": "- Fixed gravity calculation continuing to continue even if Cole was still and the player was not allowed to send input"
+        },
+        {
+          "bug": "- Fixed some text size issues after the recent update with some atlas fonts"
+        },
+        {
+          "bug": "- Fixed an accidental trigger type shifts after the \u201cOn Inactive\u201d mode was added"
+        },
+        {
+          "bug": "- Fixed a datacast issue with file management which prevented the achievement file from being made or accessed"
+        },
+        {
+          "bug": "- Fixed an issue that would cause the options file to not save"
+        },
+        {
+          "bug": "- Fixed a bug with Pulley Systems where Cole would still be labeled as \u201cBusy with an action\u201d despite leaving the interactive which prevented the player from pausing the game"
+        },
+        {
+          "bug": "- Fixed a bug with dithering where any object blocking the players view that were in a short distance or series from each other would be at the same opacity level instead of returning to solid"
+        },
+        {
+          "bug": "- Fixed a bug with dithering where if the player had rotated after being obscured and another object was in the way shortly before the other objects could finish, the previous objects would maintain their current opacity level instead of being solid"
+        },
+        {
+          "bug": "- Fixed a calculation issue found with opacity dithering where sometimes it would dither 2 objects together instead of only 1 at a time"
+        },
+        {
+          "bug": "- Fixed an audio footstep issue after updating the animation system- Fixed an issue in the upgrade tree where the targeted stat parameters would not update"
+        },
+        {
+          "bug": "- Fixed a logic issue with red locks in the upgrade tree, now they are able to target different nodes instead of the one the selected tier is parented to"
+        },
+        {
+          "bug": "- Fixed an accidental goof where the upgrade tree would allow an upgrade even if the player had no more upgrade points"
+        },
+        {
+          "bug": "- Fixed a bug where tiers without any requirements would not allow you to unlock them, even if you had a point to spend"
+        },
+        {
+          "bug": "- Fixed a visual issue where some strands of Cole\u2019s hair were inverted while the normals were facing outward"
+        },
+        {
+          "bug": "- Fixed a rotation issue when inching Cole forward by hitting the movement keys quickly"
+        },
+        {
+          "bug": "- Fixed an issue with the audio slave processor in Unity, now it no longer throws an error when compensating for a random start time in dialogue SFX"
+        },
+        {
+          "bug": "- Fixed an issue with execution order where if input was used and/or had input delay, it would still fire"
+        },
+        {
+          "bug": "- Fixed a bug with audio interpolation in the new trigger system where the value would instantly move to the target volume instead of interpolating by speed"
+        },
+        {
+          "bug": "- Fixed an issue with interpolation timing with volume control which would cause higher values to slow down each while iteration"
+        },
+        {
+          "bug": "- Fixed a bug that would cause trigger actions to execute if the player entered the collider, even if it were on a different execution type"
+        },
+        {
+          "bug": "- Fixed a bug with Multivariable Manipulative triggers, now they can actually target any script parameter"
+        },
+        {
+          "bug": "- Fixed an issue with pushable objects that would cause Cole to interact with the object as an obstacle instead of an object he can move around"
+        },
+        {
+          "bug": "- Fixed an issue where a pushable interactive would still be parented to Cole when it\u2019s supposed to be left alone"
+        },
+        {
+          "bug": "- Fixed an issue where Cole would still be able to look at any other direction when the axis rotation is restricted"
+        },
+        {
+          "bug": "- Fixed an issue where Cole would still be able to play his walking animation when he was being blocked by something"
+        },
+        {
+          "bug": "- Fixed a tuning issue with physical interactions to be more precise with Cole\u2019s new model and prevent issues with rigidbody objects parented to Cole from launching themselves"
+        },
+        {
+          "bug": "- Fixed a bug where the dialogue sequencer would throw an error if a typing SFX wasn\u2019t used"
+        }
+      ]
+    }
+  ]
+}

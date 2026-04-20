@@ -1,0 +1,105 @@
+{
+  "appId": "817980",
+  "count": 3,
+  "notes": [
+    {
+      "title": "Murderwave Devblog - 7/9/20",
+      "date": "2020-07-09 13:35:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3444640809423207474",
+      "content": "[h2]Hello everyone, since I wanted to post updates about the game more frequently, I'm going to try out weekly or bi-weekly development blogs. [/h2]\n\n[b]I've worked on a lot over the last week, so I'll break it down into categories and touch on each one briefly. \n[/b]\n[h2]Enemy Behavior[/h2]\nWhile there are several new enemy types I want to add in the future, right now I'm working on perfecting the simplest enemy type, the Cyber Freak. This is one of the most common, and weakest enemies. Their strategy is simply to move to your position and melee attack you. This kind of simple behavior is fine for this type of enemy, but I want to introduce a little more complexity in the hopes that fighting them will be more dynamic and fun. To that end, I started working on a behavior for the CF that gives them a chance to attempt to dodge out of the way of the player's crosshairs. It's going to take some fine tuning so make sure it's fun and not annoying though. \n\nI've also been working on the way CF actually inflicts damage on the player, previously it was pretty janky and not exactly clear when the player was being attacked, and what exactly inflicted damage on them. I've worked out how to make sure damage is actually synced with an attack animation, which not only provides a more consistent experience, but actually gives you an opportunity to dodge an enemy's melee attack. \n\n[h2]Visuals[/h2]\nI like the overall aesthetic of the game, the color palette, etc. But I've been wanting to push it a little further stylistically. Now that I'm more experienced with 3D modeling and texturing, I think I'll be able to get more visual interest out of the environments, while keeping the same overall color scheme and feel. Previously the game used a solid color skybox, which was the same for most of the levels. I've been working on a few simple color-band skyboxes which I think look a lot more interesting. \n[img]https://i.imgur.com/EH69BHd.png[/img]\nI've also been adding computer circuitry themed elements to the environments, which I'm hoping will tie in with the cheesy vintage digital theme of the game. \n\nRight now, the gas station level is the only level being redone, once it is complete, and most of the game features have been brought up to spec, I'll begin remaking some of the older levels and making entirely new ones. \n\n[h2]Performance[/h2]\nI've done a lot to improve performance over the last week, such as re-making models and including proper Level-Of-Detail (LOD) models for enemies and other props on each level. For those not familiar with the concept, LOD models are lower detailed models that replace higher detailed ones as you move further away, saving on performance. Better use of the Unity materials system and more efficient use of resources in general has lead to major performance increases all around. The game should no longer struggle when several enemies are on screen at once, which was really annoying before. \n\n[h2]Story[/h2]\nI've been writing up a story to give context to your actions in the game, and better inform the design of the world of the game. I don't want to give much away right now, but I want to experiment with unlocking levels sequentially and give a story context to each of them, like a campaign mode. It's also a fun opportunity to introduce some characters into the game and give it some more personality. \n\n[h2]More to come[/h2]\nI haven't touched on everything here, I've also been working on a new main menu and improved options menu, improved audio, and a total re-balance of the gameplay, but I'll go more in depth to each of those areas in a later update. [b]While the version of the game I've been working on is not really playable right now, I will probably release it into an experimental beta branch of the game in a few weeks when it is closer to the current version of the game in terms of content.[/b] This way people can see first hand what I've been working on and how it's coming together. \n\nThanks for reading this devblog and for supporting the game. If you haven't already, please share your thoughts, questions, suggestions, etc. on our [url=https://discord.gg/pdP7R8S]community discord channel[/url]",
+      "key": "817980::c075cb07408ec94fa4b1e110bbea9d2f5aa37b4a",
+      "tags": [
+        {
+          "feature": "To that end, I started working on a behavior for the CF that gives them a chance to attempt to dodge out of the way of the player's crosshairs."
+        },
+        {
+          "bug": "I've worked out how to make sure damage is actually synced with an attack animation, which not only provides a more consistent experience, but actually gives you an opportunity to dodge an enemy's melee attack."
+        },
+        {
+          "feature": "I've been working on a few simple color-band skyboxes which I think look a lot more interesting."
+        },
+        {
+          "feature": "I've also been adding computer circuitry themed elements to the environments, which I'm hoping will tie in with the cheesy vintage digital theme of the game."
+        },
+        {
+          "feature": "I've done a lot to improve performance over the last week, such as re-making models and including proper Level-Of-Detail (LOD) models for enemies and other props on each level."
+        },
+        {
+          "bug": "The game should no longer struggle when several enemies are on screen at once, which was really annoying before."
+        },
+        {
+          "feature": "I want to experiment with unlocking levels sequentially and give a story context to each of them, like a campaign mode."
+        },
+        {
+          "feature": "I've also been working on a new main menu and improved options menu, improved audio, and a total re-balance of the gameplay"
+        }
+      ]
+    },
+    {
+      "title": "The Weapon Update",
+      "date": "2020-01-06 17:18:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573913771758",
+      "content": "[img]{STEAM_CLAN_IMAGE}/35463784/4819c8e6471259d639cc8768c4ba05aac954b00f.png[/img]\n\n[h3]Because there's a special breed of people deranged enough to play this game, here's a nice big update.[/h3]\n\n-New weapon models, first person arms, and animations have been added to all weapons. Now you can actually see your hands, and the weapons you hold look much cooler. \n\n[img]{STEAM_CLAN_IMAGE}/35463784/13843992e25f9af7b722c17f026b93583fd8bbd1.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35463784/312ccf5a2c29b9d5fa64b90eb96445a842988c72.png[/img]\n\n-Experimental (Work in progress) Procedural levels have been unlocked. These levels are linear and generated each time you play. Instead of fighting endless waves, kill all the enemies on the level, and you'll unlock a teleporter that will generate a new level for you. They require rocket jumping to get around.\n\n-The player no longer has immunity to explosions caused by items on the level (barrels, gas pumps, etc.) and is no longer granted immunity from cyber freak bombers by killing them. Stay away from explosive freaks.\n\n-The cyber freak mage now has a turret and can shoot at you from a distance, it's health has also been increased.\n\n-Attacks from regular cyber freaks now slow you down temporarily, and prevent running.\n\n-Added a red screen effect when the player receives damage.\n\n-Cyber freak ballooner attack rate of fire has been increased.\n\n-You can now use the kick ability (by pressing \"E\") at any time, not just with the fists equipped. \n\n-The pistol now shoots 3 projectiles at once instead of 1. Accuracy has been changed. \n\n-The holiday theme has been disabled, the holiday build is now on the \"stable\" branch.\n\n-Fixed a bug where the jukebox UI was not scaling properly on people's screens. \n\n[b]Thanks to everyone who has been supporting the game, I look forward to learning and improving the game even more. [/b]",
+      "key": "817980::96bad92572bcf62dcea3e662744d6cde5e54bb79",
+      "tags": [
+        {
+          "feature": "-New weapon models, first person arms, and animations have been added to all weapons. Now you can actually see your hands, and the weapons you hold look much cooler."
+        },
+        {
+          "feature": "-Experimental (Work in progress) Procedural levels have been unlocked. These levels are linear and generated each time you play. Instead of fighting endless waves, kill all the enemies on the level, and you'll unlock a teleporter that will generate a new level for you. They require rocket jumping to get around."
+        },
+        {
+          "bug": "-The player no longer has immunity to explosions caused by items on the level (barrels, gas pumps, etc.) and is no longer granted immunity from cyber freak bombers by killing them. Stay away from explosive freaks."
+        },
+        {
+          "balance_change": "-The cyber freak mage now has a turret and can shoot at you from a distance, it's health has also been increased."
+        },
+        {
+          "balance_change": "-Attacks from regular cyber freaks now slow you down temporarily, and prevent running."
+        },
+        {
+          "feature": "-Added a red screen effect when the player receives damage."
+        },
+        {
+          "balance_change": "-Cyber freak ballooner attack rate of fire has been increased."
+        },
+        {
+          "feature": "-You can now use the kick ability (by pressing \"E\") at any time, not just with the fists equipped."
+        },
+        {
+          "balance_change": "-The pistol now shoots 3 projectiles at once instead of 1. Accuracy has been changed."
+        },
+        {
+          "feature": "-The holiday theme has been disabled, the holiday build is now on the \"stable\" branch."
+        },
+        {
+          "bug": "-Fixed a bug where the jukebox UI was not scaling properly on people's screens."
+        }
+      ]
+    },
+    {
+      "title": "Holiday 2019 Update",
+      "date": "2019-12-19 09:55:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573847615435",
+      "content": "[img]{STEAM_CLAN_IMAGE}/35463784/abefdacef63ee95475145ef946bcc3f898abc26e.png[/img]\n\n[b]Happy Holidays![/b] To celebrate the holidays and steam winter sale, an optional \"Holiday Mode\" has been added which enables snowfall and holiday decorations across most levels. You can find the option right on the main menu. \n\n2 new bonus weapons have been added, the minigun and air-strike. These weapons are temporary powerups that can be found at spawn points on every level. They don't require energy and can wreak much more havoc than normal weapons. \n\n[img]{STEAM_CLAN_IMAGE}/35463784/c0800bba58fe697341fbb54038f0964164333e34.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35463784/c1425bbc764c6e8763f1485c77d81f8fe3dac553.png[/img]\n\n2 New bonus levels have been added, City blocks and Battlefield, which offer up some new environments in which to slaughter clowns. \n\n[img]{STEAM_CLAN_IMAGE}/35463784/072f65d0b30bef8ebad973bcd3df495d1b6b0ed0.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35463784/27100dc66b5e8ec528315ebe04e1fd0c785624a7.png[/img]\n\nLighting improvements have been made on some levels, most noticeably on the Metro and Store levels. \n\n[img]{STEAM_CLAN_IMAGE}/35463784/1579bc3f31c645a0f73857cc0b3742703058bca8.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35463784/2593581cdfe5751ced648259f093995a1647fba9.png[/img]\n\nA new Santa hat has been added to customize your enemies, and clown hair and hats now render at the same time, which looks a lot better. \n\n[img]{STEAM_CLAN_IMAGE}/35463784/7f49ce63fe643407da7095b6d170a56be55e0a15.png[/img]\n\nA stable steam branch has been added with the previous build as well, in case you have trouble with this new version and still want to play. \n\nFinally, As part of the steam winter sale, the game will be 75% off, so anyone can pick it up for just $1!\n\nThanks again to everyone who has played the game so far, I look forward to providing updates on a more regular basis in the future.",
+      "key": "817980::cff79ce5128ef799f7bb15b7595d715c9c28272f",
+      "tags": [
+        {
+          "feature": "To celebrate the holidays and steam winter sale, an optional \"Holiday Mode\" has been added which enables snowfall and holiday decorations across most levels. You can find the option right on the main menu. "
+        },
+        {
+          "feature": "2 new bonus weapons have been added, the minigun and air-strike. These weapons are temporary powerups that can be found at spawn points on every level. They don't require energy and can wreak much more havoc than normal weapons. "
+        },
+        {
+          "feature": "2 New bonus levels have been added, City blocks and Battlefield, which offer up some new environments in which to slaughter clowns. "
+        },
+        {
+          "feature": "A new Santa hat has been added to customize your enemies, and clown hair and hats now render at the same time, which looks a lot better. "
+        },
+        {
+          "feature": "A stable steam branch has been added with the previous build as well, in case you have trouble with this new version and still want to play. "
+        }
+      ]
+    }
+  ]
+}

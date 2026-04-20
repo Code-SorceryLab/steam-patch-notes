@@ -1,0 +1,489 @@
+{
+  "appId": "41300",
+  "count": 12,
+  "notes": [
+    {
+      "title": "Altitude 1.1.9 minor update",
+      "date": "2025-07-20 12:45:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065438568",
+      "content": "[h2]Changed[/h2][list][*][p]Updated server launcher to use IPv4 if an IPv4 address is specified as the IP in the configuration file.[/p][/*][*][p]Fix issues relating to non-centered mouse navigation (camera-center policy `NEVER_MOUSE` or `NEVER`)[/p][list][*][p]Merge camera-center policy `NEVER_MOUSE` into `NEVER`, as they are logically equivalent    [/p][/*][*][p]Fix thermobarics or \"Miranda reverse reorient mouse\" setting the cursor incorrectly when the plane is not in the center of the camera[/p][/*][*][p]Fix mouse-aiming origin displaced from the plane when the camera view scale is not 1[/p][/*][/list][/*][*][p]Disable scoreboard while typing in server chat to ensure typing is not accidentally captured as game input[/p][/*][/list][p][/p]",
+      "key": "41300::913b9fc80cb3c36d3f1fef44b41e3000c0ba2afe",
+      "tags": [
+        {
+          "bug": "[p]Fix issues relating to non-centered mouse navigation (camera-center policy `NEVER_MOUSE` or `NEVER`)[/p]"
+        },
+        {
+          "bug": "[p]Merge camera-center policy `NEVER_MOUSE` into `NEVER`, as they are logically equivalent    [/p]"
+        },
+        {
+          "bug": "[p]Fix thermobarics or \"Miranda reverse reorient mouse\" setting the cursor incorrectly when the plane is not in the center of the camera[/p]"
+        },
+        {
+          "bug": "[p]Fix mouse-aiming origin displaced from the plane when the camera view scale is not 1[/p]"
+        },
+        {
+          "bug": "[p]Disable scoreboard while typing in server chat to ensure typing is not accidentally captured as game input[/p]"
+        }
+      ]
+    },
+    {
+      "title": "Altitude 1.1.6",
+      "date": "2022-03-31 20:01:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995461907827",
+      "content": "[h3]Changed[/h3]\n[list]\n[*] Changed geometry decompose issue logging to warning level, it was previously an error.\n[/list]\n",
+      "key": "41300::0ef35f6565c6b72d0abc2ca36cd0f96bf463adf7",
+      "tags": [
+        {
+          "balance_change": "- Changed geometry decompose issue logging to warning level, it was previously an error."
+        }
+      ]
+    },
+    {
+      "title": "Altitude 1.1.6",
+      "date": "2022-03-31 20:01:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995461905523",
+      "content": "[h3]Changed[/h3]\n[list]\n[*] Changed geometry decompose issue logging to warning level, it was previously an error.\n[/list]\n",
+      "key": "41300::33c4021050a7932607cb1bd03dcc06b485097413",
+      "tags": [
+        {
+          "balance_change": "- Changed geometry decompose issue logging to warning level, it was previously an error."
+        }
+      ]
+    },
+    {
+      "title": "Altitue 1.1.3",
+      "date": "2021-12-11 15:16:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936849658888362",
+      "content": "[list]\n[*] Patched log4j security vulnerability.\n[*] Limit server_launcher to 128 mebibytes of heap (-Xmx128m).\n[list]\n[*]The value can be changed per server by editing `server_launcher.cfg`.\n[/list]\n[/list]",
+      "key": "41300::5fca2421eccfeb242e09e151bd84722cbc98d9be",
+      "tags": [
+        {
+          "bug": "[*] Patched log4j security vulnerability."
+        }
+      ]
+    },
+    {
+      "title": "Altitude: big huge update",
+      "date": "2021-08-04 23:41:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530939239359",
+      "content": "It's hard to believe Altitude was released 12 years ago! \ud83c\udf89 We look forward to playing with all of you for the next 12 years! \ud83c\udfae\n\n[h1]1.1.2[/h1]\n[h2]Added[/h2]\n[list]\n[*] Added a \"Background Audio\" sound option, when enabled, sounds and music will continue to play when the game window is in the background.\n[*] Mirada reverse reorient mouse to the controls options UI.\n[*] Camera center policy to the gameplay options UI.\n[/list]\n[h2]Changed[/h2]\n[list]\n[*] Double max experience gain per minute from 90 to 180 for non-ace ranks.\n[*] Query for server details before connecting using the `/connect` command.\n   [list]\n      [*] This will resolve early timeout issues when a server isn't full.\n   [/list]\n[*] Updated server launcher to require a `--config <file>` argument.\n[*] Updated server configurator to require a save file location.\n[*] Moved log files to userspace.\n[*] Moved download maps to userspace `%LOCALAPPDATA%\\NimblyGames\\Altitude\\maps\\download`.\n[*] Moved extracted maps to userspace `%LOCALAPPDATA%\\Temp\\NimblyGames\\Altitude\\maps\\cache`.\n[*] Moved cached wav sound files to userspace `%LOCALAPPDATA%\\Temp\\NimblyGames\\Altitude\\run\\.sound`.\n[*] Moved server ban file, command file, dynamic command file, and log files into userspace `~/.local/NimblyGames/Altitude-Server-<update port number>/`\n[*] Increased idle timeout for capture mode from 1 hour to 6 hours.\n[/list]\n\n[h1]1.1.1[/h1]\n[h2]Added[/h2]\n[list]\n[*] New update path that allows updating the Java runtime.\n[*] Support for Windows 10.\n[*] Support for macOS Catalina and Big Sur.\n[/list]\n[h2]Changed[/h2]\n[list]\n[*] Use Shenandoah garbage collector.\n[*] Location of configuration files to userspace.\n   [list]\n      [*] Linux: `~/.local/NimblyGames/Altitude`.\n      [*] macOS: `~/Library/Application Support/NimblyGames/Altitude`.\n      [*] Windows: `%LOCALAPPDATA%\\NimblyGames\\Altitude`.\n   [/list]\n[/list]\n[h2]Removed[/h2]\n[list]\n[*] Old game update path.\n[/list]\n",
+      "key": "41300::81377d01204b36ab767b43cdb70d40fe4b5b458b",
+      "tags": [
+        {
+          "feature": "[*] Added a \"Background Audio\" sound option, when enabled, sounds and music will continue to play when the game window is in the background."
+        },
+        {
+          "feature": "[*] Mirada reverse reorient mouse to the controls options UI."
+        },
+        {
+          "feature": "[*] Camera center policy to the gameplay options UI."
+        },
+        {
+          "balance_change": "[*] Double max experience gain per minute from 90 to 180 for non-ace ranks."
+        },
+        {
+          "bug": "[*] This will resolve early timeout issues when a server isn't full."
+        },
+        {
+          "balance_change": "[*] Increased idle timeout for capture mode from 1 hour to 6 hours."
+        },
+        {
+          "feature": "[*] New update path that allows updating the Java runtime."
+        },
+        {
+          "feature": "[*] Support for Windows 10."
+        },
+        {
+          "feature": "[*] Support for macOS Catalina and Big Sur."
+        }
+      ]
+    },
+    {
+      "title": "Altitude is now free!",
+      "date": "2014-09-05 16:22:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/521611873210124818",
+      "content": "Altitude is now completely free. There is no full version to purchase: new players will automatically gain access to all of Altitude's planes and perks as they level up.\r\n\r\nWidescreen Support: Altitude's native resolution has been updated from 4:3 to 16:9 (widescreen). Players can now see 25% farther ahead of their plane horizontally and about 6% less far vertically.\r\n\r\nExpanded custom server support:\r\n\r\nServer Console Commands:\r\nmodifyTournament <player> <team> - for adjusting tournament participants while a tournament is in progress (-1=not part of tournament, 0=left team, 1=right team)\r\noverrideBallScore <leftScore> <rightScore> - for manually adjusting scores in ball mode\r\noverrideSpawnPoint <player> <x> <y> <angle> - for dynamic spawn positions in custom game modes\r\n* any spawn attempts by the playerId associated with <player> will use x/y/angle instead of a normal spawning location\r\n* pass x=0,y=0,angle=0 to clear the override and resume normal spawning rules for a target player, otherwise overrides are cleared on map change (after \"mapLoading\" but before \"mapChange\") and on player disconnection\r\n\r\nServers can now disallow (or enforce) the use of random plane configurations via a disallowedPlaneRandomTypes block. Edit launcher_config.xml and just before the line starting with \"<mapList...\" add a block like this (note: this example blocks all random and non-random configurations, effectively preventing any spawning):\r\nCode:\r\n\r\n<disallowedPlaneRandomTypes>\r\n  <PlaneRandomType name=\"non_random\" />\r\n  <PlaneRandomType name=\"custom_random\" />\r\n  <PlaneRandomType name=\"full_random\" />\r\n</disallowedPlaneRandomTypes>\r\n\r\nServer JSON log message updates:\r\n\"kill\" now includes \"victimPositionX\",\"victimPositionY\",\"victimVelocit yX\",\"victimVelocityY\"\r\n\"powerupPickup\" now includes the powerup's \"velocityX\",\"velocityY\" at time of pickup\r\n\r\nClients will now automatically leave a server after 5 minutes of idle time only if the server is full (for non-full servers, clients will leave after 60 idle minutes).\r\n\r\n1DE (objective) game mode timers have been updated to encourage team play:\r\n* Increased bomb plant time from 1.5 seconds to 3 seconds\r\n* Increased bomb defuse time from 3 seconds to 4 seconds\r\n* Increased bomb detonate time from 14 seconds to 22 seconds",
+      "key": "41300::75d6802bf0af5496f7d12add7bc8761d683a6950",
+      "tags": [
+        {
+          "feature": "Altitude is now completely free. There is no full version to purchase: new players will automatically gain access to all of Altitude's planes and perks as they level up."
+        },
+        {
+          "feature": "Altitude's native resolution has been updated from 4:3 to 16:9 (widescreen). Players can now see 25% farther ahead of their plane horizontally and about 6% less far vertically."
+        },
+        {
+          "feature": "Server Console Commands:\nmodifyTournament <player> <team> - for adjusting tournament participants while a tournament is in progress (-1=not part of tournament, 0=left team, 1=right team)\noverrideBallScore <leftScore> <rightScore> - for manually adjusting scores in ball mode\noverrideSpawnPoint <player> <x> <y> <angle> - for dynamic spawn positions in custom game modes\n* any spawn attempts by the playerId associated with <player> will use x/y/angle instead of a normal spawning location\n* pass x=0,y=0,angle=0 to clear the override and resume normal spawning rules for a target player, otherwise overrides are cleared on map change (after \"mapLoading\" but before \"mapChange\") and on player disconnection"
+        },
+        {
+          "feature": "Servers can now disallow (or enforce) the use of random plane configurations via a disallowedPlaneRandomTypes block. Edit launcher_config.xml and just before the line starting with \"<mapList...\" add a block like this (note: this example blocks all random and non-random configurations, effectively preventing any spawning):\nCode:\n\n<disallowedPlaneRandomTypes>\n  <PlaneRandomType name=\"non_random\" />\n  <PlaneRandomType name=\"custom_random\" />\n  <PlaneRandomType name=\"full_random\" />\n</disallowedPlaneRandomTypes>"
+        },
+        {
+          "feature": "\"kill\" now includes \"victimPositionX\",\"victimPositionY\",\"victimVelocit yX\",\"victimVelocityY\"\n\"powerupPickup\" now includes the powerup's \"velocityX\",\"velocityY\" at time of pickup"
+        },
+        {
+          "feature": "Clients will now automatically leave a server after 5 minutes of idle time only if the server is full (for non-full servers, clients will leave after 60 idle minutes)."
+        },
+        {
+          "balance_change": "Increased bomb plant time from 1.5 seconds to 3 seconds"
+        },
+        {
+          "balance_change": "Increased bomb defuse time from 3 seconds to 4 seconds"
+        },
+        {
+          "balance_change": "Increased bomb detonate time from 14 seconds to 22 seconds"
+        }
+      ]
+    },
+    {
+      "title": "Altitude is now free!",
+      "date": "2014-09-05 16:22:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819571572127378150",
+      "content": "Altitude is now completely free. There is no full version to purchase: new players will automatically gain access to all of Altitude's planes and perks as they level up.\r\n\r\nWidescreen Support: Altitude's native resolution has been updated from 4:3 to 16:9 (widescreen). Players can now see 25% farther ahead of their plane horizontally and about 6% less far vertically.\r\n\r\nExpanded custom server support:\r\n\r\nServer Console Commands:\r\nmodifyTournament <player> <team> - for adjusting tournament participants while a tournament is in progress (-1=not part of tournament, 0=left team, 1=right team)\r\noverrideBallScore <leftScore> <rightScore> - for manually adjusting scores in ball mode\r\noverrideSpawnPoint <player> <x> <y> <angle> - for dynamic spawn positions in custom game modes\r\n* any spawn attempts by the playerId associated with <player> will use x/y/angle instead of a normal spawning location\r\n* pass x=0,y=0,angle=0 to clear the override and resume normal spawning rules for a target player, otherwise overrides are cleared on map change (after \"mapLoading\" but before \"mapChange\") and on player disconnection\r\n\r\nServers can now disallow (or enforce) the use of random plane configurations via a disallowedPlaneRandomTypes block. Edit launcher_config.xml and just before the line starting with \"<mapList...\" add a block like this (note: this example blocks all random and non-random configurations, effectively preventing any spawning):\r\nCode:\r\n\r\n<disallowedPlaneRandomTypes>\r\n  <PlaneRandomType name=\"non_random\" />\r\n  <PlaneRandomType name=\"custom_random\" />\r\n  <PlaneRandomType name=\"full_random\" />\r\n</disallowedPlaneRandomTypes>\r\n\r\nServer JSON log message updates:\r\n\"kill\" now includes \"victimPositionX\",\"victimPositionY\",\"victimVelocit yX\",\"victimVelocityY\"\r\n\"powerupPickup\" now includes the powerup's \"velocityX\",\"velocityY\" at time of pickup\r\n\r\nClients will now automatically leave a server after 5 minutes of idle time only if the server is full (for non-full servers, clients will leave after 60 idle minutes).\r\n\r\n1DE (objective) game mode timers have been updated to encourage team play:\r\n* Increased bomb plant time from 1.5 seconds to 3 seconds\r\n* Increased bomb defuse time from 3 seconds to 4 seconds\r\n* Increased bomb detonate time from 14 seconds to 22 seconds",
+      "key": "41300::fd9608fb897b0d79c3ccec4caab1601b8cd99216",
+      "tags": [
+        {
+          "feature": "Altitude is now completely free. There is no full version to purchase: new players will automatically gain access to all of Altitude's planes and perks as they level up."
+        },
+        {
+          "feature": "Altitude's native resolution has been updated from 4:3 to 16:9 (widescreen). Players can now see 25% farther ahead of their plane horizontally and about 6% less far vertically."
+        },
+        {
+          "feature": "Server Console Commands:\nmodifyTournament <player> <team> - for adjusting tournament participants while a tournament is in progress (-1=not part of tournament, 0=left team, 1=right team)\noverrideBallScore <leftScore> <rightScore> - for manually adjusting scores in ball mode\noverrideSpawnPoint <player> <x> <y> <angle> - for dynamic spawn positions in custom game modes\n* any spawn attempts by the playerId associated with <player> will use x/y/angle instead of a normal spawning location\n* pass x=0,y=0,angle=0 to clear the override and resume normal spawning rules for a target player, otherwise overrides are cleared on map change (after \"mapLoading\" but before \"mapChange\") and on player disconnection"
+        },
+        {
+          "feature": "Servers can now disallow (or enforce) the use of random plane configurations via a disallowedPlaneRandomTypes block. Edit launcher_config.xml and just before the line starting with \"<mapList...\" add a block like this (note: this example blocks all random and non-random configurations, effectively preventing any spawning):\nCode:\n\n<disallowedPlaneRandomTypes>\n  <PlaneRandomType name=\"non_random\" />\n  <PlaneRandomType name=\"custom_random\" />\n  <PlaneRandomType name=\"full_random\" />\n</disallowedPlaneRandomTypes>"
+        },
+        {
+          "feature": "\"kill\" now includes \"victimPositionX\",\"victimPositionY\",\"victimVelocit yX\",\"victimVelocityY\"\n\"powerupPickup\" now includes the powerup's \"velocityX\",\"velocityY\" at time of pickup"
+        },
+        {
+          "feature": "Clients will now automatically leave a server after 5 minutes of idle time only if the server is full (for non-full servers, clients will leave after 60 idle minutes)."
+        },
+        {
+          "balance_change": "Increased bomb plant time from 1.5 seconds to 3 seconds"
+        },
+        {
+          "balance_change": "Increased bomb defuse time from 3 seconds to 4 seconds"
+        },
+        {
+          "balance_change": "Increased bomb detonate time from 14 seconds to 22 seconds"
+        }
+      ]
+    },
+    {
+      "title": "Altitude Update Released",
+      "date": "2012-04-10 20:30:00",
+      "url": "http://store.steampowered.com/news/7718/",
+      "content": " \n<a href=\"http://store.steampowered.com/app/41300/\"><img src=\"http://storefront.steampowered.com/v/gfx/apps/41300/capsule_231x87.jpg\" style=\" float: left; margin-right: 12px; height: 87px; width: 231px;\"></a>=================================================================<br>April 4th, 2012<br><br>* New maps<br>* New gameplay UI options and feedback<br>* New console commands<br>* New dedicated server configuration options<br>* Bug fixes<br><br>=================================================================\t\t\t\t",
+      "key": "41300::a73913935005d56ccac5e921edf9203b200b9b26",
+      "tags": [
+        {
+          "feature": "* New maps"
+        },
+        {
+          "feature": "* New gameplay UI options and feedback"
+        },
+        {
+          "feature": "* New console commands"
+        },
+        {
+          "feature": "* New dedicated server configuration options"
+        },
+        {
+          "bug": "* Bug fixes"
+        }
+      ]
+    },
+    {
+      "title": "Altitude Update Released",
+      "date": "2010-09-01 20:24:00",
+      "url": "http://store.steampowered.com/news/4285/",
+      "content": " \nUpdates to Altitude have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><b>Updated Maps:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>tbd_asteroids<br><li>tbd_underpark<br></ul><b>Balance:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Reverse Thrust - increased acceleration by 10% and reduced energy consumption<br><li>Miranda's Reverse no longer temporarily disables Repair Drone<br><li>Miranda's Reverse and Time Anchor now reduce Repair Drone's recharge rate by 50% (time between repairs is doubled for the 1.35 seconds following Reverse/TimeAnchor activation)<br><li>Biplane (All Forms) reduced afterburner energy usage by 5%<br><li>Biplane (Dogfighter) secondary weapon increased range from 80 to 90, added piercing (second hit deals 80%, third 50%), increased damage from 27 to 28<br><li>Biplane (Recoilless) secondary weapon increased range from 80 to 90, added piercing (second hit deals 70%, third 40%)<br><li>Biplane (Heavy Cannon) primary weapon increased piercing second hit damage from 50% to 67%<br></ul><b>Offline Mode:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Plane configurations are saved between sessions<br><li>All downloaded maps (not just official maps) are available for play<br><li>FFA and TDM games end after 7 minutes<br></ul><b>Misc:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Added \"Lock Gamepad Config\" to Options -> Controls: check this box to prevent reinitialization of default gamepad bindings when controllers are temporarily unplugged<br><li>Added friend count to friends list window<br><li>Added account creation date to Hangar Deck<br><li>Added \"Local Time\" and \"Altitude Time (GMT)\" to bottom of in-game scoreboard (hold TAB to view)<br><li>\"Mouse Navigation: Turning and Throttle\" - can now override the mouse-based throttle at any time by pressing the Throttle-Up/Down keys (allows mouse users to utilize the \"Reverse Thrust\" perk)<br><li>Adjusted \"Mouse Navigation\" trigger to prevent accidentally entering mouse mode when switching to Altitude from another application<br><li>Server Launcher now writes a PID file containing server_launcher's process identifier to ~Altitude/servers/server_launcher.pid upon startup and restart<br><li>Servers that are running an outdated version are automatically filtered from the server list<br><li>Bug Fixes<br></ul>\t\t\t\t",
+      "key": "41300::136c32ef31893de741f7d910122b958b545a6fd1",
+      "tags": [
+        {
+          "balance_change": "Reverse Thrust - increased acceleration by 10% and reduced energy consumption"
+        },
+        {
+          "balance_change": "Miranda's Reverse no longer temporarily disables Repair Drone"
+        },
+        {
+          "balance_change": "Miranda's Reverse and Time Anchor now reduce Repair Drone's recharge rate by 50% (time between repairs is doubled for the 1.35 seconds following Reverse/TimeAnchor activation)"
+        },
+        {
+          "balance_change": "Biplane (All Forms) reduced afterburner energy usage by 5%"
+        },
+        {
+          "balance_change": "Biplane (Dogfighter) secondary weapon increased range from 80 to 90, added piercing (second hit deals 80%, third 50%), increased damage from 27 to 28"
+        },
+        {
+          "balance_change": "Biplane (Recoilless) secondary weapon increased range from 80 to 90, added piercing (second hit deals 70%, third 40%)"
+        },
+        {
+          "balance_change": "Biplane (Heavy Cannon) primary weapon increased piercing second hit damage from 50% to 67%"
+        },
+        {
+          "feature": "Added \"Lock Gamepad Config\" to Options -> Controls: check this box to prevent reinitialization of default gamepad bindings when controllers are temporarily unplugged"
+        },
+        {
+          "feature": "Added friend count to friends list window"
+        },
+        {
+          "feature": "Added account creation date to Hangar Deck"
+        },
+        {
+          "feature": "Added \"Local Time\" and \"Altitude Time (GMT)\" to bottom of in-game scoreboard (hold TAB to view)"
+        },
+        {
+          "balance_change": "\"Mouse Navigation: Turning and Throttle\" - can now override the mouse-based throttle at any time by pressing the Throttle-Up/Down keys (allows mouse users to utilize the \"Reverse Thrust\" perk)"
+        },
+        {
+          "balance_change": "Adjusted \"Mouse Navigation\" trigger to prevent accidentally entering mouse mode when switching to Altitude from another application"
+        },
+        {
+          "feature": "Server Launcher now writes a PID file containing server_launcher's process identifier to ~Altitude/servers/server_launcher.pid upon startup and restart"
+        },
+        {
+          "balance_change": "Servers that are running an outdated version are automatically filtered from the server list"
+        }
+      ]
+    },
+    {
+      "title": "Altitude Update Released",
+      "date": "2010-06-09 16:14:00",
+      "url": "http://store.steampowered.com/news/3922/",
+      "content": " \nJune 9 2010 release contains:<br><p><br>Added \"Offline Mode\" for convenient access to training and skirmish modes when playing without an internet connection<br><p><br>New mouse control configurations available under Options -> Controls -> Mouse Navigation:<br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Turning and Throttle -- control orientation and throttle using the mouse (default)<br><li> Turning Only -- control orientation with the mouse and throttle with the keyboard (best for mouse+reverse thrust)<br><li> Disabled (prevent accidental switches to mouse mode)<br></ul><p><br>Added configurable bot count to Training -> Skirmish<br><p><br>Added \"Reconnect\" option when disconnected from a server<br><p><br>Added (reason) to \"has left the game\" chat notifications for unusual exits (connection lost, ping kick, banned for <time>) <br><p><br>New console command \"connect\" (ex: press F1 to open console, type \"connect 75.102.27.114:40004\" to join the server at that IP:Port) <br><p><br><p><br>Server Configurator: added tooltips for \"HTTP Map Download Source\" and \"Admin Account IDs\"<br><p><br>Added server log warning \"LAN mode -- only servers on local area network will see this server\" when running with \"LAN server\" enabled.<br><p><br>JSON server log message \"clientAdd\" -- added 'aceRank' and 'level' attributes<br><p><br><p><br>Fixed visual artifacts when wrapping around map edges in spectator mode<br><p><br>Fixed rendering issue along bottom of ball_lostcity<br><p><br>Fixed a few bugs\t\t\t\t",
+      "key": "41300::84a1b4799fd72566f6a4cba2ebed0662fede7e24",
+      "tags": [
+        {
+          "feature": "Added \"Offline Mode\" for convenient access to training and skirmish modes when playing without an internet connection"
+        },
+        {
+          "feature": "New mouse control configurations available under Options -> Controls -> Mouse Navigation:\nTurning and Throttle -- control orientation and throttle using the mouse (default)\nTurning Only -- control orientation with the mouse and throttle with the keyboard (best for mouse+reverse thrust)\nDisabled (prevent accidental switches to mouse mode)"
+        },
+        {
+          "feature": "Added configurable bot count to Training -> Skirmish"
+        },
+        {
+          "feature": "Added \"Reconnect\" option when disconnected from a server"
+        },
+        {
+          "feature": "Added (reason) to \"has left the game\" chat notifications for unusual exits (connection lost, ping kick, banned for <time>)"
+        },
+        {
+          "feature": "New console command \"connect\" (ex: press F1 to open console, type \"connect 75.102.27.114:40004\" to join the server at that IP:Port)"
+        },
+        {
+          "feature": "Server Configurator: added tooltips for \"HTTP Map Download Source\" and \"Admin Account IDs\""
+        },
+        {
+          "feature": "Added server log warning \"LAN mode -- only servers on local area network will see this server\" when running with \"LAN server\" enabled."
+        },
+        {
+          "feature": "JSON server log message \"clientAdd\" -- added 'aceRank' and 'level' attributes"
+        },
+        {
+          "bug": "Fixed visual artifacts when wrapping around map edges in spectator mode"
+        },
+        {
+          "bug": "Fixed rendering issue along bottom of ball_lostcity"
+        },
+        {
+          "bug": "Fixed a few bugs"
+        }
+      ]
+    },
+    {
+      "title": "Altitude Update Released",
+      "date": "2010-05-12 02:19:46",
+      "url": "http://store.steampowered.com/news/3817/",
+      "content": " \nUpdates to Altitude have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><b>New Maps:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Added tbd_underpark (thanks Mandrad)<br><li>Updated tbd_cave<br></ul><b>Balance:</b><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Biplane (All Forms) increased turning rate by 1.5% (6.5 -> 6.6)<br><li>Biplane (Dogfighter, Recoilless) increased primary weapon ejection velocity (17 -> 19, note: reduced lifetime so that max travel distance is unchanged)<br><li>Biplane (Dogfighter, Recoilless) slightly increased primary weapon damage (38 -> 39)<br><li>Biplane (Heavy Cannon) slightly increased primary weapon damage (109 -> 112)<br><li>Bomber (All Forms) decreased turning rate by 2.9% (7.0 -> 6.8)<br></ul><b>Feature Additions:</b><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Mouse Control: press F1 to open the console and type \"mouse true\" to activate<br><li>LAN Servers tab added to server list<br><li>Improved \"Pilot Certification\" tutorial<br><li>Export -> Screenshot added to map editor<br><li>Hangar Deck -> Community Points now allows you to hover your point total for a points-by-source breakdown<br><li>Bots that just spawned and are pursuing a stationary objective powerup (e.g. the ball after a goal was just scored) will fly at half throttle to give non-bot teammates a chance to grab the powerup first<br></ul><b>Bug Fixes:</b><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Tightened Miranda teleport collision check to prevent exploits<br><li>Fixed bug that would sometimes prevent dunks from scoring (dunk = flying directly into the goal while carrying the ball)<br><li>Fixed rare bug that allowed more than one ball to enter play<br><li>Fixed team switch bug in 1-life modes<br><li>Fixed console auto-completion bug<br><li>Fixed rare bug that caused objects near the edge of the screen to flicker<br><li>Fixed incorrect badge display on award screen caused by players leaving while the awards are showing<br><li>Fixed a bug that prevented nickname changes<br><li>Fixed a few miscellaneous bugs<br></ul>\t\t\t\t",
+      "key": "41300::64eec78b2826069d71ed0ecafe6a9bf584c7a861",
+      "tags": [
+        {
+          "feature": "<li>Added tbd_underpark (thanks Mandrad)<br>"
+        },
+        {
+          "feature": "<li>Updated tbd_cave<br>"
+        },
+        {
+          "balance_change": "<li>Biplane (All Forms) increased turning rate by 1.5% (6.5 -> 6.6)<br>"
+        },
+        {
+          "balance_change": "<li>Biplane (Dogfighter, Recoilless) increased primary weapon ejection velocity (17 -> 19, note: reduced lifetime so that max travel distance is unchanged)<br>"
+        },
+        {
+          "balance_change": "<li>Biplane (Dogfighter, Recoilless) slightly increased primary weapon damage (38 -> 39)<br>"
+        },
+        {
+          "balance_change": "<li>Biplane (Heavy Cannon) slightly increased primary weapon damage (109 -> 112)<br>"
+        },
+        {
+          "balance_change": "<li>Bomber (All Forms) decreased turning rate by 2.9% (7.0 -> 6.8)<br>"
+        },
+        {
+          "feature": "<li>Mouse Control: press F1 to open the console and type \"mouse true\" to activate<br>"
+        },
+        {
+          "feature": "<li>LAN Servers tab added to server list<br>"
+        },
+        {
+          "feature": "<li>Improved \"Pilot Certification\" tutorial<br>"
+        },
+        {
+          "feature": "<li>Export -> Screenshot added to map editor<br>"
+        },
+        {
+          "feature": "<li>Hangar Deck -> Community Points now allows you to hover your point total for a points-by-source breakdown<br>"
+        },
+        {
+          "feature": "<li>Bots that just spawned and are pursuing a stationary objective powerup (e.g. the ball after a goal was just scored) will fly at half throttle to give non-bot teammates a chance to grab the powerup first<br>"
+        },
+        {
+          "bug": "<li>Tightened Miranda teleport collision check to prevent exploits<br>"
+        },
+        {
+          "bug": "<li>Fixed bug that would sometimes prevent dunks from scoring (dunk = flying directly into the goal while carrying the ball)<br>"
+        },
+        {
+          "bug": "<li>Fixed rare bug that allowed more than one ball to enter play<br>"
+        },
+        {
+          "bug": "<li>Fixed team switch bug in 1-life modes<br>"
+        },
+        {
+          "bug": "<li>Fixed console auto-completion bug<br>"
+        },
+        {
+          "bug": "<li>Fixed rare bug that caused objects near the edge of the screen to flicker<br>"
+        },
+        {
+          "bug": "<li>Fixed incorrect badge display on award screen caused by players leaving while the awards are showing<br>"
+        },
+        {
+          "bug": "<li>Fixed a bug that prevented nickname changes<br>"
+        },
+        {
+          "bug": "<li>Fixed a few miscellaneous bugs<br>"
+        }
+      ]
+    },
+    {
+      "title": "Altitude Update Released",
+      "date": "2010-04-06 16:49:18",
+      "url": "http://store.steampowered.com/news/3673/",
+      "content": " \nUpdates to Altitude have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><b>Added \"Ace\" System:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Upon reaching level 60, players can click a button under Hangar Deck -> Stats to become an Ace.<br><li> When you become an Ace you will start over at level 1 with unlocks and challenges reset.<br><li> There are no gameplay advantages to becoming an Ace.<br><li> You will receive a new badge and the first 5 Ace ranks will each unlock an extra slot on the plane selection screen.<br><li> The max Ace rank is 10.<br><li> Aces can only gain XP in multiplayer games: single player skirmishes and bot kills don't generate XP<br><li> Ace XP gain is slower on high player count servers to discourage XP farming: with 10 or fewer players aces gain experience at 140% the pre-patch rate; at 14 players experience accumulates at the normal rate; beyond 14 players experience accumulates slower in proportion to the excess player count (e.g. 20 players -> 14/20 = 70% normal XP gain)<br></ul><br><b>Ball Mode Improvements:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Added \"Ball Camera\" spectate option: press C to toggle between Free/Chase/Ball spectate modes<br><li> Added goal assist tracking<br><li> Added \"time of possesssion\" to end of round award screen<br><li> Added visual trail effect to ball<br><li> Increased Biplane's ball shot speed (16.5 -> 17.2)<br><li> Increased Miranda's ball shot speed (16.8 -> 17)<br><li> Decreased Loopy's speed while carrying the ball (79% -> 78%)<br></ul><b>New Maps:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Added ball_planepark and tbd_planepark (thanks Mandrad)<br><li> Added tbd_nuclear (thanks Hartz)<br><li> Added tbd_focus (thanks Esoteric)<br><li> Updated ball_cave, ball_core, ball_football, ball_grotto, ball_labyrinth, ball_lostcity, ball_mayhem2, ball_planepark, ball_snow (thanks Maimer)<br></ul><b>New Console Commands:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> dnd (do not disturb mode), type \"/dnd true\" into the chat window to activate, \"/dnd false\" to deactivate: suppresses in-game whisper messages and notifications<br><li> listBans<br><li> removeBan (IP or VaporID)<br><li> addBan (IP or VaporID) (duration) (time-unit) (reason) -- for banning players that aren't currently on the server<br><li> serverWhisper (nickname) (message) -- allows the server to send a message to a single player<br><li> serverMessage <message><br><li> assignTeam <player> <team> (team -1 is spectator, 0 is left team, 1 is right team)<br></ul><b>Award Screen:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Added \"You...\" stat box beneath MVP boxes for comparison<br><li> Updated categories to display additional information<br></ul><b>Server List:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Server rows now refresh upon selection<br><li> Added filter option \"Level Appropriate\" -- excludes servers that don't allow players in your level range<br></ul><b>Helper Text:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Explodet: \"Press F to launch a rocket, then press F again to detonate it.\"<br><li> Biplane: \"Press F and D simultaneously to fire both weapons at once.\"<br><li> Miranda: \"Miranda's forward warp (hold UP) damages enemies in its path.\"<br></ul><b>Miscellaneous:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li> Added \"Map Editor\" and \"Server Launcher\" links to the main menu<br><li> Adjusted packet loss tracking for max ping kick detection<br><li> Streamlined facebook app, added unlink option, fixed known issues<br><li> New display option \"Show Notifications\" under Options -> Gameplay: toggles visibility of notification boxes in bottom right (e.g. \"<Friend> logged in\")<br><li> New child safety option \"Suppress names\" under Options -> Account: replaces custom player names with \"Player 1\", \"Player 2\", etc<br></ul>\t\t\t\t",
+      "key": "41300::92b0901a8d510e64abd716bd86b4236e88640541",
+      "tags": [
+        {
+          "feature": "Added \"Ace\" System:"
+        },
+        {
+          "feature": "Upon reaching level 60, players can click a button under Hangar Deck -> Stats to become an Ace."
+        },
+        {
+          "feature": "When you become an Ace you will start over at level 1 with unlocks and challenges reset."
+        },
+        {
+          "feature": "You will receive a new badge and the first 5 Ace ranks will each unlock an extra slot on the plane selection screen."
+        },
+        {
+          "feature": "Aces can only gain XP in multiplayer games: single player skirmishes and bot kills don't generate XP"
+        },
+        {
+          "feature": "Ace XP gain is slower on high player count servers to discourage XP farming: with 10 or fewer players aces gain experience at 140% the pre-patch rate; at 14 players experience accumulates at the normal rate; beyond 14 players experience accumulates slower in proportion to the excess player count (e.g. 20 players -> 14/20 = 70% normal XP gain)"
+        },
+        {
+          "feature": "Added \"Ball Camera\" spectate option: press C to toggle between Free/Chase/Ball spectate modes"
+        },
+        {
+          "feature": "Added goal assist tracking"
+        },
+        {
+          "feature": "Added \"time of possesssion\" to end of round award screen"
+        },
+        {
+          "feature": "Added visual trail effect to ball"
+        },
+        {
+          "balance_change": "Increased Biplane's ball shot speed (16.5 -> 17.2)"
+        },
+        {
+          "balance_change": "Increased Miranda's ball shot speed (16.8 -> 17)"
+        },
+        {
+          "balance_change": "Decreased Loopy's speed while carrying the ball (79% -> 78%)"
+        },
+        {
+          "feature": "Added ball_planepark and tbd_planepark (thanks Mandrad)"
+        },
+        {
+          "feature": "Added tbd_nuclear (thanks Hartz)"
+        },
+        {
+          "feature": "Added tbd_focus (thanks Esoteric)"
+        },
+        {
+          "feature": "Updated ball_cave, ball_core, ball_football, ball_grotto, ball_labyrinth, ball_lostcity, ball_mayhem2, ball_planepark, ball_snow (thanks Maimer)"
+        },
+        {
+          "feature": "dnd (do not disturb mode), type \"/dnd true\" into the chat window to activate, \"/dnd false\" to deactivate: suppresses in-game whisper messages and notifications"
+        },
+        {
+          "feature": "listBans"
+        },
+        {
+          "feature": "removeBan (IP or VaporID)"
+        },
+        {
+          "feature": "addBan (IP or VaporID) (duration) (time-unit) (reason) -- for banning players that aren't currently on the server"
+        },
+        {
+          "feature": "serverWhisper (nickname) (message) -- allows the server to send a message to a single player"
+        },
+        {
+          "feature": "serverMessage <message>"
+        },
+        {
+          "feature": "assignTeam <player> <team> (team -1 is spectator, 0 is left team, 1 is right team)"
+        },
+        {
+          "feature": "Added \"You...\" stat box beneath MVP boxes for comparison"
+        },
+        {
+          "feature": "Updated categories to display additional information"
+        },
+        {
+          "feature": "Server rows now refresh upon selection"
+        },
+        {
+          "feature": "Added filter option \"Level Appropriate\" -- excludes servers that don't allow players in your level range"
+        },
+        {
+          "feature": "Explodet: \"Press F to launch a rocket, then press F again to detonate it.\""
+        },
+        {
+          "feature": "Biplane: \"Press F and D simultaneously to fire both weapons at once.\""
+        },
+        {
+          "feature": "Miranda: \"Miranda's forward warp (hold UP) damages enemies in its path.\""
+        },
+        {
+          "feature": "Added \"Map Editor\" and \"Server Launcher\" links to the main menu"
+        },
+        {
+          "bug": "Adjusted packet loss tracking for max ping kick detection"
+        },
+        {
+          "feature": "Streamlined facebook app, added unlink option, fixed known issues"
+        },
+        {
+          "feature": "New display option \"Show Notifications\" under Options -> Gameplay: toggles visibility of notification boxes in bottom right (e.g. \"<Friend> logged in\")"
+        },
+        {
+          "feature": "New child safety option \"Suppress names\" under Options -> Account: replaces custom player names with \"Player 1\", \"Player 2\", etc"
+        }
+      ]
+    }
+  ]
+}

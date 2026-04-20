@@ -1,0 +1,183 @@
+{
+  "appId": "1159390",
+  "count": 7,
+  "notes": [
+    {
+      "title": "Fitter, Happier, More Productive, Comfortable",
+      "date": "2025-08-04 01:24:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490800617",
+      "content": "[h3]Taxi Simulator \u2013 Devlog: AI and Environment Systems[/h3][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/35845552/a009ebf6591153ef59b69fa995b0e2168f039dce.jpg\"][/img][/p][p][/p][p]In recent weeks, we\u2019ve mainly focused on developing our AI systems, improving NPC interactions, and further optimization.[/p][p][/p][p]The pedestrian system is now fully integrated with collision detection. Hitting a pedestrian results in a fine, and the pedestrian always gets back up\u2014unless the player stops the car directly on them, in which case they get up only after the vehicle drives away. We\u2019ve taken care of proper animations and environment reactions\u2014after an incident, nearby NPCs respond appropriately and avoid the area for a while.[/p][p][/p][p]NPC AI is already working across most of the city. Pedestrians and vehicles can avoid each other and interact with simple objects (like phone booths). The system has been tested with 1,000 active NPCs near the player, consistently delivering around 50 FPS.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/35845552/5bcdd2d66f6af943e102b3bd95ec63a7b537d1e9.jpg\"][/img][/p][p][/p][p]We\u2019ve added support for destructible objects\u2014vehicles can ram into and deform them. Placing these objects on the map only requires specifying how they should react to collisions.[/p][p][/p][p]The weather system is now dynamic, and atmospheric conditions affect the environment (for example, puddles during rain or water drops on car bodies). Plant movement in response to wind is either in the works or partially implemented.[/p][p][/p][p]Traffic systems are still being developed\u2014so far, we\u2019ve mostly improved vehicle-player collisions. Work in this area is ongoing.[/p][p][/p][p]Apart from that, we\u2019ve improved various mechanics and carried out more optimization. One known issue involves physics: in rare cases, a car can flip over if an NPC lands on the hood. This is related to changes introduced in Unreal Engine 5.5.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/35845552/e6a8e7ac814cfc3c745ec690ec03a6e0b56d2bb8.jpg\"][/img][/p][p][/p][p]We tested various approaches to procedural map generation (PCG)\u2014the current system is stable, pending final approval. We also reworked the lake environment (ultimately moving away from Nanite assets).[/p][p][/p][p]We\u2019ve introduced a new standard for road width and lane count, along with tools for faster road editing. Our detail generation tools (like custom walls) have been improved, buildings have been updated (packed level actor), and new elements have been added to the demo area.[/p][p][/p][p]The phone UI has been updated: new graphics, backgrounds, and refreshed designs for the mechanic and taxi apps. An initial version of the HUD with minimap and notifications is also in place.[/p][p][/p][p]That\u2019s it for the major updates. More soon.[/p][p][/p][p]Regarding our YouTube devlogs, the upcoming ones will most likely be in Polish with subtitles. Posting videos in alternating languages creates some confusion for new viewers.[/p]",
+      "key": "1159390::13715ced010d0c26612a00ccb9092702f4a0ee86",
+      "tags": [
+        {
+          "feature": "The pedestrian system is now fully integrated with collision detection."
+        },
+        {
+          "feature": "We\u2019ve added support for destructible objects\u2014vehicles can ram into and deform them."
+        },
+        {
+          "feature": "The weather system is now dynamic, and atmospheric conditions affect the environment (for example, puddles during rain or water drops on car bodies)."
+        },
+        {
+          "feature": "We\u2019ve introduced a new standard for road width and lane count, along with tools for faster road editing."
+        },
+        {
+          "feature": "The phone UI has been updated: new graphics, backgrounds, and refreshed designs for the mechanic and taxi apps."
+        },
+        {
+          "feature": "An initial version of the HUD with minimap and notifications is also in place."
+        }
+      ]
+    },
+    {
+      "title": "Whole Lotta Yellow",
+      "date": "2025-04-07 09:38:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897453774",
+      "content": "Yello.\n\n[img]{STEAM_CLAN_IMAGE}/35845552/ec0b85b892433027c15e8e954bf5bd4015fcb350.png[/img]\n\nWe had an unusually hands-on March, which mostly went into improving the existing content, but a few new things were added, too.\n\nThe biggest ones are:\n\n1. Traffic System. Standard feature for this kind of game; no need to elaborate. There are roads, AI cars drive on them. A classic, standard feature, but we've implemented it, so we're letting you know.\n\n2. Game Structure. The loop roughly looks like this:\n\ncutscene (a few dozen seconds) - mission (a few minutes) - grind (a few minutes) - cutscene (a few dozen seconds)\n\nOf course, the time spent on missions or grinding will depend on your skills and preferences. I recommend imagining the flow of Taxi Simulator as something similar to what\u2019s known from Underground 2. So, we have an open world with missions to trigger (which can be repeated in case of failure), and in between missions, we can do taxi orders to earn money, upgrade the car, and approach missions with a better handicap.\n\nRight now, we're focusing on skills and phone handling. We\u2019ll probably finish these features in April.\n\n[img]{STEAM_CLAN_IMAGE}/35845552/ed45c6e0a0bc1ae63a79bf7606703daa43fc9f68.png[/img]\n\nHere\u2019s what the March patch looked like; maybe someone will be interested:\n\n[list]\n[*] We improved the loading and saving situation when the player has an accepted client or is in the vehicle.\n[*] Fixed the issue where Nitro wouldn't auto-reload when its level reached 0.\n[*] Fixed the bug with the tuning icon visible on the player.\n[*] Fixed the triggers in buildings.\n[*] Improved the hiding of indicators when entering the pause menu or journal.\n[*] Improved waypoints on the map.\n[*] Fixed the issue with the incorrect input behavior when entering tuning.\n[*] After loading the game, Nitro doesn't reload and can't be used.\n[*] Fixed the problem with icons \u2013 they disappeared and reappeared unexpectedly.\n[*] Added visibility for the zone icon.\n[*] The visual effect of the zone has been restored.\n[*] Fixed the issue with tuning not loading from save in the build version.\n[*] Improved the map size.\n[*] Fixed the bug where sometimes clients were missing.\n[*] Removed the crash-causing problem in Quest Graph Taxi.\n[*] Updated the map.\n[*] Improved the navigation system (handling intersections at different heights).\n[*] Added the ability to navigate to objects.\n[*] Introduced dynamic navigation \u2013 if the zone is unlocked, you can navigate to it, otherwise, the option is not available.\n[*] Added automatic generation of navigation on roads/intersections and exclusions for sidewalks, etc.\n[*] The selected icon stops at the corner of the minimap, indicating the navigation target.\n[*] Added the ability to navigate to the client without prior acceptance.\n[*] Fixed the reset function behavior.\n[*] We removed the issue with the vehicle bouncing at the car wash.\n[*] The journal window can now be closed with the same key it was opened.\n[*] Improved vehicle behavior at high speeds.\n[*] Changed vehicle parameters.\n[*] Increased fuel and oil consumption depending on engine RPM.\n[*] Added the traffic system (Traffic System currently available on the test map).\n[*] Added new barriers and improvements to the map.\n[*] Fixed the issue with empty references.\n[*] Fixed the issue with target icons disappearing after entering and exiting the journal.\n[/list]\n\n",
+      "key": "1159390::134bc3e004dc7cef93a8cc234f4713697e0f3ae2",
+      "tags": [
+        {
+          "feature": "1. Traffic System. Standard feature for this kind of game; no need to elaborate. There are roads, AI cars drive on them. A classic, standard feature, but we've implemented it, so we're letting you know."
+        },
+        {
+          "feature": "2. Game Structure. The loop roughly looks like this: cutscene (a few dozen seconds) - mission (a few minutes) - grind (a few minutes) - cutscene (a few dozen seconds)"
+        },
+        {
+          "bug": "Fixed the issue where Nitro wouldn't auto-reload when its level reached 0."
+        },
+        {
+          "bug": "Fixed the bug with the tuning icon visible on the player."
+        },
+        {
+          "bug": "Fixed the triggers in buildings."
+        },
+        {
+          "bug": "Fixed the issue with the incorrect input behavior when entering tuning."
+        },
+        {
+          "bug": "After loading the game, Nitro doesn't reload and can't be used."
+        },
+        {
+          "bug": "Fixed the problem with icons \u2013 they disappeared and reappeared unexpectedly."
+        },
+        {
+          "feature": "Added visibility for the zone icon."
+        },
+        {
+          "bug": "Fixed the issue with tuning not loading from save in the build version."
+        },
+        {
+          "bug": "Fixed the bug where sometimes clients were missing."
+        },
+        {
+          "bug": "Removed the crash-causing problem in Quest Graph Taxi."
+        },
+        {
+          "feature": "Added the ability to navigate to objects."
+        },
+        {
+          "feature": "Introduced dynamic navigation \u2013 if the zone is unlocked, you can navigate to it, otherwise, the option is not available."
+        },
+        {
+          "feature": "Added automatic generation of navigation on roads/intersections and exclusions for sidewalks, etc."
+        },
+        {
+          "feature": "Added the ability to navigate to the client without prior acceptance."
+        },
+        {
+          "bug": "Fixed the reset function behavior."
+        },
+        {
+          "bug": "We removed the issue with the vehicle bouncing at the car wash."
+        },
+        {
+          "feature": "The journal window can now be closed with the same key it was opened."
+        },
+        {
+          "balance_change": "Changed vehicle parameters."
+        },
+        {
+          "balance_change": "Increased fuel and oil consumption depending on engine RPM."
+        },
+        {
+          "feature": "Added the traffic system (Traffic System currently available on the test map)."
+        },
+        {
+          "bug": "Fixed the issue with empty references."
+        },
+        {
+          "bug": "Fixed the issue with target icons disappearing after entering and exiting the journal."
+        }
+      ]
+    },
+    {
+      "title": "December 2024",
+      "date": "2024-12-09 17:26:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795747311",
+      "content": "Greetings, comrades.\r\n\r\n[img]https://clan.fastly.steamstatic.com/images/35280558/9760652e58f128f59776eef46c2b84e66f99236b.jpg[/img]\r\n\r\nAs the year draws to a close, here\u2019s a quick rundown. Before you tune out, let me present the agenda\u2014maybe one of the topics will catch your interest, and you can jump straight to it:\r\n\r\n1. **Priest Simulator**  \r\n2. **Mercyful Flames**  \r\n3. **Taxi Simulator**  \r\n4. **Your Principal**  \r\n\r\n[h1]Priest Simulator[/h1]\r\n\r\nOur most recognized franchise so far is keeping us busy:\r\n\r\nThe **Vampire Show** has left Early Access. However, we\u2019ve already received feedback about some messed-up lipsync and issues with the final raid not registering correctly. We\u2019ve fixed the first problem, and we\u2019re working on the second. A patch is on its way.\r\n\r\nhttps://store.steampowered.com/app/2947900/Priest_Simulator_Her_Ghost_DLC/\r\n\r\nWe\u2019ve released *Her Ghost*, a DLC for *Vampire Show*, offering about an hour of new gameplay. Some of you may remember that we declared the game finished months ago, but for various reasons, the launch was delayed. Sure, any game can be endlessly improved, so we added a few more cards to the Trello board. Plus, we wanted to experiment with creating DLC, so we decided to add new content roughly on the scale of *Heavy Duty*. Big thanks to everyone who purchased it.\r\n\r\n[img]https://clan.fastly.steamstatic.com/images/35280558/a600c086e2e6a9d8b55b48b80c2334850957a4b6.jpg[/img]\r\n\r\nWe also made the soundtrack available some time ago. You can listen to it on Spotify or YouTube. The music video for the standout track *Legion* is doing pretty well at festivals:\r\n\r\n- Winner: Best Polish Animated Music Video at PL Music Video Awards 2024  \r\n- Winner: *Black Horse of Music Videos* at Ars Independent 2024  \r\n- Semi-finalist: Azyl Shorts 2024  \r\n\r\nIt was also officially selected for:  \r\nAnimakom Fest 2024,  \r\n\u017bubroffka 2024 (Music Video category),  \r\nAnimest 2024,  \r\nSplat!FilmFest 2024,  \r\nGrand Video Awards 2024 (Music Video category),  \r\nOffeliada 2024,  \r\nLinoleum 2024.  \r\n\r\nWatch it here:  \r\nhttps://www.youtube.com/watch?v=oMop-7BM4ds  \r\n\r\nThat\u2019s not all the news from the *Priest* universe. We\u2019ve been working for months on the next installment, *Wolf Moon*. It continues threads from the previous games but takes them in a very different direction. It\u2019s a low-poly action RPG inspired by MOBAs and *Vampire Survivors*. We intended to release the Steam page this year, but it\u2019s not yet up to our standards.\r\n\r\n[h1]Mercyful Flames[/h1]\r\n\r\nWe\u2019ve really gone all out on this one. Last year, we made the tough decision to rework the game completely\u2014a decision that was challenging but ultimately necessary. The original concept of a card-based RPG might resurface in a future project, but not here. *Mercyful Flames* always had great atmosphere but struggled with the transition of our physical designs into a digital format. \r\n\r\nThis time, we went all in, inspired by a friend\u2019s comment: \u201cI\u2019d buy a *Priest* game that\u2019s just cutscenes.\u201d While it\u2019s an oversimplification, it nudged us toward creating a minimalist, gameplay-light experience.\r\n\r\n[img]https://clan.fastly.steamstatic.com/images/35280558/9f43649f9c317bbbe19503dc7c6f5949339f975b.jpg[/img]\r\n\r\nThe game is going through what feels like its hundredth iteration. I admit I\u2019ve gone a bit obsessive, tweaking every little detail. We keep adding minor dialogues or effects to enhance the illusion of a living world. The game is divided into dozens of \u201cscenes,\u201d and polishing one often makes others look subpar in comparison. At that point, we have to even things out, one way or another.\r\n\r\nhttps://store.steampowered.com/app/1066740/Mercyful_Flames_The_Witches/\r\n\r\nAs with *Vulgator*, we\u2019ve collaborated with acclaimed Polish artists. This time, we worked with *Alembik*, a duo comprising Robert and Micha\u0142. You might know Micha\u0142 from *Owls Woods Graves*, *Over the Voids*, and *Mg\u0142a* (live). They composed the soundtrack, which will also be available as a standalone album on streaming platforms.\r\n\r\n[h1]Taxi Simulator[/h1]\r\n\r\nNow for our biggest project. We\u2019ve been dedicating our lives to this one and regularly post devlogs about its progress. The game has a completely different vibe from anything we\u2019ve done before\u2014less experimental, more craftsmanship. This time, the title isn\u2019t some ironic twist; it\u2019s exactly what it says.\r\n\r\nhttps://store.steampowered.com/app/1159390/Taxi_Simulator/\r\n\r\n**Your Principal** is temporarily on hold by mutual agreement with the publisher. We\u2019ll return to it next year.\r\n\r\nhttps://store.steampowered.com/app/1176330/Your_Principal/\r\n\r\nApart from these titles, we\u2019re also working on a port\u2014or rather, a remaster\u2014of a certain hit, but we\u2019re not revealing any details yet.\r\n\r\nBy the way, you might have read rumors that we\u2019re quitting game development to start selling weapons. Some reliable Polish media outlets got their facts and companies mixed up. I won\u2019t bother denying it because it works in our favor.",
+      "key": "1159390::f60b3b6a6eb47e93d3eecfa36862a23b3e48cff6",
+      "tags": [
+        {
+          "bug": "We\u2019ve fixed the first problem, and we\u2019re working on the second."
+        }
+      ]
+    },
+    {
+      "title": "December 2024",
+      "date": "2024-12-09 17:22:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795747297",
+      "content": "Greetings, comrades.\r\n\r\n[img]https://clan.fastly.steamstatic.com/images/35280558/9760652e58f128f59776eef46c2b84e66f99236b.jpg[/img]\r\n\r\nAs the year draws to a close, here\u2019s a quick rundown. Before you tune out, let me present the agenda\u2014maybe one of the topics will catch your interest, and you can jump straight to it:\r\n\r\n1. **Priest Simulator**  \r\n2. **Mercyful Flames**  \r\n3. **Taxi Simulator**  \r\n4. **Your Principal**  \r\n\r\n[h1]Priest Simulator[/h1]\r\n\r\nOur most recognized franchise so far is keeping us busy:\r\n\r\nThe **Vampire Show** has left Early Access. However, we\u2019ve already received feedback about some messed-up lipsync and issues with the final raid not registering correctly. We\u2019ve fixed the first problem, and we\u2019re working on the second. A patch is on its way.\r\n\r\nhttps://store.steampowered.com/app/2947900/Priest_Simulator_Her_Ghost_DLC/\r\n\r\nWe\u2019ve released *Her Ghost*, a DLC for *Vampire Show*, offering about an hour of new gameplay. Some of you may remember that we declared the game finished months ago, but for various reasons, the launch was delayed. Sure, any game can be endlessly improved, so we added a few more cards to the Trello board. Plus, we wanted to experiment with creating DLC, so we decided to add new content roughly on the scale of *Heavy Duty*. Big thanks to everyone who purchased it.\r\n\r\n[img]https://clan.fastly.steamstatic.com/images/35280558/a600c086e2e6a9d8b55b48b80c2334850957a4b6.jpg[/img]\r\n\r\nWe also made the soundtrack available some time ago. You can listen to it on Spotify or YouTube. The music video for the standout track *Legion* is doing pretty well at festivals:\r\n\r\n- Winner: Best Polish Animated Music Video at PL Music Video Awards 2024  \r\n- Winner: *Black Horse of Music Videos* at Ars Independent 2024  \r\n- Semi-finalist: Azyl Shorts 2024  \r\n\r\nIt was also officially selected for:  \r\nAnimakom Fest 2024,  \r\n\u017bubroffka 2024 (Music Video category),  \r\nAnimest 2024,  \r\nSplat!FilmFest 2024,  \r\nGrand Video Awards 2024 (Music Video category),  \r\nOffeliada 2024,  \r\nLinoleum 2024.  \r\n\r\nWatch it here:  \r\nhttps://www.youtube.com/watch?v=oMop-7BM4ds  \r\n\r\nThat\u2019s not all the news from the *Priest* universe. We\u2019ve been working for months on the next installment, *Wolf Moon*. It continues threads from the previous games but takes them in a very different direction. It\u2019s a low-poly action RPG inspired by MOBAs and *Vampire Survivors*. We intended to release the Steam page this year, but it\u2019s not yet up to our standards.\r\n\r\n[h1]Mercyful Flames[/h1]\r\n\r\nWe\u2019ve really gone all out on this one. Last year, we made the tough decision to rework the game completely\u2014a decision that was challenging but ultimately necessary. The original concept of a card-based RPG might resurface in a future project, but not here. *Mercyful Flames* always had great atmosphere but struggled with the transition of our physical designs into a digital format. \r\n\r\nThis time, we went all in, inspired by a friend\u2019s comment: \u201cI\u2019d buy a *Priest* game that\u2019s just cutscenes.\u201d While it\u2019s an oversimplification, it nudged us toward creating a minimalist, gameplay-light experience.\r\n\r\n[img]https://clan.fastly.steamstatic.com/images/35280558/9f43649f9c317bbbe19503dc7c6f5949339f975b.jpg[/img]\r\n\r\nThe game is going through what feels like its hundredth iteration. I admit I\u2019ve gone a bit obsessive, tweaking every little detail. We keep adding minor dialogues or effects to enhance the illusion of a living world. The game is divided into dozens of \u201cscenes,\u201d and polishing one often makes others look subpar in comparison. At that point, we have to even things out, one way or another.\r\n\r\nhttps://store.steampowered.com/app/1066740/Mercyful_Flames_The_Witches/\r\n\r\nAs with *Vulgator*, we\u2019ve collaborated with acclaimed Polish artists. This time, we worked with *Alembik*, a duo comprising Robert and Micha\u0142. You might know Micha\u0142 from *Owls Woods Graves*, *Over the Voids*, and *Mg\u0142a* (live). They composed the soundtrack, which will also be available as a standalone album on streaming platforms.\r\n\r\n[h1]Taxi Simulator[/h1]\r\n\r\nNow for our biggest project. We\u2019ve been dedicating our lives to this one and regularly post devlogs about its progress. The game has a completely different vibe from anything we\u2019ve done before\u2014less experimental, more craftsmanship. This time, the title isn\u2019t some ironic twist; it\u2019s exactly what it says.\r\n\r\nhttps://store.steampowered.com/app/1159390/Taxi_Simulator/\r\n\r\n**Your Principal** is temporarily on hold by mutual agreement with the publisher. We\u2019ll return to it next year.\r\n\r\nhttps://store.steampowered.com/app/1176330/Your_Principal/\r\n\r\nApart from these titles, we\u2019re also working on a port\u2014or rather, a remaster\u2014of a certain hit, but we\u2019re not revealing any details yet.\r\n\r\nBy the way, you might have read rumors that we\u2019re quitting game development to start selling weapons. Some reliable Polish media outlets got their facts and companies mixed up. I won\u2019t bother denying it because it works in our favor.",
+      "key": "1159390::6094cf62180a937b7000ad4890fcd5b68b970fae",
+      "tags": [
+        {
+          "bug": "We\u2019ve fixed the first problem, and we\u2019re working on the second."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #19",
+      "date": "2021-09-24 08:52:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3936699406873467766",
+      "content": "[h3][b]Skrrrrrrt![/b][/h3]\n\nWe advise you to pull over and stop your engine before you look at this, our dear Taxi driver!\n\nWe know you're busy in The Big Apple, but so are we.\nWell.. why don't we take you on a quick trip through the city. Get in and buckle up if you're ready!\n\n\n\n[img]{STEAM_CLAN_IMAGE}/35845552/9b994f55004d766b32619ae9a01b106fa43ea31a.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/a280e7cd6d4e712a15fef229c9363675c9c23890.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/b95b118cc161cec46917a19bb6edc11b1cbb7ceb.jpg[/img]\n\nWhile we're driving through the beautiful Manhattan and we're looking at the amazing scenery, it's time to tell you more about what we're working on. \n\n[h3][b]What's new?[/b][/h3]\n[list]\n[*] City improvements. We're constantly working on our scenery and we have added various decorations and props to make it as realistic as possible. We want you to get the real feel of New York City. Be ready to visit Times Square and look around for funny 'real life' inspired billboards. \n\n[*] New mechanics that will spice things up even more!\nDid you know you'll be able to wash your taxi before you get off work after driving hundreds of miles with demanding passengers?\nOur team is working on a car wash that will allow you to keep your cab nice and clean for your clients. The cleaner the taxi the happier the client so keep an eye on your cleanliness.\n\n[*] Police system improvements. Several changes including speed, handling and turning are being revamped. The Police will now be able to watch over the city carefully to make sure you don't speed much or run the pedestrians over too often. Be careful, because if you try to run away, you'll end up being chased. Trust us, they'll push you off the road if they have to.[/list]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/26b00aa25c88dc9fcbd91a90f1fde6255674ff66.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/420bae7d87e43d7100e843848f52bd5419834f52.jpg[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/cd1474243e493032fa4df607efaaae0514d1d4ac.jpg[/img]\n\nWell.. That's the end of our tour. How do you like our city?\n\nOne more thing. We would like to address one of the most frequently asked question - [u]Will Taxi Simulator support steering wheels?[/u]\n\nSkrrrt! Yes, you better get them ready folks! Put your hat on, turn on the radio and let's roll!\n\nJoin our Discord \u2b07\ufe0f\n\n[url=https://discord.gg/Wfg9AKM52D][img]{STEAM_CLAN_IMAGE}/35845552/755ee5f56fc0c022ae6adb9a517d68cd0b071b21.png[/img][/url]\n\nHappy trails!\nWoodland Games\n",
+      "key": "1159390::db4b6444601b781b8ce67516e8e4f255f3042e3e",
+      "tags": [
+        {
+          "feature": "City improvements. We're constantly working on our scenery and we have added various decorations and props to make it as realistic as possible. We want you to get the real feel of New York City. Be ready to visit Times Square and look around for funny 'real life' inspired billboards."
+        },
+        {
+          "feature": "New mechanics that will spice things up even more! Did you know you'll be able to wash your taxi before you get off work after driving hundreds of miles with demanding passengers? Our team is working on a car wash that will allow you to keep your cab nice and clean for your clients. The cleaner the taxi the happier the client so keep an eye on your cleanliness."
+        },
+        {
+          "balance_change": "Police system improvements. Several changes including speed, handling and turning are being revamped. The Police will now be able to watch over the city carefully to make sure you don't speed much or run the pedestrians over too often. Be careful, because if you try to run away, you'll end up being chased. Trust us, they'll push you off the road if they have to."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #17",
+      "date": "2021-06-04 12:11:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4093189347047028821",
+      "content": "[h2]Hello taxi drivers![/h2]\n\nWelcome to the new devlog! What do we have to say today?\nAs always, a lot! \ud83d\ude95\ud83d\ude95\ud83d\ude95\n\n[h3]Let's start with... a mechanic \ud83d\ude09[/h3]\n\nYou often ask us about the possibility of personalizing your taxis. Will it be possible? \n\nWe answer: [b]YES! [/b]\n\nWhat's more, our team of graphic designers is currently working on elements that you will be able to add, change and improve. These include: rims, bumpers, rims and skirts. But, but... personalization will also apply to the interior! Do you want luxurious leather? Why not! \ud83d\ude09\n\nWe are talking about such goodies \ud83d\ude09:\n\n[img]{STEAM_CLAN_IMAGE}/35845552/fa56b490f80ee432ae9a66bc075a59379962a2aa.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/55588b6c6a88caa62e12f45ba6ea80db26b89079.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/b16ded67dc46b7308937213a1549d89cbf6ad1f0.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/82e2a23274fcd7a6e3148f3d19f19282731c2ca8.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/56b902d7860d45071148171455860fc83c97b7d4.png[/img]\n\n\nOn top of that, we have a new ad pack, which means that city building is slowly coming to an end! We implement decorations, and then we will take care of optimization, because each of these things weighs a lot, and you complain that your computers are like old vacuum cleaners - we do not promise that Taxi Simulator will work freely on all devices, but we hope that many of them will do \ud83d\ude96\n\n\nToday we will not spam you with beautiful Manhattan - we will leave it for the next devlog: for now, we wish you a good weekend and remember that we are always waiting for you on our discord \u2b07\n\n[url=https://discord.gg/6YMfQ6P][img]{STEAM_CLAN_IMAGE}/35845552/755ee5f56fc0c022ae6adb9a517d68cd0b071b21.png[/img][/url]\n\nRead you soon, \nWoodland Games Team",
+      "key": "1159390::8ea3e5113c02ee8e2fb6ec8ccf072d1201d321f0",
+      "tags": [
+        {
+          "feature": "You often ask us about the possibility of personalizing your taxis. Will it be possible? We answer: YES! What's more, our team of graphic designers is currently working on elements that you will be able to add, change and improve. These include: rims, bumpers, rims and skirts. But, but... personalization will also apply to the interior! Do you want luxurious leather? Why not! "
+        },
+        {
+          "feature": "On top of that, we have a new ad pack, which means that city building is slowly coming to an end!"
+        }
+      ]
+    },
+    {
+      "title": "Lucky #13",
+      "date": "2021-03-12 11:24:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4058279008613152967",
+      "content": "[b]Unlucky #13[/b]\nApparently, the number #13 is unlucky - we hope to disenchant it, because you have #Devlog number #13 ahead of you! And today a looooot of nice graphics \ud83d\ude09\n\nWe can safely say that most of Manhattan has already been prepared. The city map is huge, we tried to put as much detail as possible on it. We took care of every detail to reflect the spirit of New York. Anyway, see for yourself:\n\n[img]{STEAM_CLAN_IMAGE}/35845552/0ae6f13f343563999790718976de38044c6d7cb3.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/f80691e64d75f630c1a54d39d9508b23b2da9049.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/adb8ec8bce2ab038ade00cae1d5ad0b8662d3528.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/81f73eeb8a01be1e329b689f6495b4ce381409c8.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/63651324aeeccc2e839ca334925c7b198b0510c2.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/35845552/dc7bb4ac95f53fe719f88446b58e2a3b530b1c2a.png[/img]\n\n\n[img]{STEAM_CLAN_IMAGE}/35845552/30e29e1ca8f6d9391fa5a99746df24ba7b372427.png[/img]\n\n\nAt this stage of production, we add mechanics one by one. The first \"fire\" was human traffic. And as it turned out, we ran into some graphical problems here, as you can see below. The amount of details makes our city disappear into the charming Magenta \ud83d\ude09\n\n[img]{STEAM_CLAN_IMAGE}/35845552/1043c5c7e132ef76f118e843686e806ca415fe5a.png[/img]\n\nDon't worry, we still have some time to fix it! After adding people, we will also be adding car traffic, which is sure to be demanding as well. At the same time, we are working on the UI and UX, so if something seems illegible to you at the moment, it will probably become clear in the next devlog \ud83d\ude09\n\n[b]What else is left for us to do?[/b]\n- working on needs (car repair, refueling)\n- selection tree (after accepting the client or rejecting it)\n- consequences of elections (deduction, quitting job)\n...and a few more \"little things\" about which we will inform you soon!\n\nIf you still didn\u2019t add to wishlist \u2013 it\u2019s good moment! \n\nAnd don\u2019t forget join to discord \u2b07\ufe0f \n[url=https://discord.gg/8yjyBMs][img]{STEAM_CLAN_IMAGE}/35845552/755ee5f56fc0c022ae6adb9a517d68cd0b071b21.png[/img][/url]\n\n",
+      "key": "1159390::f35435a0c511ab1be8b7ad9528d4bad4ebb6cdf9",
+      "tags": [
+        {
+          "bug": "And as it turned out, we ran into some graphical problems here, as you can see below."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "appId": "1778020",
+  "count": 3,
+  "notes": [
+    {
+      "title": "The Great Delay & Progress Update",
+      "date": "2022-01-31 13:33:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4237326104334871070",
+      "content": "Hey Everyone,\n\nIt's been a while contrary to me saying that I'll try to keep updates consistent.\n\nI've had a struck of bad luck in terms of my health that has in return meant that I'd have to delay the game by a couple of months, there has been progress. But the progress has been slow.\n\nI'm speaking w/ Steam to try and get the date moved, I can't say when ATM because it's still in talks but It'll probably be later rather than sooner.\n\nI'm writing this with a massive migraine so please excuse the type.\n\nLets jump into the update.\n\n[list]\n[*] New UI\n[img]{STEAM_CLAN_IMAGE}/41296944/402a820711b942d2ab835e22e5592088ca22aea8.gif[/img]\n[*] New Tiles\n[img]{STEAM_CLAN_IMAGE}/41296944/b6781f7146cd395af6e6d89a9599f745e01ae699.gif[/img]\n[*] Rework - Made the code my dynamic making it easier in the long run to have updates and new additions.\n[*] Path Finding -> This is giving me the most greif. I dont want to implement standardised pathfinding as this would slow the computational nature of the game. I've gotten most of it figured out but there are just a few more bits left to do.\n[*] Cars and AI -> This is heavily dependant on the PathFinding but alot of the code has already been figured out relating to this.\n[*] Notification System\n[img]{STEAM_CLAN_IMAGE}/41296944/0fd2fcbf820c3a0161a21ced5c295552ed94c4a7.gif[/img]\n[/list]\n\nUnfortunately I don't have more to show, or really talk about as the game has had to be put to the back in my lives priority queue. This doesn't mean that the game isn't being developed.. It is. Just not at the same rate as it was previously.\n\nI appreciate all the support that I have received and I really want this to be a good and fun game for you to enjoy so I will do my best to give you just that, it'll just take a little longer than I originally thought.\n\nYour friend,\n\nRus",
+      "key": "1778020::99ff513c34daccdfaea0ca1fcfcb1a34691e6e61",
+      "tags": [
+        {
+          "feature": "[*] New UI"
+        },
+        {
+          "feature": "[*] New Tiles"
+        },
+        {
+          "feature": "[*] Rework - Made the code my dynamic making it easier in the long run to have updates and new additions."
+        },
+        {
+          "feature": "[*] Notification System"
+        }
+      ]
+    },
+    {
+      "title": "Dev Blog [3] - Let there be roads!",
+      "date": "2021-10-16 13:12:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4698935641763100143",
+      "content": "Hello! This week It's all about the [b]road system[/b]!\n\n[h2]Update[/h2]\n[list]\n[*] Comfort Mechanic Implemented fully! (Buildings/Roads Reduce comfort)\n[*] I've started the development of the roads ( The main focus this week )\n[/list]\nHave a look at how the roads look below (bare in mind, the quads are just a place holder)\n[img]{STEAM_CLAN_IMAGE}/41296944/ab194abcbd4af2cdb6dfe6c9a07d68876cd5b9a5.png[/img]\nTo give a quick explanation to how they work, very brief and quick -> A player places the road with the middle mouse button (if they have enough money), the road is placed and becomes aware of its surroundings say a radius of 1, if there is a tile within that radius, the placed tile is registered to its neighbour.\n\nI'm not entirely satisfied with this approach, firstly its slow, calling every frame to check for a collision is not really the best approach but it works, I have a solution in mind but It'll probably take a couple head bangs on the table to get right. Secondly, I'm not really sure how to get the car animations working. Though I have the neighbours details, Its not a chain e.g -> neighbour A is connected to B which is connected to C and D; Neighbour A is only aware of B. B is aware of A and C, etc, etc. This will probably need to be re-done, but I can't think of a solution atm.\n\n[h2] Update 13/10/21 [/h2]\nSo I've got the roads kind of working, really unhappy with this approach as its not entirely what I envisioned but I don't have much time to focus on the game during the week so kind of threw a few things together to get it to work. Have a look below. \n[img]{STEAM_CLAN_IMAGE}/41296944/bab7a5bd34fe89ef48bccc9b35453050e910682c.gif[/img]\nIn case you're wondering what the red and green tiles mean:\n[list]\n[*] Green = Four Way Intersection\n[*] Red/Pink/Something = Three Way Intersection\n[/list] \nThough this got me thinking a little - I could possible implement my own pathfinding (which is essentially what I'm probably going to need to do).. see below\n[img]{STEAM_CLAN_IMAGE}/41296944/aad974c5b7b9bb5c03069f7fd751c2ac4fc85b2b.gif[/img]\nI could make some sort of condition to find the best path to a commercial building.\n\nMore thinking and tinkering is needed. Hopefully next update I'll have a proper plan in place to get this to work.\n\n[h2] Update 16/10/21 [/h2]\n\nRight, the weekend has hit meaning I've spent the whole day working on this, and with some results! \n[img]{STEAM_CLAN_IMAGE}/41296944/48d122e2460b042dc3fce75a529d1ac21184761f.gif[/img]\nI've completely re-written the whole system I had in place before which was a massive pain but defo necessary. Here is the new road system and what it can do\n[list]\n[*] Player can place roads (currently the starting position and ending position -> no need to click to place them individually)\n[*] connectable roads; though this isn't quite finished yet as I was trying to make sure I was able to place the roads correctly and make sure the tiles that the roads were placed on will be set to an occupied state -> stops elements from spawning on top the road.\n[*] when a road is spawned in, it gets its own car allocated car, this means that the roads is completely traversable by the car. I've still yet to implement the residential to commercial road mechanic and I'll hopefully have it soon but the actual road system still needs a little work.\n[/list]\nNow as I mentioned, this isn't finished and in no way polished. There are still things I need to work out like; road intersections and write the logic for the cars to figure out the best path, but this should be less of a challenge with the new system in place.\n\nThats all for this weeks dev blog! I'm excited for the road system, it adds a new element to the game which I think will be pretty cool!\n\nCatch you next week.. or next-next week :D\n\nRus K",
+      "key": "1778020::3ff328bc3abca3c690523b8e951ce96cd42731c3",
+      "tags": [
+        {
+          "feature": "Comfort Mechanic Implemented fully! (Buildings/Roads Reduce comfort)"
+        },
+        {
+          "feature": "I've started the development of the roads ( The main focus this week )"
+        },
+        {
+          "feature": "Player can place roads (currently the starting position and ending position -> no need to click to place them individually)"
+        },
+        {
+          "feature": "connectable roads; though this isn't quite finished yet as I was trying to make sure I was able to place the roads correctly and make sure the tiles that the roads were placed on will be set to an occupied state -> stops elements from spawning on top the road."
+        },
+        {
+          "feature": "when a road is spawned in, it gets its own car allocated car, this means that the roads is completely traversable by the car. I've still yet to implement the residential to commercial road mechanic and I'll hopefully have it soon but the actual road system still needs a little work."
+        }
+      ]
+    },
+    {
+      "title": "Dev Blog [2] - New Buildings!",
+      "date": "2021-10-08 17:12:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069556867209140330",
+      "content": "Hello everyone! \n\nA quick update regarding week 2 of activities - I've booked some time off work so this allowed me to focus on the game a little more.\n[img]https://media1.giphy.com/media/O7BtZQ0ceoVz4pDdC7/200.gif[/img]\nNew Additions;\n[list]\n[*] I've refactored the core of the code to optimise the game and improve the quality of code (I kind of just threw everything together to get a MVP)\n[*] I've added a couple new buildings which I think have greatly improved the look of the game and the actual world itself, have a look below.\n\nUpdate:\n[*] Fully Configured Commercial Buildings\n[*] I've started work on the new comfort mechanic of the game (read below)\n[*] I've started playing around with the road system but there is still much to do (also read below)\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/41296944/8200dff72f7f3ace6429ad1376a30e6868e004a6.png[/img]\n[img]{STEAM_CLAN_IMAGE}/41296944/6825d827060d831c0d36043a09c5978132fcd220.png[/img]\n\nThere's something that I've been considering though, I want a 50/50 split between comfort and regular buildings, I want the worlds to be beautiful; Greenery, Parks, all that sort. But, with the way the game currently stands, comfort objects are cheap and only increase your click amount but I want it to do something more, something that will entice the player to get the comfort objects, this is more a problem late game rather than early game, worth a think.\n\nUP: 05/10/2021 -> I think I've figured out the above. The buildings placed lower the comfort amount, if the comfort amount is too low then the amount you generate is reduced to half the amount. I was going to say game over but I think that's too harsh (I might rethink this to increase the challenge aspect of the game <-- But then is it really an idle clicker?).\n\nI've also had another \"brilliant idea\"... Roads... If the player connects a road from a residential building to a commercial building, then the commercial building will generate more and I'll probably have some fancy animations where there are teeny little cars going from one building to the others.\n\nAll of this is just hypothetical at the moment and more of a \"might be implemented\" but I think it's pretty cool so, who knows!\n\nUP: 08/10/2021 -> Slow couple days due to work commitments but, I've started working on the road system and the comfort mechanic; still a long way to go but I must say, this has definitely improved the playability of the game.\n\nThat's all for this weeks dev blog - Apologies its not much in the way of new functionality and  glorious screen shots but hoping next week there will some more flashy stuff to show!\n\nRus K\n",
+      "key": "1778020::f46dfc995c2e2906825af32dddd123460d031819",
+      "tags": [
+        {
+          "feature": "Fully Configured Commercial Buildings"
+        },
+        {
+          "feature": "I've started work on the new comfort mechanic of the game (read below)"
+        },
+        {
+          "feature": "I've started playing around with the road system but there is still much to do (also read below)"
+        },
+        {
+          "balance_change": "The buildings placed lower the comfort amount, if the comfort amount is too low then the amount you generate is reduced to half the amount."
+        },
+        {
+          "feature": "If the player connects a road from a residential building to a commercial building, then the commercial building will generate more and I'll probably have some fancy animations where there are teeny little cars going from one building to the others."
+        },
+        {
+          "feature": "I've started working on the road system and the comfort mechanic"
+        }
+      ]
+    }
+  ]
+}

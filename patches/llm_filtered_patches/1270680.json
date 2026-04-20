@@ -1,0 +1,354 @@
+{
+  "appId": "1270680",
+  "count": 13,
+  "notes": [
+    {
+      "title": "Patch v1.0.2 Hotfix",
+      "date": "2023-03-04 13:23:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176570211082",
+      "content": "- Fixed an issue where players were unable to access the options menu after manually resizing the window",
+      "key": "1270680::31b27eca162b82537c3350061cc0009eebf7d49c",
+      "tags": [
+        {
+          "bug": "- Fixed an issue where players were unable to access the options menu after manually resizing the window"
+        }
+      ]
+    },
+    {
+      "title": "Patch Notes for v1.0.2",
+      "date": "2023-03-04 10:35:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176569786732",
+      "content": "Thank you everyone for playing reporting bugs, if you encountered any - here's the next set of fixes!\n\nPatch notes:\n- Added the ability to delete your savegame from MainMenu->Options->Game Settings\n- Improved performance in final level\n- More minor bugfixes",
+      "key": "1270680::54ebd2cd90b8f5e4d09a7bb02fb022b9f3c6758d",
+      "tags": [
+        {
+          "feature": "- Added the ability to delete your savegame from MainMenu->Options->Game Settings"
+        },
+        {
+          "bug": "- More minor bugfixes"
+        }
+      ]
+    },
+    {
+      "title": "Patch Notes for v1.0.1",
+      "date": "2023-01-25 07:54:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109505614661",
+      "content": "Hey everyone,\nthank you so much for playing WHALIEN! We've addressed a few issues that came up during the release.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/6f89a392400d8bcb879159237350115dfb993688.png[/img]\n\nPatch notes:\n[list]\n[*] Prevent players from manually toggling fullscreen mode using F11\n[*] Fixed bug in video options menu\n[*] Fixed some minor gameplay bugs\n[/list]",
+      "key": "1270680::489254cddf66874bed633104177f81ac477c677a",
+      "tags": [
+        {
+          "bug": "[*] Fixed bug in video options menu"
+        },
+        {
+          "bug": "[*] Fixed some minor gameplay bugs"
+        }
+      ]
+    },
+    {
+      "title": "WHALIEN - Unexpected Guests Release \ud83d\udc33",
+      "date": "2023-01-24 09:00:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474429323640",
+      "content": "We\u2019ve been eagerly awaiting this moment! After a ton of concepting, designing, programming and testing, [b]WHALIEN - Unexpected Guests[/b] is finally ready for the public. We are so happy to finally have all of you playing the game and hearing your feedback!\n\n[img]{STEAM_CLAN_IMAGE}/38104262/39443b54cbe843182ad8e981bfccff043ac46309.gif[/img]\nRelease Patch Notes:\n[list]\n[*]General performance improvements\n[*]Added Achievements\n[*]Fixed a few visual bugs\n[*]Fixed potential crash in latter half of game\n[*]Improved overall experience\n[/list]\nWe wish you a fintastic adventure in the Whale,\nthe team at Forbidden Folds\n\n[img]{STEAM_CLAN_IMAGE}/38104262/c78b07fecc8b951696ecfd9c66d09bbbf6be5302.gif[/img]\n\nP.S.: If you encounter any bugs or glitches, please do report them to us in the forum. That way we can continue making WHALIEN - Unexpected Guests the smoothest possible experience!\n",
+      "key": "1270680::56bf3f6c9706f94d261102e95bfb0ff12aef8dea",
+      "tags": [
+        {
+          "feature": "Added Achievements"
+        },
+        {
+          "bug": "Fixed a few visual bugs"
+        },
+        {
+          "bug": "Fixed potential crash in latter half of game"
+        }
+      ]
+    },
+    {
+      "title": "Devlog #013",
+      "date": "2022-07-06 04:09:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295776390093",
+      "content": "Throughout WHALIEN, there are lots of actions that are triggered when the player (or any other character/object) reaches a designated area. Such actions can be noticeable for the player - like triggering a scripted sequence or the camera zooming out - but some actions are also unnoticeable \u2013 like saving the game and setting a new checkpoint.\n\nMost frequently we need to trigger multiple actions at the beginning of a new level, such as\n[list]\n[*] saving the game\n[*] updating the latest checkpoint\n[*] loading/unloading other levels\n[*] starting a scripted action\n[*] displaying some dialogue\n[*] unlocking an ability and displaying the corresponding tutorial video\n[*] unlocking an achievement\n[*] etc.\n[/list]\n\nAll of these actions are ideally executed at the same time, but there are cases where some of them need to be executed in a predetermined order. For example, we might want to first display a dialogue and afterwards unlock a new ability for the player.\n\nHaving individual triggers for each of these functionalities would be very cumbersome, because having them all fire at the same time would require all triggers to be placed at the exact same location and have identical dimensions. In this setup, we would have to make some triggers ever so slightly smaller to have them be fired later and keep the predetermined order.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/f403b38b8c00df57b92a884766fb334981cffb97.png[/img]\n(Some actions combined into one collider. This trigger displays a static mesh and unlocks an ability and an achievement on overlap.)\n\n[h2]Core[/h2]\nOur CommonCollider system allows us to trigger the execution of multiple actions with a single collider. The order in which these actions are executed can be defined by the designers. The CommonCollider system consists of two elements, the [b]CommonColliderComponent[/b] and the [b]IColliderSystemImplementable[/b]-interface.\n\nThis feature allows us to keep our levels tidy and simplifies getting an overview of all actions triggered at a specific point. It also makes adding new actions to an existing trigger less cumbersome.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/cfb5942a2b58fe064f25ab132c67abebc9370cac.png[/img]\n(Multiple functions combined into one collider. This trigger prepares the state of the game for the newly entered level.)\n\n[h3]CommonColliderComponent[/h3]\nThe CommonColliderComponent is a BoxCollider that manages all actions attached to its owning actor. Whenever the Collider registers an overlap, it forwards the event to all IColliderSystemImplementable components attached to its owner. The order of execution of these actions can be customized in the editor.\n\n[h3]IColliderSystemImplementable[/h3]\nEach action usable in our CommonCollider system needs to be an ActorComponent implementing the IColliderSystemImplementable interface. It declares the virtual function [i]ExecuteFunctionality()[/i], which is called on [i]CommonColliderComponent::BeginOverlap()[/i] and [i]EndOverlap()[/i]. Each component must override the function to define the logic to be executed on begin or end overlap.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/a19df91b86633f5fddca1c899dd793d86674100b.png[/img]\n[img]{STEAM_CLAN_IMAGE}/38104262/7941eacc953c272da7d37744bde22da9e0746036.png[/img]\n(Examples of classes implementing IColliderSystemImplementable: The logic of individual actions is usually simple because they only have to accomplish simple tasks.)\n\n[img]{STEAM_CLAN_IMAGE}/38104262/58112b9def1337509ee36e37ef4fd9fed4a47603.png[/img]\n(The ICommonColliderInterface definition: Interfaces in UE4 require a special setup to be recognized by the engine and usable in Blueprint.)\n\n\n[h2]Challenges[/h2]\nOne UE4-specific challenge we had to overcome for our CommonColliders was that overlap events aren\u2019t fired if they happen during or before [i]BeginPlay()[/i]. This can for example happen when the player spawns inside a CommonCollider. Firing the overlap events manually during [i]BeginPlay()[/i] doesn\u2019t work either, because [i]GetAllOverlappingComponents()[/i] returns an empty array at that time.\n\nOnce all actors have finished their [i]BeginPlay()[/i], [i]GetAllOverlappingActors()[/i] works as intended, so normally, we could use the C++ delegate [i]UWorld::OnWorldBeginPlay[/i] (which is fired once all actors have finished their [i]BeginPlay()[/i]). However, since we use LevelStreaming and some actors are only loaded in after [i]OnWorldBeginPlay[/i], this approach is not applicable for us. Therefore, we subscribe to our own delegate [i]OnLevelStreamed[/i], which is fired whenever a new level is streamed in and all contained actors have received their [i]BeginPlay()[/i]. Therefore [i]GetAllOverlappingComponents()[/i] works here. If you want to learn more about our LevelStreaming system, check out our [url=https://steamcommunity.com/games/1270680/announcements/detail/3133944822947535307]second devlog entry[/url].\n\n[img]{STEAM_CLAN_IMAGE}/38104262/79a5ad128ceb716e3e36ca09d1890d587fe0c903.png[/img]\n(Code to subscribe to [i]OnLevelStreamed [/i]on [i]BeginPlay()[/i] and manually trigger the overlaps once the event is fired.)\n\nSince first creating the CommonCollider system, we\u2019ve continuously integrated new functionalities. It has become a staple in our toolbox to keep our levels clean and structured. If you have any questions or ideas about what other actions we could add to our CommonColliders, feel free to reach out!\n\n- Andi, Ralf",
+      "key": "1270680::b5bc47fa1bccfb7d1aeb4d314ce55ee719ea425f",
+      "tags": [
+        {
+          "bug": "One UE4-specific challenge we had to overcome for our CommonColliders was that overlap events aren\u2019t fired if they happen during or before BeginPlay()."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #009",
+      "date": "2022-05-11 03:00:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4288001105331398998",
+      "content": "After we\u2019ve covered Ernest\u2019s glove in the last post, we will now take a closer look at our pearl magnets, Mrs Pull and Mr Push as we call them. While Ernest can only manipulate objects in his direct surroundings with the gloves, he can throw Mrs Pull and Mr Push which allows him to influence objects that are far away and otherwise unreachable. \n[img]{STEAM_CLAN_IMAGE}/38104262/df145b8fdf90845d168a9c79a3ade9bebee72756.gif[/img]\n(Mrs Pull and Mr Push in cooperation.)\n\n[h2]Core[/h2]\n[h3]Custom radial force component[/h3]\nAt its core, the pearl magnets consist of a custom [url=https://docs.unrealengine.com/4.27/en-US/API/Runtime/Engine/PhysicsEngine/URadialForceComponent/]RadialForceComponent[/url]. The RadialForceComponent provided by UE4 can exert a force based on the distance between the component\u2019s center and the influenced object. Since we needed a little bit more control over the radial force, we created our own RadialForceComponent and adapted some of the code to our requirements. \nWe determine which objects to influence by performing a query from the pearl\u2019s center with its radius each frame. Since we only want to influence Whalium objects, we apply a filter for that in the query.\n\nOnce we\u2019ve gathered all objects to influence, we iterate over them and apply a radial force to each. Mrs Pull attracts everything and therefore exerts a force towards her center; Mr Push repulses everything and exerts a force away from his center. We use the function [i]PrimitiveComponent->AddRadialForce()[/i] for this.\n\n[h3]State change[/h3]\nAs we mentioned earlier, Ernest can throw his pearls to place them anywhere in the level. For this, we defined two different states for the pearls:\n[list]\n[*] Spark state, where the pearl can be thrown and bounces off of surfaces but does not influence other objects. \n[*] Pearl state, where the pearl is suspended in the air and can no longer be moved by any object or the player themselves. In this state, the pearl influences Whalium objects in its vicinity.\n[/list]\nErnest can decide freely when to manifest a spark into apearl, he can also recall the pearl at any time, at which point it returns to his gloves and can be thrown as a spark once again. Only one of each pearl can exist at the same time!\n\n[h3]Swap[/h3]\nIn the later stage of the game, Ernest discovers an additional ability for the pearls: the pearl swap. This ability allows him to instantly swap the locations and states of Mrs Pull and Mr Push. If the pearls are in different states, e.g. Mrs Pull is in pearl state and Mr Push is in spark state, their states are swapped as well. Mrs Pull is changed into the spark state and receives the location and velocity of Mr Push. Mr Push on the other hand activates his pearl state and is placed where Mrs Pull has been previously, causing it to immediately push away all objects that Mrs Pull had previously attracted.\n[img]{STEAM_CLAN_IMAGE}/38104262/80fe88dd2798bc801a93bf6106e4a7a3a9a0b5d9.gif[/img]\n(The swap can be used to instantly push away all objects that had previously been attracted by Mrs Pull.)\n\n[h2]Iterations[/h2]\n[h3]From two actors to one[/h3]\nInitially, we had the different states of the pearls implemented as individual actors that each had their own logic and behavior. Whenever a spark was turned into a pearl, we hid the spark and placed the corresponding pearl in its position. However, this became quite complicated and cumbersome once we introduced the swap ability. It meant that we always had to consider four different actors of two different classes and all the possible combinations when one pearl was in state X and the other pearl was in state Y (plus another state if one of the pearls wasn\u2019t spawned at all).\n\nTherefore, we decided to combine all pearl states into a single actor and represent their current state using an enum. The enum can take on the following values:\n[img]{STEAM_CLAN_IMAGE}/38104262/91a0654404dad4d70df2d3517e86e07f371f77b9.png[/img]\n\nThe new pearl actor has all required components for each state, most importantly a ProjectileMovementComponent for the spark state and our RadialForceComponent for the pearl state. In the function [i]TrySetState()[/i], we enable and disable the corresponding components for the requirements of each state.\nThis approach simplifies the swap procedure immensely, because we only need to swap the pearls\u2019 locations and call [i]TrySetState()[/i] for each pearl with the other pearl\u2019s current state. \n\n[h3]Throwing[/h3]\nIn early tests, players noted that they found placing the pearls accurately in the level difficult. Placing objects in 3D space is challenging, considering the players can only view the scene from a 2D perspective on the screen. \n\n[h3]Aim mode[/h3]\nWe attempted to mitigate this by providing the player with more depth information, for which we introduced the aim mode. The player can activate the aim mode by holding down the throw button. The aim mode displays the path which the spark would take, were it to be thrown right now. This path, represented by a series of spheres, is updated in real time according to the player\u2019s location and rotation, and can therefore be used to accurately aim at the desired target.\nUE4 provides the very useful function [i]PredictProjectilePathByTraceChannel()[/i] for exactly this use case. We use the OutPathPositions array and draw one InstancedStaticMesh-Sphere for each predicted position.\n[img]{STEAM_CLAN_IMAGE}/38104262/a8ff05c3dd3d2cec29d370db92eb5cecc5f5e8ed.gif[/img]\n(The aim mode helps estimating where the perl will land when throwing.)\n\n[h3]Highlighting [/h3]\nAnother way we convey the position and distance of the pearl sparks is by highlighting surrounding objects. When the spark flies by an influenceable Whalium object, that object lights up and signals that it would be influenced if the player were to manifest the pearl right now. The player can therefore concentrate on the object they want to influence, and once it lights up, they can manifest their pearl and the desired object will be attracted or repulsed.\n[img]{STEAM_CLAN_IMAGE}/38104262/ae8fb6c1935687ca2a10596847e076ac072f6fa2.gif[/img]\n(Objects light up if they are in range of the spark.)\n\n[h3]Influencing large objects[/h3]\nAnother issue that was brought forward to us was that the pearls felt too weak when influencing particularly large and bulky objects. This was because our RadialForceComponent would always apply its force at the pivot of the influenced PrimitiveComponent, instead of the closest point between pearl and object. This was especially frustrating for objects with physics constraints that prevent movement in one direction. If the player wanted to push/pull a specific segment of an object, but the pearl actually calculated the force vector to the object\u2019s center, the object would frequently move in unexpected directions or not at all if the force was pointing against the physics constraint.\nWe combated this by adding the component tag AddForceAtLocation. If this tag is set on an influenceable PrimitiveComponent, our RadialForceComponent first calculates the closest point between pearl and influenced object using [i]PrimitiveComponent->GetClosestPointOnCollision()[/i] and then [i]PrimitiveComponent->AddForceAtLocation()[/i] instead of [i]AddRadialForce()[/i]. \n[img]{STEAM_CLAN_IMAGE}/38104262/5f6bbccb76011585cfe4cbd2f16dbc7b44116976.gif[/img]\n( 1.) Force is applied at the pivot, against the actor's PhysicsConstraint - the object doesn't move. 2.) Force is applied at the nearest point between pearl and mesh - the object moves to the side as expected.)\n\nThat\u2019s all for our pearl showcase, as always feel free to ask any remaining questions! Next time we are going to cover the part that makes our objects influenceable in the first place: the Whalium component.\n\n- Andi, Ralf\n",
+      "key": "1270680::965ff0cf0ea540d540a66fc8aa2131d5400c80fe",
+      "tags": [
+        {
+          "feature": "- A new game mode has been added to matchmaking and offline play: Deathmatch."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #008",
+      "date": "2022-04-27 02:56:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348798430269899421",
+      "content": "In the next few weeks, we are finally going to talk you through the core mechanics of our game. WHALIEN is all about pushing and pulling. For this, our protagonist Ernest Hemingwhale owns a set of gloves to grab and push away objects in his vicinity. Later, he also finds two magnetic pearls that can be thrown and suspended anywhere in the level and thereby push and pull objects located farther away. We can make any object influenceable for our gloves and pearls by adding a [i]WhaliumComponent [/i]to it.\nThis first post is going to give insight on the idea and inner workings behind the glove ability.\n\n[h2]Basic Glove[/h2]\n[h3]CollisionBox[/h3]\nAt its core, our Glove consists of a collision box that overlaps with all objects that have a WhaliumComponent. Each frame, it iterates over all overlapped WhaliumComponents and applies a force towards the box\u2019 center if we want to pull the object, or away from the center if we want to push it. \n[h3]PhysicsHandleComponent[/h3]\nThis approach already allowed us to properly push objects away from the player, but when pulling them, the objects would oscillate around the center, constantly overshooting it and never coming to a full stop. This effect was magnified whenever the player was moving or turning.\n[img]{STEAM_CLAN_IMAGE}/38104262/ada4ff7b4a80ead440db863f6233fedfef1fe83a.gif[/img]\n(Objects oscillating around the box center)\n\nWe fixed this by introducing a PhysicsHandleComponent at the center of our overlap box. The function GrabComponentAtLocationWithRotation() constrains a PrimitiveComponent to a desired location while the PrimitiveComponent retains its physical properties and collision. When the first object reaches the box\u2019 center, we no longer apply any force to that object and attach it to the PhysicsHandleComponent at the box\u2019 center. Additional pulled objects then collide with the grabbed component in the center and can therefore no longer oscillate around it.\n\n[h3]Weld Together[/h3]\nWhile the PhysicsHandleComponent fixed most of the oscillating, the objects around the center would still slide along the surface of the attached object and lag behind a bit when the player moved and turned. Moreover, this solution still required applying a force to every influenced WhaliumComponent each frame, which we wanted to prevent. Therefore, we introduced a flag in our WhaliumComponent to check if it had already been picked up.\nThe first WhaliumComponent is set to bPickedUp once it\u2019s attached to the PhysicsHandleComponent. Whenever a non picked up WhaliumComponent hits a bPickedUp WhaliumComponent, that component is also set to bPickedUp and welded to the hit component using AttachToComponent() and SetSimulatePhysics(false).\n[img]{STEAM_CLAN_IMAGE}/38104262/22692f276957080003f2bc6aa7cc02a0c66208b5.gif[/img]\n(Left: Objects lagging behind the grabbed component because they are not frozen in place. Right: Objects are welded to the grabbed component and follow the player's movement without lag.)\n\nAll bPickedUp components are released when the player disables their glove. The objects are detached from one another and SetSimulatePhysics(true) is called. Additionally, the component attached to the PhysicsHandle is released. \nAlternatively, objects are released when they have been outside of the overlap box for too long. This generally happens when the carried objects get stuck on colliding geometry. We determine if the object has been outside of the overlap box for too long by setting a timer on EndOverlap with the overlap box. If the timer runs out and the object hasn\u2019t had another BeginOverlap event with the box in that duration, we release it.\n\n\n\n[h2]Iterations[/h2]\nInitially, the push glove behaved like a leaf blower that pushed away everything once it entered the overlap box. The pull glove worked similar to a vacuum cleaner, which meant that as long as the glove was active all objects inside the box were pulled towards its center.\n\nOur first few playtests yielded that many players weren\u2019t yet satisfied with the feeling of our gloves. They felt that the push glove was too weak and the pull glove was found to be unsuited for precise grabbing and placing of objects, e.g. for building a tower or stairs.\nTherefore, we decided to implement a strong initial impulse for the push and pull glove, where the objects snap towards or are pushed away with a lot of power when the glove is activated. After that initial impulse, the gloves have less power for as long as the corresponding key is held down.\n\nFor the push glove, we handle this by applying a large impulse once the ability key is pressed, launching objects away at a high speed. The continuous force applied each following frame is set to a lower value to provide more control if the player wants to push objects in a precise direction.\n[img]{STEAM_CLAN_IMAGE}/38104262/c5661aef97a18e960231e7dac2c785354b046a17.gif[/img]\n(Left: Initial push impulse exerting an explosive burst of power. Right: Continuous push force exerting far less force.)\n\nFor the pull glove, we decided that it can only pick up new objects during the initial impulse. Once this impulse is over, it can comfortably keep the carried objects in its center, but it can never attract additional objects. This way, the player can for example choose a single object to pick up and place it on top of another. If no objects are in range during the initial impulse, the glove is deactivated again. \n[img]{STEAM_CLAN_IMAGE}/38104262/301ce80aba574c15f3fecae4f3d9ffa26f4c5c61.gif[/img]\n(Left: Trying to pick up a single cube and placing it on top of another. Right: Managing to pick up a single cube and placing it on top of another.)\n\n[h2]Further Improvements[/h2]\nWe made a series of improvements to our glove to make picking up and carrying items more comfortable. For one, this involved moving the attachment point a bit higher - we don\u2019t actually attach the objects to the box\u2019 center, but to a separate SceneComponent (grabLocation). This has the effect that objects don\u2019t scrape the ground as much when they are carried. \nWe also introduced the ability to define a PickUpSocket per mesh that defines where the mesh is attached and grabbed by the glove. This is especially useful for bulky objects and the ones whose pivot is in the wrong place.\n[img]{STEAM_CLAN_IMAGE}/38104262/95a5e91f0787d2ad6512d007860325d86606df1d.gif[/img]\n(Left: Grabbing a bulky object at its original pivot, making it unwieldy to carry. Right: Grabbing the object at its PickUpSocket, making it easier to carry around.)\n\nWe also decided to lift up the grabLocation of the glove whenever something gets in the way of the carried objects, to prevent knocking those things over. For this, we calculate the bounding box of all carried objects and perform a shape trace each frame on whether the carried objects are about to collide with objects in the level. If so, we adjust the grabLocation up. If no objects are hit anymore by the shape trace, we move the grabLocation down to its original position again.\n[img]{STEAM_CLAN_IMAGE}/38104262/03b61e5aa5dc9e0ea55d1e1bf5738ff168cec4ee.gif[/img]\n(The carried object is being lifted up when it gets close to other, potentially interfering, objects.)\n\nStay tuned until next time, when we are going to uncover the mysteries of the PearlMagnet!\n\n- Andi, Ralf",
+      "key": "1270680::90de94634bafcd4f0133ea2a031efbc393c1f95b",
+      "tags": [
+        {
+          "bug": "We fixed this by introducing a PhysicsHandleComponent at the center of our overlap box."
+        },
+        {
+          "bug": "While the PhysicsHandleComponent fixed most of the oscillating, the objects around the center would still slide along the surface of the attached object and lag behind a bit when the player moved and turned."
+        },
+        {
+          "balance_change": "Therefore, we decided to implement a strong initial impulse for the push and pull glove, where the objects snap towards or are pushed away with a lot of power when the glove is activated."
+        },
+        {
+          "balance_change": "After that initial impulse, the gloves have less power for as long as the corresponding key is held down."
+        },
+        {
+          "balance_change": "For the push glove, we handle this by applying a large impulse once the ability key is pressed, launching objects away at a high speed."
+        },
+        {
+          "balance_change": "The continuous force applied each following frame is set to a lower value to provide more control if the player wants to push objects in a precise direction."
+        },
+        {
+          "balance_change": "For the pull glove, we decided that it can only pick up new objects during the initial impulse."
+        },
+        {
+          "feature": "We also introduced the ability to define a PickUpSocket per mesh that defines where the mesh is attached and grabbed by the glove."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #006",
+      "date": "2022-03-30 03:22:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995455735850",
+      "content": "As you may know, the whale that WHALIEN takes place in is infested by slimy little Squiddies - it\u2019s why the player takes on his adventure in the first place. In order to properly convey the infestation, we needed to be able to place large masses of Squiddies that don\u2019t have a significant impact on the game\u2019s performance. Therefore, we created the SwarmSquiddies which are spread all across the interior of the whale, covering walls, floor and decor.\n\n\n[h2]Implementation:[/h2]\nHaving large masses of Squiddies means rendering many of the same mesh simultaneously, which instanced static meshes are predestined for. In UE4, instanced static meshes are managed using the UInstancedStaticMeshComponent, which can dynamically add or remove instances and can be used to adjust their transform. We split up the logic between the SwarmSquiddieManager, which controls the rendering of the meshes, and the SwarmSquiddieInstance, which handles the transform and logic for each individual Squiddie. This includes the Squiddie being highlighted, influenced or defeated by the player. \n    Whenever we create a SwarmSquiddieInstance, that actor registers itself with the SwarmSquiddieManager in that level and is assigned a static mesh instance. In order to provide a little more variance in the distribution of the Squiddies, we have the SwarmSquiddieManager manage three different UInstancedStaticMeshes. The SwarmSquiddieInstance is assigned one of those three meshes at random when it is placed in the editor.\nWith our current implementation, we can place around 2.000 SwarmSquiddies in an empty level, while the frame rate remains at 50+ fps on a mid-tier PC. The player can interact with all of these Squiddies.\n[img]{STEAM_CLAN_IMAGE}/38104262/c4c15601af9030ddf5a9453d7b13949bbfe5676f.gif[/img]\n(Mrs. Pull attracting a mass of SwarmSquiddies)\n[img]{STEAM_CLAN_IMAGE}/38104262/d719c1f4733eb807581f1b78a959608a79c59bdd.gif[/img]\n(Mr. Push repulsing a mass of SwarmSquiddies)\n\n\n[h2]Highlighting:[/h2]\nAs mentioned before, we want to be able to highlight when the instanced mesh is in range of the player\u2019s forces. Since we handle this via a post-processing effect, and instanced meshes cannot apply different post-processing parameters for individual instances, we needed to create another UInstancedStaticMeshComponent for the highlighted version of each mesh. Whenever the SwarmSquiddieInstance overlaps with one of the player\u2019s forces, it reports to the SwarmSquiddieManager and is assigned a highlighted instance instead of the regular one.\n[img]{STEAM_CLAN_IMAGE}/38104262/a3e673550a4917e662484a1b17ba141a095da7c1.gif[/img]\n(SwarmSquiddies that are in influence range are highlighted)\n\n[h2]Extras:[/h2]\nIn order to make the SwarmSquiddies feel a bit more lively, we decided to let them wiggle at random intervals and emit sound- and visual effects when they are defeated. We achieve the wiggling by adjusting the Squiddies\u2019 rotation according to a timeline, which unfortunately impacts the game\u2019s performance, but we felt this trade-off between performance and liveliness was worth it in this case.\n\n[h2]Placement:[/h2]\nWe decided to use the foliage tool provided by UE4 for convenient placement of multiple Squiddies at once. This is achieved easily by creating an \u201cActor Foliage\u201d-object and specifying the actor to spawn using the foliage tool. The foliage tool can then be enabled by switching from Select to Foliage in the toolbar. The individual brush settings also allow for variations in scale and rotation, which is very convenient for us.\n[img]{STEAM_CLAN_IMAGE}/38104262/808865eb15be87600b4748099ce836deb199273e.png[/img]\n(Left: Brush settings when creating the \"Actor Foliage\"-object. Right: Settings when selecting the brush for foliage painting.)\n[img]{STEAM_CLAN_IMAGE}/38104262/c4b6f38315bb5f72b293aa6753db1b3024e37b13.gif[/img]\n(Painting a concave object with SwarmSquiddies)\n[img]{STEAM_CLAN_IMAGE}/38104262/ea6a4e4480308ab4406c6c6ea5452e4ff0b22e60.gif[/img]\n(Removing the previously placed SwarmSquiddies)\n\n\n[h2]Future improvements:[/h2]\nIn the future, we want to test if we can further reduce the performance overhead of our SwarmSquiddies. We would first attempt to implement them as a Niagara Particle System and see if that can help with the performance overhead of the Squiddies\u2019 wiggling. This could potentially work by employing a single animation across all Squiddies. They should still keep their functionalities, like being influenceable and highlighted by the player, so it remains to be seen if we can achieve this with Niagara.\n\n\nAs always, if you have any inquiries about our SwarmSquiddies, or can think of any neat performance improvements for them, do not hesitate to let us know!\n",
+      "key": "1270680::59b4c8b81bb3ee8bedf991c917199548ab63848d",
+      "tags": [
+        {
+          "feature": "Therefore, we created the SwarmSquiddies which are spread all across the interior of the whale, covering walls, floor and decor."
+        },
+        {
+          "feature": "Having large masses of Squiddies means rendering many of the same mesh simultaneously, which instanced static meshes are predestined for."
+        },
+        {
+          "feature": "In UE4, instanced static meshes are managed using the UInstancedStaticMeshComponent, which can dynamically add or remove instances and can be used to adjust their transform."
+        },
+        {
+          "feature": "We split up the logic between the SwarmSquiddieManager, which controls the rendering of the meshes, and the SwarmSquiddieInstance, which handles the transform and logic for each individual Squiddie."
+        },
+        {
+          "feature": "This includes the Squiddie being highlighted, influenced or defeated by the player."
+        },
+        {
+          "feature": "Whenever we create a SwarmSquiddieInstance, that actor registers itself with the SwarmSquiddieManager in that level and is assigned a static mesh instance."
+        },
+        {
+          "feature": "In order to provide a little more variance in the distribution of the Squiddies, we have the SwarmSquiddieManager manage three different UInstancedStaticMeshes."
+        },
+        {
+          "feature": "The SwarmSquiddieInstance is assigned one of those three meshes at random when it is placed in the editor."
+        },
+        {
+          "feature": "With our current implementation, we can place around 2.000 SwarmSquiddies in an empty level, while the frame rate remains at 50+ fps on a mid-tier PC."
+        },
+        {
+          "feature": "The player can interact with all of these Squiddies."
+        },
+        {
+          "feature": "Since we handle this via a post-processing effect, and instanced meshes cannot apply different post-processing parameters for individual instances, we needed to create another UInstancedStaticMeshComponent for the highlighted version of each mesh."
+        },
+        {
+          "feature": "Whenever the SwarmSquiddieInstance overlaps with one of the player\u2019s forces, it reports to the SwarmSquiddieManager and is assigned a highlighted instance instead of the regular one."
+        },
+        {
+          "feature": "In order to make the SwarmSquiddies feel a bit more lively, we decided to let them wiggle at random intervals and emit sound- and visual effects when they are defeated."
+        },
+        {
+          "feature": "We achieve the wiggling by adjusting the Squiddies\u2019 rotation according to a timeline, which unfortunately impacts the game\u2019s performance, but we felt this trade-off between performance and liveliness was worth it in this case."
+        },
+        {
+          "feature": "We decided to use the foliage tool provided by UE4 for convenient placement of multiple Squiddies at once."
+        },
+        {
+          "feature": "This is achieved easily by creating an \u201cActor Foliage\u201d-object and specifying the actor to spawn using the foliage tool."
+        },
+        {
+          "feature": "The foliage tool can then be enabled by switching from Select to Foliage in the toolbar."
+        },
+        {
+          "feature": "The individual brush settings also allow for variations in scale and rotation, which is very convenient for us."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #005",
+      "date": "2022-03-16 04:32:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535823170040",
+      "content": "[h2]Idea:[/h2]\nIn order to make the world of WHALIEN more lively and immersive, we decided to make our music diegetic, meaning that the audio sources are actually located in the world. We accomplished this by placing loudspeakers all over our levels. So, the players can determine what direction the music is coming from and how far the speaker is away.\n\nWe first tested this idea in one of our elevator levels, where we wanted the elevator to play its smooth elevator tunes by itself. The player should hear the music fade in as they approached the lift. We liked this concept of localized music so much that we decided to implement it throughout the entire game.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/8bc0cdea9b5ffdb03737db22271b41e3a6ce0a8c.png[/img]\n(The current model of the LevelMusicPlayer is a gramophone)\n\n[h2]Implementation:[/h2]\nConveniently, UE4 already provides a lot of audio functionality so that we were able to implement the entire system without the need for any middleware or the likes. At the core of our LevelMusicSystem, we have the LevelMusicPlayer that plays music in a conical shape in front of it.\nThe more intricate task was synchronizing all LevelMusicPlayers, since it was very off-putting if the tracks were running even a little bit asynchronously. We had to make sure that the LevelMusicPlayers started their playback at the same time when they were loaded in. This was simple when LevelMusicPlayers were placed in the same level, because we could simply start playback in the [i]BeginPlay()[/i] function. If, however, the LevelMusicPlayers were located in different levels, we couldn\u2019t guarantee that the [i]BeginPlay()[/i] functions were called simultaneously, so we had to come up with another solution.\nIn order to save processing power, we also decided to stop playback whenever the player left the LevelMusicPlayer\u2019s range and restart it once they re-entered the range. Therefore, we needed to know at which timestamp to restart the LevelMusicPlayer on re-entering.\nWe solved these problems by creating the LevelMusicPlayerManager, a static class that keeps track of all music tracks and at what time they were started. Whenever a LevelMusicPlayer wants to play its track, it first needs to ask the LevelMusicPlayerManager when this track was started first to calculate the timestamp at which it should start playback.\n\nThe music tracks should loop indefinitely, and they need to be restarted at the correct playback time when the track has already looped before. In order to determine whether a track has looped, we need to know its duration. We did a bit of research and eventually found a way to retrieve the duration of the .wav files in a USoundCue, which we could use to determine if our track had already looped. Below you can see a code sample of how we retrieve a SoundCue\u2019s duration.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/e0d2b0374dc10712b30ed0fa8e3a3ba6bad38e94.png[/img]\n(Code sample for retrieving a USoundCue's duration)\n\nIn order to ensure that our LevelMusicPlayers could not be overshadowed by an abundance of other sound effects in the area, we gave them the highest priority. We then changed the SoundConcurrencySettings in UE4 to cull music and SFX solely based on priority, whenever too many audio sources are playing simultaneously.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/add11e8802d3f617d60f600f56b199360cc7e096.png[/img]\n(Left: Project setting to define the SoundConcurrency-class; Top-Right: SoundConcurrency setting to cull music based on priority; Bottom-Right: Set priority in our LevelMusicPlayer's AudioComponent)\n\n[h2]Usage: [/h2]\nBesides providing a nice feeling of presence, we can use our LevelAudioSystem to set auditory highlights in our levels. If we want the player to check out a particular area, we can make the music come from that direction only. The music then slowly fades in as the player approaches the designated area. We can also start and stop individual LevelMusicPlayers at will in order to dynamically change the highlighted area.\nThe feature also provides an automatic way of fading between music tracks when the player is walking from one LevelMusicPlayer playing track A to another playing track B. Simply by moving away from A and towards B, the built-in attenuation system in UE4 creates a smooth transition between the two tracks.\n\nAs another small detail, we made the LevelMusicPlayer react to the players\u2019 abilities. When they influence it with Mr Push - the pearl that repulses everything in its vicinity - we apply a low-pass filter to remove all the high frequencies. When the player throws Mrs Pull - the pearl that attracts everything in its vicinity - we apply a high-pass filter to remove all the low frequencies.\n\n[h2]Future:[/h2]\nWe still want to create a prettier model as well as an animation for our speakers. Ideally, the speakers would bounce up and down with the rhythm and emit neat particle effects.\n\n[hr][/hr]\nWe created a small demonstration video for you to hear the results of our new LevelMusicPlayers: [previewyoutube=bSsDWNsBuf4;full][/previewyoutube]\n\nAs always, if you have any questions about our LevelMusicSystem, we are happy to answer them!\n- Andi, Ralf\n",
+      "key": "1270680::6a8718298c5262a2b347d364b60fb9f0672de288",
+      "tags": [
+        {
+          "feature": "In order to make the world of WHALIEN more lively and immersive, we decided to make our music diegetic, meaning that the audio sources are actually located in the world."
+        },
+        {
+          "feature": "We accomplished this by placing loudspeakers all over our levels."
+        },
+        {
+          "feature": "So, the players can determine what direction the music is coming from and how far the speaker is away."
+        },
+        {
+          "feature": "We first tested this idea in one of our elevator levels, where we wanted the elevator to play its smooth elevator tunes by itself."
+        },
+        {
+          "feature": "The player should hear the music fade in as they approached the lift."
+        },
+        {
+          "feature": "We liked this concept of localized music so much that we decided to implement it throughout the entire game."
+        },
+        {
+          "feature": "At the core of our LevelMusicSystem, we have the LevelMusicPlayer that plays music in a conical shape in front of it."
+        },
+        {
+          "feature": "We solved these problems by creating the LevelMusicPlayerManager, a static class that keeps track of all music tracks and at what time they were started."
+        },
+        {
+          "feature": "Whenever a LevelMusicPlayer wants to play its track, it first needs to ask the LevelMusicPlayerManager when this track was started first to calculate the timestamp at which it should start playback."
+        },
+        {
+          "feature": "In order to determine whether a track has looped, we need to know its duration."
+        },
+        {
+          "feature": "We did a bit of research and eventually found a way to retrieve the duration of the .wav files in a USoundCue, which we could use to determine if our track had already looped."
+        },
+        {
+          "feature": "In order to ensure that our LevelMusicPlayers could not be overshadowed by an abundance of other sound effects in the area, we gave them the highest priority."
+        },
+        {
+          "feature": "We then changed the SoundConcurrencySettings in UE4 to cull music and SFX solely based on priority, whenever too many audio sources are playing simultaneously."
+        },
+        {
+          "feature": "Besides providing a nice feeling of presence, we can use our LevelAudioSystem to set auditory highlights in our levels."
+        },
+        {
+          "feature": "If we want the player to check out a particular area, we can make the music come from that direction only."
+        },
+        {
+          "feature": "The music then slowly fades in as the player approaches the designated area."
+        },
+        {
+          "feature": "We can also start and stop individual LevelMusicPlayers at will in order to dynamically change the highlighted area."
+        },
+        {
+          "feature": "The feature also provides an automatic way of fading between music tracks when the player is walking from one LevelMusicPlayer playing track A to another playing track B."
+        },
+        {
+          "feature": "Simply by moving away from A and towards B, the built-in attenuation system in UE4 creates a smooth transition between the two tracks."
+        },
+        {
+          "feature": "As another small detail, we made the LevelMusicPlayer react to the players\u2019 abilities."
+        },
+        {
+          "feature": "When they influence it with Mr Push - the pearl that repulses everything in its vicinity - we apply a low-pass filter to remove all the high frequencies."
+        },
+        {
+          "feature": "When the player throws Mrs Pull - the pearl that attracts everything in its vicinity - we apply a high-pass filter to remove all the low frequencies."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #003",
+      "date": "2022-02-16 03:37:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335198888082671",
+      "content": "We decided to create a sort of \u201cminecart\u201d system for WHALIEN in order to lighten up the gameplay. Moreover, this system should serve as a fun and interactive means of transportation, and allow the player to push and pull the minecarts with their magnetic forces.\n[img]{STEAM_CLAN_IMAGE}/38104262/b44430e14ec8c6c4b42e673dbcecc0532f936854.gif[/img]\n(A splinecart being pushed downhill)\n\n[h2]Rails:[/h2]\nFor the rails, we once again resorted to our trusty friends - Splines and SplineMeshes. The Splines define the shape of the rails and for each segment of the spline, the rail is represented by a SplineMesh.\nSince we create and calculate our SplineMeshes in the Blueprint Construction Script, the rail mesh instantly adapts to changes in the underlying spline, simplifying the placement of the rails significantly.\n[img]{STEAM_CLAN_IMAGE}/38104262/b4b070853a2768085ee6ae7c282190ab6a99456f.gif[/img]\n(The rail can be created and adjusted easily in the editor)\n\nThe Blueprint implementation of SplineMeshComponents provides all elements we need to update the mesh in real time in the editor. The magic Blueprint-node for this is [i]SetStartAndEnd[/i], which takes the location and tangent at the start and end of the underlying spline segment and warps the mesh to overlap exactly with the spline.\n\n[h2](Spline-)carts:[/h2]\nMovement on the rails is handled by our SplinecartComponent (named for obvious reasons). This component can be attached to any actor, allowing it to move along the rail and turning the actor into a \u201cSplinecart\u201d.\nEssentially any object can be turned into a Splinecart using the SplinecartComponent - even objects that the player cannot influence because they may be too heavy. For this, we added the option for the Splinecart to move automatically with a given speed.\n[img]{STEAM_CLAN_IMAGE}/38104262/425fe7fe355d73f85dab7c50acc8301ebd3c62ea.gif[/img]\n(A ducky moving along the rail by themselves)\n\nBy default, the Splinecart\u2019s physics simulation and Tick-function is disabled. We only enable them whenever the Splinecart is supposed to move along the rail in order to conserve processing power. When that\u2019s the case, we constrain the minecart to the rail by overwriting its location and velocity each frame. Each frame, we calculate the minecart\u2019s closest location on the rail using the functions [i]FindInputKeyClosestToWorldLocation()[/i] and [i]GetTransformAtSplineInputKey()[/i]. We calculate the new velocity by multiplying the current velocity ([i]GetPhysicsLinearVelocity[/i]) with the direction along the spline ([i]GetDirectionAtSplineInputKey[/i]).\n[img]{STEAM_CLAN_IMAGE}/38104262/b5a898f10ebbb515eea366ed23b6d1a1223fd51d.png[/img]\n(Code to calculate the position and velocity of our splinecart)\n\n[h2]Difficulties:[/h2]\nInitially we had difficulties retaining the player on the minecart while it was moving. This was especially noticeable at downhill passages and in sharp corners. We fixed these issues by applying two small changes:\nThe bug while moving downhill originated from the minecart\u2019s position being updated after the character. That meant that we would sometimes offset the minecart into the character, causing the character to slide around on the Splinecart. We fixed this issue by setting the SplineCartComponent\u2019s TickGroup to [i]ETickingGroup::TG_PrePhysics[/i] to guarantee that the splinecart is always updated before the character has its gravity applied.\nIn sharp corners the minecart was rotated very abruptly, which on the one hand looked very strange and on the other hand would sometimes throw the character off the minecart. \ncausing the character to fall off frequently. We fixed this problem by interpolating between the minecart\u2019s current and its desired rotation, based on the current position along the spline. Interpolating the rotation is particularly easy in UE4 using the function [i]FMath::QInterpTo()[/i].\n[img]{STEAM_CLAN_IMAGE}/38104262/51b81c902d79c2a9f302dfb6a240bdb6c77dbfb2.gif[/img]\n(Splinecart going around a steep corner. Left: Without the fixes; Right: with the proposed fixes)\n\nIf you would like to know anything else about our splinecarts, ask away!\n\n- Andi, Ralf\n",
+      "key": "1270680::7541c28ad93bea2f50e5368ecc2b51d40d6ae707",
+      "tags": [
+        {
+          "feature": "We decided to create a sort of \u201cminecart\u201d system for WHALIEN in order to lighten up the gameplay."
+        },
+        {
+          "feature": "Movement on the rails is handled by our SplinecartComponent (named for obvious reasons)."
+        },
+        {
+          "feature": "This component can be attached to any actor, allowing it to move along the rail and turning the actor into a \u201cSplinecart\u201d."
+        },
+        {
+          "feature": "For this, we added the option for the Splinecart to move automatically with a given speed."
+        },
+        {
+          "bug": "We fixed these issues by applying two small changes: The bug while moving downhill originated from the minecart\u2019s position being updated after the character."
+        },
+        {
+          "bug": "We fixed this issue by setting the SplineCartComponent\u2019s TickGroup to ETickingGroup::TG_PrePhysics to guarantee that the splinecart is always updated before the character has its gravity applied."
+        },
+        {
+          "bug": "We fixed this problem by interpolating between the minecart\u2019s current and its desired rotation, based on the current position along the spline."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #002",
+      "date": "2021-11-17 11:17:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4227186657137747627",
+      "content": "Whale hello there to our 2nd DEVLOG!\nWhat have we been up to? \n\n\nWe added * RAILCARTS*\n[list]\n[*] Carts that can move along rails!\n[*] Carts can be Pushed and Pulled with your Abilities!\n[*] Ernest prefers comfortable cart riding to walking now.\n[/list]\n[previewyoutube=4s4sMBKpLtA;full][/previewyoutube]\n\nOur Art Department made a Maintenance Closet:\n[img]{STEAM_CLAN_IMAGE}/38104262/18caafd6ee95e449795b4639ff2cec15268b903e.png[/img]\n\nAnd also polished up one of the science laboratories:\n[img]{STEAM_CLAN_IMAGE}/38104262/adabd8e5f80ae637267834a38daac797f31bd65a.png[/img][img]{STEAM_CLAN_IMAGE}/38104262/fb9b349eabed3804dca0aedaf3cc535d0d0d6734.png[/img]\n\nWe also continued work on the menu but won\u2019t show any updates on that,.... YET! \nAAAAND we worked on a TOP SECRET new Level, here is a tiny teaser:\n\n[img]{STEAM_CLAN_IMAGE}/38104262/2ef29a4ce6debfc9548232dd92afbade754ff085.png[/img]",
+      "key": "1270680::c58321a4e6688e30334ed3a6cb787bb26f234223",
+      "tags": [
+        {
+          "feature": "We added * RAILCARTS*"
+        },
+        {
+          "feature": "Carts that can move along rails!"
+        },
+        {
+          "feature": "Carts can be Pushed and Pulled with your Abilities!"
+        },
+        {
+          "feature": "Our Art Department made a Maintenance Closet:"
+        },
+        {
+          "feature": "And also polished up one of the science laboratories:"
+        },
+        {
+          "feature": "AAAAND we worked on a TOP SECRET new Level, here is a tiny teaser:"
+        }
+      ]
+    },
+    {
+      "title": "WHALIEN - Devlog #001",
+      "date": "2021-10-19 14:55:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4698935641774283200",
+      "content": "[h1][b]Hey Finsiders! [/b][/h1]\nWHALIEN now has a [b]Devlog[/b] in wich we share a glimpse [b]behind the scenes![/b]\nLet us get right into it and show you what we have been up to:\n\n[h2]We have been prototyping two new Levels:[/h2]\n[b]\u201cOne of a grind\u201d[/b] features a thrilling conveyor belt ride ending in a big scary Grinder\n\n[img]{STEAM_CLAN_IMAGE}/38104262/f0df9549ddb1f9276866d643f40b74912e82d3c8.gif[/img]\n\nIn [b]\u201cThe pipe is real!\u201d[/b] you need to solve a tricky puzzle featuring, you guessed it: PIPES!  \n\n[img]{STEAM_CLAN_IMAGE}/38104262/d781181c08edbca5f033501ab2b1188d31394e32.gif[/img]\n\nSimultaneous our Artists started started to work on Art Assets for a Sewer Level, here is a sneak peak:\n\n[img]{STEAM_CLAN_IMAGE}/38104262/673b1fb7a706b90edd074ff82e133eefd35a1001.gif[/img]\n\nWe implemented a new [b]Quest system[/b]. You can now receive quests from the Springpeople (our NPCs) living in the whale. After doing what the Springpeople ask of you, they reward you with a collectible that is then placed in your Phonebook, also known as the Menu.\n\n[img]{STEAM_CLAN_IMAGE}/38104262/239905bda22e842f31b6be5bb0159d66c4d2ee40.gif[/img]\n\nSpeaking of menus, those received some major updates:\n[list]\n[*] Collectibles are now stored in the Collectible Submenu and can be viewed on a per-Level basis \n[*] We added a Story-Log to reminiscence and re-read previous dialogue that happens over the course of the game\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/38104262/531d7f64223e6ea32d7d3c3ed91d0eb827234dfd.png[/img]\n[i]To avoid spoilers some parts are blacked out[/i]\n\nOther Stuff\n[list]\n[*] Doors work 157% better now!\n[*] More Dialogue!\n[/list]\nFor now that is all, if you have any questions comment below or [url=https://discord.com/invite/5EK9GYMKrU]join our Discord![/url]\nyour [b]Forbidden Folds[/b] <3",
+      "key": "1270680::98676720539026b6caf0aad784d6fd5c0b862030",
+      "tags": [
+        {
+          "feature": "We have been prototyping two new Levels:"
+        },
+        {
+          "feature": "We implemented a new Quest system."
+        },
+        {
+          "feature": "Collectibles are now stored in the Collectible Submenu and can be viewed on a per-Level basis"
+        },
+        {
+          "feature": "We added a Story-Log to reminiscence and re-read previous dialogue that happens over the course of the game"
+        },
+        {
+          "feature": "More Dialogue!"
+        }
+      ]
+    },
+    {
+      "title": "Demo HotFix #1",
+      "date": "2021-08-26 10:42:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4018887653980387019",
+      "content": "In some cases the scale near the end did not work properly, we added an alternate route that allows to progess anyway if that happens.",
+      "key": "1270680::169df384aac688fd2ae3abcb1dcb1e922def41b9",
+      "tags": [
+        {
+          "bug": "In some cases the scale near the end did not work properly, we added an alternate route that allows to progess anyway if that happens."
+        }
+      ]
+    }
+  ]
+}

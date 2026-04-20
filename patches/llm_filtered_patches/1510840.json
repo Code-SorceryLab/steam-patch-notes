@@ -1,0 +1,345 @@
+{
+  "appId": "1510840",
+  "count": 10,
+  "notes": [
+    {
+      "title": "Progress report 6-18 August 2024",
+      "date": "2024-08-18 14:51:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6909171012607458189",
+      "content": "Hey friends, fans & family!\n\nI was away last sunday so couldn't post an update and decided to wait a week instead! Here's what I've been up to the last two weeks:\n\nBug fixing:\n- Fixed so \"killed\" heroes are counted properly for side objectives that depend on that variable\n- Fixed bugs relating to \"AllHeroesShouldTakeDamage\" side objective\n- Fixed bug where the \"EscortVIP\" mission type could not be finished because code that was supposed to fire when reaching a tile was not being executed anymore\n- Fixed so chest reward content is not revealed when the side objective has been failed\n- Fixed knock back bug when units are on the edge of the map\n- Fixed so the tiledetails panel doesn't look like crap before a mission starts\n- Fixed so energy is displayed correctly in the loadout panel\n\n[img]{STEAM_CLAN_IMAGE}/41411795/c9e8a9750fd5def0b181a2abe3b9eef3041fa65a.png[/img]\n\nGameplay adjustments/improvements:\n- Changed the XP necessary to level up from 10 to 6. Each mission rewards you with 4 XP so you'll level up roughly every other mission. There is however a type of reward that generates bonus XP and you can gain extra XP for an individual hero by training in camp too...\n- Increased number of turns needed to stay alive in \"ProtectVIP\" missions\n- Added restoration of 1 energy (energy is used for special skills) when a unit performs their basic attack. You HAVE to be active to restore energy in other words and can't stand around to wait for it to happen automatically\n- Added energy icon restoration animation\n- Added a third random skill in the skill tree. This means that there will be a choice to make between 3 different skills instead of 2 in some places",
+      "key": "1510840::05bcfbc160f32f6c5be52655eeefc5a50d2f3b8d",
+      "tags": [
+        {
+          "bug": "- Fixed so \"killed\" heroes are counted properly for side objectives that depend on that variable"
+        },
+        {
+          "bug": "- Fixed bugs relating to \"AllHeroesShouldTakeDamage\" side objective"
+        },
+        {
+          "bug": "- Fixed bug where the \"EscortVIP\" mission type could not be finished because code that was supposed to fire when reaching a tile was not being executed anymore"
+        },
+        {
+          "bug": "- Fixed so chest reward content is not revealed when the side objective has been failed"
+        },
+        {
+          "bug": "- Fixed knock back bug when units are on the edge of the map"
+        },
+        {
+          "bug": "- Fixed so the tiledetails panel doesn't look like crap before a mission starts"
+        },
+        {
+          "bug": "- Fixed so energy is displayed correctly in the loadout panel"
+        },
+        {
+          "balance_change": "- Changed the XP necessary to level up from 10 to 6."
+        },
+        {
+          "balance_change": "- Increased number of turns needed to stay alive in \"ProtectVIP\" missions"
+        },
+        {
+          "feature": "- Added restoration of 1 energy (energy is used for special skills) when a unit performs their basic attack."
+        },
+        {
+          "feature": "- Added energy icon restoration animation"
+        },
+        {
+          "feature": "- Added a third random skill in the skill tree."
+        }
+      ]
+    },
+    {
+      "title": "Progress report 22 July - 5 August (vacation)",
+      "date": "2024-08-05 15:18:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728350646164",
+      "content": "Hi friends, fans & family!\n\nI had a little vacation where I slacked off for a bit so didn't get all that much done in this period but I did manage to do the following:\n\n- Fixed zooming so that it zooms in to the middle of the action instead of the attack point. This allows the player to see the attacker better with ranged attacks\n- Made sure that every mission type currently on the map is unique.\n- Fixed so the victory panel looks decent\n- Reworked the mission objectives panel and the mission preview panel so I can reuse the logic in both places and make sure that the graphics are the same (avoids duplication of code and assets)\n\n[img]{STEAM_CLAN_IMAGE}/41411795/6d6d1ddd53aeb7679a33f012cb6b520f575eea26.png[/img]\n\n- Fixed some side objective bugs\n- Removed the \"defeat\" panel. Losing a mission OR losing all your heroes in one mission will end the current run and lead straight to game over screen\n- uploaded a new build to test out on the Steam Deck\n- tested the game on the Deck\n\nNext update will probably be a little scarce too since I have a busy week but progress is steady now at least :)\n\n// Luis\n\n\n",
+      "key": "1510840::a58c4912754de61df6294ad6b6e3d9b917807543",
+      "tags": [
+        {
+          "bug": "- Fixed zooming so that it zooms in to the middle of the action instead of the attack point. This allows the player to see the attacker better with ranged attacks"
+        },
+        {
+          "bug": "- Fixed so the victory panel looks decent"
+        },
+        {
+          "bug": "- Fixed some side objective bugs"
+        }
+      ]
+    },
+    {
+      "title": "Progress report 15-21 July",
+      "date": "2024-07-21 09:54:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959975831211",
+      "content": "Hi friends, fans & family!\n\nThis week has mostly been about adding side objectives to the game. Here's everything that's been done:\n\n[b]Side Objectives:[/b]\n- Missions now have one main objective and one side objective. Each of the objectives gives one reward with no reward appearing twice.\n\n- The treasure reward has now been fully implemented\n\n- Side objectives can be in one of three states: failed, cleared or in progress\n\n- The current objectives in place are: \n[list]\n[*] Clear main objective in x turns\n[*] Defended unit/structure etc takes 0 damage\n[*] Move x tiles in total around the map\n[*] No hero is knocked out\n[*] All heroes take damage\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/41411795/aa4e28c4eda30c1fdb8bd9268f1a5cec142e2f4d.png[/img]\n\nThere are plenty of more objectives in the pipe so there will be a bunch of them. Some combinations of main objectives - side objectives will not appear. For example: defend a unit for x turns makes no sense together with the \"clear main objective in x turns\".\n\n- Started redesigning objectives panel\n\n- Started redesigning cleared mission screen\n\n- Stared redesigning the mission brief panel\n\nRefactoring:\n- Lots of stuff from the old reward system has been scrapped, heavily modified or moved around. \n \nNext week will mostly be about UI design and getting all these panels in place, testing the side objectives extensively and I will probably add 1 or 2 more if I have time.\n\n// Luis\n",
+      "key": "1510840::895f35bcc9d443c58f100aac8bc0403a5b09252c",
+      "tags": [
+        {
+          "feature": "- Missions now have one main objective and one side objective. Each of the objectives gives one reward with no reward appearing twice."
+        },
+        {
+          "feature": "- The treasure reward has now been fully implemented"
+        },
+        {
+          "feature": "- Side objectives can be in one of three states: failed, cleared or in progress"
+        },
+        {
+          "feature": "- The current objectives in place are: Clear main objective in x turns Defended unit/structure etc takes 0 damage Move x tiles in total around the map No hero is knocked out All heroes take damage"
+        },
+        {
+          "feature": "- Started redesigning objectives panel"
+        },
+        {
+          "feature": "- Started redesigning cleared mission screen"
+        },
+        {
+          "feature": "- Stared redesigning the mission brief panel"
+        }
+      ]
+    },
+    {
+      "title": "Progress Report 8-14 July",
+      "date": "2024-07-14 14:35:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704277451354",
+      "content": "Hi friends, fans & family!\n\nHere's the progress report for 8-14 July \n\nLevel up screen:\n- undo functionality has been fully implemented so you can change your mind about which skills to pick while on this screen.\n\nSkills:\n- riposte has been fixed so it doesn't appear among active skills and it now has a corresponding icon and not a placeholder\n- stick & move has gotten a brand new icon and an issue with the indicator behaving oddly when you attack before moving has been fixed\n- all known bugs related to the flying skill have been fixed\n\nMap:\n- changed the code so the max nodes on the map at once is 3 and not 5. This is definitely not set in stone\n- updated mission briefs\n\n[img]{STEAM_CLAN_IMAGE}/41411795/cf8e66fdc1c760f51415ccc11553d0443f804f08.png[/img]\n\nRewards:\n- added bandage/first aid reward. Heroes won't die when they fall in battle but they will get wounds that are \"permanent\" and give all kinds of penalties. One of the few (or only) ways of getting rid of them will be through the use of bandages and treating the wound in camp\n- added XP reward. Just bonus XP on top of the amount you get after a mission\n- changed code so you can't get 2 units of the same reward on one single mission\n- removed morale reward.\n- changed code so you have one reward for the main objective and one for the side objective\n- fixed treasure reward icon\n\nLoss condition:\n- A run will end when all units fall during one mission OR if you fail the main objective.\n\nStatus effects:\n- fixed a bug that occurred when trying to activate a status effect on a unit that already has said effect\n",
+      "key": "1510840::3ca6186f4f95784f783e108a5c49f4bdbe96f429",
+      "tags": [
+        {
+          "feature": "- undo functionality has been fully implemented so you can change your mind about which skills to pick while on this screen."
+        },
+        {
+          "bug": "- riposte has been fixed so it doesn't appear among active skills and it now has a corresponding icon and not a placeholder"
+        },
+        {
+          "bug": "- stick & move has gotten a brand new icon and an issue with the indicator behaving oddly when you attack before moving has been fixed"
+        },
+        {
+          "bug": "- all known bugs related to the flying skill have been fixed"
+        },
+        {
+          "balance_change": "- changed the code so the max nodes on the map at once is 3 and not 5. This is definitely not set in stone"
+        },
+        {
+          "feature": "- added bandage/first aid reward. Heroes won't die when they fall in battle but they will get wounds that are \"permanent\" and give all kinds of penalties. One of the few (or only) ways of getting rid of them will be through the use of bandages and treating the wound in camp"
+        },
+        {
+          "feature": "- added XP reward. Just bonus XP on top of the amount you get after a mission"
+        },
+        {
+          "balance_change": "- changed code so you can't get 2 units of the same reward on one single mission"
+        },
+        {
+          "balance_change": "- removed morale reward."
+        },
+        {
+          "balance_change": "- changed code so you have one reward for the main objective and one for the side objective"
+        },
+        {
+          "bug": "- fixed treasure reward icon"
+        },
+        {
+          "bug": "- fixed a bug that occurred when trying to activate a status effect on a unit that already has said effect"
+        }
+      ]
+    },
+    {
+      "title": "Progress 1-7 July",
+      "date": "2024-07-07 14:37:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267346821667",
+      "content": "1-7 July\nHi friends, fans & family! \n\nThis week I\u2019ve been doing all sorts of small fixes and tweaks:\n\n[b]Gameplay:[/b]\n- XP for kills has been removed. Individual XP is still at thing bug all heroes will get the same amount of XP per mission except if they have certain skills or items that give bonuses. There are other ways of getting XP too\u2026\n\n- Defense and armor has been merged into one. Wearing an armor gives you defense points as do certain skills and standing on forest tiles etc. The difference is that the armor points get depleted when you take damage while the tile bonuses are valid for every hit you take. Example: Def +1 from the forest tile means every attack will be reduced by 1 point while armor 6 means you can take 6 damage before your HP is affected. I removed the armor icon to reduce confusion. Armor might \u201cregenerate\u201d every turn but that depends on how it\u2019s received\u2026\n\n[img]{STEAM_CLAN_IMAGE}/41411795/72572299d0540134b2e3ff03ad655bdb9a2b8142.png[/img]\n\n- Cooldowns have been replaced by stamina. Skills will now have a stamina cost to use so you can potentially use them several times in a row although some skills might still have a limited number of uses (potions and scrolls work that way). This also means that different heroes have different levels of stamina and this will be another thing that the player needs to manage.\n\n[b]Other:[/b]\n- Added one of those fancy disclaimer texts that developers use to explain why their demo isn\u2019t as good as it could be :D\n[img]{STEAM_CLAN_IMAGE}/41411795/e8fa721925bd42ec6bec49139bdba6ccc9f1933f.png[/img]\n\n[b]Fixes/improvements:[/b]\n- Fixed some item descriptions\n- Fixed meditation skill so it restores stamina instead of reducing cooldowns\n- Fixed skill icons to show the correct number of uses and be greyed out when the hero doesn\u2019t have enough stamina to use a particular skill\n- Fixed so items with a fixed number of uses are properly activated/deactivated. \n- Fixed missile and lightning scrolls\n- Changed XP rewards per mission. Heroes will maybe level up every other mission at the current rate. Might become a difficulty parameter that the player can tweak\n- Adjusted dialogue panel\n- Fixed so popup panel when getting a new skill has the proper font, graphics etc\n- Removed purple outline on destination tiles in escort missions\n- Made a new build for the Steamdeck so I can test the game and hunt for bugs when I'm not near the computer\n\nLoads of testing of skill and finding new bugs to be fixed but also verified that quite a few work properly. \n\nUntil next time!",
+      "key": "1510840::4f9366fabcb09751a6d8a871ea507f132ba6acf8",
+      "tags": [
+        {
+          "balance_change": "- XP for kills has been removed. Individual XP is still at thing bug all heroes will get the same amount of XP per mission except if they have certain skills or items that give bonuses. There are other ways of getting XP too\u2026"
+        },
+        {
+          "balance_change": "- Defense and armor has been merged into one. Wearing an armor gives you defense points as do certain skills and standing on forest tiles etc. The difference is that the armor points get depleted when you take damage while the tile bonuses are valid for every hit you take. Example: Def +1 from the forest tile means every attack will be reduced by 1 point while armor 6 means you can take 6 damage before your HP is affected. I removed the armor icon to reduce confusion. Armor might \u201cregenerate\u201d every turn but that depends on how it\u2019s received\u2026"
+        },
+        {
+          "balance_change": "- Cooldowns have been replaced by stamina. Skills will now have a stamina cost to use so you can potentially use them several times in a row although some skills might still have a limited number of uses (potions and scrolls work that way). This also means that different heroes have different levels of stamina and this will be another thing that the player needs to manage."
+        },
+        {
+          "feature": "- Added one of those fancy disclaimer texts that developers use to explain why their demo isn\u2019t as good as it could be :D"
+        },
+        {
+          "bug": "- Fixed some item descriptions"
+        },
+        {
+          "bug": "- Fixed meditation skill so it restores stamina instead of reducing cooldowns"
+        },
+        {
+          "bug": "- Fixed skill icons to show the correct number of uses and be greyed out when the hero doesn\u2019t have enough stamina to use a particular skill"
+        },
+        {
+          "bug": "- Fixed so items with a fixed number of uses are properly activated/deactivated."
+        },
+        {
+          "bug": "- Fixed missile and lightning scrolls"
+        },
+        {
+          "balance_change": "- Changed XP rewards per mission. Heroes will maybe level up every other mission at the current rate. Might become a difficulty parameter that the player can tweak"
+        },
+        {
+          "balance_change": "- Adjusted dialogue panel"
+        },
+        {
+          "bug": "- Fixed so popup panel when getting a new skill has the proper font, graphics etc"
+        },
+        {
+          "bug": "- Removed purple outline on destination tiles in escort missions"
+        },
+        {
+          "feature": "- Made a new build for the Steamdeck so I can test the game and hunt for bugs when I'm not near the computer"
+        }
+      ]
+    },
+    {
+      "title": "Progress update 24-30 June 2024",
+      "date": "2024-06-30 06:53:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267320130918",
+      "content": "[b]Progress updated 24-30 June 2024[/b]\n\nHi friends, fans & family! \n\nThis week I\u2019ve been focusing on the settings screen and I\u2019ve added the following options:\n\n- Turn speed: determines how quickly the enemy acts.\n- Auto end turn: If this option is turned off you have to actually press the end turn button before the turn shifts to the enemy.\n- Screenshake: toggle on/off screenshake for hit impacts.\n- Zoom to attack: toggle on/off the zoom animation that moves closer to the action when performing certain attacks. \n- Swingmeter: toggle on/off the timing mini game when performing certain attacks. Damage is randomly determined when turned off.\n- Swingmeter speed: determines how quickly the swingmeter moves.\n- Enemy spawns: determines the number of enemy reinforcements. More enemies makes the game harder (duh!).\n- Hero health: determines how much of a beating your team can take. Less health makes the game harder.\n- Resolution: choose between 1280x800 (Steamdeck), 1280x720 (Nintendo Switch), 1920x1080 (Full HD), 2560x1440, 1368x768, 960x540\n- Frame rate: choose between 30 FPS, 60 FPS, Uncapped or VSync\n\n[img]{STEAM_CLAN_IMAGE}/41411795/d8f9544f3db70d83a86e526928dc8dffab5de938.png[/img]\n\nMore settings will be added with the obvious ones being sound and music volume but I will most likely also include more options for customizable difficulty\u2026\n\nUntil next time!\n\n// Luis",
+      "key": "1510840::f1a98c2dbe5c10275dcd3f97d228a3526926acea",
+      "tags": [
+        {
+          "feature": "- Turn speed: determines how quickly the enemy acts."
+        },
+        {
+          "feature": "- Auto end turn: If this option is turned off you have to actually press the end turn button before the turn shifts to the enemy."
+        },
+        {
+          "feature": "- Screenshake: toggle on/off screenshake for hit impacts."
+        },
+        {
+          "feature": "- Zoom to attack: toggle on/off the zoom animation that moves closer to the action when performing certain attacks."
+        },
+        {
+          "feature": "- Swingmeter: toggle on/off the timing mini game when performing certain attacks. Damage is randomly determined when turned off."
+        },
+        {
+          "feature": "- Swingmeter speed: determines how quickly the swingmeter moves."
+        },
+        {
+          "feature": "- Enemy spawns: determines the number of enemy reinforcements. More enemies makes the game harder (duh!)."
+        },
+        {
+          "feature": "- Hero health: determines how much of a beating your team can take. Less health makes the game harder."
+        },
+        {
+          "feature": "- Resolution: choose between 1280x800 (Steamdeck), 1280x720 (Nintendo Switch), 1920x1080 (Full HD), 2560x1440, 1368x768, 960x540"
+        },
+        {
+          "feature": "- Frame rate: choose between 30 FPS, 60 FPS, Uncapped or VSync"
+        }
+      ]
+    },
+    {
+      "title": "The game is not scrapped or anything!",
+      "date": "2024-06-19 03:10:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039971629897",
+      "content": "[b]UI Updates and upcoming changes...[/b]\n\nHi friends, fans & family! Long time no see. Life keeps getting in the way so the pace of my updates is a bit slow (to say the least) but rest assured I'm still working on the game! \n\nI don't have a substantial amount of stuff to show actually but I've updated the store page with some new screenshot so make sure to take a look and tell me what you think! The skill trees, inventory screens and load out screens have all gotten a face lift and I've added icons to show the effects of items as well as short biography \"blurbs\" for the heroes. \n\n[img]{STEAM_CLAN_IMAGE}/41411795/a721f56f3bbffeb1e2f2af66ad3f1aecc08e7ae2.png[/img]\n\n[b] Bugs, Secondary objectives and mission design[/b]\nMost of my work recently has been about killing bugs and making things look better. I've fixed most of the problems with the missions. There are now five types of missions:\n\n- Defend a character\n- Escort a character\n- Rescue several characters\n- Defeat all enemies\n- Kill a specific enemy\n\nMy goal is to have variation within these types (unique units/scenarios etc) and to add secondary objectives which will be my next task. The secondary objectives will probably be quite \"gamey\", things like \"Get 3 kills with character x\" or \"Finish mission without anyone dying\" etc but they will help to give more variation.\n\n[b]Stamina/energy instead of cooldowns[/b]\nThe other thing I'm toying with is using Stamina instead of cooldowns. Stamina gives me much more freedom since I can add lots of mechanics that affect it while cooldowns are more rigid in that sense. It also gives the player a bit more to think about and adds a bit of complexity (although not too much) which I think is fitting.\n\n[b]Enemy telegraphing might return?[/b]\nI miss enemy telegraphing and one of the major problems I had with it (apart from it being complicated to code) was that it wasn't easy for the player to predict how the AI would behave but I think I have a solution for that. I'm thinking that different units will have different ways of prioritising their targets. Here are some examples:\n- Attack lowest HP\n- Attack closest \n- Attack strongest\n- Attack NPCs first \n\nAll this would ofc would be upfront information but I think now that my AI is more predictable the telegraphing would work much better and could help to distinguish the game more in this VERY crowded market :P. But most importantly I like the mechanic and I think it will make the game better!\n\nUntil next time! // Luis\n\n",
+      "key": "1510840::84af43337514fa3f0478d9fbd60fde7a1e6948e6",
+      "tags": [
+        {
+          "feature": "I've updated the store page with some new screenshot so make sure to take a look and tell me what you think! The skill trees, inventory screens and load out screens have all gotten a face lift and I've added icons to show the effects of items as well as short biography \"blurbs\" for the heroes."
+        },
+        {
+          "bug": "I've fixed most of the problems with the missions."
+        },
+        {
+          "feature": "There are now five types of missions:"
+        },
+        {
+          "feature": "- Defend a character"
+        },
+        {
+          "feature": "- Escort a character"
+        },
+        {
+          "feature": "- Rescue several characters"
+        },
+        {
+          "feature": "- Defeat all enemies"
+        },
+        {
+          "feature": "- Kill a specific enemy"
+        },
+        {
+          "feature": "The other thing I'm toying with is using Stamina instead of cooldowns."
+        }
+      ]
+    },
+    {
+      "title": "Progress Report August-October",
+      "date": "2023-10-09 02:50:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220292521194266111",
+      "content": "Hi friends, fans & family!\n\nWill try to post more often about progress in the game and will try to do that with as little \"fluff\" as possible (that's the price to pay for the increase in frequency :P) so let's hop right in! \n\n[h1]August-October progress:[/h1]\n\n[b]Features:[/b]\n\n-added world map with selectable missions. Missions give varying rewards, are of different type, have different biomes and difficulties and it's up to you to play to your teams current strengths. \n- added varying difficulty for missions\n- added villager/civilian happiness/morale meter\n- added morale and legend/story points as mission reward types. One of the ways of losing the game is by the people losing faith in the heroes (happens when mission objectives are failed) and therefor not hiring them anymore and morale can now be restored. Legend/story points are used to unlock new stuff for future runs.  \n\n[img]{STEAM_CLAN_IMAGE}/41411795/c1df11abb012d91c26502fd95f7f1cd4f700eaf0.png[/img]\n\n\n- added help chapters so players can read up on how some mechanics in the game work\n[img]{STEAM_CLAN_IMAGE}/41411795/70c3f25ac6012e107d911d07969dab94bca415da.png[/img]\n\n- added icons for the top menu and replaced text buttons\n- added enemy initiative order button so you can see in what order enemies will act\n[img]{STEAM_CLAN_IMAGE}/41411795/0274b1b64223be543ac400dcf7ba63f8705e7e50.png[/img]\n\n[b]Bugs:[/b]\n- fixed some game over reset bugs\n- fixed a UI bug that occured after opening a chest\n\n[b]Gameplay improvements:[/b]\n- Changed web shot to slow down units insted of incapacitating them (too similar to ice otherwise). This effect will last until a unit is attacked which will break the web\n- added the \u201cflying\u201d passive ability. Flying units can pass through rocks and hostile units and stand/cross water tiles. The ability can be given to any unit and can be applied to items.\n\n[img]{STEAM_CLAN_IMAGE}/41411795/61d54eb8f6648f294ebae48c81ce2439cd9f1ef3.png[/img]\n\nSee ya soon! // Luis",
+      "key": "1510840::02f023b2e0cbe4280c276e699711afaba7799533",
+      "tags": [
+        {
+          "feature": "-added world map with selectable missions."
+        },
+        {
+          "feature": "- added varying difficulty for missions"
+        },
+        {
+          "feature": "- added villager/civilian happiness/morale meter"
+        },
+        {
+          "feature": "- added morale and legend/story points as mission reward types."
+        },
+        {
+          "feature": "- added help chapters so players can read up on how some mechanics in the game work"
+        },
+        {
+          "feature": "- added icons for the top menu and replaced text buttons"
+        },
+        {
+          "feature": "- added enemy initiative order button so you can see in what order enemies will act"
+        },
+        {
+          "bug": "- fixed some game over reset bugs"
+        },
+        {
+          "bug": "- fixed a UI bug that occured after opening a chest"
+        },
+        {
+          "balance_change": "- Changed web shot to slow down units insted of incapacitating them (too similar to ice otherwise)."
+        },
+        {
+          "feature": "- added the \u201cflying\u201d passive ability."
+        }
+      ]
+    },
+    {
+      "title": "MAJOR Gameplay changes in the works...",
+      "date": "2022-07-01 13:50:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295759646545",
+      "content": "Hi friends, fans & family! I have some exciting news to share but before I get to it I\u2019m going to tell you what my vision for \u201cGuardian of Gridvale\u201d is/was and where it is now\u2026\n\n[h1]The vision[/h1]\n\nWhen I first began working on \u201cGuardians of Gridvale\u201d I had a couple of goals:\n\n1. Show the enemies upcoming actions so that the player doesn't have to guess/figure out what the AI will do\n2. Make sure that skills manipulate positioning of heroes and enemies and alter the environment itself\n3. Have a timing mini-game to give an extra \u201coumph\u201d when attacking\n\nGoals 2 and 3 were fairly \u201ceasy\u201d to achieve from a design perspective and I kind of knew how to approach them but showing the enemies upcoming moves proved to be tricky. Why? Because I didn\u2019t want to straight up copy \u201cInto the Breach\u201d and so I thought of different ways of achieving this. The design lead me to make a system where the player makes moves and the enemies update their upcoming moves. This all sounds good and well in theory but I ran into some problems\u2026\n\n[h1]The problem[/h1]\n\n- It is difficult to implement. You have to take into account where enemies will be and make sure they\u2019re not in the way of each other in the future for example. It also needs to be computed very often which has implications for how smart the AI can be. Undo functionality was messy and error prone too.\u00a0\n- The logic behind how it works is difficult to explain to the player and a lot times how the enemy will react to my moves becomes a guessing game which was the opposite of  what I was going for.\n- The design is not tight and unique enough. It is not traditional turnbased gameplay nor is it entirely new. You could for example just turn off the enemy intentions and the gameplay becomes the standard I go, you go.\n\n[h1]The realisation[/h1]\n\nSo as I was working on the game a week ago something hits me that was sort of gnawing at the back of my head for a long time\u2026\u00a0\n\nThis is simply not as fun as I envisioned. It is not as creative as I envisioned and I felt that I was failing to make what I set out to make.\u00a0\n\nSo I started thinking\u2026 What if the enemies show you their moves but don\u2019t update them at all? \u201cInto the Breach\u201d gameplay is about protecting buildings so getting away from attacks is trivial: you just move out of the way. My game is about combat though so this won't do. And then it hit me! \n\nWhat if the enemies are in \u201coverwatch\u201d? \u201cOverwatch\u201d is a mechanic popularized by XCOM where units aim at an area and fire at the first enemy that enters that zone. \u00a0\n\nI ran some tests and found that I could do a lot of fun stuff with something similar. What if the enemies move and end their turn aiming at the heroes? If the heroes try to move they are instantly attacked. Eureka!\n\n[h1]The solution?[/h1]\n\nI implemented this system this week:\n\n1. Enemies move and end their movement targeting heroes\n2. Player has their turn. If a targeted hero tries to move he gets fired on before completing the move.\u00a0\n3. Enemies get to attack (if they haven\u2019t already during the player\u2019s turn). \n\nHere's a gif that shows you enemies attacking when the archer moves:\n\n[img]{STEAM_CLAN_IMAGE}/41411795/9d8e85f3b0d019d624cabc539100648008cf4e1b.gif[/img] \n\nStill needs polish and some details to make things clearer but hopefully you get the picture :P. \n\nThis improved the game immensely imho. It is pretty easy to grasp for the player and pretty unique. I did however need to fix a couple of things:\n\n- Heroes can now move+attack or attack+move. No longer is a hero\u2019s turn over after an attack.\n- The player will get their ass kicked because the enemies do so much damage. To counter this I came up with giving the player a completely free turn. That\u2019s right. The very first turn you get to move and attack without a reply from the enemies. This gives you a lot of freedom when positioning your heroes. Then the turn sequence starts.\u00a0\n\nBut does this mean that the player can\u2019t avoid damage? No. You have several way of doing this:\n\n1. kill attacking enemies before they can attack.\n2. Use defensive skills like blocks, parries, dodges, teleports etcUse offensive skills like pushing/pulling away the attacker so his attacks is canceled. \n3. Use attacks that swap places with enemies or charge right passed them etc. Unlike moving, using attacks does not cause the targeting enemy to fire.\n\nThis will indeed make the game \u201cpuzzlier\u201d which some of you might not like but rest assured there will never be \u201cperfect\u201d solutions. You will take damage for sure and be forced to manage that. Trust me when I say that the game has been much improved by this move. It\u2019s way more fun now! Can't wait to show let you try it! \n\nIf you haven't done so already, don't forget to subscribe to the newsletter which is the only way of getting in on the very first, crude/raw demo of the game. Here's the link: https://www.getrevue.co/profile/sinistersiamese\n\nThanks for reading!\n\n// Luis",
+      "key": "1510840::9a1933615b76801001c89b609ea2ff39fbd319b9",
+      "tags": [
+        {
+          "feature": "I implemented this system this week: 1. Enemies move and end their movement targeting heroes 2. Player has their turn. If a targeted hero tries to move he gets fired on before completing the move. 3. Enemies get to attack (if they haven\u2019t already during the player\u2019s turn)."
+        },
+        {
+          "feature": "Heroes can now move+attack or attack+move. No longer is a hero\u2019s turn over after an attack."
+        },
+        {
+          "feature": "To counter this I came up with giving the player a completely free turn. That\u2019s right. The very first turn you get to move and attack without a reply from the enemies."
+        }
+      ]
+    },
+    {
+      "title": "Hero selection and the core loop",
+      "date": "2021-12-02 08:24:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224936215383720598",
+      "content": "Hi friends, fans and family!\n\n[b]Core loop[/b]\nThe last couple of weeks I have been focused on tying the core loop together. The various game parts are still in an unfinished state and need more love. Right now I need to tie all the different screens together to get a proper flow going. The core loop will go something like this:\n\n- Select a story mission or \u201crandom\u201d mission\n- Select which heroes go on the mission and equip them, select new skills, level up etc\n- Play mission\n- Get loot, rewards and XP\n- Go to camp to rest, get to know the heroes etc\n- Rinse and repeat\n\n[img]{STEAM_CLAN_IMAGE}/41411795/c8e5b26177b2326e72c49dd695530ae2c03becbc.png[/img]\n\n[b]Hero selection[/b]\nThe part I\u2019m focusing on right now is the \u201cSelect Heroes Screen\u201d which means I\u2019m adding new heroes among other things. There will be a total of 8 unique heroes to choose from and which heroes you pick will depend on a lot of factors like for example:\n\n* What are the conditions for the mission? \n* How many heroes can you send?\n* Is every hero available? \n* Are there any heroes that need extra XP? \n* What is your play style?\n\nI\u2019m taking care to make sure that the player has an incentive to rotate their squad but I don\u2019t want to do it in a heavy handed way. I\u2019d like to make the player WANT to rotate their squad without them HAVING to which is not the easiest of things and time will tell how well I succeed with that\u2026\n\n[img]{STEAM_CLAN_IMAGE}/41411795/94bef2e3f765039d0e4906bed84b7c179b120ee7.png[/img]\n\nApart from this I\u2019ve been rewriting and fixing A LOT of code since I\u2019m getting very close to the part where I will be adding content like crazy and the parts of the code where I will mess around the most need to be in top shape so they\u2019re easy to change and maintain.\n\nThanks for reading! // Luis",
+      "key": "1510840::77e03f3c111c8a5193ae63c178022f0630e438c7",
+      "tags": [
+        {
+          "feature": "The part I\u2019m focusing on right now is the \u201cSelect Heroes Screen\u201d which means I\u2019m adding new heroes among other things."
+        },
+        {
+          "bug": "Apart from this I\u2019ve been rewriting and fixing A LOT of code since I\u2019m getting very close to the part where I will be adding content like crazy and the parts of the code where I will mess around the most need to be in top shape so they\u2019re easy to change and maintain."
+        }
+      ]
+    }
+  ]
+}

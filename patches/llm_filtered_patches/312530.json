@@ -1,0 +1,2061 @@
+{
+  "appId": "312530",
+  "count": 15,
+  "notes": [
+    {
+      "title": "Tiny Patch",
+      "date": "2022-05-11 15:37:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4288001105333312819",
+      "content": "Just a (few) tiny patch(es), more updates should be coming before too long!\n\nMay 20 2022 Patch 8782838\n-------------------------------------------------------------------\n-Fixed issue where mod would fail to load first try when code compilation was needed\n-Fixed issue where complex mod configurations could cause mod hash to initialize with an out of order list, causing two synchronized games to think they had different mods\n\nMay 16 2022 Patch 8749737\n-------------------------------------------------------------------\n-Fixed issue with custom level blocks resetting if level is tested before saving (thanks collin, sorry everyone for leaving this bug so long)\n-Fixed memory leak with level previews (thanks collin!)\n-Fixed a few synchronization issues with holsters\n-Fixed holster locking through equippers not working on clients \n-The weight of the object in your duck's holster is now taken into account (thanks tmob!)\n-Reskins mod is now automatically disabled on linux due to incompatibility (crashes on linux when pressing start on main menu)\n-Added 'linuxFix' property to ModConfiguration. If your mod is automatically disabled on linux, set this to true once you've updated it to work!\n-Added ability to kick local players from online matches as a temporary workaround to bug where controller disconnects can cause a local duck to join\n\nMay 12 2022 Patch 8728467\n-------------------------------------------------------------------\n-Fixed issue where disabling screen flashes was causing a soft lock when playing local multiplayer\n-Added \"More...\" submenu for when there are too many mods to fit in the Editor's object menu.\n\nMay 11 2022 Patch 8721273\n-------------------------------------------------------------------\n-Fixed issue with level editor saving levels as \"Save Level As...\" (sorry to anyone who lost levels :(\n-Added graphics option for disabling screen flashes. This disables full screen flashes for grenades and other explosive weapons. It may not disable flashes in mods!\n",
+      "key": "312530::083d55278da7b76393292dd31b7b667b6a4a366d",
+      "tags": [
+        {
+          "bug": "-Fixed issue where mod would fail to load first try when code compilation was needed"
+        },
+        {
+          "bug": "-Fixed issue where complex mod configurations could cause mod hash to initialize with an out of order list, causing two synchronized games to think they had different mods"
+        },
+        {
+          "bug": "-Fixed issue with custom level blocks resetting if level is tested before saving (thanks collin, sorry everyone for leaving this bug so long)"
+        },
+        {
+          "bug": "-Fixed memory leak with level previews (thanks collin!)"
+        },
+        {
+          "bug": "-Fixed a few synchronization issues with holsters"
+        },
+        {
+          "bug": "-Fixed holster locking through equippers not working on clients"
+        },
+        {
+          "bug": "-Reskins mod is now automatically disabled on linux due to incompatibility (crashes on linux when pressing start on main menu)"
+        },
+        {
+          "bug": "-Fixed issue where disabling screen flashes was causing a soft lock when playing local multiplayer"
+        },
+        {
+          "bug": "-Fixed issue with level editor saving levels as \"Save Level As...\" (sorry to anyone who lost levels :("
+        },
+        {
+          "feature": "-The weight of the object in your duck's holster is now taken into account (thanks tmob!)"
+        },
+        {
+          "feature": "-Added 'linuxFix' property to ModConfiguration. If your mod is automatically disabled on linux, set this to true once you've updated it to work!"
+        },
+        {
+          "feature": "-Added ability to kick local players from online matches as a temporary workaround to bug where controller disconnects can cause a local duck to join"
+        },
+        {
+          "feature": "-Added \"More...\" submenu for when there are too many mods to fit in the Editor's object menu."
+        },
+        {
+          "feature": "-Added graphics option for disabling screen flashes. This disables full screen flashes for grenades and other explosive weapons. It may not disable flashes in mods!"
+        }
+      ]
+    },
+    {
+      "title": "Proton Support Patch",
+      "date": "2022-04-08 16:25:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4353300134229817846",
+      "content": "This patch is intended to allow Duck Game to run flawlessly through Proton on Linux (this hopefully includes the Steam Deck, I haven't got one to test with yet) with mods and all, and without requiring the '-linux' command line option. Something seems to have broken Proton 6 and below as mods are now unable to load textures properly in those versions and there's unfortunately nothing I can do about it on my end. So if you want to play with mods it seems that you need to upgrade to Proton 7 or higher. Please let me know if you're still having any issues running through Proton, and please include your Linux distro, Proton version and crash log if you've got one!\n\n-Updated Steam SDK version\n-Fixed issues with toggling fullscreen in Linux (Proton)\n-Added onscreen keyboard support when playing in big picture mode\n-Duck Game will now automatically detect if it is being run through Proton, the '-linux' command line is no longer necessary. It can still be used incase automatic detection fails, and the '-nolinux' command line option has been added just incase the auto detect returns a false positive in some situations. \n-Usability menu now works through Proton\n-Fixed a number of issues with Mod types loading incorrectly through Proton (Dord's Weapons and any other assembly with weird characters in it's name such as ' will benefit from this)\n-Fixed some rendering issues on Proton",
+      "key": "312530::e7a01a5e17b28ec4a4585c221e817672b1ff75b8",
+      "tags": [
+        {
+          "bug": "-Fixed issues with toggling fullscreen in Linux (Proton)"
+        },
+        {
+          "feature": "-Added onscreen keyboard support when playing in big picture mode"
+        },
+        {
+          "feature": "-Duck Game will now automatically detect if it is being run through Proton, the '-linux' command line is no longer necessary. It can still be used incase automatic detection fails, and the '-nolinux' command line option has been added just incase the auto detect returns a false positive in some situations."
+        },
+        {
+          "bug": "-Fixed a number of issues with Mod types loading incorrectly through Proton (Dord's Weapons and any other assembly with weird characters in it's name such as ' will benefit from this)"
+        },
+        {
+          "bug": "-Fixed some rendering issues on Proton"
+        }
+      ]
+    },
+    {
+      "title": "May 31st Patch (6789227) Bug Fixes, Icy Things",
+      "date": "2021-05-31 17:13:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4069544815372049093",
+      "content": "[b]A note about the game updating a million times an hour:[/b]\n[i]Sorry for all the updates in quick succession, I've been debugging the BadFormatException error that has been keeping some people from playing and the only way to iterate on it is to see what it does live. There where also a few other issues related to DInput and NAudio, which both break differently depending on the vast number of configurations that exist out in the wild. [/i]\n\nJune 12th Hotfix - 6858840(1.1.7717.16375)\n-------------------------------------------------------------------\n[list]\n[*] F10 no longer enters debug pyramid tile editing mode. If you need this (unfinished!) feature for some reason or another you can now access it by typing 'randomedit' into the dev console.\n[*] CTRL + S now saves in editor, CTRL + SHIFT + S now saves-as in editor. \n[*] Editor now shows a star in the top left corner when unsaved changes are present.\n[*] Fixed an issue with loading level previews\n[*] Fixed issue with map pack preview generation\n[/list]\n\nJune 3rd Hotfix 2- 6809975(1.1.7717.16375)\n-------------------------------------------------------------------\n[list]\n[*] Fixed issue where same random map would generate every time (whoops..)\n[*] Fixed bug where mods without a workshopID defined where disabled on startup\n[*] Fixed a few crashes\n[*] Reduced mod SFX memory usage a bit to reduce out of memory errors, more work still needs to be done.\n[/list]\n\nJune 3rd Hotfix- 6808994(1.1.7717.16375)\n-------------------------------------------------------------------\n[list]\n[*] Mod data hashes are now calculated per-mod instead of as a single global number, so if 2 players' versions of the same mod are incompatible the game can now notify players of which mod is causing trouble. \n[*] Fixed a few issues with modhash initialization\n[*] Fixed a few crashes\n[/list]\n\nJune 1st Hotfix- 6794611 (1.1.7717.16372)\n-------------------------------------------------------------------\n[list]\n[*] Fixed serious memory leak with reskins mod, in particular with Tom Clancy R6 mod which was causing out of memory errors for some players\n[*] Fixed a number of missing method errors with mods\n[*] Fixed a number of null reference crashes\n[*] Duck Game's steam integration DLL is now called \"DGSteam.dll\" instead of \"Steam.dll\", as the latter name may have been conflicting with Steam's own DLL with the same name.\n[/list]\n\nMay 31st Hotfix- 6790287 and 6790023 (1.1.7717.16372)\n-------------------------------------------------------------------\n[list]\n[*] Rewrote DInput device enumeration, it's now threaded as it should be. This should solve a ton of framerate spike issues and freezes.\n[*] Improved logging for BadFormatException \n[/list]\n\nMay 31st Patch - 6789227 (1.1.7717.16372)\n-------------------------------------------------------------------\n[list]\n[*] Objects can now be encased in ice by placing an IceBlock in the editor, and setting it's contained object.\n[*] NOTICE!! New re-texturing system that was previously called 'Reskins' is now called 'Texpacks' to differentiate it from the existing Reskin mods.\n[*] Texpacks should now be placed in Mods/Texpacks- instead of in Mods/Reskins\n[*] Texpacks now look for their texture/music/sfx data in a subfolder called Content, which should mimick the Content folder found in the Duck Game install.\n[*] The above changes will unfortunately break any existing mods using the official Reskin system. There aren't very many new reskin mods as far as I can tell, but I'm sorry to anyone who this affects. To change your reskin into the new Texturepack format, move all the DG reskin content from the root folder of your mod to a subfolder called Content. If you're testing locally, move the mod out of DuckGame/Mods/Reskins and into DuckGame/Mods/Texpacks. \n[*] Old Yupdaniel reskin mods from pre-DG 1.5 should still work fine. \n[*] Fixed a number of issues with Texpacks, retexturing ducks should now work correctly.\n[*] Added \"Show 8 Player\" setting in local lobby pause menu that zooms out to show extra slots, to help clear up confusion with how to use 8 player mode.\n[*] Text to Speech setting now shows \"Text To Speech Not Installed...\" if the system fails to initialize, or if there are no voices installed on the system.\n[*] Fixed a large number of level synchronization issues related to MysteryGun and RandomItemBox. This should fix a number of situations where item boxes wouldn't pop anything out.\n[*] Fixed a number of issues with controls resetting due to device changes (this was a bad one, really sorry to anyone whose been suffering over this)\n[*] Added \"SAVE CHANGES?\" dialogue when backing out of profile control editor with unsaved changes.\n[*] Added warning message for title screen global EDIT CONTROLS setting, which warns you if any active profiles have their own personal control overrides set, which would override the global controls.\n[*] Binding two UI controls to the same key is no longer allowed\n[*] Duplicated UI controls will now be detected and reverted to defaults on game startup (These two issues should help prevent Cancel and Accept from being bound to the same key, for example)\n[*] Running with -moddebug enabled will now throw mod OnPreInitialize exceptions\n[*] Issues encountered in a mod's OnPreInitialize function will now be displayed in the error output in the mod browser window\n[*] Text To Speech should now be working again\n[*] Fixed issue with Never Mined and Books Are Fun achievements not triggering.\n[*] Fixed issue with odd behavior when placing parallax backgrounds in the editor when a mirror object is present. \n[*] Pipes no longer use a separate object to render their end pieces, this should fix a number of pipe related issues in the editor.\n[*] \"Show Error\" in the mod browser menu now opens the error in a Notepad document, instead of showing it in a crappy ingame window.\n[*] Added emergency garbage cleanup call for compatibility with old mods that leak textures\n[*] Fixed bug where backing out after choosing to play online could softlock the lobby\n[*] Fixed bug where match settings would be reset if Play Online was accidentally chosen\n[*] Fixed Waffle Cape\n[*] Added 'xpskip' command to console for players who really don't want to see Vincent and can't stand to wait for him to gift the Voodoo Vincent doll.\n[*] Improved duck animation sync when playing online\n[*] Command line option -dinputNoTimeout is no longer neccessary. DInput now initializes asynchronously and can take as long as it wants. \n[*] The above change should fix '???' control errors with DInput pads, but if DInput is being finnicky it may take a bit of time before your DInput pad is detected.\n[*] Wall disarms have been re-implemented\n[*] Hopefully solved a few System.BadFormatException errors, and added better logging to indicate the offending DLL.\n[*] Added 'savedir' command to console, which opens your current Duck Game save folder in a new window.\n[*] Added 'userdir' command to console, which opens your current Steam user's Duck Game save sub-folder in a new window.\n[*] Fixed a few issues with object appearance offsets when netted while playing online\n[*] 'F' to flip selection in editor on keyboard should now be working properly\n[*] Fixed a number of disappearing object issues when playing online, related to objects created by references in net messages not being initialized with the correct authority values.\n[*] Fixed race condition crash in audio engine when connecting to remote play\n[*] Fixed a few crashes with initializing audio drivers\n[*] Fixed issue with renderstate pileup when rendering level previews, which caused crashing when uploading some workshop levels\n[*] Fixed issue where selected duck color could be ignored upon joining a game\n[/list]\n",
+      "key": "312530::be252532638b64f67348f3514a73e6ea305f21b1",
+      "tags": [
+        {
+          "feature": "F10 no longer enters debug pyramid tile editing mode. If you need this (unfinished!) feature for some reason or another you can now access it by typing 'randomedit' into the dev console."
+        },
+        {
+          "feature": "CTRL + S now saves in editor, CTRL + SHIFT + S now saves-as in editor."
+        },
+        {
+          "feature": "Editor now shows a star in the top left corner when unsaved changes are present."
+        },
+        {
+          "bug": "Fixed an issue with loading level previews"
+        },
+        {
+          "bug": "Fixed issue with map pack preview generation"
+        },
+        {
+          "bug": "Fixed issue where same random map would generate every time (whoops..)"
+        },
+        {
+          "bug": "Fixed bug where mods without a workshopID defined where disabled on startup"
+        },
+        {
+          "bug": "Fixed a few crashes"
+        },
+        {
+          "balance_change": "Reduced mod SFX memory usage a bit to reduce out of memory errors, more work still needs to be done."
+        },
+        {
+          "feature": "Mod data hashes are now calculated per-mod instead of as a single global number, so if 2 players' versions of the same mod are incompatible the game can now notify players of which mod is causing trouble."
+        },
+        {
+          "bug": "Fixed a few issues with modhash initialization"
+        },
+        {
+          "bug": "Fixed a few crashes"
+        },
+        {
+          "bug": "Fixed serious memory leak with reskins mod, in particular with Tom Clancy R6 mod which was causing out of memory errors for some players"
+        },
+        {
+          "bug": "Fixed a number of missing method errors with mods"
+        },
+        {
+          "bug": "Fixed a number of null reference crashes"
+        },
+        {
+          "bug": "Duck Game's steam integration DLL is now called \"DGSteam.dll\" instead of \"Steam.dll\", as the latter name may have been conflicting with Steam's own DLL with the same name."
+        },
+        {
+          "bug": "Rewrote DInput device enumeration, it's now threaded as it should be. This should solve a ton of framerate spike issues and freezes."
+        },
+        {
+          "bug": "Improved logging for BadFormatException"
+        },
+        {
+          "feature": "Objects can now be encased in ice by placing an IceBlock in the editor, and setting it's contained object."
+        },
+        {
+          "feature": "NOTICE!! New re-texturing system that was previously called 'Reskins' is now called 'Texpacks' to differentiate it from the existing Reskin mods."
+        },
+        {
+          "feature": "Texpacks should now be placed in Mods/Texpacks- instead of in Mods/Reskins"
+        },
+        {
+          "feature": "Texpacks now look for their texture/music/sfx data in a subfolder called Content, which should mimick the Content folder found in the Duck Game install."
+        },
+        {
+          "bug": "Fixed a number of issues with Texpacks, retexturing ducks should now work correctly."
+        },
+        {
+          "feature": "Added \"Show 8 Player\" setting in local lobby pause menu that zooms out to show extra slots, to help clear up confusion with how to use 8 player mode."
+        },
+        {
+          "feature": "Text to Speech setting now shows \"Text To Speech Not Installed...\" if the system fails to initialize, or if there are no voices installed on the system."
+        },
+        {
+          "bug": "Fixed a large number of level synchronization issues related to MysteryGun and RandomItemBox. This should fix a number of situations where item boxes wouldn't pop anything out."
+        },
+        {
+          "bug": "Fixed a number of issues with controls resetting due to device changes (this was a bad one, really sorry to anyone whose been suffering over this)"
+        },
+        {
+          "feature": "Added \"SAVE CHANGES?\" dialogue when backing out of profile control editor with unsaved changes."
+        },
+        {
+          "feature": "Added warning message for title screen global EDIT CONTROLS setting, which warns you if any active profiles have their own personal control overrides set, which would override the global controls."
+        },
+        {
+          "bug": "Binding two UI controls to the same key is no longer allowed"
+        },
+        {
+          "bug": "Duplicated UI controls will now be detected and reverted to defaults on game startup (These two issues should help prevent Cancel and Accept from being bound to the same key, for example)"
+        },
+        {
+          "feature": "Running with -moddebug enabled will now throw mod OnPreInitialize exceptions"
+        },
+        {
+          "feature": "Issues encountered in a mod's OnPreInitialize function will now be displayed in the error output in the mod browser window"
+        },
+        {
+          "bug": "Text To Speech should now be working again"
+        },
+        {
+          "bug": "Fixed issue with Never Mined and Books Are Fun achievements not triggering."
+        },
+        {
+          "bug": "Fixed issue with odd behavior when placing parallax backgrounds in the editor when a mirror object is present."
+        },
+        {
+          "bug": "Pipes no longer use a separate object to render their end pieces, this should fix a number of pipe related issues in the editor."
+        },
+        {
+          "feature": "\"Show Error\" in the mod browser menu now opens the error in a Notepad document, instead of showing it in a crappy ingame window."
+        },
+        {
+          "feature": "Added emergency garbage cleanup call for compatibility with old mods that leak textures"
+        },
+        {
+          "bug": "Fixed bug where backing out after choosing to play online could softlock the lobby"
+        },
+        {
+          "bug": "Fixed bug where match settings would be reset if Play Online was accidentally chosen"
+        },
+        {
+          "bug": "Fixed Waffle Cape"
+        },
+        {
+          "feature": "Added 'xpskip' command to console for players who really don't want to see Vincent and can't stand to wait for him to gift the Voodoo Vincent doll."
+        },
+        {
+          "bug": "Improved duck animation sync when playing online"
+        },
+        {
+          "bug": "Command line option -dinputNoTimeout is no longer neccessary. DInput now initializes asynchronously and can take as long as it wants."
+        },
+        {
+          "bug": "The above change should fix '???' control errors with DInput pads, but if DInput is being finnicky it may take a bit of time before your DInput pad is detected."
+        },
+        {
+          "feature": "Wall disarms have been re-implemented"
+        },
+        {
+          "bug": "Hopefully solved a few System.BadFormatException errors, and added better logging to indicate the offending DLL."
+        },
+        {
+          "feature": "Added 'savedir' command to console, which opens your current Duck Game save folder in a new window."
+        },
+        {
+          "feature": "Added 'userdir' command to console, which opens your current Steam user's Duck Game save sub-folder in a new window."
+        },
+        {
+          "bug": "Fixed a few issues with object appearance offsets when netted while playing online"
+        },
+        {
+          "bug": "'F' to flip selection in editor on keyboard should now be working properly"
+        },
+        {
+          "bug": "Fixed a number of disappearing object issues when playing online, related to objects created by references in net messages not being initialized with the correct authority values."
+        },
+        {
+          "bug": "Fixed race condition crash in audio engine when connecting to remote play"
+        },
+        {
+          "bug": "Fixed a few crashes with initializing audio drivers"
+        },
+        {
+          "bug": "Fixed issue with renderstate pileup when rendering level previews, which caused crashing when uploading some workshop levels"
+        },
+        {
+          "bug": "Fixed issue where selected duck color could be ignored upon joining a game"
+        }
+      ]
+    },
+    {
+      "title": "February 26th Patch (6302127) Audio Fixes",
+      "date": "2021-02-26 16:08:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4060529371706943568",
+      "content": "February 28th Hotfix (6307667)\n-------------------------------------------------------------------\n[list]\n[*]Changed full moon calculation to use UtcNow, and made detection more lenient (12 AM on the day before or after a full moon should also be detected now)\n[*]The -debug command line option will now log additional steam related messages to the command console when running as administrator.\n[*]added 'copy' command to console, which will copy the command consoles current contents to the clipboard\n[/list]\n\nFebruary 26th Patch (6302127)\n-------------------------------------------------------------------\n[list]\n[*]WAV files in mods bigger than 5MB are now streamed from HDD instead of loaded into memory to prevent out of memory errors when many mods are installed\n[*]Added Audio Engine selection to audio options menu to help anyone having issues with the default Wasapi API (Some builds with Proton on Linux seem to dislike this API)\n[*]Starting a remote play session now automatically switches the audio playback API to DirectSound (other APIs cause horrible horrible sounds)\n[*]More fixes for full moon check\n[*]Updated link for crash message when XNA framework is not detected\n[*]Added another check for -debug command line DLL dependency check\n[/list]",
+      "key": "312530::454a8a50fb5d9669807ed3c95db36f31f40a2c02",
+      "tags": [
+        {
+          "feature": "[list]\n[*]added 'copy' command to console, which will copy the command consoles current contents to the clipboard\n[/list]"
+        },
+        {
+          "feature": "[list]\n[*]WAV files in mods bigger than 5MB are now streamed from HDD instead of loaded into memory to prevent out of memory errors when many mods are installed\n[*]"
+        },
+        {
+          "feature": "[list]\n[*]Added Audio Engine selection to audio options menu to help anyone having issues with the default Wasapi API (Some builds with Proton on Linux seem to dislike this API)\n[*]"
+        },
+        {
+          "feature": "[list]\n[*]Starting a remote play session now automatically switches the audio playback API to DirectSound (other APIs cause horrible horrible sounds)\n[*]"
+        },
+        {
+          "bug": "[list]\n[*]More fixes for full moon check\n[*]"
+        },
+        {
+          "bug": "[list]\n[*]Updated link for crash message when XNA framework is not detected\n[*]"
+        },
+        {
+          "bug": "[list]\n[*]Added another check for -debug command line DLL dependency check\n[*]"
+        }
+      ]
+    },
+    {
+      "title": "February 16 Patch",
+      "date": "2021-02-16 13:02:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4703417046218434047",
+      "content": "Hotfix\n=================\n[list]\n[*]Added -debug command line option for debugging BadFormatException errors.\n[*]Fixed some new issues caused by target duck change.\n[*]Fixed issue with collision detection that caused unwanted clipping when jumping horizontally against a wall and a pane of glass at the same time (this was an issue introduced by 1.5's collision detection optimizations)\n[/list]\n\nMain Patch\n=================\n[list]\n[*]Added checks to prevent crashing when LoopingSound/ConstantSound instances aren't loaded properly/are disposed early.\n[*]Fixed cape not appearing for waffles hat\n[*]Removed _holdAction from TargetDuck, as this was only ever meant to be added to TargetDuckNew. This may affect challenges made after the 1.5 update using poweruser to place old TargetDuck objects holding automatic weapons.\n[*]The above change should fix a number of issues with the Grenade Launcher 102 challenge.\n[*]Added special check for version == 1 when loading old levels with background frame values == 255\n[*]Fixed issues with using frame 255 from custom tilesets in 1.5 level format\n[*]Fixed issue with editor where block nubs would get left over when removing objects and clutter up the editor UI\n[*]Rewrote mine sync again! Mines should now work online as they do offline. Mines are now client-synchronized similar to Quad Laser bullets, instead of being a mishmash (Mines will only explode when an object moves off of them if that object has isServerForObject == true)\n[/list]",
+      "key": "312530::e279398e72b4947bf6c66dd82c0063d6759905f8",
+      "tags": [
+        {
+          "feature": "[*]Added -debug command line option for debugging BadFormatException errors."
+        },
+        {
+          "bug": "[*]Fixed some new issues caused by target duck change."
+        },
+        {
+          "bug": "[*]Fixed issue with collision detection that caused unwanted clipping when jumping horizontally against a wall and a pane of glass at the same time (this was an issue introduced by 1.5's collision detection optimizations)"
+        },
+        {
+          "bug": "[*]Added checks to prevent crashing when LoopingSound/ConstantSound instances aren't loaded properly/are disposed early."
+        },
+        {
+          "bug": "[*]Fixed cape not appearing for waffles hat"
+        },
+        {
+          "bug": "[*]Removed _holdAction from TargetDuck, as this was only ever meant to be added to TargetDuckNew. This may affect challenges made after the 1.5 update using poweruser to place old TargetDuck objects holding automatic weapons."
+        },
+        {
+          "bug": "[*]The above change should fix a number of issues with the Grenade Launcher 102 challenge."
+        },
+        {
+          "bug": "[*]Added special check for version == 1 when loading old levels with background frame values == 255"
+        },
+        {
+          "bug": "[*]Fixed issues with using frame 255 from custom tilesets in 1.5 level format"
+        },
+        {
+          "bug": "[*]Fixed issue with editor where block nubs would get left over when removing objects and clutter up the editor UI"
+        },
+        {
+          "bug": "[*]Rewrote mine sync again! Mines should now work online as they do offline. Mines are now client-synchronized similar to Quad Laser bullets, instead of being a mishmash (Mines will only explode when an object moves off of them if that object has isServerForObject == true)"
+        }
+      ]
+    },
+    {
+      "title": "February 4th 2021 Patch (6190465) (The Blocking Update...)",
+      "date": "2021-02-04 13:04:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4051520269926483375",
+      "content": "February 7th 2021 Hotfix (6204004) (Does not update version number)\n-------------------------------------------------------------------\n[list]\n[*]Vincent will now buy things that *aren't* Round Tables. \n[*]Fixed crash caused by blocking the last player in your 'Recently Played With' list.\n[*]Fixed feathers!\n[/list]\n\nFebruary 5th 2021 Hotfix (6196421) (Does not update version number)\n-------------------------------------------------------------------\n[list]\n[*]Fixed issue with Vincent giving multiple perimeter defence turrets.\n[/list]\n\nFebruary 4th 2021 Hotfix (6191479) (Does not update version number)\n-------------------------------------------------------------------\n[list]\n[*]Fixed some index issues with font character fallbacks\n[*]Ragdolling now resets previous gun pickup delay, allowing quicker gun recovery when ledge grabbing and more (thanks Tater!)\n[*]Fixed crash with grappling hook\n[*]Fixed index crash with NMTransferScores\n[*]ItemBox contents are now included in the initial level data payload, this should help prevent issues with items not popping out of the boxes for clients\n[/list]\n\n\n\n[list]\n[*]New Muting/Blocking system. To use, open the pause menu in a multiplayer game, move up to the name you're having trouble with and press GRAB. You can mute chat, hat, room and name seperately and blocking a user will automatically mute chat + hat + room. Additionally the blocked user will be kicked from your game if you are the host. Matchmaking will not join players you have blocked and they will be unable to join games that you host.\n[*]Fixed crash related to SteamUtils() returning null (the game will now run for the few experiencing this issue, but chat filtering will not function)\n[*]Removed chat filter toggle from options menu, as it was redundant with Steam's settings. To disable chat filtering go into Steam and click 'View -> Settings -> In-Game' and click 'Change Chat Filtering Preferences'\n[*]Fixed issue with XML loader where loading a blank file would cause a crash\n[*]Made a number of changes related to the PS4 porting process (rewrote shaders, optimizations and preprocessor changes). This should have no visible effect if everything was done correctly.\n[*]Duck Game is now being built in Visual Studio 2017 instead of Visual Studio 2015 due to PS4/Mono build requirements\n[*]Significant level rendering performance optimizations (AutoBlock/Level tile batches are now cached, need to keep an eye out for layering issues and other oddities)\n[*]General performance optimization (Level.things._bigList and Layer updates no longer constantly call RemoveWhere)\n[*]Disabled mods now appear at the end of the mod selection list, instead of at the beginning.\n[*]Retextures and map packs are now loaded before anything else, which should fix retextures not being applied to ducks\n[*]Fixed a number of issues related to using higher definition textures in texture packs\n[*]HD texture packs no longer need to set the isHD variable, larger resolution images will automatically load in properly\n[*]New system for re-texturing parallax backgrounds, see background/office.txt in DG's content files\n[*]Fixed bug where spectator's fans where showing up in the crowd\n[*]Fixed bug with full moon check not taking timezones into account\n[*]Fixed glitch when holding F1 with chat open (F keys no longer repeat when held down)\n[*]Fixed bug where taping a taped sword to another sword would eat the sword (taped swords should not be able to be taped to other swords)\n[*]Characters missing from room fonts will now fall back to the default font\n[*]Fixed issue with Energy Scimitar where it would get stuck glowing in props\n[*]Fixed bug with storing gold rocks in purple box where the stored rock would not be gold for clients\n[*]Fixed issue where input 'down' actions weren't behaving correctly with inputs mapped to mouse buttons (you can now properly throw the energy scimitar with throw bound to the mouse)\n[*]Killing ducks by hovering gun barrel over them while they are floating in the lobby beam is no longer possible (this was a bug introduced in 1.5 related to changes with armor/prop vs. gun collision checking)\n[*]Fixed Musket/Blunderbuss collision boxes\n[/list]\n\n\n",
+      "key": "312530::cac542ff528d4b950a7cff2e60f2a773582aeb72",
+      "tags": [
+        {
+          "bug": "[*]Vincent will now buy things that *aren't* Round Tables. "
+        },
+        {
+          "bug": "[*]Fixed crash caused by blocking the last player in your 'Recently Played With' list. "
+        },
+        {
+          "bug": "[*]Fixed feathers! "
+        },
+        {
+          "bug": "[*]Fixed issue with Vincent giving multiple perimeter defence turrets. "
+        },
+        {
+          "bug": "[*]Fixed some index issues with font character fallbacks "
+        },
+        {
+          "bug": "[*]Ragdolling now resets previous gun pickup delay, allowing quicker gun recovery when ledge grabbing and more (thanks Tater!) "
+        },
+        {
+          "bug": "[*]Fixed crash with grappling hook "
+        },
+        {
+          "bug": "[*]Fixed index crash with NMTransferScores "
+        },
+        {
+          "bug": "[*]ItemBox contents are now included in the initial level data payload, this should help prevent issues with items not popping out of the boxes for clients "
+        },
+        {
+          "feature": "[*]New Muting/Blocking system. To use, open the pause menu in a multiplayer game, move up to the name you're having trouble with and press GRAB. You can mute chat, hat, room and name seperately and blocking a user will automatically mute chat + hat + room. Additionally the blocked user will be kicked from your game if you are the host. Matchmaking will not join players you have blocked and they will be unable to join games that you host. "
+        },
+        {
+          "bug": "[*]Fixed crash related to SteamUtils() returning null (the game will now run for the few experiencing this issue, but chat filtering will not function) "
+        },
+        {
+          "bug": "[*]Removed chat filter toggle from options menu, as it was redundant with Steam's settings. To disable chat filtering go into Steam and click 'View -> Settings -> In-Game' and click 'Change Chat Filtering Preferences' "
+        },
+        {
+          "bug": "[*]Fixed issue with XML loader where loading a blank file would cause a crash "
+        },
+        {
+          "bug": "[*]Made a number of changes related to the PS4 porting process (rewrote shaders, optimizations and preprocessor changes). This should have no visible effect if everything was done correctly. "
+        },
+        {
+          "feature": "[*]Duck Game is now being built in Visual Studio 2017 instead of Visual Studio 2015 due to PS4/Mono build requirements "
+        },
+        {
+          "bug": "[*]Significant level rendering performance optimizations (AutoBlock/Level tile batches are now cached, need to keep an eye out for layering issues and other oddities) "
+        },
+        {
+          "bug": "[*]General performance optimization (Level.things._bigList and Layer updates no longer constantly call RemoveWhere) "
+        },
+        {
+          "bug": "[*]Disabled mods now appear at the end of the mod selection list, instead of at the beginning. "
+        },
+        {
+          "bug": "[*]Retextures and map packs are now loaded before anything else, which should fix retextures not being applied to ducks "
+        },
+        {
+          "bug": "[*]Fixed a number of issues related to using higher definition textures in texture packs "
+        },
+        {
+          "feature": "[*]HD texture packs no longer need to set the isHD variable, larger resolution images will automatically load in properly "
+        },
+        {
+          "feature": "[*]New system for re-texturing parallax backgrounds, see background/office.txt in DG's content files "
+        },
+        {
+          "bug": "[*]Fixed bug where spectator's fans where showing up in the crowd "
+        },
+        {
+          "bug": "[*]Fixed bug with full moon check not taking timezones into account "
+        },
+        {
+          "bug": "[*]Fixed glitch when holding F1 with chat open (F keys no longer repeat when held down) "
+        },
+        {
+          "bug": "[*]Fixed bug where taping a taped sword to another sword would eat the sword (taped swords should not be able to be taped to other swords) "
+        },
+        {
+          "bug": "[*]Characters missing from room fonts will now fall back to the default font "
+        },
+        {
+          "bug": "[*]Fixed issue with Energy Scimitar where it would get stuck glowing in props "
+        },
+        {
+          "bug": "[*]Fixed bug with storing gold rocks in purple box where the stored rock would not be gold for clients "
+        },
+        {
+          "bug": "[*]Fixed issue where input 'down' actions weren't behaving correctly with inputs mapped to mouse buttons (you can now properly throw the energy scimitar with throw bound to the mouse) "
+        },
+        {
+          "bug": "[*]Killing ducks by hovering gun barrel over them while they are floating in the lobby beam is no longer possible (this was a bug introduced in 1.5 related to changes with armor/prop vs. gun collision checking) "
+        },
+        {
+          "bug": "[*]Fixed Musket/Blunderbuss collision boxes "
+        }
+      ]
+    },
+    {
+      "title": "WELCOME TO DUCK GAME 1.5!!! (PART 2)",
+      "date": "2020-11-13 14:15:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3872494575592160682",
+      "content": "Welcome to the Duck Game 1.5, the biggest Duck Game update ever! In fact it was so big, we had to break the update notes up into two parts! Here is the long, long list of bug fixes. Quack on ducks!\n\n[b]BUG FIXES:\n[/b]\n[list]\n[*] Hopefully fixed alt-tab lockup issue\n[*] Insane amounts of SFX should no longer cut out music\n[*] Musket/Bazooka smoke now properly travel in their gun's barrel direction\n[*] Added a fix for stretchy cannons\n[*] Fixed a number of offset/lighting glitches with level transition rendering\n[*] Fixed crash in sunlight refresh\n[*] Fixed rare occasion where steam lobby connection would be affected by previous lobby data\n[*] Fixed NetProfileData synchronization issues (pause indicator, spectator table sync, etc)\n[*] Removed infinite loop detector as it was crashing the game without reason and was basically in place to debug problems that have already been fixed\n[*] Reverted some Hat Selector changes that were causing bad things to happen\n[*] Non-lethal bullets now behave correctly with surface penetration\n[*] Non-flammable things can no longer burn\n[*] Fixed an issue that caused floating doors\n[*] Fixed an issue where network ducks would not moves sometimes \n[*] Fixed a desync issue with GhostObjects\n[*] Fixed a bunch of meaningless network talkback in the ghost object system\n[*] Fixed a number of pyramid level generation issues\n[*] Corrected some threading issues with the loading system.\n[*] Fixed issue where clients weren't properly spawning with holstered items\n[*] More platform fallthrough fixes (crouching and jumping near the edges of ledges was cancelling jumps, even though it shouldn't have been)\n[*] Fixed a number of power holster issues\n[*] DuckPersona.mallard now works properly\n[*] Fixed hat offset issue with vincent\n[*] Fixed -nomods not working with texture packs\n[*] Fixed issue with lobby type detection, this should help prevent Dan Rando from showing up in your private game\n[*] Random map generation fixes (first pass)\n[*] Fixed weird offset when removing helmets\n[*] Fixed reskins mod crash\n[*] Fixed issue with not being able to set custom challenges on custom arcade machines\n[*] Hopefully solved a number of sound initialization crashes\n[*] Fixed a number of object initialization synchronization issues\n[*] Fixed \"Ignoring Removed Ghost\" issue that was causing ducks not to move\n[*] Fixed a number of DWEP issues\n[*] Fixed synchronization issue with wire buttons on level start\n[*] Fixed sound synchronization issue with chain dartgun\n[*] Fixed a few synchronization issues with guns firing via heating or springing\n[*] Fixed issue with drumset blocking bullets\n[*] Fixed crash when joining local duck with no local slots enabled\n[*] Fixed a sword crash\n[*] Fixed crash running game without steam\n[*] Fixed issue with shotgun not returning to correct spawner when throwing it into the beam as players 5 to 8\n[*] Fixed issue with tall teleporters not connecting to each other when placed vertically\n[*] Fixed a number of pipe issues\n[*] Fixed issue where quickly drag removing objects in the editor wouldn't work properly\n[*] Fixed issue with random item crate not working, added \"reveal random\" property allowing '?' item crates\n[*] Fixed a few fullscreen crashes\n[*] Fixed a number of issues with background pipes generating collision\n[*] Fixed a few issues with death ray sound effects\n[*] Fixed parallax culling issues\n[*] Fixed issue with drumset disappearing online\n[*] Fixed a number of connection issues and lobby desyncs\n[*] Fixed issue with hat offsets on scoreboard in eight player mode\n[*] Fixed issue with background tile index loading that was causing potential data loss for larger tilesets\n[*] Fixed issue with layer cameras not getting reset which led to floating foreground objects and offset spawn indicators\n[*] Fixed crash related to setting too large a font size\n[*] Fixed issue with matchmaking window getting stuck when connection to a server fails\n[*] Fixed issue where infinite loop detector would trigger while dragging the game window\n[*] Fixed a memory leak with BufferedGhostStates\n[*] Fixed graphics object disposal crashed\n[*] Fixed item spawner item position glitching issue\n[*] Fixed position glitching issue with trapped ducks getting out of their nets\n[*] Fixed a custom/client/workshop level transfer related crash\n[*] Fixed crash related to creating a large raster font buffer when hidef mode is disabled\n[*] Fixed a number of minor graphical errors\n[*] Fixed a few collision bugs related to new collision code\n[*] Fixed changes that were causing DWEP to WOPP\n[*] Fixed GoalType crash caused by not setting a goal object\n[*] Fixed disappearing duck/ragdoll issue with full ghost state synchronizations (this caused particular problems when re-joining lobbies, as existing ducks would have their owner connections assigned to the host for the new client, which was causing a discrepancy and causing messages to be ignored)\n[*] Fixed a few input lockout issues with magnet guns and RC cars\n[*] Fixed red hot graphics glitch with flamethrower\n[*] Fixed a number of issues with object removal code\n[*] Fixed stack overflow crash with demo crate (this was likely causing hard lockups, the likes of which may have required a computer restart for people playing with native fullscreen enabled)\n[*] Fixed issue with jetpack smoke not appearing online\n[*] Fixed a few texture pack loading issues/crashes\n[*] Game will no longer crash when no audio device is detected\n[*] Fixed some editor resolution issues when using extremely wide aspect ratios\n[*] Fixed index out of range crash when disconnecting from game\n[*] Fixed bug with infinite firecrackers spawning way too many firecrackers when burned\n[*] Fixed a number of lobby crashes and errors\n[*] Fixed bug where destroyed network objects would be resurrected in a feedback loop\n[*] Fixed emoji support for different font sizes\n[*] Fixed issue where additional local players couldn't select custom hats\n[*] Fixed issue where players rejoining lobbies would get corrupted data (causing disappearing ragdolls/hats/etc)\n[*] Fixed an XML crash\n[*] Fixed issue where target ducks could no longer be crushed\n[*] Fixed a few editor placement issues\n[*] Fixed Kingdom Tileset collision issues\n[*] Fixed bug where backing out a local player would leave their door stuck open with a black background.\n[*] Fixed a bunch of holster synchronization bugs (disappearing objects)\n[*] Fixed bug where '+1' round win number color was appearing incorrectly\n[*] Fixed save location issues for OneDrive users..\n[*] Fixed MindControlRay crash\n[*] Fixed end of game recaps crash when playing in windowed fullscreen mode\n[*] Fixed issue where sliders with range minimums less than ze\n[/list]\n",
+      "key": "312530::ced7b0c945f49d26b2a7040ecdd7e5554efa2b00",
+      "tags": [
+        {
+          "bug": "- Hopefully fixed alt-tab lockup issue"
+        },
+        {
+          "bug": "- Insane amounts of SFX should no longer cut out music"
+        },
+        {
+          "bug": "- Musket/Bazooka smoke now properly travel in their gun's barrel direction"
+        },
+        {
+          "bug": "- Added a fix for stretchy cannons"
+        },
+        {
+          "bug": "- Fixed a number of offset/lighting glitches with level transition rendering"
+        },
+        {
+          "bug": "- Fixed crash in sunlight refresh"
+        },
+        {
+          "bug": "- Fixed rare occasion where steam lobby connection would be affected by previous lobby data"
+        },
+        {
+          "bug": "- Fixed NetProfileData synchronization issues (pause indicator, spectator table sync, etc)"
+        },
+        {
+          "bug": "- Removed infinite loop detector as it was crashing the game without reason and was basically in place to debug problems that have already been fixed"
+        },
+        {
+          "bug": "- Reverted some Hat Selector changes that were causing bad things to happen"
+        },
+        {
+          "bug": "- Non-lethal bullets now behave correctly with surface penetration"
+        },
+        {
+          "bug": "- Non-flammable things can no longer burn"
+        },
+        {
+          "bug": "- Fixed an issue that caused floating doors"
+        },
+        {
+          "bug": "- Fixed an issue where network ducks would not moves sometimes"
+        },
+        {
+          "bug": "- Fixed a desync issue with GhostObjects"
+        },
+        {
+          "bug": "- Fixed a bunch of meaningless network talkback in the ghost object system"
+        },
+        {
+          "bug": "- Fixed a number of pyramid level generation issues"
+        },
+        {
+          "bug": "- Corrected some threading issues with the loading system."
+        },
+        {
+          "bug": "- Fixed issue where clients weren't properly spawning with holstered items"
+        },
+        {
+          "bug": "- More platform fallthrough fixes (crouching and jumping near the edges of ledges was cancelling jumps, even though it shouldn't have been)"
+        },
+        {
+          "bug": "- Fixed a number of power holster issues"
+        },
+        {
+          "bug": "- DuckPersona.mallard now works properly"
+        },
+        {
+          "bug": "- Fixed hat offset issue with vincent"
+        },
+        {
+          "bug": "- Fixed -nomods not working with texture packs"
+        },
+        {
+          "bug": "- Fixed issue with lobby type detection, this should help prevent Dan Rando from showing up in your private game"
+        },
+        {
+          "bug": "- Random map generation fixes (first pass)"
+        },
+        {
+          "bug": "- Fixed weird offset when removing helmets"
+        },
+        {
+          "bug": "- Fixed reskins mod crash"
+        },
+        {
+          "bug": "- Fixed issue with not being able to set custom challenges on custom arcade machines"
+        },
+        {
+          "bug": "- Hopefully solved a number of sound initialization crashes"
+        },
+        {
+          "bug": "- Fixed a number of object initialization synchronization issues"
+        },
+        {
+          "bug": "- Fixed \"Ignoring Removed Ghost\" issue that was causing ducks not to move"
+        },
+        {
+          "bug": "- Fixed a number of DWEP issues"
+        },
+        {
+          "bug": "- Fixed synchronization issue with wire buttons on level start"
+        },
+        {
+          "bug": "- Fixed sound synchronization issue with chain dartgun"
+        },
+        {
+          "bug": "- Fixed a few synchronization issues with guns firing via heating or springing"
+        },
+        {
+          "bug": "- Fixed issue with drumset blocking bullets"
+        },
+        {
+          "bug": "- Fixed crash when joining local duck with no local slots enabled"
+        },
+        {
+          "bug": "- Fixed a sword crash"
+        },
+        {
+          "bug": "- Fixed crash running game without steam"
+        },
+        {
+          "bug": "- Fixed issue with shotgun not returning to correct spawner when throwing it into the beam as players 5 to 8"
+        },
+        {
+          "bug": "- Fixed issue with tall teleporters not connecting to each other when placed vertically"
+        },
+        {
+          "bug": "- Fixed a number of pipe issues"
+        },
+        {
+          "bug": "- Fixed issue where quickly drag removing objects in the editor wouldn't work properly"
+        },
+        {
+          "bug": "- Fixed issue with random item crate not working, added \"reveal random\" property allowing '?' item crates"
+        },
+        {
+          "bug": "- Fixed a few fullscreen crashes"
+        },
+        {
+          "bug": "- Fixed a number of issues with background pipes generating collision"
+        },
+        {
+          "bug": "- Fixed a few issues with death ray sound effects"
+        },
+        {
+          "bug": "- Fixed parallax culling issues"
+        },
+        {
+          "bug": "- Fixed issue with drumset disappearing online"
+        },
+        {
+          "bug": "- Fixed a number of connection issues and lobby desyncs"
+        },
+        {
+          "bug": "- Fixed issue with hat offsets on scoreboard in eight player mode"
+        },
+        {
+          "bug": "- Fixed issue with background tile index loading that was causing potential data loss for larger tilesets"
+        },
+        {
+          "bug": "- Fixed issue with layer cameras not getting reset which led to floating foreground objects and offset spawn indicators"
+        },
+        {
+          "bug": "- Fixed crash related to setting too large a font size"
+        },
+        {
+          "bug": "- Fixed issue with matchmaking window getting stuck when connection to a server fails"
+        },
+        {
+          "bug": "- Fixed issue where infinite loop detector would trigger while dragging the game window"
+        },
+        {
+          "bug": "- Fixed a memory leak with BufferedGhostStates"
+        },
+        {
+          "bug": "- Fixed graphics object disposal crashed"
+        },
+        {
+          "bug": "- Fixed item spawner item position glitching issue"
+        },
+        {
+          "bug": "- Fixed position glitching issue with trapped ducks getting out of their nets"
+        },
+        {
+          "bug": "- Fixed a custom/client/workshop level transfer related crash"
+        },
+        {
+          "bug": "- Fixed crash related to creating a large raster font buffer when hidef mode is disabled"
+        },
+        {
+          "bug": "- Fixed a number of minor graphical errors"
+        },
+        {
+          "bug": "- Fixed a few collision bugs related to new collision code"
+        },
+        {
+          "bug": "- Fixed changes that were causing DWEP to WOPP"
+        },
+        {
+          "bug": "- Fixed GoalType crash caused by not setting a goal object"
+        },
+        {
+          "bug": "- Fixed disappearing duck/ragdoll issue with full ghost state synchronizations (this caused particular problems when re-joining lobbies, as existing ducks would have their owner connections assigned to the host for the new client, which was causing a discrepancy and causing messages to be ignored)"
+        },
+        {
+          "bug": "- Fixed a few input lockout issues with magnet guns and RC cars"
+        },
+        {
+          "bug": "- Fixed red hot graphics glitch with flamethrower"
+        },
+        {
+          "bug": "- Fixed a number of issues with object removal code"
+        },
+        {
+          "bug": "- Fixed stack overflow crash with demo crate (this was likely causing hard lockups, the likes of which may have required a computer restart for people playing with native fullscreen enabled)"
+        },
+        {
+          "bug": "- Fixed issue with jetpack smoke not appearing online"
+        },
+        {
+          "bug": "- Fixed a few texture pack loading issues/crashes"
+        },
+        {
+          "bug": "- Game will no longer crash when no audio device is detected"
+        },
+        {
+          "bug": "- Fixed some editor resolution issues when using extremely wide aspect ratios"
+        },
+        {
+          "bug": "- Fixed index out of range crash when disconnecting from game"
+        },
+        {
+          "bug": "- Fixed bug with infinite firecrackers spawning way too many firecrackers when burned"
+        },
+        {
+          "bug": "- Fixed a number of lobby crashes and errors"
+        },
+        {
+          "bug": "- Fixed bug where destroyed network objects would be resurrected in a feedback loop"
+        },
+        {
+          "bug": "- Fixed emoji support for different font sizes"
+        },
+        {
+          "bug": "- Fixed issue where additional local players couldn't select custom hats"
+        },
+        {
+          "bug": "- Fixed issue where players rejoining lobbies would get corrupted data (causing disappearing ragdolls/hats/etc)"
+        },
+        {
+          "bug": "- Fixed an XML crash"
+        },
+        {
+          "bug": "- Fixed issue where target ducks could no longer be crushed"
+        },
+        {
+          "bug": "- Fixed a few editor placement issues"
+        },
+        {
+          "bug": "- Fixed Kingdom Tileset collision issues"
+        },
+        {
+          "bug": "- Fixed bug where backing out a local player would leave their door stuck open with a black background."
+        },
+        {
+          "bug": "- Fixed a bunch of holster synchronization bugs (disappearing objects)"
+        },
+        {
+          "bug": "- Fixed bug where '+1' round win number color was appearing incorrectly"
+        },
+        {
+          "bug": "- Fixed save location issues for OneDrive users.."
+        },
+        {
+          "bug": "- Fixed MindControlRay crash"
+        },
+        {
+          "bug": "- Fixed end of game recaps crash when playing in windowed fullscreen mode"
+        },
+        {
+          "bug": "- Fixed issue where sliders with range minimums less than ze"
+        }
+      ]
+    },
+    {
+      "title": "WELCOME TO DUCK GAME 1.5!!!",
+      "date": "2020-11-13 14:09:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3872494575592147025",
+      "content": "[i]Welcome to the Duck Game 1.5, the biggest Duck Game update ever! No seriously. It\u2019s quacktastic. This update is our thank you to all of the long time supporting fans of Duck Game. Many of the things you\u2019ve been asking for are here - 8 player multiplayer, spectator mode, hundreds of fixes and optimization, new maps, new weapons, expanded editor capabilities, customization options, and more. \n\nThank you for playing Duck Game. \n\nNow, onto this ridiculous list of notes that took us like a week to compile. They were so big, we had to break it into two parts... [/i]\n\n\n[b]Eight Player Multiplayer[/b]\n[list]\n[*] Duck Game now supports up to 8 Players\n[*] Added eight player versions of a number of levels\n[*] Added 'Eight Player' object to level editor which can be placed to designate a level as an eight player level\n[*] Creating a game via invite now automatically supports up to 8 players\n[/list]\n\n[b]Spectator Mode[/b]\n[list]\n[*] New Spectator feature! \n[*] Games can support up to 4 spectators in addition to the new 8 player limit\n[*] Spectators get to wiggle around at the spectator table and drink their favourite beverages\n[*] Added Melon Soda for spectators\n[*] Spectator names appear purple in chat and connection windows\n[*] Spectator duck color can be changed by holding strafe and pressing ragdoll\n[*] You can now host a \"dedicated\" server, allowing a game to be passively hosted and watched without a present player\n[/list]\n\n\n[b]New Maps [/b]\n[list]\n[*] Lots and lots of new maps\n[/list]\n\n[b]New Weapons & Equipment[/b]\n[list]\n[*] Added Duct Tape - Now you can tape two weapons together!\n[*] Added The Dandylion - You\u2019ll shoot your eye out, kid!\n[*] Added Camping Rifle - Trap enemy ducks in a cozy sleeping bag\n[*] Added Energy Scimitar - It\u2019s a laser sword, but cooler\n[*] Added Pokeyhead - Pierce enemies and items from below with this handy new hat!\n[*] Added Powered Holster\n[/list]\n\n\n[b]Added Hats from Switch Version[/b]\n[list]\n[*] Wahhs, Postals, Kerchiefs, UUFOs, B52s, Zeros,Clams, Bigearls, Toeboys, Waffles, and Diplomats, a top hat with 270 flags to choose from to use as a cape \n[/list]\n\n[b]Improved Mod / Custom Content Support:[/b]\n[list]\n[*] Custom hats can now be loaded from PNG files in the game directory\n[*] Hats now support metadata (put an extra line of pixels to the right side of your hat- A 32x32 hat becomes 33x32, 64x32 -> 65x32, etc.)\n[*] The Red value of the pixel determines what type of metadata it is. Currently supported is HatIsTail(R = 0), and Offset(R = 1, G = 128 - X, R = 128 - Y) (128, 128 means zero offset)\n[*] Custom rocks are now supported:\n[*] If you make your custom hat texture 24 pixels higher (32x32 -> 32x56 for example), then the bottomLeft 24x24 pixels will be read as a custom rock.\n[*] Added support for viewing mod exception stack traces through mod browser\n[*] You should now be able to play levels with local mods online\n[*] Levels with mods containing workshop ID's will no longer be considered levels with 'local' mods, even if the mods are located locally\n[*] Improved mod crash detection\n[*] Mod.Debug.Log should no longer severely lag game when debugger is attached\n[*] The steamprofiles and invitelinks mods by eim64 are now autodisabled on startup to prevent crashes due to changed UI code because these mods have been implemented officially!\n[*] Levels from a mods\u2019 Content/Levels folder are now shown in the level browser\n[*] Mod content load errors will now be shown, and miods with content load errors will now appear in the mod browser list\n[*] Restored a number of functions that various mods were accessing\n[*] \"Disable Mods?\" window that appears before creating/joining online games can now be disabled\n[*] You will now get a \"Download mods?\" notification when joining a server with different mods than yours through an invite\n[*] Crash windows will no longer open when a mod fails to load, unless the '-moddebug' command line option is present\n[*] Texture/Reskin packs are now officially supported (Add a folder in Mods/Reskins that mimicks the contents of the Duck Game/Content directory)\n[*] Texture/Reskin packs are now officially supported (Add a folder in Mods/Reskins that mimicks the contents of the Duck Game/Content directory)\n[*] Client reskin mod should now be working again\n[*] Added workshopIDFacade, namespaceFacade and assemblyNameFacade to Mod.cs to allow DEV versions of mods to define the ID's and Names of their release counterparts, allowing compatibility between them\n[/list]\n\n[b]ADDITIONAL NEW FEATURES AND IMPROVEMENTS [/b]\n[list]\n[*] Ducks now breathe. As ducks should. \n[*] Added flagpole furniture for your room \n[*] Added 'Trick Shots' to stats screen\n[*] New pipes! Use these to traverse the map, and also to your immediate death.\n[*] Added a game paused indicator\n[*] Added an indicator for when host skips a level\n[*] Duck ragdolls are no longer torn apart so wildly while flying through the air, much to their satisfaction\n[*] Little men may now grow freely, even when you reach level 20. \n[*] Hats are now drawn on netted ducks\n[*] Screen will no longer show up in rooms with backgrounds\n[/list]\n\n[b]GAMEPLAY[/b]\n[list]\n[*] Several improvements to Team hats\n[*] Team hats now have the lowest pickup priority of all props, which should prevent players from picking up a hat when they want something useful.\n[*] Team hats now go underneath everything\n[*] Team hats no longer block doors or spawners\n[*] Team hats no longer work for pressing buttons\n[*] Team hats will now drop at feet if replaced by an equipper\n[*] Darts really do stick to walls again now! \n[*] Dartgun now works at point blank range\n[*] Dart guns now work much closer to as intended online\n[*] Implemented a dozen more giant icicle breaking situations\n[*] Icicles now react to death laser, quad laser, darts\n[*] Strafe sliding into a wall will now make your duck stand up\n[*] Clicking and dragging the mouse should now allow any rightstick function (tongue, waving rock throw signs, etc)\n[*] Tongue-stuck ducks will now fall if what which they stuck their tongues on is destroyed\n[*] Made crates less shiny because crates aren\u2019t shiny\n[*] Improved platform fallthrough code\n[*] Large item crates can no longer be moved around\n[*] Subtly increased velocity needed for a disarm (prevents waterflow objects from disarming, hopefully prevents a number of unintentional ragdoll disarms)\n[*] Rock collision is now accurate when raised against wall (also helps prevent rock camping)\n[*] Killbox and equipment collision boxes are now accurate when sliding (helps prevent rock camping)\n[*] TV stuck onto spike helmet now functions properly\n[*] The Rocket launcher no longer has slight rocket speed variation, and now has perfect accuracy (it was 95 percent accurate previously)\n[*] The Sword should now properly push other ducks online\n[*] Netting a sword wielding duck is now consistent between online and offline (the previously held sword no longer immediately kills the netted duck when playing online)\n[*] Sharpshot vertical kickback has been reduced while flapping wings\n[*] Insta Unragdolling is back\n[*] Flying Nets no longer block bullets\n[*] Changed timing on spawncannon feedback\n[*] First jump when spawning in water is no longer dampened\n[*] Scimi jumping is now possible with keyboard control schemes combining 'jump' and 'up' into one button\n[*] You can now speed up quad laser bullets by hitting them with a sword in the same direction (why wasn't this possible before??)\n[*] Bananas are no longer made of metal\n[*] Drumset now appears in front of blocks\n[*] Team Hats no longer disarm or push ducks\n[*] Reduced time it takes to load golden Oldpistol, Musket, Blunderbuss and Bazooka\n[*] Fall deaths will now occur only if the player's duck is off the bottom of the camera, in addition to being below the level. This should prevent dying in midair when skirting the bottom of levels\n[/list]\n\n[b]CHAT IMPROVEMENTS [/b]\n[list]\n[*] Added chat Text to Speech accessibility option\n[*] Russian font support\n[*] Added support for non-english keyboards\n[*] Made chat bubbles less transparent to improve readability.\n[*] Improved black duck's chat readability\n[*] Custom mojis!\n[*] put an 11x11 or 28x28 png into MyDocuments/DuckGame/Custom/Moji then type it's filename in chat like this-    :mymoji:\n[*] Received custom moji names are now shown in the Dev console (~)\n[*] Received Mojis can be stolen by typing their name into chat\n[*] Removed arbitrary moji sub-size limit, custom mojis can now be any size < 56x28\n[*] Chat emojis now use : instead of @ . For example, :sadface:\n[*] Chat/Connection indicators now appear on netted ducks/ragdolls\n[*] Chat avatars now have bodies and quack\n[*] Added 'bold' and 'italic' suffixes for 'chat font <font>' command\n[*] Added custom font support for chat font via options menu More.. section, or through console commands 'chat font' and 'chat font size\n[*] Added chat filtering, sentence enhancers can be re-enabled via options menu\n[*] Chat size has been corrected\n[*] (A new Tiny size has also been added, players with existing data may find their chat automatically set to tiny. New players will default to Regular chat size)\n[/list]\n\n[b]UI IMPROVEMENTS[/b]\n[list]\n[*] Mallard skip signs should look a bit better\n[*] Game now supports resolution settings\n[*] Game should now properly support non 16:9 ratios (gameplay camera follows screen ratio, UI cameras are locked to 16:9)\n[*] Corrected squishing issues on non 16:9 monitors\n[*] Fullscreen settings are now updated in the Draw function instead of in Update \n[*] Windowed Fullscreen is no longer default\n[*] VSYNC should now work for non 60hz monitors\n[*] Error uploading now supports Japanese\n[*] Simple Hiragana/Katakana support (sorry about the font, I found it online. I'll make an improved one later!)\n[/list]\n\n[b]VISUAL / SOUND / GRAPHICS IMPROVEMENTS [/b]\n[list]\n[*] Improved mind control ray sync visuals\n[*] Changed waterfall layering, added waterfall edge pieces\n[*] Improved level transition rendering \n[*] Graphics optimizations and improved layering code\n[*] Major changes to hat metapixels\n[*] Reimplemented all ingame audio using NAudio, should reduce audio stutter and improve performance. Should also allow audio device switching while game is running. This also seems to seriously reduce random framerate stutters too (at least on my computer), I don't know what the heck happened to XNA's default audio playback but it's really not very good anymore.\n[*] Reduced size of all sound effects (trimming, converting files that should have been mono to mono). This should improve load times and reduce memory footprint.\n[*] Sound now supports Exclusive \n[*] Reduced volume of sound when things light on fire\n[*] Changed Duck #5's color to improve clarity\n[*] Improved sun and point light rendering\n[*] Made lights more dynamic\n[*] Further sound engine optimizations\n[*] All mallard colors are now more clear\n[*] Red hot glow is now more obvious and affects props as well as guns  \n[*] Improved frame timing for when VSYNC is disabled (no longer using XNA's IsFixedTimestep)\n[/list]\n\n[b]PERFORMANCE AND OPTIMIZATION [/b]\n[list]\n[*] Improved level loading times\n[*] Added limit for snow generators\n[*] Added redundant collision function implementation for checking layer, ignore object, etc which should improve collision check performance\n[*] Added more stuff to prevent Alt-Tab crashing\n[*] Removed network overload message, as it wasn't reporting anything useful (or any actual overload for that matter)\n[*] Completely removed threading from the initial loading process. This actually improves loading times, and should fix a number of lockups/crashes.\n[*] Improved object serialization/deserialization performance, should improve level/game loading times\n[*] Improved asset lazy load, this should help reduce stuttering during the games initial screens\n[*] Massive collision code optimization\n[*] Removed unnecessary XInput check in DInput driver that was causing a moment of lag on startup\n[*] Removed cloud settings menu, if you want to disable or enable cloud, or manage cloud files, please use the steam UI or a 3rd party tool\n[*] Improved purple box synchronization\n[*] Made a change that should help reduce crashing when changing back and forth from fullscreen (huge thanks to Dan for spearheading this and finding the issue)\n[*] Reduced unnecessary steam cloud activity (Steam's API's weren't updating file timestamps when writing cloud files unless said files had changed. \n[*] Added saveIndex variable to all save data which increments upon each save, ensuring save data timestamps are always up to date) \n[*] Major optimizations to ghost state refreshing system, as well as improvements to general network syncronization accuracy\n[*] Resolution logging in crash logs should now be more accurate\n[*] Improved crash logging\n[*] Removed gamepad enumeration thread in favor of a callback system (should help reduce framerate spikes)\n[*] Added \"Alt. Timestep\" setting for using original XNA timestep (which doesn't work correctly at all on my computer)\n[*] No longer preloading music, should decrease memory footprint\n[*]Synchronized save data is now saved in a Documents/DuckGame sub folder corresponding to your Steam ID number. Existing save data will automatically be moved there, anything outside of this subfolder will *not* be synchronized to the cloud.\n[*] things.RefreshState is now called before a network level is 'started'. This should fix some object initialization errors (and hopefully not create new ones..)\n[*] Crashlogs now show RAM details\n[*] Cleaned up bug report log format\n[*] All challengedata is now stored in player profiles. The ChallengeData folder will remain for existing users, but once the game has been started its data will be migrated and it will no longer be used.\n[*] Rewrote cloud integration, it should now detect deleted/modified local files (testing needed)\n[*] Custom levels are no longer preloaded, this should improve load times for people with many levels (and add a bit of lag when opening Custom Levels menu for the first time)\n[*] it will end the challenge as soon as MAX TROPHY is reached.\n[*] Crash/Alt-F4 related disconnects should now be detected much quicker.\n[*] Optimized level format\n[*] Reduced lag spikes caused by Xbox controller \"IsConnected\" check.\n[*] Optimized save data (should be smaller and load faster)\n[*] Changed GC settings to hopefully reduce framerate spikes \n[*] New netcode to prevent loss of state information in high jitter situations (packets arriving out of order)\n[*] Removed a bunch of unused data from BufferedGhostState (may improve network GC hitches, may already have been optimized out when building in release mode)\n[*] Added file saving safeties to reduce crashing on people with saves synchronized to dropbox/onedrive\n[*] Windows' new(ish) Rumble over Bluetooth feature doesn't seem to limit outgoing packets in any way, which was causing the game to become extremely laggy with bluetooth controllers. It was also causing bluetooth controllers to lose their composure and disconnect randomly. I'm limiting sent rumble messages on my end now, which should greatly improve wireless controller support. As always hardcore ducks should use a keyboard or a wire for best input performance.\n[/list]\n\n[b]MAP EDITOR IMPROVEMENTS [/b]\n[list]\n[*] New editor feature:\n[*] Holding CTRL while dragging out background tiles will automatically select and place tiles adjacent to the selected tile allowing entire portions of the tileset to be drug out all at once. (this should help make adding Danny DeVito to levels easier). This can also be  done on gamepad by holding down the tile placement button, then holding the MENU1(SHOOT) button at the same time and moving. On an XBOX controller with default settings this means holding A and X.\n[*] New city background tileset\n[*] Added box selection/mirror/flip functions to level editor\n[*] Added BuildingFramework tileset, an indestructible tileset which can be placed below normal blocks\n[*] Improved editor object placement - Quickly dragging out a line of objects should now form a consistent line without gaps\n[*]Added check when loading older levels for *extremely* large Y values, any objects with bozo values will not be loaded\n[*] Mouse will now automatically move to the current selected tile position when picking background tiles from the editor using MENU 1 (H by default)\n[*] Improved window focus detection, should prevent random tiles being placed a million miles offscreen when minimizing while using the editor (if you're ever making an XNA game I don't recommend using Game.IsActive)\n[*] Mouse input is now disabled until all buttons are released when clicking back into the Duck Game window. This should help prevent unwanted block placement in the editor.\n[*] High-Res texture packs are now possible (add the line 'hd' at the bottom of info.txt)\n[*] Reskin packs now support limited color replacement (Include a 'colors.txt' file, each line represents a string/hex pair that replaces a Colors.Color or Color.Color static data member. For example, to replace menu color with red: MenuOption=0xC0202D\n[*] Existing texture packs are now supported (thanks Yupdaniel!)\n[*] Vanilla maps can now be selected from custom map selection and put into playlists\n[*] Most vanilla levels now have explicit 1v1 spawn configurations. You can set your own 1v1 spawn configs by setting the 'secondSpawn' property on any duck FreeSpawn \n[*](for example, have secondSpawn = false for spawns located on the left side of the level, and secondSpawn = true for spawns on the right to ensure 1v1 ducks never spawn on the same side. Note that secondSpawn does *not* explicitly mean any particular color of duck.\n[*] 'My Levels' cloud folder is no longer a thing. Everything goes through the normal DuckGame/Levels folder again like always.\n[*] Level browser in editor now remembers what folder it left off in\n[*] Previews now show custom tilesets (you may have to delete My Documents/Duck Game/EditorPreviews)\n[*] CTRL + Middle Click in editor now activates layer selection swap mode- hold it when placing background tiles to select foreground objects and vice versa \n[/list]\n\n[b]NETWORKING:[/b]\n[list]\n[*] Changed Invite lobby type from Friends to Private to prevent Dan Rando from just rolling in (this potentially means a bit more 'can you resend the invite' in the future unfortunately, as it disables right click -> join functionality on invite lobbies)\n[*] Rewrote connection system and level synchronization system\n[*] Added 'netData' to Profile class, which can be used to easily and automatically synchronize string->object pairs over the network. Example: DuckNetwork.profiles[0].Set<string>(\"crazyName\", \"wowman\")\n[*] Rewrote net synchronization for GoodBook \n[*] Snow tileset freezing and melting is now synchronized\n[*] Grenade Cannon should now be synchronized properly\n[*] Bonk stars should now be synchronized\n[*] Huge laser blasts are now synchronized \n[*] Synchronized more warp gun sounds\n[*] Getting smacked sideways with objects is now synchronized\n[*] Synchronized Present sounds/effects\n[*] Synchronized hat selector\n[*] Basketball whistle sound is now synchronized\n[*] Fire synchronization has been improved a bit, should result in less random lighting on fire online.\n[*] Synchronization of objects is now strictly locked between levels, this should help solve many level start desync issues\n[*] Fire position synchronization is now more accurate\n[*] Improved chainsaw fuel leaking synchronization\n[*] Firecrackers now work online\n[*] Disarm knockback now works correctly online\n[*] Added calls to properly upload stats to ensure accurate numbers (no more losing quack numbers)\n[*] New version numbers weren't working correctly causing games not to connect. This should be fixed!\n[*] Changed the way network particles and objects are removed, hopefully this will solve the serious slowdown and lockup issues that have come up online\n[*] Increased resolution of synchronized position and angle variables which should improve the visual smoothness of online play\n[*] Rewrote network particle manager, implemented a limit on the number of network particles to prevent lockups (fire should truly be more accurate now)\n[*] Rewrote cloud integration (again) to minimize unnecessary syncing and improve loading times. Removed 'local files deleted' message in favor of a new cloud file manager window where you can manually delete specific files from the cloud. If you delete files from your save game locally with cloud enabled, they'll come right back unless you delete them through a cloud file manager.\n[*] Massive pings should no longer cause a feedback loop of message resend\n[*] Ping calculation should now be more accurate, and should average out faster during connection. This should hopefully help prevent ducks from moving early.\n[*] Restored network authority system to round robin configuration (dropped pickup time comparison, it was leading to major desync issues.\n[*] If two ducks pick up and object at the same time, the duck with the lower network index will get to keep the object. To avoid host advantage, the network index is calculated as (DuckNetwork.levelIndex + duck.networkIndex) % numberOfPlayers, so the advantage order will change every level.\n[*] Changed some lobby sync code, this should result in faster initial connections and a smoother lobby experience (that is of course if it doesn't throw a wrench into things instead)\n[*] Reported Ping numbers should now be more accurate\n[*] Reduced network bandwidth required for sending removed objects\n[*] Reduced lag spikes that occurred in -nothreading mode\n[*] Removed network threadlock (may improve performance, hoping to solve a particular connection timeout issue)\n[*] Send.Message is now ignored when called online (why wasn't this the case before?)\n[*] General network synchronization improvements\n[*] Rewrote GhostObject synchronization, reducing redundant data and grouping together state messages to greatly reduce network traffic (should help with lag and performance!)\n[*] Game now properly sends disconnect message on intentional disconnects, so feedback should be a lot better for disconnects now.\n[*] Disarms are now accompanied with a special network message to make them more reliable online\n[*] Hopefully reduced situations where 2 or more players would claim to own the same object online. (this should reduce teleporting/getting killed by invisible objects)\n[*] Added strict level index filtering for non-reliable NetMessage\n[/list]\n\n[b]QUALITY OF LIFE:[/b]\n[list]\n[*] You can now view a players steam profile page by selecting their name in the online pause menu (thanks eim64!!)\n[*] MAX TROPHY can now be set under \"ADVANCED\" in the arcade options menu, if you've gotten the best trophy on a challenge. This is for speedrunning.\n[*] Added \"browse\" button for file browsing dialogues that will open the current folder in Windows Explorer\n[*] Backfill fix is now enabled by default to prevent discord overlay artifacting\n[*] Abandoned green mallard heads in favor of color clearness\n[*] Alt-Enter no longer brings up chat window\n[*] Added IME support which can be enabled through the options menu\n[*] ESC can now be bound as a control\n[*] Slightly zoomed out camera on random levels to assist with navigation\n[*] Added the option to merge 'DEFAULT' account with main steam account (this will be done automatically if the game detects that there's no challenge progress on your steam account)\n[*] DG screenshot command is now button combination SHIFT + F12. F12 still takes normal steam screenshots\n[*] ItemSpawners set with Random and KeepRandom properties set now appear orange\n[/list]\n\n[b]CONSOLE CHANGES[/b]\n[list]\n[*] Always remember not to put linebreaks in your command line!\n[*] Added -netdebug command line for enabling the network debugger. Hover the desired game instance and press START to join the game with it, each game will automatically host and join the first game. To override automatic join, hold SHOOT while pressing START.\n[*] Added Duck.invincible, and Duck.disableCrouch (thanks DORD!)\n[*] Added accelerationModifier variable on Duck for modifying duck speed, Duck.jumpSpeed now properly affects jump\n[*] Added '-command' command line option, which allows DevConsole commands to be called on startup. Commands must be in quotes, and multiple commands can be defined with additional '-command' elements. For example:\n[*] -command \"level forest02\" -command \"give player1 pistol\"\n[*] Added shortcut for 'level' console command: 'lev'\n[*] Added custom font support for console\n[*] Added new console command options to 'level', including 'title', 'rockthrow', 'pyramid' and 'next'\n[*] Added '-oldangles' command line option for enabling old angling code, overriding the 'oldangles' console command\n[*] Added 'oldangles' console command, which will enable the old pre-beta direction changing code. This offers no objective benefit, and exists solely for personal preference!\n[*] Changed console resize commands, they are now accessed through 'console': console width, console height, console scale, console font, console font size.\n[*] Additional dev console commands can now be added via DevConsole.AddCommand. For Example:\n[*]  AddCommand(new CMD(\"level\", new CMD.Argument[] { new CMD.Level(\"level\") }, (cmd) => { Level.current = cmd.Arg<Level>(\"level\"); }) { cheat = true, aliases = new List<string>() { \"lev\" }, commandQueueWaitFunction = () => { return Level.core.nextLevel == null; } });\n[*] Command console 'level' command now supports 'editor' and 'arcade'\n[*] Command console now supports copy and paste (hi Dan) \n[*] Command console 'give' command now supports 'e' as a third parameter, which will equip the spawned item.\n[*] Command console 'give' command now supports 'h' as a third parameter, which will holster the spawned item (spawns a holster if no holster exists). 'hp' spawns a Power Holster if none exists.\n[*] Command console now supports running multiple commands in a row by pasting (Ctrl + V) a line split list of commands. For Example:\n[*] level forest02\n[*] give player1 pewpewlaser\n[*] give player2 energyscimitar\n[*] wait 60\n[*] give player2 chestplate e\n[*] give player2 helmet e\n[*] wait quack\n[*] give player1 flamethrower i\n[*] Custom levels can now be loaded through dev console 'level' command\n[*] Dev Console can now be resized via Graphics settings menu, or through commands dcwidth, dcheight, and dcscale\n[*] Holding SHIFT while using PgUp, PgDown, Home and End in the console will allow faster browsing through old log messages\n[*] DevConsole is no longer teensie tiny, now has line numbers and PageUp/PageDown can be used to scroll through output\n[*] Dev console no longer opens when opening Discord overlay with Shift + ~\n[*] Dev console command \"showcollision\" now functions properly, and will not function when playing online\n[*] You can now move the cursor in the dev console, and toggle through all recently typed commands\n[/list]",
+      "key": "312530::850a2aa50de1a4ddcfa62e92159418b5240e7cfc",
+      "tags": [
+        {
+          "feature": "- Duck Game now supports up to 8 Players"
+        },
+        {
+          "feature": "- Added eight player versions of a number of levels"
+        },
+        {
+          "feature": "- Added 'Eight Player' object to level editor which can be placed to designate a level as an eight player level"
+        },
+        {
+          "feature": "- Creating a game via invite now automatically supports up to 8 players"
+        },
+        {
+          "feature": "- New Spectator feature!"
+        },
+        {
+          "feature": "- Games can support up to 4 spectators in addition to the new 8 player limit"
+        },
+        {
+          "feature": "- Spectators get to wiggle around at the spectator table and drink their favourite beverages"
+        },
+        {
+          "feature": "- Added Melon Soda for spectators"
+        },
+        {
+          "feature": "- Spectator names appear purple in chat and connection windows"
+        },
+        {
+          "feature": "- Spectator duck color can be changed by holding strafe and pressing ragdoll"
+        },
+        {
+          "feature": "- You can now host a \"dedicated\" server, allowing a game to be passively hosted and watched without a present player"
+        },
+        {
+          "feature": "- Lots and lots of new maps"
+        },
+        {
+          "feature": "- Added Duct Tape - Now you can tape two weapons together!"
+        },
+        {
+          "feature": "- Added The Dandylion - You\u2019ll shoot your eye out, kid!"
+        },
+        {
+          "feature": "- Added Camping Rifle - Trap enemy ducks in a cozy sleeping bag"
+        },
+        {
+          "feature": "- Added Energy Scimitar - It\u2019s a laser sword, but cooler"
+        },
+        {
+          "feature": "- Added Pokeyhead - Pierce enemies and items from below with this handy new hat!"
+        },
+        {
+          "feature": "- Added Powered Holster"
+        },
+        {
+          "feature": "- Wahhs, Postals, Kerchiefs, UUFOs, B52s, Zeros,Clams, Bigearls, Toeboys, Waffles, and Diplomats, a top hat with 270 flags to choose from to use as a cape"
+        },
+        {
+          "feature": "- Custom hats can now be loaded from PNG files in the game directory"
+        },
+        {
+          "feature": "- Hats now support metadata (put an extra line of pixels to the right side of your hat- A 32x32 hat becomes 33x32, 64x32 -> 65x32, etc.)"
+        },
+        {
+          "feature": "- The Red value of the pixel determines what type of metadata it is. Currently supported is HatIsTail(R = 0), and Offset(R = 1, G = 128 - X, R = 128 - Y) (128, 128 means zero offset)"
+        },
+        {
+          "feature": "- Custom rocks are now supported:"
+        },
+        {
+          "feature": "- If you make your custom hat texture 24 pixels higher (32x32 -> 32x56 for example), then the bottomLeft 24x24 pixels will be read as a custom rock."
+        },
+        {
+          "feature": "- Added support for viewing mod exception stack traces through mod browser"
+        },
+        {
+          "feature": "- You should now be able to play levels with local mods online"
+        },
+        {
+          "feature": "- Levels with mods containing workshop ID's will no longer be considered levels with 'local' mods, even if the mods are located locally"
+        },
+        {
+          "feature": "- Improved mod crash detection"
+        },
+        {
+          "feature": "- Mod.Debug.Log should no longer severely lag game when debugger is attached"
+        },
+        {
+          "feature": "- The steamprofiles and invitelinks mods by eim64 are now autodisabled on startup to prevent crashes due to changed UI code because these mods have been implemented officially!"
+        },
+        {
+          "feature": "- Levels from a mods\u2019 Content/Levels folder are now shown in the level browser"
+        },
+        {
+          "feature": "- Mod content load errors will now be shown, and miods with content load errors will now appear in the mod browser list"
+        },
+        {
+          "feature": "- Restored a number of functions that various mods were accessing"
+        },
+        {
+          "feature": "- \"Disable Mods?\" window that appears before creating/joining online games can now be disabled"
+        },
+        {
+          "feature": "- You will now get a \"Download mods?\" notification when joining a server with different mods than yours through an invite"
+        },
+        {
+          "feature": "- Crash windows will no longer open when a mod fails to load, unless the '-moddebug' command line option is present"
+        },
+        {
+          "feature": "- Texture/Reskin packs are now officially supported (Add a folder in Mods/Reskins that mimicks the contents of the Duck Game/Content directory)"
+        },
+        {
+          "feature": "- Texture/Reskin packs are now officially supported (Add a folder in Mods/Reskins that mimicks the contents of the Duck Game/Content directory)"
+        },
+        {
+          "feature": "- Client reskin mod should now be working again"
+        },
+        {
+          "feature": "- Added workshopIDFacade, namespaceFacade and assemblyNameFacade to Mod.cs to allow DEV versions of mods to define the ID's and Names of their release counterparts, allowing compatibility between them"
+        },
+        {
+          "feature": "- Ducks now breathe. As ducks should."
+        },
+        {
+          "feature": "- Added flagpole furniture for your room"
+        },
+        {
+          "feature": "- Added 'Trick Shots' to stats screen"
+        },
+        {
+          "feature": "- New pipes! Use these to traverse the map, and also to your immediate death."
+        },
+        {
+          "feature": "- Added a game paused indicator"
+        },
+        {
+          "feature": "- Added an indicator for when host skips a level"
+        },
+        {
+          "feature": "- Duck ragdolls are no longer torn apart so wildly while flying through the air, much to their satisfaction"
+        },
+        {
+          "feature": "- Little men may now grow freely, even when you reach level 20."
+        },
+        {
+          "feature": "- Hats are now drawn on netted ducks"
+        },
+        {
+          "feature": "- Screen will no longer show up in rooms with backgrounds"
+        },
+        {
+          "feature": "- Several improvements to Team hats"
+        },
+        {
+          "feature": "- Team hats now have the lowest pickup priority of all props, which should prevent players from picking up a hat when they want something useful."
+        },
+        {
+          "feature": "- Team hats now go underneath everything"
+        },
+        {
+          "feature": "- Team hats no longer block doors or spawners"
+        },
+        {
+          "feature": "- Team hats no longer work for pressing buttons"
+        },
+        {
+          "feature": "- Team hats will now drop at feet if replaced by an equipper"
+        },
+        {
+          "bug": "- Darts really do stick to walls again now!"
+        },
+        {
+          "bug": "- Dartgun now works at point blank range"
+        },
+        {
+          "bug": "- Dart guns now work much closer to as intended online"
+        },
+        {
+          "feature": "- Implemented a dozen more giant icicle breaking situations"
+        },
+        {
+          "feature": "- Icicles now react to death laser, quad laser, darts"
+        },
+        {
+          "feature": "- Strafe sliding into a wall will now make your duck stand up"
+        },
+        {
+          "feature": "- Clicking and dragging the mouse should now allow any rightstick function (tongue, waving rock throw signs, etc)"
+        },
+        {
+          "feature": "- Tongue-stuck ducks will now fall if what which they stuck their tongues on is destroyed"
+        },
+        {
+          "feature": "- Made crates less shiny because crates aren\u2019t shiny"
+        },
+        {
+          "feature": "- Improved platform fallthrough code"
+        },
+        {
+          "bug": "- Large item crates can no longer be moved around"
+        },
+        {
+          "balance_change": "- Subtly increased velocity needed for a disarm (prevents waterflow objects from disarming, hopefully prevents a number of unintentional ragdoll disarms)"
+        },
+        {
+          "feature": "- Rock collision is now accurate when raised against wall (also helps prevent rock camping)"
+        },
+        {
+          "feature": "- Killbox and equipment collision boxes are now accurate when sliding (helps prevent rock camping)"
+        },
+        {
+          "bug": "- TV stuck onto spike helmet now functions properly"
+        },
+        {
+          "balance_change": "- The Rocket launcher no longer has slight rocket speed variation, and now has perfect accuracy (it was 95 percent accurate previously)"
+        },
+        {
+          "bug": "- The Sword should now properly push other ducks online"
+        },
+        {
+          "bug": "- Netting a sword wielding duck is now consistent between online and offline (the previously held sword no longer immediately kills the netted duck when playing online)"
+        },
+        {
+          "balance_change": "- Sharpshot vertical kickback has been reduced while flapping wings"
+        },
+        {
+          "feature": "- Insta Unragdolling is back"
+        },
+        {
+          "feature": "- Flying Nets no longer block bullets"
+        },
+        {
+          "feature": "- Changed timing on spawncannon feedback"
+        },
+        {
+          "feature": "- First jump when spawning in water is no longer dampened"
+        },
+        {
+          "feature": "- Scimi jumping is now possible with keyboard control schemes combining 'jump' and 'up' into one button"
+        },
+        {
+          "feature": "- You can now speed up quad laser bullets by hitting them with a sword in the same direction (why wasn't this possible before??)"
+        },
+        {
+          "bug": "- Bananas are no longer made of metal"
+        },
+        {
+          "feature": "- Drumset now appears in front of blocks"
+        },
+        {
+          "bug": "- Team Hats no longer disarm or push ducks"
+        },
+        {
+          "balance_change": "- Reduced time it takes to load golden Oldpistol, Musket, Blunderbuss and Bazooka"
+        },
+        {
+          "feature": "- Fall deaths will now occur only if the player's duck is off the bottom of the camera, in addition to being below the level. This should prevent dying in midair when skirting the bottom of levels"
+        },
+        {
+          "feature": "- Added chat Text to Speech accessibility option"
+        },
+        {
+          "feature": "- Russian font support"
+        },
+        {
+          "feature": "- Added support for non-english keyboards"
+        },
+        {
+          "feature": "- Made chat bubbles less transparent to improve readability."
+        },
+        {
+          "feature": "- Improved black duck's chat readability"
+        },
+        {
+          "feature": "- Custom mojis!"
+        },
+        {
+          "feature": "- put an 11x11 or 28x28 png into MyDocuments/DuckGame/Custom/Moji then type it's filename in chat like this-    :mymoji:"
+        },
+        {
+          "feature": "- Received custom moji names are now shown in the Dev console (~)"
+        },
+        {
+          "feature": "- Received Mojis can be stolen by typing their name into chat"
+        },
+        {
+          "feature": "- Removed arbitrary moji sub-size limit, custom mojis can now be any size < 56x28"
+        },
+        {
+          "feature": "- Chat emojis now use : instead of @ . For example, :sadface:"
+        },
+        {
+          "feature": "- Chat/Connection indicators now appear on netted ducks/ragdolls"
+        },
+        {
+          "feature": "- Chat avatars now have bodies and quack"
+        },
+        {
+          "feature": "- Added 'bold' and 'italic' suffixes for 'chat font <font>' command"
+        },
+        {
+          "feature": "- Added custom font support for chat font via options menu More.. section, or through console commands 'chat font' and 'chat font size"
+        },
+        {
+          "feature": "- Added chat filtering, sentence enhancers can be re-enabled via options menu"
+        },
+        {
+          "feature": "- Chat size has been corrected"
+        },
+        {
+          "feature": "- (A new Tiny size has also been added, players with existing data may find their chat automatically set to tiny. New players will default to Regular chat size)"
+        },
+        {
+          "feature": "- Mallard skip signs should look a bit better"
+        },
+        {
+          "feature": "- Game now supports resolution settings"
+        },
+        {
+          "feature": "- Game should now properly support non 16:9 ratios (gameplay camera follows screen ratio, UI cameras are locked to 16:9)"
+        },
+        {
+          "bug": "- Corrected squishing issues on non 16:9 monitors"
+        },
+        {
+          "feature": "- Fullscreen settings are now updated in the Draw function instead of in Update"
+        },
+        {
+          "feature": "- Windowed Fullscreen is no longer default"
+        },
+        {
+          "feature": "- VSYNC should now work for non 60hz monitors"
+        },
+        {
+          "bug": "- Error uploading now supports Japanese"
+        },
+        {
+          "feature": "- Simple Hiragana/Katakana support (sorry about the font, I found it online. I'll make an improved one later!)"
+        },
+        {
+          "feature": "- Improved mind control ray sync visuals"
+        },
+        {
+          "feature": "- Changed waterfall layering, added waterfall edge pieces"
+        },
+        {
+          "feature": "- Improved level transition rendering"
+        },
+        {
+          "feature": "- Graphics optimizations and improved layering code"
+        },
+        {
+          "feature": "- Major changes to hat metapixels"
+        },
+        {
+          "feature": "- Reimplemented all ingame audio using NAudio, should reduce audio stutter and improve performance. Should also allow audio device switching while game is running. This also seems to seriously reduce random framerate stutters too (at least on my computer), I don't know what the heck happened to XNA's default audio playback but it's really not very good anymore."
+        },
+        {
+          "feature": "- Reduced size of all sound effects (trimming, converting files that should have been mono to mono). This should improve load times and reduce memory footprint."
+        },
+        {
+          "feature": "- Sound now supports Exclusive"
+        },
+        {
+          "balance_change": "- Reduced volume of sound when things light on fire"
+        },
+        {
+          "feature": "- Changed Duck #5's color to improve clarity"
+        },
+        {
+          "feature": "- Improved sun and point light rendering"
+        },
+        {
+          "feature": "- Made lights more dynamic"
+        },
+        {
+          "feature": "- Further sound engine optimizations"
+        },
+        {
+          "feature": "- All mallard colors are now more clear"
+        },
+        {
+          "feature": "- Red hot glow is now more obvious and affects props as well as guns"
+        },
+        {
+          "feature": "- Improved frame timing for when VSYNC is disabled (no longer using XNA's IsFixedTimestep)"
+        },
+        {
+          "feature": "- Improved level loading times"
+        },
+        {
+          "feature": "- Added limit for snow generators"
+        },
+        {
+          "feature": "- Added redundant collision function implementation for checking layer, ignore object, etc which should improve collision check performance"
+        },
+        {
+          "feature": "- Added more stuff to prevent Alt-Tab crashing"
+        },
+        {
+          "bug": "- Removed network overload message, as it wasn't reporting anything useful (or any actual overload for that matter)"
+        },
+        {
+          "feature": "- Completely removed threading from the initial loading process. This actually improves loading times, and should fix a number of lockups/crashes."
+        },
+        {
+          "feature": "- Improved object serialization/deserialization performance, should improve level/game loading times"
+        },
+        {
+          "feature": "- Improved asset lazy load, this should help reduce stuttering during the games initial screens"
+        },
+        {
+          "feature": "- Massive collision code optimization"
+        },
+        {
+          "feature": "- Removed unnecessary XInput check in DInput driver that was causing a moment of lag on startup"
+        },
+        {
+          "feature": "- Removed cloud settings menu, if you want to disable or enable cloud, or manage cloud files, please use the steam UI or a 3rd party tool"
+        },
+        {
+          "feature": "- Improved purple box synchronization"
+        },
+        {
+          "bug": "- Made a change that should help reduce crashing when changing back and forth from fullscreen (huge thanks to Dan for spearheading this and finding the issue)"
+        },
+        {
+          "feature": "- Reduced unnecessary steam cloud activity (Steam's API's weren't updating file timestamps when writing cloud files unless said files had changed."
+        },
+        {
+          "feature": "- Added saveIndex variable to all save data which increments upon each save, ensuring save data timestamps are always up to date)"
+        },
+        {
+          "feature": "- Major optimizations to ghost state refreshing system, as well as improvements to general network syncronization accuracy"
+        },
+        {
+          "bug": "- Resolution logging in crash logs should now be more accurate"
+        },
+        {
+          "bug": "- Improved crash logging"
+        },
+        {
+          "feature": "- Removed gamepad enumeration thread in favor of a callback system (should help reduce framerate spikes)"
+        },
+        {
+          "feature": "- Added \"Alt. Timestep\" setting for using original XNA timestep (which doesn't work correctly at all on my computer)"
+        },
+        {
+          "feature": "- No longer preloading music, should decrease memory footprint"
+        },
+        {
+          "feature": "- Synchronized save data is now saved in a Documents/DuckGame sub folder corresponding to your Steam ID number. Existing save data will automatically be moved there, anything outside of this subfolder will *not* be synchronized to the cloud."
+        },
+        {
+          "bug": "- things.RefreshState is now called before a network level is 'started'. This should fix some object initialization errors (and hopefully not create new ones..)"
+        },
+        {
+          "feature": "- Crashlogs now show RAM details"
+        },
+        {
+          "feature": "- Cleaned up bug report log format"
+        },
+        {
+          "feature": "- All challengedata is now stored in player profiles. The ChallengeData folder will remain for existing users, but once the game has been started its data will be migrated and it will no longer be used."
+        },
+        {
+          "feature": "- Rewrote cloud integration, it should now detect deleted/modified local files (testing needed)"
+        },
+        {
+          "feature": "- Custom levels are no longer preloaded, this should improve load times for people with many levels (and add a bit of lag when opening Custom Levels menu for the first time)"
+        },
+        {
+          "feature": "- it will end the challenge as soon as MAX TROPHY is reached."
+        },
+        {
+          "bug": "- Crash/Alt-F4 related disconnects should now be detected much quicker."
+        },
+        {
+          "feature": "- Optimized level format"
+        },
+        {
+          "bug": "- Reduced lag spikes caused by Xbox controller \"IsConnected\" check."
+        },
+        {
+          "feature": "- Optimized save data (should be smaller and load faster)"
+        },
+        {
+          "feature": "- Changed GC settings to hopefully reduce framerate spikes"
+        },
+        {
+          "feature": "- New netcode to prevent loss of state information in high jitter situations (packets arriving out of order)"
+        },
+        {
+          "feature": "- Removed a bunch of unused data from BufferedGhostState (may improve network GC hitches, may already have been optimized out when building in release mode)"
+        },
+        {
+          "feature": "- Added file saving safeties to reduce crashing on people with saves synchronized to dropbox/onedrive"
+        },
+        {
+          "feature": "- Windows' new(ish) Rumble over Bluetooth feature doesn't seem to limit outgoing packets in any way, which was causing the game to become extremely laggy with bluetooth controllers. It was also causing bluetooth controllers to lose their composure and disconnect randomly. I'm limiting sent rumble messages on my end now, which should greatly improve wireless controller support. As always hardcore ducks should use a keyboard or a wire for best input performance."
+        },
+        {
+          "feature": "- New editor feature:"
+        },
+        {
+          "feature": "- Holding CTRL while dragging out background tiles will automatically select and place tiles adjacent to the selected tile allowing entire portions of the tileset to be drug out all at once. (this should help make adding Danny DeVito to levels easier). This can also be  done on gamepad by holding down the tile placement button, then holding the MENU1(SHOOT) button at the same time and moving. On an XBOX controller with default settings this means holding A and X."
+        },
+        {
+          "feature": "- New city background tileset"
+        },
+        {
+          "feature": "- Added box selection/mirror/flip functions to level editor"
+        },
+        {
+          "feature": "- Added BuildingFramework tileset, an indestructible tileset which can be placed below normal blocks"
+        },
+        {
+          "feature": "- Improved editor object placement - Quickly dragging out a line of objects should now form a consistent line without gaps"
+        },
+        {
+          "feature": "-Added check when loading older levels for *extremely* large Y values, any objects with bozo values will not be loaded"
+        },
+        {
+          "feature": "- Mouse will now automatically move to the current selected tile position when picking background tiles from the editor using MENU 1 (H by default)"
+        },
+        {
+          "bug": "- Improved window focus detection, should prevent random tiles being placed a million miles offscreen when minimizing while using the editor (if you're ever making an XNA game I don't recommend using Game.IsActive)"
+        },
+        {
+          "bug": "- Mouse input is now disabled until all buttons are released when clicking back into the Duck Game window. This should help prevent unwanted block placement in the editor."
+        },
+        {
+          "feature": "- High-Res texture packs are now possible (add the line 'hd' at the bottom of info.txt)"
+        },
+        {
+          "feature": "- Reskin packs now support limited color replacement (Include a 'colors.txt' file, each line represents a string/hex pair that replaces a Colors.Color or Color.Color static data member. For example, to replace menu color with red: MenuOption=0xC0202D"
+        },
+        {
+          "feature": "- Existing texture packs are now supported (thanks Yupdaniel!)"
+        },
+        {
+          "feature": "- Vanilla maps can now be selected from custom map selection and put into playlists"
+        },
+        {
+          "feature": "- Most vanilla levels now have explicit 1v1 spawn configurations. You can set your own 1v1 spawn configs by setting the 'secondSpawn' property on any duck FreeSpawn"
+        },
+        {
+          "feature": "- (for example, have secondSpawn = false for spawns located on the left side of the level, and secondSpawn = true for spawns on the right to ensure 1v1 ducks never spawn on the same side. Note that secondSpawn does *not* explicitly mean any particular color of duck."
+        },
+        {
+          "feature": "- 'My Levels' cloud folder is no longer a thing. Everything goes through the normal DuckGame/Levels folder again like always."
+        },
+        {
+          "feature": "- Level browser in editor now remembers what folder it left off in"
+        },
+        {
+          "feature": "- Previews now show custom tilesets (you may have to delete My Documents/Duck Game/EditorPreviews)"
+        },
+        {
+          "feature": "- CTRL + Middle Click in editor now activates layer selection swap mode- hold it when placing background tiles to select foreground objects and vice versa"
+        },
+        {
+          "feature": "- Changed Invite lobby type from Friends to Private to prevent Dan Rando from just rolling in (this potentially means a bit more 'can you resend the invite' in the future unfortunately, as it disables right click -> join functionality on invite lobbies)"
+        },
+        {
+          "feature": "- Rewrote connection system and level synchronization system"
+        },
+        {
+          "feature": "- Added 'netData' to Profile class, which can be used to easily and automatically synchronize string->object pairs over the network. Example: DuckNetwork.profiles[0].Set<string>(\"crazyName\", \"wowman\")"
+        },
+        {
+          "feature": "- Rewrote net synchronization for GoodBook"
+        },
+        {
+          "feature": "- Snow tileset freezing and melting is now synchronized"
+        },
+        {
+          "feature": "- Grenade Cannon should now be synchronized properly"
+        },
+        {
+          "feature": "- Bonk stars should now be synchronized"
+        },
+        {
+          "feature": "- Huge laser blasts are now synchronized"
+        },
+        {
+          "feature": "- Synchronized more warp gun sounds"
+        },
+        {
+          "feature": "- Getting smacked sideways with objects is now synchronized"
+        },
+        {
+          "feature": "- Synchronized Present sounds/effects"
+        },
+        {
+          "feature": "- Synchronized hat selector"
+        },
+        {
+          "feature": "- Basketball whistle sound is now synchronized"
+        },
+        {
+          "bug": "- Fire synchronization has been improved a bit, should result in less random lighting on fire online."
+        },
+        {
+          "feature": "- Synchronization of objects is now strictly locked between levels, this should help solve many level start desync issues"
+        },
+        {
+          "feature": "- Fire position synchronization is now more accurate"
+        },
+        {
+          "feature": "- Improved chainsaw fuel leaking synchronization"
+        },
+        {
+          "feature": "- Firecrackers now work online"
+        },
+        {
+          "bug": "- Disarm knockback now works correctly online"
+        },
+        {
+          "feature": "- Added calls to properly upload stats to ensure accurate numbers (no more losing quack numbers)"
+        },
+        {
+          "bug": "- New version numbers weren't working correctly causing games not to connect. This should be fixed!"
+        },
+        {
+          "feature": "- Changed the way network particles and objects are removed, hopefully this will solve the serious slowdown and lockup issues that have come up online"
+        },
+        {
+          "feature": "- Increased resolution of synchronized position and angle variables which should improve the visual smoothness of online play"
+        },
+        {
+          "feature": "- Rewrote network particle manager, implemented a limit on the number of network particles to prevent lockups (fire should truly be more accurate now)"
+        },
+        {
+          "feature": "- Rewrote cloud integration (again) to minimize unnecessary syncing and improve loading times. Removed 'local files deleted' message in favor of a new cloud file manager window where you can manually delete specific files from the cloud. If you delete files from your save game locally with cloud enabled, they'll come right back unless you delete them through a cloud file manager."
+        },
+        {
+          "bug": "- Massive pings should no longer cause a feedback loop of message resend"
+        },
+        {
+          "feature": "- Ping calculation should now be more accurate, and should average out faster during connection. This should hopefully help prevent ducks from moving early."
+        },
+        {
+          "feature": "- Restored network authority system to round robin configuration (dropped pickup time comparison, it was leading to major desync issues."
+        },
+        {
+          "feature": "- If two ducks pick up and object at the same time, the duck with the lower network index will get to keep the object. To avoid host advantage, the network index is calculated as (DuckNetwork.levelIndex + duck.networkIndex) % numberOfPlayers, so the advantage order will change every level."
+        },
+        {
+          "feature": "- Changed some lobby sync code, this should result in faster initial connections and a smoother lobby experience (that of course if it doesn't throw a wrench into things instead)"
+        },
+        {
+          "feature": "- Reported Ping numbers should now be more accurate"
+        },
+        {
+          "feature": "- Reduced network bandwidth required for sending removed objects"
+        },
+        {
+          "bug": "- Reduced lag spikes that occurred in -nothreading mode"
+        },
+        {
+          "feature": "- Removed network threadlock (may improve performance, hoping to solve a particular connection timeout issue)"
+        },
+        {
+          "bug": "- Send.Message is now ignored when called online (why wasn't this the case before?)"
+        },
+        {
+          "feature": "- General network synchronization improvements"
+        },
+        {
+          "feature": "- Rewrote GhostObject synchronization, reducing redundant data and grouping together state messages to greatly reduce network traffic (should help with lag and performance!)"
+        },
+        {
+          "feature": "- Game now properly sends disconnect message on intentional disconnects, so feedback should be a lot better for disconnects now."
+        },
+        {
+          "feature": "- Disarms are now accompanied with a special network message to make them more reliable online"
+        },
+        {
+          "bug": "- Hopefully reduced situations where 2 or more players would claim to own the same object online. (this should reduce teleporting/getting killed by invisible objects)"
+        },
+        {
+          "feature": "- Added strict level index filtering for non-reliable NetMessage"
+        },
+        {
+          "feature": "- You can now view a players steam profile page by selecting their name in the online pause menu (thanks eim64!!)"
+        },
+        {
+          "feature": "- MAX TROPHY can now be set under \"ADVANCED\" in the arcade options menu, if you've gotten the best trophy on a challenge. This is for speedrunning."
+        },
+        {
+          "feature": "- Added \"browse\" button for file browsing dialogues that will open the current folder in Windows Explorer"
+        },
+        {
+          "feature": "- Backfill fix is now enabled by default to prevent discord overlay artifacting"
+        },
+        {
+          "feature": "- Abandoned green mallard heads in favor of color clearness"
+        },
+        {
+          "bug": "- Alt-Enter no longer brings up chat window"
+        },
+        {
+          "feature": "- Added IME support which can be enabled through the options menu"
+        },
+        {
+          "feature": "- ESC can now be bound as a control"
+        },
+        {
+          "feature": "- Slightly zoomed out camera on random levels to assist with navigation"
+        },
+        {
+          "feature": "- Added the option to merge 'DEFAULT' account with main steam account (this will be done automatically if the game detects that there's no challenge progress on your steam account)"
+        },
+        {
+          "feature": "- DG screenshot command is now button combination SHIFT + F12. F12 still takes normal steam screenshots"
+        },
+        {
+          "feature": "- ItemSpawners set with Random and KeepRandom properties set now appear orange"
+        },
+        {
+          "feature": "- Always remember not to put linebreaks in your command line!"
+        },
+        {
+          "feature": "- Added -netdebug command line for enabling the network debugger. Hover the desired game instance and press START to join the game with it, each game will automatically host and join the first game. To override automatic join, hold SHOOT while pressing START."
+        },
+        {
+          "feature": "- Added Duck.invincible, and Duck.disableCrouch (thanks DORD!)"
+        },
+        {
+          "feature": "- Added accelerationModifier variable on Duck for modifying duck speed, Duck.jumpSpeed now properly affects jump"
+        },
+        {
+          "feature": "- Added '-command' command line option, which allows DevConsole commands to be called on startup. Commands must be in quotes, and multiple commands can be defined with additional '-command' elements. For example:"
+        },
+        {
+          "feature": "- -command \"level forest02\" -command \"give player1 pistol\""
+        },
+        {
+          "feature": "- Added shortcut for 'level' console command: 'lev'"
+        },
+        {
+          "feature": "- Added custom font support for console"
+        },
+        {
+          "feature": "- Added new console command options to 'level', including 'title', 'rockthrow', 'pyramid' and 'next'"
+        },
+        {
+          "feature": "- Added '-oldangles' command line option for enabling old angling code, overriding the 'oldangles' console command"
+        },
+        {
+          "feature": "- Added 'oldangles' console command, which will enable the old pre-beta direction changing code. This offers no objective benefit, and exists solely for personal preference!"
+        },
+        {
+          "feature": "- Changed console resize commands, they are now accessed through 'console': console width, console height, console scale, console font, console font size."
+        },
+        {
+          "feature": "- Additional dev console commands can now be added via DevConsole.AddCommand. For Example:"
+        },
+        {
+          "feature": "-  AddCommand(new CMD(\"level\", new CMD.Argument[] { new CMD.Level(\"level\") }, (cmd) => { Level.current = cmd.Arg<Level>(\"level\"); }) { cheat = true, aliases = new List<string>() { \"lev\" }, commandQueueWaitFunction = () => { return Level.core.nextLevel == null; } });"
+        },
+        {
+          "feature": "- Command console 'level' command now supports 'editor' and 'arcade'"
+        },
+        {
+          "feature": "- Command console now supports copy and paste (hi Dan)"
+        },
+        {
+          "feature": "- Command console 'give' command now supports 'e' as a third parameter, which will equip the spawned item."
+        },
+        {
+          "feature": "- Command console 'give' command now supports 'h' as a third parameter, which will holster the spawned item (spawns a holster if no holster exists). 'hp' spawns a Power Holster if none exists."
+        },
+        {
+          "feature": "- Command console now supports running multiple commands in a row by pasting (Ctrl + V) a line split list of commands. For Example:"
+        },
+        {
+          "feature": "- level forest02"
+        },
+        {
+          "feature": "- give player1 pewpewlaser"
+        },
+        {
+          "feature": "- give player2 energyscimitar"
+        },
+        {
+          "feature": "- wait 60"
+        },
+        {
+          "feature": "- give player2 chestplate e"
+        },
+        {
+          "feature": "- give player2 helmet e"
+        },
+        {
+          "feature": "- wait quack"
+        },
+        {
+          "feature": "- give player1 flamethrower i"
+        },
+        {
+          "feature": "- Custom levels can now be loaded through dev console 'level' command"
+        },
+        {
+          "feature": "- Dev Console can now be resized via Graphics settings menu, or through commands dcwidth, dcheight, and dcscale"
+        },
+        {
+          "feature": "- Holding SHIFT while using PgUp, PgDown, Home and End in the console will allow faster browsing through old log messages"
+        },
+        {
+          "feature": "- DevConsole is no longer teensie tiny, now has line numbers and PageUp/PageDown can be used to scroll through output"
+        },
+        {
+          "feature": "- Dev console no longer opens when opening Discord overlay with Shift + ~"
+        },
+        {
+          "feature": "- Dev console command \"showcollision\" now functions properly, and will not function when playing online"
+        },
+        {
+          "feature": "- You can now move the cursor in the dev console, and toggle through all recently typed commands"
+        }
+      ]
+    },
+    {
+      "title": "September 18th Hotfix",
+      "date": "2020-09-18 12:42:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206271603092",
+      "content": "Hey everyone! Just pushed a minor Hotfix patch for the current version of Duck Game. The changes include:\n\n-Fixed crashes related to My Documents folder being located on a network, or otherwise being unavailable in some way.\n\n-Fixed loading lockup crash related to profile unlock lists getting stuck in a feedback loop, leading to massive profile file sizes.\n\n-Added forward compatibility for levels created in the latest beta versions. \n\nSorry if this got anyone excited thinking the big update was finally here. A massive patch will be released very soon, I'm aiming for mid October. Among hundreds of other things, it will add major editor improvements, new weapons, equipment and levels, an all new City tileset, vastly improved network synchronization and [i]Eight Player Multiplayer[/i]! So keep an eye out~\n\nSeptember 19 Hotfix-\n\n-Removed My Documents changes temporarily, as the change wasn't reliable. I'll post another patch as soon as I figure out how to deal with OneDrive MyDocuments folders (currently OneDrive causes the game to crash when save data is updating).",
+      "key": "312530::d63dd758d94080d03c50974b720bffaee663273b",
+      "tags": [
+        {
+          "bug": "-Fixed crashes related to My Documents folder being located on a network, or otherwise being unavailable in some way."
+        },
+        {
+          "bug": "-Fixed loading lockup crash related to profile unlock lists getting stuck in a feedback loop, leading to massive profile file sizes."
+        },
+        {
+          "feature": "- Added forward compatibility for levels created in the latest beta versions."
+        },
+        {
+          "bug": "-Removed My Documents changes temporarily, as the change wasn't reliable. I'll post another patch as soon as I figure out how to deal with OneDrive MyDocuments folders (currently OneDrive causes the game to crash when save data is updating)."
+        }
+      ]
+    },
+    {
+      "title": "Duck Game @HOME UPDATE",
+      "date": "2017-08-30 13:41:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521681125504",
+      "content": "A year and a half in the making, delayed many times to be released alongside the PS4 version of Duck Game, the big update is finally here! Raise little men, get toys, and fight in the snow!\r\n\r\nChangelog\r\n===================================\r\n-New leveling system, grow up little men and get toys to decorate your duck's room.\r\n-Buy toys from Vincent and his Boy.\r\n-Entirely new random level generation system, \"Pyramid\" themed levels.\r\n-A dozen new Snow tileset levels with new ramp and ice physics.\r\n-Half a dozen new hats, unlockable through the leveling system!\r\n-All new fire extinguisher with much more sudzy foam.\r\n-Rewritten netcode, online play should be faster and smoother.\r\n-Cloud support now included, must be enabled through the options menu but automatically uploads your save games for safe keeping even when loading them from the cloud is turned off.\r\n-Server browser! Search for games, find and play games with mods. Privacy and filter options coming soon!\r\n",
+      "key": "312530::140fdcdc30c6cd55d579c8c3c1b42464b66a054b",
+      "tags": [
+        {
+          "feature": "-New leveling system, grow up little men and get toys to decorate your duck's room."
+        },
+        {
+          "feature": "-Buy toys from Vincent and his Boy."
+        },
+        {
+          "feature": "-Entirely new random level generation system, \"Pyramid\" themed levels."
+        },
+        {
+          "feature": "-A dozen new Snow tileset levels with new ramp and ice physics."
+        },
+        {
+          "feature": "-Half a dozen new hats, unlockable through the leveling system!"
+        },
+        {
+          "feature": "-All new fire extinguisher with much more sudzy foam."
+        },
+        {
+          "feature": "-Rewritten netcode, online play should be faster and smoother."
+        },
+        {
+          "feature": "-Cloud support now included, must be enabled through the options menu but automatically uploads your save games for safe keeping even when loading them from the cloud is turned off."
+        },
+        {
+          "feature": "-Server browser! Search for games, find and play games with mods. Privacy and filter options coming soon!"
+        }
+      ]
+    },
+    {
+      "title": "Duck Game @HOME UPDATE",
+      "date": "2017-08-30 13:41:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2095718613763391548",
+      "content": "A year and a half in the making, delayed many times to be released alongside the PS4 version of Duck Game, the big update is finally here! Raise little men, get toys, and fight in the snow!\r\n\r\nChangelog\r\n===================================\r\n-New leveling system, grow up little men and get toys to decorate your duck's room.\r\n-Buy toys from Vincent and his Boy.\r\n-Entirely new random level generation system, \"Pyramid\" themed levels.\r\n-A dozen new Snow tileset levels with new ramp and ice physics.\r\n-Half a dozen new hats, unlockable through the leveling system!\r\n-All new fire extinguisher with much more sudzy foam.\r\n-Rewritten netcode, online play should be faster and smoother.\r\n-Cloud support now included, must be enabled through the options menu but automatically uploads your save games for safe keeping even when loading them from the cloud is turned off.\r\n-Server browser! Search for games, find and play games with mods. Privacy and filter options coming soon!\r\n",
+      "key": "312530::b5d8a6ff3ba9bc8f5c06a6fd3a0140914f490485",
+      "tags": [
+        {
+          "feature": "-New leveling system, grow up little men and get toys to decorate your duck's room."
+        },
+        {
+          "feature": "-Buy toys from Vincent and his Boy."
+        },
+        {
+          "feature": "-Entirely new random level generation system, \"Pyramid\" themed levels."
+        },
+        {
+          "feature": "-A dozen new Snow tileset levels with new ramp and ice physics."
+        },
+        {
+          "feature": "-Half a dozen new hats, unlockable through the leveling system!"
+        },
+        {
+          "feature": "-All new fire extinguisher with much more sudzy foam."
+        },
+        {
+          "feature": "-Rewritten netcode, online play should be faster and smoother."
+        },
+        {
+          "feature": "-Cloud support now included, must be enabled through the options menu but automatically uploads your save games for safe keeping even when loading them from the cloud is turned off."
+        },
+        {
+          "feature": "-Server browser! Search for games, find and play games with mods. Privacy and filter options coming soon!"
+        }
+      ]
+    },
+    {
+      "title": "September 17th Patch Notes",
+      "date": "2015-09-17 15:13:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/405678163079186851",
+      "content": "776598 Features \r\n--------------------------------------------------------------\r\n-Added dialogues warning about hosting games with mods to prevent dead lobbies\r\n-Fixed a number of alt-tab related crashes\r\n-Fixed startup crashes related to save game loading\r\n-Attempted fix for error where sound settings would set themselves to full on startup.\r\n-Added more complete custom block and background functionality\r\n-Added name display to custom levels\r\n-Fixed broken chat\r\n-Fixed graphics glitches on transitions\r\n-Fixed tombstoning bodies\r\n-Fixed a number of situations where floating boxes could occur\r\n-Fixed a number of physics glitches\r\n-Added shotgun spawner to chainsaw murderer level, removed some crates\r\n-Made running and sliding through fire more effective\r\n-Fixed purple box ragdoll crash\r\n-Fixed some item box crashes related to empty item boxes\r\n-Something else pretty important that's on the tip of my tounge but just out of my minds reach\r\n-Fixed crashes and synchronization errors that where making custom maps unplayable!\r\n-Added custom block and background functionality, need to add template.\r\n-Fixed bugs with secret new features\r\n-Finally fixed developer time for Turbo Chainsaw so that it can be beaten.\r\n-Fixed many fullscreen and alt tab related crashes\r\n-Fixed massive bug with random levels not synchronizing properly and causing crashes online\r\n-Fixed a number of startup crashes\r\n-Added mod restart option\r\n-Fixed missing developer times\r\n-Fixed caps lock to work like a proper caps lock\r\n-Better logging\r\n-Added a secret thing (please don't ask about it )\r\n-Other things I'm sure\r\n",
+      "key": "312530::380902981057d872ab0787ca14506b0604e98382",
+      "tags": [
+        {
+          "feature": "-Added dialogues warning about hosting games with mods to prevent dead lobbies"
+        },
+        {
+          "bug": "-Fixed a number of alt-tab related crashes"
+        },
+        {
+          "bug": "-Fixed startup crashes related to save game loading"
+        },
+        {
+          "bug": "-Attempted fix for error where sound settings would set themselves to full on startup."
+        },
+        {
+          "feature": "-Added more complete custom block and background functionality"
+        },
+        {
+          "feature": "-Added name display to custom levels"
+        },
+        {
+          "bug": "-Fixed broken chat"
+        },
+        {
+          "bug": "-Fixed graphics glitches on transitions"
+        },
+        {
+          "bug": "-Fixed tombstoning bodies"
+        },
+        {
+          "bug": "-Fixed a number of situations where floating boxes could occur"
+        },
+        {
+          "bug": "-Fixed a number of physics glitches"
+        },
+        {
+          "feature": "-Added shotgun spawner to chainsaw murderer level, removed some crates"
+        },
+        {
+          "balance_change": "-Made running and sliding through fire more effective"
+        },
+        {
+          "bug": "-Fixed purple box ragdoll crash"
+        },
+        {
+          "bug": "-Fixed some item box crashes related to empty item boxes"
+        },
+        {
+          "bug": "-Fixed crashes and synchronization errors that where making custom maps unplayable!"
+        },
+        {
+          "feature": "-Added custom block and background functionality, need to add template."
+        },
+        {
+          "bug": "-Fixed bugs with secret new features"
+        },
+        {
+          "bug": "-Finally fixed developer time for Turbo Chainsaw so that it can be beaten."
+        },
+        {
+          "bug": "-Fixed many fullscreen and alt tab related crashes"
+        },
+        {
+          "bug": "-Fixed massive bug with random levels not synchronizing properly and causing crashes online"
+        },
+        {
+          "bug": "-Fixed a number of startup crashes"
+        },
+        {
+          "feature": "-Added mod restart option"
+        },
+        {
+          "bug": "-Fixed missing developer times"
+        },
+        {
+          "bug": "-Fixed caps lock to work like a proper caps lock"
+        },
+        {
+          "feature": "-Better logging"
+        },
+        {
+          "feature": "-Added a secret thing (please don't ask about it )"
+        }
+      ]
+    },
+    {
+      "title": "September 17th Patch Notes",
+      "date": "2015-09-17 15:13:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521681125597",
+      "content": "776598 Features \r\n--------------------------------------------------------------\r\n-Added dialogues warning about hosting games with mods to prevent dead lobbies\r\n-Fixed a number of alt-tab related crashes\r\n-Fixed startup crashes related to save game loading\r\n-Attempted fix for error where sound settings would set themselves to full on startup.\r\n-Added more complete custom block and background functionality\r\n-Added name display to custom levels\r\n-Fixed broken chat\r\n-Fixed graphics glitches on transitions\r\n-Fixed tombstoning bodies\r\n-Fixed a number of situations where floating boxes could occur\r\n-Fixed a number of physics glitches\r\n-Added shotgun spawner to chainsaw murderer level, removed some crates\r\n-Made running and sliding through fire more effective\r\n-Fixed purple box ragdoll crash\r\n-Fixed some item box crashes related to empty item boxes\r\n-Something else pretty important that's on the tip of my tounge but just out of my minds reach\r\n-Fixed crashes and synchronization errors that where making custom maps unplayable!\r\n-Added custom block and background functionality, need to add template.\r\n-Fixed bugs with secret new features\r\n-Finally fixed developer time for Turbo Chainsaw so that it can be beaten.\r\n-Fixed many fullscreen and alt tab related crashes\r\n-Fixed massive bug with random levels not synchronizing properly and causing crashes online\r\n-Fixed a number of startup crashes\r\n-Added mod restart option\r\n-Fixed missing developer times\r\n-Fixed caps lock to work like a proper caps lock\r\n-Better logging\r\n-Added a secret thing (please don't ask about it )\r\n-Other things I'm sure\r\n",
+      "key": "312530::614667b984db722ca83b2a8a6a1c9ff9a75a66b3",
+      "tags": [
+        {
+          "feature": "-Added dialogues warning about hosting games with mods to prevent dead lobbies"
+        },
+        {
+          "bug": "-Fixed a number of alt-tab related crashes"
+        },
+        {
+          "bug": "-Fixed startup crashes related to save game loading"
+        },
+        {
+          "bug": "-Attempted fix for error where sound settings would set themselves to full on startup."
+        },
+        {
+          "feature": "-Added more complete custom block and background functionality"
+        },
+        {
+          "feature": "-Added name display to custom levels"
+        },
+        {
+          "bug": "-Fixed broken chat"
+        },
+        {
+          "bug": "-Fixed graphics glitches on transitions"
+        },
+        {
+          "bug": "-Fixed tombstoning bodies"
+        },
+        {
+          "bug": "-Fixed a number of situations where floating boxes could occur"
+        },
+        {
+          "bug": "-Fixed a number of physics glitches"
+        },
+        {
+          "feature": "-Added shotgun spawner to chainsaw murderer level, removed some crates"
+        },
+        {
+          "balance_change": "-Made running and sliding through fire more effective"
+        },
+        {
+          "bug": "-Fixed purple box ragdoll crash"
+        },
+        {
+          "bug": "-Fixed some item box crashes related to empty item boxes"
+        },
+        {
+          "bug": "-Fixed crashes and synchronization errors that where making custom maps unplayable!"
+        },
+        {
+          "feature": "-Added custom block and background functionality, need to add template."
+        },
+        {
+          "bug": "-Fixed bugs with secret new features"
+        },
+        {
+          "bug": "-Finally fixed developer time for Turbo Chainsaw so that it can be beaten."
+        },
+        {
+          "bug": "-Fixed many fullscreen and alt tab related crashes"
+        },
+        {
+          "bug": "-Fixed massive bug with random levels not synchronizing properly and causing crashes online"
+        },
+        {
+          "bug": "-Fixed a number of startup crashes"
+        },
+        {
+          "feature": "-Added mod restart option"
+        },
+        {
+          "bug": "-Fixed missing developer times"
+        },
+        {
+          "bug": "-Fixed caps lock to work like a proper caps lock"
+        },
+        {
+          "feature": "-Better logging"
+        },
+        {
+          "feature": "-Added a secret thing (please don't ask about it )"
+        }
+      ]
+    },
+    {
+      "title": "July 31st Patch Notes",
+      "date": "2015-07-31 12:17:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/423688185539835866",
+      "content": "-Workshop support added for uploading maps and mods\r\n-Multiple local players can now join an online match (Host only currently)\r\n-Modifiers now work online\r\n-New sparks (THANKS PARIL)\r\n-Modding support and mod manager (THANKS PARIL!!!!!)\r\n-Skip signs and quack pitch now synchronized in rock throw\r\n-Added filter for ignoring games with modifiers\r\n-Steam workshop support for maps (only enabled for dev accounts right now!) it can be accessed by clicking the steam button in the editor.\r\n-Steam workshop maps can be selected in custom map screen\r\n-New laser pointer effects for grapple and sniper rifle\r\n-Fixed bug where online match would start zoomed out to the point where everyone was invisible and it would never zoom in\r\n-Fixed glitching bugs related to object id's getting confused online\r\n-Fixed bug where guns would spawn in the top left corner of the map online\r\n-Fixed bug where ragdolls wouldn't burn\r\n-Added sound effects to editor\r\n-Rebuilt and polished editor level selection dialogue\r\n-Fixed right click menu in editor so it wont go off screen\r\n-Fixed some UI layering issues in editor\r\n-Added Shift + Arrow Keys command in editor for moving entire level\r\n-New texture system should help prevent texture related crashes\r\n-Fixed bug where volume could go out of range and cause crashes\r\n-Fixed bug online where disconnecting from a match as a client, and re-joining the match would cause the game to be full\r\n-Added tinted window settings to editor (so pretty)\r\n-Fixed FAST modifier for editor sliders\r\n-Fixed weapon offsetting bugs when gun is held vertical\r\n-Added modding support, which I'm currently working on documentation for\r\n-Kills are now correctly indicated in profile stats\r\n-New connection indicators (poops, zzzzzz, etc)\r\n-Chat indicator pops up when chatting\r\n-Fixed serious online bug where certain actions usually related to taunting after matches could cause persistent excessive bandwidth buildup\r\n-Fixed bug that could cause steam stats to go out of sync, resulting in loss of hats\r\n-Added new dev times to challenge mode, not all challenges have them yet. These are subject to change, and no reward exists in the current build.\r\n-New castle tileset\r\n-New donut tileset\r\n-New blueprint tileset",
+      "key": "312530::d32180c687ea860af83fcfc6ac82886151ffbc26",
+      "tags": [
+        {
+          "feature": "-Workshop support added for uploading maps and mods"
+        },
+        {
+          "feature": "-Multiple local players can now join an online match (Host only currently)"
+        },
+        {
+          "feature": "-Modifiers now work online"
+        },
+        {
+          "feature": "-New sparks (THANKS PARIL)"
+        },
+        {
+          "feature": "-Modding support and mod manager (THANKS PARIL!!!!!)"
+        },
+        {
+          "feature": "-Skip signs and quack pitch now synchronized in rock throw"
+        },
+        {
+          "feature": "-Added filter for ignoring games with modifiers"
+        },
+        {
+          "feature": "-Steam workshop support for maps (only enabled for dev accounts right now!) it can be accessed by clicking the steam button in the editor."
+        },
+        {
+          "feature": "-Steam workshop maps can be selected in custom map screen"
+        },
+        {
+          "feature": "-New laser pointer effects for grapple and sniper rifle"
+        },
+        {
+          "bug": "-Fixed bug where online match would start zoomed out to the point where everyone was invisible and it would never zoom in"
+        },
+        {
+          "bug": "-Fixed glitching bugs related to object id's getting confused online"
+        },
+        {
+          "bug": "-Fixed bug where guns would spawn in the top left corner of the map online"
+        },
+        {
+          "bug": "-Fixed bug where ragdolls wouldn't burn"
+        },
+        {
+          "feature": "-Added sound effects to editor"
+        },
+        {
+          "feature": "-Rebuilt and polished editor level selection dialogue"
+        },
+        {
+          "bug": "-Fixed right click menu in editor so it wont go off screen"
+        },
+        {
+          "bug": "-Fixed some UI layering issues in editor"
+        },
+        {
+          "feature": "-Added Shift + Arrow Keys command in editor for moving entire level"
+        },
+        {
+          "feature": "-New texture system should help prevent texture related crashes"
+        },
+        {
+          "bug": "-Fixed bug where volume could go out of range and cause crashes"
+        },
+        {
+          "bug": "-Fixed bug online where disconnecting from a match as a client, and re-joining the match would cause the game to be full"
+        },
+        {
+          "feature": "-Added tinted window settings to editor (so pretty)"
+        },
+        {
+          "bug": "-Fixed FAST modifier for editor sliders"
+        },
+        {
+          "bug": "-Fixed weapon offsetting bugs when gun is held vertical"
+        },
+        {
+          "feature": "-Added modding support, which I'm currently working on documentation for"
+        },
+        {
+          "feature": "-Kills are now correctly indicated in profile stats"
+        },
+        {
+          "feature": "-New connection indicators (poops, zzzzzz, etc)"
+        },
+        {
+          "feature": "-Chat indicator pops up when chatting"
+        },
+        {
+          "bug": "-Fixed serious online bug where certain actions usually related to taunting after matches could cause persistent excessive bandwidth buildup"
+        },
+        {
+          "bug": "-Fixed bug that could cause steam stats to go out of sync, resulting in loss of hats"
+        },
+        {
+          "feature": "-Added new dev times to challenge mode, not all challenges have them yet. These are subject to change, and no reward exists in the current build."
+        },
+        {
+          "feature": "-New castle tileset"
+        },
+        {
+          "feature": "-New donut tileset"
+        },
+        {
+          "feature": "-New blueprint tileset"
+        }
+      ]
+    },
+    {
+      "title": "July 31st Patch Notes",
+      "date": "2015-07-31 12:17:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521681125701",
+      "content": "-Workshop support added for uploading maps and mods\r\n-Multiple local players can now join an online match (Host only currently)\r\n-Modifiers now work online\r\n-New sparks (THANKS PARIL)\r\n-Modding support and mod manager (THANKS PARIL!!!!!)\r\n-Skip signs and quack pitch now synchronized in rock throw\r\n-Added filter for ignoring games with modifiers\r\n-Steam workshop support for maps (only enabled for dev accounts right now!) it can be accessed by clicking the steam button in the editor.\r\n-Steam workshop maps can be selected in custom map screen\r\n-New laser pointer effects for grapple and sniper rifle\r\n-Fixed bug where online match would start zoomed out to the point where everyone was invisible and it would never zoom in\r\n-Fixed glitching bugs related to object id's getting confused online\r\n-Fixed bug where guns would spawn in the top left corner of the map online\r\n-Fixed bug where ragdolls wouldn't burn\r\n-Added sound effects to editor\r\n-Rebuilt and polished editor level selection dialogue\r\n-Fixed right click menu in editor so it wont go off screen\r\n-Fixed some UI layering issues in editor\r\n-Added Shift + Arrow Keys command in editor for moving entire level\r\n-New texture system should help prevent texture related crashes\r\n-Fixed bug where volume could go out of range and cause crashes\r\n-Fixed bug online where disconnecting from a match as a client, and re-joining the match would cause the game to be full\r\n-Added tinted window settings to editor (so pretty)\r\n-Fixed FAST modifier for editor sliders\r\n-Fixed weapon offsetting bugs when gun is held vertical\r\n-Added modding support, which I'm currently working on documentation for\r\n-Kills are now correctly indicated in profile stats\r\n-New connection indicators (poops, zzzzzz, etc)\r\n-Chat indicator pops up when chatting\r\n-Fixed serious online bug where certain actions usually related to taunting after matches could cause persistent excessive bandwidth buildup\r\n-Fixed bug that could cause steam stats to go out of sync, resulting in loss of hats\r\n-Added new dev times to challenge mode, not all challenges have them yet. These are subject to change, and no reward exists in the current build.\r\n-New castle tileset\r\n-New donut tileset\r\n-New blueprint tileset",
+      "key": "312530::536f61e6d9156ad57acda2a9eb97f12db30bcb30",
+      "tags": [
+        {
+          "feature": "-Workshop support added for uploading maps and mods"
+        },
+        {
+          "feature": "-Multiple local players can now join an online match (Host only currently)"
+        },
+        {
+          "feature": "-Modifiers now work online"
+        },
+        {
+          "feature": "-New sparks (THANKS PARIL)"
+        },
+        {
+          "feature": "-Modding support and mod manager (THANKS PARIL!!!!!)"
+        },
+        {
+          "feature": "-Skip signs and quack pitch now synchronized in rock throw"
+        },
+        {
+          "feature": "-Added filter for ignoring games with modifiers"
+        },
+        {
+          "feature": "-Steam workshop support for maps (only enabled for dev accounts right now!) it can be accessed by clicking the steam button in the editor."
+        },
+        {
+          "feature": "-Steam workshop maps can be selected in custom map screen"
+        },
+        {
+          "feature": "-New laser pointer effects for grapple and sniper rifle"
+        },
+        {
+          "bug": "-Fixed bug where online match would start zoomed out to the point where everyone was invisible and it would never zoom in"
+        },
+        {
+          "bug": "-Fixed glitching bugs related to object id's getting confused online"
+        },
+        {
+          "bug": "-Fixed bug where guns would spawn in the top left corner of the map online"
+        },
+        {
+          "bug": "-Fixed bug where ragdolls wouldn't burn"
+        },
+        {
+          "feature": "-Added sound effects to editor"
+        },
+        {
+          "feature": "-Rebuilt and polished editor level selection dialogue"
+        },
+        {
+          "bug": "-Fixed right click menu in editor so it wont go off screen"
+        },
+        {
+          "bug": "-Fixed some UI layering issues in editor"
+        },
+        {
+          "feature": "-Added Shift + Arrow Keys command in editor for moving entire level"
+        },
+        {
+          "feature": "-New texture system should help prevent texture related crashes"
+        },
+        {
+          "bug": "-Fixed bug where volume could go out of range and cause crashes"
+        },
+        {
+          "bug": "-Fixed bug online where disconnecting from a match as a client, and re-joining the match would cause the game to be full"
+        },
+        {
+          "feature": "-Added tinted window settings to editor (so pretty)"
+        },
+        {
+          "bug": "-Fixed FAST modifier for editor sliders"
+        },
+        {
+          "bug": "-Fixed weapon offsetting bugs when gun is held vertical"
+        },
+        {
+          "feature": "-Added modding support, which I'm currently working on documentation for"
+        },
+        {
+          "feature": "-Kills are now correctly indicated in profile stats"
+        },
+        {
+          "feature": "-New connection indicators (poops, zzzzzz, etc)"
+        },
+        {
+          "feature": "-Chat indicator pops up when chatting"
+        },
+        {
+          "bug": "-Fixed serious online bug where certain actions usually related to taunting after matches could cause persistent excessive bandwidth buildup"
+        },
+        {
+          "bug": "-Fixed bug that could cause steam stats to go out of sync, resulting in loss of hats"
+        },
+        {
+          "feature": "-Added new dev times to challenge mode, not all challenges have them yet. These are subject to change, and no reward exists in the current build."
+        },
+        {
+          "feature": "-New castle tileset"
+        },
+        {
+          "feature": "-New donut tileset"
+        },
+        {
+          "feature": "-New blueprint tileset"
+        }
+      ]
+    }
+  ]
+}

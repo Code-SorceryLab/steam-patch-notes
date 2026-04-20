@@ -1,0 +1,1047 @@
+{
+  "appId": "329070",
+  "count": 14,
+  "notes": [
+    {
+      "title": "I am no longer a \ud83d\udc3f.",
+      "date": "2025-08-25 22:35:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382594059",
+      "content": "[h3][b]Play my voice at normal human speeds.[/b][/h3]\n\n[p]This is a super minor patch to fix a bug I added (while trying to fix another bug, which it didn't even fix) that made my voice in the tutorial (and all other sounds sometimes) play at like 10x speed.  Which, while entertaining, is not great for a tutorial first impression.[/p]\n\n[u][b]Details and misc fixes for v0.2.8267.5467:[/b][/u]\n[list]\n[*]no more \ud83d\udc3f\n[/list]\n\nBummer the \ud83d\udc3f emoji is so tiny and black and white on my preview.",
+      "key": "329070::ae05218fa864a8a3dee3c01388d62f89f1e3f980",
+      "tags": [
+        {
+          "bug": "[p]This is a super minor patch to fix a bug I added (while trying to fix another bug, which it didn't even fix) that made my voice in the tutorial (and all other sounds sometimes) play at like 10x speed.  Which, while entertaining, is not great for a tutorial first impression.[/p]"
+        },
+        {
+          "bug": "[*]no more \ud83d\udc3f"
+        }
+      ]
+    },
+    {
+      "title": "The Only Mostly Dead Update",
+      "date": "2025-08-18 22:58:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939487834",
+      "content": "[h3][b][url=https://www.youtube.com/watch?v=xbE8E1ez97M]\"There's a big difference between mostly dead and all dead.\"[/url][/b][/h3]\n\n[p]It has been [i]way too long[/i] since the last update, and I apologize for that!  My hope is this is the start of regular SpyParty updates again.  This update is actually probably going to be a little disappointing content-wise, because while there are a bunch of smaller player-facing things in here, most of the real work was backend work in support of the upcoming [b]No Wait Matchmaking[/b], which should be coming relatively soon after this ([i]insert joke about hopefully not 4 more years here[/i]).[/p]\n[p]To support the style and quality of matchmaking I want in SpyParty, I needed to really make the replay/spectation sniper feature into a first class mode, and that means allowing players to spectate spectation snipers.  What does that even mean?  Well, as you may know, there are detailed replays saved for all games, both locally and to the server, so you can review your gameplay (and your opponent's), spectate live matches in the lobby, the community can do casts of competitive matches on twitch, and all that good stuff.  Then, a cool feature on top of that replay and spectation sniping.  So you can watch a replay from all the different camera angles you'd expect, the Spy's camera, the Sniper's, and various other camera modes, but you can also play Sniper against the original replay Spy.  They obviously don't know you're playing them because they're just a recording, so they can't respond to your laser scope positioning, but it works incredibly well, way better than I thought it would when I came up with the idea.  Then on top of that you can snipe live games, and there is a Daily Challenge that queries the more than FIVE MILLION replays on the server (so far) and feeds 8 of them to you and everybody else every day.  Building on top of [i]that[/i] the No Wait Matchmaking is going to be No Wait because if it can't find you a live opponent within an amount of time you set, which can be zero seconds, it will feed you a replay at your skill level to snipe, so you can basically be instantly playing the game in matchmaking.  So that code builds on all the other stuff, but then on top of [b][i]that[/i][/b] I want people to be able to spectate players while they're in matchmaking, which is different than spectating a live match between two players that lasts for a few games.  With matchmaking spectation, you spectate a given player and follow them through all the games they play in the matchmaking queue.  But some of those games might be replay sniper games, so I wanted players to see the player they were spectating doing the sniping of the replay. And then of course you can snipe too, and then take a shot and then switch to spectation and see how the original player is doing.  Or the real original Sniper in the replay.  And while I was there, you can just see all the other players sniping too.  And then you can turn on all the Snipers at the same time and see all the lasers.  And of course you can load a replay and all its sniper files from your local saves, or a zip file somebody sends you.  Which means the game saves .sniper files in addition to .replay files now.  And and and.  Anyway, you get the idea, that was a lot of work, but it's mostly working now and should be super sweet for No Wait Matchmaking.[/p]\n[p]Right now, this code is all working for matches and curated replay sets and dailies and stuff, and I have enabled a button to test just this replay sniper matchmaking feed in the settings so it gets some testing coverage while I work on the rest of the No Wait Matchmaking code.  So if you are wondering how somebody gets the lobby state Testing, check your Matchmaking settings section to enable the button.[/p]\n[img]{STEAM_CLAN_IMAGE}/31193249/223815839cc89c13ce51e0ceb81f5b836e0a2121.png[/img]\n\n[b][u]The big stuff, details are below:[/u][/b]\n[b][list]\n[*]matchmaking backend work and testing for sniper replays\n[*]can spectate other spectation snipers now in addition to live sniper\n[*]matchmaking results screen with win/loss portraits (these need to link to replays)\n[*]save .sniper files locally now for replay sniping\n[*]for replay/spectation sniping, now use an asterisk* for the not-live spy everywhere\n[*]can load multiple sniper files at the same time, ctrl-tab between them, or show all the lasers simultaneously\n[*]multi-shot .sniper files do cool rewind stuff on playthrough and seeks, and display each result (asterisk* means just recent not actual result)\n[*]full support for .sniper files in replays directory browser, highlights related .sniper and .replay files\n[*]ctrl-shift-click to toggle mark on all related .sniper and .replay files\n[*]new Major.minor.revno.changelist versioning\n[*]fast and small incremental patch updates on website version, steam still needs to exit, need to figure out if can fix this\n[*]server quickplays for ease of tournament management\n[/list][/b]\nEnjoy, and let me know if there are bugs!\nChris\n\n[u][b]Details and misc fixes for v0.2.8264.5467, v0.2.8261.5467:[/b][/u]\n[i]This was 1206 lines of checkin comments and almost 1000 revisions, this is a very shortened list...[/i]\n[list]\n[*]more accurate replay end times\n[*]more robust playing/rewind play/pause behavior and lots of bugs fixed\n[*]preserve replays menu view across dialogs and replay loads\n[*]Y on controller swaps replay sniper (assuming Y camera invert is off in settings)\n[*]draw timeslider thumb on top of the events\n[*]work on bug database, not public yet\n[*]make ctrl-rshift-alt-U actually toggle venue geometry\n[*]add 007 emote to perfect scores at your daily level and higher\n[*]add --nomemhook for memory allocation failure crash debugging\n[*]don't allow randomizer on venue select to pick Custom quickplays to avoid weird surprises\n[*]version on splash screen and more hz\n[*]don't put 1 on first matchmaking room\n[*]remove all the dumb button lines from the lobby and just use the subtitle\n[*]fix bug where was reusing instanceid if multiple snipers for live game...ugh\n[*]was sending wayyyy too many sniper laser packets\n[*]update streams notifier to helix twitch api, support babble, etc, various tools\n[*]draw all replay sniper laser names on a setting\n[*]only allow one replay sniper game on each spectation game per username, kick to spectating\n[*]fix splash screen to not stretch on steamdeck\n[*]fix if mouse focus is on main menu and hit tab with scrollbox for motd, asserts and focus gets lost\n[*]twitch->youtube stuff\n[*]handle dog with multi sniper mode\n[*]so dumb but awesome\n[*]portability work that hasn't been finished yet for win64, macos, and more\n[*]tune alpha behind dossier on unlocks\n[*]bit better buffering behavior\n[*]sort replays oldest->newest since view last replay is there and this is better for playing a set as a caster\n[*]daily challenge MegaBonus, 8/8 all levels and your Bonus, get a MegaBonus additional 8\n[*]update discord streams bot to work around discord markup parsing bug\n[*]tls 1.2 stuff\n[*]turn off mission win pending when purloin expires in spectation and replays\n[*]new telemetry system and backend\n[*]make uniform behavior on spectation auto next on end\n[*]lol 13 yr old bug\n[*]fix crash bug from wide aspect ratios in a totally stupid way\n[*]better fix for the missions setup panel aspect ratio thing, not great but way better, uses w and h\n[*]starting to log on update in helper\n[*]make pending events medium priority instead of minor in event list\n[*]write spyparty.prop property fail on readonly\n[*]don't pop unlocks on replay game accept screen ever\n[*]beginner game mode in dossier\n[*]missed a couple dossier game mode indicies\n[*]display and sort locked levels in recommended instead of hiding them, for teasers\n[*]don't randomize to locked venues\n[*]fix players vs headline everywhere (?)\n[*]put replay camera stuff on replay ui toggle\n[*]fix bug with hurry up being depressed masking mouse with activeid\n[*]twitch youtube matching and export nightmare because of twitch vod deletion\n[*]can't /makeroom if silenced\n[*]add /announce mod command for modal lobby message\n[*]portability work\n[*]/random chat command, lobby, local, match, etc.\n[*]ctrl-up/dn for chat command history, wip\n[*]switch mm spectation to correct side camera default always for spectatee\n[*]make casting mode result show up when the real result is known\n[*]fix shift draw absolute time to only care if you're typing not if the chat is up\n[*]ctrl-F5 for screenshot\n[*]make lobby message have an optional timeout\n[*]if replay fails to load, stay on results screen\n[*]enum dsound devices to log\n[*]fixing manifest to give real windows version number in log\n[*]ignore keys in replays menu if chat is up\n[*]remove .dmp suffix from local 7z crashdump archive\n[*]set the audio current position in the play before playing to avoid an echo that only ethan could hear\n[*]stop screams when watch replay hit in live game results\n[*]work around weird steph crash with wglew passing test but no funcptr\n[/list]\n[b]Before:[/b]\n[img]{STEAM_CLAN_IMAGE}/31193249/b60109e9cccc88f6657c88b6d36dda5826e7cd9a.png[/img]\n[b]After:[/b]\n[img]{STEAM_CLAN_IMAGE}/31193249/e88e0521a386106b81b0bd466250b083da99c15d.png[/img]",
+      "key": "329070::126f2b027309e3c39445ecea1d12e70365553efe",
+      "tags": [
+        {
+          "feature": "- Added the Highlights feature."
+        },
+        {
+          "feature": "- A new game mode has been added to matchmaking and offline play: Deathmatch."
+        },
+        {
+          "feature": "- Added three new playable heroes: Queen of Pain, Slark, and Templar Assassin"
+        },
+        {
+          "bug": "- Fixed an empty item panel sometimes showing on the scoreboard."
+        },
+        {
+          "bug": "-DE_Library: Fixed bug where some clients would crash on bomb explosion."
+        },
+        {
+          "bug": "- Fixed a bug where removing/adding a silencer would also drop a magazine on the ground."
+        },
+        {
+          "balance_change": "- Reduced Molotov price from 500 to 400."
+        },
+        {
+          "balance_change": "- XM1014 - reduced damage to 20."
+        },
+        {
+          "balance_change": "* Eul's Scepter of Divinity: Bonus movement speed reduced from +40 to +30"
+        }
+      ]
+    },
+    {
+      "title": "Venue Special Dailies, and Bugs",
+      "date": "2020-09-18 20:44:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206272813941",
+      "content": "[h3][b]Venue Special Dailies, and Bugs[/b][/h3]\n\n[b][u]Another minor bugfix build to fix bugs in the last bugfix build, plus new Special Venue Day Sniper Daily Challenges:[/u][/b]\n[b][list]\n[*]The Sniper Daily Challenge, that new thing that lets you play a random selection of Sniper games against players at your skill level [i]from the past[/i], now has a Special Venue Day.  Every Sunday/Monday (00:00 GMT Mondays, so local times vary, it happens 5pm Sundays in US Pacific for example), the Daily Challenge games query the replay database for a single venue, so this coming day will be 8 games of Courtyard, then next week will be Gallery, and so on.  It loops every 14 weeks.  Compare your scores and times in the the official [url=http://discord.gg/spyparty]SpyParty Discord[/url].\n\n[*]Fixed a potentially game breaking \"tell\" bug discovered and reported by [b]lazybear[/b].  The NPCs would not use the entire bookshelf pads, so any time a guest would go past the halfway point to stop, it would have to be the Spy.  You can see the possible NPC positions in this before/after image.  Thanks again to [b]lazybear[/b] for the report, it's really important that bugs like this get reported quickly and privately so I can fix them so SpyParty stays competitively balanced.\n[img]{STEAM_CLAN_IMAGE}/31193249/af9d46e5114ef0eeb852930ed58b10a9874308eb.jpg[/img]\n\n[*]I tried to fix the action priorities of Contact the Double Agent and Delegated Purloin and ended up messing everything up for three builds.\n\n[*]Finally fixed the Steam login bug that caused the lobby to disconnect you.  Hopefully.  If you get a Lobby Disconnected error (assuming your internet isn't being spotty), please report it here in the forums or on Discord.\n[/list][/b]\n\nEnjoy, and let me know if there are bugs!\nChris\n\n[u][b]v0.1.7262.0, v0.1.7263.0, v0.1.7269.0:[/b][/u]\n[list]\n[*]code[list]\n[*]now using the red-black tree super de-duper on all daily days, including special venue days and race the sniper, so if you ever see a dupe let me know when and where!\n[*]better bookcase bunching up avoidance without avoiding the entire front of the bookcase\n[*]fix action priority bug for fake bb and delegated bar purloin\n[*]fix flirt to come before bb\n[*]don't change bb priority when it's achieved\n[*]separate out fake and real and put fake last in the priorities [i]finally[/i]\n[*]finally fix steam multiple login issue with mismatched ticket names\n[*][i]VERY IMPORTANT FIX:[/i] \"specator\" -> \"spectator\" on button\n[*]finally fix obscure but somewhat common crash on displaying dossier on unlock on sniper game setup before spy ready, phew.\n[/list]\n[/list]\n",
+      "key": "329070::293b40a1e9edb2a0707be1febcf6d3951379e0d9",
+      "tags": [
+        {
+          "feature": "The Sniper Daily Challenge, that new thing that lets you play a random selection of Sniper games against players at your skill level [i]from the past[/i], now has a Special Venue Day.  Every Sunday/Monday (00:00 GMT Mondays, so local times vary, it happens 5pm Sundays in US Pacific for example), the Daily Challenge games query the replay database for a single venue, so this coming day will be 8 games of Courtyard, then next week will be Gallery, and so on.  It loops every 14 weeks.  Compare your scores and times in the the official [url=http://discord.gg/spyparty]SpyParty Discord[/url]."
+        },
+        {
+          "bug": "Fixed a potentially game breaking \"tell\" bug discovered and reported by [b]lazybear[/b].  The NPCs would not use the entire bookshelf pads, so any time a guest would go past the halfway point to stop, it would have to be the Spy.  You can see the possible NPC positions in this before/after image.  Thanks again to [b]lazybear[/b] for the report, it's really important that bugs like this get reported quickly and privately so I can fix them so SpyParty stays competitively balanced."
+        },
+        {
+          "bug": "I tried to fix the action priorities of Contact the Double Agent and Delegated Purloin and ended up messing everything up for three builds."
+        },
+        {
+          "bug": "Finally fixed the Steam login bug that caused the lobby to disconnect you.  Hopefully.  If you get a Lobby Disconnected error (assuming your internet isn't being spotty), please report it here in the forums or on Discord."
+        },
+        {
+          "bug": "better bookcase bunching up avoidance without avoiding the entire front of the bookcase"
+        },
+        {
+          "bug": "fix action priority bug for fake bb and delegated bar purloin"
+        },
+        {
+          "bug": "fix flirt to come before bb"
+        },
+        {
+          "bug": "don't change bb priority when it's achieved"
+        },
+        {
+          "bug": "separate out fake and real and put fake last in the priorities [i]finally[/i]"
+        },
+        {
+          "bug": "finally fix steam multiple login issue with mismatched ticket names"
+        },
+        {
+          "bug": "[i]VERY IMPORTANT FIX:[/i] \"specator\" -> \"spectator\" on button"
+        },
+        {
+          "bug": "finally fix obscure but somewhat common crash on displaying dossier on unlock on sniper game setup before spy ready, phew."
+        }
+      ]
+    },
+    {
+      "title": "Belated Bugfix Build",
+      "date": "2020-07-30 04:08:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3664193578958838013",
+      "content": "[img]{STEAM_CLAN_IMAGE}/31193249/82a8f697e11d007c28cff1cd5f9bc4801f215869.gif[/img]\n\n[h3][b]Belated Bugfix Build[/b][/h3]\n\n[b][u]This build is mostly a bunch of small stuff, but the biggest and most important things are:[/u][/b]\n[b][list]\n[*]I finally fixed the \"sliding bug\" where eventually the walking position and animations would desynchronize, this was due to accumulated error in some fixedpoint values sent over the network, and the fix was pretty easy once I realized this...I just keep track of the error on the sender and compensate for it over time.\n\n[*]No more dupes in dailies!  I've been testing the red/black tree implementation for months, and I'm pretty sure it's rock solid, so now I'm turning it on for a full 365 days.  If you see a duplicate game in the daily challenge ever again (not counting games before this build) then it's a big bug!\n\n[img]{STEAM_CLAN_IMAGE}/31193249/91e79f7881a139d9261e22d2644287ad80453e2d.png[/img]\n\n[*]I now queue the last three games in a match for spectators, so if you're a late joiner or the match is set to spectation /delay, you won't miss out on the first few games.\n[/list][/b]\n\nEnjoy, and let me know if there are bugs!\nChris\n\n[u][b]v0.1.7232.0:[/b][/u]\n[list]\n[*]code[list]\n[*]fix Away, Spectating \"build\" in /stats to be a little less noisy\n[*]daily challenge should not have dupes for 365 days now\n[*]check for spy and sniper setup complete on spectation load to avoid bad replays in dailies\n[*]lobby state CLOSED allows games but not matches/sets\n[*]fix lobby assert when cached game is evicted before message lands\n[*]fix lobby assert if invited by highest client id and then they disconnect and then our spectation socket closes !?\n[*]if invitations fail to find other client id, fail accepts and handle them somewhat\n[*]email notification on lobby crash\n[*]fix sliding bug, which seems to be caused by error buildup in relative timestamps in packets, track error on server and send corrections to client\n[*]fix replay timeline scrubbing memory leak (and crash?), if fading sound out don't remove from list\n[*]RIP bookmarking in practice sniper menu text\n[*]fix a crash if we're in a replay dir that gets renames but the notification fails to trigger\n[*]add prompt to /say and /emote on room change during typing to avoid spamming lobby, and fix /sayroom and /emoteroom\n[*]make /win more robust, w h, x y w h, or all params\n[*]clear credentials on exit has one-shot and always options, default steam users to one-shot for old versions, have people use one-shot for working around steam bug for now\n[*]record finished http request time from signal thread so we aren't dependent on load times for computing server clock skew\n[*]queue 3 games after end so late joiners can have a chance to watch a game even with delay on\n[*]save replay data as soon as done, don't wait for retire, avoids some quick exit situations that didn't save game correctly\n[*]display next spectation game ready in a slightly less epilepsy inducing typeface\n[*]if /away then default invites to off\n[*]display the \"next game has started\" thing in casting mode if we've seen the end of the game once\n[*]allow the spy normal action key to fire the sniper rifle\n[*]more asserts to try to catch this portrait crash(es)\n[*]flush log if lose focus\n[*]sort /away folks to bottom of lobby list above finishing folks\n[*]fix bug with replay set results screen missing title\n[*]setting for filtering lobby meta chat messages like join/leave, probably want more stuff under this category\n[*]don't play drink crash twice on canceling waiter purloin\n[*]don't use replay muting in replay/spectation sniping mode, only when viewing the replay as a spectator\n[/list]\n\n[*]content[list]\n[*]investigating and fixing offsets in pub and ballroom, this was not a big deal until the Daily Challenge and these old replays started showing up everywhere!\n[*]venue texture and geometry fixes for ballroom, gallery, balcony, high-rise, moderne, library, pub, redwoods, teien, terrace, veranda\n[*]thanks to cleetose for finding all these!!!\n[*]reduce volume a bit on drink crash and statue clank\n\n[/list][/list]\n\nEdit: Just updated to 7237, fixing a tutorial crash.  Should be live in a few minutes.\n",
+      "key": "329070::1b9631e034117dc8728cea381cc3e737b1e88654",
+      "tags": [
+        {
+          "bug": "I finally fixed the \"sliding bug\" where eventually the walking position and animations would desynchronize, this was due to accumulated error in some fixedpoint values sent over the network, and the fix was pretty easy once I realized this...I just keep track of the error on the sender and compensate for it over time."
+        },
+        {
+          "bug": "No more dupes in dailies!  I've been testing the red/black tree implementation for months, and I'm pretty sure it's rock solid, so now I'm turning it on for a full 365 days.  If you see a duplicate game in the daily challenge ever again (not counting games before this build) then it's a big bug!"
+        },
+        {
+          "feature": "I now queue the last three games in a match for spectators, so if you're a late joiner or the match is set to spectation /delay, you won't miss out on the first few games."
+        },
+        {
+          "bug": "fix Away, Spectating \"build\" in /stats to be a little less noisy"
+        },
+        {
+          "bug": "daily challenge should not have dupes for 365 days now"
+        },
+        {
+          "bug": "check for spy and sniper setup complete on spectation load to avoid bad replays in dailies"
+        },
+        {
+          "bug": "lobby state CLOSED allows games but not matches/sets"
+        },
+        {
+          "bug": "fix lobby assert when cached game is evicted before message lands"
+        },
+        {
+          "bug": "fix lobby assert if invited by highest client id and then they disconnect and then our spectation socket closes !?"
+        },
+        {
+          "bug": "if invitations fail to find other client id, fail accepts and handle them somewhat"
+        },
+        {
+          "bug": "email notification on lobby crash"
+        },
+        {
+          "bug": "fix sliding bug, which seems to be caused by error buildup in relative timestamps in packets, track error on server and send corrections to client"
+        },
+        {
+          "bug": "fix replay timeline scrubbing memory leak (and crash?), if fading sound out don't remove from list"
+        },
+        {
+          "bug": "RIP bookmarking in practice sniper menu text"
+        },
+        {
+          "bug": "fix a crash if we're in a replay dir that gets renames but the notification fails to trigger"
+        },
+        {
+          "feature": "add prompt to /say and /emote on room change during typing to avoid spamming lobby, and fix /sayroom and /emoteroom"
+        },
+        {
+          "feature": "make /win more robust, w h, x y w h, or all params"
+        },
+        {
+          "feature": "clear credentials on exit has one-shot and always options, default steam users to one-shot for old versions, have people use one-shot for working around steam bug for now"
+        },
+        {
+          "feature": "record finished http request time from signal thread so we aren't dependent on load times for computing server clock skew"
+        },
+        {
+          "feature": "queue 3 games after end so late joiners can have a chance to watch a game even with delay on"
+        },
+        {
+          "bug": "save replay data as soon as done, don't wait for retire, avoids some quick exit situations that didn't save game correctly"
+        },
+        {
+          "feature": "display next spectation game ready in a slightly less epilepsy inducing typeface"
+        },
+        {
+          "feature": "if /away then default invites to off"
+        },
+        {
+          "feature": "display the \"next game has started\" thing in casting mode if we've seen the end of the game once"
+        },
+        {
+          "feature": "allow the spy normal action key to fire the sniper rifle"
+        },
+        {
+          "bug": "more asserts to try to catch this portrait crash(es)"
+        },
+        {
+          "bug": "flush log if lose focus"
+        },
+        {
+          "feature": "sort /away folks to bottom of lobby list above finishing folks"
+        },
+        {
+          "bug": "fix bug with replay set results screen missing title"
+        },
+        {
+          "feature": "setting for filtering lobby meta chat messages like join/leave, probably want more stuff under this category"
+        },
+        {
+          "bug": "don't play drink crash twice on canceling waiter purloin"
+        },
+        {
+          "bug": "don't use replay muting in replay/spectation sniping mode, only when viewing the replay as a spectator"
+        },
+        {
+          "bug": "investigating and fixing offsets in pub and ballroom, this was not a big deal until the Daily Challenge and these old replays started showing up everywhere!"
+        },
+        {
+          "bug": "venue texture and geometry fixes for ballroom, gallery, balcony, high-rise, moderne, library, pub, redwoods, teien, terrace, veranda"
+        },
+        {
+          "bug": "fix a tutorial crash. Should be live in a few minutes."
+        }
+      ]
+    },
+    {
+      "title": "Race the Sniper Daily Challenge Mode, and Fixes & Features!",
+      "date": "2020-03-01 02:37:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2578812118962719776",
+      "content": "[h3][b]Race the Sniper Daily Challenge Mode, and Fixes & Features![/b][/h3]\n\n[img]{STEAM_CLAN_IMAGE}/31193249/7020967c317341b36c257aa7b17eaaa3f4a91aff.png[/img]\n\n[b][u]The big stuff, details are below:[/u][/b]\n[list]\n[*][b]Sniper Daily Challenge Bugs[/b]\nSome small bug fixes, and one huge exploit bug fix that was reported privately by Legorve Genine/steam before anybody else noticed, thanks so much!\n[*][b]Once a week [i]Race the Sniper[/i] Daily Challenge Mode[/b]\nThe normal Daily Challenge consists of all Spy wins or timeouts, so when you play Sniper, you get a \"normal\" game against the Spy.  I added a new mode that activates once a week on Sunday afternoons in the US, or 00:00 GMT Monday morning to be precise, where the replays choosen from the database are all games where the original sniper shoots the Spy, and you have to shoot first to win. It's an experiment, and so far some like it and some don't, give it a try on Sunday/Mondays and see what you think!\n[/list]\n\nEnjoy, and let me know if there are bugs!\nChris\n\n[u][b]v0.1.7080.0, v0.1.7083.0, v0.1.7093.0:[/b][/u]\n[list]\n[*]daily challenge fixes and features[list]\n[*]fix /daily command to print stats without level param, must have param to play daily, like /daily 4 to play level 4's daily (this is how you play more than just your own daily level)\n[*]don't lock out daily on cancel until actually started the first game\n[*]setting for disabling daily results posting to discord\n[*]pop up a screen describing daily and curated set, this is used to tell you if you're on a Race the Sniper day\n[*]fix absolutely wild replay sniper bug discovered by Legorve Genine/steam (see below)\n[*]put the spy green bar on the replays sniper view portraits[/list]\n[/list]\n\nSo, this bug:  because the replay sniper mode was built off the regular replay mode, and I was never careful about making the portraits in replay mode match up with the actual sniper's portraits, all characters who were either cast and unknown to the sniper, or marked important, were sorted to the front of the list, which means that in most games the Spy and the Seduction Target were the first two characters to the left of the portraits, even in Daily Challenge mode!?!?  If you had a green swapper, or a green purloiner, they were marked important and so were in the mix of the first four portraits.   If you were watching a live game, they would have sorted themselves to the front in real time as the purloin/swap happened!  The only saving grace is that as soon as you had highlights, they were higher priority, so you probably didn't notice. Legorve Genine spotted this and was a very good beta tester and reported it privately so everybody's dailies weren't busted until I fixed it.  This reminds me of that old bug where the guests would always only go to the largest open slot in a conversation for YEARS before I noticed it and fixed it, and thankfully no players ever noticed, but they were pretty surprised when I told them after fixing it.  Anyway, good times, but now the replay sniper portraits should exactly match the sniper's portraits, which I spent a bunch of time making sure they were shuffled correctly.\n\n",
+      "key": "329070::95df9e09c31736cfd8fba24c68af1fcd2f352bc4",
+      "tags": [
+        {
+          "bug": "fix /daily command to print stats without level param, must have param to play daily, like /daily 4 to play level 4's daily (this is how you play more than just your own daily level)"
+        },
+        {
+          "bug": "don't lock out daily on cancel until actually started the first game"
+        },
+        {
+          "feature": "setting for disabling daily results posting to discord"
+        },
+        {
+          "feature": "pop up a screen describing daily and curated set, this is used to tell you if you're on a Race the Sniper day"
+        },
+        {
+          "bug": "fix absolutely wild replay sniper bug discovered by Legorve Genine/steam (see below)"
+        },
+        {
+          "feature": "put the spy green bar on the replays sniper view portraits"
+        },
+        {
+          "bug": "So, this bug: because the replay sniper mode was built off the regular replay mode, and I was never careful about making the portraits in replay mode match up with the actual sniper's portraits, all characters who were either cast and unknown to the sniper, or marked important, were sorted to the front of the list, which means that in most games the Spy and the Seduction Target were the first two characters to the left of the portraits, even in Daily Challenge mode!?!? If you had a green swapper, or a green purloiner, they were marked important and so were in the mix of the first four portraits. If you were watching a live game, they would have sorted themselves to the front in real time as the purloin/swap happened! The only saving grace is that as soon as you had highlights, they were higher priority, so you probably didn't notice. Legorve Genine spotted this and was a very good beta tester and reported it privately so everybody's dailies weren't busted until I fixed it. This reminds me of that old bug where the guests would always only go to the largest open slot in a conversation for YEARS before I noticed it and fixed it, and thankfully no players ever noticed, but they were pretty surprised when I told them after fixing it. Anyway, good times, but now the replay sniper portraits should exactly match the sniper's portraits, which I spent a bunch of time making sure they were shuffled correctly."
+        }
+      ]
+    },
+    {
+      "title": "Sniper Daily Challenge",
+      "date": "2020-02-16 07:34:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3183419193838101049",
+      "content": "[h3][b]Sniper Daily Challenge and New Curated Replay Sets![/b][/h3]\n[i]Look\nIf you had\nEight shots\nOr eight opportunities\nTo seize everything you ever wanted\nIn one moment\nWould you capture it\nOr just let it slip?[/i]\n\n[img]{STEAM_CLAN_IMAGE}/31193249/68084f9374ec69cfe4516c5a1691ae921816d09b.gif[/img]\n\n[b][u]The big stuff, details are below:[/u][/b]\n[list]\n[*][b]Sniper Daily Challenge[/b]\nEverybody loves daily challenges in games, and the new Sniper Daily Challenge in SpyParty is pretty special.  Every day (rolling over at 00:00 GMT, which is 4pm US Pacific), the server generates a new set of eight games for everybody to snipe against. There are different skill levels based on your number of wins, so you'll always get a set of daily games that are challenging but fair. Everone at a given skill level plays the same set, and the results are posted to a channel on the SpyParty Discord (http://discord.gg/spyparty). These games actually come from the giant replays database that you all have been creating just by playing the game. At the time of this writing there are 2.3 million replays being randomized and filtered to create the daily sets. This is a fun way to stay in practice, compare your scores and times with your friends, and you can even play the other skill level dailies with a simple chat command in the lobby.\n\n[*][b]New Curated Replay Sets[/b]\nThanks to the amazing SpyParty community, we have an entire new batch of curated replay sets in the lobby. The previous curated replays were almost all the old art, and were not a great introduction to the game. Players would log into the lobby, click that button, and then all of a sudden be in an old art hellscape and wonder what happened. The games were high quality, but the visuals left something to be desired. We even got bug reports about the graphics being buggy when players went into the lobby. Now, thanks to player mintyrug and others, there's a whole new group of curated replays, so check them out!\n\n[*][b]Lobby Invitations While Spectating[/b]\nFinally, when you're waiting in the lobby to play a match, you can now spectate another match or play a curated replay set, but still appear as available to play and get invites. We had this cool spectation system but players couldn't use it when they were idling in the lobby waiting for a match because it meant they couldn't be invited, so that's finally fixed and you can feel free to hang out and watch other games while waiting for a match for yourself.\n[/list]\n\nEnjoy, and let me know if there are bugs!\nChris\n\n[u][b]v0.1.7069.0:[/b][/u]\n[list]\n[*]new curated replay sets[list]\n[*]sets are now permuted so you can retry them without accidentally memorizing the order\n[*]results screen on replay sets\n[*]one-shot sniper mode active for replay sets now instead of multi-shot chances\n[*]replay sets browser is now sortable by clicking the headings[/list]\n\n[*]sniper daily challenge[list]\n[*]there's a /daily chat command that lets you specify which level challenge you want to play, type /help /daily for more info\n[*]daily challenge results are posted to the discord #daily_challenge channel so you can compare your score and time with your friends\n[*]if you win 8 out of 8 on your daily challenge level, it unlocks a bonus set of 8 more games for that level and day\n[*]lots of ways to get to the daily, including the main menu box, which will tell you how long you have to play today's or wait for tomorrow's, a button in the lobby, and the /daily chat command\n[*]if you have multiple accounts, the main menu daily panel might get out of sync, but just log into the lobby and everything will be updated\n[*]there's UI for confirming whether you really want to quit the daily before you're done, because it will mark that daily as played and you'll have to wait until tomorrow for the next one[/list]\n\n[*]miscellaneous spectation and replay stuff[list]\n[*]checkbox on starting spectation to say whether you want to be able to be invited or not\n[*]setting for \"one shot\" versus \"multi shot\" spectation sniping mode, do you want multiple bullets?\n[*]you can select multiple replays in your replays directory and choose to snipe them as a permuted set just like a curated replay set or a daily challenge\n[*]there's an optional one-game spectation delay available if you're worried about people spectating your games live, see the /delay command for more information, it makes spectators wait until the game is completely done\n[*]store replay sniper games and wins in player data for later[/list]\n\n[*]minor stuff[list]\n[*]SpyParty Competitive League Season 6 game mode prop file is in the list\n[*]changed \"In Room\" to \"Available\" in lobby to be more clear\n[*]cleaned up some lobby sorting issues\n[*]disconnect match if spectation connection drops rather than weirdly later\n[*]slightly better invite failed strings\n[*]added redwoods and terrace to menu backgrounds\n[*]documented replays menu keyboard commands in README.txt\n[*]fixed some replays menu keyboard bugs\n[*]fixed bug where motd wouldn't show up for a few frames at start and be ugly\n[*]put up warning if a lot of clock skew with server to avoid bug reports due to wrong time set on client\n[*]fix bug with typing /help /daily eating a character and being annoying\n[*]fix spectators list doesn't disappear with ui toggles\n[*]fix to avoid escaping from settings and triggering spy action[/list]\n[/list]\n",
+      "key": "329070::fa11213ff27254033b149115f3564dd0819b8424",
+      "tags": [
+        {
+          "feature": "new curated replay sets"
+        },
+        {
+          "feature": "sets are now permuted so you can retry them without accidentally memorizing the order"
+        },
+        {
+          "feature": "results screen on replay sets"
+        },
+        {
+          "feature": "one-shot sniper mode active for replay sets now instead of multi-shot chances"
+        },
+        {
+          "feature": "replay sets browser is now sortable by clicking the headings"
+        },
+        {
+          "feature": "there's a /daily chat command that lets you specify which level challenge you want to play, type /help /daily for more info"
+        },
+        {
+          "feature": "daily challenge results are posted to the discord #daily_challenge channel so you can compare your score and time with your friends"
+        },
+        {
+          "feature": "if you win 8 out of 8 on your daily challenge level, it unlocks a bonus set of 8 more games for that level and day"
+        },
+        {
+          "feature": "lots of ways to get to the daily, including the main menu box, which will tell you how long you have to play today's or wait for tomorrow's, a button in the lobby, and the /daily chat command"
+        },
+        {
+          "feature": "if you have multiple accounts, the main menu daily panel might get out of sync, but just log into the lobby and everything will be updated"
+        },
+        {
+          "feature": "there's UI for confirming whether you really want to quit the daily before you're done, because it will mark that daily as played and you'll have to wait until tomorrow for the next one"
+        },
+        {
+          "feature": "checkbox on starting spectation to say whether you want to be able to be invited or not"
+        },
+        {
+          "feature": "setting for \"one shot\" versus \"multi shot\" spectation sniping mode, do you want multiple bullets?"
+        },
+        {
+          "feature": "you can select multiple replays in your replays directory and choose to snipe them as a permuted set just like a curated replay set or a daily challenge"
+        },
+        {
+          "feature": "there's an optional one-game spectation delay available if you're worried about people spectating your games live, see the /delay command for more information, it makes spectators wait until the game is completely done"
+        },
+        {
+          "feature": "store replay sniper games and wins in player data for later"
+        },
+        {
+          "feature": "SpyParty Competitive League Season 6 game mode prop file is in the list"
+        },
+        {
+          "feature": "changed \"In Room\" to \"Available\" in lobby to be more clear"
+        },
+        {
+          "feature": "cleaned up some lobby sorting issues"
+        },
+        {
+          "bug": "disconnect match if spectation connection drops rather than weirdly later"
+        },
+        {
+          "feature": "slightly better invite failed strings"
+        },
+        {
+          "feature": "added redwoods and terrace to menu backgrounds"
+        },
+        {
+          "feature": "documented replays menu keyboard commands in README.txt"
+        },
+        {
+          "bug": "fixed some replays menu keyboard bugs"
+        },
+        {
+          "bug": "fixed bug where motd wouldn't show up for a few frames at start and be ugly"
+        },
+        {
+          "bug": "put up warning if a lot of clock skew with server to avoid bug reports due to wrong time set on client"
+        },
+        {
+          "bug": "fix bug with typing /help /daily eating a character and being annoying"
+        },
+        {
+          "bug": "fix spectators list doesn't disappear with ui toggles"
+        },
+        {
+          "bug": "fix to avoid escaping from settings and triggering spy action"
+        }
+      ]
+    },
+    {
+      "title": "New Redwoods Venue!",
+      "date": "2019-11-06 17:21:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2448197582016780591",
+      "content": "[h1][b]New Redwoods Venue![/b][/h1]\n[img]{STEAM_CLAN_IMAGE}/31193249/934ab995711d30daf8388605964493fa34d68e84.gif[/img]\n\n[b][u]The big stuff, details are below:[/u][/b]\n[b][list]\n[*]the new Redwoods venue, with extra bonus trees for your occluding pleasure\n[*]no more marking books, should make for much less frustrating high and lowlighting\n[*]sadly, the birthday party is over, meaning no more hats or cupcakes for you\n[/list][/b]\n\nEnjoy, and let me know if there are bugs!\nChris\n\n[img]{STEAM_CLAN_IMAGE}/31193249/e5ef063e7296b0c961dc51f8cc2ea1bd0733e1c4.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/31193249/69da81e1fd904beb835d189001dbb0252fd7e7d2.png[/img]\n\n[u][b]v0.1.6873.0:[/b][/u]\n[list]\n[*]code[list]\n[*]remove book marking, yay - this cleans up a lot of fiddly accidental mouse clicking by the sniper, and is maybe a slight Spy buff, except it'll make high/lowlighting faster for Sniper so maybe it's a slight Sniper buff?  who knows\n[*]don't draw update ui if ui is toggled off, just noticed during testing that the spectators list doesn't toggle off, always more bugs\n[*]re-hide microfilm in book has lower priority than inspect\n[*]more events for inspect cancels (player bails) and interrupts (guest picks up)\n[/list]\n\n[*]content[list]\n[*]some small fixes to General's rig and walk anim\n[*]Redwoods venue!\n[*]changes since pax for Redwoods[list]\n[*]make chair a little less orange sari\n[*]color coded book ends\n[*]moarr treez\n[/list][/list][/list]\n",
+      "key": "329070::83b6b8ab6545f943fc79223f894c227832862b0c",
+      "tags": [
+        {
+          "feature": "the new Redwoods venue, with extra bonus trees for your occluding pleasure"
+        },
+        {
+          "feature": "Redwoods venue!"
+        },
+        {
+          "bug": "don't draw update ui if ui is toggled off, just noticed during testing that the spectators list doesn't toggle off, always more bugs"
+        },
+        {
+          "feature": "color coded book ends"
+        },
+        {
+          "feature": "moarr treez"
+        }
+      ]
+    },
+    {
+      "title": "Minor Error Message Fix",
+      "date": "2019-10-02 21:45:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2426802221717120490",
+      "content": "[b]v0.1.6849.0[/b]\n[list]\n[*]fix a couple minor things and make a new error message before some content updates\n[/list]",
+      "key": "329070::eee4f099b1023f11989126e7c4da8f05827b86b7",
+      "tags": [
+        {
+          "bug": "[*]fix a couple minor things and make a new error message before some content updates"
+        }
+      ]
+    },
+    {
+      "title": "Birthday Bugfix Build",
+      "date": "2019-09-30 17:25:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2422298078099195863",
+      "content": "[img]{STEAM_CLAN_IMAGE}/31193249/2e07aeca379e9524406008c53536b5e9d7025725.gif[/img]\n[h1][b]Birthday Bugfix Build[/b][/h1]\nThis build took way too long to get out, sorry the crash bugs lingered so long!  There's the final venue right around the corner, and matchmaking coming after that! I really should have published these fixes long ago...but hey, cupcakes!\n\n[b][u]The big stuff, details are below:[/u][/b]\n[b][list]\n[*]don't crash when a shot goes off and the Seduction Target is walking to a pad\n[*]don't crash in sniper tutorial\n[*]cupcakes and birthday hats!\n[/list][/b]\n\nEnjoy, and let me know if there are bugs!\nChris\n\n[u][b]v0.1.6836.0:[/b][/u]\n[list]\n[*]code[list]\n[*]wip on endgame sound effects damping in replays versioned\n[*]fix lobby crash when there's a spectator while draining\n[*]fix rare case where lobby would lose the replay if the cloud save failed\n[*]fix lobby kicking for really long games on veranda\n[*]make Minimal quickplay group flag for only showing available venues\n[*]make new events for cupcakes, new p2pv, this is kinda dumb but oh well\n[*]fix assert bugs introduced with fixing bookshelf fingerprints[/list]\n[*]features[list]\n[*]allow \"/win w h\" as command instead of requiring all the parms[/list]\n[*]content[list]\n[*]polishing Ms. O's walk, small tweak to original pickup briefcase anim\n[*]birthday stuff with cupcake and party hats[/list][/list]",
+      "key": "329070::461de25e7123bb42d9c702eb48851bc781b6d8ff",
+      "tags": [
+        {
+          "bug": "fix lobby crash when there's a spectator while draining"
+        },
+        {
+          "bug": "fix rare case where lobby would lose the replay if the cloud save failed"
+        },
+        {
+          "bug": "fix lobby kicking for really long games on veranda"
+        },
+        {
+          "bug": "fix assert bugs introduced with fixing bookshelf fingerprints"
+        },
+        {
+          "feature": "allow \"/win w h\" as command instead of requiring all the parms"
+        },
+        {
+          "feature": "birthday stuff with cupcake and party hats"
+        }
+      ]
+    },
+    {
+      "title": "Bugs and Performance...",
+      "date": "2019-05-29 21:05:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2400895196202866383",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/de07a37fa5a62b4c3e04270a8a269e7b21e7af5b.gif[/img]\r\n[h1][b]Lots o' fixes...[/b][/h1]\r\n\r\n[b][u]The big stuff, details are below:[/u][/b]\r\n[b][list]\r\n[*]tons of bug fixes for gameplay bugs, ui bugs, crash bugs, bug bugs\r\n[*]fixed two big performance things[list]\r\n[*]the internal profiling system would slowly take more and more time requiring a restart\r\n[*]the gamepad detection code was super slow, which wouldn't be a problem except a bunch of devices send spurious device changed messages, so this caused framerate hitches for some folks (like me)[/list]\r\n[*]lots of better pad collision stuff to prevent pad pathing overshoots\r\n[*]some animation polish[/list][/b]\r\n\r\nEnjoy, and let me know if there are bugs!\r\nChris\r\n\r\n[u][b]v0.1.6729.0:[/b][/u]\r\n[list]\r\n[*]code[list]\r\n[*]big optimizations for longer runtimes with the prof system (this actually was partly due to floating point denormals which is kinda funny if you're a programmer)\r\n[*]ridiculous mode is just ctrl+shift now\r\n[*]split breaking glass sound effect into normal and endgame for endgame sound damping\r\n[*]fix purloin delegate bug, at least vastly reduce the chances of it hitting again\r\n[*]don't display weirdly broken floating amba personal space timer when the mission isn't selected (revisit this?)\r\n[*]put \"simplified\" in the mission display in a few places\r\n[*]switch practice mode handicapping testing to absolute wins, and save in config, display computed handicap in settings now, remember you can click and drag in the numberspinner to scrub\r\n[*]also save practice mode quickplay group to config\r\n[*]fix draw order on mission checkboxes in hud\r\n[*]use previous replays sort as secondary sort key\r\n[*]only guests invade amba personal space\r\n[*]fix sliding accidentally introduced on going to bar\r\n[*]stop bartender walking if queued guests and current guest bails\r\n[*]remove UI from dossier preview on ui toggle ctrl-shift-u\r\n[*]don't crash if venue not in custom qpg\r\n[*]fix the out-of-convo stop but still in convo bug\r\n[*]fix issue with amba leaving convo as bug should finish bypassing walking bug time window\r\n[*]better threaded gamepad detection to avoid hitches, including if spurious notifications which happen with some devices for some reason?\r\n[*]when making new replay dir, actually put cursor on it when done\r\n[*]allow non-holding inspects, disabled for now\r\n[*]add default_missions to qpg props so can do alt balcony modes without surprising people\r\n[*]fix issue with custom quickplay props overshadowing normal quickplay modes on loading screen, now should display correct name\r\n[*]more fixes for focus issues on ui transitions\r\n[*]remove any customized quickplay mapping when switching venues, now you just have to customize every venue, which is less surprising\r\n[*]fix issue with replay sets hanging if auto next is on\r\n[*]more button options for replay sniping in results screen (go to replay, continue, next game, menu, etc)\r\n[*]I think I fixed the bookcase fingerprint thing?  also, now takes and returns by civs both smudge, spies be warned\r\n[*]fix leaving spectation lobby sort bug\r\n[*]speeling\r\n[*]replay timeline and playback quality of life changes[list]\r\n[*]ctrl-click in viewport toggles play/pause\r\n[*]more robust mousewheel and shoulder button event scrolling\r\n[*]timeline events track timeslider scrubbing\r\n[*]fix some bugs with timeline not recentering on maximized toggle\r\n[*]add left/right keyboard event scrolling, and repeat for gamepad and key event/timeline scrolling\r\n[*]in free cam, if you click on an event in the timeline, it tries to move the camera to that event's noun[/list]\r\n[*]use generic game result messages in practice mode because it switches to spy results after sniper shot and the \"you were shot\" message is wrong\r\n[*]no more instasip at bar\r\n[*]don't instasip at statues either\r\n[*]don't instant check watch, little buffer\r\n[*]don't detach briefcase if we get interrupted and are blending out, so avoid flying briefcase\r\n[*]try to fix flying briefcase book raise case\r\n[*]fix text fringing on 16x multisampling, add 1px border to each glyph\r\n[*]fix infinite pending delegated purloin bug\r\n[*]settings for vsync and frame rate limits\r\n[*]blank screen for spectation sniper buffering...not great but prevents long freeze frame\r\n[*]settings for separate draw spectator list while playing and spectating\r\n[*]replay auto play next seperate controls for all games or only live spectation\r\n[*]fix some spectation ui stuff\r\n[*]add simple network buffering to correct sniper side stutter if there's a lag spike in play, like with spectation\r\n[*]log num logical processors\r\n[*]setting to allow y invert shortcuts (ctrl-y and y/triangle), disabled by default since most people aren't demoing at trade shows[/list][/list]\r\n\r\n[list]\r\n[*]content[list]\r\n[*]fixing ik weighting on statue anims for devi, dom, danielle, danger to not spaz out while theyre holding statues\r\n[*]fix ballroom sniper camera and keep backwards compat for replays because I'm a nice guy\r\n[*]typos in unlocks\r\n[*]fixed morgans walk so that his right foot doesnt slide\r\n[*]update quickplay props to latest\r\n[*]add default_missions for balcony surprises\r\n[*]aquarium adjust hard colliders to keep people out from the corners behind the curtains\r\n[*]fix a ton of bookshelf, statue, window, and painting pads to avoid overshoot, almost all venues (pub, aquarium, gallery, library, high-rise, moderne, ballroom, terrace, teien, courtyard)[/list][/list]",
+      "key": "329070::bea9fd79364bfce00e6d19e0e5367af02c429699",
+      "tags": [
+        {
+          "bug": "- tons of bug fixes for gameplay bugs, ui bugs, crash bugs, bug bugs"
+        },
+        {
+          "bug": "- fixed two big performance things"
+        },
+        {
+          "bug": "- the internal profiling system would slowly take more and more time requiring a restart"
+        },
+        {
+          "bug": "- the gamepad detection code was super slow, which wouldn't be a problem except a bunch of devices send spurious device changed messages, so this caused framerate hitches for some folks (like me)"
+        },
+        {
+          "bug": "- lots of better pad collision stuff to prevent pad pathing overshoots"
+        },
+        {
+          "bug": "- some animation polish"
+        },
+        {
+          "bug": "- big optimizations for longer runtimes with the prof system (this actually was partly due to floating point denormals which is kinda funny if you're a programmer)"
+        },
+        {
+          "bug": "- ridiculous mode is just ctrl+shift now"
+        },
+        {
+          "bug": "- split breaking glass sound effect into normal and endgame for endgame sound damping"
+        },
+        {
+          "bug": "- fix purloin delegate bug, at least vastly reduce the chances of it hitting again"
+        },
+        {
+          "bug": "- don't display weirdly broken floating amba personal space timer when the mission isn't selected (revisit this?)"
+        },
+        {
+          "bug": "- put \"simplified\" in the mission display in a few places"
+        },
+        {
+          "bug": "- switch practice mode handicapping testing to absolute wins, and save in config, display computed handicap in settings now, remember you can click and drag in the numberspinner to scrub"
+        },
+        {
+          "bug": "- also save practice mode quickplay group to config"
+        },
+        {
+          "bug": "- fix draw order on mission checkboxes in hud"
+        },
+        {
+          "bug": "- use previous replays sort as secondary sort key"
+        },
+        {
+          "bug": "- only guests invade amba personal space"
+        },
+        {
+          "bug": "- fix sliding accidentally introduced on going to bar"
+        },
+        {
+          "bug": "- stop bartender walking if queued guests and current guest bails"
+        },
+        {
+          "bug": "- remove UI from dossier preview on ui toggle ctrl-shift-u"
+        },
+        {
+          "bug": "- don't crash if venue not in custom qpg"
+        },
+        {
+          "bug": "- fix the out-of-convo stop but still in convo bug"
+        },
+        {
+          "bug": "- fix issue with amba leaving convo as bug should finish bypassing walking bug time window"
+        },
+        {
+          "bug": "- better threaded gamepad detection to avoid hitches, including if spurious notifications which happen with some devices for some reason?"
+        },
+        {
+          "bug": "- when making new replay dir, actually put cursor on it when done"
+        },
+        {
+          "bug": "- allow non-holding inspects, disabled for now"
+        },
+        {
+          "bug": "- add default_missions to qpg props so can do alt balcony modes without surprising people"
+        },
+        {
+          "bug": "- fix issue with custom quickplay props overshadowing normal quickplay modes on loading screen, now should display correct name"
+        },
+        {
+          "bug": "- more fixes for focus issues on ui transitions"
+        },
+        {
+          "bug": "- remove any customized quickplay mapping when switching venues, now you just have to customize every venue, which is less surprising"
+        },
+        {
+          "bug": "- fix issue with replay sets hanging if auto next is on"
+        },
+        {
+          "bug": "- more button options for replay sniping in results screen (go to replay, continue, next game, menu, etc)"
+        },
+        {
+          "bug": "- I think I fixed the bookcase fingerprint thing? also, now takes and returns by civs both smudge, spies be warned"
+        },
+        {
+          "bug": "- fix leaving spectation lobby sort bug"
+        },
+        {
+          "bug": "- speeling"
+        },
+        {
+          "bug": "- replay timeline and playback quality of life changes"
+        },
+        {
+          "bug": "- ctrl-click in viewport toggles play/pause"
+        },
+        {
+          "bug": "- more robust mousewheel and shoulder button event scrolling"
+        },
+        {
+          "bug": "- timeline events track timeslider scrubbing"
+        },
+        {
+          "bug": "- fix some bugs with timeline not recentering on maximized toggle"
+        },
+        {
+          "bug": "- add left/right keyboard event scrolling, and repeat for gamepad and key event/timeline scrolling"
+        },
+        {
+          "bug": "- in free cam, if you click on an event in the timeline, it tries to move the camera to that event's noun"
+        },
+        {
+          "bug": "- use generic game result messages in practice mode because it switches to spy results after sniper shot and the \"you were shot\" message is wrong"
+        },
+        {
+          "bug": "- no more instasip at bar"
+        },
+        {
+          "bug": "- don't instasip at statues either"
+        },
+        {
+          "bug": "- don't instant check watch, little buffer"
+        },
+        {
+          "bug": "- don't detach briefcase if we get interrupted and are blending out, so avoid flying briefcase"
+        },
+        {
+          "bug": "- try to fix flying briefcase book raise case"
+        },
+        {
+          "bug": "- fix text fringing on 16x multisampling, add 1px border to each glyph"
+        },
+        {
+          "bug": "- fix infinite pending delegated purloin bug"
+        },
+        {
+          "bug": "- settings for vsync and frame rate limits"
+        },
+        {
+          "bug": "- blank screen for spectation sniper buffering...not great but prevents long freeze frame"
+        },
+        {
+          "bug": "- settings for separate draw spectator list while playing and spectating"
+        },
+        {
+          "bug": "- replay auto play next seperate controls for all games or only live spectation"
+        },
+        {
+          "bug": "- fix some spectation ui stuff"
+        },
+        {
+          "bug": "- add simple network buffering to correct sniper side stutter if there's a lag spike in play, like with spectation"
+        },
+        {
+          "bug": "- log num logical processors"
+        },
+        {
+          "bug": "- setting to allow y invert shortcuts (ctrl-y and y/triangle), disabled by default since most people aren't demoing at trade shows"
+        },
+        {
+          "bug": "- fixing ik weighting on statue anims for devi, dom, danielle, danger to not spaz out while theyre holding statues"
+        },
+        {
+          "bug": "- fix ballroom sniper camera and keep backwards compat for replays because I'm a nice guy"
+        },
+        {
+          "bug": "- typos in unlocks"
+        },
+        {
+          "bug": "- fixed morgans walk so that his right foot doesnt slide"
+        },
+        {
+          "bug": "- update quickplay props to latest"
+        },
+        {
+          "bug": "- add default_missions for balcony surprises"
+        },
+        {
+          "bug": "- aquarium adjust hard colliders to keep people out from the corners behind the curtains"
+        },
+        {
+          "bug": "- fix a ton of bookshelf, statue, window, and painting pads to avoid overshoot, almost all venues (pub, aquarium, gallery, library, high-rise, moderne, ballroom, terrace, teien, courtyard)"
+        }
+      ]
+    },
+    {
+      "title": "Is that a shark?!",
+      "date": "2019-03-27 23:17:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2465065785296481564",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/8887be47c26e5db93f3f0645e78a3b4a53d37af5.gif[/img]\r\n\r\n[h1][b]It's hard to see the Spy doing missions with a Great White Shark in the way![/b][/h1]\r\n\r\n[b][u]The big stuff, details are below:[/u][/b]\r\n[b][list]\r\n[*]Brand new Aquarium venue, complete with a bulletproof shark named Kiel that really likes to hog the limelight.\r\n\r\n[*]Tons of work getting ready for Matchmaking, including automatic Handicapping and the all new Recommended QuickPlay Group that will dynamically adjust the game settings based on the skill levels of the players.\r\n\r\n[*]Venues and missions now unlock as you play so new players aren't snowed under with options where they're learning.\r\n[/list][/b]\r\n\r\n[h1][b]Aquarium[/b][/h1]\r\nThe new Aquarium venue is the second in a collection of three venues focused on \"occlusion\", the first being Teien, discussed here:  https://steamcommunity.com/games/SpyParty/announcements/detail/1721960431557729429\r\nIn Teien, the occlusion was the shoji screens showing only silhouettes of the action behind them, but in the case of Aquarium, there's a giant shark that is constantly swimming back and forth in front of the Sniper's view. Spies need to learn the shark's patterns and do missions while in shark-shadow, because otherwise the Sniper has a commanding view of the entire floorplan.\r\n\r\nSpeaking of floorplans, the in-game Dossier now has floor plans for every venue.  As you can see from this one, in addition to the shark, Aquarium has a slight asymmetry to it in the statue layout:\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/a2764b9736f22934e459de13c23cced2ad53dcfa.png[/img]\r\n\r\nThe shark follows a set pattern that occludes the back, middle, and front mission sites and then repeats going the other direction, so timing your missions is essential.  Some players are already saying Aquarium is the most strategic venue due to the timing predictability of our fishy friend.\r\n\r\n[h1][b]Handicapping, Unlocks, and Recommended Mode[/b][/h1]\r\nThe shark is cool, but what really took the most development time in this update was the completely new handicapping system and the Recommended QuickPlay Group.  It's always been possible to handicap games in SpyParty to compensate for a skill gap between players, but now it's automated if you're set to the Recommended group, which is important for the upcoming matchmaking system.  Now, if an experienced player is in a match with a new player, the game will automatically adjust the number of missions, guests, and duration to try to make a balanced game mode.  So far it's working pretty well according to the data, but it needs more testing, so please try it out. It's easy to try, just go into a match with a player with different number of wins than you (either more or fewer) and see how it feels.\r\n\r\nYou can still access the other groups but Recommended is, uh, recommended now.  I'm very interested in feedback on how these handicapped modes feel to play...they could be balanced but be no fun, which would be a problem, so please let me know what you think here in the forums or in the discord (linked below).\r\n\r\n[h1][b]Unlocks for Missions and Venues[/b][/h1]\r\nSpyParty is a pretty difficult game to learn.  I'm very proud of the tutorial with its full voice narration and interactive teaching puzzles, but it only tutorializes less than half of the game, and so we used to just dump players directly into the thick of things and hope they could swim.  This wasn't going to work very well in the long run, so now we have an unlock system that opens up the game a bit more slowly, and gives you a chance to learn the new stuff as you go along.  Missions and venues unlock slightly differently: missions unlock only if both players in a match have unlocked them to avoid surprising a player with a mission they've never seen before; venues unlock when either player in a match has unlocked them, to give players access to venues faster, and it seems like learning to play on a new venue is not as hard as learning a new mission.\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/86f00a115c934aeff2fd75d4972b3969cf747489.png[/img]\r\n\r\nAs part of the unlocks system, I've increased the amount of information in the in-game Dossier and updated it.  Now anytime you see a (?) icon anywhere, you can get contextualized information to learn more.\r\n\r\nYou can play with the handicapping and unlocks in Practice Mode, it's just a bit odd.  In the Gameplay settings, you can set your Practice Mode number of simulated wins (meaning how experienced you are), and the handicapping level of the opponent, and see what changes about the setups.  I need to figure out a slightly more clear way to do this, but it lets you experiment for now. You need to set the QuickPlay mode to Recommended to see this, and remember you can hit escape and get to the settings on the game setup screen so you can see the changes easily.\r\n\r\nOh, and if you're hard core and don't want any handicapping, you can go into the Gameplay settings and restrict the amount of \"up handicapping\" you get. This controls how much the game will try to help you out if your opponent has more experience. You can't restrict your down handicapping obviously, because that would allow you to farm less experienced players, but if both players in a match have this set to 0 the game will always give you the Standard balanced modes (while still respecting the unlock schedule).\r\n\r\nAs always, let me know if there are bugs, either here in the forums or join us on [url=http://discord.gg/spyparty]the discord[/url] for fun SpyParty chats.\r\nChris\r\n\r\n[u][b]v0.1.6619.0:[/b][/u]\r\n[list]\r\n[*]code[list]\r\n[*]unlocks system, list, and popup\r\n[*]handicapping and recommended quickplay group\r\n[*]dossier updates[list]\r\n[*]simplified mode missions preview\r\n[*]venue floorplans and description text\r\n[*]intermediate/simplified and standard mode in special tab\r\n[*]bar purloin preview finished\r\n[*]add percent meters to match in game missions\r\n[*]more contextual (?) icons throughout\r\n[/list]\r\n[*]misc fixes[list]\r\n[*]actually use Display Name and Username correctly in lobby details\r\n[*]when taking screenshot, also put it in the clipboard because that's a nice thing to do\r\n[*]log /whoroom results in addition to chat them\r\n[*]\"randomize\" button to \"random setup\" to be more clear that it's everything\r\n[*]game setup ui keyboard/controller fixes\r\n[*]randomize which qp chosen on level change\r\n[*]shift and control and mouse drag for number spinner acceleration\r\n[*]beginner/intermediate -> simplified naming\r\n[*]joining state and packets so joinmsg and unlock popups don't happen when you're in the lobby, future away possibility\r\n[*]ui try to fix interaction layer being below a top level screen at least\r\n[*]ui slightly better edge triggering of mouse clicks for not missing button clicks at low frame rates\r\n[*]view last replay menu item kicking from lobby bug fix\r\n[*]add intermediate and standard game modes to special dossier tab\r\n[*]no briefcase in simplified fingerprint dossier preview\r\n[*]don't make info icon on unavailable qpg venues\r\n[*]don't allow matchmaking while not joined or away\r\n[/list]\r\n[/list]\r\n\r\n[*]content[list]\r\n[*]Aquarium[list]\r\n[*]SHARK \ud83e\udd88\r\n[/list]\r\n[*]misc fixes[list]\r\n[*]fixing the weird AO line on the left wall of ballroom\r\n[*]boots fixes so that her phone doesnt go too deep into the floor, becoming visible on the balcony of highrise\r\n[*]The president says Santa Claus doesn't exist so...\r\n[*]make new school balcony 2:30 8, this will get picked more due to better randomization, watch out!\r\n[*]kill the intermediate and standard qpgs because they're generated from the table now\r\n[*]adding floorplan venue maps to the dossier\r\n[*]abearrawr's experimental group\r\n[*]tuning preview ribbons on a bunch of venues for dossier\r\n[/list][/list]\r\n",
+      "key": "329070::28c94a1551162765e1dff8393002457d3ed742f6",
+      "tags": [
+        {
+          "feature": "[*]Brand new Aquarium venue, complete with a bulletproof shark named Kiel that really likes to hog the limelight."
+        },
+        {
+          "feature": "[*]Tons of work getting ready for Matchmaking, including automatic Handicapping and the all new Recommended QuickPlay Group that will dynamically adjust the game settings based on the skill levels of the players."
+        },
+        {
+          "feature": "[*]Venues and missions now unlock as you play so new players aren't snowed under with options where they're learning."
+        },
+        {
+          "bug": "- Fixed an empty item panel sometimes showing on the scoreboard."
+        },
+        {
+          "bug": "-DE_Library: Fixed bug where some clients would crash on bomb explosion."
+        },
+        {
+          "bug": "- Fixed a bug where removing/adding a silencer would also drop a magazine on the ground."
+        },
+        {
+          "balance_change": "- Reduced Molotov price from 500 to 400."
+        },
+        {
+          "balance_change": "- XM1014 - reduced damage to 20."
+        },
+        {
+          "balance_change": "* Eul's Scepter of Divinity: Bonus movement speed reduced from +40 to +30"
+        },
+        {
+          "feature": "unlocks system, list, and popup"
+        },
+        {
+          "feature": "handicapping and recommended quickplay group"
+        },
+        {
+          "feature": "dossier updates"
+        },
+        {
+          "feature": "simplified mode missions preview"
+        },
+        {
+          "feature": "venue floorplans and description text"
+        },
+        {
+          "feature": "intermediate/simplified and standard mode in special tab"
+        },
+        {
+          "feature": "bar purloin preview finished"
+        },
+        {
+          "feature": "add percent meters to match in game missions"
+        },
+        {
+          "feature": "more contextual (?) icons throughout"
+        },
+        {
+          "bug": "actually use Display Name and Username correctly in lobby details"
+        },
+        {
+          "feature": "when taking screenshot, also put it in the clipboard because that's a nice thing to do"
+        },
+        {
+          "bug": "log /whoroom results in addition to chat them"
+        },
+        {
+          "feature": "\"randomize\" button to \"random setup\" to be more clear that it's everything"
+        },
+        {
+          "bug": "game setup ui keyboard/controller fixes"
+        },
+        {
+          "bug": "randomize which qp chosen on level change"
+        },
+        {
+          "bug": "shift and control and mouse drag for number spinner acceleration"
+        },
+        {
+          "feature": "beginner/intermediate -> simplified naming"
+        },
+        {
+          "bug": "joining state and packets so joinmsg and unlock popups don't happen when you're in the lobby, future away possibility"
+        },
+        {
+          "bug": "ui try to fix interaction layer being below a top level screen at least"
+        },
+        {
+          "bug": "ui slightly better edge triggering of mouse clicks for not missing button clicks at low frame rates"
+        },
+        {
+          "bug": "view last replay menu item kicking from lobby bug fix"
+        },
+        {
+          "feature": "add intermediate and standard game modes to special dossier tab"
+        },
+        {
+          "bug": "no briefcase in simplified fingerprint dossier preview"
+        },
+        {
+          "bug": "don't make info icon on unavailable qpg venues"
+        },
+        {
+          "bug": "don't allow matchmaking while not joined or away"
+        },
+        {
+          "feature": "Aquarium"
+        },
+        {
+          "feature": "SHARK \ud83e\udd88"
+        },
+        {
+          "bug": "fixing the weird AO line on the left wall of ballroom"
+        },
+        {
+          "bug": "boots fixes so that her phone doesnt go too deep into the floor, becoming visible on the balcony of highrise"
+        },
+        {
+          "bug": "The president says Santa Claus doesn't exist so..."
+        },
+        {
+          "bug": "make new school balcony 2:30 8, this will get picked more due to better randomization, watch out!"
+        },
+        {
+          "bug": "kill the intermediate and standard qpgs because they're generated from the table now"
+        },
+        {
+          "feature": "adding floorplan venue maps to the dossier"
+        },
+        {
+          "feature": "abearrawr's experimental group"
+        },
+        {
+          "feature": "tuning preview ribbons on a bunch of venues for dossier"
+        }
+      ]
+    },
+    {
+      "title": "Bugs and Holiday Cheer!",
+      "date": "2018-12-02 02:13:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415515408478980407",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/074ade3446aa4bd035febf5289ce95a721e48cd0.gif[/img]\r\n\r\n[h1][b]Toby and Damon are celebrating the fixed replays and memory leaks![/b][/h1]\r\n\r\n[b][u]The big stuff:[/u][/b]\r\n[b][list]\r\n[*]old replays with Steam names no longer crash, oops\r\n[*]fixed a bunch of memory leaks so long play sessions shouldn't run out of memory\r\n[*]fixed the shoji bottoms to not disappear when doing Spy curbs, and improved their quality a bit[/list][/b]\r\nHappy start of the holiday season!\r\nChris\r\n\r\n[u][b]v0.1.6384.0:[/b][/u]\r\n[list]\r\n[*]code[list]\r\n[*]fix problem reading v5 replays with display names...bad old header length calc\r\n[*]add another ps2 usb controller\r\n[*]don't play the over sound over and over while over the random cast button\r\n[*]fix a bunch of small memory leaks that built up over lots of games\r\n[*]output final game setup to log for easier game finding\r\n[*]handle silhouette links correctly when root is turned off due to curb bounds\r\n[/list][/list]\r\n[list]\r\n[*]content[list]\r\n[*]fix shoji screen bottoms to stay when spy curbs activated\r\n[*]add shoji bottom contact shadows\r\n[*]misc shoji texture and lighting fixes\r\n[*]holiday spirit\r\n[/list][/list]\r\n",
+      "key": "329070::07c364a3b320b5ebe4252e4fdc6161e2458c1146",
+      "tags": [
+        {
+          "bug": "old replays with Steam names no longer crash, oops"
+        },
+        {
+          "bug": "fixed a bunch of memory leaks so long play sessions shouldn't run out of memory"
+        },
+        {
+          "bug": "fixed the shoji bottoms to not disappear when doing Spy curbs, and improved their quality a bit"
+        },
+        {
+          "bug": "fix problem reading v5 replays with display names...bad old header length calc"
+        },
+        {
+          "bug": "don't play the over sound over and over while over the random cast button"
+        },
+        {
+          "bug": "fix a bunch of small memory leaks that built up over lots of games"
+        },
+        {
+          "bug": "handle silhouette links correctly when root is turned off due to curb bounds"
+        },
+        {
+          "bug": "fix shoji screen bottoms to stay when spy curbs activated"
+        },
+        {
+          "bug": "misc shoji texture and lighting fixes"
+        }
+      ]
+    },
+    {
+      "title": "Teien \u5ead\u5712 garden venue!",
+      "date": "2018-11-22 05:56:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2415514774168307076",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/ca74f4ac70a5ebd66d2c860f6e76885f58226944.gif[/img]\r\n\r\n[h1][b]It took way too long to get here, but it's finally here![/b][/h1]\r\n\r\n[b][u]The big stuff, details below:[/u][/b]\r\n[b][list]\r\n[*]A beautiful new venue: Teien \u5ead\u5712, with silhouette rendered randomized shoji screens!\r\n[*]Vastly improved gamepad support for up to 98.9% of controllers (according to Steam's numbers), including fightstick support, for which everybody has been clamoring.\r\n[/list][/b]\r\n[h1][b]Teien[/b][/h1]\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/33e9a245b8afb3d4353b752868380bc4964d4ead.png[/img]\r\nTeien is set in a beautiful Japanese garden in the early evening, and was inspired by my visit to the Ginkakuji temple in Kyoto.  Sliding shoji screens provide cover, and randomize between 8 different layouts on game start, but beware, your silhouette can give away a lot of information to the Sniper!\r\n\r\n\r\n\r\nYou can manually set the shoji layout in practice games so you can, well, practice. High- and low-lights don't show on the silhouettes, but if you target a guest you can see if they are lit.  Of course, the Sniper can shoot through the shoji. Please ignore the huge and glaring bug that the guests are wearing shoes in the temple; the fix for that bug will have to wait for the outfits feature.\r\n\r\nTeien is actually the first in a series of three venues exploring the theme of \"occlusion\", each in a radically different way...\r\n\r\n[h1][b]Gamepads[/b][/h1]\r\nI'm going to have to write more details about this later in addition to what's below in the release notes, but almost any gamepad should work well with SpyParty now on Windows standalone, Steam, and MacOS.  I will just leave this image right here...\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/f73a718066b1e300f8fe8e6d1079f7e384d32548.jpg[/img]\r\n\r\nOops, I didn't have the fightstick in the pic, oh well.\r\n\r\nOh, and the gamepads are all auto-detected and the correct button glyphs are rendered in the UI (including Switch Pro regular and flipped buttons support).\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/33cb3738a3402d6069661e40a5ada8f7fabae8d3.png[/img]\r\n\r\nEnjoy, and let me know if there are bugs or comments here in the Steam forums or on [url=http://discord.gg/spyparty]the SpyParty discord[/url]!\r\n\r\nThanks,\r\nChris\r\n\r\n[u][b]v0.1.6370.0:[/b][/u]\r\n[list]\r\n[*]gamepad support greatly improved[list]\r\n[*]not sure I should have spent so much time on this, but hey, now it's pretty cool[list]\r\n[*]covering upwards of 98.9% of controller usage according to recent steam usage data post\r\n[*]360/xbone/ps4/ps3/ps2/switchpro/dinput all autodetected and supported well, including with correct button glyphs[/list]\r\n[*]will need to write more detail about this later, including[list]\r\n[*]documenting all the new settings\r\n[*]documenting custom layouts and how to make them, how to figure out what your controller is sending\r\n[*]tutorial on getting some of the more difficult controllers working on windows, steam, and macos[/list]\r\n[*]fixes and features[list]\r\n[*]right stick (camera) scaling settings, helps with steam controller too\r\n[*]make a gamepad disable layout if you've got a weird accelerometer or something\r\n[*]custom layouts for unknown gamepads\r\n[*]autodetect or manual gamepad button glyphs\r\n[*]keep deadzone, layout, fightstick, flipped buttons, camera params, and button glyphs per gamepad instance in settings prop   \r\n[*]nest keyboard remaps into keys prop in controls and add to print controls\r\n[*]fightstick mode...no, I have no idea why I did this either.\r\n[*]got button displaying in tutorial help instead of \"Press X\", still some places in UI with 360 button names[/list][/list][/list]\r\n[list]\r\n[*]misc fixes[list]\r\n[*]prevent some crashes\r\n[*]mirror custom quickplays correctly\r\n[*]handle mirror custom when one player has a qpg prop but not the other\r\n[*]fixed \"arms too short to reach book\" bug\r\n[*]don't show display name if same as username in stats\r\n[*]don't count /steam in test for whether mostly unicode\r\n[*]use case preserved string for command completion leaves\r\n[*]when eating characters don't tolower, hopefully fixing capslock bug\r\n[*]case insensitive sort in lobby names\r\n[*]don't hittest books when safety is off\r\n[*]don't crash if over header in replays and ctrl-\r\n[*]bail to main menu on failed steam login so we don't loop endlessly\r\n[*]robustify steamlogin on reconnect errors\r\n[*]tune HL and LL outlines and colors a bit\r\n[*]finally figured out repro for pax setup gamepad listbox crash, and fixed it\r\n[*]fix code page and utf8 bugs with windows usernames and directories with fancy characters\r\n[*]fix winxp issues by dynaloading vista-only function call, so winxp minspec is correct again[/list]\r\n[*]minor features[list]\r\n[*]display steam id in /who\r\n[*]log window size in /fps\r\n[*]have helper write dump file name to log on close\r\n[*]log params --logflush and --lognogzip to make printing logs work on startup crashes\r\n[*]replay header v6 with venue variant int\r\n[*]don't display lobby list if redirecting to single new server\r\n[*]listbox scrollbar and mousewheel support, now I can have giant lists of things yay\r\n[*]add view last replay to match menu...some would say this isn't minor...\r\n[*]display in replay summary box if simplified game rules[/list]\r\n[*]game setup screen stuff for keyboard/gamepad usability[list]\r\n[*]better keyboard/gamepad navigation of spy game setup screen, don't need to know about shoulder buttons/tab   \r\n[*]better portraits drag behavior with cancel and layers\r\n[*]dossier info circle now a '?' instead of an 'i', which was actually a shortcut for /reply\r\n[*]expand venue preview on non-mouse focus for keyboard/gamepad for visibility\r\n[*]pop level icon listbox on nonmouse focus\r\n[*]now can mouse over venue preview to get info circle[/list][/list]\r\n[list]\r\n[*]content[list]\r\n[*]fixing walking bug arm starting positions on group 4 characters\r\n[*]tune pathing edges in Moderne\r\n[*]change Terrace modes to 3 mins\r\n[*]add 30 seconds to Moderne quickplays\r\n[*]fix Veranda clock mesh flipped normal allowing you to see statues through the window\r\n[*]fixed the alpha sorting chracter highlight bug on veranda, garden, and courtyard\r\n[*]gamepad button glyphs, add arrows to ps4 options and share buttons since they're impossible to tell apart[/list][/list]",
+      "key": "329070::d2f32b1f10edd8d71e4308223c363ebcd7bdde82",
+      "tags": [
+        {
+          "feature": "A beautiful new venue: Teien \u5ead\u5712, with silhouette rendered randomized shoji screens!"
+        },
+        {
+          "feature": "Vastly improved gamepad support for up to 98.9% of controllers (according to Steam's numbers), including fightstick support, for which everybody has been clamoring."
+        },
+        {
+          "bug": "Please ignore the huge and glaring bug that the guests are wearing shoes in the temple; the fix for that bug will have to wait for the outfits feature."
+        },
+        {
+          "feature": "gamepad support greatly improved"
+        },
+        {
+          "feature": "not sure I should have spent so much time on this, but hey, now it's pretty cool"
+        },
+        {
+          "feature": "covering upwards of 98.9% of controller usage according to recent steam usage data post"
+        },
+        {
+          "feature": "360/xbone/ps4/ps3/ps2/switchpro/dinput all autodetected and supported well, including with correct button glyphs"
+        },
+        {
+          "feature": "documenting all the new settings"
+        },
+        {
+          "feature": "documenting custom layouts and how to make them, how to figure out what your controller is sending"
+        },
+        {
+          "feature": "tutorial on getting some of the more difficult controllers working on windows, steam, and macos"
+        },
+        {
+          "feature": "right stick (camera) scaling settings, helps with steam controller too"
+        },
+        {
+          "feature": "make a gamepad disable layout if you've got a weird accelerometer or something"
+        },
+        {
+          "feature": "custom layouts for unknown gamepads"
+        },
+        {
+          "feature": "autodetect or manual gamepad button glyphs"
+        },
+        {
+          "feature": "keep deadzone, layout, fightstick, flipped buttons, camera params, and button glyphs per gamepad instance in settings prop"
+        },
+        {
+          "feature": "nest keyboard remaps into keys prop in controls and add to print controls"
+        },
+        {
+          "feature": "fightstick mode...no, I have no idea why I did this either."
+        },
+        {
+          "feature": "got button displaying in tutorial help instead of \"Press X\", still some places in UI with 360 button names"
+        },
+        {
+          "bug": "prevent some crashes"
+        },
+        {
+          "bug": "mirror custom quickplays correctly"
+        },
+        {
+          "bug": "handle mirror custom when one player has a qpg prop but not the other"
+        },
+        {
+          "bug": "fixed \"arms too short to reach book\" bug"
+        },
+        {
+          "bug": "don't show display name if same as username in stats"
+        },
+        {
+          "bug": "don't count /steam in test for whether mostly unicode"
+        },
+        {
+          "bug": "use case preserved string for command completion leaves"
+        },
+        {
+          "bug": "when eating characters don't tolower, hopefully fixing capslock bug"
+        },
+        {
+          "bug": "case insensitive sort in lobby names"
+        },
+        {
+          "bug": "don't hittest books when safety is off"
+        },
+        {
+          "bug": "don't crash if over header in replays and ctrl-"
+        },
+        {
+          "bug": "bail to main menu on failed steam login so we don't loop endlessly"
+        },
+        {
+          "bug": "robustify steamlogin on reconnect errors"
+        },
+        {
+          "bug": "tune HL and LL outlines and colors a bit"
+        },
+        {
+          "bug": "finally figured out repro for pax setup gamepad listbox crash, and fixed it"
+        },
+        {
+          "bug": "fix code page and utf8 bugs with windows usernames and directories with fancy characters"
+        },
+        {
+          "bug": "fix winxp issues by dynaloading vista-only function call, so winxp minspec is correct again"
+        },
+        {
+          "feature": "display steam id in /who"
+        },
+        {
+          "feature": "log window size in /fps"
+        },
+        {
+          "feature": "have helper write dump file name to log on close"
+        },
+        {
+          "feature": "log params --logflush and --lognogzip to make printing logs work on startup crashes"
+        },
+        {
+          "feature": "replay header v6 with venue variant int"
+        },
+        {
+          "feature": "don't display lobby list if redirecting to single new server"
+        },
+        {
+          "feature": "listbox scrollbar and mousewheel support, now I can have giant lists of things yay"
+        },
+        {
+          "feature": "add view last replay to match menu...some would say this isn't minor..."
+        },
+        {
+          "feature": "display in replay summary box if simplified game rules"
+        },
+        {
+          "feature": "better keyboard/gamepad navigation of spy game setup screen, don't need to know about shoulder buttons/tab"
+        },
+        {
+          "feature": "better portraits drag behavior with cancel and layers"
+        },
+        {
+          "feature": "dossier info circle now a '?' instead of an 'i', which was actually a shortcut for /reply"
+        },
+        {
+          "feature": "expand venue preview on non-mouse focus for keyboard/gamepad for visibility"
+        },
+        {
+          "feature": "pop level icon listbox on nonmouse focus"
+        },
+        {
+          "feature": "now can mouse over venue preview to get info circle"
+        },
+        {
+          "bug": "fixing walking bug arm starting positions on group 4 characters"
+        },
+        {
+          "balance_change": "tune pathing edges in Moderne"
+        },
+        {
+          "balance_change": "change Terrace modes to 3 mins"
+        },
+        {
+          "balance_change": "add 30 seconds to Moderne quickplays"
+        },
+        {
+          "bug": "fix Veranda clock mesh flipped normal allowing you to see statues through the window"
+        },
+        {
+          "bug": "fixed the alpha sorting chracter highlight bug on veranda, garden, and courtyard"
+        },
+        {
+          "feature": "gamepad button glyphs, add arrows to ps4 options and share buttons since they're impossible to tell apart"
+        }
+      ]
+    },
+    {
+      "title": "Statues+Bar on Terrace!",
+      "date": "2018-06-05 09:05:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2396358622015304212",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/510673197e68561ec3edea0883ce2dd73631de82.png[/img]\r\n\r\n[h1][b]It's our first Steam Update!  Hopefully I'm posting these release notes in the right place![/b][/h1]\r\n\r\n[b][u]This build has a ton of fixes, but the really big stuff is:[/u][/b]\r\n[b][list]\r\n[*]finally you're not just a number in the lobby, you've got your real name!\r\n[*]we added statues and a bar on Terrace, which will separate it even farther from the old Double Modern map and from Balcony, excited to see how the meta evolves on this map now\r\n[*]the post-tutorial new user experience should be a lot better...it's not where it needs to be yet but it should be much more clear now\r\n[*]see below for the big list of fixes and features!\r\n[/list][/b]\r\nEnjoy, and let me know if there are bugs!\r\nChris\r\n\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/31193249/3f687365afd9b9049204b429dbf81a8e5b827a31.png[/img]\r\n\r\n[u][b]v0.1.6134.0:[/b][/u]\r\n\r\n[list]\r\n[*]code[list]\r\n[*]features[list]\r\n[*]steam persona names displayed...utf8 chars are currently stomped to _ and if you have too many it defaults to your s76.../steam name still since client can't handle utf8 yet\r\n[*]much improved Beginner, Intermediate, Standard (nee Experienced) quickplay progression and UI clarity, level icon selector always visible, listbox text visible, disabled levels greyed out but teased\r\n[*]prompt for spectation or sniper playback in replays menu like in spectation\r\n[*]allow dragging spy portrait in tutorial on mouse down\r\n[*]allow invites to pop modal dialogs in practice and replays finally\r\n[*]better lobby disconnect notification instead of just returning to main menu\r\n[*]highlights and lowlights and book lights all have audio feedback now\r\n[*]resume auto-scrolling the replay timeline if haven't scrolled for 3 seconds\r\n[*]keep mission selections on mirror for fewer surprises\r\n[*]replay file v5 has displayname and num guests and start duration\r\n[*]incremental db writes on server so stats should be way more robust if server crashes\r\n[*]use all new art levels for menu background images\r\n[*]tooltips for how to drag roles on portraits until you've done it successfully\r\n[*]starburst to encourage people to push the Watch Replay button for the first time\r\n[*]custom groups required for quickplays, see file formats post\r\n[*]catch out of memory errors and just pop a dialog instead of crash\r\n[*]disable sticky/toggle/filter keys by default\r\n[*]/kick, /silence, and login message support\r\n[*]if / is first character typed in a message then rewind to command cycling\r\n[*]flirt always prioritized over check watch[/list]\r\n[*]bug fixes[list]\r\n[*]don't reset the sniper camera on replay seek\r\n[*]don't change character in dossier on portraits click on game setup screen\r\n[*]misc minor portraits bugs\r\n[*]clear accept ui so not stuck, more bandaids for these ui lock bugs\r\n[*]if in spectation/replay setup and cancel, don't get stuck in ui when switches to loading\r\n[*]fix ui bug where if dossier is up and get invite then ui locks up...will this fix other bugs?\r\n[*]fix tooltip showing up wrong on dossier level icon selector\r\n[*]if you're the spy, you can put the briefcase down without any animation queueing now, be aware!\r\n[*]fix broken books bounding box for changing color as sniper\r\n[*]amba don't get stuck if can't put down briefcase\r\n[*]fix the insta-fade AT bar on ST bail after first bail\r\n[*]filter watch checks by non-spies in replay timeline\r\n[*]fix bartender getting frozen on edges of bartending zone sometimes\r\n[*]take the waiter out of pathing before trying to find spot\r\n[*]delegated purloin to book holder should still work and put the book away, basically try really hard to purloin if you're the delegate\r\n[*]fix matches not updating to client and to non-first-match-quitter\r\n[*]don't allow resurrecting old levels with qpgroups\r\n[*]try hard to make replay filenames shorter than MAX_PATH\r\n[*]fix teleport bug on gallery oh boy\r\n[*]fix library walking weirdness epsilon pathing raycast bug\r\n[*]fixed old replays, oops\r\n[*]fix dossier crash because not keeping track of which roles are actually needed\r\n[*]don't destroy the gl context and hope it fixes obs exit crashes?\r\n[*]fix crash with first replay note of a match\r\n[*]always use locally generated anonymous uuid for telemetry id and anonymize ip for gdpr privacy[/list][/list][/list]\r\n\r\n[list]\r\n[*]content[list]\r\n[*]gameplay[list]\r\n[*]new terrace with statues and bar instead of waiter\r\n[*]fix statue pedestals for gallery so flirts are only between neighbors\r\n[*]new quickplay props for Beginner, Intermediate 1-3, Standard, and Old Art\r\n[*]darkened moderne kitchen counter a bit to make guestlist more visible\r\n[*]lowered the top railings a bit for sniper lean on library[/list]\r\n[*]animations[list]\r\n[*]slightly exaggerated left hand cane side only bug for papa danger\r\n[*]smoothing out the right arm on mr. a walk, and walking bug smoothness fixes\r\n[*]more work on hide microfilm animation to make the green test less poppy\r\n[*]making sure all the hidefilm anims start after 30 frames to work better with action tests\r\n[*]fixed weighting behind the ears of many characters to prevent holes on head turns[/list]\r\n[*]aesthetics[list]\r\n[*]lowering preview image of courtyard for the UI change so turing isnt cropped\r\n[*]extending wires of reception lights upward in gallery\r\n[*]moderne bar fixes, moved hard points back a little, backed up the bartender a little so he doesnt inner penetrate the bar as much, blocked in the bartender with hard colliders\r\n[*]some texture dilation work to help cover up seams while in med and low mode[/list]\r\n[*]pathing[list]\r\n[*]gallery plant pathing clean up, centered targets on paintings\r\n[*]softening the colliders on the benches of library\r\n[*]rounded corners of soft colliders on moderne for smoother paths\r\n[*]made library railings a seperate layer with pathing off so that the soft colliders will make the pathing more forgiving[/list]\r\n[*]hittesting[list]\r\n[*]making it so you can shoot thru the trees on courtyard\r\n[*]making library pillars and railing shoot thru-able\r\n[*]changing high-rise so that you can shoot thru the window dividers\r\n[*]adding ignore hit to the hard and soft collider layers of courtyard so that you can shoot people in the lower leg\r\n[*]changing colliders to hit ignore on library and moderne so you can shoot peoples feet through the railings and under deck chairs[/list][/list][/list]\r\n\r\nThese notes are for v0.1.6128.0 and v0.1.6134.0, the latter released a few hours after the former!",
+      "key": "329070::3071c29b32def9fb306046c601d0b3f07c814605",
+      "tags": [
+        {
+          "feature": "new terrace with statues and bar instead of waiter"
+        },
+        {
+          "bug": "fix statue pedestals for gallery so flirts are only between neighbors"
+        },
+        {
+          "feature": "new quickplay props for Beginner, Intermediate 1-3, Standard, and Old Art"
+        },
+        {
+          "balance_change": "darkened moderne kitchen counter a bit to make guestlist more visible"
+        },
+        {
+          "balance_change": "lowered the top railings a bit for sniper lean on library"
+        },
+        {
+          "bug": "slightly exaggerated left hand cane side only bug for papa danger"
+        },
+        {
+          "bug": "smoothing out the right arm on mr. a walk, and walking bug smoothness fixes"
+        },
+        {
+          "bug": "more work on hide microfilm animation to make the green test less poppy"
+        },
+        {
+          "bug": "making sure all the hidefilm anims start after 30 frames to work better with action tests"
+        },
+        {
+          "bug": "fixed weighting behind the ears of many characters to prevent holes on head turns"
+        },
+        {
+          "balance_change": "lowering preview image of courtyard for the UI change so turing isnt cropped"
+        },
+        {
+          "balance_change": "extending wires of reception lights upward in gallery"
+        },
+        {
+          "bug": "moderne bar fixes, moved hard points back a little, backed up the bartender a little so he doesnt inner penetrate the bar as much, blocked in the bartender with hard colliders"
+        },
+        {
+          "balance_change": "some texture dilation work to help cover up seams while in med and low mode"
+        },
+        {
+          "bug": "gallery plant pathing clean up, centered targets on paintings"
+        },
+        {
+          "balance_change": "softening the colliders on the benches of library"
+        },
+        {
+          "balance_change": "rounded corners of soft colliders on moderne for smoother paths"
+        },
+        {
+          "bug": "made library railings a seperate layer with pathing off so that the soft colliders will make the pathing more forgiving"
+        },
+        {
+          "balance_change": "making it so you can shoot thru the trees on courtyard"
+        },
+        {
+          "balance_change": "making library pillars and railing shoot thru-able"
+        },
+        {
+          "balance_change": "changing high-rise so that you can shoot thru the window dividers"
+        },
+        {
+          "balance_change": "adding ignore hit to the hard and soft collider layers of courtyard so that you can shoot people in the lower leg"
+        },
+        {
+          "balance_change": "changing colliders to hit ignore on library and moderne so you can shoot peoples feet through the railings and under deck chairs"
+        }
+      ]
+    }
+  ]
+}

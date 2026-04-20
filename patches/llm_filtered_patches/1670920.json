@@ -1,0 +1,102 @@
+{
+  "appId": "1670920",
+  "count": 4,
+  "notes": [
+    {
+      "title": "0.13 Hotfix",
+      "date": "2025-09-20 18:35:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915471034",
+      "content": "[p]Small fix introducing logic to sanitize save file names to ensure they're valid for both Windows and macOS. Players were reporting crashes due to save file names with invalid characters. [/p]",
+      "key": "1670920::b38bd59c4caef8bbd02b2de6c474291216b32c34",
+      "tags": [
+        {
+          "bug": "Small fix introducing logic to sanitize save file names to ensure they're valid for both Windows and macOS."
+        },
+        {
+          "bug": "Players were reporting crashes due to save file names with invalid characters."
+        }
+      ]
+    },
+    {
+      "title": "Unstable 0.12 Notes",
+      "date": "2025-09-17 02:56:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915350380",
+      "content": "[h2]Political Arena Unstable 0.12 Notes[/h2][p][/p][p]- Ironman/Steam Achievements added\u00a0 [/p][p][/p][p]- Point tracking added to character creator. Cannot enable achievements going over point allotment.\u00a0\n[/p][p]- Committee windows now show a breakdown of the issues under the committee\u2019s jurisdiction.\n[/p][p]- Vote window post-vote recap now features a party breakdown\n[/p][p]\u2013 Further improvements to vote window tracking to address vote discontinuity issues.\u00a0\n[/p][p]- Major performance fixes to loading: times reduced by ~10x.\u00a0\n[/p][p]- Performance fixes to save/load system\n[/p][p]- Autosave system implemented.\u00a0[/p]",
+      "key": "1670920::a34bf604486408b3c631377aea6faa828840eab5",
+      "tags": [
+        {
+          "feature": "- Ironman/Steam Achievements added "
+        },
+        {
+          "feature": "- Point tracking added to character creator. Cannot enable achievements going over point allotment. "
+        },
+        {
+          "feature": "- Committee windows now show a breakdown of the issues under the committee\u2019s jurisdiction."
+        },
+        {
+          "feature": "- Vote window post-vote recap now features a party breakdown"
+        },
+        {
+          "bug": "\u2013 Further improvements to vote window tracking to address vote discontinuity issues. "
+        },
+        {
+          "bug": "- Major performance fixes to loading: times reduced by ~10x. "
+        },
+        {
+          "bug": "- Performance fixes to save/load system"
+        },
+        {
+          "feature": "- Autosave system implemented. "
+        }
+      ]
+    },
+    {
+      "title": "Unstable Branch Update",
+      "date": "2025-09-04 14:11:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180041300",
+      "content": "[h2]Having weird vote issues? Give this a try. [/h2][p][b][i]To switch to the unstable branch, right click on Political Arena in your Steam library, select \"Betas\" and choose \"unstable\" from the dropdown. No password required.[/i][/b] [/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/41345362/d9419820af9a5f47a741806ba32aa55311b89aec.png\"][/img][/p][list][*][p][b]Updated tracking of UI votes and UI vote queue.[/b] Previously a shared \"CurrentVote\" reference may have been improperly transitioned across votes, leading to tracking issues and passed votes being listed as failed, etc. [/p][/*][*][p][b]Fixed Event Window issue. [/b]The game's event queue was being dequeued twice when closing the vote window, potentially leading to race conditions [b] [/b][/p][/*][*][p][b]Capped the number of AI-generated votes per week.[/b] Committees and chambers now For most votes, the AI now only schedules them for AFTER their body's last vote on the calendar. [/p][list][*][p]Quality of life: too many votes can get repetitive. [/p][/*][*][p]With too many votes, the value of getting your bill a vote loses its cache / no reason to spend PC to get a vote. \n[/p][/*][/list][/*][/list]",
+      "key": "1670920::6e163c25f908b2c21dd61a0808eb397e0e0b0ba2",
+      "tags": [
+        {
+          "bug": "Updated tracking of UI votes and UI vote queue. Previously a shared \"CurrentVote\" reference may have been improperly transitioned across votes, leading to tracking issues and passed votes being listed as failed, etc. "
+        },
+        {
+          "bug": "Fixed Event Window issue. The game's event queue was being dequeued twice when closing the vote window, potentially leading to race conditions "
+        },
+        {
+          "balance_change": "Capped the number of AI-generated votes per week. Committees and chambers now For most votes, the AI now only schedules them for AFTER their body's last vote on the calendar. "
+        }
+      ]
+    },
+    {
+      "title": "Hotfix 0.11 Update",
+      "date": "2025-09-03 13:19:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180006938",
+      "content": "[h3][u]PROBLEM SOLVERS CAUCUS....ACTIVATE[/u][/h3][p][/p][p]Created an unstable branch for people to try out experimental fixes and features. To access it, right click Political Arena in your library, bring up the properties window, go to betas and select \u201cunstable\u201d. No password required. Currently there is nothing there as of this update going live. Will likely be mostly used to see if fixes work for players having issues.\u00a0[/p][p][/p][p]The bug form now accepts feedback and suggestions. Submissions are fed directly into the dev\u2019s management software and Slack, so they will be seen!\u00a0[/p][p][/p][p]Some votes weren\u2019t being registered as the player cast them, owing to improper referencing of the player\u2019s pre-calculated automated vote.\u00a0[/p][p][/p][p]Improved how the vote window interacts with the game\u2019s underlying architecture. Some players were having bizarre vote results (failing 80-20 in the Senate with the filibuster at 60, etc). This likely resulted in the system processing a previous vote while the ui was handling a new one.[/p][p]\nVotes will be less clustered. NPC schedulers will now (usually) only schedule votes for after the last scheduled vote in their calendar.\u00a0[/p][p][/p][p]Tightened senate vote result logic in the vote window. In some situations a bill would be said to be filibustered once it got to 41 nay votes (on default settings) but that prevented it from being declared outright rejected with 51+votes.\u00a0[/p][p][/p][p]Tightened up how the game manages window states. Some players were unable to reopen certain windows and some windows weren\u2019t closing. All window state logic is now funneled through a single handler.\u00a0[/p][p][/p][p]You can no longer get around the max/min number of Republicans/Democrats by sliding above or below the handles in the game settings section.\u00a0[/p]",
+      "key": "1670920::0d16958882fcc1bde8925aa66c3cc02dbf156931",
+      "tags": [
+        {
+          "feature": "Created an unstable branch for people to try out experimental fixes and features."
+        },
+        {
+          "feature": "The bug form now accepts feedback and suggestions."
+        },
+        {
+          "bug": "Some votes weren\u2019t being registered as the player cast them, owing to improper referencing of the player\u2019s pre-calculated automated vote."
+        },
+        {
+          "bug": "Improved how the vote window interacts with the game\u2019s underlying architecture. Some players were having bizarre vote results (failing 80-20 in the Senate with the filibuster at 60, etc). This likely resulted in the system processing a previous vote while the ui was handling a new one."
+        },
+        {
+          "bug": "Tightened senate vote result logic in the vote window. In some situations a bill would be said to be filibustered once it got to 41 nay votes (on default settings) but that prevented it from being declared outright rejected with 51+votes."
+        },
+        {
+          "bug": "Tightened up how the game manages window states. Some players were unable to reopen certain windows and some windows weren\u2019t closing."
+        },
+        {
+          "bug": "You can no longer get around the max/min number of Republicans/Democrats by sliding above or below the handles in the game settings section."
+        }
+      ]
+    }
+  ]
+}
