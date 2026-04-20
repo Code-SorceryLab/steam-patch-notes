@@ -6,25 +6,33 @@
       "title": "Hopefully last bug fixing patch :P",
       "date": "2015-05-03 15:43:23",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/518255472514230622",
-      "content": "[list]\r\n[*]The collision checking should no longer randomly fail to execute.\r\n[*]Fixed a problem with the ability Slam, which was introduced when I let the player aim while casting spells.\r\n[*]Should no longer lose any settings when resizing the window in the menu.\r\n[/list]\r\n\r\n[b]Warning - technical rambling:[/b]\r\nI finally managed to reproduce the collision problems through a lot of angry clicking and tabbing on game load. Then it took me a couple of hours to realize that the image data failed to load correctly. Apparently I hadn't considered that the sound loading and image loading were using the same resource loader, so I had only made the texture loader thread safe (able to process multiple images at the same time) on its own. If you were unlucky an image and a sound would try to load at the same time, which XNA content pipe doesn't support. You would then get corrupt image data, which messed up the collision checker."
+      "content": "[list]\r\n[*]The collision checking should no longer randomly fail to execute.\r\n[*]Fixed a problem with the ability Slam, which was introduced when I let the player aim while casting spells.\r\n[*]Should no longer lose any settings when resizing the window in the menu.\r\n[/list]\r\n\r\n[b]Warning - technical rambling:[/b]\r\nI finally managed to reproduce the collision problems through a lot of angry clicking and tabbing on game load. Then it took me a couple of hours to realize that the image data failed to load correctly. Apparently I hadn't considered that the sound loading and image loading were using the same resource loader, so I had only made the texture loader thread safe (able to process multiple images at the same time) on its own. If you were unlucky an image and a sound would try to load at the same time, which XNA content pipe doesn't support. You would then get corrupt image data, which messed up the collision checker.",
+      "key": "351400::6fc6dc150997cb72ae3014fc8d67aa57018b22e8",
+      "tags": null
     },
     {
       "title": "Hopefully last bug fixing patch :P",
       "date": "2015-05-03 15:43:23",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521682747309",
-      "content": "[list]\r\n[*]The collision checking should no longer randomly fail to execute.\r\n[*]Fixed a problem with the ability Slam, which was introduced when I let the player aim while casting spells.\r\n[*]Should no longer lose any settings when resizing the window in the menu.\r\n[/list]\r\n\r\n[b]Warning - technical rambling:[/b]\r\nI finally managed to reproduce the collision problems through a lot of angry clicking and tabbing on game load. Then it took me a couple of hours to realize that the image data failed to load correctly. Apparently I hadn't considered that the sound loading and image loading were using the same resource loader, so I had only made the texture loader thread safe (able to process multiple images at the same time) on its own. If you were unlucky an image and a sound would try to load at the same time, which XNA content pipe doesn't support. You would then get corrupt image data, which messed up the collision checker."
+      "content": "[list]\r\n[*]The collision checking should no longer randomly fail to execute.\r\n[*]Fixed a problem with the ability Slam, which was introduced when I let the player aim while casting spells.\r\n[*]Should no longer lose any settings when resizing the window in the menu.\r\n[/list]\r\n\r\n[b]Warning - technical rambling:[/b]\r\nI finally managed to reproduce the collision problems through a lot of angry clicking and tabbing on game load. Then it took me a couple of hours to realize that the image data failed to load correctly. Apparently I hadn't considered that the sound loading and image loading were using the same resource loader, so I had only made the texture loader thread safe (able to process multiple images at the same time) on its own. If you were unlucky an image and a sound would try to load at the same time, which XNA content pipe doesn't support. You would then get corrupt image data, which messed up the collision checker.",
+      "key": "351400::14df9cfdff4646444c535d97cb92eaf397802576",
+      "tags": null
     },
     {
       "title": "Fixed some stuff",
       "date": "2015-04-19 09:40:55",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517128413773586383",
-      "content": "[list]\r\n[*]You can now play in window mode.\r\n[*]You can now aim while casting spells.\r\n[*]Bosses drop healing globes, which restore you to full health.\r\n[*]A hint has been added at the wave where you encounter the shielded enemies that you can hold attack for a charged strike.\r\n[*]Simplified collision code and added error checking, hopefully removing the rare bug where occasionally no collisions occurred.\r\n[/list]"
+      "content": "[list]\r\n[*]You can now play in window mode.\r\n[*]You can now aim while casting spells.\r\n[*]Bosses drop healing globes, which restore you to full health.\r\n[*]A hint has been added at the wave where you encounter the shielded enemies that you can hold attack for a charged strike.\r\n[*]Simplified collision code and added error checking, hopefully removing the rare bug where occasionally no collisions occurred.\r\n[/list]",
+      "key": "351400::e2bc3ee8765453cb20ceb75dbf320c5235f18071",
+      "tags": null
     },
     {
       "title": "Fixed some stuff",
       "date": "2015-04-19 09:40:55",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521682747415",
-      "content": "[list]\r\n[*]You can now play in window mode.\r\n[*]You can now aim while casting spells.\r\n[*]Bosses drop healing globes, which restore you to full health.\r\n[*]A hint has been added at the wave where you encounter the shielded enemies that you can hold attack for a charged strike.\r\n[*]Simplified collision code and added error checking, hopefully removing the rare bug where occasionally no collisions occurred.\r\n[/list]"
+      "content": "[list]\r\n[*]You can now play in window mode.\r\n[*]You can now aim while casting spells.\r\n[*]Bosses drop healing globes, which restore you to full health.\r\n[*]A hint has been added at the wave where you encounter the shielded enemies that you can hold attack for a charged strike.\r\n[*]Simplified collision code and added error checking, hopefully removing the rare bug where occasionally no collisions occurred.\r\n[/list]",
+      "key": "351400::d4a0397d780c34c9fd2f6687415e6853f7dc7143",
+      "tags": null
     }
   ]
 }

@@ -6,115 +6,153 @@
       "title": "Patch 0.061",
       "date": "2022-05-10 00:46:26",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348799082207189258",
-      "content": "-French language added.\n-Self Damage pick will no longer stack in consecutive matches.\n-Demo will be deactivated in 2 days, will be updated and reactivated next month for Next Fest."
+      "content": "-French language added.\n-Self Damage pick will no longer stack in consecutive matches.\n-Demo will be deactivated in 2 days, will be updated and reactivated next month for Next Fest.",
+      "key": "1913530::ea269eab2a20ed10e0b81129ee88dcae91113a01",
+      "tags": null
     },
     {
       "title": "Patch 0.06 Overtime Merged",
       "date": "2022-05-06 18:35:59",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348799082195326858",
-      "content": "-Overtime has been removed and merged with the base game.\n-Game no longer has a set time limit, contestants can 'Retire' from the pause menu at any time but otherwise fight until they die.\n-The negative choices present in the overtime mode are now part of the base game, most of the buffs/debuff selections have been significantly nerfed.\n-The new mode needs testing there is a good chance there are bugs and balance issues from the adjustment.\n\nI was looking for a way to balance the initial game mode to still be engaging after getting most/all of the upgrades, at that point it's pretty typical to max out in levels at around 10 minutes and then have 5 minutes of not much happening until the timer expires.\n\nMy first attempt was to change the match to time 10 minutes after the first win, which partially worked but I was worried it was too difficult at low 'levels', and I wasn't a fan in general of changing the match timer I know it would be confusing and a bit inconsistent. It occurred to me that \"the Overtime setup could handle this\" and at that point it clicked for me to make this change.\n\nThere are other reasons I think this should be a good change, it should be a more fun game mode with more choices to make, that is no longer gated behind an hour or so of gameplay (typically). Most of the videos about the game so far have not even unlocked Overtime, and even when you do it's another 15 minutes before those choices start kicking in again.\n\nI'd be very interested in any feedback on the change, it seems clear to me that it should be a better setup but I'm curious if anyone feels the old way was better.\n\n\n\n"
+      "content": "-Overtime has been removed and merged with the base game.\n-Game no longer has a set time limit, contestants can 'Retire' from the pause menu at any time but otherwise fight until they die.\n-The negative choices present in the overtime mode are now part of the base game, most of the buffs/debuff selections have been significantly nerfed.\n-The new mode needs testing there is a good chance there are bugs and balance issues from the adjustment.\n\nI was looking for a way to balance the initial game mode to still be engaging after getting most/all of the upgrades, at that point it's pretty typical to max out in levels at around 10 minutes and then have 5 minutes of not much happening until the timer expires.\n\nMy first attempt was to change the match to time 10 minutes after the first win, which partially worked but I was worried it was too difficult at low 'levels', and I wasn't a fan in general of changing the match timer I know it would be confusing and a bit inconsistent. It occurred to me that \"the Overtime setup could handle this\" and at that point it clicked for me to make this change.\n\nThere are other reasons I think this should be a good change, it should be a more fun game mode with more choices to make, that is no longer gated behind an hour or so of gameplay (typically). Most of the videos about the game so far have not even unlocked Overtime, and even when you do it's another 15 minutes before those choices start kicking in again.\n\nI'd be very interested in any feedback on the change, it seems clear to me that it should be a better setup but I'm curious if anyone feels the old way was better.\n\n\n\n",
+      "key": "1913530::0af2f638df5987b6d24801f4b61b24d3549edf8a",
+      "tags": null
     },
     {
       "title": "Patch 0.053, Loading times improved.",
       "date": "2022-05-04 08:11:09",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348799082186460399",
-      "content": "-German language option added.\n-Loading times improved.\n-Dark Viper added to in-game unlocks.\n-Minor bugfixes."
+      "content": "-German language option added.\n-Loading times improved.\n-Dark Viper added to in-game unlocks.\n-Minor bugfixes.",
+      "key": "1913530::4616a70ca28ef91c94605d96e95f328400b0fafb",
+      "tags": null
     },
     {
       "title": "Patch 0.052",
       "date": "2022-04-25 03:28:01",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348797798089057766",
-      "content": "-Music settings will no longer reset\n-Improved sound compression, should improve load times, if anything sounds off with the new settings please let me know."
+      "content": "-Music settings will no longer reset\n-Improved sound compression, should improve load times, if anything sounds off with the new settings please let me know.",
+      "key": "1913530::97febf146cf48efdc81932ab956492f1474b86a2",
+      "tags": null
     },
     {
       "title": "Patch 0.051, Quit time fixed",
       "date": "2022-04-24 05:56:07",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348797798085790949",
-      "content": "-Fixed Quit time, details below\n-Improved Loading times, hopefully\n-Added \"Restart\" button on death.\n\n\nI have been having an issue where the loading times are long, and quitting the game in particular was taking a long time (one tester thought his computer was locking up before I put in a quitting screen stating it can take a minute). \n\nWanderbots did a video on my game today (super excited about that) and one of the comments was complaining about how long it takes to quit and implying that the app might be doing something nefarious (which is a fair take).\n\nI looked into the issue and did solve it, it turns out that it's because I've been loading my game scene asynch when on the menu screen, something that I thought was a good thing to do. I tried it without doing that and just loading the scene directly instead when the Play button is hit, and now the game quits in a few seconds instead of like 30 to a minute.\n\nChanging it did not significantly impact the loading time either as I thought it would. I came across another tip when looking how to improve loading times, and it turns out that a big culprit was the music in the game.\n\nThe default setting for sounds is \"Decompress on Load\" and if you change it to either of the 2 other options it improves loading time. The setup I am using right now is all of my music is set to \"Streaming\" and my sound effects are \"Compress in Memory\" with both \"Load in background\" and \"Preload audio data\" checked.\n\nChanging these things has significantly improved the loading and quit time."
+      "content": "-Fixed Quit time, details below\n-Improved Loading times, hopefully\n-Added \"Restart\" button on death.\n\n\nI have been having an issue where the loading times are long, and quitting the game in particular was taking a long time (one tester thought his computer was locking up before I put in a quitting screen stating it can take a minute). \n\nWanderbots did a video on my game today (super excited about that) and one of the comments was complaining about how long it takes to quit and implying that the app might be doing something nefarious (which is a fair take).\n\nI looked into the issue and did solve it, it turns out that it's because I've been loading my game scene asynch when on the menu screen, something that I thought was a good thing to do. I tried it without doing that and just loading the scene directly instead when the Play button is hit, and now the game quits in a few seconds instead of like 30 to a minute.\n\nChanging it did not significantly impact the loading time either as I thought it would. I came across another tip when looking how to improve loading times, and it turns out that a big culprit was the music in the game.\n\nThe default setting for sounds is \"Decompress on Load\" and if you change it to either of the 2 other options it improves loading time. The setup I am using right now is all of my music is set to \"Streaming\" and my sound effects are \"Compress in Memory\" with both \"Load in background\" and \"Preload audio data\" checked.\n\nChanging these things has significantly improved the loading and quit time.",
+      "key": "1913530::7d4fd08b10b1dd66151cc83473eabdbf56b7a211",
+      "tags": null
     },
     {
       "title": "Patch 0.05, New Weapon!",
       "date": "2022-04-22 14:22:02",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348797798079787321",
-      "content": "-Added a new weapon, item, and upgrade combo\n-Doubled the size of boss power drop to prevent it being stuck in terrain\n-Several minor bug fixes."
+      "content": "-Added a new weapon, item, and upgrade combo\n-Doubled the size of boss power drop to prevent it being stuck in terrain\n-Several minor bug fixes.",
+      "key": "1913530::5f6e1824234265f2f73c44d68540c0800712d0dd",
+      "tags": null
     },
     {
       "title": "Patch 0.046",
       "date": "2022-04-11 20:35:55",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4353300134241376001",
-      "content": "-Fixed button not highlighting on chest.\n-Fixed speed issues with ice and overtime buffs.\n-Added a bunch more smack talk.\n-Added arrow for first chest to make it clear it's a pickup.\n-Overtime heads up on first win. gives the player notice they need to win again to unlock it.\n-Fixed achievements not triggering, if you are missing achievements you need to reset your progress in settings and unlock them again, sorry.\n-Doubled the size of the map and all terrain objects."
+      "content": "-Fixed button not highlighting on chest.\n-Fixed speed issues with ice and overtime buffs.\n-Added a bunch more smack talk.\n-Added arrow for first chest to make it clear it's a pickup.\n-Overtime heads up on first win. gives the player notice they need to win again to unlock it.\n-Fixed achievements not triggering, if you are missing achievements you need to reset your progress in settings and unlock them again, sorry.\n-Doubled the size of the map and all terrain objects.",
+      "key": "1913530::ab5928ad07b5467ec09beb621fb895c807504065",
+      "tags": null
     },
     {
       "title": "Patch 0.045",
       "date": "2022-04-10 14:49:32",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4353300134236858011",
-      "content": "-Implemented smooth camera follow\n-Increased size of smack talk\n-did some stuff to improve performance"
+      "content": "-Implemented smooth camera follow\n-Increased size of smack talk\n-did some stuff to improve performance",
+      "key": "1913530::c4842a3bb2cbfc73b679bd14a88bdf9f7ed81056",
+      "tags": null
     },
     {
       "title": "Patch 0.044",
       "date": "2022-04-08 01:45:01",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4353300134227590052",
-      "content": "-Enemies now talk smack."
+      "content": "-Enemies now talk smack.",
+      "key": "1913530::a396078a7a673cc3f075100b54199f96c68cfc00",
+      "tags": null
     },
     {
       "title": "Patch 0.043",
       "date": "2022-04-05 17:16:38",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995479700116",
-      "content": "-Added health bars to everyone\n-Fixed self-movement debuff possibly showing twice in Overtime and enemy speed buff not showing at all.\n-Correct Fire Spire listed damage\n-Added background to Overtime general penalty text to make it readable."
+      "content": "-Added health bars to everyone\n-Fixed self-movement debuff possibly showing twice in Overtime and enemy speed buff not showing at all.\n-Correct Fire Spire listed damage\n-Added background to Overtime general penalty text to make it readable.",
+      "key": "1913530::21fa1d9da1e73bc83fc4082389fff37a1058189f",
+      "tags": null
     },
     {
       "title": "Patch 0.042",
       "date": "2022-04-03 18:29:16",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995472599021",
-      "content": "-Corrected the spelling of a contestants name\n-Doubled the size of Magnet, Coin, Dynamite, and Heart pickups.\n-Vampire Survivor now does less self damage\n-Alien Shooter now registers multiple hits in a short time correctly\n-Overtime spawn increases reduced\n-Bubble can no longer achieve 100% cooldown reduction, and has also been nerfed, base cooldown now 30 seconds.\n-Health number will now update properly"
+      "content": "-Corrected the spelling of a contestants name\n-Doubled the size of Magnet, Coin, Dynamite, and Heart pickups.\n-Vampire Survivor now does less self damage\n-Alien Shooter now registers multiple hits in a short time correctly\n-Overtime spawn increases reduced\n-Bubble can no longer achieve 100% cooldown reduction, and has also been nerfed, base cooldown now 30 seconds.\n-Health number will now update properly",
+      "key": "1913530::c300155e5e2d4ff18c270a3df9f31bb1fb459fe0",
+      "tags": null
     },
     {
       "title": "Patch 0.041",
       "date": "2022-04-03 04:33:38",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995470485882",
-      "content": "-Chain Gun will no longer break after pausing.\n-Coins Earned will display properly after Overtime death.\n-Movement speed and a few other upgrades will now properly persist after restarting the game (whoops!)\n"
+      "content": "-Chain Gun will no longer break after pausing.\n-Coins Earned will display properly after Overtime death.\n-Movement speed and a few other upgrades will now properly persist after restarting the game (whoops!)\n",
+      "key": "1913530::2316e879750f5d6ff5f5c6cbf6bda2bc0542a7cd",
+      "tags": null
     },
     {
       "title": "Patch 0.04, Overtime Overhaul",
       "date": "2022-04-02 11:35:42",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995467912293",
-      "content": "-Overtime mode has been overhauled, instead of scaling linearly with time it is now a combination of global enemy upgrades and player chosen enemy upgrades.\n\nAt the start of Overtime and every 30 seconds after a menu will pop, one of the 4 following mutators will be applied\n\n1. Enemy Health Increase\n2. Enemy Speed Increase\n3. Enemy Damage Increase\n4. Enemy Spawns Increase\n\nAdditionally, the player will be offered 3 options out of the following 9\n\n1. Alien Shooter +1 spawn\n2. Periodic Damage, Ignores Bubble\n3. Your Max Health Reduced\n4. Your Healing Reduced\n5. Your Movement Reduced\n6. Enemy Health Increased\n7. Enemy Speed Increased\n8. Enemy Damage Increased\n9. This Menu Appears Faster"
+      "content": "-Overtime mode has been overhauled, instead of scaling linearly with time it is now a combination of global enemy upgrades and player chosen enemy upgrades.\n\nAt the start of Overtime and every 30 seconds after a menu will pop, one of the 4 following mutators will be applied\n\n1. Enemy Health Increase\n2. Enemy Speed Increase\n3. Enemy Damage Increase\n4. Enemy Spawns Increase\n\nAdditionally, the player will be offered 3 options out of the following 9\n\n1. Alien Shooter +1 spawn\n2. Periodic Damage, Ignores Bubble\n3. Your Max Health Reduced\n4. Your Healing Reduced\n5. Your Movement Reduced\n6. Enemy Health Increased\n7. Enemy Speed Increased\n8. Enemy Damage Increased\n9. This Menu Appears Faster",
+      "key": "1913530::d4d72fd9ea87e8eb9dbb19568e0a2155a2dd7cf9",
+      "tags": null
     },
     {
       "title": "Patch 0.03, Localization Started",
       "date": "2022-04-01 06:36:31",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4347669995463513261",
-      "content": "-Added Portuguese(BR) and framework for more languages.\n-Fixed potential level overflow and tweaked exp curve a little.\n-Added unlocks screen to game scene pause menu so combos can be referenced.\n-Fixed the new bugs with healing that were caused by fixing the old bug with healing.\n-Fixed wonky interaction between alien shot and bubble.\n-Fixed lag on chest pickup, hopefully.\n-Starting work on improving Overtime.\n[img]{STEAM_CLAN_IMAGE}/42008322/5a1045dadd034fd0e21284902f04788da58c6c0a.gif[/img]"
+      "content": "-Added Portuguese(BR) and framework for more languages.\n-Fixed potential level overflow and tweaked exp curve a little.\n-Added unlocks screen to game scene pause menu so combos can be referenced.\n-Fixed the new bugs with healing that were caused by fixing the old bug with healing.\n-Fixed wonky interaction between alien shot and bubble.\n-Fixed lag on chest pickup, hopefully.\n-Starting work on improving Overtime.\n[img]{STEAM_CLAN_IMAGE}/42008322/5a1045dadd034fd0e21284902f04788da58c6c0a.gif[/img]",
+      "key": "1913530::782972c8477abe84106339dfd671232dce719fcd",
+      "tags": null
     },
     {
       "title": "Patch 0.022",
       "date": "2022-03-26 03:31:17",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269514491953",
-      "content": "-Achievements/unlocks for winning a match should no longer trigger from losing\n-Health total resetting should hopefully be fixed\n-Quit screen added to indicate something is happening."
+      "content": "-Achievements/unlocks for winning a match should no longer trigger from losing\n-Health total resetting should hopefully be fixed\n-Quit screen added to indicate something is happening.",
+      "key": "1913530::2a70e93d6832b7cf9df265118a8d7f6223ded413",
+      "tags": null
     },
     {
       "title": "Patch 0.021",
       "date": "2022-03-25 01:10:49",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269510494569",
-      "content": "-Overtime button should be properly disabled after dying\n-Reduced Alien Shooter's damage scaling\n-Boss's red circle attack should be easier to see."
+      "content": "-Overtime button should be properly disabled after dying\n-Reduced Alien Shooter's damage scaling\n-Boss's red circle attack should be easier to see.",
+      "key": "1913530::d933e975180cf9e0236f816fe618b26348f31a25",
+      "tags": null
     },
     {
       "title": "Patch 0.02, Overtime Enabled",
       "date": "2022-03-24 04:18:57",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4258723269507327912",
-      "content": "-Initial version of Overtime is now in the game, it will unlock on second win.\n-Enemies will scale in health, damage, speed, and number of special enemies."
+      "content": "-Initial version of Overtime is now in the game, it will unlock on second win.\n-Enemies will scale in health, damage, speed, and number of special enemies.",
+      "key": "1913530::cfa44116f982398db8969de5e1a27d64f9a49354",
+      "tags": null
     },
     {
       "title": "Patch 0.013",
       "date": "2022-03-22 05:48:47",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535845213714",
-      "content": "-Crash on second run is fixed.\n-Achievements and Unlocks base logic implemented.\n-Pain gains and Super Cool are now gated behind achievements.\n-Cost of upgrades increased.\n\nWith the initial achievements and unlocks implemented I can now start work on the next unlock, Overtime mode."
+      "content": "-Crash on second run is fixed.\n-Achievements and Unlocks base logic implemented.\n-Pain gains and Super Cool are now gated behind achievements.\n-Cost of upgrades increased.\n\nWith the initial achievements and unlocks implemented I can now start work on the next unlock, Overtime mode.",
+      "key": "1913530::ac8e3e16ccf51c168071c27508463908ab49d092",
+      "tags": null
     },
     {
       "title": "Patch 0.01",
       "date": "2022-03-17 06:56:24",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4259848535827176455",
-      "content": "-Pushed a small update just to make the Alien Shooter much more clear that it is a threat, doubled its size and added trail effect for the shot.\n-Added trail to Plasmarang"
+      "content": "-Pushed a small update just to make the Alien Shooter much more clear that it is a threat, doubled its size and added trail effect for the shot.\n-Added trail to Plasmarang",
+      "key": "1913530::105007c8e668756a85e43e53ba106a9260296a6a",
+      "tags": null
     }
   ]
 }

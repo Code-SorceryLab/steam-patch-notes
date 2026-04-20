@@ -6,109 +6,145 @@
       "title": "June 20, 2022 - Patch",
       "date": "2022-06-20 03:22:27",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6214419350718026126",
-      "content": "fixed several ui crashes for scene, graphics, etc windows."
+      "content": "fixed several ui crashes for scene, graphics, etc windows.",
+      "key": "1527250::0d666b46105093a7c651b6199f88bb1ef1cd48f8",
+      "tags": null
     },
     {
       "title": "Update - 9/12/2021",
       "date": "2021-09-12 19:18:20",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014731807308573",
-      "content": "Many fixes and new features in this update:\n- an improved implementation of FXAA\n- a reimplenation of TAA\n- added toggle for SSR temporal accumulation\n- add fix to allow loading DX10 DDS textures (many DDS textures may still have issues, when in doubt convert your DDS textures to a non-compressed format ahead of time. Compressed data is not useable by the texture tools functions, hopefully at some point I will implement decompression algorithms for S3TC, etc compressed file data).\n- fix issue saving images to file\n- fix issue with texture tools 'alter texture' and several others for non-byte valued textures. In general, a lot of work went in to handling non-byte valued textures."
+      "content": "Many fixes and new features in this update:\n- an improved implementation of FXAA\n- a reimplenation of TAA\n- added toggle for SSR temporal accumulation\n- add fix to allow loading DX10 DDS textures (many DDS textures may still have issues, when in doubt convert your DDS textures to a non-compressed format ahead of time. Compressed data is not useable by the texture tools functions, hopefully at some point I will implement decompression algorithms for S3TC, etc compressed file data).\n- fix issue saving images to file\n- fix issue with texture tools 'alter texture' and several others for non-byte valued textures. In general, a lot of work went in to handling non-byte valued textures.",
+      "key": "1527250::e9654e3732186d3131cb4b545a0a78d367a3bf92",
+      "tags": null
     },
     {
       "title": "Nightly Build - 8/23/2021",
       "date": "2021-08-23 14:43:10",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629326708717",
-      "content": "- implement dds loading for cubemap, 3d texture types\n- implement project file embedding for cubemap and 3d textures\n- Broad changes to texture handling. CPU-side data is kept concurrently with GPU-side data and updated along with it, allowing multi-threaded texture operations for textures. Mirroring texture data on both CPU/GPU sides allows texture access for both the CPU raytracer and GPU shaders. \n- change direct lighting from world space to view space for increased precision\n- add toggle for auto-conversion of textures at load time to 8-bit RGB values, which was previously the only option for loading.\n- several fixes to texture tools. See README.txt for more details."
+      "content": "- implement dds loading for cubemap, 3d texture types\n- implement project file embedding for cubemap and 3d textures\n- Broad changes to texture handling. CPU-side data is kept concurrently with GPU-side data and updated along with it, allowing multi-threaded texture operations for textures. Mirroring texture data on both CPU/GPU sides allows texture access for both the CPU raytracer and GPU shaders. \n- change direct lighting from world space to view space for increased precision\n- add toggle for auto-conversion of textures at load time to 8-bit RGB values, which was previously the only option for loading.\n- several fixes to texture tools. See README.txt for more details.",
+      "key": "1527250::4cab51c690392a5a0fff7cf8c8b525132fa64dc3",
+      "tags": null
     },
     {
       "title": "Minor Update - 8/17/2021",
       "date": "2021-08-17 22:38:34",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629306069116",
-      "content": "Implemented octahedral encoding for view/world normals in the gBuffer. This has somewhat streamlined normal handling, resulting in a minor performance boost. Also, this is similar to the way many modern renderers handling normal packing, so rendering will be more consistent with major apps."
+      "content": "Implemented octahedral encoding for view/world normals in the gBuffer. This has somewhat streamlined normal handling, resulting in a minor performance boost. Also, this is similar to the way many modern renderers handling normal packing, so rendering will be more consistent with major apps.",
+      "key": "1527250::e6865cca3e75166047bd19c5608b724fbe4c4019",
+      "tags": null
     },
     {
       "title": "Nightly Build - 8/11/2021",
       "date": "2021-08-11 07:21:41",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4040278393511236038",
-      "content": "- Add UI for changing controls in the 'Preferences' window, with values loaded and saved when the program closes.\n\n- Fix some issues with black screens due to switching modes."
+      "content": "- Add UI for changing controls in the 'Preferences' window, with values loaded and saved when the program closes.\n\n- Fix some issues with black screens due to switching modes.",
+      "key": "1527250::6681fc735cec359f63d9a45d66ae69b5d548bccb",
+      "tags": null
     },
     {
       "title": "Nightly Build - 8/10/2021",
       "date": "2021-08-10 08:33:17",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530958782378",
-      "content": "- Added embedding for mesh data to project files. This may cause saving project files to be much slower, but this will allow the app to save projects with altered meshes.\n- Fix error thrown while recording screen and using any texture tool."
+      "content": "- Added embedding for mesh data to project files. This may cause saving project files to be much slower, but this will allow the app to save projects with altered meshes.\n- Fix error thrown while recording screen and using any texture tool.",
+      "key": "1527250::7bdf5ff59c8b3936ebdcd628fc65febb1bb028df",
+      "tags": null
     },
     {
       "title": "Nightly Build - 8/8/2021",
       "date": "2021-08-08 06:50:09",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530951242150",
-      "content": "new features:\n- hardcode all FBOs to use 32-bit float textures (performance hit is worth it, half-float values are too imprecise to handle all cases for\nscene path tracing)\n- switch CPU-side matrix transform calculations for bounding boxes, cameras, and lights from float to double precision for more accuracy.  Offline ray tracer will also share these values, and must use double precision.\n\nfixes:\n- fix flicker caused by failure to update inverse VP matrix properly deep in the code\n- fix issues with loading project files due to incorrect file path association with loaded mesh objects\n- fix issue auto-loading imported meshes to single node (previously, all nodes from entire scene would be copied to the created node causing overdraw)"
+      "content": "new features:\n- hardcode all FBOs to use 32-bit float textures (performance hit is worth it, half-float values are too imprecise to handle all cases for\nscene path tracing)\n- switch CPU-side matrix transform calculations for bounding boxes, cameras, and lights from float to double precision for more accuracy.  Offline ray tracer will also share these values, and must use double precision.\n\nfixes:\n- fix flicker caused by failure to update inverse VP matrix properly deep in the code\n- fix issues with loading project files due to incorrect file path association with loaded mesh objects\n- fix issue auto-loading imported meshes to single node (previously, all nodes from entire scene would be copied to the created node causing overdraw)",
+      "key": "1527250::d3327095e5f56ef6e6de1740cec5e15b98935dbb",
+      "tags": null
     },
     {
       "title": "Nightly Build - 8/5/2021",
       "date": "2021-08-05 06:07:34",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032396530940214803",
-      "content": "- fix issue with scene 'remove all' for materials just turns all materials into the default material.\n- fix issue with camera editor UI not allowing selection for multiple cameras.\n- fix issue where mesh tools do not display the selector UI\n- switch help marker to use help icon\n- adding albedo map will force removal of the diffuse map (and vice versa)"
+      "content": "- fix issue with scene 'remove all' for materials just turns all materials into the default material.\n- fix issue with camera editor UI not allowing selection for multiple cameras.\n- fix issue where mesh tools do not display the selector UI\n- switch help marker to use help icon\n- adding albedo map will force removal of the diffuse map (and vice versa)",
+      "key": "1527250::2b89ed013826fe277d88cab847df64142cab5ad3",
+      "tags": null
     },
     {
       "title": "Nightly Build - 8/2/2021",
       "date": "2021-08-02 09:33:38",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038025597326218288",
-      "content": "- add 'generate normal map' texture tool\n- add 'edge detection' texture tool\n- fix weather shader blend between regular sky and sunset"
+      "content": "- add 'generate normal map' texture tool\n- add 'edge detection' texture tool\n- fix weather shader blend between regular sky and sunset",
+      "key": "1527250::2443c67a417c8fe7c6990008fd397aa575651623",
+      "tags": null
     },
     {
       "title": "Minor update - 7/24/2021",
       "date": "2021-07-24 22:40:22",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692295381308",
-      "content": "Fix non-functional skybox editor button, many fixes to code for video tools."
+      "content": "Fix non-functional skybox editor button, many fixes to code for video tools.",
+      "key": "1527250::fd048afe88e1548e0f82f1589e1b4ef936204a44",
+      "tags": null
     },
     {
       "title": "Update - Added cubemap texture preview",
       "date": "2021-07-23 14:12:19",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692290457722",
-      "content": "Just added early version of code for previewing cubemap textures, it'll be a rotating animation later."
+      "content": "Just added early version of code for previewing cubemap textures, it'll be a rotating animation later.",
+      "key": "1527250::701371ecb6a4a4e1ada195631ffe5af40f95a45f",
+      "tags": null
     },
     {
       "title": "Nightly Build 7/23/2021",
       "date": "2021-07-23 10:07:23",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692289838405",
-      "content": "- fix voxel texture indexing issue which reduced quality of GI/reflections\n- fix popups to set focus on first call\n- add the combo boxes back in for mesh/texture tools\n- fix screenshot functionality\n\nsee readme.txt for more details"
+      "content": "- fix voxel texture indexing issue which reduced quality of GI/reflections\n- fix popups to set focus on first call\n- add the combo boxes back in for mesh/texture tools\n- fix screenshot functionality\n\nsee readme.txt for more details",
+      "key": "1527250::13bb52deae94d87b63d89916362a1d78f6e88806",
+      "tags": null
     },
     {
       "title": "Minor Update 7/22/2021",
       "date": "2021-07-22 11:35:31",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692286420869",
-      "content": "Fix mipmapping issues"
+      "content": "Fix mipmapping issues",
+      "key": "1527250::ee6cdc40a79a6b63966532cd03c21d9f557bf223",
+      "tags": null
     },
     {
       "title": "Quick Fix -- Camera Update Issue 7/22/2021",
       "date": "2021-07-22 03:25:55",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038024692285182762",
-      "content": "Quick fix to camera issue from last update where quaternions are initialized to null values instead of identity quaternions. Apologies if that made the app unusable to anyone for the last 12 hrs."
+      "content": "Quick fix to camera issue from last update where quaternions are initialized to null values instead of identity quaternions. Apologies if that made the app unusable to anyone for the last 12 hrs.",
+      "key": "1527250::3853f59c87c59cf5cf45aff3419c6001151dd106",
+      "tags": null
     },
     {
       "title": "UI Update 7/19/2021",
       "date": "2021-07-19 09:47:15",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340180081459",
-      "content": "Minor UI update: change UI icons, impl selection types for edit mode, some minor fixes everywhere."
+      "content": "Minor UI update: change UI icons, impl selection types for edit mode, some minor fixes everywhere.",
+      "key": "1527250::47176954ccc2eecfe6111590da954dc7f8e3e95b",
+      "tags": null
     },
     {
       "title": "Minor Patch 7/18/2021",
       "date": "2021-07-18 09:08:00",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340176343224",
-      "content": "Further UI impl, minor fixes for texture tools, fixes for video impl and preview images. See README.txt for details."
+      "content": "Further UI impl, minor fixes for texture tools, fixes for video impl and preview images. See README.txt for details.",
+      "key": "1527250::7ed216879cd78e7e23e21ef06a25e13f8212c8a3",
+      "tags": null
     },
     {
       "title": "Temporary Patch 7/15/2021",
       "date": "2021-07-15 21:43:12",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340167333422",
-      "content": "Fix crash due to ctrl/alt/shift keys, temporarily remove preview images and video editor until their UI crashes are resolved. See README.txt for more details."
+      "content": "Fix crash due to ctrl/alt/shift keys, temporarily remove preview images and video editor until their UI crashes are resolved. See README.txt for more details.",
+      "key": "1527250::09079ec496e0aef401f51dfc07e055801b425469",
+      "tags": null
     },
     {
       "title": "Update Build July 14, 2021",
       "date": "2021-07-14 21:13:52",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4204657340163618925",
-      "content": "Add node selection by mouse picking, fixes to UI. Please read the included README.txt file for more info."
+      "content": "Add node selection by mouse picking, fixes to UI. Please read the included README.txt file for more info.",
+      "key": "1527250::22de22f9078cbaa3cd59c0eebee84e559ccefcbb",
+      "tags": null
     }
   ]
 }

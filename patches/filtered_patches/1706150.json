@@ -6,49 +6,65 @@
       "title": "Patch (1.9)",
       "date": "2025-08-12 08:15:07",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909731193",
-      "content": "[p]Changes:\n\n-Support for .lcl localization (implementation borrowed from another of my games Genocide: The Story of One of the Last Lizhums);\n--Now you can translate the game yourself into languages supported by Godot 3.3.2 (source files and instructions will be prepared in the future);\n---If the city maps are not visible in Story Mode, delete all PCK files from the locals folder.\n----For those who want to know the reason: PCK files are loaded via ProjectSettings.load_resource_pack, and for some reason it can spontaneously cause the engine to read not all files, but only from the last loaded PCK file. I do not know the exact reason for this behavior, but in the release version everything works fine, and in the editor it does not;[/p][p]-Serbian (Cyrillic) localization;\n--I, the game author, do not know Serbian. But a longtime friend from Serbia helped translate part of it for the release of the first version (without Story Mode) on another platform, and refused to translate for the Steam release. So I used various translators to translate the rest. If you are unhappy with the translation, the LCL localization files are located in the locale folder. LCL files can be opened with Notepad, but it\u2019s better to use Notepad++ to save the encoding as \"UTF-8 without BOM\". If you need the original Russian text or the English translation based on it, I will upload it to GitHub in the future. Stay tuned for updates;[/p][p]-Fixed the localization switching issue with the helper (which opens by pressing F1);[/p][p]-Edited some minor content;[/p][p]-Fixed a bug where the \"PRESS <ENTER>\" menu item could appear without a space as \"PRESS<ENTER>\" (I still don't understand the cause of the bug, but I just rewrote that code section);[/p][p]-Now the game pauses and opens the menu if the gamepad is disconnected;[/p][p]-\\[Story Mode] Fixed crashes during cutscenes;[/p][p]-\\[Story Mode] The timer in the \"Mirokso\" supermarket no longer goes into negative;[/p][p]-\\[Story Mode] Restored the end-of-level animation from older versions (it was previously removed due to rare random crashes at the end of levels);[/p][p]-\\[Story Mode] Removed the \"Schr\u00f6dinger\u2019s Victory\" bug (where both the boss and the player lose, but victory and defeat plays simultaneously) on the level \"Doubled Base (part 2)\";[/p][p]-\\[Story Mode] The level names \"Torture Building No.45 (Former Arcade Hall)\" and \"Rossy Street 2\" have been swapped;[/p][p]-\\[Story Mode] Added a cut mission on the level \"Torture Building No.45 (Former Arcade Hall)\" (I wanted to add it before release, but was afraid there wasn\u2019t enough time, so I left it as a normal level);[/p][p]-\\[Story Mode] Reduced the amount needed to collect to unlock the main ending (was: 185000 / now: 170000);[/p][p]-\\[Temporary] Enabled logs (saved in the game directory as logs.log);\n--Ignore the memory leak messages at the end of the logs;\n---For those curious: these leaks are objects I can\u2019t clean up due to my bad code. However, they don\u2019t hog RAM after 3+ hours of gameplay (I personally tested on old hardware (Lenovo IdeaPad S20-30) and RAM usage did not exceed 200 MB), so don\u2019t worry about it;  [/p]"
+      "content": "[p]Changes:\n\n-Support for .lcl localization (implementation borrowed from another of my games Genocide: The Story of One of the Last Lizhums);\n--Now you can translate the game yourself into languages supported by Godot 3.3.2 (source files and instructions will be prepared in the future);\n---If the city maps are not visible in Story Mode, delete all PCK files from the locals folder.\n----For those who want to know the reason: PCK files are loaded via ProjectSettings.load_resource_pack, and for some reason it can spontaneously cause the engine to read not all files, but only from the last loaded PCK file. I do not know the exact reason for this behavior, but in the release version everything works fine, and in the editor it does not;[/p][p]-Serbian (Cyrillic) localization;\n--I, the game author, do not know Serbian. But a longtime friend from Serbia helped translate part of it for the release of the first version (without Story Mode) on another platform, and refused to translate for the Steam release. So I used various translators to translate the rest. If you are unhappy with the translation, the LCL localization files are located in the locale folder. LCL files can be opened with Notepad, but it\u2019s better to use Notepad++ to save the encoding as \"UTF-8 without BOM\". If you need the original Russian text or the English translation based on it, I will upload it to GitHub in the future. Stay tuned for updates;[/p][p]-Fixed the localization switching issue with the helper (which opens by pressing F1);[/p][p]-Edited some minor content;[/p][p]-Fixed a bug where the \"PRESS <ENTER>\" menu item could appear without a space as \"PRESS<ENTER>\" (I still don't understand the cause of the bug, but I just rewrote that code section);[/p][p]-Now the game pauses and opens the menu if the gamepad is disconnected;[/p][p]-\\[Story Mode] Fixed crashes during cutscenes;[/p][p]-\\[Story Mode] The timer in the \"Mirokso\" supermarket no longer goes into negative;[/p][p]-\\[Story Mode] Restored the end-of-level animation from older versions (it was previously removed due to rare random crashes at the end of levels);[/p][p]-\\[Story Mode] Removed the \"Schr\u00f6dinger\u2019s Victory\" bug (where both the boss and the player lose, but victory and defeat plays simultaneously) on the level \"Doubled Base (part 2)\";[/p][p]-\\[Story Mode] The level names \"Torture Building No.45 (Former Arcade Hall)\" and \"Rossy Street 2\" have been swapped;[/p][p]-\\[Story Mode] Added a cut mission on the level \"Torture Building No.45 (Former Arcade Hall)\" (I wanted to add it before release, but was afraid there wasn\u2019t enough time, so I left it as a normal level);[/p][p]-\\[Story Mode] Reduced the amount needed to collect to unlock the main ending (was: 185000 / now: 170000);[/p][p]-\\[Temporary] Enabled logs (saved in the game directory as logs.log);\n--Ignore the memory leak messages at the end of the logs;\n---For those curious: these leaks are objects I can\u2019t clean up due to my bad code. However, they don\u2019t hog RAM after 3+ hours of gameplay (I personally tested on old hardware (Lenovo IdeaPad S20-30) and RAM usage did not exceed 200 MB), so don\u2019t worry about it;  [/p]",
+      "key": "1706150::b46b9fa23b5ad021f119ce9d092fcd3f590ae1c5",
+      "tags": null
     },
     {
       "title": "Patch (1.8.4)",
       "date": "2022-04-21 13:20:15",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348797798075988084",
-      "content": "Changes:\n\n-Fixed something non-critical that you would never notice;\n-[Story mode] Edited some graphics on the level \"\"Mirokso\" supermarket\";\n-Add cheat code;\n\n"
+      "content": "Changes:\n\n-Fixed something non-critical that you would never notice;\n-[Story mode] Edited some graphics on the level \"\"Mirokso\" supermarket\";\n-Add cheat code;\n\n",
+      "key": "1706150::7a63226caef4ed12acda19a833c963aec078b722",
+      "tags": null
     },
     {
       "title": "Patch (1.8.3)",
       "date": "2022-03-14 10:19:35",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5631194088572904323",
-      "content": "Changes:\n\n-Fixed a crash during the credits after beating the game. If at this moment close the game via Alt + F4 or the \"Close window\" button;\n-[Story mode] Removed meaningless loading of already loaded scripts during cut-scenes;\n-Fixed something;"
+      "content": "Changes:\n\n-Fixed a crash during the credits after beating the game. If at this moment close the game via Alt + F4 or the \"Close window\" button;\n-[Story mode] Removed meaningless loading of already loaded scripts during cut-scenes;\n-Fixed something;",
+      "key": "1706150::230f6ce296a45577ac2e8fafb612161177260f85",
+      "tags": null
     },
     {
       "title": "Patch (1.8.2)",
       "date": "2022-02-24 14:19:33",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832509052121",
-      "content": "Changes:\n-[Story mode] Add special the game over cut-scene, if player has lost all lives at the \"Orphan home #2\" level;"
+      "content": "Changes:\n-[Story mode] Add special the game over cut-scene, if player has lost all lives at the \"Orphan home #2\" level;",
+      "key": "1706150::f09bf20cf8f7c435611268fb294928da9a26ea27",
+      "tags": null
     },
     {
       "title": "Patch (1.8.1)",
       "date": "2022-02-03 12:59:47",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4235074931847809547",
-      "content": "Changes:\n-Big fixes in English localization (Thank you [i]Soupy Doorman[/i] for your help);\n-Small fixes in Russian localization;"
+      "content": "Changes:\n-Big fixes in English localization (Thank you [i]Soupy Doorman[/i] for your help);\n-Small fixes in Russian localization;",
+      "key": "1706150::43b7c1ea909d00bfd4a9f3f29c885160aaa76279",
+      "tags": null
     },
     {
       "title": "Patch (1.8)",
       "date": "2022-01-13 00:44:43",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224939931826774372",
-      "content": "Changes:\n\n-Add helper;\n-Add option to disable and enable the helper in game options;\n-Fix crash game in story mode, when loading a save with a negative number of lives (now, in this case, the game over screen will be issued instantly. Unless, of course, you have activated a certain cheat code);\n-Fix crash game, when view demo;\n-Add new cheat-code in Debug menu;\n-Cut-scenes in story mode, now you can skip with any active buttons;\n\nWhat is an Helper?\n\nHelper is window, the purpose of which is output text about active buttons in certain moments of the game. This is done because many do not know that a player can hit in a jump."
+      "content": "Changes:\n\n-Add helper;\n-Add option to disable and enable the helper in game options;\n-Fix crash game in story mode, when loading a save with a negative number of lives (now, in this case, the game over screen will be issued instantly. Unless, of course, you have activated a certain cheat code);\n-Fix crash game, when view demo;\n-Add new cheat-code in Debug menu;\n-Cut-scenes in story mode, now you can skip with any active buttons;\n\nWhat is an Helper?\n\nHelper is window, the purpose of which is output text about active buttons in certain moments of the game. This is done because many do not know that a player can hit in a jump.",
+      "key": "1706150::dab5cb8949a0ef57429dd1d6f329662a2ca2f2fe",
+      "tags": null
     },
     {
       "title": "Patch (1.7.6)",
       "date": "2021-12-27 14:05:17",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224938027314855475",
-      "content": "Changes:\n\n-Add new cheat-code in Debug menu;\n-Fix incorrectly working health bar at the Jaro in story mode;\n-Seems to have fixed a bug in story mode, because of which the game crashes after completing the level (maybe);"
+      "content": "Changes:\n\n-Add new cheat-code in Debug menu;\n-Fix incorrectly working health bar at the Jaro in story mode;\n-Seems to have fixed a bug in story mode, because of which the game crashes after completing the level (maybe);",
+      "key": "1706150::0576588aff90854ab8b2abc9e44c6841b1f06f22",
+      "tags": null
     },
     {
       "title": "First patch (1.7.5)",
       "date": "2021-12-24 15:54:31",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224938027304209786",
-      "content": "Changes:\n\n-The animation of the end of the level in the story mode was cut out. This event in a random case could cause the game to crash."
+      "content": "Changes:\n\n-The animation of the end of the level in the story mode was cut out. This event in a random case could cause the game to crash.",
+      "key": "1706150::133d9d957b22091e58aae8b18365f559969d50bc",
+      "tags": null
     }
   ]
 }

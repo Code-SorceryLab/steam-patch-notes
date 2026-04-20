@@ -6,49 +6,65 @@
       "title": "Minor Patch",
       "date": "2025-07-09 21:21:41",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891945092",
-      "content": "In my propeller code;\n\n[i]        if (IsPropellerSection) {\n            Vector3 rotationalVelocity = Vector3.Cross(propeller.angularVelocity, \n                liftPoint - propeller.propellerPoint);\n            \n            // For propellers, use primarily the rotational velocity, with a small influence from forward velocity\n            Vector3 totalVelocity = rotationalVelocity + (velocity * 1.0f); \n            \n            Vector3 normal = _aircraftTransform.TransformDirection(normalVector);\n            Vector3 liftDirection = Vector3.Cross(totalVelocity, \n                Vector3.Cross(normal, totalVelocity)).normalized * -1;\n            \n            if (_aircraft.throttlePercentage > 0.001f) {\n                _liftForceVector = currentLift * liftDirection;\n                _dragVector = -totalVelocity.normalized * totalSectionDrag;\n            } else {\n                _dragVector = Vector3.zero;\n            }[/i]\n\nI did not add a line to remove the lift force, which meant that at zero throttle players would get infinite thrust! It was solved byadding _dragVector = -totalVelocity.normalized * totalSectionDrag; to the else statement."
+      "content": "In my propeller code;\n\n[i]        if (IsPropellerSection) {\n            Vector3 rotationalVelocity = Vector3.Cross(propeller.angularVelocity, \n                liftPoint - propeller.propellerPoint);\n            \n            // For propellers, use primarily the rotational velocity, with a small influence from forward velocity\n            Vector3 totalVelocity = rotationalVelocity + (velocity * 1.0f); \n            \n            Vector3 normal = _aircraftTransform.TransformDirection(normalVector);\n            Vector3 liftDirection = Vector3.Cross(totalVelocity, \n                Vector3.Cross(normal, totalVelocity)).normalized * -1;\n            \n            if (_aircraft.throttlePercentage > 0.001f) {\n                _liftForceVector = currentLift * liftDirection;\n                _dragVector = -totalVelocity.normalized * totalSectionDrag;\n            } else {\n                _dragVector = Vector3.zero;\n            }[/i]\n\nI did not add a line to remove the lift force, which meant that at zero throttle players would get infinite thrust! It was solved byadding _dragVector = -totalVelocity.normalized * totalSectionDrag; to the else statement.",
+      "key": "2795160::8633c303522d06cfa0ba75ecb8d2695e072d2ba2",
+      "tags": null
     },
     {
       "title": "Physics Overhaul Update",
       "date": "2025-07-08 10:31:51",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891898046",
-      "content": "[p]After Flight Sim Expo 2025 I got some feedback that helped me pin down exactly what was causing an issue that I had with the current flight model. Currently in the game, releasing the stick input does not immediately cease rotations - you keep going for a ways, which made me feel like the flying was a bit sloppy and imprecise.[/p][p][/p][p]I discovered that the solution was a couple things;[/p][p][/p][p]1) The major one was that control surfaces were lerping from their final position back to their starting position; this meant that even though the stick was not giving input, the control surfaces still were. Removing this lerp fixed a huge part of the issue.[/p][p][/p][p]2) I found out the aircraft weren't using the custom calculated inertia tensor! The inertia tensor is basically a set of values that dictate how hard it is to change momentum on a given access. Fixing this makes each aircraft fly more realistically and uniquely.[/p][p][/p][p]3) The collision system has been overhauled. Previously I was using a simple convex mesh collider, which basically wrapped around the entire aircraft and gave an imprecise shape. The new system basically voxelizes the aircraft geometry and creates a series of box colliders that match it. This not only improves collision detection but it also improves the inertial tensor calculations![/p]"
+      "content": "[p]After Flight Sim Expo 2025 I got some feedback that helped me pin down exactly what was causing an issue that I had with the current flight model. Currently in the game, releasing the stick input does not immediately cease rotations - you keep going for a ways, which made me feel like the flying was a bit sloppy and imprecise.[/p][p][/p][p]I discovered that the solution was a couple things;[/p][p][/p][p]1) The major one was that control surfaces were lerping from their final position back to their starting position; this meant that even though the stick was not giving input, the control surfaces still were. Removing this lerp fixed a huge part of the issue.[/p][p][/p][p]2) I found out the aircraft weren't using the custom calculated inertia tensor! The inertia tensor is basically a set of values that dictate how hard it is to change momentum on a given access. Fixing this makes each aircraft fly more realistically and uniquely.[/p][p][/p][p]3) The collision system has been overhauled. Previously I was using a simple convex mesh collider, which basically wrapped around the entire aircraft and gave an imprecise shape. The new system basically voxelizes the aircraft geometry and creates a series of box colliders that match it. This not only improves collision detection but it also improves the inertial tensor calculations![/p]",
+      "key": "2795160::f9f87626b42349eaf94b75b85e9d593f953dc366",
+      "tags": null
     },
     {
       "title": "Patch 1.2.2",
       "date": "2025-06-22 22:09:33",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906843441",
-      "content": "Fixed a video file for playback on Linux machines."
+      "content": "Fixed a video file for playback on Linux machines.",
+      "key": "2795160::cd9acb7be2ea3560ea0d2a23a898238b5c124db9",
+      "tags": null
     },
     {
       "title": "Hotfix Patch 1.2.1",
       "date": "2025-06-21 23:57:48",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906814241",
-      "content": "The previous patch may have caused players to lose save data. If so please get in touch and I can work with you to restore it."
+      "content": "The previous patch may have caused players to lose save data. If so please get in touch and I can work with you to restore it.",
+      "key": "2795160::f0bcb1544142e50e57961f6ea69c80b148105789",
+      "tags": null
     },
     {
       "title": "NEW PATCH/NEW PLANES",
       "date": "2025-06-20 11:59:31",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906766517",
-      "content": "[olist][*][p]MAJOR FEATURE: P-51D/BF-109E-4 added as playable[/p][/*][*][p]Mouse flight controls[/p][/*][*][p]Coin sound goes off every other coin[/p][/*][*][p]HUD color changer is weird[/p][/*][*][p]POI points dont disappear, at least on pentium[/p][/*][*][p]Improve Control axis binding[/p][/*][*][p]WebM loading is too low res[/p][/*][*][p]Odd visual glitches in ram, shadowcasting on?[/p][/*][*][p]Salem has no bake and the scores all stay up the whole time[/p][/*][/olist]"
+      "content": "[olist][*][p]MAJOR FEATURE: P-51D/BF-109E-4 added as playable[/p][/*][*][p]Mouse flight controls[/p][/*][*][p]Coin sound goes off every other coin[/p][/*][*][p]HUD color changer is weird[/p][/*][*][p]POI points dont disappear, at least on pentium[/p][/*][*][p]Improve Control axis binding[/p][/*][*][p]WebM loading is too low res[/p][/*][*][p]Odd visual glitches in ram, shadowcasting on?[/p][/*][*][p]Salem has no bake and the scores all stay up the whole time[/p][/*][/olist]",
+      "key": "2795160::362fad59b7743ed92f50402746cbf2e7fd26ec68",
+      "tags": null
     },
     {
       "title": "Patch 1.1 now live!",
       "date": "2025-05-02 09:55:00",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487638144",
-      "content": "Added Mouse Flight Controls:\n- Now you can use your mouse to fly!\n- Standard left/right up/down will control pitch and yaw.\n- Left mouse click + hold acts as a modifier to apply both roll and yaw to left/right movement.\n- Right mouse click + hold acts as a modifier to apply just yaw to left/right movement.\n- Adjust the size of the movement disc and the pilot headlook values in the settings.\n\nFixed bug where coins would only play a sound every other coin when collected in rapid succession.\n\nFixed bug where HUD color adjuster values were inverted.\n\nFixed bug where POI points would not disappear after being collected on the CPU level.\n\nImproved control axis binding for headlook.\n\nChanged videos to WEBM to enable them to work in Linux emulation\n\n\nI've also updated the demo with these new changes - more to come!"
+      "content": "Added Mouse Flight Controls:\n- Now you can use your mouse to fly!\n- Standard left/right up/down will control pitch and yaw.\n- Left mouse click + hold acts as a modifier to apply both roll and yaw to left/right movement.\n- Right mouse click + hold acts as a modifier to apply just yaw to left/right movement.\n- Adjust the size of the movement disc and the pilot headlook values in the settings.\n\nFixed bug where coins would only play a sound every other coin when collected in rapid succession.\n\nFixed bug where HUD color adjuster values were inverted.\n\nFixed bug where POI points would not disappear after being collected on the CPU level.\n\nImproved control axis binding for headlook.\n\nChanged videos to WEBM to enable them to work in Linux emulation\n\n\nI've also updated the demo with these new changes - more to come!",
+      "key": "2795160::79c69b932b37ffcfd1d907df2a4af0d431d5ffac",
+      "tags": null
     },
     {
       "title": "Pre-Release Interview with Skyward Flight Media Now Live!",
       "date": "2025-02-27 08:35:18",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526008724",
-      "content": "[h3][b]What's in the Interview?\n[/b][/h3]\nThis comprehensive interview covers a wide range of topics including:\n\n[list]\n[*] My background in 3D design and aviation\n[*] The unique flight model that powers Exosky\n[*] How the concept evolved from its predecessor \"Yesplane!\"\n[*] Why I chose to create a non-combat flight game\n[*] The story behind the unusual environments you'll fly through\n[*] My decision to go straight to full release rather than early access\n[*] The larger vision behind Exosky and what it represents\n[/list]\n\n[h3][b]Perfect Timing![/b][/h3]\nThis interview lands right in the middle of Steam Next Fest, where you can try the Exosky demo that was just updated with significant improvements to the flight model and scoring system.\n\n[h3][b]Full Release Coming March 7th![/b][/h3]\nAs mentioned in the interview, Exosky will officially launch on March 7th, 2025. This will be a complete 1.0 release - no early access period!\n\n[h3][b]Check It Out![/b][/h3]\n[b]You can read the full interview here: [url=https://www.skywardfm.com/post/exosky-pre-release-interview-2025] Pre-Release Interview: Exosky (2025) [/url][/b]\n\nAnd don't forget to try the demo during Steam Next Fest (February 24th - March 3rd)!\nThank you all for your support and interest in Exosky. I can't wait to share the full game with you soon!\n\n~ Jordan Elevons\nElevons LLC"
+      "content": "[h3][b]What's in the Interview?\n[/b][/h3]\nThis comprehensive interview covers a wide range of topics including:\n\n[list]\n[*] My background in 3D design and aviation\n[*] The unique flight model that powers Exosky\n[*] How the concept evolved from its predecessor \"Yesplane!\"\n[*] Why I chose to create a non-combat flight game\n[*] The story behind the unusual environments you'll fly through\n[*] My decision to go straight to full release rather than early access\n[*] The larger vision behind Exosky and what it represents\n[/list]\n\n[h3][b]Perfect Timing![/b][/h3]\nThis interview lands right in the middle of Steam Next Fest, where you can try the Exosky demo that was just updated with significant improvements to the flight model and scoring system.\n\n[h3][b]Full Release Coming March 7th![/b][/h3]\nAs mentioned in the interview, Exosky will officially launch on March 7th, 2025. This will be a complete 1.0 release - no early access period!\n\n[h3][b]Check It Out![/b][/h3]\n[b]You can read the full interview here: [url=https://www.skywardfm.com/post/exosky-pre-release-interview-2025] Pre-Release Interview: Exosky (2025) [/url][/b]\n\nAnd don't forget to try the demo during Steam Next Fest (February 24th - March 3rd)!\nThank you all for your support and interest in Exosky. I can't wait to share the full game with you soon!\n\n~ Jordan Elevons\nElevons LLC",
+      "key": "2795160::6fec9b575077da2b045dc15277acef93d2670f6c",
+      "tags": null
     },
     {
       "title": "Demo Update!",
       "date": "2024-03-13 15:08:27",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686429670868698113",
-      "content": "[img]{STEAM_CLAN_IMAGE}/44847708/f2792a2a4c6d537a9d607aa86e1d12909ce06e30.png[/img]\nNew update adds custom music support, the option to rebind all keys at once and the option to use a joystick hat switch!\n\nTo use your own music for the game's music player:\n\n1) Right click on the game and go to \"Manage\" -> Browse Local Files.\n2) Navigate to Exosky Demo\\Exosky_Data\\StreamingAssets\n3) Right click and create a new folder, call it \"Music\".\n4) Drop in any MP3s or WAV files  you'd like.\n5) In the audio options in-game, enable the custom music option!"
+      "content": "[img]{STEAM_CLAN_IMAGE}/44847708/f2792a2a4c6d537a9d607aa86e1d12909ce06e30.png[/img]\nNew update adds custom music support, the option to rebind all keys at once and the option to use a joystick hat switch!\n\nTo use your own music for the game's music player:\n\n1) Right click on the game and go to \"Manage\" -> Browse Local Files.\n2) Navigate to Exosky Demo\\Exosky_Data\\StreamingAssets\n3) Right click and create a new folder, call it \"Music\".\n4) Drop in any MP3s or WAV files  you'd like.\n5) In the audio options in-game, enable the custom music option!",
+      "key": "2795160::135d79168d33c801257e0c0e72b0e74e67b3b781",
+      "tags": null
     }
   ]
 }
