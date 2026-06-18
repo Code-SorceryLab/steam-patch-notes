@@ -1,0 +1,543 @@
+{
+  "appId": "3174620",
+  "count": 16,
+  "notes": [
+    {
+      "title": "RAIDING PARTY v0.1.0.1045 Changelog",
+      "date": "2025-08-29 12:12:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871624217",
+      "content": "r1045\n+ Add m_HasPlayedRoomDescription variable to Prologue System and save/load in GameData\n+ Add poster interactions akin to datapad interaction with relevant bools used for save/load in GameData\n+ Ensure room event triggers dont prevent player from exiting room \n+ Add audio to player choice buttons\n+ Add audio to appearance and disappearance of player choice menu\n\nr1044\n+ Refactor Smoking Man prologue into branching dialogue with player choices\n- refactor dialogue coroutines into new prologue system that steps through:\n- X number of skippable dialogue strings (List<string>), for Y seconds (List<float>)\n- W number of player choices (List<int>)\n- new DialogueProgression method\n- new DecisionPoint method\n      - accept = (disable button, unpause, close menu, dialogue progression) + enable key + close smoking man + camera target player\n      - decline = (disable button, unpause, close menu, dialogue progression) + return to decision point\n      - ask AI = (disable button, unpause, close menu, dialogue progression) + open second scroll view\n      - ask memory = (disable button, unpause, close menu, dialogue progression) + open third scroll view\n      - notice = (disable button, unpause, close menu, dialogue progression) + open fourth scroll view\n                - accept green = (disable button, unpause, close menu, dialogue progression) + open first scroll view + gain 2 green\n                - accept rage = (disable button, unpause, close menu, dialogue progression) + open first scroll view + gain 2 rage \n                - accept kocha = (disable button, unpause, close menu, dialogue progression) + open first scroll view + gain 2 kocha \n                - accept black magic = (disable button, unpause, close menu, dialogue progression) + open first scroll view + gain 2 black magic\n                - decline anything = (disable button, unpause, close menu, dialogue progression) + open first scroll view\n- dialogue system player decision points pause the game and bring up player choice menu\n- dialogue system starts a player decision point with first player choice selected\n- ability to step through dialogue text at your own pace\n- add initial narrative preface\n\nr1043\n+ Fix door issue with rapidly opening and closing\n+ Fix: Player was able to get stuck in doors - progression stopper\n\nr1042\n+ Refactor Smoking Man prologue into branching dialogue with player choices\n- create new multiple choice answer UI\n- create green drug item",
+      "key": "3174620::24bdf5da4907dbb04884d463cb6930663e1e411f",
+      "tags": [
+        {
+          "feature": "+ Add m_HasPlayedRoomDescription variable to Prologue System and save/load in GameData"
+        },
+        {
+          "feature": "+ Add poster interactions akin to datapad interaction with relevant bools used for save/load in GameData"
+        },
+        {
+          "feature": "+ Ensure room event triggers dont prevent player from exiting room"
+        },
+        {
+          "feature": "+ Add audio to player choice buttons"
+        },
+        {
+          "feature": "+ Add audio to appearance and disappearance of player choice menu"
+        },
+        {
+          "feature": "+ Refactor Smoking Man prologue into branching dialogue with player choices"
+        },
+        {
+          "feature": "- refactor dialogue coroutines into new prologue system that steps through:"
+        },
+        {
+          "feature": "- X number of skippable dialogue strings (List<string>), for Y seconds (List<float>)"
+        },
+        {
+          "feature": "- W number of player choices (List<int>)"
+        },
+        {
+          "feature": "- new DialogueProgression method"
+        },
+        {
+          "feature": "- new DecisionPoint method"
+        },
+        {
+          "feature": "- dialogue system player decision points pause the game and bring up player choice menu"
+        },
+        {
+          "feature": "- dialogue system starts a player decision point with first player choice selected"
+        },
+        {
+          "feature": "- ability to step through dialogue text at your own pace"
+        },
+        {
+          "feature": "+ add initial narrative preface"
+        },
+        {
+          "bug": "+ Fix door issue with rapidly opening and closing"
+        },
+        {
+          "bug": "+ Fix: Player was able to get stuck in doors - progression stopper"
+        },
+        {
+          "feature": "+ Refactor Smoking Man prologue into branching dialogue with player choices"
+        },
+        {
+          "feature": "- create new multiple choice answer UI"
+        },
+        {
+          "feature": "- create green drug item"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.1041 Changelog",
+      "date": "2025-08-22 01:16:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382467012",
+      "content": "+ Fix: inconsistent save/load of vehicle inventory",
+      "key": "3174620::66c7a67cc17e2f9ca43ab6c0942ff40ac0240801",
+      "tags": [
+        {
+          "bug": "+ Fix: inconsistent save/load of vehicle inventory"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.1040 Changelog",
+      "date": "2025-08-21 15:33:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382453786",
+      "content": "r1030\n+ Lore tip system that integrates lore and tip entries\n\nr1031\n+ Fix: first lightning bolt of player lightning bolt spell doesn't visualize properly\n+ Fix: ensure tumbleweeds don't move when game is paused\n\nr1032\n+ Fix: enemies seeing through closed doors\n\nr1033\n+ Shortened length of lore regarding the 6th Extinction in LoreTipsSystem.prefab\n\nr1034\n+ Implement subset of spells \n- elemental spells - ice spike\n\nr1035\n+ Implement subset of spells\n- demonic spells - possession, boon\n- life spells - heal\n+ Visually delineate between interactable vs disabled skill tree buttons\n+ Fix: Continue doesn't populate loretips system\n\nr1036\n+ Implement subset of spells\n- blood spells - blood meal\n- temporal spells - slow\n\nr1037\n+ Implement subset of spells\n- light spells - banish, illuminate\n- death spells - necrotic rot\n+ Add delayed door toggle to ensure recast graph doesn't detect doors as walls\n\nr1038\n+ Account for Shadow's Hand bosses for slow spell ChangeSpeed() method\n+ Toggle off inactive melee, ranged skills in skill tree\n+ Update melee and ranged skill tree images\n\nr1039\n+ Add more prop environment objects \n- debris (3)\n- trash (3)\n- papers (3)\n+ Add debris, trash, mushrooms, and papers to mission 01, 02, 03, 04, 05\n\nr1040\n+ Fix: door toggle issue where enemies and party members couldnt path through doors\n+ Fix: Skill system not referenced properly in PlayerStatisticsSystem in MissionSecondaryExploration01Level01.unity\n+ Fix: toggled off text wrapping in header text of LevelSystem.prefab lore & tips UI",
+      "key": "3174620::6f8dca6d22e7577b17f9074897b3340d2a22ca5e",
+      "tags": [
+        {
+          "feature": "+ Lore tip system that integrates lore and tip entries"
+        },
+        {
+          "bug": "+ Fix: first lightning bolt of player lightning bolt spell doesn't visualize properly"
+        },
+        {
+          "bug": "+ Fix: ensure tumbleweeds don't move when game is paused"
+        },
+        {
+          "bug": "+ Fix: enemies seeing through closed doors"
+        },
+        {
+          "bug": "+ Fix: Continue doesn't populate loretips system"
+        },
+        {
+          "feature": "+ Implement subset of spells \n- elemental spells - ice spike"
+        },
+        {
+          "feature": "+ Implement subset of spells\n- demonic spells - possession, boon\n- life spells - heal"
+        },
+        {
+          "feature": "+ Visually delineate between interactable vs disabled skill tree buttons"
+        },
+        {
+          "feature": "+ Implement subset of spells\n- blood spells - blood meal\n- temporal spells - slow"
+        },
+        {
+          "feature": "+ Implement subset of spells\n- light spells - banish, illuminate\n- death spells - necrotic rot"
+        },
+        {
+          "feature": "+ Add delayed door toggle to ensure recast graph doesn't detect doors as walls"
+        },
+        {
+          "balance_change": "+ Account for Shadow's Hand bosses for slow spell ChangeSpeed() method"
+        },
+        {
+          "feature": "+ Toggle off inactive melee, ranged skills in skill tree"
+        },
+        {
+          "feature": "+ Update melee and ranged skill tree images"
+        },
+        {
+          "feature": "+ Add more prop environment objects \n- debris (3)\n- trash (3)\n- papers (3)"
+        },
+        {
+          "feature": "+ Add debris, trash, mushrooms, and papers to mission 01, 02, 03, 04, 05"
+        },
+        {
+          "bug": "+ Fix: door toggle issue where enemies and party members couldnt path through doors"
+        },
+        {
+          "bug": "+ Fix: Skill system not referenced properly in PlayerStatisticsSystem in MissionSecondaryExploration01Level01.unity"
+        },
+        {
+          "bug": "+ Fix: toggled off text wrapping in header text of LevelSystem.prefab lore & tips UI"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.1019 Changelog",
+      "date": "2025-06-26 11:06:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891510597",
+      "content": "r1019\n+ Fix: soft freeze loading between scenes\n+ Ensure player weapon and gear properly loads with new soft freeze fix\n\nr1018\n+ Add audio for clicking on skill button in party panel\n+ Add audio for clicking on category and subcategory buttons \n+ Replace sliders in options menu\n+ Added new DisciplinesButton.cs script for parent skill buttons\n\nr1017\n+ Color pass on ranged, melee, and physical skills\n+ Slightly adjust placement of skills button in party panel\n+ Audio pass on clicking skill buttons - gain skill, select skill positive, select skill negative\n\nr1016\n+ Implement skill tree prerequisites\n\nr1015\n+ Update level up tutorial art\n\nr1014\n+ Figure out and implement inventory item to regain mana \n- mana potion\n- add to inventory data\n- add to itemsystem consumables list\n\nr1013\n+ Localize prompts in SaveSlotsMenu.cs\n+ Ensure skill points and skill tree are tracked properly in save/load\n\nr1012\n+ Change Disciplines to Skills\n+ Add all skills text to magic, melee, ranged, and physical skills\n- ranged skill tree\n- localization table entries\n- first pass on all melee, ranged, and physical %'s\n\nr1011\n+ Improve submenu art\n\nr1010\n+ Add level up tutorial talking about skill points vs discipline points\n- ensure tutorial appears when player gains their first level\n\nr1009\n+ Implement tumbledust\n- tumble, rotating movement with brief pauses behavior\n- audio effect - branch whack \n\nr1008\n+ Enable all disciplines and their buttons by default\n+ Enable mana slider in HudPanel.prefab\n+ Implement mana fissure\n- audio effect - low hum & gain\n- visual effect over fissure\n+ Added Valarian Guard to EnemyDamageOverTimeExplosion.cs\n\n\n\n",
+      "key": "3174620::742114098d9959d2593a6d7f099390bcd0cfc4cc",
+      "tags": [
+        {
+          "bug": "+ Fix: soft freeze loading between scenes"
+        },
+        {
+          "bug": "+ Ensure player weapon and gear properly loads with new soft freeze fix"
+        },
+        {
+          "feature": "+ Add audio for clicking on skill button in party panel"
+        },
+        {
+          "feature": "+ Add audio for clicking on category and subcategory buttons"
+        },
+        {
+          "feature": "+ Replace sliders in options menu"
+        },
+        {
+          "feature": "+ Added new DisciplinesButton.cs script for parent skill buttons"
+        },
+        {
+          "feature": "+ Color pass on ranged, melee, and physical skills"
+        },
+        {
+          "balance_change": "+ Slightly adjust placement of skills button in party panel"
+        },
+        {
+          "feature": "+ Audio pass on clicking skill buttons - gain skill, select skill positive, select skill negative"
+        },
+        {
+          "feature": "+ Implement skill tree prerequisites"
+        },
+        {
+          "feature": "+ Update level up tutorial art"
+        },
+        {
+          "feature": "+ Figure out and implement inventory item to regain mana \n- mana potion\n- add to inventory data\n- add to itemsystem consumables list"
+        },
+        {
+          "feature": "+ Localize prompts in SaveSlotsMenu.cs"
+        },
+        {
+          "bug": "+ Ensure skill points and skill tree are tracked properly in save/load"
+        },
+        {
+          "feature": "+ Change Disciplines to Skills"
+        },
+        {
+          "feature": "+ Add all skills text to magic, melee, ranged, and physical skills\n- ranged skill tree\n- localization table entries\n- first pass on all melee, ranged, and physical %'s"
+        },
+        {
+          "feature": "+ Improve submenu art"
+        },
+        {
+          "feature": "+ Add level up tutorial talking about skill points vs discipline points\n- ensure tutorial appears when player gains their first level"
+        },
+        {
+          "feature": "+ Implement tumbledust\n- tumble, rotating movement with brief pauses behavior\n- audio effect - branch whack"
+        },
+        {
+          "feature": "+ Enable all disciplines and their buttons by default"
+        },
+        {
+          "feature": "+ Enable mana slider in HudPanel.prefab"
+        },
+        {
+          "feature": "+ Implement mana fissure\n- audio effect - low hum & gain\n- visual effect over fissure"
+        },
+        {
+          "feature": "+ Added Valarian Guard to EnemyDamageOverTimeExplosion.cs"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.992 Changelog",
+      "date": "2025-05-02 13:53:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487643606",
+      "content": "r992\n+ Add 'tab' key as inventory alternate toggle keybinding\n+ Completely refactor player jump using bezier curve\n\nr991\n+ UI pass on menus and button art\n- word \"demo\"\n- main menu buttons\n- update save menu buttons\n- escape menu buttons\n- credits menu buttons\n- confirmation prompts\n- delete button\n+ Fix: crash loading between levels - make a dev build with debugger - removed extraneous ShadowCaster2DCreator.cs and instances of script in all scenes\n+ Fix: negative traits gained on mission fail are reset upon mission restart",
+      "key": "3174620::1403f223ebe213e14d4a2a08f5c6429ee809d345",
+      "tags": [
+        {
+          "feature": "+ Add 'tab' key as inventory alternate toggle keybinding"
+        },
+        {
+          "feature": "+ Completely refactor player jump using bezier curve"
+        },
+        {
+          "feature": "+ UI pass on menus and button art"
+        },
+        {
+          "bug": "+ Fix: crash loading between levels - make a dev build with debugger - removed extraneous ShadowCaster2DCreator.cs and instances of script in all scenes"
+        },
+        {
+          "bug": "+ Fix: negative traits gained on mission fail are reset upon mission restart"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.990 Changelog",
+      "date": "2025-04-11 12:23:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172283455",
+      "content": "r988\n+ Deconflict selecting units with attacking enemies (alt + left click)\n\nr989\n+ Update all maps with destroyed wall end caps\n+ Update all maps with carpet periphery\n+ Add animated neon offworld poster to prologue room\n+ Add Dominion poster to prologue room(s)\n+ Ensure objectives automatically appear if player moves to another level prior to mission start sequence\n+ Title update\n+ Create banner art\n+ Update main menu art\n- adjust cloud height\n- add water moonlight animation\n- add more rocks to ground\n- update title in game\n- final pass on background art\n\nr990\n+ Fix: jitter with player rigidbody when moving into walls or obstacles\n+ Fix: update select party member controls to reflect latest input alt + left click\n+ Fix: objective 1 marker shows up and obj text white after completing, going to underground, and back (mission 02, 05)\n+ Fix: warrior light doesnt turn on when recruited, while berserkers does or vice versa\n+ party members dont account for generated walls in exploration mission type\n+ Refactor player jump to avoid player jumping through walls\n+ Refactor player dodge to avoid player skipping through walls\n",
+      "key": "3174620::7de5cb94ede1fb3c5163525cd3fe1110a2e6f963",
+      "tags": [
+        {
+          "bug": "+ Fix: jitter with player rigidbody when moving into walls or obstacles"
+        },
+        {
+          "bug": "+ Fix: update select party member controls to reflect latest input alt + left click"
+        },
+        {
+          "bug": "+ Fix: objective 1 marker shows up and obj text white after completing, going to underground, and back (mission 02, 05)"
+        },
+        {
+          "bug": "+ Fix: warrior light doesnt turn on when recruited, while berserkers does or vice versa"
+        },
+        {
+          "bug": "+ party members dont account for generated walls in exploration mission type"
+        },
+        {
+          "bug": "+ Refactor player jump to avoid player jumping through walls"
+        },
+        {
+          "bug": "+ Refactor player dodge to avoid player skipping through walls"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.983 Changelog",
+      "date": "2025-02-12 11:53:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1791482680862971",
+      "content": "r983\n+ Fix: setup initial objective in mission 05\n+ Fix: setup departure objective triggered by first objective completion in mission 05\n+ Fix: upstairs lighting issue in mission 05 level 02\n+ Fix: ensure trees in mission 04 level 01 are considered environment objects\n+ Commented out debug line in EnemyHealth.cs\n\nr982\n+ Fix: nullreference error in NPCController line 525\n+ Fix: Texture TilemapSpriteAtlas is not readable, so Compress cannot work\n+ Fix: ensure corpses on player longship are child objects of vehicle and move with longship\n- add VehicleSystem to SpawnSystem\n- ensure corpses + heads spawns on vehicle properly in save/load, track with List<int> vehicle 0 - null, 1 - player longship, 2 - dominion longship\n+ Ensure blood on player longship are child objects of vehicle and move with longship\n- ensure blood spawns on vehicle properly in save/load, track with List<int> vehicle 0 - null, 1 - player longship, 2 - dominion longship\n+ Fix: nullreferenceexception in target mover scripts when enemyTarget gameobject is null\n+ Fix: ensure longship and dominion longship aren't completely flush against each other in MissionSkirmishNaval01Level01.unity\n+ Fix: change head leap layer from default to ignore raycast upon completion of leap to ensure head is properly set as child object of a vehicle\n\nr981\n+ Fix: upon mission failure, save file isnt world map, its the previous mission\n+ Fix: add close buttons to discipline tree, inventory, and character record menus\n+ Fix: close party menu if player opens inventory and vice versa\n+ Move PartyMemberScrollView to beneath InventoryPanel in all scenes\n\nr980\n+ Refactor gaining positive/negative traits\n- only gain positive on objectives completed\n- only gain negative on party member killed or mission failure\n+ Increase movement speed of player longship on world map (13 -> 20)\n+ Increase movement speed of enemy agents on world map (10 -> 15)\n+ Commented out debug line in SkipExpositionSystem.cs\n+ Added EarlyAccessScreen03.png\n+ Updated main menu copyright to 2025",
+      "key": "3174620::496b52c80c2879659ad55466a78c4d0369411e19",
+      "tags": [
+        {
+          "bug": "+ Fix: setup initial objective in mission 05"
+        },
+        {
+          "bug": "+ Fix: setup departure objective triggered by first objective completion in mission 05"
+        },
+        {
+          "bug": "+ Fix: upstairs lighting issue in mission 05 level 02"
+        },
+        {
+          "bug": "+ Fix: ensure trees in mission 04 level 01 are considered environment objects"
+        },
+        {
+          "bug": "+ Fix: nullreference error in NPCController line 525"
+        },
+        {
+          "bug": "+ Fix: Texture TilemapSpriteAtlas is not readable, so Compress cannot work"
+        },
+        {
+          "bug": "+ Fix: ensure corpses on player longship are child objects of vehicle and move with longship"
+        },
+        {
+          "bug": "+ Fix: nullreferenceexception in target mover scripts when enemyTarget gameobject is null"
+        },
+        {
+          "bug": "+ Fix: ensure longship and dominion longship aren't completely flush against each other in MissionSkirmishNaval01Level01.unity"
+        },
+        {
+          "bug": "+ Fix: change head leap layer from default to ignore raycast upon completion of leap to ensure head is properly set as child object of a vehicle"
+        },
+        {
+          "bug": "+ Fix: upon mission failure, save file isnt world map, its the previous mission"
+        },
+        {
+          "bug": "+ Fix: add close buttons to discipline tree, inventory, and character record menus"
+        },
+        {
+          "bug": "+ Fix: close party menu if player opens inventory and vice versa"
+        },
+        {
+          "balance_change": "- only gain positive on objectives completed"
+        },
+        {
+          "balance_change": "- only gain negative on party member killed or mission failure"
+        },
+        {
+          "balance_change": "+ Increase movement speed of player longship on world map (13 -> 20)"
+        },
+        {
+          "balance_change": "+ Increase movement speed of enemy agents on world map (10 -> 15)"
+        },
+        {
+          "feature": "+ Added EarlyAccessScreen03.png"
+        },
+        {
+          "feature": "+ Updated main menu copyright to 2025"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.979 Changelog",
+      "date": "2024-12-23 00:28:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930741292",
+      "content": "+ Fix: raycast target is toggled on for skip cutscene panel\n+ Fix: ensure skip panel cant be activated after smoking man and informant expositions\n+ Fix: ensure skip cutscene panel is toggled off and doesnt appear if player watches full smoking man and informant expositions\n",
+      "key": "3174620::32a0a507640434e93f478d9a2da6bbef3cb81b37",
+      "tags": [
+        {
+          "bug": "+ Fix: raycast target is toggled on for skip cutscene panel"
+        },
+        {
+          "bug": "+ Fix: ensure skip panel cant be activated after smoking man and informant expositions"
+        },
+        {
+          "bug": "+ Fix: ensure skip cutscene panel is toggled off and doesnt appear if player watches full smoking man and informant expositions"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.978 Changelog",
+      "date": "2024-12-21 15:01:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930697287",
+      "content": "+ Added Steam Integration to Cutscene01.unity\n+ Fix: null reference exception when trap damage trigger injures a non-warrior party member\n+ Fix: soft freeze during room first dungeon generation in procedural exploration mission\n+ Fix: null reference exception in player attack throwable when switching between throwable objects\n+ Fix: lock and remove buttons appear when viewing a trait in party panel\n+ Fix: only call terrain repaint methods in exploration system when in procedural exploration mission",
+      "key": "3174620::e4bd6b5f9b71144e8a9ed9bc6293f9233a9a04ea",
+      "tags": [
+        {
+          "feature": "+ Added Steam Integration to Cutscene01.unity"
+        },
+        {
+          "bug": "+ Fix: null reference exception when trap damage trigger injures a non-warrior party member"
+        },
+        {
+          "bug": "+ Fix: soft freeze during room first dungeon generation in procedural exploration mission"
+        },
+        {
+          "bug": "+ Fix: null reference exception in player attack throwable when switching between throwable objects"
+        },
+        {
+          "bug": "+ Fix: lock and remove buttons appear when viewing a trait in party panel"
+        },
+        {
+          "bug": "+ Fix: only call terrain repaint methods in exploration system when in procedural exploration mission"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.975 Changelog",
+      "date": "2024-12-19 15:21:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930631971",
+      "content": "+ Fix: check for null reference exception in SteamIntegration achievements by checking if game is connected to Steam or not",
+      "key": "3174620::23c3d81fcd333e2c510f43ea73a55f7f2980d9a2",
+      "tags": [
+        {
+          "bug": "+ Fix: check for null reference exception in SteamIntegration achievements by checking if game is connected to Steam or not"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.974 Changelog",
+      "date": "2024-12-18 13:58:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786409468851306",
+      "content": "+ Added auto-reload functionality for player ranged attacks when player runs out of ammo to make reloading easier on Steam Deck",
+      "key": "3174620::98cc5a5d3c2a2359348f5fef1c98a3e0db03decf",
+      "tags": [
+        {
+          "feature": "+ Added auto-reload functionality for player ranged attacks when player runs out of ammo to make reloading easier on Steam Deck"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.973 Changelog",
+      "date": "2024-12-17 18:04:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543700263",
+      "content": "+ Fix: Font size issues on Steam Deck 1280x800 screen resolution\n- merchant panel player and merchant inventory and sell items are one column and player inventory overlaps with player gear\n- extend merchant panel fixes to vehicle panel\n+ Fix: advisor speech bubble doesnt scale relative to screen resolution\n+ Fix: player shouldn't be able to complete mission 01 objective 02 without first completing objective 01\n+ Fix: valarian guard swim animations are using old art assets\n",
+      "key": "3174620::8a1186c5ee734d8a46c5048db38a50efb9c9d917",
+      "tags": [
+        {
+          "bug": "+ Fix: Font size issues on Steam Deck 1280x800 screen resolution"
+        },
+        {
+          "bug": "- merchant panel player and merchant inventory and sell items are one column and player inventory overlaps with player gear"
+        },
+        {
+          "bug": "- extend merchant panel fixes to vehicle panel"
+        },
+        {
+          "bug": "+ Fix: advisor speech bubble doesnt scale relative to screen resolution"
+        },
+        {
+          "bug": "+ Fix: player shouldn't be able to complete mission 01 objective 02 without first completing objective 01"
+        },
+        {
+          "bug": "+ Fix: valarian guard swim animations are using old art assets"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.970 Changelog",
+      "date": "2024-12-15 15:58:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543632323",
+      "content": "+ Fix: Font size issues on Steam Deck 1280x800 screen resolution\n- mission success/fail panel\n- party member panel\n- world map mission details panel\n- skip cutscene panel\n- notification panel\n- trait panel\n",
+      "key": "3174620::7d271803b3d095ec66accd12b7deee40bf20bbd6",
+      "tags": [
+        {
+          "bug": "+ Fix: Font size issues on Steam Deck 1280x800 screen resolution\n- mission success/fail panel\n- party member panel\n- world map mission details panel\n- skip cutscene panel\n- notification panel\n- trait panel"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.969 Changelog",
+      "date": "2024-12-14 16:54:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543602472",
+      "content": "+ Fix: Font size issues on Steam Deck 1280x800 screen resolution\n- version number inconsistent scale with copyright text on main menu\n- empty save slot text too large \n- loading text offset from bar in loading screen\n- key and gas mask filter UI offset from funds\n- quickslot numbers too large and overlap\n- inventory menu\n- party menu",
+      "key": "3174620::9cbf42d974352e78d5293883cd07483c2529d64e",
+      "tags": [
+        {
+          "bug": "+ Fix: Font size issues on Steam Deck 1280x800 screen resolution"
+        },
+        {
+          "bug": "- version number inconsistent scale with copyright text on main menu"
+        },
+        {
+          "bug": "- empty save slot text too large"
+        },
+        {
+          "bug": "- loading text offset from bar in loading screen"
+        },
+        {
+          "bug": "- key and gas mask filter UI offset from funds"
+        },
+        {
+          "bug": "- quickslot numbers too large and overlap"
+        },
+        {
+          "bug": "- inventory menu"
+        },
+        {
+          "bug": "- party menu"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.967 Changelog",
+      "date": "2024-12-13 22:25:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543577724",
+      "content": "+ Steam Deck Compatibility - add gamepad controls menu with current steam deck input mapping",
+      "key": "3174620::02f98ea526ae494092b39b31e935af9fdcdb437b",
+      "tags": [
+        {
+          "feature": "+ Steam Deck Compatibility - add gamepad controls menu with current steam deck input mapping"
+        }
+      ]
+    },
+    {
+      "title": "RAIDING PARTY v0.1.0.966 Changelog",
+      "date": "2024-12-13 20:09:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785774543575038",
+      "content": "+ Steam Deck Compatibility - add two buttons on either side of quickslots for character and inventory\n+ Fix: remove initialize volume call in VolumeSystem to avoid resetting current desired game and score levels\n+ Fix: Player Dodge needs a controller keybinding\n+ Fix: ensure trait modification submenu closes if player steps away from psychonaut without locking or removing a trait\n+ Fix: cant select party members with melee weapon equipped\n+ Lower volume and distance of companion footsteps\n+ Move explore secondary mission button overlapping with mission 05 in world map scene\n+ Fix: terrain not properly repainting in exploration missions based on biome type\n+ Add Full Metal Jacket to random audio score list in all secondary, skirmish, and boss encounter missions\n+ Bind Interact input to X button and Reload to B button on gamepad controller",
+      "key": "3174620::9e66366c2dda3d8b94782bf7f478c8431c5f92d4",
+      "tags": [
+        {
+          "feature": "+ Steam Deck Compatibility - add two buttons on either side of quickslots for character and inventory"
+        },
+        {
+          "bug": "+ Fix: remove initialize volume call in VolumeSystem to avoid resetting current desired game and score levels"
+        },
+        {
+          "bug": "+ Fix: Player Dodge needs a controller keybinding"
+        },
+        {
+          "bug": "+ Fix: ensure trait modification submenu closes if player steps away from psychonaut without locking or removing a trait"
+        },
+        {
+          "bug": "+ Fix: cant select party members with melee weapon equipped"
+        },
+        {
+          "balance_change": "+ Lower volume and distance of companion footsteps"
+        },
+        {
+          "bug": "+ Move explore secondary mission button overlapping with mission 05 in world map scene"
+        },
+        {
+          "bug": "+ Fix: terrain not properly repainting in exploration missions based on biome type"
+        },
+        {
+          "feature": "+ Add Full Metal Jacket to random audio score list in all secondary, skirmish, and boss encounter missions"
+        },
+        {
+          "feature": "+ Bind Interact input to X button and Reload to B button on gamepad controller"
+        }
+      ]
+    }
+  ]
+}

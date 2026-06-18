@@ -1,0 +1,81 @@
+{
+  "appId": "1860650",
+  "count": 5,
+  "notes": [
+    {
+      "title": "Dev Blog - Tents and Walls",
+      "date": "2022-10-15 18:46:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6402455182513308860",
+      "content": "[h3]Hi Everyone ![/h3]\n\nHere again a small progress-update about Rokatusch.\n[b]Notice:[/b] Since the workers are controlled by AI (Artificial intelligence / Computer player), there are some delays between the actions (Running, cutting trees and building buildings),\n\n[h2]What's going on?[/h2]\nI added a new resource into the game (Iron).\nTent and wooden wall were added too.\n\n[previewyoutube=WcmoJF1QGZE;full][/previewyoutube]\n\n[h2]What's next?[/h2]\nOptimizations for wooden walls and other stuff.\n\nOtherwise nice day and greetings\nNoserverStudios",
+      "key": "1860650::c8a9999eac521796ecc0c663420d16f0a865e98c",
+      "tags": [
+        {
+          "feature": "I added a new resource into the game (Iron)."
+        },
+        {
+          "feature": "Tent and wooden wall were added too."
+        }
+      ]
+    },
+    {
+      "title": "Dev Blog - Mining",
+      "date": "2022-08-24 10:19:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316499999207208",
+      "content": "[h3]Hi Everyone ![/h3]\n\nHere again a small progress-update about Rokatusch.\n[b]Notice:[/b] Since the workers are controlled by AI (Artificial intelligence / Computer player), there are some delays between the actions (Running, cutting trees and building buildings),\n\n[h2]What's going on?[/h2]\nI added new resources into the game (Stone and Gold).\nStone mine and gold mine building was added too.\n\n[previewyoutube=Udr34JEr0dw;full][/previewyoutube]\n\n[b]Short making-of gold rock:[/b]\n[previewyoutube=VcsN9Fzz0OM;full][/previewyoutube]\n\n[h2]What's next?[/h2]\nFine tuning and other stuff.\n\nOtherwise nice day and greetings\nNoserverStudios",
+      "key": "1860650::ca26c44765beaef58eebe36a33e6592611512277",
+      "tags": [
+        {
+          "feature": "I added new resources into the game (Stone and Gold)."
+        },
+        {
+          "feature": "Stone mine and gold mine building was added too."
+        }
+      ]
+    },
+    {
+      "title": "Dev Blog - Building System",
+      "date": "2022-05-29 05:32:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4437747060836867267",
+      "content": "[h3]Hi Everyone ![/h3]\n\nHere again a small progress-update about Rokatusch.\n[b]Notice:[/b] Since the workers are controlled by AI (Artificial intelligence / Computer player), there are some delays between the actions (Running, cutting trees and building buildings),\n\n[h2]What's going on?[/h2]\nI updated the building process. Grass and other environment details (Stones, flowers, ...) at building will be removed from now on.\nFood production building was added too.\n\n[previewyoutube=RJjpjz9_UxQ;full][/previewyoutube]\n\n[h2]What's next?[/h2]\nI will work on the resources logic next.\n\n[h2]How does grass removing work in Unity[/h2]\n[code]// Removes details of terrain [layer] at [position] for size [halfExtendWorld] (Half extended quad in world size)\nprivate static void RemoveMapDetails(Terrain terrain, Vector3 position, float halfExtendWorld, int layer = 0)\n{\n\tvar detailWidth = terrain.terrainData.detailWidth;\n\tvar halfDetailWidth = detailWidth / 2f;\n\tvar factor = detailWidth / terrain.terrainData.size.x; // Calc factor for detail map resolution\n\n\tvar targetX = (int)Math.Round((position.x * factor) + halfDetailWidth, 0, MidpointRounding.AwayFromZero);\n\tvar targetZ = (int)Math.Round((position.z * factor) + halfDetailWidth, 0, MidpointRounding.AwayFromZero);\n\n\tvar halfExtend = (int)Math.Round(halfExtendWorld * factor, 0, MidpointRounding.AwayFromZero);\n\n\tvar startX = targetX - halfExtend;\n\tvar startZ = targetZ - halfExtend;\n\n\tvar map = GetMapData(terrain, layer);\n\tvar maxZ = map.GetLength(0);\n\tvar maxX = map.GetLength(1);\n\n\tfor (var z = startZ; z <= targetZ + halfExtend; z++)\n\t{\n\t\tfor (var x = startX; x <= targetX + halfExtend; x++)\n\t\t{\n\t\t\tif (z < 0 || x < 0)\n\t\t\t{\n\t\t\t\tcontinue;\n\t\t\t}\n\n\t\t\tif (z >= maxZ || x >= maxX)\n\t\t\t{\n\t\t\t\tcontinue;\n\t\t\t}\n\n\t\t\tmap[z, x] = 0;\n\t\t}\n\t}\n\n\tSetMapData(terrain, map, layer);\n}\n        \nprivate static int[,] GetMapData(Terrain terrain, int layer)\n{\n\treturn terrain.terrainData.GetDetailLayer(\n\t\t0,\n\t\t0,\n\t\tterrain.terrainData.detailWidth,\n\t\tterrain.terrainData.detailHeight,\n\t\tlayer);\n}\n\nprivate static void SetMapData(Terrain terrain, int[,] mapData, int layer)\n{\n\tterrain.terrainData.SetDetailLayer(0, 0, layer, mapData);\n}[/code]\n\nOtherwise nice day and greetings\nNoserverStudios",
+      "key": "1860650::6f9c7eb467d5a09d0ab5e32bbeb2cdc3ebc213f9",
+      "tags": [
+        {
+          "feature": "Grass and other environment details (Stones, flowers, ...) at building will be removed from now on."
+        },
+        {
+          "feature": "Food production building was added too."
+        }
+      ]
+    },
+    {
+      "title": "Dev Blog - Weather system",
+      "date": "2022-04-30 17:31:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4348798430283040700",
+      "content": "[h3]Hi Everyone ![/h3]\n\nHere again a small progress-update about Rokatusch.\n[b]Notice:[/b] Since the workers are controlled by AI (Artificial intelligence), there are some delays between the actions (Running, cutting trees and building buildings),\n\n[h2]What's going on?[/h2]\nI added a weather-system to Rokatusch (Simple system: Day and night cycle + Clouds and rain).\n\n[previewyoutube=XlDGly27i3Q;full][/previewyoutube]\n\n[h2]What's next?[/h2]\nI will work on the food-logic next.\n\nOtherwise nice day and greetings\nNoserverStudios",
+      "key": "1860650::ddc408564b2a6f2b699974b09c0b8ba278111ffd",
+      "tags": [
+        {
+          "feature": "I added a weather-system to Rokatusch (Simple system: Day and night cycle + Clouds and rain)."
+        }
+      ]
+    },
+    {
+      "title": "Dev Blog - Building system",
+      "date": "2022-02-23 14:06:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4246335832505376189",
+      "content": "[h3]Hi Everyone ![/h3]\n\nHere again a small progress-update about Rokatusch.\n[b]Notice:[/b] Since the workers are controlled by AI (Artificial intelligence), there are some delays between the actions (Running, cutting trees and building buildings), so that the whole thing also works performers.\n\n[h2]What's going on?[/h2]\nThe building system is as good as you can see in the video on the edge.\nSystem: You place a game-pre-defined blueprint somewhere and order that building. You are able to build up this building after that or send workers.\n\n[previewyoutube=Mjo-YhfFpxg;full][/previewyoutube]\n\n[h2]What's next?[/h2]\nI will continue with AI logic (Spawn more workers, build village, ...).\n\nOtherwise nice day and greetings\nNoserverStudios",
+      "key": "1860650::679f851c7e6bdf26009cf286b95cf05ba8e9f340",
+      "tags": [
+        {
+          "feature": "The building system is as good as you can see in the video on the edge."
+        },
+        {
+          "feature": "System: You place a game-pre-defined blueprint somewhere and order that building."
+        },
+        {
+          "feature": "You are able to build up this building after that or send workers."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1137 @@
+{
+  "appId": "1382980",
+  "count": 13,
+  "notes": [
+    {
+      "title": "1.1.0b Devlog - Swimming, new clothes and countless bugfixes",
+      "date": "2024-01-09 18:55:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510783579244809458",
+      "content": "Hello and welcome! It's time for a new update. I'm marking it as the start of the beta phase of the project now that 1.0alpha established the rules of the game in a definitive way.\n\nThis update started as a minor one, an update where I would work largely alone to address the most recent bugs with things like climbing steps and wall climbing.\nThough - as you can guess from the length of the devlog - for a wide variety of reasons the scope of the update ended up growing, starting from implementing some new animations for Fech - the swimming ones and the dash landing - and closing with revamped UI for the rhythm aras and Porfu's shop.\nIn the meantime I also took the time to learn a few new tricks in the matters of optimization, so do tell if performance changes significantly or anything looks off!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/3563a630a3eca36a15f107ac2726f0d9077a1c12.png[/img]\n\n[h2]HIGHLIGHTS:[/h2]\n2023-12-27 Added two new clothes sets\n2023-12-30 Revamped swimming gameplay to be fun and more expressive thanks to new animations, better camera and better controls\n2023-12-30 Added Anxious Rat at the start of the quarry\n2024-01-07 Remade the UI for rhythm aras\n\n[h2]CHANGES:[/h2]\n-Fech climbs steps smoothly now\n-Improvements to zone part loading\n-Added LOD to some smaller objects\n-Powie's model was polished a tad\n-Slightly increased spawn distance for leaves\n-Removed roadmap from the main menu. It's no longer needed\n-Updated game logo on Steam\n-Shortened dialogue on the power plant\n-Added wall texture to Marmocle\n-Increased the ability to look up by 75%, you can now easily see the full extent of the obelisk in the ferrest!\n-Patched an out of bounds spot in the ferrest\n-Added few useful items in the river zone\n-Optimized occlusion on the river zone\n-Shuffled some options in the settings menu\n-Remade the resolution dropdown to be a simpler and nicer-looking selector instead\n-Renamed \"misc quality\" to \"general quality\" and added a new \"low\" option that's more effective at saving GPU performance by halving texture resolutions\n-It's now possible to look up and down using mouse controls\n-Small tweaks to how camera moves\n-Re-added face blinking and dooking animation to Fech\n-Added mipmapping to most of textures. Might improve performance on low spec machines and reduce a bit the intentionally aliased look of the game\n-Compressed some assets to better contain the slowly but surely growing filesize of the game\n-Reduced delay in jump sfx\n-Added sfx to the dream tutorial\n-Tweaked \"so far\", the dream tutorial song, to be a tiny bit more balanced and polished\n-Framerate cap is now off by default, this means better visuals by default on powerful PCs with high refresh monitors\n-Small tweaks to some icons\n-Rolling feels a little more powerful now\n-Added a clean soft camera shot transition when getting into water\n-Tiny tweaks to dash camera\n-Fech defaults to dash motion underwater now, you can't fully stop moving\n-Added character portrait to ATM\n-Tweaked dialogue typewriter speed\n-Tiny tweaks to dialogue and text\n-Fech nicely adapts to the underwater floor now\n-Brought back the mechanic of jumping out of water, now more polished than before\n-The game cursor is now a little hand\n-Added rain effect to river ground\n-Added a new Porfu shop to Marmocle, it sells only the most prestigious items\n-It's easier to snap out of a chained pole by allowing to jump sideways like on normal individual poles\n-Timer countdown is now synced to the beat\n-A few improvements to make the power plant sync better with the music\n-A deleted save file can now be recovered in the save folder\n-More emphasis on birds in the tutorial\n-Added a new wall sliding animation\n-Due to player confusion, the puzzle tutorial is now entirely optional\n-Camera adapts more slowly to the ground slope resulting in a more smooth and gentle motion\n-Camera is now a little closer to Fech in rhythm aras\n-Changed occlusion culling settings to be more granular now that CPU is no longer the main bottleneck\n-Increased max speed underwater, decreased water edge speed\n-Updated game icon on the OS\n\n[h2]FIXES:[/h2]\n-Fixed Rhythm aras not supporting re-tries after having failed once\n-Fixed Rhythm ara death planes triggering too easily\n-Fixed step offset issues. Fech gets stuck at random steps much more rarely\n-Camera now ignores a few troublesome colliders in the tutorial\n-Fixed an editor bug that led to clothes slipping into a build\n-Fixed excessive underwater effect on a few puddles\n-Small tweaks to aid navigation at the start of the ferrest and in the middle of the quarry\n-Fixed a music triggering bug in the sewers\n-Closed hole in ferrest trees\n-Correctly implemented wall climbing on trees \n-Fixed respawn bug that could lead Fech to falling through the ground\n-Fixed small bug that would show the network connect button as interactable if connected to the default room\n-The game can correctly go full screen on a secondary monitor now\n-Fixed wrong bunny colours showing up on dialogues in Marmocle\n-Removed some temporary towers from Marmocle\n-Fixed parts of Marmocle unintentionally appearing in the sewers\n-Fixed bug that would allow to terminate minigames and Porfu's shop while starting them\n-Fixed devil outfit set not having any slots assigned (and thus not showing up in UI)\n-Added back decals in the quarry zone\n-Fixed gravity bug when running down slopes\n-Fech's shader correctly supports shadow cascades now, which means meaning you can safely set shadow settings to high and enjoy better graphics\n-Fixed the buggy and unintended ability to jump up walls. Now wall jumping is strictly horizontal\n-Restored Fech's animations stopping when pausing during a rhythm ara\n-Removed all references to the old Fech model\n-Fixed plank spring bug that would get Fech frozen in place\n-Fixed bug that would allow to swim even after leaving the water\n-Removed old \"end of build\" dialogues from the park\n-Fixed small but annoying bugs with saving menu settings\n-Fixed bug that would lead to Fech's body clipping through clothes when swapping an already occupied slot\n-Greatly increased the consistency in speed and view you get when beginning to swim\n-Fixed a longstanding bug where grass would permanently desaturate after dooking once\n-Fixed ancient annoying bug that would have Fech act as if the dash button was constantly pressed\n-Fech only adapts to the ground slope if in quadruped pose now. No more funky biped rotations when hitting a pebble, sorry!\n-Fixed some stuff that would make the end of the landslide setpiece immersion-breaking\n-Fixed major bug that would have cutscene respawn positions impossible to override, leading to Fech always respawning back in the same locations\n-Small fixes in the power plant\n-Reduced the impact of a climbing animation bug\n-Fixed Power Plant music not repeating\n-Fixed bug with spring launcher in the Power Plant\n-Small improvements to snapping to poles\n-Removed the unintended ability to climb the invisible wall at the ara exit\n-Added back small visual elements of rhythm aras\n-Fixed tiny visual bug when loading rhythm aras\n-Slightly smoother and more polished behaviour on ara pins\n-Fixed known issues with dialogue\n-Fixed major bug with colliding against crane blocks\n-Negligible polishing on the entrance to the power plant\n-Fixed speed lines getting spammed in the rhythm ara\n-Fixed bug that would have the pause menu appear if the game goes out of focus while playing a rhythm ara as it does not stop Fech from moving forwards\n\n[h3]KNOWN ISSUES:[/h3]\n-Small troubles with step offset\n-Respawn position is sometimes unexpectedly offset\n-Rhythm aras are a little empty and buggy\n-Same old camera collision issues at the start of the ferrest\n-Cloud saves don't work on Linux yet\n-Marmocle is rather unoptimized\n-Much of the music and sound effects are missing at the moment\n-Some vfx and particles are missing\n-Production quality of cutscenes and NPC interactions varies a lot at the moment\n\n\nAs a final note, I plan to take a roughly 2 months-long break from updating the game as I focus on getting my bachelor's degree in March.\nThough we'll get to see each other rather soon! This month I'll make a lengthy post recapping 2023's development of Fech, and then we'll have the monthly stream alongside Wishdream.\nCheers!\n\nOh, and as usual, for more direct updates consider joining the [url=https://playfe.ch/discord]discord[/url] community!",
+      "key": "1382980::7819f8e0d4d2ac786e0f7f29011a491500eb4cb5",
+      "tags": [
+        {
+          "feature": "Added two new clothes sets"
+        },
+        {
+          "feature": "Revamped swimming gameplay to be fun and more expressive thanks to new animations, better camera and better controls"
+        },
+        {
+          "feature": "Added Anxious Rat at the start of the quarry"
+        },
+        {
+          "feature": "Remade the UI for rhythm aras"
+        },
+        {
+          "feature": "Added LOD to some smaller objects"
+        },
+        {
+          "feature": "Added wall texture to Marmocle"
+        },
+        {
+          "balance_change": "Increased the ability to look up by 75%, you can now easily see the full extent of the obelisk in the ferrest!"
+        },
+        {
+          "feature": "Added few useful items in the river zone"
+        },
+        {
+          "feature": "Remade the resolution dropdown to be a simpler and nicer-looking selector instead"
+        },
+        {
+          "feature": "Renamed \"misc quality\" to \"general quality\" and added a new \"low\" option that's more effective at saving GPU performance by halving texture resolutions"
+        },
+        {
+          "feature": "It's now possible to look up and down using mouse controls"
+        },
+        {
+          "feature": "Re-added face blinking and dooking animation to Fech"
+        },
+        {
+          "feature": "Added mipmapping to most of textures. Might improve performance on low spec machines and reduce a bit the intentionally aliased look of the game"
+        },
+        {
+          "balance_change": "Reduced delay in jump sfx"
+        },
+        {
+          "feature": "Added sfx to the dream tutorial"
+        },
+        {
+          "balance_change": "Tweaked \"so far\", the dream tutorial song, to be a tiny bit more balanced and polished"
+        },
+        {
+          "feature": "Framerate cap is now off by default, this means better visuals by default on powerful PCs with high refresh monitors"
+        },
+        {
+          "balance_change": "Rolling feels a little more powerful now"
+        },
+        {
+          "feature": "Added a clean soft camera shot transition when getting into water"
+        },
+        {
+          "feature": "Fech defaults to dash motion underwater now, you can't fully stop moving"
+        },
+        {
+          "feature": "Added character portrait to ATM"
+        },
+        {
+          "feature": "Fech nicely adapts to the underwater floor now"
+        },
+        {
+          "feature": "Brought back the mechanic of jumping out of water, now more polished than before"
+        },
+        {
+          "feature": "The game cursor is now a little hand"
+        },
+        {
+          "feature": "Added rain effect to river ground"
+        },
+        {
+          "feature": "Added a new Porfu shop to Marmocle, it sells only the most prestigious items"
+        },
+        {
+          "feature": "It's easier to snap out of a chained pole by allowing to jump sideways like on normal individual poles"
+        },
+        {
+          "feature": "Timer countdown is now synced to the beat"
+        },
+        {
+          "feature": "A deleted save file can now be recovered in the save folder"
+        },
+        {
+          "feature": "Added a new wall sliding animation"
+        },
+        {
+          "feature": "Due to player confusion, the puzzle tutorial is now entirely optional"
+        },
+        {
+          "balance_change": "Increased max speed underwater, decreased water edge speed"
+        },
+        {
+          "bug": "Fixed Rhythm aras not supporting re-tries after having failed once"
+        },
+        {
+          "bug": "Fixed Rhythm ara death planes triggering too easily"
+        },
+        {
+          "bug": "Fixed step offset issues. Fech gets stuck at random steps much more rarely"
+        },
+        {
+          "bug": "Camera now ignores a few troublesome colliders in the tutorial"
+        },
+        {
+          "bug": "Fixed an editor bug that led to clothes slipping into a build"
+        },
+        {
+          "bug": "Fixed excessive underwater effect on a few puddles"
+        },
+        {
+          "bug": "Fixed a music triggering bug in the sewers"
+        },
+        {
+          "bug": "Closed hole in ferrest trees"
+        },
+        {
+          "bug": "Correctly implemented wall climbing on trees"
+        },
+        {
+          "bug": "Fixed respawn bug that could lead Fech to falling through the ground"
+        },
+        {
+          "bug": "Fixed small bug that would show the network connect button as interactable if connected to the default room"
+        },
+        {
+          "bug": "The game can correctly go full screen on a secondary monitor now"
+        },
+        {
+          "bug": "Fixed wrong bunny colours showing up on dialogues in Marmocle"
+        },
+        {
+          "bug": "Removed some temporary towers from Marmocle"
+        },
+        {
+          "bug": "Fixed parts of Marmocle unintentionally appearing in the sewers"
+        },
+        {
+          "bug": "Fixed bug that would allow to terminate minigames and Porfu's shop while starting them"
+        },
+        {
+          "bug": "Fixed devil outfit set not having any slots assigned (and thus not showing up in UI)"
+        },
+        {
+          "bug": "Added back decals in the quarry zone"
+        },
+        {
+          "bug": "Fixed gravity bug when running down slopes"
+        },
+        {
+          "bug": "Fech's shader correctly supports shadow cascades now, which means meaning you can safely set shadow settings to high and enjoy better graphics"
+        },
+        {
+          "bug": "Fixed the buggy and unintended ability to jump up walls. Now wall jumping is strictly horizontal"
+        },
+        {
+          "bug": "Restored Fech's animations stopping when pausing during a rhythm ara"
+        },
+        {
+          "bug": "Removed all references to the old Fech model"
+        },
+        {
+          "bug": "Fixed plank spring bug that would get Fech frozen in place"
+        },
+        {
+          "bug": "Fixed bug that would allow to swim even after leaving the water"
+        },
+        {
+          "bug": "Removed old \"end of build\" dialogues from the park"
+        },
+        {
+          "bug": "Fixed small but annoying bugs with saving menu settings"
+        },
+        {
+          "bug": "Fixed bug that would lead to Fech's body clipping through clothes when swapping an already occupied slot"
+        },
+        {
+          "bug": "Greatly increased the consistency in speed and view you get when beginning to swim"
+        },
+        {
+          "bug": "Fixed a longstanding bug where grass would permanently desaturate after dooking once"
+        },
+        {
+          "bug": "Fixed ancient annoying bug that would have Fech act as if the dash button was constantly pressed"
+        },
+        {
+          "bug": "Fech only adapts to the ground slope if in quadruped pose now. No more funky biped rotations when hitting a pebble, sorry!"
+        },
+        {
+          "bug": "Fixed some stuff that would make the end of the landslide setpiece immersion-breaking"
+        },
+        {
+          "bug": "Fixed major bug that would have cutscene respawn positions impossible to override, leading to Fech always respawning back in the same locations"
+        },
+        {
+          "bug": "Reduced the impact of a climbing animation bug"
+        },
+        {
+          "bug": "Fixed Power Plant music not repeating"
+        },
+        {
+          "bug": "Fixed bug with spring launcher in the Power Plant"
+        },
+        {
+          "bug": "Removed the unintended ability to climb the invisible wall at the ara exit"
+        },
+        {
+          "bug": "Added back small visual elements of rhythm aras"
+        },
+        {
+          "bug": "Fixed tiny visual bug when loading rhythm aras"
+        },
+        {
+          "bug": "Fixed known issues with dialogue"
+        },
+        {
+          "bug": "Fixed major bug with colliding against crane blocks"
+        },
+        {
+          "bug": "Fixed speed lines getting spammed in the rhythm ara"
+        },
+        {
+          "bug": "Fixed bug that would have the pause menu appear if the game goes out of focus while playing a rhythm ara as it does not stop Fech from moving forwards"
+        }
+      ]
+    },
+    {
+      "title": "1.0.0a Devlog - Systemic rework: physics, animation, dialogue, collectibles",
+      "date": "2023-12-08 08:56:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616798198388",
+      "content": "Welcome to a much anticipated new major update of Fech The Ferret, version 1.0.0alpha. \nWith no doubt the biggest update the game ever had.\n\n[previewyoutube=WiOqwHd5vVw;full][/previewyoutube]\nI'll try to be quick and sum up the intent behind this update.\nAs many of you know, I've been working on Fech for 7 years and a half now, the game has been a team effort since Spring 2020. Until a few months ago making Fech was a diligent process of taking two steps forward and one step back as we patched/edited/replaced stuff that wouldn't work with the growing complexity of the project.\n\nIn summer 2023 we got ourselves in a bit of a perfect storm: we realized that the old dialogue system was at odds with our worklow, that way too much code was running concurrentlly thus making interactibles nigh impossible to code and - on top of this all - a newly improved Fech 3D model was on its way to completion.\nIt was time for some project-wide restructuring, hopefully the basis to get on the path to completing the game.\n\nSo two new people joined the team! \n[i]Determined Bun[/i] as the new writer and [i]Chaoko[/i] taking the role of 3D animator on the project. \nWe began remaking all NPC interactions to be much more flexible with a new dialogue system of our own, Fech's animations got remade from scratch for the new model and - lastly - I was finally convinced to port and rewrite ALL gameplay code to work using state machines.\n\nEverything you'll read below is either outlining this process or describing the happy consequences of getting into this new approach to working, such as the introduction of cutscene, more minigames and much better collectibles.\n\nAnd with that, I'll leave you to perhaps the longest devlog to date. Have fun reading!\n\n[h2]HIGHLIGHTS:[/h2]\n2023-06-20 [b]Entirely redone the dialogue system. It now supports character portraits[/b], text animations and character animations\n2023-07-28 Moved from Character Controller to Rigidbody for Fech's movements\n2023-08-05 [b]Redone Fech's physics system from scratch[/b]. Better grounding, rotations and handling. Fixed all issues tied to slopes and climbing. Improved overall feel providing a much smoother experience.\n2023-08-09 [b]Dive roll mechanic changed[/b] to feel more like a short boost after a brief pause in the air\n2023-08-13 Redone camera height control to be much simpler and more reliable. Works while dashing too\n2023-08-16 Redone the spine bending system to be more natural-looking (later changed again to be simpler)\n2023-09-26 Look of the sewers has been polished and revamped\n2023-09-28 [b]Goose chase added[/b]\n2023-10-28 Began transitioning to a State Machine system to handle Fech. Fixed countless bugs tied to interactibles\n2023-10-28 The team is now complete! New writer and animator. Updated credits to reflect that\n2023-11-07 Dialogues in the game have been overhauled. New HUD for NPCs has been added\n2023-11-07 Massively cut down on Garbage Collection and removed periodic framerate spikes. The framerate should be a lot more stable!\n2023-11-12 [b]New Fech model with remade animations![/b]\n2023-11-14 New Quests and NPCs! Also, bunnies!\n2023-11-16 [b]Fech can wear clothes now! Go find them around the world![/b]\n2023-11-18 Added many new animations that allow gameplay to feel more expressive\n2023-11-20 [b]Porfu travels all around the world to sell his goods now![/b]\n2023-11-22 The old centre is good to go! If only there was a bridge to reach it...\n2023-11-26 Redone the climbing system to closely mimic the base mechanics but with more animations and bigger wall variety support\n2023-11-27 Marmocle's market is ready and it's got a few minigames to play!\n2023-11-27 [b]Added ferrest and quarry cutscenes to the game, look at that ferret go![/b]\n2023-11-28 [b]Added Fech meeting Powie[/b]\n2023-11-29 No longer alone, Powie sticks by Fech's side now\n2023-11-30 [b]Fech's notes have been remade[/b] for better navigability and a nicer display of clothes and comics\n2023-11-30 [b]Comics finally added to the game![/b]\n2023-12-05 Updated online code: clothes and better animation syncing!\n2023-12-06 [b]Removed pal pulling from the game entirely[/b]: we'll redo the mechanic at a later time\n2023-12-07 Game now autosaves every time the player touches water. Easier to understand, opening the menu is no longer needed\n\n\n[h2]CHANGES:[/h2]\n-Added idle animations to squids\n-New shops in Marmocle\n-Increased physics calculations as part of moving to a rigidbody system to handle Fech's physics\n-Camera improvements, shots feel like they flow much more freely now\n-Swimming is a little slippery now\n-Slope movement now carries over when losing grounding. The player can theoretically launch themselves in the air if speed is sufficient\n-Slightly re-balanced the roll: a little slower, lasts a little longer\n-Slight increase to max swimming speed\n-Added HUD animation for Fech taking damage\n-Marginal improvements to the look of the credits tab\n-Added a water splash effect\n-Somewhat nicer water look\n-More wind to grass in the river\n-Changing the camera angle with the right stick now leads it to sticking into that position for some time\n-Updated resolution scaling settings to provide more granular control\n-Physics code is now computed 120 times per second instead of 30, the Physics simulatations happen instead always exactly once per frame. This might lead to a smoother experience and more consistent framerates without any significant CPU overhead\n-Reduced code overhead of respawning Fech\n-Optimized discord integration by updating it only when needed\n-Significantly increased the size of input prompts\n-Added a new zipline at the start of the quarry to backtrack more easily\n-New structures in the ferrest and river zones, slightly improved the overall visibility\n-Added subtle spine bending to Fech rolling\n-Thumbstick camera controls are much faster now\n-Quadruped walk camera is a little closer now\n-Quadruped walk and dash camera shots are more similar, the blend more nicely between each other\n-Dash camera is a tiny bit closer now. These camera edits aim to make the game a little more immersive\n-Increased size of UI prompt\n-Polished Zipline: faster, smoother and with a new camera shot\n-Small tweaks to dashing to feel a little snappier\n-Many small tweaks to gravity acceleration depending on Fech's state\n-Added squash and stretch to rolling\n-Dropping while rolling gives 50% more stamina now\n-Added a waterslide at the end of the river\n-Added dialogue and better interactions to the power plant\n-Unexpected feature: thanks to the better climbing system, trees are now climbable\n-Temporarily removed explosion from the quarry battery\n-Marmocle has out of bound trees now\n-Removed stripes from previously unclimbable walls. Now there's no longer any hard limit on what can be climbed\n-Fech is much faster at turning when walking on all fours\n-Tweaked the notification system to look a little more consistent with the overall style of the game\n-Colours are little bit more vivid overall\n-New save notice animation, it plays as soon as it happens, rendered on top of everything\n-Save animation no longer shares the same space as the notifications\n-Due to how the dialogue system works, the game saves very often now. Will be tweaked further in the future\n-Added underwater distortion\n-Significant optimization improvements in the quarry: sections now load and unload much more effectively thanks to proper partitioning of props and interactibles\n-Removed ability to manually save progress in the menu, replaced with resetting Fech's position (as oppose to resetting the save file)\n-Better rhythm ara camera: closer to Fech and with nicer vertical movement\n-The ara gate has to be loaded only once. Restarting aras is less annoying now\n-Restored a little bit of spine bending when using treadmills\n-Much improved spine bending on online players. It now perfectly mimics the local behaviour\n-Ziplines are much faster now\n-Fech control sensitivity in rhythm aras are no longer dependent on the speed of the level\n-Made the clothes and notes notice more apparent after Fech wakes up\n-Adjusted ara tuuti to work without pal pulling\n-Added a very basic implementation of wall jumping\n-Improved the feel of ara pins\n-Camera improvements when rolling\n-Added a little dialogue at the start of the ferrest\n\n[h2]FIXES:[/h2]\n-Fixed bug that would have the player stuck in a climbing position if they climbed a wall right before entering a rhythm ara\n-Fixed collision bug tied to interacting with triggers\n-Removed demo barrier that was incorrectly left in the quarry\n-Fixed lack of rotation when walking on slopes\n-Accidentally fixed some gravity bug with the poles by remaking physics\n-Fixed swimming bug that would lead to a small vertical force being applied even when standing outside of the water\n-Fixed animation triggering when entering water\n-Fixed other small issues with animation triggering such as jump animation not triggering at times\n-Tiny adjustments in the second half of the ferrest, backtracking is now allowed\n-Potentially big performance fix, many objects were rendering backfaces\n-Fixed foliage slider not removing nearly as many trees as it was supposed to. Major performance improvement for integrated graphic cards\n-Pollen boxes and out of bound tree trunks now correctly support fog\n-Fixed more issues with triggering animations as part of rebuilding the Animator to use State Machines\n-Debug characters have been removed from Marmocle\n-Fixed all major bugs in the power plant\n-Fixed all major bugs tied to poles\n-Fixed a few bugs in the glasshouse at the end of the river zone\n-No more jittery look on unclimbable stripes now that's they're removed\n-As part of a UI overhaul, Fech notes are now navigable with a controller\n-Mostly fixed falling through the ground bug when respawning out of an enclosed level\n-Fixed most of water not triggering a save position or respawning in inconvenient places\n-Fixed ara essential bug, now it's playable again\n-Fixed main music bugs in rhythm ara\n-Removed the unfinished defective online \"business\" code\n-Online players now can correctly show up as sleeping if they join the network before starting to play\n-Fixed and improved visibility on the quest/item notice\n-It's no longer possible to pause on the treadmill section at the ara gate. This would lead to a situation where it's impossible to unpause\n-Small UI transition fixes\n-Fixed server region not showing up when auto-connecting to the network\n-Fixed a few networking UI bugs related to allowing players to connect to a new region / room\n-Fixed a bug with resetting Fech's position\n\n[h3]KNOWN ISSUES:[/h3]\n-Same old camera collision issues tied to underpasses. Might be more of a design issue than else at this point\n-Cloud saves don't work on Linux yet\n-Fech himself oddly doesn't support shadow cascades. Set shadows to low\n-Marmocle is likely to be very heavy on slower machines. This will be dealt with over time\n-A lot of music and sound effects are missing at the moment\n-Some vfx and particles are missing\n-Rhythm aras are in need of a partial overhaul\n-Production quality of cutscenes and NPC interactions varies a lot. These elements are still very much under development\n\n\nClosing thoughts.\nI decided to drop the update cards thing. They looked really nice, but I would usually end up completely missing the mark with assuming incoming priorities and actually deciding what to work on.\nSo this time around I'm just saying what my current intentions are for the next major update:\nPartial rework of how rhythm aras. They need significant polish if not some major changes altogether.\nBringing back / completing missing gameplay features, so basically the pal pulling.\nDelivering a new zone or level.\nNew features to the online play now that we have a state machine making everything easier to manage.\n\n\nAnyway, congrats for reaching the end of the devlog!\nAs usualy I suggest joining the discord community for random updates and direct feedback.\n[url=https://playfe.ch/discord]playfe.ch/discord[/url]\n\nCheers!",
+      "key": "1382980::2704941cdfebd65493a7fa8a8828a0cecc01d7f7",
+      "tags": [
+        {
+          "feature": "Entirely redone the dialogue system. It now supports character portraits, text animations and character animations"
+        },
+        {
+          "bug": "Redone Fech's physics system from scratch. Better grounding, rotations and handling. Fixed all issues tied to slopes and climbing."
+        },
+        {
+          "balance_change": "Dive roll mechanic changed to feel more like a short boost after a brief pause in the air"
+        },
+        {
+          "feature": "Goose chase added"
+        },
+        {
+          "bug": "Began transitioning to a State Machine system to handle Fech. Fixed countless bugs tied to interactibles"
+        },
+        {
+          "feature": "New Fech model with remade animations!"
+        },
+        {
+          "feature": "Fech can wear clothes now! Go find them around the world!"
+        },
+        {
+          "feature": "Porfu travels all around the world to sell his goods now!"
+        },
+        {
+          "feature": "Added ferrest and quarry cutscenes to the game, look at that ferret go!"
+        },
+        {
+          "feature": "Added Fech meeting Powie"
+        },
+        {
+          "feature": "Fech's notes have been remade for better navigability and a nicer display of clothes and comics"
+        },
+        {
+          "feature": "Comics finally added to the game!"
+        },
+        {
+          "balance_change": "Removed pal pulling from the game entirely: we'll redo the mechanic at a later time"
+        },
+        {
+          "feature": "Added idle animations to squids"
+        },
+        {
+          "feature": "New shops in Marmocle"
+        },
+        {
+          "balance_change": "Increased physics calculations as part of moving to a rigidbody system to handle Fech's physics"
+        },
+        {
+          "balance_change": "Swimming is a little slippery now"
+        },
+        {
+          "balance_change": "Slope movement now carries over when losing grounding. The player can theoretically launch themselves in the air if speed is sufficient"
+        },
+        {
+          "balance_change": "Slightly re-balanced the roll: a little slower, lasts a little longer"
+        },
+        {
+          "balance_change": "Slight increase to max swimming speed"
+        },
+        {
+          "feature": "Added HUD animation for Fech taking damage"
+        },
+        {
+          "feature": "Added a water splash effect"
+        },
+        {
+          "balance_change": "Physics code is now computed 120 times per second instead of 30, the Physics simulatations happen instead always exactly once per frame. This might lead to a smoother experience and more consistent framerates without any significant CPU overhead"
+        },
+        {
+          "feature": "Added a new zipline at the start of the quarry to backtrack more easily"
+        },
+        {
+          "feature": "New structures in the ferrest and river zones, slightly improved the overall visibility"
+        },
+        {
+          "feature": "Added subtle spine bending to Fech rolling"
+        },
+        {
+          "balance_change": "Thumbstick camera controls are much faster now"
+        },
+        {
+          "balance_change": "Quadruped walk camera is a little closer now"
+        },
+        {
+          "balance_change": "Quadruped walk and dash camera shots are more similar, the blend more nicely between each other"
+        },
+        {
+          "balance_change": "Dash camera is a tiny bit closer now. These camera edits aim to make the game a little more immersive"
+        },
+        {
+          "balance_change": "Increased size of UI prompt"
+        },
+        {
+          "balance_change": "Polished Zipline: faster, smoother and with a new camera shot"
+        },
+        {
+          "balance_change": "Small tweaks to dashing to feel a little snappier"
+        },
+        {
+          "balance_change": "Many small tweaks to gravity acceleration depending on Fech's state"
+        },
+        {
+          "feature": "Added squash and stretch to rolling"
+        },
+        {
+          "balance_change": "Dropping while rolling gives 50% more stamina now"
+        },
+        {
+          "feature": "Added a waterslide at the end of the river"
+        },
+        {
+          "feature": "Added dialogue and better interactions to the power plant"
+        },
+        {
+          "feature": "Unexpected feature: thanks to the better climbing system, trees are now climbable"
+        },
+        {
+          "balance_change": "Temporarily removed explosion from the quarry battery"
+        },
+        {
+          "feature": "Marmocle has out of bound trees now"
+        },
+        {
+          "balance_change": "Removed stripes from previously unclimbable walls. Now there's no longer any hard limit on what can be climbed"
+        },
+        {
+          "balance_change": "Fech is much faster at turning when walking on all fours"
+        },
+        {
+          "feature": "New save notice animation, it plays as soon as it happens, rendered on top of everything"
+        },
+        {
+          "feature": "Added underwater distortion"
+        },
+        {
+          "balance_change": "Removed ability to manually save progress in the menu, replaced with resetting Fech's position (as oppose to resetting the save file)"
+        },
+        {
+          "balance_change": "Better rhythm ara camera: closer to Fech and with nicer vertical movement"
+        },
+        {
+          "balance_change": "The ara gate has to be loaded only once. Restarting aras is less annoying now"
+        },
+        {
+          "balance_change": "Restored a little bit of spine bending when using treadmills"
+        },
+        {
+          "balance_change": "Much improved spine bending on online players. It now perfectly mimics the local behaviour"
+        },
+        {
+          "balance_change": "Ziplines are much faster now"
+        },
+        {
+          "balance_change": "Fech control sensitivity in rhythm aras are no longer dependent on the speed of the level"
+        },
+        {
+          "balance_change": "Made the clothes and notes notice more apparent after Fech wakes up"
+        },
+        {
+          "balance_change": "Adjusted ara tuuti to work without pal pulling"
+        },
+        {
+          "feature": "Added a very basic implementation of wall jumping"
+        },
+        {
+          "balance_change": "Improved the feel of ara pins"
+        },
+        {
+          "feature": "Added a little dialogue at the start of the ferrest"
+        },
+        {
+          "bug": "Fixed bug that would have the player stuck in a climbing position if they climbed a wall right before entering a rhythm ara"
+        },
+        {
+          "bug": "Fixed collision bug tied to interacting with triggers"
+        },
+        {
+          "bug": "Removed demo barrier that was incorrectly left in the quarry"
+        },
+        {
+          "bug": "Fixed lack of rotation when walking on slopes"
+        },
+        {
+          "bug": "Accidentally fixed some gravity bug with the poles by remaking physics"
+        },
+        {
+          "bug": "Fixed swimming bug that would lead to a small vertical force being applied even when standing outside of the water"
+        },
+        {
+          "bug": "Fixed animation triggering when entering water"
+        },
+        {
+          "bug": "Fixed other small issues with animation triggering such as jump animation not triggering at times"
+        },
+        {
+          "bug": "Tiny adjustments in the second half of the ferrest, backtracking is now allowed"
+        },
+        {
+          "bug": "Potentially big performance fix, many objects were rendering backfaces"
+        },
+        {
+          "bug": "Fixed foliage slider not removing nearly as many trees as it was supposed to. Major performance improvement for integrated graphic cards"
+        },
+        {
+          "bug": "Pollen boxes and out of bound tree trunks now correctly support fog"
+        },
+        {
+          "bug": "Fixed more issues with triggering animations as part of rebuilding the Animator to use State Machines"
+        },
+        {
+          "bug": "Debug characters have been removed from Marmocle"
+        },
+        {
+          "bug": "Fixed all major bugs in the power plant"
+        },
+        {
+          "bug": "Fixed all major bugs tied to poles"
+        },
+        {
+          "bug": "Fixed a few bugs in the glasshouse at the end of the river zone"
+        },
+        {
+          "bug": "No more jittery look on unclimbable stripes now that's they're removed"
+        },
+        {
+          "bug": "As part of a UI overhaul, Fech notes are now navigable with a controller"
+        },
+        {
+          "bug": "Mostly fixed falling through the ground bug when respawning out of an enclosed level"
+        },
+        {
+          "bug": "Fixed most of water not triggering a save position or respawning in inconvenient places"
+        },
+        {
+          "bug": "Fixed ara essential bug, now it's playable again"
+        },
+        {
+          "bug": "Fixed main music bugs in rhythm ara"
+        },
+        {
+          "bug": "Removed the unfinished defective online \"business\" code"
+        },
+        {
+          "bug": "Online players now can correctly show up as sleeping if they join the network before starting to play"
+        },
+        {
+          "bug": "Fixed and improved visibility on the quest/item notice"
+        },
+        {
+          "bug": "It's no longer possible to pause on the treadmill section at the ara gate. This would lead to a situation where it's impossible to unpause"
+        },
+        {
+          "bug": "Small UI transition fixes"
+        },
+        {
+          "bug": "Fixed server region not showing up when auto-connecting to the network"
+        },
+        {
+          "bug": "Fixed a few networking UI bugs related to allowing players to connect to a new region / room"
+        },
+        {
+          "bug": "Fixed a bug with resetting Fech's position"
+        }
+      ]
+    },
+    {
+      "title": "One year Anniversary - Plans for Fech The Ferret 1.0.0a",
+      "date": "2023-09-21 17:50:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352625054307",
+      "content": "Good day!\nToday marks the first anniversary of Fech The Ferret releasing on Steam.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/ac53ea326c5c6dac0b1a25d3a22af1f505fb0b64.png[/img]\n\nGiven the special occasion, I'd like to tell you a little bit about the next major update, version 1.0alpha.\nIt's coming in November and we decided to make it substantial by bringing some elements that would change and polish the experience.\n\nFor instance, we chose to remake a few old systems.\n\n[h3]New Dialogue System[/h3]\nWe decided to redo the dialogue system from scratch to better fit our project: we can now show character portraits as well as trigger animations, allowing our characters to be more expressive.\nAnd of course, we're also bringing new NPCs and dialogues.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/cd9768084f2815d24222d7b9cdab4a407a33caeb.png[/img]\n[i]WIP in a test scene[/i]\n\n[img]{STEAM_CLAN_IMAGE}/38421767/413aef33e5b4d9997eb6cc848ce5d72e2cff207f.png[/img]\n[i]Our custom editor[/i]\n\n[h3]New Fech Physics[/h3]\nWe've also remade Fech's own physics system: we accurately mimicked the existing behaviours, but coded them again in a more coherent and robust way. The current system - originally coded around 2018 and slowly built on top of until recently - didn't properly support slopes, so things such as Fech adapting to the ground or climbing up walls were handled in a very situational kind of way.\nAs consequence of this rework, we're now able to track down and remove year-old bugs.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/7a14748043fa3431f8bc65b1da5010070bb1159c.gif[/img]\n[i]Best Steam allows me to upload is this tiny gif[/i]\n\n[h3]New content[/h3]\nAnd as promised in the past, we're completing Marmocle with new characters and activites.\nIn addition to that, we're also working on a brand new intro stage that plays right before the Ferrest, while Fech is asleep.\nYou'll get to see more in the future!\n\n[h3]When?[/h3]\nCertainly in November 2023! When 1.0alpha releases.\nWe're going to bring a lot of new stuff, we're keeping some as a surprise still.\n\n\nCheers!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/3842348388649221d6529ae0ba8f3867335ce3e1.png[/img]\n\nOh and check out the [url=https://playfe.ch/discord]Discord Community[/url] for more behind the scenes.",
+      "key": "1382980::eee612d6329ce82f9673d258af6708a78ee94a7c",
+      "tags": [
+        {
+          "feature": "We decided to redo the dialogue system from scratch to better fit our project: we can now show character portraits as well as trigger animations, allowing our characters to be more expressive."
+        },
+        {
+          "feature": "And of course, we're also bringing new NPCs and dialogues."
+        },
+        {
+          "bug": "As consequence of this rework, we're now able to track down and remove year-old bugs."
+        },
+        {
+          "feature": "And as promised in the past, we're completing Marmocle with new characters and activites."
+        },
+        {
+          "feature": "In addition to that, we're also working on a brand new intro stage that plays right before the Ferrest, while Fech is asleep."
+        }
+      ]
+    },
+    {
+      "title": "0.9.0a Devlog - Marmocle, Park and quest system",
+      "date": "2023-05-24 18:10:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151600576585769677",
+      "content": "Welcome to another major update of Fech The Ferret!\n4 months after last update, we've primarily worked around the end of the current build: a park is now located after the river zone and the brand new city Marmocle is now accessible, which will eventually serve as the main hub for the game.\nDuring this time we've also laid the groundwork for a quest system and notifications on the UI to warn the player about any change of state, like saving and having picked up objects.\nLastly we've continued with improving existing systems under the hood as we try to streamline the development workflows, leading to reduced likelihood of mistakes on our side and making it easier to add new content: an example of that would be the improved water behaviour throughout the game.\n\nAs it is with each major update in this Early Access, resetting the save file is not required, but it may be convenient.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/c69f70c1367acac8bf618cd8bcc11704a9d07684.png[/img]\n\n[h2]HIGHLIGHTS:[/h2]\n2023-02-02 New swimming behaviour\n2023-04-09 Implemented new quest system\n2023-04-20 Brand new look for the park\n2023-04-30 Marmocle's main centre is accessible! (but with no activities)\n2023-05-01 Added notification system for quests and saves\n2023-05-02 Major UX improvements to the power plant\n2023-05-21 New songs added for Marmocle and the Sewers/Park\n\n[h2]CHANGES:[/h2]\n-Water is now made of box triggers instead of planar ones, making the game more flexible\n-Further collectibles optimizations: they make use of spawners now. Small performance improvements expected on low spec hardware\n-Technical improvements to the occlusion system. Small performance improvements expected\n-Removed an arrow in excess from rhythm aras that looked off\n-Small improvements to ara maps\n-Ara obstacles appear a little later to better sync up with music\n-Improvements to the elevator battery quest\n-Snappier animation transitions\n-Rolling in air no longer consumes stamina\n-Improvements to the feel of the flower spring\n-Increased thread priority during loading screens\n-Added grass to a few empty spots of the game\n-Improved Timer UI\n-New character species added to Marmocle\n-Adjusted out of bound trees in the quarry\n-Slightly reduced river push force, added support multiple forces at once\n-First zone card after opening the game stalls a little longer\n-Diving works underwater too, rolling is easier\n-Rolling underwater doesn't deplete the stamina anymore\n-Tiny improvements to simple poles\n-Removed potential unsupported resolutions in excess, added a failsafe\n\n[h2]FIXES:[/h2]\n-Fixed all water detection bugs. The game now supports having dry spaces below a body of water\n-Fixed a infinite water jump bug\n-Fixed inventory loading bug (cone hat would disappear)\n-Fixed excessive shininess in the river zone\n-Calling the quarry elevator multiple times no longer resets its speed\n-Fixed inconsistent behaviour on whether a player could roll or not on a rhythm ara treadmill\n-Removed an old invisible wall in the ferrest\n-Small fixes to how Fech's animations are triggered\n-Fixed fall animation being triggered instead the jump one when jumping (most evident in rhythm aras and on springs)\n-Reset button completely deletes the save file now\n-Improved stability of the water push system\n-Small fixes to the power plant\n-Fixed a few holes in the quarry\n-Fixes to how simple poles behave\n-Rain is now correctly confined to the river zone only\n-Fixed a water bug in the sewers\n-Fixed oversight with triggering music change at the end of the river zone\n-Fixed a death plane in the river zone\n-Fixed weird bug where the mouse cursor would mysteriously appear every time a new scene got loaded\n-Fixed bugs related to fech being wet in the wrong zones\n-More fixes to the custom occlusion system\n\n[h3]KNOWN ISSUES:[/h3]\n-Marmocle is incomplete\n-Some longtime issues related to slopes\n-Infrequent camera collision issues\n-Make sure to manually save in the river zone. The river itself is a valid save point\n-New challenges are missing of their own dedicated music and sfx\n-Fech's notes aren't navigable with a controller\n-There's unfinished \"business mode\" code in the build\n-Post processing seems to get turned off when dealing with some online interactions\n-Cloud saves don't work on Linux yet\n-Fech himself oddly doesn't support shadow cascades. Set shadows settings to low\n-Given the lack of activities, debug characters have been left in Marmocle\n\n\nAnd lastly, the roadmap as of now!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/b6af2cc80c7b5f4ea06d8876f63ea4c769e3b6d8.png[/img]",
+      "key": "1382980::8a67ec11a9a35651bbaa90591d1b7cfaf08af45f",
+      "tags": [
+        {
+          "feature": "2023-02-02 New swimming behaviour"
+        },
+        {
+          "feature": "2023-04-09 Implemented new quest system"
+        },
+        {
+          "feature": "2023-04-20 Brand new look for the park"
+        },
+        {
+          "feature": "2023-04-30 Marmocle's main centre is accessible! (but with no activities)"
+        },
+        {
+          "feature": "2023-05-01 Added notification system for quests and saves"
+        },
+        {
+          "feature": "2023-05-02 Major UX improvements to the power plant"
+        },
+        {
+          "feature": "2023-05-21 New songs added for Marmocle and the Sewers/Park"
+        },
+        {
+          "feature": "-Water is now made of box triggers instead of planar ones, making the game more flexible"
+        },
+        {
+          "feature": "-Further collectibles optimizations: they make use of spawners now. Small performance improvements expected on low spec hardware"
+        },
+        {
+          "feature": "-Technical improvements to the occlusion system. Small performance improvements expected"
+        },
+        {
+          "feature": "-Removed an arrow in excess from rhythm aras that looked off"
+        },
+        {
+          "feature": "-Small improvements to ara maps"
+        },
+        {
+          "feature": "-Improvements to the elevator battery quest"
+        },
+        {
+          "feature": "-Snappier animation transitions"
+        },
+        {
+          "feature": "-Improvements to the feel of the flower spring"
+        },
+        {
+          "feature": "-Increased thread priority during loading screens"
+        },
+        {
+          "feature": "-Added grass to a few empty spots of the game"
+        },
+        {
+          "feature": "-Improved Timer UI"
+        },
+        {
+          "feature": "-New character species added to Marmocle"
+        },
+        {
+          "feature": "-Adjusted out of bound trees in the quarry"
+        },
+        {
+          "feature": "-Diving works underwater too, rolling is easier"
+        },
+        {
+          "feature": "-Tiny improvements to simple poles"
+        },
+        {
+          "feature": "-Removed potential unsupported resolutions in excess, added a failsafe"
+        },
+        {
+          "balance_change": "-Ara obstacles appear a little later to better sync up with music"
+        },
+        {
+          "balance_change": "-Rolling in air no longer consumes stamina"
+        },
+        {
+          "balance_change": "-Slightly reduced river push force, added support multiple forces at once"
+        },
+        {
+          "balance_change": "-First zone card after opening the game stalls a little longer"
+        },
+        {
+          "balance_change": "-Rolling underwater doesn't deplete the stamina anymore"
+        },
+        {
+          "bug": "-Fixed all water detection bugs. The game now supports having dry spaces below a body of water"
+        },
+        {
+          "bug": "-Fixed a infinite water jump bug"
+        },
+        {
+          "bug": "-Fixed inventory loading bug (cone hat would disappear)"
+        },
+        {
+          "bug": "-Fixed excessive shininess in the river zone"
+        },
+        {
+          "bug": "-Calling the quarry elevator multiple times no longer resets its speed"
+        },
+        {
+          "bug": "-Fixed inconsistent behaviour on whether a player could roll or not on a rhythm ara treadmill"
+        },
+        {
+          "bug": "-Removed an old invisible wall in the ferrest"
+        },
+        {
+          "bug": "-Small fixes to how Fech's animations are triggered"
+        },
+        {
+          "bug": "-Fixed fall animation being triggered instead the jump one when jumping (most evident in rhythm aras and on springs)"
+        },
+        {
+          "bug": "-Reset button completely deletes the save file now"
+        },
+        {
+          "bug": "-Improved stability of the water push system"
+        },
+        {
+          "bug": "-Small fixes to the power plant"
+        },
+        {
+          "bug": "-Fixed a few holes in the quarry"
+        },
+        {
+          "bug": "-Fixes to how simple poles behave"
+        },
+        {
+          "bug": "-Rain is now correctly confined to the river zone only"
+        },
+        {
+          "bug": "-Fixed a water bug in the sewers"
+        },
+        {
+          "bug": "-Fixed oversight with triggering music change at the end of the river zone"
+        },
+        {
+          "bug": "-Fixed a death plane in the river zone"
+        },
+        {
+          "bug": "-Fixed weird bug where the mouse cursor would mysteriously appear every time a new scene got loaded"
+        },
+        {
+          "bug": "-Fixed bugs related to fech being wet in the wrong zones"
+        },
+        {
+          "bug": "-More fixes to the custom occlusion system"
+        }
+      ]
+    },
+    {
+      "title": "0.8.1a Devlog - Hotfixes and Cloud Saves",
+      "date": "2023-01-29 19:20:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109521936322",
+      "content": "[h2]HIGHLIGHTS:[/h2]\n2023-01-29 Added Steamworks API, Cloud saves are now enabled\n2023-01-29 Fixed game breaking occlusion bug in the quarry\n\n[h2]CHANGES:[/h2]\n-The game checks for a SteamID at bootup now\n-Save data has been moved to the installation folder. This helps with enabling cross-saves\n\n[h2]FIXES:[/h2]\n-Fixed quarry occlusion bug\n-Fixed solid pond in the middle of the quarry\n-Fixed goose minigame UI showing up as soon as the river zone loads\n-Fixed a couple of water colliders\n-Poles correctly reset fall damage now\n-No more infinite pole jumps\n-Fixed elevator fall damage bug\n\n[h3]KNOWN ISSUES:[/h3]\n-Some longtime issues related to climbing and sliding down walls\n-Infrequent camera collision issues, mostly tied to underpasses\n-Every time there's a scene change, the mouse cursor mysteriously appears\n-Some jank in rhythm aras\n-Be careful with saving in the river zone. The river itself is still a valid save point\n-The new challenges are missing of their own dedicated music and sfx\n-Fech's notes aren't navigable with a controller\n-There's unfinished \"business mode\" code in the build\n-Post processing seems to get turned off when dealing with some online interactions",
+      "key": "1382980::66c8356b168a8f311a88f5a24218f1a9cb56aeff",
+      "tags": [
+        {
+          "feature": "2023-01-29 Added Steamworks API, Cloud saves are now enabled"
+        },
+        {
+          "bug": "2023-01-29 Fixed game breaking occlusion bug in the quarry"
+        },
+        {
+          "bug": "Fixed quarry occlusion bug"
+        },
+        {
+          "bug": "Fixed solid pond in the middle of the quarry"
+        },
+        {
+          "bug": "Fixed goose minigame UI showing up as soon as the river zone loads"
+        },
+        {
+          "bug": "Fixed a couple of water colliders"
+        },
+        {
+          "bug": "Fixed elevator fall damage bug"
+        }
+      ]
+    },
+    {
+      "title": "0.8.0a Devlog - New hubs and activities",
+      "date": "2023-01-25 19:07:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109507320315",
+      "content": "Welcome to the first major update of Fech The Ferret's Early Access!\nIt's an unusual update, one whose main goal is to make the game feel more interactive and dense of content.\n\nWe began with visuals and level design: filling up some sections of the world with new structures and by developing new hubs - the goose one at the start of the river zone and the park at the end of it. We continued by adding an inventory to Fech's notes that can hold clothing (hats, currently).\n\nAt the same time, we also made quality of life improvements like adding a pause screen in the rhythm aras and unifying button prompts for all interactables. Lastly I continued work on the online play starting with syncing the hats that are being worn.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/b7782bc85064f95624a5adb74d6454d8e5c4be1d.png[/img]\n\n[h2]HIGHLIGHTS:[/h2]\n2022-11-20 Added a pause screen for rhythm aras\n2022-11-22 Brand new ground rock texture for the ferrest\n2022-12-15 [b]Added goose hub with a new minigame[/b], located right before the river zone\n2022-12-22 More thorns in the river, they also deal damage now\n2022-01-10 [b]Fech can wear hats and hold items[/b]\n2022-01-12 [b]New elevator quest[/b]\n2022-01-12 New nicer looking walls at the start of the quarry\n2022-01-15 An inventory has been added\n2022-01-16 Added a lovely treehouse at the end of the river zone\n2022-01-23 You can now see what hats other players are wearing online\n\n[h2]CHANGES:[/h2]\n-Added new structures in the ferrest\n-Minor polish to the power plant visuals\n-Grass polycount reduced by roughly 25% thanks to improved placement algorithm\n-Overhaul of the collision detection system for most of interactables\n-Updated texture for the ara door\n-Updated obelisk materials\n-Nicer camera shot for Fech sleeping\n-New on rail camera section for the park hub at the end of the river\n-Dook particle aligns with Fech's head\n-Fech now stares at the camera\n-Poles have been greatly improved\n-Power plant is a little more accessible\n-Grass is tentatively opaque\n-Added much better terrain blending effect\n-Visual polish to the quarry zone thanks to new textures and props\n-It's no longer possible to pause while loading a rhythm ara or during level transitions\n-Updated signal towers in the river zone\n-An inventory now exists\n-New timer for quests\n-Better quarry shaders\n-New leaf counter inside of Fech's notes\n-Many small improvements to materials\n-Redone caculations for diagetic UI. The heart indicator nicely plays catchup with Fech rolling now\n-Brand new timer for the battery challenge\n-New UI input prompts for interactables\n-Opening Fech's notes now stops him in place\n-Small changes to how Fech's underwater mechanism works\n-Slightly reduced the push force of the river\n-There's 2 hats in the game now\n-New props and structures at the end of the river (park hub)\n-Removed end of build scaffoldings\n-Fech is back up standing in the Kyuknos\n-Cursor becomes visible when opening Fech's notes\n-The inventory gets saved (except for the leaves, they are specific to the current session)\n-Increased texture contrast on the kyuknos\n\n[h2]FIXES:[/h2]\n-Fixed texturing errors at the end of the river\n-Tiny visual fixes in the ferrest\n-Fixed bug with turning in rhythm aras\n-Slight improvements in rhythm aras accuracy\n-Fixed Fech position and rotation on pole, he properly snaps now\n-Removed jerkiness in the spine bending of Fech. This is most noticeable at low fps\n-Fixed small visual bug that would make it seem possible to roll on walls\n-Small fixes and improvements to roadmap animations in the main menu thanks to the usage of tweening instead of animation clips\n-Fixed animations on the river poplars\n-Fixed small bug with the \"connect\" button on the online menu\n-Fixed several bugs tied to being underwater in the river zone\n-Fixed incorrect respawn points on several water bodies\n-Cut down on the freeze time at the start of rhythm aras (caused by an unneeded GC.Collect call)\n-Removed all references to the localization system. It wasn't active, it will be setup again later in development\n-Fixed bug that would make it impossible to pause after the intro cutscene\n\n[h3]KNOWN ISSUES:[/h3]\n-Some longtime issues related to climbing and sliding down walls\n-Infrequent camera collision issues, mostly tied to underpasses\n-Every time there's a scene change, the mouse cursor mysteriously appears\n-Be careful with saving in the river zone. The river itself is still a valid save point\n-The new challenges are missing of their own dedicated music and sfx\n-Fech's notes aren't navigable with a controller\n-There's unfinished \"business mode\" code in the build\n-Post processing seems to get turned off when dealing with some online interactions\n-APPARENTLY THERE'S A GLARING OCCLUSION BUG IN THE MIDDLE OF THE QUARRY. A hotfix will be made with urgency\n\n\nAnd here's the development plans roadmap as of now!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/3d1675abbd370cc537ff9597beb1bebdbbfa118b.png[/img]",
+      "key": "1382980::b4a441132586ee70201d4f4d97ce35341fc53041",
+      "tags": [
+        {
+          "feature": "2022-11-20 Added a pause screen for rhythm aras"
+        },
+        {
+          "feature": "2022-12-15 Added goose hub with a new minigame, located right before the river zone"
+        },
+        {
+          "feature": "2022-01-10 Fech can wear hats and hold items"
+        },
+        {
+          "feature": "2022-01-12 New elevator quest"
+        },
+        {
+          "feature": "2022-01-15 An inventory has been added"
+        },
+        {
+          "feature": "2022-01-16 Added a lovely treehouse at the end of the river zone"
+        },
+        {
+          "feature": "2022-01-23 You can now see what hats other players are wearing online"
+        },
+        {
+          "balance_change": "-Grass polycount reduced by roughly 25% thanks to improved placement algorithm"
+        },
+        {
+          "balance_change": "-Slightly reduced the push force of the river"
+        },
+        {
+          "balance_change": "-Increased texture contrast on the kyuknos"
+        },
+        {
+          "bug": "-Fixed texturing errors at the end of the river"
+        },
+        {
+          "bug": "-Tiny visual fixes in the ferrest"
+        },
+        {
+          "bug": "-Fixed bug with turning in rhythm aras"
+        },
+        {
+          "bug": "-Fixed Fech position and rotation on pole, he properly snaps now"
+        },
+        {
+          "bug": "-Removed jerkiness in the spine bending of Fech. This is most noticeable at low fps"
+        },
+        {
+          "bug": "-Fixed small visual bug that would make it seem possible to roll on walls"
+        },
+        {
+          "bug": "-Fixed animations on the river poplars"
+        },
+        {
+          "bug": "-Fixed small bug with the \"connect\" button on the online menu"
+        },
+        {
+          "bug": "-Fixed several bugs tied to being underwater in the river zone"
+        },
+        {
+          "bug": "-Fixed incorrect respawn points on several water bodies"
+        },
+        {
+          "bug": "-Cut down on the freeze time at the start of rhythm aras (caused by an unneeded GC.Collect call)"
+        },
+        {
+          "bug": "-Removed all references to the localization system. It wasn't active, it will be setup again later in development"
+        },
+        {
+          "bug": "-Fixed bug that would make it impossible to pause after the intro cutscene"
+        }
+      ]
+    },
+    {
+      "title": "Start of a new year! Let's review 2022",
+      "date": "2023-01-09 18:52:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387704011373",
+      "content": "Hi hi, happy new year! With such an eventful year being left behind, today I'd like to look back to everything that happened in 2022.\nUsually I would recap the last 3 months of development, but with many people getting to know of Fech just recently, I figured it would make sense to write a complete overview of the work on Fech The Ferret in 2022, starting from the buildup to the original alpha release up to the work on the upcoming 0.8a major update.\n\n[h2]January[/h2]\n[h3]Introducing dev streams[/h3]\nBeginning of a new year, time for new habits! At the start of 2022, as we were ramping up the work in anticipation of the first public alpha of the game, we figured that we needed a way to keep people updated on what we were doing on the game. Making monthly devlogs - let alone videos - was out of the question due to the amount of time that would have taken; so that's how Wishdream - the prop artist on the team - and I \u2013 Raoul, the director - decided to commit to monthly streams instead: we would spend a couple of hours showcasing something novel about the game by playing new builds or modeling props live as we chatted about the game.\n\n[img]https://i.imgur.com/Ukb5LgL.gif[/img]\n\nThis idea came from the fact Wishdream already had quite an active Twitch channel where they would play games and occasionally stream 3D modeling, sometimes of Fech as well! So why not build off of that instead of creating a new account?\n\nThe first [url=https://youtu.be/Od3xqsJctio]stream[/url] was on January 23rd, exactly 30 days before the Alpha release of Fech. We played the - at the time - most up to date internal build as we answered some questions live.\n\n[h3]Experimenting with new tools[/h3]\nRight around the start of this month Wishdream also began to experiment with a new Blender tool: Geometry Nodes. This made it possible to assemble/shape models through a set of instructions. In our case we first tested it by making the wooden suspensions for the the quarry zone.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/7bc89d064678e12e1dada9526e49861b4bca95e9.png[/img]\n\nOver time working with geometry nodes fundamentally changed our approach to creating more advanced assets as it enables a modular approach to building and placing them. The prospect of making city buildings was no longer a daunting one.\n\n[h2]February[/h2]\n[h3]Rushing to the finish line[/h3]\nThis month was quite the hectic one. The artistic side of the team - Wishdream and Dramis, the concept artist - found themselves with a big task to deal with: making what would later become the Rat Hub, a small city for the rats living in the quarry, as well as building the Kyuknos, the introductory level of the game.\nIndividually they seemed to be fairly simple, but the amount of unique assets and the time pressure proved to be very taxing for a team of 2.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/e32f40256eabb202a7db83b3a5922e4d81d783c6.png[/img]\n[i]One of the original pieces of concept art for the rat hub[/i]\n\n[h3]Introducing the comic strips?[/h3]\nWhile Wishdream was working on the last few assets before the Alpha release, Dramis was busy with an unusual task: making comic strips, one of the longtime plans for Fech The Ferret.\n\nThe idea is simple: given the generally fast-paced gameplay, it's hard if not counter-intuitive to constrain much of the game to cutscenes to tell about game events, so I once thought to rather use 4-panels comic strips to tell anecdotal stories from Fech's adventure.\nNow, this eventually worked, we have a few comic strips and I love them, but I never managed to include them [i]inside[/i] of the game due to lack of planning on how to handle the UI and - more simply - just having other matters taking a higher priority.\nPossibly you'll enjoy them as collectibles in the near future!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/affbf63a80c93eb47efa548013a7dd12051bcbfc.png[/img]\n[i]One of the comic strips[/i]\n\n[h3]Alpha Release!![/h3]\nOn February 22nd 2022 at 22.22.22 CET Fech The Ferret (0.5.0 alpha) releases on Itch.io with 3 zones, 3 rhythm aras, an introductory level and a tutorial stage. After years of build up, this was with no doubt the biggest milestone for the team to date. At the same time, I must admit that at this point releasing the alpha on this date was part keeping an old promise I made to myself and part a shift to move away from using Patreon as a way to grant access to alpha builds of the game.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/e9fe9a30730ceef1b2f4e26c9f1c03c673a49dff.png[/img]\n\nThis was quite a relieving event: as the project leader, I had finally taken a weight off my chest now that I no longer had to tell people to wait for new DEMOs in order to play and see what was getting added in Fech.\n\nAs a small aside, you can catch the February stream VOD down here and have a glimpse at the beautifully disastrous Alpha launch we had. It was later followed by a week filled with hotfixes.\n\nhttps://www.youtube.com/watch?v=mkCw5ruvq5Q\n\n[h3]Official schedule[/h3]\nStarting with the Alpha release we decided to publish a roadmap to better communicate development plans at a glance. The original plan (see below) was to release a new zone every 3 months. We later realized that fundamental gameplay loop changes and polish passes were needed first.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/1db95a8091ad4b80166046150da5438e3b237aff.png[/img]\n\nWith no doubt updating our roadmap over time proved to be an effective way to tell players what was going to happen in the next few months without having to write impossibly long blogposts like-\n...\nDid you know the ingame roadmap is fetched from a GitHub repository of the game website? That makes sure I can update it in there at any given time.\n\n[h3]Fech The Brush[/h3]\nLast but not least on the matters of things tied to the alpha release: [url=https://twitter.com/dramisdraws/status/1496509903594311684]Dramis[/url] made a free Clip Studio brush! Get it [url=https://assets.clip-studio.com/en-us/detail?id=1901216]here[/url]! \n\n[img]{STEAM_CLAN_IMAGE}/38421767/3d8f2ca385fa1fd7d7321f645117db1a2f7d1278.png[/img]\n\n[h2]March[/h2]\n[h3]The initial online tests[/h3]\nThis month saw a much needed slow down after two months of climax. Now, while everything about development appeared to be static on the surface, I decided to branch off and work on something brand new, I began to experiment with online features. \n\nFirst inspired back in late 2020, the aftermath of the alpha release felt like the perfect time to have a second try at syncing up several ferrets in a single world without having to change the base structure of the game. Fortunately, that happened to be the case!\n\n[img]https://i.imgur.com/CYNNoIJ.gif[/img]\n\nMildly interesting fact: one of these early only test sessions happens to be the origin of the [url=https://playfe.ch/discord]discord[/url] emote saying \"FECH\". It involves player looking towards the camera and another player clipping through it.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/fc13c76393f8898a0c4f07b7812363df072c0272.png[/img]\n\n\n[h2]April[/h2]\n[h3]Zone partitioning[/h3]\nApril was a month largely focused on optimization. \nAs you all know the game is made up of a single world with different zones. This is especially true on the technical side of things: the project is structured in multiple [i]scenes[/i] with most of them representing a zone/level and all of their assets and logic. With this setup in mind, it made sense to manage performance optimization by having the game load/unload zones based on Fech's position in the world. On paper this seems to be an effective way to save up on resources, but this system had three big limitations:\n\n1. My implementation relied on a portal-based approach. Throughout the game there would be 3 kinds of zone portals that dealt with assets: \"preload\", \"load\" and \"unload\"; going trough them would trigger different behaviours, for instance \"preload\" would warm up a zone to be loaded, while \"load\" would activate said zone. \nIn order to have the game run properly, every portal must be triggered orderly, otherwise the game could stutter severely as it tried to instantly load a zone that wasn't ready yet, or worse it could leave a preloaded zone hanging forever causing the game to eventually freeze if the player attempted to load any other zone.\n\n2. Each time a player went through a portal, they'd immediately get a performance hiccup, later followed by a permanent increase or decrease in performance based on whether the total amount of objects had increased or decreased. Only the \"music change\" portal made an exception to this rule since it doesn't directly deal with objects.\n\n3. During most of the game 2 full zones alongside all of their objects would be active and loaded up in memory. An example of such situation is the entirety of the quarry being loaded while close to the end of the Ferrest; or the river zone - including its sewers - being loaded while being in the rat hub of the quarry. While better than having the entire game loaded at all times, this was still a waste of resources that couldn't be overlooked.\n\nSolving or mitigating all three issues required a full remake of the custom occlusion system of the open world. During this time, I began working on a system that would address these issues by subdividing zones into few \"parts\" encapsulated in [i]bounding boxes[/i] with each of them representing easily identifiable sections of the world.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/5b5c07caa7bbcc21927c61a457d49d871ca894fd.png[/img]\n[i]Top-down view of a few of the \"bounding boxes\" of the Ferrest. Good luck with understanding it![/i]\n\nNow \u2013 once empty zones got loaded in memory - what gets enabled/disabled is these new zone parts based on whether Fech is inside or outside of the bounding boxes. There's no specific preload/load mechanism anymore, but rather the scheduled activation of objects in succession: doing so takes longer than activating a whole scene as soon as possible, but it also assures that no visible hiccup is going to happen while zone parts are getting enabled/disabled.\nSo, in reality the core scene loading system is still present, the system still relies on opening scenes that contain zones, but that's performed only once per zone as they no longer get unloaded. That certainly leads to an increased memory consumption, but that's a resource Fech hardly uses at all, as all tests seem to suggest the game struggles to ever use more than 1 GB of RAM. Potentially, keeping all assets of the game in memory should not present any issues; rather, the upside is a stark reduction in the frequency of performance hiccups caused by loading/unloading entire game scenes.\n\nAll in all, this resulted in a massive CPU performance boost, making the game less CPU-bound.\n\n[h2]May[/h2]\n[h3]Pause[/h3]\nAside from the last update on the 0.5.Xa cycle on May 1st - which mostly saw CPU performance improvements - much of this month was uneventful, I was busy on a trip to Germany right in the middle of May. \n\n[h3]Level design planning[/h3]\nRather, on this month Gabriel - the level designer - began to change his workflow in Blender to be more effective at iterating on zones. He started to make use of procedural tools to work on the river zone and - after I came back from my trip - we began to plan the centre of Marmocle, the heart of the incoming fourth zone of the game.\nAround this time Gabriel also modeled the first sections of the 5th zone of the game.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/0373f1434ef974e979f5ea17a58cca4e2da72b48.png[/img]\n[i]Fuzzy rocks and modular buildings test[/i]\n\n[h3]Save & Sound preparation[/h3]\nThe very last days of the month were spent shooting the footage for the Save & Sound Steam Festival, a neat event where I got to explain the audio side of things in Fech. I went a little overboard with it as decided to try out a semi-professional setup with my camera: it was a pain due to the high temperatures overheating the camera and me getting 9 out of 10 takes wrong, but still a worthwhile experience.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/8c3a2f27084a6990f74d8e8c2bcf4995a1b9d398.png[/img]\n[i]Camera connected to PC via USB. High quality at a standard resolution[/i]\n\n[h2]June[/h2]\n[h3]Steam Next Fest![/h3]\nTime for another milestone! Showing Fech to the broad gaming audience at the Steam Next Fest. For this new demo we had to play it safe: re-use the same structure of older demos (brief intro + the first zone and a half) and get as much of the new visuals done on time. We could not afford unexpected bugs here.\n\n[img]https://i.imgur.com/UKgKfrV.gif[/img]\n\nThis tactic seemed to work, we were able to meet our own deadlines without any crunch. Everything went smoothly save for one thing: we had not made any builds of Fech with the current Unity version.\nNow, Fech The Ferret is a big project, one that's had its incept in 2016; in order to keep up with the tech, we decided to update the Unity engine once a year. It's something that requires a lot of checks, so we such updates at a calm time of development after the release of a new LTS version of the program, usually around spring. It just so happens that right after the release of 0.5.2a, at the start of May, we updated to the newer Unity version, but neither Gabriel nor I remembered about doing that [i]after[/i] the most recent build due to the two events nearly overlapping.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/04cf0d9ca7c5dc9e43938ce160138606ee6b0717.png[/img]\n[i]With and without the shadows bug[/i]\n\nA last-minute visual bug ensued, shadows would render pitch black instead of colourful like they usually do. Everything else worked as expected - fortunately - but this bug forced me to delay the new proper demo by half a day as I rushed to figure out what was going on.\nHopefully as few people as possible realized that.\n\n[h3]A brand new grass system![/h3]\nPeople in here might not be aware yet, but I love working on grass. It's a recurring joke that every year I must remake it at least once. Well, June was the time for it, I began building a fully procedural grass system where every single grass blade gets created vertex by vertex using few simple meshes as primers.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/8418a47588041f48b17800a4a45e63c243488bd4.png[/img]\n[i]A row of grass[/i]\n\nThis would make it possible to build gigantic grass fields that are made of a single mesh with up to a million triangles. Is that bad? Not by modern standards! Modern GPUs can handle high polycount with ease: the goal was to rather free up the CPU by having it deal with as few objects as possible. \nNow, there's definitely room for improvements: the usage of a chunking system would make sure to occlude parts of the field that are not in view, but now I can at least say that grass rendering is no longer the one piece of tech bringing down the performance of the game.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/f1e19406932df7cac092dd8f2c276936de414381.png[/img]\n[i]The new grass accurately samples terrain data now![/i]\n\n[h2]July[/h2]\n[h3]More events[/h3]\nJust like June, July was also a busy month when it came showing Fech around: [url=https://www.youtube.com/watch?v=FnlxwicLoSQ&t=14s]Save & Sound happened[/url] and I got to take part to First Playable, a yearly game business event located in Italy. Both events were useful to better understand what resonates the most with new players as well as publishers.\n\n[h3]Fech notes[/h3]\nAround this time, I realized the importance of objectives and being able to keep track of progress. That was long overdue, so we quickly decided to include an ingame menu where the player would be able to read about essential info like goals and inventory.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/1f2532f300108e38dbe257f6f6f58b4a51d2c435.png[/img]\n\nThough to this date these Fech notes are only a little more than a proof of concept. We do plan to expand on them during 2023. Perhaps the new home to Fech\u2019s comic strips?\n\n[h3]Grass showcase[/h3]\nTowards the end of the month I was able to complete the work I had previously begun on the grass. Now I could effectively test what was the typical polycount of a grass field if we decided to have only a single mesh per each zone part. That surprisingly turned out to be viable, here's a screenshot of the final section of the ferrest, right up to the obelisk.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/4079ff8c263eccadad1d2c0811347a23c1937ef0.png[/img]\n[i]End of Ferrest. 657k tris. I have scared fellow devs with this image[/i]\n\n[h3]New terrains[/h3]\nRight as we were dealing with grass we finally committed to redoing the whole terrain system to be mesh-based rather than heightmap-based as Unity provides it. Or rather, I should say I finally gave in to Gabriel's requests and accepted that this change could no longer be delayed. In fact, before this time I had rather - for instance - developed a mesh-to-terrain conversion tool back in 2021, but for multiple reasons the open world structure of Fech simply couldn't support that solution, Unity terrains were a major limit to how we could approach level design.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/d4d0b0d26c0ac89e1c98201522eb32eaf71e1ec8.png[/img]\n\nAnyway, at this time we redid terrains for the Ferrest and the quarry and took the chance to fix many small issues they contained. The river zone would follow suit in September, right ahead of the Early Access release.\n\n[h2]August[/h2]\n[h3]Preparations for SAGE 2022[/h3]\nThe recurring theme throughout August is one: getting ready for the Sonic Amateur Games Expo.\nHappening in the first week of September, it\u2019s a yearly online exhibition/celebration of games and fangames made by the Sonic community. My gamedev roots and much of my online activity is centered around those spaces, to the point of meeting some colleagues in there. \n\nSo of course, I had to show Fech - a Sonic-inspired 3D platformer - at SAGE.\nAnd that's actually something I've been doing each year since 2019! It used to be a major way for me to get feedback earlier in development. 2022, though, was planned to be the last showcase, so I wanted to make sure to have ready something brand new and focus on the online.\n\n[h3]Birth of the rat hub[/h3]\nIt's at this point that the rat hub truly came to be. We needed a new hub to base the latest demo on, something that would play out a little like a sandbox where people could gather enjoy online play the best.\n\nTo do that, Gabriel began working on new a new gimmick for this part - the zipline - while Dramis and Wishdream would make new landmarks for it.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/40309a7aa94777d5505e17e88775990998f8ce58.png[/img]\n[i]Ziplines[/i]\n\n[h3]Cat joins the team![/h3]\nDuring this time we welcomed Cat, the new concept artist. Over the course of this year, it became apparent that the project was oversized for a single 2D artist, so Dramis was joined by another fellow Italian artist. Their styles are similar enough that it becomes almost impossible to tell apart which assets were designed by Dramis and which by Cat.\nCat\u2019s first assignments were to work on the brand new Power Plant level, something she managed to do masterfully right on time for the SAGE demo.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/496c5979edf518a349814dcca7dbb8dc179be85a.jpg[/img]\n[i]The treadmill she designed[/i]\n\n[h3]More online tests[/h3]\nAside from finally delivering a rhythm ara with the most beloved track track of the game, I spent most of my demo efforts working on the online mode. The goal was simple on paper: having the game to be online by default and getting support for the largest reasonable amount of people on a single room. That took a few tests, but it appeared that 12 people from all around the world performing as many actions as possible while standing close to each other was roughly the cap for a stable connection.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/a105bcc86e6a87352c6edf30531c3970bde89d3c.png[/img]\n[i]Taking turns at the zipline[/i]\n\nSmall aside: you may see different colour palettes on the SAGE trailer. That ended up getting scrapped at the time. Ingame customization is still on the plate, but as something more nuanced than just changing colours.\n\n[h2]September[/h2]\n[h3]SAGE 2022[/h3]\nSAGE time! A full week a playing games and seeing people play Fech. A few bugs popped up, but nothing out of the ordinary. Overall a fun week for the team.\n\nhttps://www.youtube.com/watch?v=WrUp7AWKcwA\n[i]Fech's teaser at 5:39[/i]\n\n[h3]Leading up to Early Access![/h3]\nThe Early Access release date was set to just two weeks after the end of SAGE. We had to act fast, we had barely enough time to fix new bugs and perform a couple of major changes.\n\nSome of the things that were made during these days were: a brand new cutscene introducing to Fech's adventure; a new dirt texture from scratch, old one looked dull and ugly; improvements to the looks of the river zone; a reliable water stream system to make the river push Fech back; compacting the game world by cutting down on entire buffer sections present in the quarry and by rotating the entire ferrest zone by 45\u00b0, risky but it fortunately paid off.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/26f15299943da00bd0f243c38b6aa369b925eefc.png[/img]\n[i]Ferrest rotated[/i]\n\n[h3]Release Time!![/h3]\nIt's September 21st 2022, after 6 years and 3 months Fech The Ferret finally sees the light of day on Steam. It's the alpha, it's still Early Access, but nonetheless a huge accomplishment for us working in Aucritas.\n\nThis time I managed to make and test the build of game with a few hours of advance so we could properly celebrate on stream.\n\nhttps://www.youtube.com/watch?v=PUVpo-tiGGA\n\n[h2]October[/h2]\n[h3]New optimizations[/h3]\nTime to immediately go back to work! \nUp until this point 2022 had been extremely taxing on myself: somehow my Uni exams lined up with [i]all[/i] of the major milestones: mid February - itch alpha, late June - Next Fest, mid September - Early Access; so now that University was taking its one month of full break - and I was freed from most of PR work that led up to release - I was finally able to relax by working on something novel instead of rushing to meet self-imposed deadlines.\n\nAnd that's how I picked optimization again, a good excuse to clean up the project and identify bottlenecks on low spec hardware.\nThis is when we found out we had gone far overboard with polycount on river canes (up to 15M tris on display!), and I also figured out I could reduce grass density by up to 30% without apparent visual changes.\n\n[h3]Improvements to the river[/h3]\nWe added new raindrops! This time procedurally done in shader instead of using particles. Waves were improved too, the aforementioned canes optimized and adjusted, and lastly new bridges were made.\n\n[img]https://i.imgur.com/kQ5ouQ3.gif[/img]\n\nDuring this month we also resumed planning for the city of Marmocle as well as began defining two new hubs that would surround the river zone.\n\n[h2]November[/h2]\n[h3]Rhythm ara improvements[/h3]\nOn this month I worked on improving rhythm aras. Nothing too flashy: fixing obscure bugs, updating old textures and adding the long-requested pause menu.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/50ed8d56bc17323f46fea7b1c5f239683f0b3b88.png[/img]\n\n[h3]Misc visual work[/h3]\nAs usual, November saw some changes in the game visuals. This time we focused on the beginning of the ferrest by adding structures that better contextualize the place and by developing a new texturing approach to break away from the repetitive checkered pattern of the rocks. Really convenient to better establish a texturing style.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/4f1679bad24e9555be9df8bf0f1be3087eb720a5.png[/img]\n[i]Before and after[/i]\n\n[h2]December[/h2]\n[h3]More terrain improvements[/h3]\nNow this is one of those things that bothered me specifically. The whole game's style is about striking lines and colours, and terrains defied that rule: the blending between grass and dirt was unnaturally soft. So, I put a fix to that with a rather crafty system that makes use of two noise layers and a lot of shader calculations.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/0f7d4554fef9ab40b019ef48f2044edc52f6a12b.png[/img]\n[i]Before, WIP and after[/i]\n\nA side effect of muddying the input texture with noise is that we can now lower the splatmap resolution by 16 times - from 2048px to 512px - with no visual degradation. That's going to save quite some storage space.\n\n[h3]Goose hub[/h3]\nThe main topic of the month has been working on the new hub placed right before the start of the river zone. You'll get to meet some mischievous animals who seem to be eager to play games with you.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/1b53761846731177549465f0d84f4c32c9a4770e.png[/img]\n[i]Honk[/i]\n\n[h3]Resumed work on the online[/h3]\nLastly! I went back to working on the online mode with the goal to add a small online game. It's a game of tag: easy to design on paper, but fairly complicated to organize in-game without having traditional lobbies or menus. You'll get to play it in the upcoming update!\n\n\n\n[h2]End of the racap[/h2]\nAnd now we're left to work on version 0.8.0a of Fech, due in a couple of weeks from now.\n\nThank you all who managed to get to the end of this post! It took me a full week to track down and review every month of 2022. I hope you enjoyed getting a glimpse of how a year of development can look like. Due to the structure of this post I was forced to cut a lot of stuff, I especially had to avoid talking about incremental upgrades, individual features (like the ability to dook ingame) or posting screenshots of the game as it began to look nicer; though in roughly 3 months from now you'll get to see another recap, a quarterly one, one that will rather neatly sum up the next three months of events surrounding Fech The Ferret.\n\nOr perhaps you wish to get updated as soon as possible? Check out the [url=http://playfe.ch/discord]official discord server[/url] then, I use the [i]fech-dev[/i] channel to show things early in a less formal manner.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/c690fe9ce8de755fbcd7662cf58ce1304e7a122e.png[/img]\n\nSee you next time!\nRaoul.",
+      "key": "1382980::adc833579f785353151f517be07ff981781dcb62",
+      "tags": [
+        {
+          "bug": "A last-minute visual bug ensued, shadows would render pitch black instead of colourful like they usually do."
+        },
+        {
+          "bug": "Everything else worked as expected - fortunately - but this bug forced me to delay the new proper demo by half a day as I rushed to figure out what was going on."
+        },
+        {
+          "feature": "Around this time, I realized the importance of objectives and being able to keep track of progress. That was long overdue, so we quickly decided to include an ingame menu where the player would be able to read about essential info like goals and inventory."
+        },
+        {
+          "bug": "Anyway, at this time we redid terrains for the Ferrest and the quarry and took the chance to fix many small issues they contained."
+        },
+        {
+          "feature": "Some of the things that were made during these days were: a brand new cutscene introducing to Fech's adventure; a new dirt texture from scratch, old one looked dull and ugly; improvements to the looks of the river zone; a reliable water stream system to make the river push Fech back; compacting the game world by cutting down on entire buffer sections present in the quarry and by rotating the entire ferrest zone by 45\u00b0, risky but it fortunately paid off."
+        },
+        {
+          "balance_change": "This is when we found out we had gone far overboard with polycount on river canes (up to 15M tris on display!), and I also figured out I could reduce grass density by up to 30% without apparent visual changes."
+        },
+        {
+          "feature": "We added new raindrops! This time procedurally done in shader instead of using particles."
+        },
+        {
+          "balance_change": "Waves were improved too, the aforementioned canes optimized and adjusted, and lastly new bridges were made."
+        },
+        {
+          "bug": "On this month I worked on improving rhythm aras. Nothing too flashy: fixing obscure bugs, updating old textures and adding the long-requested pause menu."
+        },
+        {
+          "bug": "The whole game's style is about striking lines and colours, and terrains defied that rule: the blending between grass and dirt was unnaturally soft. So, I put a fix to that with a rather crafty system that makes use of two noise layers and a lot of shader calculations."
+        },
+        {
+          "balance_change": "A side effect of muddying the input texture with noise is that we can now lower the splatmap resolution by 16 times - from 2048px to 512px - with no visual degradation."
+        },
+        {
+          "feature": "Lastly! I went back to working on the online mode with the goal to add a small online game. It's a game of tag: easy to design on paper, but fairly complicated to organize in-game without having traditional lobbies or menus. You'll get to play it in the upcoming update!"
+        }
+      ]
+    },
+    {
+      "title": "0.7.4a Devlog - Second round of fixes!",
+      "date": "2022-11-08 17:51:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4732747437221630785",
+      "content": "Welcome to the second set of fixes of [i][b]Fech The Ferret[/b][/i]'s Early Access!\nOn this update we focused on addressing major bugs that were still present in the game - such as the infamous second rhythm ara freeze - while carrying on with zone design tweaks, visual updates and general optimization.\n\n[h2]HIGHLIGHTS:[/h2]\n2022-10-27 The quarry zone is shorter and flows better thanks to a major level design change\n2022-10-27 Snappy position syncing of players online. Delay between peers has been cut down to the sum of their pings\n2022-10-28 Added rails to the start of the ferrest (only visual)\n2022-10-30 Progress is saved to a file. Power plant level completion and NPC challenges are saved now\n\n[h2]CHANGES:[/h2]\n-Improved and optimized the grass detection algorithm to support compressed textures\n-Massively reduced polycount of out of bounds river poplars. Performance improvements expected on systems with old or integrated GPUs\n-Improvements to occlusion in the river\n-Small visual improvements to raindrops in the river\n-Added raindrops to props in the river\n-Camera lags behind Fech when entering an enclosed level\n-Loading of enclosed levels is slightly faster now\n-Any time Fech clings to a wall the view aligns to it. Previously it would only do so at the start of a walldash\n-Two new tunnels were added to the quarry to make the level flow more nicely and cut down on repetition\n-The new save system enables more flexible progress saving\n-New bridges in the power plant make the level look nicer\n-Small visual improvements in the sewers\n-Added more bridges in the river zone\n-Made the start of the ferrest more accessible\n-New nicer looking river waves\n\n[h2]FIXES:[/h2]\n-Fixed MAJOR oversight. The sewers are visible and accessible again\n-Small menu settings fixes\n-Fixed a NPC prop in the quarry\n-Properly set variables for the comically oversized radio rat challenge\n-Fixed stamina recharging bug\n-Life HUD no longer displays while Fech is sleeping\n-Fixed major bug that would prevent from loading the second ara in the ferrest. It was caused by another scene load happening concurrently\n-Added zone card to the third rhythm ara\n\n[h3]KNOWN ISSUES:[/h3]\n-Some longtime issues related to climbing and sliding down walls\n-Infrequent camera collision issues, mostly tied to underpasses\n-Every time there's a scene change, the mouse cursor seems to mysteriously reappear\n-Some jank in in enclosed levels\n-Be careful with autosaving in the river zone. The river itself is a valid save point\n\n\nThis is the last update of the 0.7a cycle! Next update will be a major one (0.8.0a) and it's scheduled for the end of the year. You can get an idea of what's to come with the roadmap here below. See you next time!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/103e584223992c89b60d3e177df09fff29b6eece.png[/img]",
+      "key": "1382980::c30359fd3ebd5ecc349d369f77e0de42eee67433",
+      "tags": [
+        {
+          "feature": "2022-10-28 Added rails to the start of the ferrest (only visual)"
+        },
+        {
+          "feature": "2022-10-30 Progress is saved to a file. Power plant level completion and NPC challenges are saved now"
+        },
+        {
+          "feature": "-Added raindrops to props in the river"
+        },
+        {
+          "feature": "-Two new tunnels were added to the quarry to make the level flow more nicely and cut down on repetition"
+        },
+        {
+          "feature": "-The new save system enables more flexible progress saving"
+        },
+        {
+          "feature": "-New bridges in the power plant make the level look nicer"
+        },
+        {
+          "feature": "-Added more bridges in the river zone"
+        },
+        {
+          "bug": "-Fixed MAJOR oversight. The sewers are visible and accessible again"
+        },
+        {
+          "bug": "-Small menu settings fixes"
+        },
+        {
+          "bug": "-Fixed a NPC prop in the quarry"
+        },
+        {
+          "bug": "-Properly set variables for the comically oversized radio rat challenge"
+        },
+        {
+          "bug": "-Fixed stamina recharging bug"
+        },
+        {
+          "bug": "-Life HUD no longer displays while Fech is sleeping"
+        },
+        {
+          "bug": "-Fixed major bug that would prevent from loading the second ara in the ferrest. It was caused by another scene load happening concurrently"
+        },
+        {
+          "feature": "-Added zone card to the third rhythm ara"
+        }
+      ]
+    },
+    {
+      "title": "0.7.3a Devlog - First big round of fixes!",
+      "date": "2022-10-21 20:24:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4714731755417547546",
+      "content": "Hello and welcome to the first update of [i][b]Fech The Ferret[/b][/i]'s Early Access! \nIt's been exactly a month since the initial release of the game. We took this time to carefully begin touching up and improving nearly all aspects of the game, most notably known ara bugs and a early polish pass on the river zone. \nThis was also a great time to begin working on the next major update schedule for December, but for now I'll just get to the contents of the new build and save that for another occasion. So get ready for a [i]long[/i] read as I get to list every change, addition and fix made in the past 30 days.\n\n[h2]HIGHLIGHTS:[/h2]\n2022-10-02 Shortened ara tuuti by a minute (from 86 to 54 bars)\n2022-10-03 [b]Remade all terrains and rocks of the river zone[/b] + new fancy raindrop shader effect\n2022-10-17 Various rounds of optimization. Added a layer-based occlusion system for smaller objects: potential performance improvements on low spec hardware\n2022-10-20 Noticeable changes and improvements to the the river zone's level design\n\n[h2]CHANGES:[/h2]\n-Reduced Fech's overall shadowing\n-Optimized the chestnut trees in the ferrest\n-Removed few unused assets\n-Jumping off a pole now always puts Fech in quadruped position\n-Changed grass color in the river zone\n-Added collider to mill\n-[b]Added ability to entirely disable outer trees for performance optimization[/b]\n-Foliage slider now also affects LOD bias\n-Added ability to disable grass (only for testing and extreme performance optimization measures)\n-Chestnuts shadows are slightly brighter\n-Reverted particles on pollen trees because... vfx actually had no positive impact on performance? huh, didn't expect that one\n-Pollen triggers are a little more visible now\n-Few new props and small changes in the ferrest\n-Optimized collectibles\n-Added LOD to river poplars\n-Optimized Aucritas intro by disabling camera rendering\n-Optimized Kyuknos by correctly disabling the world geometry\n-Some leaf optimization by making use of the \"zone part\" occlusion system\n-Standardized Fech's collision system for higher accuracy\n-Adjustments to Fech's animation speed on ara chop chop. No more extremely fast run\n-Added input UI for some interactables. Still a WIP\n-Standardized the jumping speed on the poles. This makes challenges in the quarry (especially the power plant) much more accessible\n-Minor improvements to the power plant (mostly visual feedback with the spring and timer)\n-You know what, more pollen trees at the start of the ferrest now so to better distinguish it from the rest of the ferrest\n-Fech's notes now change based on the zone he's in. Only ferrest notes currently exist\n-River canes are much lower poly than before and stylistically more in tune with the game\n-Bridges in the river zone!\n-[b]There's grass in the river zone now[/b]\n-Improved occlusion in the river zone\n-Occlusion culling is slightly more accurate\n-Increased thumbstick deadzone\n\n[h2]FIXES:[/h2]\n-Fixed bug where attempting to exit an ara immediately after entering it could lead to falling out of the world\n-[b]Fixed major bug that soflocked the game and prevented from playing ara good filter[/b]\n-Added colliders that prevent clipping through faded entrances/exits \n-Fixed a bug tied to respawning out of an ara\n-Fixed Fech's complete lack of shadowing (I don't know why this keeps on breaking and unbreaking)\n-Fixed shader bug in the displacement of tree foliage (empty spots would appear)\n-Small fixes to ara entrances\n-[b]Fixed major bug that would cut off ara chop chop's music midway through and make its exit inaccessible.[/b] I had simply cut the music track short by mistake\n-Restored LOD for the chestnut trees\n-Fixed major shader bug that would make shadows not work for seemingly no reason (the past several builds alternated between having this bug or not)\n-Fixed leaf positions\n-Partial fixes to modern crane\n-Fixed some water triggers in the river zone\n-Small fixes to power plant poles\n-Fixed collision bugs of the river canes\n-Fixed a bug that would make Fech immediately run from a still position\n-Removed unwanted ability to pal pull during the intro cutscene\n-Patched out the unwanted ability to open the pause menu during cutscenes\n-Fixed camera angle bug when pal pulling while starting a rhythm ara section\n-Fixed rat protesters dialogue variable when the power plant gets fixed (they cheer instead of demanding to fix what's already fixed)\n-The \"fixedness\" state of the power plant no longer resets every time you enter it\n\n[h3]KNOWN ISSUES:[/h3]\n-Various issues with climbing and sliding down walls of inclination close to 90\u00b0\n-Infrequent camera collision issues, mostly tied to underpasses\n-Every time there's a scene change, the mouse cursor mysteriously appears\n-Some jank in rhythm aras\n-Be careful with saving in the river zone. The river itself is a (unwantedly) valid autosave point\n\n\nAnd just like last time, here's the roadmap as it currently stands. See you in the next update!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/103e584223992c89b60d3e177df09fff29b6eece.png[/img]",
+      "key": "1382980::9663f207bc73c76b57a6299040ebb9dea8328156",
+      "tags": [
+        {
+          "balance_change": "2022-10-02 Shortened ara tuuti by a minute (from 86 to 54 bars)"
+        },
+        {
+          "feature": "2022-10-03 Remade all terrains and rocks of the river zone + new fancy raindrop shader effect"
+        },
+        {
+          "feature": "2022-10-17 Various rounds of optimization. Added a layer-based occlusion system for smaller objects: potential performance improvements on low spec hardware"
+        },
+        {
+          "feature": "2022-10-20 Noticeable changes and improvements to the the river zone's level design"
+        },
+        {
+          "balance_change": "-Reduced Fech's overall shadowing"
+        },
+        {
+          "balance_change": "-Jumping off a pole now always puts Fech in quadruped position"
+        },
+        {
+          "balance_change": "-Changed grass color in the river zone"
+        },
+        {
+          "feature": "-Added collider to mill"
+        },
+        {
+          "feature": "-Added ability to entirely disable outer trees for performance optimization"
+        },
+        {
+          "balance_change": "-Foliage slider now also affects LOD bias"
+        },
+        {
+          "feature": "-Added ability to disable grass (only for testing and extreme performance optimization measures)"
+        },
+        {
+          "balance_change": "-Chestnuts shadows are slightly brighter"
+        },
+        {
+          "balance_change": "-Pollen triggers are a little more visible now"
+        },
+        {
+          "feature": "-Few new props and small changes in the ferrest"
+        },
+        {
+          "feature": "-Added LOD to river poplars"
+        },
+        {
+          "balance_change": "-Adjustments to Fech's animation speed on ara chop chop. No more extremely fast run"
+        },
+        {
+          "feature": "-Added input UI for some interactables. Still a WIP"
+        },
+        {
+          "balance_change": "-Standardized the jumping speed on the poles. This makes challenges in the quarry (especially the power plant) much more accessible"
+        },
+        {
+          "feature": "-Minor improvements to the power plant (mostly visual feedback with the spring and timer)"
+        },
+        {
+          "feature": "-You know what, more pollen trees at the start of the ferrest now so to better distinguish it from the rest of the ferrest"
+        },
+        {
+          "feature": "-Fech's notes now change based on the zone he's in. Only ferrest notes currently exist"
+        },
+        {
+          "balance_change": "-River canes are much lower poly than before and stylistically more in tune with the game"
+        },
+        {
+          "feature": "-Bridges in the river zone!"
+        },
+        {
+          "feature": "-There's grass in the river zone now"
+        },
+        {
+          "balance_change": "-Increased thumbstick deadzone"
+        },
+        {
+          "bug": "-Fixed bug where attempting to exit an ara immediately after entering it could lead to falling out of the world"
+        },
+        {
+          "bug": "-Fixed major bug that soflocked the game and prevented from playing ara good filter"
+        },
+        {
+          "bug": "-Added colliders that prevent clipping through faded entrances/exits"
+        },
+        {
+          "bug": "-Fixed a bug tied to respawning out of an ara"
+        },
+        {
+          "bug": "-Fixed Fech's complete lack of shadowing (I don't know why this keeps on breaking and unbreaking)"
+        },
+        {
+          "bug": "-Fixed shader bug in the displacement of tree foliage (empty spots would appear)"
+        },
+        {
+          "bug": "-Small fixes to ara entrances"
+        },
+        {
+          "bug": "-Fixed major bug that would cut off ara chop chop's music midway through and make its exit inaccessible. I had simply cut the music track short by mistake"
+        },
+        {
+          "bug": "-Restored LOD for the chestnut trees"
+        },
+        {
+          "bug": "-Fixed major shader bug that would make shadows not work for seemingly no reason (the past several builds alternated between having this bug or not)"
+        },
+        {
+          "bug": "-Fixed leaf positions"
+        },
+        {
+          "bug": "-Partial fixes to modern crane"
+        },
+        {
+          "bug": "-Fixed some water triggers in the river zone"
+        },
+        {
+          "bug": "-Small fixes to power plant poles"
+        },
+        {
+          "bug": "-Fixed collision bugs of the river canes"
+        },
+        {
+          "bug": "-Fixed a bug that would make Fech immediately run from a still position"
+        },
+        {
+          "bug": "-Removed unwanted ability to pal pull during the intro cutscene"
+        },
+        {
+          "bug": "-Patched out the unwanted ability to open the pause menu during cutscenes"
+        },
+        {
+          "bug": "-Fixed camera angle bug when pal pulling while starting a rhythm ara section"
+        },
+        {
+          "bug": "-Fixed rat protesters dialogue variable when the power plant gets fixed (they cheer instead of demanding to fix what's already fixed)"
+        },
+        {
+          "bug": "-The \"fixedness\" state of the power plant no longer resets every time you enter it"
+        }
+      ]
+    },
+    {
+      "title": "0.7.2a Devlog - Early Access Release!",
+      "date": "2022-09-23 19:23:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4589754330737226223",
+      "content": "Welcome to the first Devlog here on Steam! Make yourselves comfortable, this will be the new norm in here. So let's get to the meat of it right away.\n\nFech The Ferret is out in Early Access! This version - out since September 21st - marks the release on Steam and the introduction of many elements to the game such as: online play, all 4 total rhytm aras shown thus far, 1 new enclosed level, polish to the world structure and a new intro cutscene.\n\nOverall one of the main goals with this version was to better define zone thresholds using visual and audio cues as well as beginning to delimit \"hub\" sections of the open world. You'll certainly see more work on this in the coming months, like in that tiny piece of land in between the quarry and the river Eridhen.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/15077fc23b16f7ea3a04a29a19a23a15e88bfc50.png[/img]\n[h2]HIGHLIGHTS:[/h2]\n2022-09-13 [b]The world map is more compact[/b] thanks to structural changes to the ferrest and quarry. Removed empty stretches of land in the quarry \n2022-09-15 Revamped zone landmarks\n2022-09-15 The river now pushes Fech back\n2022-09-17 New hub before the river zone\n2022-09-18 [b]Two brand new songs[/b] for the river zone\n2022-09-20 Added a [b]new intro cutscene[/b] for Fech waking up\n\n[h2]CHANGES:[/h2]\n-Many big and small updates to props\n-Hitting an obstacle in a rhythm ara now cuts off the audio for a short amount of time\n-There's a lot more trees in the world\n-Added rain effects on rock sides in the river zone\n-Added on-rail camera for specific enclosed set pieces\n-New *much better* dirt texture. The whole game looks quite nicer now\n-Quicker and more accurate visual transitions between zones (especially quarry and river)\n-Reshaped the overall visual mood of the river zone. More teal-coloured, easier to understand the level\n-Removed old placeholder-y river song. It was nice but incredibly tiring to listen to in a loop\n-When it's rainy Fech can only cling onto walls and slide, not climb them\n-Fech gets wet under the rain\n-Rhythm aras' treadmills no longer require running\n-No more head movement while Fech is sleeping\n-Small improvements to the first rhythm ara\n-Added third ara level and placed it in the quarry hub with poles\n-Removed old text from the second ara level\n-Lowered the volume of the dash version of cava rattina's song\n-Added saving notice in the main menu\n-Updated credits\n\n[h2]FIXES:[/h2]\n-Fixed oversight that removed the camera lookahead movement when rolling on the ground\n-Fixed major piston spring softlock\n-Fixed bug that would make the stamina restore automatically\n-Fixed way back exit in ara good filter\n-Improved look of the toon shader (no more darkened landmarks)\n-The edge running bug *might* be gone. Reason: unknown\n-Fixed bug that would make Fech's jump animation not trigger consistently\n-Saving inside of an enclosed level (rhythm ara, the grotta level) no longer returns an invalid game position\n-Fixed the most glaring issues in the power plant (softlock and spring)\n-Fixed small bug in ara good filter\n-Added collisions to the octopuses\n-Fixed sewer NPCs dialogue\n-Fixed issues with reflection probes\n-Online room names are now case insensitive\n-Fixed bug that would make fech stuck in the rhythm ara\n-Fixed major bug that would load only 1 zone when starting the game\n-Fixed third rhythm ara's exit missing\n-Restored Fech's grass trail\n-Fech can no longer drown while in the main menu\n-Early optimization measures for the river zone\n\n[h3]KNOWN ISSUES:[/h3]\n-Various issues with climbing and sliding down walls of inclination close to 90\u00b0\n-Infrequent camera collision issues, mostly tied to underpasses\n-Every time there's a scene change, the mouse cursor appears\n-The third rhythm ara (ara tuuti) is too long and unpolished\n-Various small issues in the river, among which lack of grass\n-Not all dialogue variables are set\n-The advanced cranes were temporarily made incomplete\n-Fech's notes don't change based on the zone\n\n\n\nAnd lastly before closing up this devlog I'd like to say I've managed to update the roadmap. Expect touch-ups every now and then as we keep on working!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/995807f317bf57572dba8e521964a856c8b759c5.png[/img]",
+      "key": "1382980::45de48bc57a6459068c4943a139a885c637a740e",
+      "tags": [
+        {
+          "feature": "- Added the Highlights feature."
+        },
+        {
+          "feature": "- A new game mode has been added to matchmaking and offline play: Deathmatch."
+        },
+        {
+          "feature": "- Added three new playable heroes: Queen of Pain, Slark, and Templar Assassin"
+        },
+        {
+          "balance_change": "- Reduced Molotov price from 500 to 400."
+        },
+        {
+          "balance_change": "- XM1014 - reduced damage to 20."
+        },
+        {
+          "balance_change": "* Eul's Scepter of Divinity: Bonus movement speed reduced from +40 to +30"
+        }
+      ]
+    },
+    {
+      "title": "Save & Sound + Feedback DEMO Update! (0.6.2alpha)",
+      "date": "2022-07-15 18:32:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144690326612",
+      "content": "Hi there!\nFech The Ferret is part of Save & Sound 2022! Started on July 14th and running until July 18th, it's a Steam Festival celebrating music in games.\n\n[url=https://store.steampowered.com/sale/SaveandSound]\n[img]{STEAM_CLAN_IMAGE}/38421767/bc90028cc0bf697b1f86d0a06e7832e24e84b5bb.png[/img][/url]\n\nIn the sales page (click on the image above) you'll also find a stream showing behind the scenes and live performances of some of the games present. [b]Tune in on July 17th at 20:00 CET to see Fech[/b] in there!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/30d4cf7a52a0dd23465d63085a8dcb27f3aabed5.png[/img]\n\nAnd lastly, \nI took this opportunity to release a [b]demo update[/b]!\n\nVersion [b]0.6.2alpha[/b] is mostly about addressing feedback from the Steam Next Fest, such as:\n-Fixing keyboard bugs\n-Fixing visual glitches tied to rolling while pal pulling\n-Fixing climbing bug that would let you climb more if you spammed the jump button\n-Fixing a bug that wouldn't let Fech exit a rhythm ara\n-It's now possible to turn off the autocamera in the controls menu\n\nOn top of this, we've realized that adding an early version of Fech's notes might be convenient.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/1f2532f300108e38dbe257f6f6f58b4a51d2c435.png[/img]\n\nAs usual you can find the full changelog history over at: [url=https://raoulwb.itch.io/fech-the-ferret/devlog]raoulwb.itch.io/fech-the-ferret/devlog[/url]\n\nHave a fun weekend!!\nRaoul.\n",
+      "key": "1382980::f51dabb39c14de035687a94f4f4991e0c1ad11a7",
+      "tags": [
+        {
+          "bug": "-Fixing keyboard bugs"
+        },
+        {
+          "bug": "-Fixing visual glitches tied to rolling while pal pulling"
+        },
+        {
+          "bug": "-Fixing climbing bug that would let you climb more if you spammed the jump button"
+        },
+        {
+          "bug": "-Fixing a bug that wouldn't let Fech exit a rhythm ara"
+        },
+        {
+          "feature": "-It's now possible to turn off the autocamera in the controls menu"
+        }
+      ]
+    },
+    {
+      "title": "Steam Next Fest DEMO + Hotfixes",
+      "date": "2022-06-15 14:31:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4480533160883190114",
+      "content": "Hi there! Fech The Ferret is part of the ongoing Steam Next Fest with an extended demo!\n\n[img]{STEAM_CLAN_IMAGE}/38421767/b94cb70ad7ccc18d0ad405cc299cd60d9d33ef4b.png[/img]\n\nIf you happened to play a Fech demo before - or even on the very first day of the Festival - here's the new stuff you're getting:\n- The entire first zone + Kyuknos intro\n- Better performance\n- One more rhythmic level\n- Nicer graphics\n- Nicer vfx\n- Nicer sfx\n- And much more stuff I'd file under the category of \"polish\"\n\nAnd if you play on Linux you also get:\n-controller rumble\n\nIf curious, you can find new and old changelogs in detail on itch: [url=https://raoulwb.itch.io/fech-the-ferret/devlog]raoulwb.itch.io/fech-the-ferret/devlog[/url].\n\nLastly in the theme of updates, today's fixes are about:\n- Discord integration issues (no more crashes or popups)\n- Endless water edge jump\n\n\nAs for bug reporting and feedback, feel free to post in the \"demo feedback\" section of the Steam forum or in the \"ferret-chat\" of the Discord community over at [url=https://playfe.ch/discord]playfe.ch/discord[/url].\n\nHave fun!!\nRaoul.",
+      "key": "1382980::addd6d94e77e9811b1ca8f4f9bd340239fc8eae1",
+      "tags": [
+        {
+          "feature": "- The entire first zone + Kyuknos intro"
+        },
+        {
+          "feature": "- One more rhythmic level"
+        },
+        {
+          "feature": "-controller rumble"
+        },
+        {
+          "bug": "- Discord integration issues (no more crashes or popups)"
+        },
+        {
+          "bug": "- Endless water edge jump"
+        }
+      ]
+    },
+    {
+      "title": "Milan Games Week DEMO now available!",
+      "date": "2021-11-17 10:26:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4227186657137617477",
+      "content": "[h3]Helo helo and welcome to our first community post![/h3]\n\nWe've just updated the demo to the one recently shown at Milan Games Week 2021. It features lots of improvements such as ciambella rolling (the new super fast roll mechanic), revamped controls and graphical improvements.\n\n[img]{STEAM_CLAN_IMAGE}/38421767/cfdd6facccafded39a96fa042fee6314351caf75.jpg[/img]\n\nThere are a few bugs here and there still, but rest assured that we're aware and already working on fixing them.\n\nHave fun playing and make sure to tell us what you think!!\n\nCiao,\nRaoul.",
+      "key": "1382980::ce411c0c10be92951e29be938d28ab1d0b229f2a",
+      "tags": [
+        {
+          "feature": "We've just updated the demo to the one recently shown at Milan Games Week 2021. It features lots of improvements such as ciambella rolling (the new super fast roll mechanic), revamped controls and graphical improvements."
+        }
+      ]
+    }
+  ]
+}

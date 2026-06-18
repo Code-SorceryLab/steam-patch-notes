@@ -1,0 +1,381 @@
+{
+  "appId": "2830480",
+  "count": 14,
+  "notes": [
+    {
+      "title": "1.1.1 - Bugfixes",
+      "date": "2025-08-25 14:08:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382582961",
+      "content": "I've been streaming daily since the major patch and have had some time to play a few of the workshop levels. I've had a fun time with meta in [i]The Dragon[/i], and also had this wonderful moment from [i]Levels that shouldn't exist[/i]: (Big spoilers) https://www.twitch.tv/jagriff/clip/ZealousSpookyOilCeilingCat-9SPm5hkd3gKEM9UK\nDefinitely check these out once you've completed the main game!\n\nIt's the last day of the 20% discount, so I wanted to squeeze in this small patch that fixes some bugs introduced in the major patch last week. These are mostly relevant for custom levelpacks, although the visual bug could be observed in the main game.\n[list]\n[*] Fixed a visual bug where loading a puzzle while animals are in motion could cause them to show up in the loaded puzzle.\n[*] Fixed a bug where sometimes a puzzle under a grey animal could be mistakenly marked as visited after an [spoiler]export[/spoiler].\n[*] Fixed a bug where the hub and sublevels under selectable animals would not initially be marked as visited.\n[*] Fixed a bug where creating a puzzle that is solvable in 0 moves could softlock in the puzzle tester.\n[/list]",
+      "key": "2830480::ff37f7f9e5be75a389ca1c842422fc436877e641",
+      "tags": [
+        {
+          "bug": "[*] Fixed a visual bug where loading a puzzle while animals are in motion could cause them to show up in the loaded puzzle."
+        },
+        {
+          "bug": "[*] Fixed a bug where sometimes a puzzle under a grey animal could be mistakenly marked as visited after an [spoiler]export[/spoiler]."
+        },
+        {
+          "bug": "[*] Fixed a bug where the hub and sublevels under selectable animals would not initially be marked as visited."
+        },
+        {
+          "bug": "[*] Fixed a bug where creating a puzzle that is solvable in 0 moves could softlock in the puzzle tester."
+        }
+      ]
+    },
+    {
+      "title": "1.1.0 - Workshop Levelpacks, MacOS Support, performance improvements, and more!",
+      "date": "2025-08-19 11:37:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939505514",
+      "content": "That's right, it's Gentoosday! This is a huge patch that contains over a month of small updates, as well as some exciting new features like Steam Workshop and MacOS Support. I am incredibly grateful for all of your support that has allowed me to continue work on the game post-release.\n\nSteam workshop\n[list]\n[*] There are already several levelpacks on the workshop now, and I look forward for more to come!\n[*] There is a new main menu button \"Custom\". The first time you select this, you'll directed to the Steam workshop page for Gentoo Rescue. There you can subscribe to custom levelpacks, which can can be played through the \"Custom\" menu.\n[*] One can also bypass Steam workshop by manually installing a custom levelpack into the directory: `<game install>/GentooRescue/Custom/`. Note that custom levelpacks installed this way will use the name of their hub level as the name of the levelpack, and that this name should not clash with any other manually installed custom levelpacks. Steam workshop levelpacks have a unique ID independent of its title.\n[*] Your time played and progress on each levelpack is stored by profile, and the levelpack saves are separate from the main save (and each other). They are also tracked by Steam Cloud, so your progress will stay when switching devices. You can find these saves in the Custom subdirectory of your player directory.\n[*] Solutions are now saved in the same file as the rest of your progress instead of a separate file. This affects the main save (`progress.sav`), but it was mostly done for custom levelpack support.\n[*] Added button in the puzzle editor to upload to Steam workshop. You can (and should) specify a title/description through this interface, not Steam's.\n[*] Steam workshop uploads will automatically generate a preview image based on your currently loaded puzzle, but you can manually specify an image by placing it at: [code]<game install>/GentooRescue/Images/<levelpack title>.png[/code] I recommend a resolution of 800x800.\n[*] Subscribed Steam workshop levels will be copied to `<game install>/GentooRescue/Workshop` upon entering the \"Custom\" menu. This allows for offline support.\n[*] The [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3551222533]guide[/url] should cover all of the essentials.\n[/list]\n\nMacOS support\n[list]\n[*] I'm excited that more people can now play Gentoo Rescue!\n[*] Any serious MacOS specific bugs will get the highest priority for the next small patch. Please report any to the discord!\n[/list]\n\nPuzzle changes\n[list]\n[*] I've refined some hints in various levels. I've been doing this every patch without noting details, and will continue to do so. Keep the feedback coming!\n[*] Removed unintended solution from Quasar in [spoiler]Pickpocket[/spoiler]. Maybe the first cheese found? Not sure it qualifies a cheese because it was more difficult than the intended solution.\n[*] Swapped the positions of Vantage and Jailbreak in [spoiler]Path of Plain[/spoiler].\n[*] Changed Transpositions (in Exfiltration.Temporary) to make [spoiler]all swap imports clearly impossible[/spoiler], which allowed for the removal of the blue colored wall from Temporary.\n[*] Removed the blue colored wall from Foreboding.Flutter because it wasn't important. Same for Liftoff.Balance.\n[*] Added fog to a tile in Sustain to make an aspect of [spoiler]the meta puzzle of reaching the bottom left puzzle[/spoiler] easier. More specifically, a [spoiler]bomb import is now clearly useless[/spoiler].\n[*] Renamed Sustain to [spoiler]Herrings[/spoiler], Implant to [spoiler]Transplant[/spoiler], and swapped the names of [spoiler]Y and V[/spoiler]. Bonus points to anyone that can figure out why these changes were done!\n[/list]\n\nPuzzle editor\n[list]\n[*] Added a button to record journal entries to the puzzle editor. Click \"Journal\" in the editor, then confirm \"Record\". This will load the current puzzle in test mode. Upon exiting test mode, all journal entries that you performed during testing will be written to the current puzzle's list of 'Required for current level' journal entries. This replaces the old method of entering the IDs by hand.\n[*] Added icon for normal/plain walls with the keyword PWALL. This can be used in your hints.\n[*] Fixed puzzle test bug where exiting the puzzle under test in the puzzle editor could cause the puzzle to be modified.\n[/list]\n\nPerformance improvements\n[list]\n[*] The goal was just to reduce loading times for custom levelpacks. However these optimizations will also benefit the main game, particularly for those on lower-end machines.\n[*] Optimized walls and tile objects.\n[*] Animals and items are now pooled instead of being allocated/destroyed on the fly.\n[*] Moved some important work from scripting to C++: tile generation/arrangement, animal organization, and loading static puzzle state.\n[/list]\n\nSettings\n[list]\n[*] Gridlines are enabled by default at the smallest nonzero thickness.\n[*] Added more ticks to the low end of the \"Base speed\" Gameplay slider.\n[/list]\n\nMisc\n[list]\n[*] Reworded some journal entries to remove slight spoilers. This comes at the cost of making a few entries less descriptive, but I think the tradeoff is worth it.\n[*] End popup on the hub puzzle now includes the total time played.\n[*] Mouse autohide is now disabled while in the Create submenu.\n[*] Increased size of some small text in various places. This was mainly done to help visibility on Steam Deck.\n[*] The music track will not be restarted upon changing biomes if the old and new biome use the same track.\n[*] Increased teleport animation speed to better match internal logic. This may be relevant for some cursed custom levels.\n[/list]\n\nWhat's next?\n[list]\n[*] General bugfixes.\n[*] Continued minor improvements to hints/puzzles, as needed. Watching your gameplay videos/streams really helps me spot tweaks that I can make, so keep sending those my way!\n[*] Puzzle editor improvements and polish.\n[*] I'll be streaming playthroughs of workshop levelpacks soon at https://www.twitch.tv/jagriff/.\n[*] I may also start making YouTube videos with some puzzle design examples / challenges, or other general dev commentary. Please let me know if there's any interest for this.\n[/list]\n\nDream goals. Ordered by insanity (ascending). Don't count on these happening unless Gentoo Rescue becomes so popular that I can afford to quit my real job. \n[list]\n[*] Localization support. This would have limited use on its own. Maybe community language packs?\n[*] Official support for Simplified Chinese, Japanese, and maybe other languages?\n[*] A DLC secret area with new or expanded mechanics? I intentionally left a place for this in the hub.\n[*] Mobile port? Switch port?\n[*] Challenge mode. Maybe this would have to be a separate game? I originally planned to ship with a score-based \"roguelike\" mode with leaderboards, but it was over-scoped and there were some design challenges that I couldn't address in time for launch.\n[*] Multiplayer. This would certainly have to be an entirely separate game. If you've played Ricochet Robots, then you might have an idea for how this would work.\n[/list]",
+      "key": "2830480::928e04a3fc37aa5567240eb3129361b47b870a6d",
+      "tags": [
+        {
+          "feature": "Steam workshop"
+        },
+        {
+          "feature": "MacOS Support"
+        },
+        {
+          "feature": "Added button in the puzzle editor to upload to Steam workshop."
+        },
+        {
+          "feature": "Added fog to a tile in Sustain to make an aspect of [spoiler]the meta puzzle of reaching the bottom left puzzle[/spoiler] easier."
+        },
+        {
+          "feature": "Added a button to record journal entries to the puzzle editor."
+        },
+        {
+          "feature": "Added icon for normal/plain walls with the keyword PWALL."
+        },
+        {
+          "feature": "Gridlines are enabled by default at the smallest nonzero thickness."
+        },
+        {
+          "feature": "Added more ticks to the low end of the \"Base speed\" Gameplay slider."
+        },
+        {
+          "bug": "Fixed puzzle test bug where exiting the puzzle under test in the puzzle editor could cause the puzzle to be modified."
+        },
+        {
+          "balance_change": "Increased teleport animation speed to better match internal logic."
+        },
+        {
+          "bug": "Removed unintended solution from Quasar in [spoiler]Pickpocket[/spoiler]."
+        },
+        {
+          "balance_change": "Swapped the positions of Vantage and Jailbreak in [spoiler]Path of Plain[/spoiler]."
+        },
+        {
+          "balance_change": "Changed Transpositions (in Exfiltration.Temporary) to make [spoiler]all swap imports clearly impossible[/spoiler], which allowed for the removal of the blue colored wall from Temporary."
+        },
+        {
+          "balance_change": "Removed the blue colored wall from Foreboding.Flutter because it wasn't important."
+        },
+        {
+          "balance_change": "Same for Liftoff.Balance."
+        },
+        {
+          "balance_change": "Renamed Sustain to [spoiler]Herrings[/spoiler], Implant to [spoiler]Transplant[/spoiler], and swapped the names of [spoiler]Y and V[/spoiler]."
+        },
+        {
+          "balance_change": "Increased size of some small text in various places."
+        }
+      ]
+    },
+    {
+      "title": "1.0.6 - Dragging and moonwalking",
+      "date": "2025-06-19 01:09:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906718230",
+      "content": "Patch 6 is here! I'm hoping I can finally get time to start improving the custom levelpack experience and add Steam Workshop support. No promises on any timeline because I am still prioritizing QoL suggestions, and addressing any points of unintended friction. Hearing your feedback and watching gameplay videos/streams has been very helpful for further improving the game, so keep sending those my way!\n\nSpeaking of custom levels, we already have a few community members creating them. Until Steam Workshop is ready, join the Discord to play and share custom levels. As we start to get more, I would like to do some regular streams, say 1-2 times per month, where I play some community levels.\n\nAlso I want to give a shout-out to Discord user StarlitEternity who has routed and completed a low% run of the game's \"true ending\". They managed to reach this ending while only completing [spoiler]55[/spoiler] levels for a progress of [spoiler]16.9%[/spoiler]. Wow!\n\nPuzzle changes\n[list]\n[*] Made Moonwalk much easier to solve by moving the red goal. Players were too easily reaching the optional hard levels before realizing that they could just complete and leave the world, so having an easy solution to this early world puzzle will better teach how the meta structure of the game works.\n[*] Moonwalk.Reciprocity now has the walrus start with the spring. Also added an extra tile in the bottom left to make the main deduction a bit easier to spot.\n[*] Added 2 fog columns to Liftoff.Countdown to make one of the early deductions easier.\n[/list]\nMisc\n[list]\n[*] Mouse users can now perform moves using LMB click-drag-release. This is not tutorialized anywhere, but there is feedback in the form of a stretching arrow in the direction of the drag. Some people will like this much more than LMB to select and RMB to move.\n[*] Gameplay setting 'Selection ring' will now also control whether the two different mouse arrows (one for RMB movement and one for LMB drag movement) are displayed.\n[/list]",
+      "key": "2830480::c0a54dc250a1ec2e5f9c311a997d96a28a7ab536",
+      "tags": [
+        {
+          "balance_change": "Made Moonwalk much easier to solve by moving the red goal. Players were too easily reaching the optional hard levels before realizing that they could just complete and leave the world, so having an easy solution to this early world puzzle will better teach how the meta structure of the game works."
+        },
+        {
+          "balance_change": "Moonwalk.Reciprocity now has the walrus start with the spring. Also added an extra tile in the bottom left to make the main deduction a bit easier to spot."
+        },
+        {
+          "balance_change": "Added 2 fog columns to Liftoff.Countdown to make one of the early deductions easier."
+        },
+        {
+          "feature": "Mouse users can now perform moves using LMB click-drag-release. This is not tutorialized anywhere, but there is feedback in the form of a stretching arrow in the direction of the drag. Some people will like this much more than LMB to select and RMB to move."
+        },
+        {
+          "balance_change": "Gameplay setting 'Selection ring' will now also control whether the two different mouse arrows (one for RMB movement and one for LMB drag movement) are displayed."
+        }
+      ]
+    },
+    {
+      "title": "1.0.5 - Hints, grid lines, and Lemniscate improvement",
+      "date": "2025-06-15 12:58:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289664209",
+      "content": "The 5th patch is here! Sorry for the delay - work was really hectic this week.\n\nWe're a week away from the 1-monthiversary, and only 13 reviews away from the magic number of 50 required for \"Very Positive\". Please continue to help spread the game around to other puzzle enthusiasts.\n\nPuzzle changes\n[list]\n[*] Added hints for remaining levels. I am done! Feedback for improvements is still welcome, of course.\n[*] Moved the yellow goal location on Lemniscate. The old version was straight-forward from the starting position, but it was very easy for players to accidentally fall into an impossible state without realizing it. This is one of the biggest sins in puzzle design, and it should not occur unless the \"realizing it\" step is part of the main idea of the puzzle. In this case it wasn't.\n[*] Added 2 fog tiles to Pivots. This increases the uniqueness of the puzzle, making it more deducible.\n[/list]\n\nMisc\n[list]\n[*] (Post-Inception) Unused [spoiler]exit spirals[/spoiler] now animate by being pulled to the center instead of flashing.\n[*] Increased the size of grid lines because the lowest nonzero setting was unusable with FXAA, and barely usable with TAA/TSR.\n[*] Changed the look of the grid lines to be more \"natural\". You can still increase \"Grid darkness\" if you like the artificial look. I like the lowest nonzero thickness with darkness turned all the way down. I'm considering making this the default in a future patch. Thoughts?\n[*] Hint menu in puzzle editor now has a scrollbar so there is no longer a soft limit to the number of hints that can be added to a puzzle.\n[*] Don't show the journal entry tag icons in the \"Required for current level\" menu for undiscovered journal entries.\n[*] Added mention of font under assets in credits.\n[/list]\n\nBugfixes\n[list]\n[*] Prevent animation of [spoiler]exit spirals[/spoiler] when first loading a puzzle in the puzzle editor.\n[/list]\n",
+      "key": "2830480::b55f92868213506964233a59073177d4c0bb1a1c",
+      "tags": [
+        {
+          "feature": "[*] Added hints for remaining levels. I am done! Feedback for improvements is still welcome, of course."
+        },
+        {
+          "feature": "[*] Added 2 fog tiles to Pivots. This increases the uniqueness of the puzzle, making it more deducible."
+        },
+        {
+          "balance_change": "[*] Increased the size of grid lines because the lowest nonzero setting was unusable with FXAA, and barely usable with TAA/TSR."
+        },
+        {
+          "feature": "[*] Hint menu in puzzle editor now has a scrollbar so there is no longer a soft limit to the number of hints that can be added to a puzzle."
+        },
+        {
+          "feature": "[*] Added mention of font under assets in credits."
+        },
+        {
+          "bug": "[*] Prevent animation of [spoiler]exit spirals[/spoiler] when first loading a puzzle in the puzzle editor."
+        }
+      ]
+    },
+    {
+      "title": "1.0.4 - New Trapeze and bigger unused [redacted]",
+      "date": "2025-06-06 02:29:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199415861",
+      "content": "I'm pushing this patch earlier than planned because I think some of the changes warrant it. As a result I'm not finished with hints for all bonus levels yet.\n\nPuzzle changes\n[list]\n[*] Replaced Trapeze (level in post-Accumlation world [spoiler]Crowdsurf[/spoiler]) with a completely new puzzle. The old version wasn't an amazing puzzle, and its idea also had already appeared in a similar form in another level. So I made a completely new level that explores a novel idea. I'm granting anyone that beat the old puzzle progress on this one because I don't want to spoil 100%-ers, but there is no relation between the old Trapeze and this new Trapeze. Give it a try!\n[*] Added blue wall to hub puzzle. This prevents another scarlet herring (see 1.0.3 notes), and should better hint at how to reach one of the endgame areas.\n[*] Hints for a couple of levels added.\n[/list]\n\nMisc\n[list]\n[*] Flashing [spoiler]export spirals[/spoiler] are now much bigger. I noticed players were having issues finding out what to do immediately after completing Inception. Hopefully this helps!\n[*] Fade \"undo or reset\" message when pause or warp menus are opened.\n[*] Tweaked tile shader to not show grid lines (when enabled) on the sides of tiles.\n[/list]\n\nBugfixes\n[list]\n[*] Fixed flashing \"water\" in the black background of the space biome when using \"Medium\" graphics settings preset.\n[*] Using the \"quick exit\" bind while the end popup and journal are both up will no longer close the end popup.\n[/list]\n",
+      "key": "2830480::e54e07dd37b0a7eada42ec69b2062eb8ca888b1d",
+      "tags": [
+        {
+          "feature": "[*] Replaced Trapeze (level in post-Accumlation world [spoiler]Crowdsurf[/spoiler]) with a completely new puzzle. The old version wasn't an amazing puzzle, and its idea also had already appeared in a similar form in another level. So I made a completely new level that explores a novel idea. I'm granting anyone that beat the old puzzle progress on this one because I don't want to spoil 100%-ers, but there is no relation between the old Trapeze and this new Trapeze. Give it a try!"
+        },
+        {
+          "feature": "[*] Added blue wall to hub puzzle. This prevents another scarlet herring (see 1.0.3 notes), and should better hint at how to reach one of the endgame areas."
+        },
+        {
+          "feature": "[*] Hints for a couple of levels added."
+        },
+        {
+          "feature": "[*] Flashing [spoiler]export spirals[/spoiler] are now much bigger. I noticed players were having issues finding out what to do immediately after completing Inception. Hopefully this helps!"
+        },
+        {
+          "feature": "[*] Fade \"undo or reset\" message when pause or warp menus are opened."
+        },
+        {
+          "balance_change": "[*] Tweaked tile shader to not show grid lines (when enabled) on the sides of tiles."
+        },
+        {
+          "bug": "[*] Fixed flashing \"water\" in the black background of the space biome when using \"Medium\" graphics settings preset."
+        },
+        {
+          "bug": "[*] Using the \"quick exit\" bind while the end popup and journal are both up will no longer close the end popup."
+        }
+      ]
+    },
+    {
+      "title": "1.0.3 - Hints and a herring",
+      "date": "2025-06-03 13:25:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756479893",
+      "content": "It's almost 2 weeks since launch and I'm embarrassed to say that all levels still do not have hints. But I'm almost there! The only missing hints are for bonus levels, and those will be done in the next patch within the next few days.\n\nI keep saying it, and it keeps being true. The support and enthusiasm from the puzzle community is overwhelming. I'm glad you're liking the game and spending 30+ hours of your life to playing it. Please keep telling others about the game. I want to watch more YouTube videos and Twitch streams! I also want to start playing your custom levels, so please join the Discord server to share them! I might even make it a regular thing where I stream some user submitted levels. (Eventually I'll add Steam Workshop support, but for now Discord will have to do....)\n\nHere's the 3rd patch.\n\nPuzzle changes\n[list]\n[*] Removed a block on the left side of the hub puzzle because it created a possible [i]scarlet herring[/i]; i.e., a red herring that is especially attractive. As much as the penguins like herrings, I do not.\n[*] Renamed puzzle `tmp` to `Temporary` to make it fit the naming style of the rest of the game.\n[*] Added hints for all puzzles in Replication.\n[*] Tweaked hints for a few other levels based on feedback. Please keep sending feedback my way!\n[/list]\n\nMisc\n[list]\n[*] Keep Warp bind prompt hidden until a sublevel has been seen. This is only relevant for a single level in the very late-game.\n[/list]\n\nBugfixes\n[list]\n[*] Scroll wheel binds are given a special exception to not trigger \"menu back\" because of collisions with normal scrolling. However scroll wheel down could mistakenly trigger \"menu back\" from menus like warp, journal, pause, and settings if the end popup was visible. Now it cannot.\n[/list]",
+      "key": "2830480::1d20d66a1bcd33d57229396c4112da24620ca258",
+      "tags": [
+        {
+          "bug": "[*] Scroll wheel binds are given a special exception to not trigger \"menu back\" because of collisions with normal scrolling. However scroll wheel down could mistakenly trigger \"menu back\" from menus like warp, journal, pause, and settings if the end popup was visible. Now it cannot."
+        },
+        {
+          "feature": "[*] Added hints for all puzzles in Replication."
+        },
+        {
+          "balance_change": "[*] Tweaked hints for a few other levels based on feedback. Please keep sending feedback my way!"
+        },
+        {
+          "bug": "[*] Keep Warp bind prompt hidden until a sublevel has been seen. This is only relevant for a single level in the very late-game."
+        }
+      ]
+    },
+    {
+      "title": "1.0.2",
+      "date": "2025-05-29 00:01:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756298507",
+      "content": "I've noticed many players are already well past the 20+ hour mark and have finished, or are closing in. Others are just getting started and still wondering what that color spirally thing is for. I really love reading all of your comments about the game in reviews, on forums, and on social media. The more buzz around the game the happier the penguins will be, so keep it up!\n\nWithout further ado, here's patch number two.\n\nPuzzle changes\n[list]\n[*] Added hints for all initially reachable puzzles in Attraction and Contraband. This came with a few very very minor puzzle tweaks that I'm confident objectively improve the design.\n  [list]\n  [*] Removed unnecessary fog from Attraction.Hurl.\n  [*] Removed unnecessary tile from Attraction.Tractor.\n  [*] Changed the starting state of Attraction.Wrecker. This was done because the new version will do a slightly better job at encouraging the player to try an idea that [spoiler]would work if there were no magnet: move green down onto blue's target, and then hit it with a blue move right[/spoiler]. This isn't just a bait, but it shows off why this puzzle is interesting while hinting at the main idea for how to solve it. The old version, where blue started in the far left of the middle row, was further from revealing the key idea [spoiler]despite being technically closer to the solution[/spoiler].\n  [*] Added colored wall to Contraband.Deeper to fix cheese that let players skip ~2/7 of the puzzle.\n  [/list]\n[*] Refined journal entry unlock conditions for a few fog related entries to not include grey animals in fog. This affected the \"Required for current level\" entries for Ground_Rules.I and Liftoff.Extinction.\n[*] The following levels had some errors in their \"Required for current level\" entries, unrelated to the above change: Attraction.Fledging, Exchange.Displacement, Exchange.Stwap, Exchange.Timing, Exfiltration.G, Foreboding.Jackhammer, and Sustain.Chumming.\n[*] Added new (post-Replication) [spoiler]bonus solution[/spoiler] and reworded existing one for Lemniscate.EYO. Thanks to Mikan for discovering the new one!\n[*] Reworded (post-Replication) [spoiler]bonus solution[/spoiler] for Ground_Rules.Blockers.\n[*] Moved the position of Walk.Threading.\n[/list]\n\nMisc\n[list]\n[*] Added \"LMB double click\" bind prompt to sublevel button on hover. On unhover it goes back to the keyboard bind. Mouse-only is an option that the game doesn't teach very well, so hopefully this helps.\n[*] Removed \"Awards\" and \"Challenge\" sections from buttons corresponding to backup saves.\n[*] Achievements all marked as secret to avoid spoilers. I don't think anything there is super spoilery but just staying on the safe side since players can reveal hidden achievements on Steam. This was done through Steam, so it is not part of the build and actually went in Sunday night (PDT).\n[/list]\n\nBugfixes\n[list]\n[*] It was possible to use the quick exit bind to exit from a puzzle while the journal menu was opened if the end popup was also opened.\n[/list]",
+      "key": "2830480::7b940dc03c6afff77127cc3f7468295cceab99d9",
+      "tags": [
+        {
+          "feature": "[*] Added hints for all initially reachable puzzles in Attraction and Contraband. This came with a few very very minor puzzle tweaks that I'm confident objectively improve the design."
+        },
+        {
+          "feature": "[*] Added colored wall to Contraband.Deeper to fix cheese that let players skip ~2/7 of the puzzle."
+        },
+        {
+          "feature": "[*] Added new (post-Replication) [spoiler]bonus solution[/spoiler] and reworded existing one for Lemniscate.EYO. Thanks to Mikan for discovering the new one!"
+        },
+        {
+          "feature": "[*] Added \"LMB double click\" bind prompt to sublevel button on hover. On unhover it goes back to the keyboard bind. Mouse-only is an option that the game doesn't teach very well, so hopefully this helps."
+        },
+        {
+          "bug": "[*] It was possible to use the quick exit bind to exit from a puzzle while the journal menu was opened if the end popup was also opened."
+        }
+      ]
+    },
+    {
+      "title": "1.0.1",
+      "date": "2025-05-25 14:49:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164511343",
+      "content": "Many players are accumulating insane playtimes, and I've been reading all sorts of excitement about the game. I appreciate this so much! I don't have any funding for advertisements, and to be honest, what makes the game special is hard to advertise. So I am incredibly grateful for your continued support in spreading the game to other players.\n\nI'm super proud to have no major bugs, no broken puzzles, and not even any reports of puzzle cheese! A large part of this is due to the many amazing playtesters. Hopefully this trend continues through future patches. Without further ado, here are the changes.\n\nPuzzle changes\n[list]\n[*] Added (post-Replication) [spoiler]bonus solution[/spoiler] for Ground_Rules.Movement. This will take away 100% from the couple of people that have earned it so quickly. :( There aren't any Steam achievements for 100% completion and it is just there for your own satisfaction, so I don't mind doing this very sparingly. This one in particular will take 30s to complete, so definitely no worries here. I'm open to adding more (post-Replication) [spoiler]bonus solutions[/spoiler] if anyone happens to discover something that is both interesting and not purely a subset of an existing puzzle. I'm certain there are some wild end-game things still remaining for the community to discover.\n[/list]\n\nJournal\n[list]\n[*] Lightbulb submenu icon now turns yellow when the current level requires a journal entry that isn't unlocked. This gives an easy check that something new is needed without risking a spoiler that could happen if you actually read through the journal entries needed for the current level.\n[*] If the journal/hint menu is opened while the journal popup message is on screen, then it will open to the most recently unlocked journal entry.\n[*] The journal entry popup message is now a button which opens the journal.\n[*] The journal/hint menu can now be opened while the end popup is visible.\n[*] If a new journal entry is unlocked while the message for the previous entry is showing, then the previous message is hidden and a new message is shown immediately. The old behavior would not show anything for the 2nd unlock.\n[*] Slightly reworded journal entry descriptions involving (Implant/Contraband) [spoiler]imports to use the word \"import\" instead of \"level variation\"[/spoiler].\n[/list]\n\nPuzzle editor\n[list]\n[*] Allow exiting the puzzle select screen using undo/redo binds.\n[*] Added warning to puzzle select screen that a mouse is needed.\n[*] Added gameplay settings toggle \"Enable solver\", which defaults to off. The solver function in the puzzle editor is very resource intensive and may cause crashes.\n[/list]\n\nMisc\n[list]\n[*] Added hints for all initially reachable puzzles of Liftoff.\n[*] Unbound mouse bind prompts will no longer show the mouse button icon unless the 'Mouse buttons' option is enabled in gameplay settings. If 'Mouse buttons' is disabled, then it will show a keyboard bind.\n[*] (Post-Replication) [spoiler]Bonus solutions[/spoiler] now more clearly indicate when they have not been completed with text that is more faded.\n[/list]\n\nBugfixes\n[list]\n[*] Under very rare cases it was possible to (Implant/Contraband) [spoiler]import without landing on the puzzle using the warp menu[/spoiler].\n[*] The level name for a loaded level would not display if (Implant/Contraband) [spoiler]the only known variation seen was not NONE[/spoiler].\n[*] If you were at the start of the hub puzzle and had not completed Ground_Rules (possible with 'Allow skipping' toggle), then reloading your save would mistakenly autoload you into Ground_Rules.\n[*] The second journal entry in the \"Advanced\" section was mistakenly being unlocked on any (post-Inception) [spoiler]export from menu[/spoiler].\n[*] Redo bind in warp menu while end popup is up will now correctly close the warp menu.\n[*] Reset bind in warp menu now correctly does nothing.\n[/list]",
+      "key": "2830480::97aaeb4e1250c3a8c30e4508dfb08391bab5998c",
+      "tags": [
+        {
+          "feature": "[list]\n[*] Added (post-Replication) [spoiler]bonus solution[/spoiler] for Ground_Rules.Movement. This will take away 100% from the couple of people that have earned it so quickly. :( There aren't any Steam achievements for 100% completion and it is just there for your own satisfaction, so I don't mind doing this very sparingly. This one in particular will take 30s to complete, so definitely no worries here. I'm open to adding more (post-Replication) [spoiler]bonus solutions[/spoiler] if anyone happens to discover something that is both interesting and not purely a subset of an existing puzzle. I'm certain there are some wild end-game things still remaining for the community to discover.\n[/list]"
+        },
+        {
+          "feature": "[list]\n[*] Lightbulb submenu icon now turns yellow when the current level requires a journal entry that isn't unlocked. This gives an easy check that something new is needed without risking a spoiler that could happen if you actually read through the journal entries needed for the current level.\n[*] If the journal/hint menu is opened while the journal popup message is on screen, then it will open to the most recently unlocked journal entry.\n[*] The journal entry popup message is now a button which opens the journal.\n[*] The journal/hint menu can now be opened while the end popup is visible.\n[*] If a new journal entry is unlocked while the message for the previous entry is showing, then the previous message is hidden and a new message is shown immediately. The old behavior would not show anything for the 2nd unlock.\n[*] Slightly reworded journal entry descriptions involving (Implant/Contraband) [spoiler]imports to use the word \"import\" instead of \"level variation\"[/spoiler].\n[/list]"
+        },
+        {
+          "feature": "[list]\n[*] Allow exiting the puzzle select screen using undo/redo binds.\n[*] Added warning to puzzle select screen that a mouse is needed.\n[*] Added gameplay settings toggle \"Enable solver\", which defaults to off. The solver function in the puzzle editor is very resource intensive and may cause crashes.\n[/list]"
+        },
+        {
+          "feature": "[list]\n[*] Added hints for all initially reachable puzzles of Liftoff.\n[*] Unbound mouse bind prompts will no longer show the mouse button icon unless the 'Mouse buttons' option is enabled in gameplay settings. If 'Mouse buttons' is disabled, then it will show a keyboard bind.\n[*] (Post-Replication) [spoiler]Bonus solutions[/spoiler] now more clearly indicate when they have not been completed with text that is more faded.\n[/list]"
+        },
+        {
+          "bug": "[list]\n[*] Under very rare cases it was possible to (Implant/Contraband) [spoiler]import without landing on the puzzle using the warp menu[/spoiler].\n[*] The level name for a loaded level would not display if (Implant/Contraband) [spoiler]the only known variation seen was not NONE[/spoiler].\n[*] If you were at the start of the hub puzzle and had not completed Ground_Rules (possible with 'Allow skipping' toggle), then reloading your save would mistakenly autoload you into Ground_Rules.\n[*] The second journal entry in the \"Advanced\" section was mistakenly being unlocked on any (post-Inception) [spoiler]export from menu[/spoiler].\n[*] Redo bind in warp menu while end popup is up will now correctly close the warp menu.\n[*] Reset bind in warp menu now correctly does nothing.\n[/list]"
+        }
+      ]
+    },
+    {
+      "title": "So now what?",
+      "date": "2025-05-22 13:10:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800357164412926",
+      "content": "Firstly I want to emphasize that the game is content complete. There are no missing achievements, no missing mechanics, no missing puzzles, and I have no intentions of doing any major redesigns. However, there is a never-ending list of things that I've wanted to do, but could not afford to either for monetary or time reasons.\n\n[b]Custom level support[/b]\nThe puzzle editor is available and functional, albeit with some lack of polish. Your created puzzles go to [code]<install directory>/Puzzles/[/code] as JSON files (that use a custom string format for puzzle parsing). I do recommend making a new folder (which can be done in-game) to separate out different puzzles, since puzzle name collisions within the same directory can cause issues. You can manually place JSON files in this directory, and play them through the puzzle editor using the \"Test\" button. This isn't great, and will be the main focus of post-launch development. The game is very long, so I expect to have some time before people really start going crazy with custom levels. The main things I intend to add here are:\n[list]\n[*] A special menu option for playing custom levels packs. You shouldn't have to go through the puzzle editor, and you should have basic QoL like the ability to save your progress - which the editor's \"Test\" function doesn't provide.\n[*]Level sharing through Steam Workshop. I don't expect many players will want to manually transfer files around. Plus this is very important for custom level pack discoverability!\n[*]Puzzle editor polish. I'll be making improvements based on feedback. I will be happy to write-up some detailed documentation on Discord if anyone is interested.\n[/list]\n[b]Music and hints[/b]\nI intend on getting the missing pieces in before any non-speedrunners notice, but there are some (later) levels without hints and some later worlds that reuse earlier tracks. If you happen to get stuck on a level without hints, feel free to reach out to me. I'll send you some hints and make sure they get added in the next small update.\n\n[b]Frequently requested features[/b]\nI make no promises that I will get to these, but they are things I would like to add sometime in the future if it becomes feasible.\n[list]\n[*] Support for MacOS.\n[*] Localization. Outside of menus and the journal/hints (which are optional), the game is fairly text-free. Nevertheless, players with very limited English skills will struggle. If the game does well enough and it makes financial sense, then I would like to slowly add more languages as it makes sense. I've received a lot of feedback for Simplified Chinese, but am curious, what other languages should I prioritize?\n[/list]\n\nWhat else should be on my list?\n\nA sequel? Trust me - Gentwo Rescue is closer than you think.",
+      "key": "2830480::0c72601ec78cd4d7ecec49eef67f98a1b851c47c",
+      "tags": [
+        {
+          "feature": "A special menu option for playing custom levels packs. You shouldn't have to go through the puzzle editor, and you should have basic QoL like the ability to save your progress - which the editor's \"Test\" function doesn't provide."
+        },
+        {
+          "feature": "Level sharing through Steam Workshop. I don't expect many players will want to manually transfer files around. Plus this is very important for custom level pack discoverability!"
+        },
+        {
+          "feature": "Puzzle editor polish. I'll be making improvements based on feedback. I will be happy to write-up some detailed documentation on Discord if anyone is interested."
+        },
+        {
+          "feature": "Support for MacOS."
+        },
+        {
+          "feature": "Localization. Outside of menus and the journal/hints (which are optional), the game is fairly text-free. Nevertheless, players with very limited English skills will struggle. If the game does well enough and it makes financial sense, then I would like to slowly add more languages as it makes sense. I've received a lot of feedback for Simplified Chinese, but am curious, what other languages should I prioritize?"
+        }
+      ]
+    },
+    {
+      "title": "Steam NextFest",
+      "date": "2025-02-24 07:14:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353321808",
+      "content": "Gentoo Rescue is part of Steam NextFest!\n\nThis comes with another round of many small improvements. Here's some of the more noticeable ones that appear in the demo:\n[olist]\n[*] \"Warp\" menu to quickly return to old puzzles. This also shows your progress on each level.\n[*] Improved UI for [spoiler]importing[/spoiler] items, both manually and through the warp menu.\n[*] Smoother zooming in/out with special animations for the animal on the level being zoomed.\n[*] Smoke effect on rocket.\n[*] New journal entry specifically for launching towards water.\n[*] Better bind prompts for mouse.\n[*] Wall bump and water splash particles now scale correctly with level size.\n[*] An end screen for the demo with a special message.\n[/olist]\n\nI'm still hard at work on adding more polish for the final release. If you have any feedback or find any issues, please reach out!\n\n[url=https://discord.com/invite/Z6C37GCu5H]Discord[/url]\n[url=https://bsky.app/profile/jagriff.bsky.social]BlueSky[/url]\n[url=https://x.com/GentooRescue]Twitter[/url]\n\n- Jagriff",
+      "key": "2830480::ee5d09c9322e80512695c1aa429e7d24f585b666",
+      "tags": [
+        {
+          "feature": "\"Warp\" menu to quickly return to old puzzles. This also shows your progress on each level."
+        },
+        {
+          "feature": "Improved UI for [spoiler]importing[/spoiler] items, both manually and through the warp menu."
+        },
+        {
+          "feature": "Smoother zooming in/out with special animations for the animal on the level being zoomed."
+        },
+        {
+          "feature": "Smoke effect on rocket."
+        },
+        {
+          "feature": "New journal entry specifically for launching towards water."
+        },
+        {
+          "feature": "Better bind prompts for mouse."
+        },
+        {
+          "bug": "Wall bump and water splash particles now scale correctly with level size."
+        },
+        {
+          "feature": "An end screen for the demo with a special message."
+        }
+      ]
+    },
+    {
+      "title": "Demo update 0.5 - Closing in on release!",
+      "date": "2025-01-02 18:24:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1787858252729115",
+      "content": "The previous demo was intentionally long so that I could gather as much feedback as possible. This new version has a much more appropriate length of only 17 puzzles. The full game will have nearly 300. The demo covers:\n[olist]\n[*] \"Ground Rules\", which is the starting world showing the basic movement and win conditions.\n[*] \"Progression\", which introduces the basics of the spring item.\n[*] A couple \"Teaser\" levels that briefly show off some other mechanic(s), but without the appropriate progression that you'll see in the full game.\n[*] Some bonus content that requires discovery of deeper spring mechanics.\n[/olist]\n\nYes, some post-game exploration is still necessary to complete all demo levels, because I just couldn't help myself. I expect most players will spend:\n[list]\n[*] 20-60 minutes reaching the \"end screen\", and\n[*] 30-90 minutes completing all 17 puzzles.\n[/list]\n\nThis demo version also brings in a couple months of development updates, which includes some QoL and polish. Here are the big ones which are relevant for demo:\n[list]\n[*] Old solutions are saved. Re-entering a puzzle you've completed will put you at the end of the puzzle. You can still undo/reset to play the puzzle again, or perform many undos followed by redos to replay your solution.\n[*] Entering puzzles through the menu is more streamlined, particularly with regards to (end-of-demo spoiler) [spoiler]bringing items into levels[/spoiler].\n[*] Animation of locks being destroyed when a level is completed.\n[*] Visuals updated with much more biome variety.\n[*] Main menu updated to be more streamlined, and with new artwork.\n[*] Improved UI in menus and in-game.\n[/list]\n\nThe release date is not officially set, but I can say that it is closing in. I'm still tirelessly working to perfect all aspects of the game, so if you find any issues, please reach out. Join the [url=https://discord.com/invite/Z6C37GCu5H]Discord server[/url] and post any feedback or questions there, or just PM me (Jagriff). I'm also consistently posting updates to [url=https://bsky.app/profile/jagriff.bsky.social]BlueSky[/url] and [url=https://x.com/GentooRescue]Twitter[/url]. Any follow / like / repost would be much appreciated!",
+      "key": "2830480::82c731c50cd2be0e174553bb97afab7b8329858c",
+      "tags": [
+        {
+          "feature": "Old solutions are saved. Re-entering a puzzle you've completed will put you at the end of the puzzle. You can still undo/reset to play the puzzle again, or perform many undos followed by redos to replay your solution."
+        },
+        {
+          "feature": "Entering puzzles through the menu is more streamlined, particularly with regards to (end-of-demo spoiler) [spoiler]bringing items into levels[/spoiler]."
+        },
+        {
+          "feature": "Animation of locks being destroyed when a level is completed."
+        },
+        {
+          "feature": "Visuals updated with much more biome variety."
+        },
+        {
+          "feature": "Main menu updated to be more streamlined, and with new artwork."
+        },
+        {
+          "feature": "Improved UI in menus and in-game."
+        }
+      ]
+    },
+    {
+      "title": "Demo update 0.4 - Revamped progression now with 30 puzzles!",
+      "date": "2024-10-05 18:40:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003502929170",
+      "content": "I've gathered a lot of feedback on the previous demo, and the consensus is that it was still too difficult. I agree, and I've identified that this was not because of the mechanics or the puzzles themselves, but because the progression was too fast.\n\nDemo version 0.4 completely reworks the world puzzles and the overall organization of puzzles. The early experience is now much more representative of the full release. With 30 puzzles, there is more room for tutorial puzzles without sacrificing too much of the post-game bonus content. Don't worry! There are still difficult puzzles and teases of late-game mechanics that come without any on-boarding. It's just that they are now 100% optional.\n\nThe full version of the game is coming along nicely, but I wanted to take this detour to update the demo. It's very important that I get as much feedback as possible, and now that the demo is a better representation of the full game, the feedback will be more valuable. [url=https://discord.com/invite/Z6C37GCu5H]Want to join the conversation? Join the discord![/url]\n\n[url=https://x.com/GentooRescue]After discord, our twitter is the next-best place to get updates and follow development.[/url]\n\nBe on the look out for an announcement later this year!\n",
+      "key": "2830480::f0bbd2025c3d3f12fc6e6e713421caf5257a871a",
+      "tags": [
+        {
+          "feature": "Demo version 0.4 completely reworks the world puzzles and the overall organization of puzzles."
+        },
+        {
+          "feature": "With 30 puzzles, there is more room for tutorial puzzles without sacrificing too much of the post-game bonus content."
+        }
+      ]
+    },
+    {
+      "title": "Demo update 0.3 - Journal system and easier hubs",
+      "date": "2024-08-15 15:03:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6909171012596552377",
+      "content": "The new demo features a journal system, which will track the discovered mechanics and interactions. Once unlocked, each journal entry reveals a description and video demonstration. Players can be confident about what they've learned, and they no longer need to worry about forgetting old mechanics. Additionally, the journal features a lightbulb \"hint\" button, which will show all journal entries that are needed for the current level. This will remove uncertainty about whether the current level needs a new discovery, or if it just uses old mechanics in a new way.\n\nThe main hub levels \"The Beginning\" and \"Vignette\" were also tweaked to be a bit easier.\n\n\"The Beginning\" was particularly difficult for its place in the demo, and this difficulty was not very interesting, so it's been greatly simplified to make it easier for the player to reach new puzzles. It still features all of the same bonus content as the previous version, except the sub-puzzle \"Siblings\" has been removed. \"Siblings\" was not a great reward for the amount of secret discovery that the player needed to do to reach it. The demo also already has way too much secret and bonus content as it is.\n\nThe change to \"Vignette\" was much smaller. We just removed one crucial step from it, which was done because \"VIgnette\" already introduces a lot of new mechanics - including the meta elements.\n\nWe hope the journal system and simpler hub puzzles will round out the difficulty curve a bit. The on-boarding is still quite a bit rushed compared to the full game, but we believe the new demo is much closer than the old version.\n\n[url=https://discord.com/invite/Z6C37GCu5H]Please join our discord for feedback![/url]",
+      "key": "2830480::ae4e736d94b86ccb86dab40f57624a4a2c76ae49",
+      "tags": [
+        {
+          "feature": "The new demo features a journal system, which will track the discovered mechanics and interactions."
+        },
+        {
+          "feature": "Once unlocked, each journal entry reveals a description and video demonstration."
+        },
+        {
+          "feature": "Additionally, the journal features a lightbulb \"hint\" button, which will show all journal entries that are needed for the current level."
+        },
+        {
+          "feature": "The main hub levels \"The Beginning\" and \"Vignette\" were also tweaked to be a bit easier."
+        },
+        {
+          "balance_change": "\"The Beginning\" was particularly difficult for its place in the demo, and this difficulty was not very interesting, so it's been greatly simplified to make it easier for the player to reach new puzzles."
+        },
+        {
+          "feature": "It still features all of the same bonus content as the previous version, except the sub-puzzle \"Siblings\" has been removed."
+        },
+        {
+          "feature": "The change to \"Vignette\" was much smaller. We just removed one crucial step from it, which was done because \"VIgnette\" already introduces a lot of new mechanics - including the meta elements."
+        }
+      ]
+    },
+    {
+      "title": "Major demo update!",
+      "date": "2024-07-26 11:03:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094352185140",
+      "content": "Demo has been updated! The new demo features metroidvania-esque elements, where backtracking is rewarded and different levels can influence one another.\n\nThis demo contains 15 puzzles, and will take roughly:\n[list]\n[*] 30+ minutes to reach the end screen\n[*] 100+ minutes to complete all puzzles\n[*] 150+ minutes to obsessively complete literally everything (don't do this)\n[/list]\n\nI wanted to cram as much as possible into this demo, so on-boarding is a little rushed. Things will ramp up a lot more nicely in the full game. Please reach out if you have any issues, especially any accessibility or QoL concerns.\n\n[url=https://discord.com/invite/Z6C37GCu5H]Please join our discord for feedback![/url]",
+      "key": "2830480::7d164304388f5f0d44cf456b8ffd2a2b97c73e8b",
+      "tags": [
+        {
+          "feature": "The new demo features metroidvania-esque elements, where backtracking is rewarded and different levels can influence one another."
+        }
+      ]
+    }
+  ]
+}

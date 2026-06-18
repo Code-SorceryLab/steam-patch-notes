@@ -1,0 +1,141 @@
+{
+  "appId": "2261380",
+  "count": 3,
+  "notes": [
+    {
+      "title": "Devlog #7 - Rendering",
+      "date": "2025-04-10 05:29:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172240458",
+      "content": "This post is about a few different aspects regarding how the game is being rendered. It's mostly technical but I figured it might still be interesting to see behind the scenes a bit.\n\nWe're using Unity as the engine for this game. A game engine is a piece of software that provides various features for you, such as systems for animations, the UI, or how things get drawn (rendered).\nThis brings a bunch of benefits for game developers - creating all of this yourself is a big non-trivial task, so using an existing engine can save a lot of time. Plus if it's an engine that's already been used by many other games that probably means it comes with many helpful features have been proven to work well.\n\nOn the other hand, using something that has been created by others to work across a wide variety of games can also mean that despite being adaptable to your needs it's probably not going to be a 100% perfect match. If you need a feature to work slightly differently you might be out of luck, especially if it's an engine like Unity where you can't change the source code yourself. Also, since the features were designed to work for many different purposes and to have as few limitations as possible, they are probably doing things that you never need, or are doing things in a way that aren't necessarily the most optimal performance-wise for your specific game.\n\nThis is why we're not using many of Unitys default features and are developing our own solutions instead. One big area where we're doing a lot of custom work is rendering.\n    \n[i]You might think: why are you even using Unity then, couldn't you just make your own engine?\nWe're still using many lower-level Unity features such as the graphics API abstractions; how assets are being loaded; and being able to deploy to many different platforms is great. So while we're not using some big parts of it the remaining parts still save us a lot of time.\n\nI also want to point out that this is not supposed to be a \"Unity is bad\" post. When we decide to not use a Unity feature it's [u]usually[/u] not because what Unity has is not good, but because we have some needs that other games might not have, or we might want to have more control over what's going on so we can do some slightly unusual things. Also Unity is constantly changing too - some of the things we have developed ourselves they have added in similar form in the meantime as well, so if were restarting development on this game today then the decision to develop some things ourselves might look differently.[/i]\n\n\n[h2]Frustum culling[/h2]\nYou don't want to tell the graphics card to render things that aren't visible on screen, so you need to check if your object would be visible or not.\nUnity does this on the CPU, which can have some benefits. For the type of games that we're making that's not great though, because:\n[list][*]we have [b]lots[/b] of objects (e.g. a single house is not \"one object\" but created from hundreds of individual pieces).\nChecking them individually one after another is slow.[/*][*]our games are more CPU-intense than most. Simulating all the little people running around needs to happen on the CPU, so ideally we want to avoid  keeping it busy with other tasks as much as we can.[/*][/list]\nSo we're doing this on the GPU instead. This is great because GPUs can easily do these visibility checks for many objects in parallel, and since we're not going for AAA graphics we can afford moving some tasks to the GPU.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/e7f36f2825f106b6ade1abe49d11c504db895935.gif[/img]\n\n[h2]LOD[/h2]\nUsually it's a good idea to draw things that are appearing tiny on screen at a lower level of detail.\n\nUnity unfortunately doesn't have a tool to automatically generate lower level of detail versions of your objects (it looks like they're adding one soon though).\nBuilding these manually is a mind-numbing task, and while there are some commercial tools for creating them automatically the ones we found are either super expensive or not very good, so we built this ourselves.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/e33ce5228c77ca3339dcbc9869495f8857fd26ef.gif[/img]\n\n[h2]Postprocessing[/h2]\nPostprocessing layers effects on top of the rendered image, which can change the look of the game quite significantly.\nHere's a look at some of our most important postprocessing effects.\n\n[h3]Forest shadows[/h3]\nWe want to give the feeling that the town is located in a clearing somewhere deep within an ancient, dense forest.\nTo emphasize this we gradually darken anything outside the area you can build in. It's essentially the same as a [url=https://en.wikipedia.org/wiki/Distance_fog]distance fog[/url] effect, just using the distance to the playable area instead of the distance to the camera.\n\nApart from looking nice this effect has the additional benefits of making it a bit more clear where you can't build, and it nicely hides the seam that would otherwise be visible where our terrain ends.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/639b4bf62bd8707a543d96f6d167ee40ac82f216.png[/img]\n[i]Left: effect off; right: effect on[/i]\n\n[h3]Volumetric light rays[/h3]\nThese light rays add a lot to the atmosphere of the scene.\nThey are [url=https://en.wikipedia.org/wiki/Ray_marching]ray marched[/url]. We tried a few ways to fake them with geometry which would be cheaper performance-wise but it didn't give us results we were satisfied with.\n\nThis effect only appears at the edge of the playing area. It would be a bit distracting if it appeared everywhere.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/10c948217e3a68e62a8c6e85656dfe009d66bfc1.png[/img]\n[i]Left: effect off; right: effect on[/i]\n\n[h3]Voxel AO/GI[/h3]\nThis one seemed a bit crazy to do, but it's working really well.\nNice lighting is one of the most important things for making a game look good. In games with predesigned levels it's achieved by doing some heavy pre-calculations that can take many hours to complete.\nIn our games the players place all of the objects, so we can't pre-calculate anything. To still get nice lighting in Parkitect we used [url=https://en.wikipedia.org/wiki/Screen_space_ambient_occlusion]screen space ambient occlusion (SSAO)[/url], which is an effect that tries to darken areas that less directly exposed to light. There can be some artifacts such as some flickering when objects disappear or dark halos around objects where it doesn't make much sense but overall it works reasonably well.\n\nI've been keeping an eye on better methods for the past few years and one called [url=https://www.gamedeveloper.com/programming/graphics-deep-dive-cascaded-voxel-cone-tracing-in-i-the-tomorrow-children-i-]Voxel Cone Tracing[/url] was looking quite promising, so we tried building something based on that for Croakwood.\n[url=https://wickedengine.net/2017/08/voxel-based-global-illumination/]This article[/url] gives a pretty good overview for the technical details, but in short, we first create a [url=https://de.wikipedia.org/wiki/Voxel]voxel[/url] representation of our scene. This means rendering any contributing object a second time (at a lower LOD level) in a special way, which gives us this slightly Minecraft-looking version of the world:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/0ddf57a5b107c9c012452ebe38c8b6808c1a7139.gif[/img]\n\nThis can then be used to fairly efficiently calculate ambient occlusion and color bounces:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/a842d8a9124edb44f0c4e45c831dc619f5527025.png[/img]\n[i]Ambient occlusion[/i]\n\n[img]{STEAM_CLAN_IMAGE}/45051606/ec4cbafc1c9fccc9c129da43b02f64479ecf7c95.png[/img]\n[i]Color bounce[/i]\n\nHere's a comparison how this looks in-game with the effect turned on/disabled:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/70632c3f1a9d026176691ae0417173e253ca991b.png[/img]\n[i]Left: effect off; right: effect on[/i]\n\nWe think the AO we get from this looks nicer and more \"correct\" than SSAO, without any of its artifacts. Additionally we get a light color bounce along with the AO more or less for free, as a sort of very basic [url=https://en.wikipedia.org/wiki/Global_illumination]GI[/url] approximation.\nSome open areas for improvements that we still want to investigate is doing more light bounces, and using the voxel representation for real-time reflections on shiny materials.\n\nAnother benefit that's quite specific to our game is that it allows us to still get AO from objects that aren't visible, which is quite nice when looking into a building.\nNote how in this example the roof is hidden, but you still get a color gradient on the wall in the corner where the roof would be:\n[img]{STEAM_CLAN_IMAGE}/45051606/f97d2b33cb859d112f8e2005b5ece620cc3e94fb.png[/img]",
+      "key": "2261380::18e0e2206a10742357acfe80fe482fadb653e2d9",
+      "tags": [
+        {
+          "feature": "- Unity unfortunately doesn't have a tool to automatically generate lower level of detail versions of your objects (it looks like they're adding one soon though)."
+        },
+        {
+          "feature": "So we're doing this on the GPU instead."
+        },
+        {
+          "feature": "We want to give the feeling that the town is located in a clearing somewhere deep within an ancient, dense forest."
+        },
+        {
+          "feature": "To emphasize this we gradually darken anything outside the area you can build in."
+        },
+        {
+          "feature": "It's essentially the same as a distance fog effect, just using the distance to the playable area instead of the distance to the camera."
+        },
+        {
+          "feature": "Apart from looking nice this effect has the additional benefits of making it a bit more clear where you can't build, and it nicely hides the seam that would otherwise be visible where our terrain ends."
+        },
+        {
+          "feature": "These light rays add a lot to the atmosphere of the scene."
+        },
+        {
+          "feature": "They are ray marched."
+        },
+        {
+          "feature": "We tried a few ways to fake them with geometry which would be cheaper performance-wise but it didn't give us results we were satisfied with."
+        },
+        {
+          "feature": "This effect only appears at the edge of the playing area."
+        },
+        {
+          "feature": "It would be a bit distracting if it appeared everywhere."
+        },
+        {
+          "feature": "This one seemed a bit crazy to do, but it's working really well."
+        },
+        {
+          "feature": "Nice lighting is one of the most important things for making a game look good."
+        },
+        {
+          "feature": "In games with predesigned levels it's achieved by doing some heavy pre-calculations that can take many hours to complete."
+        },
+        {
+          "feature": "In our games the players place all of the objects, so we can't pre-calculate anything."
+        },
+        {
+          "feature": "To still get nice lighting in Parkitect we used screen space ambient occlusion (SSAO), which is an effect that tries to darken areas that less directly exposed to light."
+        },
+        {
+          "feature": "There can be some artifacts such as some flickering when objects disappear or dark halos around objects where it doesn't make much sense but overall it works reasonably well."
+        },
+        {
+          "feature": "I've been keeping an eye on better methods for the past few years and one called Voxel Cone Tracing was looking quite promising, so we tried building something based on that for Croakwood."
+        },
+        {
+          "feature": "This article gives a pretty good overview for the technical details, but in short, we first create a voxel representation of our scene."
+        },
+        {
+          "feature": "This means rendering any contributing object a second time (at a lower LOD level) in a special way, which gives us this slightly Minecraft-looking version of the world:"
+        },
+        {
+          "feature": "This can then be used to fairly efficiently calculate ambient occlusion and color bounces:"
+        },
+        {
+          "feature": "We think the AO we get from this looks nicer and more \"correct\" than SSAO, without any of its artifacts."
+        },
+        {
+          "feature": "Additionally we get a light color bounce along with the AO more or less for free, as a sort of very basic GI approximation."
+        },
+        {
+          "feature": "Some open areas for improvements that we still want to investigate is doing more light bounces, and using the voxel representation for real-time reflections on shiny materials."
+        },
+        {
+          "feature": "Another benefit that's quite specific to our game is that it allows us to still get AO from objects that aren't visible, which is quite nice when looking into a building."
+        },
+        {
+          "feature": "Note how in this example the roof is hidden, but you still get a color gradient on the wall in the corner where the roof would be:"
+        }
+      ]
+    },
+    {
+      "title": "Devlog #5 - Water",
+      "date": "2024-11-12 07:50:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801756035",
+      "content": "In a game about frogs you kind of need to have water, which means you need to program a water shader. A shader is basically a short program that calculates what color a pixel should receive. To me as a programmer they can be somewhat intimidating to create - you need to write some code that, somehow, produces something that matches a certain artistic vision. Whenever I'm working on a shader I find that oftentimes the result looks terrible for a long time until eventually a tiny change is made and suddenly everything looks great, but figuring out what tiny change is required can be a long process of trying lots of different things.\n\nOftentimes it's also not clear from the start what the artistic vision is, especially when the art style of the rest of the game is still evolving, but you have to start somewhere. So one of our first tests around late 2021 for the water looked like this:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/86e298971debdc13a8fdbde44411fe49a8175de6.png[/img]\n\nWe liked the reflections and the wavy outlines around the edges of the water, but it felt like it was still missing something.\n\nEventually Marve came up with this concept art for the fishing hut:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/011f2b5f7a7ca4e80cda51a019a87c1ea16308a9.png[/img]\n\nThis concept is really more about the the objects for the fishing hut, but it still gave us a some direction for what the water could look and \"feel\" like.\n\nOver the next few years we kept making small tweaks to the water shader until eventually arriving at the current version, which looks like this:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/88d8dcc3f6a8dfc51f05b887bfbfd8149024802f.png[/img]\n\nThis is what I meant at the start of this post - from a technical point of view this is really not all too different from the very first version we had, there's just some tweaks to the color, the transparency, the width and shape of the outlines, and some \"smaller\" additions like the ripples from the fish and other things swimming in the water, but with all of these things together it eventually looks good.\n\nWe'll surely keep making more small changes but for now we're quite happy with how it looks.\n\n[h2]Shorelines[/h2]\nI couldn't find a lot about how other games are doing their water, so I wanted to give a bit of technical insight into how we're doing ours.\n\nProbably the easiest approach for this kind of effect is the version we used in Parkitect, which looks like this:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/267968eb74885d66f398f6684def2067472ed2ab.png[/img]\n\nThis is being created by checking if the distance from the water surface to the depth in the depth buffer is below a certain threshold. It's very easy to do and quite cheap performance-wise, but you can't do a wave movement animation towards the shore and it can look as if the effect is painted onto the objects inside the water (because it essentially is; the effect can not extend beyond the geometry of the objects inside the water, so you can also only ever see it on the side that's facing the camera, not all around the object).\n\nIn Croakwood we went for a slightly more complex approach. We're placing an orthographic camera that's looking straight down just above the water surface to get a texture that contains the outlines of anything intersecting the water surface.\nHere's an example with the generated outline texture on the right:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/589884094652cba32dea6a32df62a11356abfbb7.png[/img]\n\nTo be able to distinguish what type of shore it is we render the terrain into the green color channel and anything else into the red color channel (we do this so that we can give the wave effect a different movement direction and slightly different look depending on whether it's around the terrain or an object).\n\nThen for every pixel in this outline texture we calculate the distance to the nearest shoreline pixel which can be done really fast on the GPU as explained in [url=https://bgolus.medium.com/the-quest-for-very-wide-outlines-ba82ed442cd9]this excellent article[/url].\n\n[img]{STEAM_CLAN_IMAGE}/45051606/781885a0daa579a5d0a7e708e8d05ebc3553cbeb.png[/img]\n\n[i]Signed Distance Field generated for the shoreline effect (the version on the right is just a different visualization to better understand what's going on)[/i]\n\nAnd that's all we need to know where the shoreline effect should appear! They work for objects of any shape, fully surround them and nicely combine if there are multiple nearby objects.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/d0c26d2c8090e288bb3d9cace69eb925c1db7aaf.png[/img]\n\n[h2]Waves[/h2]\nThe waves created by swimming frogs and fish look like they might be fairly complex, but it's surprisingly just a couple dozen lines of code in a compute shader. [url=https://john-wigg.dev/DynamicWaterDemo/]This article[/url] and [url=https://www.youtube.com/watch?v=5EyL0WpjdI8]this video[/url] explain it better than I could.\n",
+      "key": "2261380::0066b06e87a75bfd1449a05d417b212d63223eec",
+      "tags": [
+        {
+          "feature": "- We'll surely keep making more small changes but for now we're quite happy with how it looks."
+        }
+      ]
+    },
+    {
+      "title": "Devlog #2 - Terrain",
+      "date": "2024-07-08 04:30:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267348930887",
+      "content": "Where do you even start developing a game? There's so many things you need to work on at the same time.\nA good starting point probably is the terrain and general environment, so let's take a look at how that developed.\n\nAs with any feature, it starts very simple. Over time we get a better idea for what exactly we need and we keep iterating to improve and expand.\nSince we knew it would be a grid-based game again our starting point was the Parkitect terrain. The main challenge is that you have to be able to build paths and buildings on the terrain, which means the terrain can't be too bumpy, but we still wanted it to look somewhat smooth and natural.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/28502402ebe9e17575ed8d966cf5c9aef3270a71.png[/img]\n[i]First Croakwood terrain tests, ~early 2022[/i]\n\nWhat we came up with is not too different from Parkitects terrain actually - it's secretly still using the same blocky slopes that work well for putting paths on them, but then we add a bunch more polygons to it, smoothen it using ideas from [url=https://en.wikipedia.org/wiki/B%C3%A9zier_surface]Bezier surfaces[/url] and add a bit of random bumpiness.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/0043615a43b27e7ed5a61862bf5238f393747a00.png[/img]\n\nThis creates the problem of the bumps in the terrain clipping through the paths...\n\n[img]{STEAM_CLAN_IMAGE}/45051606/da4b1a57bd31920d44fc15d8a619b1613e76bbc0.gif[/img]\n\n...which we can solve by flattening the terrain wherever a path is.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/cb56dd49c3403b69dc9b686032c979b5df3a3bc4.gif[/img]\n\nAnother technical challenge we had to solve was that our terrain could only be a single big rectangle initially, but we wanted to create maps that are very irregularly shaped sprawling woods, with little pockets where you can build.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/6cc1dc89d4f661c8d2830c0666cc29d80cbc3f05.png[/img]\n[i]Big rectangular terrain, ~mid 2022[/i]\n\nCreating this kind of playable space inside a big rectangle would mean there'd be a lot of wasted space, which is bad for performance. We solved it by splitting up the terrain into lots of small rectangles that can be created wherever we want, which allows us to give the map a much more freeform shape.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/53e0b9df029f503a8e4087c5432421f0b0c5535b.gif[/img]\n\nAnd since the terrain was more detailed than Parkitects we also had to add a system for reducing details in far-away areas.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/015b71904da2becc3a9bcd081b9238ad3650b2f5.png[/img]\n[i]Terrain chunks with different levels of detail[/i]\n\nFinally, to make the terrain look more interesting we added a way to paint it with a bunch of different textures.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/08aa7905c20afd3c83f811238f7a76d269cca92f.gif[/img]\n\nTo decorate the terrain even more we wanted a way to place [b]lots[/b] of objects on it, for example blades of grass.\nFiguring out a fitting style for the grass took some iterations. Especially early on we didn't fully know what the game was going to look like yet, so the first version was more of a technical test:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/9825d97f2cf9dc7c7abbd5ad51db54489172aae7.png[/img]\n[i]Early grass test, ~late 2021[/i]\n\nEventually we figured out that having a nice transition between the terrain texture and the grass is really important for it to look good.\nOn the technical side, the key to achieving this was to give the grass the same normals as the terrain to make everything look less messy, and to fade its color towards the terrain texture at the bottom.\nHere's a test where they blend together more nicely:\n\n[img]{STEAM_CLAN_IMAGE}/45051606/fd25c0ac3078625d7becaa1a72cd16c2004d07c8.png[/img]\n[i]Better fitting grass, ~mid 2022[/i]\n\nAnd finally it received some more texture to reach the current state. In addition to the grass there's a couple of other objects that can be spammed across the terrain.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/52c785b9b7a3cc8c965cbca45ac69e8722aeddec.gif[/img]\n\nThis is getting quite technical now, but there were a few questions that stumped us for a while:\n[list][*]how do you store grass in the savegame? Obviously you can't store the position of each individual blade of grass, that'd be way too much data[/*][*]how do you even keep the grass in memory? Keeping hundreds of thousands of positions for the grass blades on a huge map in memory would be too much[/*][/list]\nThe answers came from a great [url=https://www.youtube.com/watch?v=Ibe1JBF5i5Y]video on the grass in Ghost of Tsushima[/url]: you create a low-resolution density map that says how much grass should be in an area, then when that area becomes visible you generate the data you need for the grass instances (i.e. the position, rotation, which mesh to use) - we do this in a compute shader, so it's super fast. When the area goes invisible you can unload all that instance data. So all you ever need to have in memory is what's visible, and all you need to store in the savegame is the low-resolution density map.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/cd0542284737fdf602a24832bfc35c385973d959.png[/img]\n[i]Density map debug view[/i]\n\nThis allows to spawn large amounts of small objects at low performance cost.\n\n[img]{STEAM_CLAN_IMAGE}/45051606/433cd354cd12779161656d865d6854ac4ace3891.png[/img]",
+      "key": "2261380::ab186ece81bbb53cb65f024ec7dab9559759b5c7",
+      "tags": [
+        {
+          "feature": "As with any feature, it starts very simple. Over time we get a better idea for what exactly we need and we keep iterating to improve and expand."
+        },
+        {
+          "feature": "What we came up with is not too different from Parkitects terrain actually - it's secretly still using the same blocky slopes that work well for putting paths on them, but then we add a bunch more polygons to it, smoothen it using ideas from [url=https://en.wikipedia.org/wiki/B%C3%A9zier_surface]Bezier surfaces[/url] and add a bit of random bumpiness."
+        },
+        {
+          "bug": "...which we can solve by flattening the terrain wherever a path is."
+        },
+        {
+          "feature": "Creating this kind of playable space inside a big rectangle would mean there'd be a lot of wasted space, which is bad for performance. We solved it by splitting up the terrain into lots of small rectangles that can be created wherever we want, which allows us to give the map a much more freeform shape."
+        },
+        {
+          "feature": "And since the terrain was more detailed than Parkitects we also had to add a system for reducing details in far-away areas."
+        },
+        {
+          "feature": "Finally, to make the terrain look more interesting we added a way to paint it with a bunch of different textures."
+        },
+        {
+          "feature": "To decorate the terrain even more we wanted a way to place [b]lots[/b] of objects on it, for example blades of grass."
+        },
+        {
+          "feature": "On the technical side, the key to achieving this was to give the grass the same normals as the terrain to make everything look less messy, and to fade its color towards the terrain texture at the bottom."
+        },
+        {
+          "feature": "This allows to spawn large amounts of small objects at low performance cost."
+        }
+      ]
+    }
+  ]
+}

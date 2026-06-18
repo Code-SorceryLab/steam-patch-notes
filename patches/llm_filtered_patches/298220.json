@@ -1,0 +1,1191 @@
+{
+  "appId": "298220",
+  "count": 29,
+  "notes": [
+    {
+      "title": "Terraformer Expedition to Mars Major Update 11/18/15",
+      "date": "2015-11-19 05:40:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/377536475377816756",
+      "content": "[I]- Leo's write up is now an option in the PDA[/I]\r\n- The html parser is a very stripped down parser.\r\n\t- It uses the <P STYLE=margin-bottom: 0in> as an indicator of a new section, \r\n\tthis section text will appear on the main index page of the PDA Guide\r\n\t- It uses the NAME= tag of any <IMG SRC lines to determine the picture to display, these pictures must be in the /Textures \tsubdirectory of the main working folder.\r\n\t- Although it supports a number of & statements it does not support them all.\r\n\r\n[I]- Water cycle[/I]\r\n- This is pretty much a rewrite.\r\n\t- A couple of liquid type block rendering issues were addressed.\r\n\t- The melt rate of (any solid to liquid/gas), now uses a chance value.\r\n\t- The precipitation rate of any liquid to gas now uses a chance value.\r\n\t- The rain rate of any gas to a solid now uses a chance value.\r\n\t- The value of these chance values can be changed via the 'WaterCycle' hack code.\r\n\t- To make rendering of the water melt more realistic and the code run faster, \r\n\t  fully obscured water blocks have a high probability of turning back to a solid.\r\n\t- Water flowing now goes in 8 directions instead of 4, water flow direction and speed have been improved.\r\n\t- Stand alone water puddles have a high chance of evaporating, as do higher elevation water blocks\r\n\t- Lower elevation water blocks have lower chance of evaporating.\r\n\t- This makes water collection in craters much easier and doable.\r\n\t- Clouds systems have been introduced.\r\n\t\t- Two vortexes are created on the planet, one southern latitude, the other in the north.\r\n\t\t- Clouds have been added to the GPS, so you can visibly  see these vortexes in action.\r\n\t\t- These vortexes suck in clouds, they rotate the planet either CW or CCW depending on the latitude.\r\n\t\t- Clouds in these vortexes have a high chance of dumping rain.\r\n\t\t- So what happens is, over time the planet will accumulate bands of water\r\n\t\t- These bands could be funneled to an appropriate player determined spot, like a crater, via a player built canal.\r\n\t\t- The size of the vortex can be changed via the 'WaterCycle' hack code.\r\n\r\n\r\n[I]- Vortices[/I]\r\n\t- Hellas Planitia,  Argyre Planitia, Valles Marineris each has a vortex that orbits these features.\r\n\t- (Look at the fractal files to these to see how I add these)\r\n\t- (Look at the block defs to see the options on how a Vortex if defined as a block type/\r\n\t- Planum Boreum has a commented out storm, you can uncomment this to get a 4th\r\n\t- Note: Clouds are always attracted to the nearest vortex, so an added vortex might not get any clouds based on their location.\r\n\r\n[I]- Iron core fingers are smaller[/I]\r\n\r\n[I]- Ice caps are smaller, Planum Australe is now approx. 66% dry ice.[I/]\r\n\r\n[I]- Elevation evaporation[/I]\r\n\t- I ditched the higher evaporation rate for water with no neighbors, it was conflicted with the elevation based evaporation\r\n\t- Added 3 new sliders to \"WaterCycle\" hack code dlg.\r\n\t\t- Elevation cutoff, defaults to 96\r\n\t\t- Below cutoff, evaporation scalar\r\n\t\t- Above cutoff, evaporation scalar\r\n\r\n[I]- Smaller sun[/I]\r\n\r\n[I]- New tool - Blaster[/I]\r\n\t- Has no shooting graphics\r\n\t- Deletes blocks, creates the atmos gas associated with the block\r\n\t- Doesn't work on aliens, works like a normal weapon in this case\r\n\r\n[I]- Water flow speed[/I]\r\n\t- This has been increased, I worry about FPS with this increase.\r\n\r\n[I]- All plants grow twice as fast[I]\r\n- Psychrophiles are now temp=0,60\r\n- Radiophiles are now temp=28,160\r\n- Growing bacteria triggers the 'first plant' achievement, outside plant still requires 'real' plant\r\n- Methane going negative, I have put a clamp of zero on all gases, this has not been tested\r\n\r\n[I]- Fixed: Overwrite of underground levels with random features is now prevented[/I]\r\n\r\n[I]- Added populated food rations slot to the spacesuit[/I]\r\n\r\n[I]- Water flow rate is adjustable via the 'WaterCycle' hack code[/I]\r\n\r\n\r\n[b]IMPORTANT![/b]\r\nThis update breaks saved games that have aqueduct pump or pipes\r\n\r\nBecause I changed the fractal definitions, saved games can have\r\n mislabeled features.\r\nBecause of this, in reality, this update breaks all saved games.\r\n",
+      "key": "298220::1428e8fadc77c4dc9ffcad158e9b0f6328b2944c",
+      "tags": [
+        {
+          "feature": "[I]- Leo's write up is now an option in the PDA[/I]"
+        },
+        {
+          "bug": "- A couple of liquid type block rendering issues were addressed."
+        },
+        {
+          "balance_change": "- The melt rate of (any solid to liquid/gas), now uses a chance value."
+        },
+        {
+          "balance_change": "- The precipitation rate of any liquid to gas now uses a chance value."
+        },
+        {
+          "balance_change": "- The rain rate of any gas to a solid now uses a chance value."
+        },
+        {
+          "balance_change": "- To make rendering of the water melt more realistic and the code run faster, fully obscured water blocks have a high probability of turning back to a solid."
+        },
+        {
+          "balance_change": "- Water flowing now goes in 8 directions instead of 4, water flow direction and speed have been improved."
+        },
+        {
+          "balance_change": "- Stand alone water puddles have a high chance of evaporating, as do higher elevation water blocks"
+        },
+        {
+          "balance_change": "- Lower elevation water blocks have lower chance of evaporating."
+        },
+        {
+          "feature": "- Clouds systems have been introduced."
+        },
+        {
+          "feature": "- Two vortexes are created on the planet, one southern latitude, the other in the north."
+        },
+        {
+          "feature": "- Clouds have been added to the GPS, so you can visibly see these vortexes in action."
+        },
+        {
+          "balance_change": "- Clouds in these vortexes have a high chance of dumping rain."
+        },
+        {
+          "balance_change": "- So what happens is, over time the planet will accumulate bands of water"
+        },
+        {
+          "balance_change": "- These bands could be funneled to an appropriate player determined spot, like a crater, via a player built canal."
+        },
+        {
+          "balance_change": "- The size of the vortex can be changed via the 'WaterCycle' hack code."
+        },
+        {
+          "balance_change": "- Hellas Planitia, Argyre Planitia, Valles Marineris each has a vortex that orbits these features."
+        },
+        {
+          "balance_change": "- Planum Boreum has a commented out storm, you can uncomment this to get a 4th"
+        },
+        {
+          "balance_change": "- Note: Clouds are always attracted to the nearest vortex, so an added vortex might not get any clouds based on their location."
+        },
+        {
+          "balance_change": "- Iron core fingers are smaller"
+        },
+        {
+          "balance_change": "- Ice caps are smaller, Planum Australe is now approx. 66% dry ice."
+        },
+        {
+          "balance_change": "- I ditched the higher evaporation rate for water with no neighbors, it was conflicted with the elevation based evaporation"
+        },
+        {
+          "feature": "- Added 3 new sliders to \"WaterCycle\" hack code dlg."
+        },
+        {
+          "balance_change": "- Smaller sun"
+        },
+        {
+          "feature": "- New tool - Blaster"
+        },
+        {
+          "bug": "- Has no shooting graphics"
+        },
+        {
+          "bug": "- Deletes blocks, creates the atmos gas associated with the block"
+        },
+        {
+          "bug": "- Doesn't work on aliens, works like a normal weapon in this case"
+        },
+        {
+          "balance_change": "- This has been increased, I worry about FPS with this increase."
+        },
+        {
+          "balance_change": "- All plants grow twice as fast"
+        },
+        {
+          "balance_change": "- Psychrophiles are now temp=0,60"
+        },
+        {
+          "balance_change": "- Radiophiles are now temp=28,160"
+        },
+        {
+          "feature": "- Growing bacteria triggers the 'first plant' achievement, outside plant still requires 'real' plant"
+        },
+        {
+          "balance_change": "- Methane going negative, I have put a clamp of zero on all gases, this has not been tested"
+        },
+        {
+          "bug": "- Fixed: Overwrite of underground levels with random features is now prevented"
+        },
+        {
+          "feature": "- Added populated food rations slot to the spacesuit"
+        },
+        {
+          "balance_change": "- Water flow rate is adjustable via the 'WaterCycle' hack code"
+        }
+      ]
+    },
+    {
+      "title": "Terraformer Expedition to Mars Major Update 11/18/15",
+      "date": "2015-11-19 05:40:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680680930",
+      "content": "[I]- Leo's write up is now an option in the PDA[/I]\r\n- The html parser is a very stripped down parser.\r\n\t- It uses the <P STYLE=margin-bottom: 0in> as an indicator of a new section, \r\n\tthis section text will appear on the main index page of the PDA Guide\r\n\t- It uses the NAME= tag of any <IMG SRC lines to determine the picture to display, these pictures must be in the /Textures \tsubdirectory of the main working folder.\r\n\t- Although it supports a number of & statements it does not support them all.\r\n\r\n[I]- Water cycle[/I]\r\n- This is pretty much a rewrite.\r\n\t- A couple of liquid type block rendering issues were addressed.\r\n\t- The melt rate of (any solid to liquid/gas), now uses a chance value.\r\n\t- The precipitation rate of any liquid to gas now uses a chance value.\r\n\t- The rain rate of any gas to a solid now uses a chance value.\r\n\t- The value of these chance values can be changed via the 'WaterCycle' hack code.\r\n\t- To make rendering of the water melt more realistic and the code run faster, \r\n\t  fully obscured water blocks have a high probability of turning back to a solid.\r\n\t- Water flowing now goes in 8 directions instead of 4, water flow direction and speed have been improved.\r\n\t- Stand alone water puddles have a high chance of evaporating, as do higher elevation water blocks\r\n\t- Lower elevation water blocks have lower chance of evaporating.\r\n\t- This makes water collection in craters much easier and doable.\r\n\t- Clouds systems have been introduced.\r\n\t\t- Two vortexes are created on the planet, one southern latitude, the other in the north.\r\n\t\t- Clouds have been added to the GPS, so you can visibly  see these vortexes in action.\r\n\t\t- These vortexes suck in clouds, they rotate the planet either CW or CCW depending on the latitude.\r\n\t\t- Clouds in these vortexes have a high chance of dumping rain.\r\n\t\t- So what happens is, over time the planet will accumulate bands of water\r\n\t\t- These bands could be funneled to an appropriate player determined spot, like a crater, via a player built canal.\r\n\t\t- The size of the vortex can be changed via the 'WaterCycle' hack code.\r\n\r\n\r\n[I]- Vortices[/I]\r\n\t- Hellas Planitia,  Argyre Planitia, Valles Marineris each has a vortex that orbits these features.\r\n\t- (Look at the fractal files to these to see how I add these)\r\n\t- (Look at the block defs to see the options on how a Vortex if defined as a block type/\r\n\t- Planum Boreum has a commented out storm, you can uncomment this to get a 4th\r\n\t- Note: Clouds are always attracted to the nearest vortex, so an added vortex might not get any clouds based on their location.\r\n\r\n[I]- Iron core fingers are smaller[/I]\r\n\r\n[I]- Ice caps are smaller, Planum Australe is now approx. 66% dry ice.[I/]\r\n\r\n[I]- Elevation evaporation[/I]\r\n\t- I ditched the higher evaporation rate for water with no neighbors, it was conflicted with the elevation based evaporation\r\n\t- Added 3 new sliders to \"WaterCycle\" hack code dlg.\r\n\t\t- Elevation cutoff, defaults to 96\r\n\t\t- Below cutoff, evaporation scalar\r\n\t\t- Above cutoff, evaporation scalar\r\n\r\n[I]- Smaller sun[/I]\r\n\r\n[I]- New tool - Blaster[/I]\r\n\t- Has no shooting graphics\r\n\t- Deletes blocks, creates the atmos gas associated with the block\r\n\t- Doesn't work on aliens, works like a normal weapon in this case\r\n\r\n[I]- Water flow speed[/I]\r\n\t- This has been increased, I worry about FPS with this increase.\r\n\r\n[I]- All plants grow twice as fast[I]\r\n- Psychrophiles are now temp=0,60\r\n- Radiophiles are now temp=28,160\r\n- Growing bacteria triggers the 'first plant' achievement, outside plant still requires 'real' plant\r\n- Methane going negative, I have put a clamp of zero on all gases, this has not been tested\r\n\r\n[I]- Fixed: Overwrite of underground levels with random features is now prevented[/I]\r\n\r\n[I]- Added populated food rations slot to the spacesuit[/I]\r\n\r\n[I]- Water flow rate is adjustable via the 'WaterCycle' hack code[/I]\r\n\r\n\r\n[b]IMPORTANT![/b]\r\nThis update breaks saved games that have aqueduct pump or pipes\r\n\r\nBecause I changed the fractal definitions, saved games can have\r\n mislabeled features.\r\nBecause of this, in reality, this update breaks all saved games.\r\n",
+      "key": "298220::974aaf0090a68a46513beac6d4dfe2ead5ab4e0b",
+      "tags": [
+        {
+          "feature": "[I]- Leo's write up is now an option in the PDA[/I]"
+        },
+        {
+          "bug": "- A couple of liquid type block rendering issues were addressed."
+        },
+        {
+          "balance_change": "- The melt rate of (any solid to liquid/gas), now uses a chance value."
+        },
+        {
+          "balance_change": "- The precipitation rate of any liquid to gas now uses a chance value."
+        },
+        {
+          "balance_change": "- The rain rate of any gas to a solid now uses a chance value."
+        },
+        {
+          "balance_change": "- To make rendering of the water melt more realistic and the code run faster, fully obscured water blocks have a high probability of turning back to a solid."
+        },
+        {
+          "balance_change": "- Water flowing now goes in 8 directions instead of 4, water flow direction and speed have been improved."
+        },
+        {
+          "balance_change": "- Stand alone water puddles have a high chance of evaporating, as do higher elevation water blocks"
+        },
+        {
+          "balance_change": "- Lower elevation water blocks have lower chance of evaporating."
+        },
+        {
+          "feature": "- Clouds systems have been introduced."
+        },
+        {
+          "feature": "- Two vortexes are created on the planet, one southern latitude, the other in the north."
+        },
+        {
+          "feature": "- Clouds have been added to the GPS, so you can visibly see these vortexes in action."
+        },
+        {
+          "balance_change": "- Clouds in these vortexes have a high chance of dumping rain."
+        },
+        {
+          "balance_change": "- So what happens is, over time the planet will accumulate bands of water"
+        },
+        {
+          "balance_change": "- These bands could be funneled to an appropriate player determined spot, like a crater, via a player built canal."
+        },
+        {
+          "balance_change": "- The size of the vortex can be changed via the 'WaterCycle' hack code."
+        },
+        {
+          "balance_change": "- Hellas Planitia, Argyre Planitia, Valles Marineris each has a vortex that orbits these features."
+        },
+        {
+          "balance_change": "- Planum Boreum has a commented out storm, you can uncomment this to get a 4th"
+        },
+        {
+          "balance_change": "- Note: Clouds are always attracted to the nearest vortex, so an added vortex might not get any clouds based on their location."
+        },
+        {
+          "balance_change": "- Iron core fingers are smaller"
+        },
+        {
+          "balance_change": "- Ice caps are smaller, Planum Australe is now approx. 66% dry ice."
+        },
+        {
+          "balance_change": "- I ditched the higher evaporation rate for water with no neighbors, it was conflicted with the elevation based evaporation"
+        },
+        {
+          "feature": "- Added 3 new sliders to \"WaterCycle\" hack code dlg."
+        },
+        {
+          "balance_change": "- Smaller sun"
+        },
+        {
+          "feature": "- New tool - Blaster"
+        },
+        {
+          "bug": "- Has no shooting graphics"
+        },
+        {
+          "bug": "- Deletes blocks, creates the atmos gas associated with the block"
+        },
+        {
+          "bug": "- Doesn't work on aliens, works like a normal weapon in this case"
+        },
+        {
+          "balance_change": "- This has been increased, I worry about FPS with this increase."
+        },
+        {
+          "balance_change": "- All plants grow twice as fast"
+        },
+        {
+          "balance_change": "- Psychrophiles are now temp=0,60"
+        },
+        {
+          "balance_change": "- Radiophiles are now temp=28,160"
+        },
+        {
+          "feature": "- Growing bacteria triggers the 'first plant' achievement, outside plant still requires 'real' plant"
+        },
+        {
+          "balance_change": "- Methane going negative, I have put a clamp of zero on all gases, this has not been tested"
+        },
+        {
+          "bug": "- Fixed: Overwrite of underground levels with random features is now prevented"
+        },
+        {
+          "feature": "- Added populated food rations slot to the spacesuit"
+        },
+        {
+          "balance_change": "- Water flow rate is adjustable via the 'WaterCycle' hack code"
+        }
+      ]
+    },
+    {
+      "title": "TERRAFORMER EXPEDITION TO MARS 9/21/15 UPDATE",
+      "date": "2015-09-21 11:28:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/405678163093075802",
+      "content": "[*] Save/load game edit box\r\n\t         - right/left/back space, etc. keys now work in the edit boxes\r\n\t          - Displays the time of the game save\r\n\r\n- Save game, checks for and appends .save to user named filenames, so they'll correctly show up in the load game list.\r\n\r\n[*] Containers\r\n\t - Found and fixed issue with load game and potential container bug.\r\n\t - Found and fixed issue with drag/drop and potential container bug.\r\n\t - Found and fixed issue with consumption thread cycle and potential container bug.\r\n\t- Container operations have additional error checking. errors will show up in 'log.txt'.\r\n\r\n[*] Tool tips\r\n\t- Ditched the use of WM_TIMER windows timer messages, as these are low priority, unreliable messages.\r\n\t- I now use a hi-res timer for this, (the same timer I use for calc'ing FPS).\r\n\t- Added a game option so the player can change the tooltip delay time, 0.1 seconds to 5 seconds.\r\n\t- Refactored the tooltip formatting, \r\n\t\tadded time to next 'consume/produce' cycle \r\n\t\tchanged colors for on vs off\r\n\t\tchanged colors for valid operations\r\n\t\tadded which mouse button info to valid operations\r\n\r\n\r\n[*] Electricity\r\n\t- Producers now keep a list of electricity consumers and how much each is using\r\n\t- This list is displayed in tooltip for electrical generation items\r\n\t- Notes: Old save games will not display this list until one complete consumption cycle has completed\r\n\r\n[*] Consume/produce cycle\r\n\t- Fixed bug where in some cases a double consume was being performed\r\n",
+      "key": "298220::9f49aed0139c1b425a95fdd66feeb948998ccfc1",
+      "tags": [
+        {
+          "bug": "- right/left/back space, etc. keys now work in the edit boxes"
+        },
+        {
+          "bug": "- Save game, checks for and appends .save to user named filenames, so they'll correctly show up in the load game list."
+        },
+        {
+          "bug": "- Found and fixed issue with load game and potential container bug."
+        },
+        {
+          "bug": "- Found and fixed issue with drag/drop and potential container bug."
+        },
+        {
+          "bug": "- Found and fixed issue with consumption thread cycle and potential container bug."
+        },
+        {
+          "bug": "- Container operations have additional error checking. errors will show up in 'log.txt'."
+        },
+        {
+          "feature": "- Added a game option so the player can change the tooltip delay time, 0.1 seconds to 5 seconds."
+        },
+        {
+          "feature": "- Refactored the tooltip formatting, \n\t\tadded time to next 'consume/produce' cycle \n\t\tchanged colors for on vs off\n\t\tchanged colors for valid operations\n\t\tadded which mouse button info to valid operations"
+        },
+        {
+          "feature": "- Producers now keep a list of electricity consumers and how much each is using"
+        },
+        {
+          "feature": "- This list is displayed in tooltip for electrical generation items"
+        },
+        {
+          "bug": "- Fixed bug where in some cases a double consume was being performed"
+        }
+      ]
+    },
+    {
+      "title": "TERRAFORMER EXPEDITION TO MARS 9/21/15 UPDATE",
+      "date": "2015-09-21 11:28:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680681877",
+      "content": "[*] Save/load game edit box\r\n\t         - right/left/back space, etc. keys now work in the edit boxes\r\n\t          - Displays the time of the game save\r\n\r\n- Save game, checks for and appends .save to user named filenames, so they'll correctly show up in the load game list.\r\n\r\n[*] Containers\r\n\t - Found and fixed issue with load game and potential container bug.\r\n\t - Found and fixed issue with drag/drop and potential container bug.\r\n\t - Found and fixed issue with consumption thread cycle and potential container bug.\r\n\t- Container operations have additional error checking. errors will show up in 'log.txt'.\r\n\r\n[*] Tool tips\r\n\t- Ditched the use of WM_TIMER windows timer messages, as these are low priority, unreliable messages.\r\n\t- I now use a hi-res timer for this, (the same timer I use for calc'ing FPS).\r\n\t- Added a game option so the player can change the tooltip delay time, 0.1 seconds to 5 seconds.\r\n\t- Refactored the tooltip formatting, \r\n\t\tadded time to next 'consume/produce' cycle \r\n\t\tchanged colors for on vs off\r\n\t\tchanged colors for valid operations\r\n\t\tadded which mouse button info to valid operations\r\n\r\n\r\n[*] Electricity\r\n\t- Producers now keep a list of electricity consumers and how much each is using\r\n\t- This list is displayed in tooltip for electrical generation items\r\n\t- Notes: Old save games will not display this list until one complete consumption cycle has completed\r\n\r\n[*] Consume/produce cycle\r\n\t- Fixed bug where in some cases a double consume was being performed\r\n",
+      "key": "298220::8db4a9db2f7da213a37f785ac359507ada00b34c",
+      "tags": [
+        {
+          "bug": "- right/left/back space, etc. keys now work in the edit boxes"
+        },
+        {
+          "bug": "- Save game, checks for and appends .save to user named filenames, so they'll correctly show up in the load game list."
+        },
+        {
+          "bug": "- Found and fixed issue with load game and potential container bug."
+        },
+        {
+          "bug": "- Found and fixed issue with drag/drop and potential container bug."
+        },
+        {
+          "bug": "- Found and fixed issue with consumption thread cycle and potential container bug."
+        },
+        {
+          "bug": "- Container operations have additional error checking. errors will show up in 'log.txt'."
+        },
+        {
+          "feature": "- Added a game option so the player can change the tooltip delay time, 0.1 seconds to 5 seconds."
+        },
+        {
+          "feature": "- Refactored the tooltip formatting, \n\t\tadded time to next 'consume/produce' cycle \n\t\tchanged colors for on vs off\n\t\tchanged colors for valid operations\n\t\tadded which mouse button info to valid operations"
+        },
+        {
+          "feature": "- Producers now keep a list of electricity consumers and how much each is using"
+        },
+        {
+          "feature": "- This list is displayed in tooltip for electrical generation items"
+        },
+        {
+          "bug": "- Fixed bug where in some cases a double consume was being performed"
+        }
+      ]
+    },
+    {
+      "title": "UPDATE 9/2/15",
+      "date": "2015-09-03 05:17:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/409054598162984743",
+      "content": "-[b] Fixed \"?\" in PDA crafting dialog[/b]\r\n\r\n\r\n-[b] Fixed counts for iron core fingers[/b]\r\n\t- This count is performed at height 64, this is roughly 32 below sea level.\r\n\r\n-[b] Changed core released check.[/b]\r\n\t- This only checks against iron blocks that were created by the 'Iron core fingers' fractal.\r\n\t- This checks for iron and molten iron blocks at this height\r\n\t\t- If a block hasn't melted yet, it takes time, an additional check is performed against the melting point of iron,\r\n\t- In previous versions this temperature check was MAX_TEMP, \r\n\t\t- meaning the nuke that was used had to be really close to the middle of the finger,\r\n\t\t- so melting the iron fingers should be easier.\r\n\r\n-[b] Fixed Electrolysis restarting after loss of power bug.[/b]\r\n\r\n[h1]See the Update in the discussion page for details[/h1]",
+      "key": "298220::3d4a4829fd3b80f9c835e09fc517266f4ae6d903",
+      "tags": [
+        {
+          "bug": "-[b] Fixed \"?\" in PDA crafting dialog[/b]"
+        },
+        {
+          "bug": "-[b] Fixed counts for iron core fingers[/b]"
+        },
+        {
+          "bug": "-[b] Fixed Electrolysis restarting after loss of power bug.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "UPDATE 9/2/15",
+      "date": "2015-09-03 05:17:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680681987",
+      "content": "-[b] Fixed \"?\" in PDA crafting dialog[/b]\r\n\r\n\r\n-[b] Fixed counts for iron core fingers[/b]\r\n\t- This count is performed at height 64, this is roughly 32 below sea level.\r\n\r\n-[b] Changed core released check.[/b]\r\n\t- This only checks against iron blocks that were created by the 'Iron core fingers' fractal.\r\n\t- This checks for iron and molten iron blocks at this height\r\n\t\t- If a block hasn't melted yet, it takes time, an additional check is performed against the melting point of iron,\r\n\t- In previous versions this temperature check was MAX_TEMP, \r\n\t\t- meaning the nuke that was used had to be really close to the middle of the finger,\r\n\t\t- so melting the iron fingers should be easier.\r\n\r\n-[b] Fixed Electrolysis restarting after loss of power bug.[/b]\r\n\r\n[h1]See the Update in the discussion page for details[/h1]",
+      "key": "298220::67a59140d55a41b1f0683001af373da86e771b3c",
+      "tags": [
+        {
+          "bug": "-[b] Fixed \"?\" in PDA crafting dialog[/b]"
+        },
+        {
+          "bug": "-[b] Fixed counts for iron core fingers[/b]"
+        },
+        {
+          "bug": "-[b] Fixed Electrolysis restarting after loss of power bug.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "July 1 UPDATE",
+      "date": "2015-07-01 17:29:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/424811489599380847",
+      "content": "\r\n[b]- Dialog and tool tip flickering in PDA[/b]\r\n [b]-The atmosphere pressure to temperature calculation has been changed.\r\n\r\n\r\n[/b]- This used to be a simple linear interpolation,\r\n- It is now curved.\r\n\r\n[h1]Please see discussion page for a detailed description of changes.[/h1]\r\nUpdate 7/1/15",
+      "key": "298220::3e382ee0aba2df7d46e5c0667b4a4e2da11748a9",
+      "tags": [
+        {
+          "bug": "- Dialog and tool tip flickering in PDA"
+        },
+        {
+          "balance_change": "-The atmosphere pressure to temperature calculation has been changed."
+        },
+        {
+          "balance_change": "- It is now curved."
+        }
+      ]
+    },
+    {
+      "title": "July 1 UPDATE",
+      "date": "2015-07-01 17:29:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680682090",
+      "content": "\r\n[b]- Dialog and tool tip flickering in PDA[/b]\r\n [b]-The atmosphere pressure to temperature calculation has been changed.\r\n\r\n\r\n[/b]- This used to be a simple linear interpolation,\r\n- It is now curved.\r\n\r\n[h1]Please see discussion page for a detailed description of changes.[/h1]\r\nUpdate 7/1/15",
+      "key": "298220::af7a055cb81ab8ceeac21191badbeb44c3d44666",
+      "tags": [
+        {
+          "bug": "- Dialog and tool tip flickering in PDA"
+        },
+        {
+          "balance_change": "-The atmosphere pressure to temperature calculation has been changed."
+        },
+        {
+          "balance_change": "- It is now curved."
+        }
+      ]
+    },
+    {
+      "title": "6/11/15 UPDATE & SUMMER SALE 25%OFF",
+      "date": "2015-06-12 05:19:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/499119164361147695",
+      "content": "-[b] Graphical fixes[/b]\r\n- New PDA skin w/ tabs\r\n- Its now easier to hit guard dogs\r\n- Added a new plant, cactus, useful for a very arid climate.  \r\n- Plant models weren't growing properly in some cases, this has been fixed.\r\n- Interior heating is twice as efficient.\r\n I did some fooling around with this, if I have a 3x3x3 enclosure, I use 0.5 hydrogen/oxygen to get the room up to temp.\r\n As long as I use the my airlock (2 doors w/ a free space in between) \r\n for exiting and entering I hardly use any hydrogen / oxygen (0.125) to get the room back up to temp.\r\n I also changed the thermostat setting for the gas heaters, they heat was going to high.\r\n",
+      "key": "298220::d7eddae23fc2aabb56c895d5ec33bfadae731e1b",
+      "tags": [
+        {
+          "feature": "- New PDA skin w/ tabs"
+        },
+        {
+          "feature": "- Added a new plant, cactus, useful for a very arid climate."
+        },
+        {
+          "bug": "- Plant models weren't growing properly in some cases, this has been fixed."
+        },
+        {
+          "balance_change": "- Interior heating is twice as efficient."
+        },
+        {
+          "balance_change": "I also changed the thermostat setting for the gas heaters, they heat was going to high."
+        }
+      ]
+    },
+    {
+      "title": "6/11/15 UPDATE & SUMMER SALE 25%OFF",
+      "date": "2015-06-12 05:19:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680682902",
+      "content": "-[b] Graphical fixes[/b]\r\n- New PDA skin w/ tabs\r\n- Its now easier to hit guard dogs\r\n- Added a new plant, cactus, useful for a very arid climate.  \r\n- Plant models weren't growing properly in some cases, this has been fixed.\r\n- Interior heating is twice as efficient.\r\n I did some fooling around with this, if I have a 3x3x3 enclosure, I use 0.5 hydrogen/oxygen to get the room up to temp.\r\n As long as I use the my airlock (2 doors w/ a free space in between) \r\n for exiting and entering I hardly use any hydrogen / oxygen (0.125) to get the room back up to temp.\r\n I also changed the thermostat setting for the gas heaters, they heat was going to high.\r\n",
+      "key": "298220::73c4f9ec427b1e06a1835978c677155be0285bc3",
+      "tags": [
+        {
+          "feature": "- New PDA skin w/ tabs"
+        },
+        {
+          "feature": "- Added a new plant, cactus, useful for a very arid climate."
+        },
+        {
+          "bug": "- Plant models weren't growing properly in some cases, this has been fixed."
+        },
+        {
+          "balance_change": "- Interior heating is twice as efficient."
+        },
+        {
+          "balance_change": "I also changed the thermostat setting for the gas heaters, they heat was going to high."
+        }
+      ]
+    },
+    {
+      "title": "Terraformer Expedition to Mars Update 3/28/15",
+      "date": "2015-03-28 11:02:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517126407352456870",
+      "content": "-[b][u] This update is mostly a graphics update[/u][/b]\r\n\t\r\n- We've added quad trees for more detailed terrain.\r\n\r\n- We've improved performance by improving the polygon and vertex filters\r\n\r\n- We've changed the lighting/shading model, fixing shading issues while under ground\r\n\r\n- We've changed the bump mapping, bump mapping is now implemented correctly when underground.\r\n\r\n- We've fixed edge blending, \r\n\t- There were cases when hard edges were used when a smooth edge would be desirable.\r\n\t- There were cases when blends were not depth biased correctly.\r\n\r\n- Added new distance fading\r\n\r\n- Added a new adaptive vertex distance filter \r\n\r\n- Fixed world wrapping normal vector issue(s).\r\n\r\n- Fixed jump bug\r\n\r\n- Added number of iron veins left to melt/remove, in order to get core rotating, to the planet magnetic field achievement.\r\n\r\n",
+      "key": "298220::01f2fc735561354b9face0dd4b0e3eb772f5179c",
+      "tags": [
+        {
+          "feature": "- We've added quad trees for more detailed terrain."
+        },
+        {
+          "feature": "- Added new distance fading"
+        },
+        {
+          "feature": "- Added a new adaptive vertex distance filter"
+        },
+        {
+          "feature": "- Added number of iron veins left to melt/remove, in order to get core rotating, to the planet magnetic field achievement."
+        },
+        {
+          "bug": "- We've fixed edge blending,"
+        },
+        {
+          "bug": "- Fixed world wrapping normal vector issue(s)."
+        },
+        {
+          "bug": "- Fixed jump bug"
+        }
+      ]
+    },
+    {
+      "title": "Terraformer Expedition to Mars Update 3/28/15",
+      "date": "2015-03-28 11:02:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680683094",
+      "content": "-[b][u] This update is mostly a graphics update[/u][/b]\r\n\t\r\n- We've added quad trees for more detailed terrain.\r\n\r\n- We've improved performance by improving the polygon and vertex filters\r\n\r\n- We've changed the lighting/shading model, fixing shading issues while under ground\r\n\r\n- We've changed the bump mapping, bump mapping is now implemented correctly when underground.\r\n\r\n- We've fixed edge blending, \r\n\t- There were cases when hard edges were used when a smooth edge would be desirable.\r\n\t- There were cases when blends were not depth biased correctly.\r\n\r\n- Added new distance fading\r\n\r\n- Added a new adaptive vertex distance filter \r\n\r\n- Fixed world wrapping normal vector issue(s).\r\n\r\n- Fixed jump bug\r\n\r\n- Added number of iron veins left to melt/remove, in order to get core rotating, to the planet magnetic field achievement.\r\n\r\n",
+      "key": "298220::c041c1b9c27b359940e39e9d9ae2541722ff4271",
+      "tags": [
+        {
+          "feature": "- We've added quad trees for more detailed terrain."
+        },
+        {
+          "feature": "- Added new distance fading"
+        },
+        {
+          "feature": "- Added a new adaptive vertex distance filter"
+        },
+        {
+          "feature": "- Added number of iron veins left to melt/remove, in order to get core rotating, to the planet magnetic field achievement."
+        },
+        {
+          "bug": "- We've fixed edge blending,"
+        },
+        {
+          "bug": "- Fixed world wrapping normal vector issue(s)."
+        },
+        {
+          "bug": "- Fixed jump bug"
+        }
+      ]
+    },
+    {
+      "title": "TERRAFORMER EXPEDITION TO MARS From VTSS On sale 30% Off",
+      "date": "2015-02-16 07:31:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/517122602990280978",
+      "content": "[b]Join in the fun![/b]\r\n\r\n[h1]Update on 1/29/15 included:[/h1]\r\n\r\nAdded Arabia Terra, with 2 new craters and signs of water\r\nSignificantly reduced memory usage.\r\nAdded Arabia Terra, with 2 new craters and signs of water\r\nAdded 3 new craftable items, drilling rig, water pump and water pipes\r\n\r\nNext Update in a few weeks.",
+      "key": "298220::151ccd999c3e523f718ba7e5991954ec8a0e08fc",
+      "tags": [
+        {
+          "feature": "Added Arabia Terra, with 2 new craters and signs of water"
+        },
+        {
+          "balance_change": "Significantly reduced memory usage."
+        },
+        {
+          "feature": "Added Arabia Terra, with 2 new craters and signs of water"
+        },
+        {
+          "feature": "Added 3 new craftable items, drilling rig, water pump and water pipes"
+        }
+      ]
+    },
+    {
+      "title": "TERRAFORMER EXPEDITION TO MARS From VTSS On sale 30% Off",
+      "date": "2015-02-16 07:31:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680683718",
+      "content": "[b]Join in the fun![/b]\r\n\r\n[h1]Update on 1/29/15 included:[/h1]\r\n\r\nAdded Arabia Terra, with 2 new craters and signs of water\r\nSignificantly reduced memory usage.\r\nAdded Arabia Terra, with 2 new craters and signs of water\r\nAdded 3 new craftable items, drilling rig, water pump and water pipes\r\n\r\nNext Update in a few weeks.",
+      "key": "298220::c2d4d1f2f819ae92efdb3ab8a28d820f90e79877",
+      "tags": [
+        {
+          "feature": "Added Arabia Terra, with 2 new craters and signs of water"
+        },
+        {
+          "balance_change": "Significantly reduced memory usage."
+        },
+        {
+          "feature": "Added Arabia Terra, with 2 new craters and signs of water"
+        },
+        {
+          "feature": "Added 3 new craftable items, drilling rig, water pump and water pipes"
+        }
+      ]
+    },
+    {
+      "title": "Terraformer Expedition to Mars Update 1/29/15",
+      "date": "2015-02-01 07:39:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/510365936304793127",
+      "content": "[h1] Fixed discovery of crash sites achievements[/h1] \r\n\r\n[h1]Added adapter ID to config.ini file. [/h1]\r\n\tIn the case of multi-adapter systems, the user can define the monitor on which the game will run. \r\n\tThis is a work around fix and not a permanent fix. \r\n\tSyntax: \r\n\tAdapter=X \r\n\tWhere X is the monitors adapter ordinal, (0 for single monitor systems) \r\n\r\n[h1] Significantly reduced memory usage.[/h1] \r\n\tOn 4gig PCs, the memory usage was pretty tight. \r\n\tAny deviation from a bare bones system would result in page faults, resulting in game stuttering. \r\n\r\n[h1]Changed player position icon in the GPS dialog to be an arrow.[/h1] \r\n\r\n[h1] FPS Performance[/h1] \r\n\t2 things: \r\n\tThe 3d animations are being performed on the GPU as opposed to the CPU. \r\n\tThe ROAM modeling and horizon filter have been replaced with a region elimination algorithm. \r\n\r\n-[h1]Releasing the core[/h1] \r\n\tThere are now surface features that allow the player to easily find these iron fingers. \r\n\tPrevious versions the iron fingers had to be 'melted' at a depth of 32 (surface being 96), \r\n\tso this was a lot of digging. \r\n\tIf these iron fingers are 'melted at depth 64, this will now release the core. \r\n\r\n\r\n[h1] Added Arabia Terra, with 2 new craters and signs of water[/h1] \r\n\r\n[h1] Added 3 new craftable items, drilling rig, water pump and water pipes[/h1] \r\n\r\n[h1]Added new physics and achievements, using the 'new' plugin C++ interface.[/h1]\r\n -The plugin interface includes source code examples and interface help documentation.\r\n\r\n[h1] Rain cycle fixes: [/h1]\r\n\t- Water was being added into the Mars ecosystem for each evaporation/precipitation cycle. \r\n\t- Elevation is now included in the chances to rain calculation, higher elevations will now get less rain. \r\n\r\n[h1] Core/mantel temperatures have been changed.[/h1] \r\n -They now reflect the values specified in the PlanetDef.ini file. \r\n\r\n\r\n[h1] Melt the ice cap achievement has been fixed.[/h1] \r\n\r\n[h1]Plant decals now use the same blending as block to block blends,[/h1] \r\n\tsome users were seeing black as the background, this should be fixed. \r\n\r\n[h1] Cosmetic changes in the tooltip dialog and the message area.[/h1] \r\n",
+      "key": "298220::4b298484d851f3a52fcfdb2d53f4fefe5c83966c",
+      "tags": [
+        {
+          "bug": "[h1] Fixed discovery of crash sites achievements[/h1]"
+        },
+        {
+          "feature": "[h1]Added adapter ID to config.ini file. [/h1]"
+        },
+        {
+          "balance_change": "[h1] Significantly reduced memory usage.[/h1]"
+        },
+        {
+          "feature": "[h1]Changed player position icon in the GPS dialog to be an arrow.[/h1]"
+        },
+        {
+          "feature": "[h1] FPS Performance[/h1]"
+        },
+        {
+          "feature": "[h1]Releasing the core[/h1]"
+        },
+        {
+          "feature": "[h1] Added Arabia Terra, with 2 new craters and signs of water[/h1]"
+        },
+        {
+          "feature": "[h1] Added 3 new craftable items, drilling rig, water pump and water pipes[/h1]"
+        },
+        {
+          "feature": "[h1]Added new physics and achievements, using the 'new' plugin C++ interface.[/h1]"
+        },
+        {
+          "bug": "[h1] Rain cycle fixes: [/h1]"
+        },
+        {
+          "balance_change": "[h1] Core/mantel temperatures have been changed.[/h1]"
+        },
+        {
+          "bug": "[h1] Melt the ice cap achievement has been fixed.[/h1]"
+        },
+        {
+          "bug": "[h1] Plant decals now use the same blending as block to block blends,[/h1]"
+        },
+        {
+          "feature": "[h1] Cosmetic changes in the tooltip dialog and the message area.[/h1]"
+        }
+      ]
+    },
+    {
+      "title": "Terraformer Expedition to Mars Update 1/29/15",
+      "date": "2015-02-01 07:39:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680684418",
+      "content": "[h1] Fixed discovery of crash sites achievements[/h1] \r\n\r\n[h1]Added adapter ID to config.ini file. [/h1]\r\n\tIn the case of multi-adapter systems, the user can define the monitor on which the game will run. \r\n\tThis is a work around fix and not a permanent fix. \r\n\tSyntax: \r\n\tAdapter=X \r\n\tWhere X is the monitors adapter ordinal, (0 for single monitor systems) \r\n\r\n[h1] Significantly reduced memory usage.[/h1] \r\n\tOn 4gig PCs, the memory usage was pretty tight. \r\n\tAny deviation from a bare bones system would result in page faults, resulting in game stuttering. \r\n\r\n[h1]Changed player position icon in the GPS dialog to be an arrow.[/h1] \r\n\r\n[h1] FPS Performance[/h1] \r\n\t2 things: \r\n\tThe 3d animations are being performed on the GPU as opposed to the CPU. \r\n\tThe ROAM modeling and horizon filter have been replaced with a region elimination algorithm. \r\n\r\n-[h1]Releasing the core[/h1] \r\n\tThere are now surface features that allow the player to easily find these iron fingers. \r\n\tPrevious versions the iron fingers had to be 'melted' at a depth of 32 (surface being 96), \r\n\tso this was a lot of digging. \r\n\tIf these iron fingers are 'melted at depth 64, this will now release the core. \r\n\r\n\r\n[h1] Added Arabia Terra, with 2 new craters and signs of water[/h1] \r\n\r\n[h1] Added 3 new craftable items, drilling rig, water pump and water pipes[/h1] \r\n\r\n[h1]Added new physics and achievements, using the 'new' plugin C++ interface.[/h1]\r\n -The plugin interface includes source code examples and interface help documentation.\r\n\r\n[h1] Rain cycle fixes: [/h1]\r\n\t- Water was being added into the Mars ecosystem for each evaporation/precipitation cycle. \r\n\t- Elevation is now included in the chances to rain calculation, higher elevations will now get less rain. \r\n\r\n[h1] Core/mantel temperatures have been changed.[/h1] \r\n -They now reflect the values specified in the PlanetDef.ini file. \r\n\r\n\r\n[h1] Melt the ice cap achievement has been fixed.[/h1] \r\n\r\n[h1]Plant decals now use the same blending as block to block blends,[/h1] \r\n\tsome users were seeing black as the background, this should be fixed. \r\n\r\n[h1] Cosmetic changes in the tooltip dialog and the message area.[/h1] \r\n",
+      "key": "298220::ec064692635d182f6142f31f24ac33fce3b09f13",
+      "tags": [
+        {
+          "bug": "[h1] Fixed discovery of crash sites achievements[/h1]"
+        },
+        {
+          "feature": "[h1]Added adapter ID to config.ini file. [/h1]"
+        },
+        {
+          "balance_change": "[h1] Significantly reduced memory usage.[/h1]"
+        },
+        {
+          "feature": "[h1]Changed player position icon in the GPS dialog to be an arrow.[/h1]"
+        },
+        {
+          "feature": "[h1] FPS Performance[/h1]"
+        },
+        {
+          "feature": "[h1]Releasing the core[/h1]"
+        },
+        {
+          "feature": "[h1] Added Arabia Terra, with 2 new craters and signs of water[/h1]"
+        },
+        {
+          "feature": "[h1] Added 3 new craftable items, drilling rig, water pump and water pipes[/h1]"
+        },
+        {
+          "feature": "[h1]Added new physics and achievements, using the 'new' plugin C++ interface.[/h1]"
+        },
+        {
+          "bug": "[h1] Rain cycle fixes: [/h1]"
+        },
+        {
+          "balance_change": "[h1] Core/mantel temperatures have been changed.[/h1]"
+        },
+        {
+          "bug": "[h1] Melt the ice cap achievement has been fixed.[/h1]"
+        },
+        {
+          "bug": "[h1] Plant decals now use the same blending as block to block blends,[/h1]"
+        },
+        {
+          "feature": "[h1] Cosmetic changes in the tooltip dialog and the message area.[/h1]"
+        }
+      ]
+    },
+    {
+      "title": "1/29/15 Update and Latest Fixes",
+      "date": "2015-01-31 08:55:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/510365936301369873",
+      "content": "-[b] Fixed discovery of crash sites achievements[/b]\r\n\r\n- [b]Added adapter ID to config.ini file.[/b]\r\n\tIn the case of multi-adapter systems, the user can define the monitor on which the game will run.\r\n\tThis is a work around fix and not a permanent fix.\r\n\tSyntax:\r\n\tAdapter=X\r\n\tWhere X is the monitors adapter ordinal, (0 for single monitor systems)\r\n\r\n- [b]Significantly reduced memory usage.[/b]\r\n\tOn 4gig PCs, the memory usage was pretty tight.\r\n\tAny deviation from a bare bones system would result in page faults, resulting in game stuttering.\r\n\t\r\n-[b] Changed player position icon in the GPS dialog to be an arrow.[/b]\r\n\r\n-[b] FPS Performance[/b]\r\n\t2 things:\r\n\tThe 3d animations are being performed on the GPU as opposed to the CPU.\r\n\tThe ROAM modeling and horizon filter have been replaced with a region elimination algorithm.\r\n\r\n-[b] Releasing the core[/b]\r\n\tThere are now surface features that allow the player to easily find these iron fingers.\r\n\tPrevious versions the iron fingers had to be 'melted' at a depth of 32 (surface being 96), \r\n\tso this was a lot of digging.  \r\n\tIf these iron fingers are 'melted at depth 64, this will now release the core.\r\n\r\n\r\n1/29/14\r\n-------\r\n\r\n-[b] Added Arabia Terra[/b], with 2 new craters and signs of water\r\n\r\n-[b] Added 3 new craftable items[/b], drilling rig, water pump and water pipes\r\n\r\n- [b]Added new physics and achievements[/b], using the 'new' plugin C++ interface. \r\n - The plugin interface includes source code examples and interface help documentation.\r\n\r\n- [b]Rain cycle fixes:[/b] \r\n\t- Water was being added into the Mars ecosystem for each evaporation/precipitation cycle.\r\n\t- Elevation is now included in the chances to rain calculation, higher elevations will now get less rain. \r\n\r\n-[b] Core/mantel temperatures have been changed.[/b]\r\n They now reflect the values specified in the PlanetDef.ini file. \r\n\r\n-[b] Melt the ice cap achievement has been fixed.[/b]\r\n\r\n-[b] Plant decals now use the same blending as block to block blends,[/b]\r\n\tsome users were seeing black as the background, this should be fixed.\r\n\r\n[b]- Cosmetic changes in the tooltip dialog and the message area.[/b]  \r\n\r\n",
+      "key": "298220::1997fb75bbe7e592bb25d180e1e099fa3727b8ab",
+      "tags": [
+        {
+          "bug": "-[b] Fixed discovery of crash sites achievements[/b]"
+        },
+        {
+          "feature": "- [b]Added adapter ID to config.ini file.[/b]"
+        },
+        {
+          "feature": "- [b]Significantly reduced memory usage.[/b]"
+        },
+        {
+          "feature": "- [b] Changed player position icon in the GPS dialog to be an arrow.[/b]"
+        },
+        {
+          "feature": "- [b] FPS Performance\n\tThe 3d animations are being performed on the GPU as opposed to the CPU.\n\tThe ROAM modeling and horizon filter have been replaced with a region elimination algorithm."
+        },
+        {
+          "feature": "- [b] Releasing the core\n\tThere are now surface features that allow the player to easily find these iron fingers.\n\tPrevious versions the iron fingers had to be 'melted' at a depth of 32 (surface being 96),\n\tso this was a lot of digging.\n\tIf these iron fingers are 'melted at depth 64, this will now release the core."
+        },
+        {
+          "feature": "-[b] Added Arabia Terra[/b], with 2 new craters and signs of water"
+        },
+        {
+          "feature": "-[b] Added 3 new craftable items[/b], drilling rig, water pump and water pipes"
+        },
+        {
+          "feature": "- [b]Added new physics and achievements[/b], using the 'new' plugin C++ interface.\n - The plugin interface includes source code examples and interface help documentation."
+        },
+        {
+          "bug": "- Rain cycle fixes:\n\t- Water was being added into the Mars ecosystem for each evaporation/precipitation cycle.\n\t- Elevation is now included in the chances to rain calculation, higher elevations will now get less rain."
+        },
+        {
+          "balance_change": "- [b] Core/mantel temperatures have been changed.[/b]\nThey now reflect the values specified in the PlanetDef.ini file."
+        },
+        {
+          "bug": "- [b] Melt the ice cap achievement has been fixed.[/b]"
+        },
+        {
+          "bug": "- Plant decals now use the same blending as block to block blends,[\n\tsome users were seeing black as the background, this should be fixed."
+        },
+        {
+          "feature": "- [b] Cosmetic changes in the tooltip dialog and the message area.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "Update 11/30/14",
+      "date": "2014-11-30 18:44:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/522745036188993415",
+      "content": "Water flow improvement.\r\n\r\nJumping behavior improvements.\r\n\r\nBig performance improvements.\r\n\r\n",
+      "key": "298220::1e848a6035a99f9323373b6f570afa97e1db321b",
+      "tags": [
+        {
+          "feature": "Water flow improvement."
+        },
+        {
+          "feature": "Jumping behavior improvements."
+        },
+        {
+          "feature": "Big performance improvements."
+        }
+      ]
+    },
+    {
+      "title": "Update 11/30/14",
+      "date": "2014-11-30 18:44:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680686885",
+      "content": "Water flow improvement.\r\n\r\nJumping behavior improvements.\r\n\r\nBig performance improvements.\r\n\r\n",
+      "key": "298220::8fbbd310a4915cc39856be17b8a9e9be1c43da11",
+      "tags": [
+        {
+          "feature": "Water flow improvement."
+        },
+        {
+          "feature": "Jumping behavior improvements."
+        },
+        {
+          "feature": "Big performance improvements."
+        }
+      ]
+    },
+    {
+      "title": "New Update 11/18/14",
+      "date": "2014-11-19 18:36:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/522744579225033424",
+      "content": "- Memory usage has been decreased \r\n- Various small performance improvements\r\n- Fixed a couple of game crashing issues\r\n- Added support for DLC:\r\n\t- Support for new planet definitions\r\n\t- Support for new block/item types\r\n\t- Support for new features and levels\r\n\t- Plugin 'C++' API support for new types of physics\r\n\t- Plugin 'C++' API support for new rendering\r\n\t- Plugin 'C++' API support for new user defined achievements\r\n\r\n\t- Free DLC content with source code will be available shortly\r\n\r\n",
+      "key": "298220::65301f37b4f8c4acb57b79a67e6eafc07beb3093",
+      "tags": [
+        {
+          "balance_change": "- Memory usage has been decreased"
+        },
+        {
+          "balance_change": "- Various small performance improvements"
+        },
+        {
+          "bug": "- Fixed a couple of game crashing issues"
+        },
+        {
+          "feature": "- Added support for DLC:"
+        },
+        {
+          "feature": "\t- Support for new planet definitions"
+        },
+        {
+          "feature": "\t- Support for new block/item types"
+        },
+        {
+          "feature": "\t- Support for new features and levels"
+        },
+        {
+          "feature": "\t- Plugin 'C++' API support for new types of physics"
+        },
+        {
+          "feature": "\t- Plugin 'C++' API support for new rendering"
+        },
+        {
+          "feature": "\t- Plugin 'C++' API support for new user defined achievements"
+        },
+        {
+          "feature": "\t- Free DLC content with source code will be available shortly"
+        }
+      ]
+    },
+    {
+      "title": "New Update 11/18/14",
+      "date": "2014-11-19 18:36:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680686992",
+      "content": "- Memory usage has been decreased \r\n- Various small performance improvements\r\n- Fixed a couple of game crashing issues\r\n- Added support for DLC:\r\n\t- Support for new planet definitions\r\n\t- Support for new block/item types\r\n\t- Support for new features and levels\r\n\t- Plugin 'C++' API support for new types of physics\r\n\t- Plugin 'C++' API support for new rendering\r\n\t- Plugin 'C++' API support for new user defined achievements\r\n\r\n\t- Free DLC content with source code will be available shortly\r\n\r\n",
+      "key": "298220::c471bcb6e59d5988bac8429c7aa42270a10160e4",
+      "tags": [
+        {
+          "balance_change": "- Memory usage has been decreased"
+        },
+        {
+          "balance_change": "- Various small performance improvements"
+        },
+        {
+          "bug": "- Fixed a couple of game crashing issues"
+        },
+        {
+          "feature": "- Added support for DLC:"
+        },
+        {
+          "feature": "\t- Support for new planet definitions"
+        },
+        {
+          "feature": "\t- Support for new block/item types"
+        },
+        {
+          "feature": "\t- Support for new features and levels"
+        },
+        {
+          "feature": "\t- Plugin 'C++' API support for new types of physics"
+        },
+        {
+          "feature": "\t- Plugin 'C++' API support for new rendering"
+        },
+        {
+          "feature": "\t- Plugin 'C++' API support for new user defined achievements"
+        },
+        {
+          "feature": "\t- Free DLC content with source code will be available shortly"
+        }
+      ]
+    },
+    {
+      "title": "Halloween Updates 10/27/14",
+      "date": "2014-10-27 17:55:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/521616306774085847",
+      "content": "Centuries of misuse and neglect have transformed our home world into a blistered ruin. In desperation, the dwindling resources of all mankind are pooled together one last time.  Three terraforming ships set forth towards Mars, the ancient deity of War, of blood. Of our final hope. As they begin their approach to the red planet a blinding light erupts from behind the moon Deimos, and the last chance for the human race plummets to the arms of the awaiting God. \r\n\r\nBeware: someone, something brought those ships down.\r\n\r\n You will create a complete atmosphere, hydrosphere, and a complex biosphere - step by agonizing step - as you fight to stave off the cold, the hunger, and the loneliness of a world that will kill you without a thought, with no one to hear you scream.\r\n\r\n[h1]Fixes[/h1]\r\n\r\n[b]Aliens[/b]\r\n- Rendering aliens after world wrap.\r\n- Alien AI is slightly better.\r\n\t- Aliens will avoid jumping over one another\r\n\t- Aliens will avoid jumping on top of the player\r\n\t- Aliens will try to take an alternate path to the player, if any obstruction is in the way, \r\n\t- Aliens no longer deal each other damage.\r\n\t- Aliens will die if exposed to extreme temperatures\r\n\r\n[b]Temperature[/b]\r\n\t- The conversion from internal units to actual temperatures has been changed\r\n\t- This change allows for a wider temperature range\r\n\t- And allows for more accurate state changes,\r\n\t- Example: Basalt to lava now takes place at 700c\r\n\r\n[b]Door placement orientation[/b]\r\n\r\n[b]Heating[/b]\r\n- Interior heating is slower and consumes less fuel\r\n- Inaccurate temperature readings after a players movement in interior places\r\n\r\n[b]Battery[/b]\r\n\t- Battery capacity is doubled\r\n\t- But degradation is based on power use\r\n\t- So, both the light and heater will consume battery\r\n\t- But, if you turn off the light, battery degrading will slow\r\n\t- The battery degrading w/o the light on equals old degrading\r\n\t- So keep the light turned off as much as possible.\r\n\r\n[b]Evaporation uses different logic[/b]\r\n\t- Inverse pressure times inverse humidity times temperature gives the likelihood of any 'sun lit' water block to evaporate.\r\n\r\n[b]Rain uses different logic[/b]\r\n\t- Pressure times humidity gives the likelihood of any cloud block to rain.\r\n\t- There is a low and high water mark for clouds\r\n\t- Once the high water mark is reached, it will start to rain\r\n\t- Once raining, once the low water mark is reached, raining will stop\r\n\r\n[b]Some small performance improvements[/b] \r\n\r\n",
+      "key": "298220::b36ca436a448cc2a1cc70c9e37ac836f4f31fb9a",
+      "tags": [
+        {
+          "bug": "- Rendering aliens after world wrap."
+        },
+        {
+          "bug": "- Alien AI is slightly better."
+        },
+        {
+          "bug": "- Aliens will avoid jumping over one another"
+        },
+        {
+          "bug": "- Aliens will avoid jumping on top of the player"
+        },
+        {
+          "bug": "- Aliens will try to take an alternate path to the player, if any obstruction is in the way,"
+        },
+        {
+          "bug": "- Aliens no longer deal each other damage."
+        },
+        {
+          "bug": "- Aliens will die if exposed to extreme temperatures"
+        },
+        {
+          "bug": "- The conversion from internal units to actual temperatures has been changed"
+        },
+        {
+          "bug": "- This change allows for a wider temperature range"
+        },
+        {
+          "bug": "- And allows for more accurate state changes,"
+        },
+        {
+          "bug": "- Example: Basalt to lava now takes place at 700c"
+        },
+        {
+          "bug": "- Door placement orientation"
+        },
+        {
+          "bug": "- Interior heating is slower and consumes less fuel"
+        },
+        {
+          "bug": "- Inaccurate temperature readings after a players movement in interior places"
+        },
+        {
+          "bug": "- Battery capacity is doubled"
+        },
+        {
+          "bug": "- But degradation is based on power use"
+        },
+        {
+          "bug": "- So, both the light and heater will consume battery"
+        },
+        {
+          "bug": "- But, if you turn off the light, battery degrading will slow"
+        },
+        {
+          "bug": "- The battery degrading w/o the light on equals old degrading"
+        },
+        {
+          "bug": "- So keep the light turned off as much as possible."
+        },
+        {
+          "bug": "- Evaporation uses different logic"
+        },
+        {
+          "bug": "- Inverse pressure times inverse humidity times temperature gives the likelihood of any 'sun lit' water block to evaporate."
+        },
+        {
+          "bug": "- Rain uses different logic"
+        },
+        {
+          "bug": "- Pressure times humidity gives the likelihood of any cloud block to rain."
+        },
+        {
+          "bug": "- There is a low and high water mark for clouds"
+        },
+        {
+          "bug": "- Once the high water mark is reached, it will start to rain"
+        },
+        {
+          "bug": "- Once raining, once the low water mark is reached, raining will stop"
+        },
+        {
+          "bug": "- Some small performance improvements"
+        }
+      ]
+    },
+    {
+      "title": "Halloween Updates 10/27/14",
+      "date": "2014-10-27 17:55:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680687203",
+      "content": "Centuries of misuse and neglect have transformed our home world into a blistered ruin. In desperation, the dwindling resources of all mankind are pooled together one last time.  Three terraforming ships set forth towards Mars, the ancient deity of War, of blood. Of our final hope. As they begin their approach to the red planet a blinding light erupts from behind the moon Deimos, and the last chance for the human race plummets to the arms of the awaiting God. \r\n\r\nBeware: someone, something brought those ships down.\r\n\r\n You will create a complete atmosphere, hydrosphere, and a complex biosphere - step by agonizing step - as you fight to stave off the cold, the hunger, and the loneliness of a world that will kill you without a thought, with no one to hear you scream.\r\n\r\n[h1]Fixes[/h1]\r\n\r\n[b]Aliens[/b]\r\n- Rendering aliens after world wrap.\r\n- Alien AI is slightly better.\r\n\t- Aliens will avoid jumping over one another\r\n\t- Aliens will avoid jumping on top of the player\r\n\t- Aliens will try to take an alternate path to the player, if any obstruction is in the way, \r\n\t- Aliens no longer deal each other damage.\r\n\t- Aliens will die if exposed to extreme temperatures\r\n\r\n[b]Temperature[/b]\r\n\t- The conversion from internal units to actual temperatures has been changed\r\n\t- This change allows for a wider temperature range\r\n\t- And allows for more accurate state changes,\r\n\t- Example: Basalt to lava now takes place at 700c\r\n\r\n[b]Door placement orientation[/b]\r\n\r\n[b]Heating[/b]\r\n- Interior heating is slower and consumes less fuel\r\n- Inaccurate temperature readings after a players movement in interior places\r\n\r\n[b]Battery[/b]\r\n\t- Battery capacity is doubled\r\n\t- But degradation is based on power use\r\n\t- So, both the light and heater will consume battery\r\n\t- But, if you turn off the light, battery degrading will slow\r\n\t- The battery degrading w/o the light on equals old degrading\r\n\t- So keep the light turned off as much as possible.\r\n\r\n[b]Evaporation uses different logic[/b]\r\n\t- Inverse pressure times inverse humidity times temperature gives the likelihood of any 'sun lit' water block to evaporate.\r\n\r\n[b]Rain uses different logic[/b]\r\n\t- Pressure times humidity gives the likelihood of any cloud block to rain.\r\n\t- There is a low and high water mark for clouds\r\n\t- Once the high water mark is reached, it will start to rain\r\n\t- Once raining, once the low water mark is reached, raining will stop\r\n\r\n[b]Some small performance improvements[/b] \r\n\r\n",
+      "key": "298220::2c13e63a19b5ddaafeb7f35ca99594c8c58a3ddd",
+      "tags": [
+        {
+          "bug": "- Rendering aliens after world wrap."
+        },
+        {
+          "bug": "- Alien AI is slightly better."
+        },
+        {
+          "bug": "- Aliens will avoid jumping over one another"
+        },
+        {
+          "bug": "- Aliens will avoid jumping on top of the player"
+        },
+        {
+          "bug": "- Aliens will try to take an alternate path to the player, if any obstruction is in the way,"
+        },
+        {
+          "bug": "- Aliens no longer deal each other damage."
+        },
+        {
+          "bug": "- Aliens will die if exposed to extreme temperatures"
+        },
+        {
+          "bug": "- The conversion from internal units to actual temperatures has been changed"
+        },
+        {
+          "bug": "- This change allows for a wider temperature range"
+        },
+        {
+          "bug": "- And allows for more accurate state changes,"
+        },
+        {
+          "bug": "- Example: Basalt to lava now takes place at 700c"
+        },
+        {
+          "bug": "- Door placement orientation"
+        },
+        {
+          "bug": "- Interior heating is slower and consumes less fuel"
+        },
+        {
+          "bug": "- Inaccurate temperature readings after a players movement in interior places"
+        },
+        {
+          "bug": "- Battery capacity is doubled"
+        },
+        {
+          "bug": "- But degradation is based on power use"
+        },
+        {
+          "bug": "- So, both the light and heater will consume battery"
+        },
+        {
+          "bug": "- But, if you turn off the light, battery degrading will slow"
+        },
+        {
+          "bug": "- The battery degrading w/o the light on equals old degrading"
+        },
+        {
+          "bug": "- So keep the light turned off as much as possible."
+        },
+        {
+          "bug": "- Evaporation uses different logic"
+        },
+        {
+          "bug": "- Inverse pressure times inverse humidity times temperature gives the likelihood of any 'sun lit' water block to evaporate."
+        },
+        {
+          "bug": "- Rain uses different logic"
+        },
+        {
+          "bug": "- Pressure times humidity gives the likelihood of any cloud block to rain."
+        },
+        {
+          "bug": "- There is a low and high water mark for clouds"
+        },
+        {
+          "bug": "- Once the high water mark is reached, it will start to rain"
+        },
+        {
+          "bug": "- Once raining, once the low water mark is reached, raining will stop"
+        },
+        {
+          "bug": "- Some small performance improvements"
+        }
+      ]
+    },
+    {
+      "title": "Bug fixes, Update.",
+      "date": "2014-09-22 05:53:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/521613086873464996",
+      "content": "The stats issue and the heating problems have been fixed. Also no more disappearing blocks at the \"edge\" of the world.",
+      "key": "298220::26925e4b4e6161b869efbfead3d4084b60eca51e",
+      "tags": [
+        {
+          "bug": "The stats issue and the heating problems have been fixed."
+        },
+        {
+          "bug": "Also no more disappearing blocks at the \"edge\" of the world."
+        }
+      ]
+    },
+    {
+      "title": "Bug fixes, Update.",
+      "date": "2014-09-22 05:53:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680687524",
+      "content": "The stats issue and the heating problems have been fixed. Also no more disappearing blocks at the \"edge\" of the world.",
+      "key": "298220::92a67cd858d66d3a7b5fe4c066dfa5d64d1d46a3",
+      "tags": [
+        {
+          "bug": "The stats issue and the heating problems have been fixed."
+        },
+        {
+          "bug": "Also no more disappearing blocks at the \"edge\" of the world."
+        }
+      ]
+    },
+    {
+      "title": "Update Release 1.37",
+      "date": "2014-08-24 11:07:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/552009641868224079",
+      "content": "The new version 1.37 is up.  The list of fixes is below. \r\n\r\n- Fixed discovery of crash site achievements\r\n- Added adapter ID to config.ini file.\r\n- Significantly reduced memory usage\r\n- Changed player position icon in the GPS dialog to be an arrow\r\n- FPS Performance\r\n- Releasing the core\r\nFor more in depth information on these fixes please visit the forum. \r\n\r\nThanks,\r\nVermont Software Studios\r\n\r\n",
+      "key": "298220::dd0d05785ffae43c316f3e8e6b2eac3d5766f77a",
+      "tags": [
+        {
+          "bug": "- Fixed discovery of crash site achievements"
+        },
+        {
+          "feature": "- Added adapter ID to config.ini file."
+        },
+        {
+          "balance_change": "- Significantly reduced memory usage"
+        },
+        {
+          "feature": "- Changed player position icon in the GPS dialog to be an arrow"
+        }
+      ]
+    },
+    {
+      "title": "Update Release 1.37",
+      "date": "2014-08-24 11:07:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680687622",
+      "content": "The new version 1.37 is up.  The list of fixes is below. \r\n\r\n- Fixed discovery of crash site achievements\r\n- Added adapter ID to config.ini file.\r\n- Significantly reduced memory usage\r\n- Changed player position icon in the GPS dialog to be an arrow\r\n- FPS Performance\r\n- Releasing the core\r\nFor more in depth information on these fixes please visit the forum. \r\n\r\nThanks,\r\nVermont Software Studios\r\n\r\n",
+      "key": "298220::3109825451031784969a687f15ed1a5110f91588",
+      "tags": [
+        {
+          "bug": "- Fixed discovery of crash site achievements"
+        },
+        {
+          "feature": "- Added adapter ID to config.ini file."
+        },
+        {
+          "balance_change": "- Significantly reduced memory usage"
+        },
+        {
+          "feature": "- Changed player position icon in the GPS dialog to be an arrow"
+        }
+      ]
+    },
+    {
+      "title": "Release 1.036hes been releases Friday 5/30/14 at 12:00 EST.",
+      "date": "2014-05-30 12:08:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3188859613419200086",
+      "content": "\r\nThese are the fixes:\r\n- Disappearing items (typically interacting w/ spaceship)\r\n- Dropping an item on an item.\r\n- Crafting wasn't always using all the required materials.\r\n- Volume controls for music and effects (turn down the breathing!)\r\n- Confirmation dialogs for save/load/new and exit game.\r\n- Thread timing causing jitter on some PCs. (This change also improves FPS).\r\n- Tool tip flickering for some folks\r\n- Placing building materials, this works way better now.\r\n- I toned down radiation posioning by 25%, alot of folks were having a difficult start.\r\n- Harvesting dead immature plants, these no longer come back alive, they turn into dead plant matter.\r\n- Tooltips for using an equipped tool, had an incorrect information issue w/ dead plants.\r\n- Save game, there was a situation where a save would not correctly save a tool.\r\nThis has been fixed.\r\nAlso, the code, upon a game load, checks for this error and then auto-fixes the tool, \r\nso any saved games with this problem should be fixed and work correctly.\r\n- Saved file screenshot size has been changed, this fixes an issue w/ anti-aliasing.\r\n- Added memory checks on new game and load game.\r\n- Mesh objects flickering\r\n\r\n",
+      "key": "298220::10950baf2e1e548c6ca55b5598d8216e52c6f1a3",
+      "tags": [
+        {
+          "bug": "- Disappearing items (typically interacting w/ spaceship)"
+        },
+        {
+          "bug": "- Dropping an item on an item."
+        },
+        {
+          "bug": "- Crafting wasn't always using all the required materials."
+        },
+        {
+          "bug": "- Volume controls for music and effects (turn down the breathing!)"
+        },
+        {
+          "bug": "- Confirmation dialogs for save/load/new and exit game."
+        },
+        {
+          "bug": "- Thread timing causing jitter on some PCs. (This change also improves FPS)."
+        },
+        {
+          "bug": "- Tool tip flickering for some folks"
+        },
+        {
+          "bug": "- Placing building materials, this works way better now."
+        },
+        {
+          "balance_change": "- I toned down radiation posioning by 25%, alot of folks were having a difficult start."
+        },
+        {
+          "bug": "- Harvesting dead immature plants, these no longer come back alive, they turn into dead plant matter."
+        },
+        {
+          "bug": "- Tooltips for using an equipped tool, had an incorrect information issue w/ dead plants."
+        },
+        {
+          "bug": "- Save game, there was a situation where a save would not correctly save a tool."
+        },
+        {
+          "bug": "- Saved file screenshot size has been changed, this fixes an issue w/ anti-aliasing."
+        },
+        {
+          "feature": "- Added memory checks on new game and load game."
+        },
+        {
+          "bug": "- Mesh objects flickering"
+        }
+      ]
+    },
+    {
+      "title": "Release 1.036hes been releases Friday 5/30/14 at 12:00 EST.",
+      "date": "2014-05-30 12:08:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521680687738",
+      "content": "\r\nThese are the fixes:\r\n- Disappearing items (typically interacting w/ spaceship)\r\n- Dropping an item on an item.\r\n- Crafting wasn't always using all the required materials.\r\n- Volume controls for music and effects (turn down the breathing!)\r\n- Confirmation dialogs for save/load/new and exit game.\r\n- Thread timing causing jitter on some PCs. (This change also improves FPS).\r\n- Tool tip flickering for some folks\r\n- Placing building materials, this works way better now.\r\n- I toned down radiation posioning by 25%, alot of folks were having a difficult start.\r\n- Harvesting dead immature plants, these no longer come back alive, they turn into dead plant matter.\r\n- Tooltips for using an equipped tool, had an incorrect information issue w/ dead plants.\r\n- Save game, there was a situation where a save would not correctly save a tool.\r\nThis has been fixed.\r\nAlso, the code, upon a game load, checks for this error and then auto-fixes the tool, \r\nso any saved games with this problem should be fixed and work correctly.\r\n- Saved file screenshot size has been changed, this fixes an issue w/ anti-aliasing.\r\n- Added memory checks on new game and load game.\r\n- Mesh objects flickering\r\n\r\n",
+      "key": "298220::9605a2323836f40e0e2b7cfbaff7b5a4e159820e",
+      "tags": [
+        {
+          "bug": "- Disappearing items (typically interacting w/ spaceship)"
+        },
+        {
+          "bug": "- Dropping an item on an item."
+        },
+        {
+          "bug": "- Crafting wasn't always using all the required materials."
+        },
+        {
+          "bug": "- Volume controls for music and effects (turn down the breathing!)"
+        },
+        {
+          "bug": "- Confirmation dialogs for save/load/new and exit game."
+        },
+        {
+          "bug": "- Thread timing causing jitter on some PCs. (This change also improves FPS)."
+        },
+        {
+          "bug": "- Tool tip flickering for some folks"
+        },
+        {
+          "bug": "- Placing building materials, this works way better now."
+        },
+        {
+          "balance_change": "- I toned down radiation posioning by 25%, alot of folks were having a difficult start."
+        },
+        {
+          "bug": "- Harvesting dead immature plants, these no longer come back alive, they turn into dead plant matter."
+        },
+        {
+          "bug": "- Tooltips for using an equipped tool, had an incorrect information issue w/ dead plants."
+        },
+        {
+          "bug": "- Save game, there was a situation where a save would not correctly save a tool."
+        },
+        {
+          "bug": "- Saved file screenshot size has been changed, this fixes an issue w/ anti-aliasing."
+        },
+        {
+          "feature": "- Added memory checks on new game and load game."
+        },
+        {
+          "bug": "- Mesh objects flickering"
+        }
+      ]
+    }
+  ]
+}

@@ -6,217 +6,289 @@
       "title": "More funnel motion controls, HSV replaces RGB funnel colours",
       "date": "2024-11-17 15:53:21",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1783238125320530",
-      "content": "Just some minor updates to the tornado design tool:\n[list]\n[*] Added 'vertical motion' control slider to create upwards motion in the funnel\n[*] Replaced red/green/blue sliders with hue/saturation/brightness sliders for easier control of the tornado funnel colouring\n[/list]\n\nEnjoy! :)"
+      "content": "Just some minor updates to the tornado design tool:\n[list]\n[*] Added 'vertical motion' control slider to create upwards motion in the funnel\n[*] Replaced red/green/blue sliders with hue/saturation/brightness sliders for easier control of the tornado funnel colouring\n[/list]\n\nEnjoy! :)",
+      "key": "2250550::5c9ab4cc53285fb1355aa6faef97c91c36ee7ed3",
+      "tags": null
     },
     {
       "title": "Lots of Big Updates Coming!",
       "date": "2024-01-04 05:52:57",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585180632867",
-      "content": "Happy New Year everyone!\n\nI am conscious there hasn't been an update on the game for a while, this has been for a few reasons:\n\n[olist]\n[*] I'm nearing the end of my PhD and I have been very busy getting the final draft of my thesis completed\n[*] I had an idea for a completely different game, so I spent a couple of months creating a proof of concept in any free time I had ([url=https://www.youtube.com/watch?v=yP65CcHXhhw]https://www.youtube.com/watch?v=yP65CcHXhhw[/url])\n[*] The next updates planned are major updates\n[/olist]\n\nWhen working on the proof of concept game, I learned a lot about user interface design in Unity, so I am planning a complete revamp of the in-game user interface. This opens the option for more features, most notably a skill/upgrade tree. Here are the new features that are planned:\n\n[h1]New Upgrade System, Research Contracts, New Data Types[/h1]\nRight now the upgrade system is quite linear: you collect samples, sell them, then use the money to buy the next upgrade level(s). I plan to add a procedurally generated upgrade tree, with different requirements to unlock upgrades. At the start of the game, there will only be one or two easy to accomplish requirements, but as you progress there will be more requirements to fulfil that will require strategic chasing if you want to max out your upgrades. So what will these requirements be?\n\n\n[list]\n[*] Collect \"X\" samples of data type \"Y\" for tornado rating \"Z\"\n[*] Take \"X\" photos of a tornado rated \"Z\"\n[*] Save \"X\" lives\n[*] Discover \"X\" anomalies of data type \"Y\" for tornado rating \"Z\"\n[/list]\n\nThese requirements can be relaxed, for example you may only have to collect \"X\" number of samples of any data type, or for any tornado rating. So what do I mean by \"data type\" and \"anomalies\"?\n\n[h2]New Data Types[/h2]\nCurrently the game only has one data type (wind speed), however there's no reason to be limited to this one type (https://www.youtube.com/watch?v=G0u5-HzXFVg&t=95s) (https://www.youtube.com/watch?v=PFxsE2RWgT8&t=24s). I plan to add a dial on the probe that you have to turn to the data type you want to collect, there may also be a short-ish setup sequence where you have to flip some switches and press some buttons, just to add to the tension! (https://www.youtube.com/watch?v=03DdsuaKw1I&t=81s)\n\nThe new data types will be: wind speed, pressure, temperature and dew point temperature.\n\n[h2]Data Anomalies[/h2]\nThere are already models of tornado wind fields, however, it's when models disagree with observed data (i.e. \"anomalies\") that science is pushed forward. You will be able to scan your collected samples for anomalies, these will be relatively rare, but when found will allow you to unlock upgrades and complete research contracts.\n\n[h2]Research Contracts[/h2]\nFor those of you that played very early versions of this game, you may remember \"contracts\". These were time limited and generally people found them frustrating so I removed them. I plan to re-introduce them, but with no time limit. The contracts will have requirements just like for upgrades, and will range from short-term easy contracts that pay less to long-term difficult contracts that have a large pay-out. You will be able to take on multiple contracts (but limited to maybe 2-3, I will have to play test to see how well balanced this is), and you can cancel them but that will come with a penalty.\n\n[h1]New Engine Sounds[/h1]\nI am aware that the current engine sound effect is not the best, however I have purchased a realistic engine sound asset and plan to add a 2.5 litre diesel engine sound effect (https://www.youtube.com/watch?v=liaan7FNWN8&t=1510s)\n\n[h1]Complete Map Revamp[/h1]\nI have started re-creating the map from scratch. This includes updated terrain texturing, advanced rendering using the newly released TerraFormer shader, and procedural placing of vegetation using TerraWorld2023. I am also manually creating the entire road network: the current road network in the game was automatically imported using OSM data, however the roads were not always placed correctly, and there are a LOT of missing roads and dirt roads. Getting around the map will be a lot easier now. This will take a while to do manually as the map is 100 square miles, but it will be worth it for a better overall map.\n\nOne fun change I plan on making is for some of the bridges crossing the main river in the game, they will be \"under construction\", requiring you to take a leap of faith. I have also surrounded the map with hills and there will be an invisible barrier around the perimeter, so no more falling into the abyss!\n\n[h2]Performance Upgrades[/h2]\nI have also purchased World Streamer 2 - right now the entire map is loaded into memory, so even if you can't see distant towns, all the models are loaded into memory, and if the town is hit by a tornado your CPU is simulating all the physics and mesh breaking even though you can't see it. What World Streamer 2 will allow me to do is break the map up into a grid, and only load in the models of objects you are near, with lower quality models being loaded for more distant models. This should reduce memory requirements and also improve performance.\n\nSpeaking of performance, I have switched to the \"Universal Render Pipeline\" (or URP), this allows for more post-processing effects but more importantly results in better performance for lower end devices.\n\n[h2]New Houses, and Corn![/h2]\nI have purchased a modular house system for Unity, so the house models will be getting upgraded. I have also purchased some farm assets including corn - which I think is mandatory considering this map is based on Pilot Mound, Iowa.\n\n[h1]New Weather Engine[/h1]\nThe current weather engine was a great asset, however now that I've switched to URP I would be limited to Unity 2021, which wouldn't allow me to use future versions or the upgraded terrain shaders. I have switched to a new one, and while I've only tested it out for a few hours, it looks amazing, especially the lightning effects. The clouds are also physically *in* the scene, which means I should be able to blend the tornado with the clouds.\n\n\n"
+      "content": "Happy New Year everyone!\n\nI am conscious there hasn't been an update on the game for a while, this has been for a few reasons:\n\n[olist]\n[*] I'm nearing the end of my PhD and I have been very busy getting the final draft of my thesis completed\n[*] I had an idea for a completely different game, so I spent a couple of months creating a proof of concept in any free time I had ([url=https://www.youtube.com/watch?v=yP65CcHXhhw]https://www.youtube.com/watch?v=yP65CcHXhhw[/url])\n[*] The next updates planned are major updates\n[/olist]\n\nWhen working on the proof of concept game, I learned a lot about user interface design in Unity, so I am planning a complete revamp of the in-game user interface. This opens the option for more features, most notably a skill/upgrade tree. Here are the new features that are planned:\n\n[h1]New Upgrade System, Research Contracts, New Data Types[/h1]\nRight now the upgrade system is quite linear: you collect samples, sell them, then use the money to buy the next upgrade level(s). I plan to add a procedurally generated upgrade tree, with different requirements to unlock upgrades. At the start of the game, there will only be one or two easy to accomplish requirements, but as you progress there will be more requirements to fulfil that will require strategic chasing if you want to max out your upgrades. So what will these requirements be?\n\n\n[list]\n[*] Collect \"X\" samples of data type \"Y\" for tornado rating \"Z\"\n[*] Take \"X\" photos of a tornado rated \"Z\"\n[*] Save \"X\" lives\n[*] Discover \"X\" anomalies of data type \"Y\" for tornado rating \"Z\"\n[/list]\n\nThese requirements can be relaxed, for example you may only have to collect \"X\" number of samples of any data type, or for any tornado rating. So what do I mean by \"data type\" and \"anomalies\"?\n\n[h2]New Data Types[/h2]\nCurrently the game only has one data type (wind speed), however there's no reason to be limited to this one type (https://www.youtube.com/watch?v=G0u5-HzXFVg&t=95s) (https://www.youtube.com/watch?v=PFxsE2RWgT8&t=24s). I plan to add a dial on the probe that you have to turn to the data type you want to collect, there may also be a short-ish setup sequence where you have to flip some switches and press some buttons, just to add to the tension! (https://www.youtube.com/watch?v=03DdsuaKw1I&t=81s)\n\nThe new data types will be: wind speed, pressure, temperature and dew point temperature.\n\n[h2]Data Anomalies[/h2]\nThere are already models of tornado wind fields, however, it's when models disagree with observed data (i.e. \"anomalies\") that science is pushed forward. You will be able to scan your collected samples for anomalies, these will be relatively rare, but when found will allow you to unlock upgrades and complete research contracts.\n\n[h2]Research Contracts[/h2]\nFor those of you that played very early versions of this game, you may remember \"contracts\". These were time limited and generally people found them frustrating so I removed them. I plan to re-introduce them, but with no time limit. The contracts will have requirements just like for upgrades, and will range from short-term easy contracts that pay less to long-term difficult contracts that have a large pay-out. You will be able to take on multiple contracts (but limited to maybe 2-3, I will have to play test to see how well balanced this is), and you can cancel them but that will come with a penalty.\n\n[h1]New Engine Sounds[/h1]\nI am aware that the current engine sound effect is not the best, however I have purchased a realistic engine sound asset and plan to add a 2.5 litre diesel engine sound effect (https://www.youtube.com/watch?v=liaan7FNWN8&t=1510s)\n\n[h1]Complete Map Revamp[/h1]\nI have started re-creating the map from scratch. This includes updated terrain texturing, advanced rendering using the newly released TerraFormer shader, and procedural placing of vegetation using TerraWorld2023. I am also manually creating the entire road network: the current road network in the game was automatically imported using OSM data, however the roads were not always placed correctly, and there are a LOT of missing roads and dirt roads. Getting around the map will be a lot easier now. This will take a while to do manually as the map is 100 square miles, but it will be worth it for a better overall map.\n\nOne fun change I plan on making is for some of the bridges crossing the main river in the game, they will be \"under construction\", requiring you to take a leap of faith. I have also surrounded the map with hills and there will be an invisible barrier around the perimeter, so no more falling into the abyss!\n\n[h2]Performance Upgrades[/h2]\nI have also purchased World Streamer 2 - right now the entire map is loaded into memory, so even if you can't see distant towns, all the models are loaded into memory, and if the town is hit by a tornado your CPU is simulating all the physics and mesh breaking even though you can't see it. What World Streamer 2 will allow me to do is break the map up into a grid, and only load in the models of objects you are near, with lower quality models being loaded for more distant models. This should reduce memory requirements and also improve performance.\n\nSpeaking of performance, I have switched to the \"Universal Render Pipeline\" (or URP), this allows for more post-processing effects but more importantly results in better performance for lower end devices.\n\n[h2]New Houses, and Corn![/h2]\nI have purchased a modular house system for Unity, so the house models will be getting upgraded. I have also purchased some farm assets including corn - which I think is mandatory considering this map is based on Pilot Mound, Iowa.\n\n[h1]New Weather Engine[/h1]\nThe current weather engine was a great asset, however now that I've switched to URP I would be limited to Unity 2021, which wouldn't allow me to use future versions or the upgraded terrain shaders. I have switched to a new one, and while I've only tested it out for a few hours, it looks amazing, especially the lightning effects. The clouds are also physically *in* the scene, which means I should be able to blend the tornado with the clouds.\n\n\n",
+      "key": "2250550::270b9429c08d6e08526132985d025a0190163a31",
+      "tags": null
     },
     {
       "title": "Mouse Sensitivity Patch + FPS Limiter",
       "date": "2023-09-20 06:37:53",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5219165352619705695",
-      "content": "I have adjusted the mouse settings to use raw mouse input, this has resulted in having to re-scale the sensitivity settings so you may need to adjust your player and vehicle sensitivity settings. \n\nI'm hoping this fixes issues people have been having with the mouse input, if not let me know which issues you are having and whether it is with the vehicle camera, first person camera, or both.\n\nI have also added an FPS limiter, if you have high-end hardware and your GPU has been running hot, try setting the FPS limit and see if that lets your GPU run cooler."
+      "content": "I have adjusted the mouse settings to use raw mouse input, this has resulted in having to re-scale the sensitivity settings so you may need to adjust your player and vehicle sensitivity settings. \n\nI'm hoping this fixes issues people have been having with the mouse input, if not let me know which issues you are having and whether it is with the vehicle camera, first person camera, or both.\n\nI have also added an FPS limiter, if you have high-end hardware and your GPU has been running hot, try setting the FPS limit and see if that lets your GPU run cooler.",
+      "key": "2250550::5be65ac5e89e14676510c68495238d434a29a637",
+      "tags": null
     },
     {
       "title": "Improved Camera System, Probe Battery Introduced & More Settings",
       "date": "2023-09-15 09:48:16",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5480373588786326327",
-      "content": "It's been a while since the last update! New in this one:\n\n[list]\n[*] Improved camera/rendering system - this should prevent vegetation suddenly disappearing when outside of the vehicle and using the pause screen. Ghosting/aliasing artefacts are reduced as well (they still show up in certain situations, but visually they are massively reduced)\n[*] Probe battery - the probe now has a battery that will slowly discharge once deployed. When the battery runs out the probe stops sampling. To recharge put the probe back in the truck. Both the battery capacity and recharge time can be upgraded.\n[*] Main menu bugfix - after returning to the main menu there was a bug preventing loading back into the game (stuck with a random view of the terrain), this should now be fixed\n[*] New settings: MSAA level (this was previously automatically set to 8x, it now defaults to 2x and should result in an FPS increase), screen/window resolution, texture resolution (defaults to full resolution but can be set to 1/2, 1/4 or even 1/8 resolution to improve performance)\n[/list]"
+      "content": "It's been a while since the last update! New in this one:\n\n[list]\n[*] Improved camera/rendering system - this should prevent vegetation suddenly disappearing when outside of the vehicle and using the pause screen. Ghosting/aliasing artefacts are reduced as well (they still show up in certain situations, but visually they are massively reduced)\n[*] Probe battery - the probe now has a battery that will slowly discharge once deployed. When the battery runs out the probe stops sampling. To recharge put the probe back in the truck. Both the battery capacity and recharge time can be upgraded.\n[*] Main menu bugfix - after returning to the main menu there was a bug preventing loading back into the game (stuck with a random view of the terrain), this should now be fixed\n[*] New settings: MSAA level (this was previously automatically set to 8x, it now defaults to 2x and should result in an FPS increase), screen/window resolution, texture resolution (defaults to full resolution but can be set to 1/2, 1/4 or even 1/8 resolution to improve performance)\n[/list]",
+      "key": "2250550::ab1fe4d6a8dc0ad40b4ba1852cb7c0afbc1fd898",
+      "tags": null
     },
     {
       "title": "Small patches: tornado and vehicle camera bug fixes",
       "date": "2023-09-02 18:10:50",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355666260439",
-      "content": "- Adjusted some of the sensitivity settings for the tornado camera\n- Fixed issue with vehicle camera not rotating correctly with vehicle movement"
+      "content": "- Adjusted some of the sensitivity settings for the tornado camera\n- Fixed issue with vehicle camera not rotating correctly with vehicle movement",
+      "key": "2250550::d76cb861b1948130d3b667f965f0a929656ebb20",
+      "tags": null
     },
     {
       "title": "\ud83d\udd25\ud83c\udf2a\ufe0f Unleash the Storm: The Game-Changing Update You've Been Waiting For! \ud83c\udf2a\ufe0f\ud83d\udd25",
       "date": "2023-09-01 10:19:12",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355661421759",
-      "content": "Attention, storm chasers! We've got an update that's more than just a few tweaks. We've carefully reworked and enhanced key elements of the game to bring you a richer experience. Here's what's new:\n\n\ud83c\udf00 Become the Tornado in [b]Be The Tornado Mode[/b] \ud83c\udf00\nStart as a mere F1, a whisper in the wind. But wreak havoc, and evolve into an awe-inspiring F5 wedge tornado! Your path of destruction just got a whole lot more personal.\n\n\ud83d\udca5 Next-Level Destruction System \ud83d\udca5\nWe didn't just tweak the destruction; we overhauled it! Now, not only is the destruction procedural, but it's also a visual spectacle! Customize the chaos with settings for destructible buildings and debris generation. And watch out\u2014powerlines now topple over, blocking your escape routes!\n\n\ud83c\udf33 Random Object Scattering: It's a Jungle Out There! \ud83c\udf33\nFrom wind turbines (whose blades detach in high winds, so beware!) to tractors, trailers, hay bales, and uprootable trees\u2014every game will be a new adventure!\n\n\ud83d\ude9a Upgrade Smart, Not Hard: Choose Your Style \ud83d\ude9a\nYou can't max out everything anymore. With limitations on truck, probe, and radar upgrades, you'll have to strategize. But don't worry; there are still 30,000 ways to become the ultimate storm chaser!\n\n\ud83d\udcca Revamped HUD: Information at a Glance \ud83d\udcca\nSay goodbye to plain white text! Your HUD now features mini \"data screens\" for sample data and interceptometer readings. It's not just informative; it's immersive!\n\n\ud83c\udfae Fine-Tuned Sensitivity Settings \ud83c\udfae\nWe've expanded the range for both first-person and in-vehicle camera adjustments. Tailor your experience to the finest detail!\n\nSo, what are you waiting for? Dive into this whirlwind of upgrades and experience storm chasing like never before! \ud83c\udf2a\ufe0f\ud83d\udca5"
+      "content": "Attention, storm chasers! We've got an update that's more than just a few tweaks. We've carefully reworked and enhanced key elements of the game to bring you a richer experience. Here's what's new:\n\n\ud83c\udf00 Become the Tornado in [b]Be The Tornado Mode[/b] \ud83c\udf00\nStart as a mere F1, a whisper in the wind. But wreak havoc, and evolve into an awe-inspiring F5 wedge tornado! Your path of destruction just got a whole lot more personal.\n\n\ud83d\udca5 Next-Level Destruction System \ud83d\udca5\nWe didn't just tweak the destruction; we overhauled it! Now, not only is the destruction procedural, but it's also a visual spectacle! Customize the chaos with settings for destructible buildings and debris generation. And watch out\u2014powerlines now topple over, blocking your escape routes!\n\n\ud83c\udf33 Random Object Scattering: It's a Jungle Out There! \ud83c\udf33\nFrom wind turbines (whose blades detach in high winds, so beware!) to tractors, trailers, hay bales, and uprootable trees\u2014every game will be a new adventure!\n\n\ud83d\ude9a Upgrade Smart, Not Hard: Choose Your Style \ud83d\ude9a\nYou can't max out everything anymore. With limitations on truck, probe, and radar upgrades, you'll have to strategize. But don't worry; there are still 30,000 ways to become the ultimate storm chaser!\n\n\ud83d\udcca Revamped HUD: Information at a Glance \ud83d\udcca\nSay goodbye to plain white text! Your HUD now features mini \"data screens\" for sample data and interceptometer readings. It's not just informative; it's immersive!\n\n\ud83c\udfae Fine-Tuned Sensitivity Settings \ud83c\udfae\nWe've expanded the range for both first-person and in-vehicle camera adjustments. Tailor your experience to the finest detail!\n\nSo, what are you waiting for? Dive into this whirlwind of upgrades and experience storm chasing like never before! \ud83c\udf2a\ufe0f\ud83d\udca5",
+      "key": "2250550::db2390665866241062d64f0fcc9d67ca8a22df49",
+      "tags": null
     },
     {
       "title": "Ambient Sound Effects, Debris Cloud Improvements, Bug Fixes",
       "date": "2023-08-19 12:36:44",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289180716077",
-      "content": "[list]\n[*] You will now hear birds during the day and crickets at night, which will fade out as night falls\n[*] You will also hear frogs and water near the river\n[*] The appearance of the debris cloud is more variable, it can be smooth or bumpy\n[*] Fixed issue with pause menu becoming disabled\n[/list]"
+      "content": "[list]\n[*] You will now hear birds during the day and crickets at night, which will fade out as night falls\n[*] You will also hear frogs and water near the river\n[*] The appearance of the debris cloud is more variable, it can be smooth or bumpy\n[*] Fixed issue with pause menu becoming disabled\n[/list]",
+      "key": "2250550::e4bcefbb892144d17e6ca2cd418e8882cdff8023",
+      "tags": null
     },
     {
       "title": "Updated Sound Effects, More Mouse Sensitivity Settings, Minor Patches",
       "date": "2023-08-18 12:04:27",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289176990152",
-      "content": "[list]\n[*] Sound effects have been updated to be more intimidating, you will also notice a difference in sound when getting in/out of the truck\n[*] Mouse sensitivity settings now scale from 1 - 30, using a non-linear scale so that you can really fine-tune the sensitivity to your hardware\n[*] Added radar delay upgrade back to upgrades screen (not sure how this went missing... but it's back!)\n[*] Fixed buggy vegetation movement, it should respond appropriately to the wind speed now\n[*] Fixed a small arithmetic error that was making debris clouds render smaller than they should\n[*] There was a small bug when transitioning from the pause screen, that has been fixed\n[*] Costs for upgrades have been re-balanced now that earnings can be 7 figures in a single successful chase\n[/list]"
+      "content": "[list]\n[*] Sound effects have been updated to be more intimidating, you will also notice a difference in sound when getting in/out of the truck\n[*] Mouse sensitivity settings now scale from 1 - 30, using a non-linear scale so that you can really fine-tune the sensitivity to your hardware\n[*] Added radar delay upgrade back to upgrades screen (not sure how this went missing... but it's back!)\n[*] Fixed buggy vegetation movement, it should respond appropriately to the wind speed now\n[*] Fixed a small arithmetic error that was making debris clouds render smaller than they should\n[*] There was a small bug when transitioning from the pause screen, that has been fixed\n[*] Costs for upgrades have been re-balanced now that earnings can be 7 figures in a single successful chase\n[/list]",
+      "key": "2250550::2c34e8171061969b6d38b54d08dae6be28ea25a6",
+      "tags": null
     },
     {
       "title": "Bringing Back Stratford, Mouse Sensitivity Fix, Controller Patches",
       "date": "2023-08-17 16:15:02",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289173979170",
-      "content": "New in this patch:\n\n[list]\n[*] Brought Stratford back into the game (sorry! I disabled this for testing and forgot to enable before pushing the update)\n[*] Added some new wind sound effects when near tornadoes\n[*] Added first-person and in-vehicle look sensitivity settings (access in the settings menu: esc or start button on controller)\n[*] Fixed issue with mouse scroll wheel making the camera zoom uncontrollable\n[*] You can now enter/exit the pause screen with the start button on controllers\n[*] Patched bug where residents wouldn't shelter when warned\n[*] Laptop 'Radar' button no longer locked out when using a mouse\n[/list]\n"
+      "content": "New in this patch:\n\n[list]\n[*] Brought Stratford back into the game (sorry! I disabled this for testing and forgot to enable before pushing the update)\n[*] Added some new wind sound effects when near tornadoes\n[*] Added first-person and in-vehicle look sensitivity settings (access in the settings menu: esc or start button on controller)\n[*] Fixed issue with mouse scroll wheel making the camera zoom uncontrollable\n[*] You can now enter/exit the pause screen with the start button on controllers\n[*] Patched bug where residents wouldn't shelter when warned\n[*] Laptop 'Radar' button no longer locked out when using a mouse\n[/list]\n",
+      "key": "2250550::a4ef134d5ba10aaae4f5579acf8516c41e588754",
+      "tags": null
     },
     {
       "title": "Partial Controller Support, Updated Funnel & Debris Cloud Rendering",
       "date": "2023-08-16 15:59:57",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289170295890",
-      "content": "[list]\n[*] Had a Bob Ross Moment (\"Happy Little Accident\") and stumbled on a better way to render debris clouds:\n[img]https://cdn.discordapp.com/attachments/1005462599544078426/1141350449929265323/image.png[/img]\n[*] Funnel rendering has been changed due to an awesome user-submitted suggestion: funnel is smoother at the top and \"bumpier\" near the ground\n[*] Partial controller support has been added, control scheme posted below:\n[/list]\n\n[h1]Vehicle Controls[/h1]\nAccelerate - Right Trigger\nBrake - Left Trigger (Keep holding to reverse)\nHandbrake - 'B' / East Button\nEnter/Exit Vehicle - 'A' / South Button\nSound Siren - 'X' / West Button\nToggle Lights - 'Y' / North Button\nSteer - Left Stick\nLook - Right Stick\nToggle 1st/3rd Person Camera - Right Stick Press\nToggle VHS Camera - Right Shoulder Button\nToggle Laptop - Select\n\n[h1]VHS Camera Controls[/h1]\nZoom In/Out - D-Pad Up/Down\nTake Photo - Left Shoulder Button\nExit Camera - Right Shoulder Button\n\n[h1]Laptop Controls[/h1]\nSelect Action - D-Pad Up/Down\nPress Button - 'A' / South Button\nChange Screen - D-Pad Left/Right\nClose Laptop - Select Button\n\n[h1]First Person Controls[/h1]\nMove - Left Stick\nSprint - Click and move left stick\nLook - Right Stick\nJump - 'Y' / North Button\nDeploy Probe / Sound Siren - 'X' / West Button\nEnter Vehicle - 'A' / South Button\nToggle VHS - Right Shoulder Button"
+      "content": "[list]\n[*] Had a Bob Ross Moment (\"Happy Little Accident\") and stumbled on a better way to render debris clouds:\n[img]https://cdn.discordapp.com/attachments/1005462599544078426/1141350449929265323/image.png[/img]\n[*] Funnel rendering has been changed due to an awesome user-submitted suggestion: funnel is smoother at the top and \"bumpier\" near the ground\n[*] Partial controller support has been added, control scheme posted below:\n[/list]\n\n[h1]Vehicle Controls[/h1]\nAccelerate - Right Trigger\nBrake - Left Trigger (Keep holding to reverse)\nHandbrake - 'B' / East Button\nEnter/Exit Vehicle - 'A' / South Button\nSound Siren - 'X' / West Button\nToggle Lights - 'Y' / North Button\nSteer - Left Stick\nLook - Right Stick\nToggle 1st/3rd Person Camera - Right Stick Press\nToggle VHS Camera - Right Shoulder Button\nToggle Laptop - Select\n\n[h1]VHS Camera Controls[/h1]\nZoom In/Out - D-Pad Up/Down\nTake Photo - Left Shoulder Button\nExit Camera - Right Shoulder Button\n\n[h1]Laptop Controls[/h1]\nSelect Action - D-Pad Up/Down\nPress Button - 'A' / South Button\nChange Screen - D-Pad Left/Right\nClose Laptop - Select Button\n\n[h1]First Person Controls[/h1]\nMove - Left Stick\nSprint - Click and move left stick\nLook - Right Stick\nJump - 'Y' / North Button\nDeploy Probe / Sound Siren - 'X' / West Button\nEnter Vehicle - 'A' / South Button\nToggle VHS - Right Shoulder Button",
+      "key": "2250550::6a180b70e6aabb49a1e87c4f0b5ed69ed8946bc0",
+      "tags": null
     },
     {
       "title": "Ultra-wide Support, Fixed Parking Brake & UI Glitches, Updated Lighting",
       "date": "2023-08-11 09:13:15",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5839532486214451313",
-      "content": "[list]\n[*] Support has now been added for ultra-wide monitors, please let me know if you notice any UI issues if you use an ultra-wide\n[*] Fixed issue with parking brake not applying\n[*] Fixed UI glitches where buttons would \"float\" out of the screen\n[*] Updated lighting so the stratus clouds don't absorb too much light\n[/list]"
+      "content": "[list]\n[*] Support has now been added for ultra-wide monitors, please let me know if you notice any UI issues if you use an ultra-wide\n[*] Fixed issue with parking brake not applying\n[*] Fixed UI glitches where buttons would \"float\" out of the screen\n[*] Updated lighting so the stratus clouds don't absorb too much light\n[/list]",
+      "key": "2250550::ebc5488df6afae3dc6922ac717d9cb8acbfe98ec",
+      "tags": null
     },
     {
       "title": "Visual Fixes & Vehicle Handling",
       "date": "2023-08-09 08:35:12",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124585954863046165",
-      "content": "[list]\n[*] Vehicle handling updated so truck doesn't skid out of control when braking and turning\n[*] Adjusted wind effects so vegetation doesn't get stretched to ridiculous proportions\n[*] Cloud layer fades in/out depending on proximity to cell\n[*] Tweaked VHS effect to have more \"washed out\" colouring\n[*] Fixed some issues with post processing on laptop screen\n[/list]"
+      "content": "[list]\n[*] Vehicle handling updated so truck doesn't skid out of control when braking and turning\n[*] Adjusted wind effects so vegetation doesn't get stretched to ridiculous proportions\n[*] Cloud layer fades in/out depending on proximity to cell\n[*] Tweaked VHS effect to have more \"washed out\" colouring\n[*] Fixed some issues with post processing on laptop screen\n[/list]",
+      "key": "2250550::83cbd472847ee5e25243c6dbe7ed0b90c8cc600e",
+      "tags": null
     },
     {
       "title": "UI Overhaul, River Overhaul, VHS Overhaul, Updated Terrain Texturing",
       "date": "2023-08-08 16:18:41",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124585319868496811",
-      "content": "[list]\n[*] This update completely removes the DOS/Ceefax style user interface in the laptop, and replaces it with a more era-accurate \"Motif\" user interface with a point-and-click interface (no more keyboard shortcuts!) - there is also a \"Dark Mode\" toggle for those of you who prefer it :)\n[*] The horrendous screen shaking while the laptop is in full screen mode has also been fixed!\n[*] I have replaced the river with a much more detailed river material with reflections, ripples, rocks etc.\n[*] A completely different asset is now used for rendering VHS effects.\n[*] Terrain texturing has been updated, I'm not sure how noticeable it is, but hopefully it looks less \"uniform\" than before.\n[/list]\n\n\n\n\n\n"
+      "content": "[list]\n[*] This update completely removes the DOS/Ceefax style user interface in the laptop, and replaces it with a more era-accurate \"Motif\" user interface with a point-and-click interface (no more keyboard shortcuts!) - there is also a \"Dark Mode\" toggle for those of you who prefer it :)\n[*] The horrendous screen shaking while the laptop is in full screen mode has also been fixed!\n[*] I have replaced the river with a much more detailed river material with reflections, ripples, rocks etc.\n[*] A completely different asset is now used for rendering VHS effects.\n[*] Terrain texturing has been updated, I'm not sure how noticeable it is, but hopefully it looks less \"uniform\" than before.\n[/list]\n\n\n\n\n\n",
+      "key": "2250550::9f119b28a8a5b8ec6f9e8df61e9aebd50d67430c",
+      "tags": null
     },
     {
       "title": "Fixed Timezone Issue, Lowered Stratford Siren, Brightened Post-Processing",
       "date": "2023-07-26 18:58:21",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686243911936",
-      "content": "[list]\n[*] Fixed the timezone-offset issue where the game wouldn't start at the user's inputted time, but would be offset by their timezone\n[*] Lowered the siren in Stratford now that the terrain is lowered\n[*] Brightened the post-processing by 0.5EV to help with night-time driving\n[/list]"
+      "content": "[list]\n[*] Fixed the timezone-offset issue where the game wouldn't start at the user's inputted time, but would be offset by their timezone\n[*] Lowered the siren in Stratford now that the terrain is lowered\n[*] Brightened the post-processing by 0.5EV to help with night-time driving\n[/list]",
+      "key": "2250550::c85f322597691f91f286ffe4f573c86dd594c589",
+      "tags": null
     },
     {
       "title": "Building Placement, Updated Wind FX, Lighting HotFix",
       "date": "2023-07-26 16:19:25",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686243509605",
-      "content": "[list]\n[*] Smoothed terrain around towns, hopefully no more \"floating buildings\"\n[*] Smoother transition for wind effects on vegetation and trees, hopefully no more \"jumping/skipping\" every second\n[*] Fixed issue with reflection probe on truck affecting roads\n[*] Temporarily removed AI traffic, will be re-introduced in a coming update\n[/list]"
+      "content": "[list]\n[*] Smoothed terrain around towns, hopefully no more \"floating buildings\"\n[*] Smoother transition for wind effects on vegetation and trees, hopefully no more \"jumping/skipping\" every second\n[*] Fixed issue with reflection probe on truck affecting roads\n[*] Temporarily removed AI traffic, will be re-introduced in a coming update\n[/list]",
+      "key": "2250550::c967e16e2302fa943040c78adc8db4fa76015bef",
+      "tags": null
     },
     {
       "title": "Roads & Visuals Update",
       "date": "2023-07-25 16:37:57",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051989147420",
-      "content": "I've manually adjusted all of the roads so that there are no longer \"cliffs\" on each side. I've also adjusted the lighting and visuals to try and give the game a bit more of a polished look."
+      "content": "I've manually adjusted all of the roads so that there are no longer \"cliffs\" on each side. I've also adjusted the lighting and visuals to try and give the game a bit more of a polished look.",
+      "key": "2250550::484eafdc4d154300644f9d6f0027b7bf5a678821",
+      "tags": null
     },
     {
       "title": "Vegetation LOD Hotfix",
       "date": "2023-07-20 04:30:54",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051969081986",
-      "content": "The vegetation render radius setting was broken, this will allow players to customise the render distance of vegetation and trees."
+      "content": "The vegetation render radius setting was broken, this will allow players to customise the render distance of vegetation and trees.",
+      "key": "2250550::196699ccbe80a20715b20ce258451dc983fda9fa",
+      "tags": null
     },
     {
       "title": "Tutorial hotfix",
       "date": "2023-07-20 03:54:27",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584051968990031",
-      "content": "An eagle-eyed player spotted a bug with the tutorial, which I'm happy to say is now fixed :)"
+      "content": "An eagle-eyed player spotted a bug with the tutorial, which I'm happy to say is now fixed :)",
+      "key": "2250550::bbec592f5fc6e51c415e709efbaae5b40836d6fe",
+      "tags": null
     },
     {
       "title": "\"Smooth\" Tornadoes, Precipitation Fix, Sound Fix, Input Fix",
       "date": "2023-07-14 08:15:44",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124583599317753912",
-      "content": "Fixed issues where the same key could trigger multiple actions, for example, pressing ENTER to save game also sounds siren, or dialling in a remote warning results in selling samples.\n\nFixed texture issue preventing rain shafts from rendering.\n\nTornadoes now start smooth with small debris clouds, over time the funnels become more \"dirty\" and the debris clouds grow\n\nMoved truck audio source so it is now centred with the model instead of offset"
+      "content": "Fixed issues where the same key could trigger multiple actions, for example, pressing ENTER to save game also sounds siren, or dialling in a remote warning results in selling samples.\n\nFixed texture issue preventing rain shafts from rendering.\n\nTornadoes now start smooth with small debris clouds, over time the funnels become more \"dirty\" and the debris clouds grow\n\nMoved truck audio source so it is now centred with the model instead of offset",
+      "key": "2250550::d029417995d40b273ee6e4d6411cc7eb72b8a2ad",
+      "tags": null
     },
     {
       "title": "In-Game Tutorial & Lighting Tweak",
       "date": "2023-07-12 15:55:08",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150179173062",
-      "content": "Added an in-game tutorial new players can work through, teaching the main concepts of the game.\n\nSoftened shadows and changed lighting settings."
+      "content": "Added an in-game tutorial new players can work through, teaching the main concepts of the game.\n\nSoftened shadows and changed lighting settings.",
+      "key": "2250550::08891bbe92ab2f8fc5bfc762dc029fb6b36ea5a6",
+      "tags": null
     },
     {
       "title": "Market Price Hotfix",
       "date": "2023-07-10 07:35:44",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150170618351",
-      "content": "Market prices could go negative if you were particularly unlucky! All data prices now have a minimum of $1."
+      "content": "Market prices could go negative if you were particularly unlucky! All data prices now have a minimum of $1.",
+      "key": "2250550::5792bb33fd3fa1fa2d776e5d101c8139a36608a9",
+      "tags": null
     },
     {
       "title": "Additional Settings + Hotfix",
       "date": "2023-07-10 07:27:51",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150170598538",
-      "content": "Two new settings were added:\n[list]\n[*] Tornado Quality - this changes the ray marching settings and can be used to gain extra performance\n[*] Camera Shake - disable camera shake in first person view if preferred\n[/list]\n\nOne adjustment was made :- AI traffic should get tossed by tornadic winds\n\nFixed bug where player wouldn't die unless market screen was open"
+      "content": "Two new settings were added:\n[list]\n[*] Tornado Quality - this changes the ray marching settings and can be used to gain extra performance\n[*] Camera Shake - disable camera shake in first person view if preferred\n[/list]\n\nOne adjustment was made :- AI traffic should get tossed by tornadic winds\n\nFixed bug where player wouldn't die unless market screen was open",
+      "key": "2250550::400c0f1e271bd22dee5e598338f6a9470adf37df",
+      "tags": null
     },
     {
       "title": "Hotfix - Tornado-Vehicle Interaction",
       "date": "2023-07-09 16:30:43",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150168329003",
-      "content": "Fixed tornado winds not interacting with player vehicle"
+      "content": "Fixed tornado winds not interacting with player vehicle",
+      "key": "2250550::06b676e922b2191b740b67e61b02af7bc417ca6f",
+      "tags": null
     },
     {
       "title": "Bug Fixes + AI Traffic",
       "date": "2023-07-08 19:04:31",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150165076384",
-      "content": "Added AI traffic around Stratford, I will add more AI routes over the next few days.\n\nFixed bug where main probe wasn't collecting samples\n\nAdjusted the rain wrapping, may still need adjusting but it looked good in the editor"
+      "content": "Added AI traffic around Stratford, I will add more AI routes over the next few days.\n\nFixed bug where main probe wasn't collecting samples\n\nAdjusted the rain wrapping, may still need adjusting but it looked good in the editor",
+      "key": "2250550::8d7a1e0ad774617243f5b9c87b79dc77584c33a5",
+      "tags": null
     },
     {
       "title": "Core Gameplay Update - Data Market & Moddable Vehicles",
       "date": "2023-07-07 19:26:13",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124582150161487833",
-      "content": "The major updates are:\n[list]\n[*] Modding support for vehicles and probes\n[*] Data Market replaced mission system\n[/list]\nNow you can deploy your probe whenever you like and collect as many samples as you like (no missions or upgrades required!) - time the markets and sell your data for massive profits! If you're lucky you will sell during a market spike!\n\nI have also submitted an official quick start guide for the game, that should appear on the game's \"Guides\" page soon.\n\nIf you are feeling ambitious you can add your own vehicle and probe models to the game. A template Unity project package is included in the game folder. I have created a video guide here: \n\n[previewyoutube=fnXeAO84zvQ;full][/previewyoutube]\n\nMinor updates:\n[list]\n[*] Fixed radar lag-spike\n[*] Added V-Sync option\n[*] Added precipitation particle system\n[/list]\n\n\n\n"
+      "content": "The major updates are:\n[list]\n[*] Modding support for vehicles and probes\n[*] Data Market replaced mission system\n[/list]\nNow you can deploy your probe whenever you like and collect as many samples as you like (no missions or upgrades required!) - time the markets and sell your data for massive profits! If you're lucky you will sell during a market spike!\n\nI have also submitted an official quick start guide for the game, that should appear on the game's \"Guides\" page soon.\n\nIf you are feeling ambitious you can add your own vehicle and probe models to the game. A template Unity project package is included in the game folder. I have created a video guide here: \n\n[previewyoutube=fnXeAO84zvQ;full][/previewyoutube]\n\nMinor updates:\n[list]\n[*] Fixed radar lag-spike\n[*] Added V-Sync option\n[*] Added precipitation particle system\n[/list]\n\n\n\n",
+      "key": "2250550::b42419698f4765a3c46472c5ddd0bbc9f6bb2259",
+      "tags": null
     },
     {
       "title": "Forecast Mode HotFIx",
       "date": "2023-06-16 04:45:05",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5896948309842386114",
-      "content": "Major Change: risk area is now shown in red on the map, rather than a text description on the forecast page. Size of risk area can also change.\n\nMinor changes:\nFixed graphical error where opening and closing laptop caused the radar and forecast screens to glitch together\nFixed tornado spawn intensities so they are always at least F1 strength"
+      "content": "Major Change: risk area is now shown in red on the map, rather than a text description on the forecast page. Size of risk area can also change.\n\nMinor changes:\nFixed graphical error where opening and closing laptop caused the radar and forecast screens to glitch together\nFixed tornado spawn intensities so they are always at least F1 strength",
+      "key": "2250550::eca113f8b03845b518428252ee0b9aef50dcbe94",
+      "tags": null
     },
     {
       "title": "Hot Fix - Minor Bug Fixes",
       "date": "2023-06-13 14:32:22",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846358020513",
-      "content": "[list]\n[*] Disabled radar screen and replaced with BSOD for performance in doomsday mode\n[*] Truck lights should actually light up now\n[*] Truck should actually respond to tornadic winds now even if unoccupied\n[*] Fixed potential bug where if you run away and your truck impacts something you would still die\n[*] Other minor bug fixes\n[/list]"
+      "content": "[list]\n[*] Disabled radar screen and replaced with BSOD for performance in doomsday mode\n[*] Truck lights should actually light up now\n[*] Truck should actually respond to tornadic winds now even if unoccupied\n[*] Fixed potential bug where if you run away and your truck impacts something you would still die\n[*] Other minor bug fixes\n[/list]",
+      "key": "2250550::6601517362449599bc051d4f5550a2853136956c",
+      "tags": null
     },
     {
       "title": "Photography, Remote Warnings and More!",
       "date": "2023-06-12 19:54:38",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846355191496",
-      "content": "Major changes:\n\n[list]\n[*] You can take up to 3 photographs per tornado, closer photos of more intense tornadoes results in higher pay. The amount earned per photograph decreases, so take your shots wisely!\n[*] You can now remotely \"dial-in\" to sound the siren in a town, the first call costs $1000, the second costs $5000 and every subsequent call costs $10000\n[*] Doomsday gamemode has been added: you start with one tornado on the map that always follows you, every 30 seconds another tornado spawns - how many rounds can you survive?\n[*] Realistic wind direction is now an option - cells will spawn in the south west corner of the map and move generally NE with the mean wind, right-moving cells generally produce stronger tornadoes\n[/list]\n\n\nMinor changes:\n[list]\n[*] There is a random offset when you reset your vehicle to help with situations where you are stuck\n[*] EAS tones have been replaced\n[*] Jumping now works (space)\n[*] Mouse remaining visible after applying settings has been fixed\n[*] Truck now reacts to tornadoes even if you aren't inside of it\n[*] A few fences have been added to the map, more to come\n[*] Distance from probe display has been fixed\n[*] Floating sirens have been fixed\n[/list]\n\n"
+      "content": "Major changes:\n\n[list]\n[*] You can take up to 3 photographs per tornado, closer photos of more intense tornadoes results in higher pay. The amount earned per photograph decreases, so take your shots wisely!\n[*] You can now remotely \"dial-in\" to sound the siren in a town, the first call costs $1000, the second costs $5000 and every subsequent call costs $10000\n[*] Doomsday gamemode has been added: you start with one tornado on the map that always follows you, every 30 seconds another tornado spawns - how many rounds can you survive?\n[*] Realistic wind direction is now an option - cells will spawn in the south west corner of the map and move generally NE with the mean wind, right-moving cells generally produce stronger tornadoes\n[/list]\n\n\nMinor changes:\n[list]\n[*] There is a random offset when you reset your vehicle to help with situations where you are stuck\n[*] EAS tones have been replaced\n[*] Jumping now works (space)\n[*] Mouse remaining visible after applying settings has been fixed\n[*] Truck now reacts to tornadoes even if you aren't inside of it\n[*] A few fences have been added to the map, more to come\n[*] Distance from probe display has been fixed\n[*] Floating sirens have been fixed\n[/list]\n\n",
+      "key": "2250550::d4d83adde94613fcc8808fda868a3a0edeb00192",
+      "tags": null
     },
     {
       "title": "Tornado Magnet Mode + Options, Options, Options!",
       "date": "2023-06-07 17:57:31",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846336671006",
-      "content": "You can now configure your game with two different game modes:\n[list]\n[*] Career - Normal game mode\n[*] Tornado Magnet - All tornadoes move towards your location, constantly, unceasingly, mercilessly\n[/list]\n\nThere are also three \"death modes\":\n[list]\n[*] Disabled - You can't die\n[*] Tornado Only - You only die if your character or truck is lifted above 700 metres in the air\n[*] Enabled - You die if you are lifted by a tornado or if your truck impacts something\n[/list]\n\nAnd you can set the date and time before you start, format is MM/DD/YYYY HH:MM:SS\n\n[h1]IMPORTANT[/h1]\nPlease be respectful of historical event dates, while they are well known within the storm chasing community, these are also dates where families lost loved ones, their homes, their livelihoods etc. If I start seeing videos of people glorifying death and destruction on these dates I will remove this feature.\n\nAn additional option has been added for vegetation render distance, turn this down if the new map is making your game lag.\n\nI also fixed a bug where switching to the laptop while in VHS camera mode caused some rendering glitches, you will now have to exit camera mode to enter the laptop mode. The vehicle tyre friction has been increased to decrease the amount of screeching."
+      "content": "You can now configure your game with two different game modes:\n[list]\n[*] Career - Normal game mode\n[*] Tornado Magnet - All tornadoes move towards your location, constantly, unceasingly, mercilessly\n[/list]\n\nThere are also three \"death modes\":\n[list]\n[*] Disabled - You can't die\n[*] Tornado Only - You only die if your character or truck is lifted above 700 metres in the air\n[*] Enabled - You die if you are lifted by a tornado or if your truck impacts something\n[/list]\n\nAnd you can set the date and time before you start, format is MM/DD/YYYY HH:MM:SS\n\n[h1]IMPORTANT[/h1]\nPlease be respectful of historical event dates, while they are well known within the storm chasing community, these are also dates where families lost loved ones, their homes, their livelihoods etc. If I start seeing videos of people glorifying death and destruction on these dates I will remove this feature.\n\nAn additional option has been added for vegetation render distance, turn this down if the new map is making your game lag.\n\nI also fixed a bug where switching to the laptop while in VHS camera mode caused some rendering glitches, you will now have to exit camera mode to enter the laptop mode. The vehicle tyre friction has been increased to decrease the amount of screeching.",
+      "key": "2250550::aee01e7662ebb576adea6d109a93f88270b53182",
+      "tags": null
     },
     {
       "title": "Lighting & Sky Fix + Tornado Probabilities",
       "date": "2023-06-06 09:24:30",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211244329398",
-      "content": "[list]\n[*] The \"# Tornadoes\" setting is now \"# Cells\", and you can adjust the probability of a cell producing a tornado using the \"Tornado Spawn %\" setting.\n[*] Fixed \"blue sky tornadoes\" and made the game a bit more overcast again\n[*] Fixed ambient lighting so shadows aren't as harsh\n[/list]"
+      "content": "[list]\n[*] The \"# Tornadoes\" setting is now \"# Cells\", and you can adjust the probability of a cell producing a tornado using the \"Tornado Spawn %\" setting.\n[*] Fixed \"blue sky tornadoes\" and made the game a bit more overcast again\n[*] Fixed ambient lighting so shadows aren't as harsh\n[/list]",
+      "key": "2250550::5040f810972b3461996472b2c451e2763548e5be",
+      "tags": null
     },
     {
       "title": "Map Overhaul - Step 2 (of many)",
       "date": "2023-06-05 18:50:29",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211242117296",
-      "content": "Added more detail to the map, enjoy! :)"
+      "content": "Added more detail to the map, enjoy! :)",
+      "key": "2250550::8c2767f6c6fb111fbaca715b54efa237ffd63ad2",
+      "tags": null
     },
     {
       "title": "Map Overhaul - Step 1 of Many!",
       "date": "2023-06-05 08:52:02",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211240602186",
-      "content": "The main update with this build is a map overhaul:\n\nThe map has been re-textured and the heightmap has been updated to the real-world location (Pilot Mound, Iowa). Tree distributions have changed to be more dense near rivers and less dense on the \"plains\".\n\nI still need to manually adjust the road network, however this is a several hour job I have to do by hand, and didn't want to delay the update for this. I will make incremental updates to both the road network and the map in future map overhaul updates.\n\nOther updates:\n[list]\n[*] Fixed tornado upward motion, it was way too strong, and is now a percentage of the rotation speed\n[*] Previous update broke the car-tornado interaction, this is now fixed, and is also tweaked to be a bit stronger than before, so be careful at close range!\n[*] Volume slider added on settings screen (press 'esc' to access)\n[*] Visible gap between clouds and tornadoes should be fixed (let me know if this persists)\n[*] Probe no longer wastes samples, will only take a reading when it is within the active mission rating range\n[*] Car has stronger brakes\n[*] Road and terrain have different physics materials, car handling differs between surfaces you're driving on\n[*] The intercept point is now visible and highlighted in-game, so you can simply drive towards it for a good intercept (can be disabled on the settings screen)\n[*] Garbled siren sound has been fixed (doppler effect disabled)\n[/list]\n\nEnjoy and have fun!"
+      "content": "The main update with this build is a map overhaul:\n\nThe map has been re-textured and the heightmap has been updated to the real-world location (Pilot Mound, Iowa). Tree distributions have changed to be more dense near rivers and less dense on the \"plains\".\n\nI still need to manually adjust the road network, however this is a several hour job I have to do by hand, and didn't want to delay the update for this. I will make incremental updates to both the road network and the map in future map overhaul updates.\n\nOther updates:\n[list]\n[*] Fixed tornado upward motion, it was way too strong, and is now a percentage of the rotation speed\n[*] Previous update broke the car-tornado interaction, this is now fixed, and is also tweaked to be a bit stronger than before, so be careful at close range!\n[*] Volume slider added on settings screen (press 'esc' to access)\n[*] Visible gap between clouds and tornadoes should be fixed (let me know if this persists)\n[*] Probe no longer wastes samples, will only take a reading when it is within the active mission rating range\n[*] Car has stronger brakes\n[*] Road and terrain have different physics materials, car handling differs between surfaces you're driving on\n[*] The intercept point is now visible and highlighted in-game, so you can simply drive towards it for a good intercept (can be disabled on the settings screen)\n[*] Garbled siren sound has been fixed (doppler effect disabled)\n[/list]\n\nEnjoy and have fun!",
+      "key": "2250550::b29b3ba82bbdcbe3c955e3430a9e291f55abe4a5",
+      "tags": null
     },
     {
       "title": "Vehicle Physics HotFix",
       "date": "2023-06-02 17:09:57",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211230930946",
-      "content": "[list]\n[*] Enabled brake assist (prevents vehicle going out of control when braking)\n[*] Enabled traction control (prevents horrible screeching when accelerating)\n[*] Increased tyre friction (better handling, acceleration and braking)\n[*] Tightened the anti-roll (no more excessive swaying when cornering)\n[*] Added textures to laptop model\n[*] Vehicle can now collide with bridges and other road objects\n[/list]"
+      "content": "[list]\n[*] Enabled brake assist (prevents vehicle going out of control when braking)\n[*] Enabled traction control (prevents horrible screeching when accelerating)\n[*] Increased tyre friction (better handling, acceleration and braking)\n[*] Tightened the anti-roll (no more excessive swaying when cornering)\n[*] Added textures to laptop model\n[*] Vehicle can now collide with bridges and other road objects\n[/list]",
+      "key": "2250550::cdeb42145676af9fbaa15d501e929f49fddc2a1c",
+      "tags": null
     },
     {
       "title": "Vehicle Physics Overhaul + Gameplay Tweaks",
       "date": "2023-06-02 11:00:41",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151601211229995879",
-      "content": "The following have changed:\n\n[list]\n[*] Old vehicle physics have been completely removed from the game and replaced with much more stable vehicle physics\n[*] You can now switch between driver view and 3rd person view in the vehicle by pressing the C key\n[*] You can zoom in and out with the VHS camera by using the mouse scroll wheel\n[*] Tornado ground speeds have changed, they are slower to make intercepting easier\n[*] You will now see the distance you are from your probe underneath your probe readings display (useful if you manage to lose your probe!)\n[*] Timings have been adjusted to make things a little bit less chaotic\n[*] A bit more work has been done on the tornado funnel blending, it is by no means complete, but hopefully looks a bit better than the previous version\n[/list]"
+      "content": "The following have changed:\n\n[list]\n[*] Old vehicle physics have been completely removed from the game and replaced with much more stable vehicle physics\n[*] You can now switch between driver view and 3rd person view in the vehicle by pressing the C key\n[*] You can zoom in and out with the VHS camera by using the mouse scroll wheel\n[*] Tornado ground speeds have changed, they are slower to make intercepting easier\n[*] You will now see the distance you are from your probe underneath your probe readings display (useful if you manage to lose your probe!)\n[*] Timings have been adjusted to make things a little bit less chaotic\n[*] A bit more work has been done on the tornado funnel blending, it is by no means complete, but hopefully looks a bit better than the previous version\n[/list]",
+      "key": "2250550::d1365b7fc08cb67837cb4f8f3024174566228ffb",
+      "tags": null
     },
     {
       "title": "Hot Fix #2",
       "date": "2023-05-30 10:42:06",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151600576606498452",
-      "content": "[list]\n[*] Mouse cursor is only visible on settings screen (opened with 'esc' key)\n[*] Can toggle between windowed and full screen mode\n[*] EAS tone has been pitch-shifted and made quieter\n[*] Cells forming near the edge of the map will move towards the centre of the map, no more \"waste of time\" cells\n[*] Vehicle can only be reset every 5 seconds, must be moving slowly or stationary to reset\n[/list]"
+      "content": "[list]\n[*] Mouse cursor is only visible on settings screen (opened with 'esc' key)\n[*] Can toggle between windowed and full screen mode\n[*] EAS tone has been pitch-shifted and made quieter\n[*] Cells forming near the edge of the map will move towards the centre of the map, no more \"waste of time\" cells\n[*] Vehicle can only be reset every 5 seconds, must be moving slowly or stationary to reset\n[/list]",
+      "key": "2250550::23a71320628baec0af9962ac11f60698a0c7bfa9",
+      "tags": null
     },
     {
       "title": "HotFix #1",
       "date": "2023-05-29 11:16:51",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5151600576602942036",
-      "content": "[list]\n[*]Cursor should stay in the game window now\n[*]Photos will be saved to your \"My Documents/Tornado Research and Rescue\" directory\n[*]Fixed sliding truck when standing next to it\n[*]Removed a tree that was in the middle of the road\n[*]Added label for Stratford to the map\n[/list]"
+      "content": "[list]\n[*]Cursor should stay in the game window now\n[*]Photos will be saved to your \"My Documents/Tornado Research and Rescue\" directory\n[*]Fixed sliding truck when standing next to it\n[*]Removed a tree that was in the middle of the road\n[*]Added label for Stratford to the map\n[/list]",
+      "key": "2250550::af3337f58e39aefa2251cea7f060ef8528f43f1b",
+      "tags": null
     }
   ]
 }

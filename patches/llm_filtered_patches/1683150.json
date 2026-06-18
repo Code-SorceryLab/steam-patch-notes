@@ -1,0 +1,1878 @@
+{
+  "appId": "1683150",
+  "count": 46,
+  "notes": [
+    {
+      "title": "August 2025 Development Update",
+      "date": "2025-08-22 10:13:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382479620",
+      "content": "[p]Hello Railroaders![/p][p]Progress continues on our Maintenance of Way (MoW) update! In our [url=\"https://store.steampowered.com/news/app/1683150/view/498325386812195144\"]last update[/url] we shared a number of items, including that we are reworking track construction milestones to work with the MoW system: MoW trains will build the track and need to be supplied with ties, track, and ballast. Lots and lots of ballast.[/p][p]Today we'll look at what we've been up to as we continue to work toward releasing MoW on an experimental branch![/p][p][/p][h2]Dynamic Load Models[/h2][p]Load models are an area that we've been needing to improve upon, and MoW has helped bring that to the forefront during our testing. One of the challenges with load models has been that our system required each car to be configured for each type of load model, which meant that if we were to add tie models to our gondolas, we'd need to do that for each gondola. New track load model? Update the gondolas. Adding a ties load model? Update the gondolas. This quickly becomes rather tedious, particularly if we need to make changes later, and it's also not modding-friendly in that it requires modifying the cars to add new load models, creating conflicts. We needed a better system.[/p][p]The solution we've built enables us to define a \"load volume\" within rolling stock. The load volume describes the available space for the load within that car. Railroader can then find an appropriate load model at runtime and put it in place. This makes it possible to provide varying models for the same loads, without needing to configure each car for each possible load model.[/p][p]Here are some of the MoW load models:[/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/86d93e0816e77f9663738fff92aeaeb246702671.png\"][/img][/p][p]Not all loads can simply sit in a gondola though. Break bulk loads like dimensional lumber are often sent by flat car, with stakes securing the load. If the load isn't specific to the car, how can we include stakes? After all, the stakes are specific to the car, placed in the pockets along the side.[/p][p]To address this we've created a way to toggle detail models on cars depending on certain properties of the car, including whether the load model calls for stakes.[/p][p] [img src=\"{STEAM_CLAN_IMAGE}/41998859/1cb3d533dbe7e83de03c704f0c704baefb08d62a.png\"][/img][/p][p][/p][p]There are certainly much simpler ways to build these things that would have been faster to build, but we think they're worth the investment now to make Railroader more flexible in the future. [/p][p]On the topic of loads \u2013 now that we have better volume information, Railroader now takes density into consideration when determining how many pounds of a load are in a car. No more 50T boxcars of dimensional lumber \u2013\u00a0it isn't desert ironwood![/p][p][/p][h2]More MoW Equipment[/h2][p]We've created a new MoW car for your forthcoming maintenance needs. Like all good MoW equipment it's repurposed \u2013\u00a0this one from a box car. We really like how it turned out.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/d96c676ac6f714e34715891c6dde2898b278fcd4.png\"][/img][/p][p][/p][p]Gondolas are now purchasable, and a very basic MoW train is part of new Company mode games.[/p][p][/p][p]Speaking of new equipment, we're adding an ore car for the Alarka Copper Co. mines![/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/5d000aa5e0725a28c90bcc35bc197b00ddb5207f.png\"][/img][/p][p][/p][h2]More Data[/h2][p]Perhaps you've noticed above: we've revamped our rolling stock to include more prototypical car data, as well as the reporting mark and number![/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/890b81425efbf9896eda5cab8fc82c4b64216e5e.png\"][/img][/p][p][/p][h2]More Ballast[/h2][p]In our last post we mentioned what a ridiculous number of cars of ballast it would take to build 13 miles of railroad (1,429, in real life). We heard from a number of you who were very much up for the challenge, so we've added in a setting for construction realism. We're also including a lower realism setting.[/p][p][/p][p]We're aiming to find a good location for an on-line ballast producer, or perhaps other MoW loads. This would make for a fun alternative to running all of those cars through the interchange.\n\n[img src=\"{STEAM_CLAN_IMAGE}/41998859/d7abdc413ffb731d66889a0ce3bdac80a3c34242.png\"][/img][/p][p][/p][p]On a related note, we've made a key enhancement to how construction works. Previously, the MoW \"crew\" would use the cars as storage, working from it as they go. Now, they gradually unload the car while construction continues. This frees up your cars more quickly to get them filled back up again.[/p][p][/p][h2]Toward Experimental[/h2][p]This has been a challenging update cycle \u2013\u00a0a lot is changing, and we are still working on significant adjustments. Nevertheless, we are confident that these changes are necessary and important for the future of Railroader.[/p][p]Thank you for reading! We know that many of you are eager to take the new MoW features for a spin. We're working hard on it and plan to put it up on an experimental branch as soon as it's ready! [/p][p]\n[/p]",
+      "key": "1683150::dbc4ce35b08f09acf7208f95cd3144de35e6c40e",
+      "tags": [
+        {
+          "feature": "The solution we've built enables us to define a \"load volume\" within rolling stock."
+        },
+        {
+          "feature": "To address this we've created a way to toggle detail models on cars depending on certain properties of the car, including whether the load model calls for stakes."
+        },
+        {
+          "balance_change": "On the topic of loads \u2013 now that we have better volume information, Railroader now takes density into consideration when determining how many pounds of a load are in a car."
+        },
+        {
+          "feature": "We've created a new MoW car for your forthcoming maintenance needs."
+        },
+        {
+          "feature": "Gondolas are now purchasable, and a very basic MoW train is part of new Company mode games."
+        },
+        {
+          "feature": "Speaking of new equipment, we're adding an ore car for the Alarka Copper Co. mines!"
+        },
+        {
+          "feature": "we've revamped our rolling stock to include more prototypical car data, as well as the reporting mark and number!"
+        },
+        {
+          "feature": "we've added in a setting for construction realism."
+        },
+        {
+          "feature": "We're also including a lower realism setting."
+        },
+        {
+          "feature": "we've made a key enhancement to how construction works. Previously, the MoW \"crew\" would use the cars as storage, working from it as they go. Now, they gradually unload the car while construction continues."
+        }
+      ]
+    },
+    {
+      "title": "June 2025 Development Update",
+      "date": "2025-06-25 18:48:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891488362",
+      "content": "[p]Hello Railroaders![/p][p]Today we are happy to share our progress on the Maintenance of Way\u00a0(MoW) update we've been hard at work on. We knew this was going to be a big update, and as we have playtested and iterated on MoW that has certainly proven true. It's also driven us to revisit some aspects of Railroader's milestone progression and the map itself.[/p][p]We think it's important to note that none of this has happened in a vacuum, so to speak. Since we announced that we were working on MoW we've received tons of great ideas and feedback. Thank you! This is one of those features that makes it challenging to balance wide open vision with what we can make real, and will mesh with the rest of the game.[/p][p]In our [url=\"https://steamcommunity.com/games/1683150/announcements/detail/498319044783374805\"]last update on MoW[/url] we shared that you'll use ballast, ties, and rail to maintain your tracks. One thing we didn't share at that time was our thinking on how the core MoW mechanic of the work train would be a very cool way to do construction milestones. Instead of spotting a few batches of cars next to the missing track, what if you had to purchase and supply loads to the work train as it made its way down the line? This is the direction we're taking for the MoW update, and we're very excited about the richness and challenge it adds to Railroader.[/p][p]\n[img src=\"{STEAM_CLAN_IMAGE}/41998859/77b09c4fa5aea0f92ba784df2fddb79b7d15a3b2.png\"][/img][/p][p][/p][h3]The Price of Ballast: A Historical Reference Point[/h3][p]What loads are needed to rebuild the Ela bridge? Or build from Bryson Bridge to Alarka Junction? We dug into our sources, textbooks and historical records including the Tennessee Valley Authority and Southern Railway's own historical numbers for rebuilding the line to come up with the \"at the time\" resources. Based on those numbers we estimated the loads to build the 13 miles of railroad between Bryson and Fontana Lake and came up with:[/p][list][*][p]22 cars of rails[/p][/*][*][p]139 cars of ties[/p][/*][*][p]1,429 cars of ballast[/p][/*][*][p]Total load cost: $335,039[/p][/*][/list][p]Well. As exciting as it was to imagine moving 1,590 cars to and from the interchange, we decided that for the vast majority of players this was not anywhere in the realm of realistic or practical. By scaling those numbers we've arrived at car counts and costs that are both practical and substantial:[/p][list][*][p]10 cars of rails[/p][/*][*][p]20 cars of ties[/p][/*][*][p]200 cars of ballast[/p][/*][*][p]Total load cost: $15,080[/p][/*][/list][p](Note that for simplicity I've omitted costs and loads to construct the bridges in these example milestones.)[/p][p]Keep in mind that we are still very much in the development/playtesting phase and these numbers are almost guaranteed to change before we release the MoW update, but we wanted to give you an idea of what we're thinking about. What do you think? Let us know in the comments.[/p][p][/p][h3]Rethinking Milestones and The Map[/h3][p]Rethinking the milestones in terms of construction materials has also caused us to rethink the boundaries of those milestones, and even the reward for accomplishing a milestone, which is generally satisfaction of reaching a goal and access to more customers. We understand that for many players the western end of the map, with its lower customer density and heavy grades, may be too much to tackle. To address this we are making the following adjustments:[/p][list][*][p]Changing the Bryson Bridge to Fontana milestone to run only as far as Alarka Junction, and adding a second milestone from Alarka Junction (past the spur to Robinson Gap) to Almond. The Nantahala milestone will begin after Almond.[/p][/*][*][p]Dramatically reworking Nantahala Talc & Limestone at Hewitt to provide more traffic.[/p][/*][*][p]Adding an interchange and small freight house at Almond. (This is a big one. We have wanted to do something like this for a long time now.)[/p][/*][*][p]Others?[/p][/*][/list][p]Our goal in making these changes is to provide more options for your railroad, as well as to make expansion more rewarding.[/p][p][/p][p]Below: expanded Nantahala Talc & Limestone with placeholder scenery buildings.\n[/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/d700eebe8f5f9ce5364bcf99df3766bdcfd85bb5.png\"][/img][/p][p][/p][h3]Speed Restriction Signage and Other Challenges[/h3][p]We've also been busy with some of the more challenging details of MoW. For example, dynamically displaying signs to reflect speed restrictions due to poor track conditions.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/0fadf07b760cc69ed4ff8f8f1c5387f16d48880a.png\"][/img]\n[/p][p]In some circumstances displaying signs that make sense and don't overwhelm the player poses a real challenge![/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/0c7cdb3765a017abea0b325afbecdba63520e1fb.png\"][/img][/p][p]In addition we are planning on looking at supporting MoW load storage, reevaluating starting equipment, and so forth. Like we said: it's a big feature, but we think the wait will be worth it![/p][p][/p][h3]Scenery and Equipment Models... and the Turntable[/h3][p]As with previous updates we've been continuing to work on equipment model updates, as well as new scenery structures, including a revamped turntable bridge.[/p][p]Speaking of the turntable: we have added a control window to allow \"remote control\", as well as a new overlay interface which allows you to drag the bridge to the desired position, which it will automatically turn to. Hat tip to the Century of Steam team for inspiring us to improve the turntable interaction![/p][p][/p][p]Drag and drop turntable rotation:[/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/491e1295dd0eb41a989b9e0e7a9242e9ee61af21.gif\"][/img][/p][p][/p][p]Using the window to manually control the turntable, shown at 3X speed:[/p][p][img src=\"{STEAM_CLAN_IMAGE}/41998859/c91ba5cab200bd351262d10675627681c7dfd381.gif\"][/img][/p][p][/p][h3]New Map Terrain Data Format[/h3][p]Although we don't officially support modding, we wanted to provide a heads-up that this update will change the map terrain data format to one that uses the RIFF format and improves terrain data load times. We expect this to simplify creating/manipulating the terrain data in mods, as we know some of you are keen to do. We'll share more details about the format once this update is available on an experimental branch.[/p][p][/p][h3]Wrap-Up[/h3][p]That's all we have to share for now. Naturally we've got a number of smaller enhancements and bug fixes queued up, and perhaps a surprise or two. We don't yet know when this update will be available on an experimental branch, but rest assured that we want you to have it as soon as possible.[/p][p]Thank you for reading and for supporting Railroader!\n[/p]",
+      "key": "1683150::02dbd939ac89acd81f642936d12beb7ecf7424d7",
+      "tags": [
+        {
+          "balance_change": "By scaling those numbers we've arrived at car counts and costs that are both practical and substantial:"
+        },
+        {
+          "balance_change": "- 10 cars of rails"
+        },
+        {
+          "balance_change": "- 20 cars of ties"
+        },
+        {
+          "balance_change": "- 200 cars of ballast"
+        },
+        {
+          "balance_change": "- Total load cost: $15,080"
+        },
+        {
+          "balance_change": "- Changing the Bryson Bridge to Fontana milestone to run only as far as Alarka Junction, and adding a second milestone from Alarka Junction (past the spur to Robinson Gap) to Almond. The Nantahala milestone will begin after Almond."
+        },
+        {
+          "balance_change": "- Dramatically reworking Nantahala Talc & Limestone at Hewitt to provide more traffic."
+        },
+        {
+          "feature": "- Adding an interchange and small freight house at Almond. (This is a big one. We have wanted to do something like this for a long time now.)"
+        },
+        {
+          "feature": "Speaking of the turntable: we have added a control window to allow \"remote control\", as well as a new overlay interface which allows you to drag the bridge to the desired position, which it will automatically turn to."
+        },
+        {
+          "feature": "Although we don't officially support modding, we wanted to provide a heads-up that this update will change the map terrain data format to one that uses the RIFF format and improves terrain data load times."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2025.1.0a",
+      "date": "2025-05-09 11:00:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287868172",
+      "content": "This is a hot fix release that includes the following:\n[list][*] Tutorial bug/typo fixes.\n[*] Fix for broken Crews panel in the Company window.\n[/list]",
+      "key": "1683150::2fe7b9166ed1b14c5243fed4aecea91c9cc0b5d6",
+      "tags": [
+        {
+          "bug": "[*] Tutorial bug/typo fixes."
+        },
+        {
+          "bug": "[*] Fix for broken Crews panel in the Company window."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2025.1.0: New Tutorial!",
+      "date": "2025-05-08 11:51:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287836300",
+      "content": "There's a lot to learn about Railroader and for a long time now we have wanted to create a more interactive tutorial, with better cues and feedback. For those of you who are new to Railroader we hope that it helps get you on the right track, pun intended.\n\nIf you run into any stumbling blocks please let us know in the Discord or Steam Community! Note that if you had previously started but not completed the tutorial, you will need to restart it with a fresh Company mode game.\n\nAlso in this release:\n\n[list][*] Fixed AE Waypoint Mode pulling high of switch when the most logical route would be to change directions. (RR-789)\n[*] Fixed/adjusted Bryson CTC blocks. Boundaries are now west of wye and service track switches, and east of easternmost crossover. (RR-783)\n[*] Fixed Barker's Creek West occupancy gap. (RR-787)\n[*] Fixed keyboard input for diesel throttle/reverser difficult to move notch-by-notch. (RR-805)\n[*] Fixed case where loader saved while loading in an older version could continue animating as if it were loading in the new version.\n[*] Fixed releasing mouse button over window while dragging control not releasing the control.\n[*] Fixed Invert Mouse preference not respected in overhead camera view. (RR-809)\n[*] Adjusted `/stats` display to use a rolling average and show top and bottom 1% frame times, rather than min and max.\n[*] Increased click distance for angleocks.\n[*] Internal: Fixed unload assuming cars have single load. (RR-807)\n[*] Internal: The new tutorial is implemented in Lua, but please bear in mind that the implementation is tailored to that purpose and not intended to support modding at this time. Official modding support is still something we plan to look into in the future.[/list]\n\nAfter this we plan to get back to focusing on MoW work. More to come on that down the line!",
+      "key": "1683150::6591b449b6dbfb41102a2654f48b7c149fd2b0de",
+      "tags": [
+        {
+          "feature": "There's a lot to learn about Railroader and for a long time now we have wanted to create a more interactive tutorial, with better cues and feedback. For those of you who are new to Railroader we hope that it helps get you on the right track, pun intended."
+        },
+        {
+          "bug": "Fixed AE Waypoint Mode pulling high of switch when the most logical route would be to change directions. (RR-789)"
+        },
+        {
+          "bug": "Fixed/adjusted Bryson CTC blocks. Boundaries are now west of wye and service track switches, and east of easternmost crossover. (RR-783)"
+        },
+        {
+          "bug": "Fixed Barker's Creek West occupancy gap. (RR-787)"
+        },
+        {
+          "bug": "Fixed keyboard input for diesel throttle/reverser difficult to move notch-by-notch. (RR-805)"
+        },
+        {
+          "bug": "Fixed case where loader saved while loading in an older version could continue animating as if it were loading in the new version."
+        },
+        {
+          "bug": "Fixed releasing mouse button over window while dragging control not releasing the control."
+        },
+        {
+          "bug": "Fixed Invert Mouse preference not respected in overhead camera view. (RR-809)"
+        },
+        {
+          "balance_change": "Adjusted `/stats` display to use a rolling average and show top and bottom 1% frame times, rather than min and max."
+        },
+        {
+          "balance_change": "Increased click distance for angleocks."
+        },
+        {
+          "bug": "Internal: Fixed unload assuming cars have single load. (RR-807)"
+        },
+        {
+          "feature": "Internal: The new tutorial is implemented in Lua, but please bear in mind that the implementation is tailored to that purpose and not intended to support modding at this time."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.6 Is Inbound!",
+      "date": "2025-02-28 12:07:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526047822",
+      "content": "Hello Railroaders!\n\nOn [b]Monday, March 3rd[/b], we are finally bringing our work on the Experimental branch to everybody! Those of you who have not opted into the Experimental branch will finally experience Auto Engineer Waypoint Mode, Timetables (if you so choose), new engines, and more!\n\n[I]We will remove the experimental-2024.6 branch at this time. If you wish to delay updating to 2024.6, you can switch to the 2024.5.x branch which is currently available, but note that we plan to remove the 2024.5.x branch on Monday, March 17th.[/i]\n\nThank you to the many of you who played the experimental branch and shared your feedback with us. You've been a huge help in improving Railroader. If you're already on the experimental branch you don't need to change anything before Monday: when we remove it you will be moved to the main release. We plan to create a new experimental branch at some point in the future.\n\nFor those of you who haven't been on the experimental branch, here are some of the highlights of what to expect in  2024.6 when it releases:\n\n[h2]Auto Engineer Waypoint Mode[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/2115530e3b5c4a9e6c60c61989f5073ba014b84a.gif[/img]\n\nThe most game-changing feature in 2024.6 is Auto Engineer Waypoint Mode. Waypoint Mode lets you give your Auto Engineer (AE) a point on the track, and it will route itself to that location, lining switches along the way! You can perform a run-around in just a few clicks, or send a train out of the yard and straight to a customer track, miles away.\n\nWhile Waypoint mode is very powerful, there are some limitations:\n[list]\n[*] AEs can not negotiate meets with other trains; you still need to act as dispatcher, either by setting incremental waypoints or using CTC.\n[*] Along the same lines, AEs may \"fight\" over switches if they have conflicting routes.\n[/list]\nIf you haven't used it yet, we think you'll find Waypoint Mode makes a huge difference in your ability to scale your operations, which is why we've invested so much in this feature over the past few months.\n\n[h2]Other Auto Engineer Changes[/h2]\n\nAnother new feature for Auto Engineers is Notices, a new UI element that lets the AE notify you when something is wrong, or when it has completed its instructions. Notices appear in the upper right corner of your screen and help make you aware of when an AE reaches its waypoint, a fusee, or can't move because of a handbrake, switch against it (Road/Yard mode), and so forth.\n\nIn 2024.6 we've moved all AE control to the HUD (lower left) -- the Auto Engineer Orders tab has been removed from the locomotive inspector. We know the Orders tab is preferred by some players, but with adding a new AE mode we had reached a point where maintaining two different UIs for the same thing was not practical. We'll be looking at ways to make it easier to control an AE engine without selecting it for a future release.\n\nWe've also made numerous other refinements and enhancements to the Auto Engineers, including making hard couples less likely, reducing some of the \"padding\" distances to make it easier to get right up to the end of track, and treating intermediate signals as Stop and Proceed. The default minimum passenger stop duration has been changed to one minute, and can now be set as low as 30 seconds in Settings. Additionally, MU now works better with steam MU'd to diesel and vice-versa.\n\n[h2]Timetables[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/bde9b8ba2ad5cc8de36dc345ca93510f049c09c3.png[/img]\n\nTimetables are a new, advanced, and optional feature in 2024.6. By creating a timetable in the in-game editor you can bring a sense of structure to your railroad, as well as enjoy higher passenger profitability, as passengers will gather for the scheduled trains. Auto Engineer passenger trains also follow the timetable, holding at passenger stations until the timetable departure time.\n\n[url={STEAM_CLAN_IMAGE}/41998859/1bc502bc3a6525824bde27eeac10e890a53bb332.png][img]{STEAM_CLAN_IMAGE}/41998859/f97f50e00ea9a0428025cfe04e96b580754fc6b0.png[/img][/url]\n\nTimetable train symbols are assigned to train crews. Timetable trains are directional (westbound or eastbound) and can even run onto the Alarka Branch. Note, however, that because trains are directional and Alarka is railroad west of Alarka Jct, it is not currently possible to create a timetable train from, say, Andrews to Alarka. Instead, you will need to create a separate timetable train so that the eastbound from Andrews can change symbols to a westbound at Alarka Jct. Keep in mind that it's also possible to avoid this issue by transferring passengers to another train entirely at Alarka Jct.\n\nFor more on timetables, see the Timetables section in the Guide (F1), or our video overview:\n\nhttps://www.youtube.com/watch?v=H_TrE44jLo4\n\n[h2]Equipment[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/42b21ad063d9db539bba7e046c2f0ffe9fdade73.png[/img]\n\nThis release includes numerous equipment updates. There's new power, and a new tank car:\n\n[list]\n[*] P-48 modeled after the Southern Ps-4 class, and revised the P-43 to model a USRA Heavy Pacific\n[*] C-40 Mastodon, modeled after the Norfolk & Western M Class\n[*] SD7 diesel locomotive\n[*] Union Tank Car tank car[/list]\nAs well as aggregate load models, and numerous model refinements, including: C-46, F-71, T-22, SW1, C-40, C-55, S-23. GP9, and SW1.\n\n[h2]Scenery[/h2]\n\nThis release also sees a lot of new construction along the railroad: there's a new station at Dillsboro. Ela Farm Supply. Alarka Copper Co., Locust Pin Co., Nantahala Power & Light, Union Lumber Co., and several fuel dealers now have structures. We think these add a lot to the environment and are looking forward to adding more in future releases!\n\n[img]{STEAM_CLAN_IMAGE}/41998859/7398d7840c71807487097f6943250d7b9f5b5342.gif[/img]\n\nWe've also added new crossing pads and concrete road bridges!\n\n[img]{STEAM_CLAN_IMAGE}/41998859/25f7eaedfde5b90386bfc4b8171f2331d992818b.png[/img]\n\n[h2]Track & Operations[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/8f1ba04bd2ce2e0c6915aab3b3b785629784437f.png[/img]\n\nThere's a new wye at Sylva - now you can turn your trains at the eastern end \u2013\u00a0as well as a new customer, Sylva Building Supply. Both were inspired by historic Sylva track arrangements.\n\nThere's also a new customer at the western end of the railroad, Tatham Grain & Seed Co. at Andrews. This has necessitated moving the Andrews signal milestone staging area closer to Andrews passenger station - you will need to move any cars formerly spotted for this milestone.\n\nMore operationally, we've made some enhancements to passengers: passengers taking transfers now pay full fare upon reaching their destination (previously they would only pay fare for the last leg of their journey). Also, passengers will now only wait four hours from the time they board their first train - after four hours they will disappear.\n\nWe've removed the time multiplier feature. This was a fun feature but as we have made enhancements (the aforementioned passenger time limit and timetables in particular) it became clear that the time multiplier -- which made everything but trains \"move\" faster -- would become a source of confusion. We have, however, added a new Time window -- click on the clock in the top right corner or hit F3. With the time window you can easily \"wait\" to allow time to pass and get the customer to release that last car!\n\n[h2]Simulation[/h2]\n\nThere are a number of simulation changes in 2024.6:\n[list]\n[*] Locomotive and tender brake cylinder pressure for a train brake application now matches the 2.5X factor of standard cars. Additionally, locomotive brake cylinders hold pressure applied via train brake until the train brake is released or the independent is bailed off.\n[*] Fixed a longstanding issue where, when an engine that had been bailed off was loaded from a save, the brake line would incorrectly be restored to 0 PSI.\n[*] Fixed a case where a car on a grade would not start rolling after releasing the handbrake.\n[*] Updated notch-to-power mapping to more closely match EMD documentation. Diesels now produce 100% more power at notch 1.[/list]\n[h2]UI[/h2]\n\nWe've also continued to invest in improving Railroader's UI:\n[list]\n[*] Revamped right click circular menu design.\n[*] Fixed an issue where clicks on objects might not register correctly in low frame rate situations. If you still encounter these issues in 2024.6, please try enabling Vsync or Limit to 60fps. Let us know if the issue persists!\n[*] Windows now remember their position and size between game sessions.\n[*] Overhead (\"2\") camera now restores its orientation after moving to stay above ground, such as when following a train through a tunnel.\n[*] Refined the Switch List window, fixing layout issues and moving the buttons into gear dropdown menu.\n[*] Teleporting to the mouse pointer now results in first person camera pointing in expected direction.\n[*] Car Inspector Operations tab Status field now shows expected waybill payment, including timely bonus and damage fine. Tooltip has a full breakdown.\n[*] HUD controls for diesel engines now snap and show notch values. In-cab control throttle tooltip now shows notches.\n[*] Added Shift-Click on anglecock to toggle between open and close, or jump to nearest if in the middle.[/list]\n[h2]Multiplayer[/h2]\n\nThere are several multiplayer enhancements. New settings give you more control over your crews: \"Trainmaster Manages Crew Assignments\" and \"Restrict Equipment Control to Train Crew\". We've also fixed joining a game from Steam invite when Railroader is not already running, and made a key enhancement to better handle joining very large games.\n\n[h2]Additional Improvements[/h2]\n\nA few other noteworthy changes:\n[list]\n[*] A new decal culling system helps with frame rates on busy railroads.\n[*] Fixed a memory leak relating to audio clips used on engines.\n[*] We've bumped up the \"High\" video quality level to improve texture quality (forced anisotropic) as well as shadow cascades.\n[*] Made the first person camera move more smoothly when riding on a car.\n[*] Rail ends are now rendered.[/list]\nThank you for reading to the end! Keep in mind that these are just the highlights. For a complete list of changes, please see the in-game release notes, which can also be found in a text file if you click \"Browse local files\" in Steam.\n\nWe're excited to finally release this work to the main branch -- it's been quite a journey, and again a big thank you to the players who have played on the experimental branch and provided their feedback and bug reports!\n\nWhat's next for Railroader? We're not quite ready to say what's next for features, but we're going to continue populating the map with buildings, as well as making model refinements. Our [url=https://docs.railroadergame.com/roadmap]Roadmap[/url] is up to date and we've got some great stuff planned for future updates. Until then!",
+      "key": "1683150::e3eb5fd882eef7e5af42c8e70e43b6c5aaf234bc",
+      "tags": [
+        {
+          "feature": "The most game-changing feature in 2024.6 is Auto Engineer Waypoint Mode."
+        },
+        {
+          "feature": "Another new feature for Auto Engineers is Notices, a new UI element that lets the AE notify you when something is wrong, or when it has completed its instructions."
+        },
+        {
+          "feature": "Timetables are a new, advanced, and optional feature in 2024.6."
+        },
+        {
+          "feature": "This release includes numerous equipment updates."
+        },
+        {
+          "feature": "This release also sees a lot of new construction along the railroad: there's a new station at Dillsboro."
+        },
+        {
+          "feature": "We've also added new crossing pads and concrete road bridges!"
+        },
+        {
+          "feature": "There's a new wye at Sylva - now you can turn your trains at the eastern end \u2013 as well as a new customer, Sylva Building Supply."
+        },
+        {
+          "feature": "There's also a new customer at the western end of the railroad, Tatham Grain & Seed Co. at Andrews."
+        },
+        {
+          "feature": "We've also continued to invest in improving Railroader's UI: Revamped right click circular menu design."
+        },
+        {
+          "feature": "Windows now remember their position and size between game sessions."
+        },
+        {
+          "feature": "Overhead (\"2\") camera now restores its orientation after moving to stay above ground, such as when following a train through a tunnel."
+        },
+        {
+          "feature": "Refined the Switch List window, fixing layout issues and moving the buttons into gear dropdown menu."
+        },
+        {
+          "feature": "Teleporting to the mouse pointer now results in first person camera pointing in expected direction."
+        },
+        {
+          "feature": "Car Inspector Operations tab Status field now shows expected waybill payment, including timely bonus and damage fine."
+        },
+        {
+          "feature": "HUD controls for diesel engines now snap and show notch values."
+        },
+        {
+          "feature": "Added Shift-Click on anglecock to toggle between open and close, or jump to nearest if in the middle."
+        },
+        {
+          "feature": "New settings give you more control over your crews: \"Trainmaster Manages Crew Assignments\" and \"Restrict Equipment Control to Train Crew\"."
+        },
+        {
+          "feature": "A new decal culling system helps with frame rates on busy railroads."
+        },
+        {
+          "feature": "We've bumped up the \"High\" video quality level to improve texture quality (forced anisotropic) as well as shadow cascades."
+        },
+        {
+          "feature": "Made the first person camera move more smoothly when riding on a car."
+        },
+        {
+          "feature": "Rail ends are now rendered."
+        },
+        {
+          "feature": "We have, however, added a new Time window -- click on the clock in the top right corner or hit F3."
+        },
+        {
+          "balance_change": "The default minimum passenger stop duration has been changed to one minute, and can now be set as low as 30 seconds in Settings."
+        },
+        {
+          "balance_change": "Additionally, MU now works better with steam MU'd to diesel and vice-versa."
+        },
+        {
+          "balance_change": "More operationally, we've made some enhancements to passengers: passengers taking transfers now pay full fare upon reaching their destination (previously they would only pay fare for the last leg of their journey)."
+        },
+        {
+          "balance_change": "Also, passengers will now only wait four hours from the time they board their first train - after four hours they will disappear."
+        },
+        {
+          "balance_change": "We've removed the time multiplier feature."
+        },
+        {
+          "balance_change": "Locomotive and tender brake cylinder pressure for a train brake application now matches the 2.5X factor of standard cars."
+        },
+        {
+          "balance_change": "Additionally, locomotive brake cylinders hold pressure applied via train brake until the train brake is released or the independent is bailed off."
+        },
+        {
+          "balance_change": "Updated notch-to-power mapping to more closely match EMD documentation."
+        },
+        {
+          "balance_change": "Diesels now produce 100% more power at notch 1."
+        },
+        {
+          "bug": "Fixed a longstanding issue where, when an engine that had been bailed off was loaded from a save, the brake line would incorrectly be restored to 0 PSI."
+        },
+        {
+          "bug": "Fixed a case where a car on a grade would not start rolling after releasing the handbrake."
+        },
+        {
+          "bug": "Fixed an issue where clicks on objects might not register correctly in low frame rate situations."
+        },
+        {
+          "bug": "We've also fixed joining a game from Steam invite when Railroader is not already running, and made a key enhancement to better handle joining very large games."
+        },
+        {
+          "bug": "Fixed a memory leak relating to audio clips used on engines."
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.10",
+      "date": "2025-02-22 10:56:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353263388",
+      "content": "As with 2024.6.9, focusing on refinements with the goal of this being our last release before 2024.6 is posted on the default branch!\n\n[list][*] Adjusted Auto Engineer to make hard couples less likely. (RR-750)\n[*] Adjusted Auto Engineer Waypoint Mode to take current train direction into account when planning its route. (RR-763)\n[*] Fixed Auto Engineer Waypoint Mode slowing in advance of CTC switches when there was a non-CTC controlled switch beyond it, even when that switch was lined for its route. (RR-764)\n[*] Waypoint selection is now cancelled when selecting another engine or changing the control mode. Fixed clicking on window setting the waypoint 'through' the window. (RR-595)\n[*] Changed locomotive and tender brake cylinder pressure for a train brake application to match the 2.5X factor of standard cars. Additionally, locomotive brake cylinders will hold pressure applied via train brake until train brake is released. (RR-762)\n[*] Overhead (\"2\") camera now restores its orientation after moving to stay above ground, such as when following a train through a tunnel.\n[*] Added \"Jump to Waypoint\" item to gear menu in HUD controls. \"Simplified Controls\" toggle now only appears for engines in Manual control mode.\n[*] Made waypoint overlay arrows gently emissive (more visible at night).\n[*] Fixed waypoint overlay showing incorrect final waypoint arrow in some cases.\n[*] Fixed leaks from audio clips from engines; would occur when engines are unloaded and then reloaded.\n[*] Fixed unstable Sort by Destination order in switch list panel; added Sort by Location. (RR-676)\n[/list]",
+      "key": "1683150::ddfe3a40c0052cabdf838cd5f1dee95b12f0dea0",
+      "tags": [
+        {
+          "balance_change": "Adjusted Auto Engineer to make hard couples less likely. (RR-750)"
+        },
+        {
+          "balance_change": "Adjusted Auto Engineer Waypoint Mode to take current train direction into account when planning its route. (RR-763)"
+        },
+        {
+          "bug": "Fixed Auto Engineer Waypoint Mode slowing in advance of CTC switches when there was a non-CTC controlled switch beyond it, even when that switch was lined for its route. (RR-764)"
+        },
+        {
+          "bug": "Waypoint selection is now cancelled when selecting another engine or changing the control mode. Fixed clicking on window setting the waypoint 'through' the window. (RR-595)"
+        },
+        {
+          "balance_change": "Changed locomotive and tender brake cylinder pressure for a train brake application to match the 2.5X factor of standard cars. Additionally, locomotive brake cylinders will hold pressure applied via train brake until train brake is released. (RR-762)"
+        },
+        {
+          "feature": "Overhead (\"2\") camera now restores its orientation after moving to stay above ground, such as when following a train through a tunnel."
+        },
+        {
+          "feature": "Added \"Jump to Waypoint\" item to gear menu in HUD controls. \"Simplified Controls\" toggle now only appears for engines in Manual control mode."
+        },
+        {
+          "feature": "Made waypoint overlay arrows gently emissive (more visible at night)."
+        },
+        {
+          "bug": "Fixed waypoint overlay showing incorrect final waypoint arrow in some cases."
+        },
+        {
+          "bug": "Fixed leaks from audio clips from engines; would occur when engines are unloaded and then reloaded."
+        },
+        {
+          "bug": "Fixed unstable Sort by Destination order in switch list panel; added Sort by Location. (RR-676)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.9",
+      "date": "2025-02-11 08:33:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102783806",
+      "content": "[list][*] Added timetable symbol dropdown to car inspector Operations tab.\n[*] Timetable symbol dropdown now shows next departure time, or last arrival time if the next departure is too distant.\n[*] Fixed Auto Dest on timetable passenger cars incorrectly checking passed stops. Note that it will check stops which are not reachable otherwise, such as a local passenger vs express passenger. (RR-732)\n[*] Fixed Timetable editor showing large negative estimates between stops that span midnight. (RR-739)\n[*] Fixed Auto Engineer Waypoint Mode setting switch behind lined CTC switch causing signal to drop. (RR-638, RR-742)\n[*] Fixed Auto Engineer running 25mph max speed just west of Wesser. (RR-748)\n[*] Fixed flat top handbrake only clickable from very close on some equipment. (RR-735)\n[*] Fixed longstanding issue where brake line is incorrectly restored to 0 PSI when loading a save with an engine that had been bailed off.\n[*] Fixed weight of liquids calculation. (RR-744)\n[*] Improved waypoint picker consistency on switches. (RR-743)\n[*] Moved Switch List window buttons into gear dropdown menu. (RR-396)\n[*] Model refinements for C-40, C-55, S-23, P-43, P-48, SD7.\n[/list]",
+      "key": "1683150::8c75156e8a3d36a4f639686f73099c95921d7b1e",
+      "tags": [
+        {
+          "feature": "Added timetable symbol dropdown to car inspector Operations tab."
+        },
+        {
+          "feature": "Timetable symbol dropdown now shows next departure time, or last arrival time if the next departure is too distant."
+        },
+        {
+          "bug": "Fixed Auto Dest on timetable passenger cars incorrectly checking passed stops. Note that it will check stops which are not reachable otherwise, such as a local passenger vs express passenger. (RR-732)"
+        },
+        {
+          "bug": "Fixed Timetable editor showing large negative estimates between stops that span midnight. (RR-739)"
+        },
+        {
+          "bug": "Fixed Auto Engineer Waypoint Mode setting switch behind lined CTC switch causing signal to drop. (RR-638, RR-742)"
+        },
+        {
+          "bug": "Fixed Auto Engineer running 25mph max speed just west of Wesser. (RR-748)"
+        },
+        {
+          "bug": "Fixed flat top handbrake only clickable from very close on some equipment. (RR-735)"
+        },
+        {
+          "bug": "Fixed longstanding issue where brake line is incorrectly restored to 0 PSI when loading a save with an engine that had been bailed off."
+        },
+        {
+          "bug": "Fixed weight of liquids calculation. (RR-744)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.8",
+      "date": "2025-01-31 17:20:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790214123128201",
+      "content": "We're continuing to work toward wrapping up work on the experimental branch, so our programming effort has been focused on bug fixes and refinements to Auto Engineer Waypoint Mode and Timetables, but we've also been working on several new locomotives and buildings that are ready for service on your railroads! This release also includes a significant performance improvement for busy railroads.\n\n[img]{STEAM_CLAN_IMAGE}/41998859/17029461c84fe96fef25a87a9dea7986b6e899cb.png[/img]\n\n[h2]Equipment & Building Additions[/h2]\n[list][*] Added P-48 modeled after Southern Ps-4 class. Revised P-43 to model USRA Heavy Pacific.\n[*] Added C-40 Mastodon.\n[*] Added SD7 diesel locomotive! Updated GP9.\n[*] Added Union Tank Car Co. tank car tank car. Fixed capacity of Single Dome tank car (8kgal to 10kgal).\n[*] Added Locust Pin Co. and fuel dealer buildings![/list]\n[h2]Auto Engineer & Timetable Improvements[/h2]\n[list][*] Auto Engineer now interprets timetable times that are 12 hours in the past as the next day, allowing assigning an AE to a timetable train for the next day during the 12 hours preceeding its departure.\n[*] Auto Engineer now handles timetable stops where the arrival time is after the departure time (example: 18:00 arrival, 7:00 departure) by waiting until next day after the arrival. We recommend an interval of several hours between the two to avoid edge cases, as well as considering using different trains to support layover schedules like this.\n[*] Auto Engineer HUD status label now shows reason for not moving which was previously only posted as a notice.\n[*] Fixed artificially higher numbers of transfer passengers gathering at stations. (RR-707)\n[*] Fixed Auto Engineer Waypoint Mode moving slowly through cleared signals that are not lined for their desired route. (RR-697)\n[*] Fixed Auto Engineer Waypoint Mode reporting \"Switch Against\" when waypoint is within fouling distance. AE in Waypoint mode will now foul switches unless they are already fouled, or CTC-controlled. (RR-607)\n[*] Fixed timetable editor window not prompting to apply changes when hitting backspace. (RR-712)\n[*] Enabled throwing fouled switch in case where car fouling it is already on that route. (RR-713)[/list]\n[h2]Other Enhancements[/h2]\n[list][*] Improved MU mode reverser handling to automatically set an appropriate reverser setting. Fixes diesel MU'd to steam running at centered reverser setting. (RR-714)\n[*] Fixed issue that would prevent completing purchase of cars if they could not be fit on one track. (RR-711)\n[*] HUD controls for diesel engines now snap and show notch values. In-cab control throttle tooltip now shows notches.\n[*] Fixed first person camera not moving smoothly with swaying car.\n[*] Improved performance in cases with many nearby train cars via adaptive decal culling. (Note to modders: we highly recommend consolidating decals where possible. Smaller decals are culled when many decals are visible, similar to how LODs work.) (RR-719)[/list]\n\nThank you as always for your feedback!\n\n[img]{STEAM_CLAN_IMAGE}/41998859/6ac37f849e634dfe7838e20520176d1fb50527ec.png[/img]",
+      "key": "1683150::35effe47630a5ff647f0f8fc1577462908f972ed",
+      "tags": [
+        {
+          "feature": " Added P-48 modeled after Southern Ps-4 class. Revised P-43 to model USRA Heavy Pacific."
+        },
+        {
+          "feature": " Added C-40 Mastodon."
+        },
+        {
+          "feature": " Added SD7 diesel locomotive! Updated GP9."
+        },
+        {
+          "feature": " Added Union Tank Car Co. tank car tank car. Fixed capacity of Single Dome tank car (8kgal to 10kgal)."
+        },
+        {
+          "feature": " Added Locust Pin Co. and fuel dealer buildings!"
+        },
+        {
+          "feature": " Auto Engineer now interprets timetable times that are 12 hours in the past as the next day, allowing assigning an AE to a timetable train for the next day during the 12 hours preceeding its departure."
+        },
+        {
+          "feature": " Auto Engineer now handles timetable stops where the arrival time is after the departure time (example: 18:00 arrival, 7:00 departure) by waiting until next day after the arrival. We recommend an interval of several hours between the two to avoid edge cases, as well as considering using different trains to support layover schedules like this."
+        },
+        {
+          "feature": " Auto Engineer HUD status label now shows reason for not moving which was previously only posted as a notice."
+        },
+        {
+          "bug": " Fixed artificially higher numbers of transfer passengers gathering at stations. (RR-707)"
+        },
+        {
+          "bug": " Fixed Auto Engineer Waypoint Mode moving slowly through cleared signals that are not lined for their desired route. (RR-697)"
+        },
+        {
+          "bug": " Fixed Auto Engineer Waypoint Mode reporting \"Switch Against\" when waypoint is within fouling distance. AE in Waypoint mode will now foul switches unless they are already fouled, or CTC-controlled. (RR-607)"
+        },
+        {
+          "bug": " Fixed timetable editor window not prompting to apply changes when hitting backspace. (RR-712)"
+        },
+        {
+          "feature": " Enabled throwing fouled switch in case where car fouling it is already on that route. (RR-713)"
+        },
+        {
+          "feature": " Improved MU mode reverser handling to automatically set an appropriate reverser setting. Fixes diesel MU'd to steam running at centered reverser setting. (RR-714)"
+        },
+        {
+          "bug": " Fixed issue that would prevent completing purchase of cars if they could not be fit on one track. (RR-711)"
+        },
+        {
+          "feature": " HUD controls for diesel engines now snap and show notch values. In-cab control throttle tooltip now shows notches."
+        },
+        {
+          "bug": " Fixed first person camera not moving smoothly with swaying car."
+        },
+        {
+          "feature": " Improved performance in cases with many nearby train cars via adaptive decal culling. (Note to modders: we highly recommend consolidating decals where possible. Smaller decals are culled when many decals are visible, similar to how LODs work.) (RR-719)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.7",
+      "date": "2025-01-18 09:40:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014402474",
+      "content": "[list][*] Fixed steam engine trucks drifting forward/back, our of sync with engine. (RR-701)\n[*] Fixed delivered cars not recognized at Bryson Lumber Coal & Supply D1, Nantahala Talc & Limestone T3. (RR-700)\n[*] Fixed timetable passenger trains stopping at stations that are not on their timetable schedule. (RR-704)[/list]",
+      "key": "1683150::18ad3efc2a44579f61c3ceaa5b983dea9d06840c",
+      "tags": [
+        {
+          "bug": "Fixed steam engine trucks drifting forward/back, our of sync with engine. (RR-701)"
+        },
+        {
+          "bug": "Fixed delivered cars not recognized at Bryson Lumber Coal & Supply D1, Nantahala Talc & Limestone T3. (RR-700)"
+        },
+        {
+          "bug": "Fixed timetable passenger trains stopping at stations that are not on their timetable schedule. (RR-704)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.6b",
+      "date": "2025-01-16 21:45:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014353439",
+      "content": "Two more quick fixes \u2013\u00a0thank you for your reports and feedback!\n[list][*] Fixed issue that caused derailments and equipment damage during regular movement, first seen in 2024.6.6.\n[*] Fixed \"Edit Timetable\" button missing for clients in multiplayer.[/list]\n",
+      "key": "1683150::cec3ea67f22fb47e7a07804f4a2417838a1383f2",
+      "tags": [
+        {
+          "bug": "Fixed issue that caused derailments and equipment damage during regular movement, first seen in 2024.6.6."
+        },
+        {
+          "bug": "Fixed \"Edit Timetable\" button missing for clients in multiplayer."
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.6a",
+      "date": "2025-01-16 14:54:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014344186",
+      "content": "A few quick fixes!\n[list][*] Fixed Auto Engineer Waypoint failing to operate when signals were not unlocked.\n[*] Fixed missing Nantahala Power & Light building.\n[*] Fixed pavement at Dillsboro grade crossing.[/list]",
+      "key": "1683150::ee956b4fc0bdd7c09284f532b75ec7ef66a90b96",
+      "tags": [
+        {
+          "bug": "Fixed Auto Engineer Waypoint failing to operate when signals were not unlocked."
+        },
+        {
+          "bug": "Fixed missing Nantahala Power & Light building."
+        },
+        {
+          "bug": "Fixed pavement at Dillsboro grade crossing."
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.6",
+      "date": "2025-01-16 13:11:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014341907",
+      "content": "Railroader 2024.6.6 is now available on the Experimental branch! This release brings a bunch of bugfixes, but also some map changes we think you'll enjoy.\n\nWe plan for this to be the [b]last feature release for the 2024.6 experimental branch[/b], and work toward releasing AE Waypoint Mode and Timetables on the main branch. There will likely be a few followup bugfix releases, but we will save new features and significant changes to 2025.1.\n\nOn to what's new!\n\n[h2]Map Updates[/h2]\n\nWe're pleased to have finally added a wye at Sylva! For a long time now we've wanted to add some sort of means of turning trains, and this has certainly been a popular request from the community. Historically, the Tuckasegee & Southeastern Railway had an interchange with the Southern adjacent to Sylva Paperboard, so we've drawn on that design and added a leg to form a wye. We also added a new (historical) customer off of the wye: Sylva Building Supply.\n\n[img]{STEAM_CLAN_IMAGE}/41998859/756a88a3f072d8903caaa5082c0aab722192b9bb.png[/img]\nA new customer has erected their elevator and silo in Andrews: Tatham Grain & Seed Co. Also with a historical basis, this industry takes its rightful place just east of the Andrews station. As such the Andrews signal milestone staging track has been moved toward the station. If you have milestone cars there you will need to move them so the signal crews can find them.\n\nSometimes map changes break the game's ability to restore the positions of cars on the changed tracks in saves. We've improved detection of related issues in this release and you should see the Lost & Found window if any cars need to be re-placed.\n\nFinally for the map we've added new buildings at various locations: Alarka Copper Co., Nantahala Power & Light, and Union Lumber Co. There's also a new (curvable) crossing pad.\n\nSpeaking of model updates: the T-22 ten-wheeler has been updated! We have updates under way for several other engines - look for them in future updates.\n\n[h2]Auto Engineer Waypoint Mode[/h2]\n\nWe've made a number of refinements to AE Waypoint Mode:\n[list][*] In ABS the AE will now throw switches within interlockings, rather than creep into the plant. (RR-666)\n[*] No longer throws switches while its max speed is set to zero. (RR-660)\n[*] No longer tries to clear points it is already clear of.[/list]\nThere are still several [b]known issues[/b] that we're working on and plan to address in future updates. The AE will sometimes:\n[list][*] Roll up to clear CTC switches very slowly if the switch is not set for the route it wants to take. (RR-697)\n[*] Display incorrect notices such as \"Switch Against\" when reaching a waypoint. (RR-607)\n[*] Fail to couple to another cut of cars, particularly when it is already very close to the cut. (RR-618)\n[*] Appear to be stuck with status \"Couple\" when it cannot move to clear switch points due to uncoupled cars on the other end, even if points are already lined. (RR-642)[/list]\n[h2]Auto Engineer Changes[/h2]\n\nThere have also been some refinements to the Auto Engineer in general: it now correctly treats intermediate signals as \"Stop and Proceed\". We've also reduced the stop distance before stop signals to 15m.\n\nAlso, we've removed the AE Orders tab in the locomotive Inspector window. It did not support AE Waypoint mode and we want to focus our effort on making a great AE orders UI in the HUD. Although the Inspector Orders UI had its uses, at this time we don't think it is realistic to keep both in feature parity.\n\n[h2]Timetables[/h2]\n\nWe released timetables in December with version 2024.6.3 and the response has been much stronger than we anticipated! It's been clear to us that enhancements in two areas in particular are necessary: passenger movement and a more robust timetable display.\n\nManaging destinations on coaches can be tedious, so we initially made passengers board coaches on timetable trains if they thought they could get to their destination via that train. The problem with this approach was that it made it impossible to perform finer-grained management of your coaches.\n\nWith 2024.6.6, passengers will only board coaches that are checked for their destination. (This is consistent with the behavior of non-timetable trains.) To help ease checking destinations however, we've enhanced the \"Copy from Timetable\" button to include potential transfer destinations, _and_ we've added a new feature for timetable trains: Auto Destination.\n\nWhen \"Auto Dest\" is enabled on a coach, the coach's checked passenger stops will be automatically updated whenever it is stopped at a passenger station. This essentially makes it possible to never have to manage passenger stops manually. When turning a train you need only update the timetable symbol and guide it to its first stop.\n\nWe look forward to hearing about your experiences using timetables with these changes!\n\nAdditional timetable updates:\n[list][*] Changed train sort order to be by departure time within class, rather than train name within class. (RR-673)\n[*] AE Road mode engineer now posts notice upon completing schedule. (RR-675)\n[*] Fixed case where transferring passengers would disperse prior to the arrival of their transfer. (RR-695)\n[*] Fixed coaches not departing when timetable schedule runs past midnight. Fixed incorrect display of times past midnight. (RR-669)\n[*] Improved text layout to allow for longer train names in timetable. Added \"Read Down\" and \"Read Up\" labels. (RR-661, RR-647)\n[*] Added \"Clear Timetable\" to editor tools menu. (RR-685)[/list]\n[h2]Everything Else[/h2]\n\nWhew, that was a lot. We have a few more enhancements and fixes to mention though:\n[list][*] Car Inspector Operations tab Status field now shows expected waybill payment, including timely bonus and damage fine. Tooltip shows full breakdown.\n[*] Adjusted \"High\" video quality level settings to improve texture quality (forced anisotropic) as well as shadow cascades (2 to 3).\n[*] Fixed regression introduced in 2024.6.5 which caused CTC blocks to show as occupied when they are not. (RR-674)\n[*] Increased maximum length of CTC marker text from 16 to 48 characters. (RR-680)\n[*] Changed oil point click area to be more focused on the outer axle/gearing area.\n[*] Teleporting to the mouse pointer now results in first person camera pointing in expected direction.\n[*] Fixed car on grade not rolling after releasing handbrake.\n[*] Fixed window sizes not correctly saved/restored when using UI scaling. (RR-696)\n[*] Fixed list/detail panels (Milestones tab content) not maintaining consistent list width. (RR-657)\n[*] Fixed camera zooming while mouse is over dropdown window or other UI. (RR-691)\n[*] Fixed car inspector Operations panel not updating to reflect train crew and timetable symbol updates. (RR-689)\n[*] Internal: Deprecated MapMask component; added RectangleMapMask and CircleMapMask.[/list]\n\nThank you for reading, for your support, and for playing Railroader!\n",
+      "key": "1683150::dbd5f251390dc7765724e272fb92af80b27ed268",
+      "tags": [
+        {
+          "feature": "We're pleased to have finally added a wye at Sylva!"
+        },
+        {
+          "feature": "We also added a new (historical) customer off of the wye: Sylva Building Supply."
+        },
+        {
+          "feature": "A new customer has erected their elevator and silo in Andrews: Tatham Grain & Seed Co."
+        },
+        {
+          "feature": "Finally for the map we've added new buildings at various locations: Alarka Copper Co., Nantahala Power & Light, and Union Lumber Co."
+        },
+        {
+          "feature": "There's also a new (curvable) crossing pad."
+        },
+        {
+          "feature": "In ABS the AE will now throw switches within interlockings, rather than creep into the plant."
+        },
+        {
+          "feature": "When \"Auto Dest\" is enabled on a coach, the coach's checked passenger stops will be automatically updated whenever it is stopped at a passenger station."
+        },
+        {
+          "feature": "Added \"Clear Timetable\" to editor tools menu."
+        },
+        {
+          "feature": "Car Inspector Operations tab Status field now shows expected waybill payment, including timely bonus and damage fine."
+        },
+        {
+          "feature": "Increased maximum length of CTC marker text from 16 to 48 characters."
+        },
+        {
+          "bug": "No longer throws switches while its max speed is set to zero."
+        },
+        {
+          "bug": "No longer tries to clear points it is already clear of."
+        },
+        {
+          "bug": "Fixed case where transferring passengers would disperse prior to the arrival of their transfer."
+        },
+        {
+          "bug": "Fixed coaches not departing when timetable schedule runs past midnight."
+        },
+        {
+          "bug": "Fixed incorrect display of times past midnight."
+        },
+        {
+          "bug": "Fixed regression introduced in 2024.6.5 which caused CTC blocks to show as occupied when they are not."
+        },
+        {
+          "bug": "Fixed car on grade not rolling after releasing handbrake."
+        },
+        {
+          "bug": "Fixed window sizes not correctly saved/restored when using UI scaling."
+        },
+        {
+          "bug": "Fixed list/detail panels (Milestones tab content) not maintaining consistent list width."
+        },
+        {
+          "bug": "Fixed camera zooming while mouse is over dropdown window or other UI."
+        },
+        {
+          "bug": "Fixed car inspector Operations panel not updating to reflect train crew and timetable symbol updates."
+        },
+        {
+          "balance_change": "As such the Andrews signal milestone staging track has been moved toward the station."
+        },
+        {
+          "balance_change": "We've also reduced the stop distance before stop signals to 15m."
+        },
+        {
+          "balance_change": "Changed train sort order to be by departure time within class, rather than train name within class."
+        },
+        {
+          "balance_change": "Adjusted \"High\" video quality level settings to improve texture quality (forced anisotropic) as well as shadow cascades (2 to 3)."
+        },
+        {
+          "balance_change": "Changed oil point click area to be more focused on the outer axle/gearing area."
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.5",
+      "date": "2024-12-24 11:20:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930788022",
+      "content": "One more quick fix for the holidays on the experimental-2024.6 branch!\n\n[list]\n[*] Auto Engineer Waypoint Mode: Fixed AE balking at taking diverging route at CTC switches. (RR-662)\n[/list]",
+      "key": "1683150::3bfdc7c90059dbcfe67b89586fcc39b7274e8c73",
+      "tags": [
+        {
+          "bug": "Auto Engineer Waypoint Mode: Fixed AE balking at taking diverging route at CTC switches. (RR-662)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.4",
+      "date": "2024-12-23 11:54:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930756568",
+      "content": "A few Auto Engineer and Timetable bug fixes to follow up 2024.6.3:\n\n[list]\n[*] Auto Engineer Waypoint Mode: Fixed AE not throwing switch and instead oscillating across it, particularly at west end of Sylva station siding. Fixed AE not throwing switch when a signal was just past it in some cases (east Dillsboro). (RR-655)\n[*] Auto Engineer Waypoint Mode: Fixed notice not cleared after arriving at a waypoint and switching to a different AE mode. (RR-659)\n[*] Auto Engineer: Removed end of track padding to allow AE to get right up to the bumper. (RR-651)\n[*] Timetables: Fixed timetables not horizontally scrollable. (RR-643)\n[*] Timetables: Fixed parse error caused by meet containing dash character. (RR-649)\n[*] Timetables known issue: Passengers will board coaches for unchecked destinations if they can transfer at a later station. Essentially they want to get on the train as soon as possible. And who can blame them? (RR-656 can)[/list]\n\nHappy Holidays from the Railroader team!",
+      "key": "1683150::bc8b2c3fef589a455a430c1c4a02580815c223a7",
+      "tags": [
+        {
+          "bug": "[*] Auto Engineer Waypoint Mode: Fixed AE not throwing switch and instead oscillating across it, particularly at west end of Sylva station siding. Fixed AE not throwing switch when a signal was just past it in some cases (east Dillsboro). (RR-655)"
+        },
+        {
+          "bug": "[*] Auto Engineer Waypoint Mode: Fixed notice not cleared after arriving at a waypoint and switching to a different AE mode. (RR-659)"
+        },
+        {
+          "bug": "[*] Auto Engineer: Removed end of track padding to allow AE to get right up to the bumper. (RR-651)"
+        },
+        {
+          "bug": "[*] Timetables: Fixed timetables not horizontally scrollable. (RR-643)"
+        },
+        {
+          "bug": "[*] Timetables: Fixed parse error caused by meet containing dash character. (RR-649)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.3",
+      "date": "2024-12-21 16:04:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1786573930698615",
+      "content": "Our long-awaited 2024.6.3 update is here! The big new feature is Timetables \u2013\u00a0check out the video below which gives you an overview as well as in-depth instructions. We've also added new buildings, quality of life features and enhancements, and a raft (flat car?) of bug fixes.\n\n[previewyoutube=H_TrE44jLo4;full][/previewyoutube]\n\n[h3]Railroader 2024.6.3 Release Notes[/h3]\n\n[list]\n[*] Added timetables! Timetables must be enabled in Company Settings and, for passenger trains, cause passengers to gather accordingly. Additionally, Auto Engineers of timetable passenger trains will wait until the timetable departure time. For details, see the Timetables section in the Guide (F1) \u2013\u00a0or watch the video above! (RR-558)\n[*] Added Ela Farm Supply building and others. (Thanks, Ben aka Xyvoracle!) Extended track at Ela Farm Supply to suit.\n[*] Added multiplayer settings: Trainmaster Manages Crew Assignments and Restrict Equipment Control to Train Crew. (RR-398)\n[*] Assigning the train crew of a steam engine now assigns the train crew of its tender. Existing engines need to be unassigned and reassigned in order to set the tender train crew.\n[*] Crews panel in Settings now shows crews with active Auto Engineers as Active.\n[*] Added Time window to ease advancing time, available by clicking the clock in the top right corner, F3 by default, or via the Company Settings panel. (RR-605)\n[*] Added Shift-Click on anglecock to toggle between open and close, or jump to nearest if in the middle.\n[*] Rail ends now properly rendered with faces.\n[*] Changed AE default minimum passenger stop duration to one minute. Changed slider minimum to 30s.\n[*] Re-added seconds to the top right corner HUD as time is 1:1.\n[*] `/wait` and `/time` console commands how accept `hh:mm` format times in addition to decimal hours.\n[*] Adjusted AE waypoint routing to be more likely to run around when the run around distance is not short.\n[*] Fixed AE disabling Cut Out when in a rear end helper configuration. (RR-596)\n[*] Improved consistency of terrain loading performance.\n[*] Baggage cars can now be sent to repair tracks. (RR-473)\n[*] Fixed joining game from Steam invite when Railroader is not already running. (RR-541)\n[*] Fixed AE Waypoint stopping if switch behind it is lined differently than it wanted it. (RR-597, RR-606, RR-621)\n[*] Fixed AE Waypoint lining switches that are behind a fusee. (RR-598)\n[*] Fixed AE Waypoint lining switches that are behind a signal, causing the signal to drop. (RR-638)\n[*] Fixed AE Waypoint repeatedly lining a switch when its moves would put it within fouling distance of both. (RR-626)\n[*] Fixed AE Waypoint blowing whistle when first engaging. (RR-635)\n[*] Fixed AE trains unexpectedly coupling to cars in cases where the leading car is far from engine. (RR-611, RR-617)\n[*] Improved consistency of AE calculation of fouling point. (RR-607)\n[*] Updated AE documentation to refer to the HUD; added \"Control Mode\" and \"Status\" labels. (RR-602)\n[*] Windows now remember their position and size between game sessions.\n[*] Modal alerts now automatically focus the text field.\n[*] Added check to lower UI Scale if current settings would cause the Preferences panel to be inaccessible.\n[*] Fixed coal loaders start-stopping during loading.\n[*] Fixed oiling tooltip appearing on steam engines even when oiling feature is disabled. (RR-620)\n[*] Fixed cars keeping hotbox status if the hotbox occurred before turning off oiling & hotboxes. (RR-620)\n[*] Fixed tooltips going off screen when mouse cursor is at lower or right edge. (RR-466)\n[*] Fixed CTC markers disappearing when dropped in a specific position between CTC panel faces. This change causes marker positions on the center panel to be moved slightly from the previous save. (RR-616)\n[*] Selected Known Issues with AE Waypoint Mode:[list]\n    [*] Displays incorrect notices such as \"Switch Against\" when reaching a waypoint. (RR-607)\n    [*] May fail to couple to another cut of cars, particularly when it is already very close to the cut. (RR-618)\n    [*] May appear to be stuck with status \"Couple\" when it cannot move to clear switch points due to uncoupled cars on the other end, even if points are already lined. (RR-642)[/list][*] Selected Internal Adjustments (relevant for modders):[list]\n    [*] Moved PassengerStop to Model.Ops namespace.\n    [*] Made TeamTrack configuration fields public.[/list]\n[/list]",
+      "key": "1683150::f92d1a6f7289708d57e9e88f776b851fb85cb1f8",
+      "tags": [
+        {
+          "feature": "Added timetables! Timetables must be enabled in Company Settings and, for passenger trains, cause passengers to gather accordingly. Additionally, Auto Engineers of timetable passenger trains will wait until the timetable departure time. For details, see the Timetables section in the Guide (F1) \u2013 or watch the video above! (RR-558)"
+        },
+        {
+          "feature": "Added Ela Farm Supply building and others. (Thanks, Ben aka Xyvoracle!) Extended track at Ela Farm Supply to suit."
+        },
+        {
+          "feature": "Added multiplayer settings: Trainmaster Manages Crew Assignments and Restrict Equipment Control to Train Crew. (RR-398)"
+        },
+        {
+          "feature": "Added Time window to ease advancing time, available by clicking the clock in the top right corner, F3 by default, or via the Company Settings panel. (RR-605)"
+        },
+        {
+          "feature": "Added Shift-Click on anglecock to toggle between open and close, or jump to nearest if in the middle."
+        },
+        {
+          "feature": "Re-added seconds to the top right corner HUD as time is 1:1."
+        },
+        {
+          "bug": "Fixed AE disabling Cut Out when in a rear end helper configuration. (RR-596)"
+        },
+        {
+          "bug": "Fixed joining game from Steam invite when Railroader is not already running. (RR-541)"
+        },
+        {
+          "bug": "Fixed AE Waypoint stopping if switch behind it is lined differently than it wanted it. (RR-597, RR-606, RR-621)"
+        },
+        {
+          "bug": "Fixed AE Waypoint lining switches that are behind a fusee. (RR-598)"
+        },
+        {
+          "bug": "Fixed AE Waypoint lining switches that are behind a signal, causing the signal to drop. (RR-638)"
+        },
+        {
+          "bug": "Fixed AE Waypoint repeatedly lining a switch when its moves would put it within fouling distance of both. (RR-626)"
+        },
+        {
+          "bug": "Fixed AE Waypoint blowing whistle when first engaging. (RR-635)"
+        },
+        {
+          "bug": "Fixed AE trains unexpectedly coupling to cars in cases where the leading car is far from engine. (RR-611, RR-617)"
+        },
+        {
+          "feature": "Windows now remember their position and size between game sessions."
+        },
+        {
+          "feature": "Modal alerts now automatically focus the text field."
+        },
+        {
+          "feature": "Added check to lower UI Scale if current settings would cause the Preferences panel to be inaccessible."
+        },
+        {
+          "bug": "Fixed coal loaders start-stopping during loading."
+        },
+        {
+          "bug": "Fixed oiling tooltip appearing on steam engines even when oiling feature is disabled. (RR-620)"
+        },
+        {
+          "bug": "Fixed cars keeping hotbox status if the hotbox occurred before turning off oiling & hotboxes. (RR-620)"
+        },
+        {
+          "bug": "Fixed tooltips going off screen when mouse cursor is at lower or right edge. (RR-466)"
+        },
+        {
+          "bug": "Fixed CTC markers disappearing when dropped in a specific position between CTC panel faces. This change causes marker positions on the center panel to be moved slightly from the previous save. (RR-616)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.2",
+      "date": "2024-10-02 08:15:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6350729003490409559",
+      "content": "We have a few more enhancements, as well as a number of bugfixes for you on the experimental branch!\n\n[list][*] Auto Engineer (AE) now only shows notices for handbrakes and air lines when it is attempting to move.\n[*] AE now fixes problematic MU and Cut Out settings on its engine when attempting to move: disables MU always and disables Cut-Out if it is the only power in the train. (RR-565)\n[*] Added Shift-click on waypoint select button to recalculate the route.\n[*] Adjusted AE behavior when approaching (but not coupling to) another train for greater consistency.\n[*] Fixed AE Waypoint leaving last switch un-restored when reaching waypoint. (RR-588)\n[*] Fixed AE Waypoint set being ignored if it is the same waypoint that had been set and then cleared.\n[*] Fixed remaining uses of \"AI\". Added engine number to switch audit. (RR-587)\n[*] Fixed selling/deleting K-28T causing removal of car behind it. (RR-589)\n[*] Fixed large curve radius engines refusing to move through small curve radius track. They will now move at 5mph in such cases. (RR-566)\n[*] Fixed engines with multiple of the same gauge only updating one. (RR-560)\n[*] Fixed click-through when closing windows. (RR-593)\n[*] Fixed lengthy car numbers in switch list wrapping. (RR-554)\n[*] Internal: Model.OpsNew types have been moved to Model.Ops namespace.\n[*] Internal: IsPassengerCar extension method is now used to determine passenger-worthiness. Expanded acceptable archetypes to include locomotives, baggage, and caboose.\n[/list]",
+      "key": "1683150::f4582b691c4c33b9449d37c6d1ed750534f1b39a",
+      "tags": [
+        {
+          "bug": "- Auto Engineer (AE) now only shows notices for handbrakes and air lines when it is attempting to move."
+        },
+        {
+          "bug": "- AE now fixes problematic MU and Cut Out settings on its engine when attempting to move: disables MU always and disables Cut-Out if it is the only power in the train. (RR-565)"
+        },
+        {
+          "feature": "- Added Shift-click on waypoint select button to recalculate the route."
+        },
+        {
+          "bug": "- Fixed AE Waypoint leaving last switch un-restored when reaching waypoint. (RR-588)"
+        },
+        {
+          "bug": "- Fixed AE Waypoint set being ignored if it is the same waypoint that had been set and then cleared."
+        },
+        {
+          "bug": "- Fixed remaining uses of \"AI\". Added engine number to switch audit. (RR-587)"
+        },
+        {
+          "bug": "- Fixed selling/deleting K-28T causing removal of car behind it. (RR-589)"
+        },
+        {
+          "bug": "- Fixed large curve radius engines refusing to move through small curve radius track. They will now move at 5mph in such cases. (RR-566)"
+        },
+        {
+          "bug": "- Fixed engines with multiple of the same gauge only updating one. (RR-560)"
+        },
+        {
+          "bug": "- Fixed click-through when closing windows. (RR-593)"
+        },
+        {
+          "bug": "- Fixed lengthy car numbers in switch list wrapping. (RR-554)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.1",
+      "date": "2024-09-24 10:06:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536521023260",
+      "content": "Thank you for your feedback on our experimental branch build! Changes in this build include:\n\n[list][*] Added aggregate load model for ballast.\n[*] Fixed Auto Engineer not stopping for cars fouling switches when approaching from the points end. (RR-581)\n[*] Fixed Auto Engineer not responding to waypoint set by certain clients. (RR-582)\n[*] Fixed Auto Engineer Waypoint Mode not throwing switch in ABS at certain plants. (RR-583)\n[*] Fixed a case where Auto Engineer Waypoint Mode would fail to start movement after waypoint assignment. (RR-585)\n[*] Fixed passengers loading (briefly) for incorrect destinations. (RR-586)\n[*] Fixed open windows preventing camera movement input in photo mode. (RR-584)[/list]",
+      "key": "1683150::3a406846a531351bc790685f637428ba02f85daf",
+      "tags": [
+        {
+          "feature": "Added aggregate load model for ballast."
+        },
+        {
+          "bug": "Fixed Auto Engineer not stopping for cars fouling switches when approaching from the points end. (RR-581)"
+        },
+        {
+          "bug": "Fixed Auto Engineer not responding to waypoint set by certain clients. (RR-582)"
+        },
+        {
+          "bug": "Fixed Auto Engineer Waypoint Mode not throwing switch in ABS at certain plants. (RR-583)"
+        },
+        {
+          "bug": "Fixed a case where Auto Engineer Waypoint Mode would fail to start movement after waypoint assignment. (RR-585)"
+        },
+        {
+          "bug": "Fixed passengers loading (briefly) for incorrect destinations. (RR-586)"
+        },
+        {
+          "bug": "Fixed open windows preventing camera movement input in photo mode. (RR-584)"
+        }
+      ]
+    },
+    {
+      "title": "Experimental: Railroader 2024.6.0",
+      "date": "2024-09-21 18:30:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6341720536511364913",
+      "content": "First, thank you for your support as we continue to build and improve Railroader! We're proud of the progress we've made already and excited about the work remaining as we continue to push toward \"1.0\"!\n\nWe've been working on Railroader 2024.6.0 for the past couple months and are happy to finally share some details on what's in it. Along with a number of smaller fixes and enhancements, there are a few significant enhancements/changes that I want to focus on:\n\n[img]{STEAM_CLAN_IMAGE}/41998859/803cbcf044995a58ec5e799f0b0bd895114f4b05.gif[/img]\n\n[b]Auto Engineer Waypoint Mode[/b]: This marks a huge step forward in helping you do more on your railroad. When in Waypoint Mode the Auto Engineer will navigate to the selected location (waypoint), setting switches on its way. It's great for switching a yard or performing a run-around, but it can also navigate across the map. It can't negotiate meets, however, so if you have multiple trains running in the same area, you'll need to plan accordingly, or use CTC. We've been loving using it while testing and can't wait for you to try it out.\n\n[img]{STEAM_CLAN_IMAGE}/41998859/af62dae0d87c4fd9ba4ed281352531bd24401966.gif[/img]\n\n[b]Builder Photos[/b] have been added to the Atlantic Locomotive Works equipment catalog (window)! These add a lot to the browsing experience and we hope it will ease your next equipment purchasing decision.\n\n[b]Passengers[/b] could always be unloaded at stops that weren't their destination, but now they properly retain their origin and pay the full fare upon arrival there. Passengers also no longer have infinite patience: they must reach their destination within four game hours of boarding a train \u2013 otherwise they will make other arrangements. Please bear this in mind when planning your passenger routes.\n\nIn connection with the above, we have removed the time multiplier feature, so time in Railroader now progresses with real time. This sets us up for future plans, as well as simplifying an unnecessarily confusing aspect of the game. Remember that if you need time to pass you can always use the Wait button, or the /wait console command.\n\n[img]{STEAM_CLAN_IMAGE}/41998859/3982167f046c8bd55b4360c32c0a299ed05303f7.jpg[/img]\n\nWe've made a number of [b]model enhancements[/b], including aggregate loads in hoppers and gondolas, updates to several engines, and even a couple new buildings. More to come!\n\n[img]{STEAM_CLAN_IMAGE}/41998859/e45c271ae7a42b4bf92a2e74eec853a38c1becf5.jpg[/img]\n\nFinally, we've made some enhancements under the hood to networking that should make busy servers run more smoothly. For the full list of changes, please see below.\n\n[h2]Availability[/h2]\n\nWhen will Railroader 2024.6.0 be available? We're trying something new and are releasing it today on an experimental branch. We want to gather early feedback on it before releasing it to everybody. Given the nature of this experimental branch, expect frequent updates! As such, if you play Railroader with mods, we recommend holding off on installing mods, or sticking with the public (default) release.\n\nIf you're ready to try out the experimental build, use your Steam client's Betas panel (under Properties) to select the [b]experimental-2024.6[/b] branch. Please post bug reports in the Discord #bug-reports channel, and make sure to use the \"Experimental\" tag.\n\nThis experimental branch is a bit of an experiment for us in itself, so we'll be evaluating how we want to run releases going forward.\n\n[h2]2024.6.0 Release Notes (Experimental)[/h2]\n\n[list][*] The Atlantic Locomotive Works is pleased to announce that the latest catalog has been enhanced with photographs of their offerings.\n[*] Added Auto Engineer Waypoint Mode: set a waypoint and the auto engineer will route itself to that location, lining switches along the way! Once \"AE Waypoint\" mode is selected, hit `Ctrl-G` to set the waypoint. Waypoint mode is great for switching moves and run-arounds, and can also run across the railroad [*] but remember, Waypoint Mode doesn't negotiate meets, so make sure you plan ahead (or use CTC). For more, see the in-game Employee Timetable (`F1`).\n[*] Passengers disembarking at a station that is not their destination now pay full fare upon reaching their destination. Previously they would only pay from the station they boarded at. (RR-167)\n[*] Passengers now only wait 4 hours from the time they board their first train. After 4 hours they will disappear from stations and coaches. (RR-303)\n[*] Added aggregate loads to hoppers and gondolas.\n[*] Updated S-23, C-46, C-55, F-71, and SW1 models.\n[*] Added two new buildings: new station at Dillsboro and small office structure at Dillsboro and Whittier. More to follow!\n[*] Diesels: Updated notch-to-power mapping to more closely match EMD documentation. Diesels now produce 100% more power at notch 1.\n[*] Added alert on startup to warn if there are no enabled interchanges; prevent disabling the last enabled interchange. (RR-557)\n[*] Auto Engineer now posts notices for pitfalls such as handbrake applied or brake cylinders set that are outside the connected brake line. A status message is shown when charging the brake line.\n[*] Removed time multiplier feature. (RR-579)\n[*] Improved reliability of clicking on objects in low frame rate situations.\n[*] Fixed Nantahala Talc & Limestone T1 to export limestone, not talc. Any existing cars for T1 that contain talc will be re-waybilled to an interchange. (RR-577)\n[*] Standardized terminology in UI and ETT on \"Auto Engineer\" or \"AE\".\n[*] Enhanced networking to better handle joining very large games. (RR-562)\n[*] Fixed auto engineer not announcing stop for switch set against.\n[*] Fixed auto engineer passenger stop ending too soon after pause. (RR-575)\n[/list]",
+      "key": "1683150::53a77e1d370516e3fdfb147964d9c46c08ad1289",
+      "tags": [
+        {
+          "feature": "- Added Auto Engineer Waypoint Mode: set a waypoint and the auto engineer will route itself to that location, lining switches along the way! Once \"AE Waypoint\" mode is selected, hit `Ctrl-G` to set the waypoint. Waypoint mode is great for switching moves and run-arounds, and can also run across the railroad [*] but remember, Waypoint Mode doesn't negotiate meets, so make sure you plan ahead (or use CTC). For more, see the in-game Employee Timetable (`F1`)."
+        },
+        {
+          "balance_change": "- Passengers disembarking at a station that is not their destination now pay full fare upon reaching their destination. Previously they would only pay from the station they boarded at. (RR-167)"
+        },
+        {
+          "balance_change": "- Passengers now only wait 4 hours from the time they board their first train. After 4 hours they will disappear from stations and coaches. (RR-303)"
+        },
+        {
+          "feature": "- Added aggregate loads to hoppers and gondolas."
+        },
+        {
+          "feature": "- Updated S-23, C-46, C-55, F-71, and SW1 models."
+        },
+        {
+          "feature": "- Added two new buildings: new station at Dillsboro and small office structure at Dillsboro and Whittier. More to follow!"
+        },
+        {
+          "balance_change": "- Diesels: Updated notch-to-power mapping to more closely match EMD documentation. Diesels now produce 100% more power at notch 1."
+        },
+        {
+          "feature": "- Added alert on startup to warn if there are no enabled interchanges; prevent disabling the last enabled interchange. (RR-557)"
+        },
+        {
+          "feature": "- Auto Engineer now posts notices for pitfalls such as handbrake applied or brake cylinders set that are outside the connected brake line. A status message is shown when charging the brake line."
+        },
+        {
+          "feature": "- Removed time multiplier feature. (RR-579)"
+        },
+        {
+          "feature": "- Improved reliability of clicking on objects in low frame rate situations."
+        },
+        {
+          "bug": "- Fixed Nantahala Talc & Limestone T1 to export limestone, not talc. Any existing cars for T1 that contain talc will be re-waybilled to an interchange. (RR-577)"
+        },
+        {
+          "feature": "- Standardized terminology in UI and ETT on \"Auto Engineer\" or \"AE\"."
+        },
+        {
+          "feature": "- Enhanced networking to better handle joining very large games. (RR-562)"
+        },
+        {
+          "bug": "- Fixed auto engineer not announcing stop for switch set against."
+        },
+        {
+          "bug": "- Fixed auto engineer passenger stop ending too soon after pause. (RR-575)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.5.3 Hotfix 1",
+      "date": "2024-07-26 21:53:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094353829564",
+      "content": "Fixed an issue that caused the game to fail to properly initialize games created/loaded in a session after the first one.",
+      "key": "1683150::f85ec41e5e0d8e13689662e8e7f3f300c4d72c73",
+      "tags": [
+        {
+          "bug": "Fixed an issue that caused the game to fail to properly initialize games created/loaded in a session after the first one."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.5.3",
+      "date": "2024-07-26 10:05:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094352036007",
+      "content": "[list]\n[*] Fixed AI moving inconsistently when a switch is set against it and there is another train on that switch. It now ignores such trains and stops in advance of the foul point. (RR-495)\n[*] Fixed jerky animation when un-leaning. (RR-544)\n[*] Fixed unable to interact with some cab controls while leaning out the window. (RR-408)\n[*] Fixed case that could cause interchange to not receive cars, erroneously stating it is at capacity. (RR-545)\n[*] Fixed sound on striking track bumper.\n[*] Fixed coal/water/diesel loaders failing to load equipment in cases where the load point is close to another car, particularly coal on the K-28T. (RR-542)\n[*] Fixed turntable not properly lined in new game. (RR-525)\n[/list]",
+      "key": "1683150::abb169783e261cff6018a467a0e07fffcd40b44b",
+      "tags": [
+        {
+          "bug": "Fixed AI moving inconsistently when a switch is set against it and there is another train on that switch. It now ignores such trains and stops in advance of the foul point. (RR-495)"
+        },
+        {
+          "bug": "Fixed jerky animation when un-leaning. (RR-544)"
+        },
+        {
+          "bug": "Fixed unable to interact with some cab controls while leaning out the window. (RR-408)"
+        },
+        {
+          "bug": "Fixed case that could cause interchange to not receive cars, erroneously stating it is at capacity. (RR-545)"
+        },
+        {
+          "bug": "Fixed sound on striking track bumper."
+        },
+        {
+          "bug": "Fixed coal/water/diesel loaders failing to load equipment in cases where the load point is close to another car, particularly coal on the K-28T. (RR-542)"
+        },
+        {
+          "bug": "Fixed turntable not properly lined in new game. (RR-525)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.5.2",
+      "date": "2024-07-18 17:06:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959965989517",
+      "content": "[list]\n[*] Company window Locations panel now automatically selects nearest location when opened.\n[*] Fixed AI engineer continuing to stop for signal after diverging switch is thrown, e.g. train moving from Ela siding to switchback. (RR-524)\n[*] Made AI engineers more resilient in the face of internal errors.\n[*] Changed MU to require that it is connected not just by air to the source engine, but that it is coupled, too, to avoid confusing behavior after uncoupling. Anglecock setting does not matter. (RR-520)\n[*] Fixed CTC panel not initializing properly when first CTC milestone is unlocked. (RR-529)\n[*] Fixed CTC not fully clearing route when setting signal to stop while throwing switch, which could prevent setting a route into that same track from the opposite direction. (RR-526)\n[*] Fixed CTC bell's unnatural carrying distance. (RR-530)\n[*] Fixed \"(Overhaul)\" destination being cleared before overhaul was fully completed. (RR-528)\n[*] Updated turntable pit texture.\n[*] Fixed truck brake animation jumping when brakes change state midway through.\n[/list]",
+      "key": "1683150::cd52526d07658212a9098f74039f123e665f4adc",
+      "tags": [
+        {
+          "feature": "Company window Locations panel now automatically selects nearest location when opened."
+        },
+        {
+          "bug": "Fixed AI engineer continuing to stop for signal after diverging switch is thrown, e.g. train moving from Ela siding to switchback. (RR-524)"
+        },
+        {
+          "bug": "Fixed CTC panel not initializing properly when first CTC milestone is unlocked. (RR-529)"
+        },
+        {
+          "bug": "Fixed CTC not fully clearing route when setting signal to stop while throwing switch, which could prevent setting a route into that same track from the opposite direction. (RR-526)"
+        },
+        {
+          "bug": "Fixed CTC bell's unnatural carrying distance. (RR-530)"
+        },
+        {
+          "bug": "Fixed \"(Overhaul)\" destination being cleared before overhaul was fully completed. (RR-528)"
+        },
+        {
+          "bug": "Fixed truck brake animation jumping when brakes change state midway through."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.5.1",
+      "date": "2024-07-13 10:17:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6000566704273154494",
+      "content": "Thank you for your feedback on Railroader! We have a few bugfixes and adjustments for this build.\n\n[list]\n[*] Quit confirmation now shows time since last save.\n[*] Doubled S-23 tender coal capacity, fixed firebox tooltips.\n[*] Fixed C-55 water hatch tooltips. Minor model updates to C-46, A-26.\n[*] Fixed wear & tear damage only being applied to railroad-owned cars. Changed delivery damage fine threshold to 95%. (RR-514)\n[*] Fixed oiling tooltip appearing if Wear & Tear has been disabled.\n[*] Fixed AI engineer continuing to ignore a stop signal it was instructed to pass, after the signal has already been passed. (RR-517)\n[*] Fixed B-65 tender trucks not showing bearing oiling tooltip. (RR-515)\n[*] Fixed hotbox not appearing on a consistent bearing for clients/host. (RR-513)\n[/list]",
+      "key": "1683150::926ef71d5cbde03454c27472ae5eed88a62ff9bc",
+      "tags": [
+        {
+          "feature": "Quit confirmation now shows time since last save."
+        },
+        {
+          "balance_change": "Doubled S-23 tender coal capacity, fixed firebox tooltips."
+        },
+        {
+          "bug": "Fixed C-55 water hatch tooltips."
+        },
+        {
+          "bug": "Fixed wear & tear damage only being applied to railroad-owned cars."
+        },
+        {
+          "balance_change": "Changed delivery damage fine threshold to 95%."
+        },
+        {
+          "bug": "Fixed oiling tooltip appearing if Wear & Tear has been disabled."
+        },
+        {
+          "bug": "Fixed AI engineer continuing to ignore a stop signal it was instructed to pass, after the signal has already been passed. (RR-517)"
+        },
+        {
+          "bug": "Fixed B-65 tender trucks not showing bearing oiling tooltip. (RR-515)"
+        },
+        {
+          "bug": "Fixed hotbox not appearing on a consistent bearing for clients/host. (RR-513)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.5.0",
+      "date": "2024-07-11 16:59:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267361762427",
+      "content": "There's a lot in this update, so grab an oil can and let's walk the train while I tell you about it.\n\nWe are continuing to build and refine Wear & Tear in Railroader by adding two new features - oiling and hotboxes - and adjusting how repair tracks work. There're also two big new quality of life features - the context menu and notices - as well as some exciting enhancements for switches: manual unlocking CTC switches, and switch throw \"audits\" for multiplayer.\n\nThat journal box looks like it needs a bit more oil. Get that one real quick.\n\n[h2]Oiling & Hotboxes[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/9adb41af5c4271ec6d0cd2251836a5a9a8d8c58b.gif[/img]\n\nWhile hotboxes are still a concern in railroading, in the days of friction bearings (i.e., the days of Railroader) they were a much bigger deal. \"Hotbox\" refers to the axle bearing overheating, usually due to inadequate lubrication. That's where oiling comes in.\n\nOur goal with bearing oiling was to add a simple preventative maintenance interaction with a \"fun\" consequence -- hotboxes. Cars and steam engines (but not diesels) have a bearing oil level which can be checked by hovering the mouse over the trucks or drivers. \n\n[img]{STEAM_CLAN_IMAGE}/41998859/bb2c60708f2621c4e17f1a04f09feb13536a0ef1.gif[/img]\n\nFilling the oil is as simple as holding left mouse on the truck or drivers while the oiled percentage rises. You'll want to check the oil level on cars arriving at the interchange!\n\nAs the oil level drops below 50%, wear starts to rise, as does the risk of a hotbox (on cars only). You can spot a hotbox by the smoke, as well as the tooltip. If a hotbox occurs, you'll want to add oil and keep the speed below 15mph to avoid further damage. Hotboxes are repaired by taking the car to any repair track.\n\nWe understand that this may sound like a lot to worry about - don't despair!\n\n[list]\n[*] Cars in good condition only consume about 0.5% of their oil in a mile.\n[*] AI Engineers, when stopped, will gradually walk the train and oil any cars below 75% oil level.\n[*] AI Engineers periodically check the train for hotboxes and automatically reduce speed.\n[*] You can always turn off oiling and hotboxes in the Settings for your game.\n[/list]\n\n[h2]Additional Changes to Wear & Repair[/h2]\n\nWe've adjusted the rate at which equipment on the road takes wear to better incentivize regular maintenance while not being too punishing if you don't put your engines in the shed every night.\n\nFor general use you should expect condition to fall from 100% to 90% in the first 200 miles, but it will take over 3,000 miles before you reach 50%. This is with the default settings - you can adjust this and the overhaul mileage (which is now 2,500 by default) in Settings.\n\nWe've also reworked how repair tracks operate. Now, the shop automatically \"hires\" repair crews depending on how much equipment is present, and all equipment is repaired simultaneously. You can also set repair shop speed if you need them to work faster. We expect this to help especially busy railroads handle the repair work. Just make sure you have enough funds on hand to pay the wages due at midnight!\n\n[img]{STEAM_CLAN_IMAGE}/41998859/400d1aba74302aaceaef6b3c3d6c50535a34cb6d.png[/img]\n\n[h2]Context Menu[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/70b36ba2b9fd1410c92840bdecdd596b0db58e74.gif[/img]\n\nWe've added a context menu for equipment! Clicking on equipment with right mouse (RMB, or using the `Z` key if you have \"Right Mouse Toggles\" mouse look enabled) shows a radial menu for quick access to toggling the handbrake, bleeding the brakes, showing the inspector, and selecting/deselecting.\n\nWe can't wait for you to try it out. It's immediately become a feature we wonder how we ever played the game without!\n\n[h2]Notices[/h2]\n\nSometimes there's a lot going on and it's easy to miss or forget about an important message like an AI engineer running low on water. That's where the new Notices feature comes in: notices appear in the upper right corner and stay until you dismiss them, or they are canceled.\n\nNotices currently appear for AI engineer fuel/water levels, stop signals, fusees, and player connection changes. We plan to expand this feature in the future, so let us know what you'd like to see!\n\n[h2]CTC Switch Unlocking[/h2]\n\nIf you're doing some switching around a CTC interlocking it can be cumbersome to clear the interlocking and contact the dispsatcher for every throw. Now, crews can unlock and lock CTC switches using the switch's context menu (and verbal permission from the dispatcher, of course).\n\nBy unlocking a CTC switch the crew can throw it as needed and lock it again once they're done with their work, returning it to dispatcher control. Unlocked switches make the interlocking show occupied on the CTC panel.\n\nAlso: we have put a lot of effort into resolving bugs related to unlocking sections of the CTC system. We hope you notice the improvement, and thank you for your patience with these issues. Please continue reporting any issues you see!\n\n[h2]Switch Audits[/h2]\n\nThere's a lot more in this update - the full release notes are below - but we have one more feature we want to cover specifically.\n\n[img]{STEAM_CLAN_IMAGE}/41998859/81d969d2bffd3bce428291b2010ed1f39232b724.jpg[/img]\n\nWe've heard from some multiplayer players that they've had trouble with crews throwing switches they shouldn't. We're considering introducing enhanced access controls to help with this in the future, but for the time being we have enhanced switches to record an \"audit trail\" of the last three throws.\n\nTo see the audit for a switch, hold Shift while hovering over the switch and the tooltip will expand to show the available audit data.\n\nWe hope this helps you educate crews and promote safety on your railroads!\n\n[h2]Full Release Notes[/h2]\n\n[list]\n[*] Wear & Tear Iteration[list]\n  [*] Added Hotboxes & Bearing Oiling! Steam engines, tenders, freight and passenger equipment now have an oil level. Hover over the trucks (wheels) to check the level via tooltip, and click-and-hold to fill. Equipment with < 50% oil runs the risk of hotbox, which requires moving at < 15 mph to avoid additional damage. AI crews will periodically check for hotboxes and reduce speed upon detection. AI crews will also gradually oil the train when stopped. Full details are available in the Employee Timetable (F1 in game).\n  [*] Hotboxes & Oiling can be disabled in Settings, but you must save and re-open the save file for the change to take effect.\n  [*] Revised equipment wear from general use to incentivize daily service but not drop dramatically until condition approaches 50%. On default settings equipment will drop to 90% in the first 200 miles, but not reach 50% for more than 3500 miles.\n  [*] Repair facilities are no longer limited by number of shop crew. Instead, crew is brought on as needed and all present equipment is repaired simultaneously. Repair is limited by money to pay wages at midnight (if inadequate, no repairs will be performed the following day) and repair parts on hand. Wages are only paid for repair work performed.\n  [*] Repair speed can be set to increase wages in exchange for faster repairs.\n  [*] Repair times are non-linear, depending on the condition of the equipment. It will take longer to repair from 50% to 60% than it will take to repair from 90% to 100%.\n  [*] One overhaul is sufficient to return equipment to full condition.\n  [*] Added overhaul information to the Equipment panel. Revised presentation to show service miles until overhaul.\n[/list][*] Added context menu to cars for quick access to handbrake and bleed. Right click on car to access. The menu can also be opened with `Z` (right click context menu is not available for players who have enabled \"Right Mouse Toggles\" mouse look).\n[*] CTC switches may now be unlocked for local control using the aforementioned context menu on the switch motor. Unlocking a CTC switch sets the interlocking block occupied until it is locked again.\n[*] Improved representation of switches on the map, particularly at crossovers.\n[*] Added clickety-clack sounds for steam engines. (RR-469)\n[*] Adjusted selection of cars delivered to the interchange to be based on a normal distribution, better preferring cars that are appropriate to the power present on your railroad.\n[*] Switches now record recent throws. Hold Shift while hovering over a switch stand to see who recently threw a switch.\n[*] Added notices in the upper right corner to make important events more visible. AI engineers will post notices when they have stopped for some reason; player connect/disconnect will also appear here. We plan to expand this feature in the future.\n[*] Added ability to set train crew from Employees panel.\n[*] Added ability to rename train crews.\n[*] Added \"East Whittier Interchange\" map label; interchange labels now appear only when enabled. (RR-500)\n[*] Added tooltips to signal heads.\n[*] Updated A-26 engine.\n[*] Updated car tooltip: Moved handbrake indicator to its own line, changed to use icon in place of \"Destination\" and \"Spotted\".\n[*] Changed Alarka Jct Water Column milestone destination track to match other Alarka Jct Site tracks. This will require existing cars spotted at the prior location to be moved. (RR-498)\n[*] Changed milestone button text to use \"Start\" when ordering cars and \"Purchase\" for milestones without cars.\n[*] Changed AI to whistle more rapidly when moving a short distance.\n[*] Improved restoring player position on connect or load when player was riding on top of a car.\n[*] Mines now spot cars with air connected, end anglecocks open, and brake cylinders bled.\n[*] Improved map switch button culling vs UI scaling setting. (RR-455)\n[*] Improved display of small quantities of weight-measured loads. (RR-505)\n[*] Audio is now muted when pausing the game in single player.\n[*] Expanded range of sound preference sliders to 200%.\n[*] Fixed CTC not initializing correctly when purchased, which could cause signals at the extent of the system to not be settable. (RR-233)\n[*] Fixed phantom switch stand throw sounds.\n[*] Fixed Dillsboro Diesel Stand enabled by default in Sandbox mode.\n[*] Fixed AI announcing that it is stopping for a signal or fusee when it just stopped for a couple in yard mode.\n[*] Fixed AI setting headlight to forward when stopping.\n[*] Fixed AI not starting with reverser at 100%.\n[*] Fixed console text field being selected when hitting W in certain cases. (RR-461)\n[*] Fixed map icon for triple-headed Bryson entry signals. (RR-489)\n[*] Fixed unable to sell car that is already waybilled to buy repair parts or fuel. Any previously set sell destinations have been lost and will need to be re-applied! (RR-504)\n[*] Fixed \"Copy to Coupled\" of auto waybills applying waybills to cars which shouldn't be waybilled to those destinations. (RR-488)\n[*] Fixed case where player would be dropped from car they were riding when camera is elsewhere. (RR-501)\n[*] Fixed paying down loan resulting in negative loan payments in certain circumstances. Interest owed is no longer cleared by paying remaining loan amount and is due on the regular schedule. (RR-496)\n[*] Fixed cars sent away for loading still having their handbrake set upon return. (RR-510)\n[/list]",
+      "key": "1683150::fa9bf6fcf89199b3ab12aff693c9b7b449461de4",
+      "tags": [
+        {
+          "feature": "- Added Hotboxes & Bearing Oiling! Steam engines, tenders, freight and passenger equipment now have an oil level. Hover over the trucks (wheels) to check the level via tooltip, and click-and-hold to fill. Equipment with < 50% oil runs the risk of hotbox, which requires moving at < 15 mph to avoid additional damage. AI crews will periodically check for hotboxes and reduce speed upon detection. AI crews will also gradually oil the train when stopped. Full details are available in the Employee Timetable (F1 in game)."
+        },
+        {
+          "balance_change": "- Revised equipment wear from general use to incentivize daily service but not drop dramatically until condition approaches 50%. On default settings equipment will drop to 90% in the first 200 miles, but not reach 50% for more than 3500 miles."
+        },
+        {
+          "balance_change": "- Repair facilities are no longer limited by number of shop crew. Instead, crew is brought on as needed and all present equipment is repaired simultaneously. Repair is limited by money to pay wages at midnight (if inadequate, no repairs will be performed the following day) and repair parts on hand. Wages are only paid for repair work performed."
+        },
+        {
+          "feature": "- Repair speed can be set to increase wages in exchange for faster repairs."
+        },
+        {
+          "balance_change": "- Repair times are non-linear, depending on the condition of the equipment. It will take longer to repair from 50% to 60% than it will take to repair from 90% to 100%."
+        },
+        {
+          "feature": "- One overhaul is sufficient to return equipment to full condition."
+        },
+        {
+          "feature": "- Added overhaul information to the Equipment panel. Revised presentation to show service miles until overhaul."
+        },
+        {
+          "feature": "- Added context menu to cars for quick access to handbrake and bleed. Right click on car to access. The menu can also be opened with `Z` (right click context menu is not available for players who have enabled \"Right Mouse Toggles\" mouse look)."
+        },
+        {
+          "feature": "- CTC switches may now be unlocked for local control using the aforementioned context menu on the switch motor. Unlocking a CTC switch sets the interlocking block occupied until it is locked again."
+        },
+        {
+          "feature": "- Improved representation of switches on the map, particularly at crossovers."
+        },
+        {
+          "feature": "- Added clickety-clack sounds for steam engines. (RR-469)"
+        },
+        {
+          "balance_change": "- Adjusted selection of cars delivered to the interchange to be based on a normal distribution, better preferring cars that are appropriate to the power present on your railroad."
+        },
+        {
+          "feature": "- Switches now record recent throws. Hold Shift while hovering over a switch stand to see who recently threw a switch."
+        },
+        {
+          "feature": "- Added notices in the upper right corner to make important events more visible. AI engineers will post notices when they have stopped for some reason; player connect/disconnect will also appear here. We plan to expand this feature in the future."
+        },
+        {
+          "feature": "- Added ability to set train crew from Employees panel."
+        },
+        {
+          "feature": "- Added ability to rename train crews."
+        },
+        {
+          "feature": "- Added \"East Whittier Interchange\" map label; interchange labels now appear only when enabled. (RR-500)"
+        },
+        {
+          "feature": "- Added tooltips to signal heads."
+        },
+        {
+          "feature": "- Updated A-26 engine."
+        },
+        {
+          "feature": "- Updated car tooltip: Moved handbrake indicator to its own line, changed to use icon in place of \"Destination\" and \"Spotted\"."
+        },
+        {
+          "balance_change": "- Changed Alarka Jct Water Column milestone destination track to match other Alarka Jct Site tracks. This will require existing cars spotted at the prior location to be moved. (RR-498)"
+        },
+        {
+          "balance_change": "- Changed milestone button text to use \"Start\" when ordering cars and \"Purchase\" for milestones without cars."
+        },
+        {
+          "balance_change": "- Changed AI to whistle more rapidly when moving a short distance."
+        },
+        {
+          "feature": "- Improved restoring player position on connect or load when player was riding on top of a car."
+        },
+        {
+          "feature": "- Mines now spot cars with air connected, end anglecocks open, and brake cylinders bled."
+        },
+        {
+          "feature": "- Improved map switch button culling vs UI scaling setting. (RR-455)"
+        },
+        {
+          "feature": "- Improved display of small quantities of weight-measured loads. (RR-505)"
+        },
+        {
+          "feature": "- Audio is now muted when pausing the game in single player."
+        },
+        {
+          "feature": "- Expanded range of sound preference sliders to 200%."
+        },
+        {
+          "bug": "- Fixed CTC not initializing correctly when purchased, which could cause signals at the extent of the system to not be settable. (RR-233)"
+        },
+        {
+          "bug": "- Fixed phantom switch stand throw sounds."
+        },
+        {
+          "bug": "- Fixed Dillsboro Diesel Stand enabled by default in Sandbox mode."
+        },
+        {
+          "bug": "- Fixed AI announcing that it is stopping for a signal or fusee when it just stopped for a couple in yard mode."
+        },
+        {
+          "bug": "- Fixed AI setting headlight to forward when stopping."
+        },
+        {
+          "bug": "- Fixed AI not starting with reverser at 100%."
+        },
+        {
+          "bug": "- Fixed console text field being selected when hitting W in certain cases. (RR-461)"
+        },
+        {
+          "bug": "- Fixed map icon for triple-headed Bryson entry signals. (RR-489)"
+        },
+        {
+          "bug": "- Fixed unable to sell car that is already waybilled to buy repair parts or fuel. Any previously set sell destinations have been lost and will need to be re-applied! (RR-504)"
+        },
+        {
+          "bug": "- Fixed \"Copy to Coupled\" of auto waybills applying waybills to cars which shouldn't be waybilled to those destinations. (RR-488)"
+        },
+        {
+          "bug": "- Fixed case where player would be dropped from car they were riding when camera is elsewhere. (RR-501)"
+        },
+        {
+          "bug": "- Fixed paying down loan resulting in negative loan payments in certain circumstances. Interest owed is no longer cleared by paying remaining loan amount and is due on the regular schedule. (RR-496)"
+        },
+        {
+          "bug": "- Fixed cars sent away for loading still having their handbrake set upon return. (RR-510)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.4.4",
+      "date": "2024-06-01 14:18:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639338135658",
+      "content": "A few more bugfixes of higher profile items:\n\n[list][*] Fixed movement input being ignored after interacting with the AI HUD panel. (RR-467)\n[*] Fixed diesel reverser getting set to neutral when switching the selected engine in certain cases. (RR-480)\n[*] Fixed AI failing to stop correctly when approaching a switch set against it occupied by a train moving in the same direction of travel. (RR-481)[/list]",
+      "key": "1683150::0f18a4ce58e19be89900e1c9bf180e2ba7aedbc9",
+      "tags": [
+        {
+          "bug": "Fixed movement input being ignored after interacting with the AI HUD panel. (RR-467)"
+        },
+        {
+          "bug": "Fixed diesel reverser getting set to neutral when switching the selected engine in certain cases. (RR-480)"
+        },
+        {
+          "bug": "Fixed AI failing to stop correctly when approaching a switch set against it occupied by a train moving in the same direction of travel. (RR-481)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.4.3",
+      "date": "2024-05-31 17:17:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639334945480",
+      "content": "A few more bugfixes and enhancements:\n\n[list][*] Improved AI behavior when approaching speed changes, particularly for longer trains.\n[*] AI Engineer no longer e-stops when cutting off as a helper. (RR-40)\n[*] Station Agent windows: expanded freight car catchment of Whittier to include Connelly, Bryson - Walker, Alarka Jct - Fontana, Almond - Wesser, Nantahala - Hewitt, Topton - GCRR. (RR-416)\n[*] `/tp` command: renamed \"logcamp1\" to \"walker\", added \"connelly\". (RR-115)\n[*] Added train length in feet to HUD data. (RR-83)\n[*] Improved flickering lights in areas like Bryson (which has a lot of lights) at higher quality levels by increasing maximum lights per object on Medium, High, Very High, and Ultra quality settings. We plan to look at ways to further improve this in the future. (RR-203)\n[*] Removed unused Cowee Bridge Site. (RR-125)\n[*] Fixed cars sent for coal at East Whittier getting lost if Sylva is unlocked while they are away. (RR-470)\n[*] Fixed cars that are away appearing in Station Agent window. (RR-471)\n[*] Fixed diesel stands and water columns appearing when they have not been purchased, since 2024.4.2. (RR-472)[/list]",
+      "key": "1683150::acd6c4d0faec22ac914500f51fc821e22c74c2d2",
+      "tags": [
+        {
+          "bug": "AI Engineer no longer e-stops when cutting off as a helper. (RR-40)"
+        },
+        {
+          "feature": "Station Agent windows: expanded freight car catchment of Whittier to include Connelly, Bryson - Walker, Alarka Jct - Fontana, Almond - Wesser, Nantahala - Hewitt, Topton - GCRR. (RR-416)"
+        },
+        {
+          "feature": "`/tp` command: renamed \"logcamp1\" to \"walker\", added \"connelly\". (RR-115)"
+        },
+        {
+          "feature": "Added train length in feet to HUD data. (RR-83)"
+        },
+        {
+          "feature": "Improved flickering lights in areas like Bryson (which has a lot of lights) at higher quality levels by increasing maximum lights per object on Medium, High, Very High, and Ultra quality settings. We plan to look at ways to further improve this in the future. (RR-203)"
+        },
+        {
+          "feature": "Removed unused Cowee Bridge Site. (RR-125)"
+        },
+        {
+          "bug": "Fixed cars sent for coal at East Whittier getting lost if Sylva is unlocked while they are away. (RR-470)"
+        },
+        {
+          "bug": "Fixed cars that are away appearing in Station Agent window. (RR-471)"
+        },
+        {
+          "bug": "Fixed diesel stands and water columns appearing when they have not been purchased, since 2024.4.2. (RR-472)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.4.2",
+      "date": "2024-05-24 16:22:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105611989631",
+      "content": "A number of bugfixes \u2013\u00a0and a couple key enhancements, too!\n\n[list]\n[*] Updated tutorial to start with loaded hopper at interchange. (RR-444)\n[*] Added stationary camera at dispatcher's panel, selected with `3`. (RR-251)\n[*] Handbrakes or independent brakes are now set on purchased/placed equipment as appropriate. (RR-421)\n[*] Set AI speed limit for crossovers in Bryson and Whittier to 15mph.\n[*] AI will now respect a fusee it has been told to pass, once it has passed it. (RR-448)\n[*] Map no longer shows speed signs and mile posts for unavailable track.\n[*] Fixed error in Walker Logging track labels in the Location panel. (RR-456)\n[*] Fixed Dillsboro Engine Service appearing in Locations panel before it has been purchased. (RR-463)\n[*] Fixed issue that could cause interchange to fail to handle all cars. (RR-468)\n[*] Fixed turntable bridge track appearing as available on map before it has been unlocked.[/list]",
+      "key": "1683150::a9a376a312ba1f754c125b9933709e4d0c05199a",
+      "tags": [
+        {
+          "feature": "Updated tutorial to start with loaded hopper at interchange. (RR-444)"
+        },
+        {
+          "feature": "Added stationary camera at dispatcher's panel, selected with `3`. (RR-251)"
+        },
+        {
+          "feature": "Handbrakes or independent brakes are now set on purchased/placed equipment as appropriate. (RR-421)"
+        },
+        {
+          "balance_change": "Set AI speed limit for crossovers in Bryson and Whittier to 15mph."
+        },
+        {
+          "feature": "AI will now respect a fusee it has been told to pass, once it has passed it. (RR-448)"
+        },
+        {
+          "bug": "Map no longer shows speed signs and mile posts for unavailable track."
+        },
+        {
+          "bug": "Fixed error in Walker Logging track labels in the Location panel. (RR-456)"
+        },
+        {
+          "bug": "Fixed Dillsboro Engine Service appearing in Locations panel before it has been purchased. (RR-463)"
+        },
+        {
+          "bug": "Fixed issue that could cause interchange to fail to handle all cars. (RR-468)"
+        },
+        {
+          "bug": "Fixed turntable bridge track appearing as available on map before it has been unlocked."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.4.1",
+      "date": "2024-05-21 17:46:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970438040688",
+      "content": "We've heard a lot of great feedback about the new Wear & Tear feature. While the feedback is generally positive, we've heard from a lot of you that it is too severe, and we agree, so we've reduced the wear from 5% per 100 miles to 1% per 100 miles, and the overhaul mileage from 1,000 to 5,000 miles. We expect to continue to adjust this in the future. Thank you for helping us shape this feature!\n\nAdditional changes & fixes:\n\n[list][*] Refinements to repair track to reflect time to repair in addition to overhaul time, if any.\n[*] Close Window keyboard shortcut is now custom bindable. (RR-446)\n[*] Increased car unload rates at Appalachian Hardwoods R1 and Locust Pin Co. BR3.\n[*] Fixed roster grouping by diesel and steam engines separately. (RR-457)\n[*] Fixed unable to manipulate car controls (handbrake, etc.) in some cases when a car returns to interchange. (RR-450)\n[*] Fixed car not returning to interchange in same game session if moved using Shift-Ctrl-M. (RR-458)\n[*] Fixed mouse look staying on when entering pause menu. (RR-439)\n[*] Fixed station agent window freight fields not clickable. (RR-443)\n[*] Fixed showing \"+\" for damage on car delivery rather than \"-\". (RR-445)\n[*] Fixed incorrect tooltip on engine roster map button. (RR-440)\n[*] Fixed Shift-Ctrl-M losing train crew. (RR-441)\n[*] Fixed Engine Roster resizing itself and discarding player resizing. (RR-449)\n[*] Fixed AI not observing speed limit west of Brooks. (RR-447)\n[*] Fixed doppler effect warbling in some cases.[/list]",
+      "key": "1683150::c677586985630964c4f67d61f89ee2da5c20b45e",
+      "tags": [
+        {
+          "balance_change": "we've reduced the wear from 5% per 100 miles to 1% per 100 miles, and the overhaul mileage from 1,000 to 5,000 miles."
+        },
+        {
+          "balance_change": "Increased car unload rates at Appalachian Hardwoods R1 and Locust Pin Co. BR3."
+        },
+        {
+          "feature": "Close Window keyboard shortcut is now custom bindable."
+        },
+        {
+          "bug": "Fixed roster grouping by diesel and steam engines separately."
+        },
+        {
+          "bug": "Fixed unable to manipulate car controls (handbrake, etc.) in some cases when a car returns to interchange."
+        },
+        {
+          "bug": "Fixed car not returning to interchange in same game session if moved using Shift-Ctrl-M."
+        },
+        {
+          "bug": "Fixed mouse look staying on when entering pause menu."
+        },
+        {
+          "bug": "Fixed station agent window freight fields not clickable."
+        },
+        {
+          "bug": "Fixed showing \"+\" for damage on car delivery rather than \"-\"."
+        },
+        {
+          "bug": "Fixed incorrect tooltip on engine roster map button."
+        },
+        {
+          "bug": "Fixed Shift-Ctrl-M losing train crew."
+        },
+        {
+          "bug": "Fixed Engine Roster resizing itself and discarding player resizing."
+        },
+        {
+          "bug": "Fixed AI not observing speed limit west of Brooks."
+        },
+        {
+          "bug": "Fixed doppler effect warbling in some cases."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.4.0: Wear & Tear, New Chuff, UI Refresh and More!",
+      "date": "2024-05-18 14:43:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970426644687",
+      "content": "Railroader 2024.4.0 has arrived! There's a lot in this update, including some important changes you'll want to know about. Let's get into it!\n\n[h2]New Chuff and Crash Fix[/h2]\n\nWith this version we introduce a completely rebuilt chuff sound which smoothly matches the speed of the engine. It even changes with the cutoff/reverser setting, as well as between engines. We plan to further develop this in the future, but we're thrilled to finally share it with you. Farewell to that awkward transition around 11mph!\n\nAdditionally, this version fixes a crash that has been affecting some players. This crash is recognizable by the error code \"0x887a0005\" in the log, but it's important to note that there may be other issues lurking which crash with this same error code. If you encounter a crash with this new version, please try to get a sense of how frequently it occurs and if it is improved by using different quality settings before reporting it. Thank you!\n\n[h2]Wear & Tear[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/6cdf726730e603de77291d8ce6dcf1ab718b9320.gif[/img]\n\nMaintenance is a huge part of running a railroad. With 2024.4.0, we're bringing some significant changes to equipment wear and maintenance. This has three components: regular wear & tear, overhauls, and repair parts.\n\nSince launch, equipment has taken damage from hard coupling, derailments, and taking curves too fast. Now, every mile on the road will take its toll on your cars and engines, and engines will take more wear the harder they're run. You'll see a minimum of 5% damage every 100 miles.\n\nA well-crewed repair shop will be able to keep your engines in good condition if you keep them in the roundhouse or shed when they're not on duty, but over time the miles have a deeper impact that routine maintenance can't address, limiting the shop's ability to fully repair equipment. However, performing an [b]Overhaul[/b] (by setting a specific Overhaul repair destination) will instruct the shop crew to take time for those deeper repairs, bringing your equipment back to top condition. We recommend an overhaul every 1,000 miles.\n\nShop crews now consume [b]Repair Parts[/b] when performing repairs. You'll need to manage your supply of repair parts in your engine service facilities. They can be purchased using company-owned box cars, just like coal or diesel fuel.\n\nLastly for wear & tear, shops now employ [i]crews[/i] rather than individual workers. Wages have been increased accordingly. Additionally, you can disable wear & tear in Company settings.\n\n[h2]Passenger Network and Reputation[/h2]\n\nWe've made a couple changes to how your Passenger Reputation is calculated which we think you'll like. For those of you updating with existing saves, note that these changes will result in Railroader forgetting any passenger stops you've made on that day, prior to upgrading.\n\nThe good news is that your passenger network reputation now only includes stations which have been served in the past ten days. This means that if you don't want to provide passenger service for a particular section of the railroad, you can simply never serve it.\n\nAdditionally, equipment condition no longer affects passenger fares. Instead, it drives a new passenger equipment reputation score.\n\n[h2]Map Window Enhancements[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/99f5184aa5c2055a2a788f8188e40899a5507d96.gif[/img]\n\nThe map now displays switch positions, as well as a button to allow throwing any switch from the map! This can be disabled in Company settings.\n\nAlso: the map can now be resized using the control in the lower right corner. (We've also added resize controls to a number of other windows!)\n\nThe map no longer automatically centers on your position when being opened. A \"locate me\" button has been added, should you want to center the map on your position.\n\n[h2]Redesigned HUD[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/fdf199ab11040ca7e0f90d704c4546e9bb29f3c1.gif[/img]\n\nThe on-screen selected engine controls have been redesigned, and you can now choose between Manual, AI Road, and AI Yard modes within the HUD, as well as perform AI commands, without needing to open the inspector!\n\n[h2]Other UI Changes[/h2]\n\nThere's a new way to close windows: the Backspace key. This took us some getting used to, but we love being able to open the pause menu and save the game without having to close all of the windows first.\n\nYou can recall the last selected engine with X, or cycle between favorited engines using Shift-X. Remember that engines can be favorited in the Engine Roster window.\n\nIf you'd prefer to toggle mouse look by clicking the right mouse button (rather than the default of holding right mouse), you can select that in Preferences.\n\n[h2]Operational Updates[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/41998859/7fe8dba0b94cb61b5759087beec90c9ae85beb12.jpg[/img]\n\n[list]\n[*] Cars loaded by off-railroad industries (such as Coal, Diesel Fuel, and Repair Parts for the player railroad) now take cars away while they are being filled. Cars are returned after 24 hours have passed.\n[*] Whittier Saw Mill now takes gondola cars for wood chip export.\n[*] Added second repair track behind the Bryson roundhouse.\n[*] AI Engineer now resumes track speed after passing Restricting or Approach signals in certain conditions.\n[/list]\n\nSee the complete release notes in-game for more!",
+      "key": "1683150::bdcd2e0889323054e55ec354390fdfcf7ebce948",
+      "tags": [
+        {
+          "feature": "With this version we introduce a completely rebuilt chuff sound which smoothly matches the speed of the engine."
+        },
+        {
+          "bug": "Additionally, this version fixes a crash that has been affecting some players."
+        },
+        {
+          "feature": "With 2024.4.0, we're bringing some significant changes to equipment wear and maintenance."
+        },
+        {
+          "feature": "Now, every mile on the road will take its toll on your cars and engines, and engines will take more wear the harder they're run."
+        },
+        {
+          "feature": "However, performing an Overhaul (by setting a specific Overhaul repair destination) will instruct the shop crew to take time for those deeper repairs, bringing your equipment back to top condition."
+        },
+        {
+          "feature": "Shop crews now consume Repair Parts when performing repairs."
+        },
+        {
+          "feature": "Lastly for wear & tear, shops now employ crews rather than individual workers."
+        },
+        {
+          "balance_change": "Wages have been increased accordingly."
+        },
+        {
+          "feature": "Additionally, you can disable wear & tear in Company settings."
+        },
+        {
+          "feature": "The good news is that your passenger network reputation now only includes stations which have been served in the past ten days."
+        },
+        {
+          "balance_change": "Additionally, equipment condition no longer affects passenger fares."
+        },
+        {
+          "feature": "Instead, it drives a new passenger equipment reputation score."
+        },
+        {
+          "feature": "The map now displays switch positions, as well as a button to allow throwing any switch from the map!"
+        },
+        {
+          "feature": "Also: the map can now be resized using the control in the lower right corner."
+        },
+        {
+          "feature": "The map no longer automatically centers on your position when being opened."
+        },
+        {
+          "feature": "A \"locate me\" button has been added, should you want to center the map on your position."
+        },
+        {
+          "feature": "The on-screen selected engine controls have been redesigned, and you can now choose between Manual, AI Road, and AI Yard modes within the HUD, as well as perform AI commands, without needing to open the inspector!"
+        },
+        {
+          "feature": "There's a new way to close windows: the Backspace key."
+        },
+        {
+          "feature": "You can recall the last selected engine with X, or cycle between favorited engines using Shift-X."
+        },
+        {
+          "feature": "If you'd prefer to toggle mouse look by clicking the right mouse button (rather than the default of holding right mouse), you can select that in Preferences."
+        },
+        {
+          "feature": "Cars loaded by off-railroad industries (such as Coal, Diesel Fuel, and Repair Parts for the player railroad) now take cars away while they are being filled."
+        },
+        {
+          "feature": "Whittier Saw Mill now takes gondola cars for wood chip export."
+        },
+        {
+          "feature": "Added second repair track behind the Bryson roundhouse."
+        },
+        {
+          "feature": "AI Engineer now resumes track speed after passing Restricting or Approach signals in certain conditions."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.3.1",
+      "date": "2024-03-30 14:47:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5749481331445096811",
+      "content": "Railroader 2024.3.1 adds a few improvements and a number of bugfixes. Thank you for your feedback!\n\n[list]\n[*] Updated wheel tread appearance on most equipment.\n[*] Added Dillsboro Yard Storage Tracks milestone. (RR-171)\n[*] Added page on Signals to Employee Timetable.\n[*] AI Engineer in motion now stops for open brake line or handbrake application.\n[*] AI Engineer in Yard mode no longer stops for open brake line.\n[*] Lowered sway for heavier equipment on curves.\n[*] Fixed inconsistent ordering of coal, water in tender tooltip, equipment purchase UI. (RR-394)\n[*] Fixed ABS signals showing clear into occupied track when loading game. (RR-370)\n[*] Fixed switches on newly-expanded map sections appearing as CTC switches. (RR-388)\n[*] Fixed rare case where car purchase/placement would fail. Player owned cars are now all numbered sequentially. (RR-397)\n[*] Fixed incorrect tractive effort on F-71.\n[*] Fixed caboose weights.\n[*] Fixed \"DS\" label on Bryson Station being barely visible. (RR-402)\n[/list]",
+      "key": "1683150::44a49412410f6789aa4eba27c0112a05dd837cc9",
+      "tags": [
+        {
+          "feature": "Updated wheel tread appearance on most equipment."
+        },
+        {
+          "feature": "Added Dillsboro Yard Storage Tracks milestone. (RR-171)"
+        },
+        {
+          "feature": "Added page on Signals to Employee Timetable."
+        },
+        {
+          "feature": "AI Engineer in motion now stops for open brake line or handbrake application."
+        },
+        {
+          "feature": "AI Engineer in Yard mode no longer stops for open brake line."
+        },
+        {
+          "balance_change": "Lowered sway for heavier equipment on curves."
+        },
+        {
+          "bug": "Fixed inconsistent ordering of coal, water in tender tooltip, equipment purchase UI. (RR-394)"
+        },
+        {
+          "bug": "Fixed ABS signals showing clear into occupied track when loading game. (RR-370)"
+        },
+        {
+          "bug": "Fixed switches on newly-expanded map sections appearing as CTC switches. (RR-388)"
+        },
+        {
+          "bug": "Fixed rare case where car purchase/placement would fail. Player owned cars are now all numbered sequentially. (RR-397)"
+        },
+        {
+          "bug": "Fixed incorrect tractive effort on F-71."
+        },
+        {
+          "bug": "Fixed caboose weights."
+        },
+        {
+          "bug": "Fixed \"DS\" label on Bryson Station being barely visible. (RR-402)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.3.0 Input Customization Hotfix",
+      "date": "2024-03-23 13:59:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301725984218",
+      "content": "Hotfix release for the Input Customization window contents being obscured.",
+      "key": "1683150::79e3191adf4f5837641a1dcea4fd07d88b52a19b",
+      "tags": [
+        {
+          "bug": "Hotfix release for the Input Customization window contents being obscured."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.3.0 Released!",
+      "date": "2024-03-23 12:49:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301725807029",
+      "content": "Railroader 2024.3.0 brings new engines & customers, plus revamped coal & water consumption, updated vegetation, performance improvements, a new Engine Roster window to keep tabs on your power, and a whole lot more!\n\n[list]\n[*] Atlantic Locomotive Works is now offering three new steam locomotives: T-22, A-23, and F-71!\n[*] C-55 and old wooden caboose models updated! Old wooden caboose is now colorable.\n[*] Revamped tree/grass/plant rendering! River and roadbed edges are more natural now, too.\n[*] Added customers at Nantahala, Hewitt, and Wesser.\n[*] Revamped water and coal consumption: usage is significantly lower and is governed by reverser and throttle position. Tractive effort is not affected. (RR-367)\n[*] Added Engine Roster window (open with `R`) to ease switching between power.\n[*] Performance enhancements relating to car movement.\n[*] AI now warns when handbrakes are on or brake line is open when starting movement. (RR-297)\n[*] Compass display at top of screen is now much more accurate and tracks directly with camera rotation.\n[*] Added percentage graphic to tooltips for equipment loads and fuel loaders.\n[*] Added time to console messages.\n[*] Added Shift-Click on engine in map view to select.\n[*] Added \"Add from train\" button to Switch List.\n[*] Added `/repair` command to repair selected train (host, sandbox only).\n[*] Updated car tag colors to be more evenly distributed across the railroad.\n[*] Adjusted default Post Exposure & Contrast, customizable in the Preferences window.\n[*] Fixed Ela trestle abutments. (RR-318)\n[*] Fixed overhead camera snapping to directly above car. (RR-348)\n[*] Fixed AI reading 25mph speed limit near Bryson East and Whittier Wye. (RR-350)\n[*] Fixed AI not keeping current speed when enabling road mode while moving in reverse.\n[*] Fixed car tag overlay rendering behind water sometimes. (RR-353)\n[*] Fixed higher tree density causing trees to appear in places they shouldn't be.\n[*] Fixed engines consuming coal when there's no water and vice-versa. (RR-361)\n[*] Fixed mines loading too many cars when waiting/sleeping.\n[*] Fixed signal lenses appearing impossibly dark in fog.\n[*] Made water hatches more lenient in positioning below water columns and towers. (RR-257)\n[/list]",
+      "key": "1683150::7addc1281ad73e74fe80926ca7302bce90f86897",
+      "tags": [
+        {
+          "feature": "Atlantic Locomotive Works is now offering three new steam locomotives: T-22, A-23, and F-71!"
+        },
+        {
+          "feature": "C-55 and old wooden caboose models updated! Old wooden caboose is now colorable."
+        },
+        {
+          "feature": "Revamped tree/grass/plant rendering! River and roadbed edges are more natural now, too."
+        },
+        {
+          "feature": "Added customers at Nantahala, Hewitt, and Wesser."
+        },
+        {
+          "balance_change": "Revamped water and coal consumption: usage is significantly lower and is governed by reverser and throttle position. Tractive effort is not affected. (RR-367)"
+        },
+        {
+          "feature": "Added Engine Roster window (open with `R`) to ease switching between power."
+        },
+        {
+          "feature": "Performance enhancements relating to car movement."
+        },
+        {
+          "feature": "AI now warns when handbrakes are on or brake line is open when starting movement. (RR-297)"
+        },
+        {
+          "feature": "Compass display at top of screen is now much more accurate and tracks directly with camera rotation."
+        },
+        {
+          "feature": "Added percentage graphic to tooltips for equipment loads and fuel loaders."
+        },
+        {
+          "feature": "Added time to console messages."
+        },
+        {
+          "feature": "Added Shift-Click on engine in map view to select."
+        },
+        {
+          "feature": "Added \"Add from train\" button to Switch List."
+        },
+        {
+          "feature": "Added `/repair` command to repair selected train (host, sandbox only)."
+        },
+        {
+          "feature": "Updated car tag colors to be more evenly distributed across the railroad."
+        },
+        {
+          "balance_change": "Adjusted default Post Exposure & Contrast, customizable in the Preferences window."
+        },
+        {
+          "bug": "Fixed Ela trestle abutments. (RR-318)"
+        },
+        {
+          "bug": "Fixed overhead camera snapping to directly above car. (RR-348)"
+        },
+        {
+          "bug": "Fixed AI reading 25mph speed limit near Bryson East and Whittier Wye. (RR-350)"
+        },
+        {
+          "bug": "Fixed AI not keeping current speed when enabling road mode while moving in reverse."
+        },
+        {
+          "bug": "Fixed car tag overlay rendering behind water sometimes. (RR-353)"
+        },
+        {
+          "bug": "Fixed higher tree density causing trees to appear in places they shouldn't be."
+        },
+        {
+          "bug": "Fixed engines consuming coal when there's no water and vice-versa. (RR-361)"
+        },
+        {
+          "bug": "Fixed mines loading too many cars when waiting/sleeping."
+        },
+        {
+          "bug": "Fixed signal lenses appearing impossibly dark in fog."
+        },
+        {
+          "bug": "Made water hatches more lenient in positioning below water columns and towers. (RR-257)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.2.5",
+      "date": "2024-02-23 13:42:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065186395981",
+      "content": "[list]\n[*] Customers now receive a more appropriate number of empties for interchange services beyond the daily one.\n[*] Changed Graham County Pulpwood to a high volume pulpwood source, similar to Connelly and Walker. This means it now loads incrementally rather than with interchange service. This is a temporary measure; we plan to revise the Graham County interchange in the future.\n[*] Fixed jumping singleplayer player (or multiplayer host) to spawn when loading a game saved while ridiing on equipment. (RR-342)\n[*] Fixed Robinson Gap and Alarka mines not filling as many cars as they should while waiting or sleeping. (RR-345)\n[*] Fixed Bryson Freight Hours track FR1 appearing multiple times in locations panel. (RR-164)\n[*] Trainmaster and up can now use the `/fill` and `/setload` commands in sandbox.\n[/list]",
+      "key": "1683150::0396a2bc151088ceccf343508dcab3d424e6f2c7",
+      "tags": [
+        {
+          "balance_change": "Customers now receive a more appropriate number of empties for interchange services beyond the daily one."
+        },
+        {
+          "balance_change": "Changed Graham County Pulpwood to a high volume pulpwood source, similar to Connelly and Walker. This means it now loads incrementally rather than with interchange service. This is a temporary measure; we plan to revise the Graham County interchange in the future."
+        },
+        {
+          "bug": "Fixed jumping singleplayer player (or multiplayer host) to spawn when loading a game saved while ridiing on equipment. (RR-342)"
+        },
+        {
+          "bug": "Fixed Robinson Gap and Alarka mines not filling as many cars as they should while waiting or sleeping. (RR-345)"
+        },
+        {
+          "bug": "Fixed Bryson Freight Hours track FR1 appearing multiple times in locations panel. (RR-164)"
+        },
+        {
+          "feature": "Trainmaster and up can now use the `/fill` and `/setload` commands in sandbox."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.2.4",
+      "date": "2024-02-19 10:12:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544507364448",
+      "content": "[list]\n[*] Limited manual car mover (Shift-R) to 3mph and 5m away. (RR-339)\n[*] Fixed cases where low throttle setting could result in no fuel/water consumption. (RR-186)\n[*] Fixed AI engineer failing to release independent brakes in MU configuration. (RR-341)\n[*] Added workaround for sandbox games failing to properly restore map feature selections due to having been opened in company mode in the past. (RR-340)\n[/list]",
+      "key": "1683150::384de0fc0615ae413b72116c262c2aa0d7569929",
+      "tags": [
+        {
+          "balance_change": "Limited manual car mover (Shift-R) to 3mph and 5m away. (RR-339)"
+        },
+        {
+          "bug": "Fixed cases where low throttle setting could result in no fuel/water consumption. (RR-186)"
+        },
+        {
+          "bug": "Fixed AI engineer failing to release independent brakes in MU configuration. (RR-341)"
+        },
+        {
+          "bug": "Added workaround for sandbox games failing to properly restore map feature selections due to having been opened in company mode in the past. (RR-340)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.2.3",
+      "date": "2024-02-18 13:18:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544504189161",
+      "content": "[img]{STEAM_CLAN_IMAGE}/41998859/823defc502d353517de84161416fad38c3e759e0.png[/img]\n\n[list]\n[*] Added milestone upgrade water columns at Alarka Jct and Almond.\n[*] Added lights at East Whittier.\n[*] Independent brake is now linked across engines when MU is enabled. Main reservoirs are also linked.\n[*] Fixed interchange served at top of hour, not at exact scheduled time. (RR-336)\n[*] Fixed animations not playing on newly purchased milestone elements. (RR-317 cont'd)\n[*] Fixed client unable to join when the equipment they had been riding has been deleted. (RR-337)\n[*] Fixed AI not proceeding once stop signal changes to approach at interlockings where the next signal is > 2km away. (RR-338)\n[/list]",
+      "key": "1683150::429e09470988bf66f2b63b98f99c6ae2d5fc1197",
+      "tags": [
+        {
+          "feature": "Added milestone upgrade water columns at Alarka Jct and Almond."
+        },
+        {
+          "feature": "Added lights at East Whittier."
+        },
+        {
+          "feature": "Independent brake is now linked across engines when MU is enabled. Main reservoirs are also linked."
+        },
+        {
+          "bug": "Fixed interchange served at top of hour, not at exact scheduled time. (RR-336)"
+        },
+        {
+          "bug": "Fixed animations not playing on newly purchased milestone elements. (RR-317 cont'd)"
+        },
+        {
+          "bug": "Fixed client unable to join when the equipment they had been riding has been deleted. (RR-337)"
+        },
+        {
+          "bug": "Fixed AI not proceeding once stop signal changes to approach at interlockings where the next signal is > 2km away. (RR-338)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.2.2 is now available!",
+      "date": "2024-02-17 10:55:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544500184281",
+      "content": "[list]\n[*] Re-graded Alarka Jct through Cochran tunnel.\n[*] Railroader will now prompt to re-place trains with invalid locations (such as from map changes) when loading a game.\n[*] Reverted headlight control scheme to original: Front Full - Front Dim - Off - Rear Dim - Rear Full.\n[*] AI will now call approach, stop, and restricting signals at interlockings. This can be disabled in company settings.\n[*] Interchanges: Removed limit on per-service number of cuts. Changed capacity limit to 70%.\n[*] Additional interchange service can now be scheduled for those of you with particularly busy railroads. Automatic return visits for full interchanges use the same system. The service interval is 2:30. You can schedule interchange service in the Locations panel, as well as see when the next service will be.\n[*] Re-added \"Limit to 60fps\" option to Vsync dropdown (Graphics Preferences).\n[*] Fixed signals showing incorrect aspects for clients after purchase. (RR-325)\n[*] Fixed coal loaders not operating immediately after purchase. (RR-315)\n[*] Improved diesel \"quill\" when signaling for crossings. (RR-317)\n[*] Manual car move (Shift-R) is much stronger now.\n[/list]",
+      "key": "1683150::36dd0da0f7cc4352c7932578c63bb01d815c88ce",
+      "tags": [
+        {
+          "feature": "[*] Railroader will now prompt to re-place trains with invalid locations (such as from map changes) when loading a game."
+        },
+        {
+          "feature": "[*] Reverted headlight control scheme to original: Front Full - Front Dim - Off - Rear Dim - Rear Full."
+        },
+        {
+          "feature": "[*] AI will now call approach, stop, and restricting signals at interlockings. This can be disabled in company settings."
+        },
+        {
+          "balance_change": "[*] Interchanges: Removed limit on per-service number of cuts. Changed capacity limit to 70%."
+        },
+        {
+          "feature": "[*] Additional interchange service can now be scheduled for those of you with particularly busy railroads. Automatic return visits for full interchanges use the same system. The service interval is 2:30. You can schedule interchange service in the Locations panel, as well as see when the next service will be."
+        },
+        {
+          "feature": "[*] Re-added \"Limit to 60fps\" option to Vsync dropdown (Graphics Preferences)."
+        },
+        {
+          "bug": "[*] Fixed signals showing incorrect aspects for clients after purchase. (RR-325)"
+        },
+        {
+          "bug": "[*] Fixed coal loaders not operating immediately after purchase. (RR-315)"
+        },
+        {
+          "feature": "[*] Improved diesel \"quill\" when signaling for crossings. (RR-317)"
+        },
+        {
+          "balance_change": "[*] Manual car move (Shift-R) is much stronger now."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.2.1 is up with some quick followup adjustments!",
+      "date": "2024-02-03 17:37:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074949504113",
+      "content": "[list]\n[*] Reduced damage on collision, particularly at speeds below 10mph. (RR-305)\n[*] AI Yard Mode: Adjust behavior when coupling to a cut. (RR-306)\n[*] Doubled clickable distance for fusees.\n[*] P-18: Fixed headlight control position. (RR-307)\n[*] C-25: Fixed seat order on Ctrl-0.\n[/list]",
+      "key": "1683150::0591fd3d32caf7ecb8acc2c4b0a9f1805462fcaf",
+      "tags": [
+        {
+          "balance_change": "Reduced damage on collision, particularly at speeds below 10mph. (RR-305)"
+        },
+        {
+          "balance_change": "Doubled clickable distance for fusees."
+        },
+        {
+          "bug": "P-18: Fixed headlight control position. (RR-307)"
+        },
+        {
+          "bug": "C-25: Fixed seat order on Ctrl-0."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.2.0 is now available!",
+      "date": "2024-02-03 15:54:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074949243818",
+      "content": "[list]\n[*] AI Engineer now makes passenger stops at stations matching selected stops on coaches in its train. This can be disabled Company window Settings; the minimum stop duration can also be set.\n[*] Added interactive headlight controls to engines and observation car and adjusted headlight shortcut behavior to match, allowing dimming both front and rear. (RR-232)\n[*] Adjusted how loading industries order cars. Should result in fewer unnecessary cars. (RR-278)\n[*] Added whistle volume preference. (RR-271)\n[*] Added AI setting to disable crossing signalling.\n[*] Added Vsync setting in place of \"Limit FPS to 60\" setting. (RR-268)\n[*] AI now announces low fuel levels. (RR-28)\n[*] Removed implicit gamepad movement binding to prevent unexpected input/camera drift. Instead, please use Steam's controller support to bind your gamepad to the movement keys.\n[*] Fixed AI Orders panel showing track speed and not lower ordered speed limit. (RR-270)\n[*] Fixed Andrews signal appearing on CTC panel when Andrews signals haven't been purchased. (RR-274)\n[*] Fixed Wilmot station icon position, teleport location. (RR-275)\n[*] Fixed Walker branch trestle alignment, re-graded bottom portion. (RR-277)\n[*] Fixed high tree density causing trees to excessively encroach upon the right of way. (RR-25)\n[*] Coal loaders no longer load cars not owned by your railroad. (RR-292)\n[*] Fixed Robinson Gap not loading cars if they already contain coal (likely via the prior item). (RR-293)\n[*] Fixed issue affecting some milestones which require cars of ballast. (RR-294)\n[*] Fixed offline passenger players in multiplayer counting toward total. (RR-299)\n[*] Overhead camera no longer stops following a car with a simple click. (RR-285)\n[*] B-65 is now \"Large\" curve radius, D-46 is now \"Medium\". (RR-262)\n[/list]",
+      "key": "1683150::09a9a5fff335550c659cf6a82f6a4297bf892987",
+      "tags": [
+        {
+          "feature": "AI Engineer now makes passenger stops at stations matching selected stops on coaches in its train. This can be disabled Company window Settings; the minimum stop duration can also be set."
+        },
+        {
+          "feature": "Added interactive headlight controls to engines and observation car and adjusted headlight shortcut behavior to match, allowing dimming both front and rear. (RR-232)"
+        },
+        {
+          "feature": "Added whistle volume preference. (RR-271)"
+        },
+        {
+          "feature": "Added AI setting to disable crossing signalling."
+        },
+        {
+          "feature": "Added Vsync setting in place of \"Limit FPS to 60\" setting. (RR-268)"
+        },
+        {
+          "feature": "AI now announces low fuel levels. (RR-28)"
+        },
+        {
+          "feature": "Removed implicit gamepad movement binding to prevent unexpected input/camera drift. Instead, please use Steam's controller support to bind your gamepad to the movement keys."
+        },
+        {
+          "bug": "Fixed AI Orders panel showing track speed and not lower ordered speed limit. (RR-270)"
+        },
+        {
+          "bug": "Fixed Andrews signal appearing on CTC panel when Andrews signals haven't been purchased. (RR-274)"
+        },
+        {
+          "bug": "Fixed Wilmot station icon position, teleport location. (RR-275)"
+        },
+        {
+          "bug": "Fixed Walker branch trestle alignment, re-graded bottom portion. (RR-277)"
+        },
+        {
+          "bug": "Fixed high tree density causing trees to excessively encroach upon the right of way. (RR-25)"
+        },
+        {
+          "bug": "Coal loaders no longer load cars not owned by your railroad. (RR-292)"
+        },
+        {
+          "bug": "Fixed Robinson Gap not loading cars if they already contain coal (likely via the prior item). (RR-293)"
+        },
+        {
+          "bug": "Fixed issue affecting some milestones which require cars of ballast. (RR-294)"
+        },
+        {
+          "bug": "Fixed offline passenger players in multiplayer counting toward total. (RR-299)"
+        },
+        {
+          "bug": "Overhead camera no longer stops following a car with a simple click. (RR-285)"
+        },
+        {
+          "balance_change": "Adjusted how loading industries order cars. Should result in fewer unnecessary cars. (RR-278)"
+        },
+        {
+          "balance_change": "B-65 is now \"Large\" curve radius, D-46 is now \"Medium\". (RR-262)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2024.1.0",
+      "date": "2024-01-09 08:03:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585199186885",
+      "content": "We've retuned the AI for this update and think you will find that it runs better than ever. If you find a situation it can't handle that it should, please post in #bug-reports on our Discord! Also: the AI has learned to whistle for crossings!\n\nWe've also adjusted the default braking force, and provided a new Company Setting to configure it for your save. \"Medium\" is the new, stronger default, while \"Low\" is roughly equivalent to the old braking force.\n\nAdditional changes:\n\n[list]\n[*] Mines now check for cars in the way between the empty and its destination before moving them, as originally intended. (RR-243)\n[*] Limited multiplayer messages to 512 characters. (RR-242)\n[*] Reporting marks and numbers are now limited to 6 letters and &. Railroad names are limited to 50 characters.\n[*] The host can rename their railroad using the recharter console command. Example: `/recharter PC \"Penn Central\"` This command changes the reporting marks of existing cars to match, if possible without creating a conflict.\n[*] Fixed overhead camera momentarily showing old position when jumping to it via 0/9. (RR-241)\n[*] Increased log unloading speed at Whittier Saw Mill.\n[*] Pulpwood payments increased by 50%.\n[*] Maximum tree density restored to 2; detail density max remains at 1.\n[*] Fixed finance tab performance. (RR-149)\n[*] Fixed misaligned turntable causing chaotic derailments.(RR-110)\n[/list]",
+      "key": "1683150::d9f0662503ea5d67b6c763ea20e013745f64f5c3",
+      "tags": [
+        {
+          "balance_change": "We've retuned the AI for this update and think you will find that it runs better than ever."
+        },
+        {
+          "feature": "Also: the AI has learned to whistle for crossings!"
+        },
+        {
+          "balance_change": "We've also adjusted the default braking force, and provided a new Company Setting to configure it for your save."
+        },
+        {
+          "balance_change": "\"Medium\" is the new, stronger default, while \"Low\" is roughly equivalent to the old braking force."
+        },
+        {
+          "bug": "Mines now check for cars in the way between the empty and its destination before moving them, as originally intended."
+        },
+        {
+          "balance_change": "Limited multiplayer messages to 512 characters."
+        },
+        {
+          "balance_change": "Reporting marks and numbers are now limited to 6 letters and &."
+        },
+        {
+          "balance_change": "Railroad names are limited to 50 characters."
+        },
+        {
+          "feature": "The host can rename their railroad using the recharter console command."
+        },
+        {
+          "bug": "Fixed overhead camera momentarily showing old position when jumping to it via 0/9."
+        },
+        {
+          "balance_change": "Increased log unloading speed at Whittier Saw Mill."
+        },
+        {
+          "balance_change": "Pulpwood payments increased by 50%."
+        },
+        {
+          "balance_change": "Maximum tree density restored to 2; detail density max remains at 1."
+        },
+        {
+          "bug": "Fixed finance tab performance."
+        },
+        {
+          "bug": "Fixed misaligned turntable causing chaotic derailments."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2023.3.2",
+      "date": "2024-01-01 13:18:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585170824833",
+      "content": "Happy New Year! This build contains an assortment of improvements and fixes:\n\n[list]\n[*] Added Interchange Blocking setting which controls the degree to which cars delivered at the interchange(s) are blocked (grouped) by their destinations.\n[*] Added proper UI Scaling preference, allowing you to set the scaling that works for you.\n[*] Revamped overhead camera (2) control to move more smoothly.\n[*] Revamped Auto Engineer to improve stopping accuracy. Reduced fusee stop distance.\n[*] Improved fouling distance calculation.\n[*] Fixed not able to maintain tier if selecting a lower tier when performance is below current tier conditions. (RR-223)\n[*] Replaced daytime environment audio.\n[*] Limited tree and detail density to 1.0 in the hopes that this will mitigate crashes.\n[*] Changed base road numbers for a number of cars.\n[*] Fixed issue for multiplayer clients that could cause cars to show up out of position, e.g. at Robinson Gap. (RR-154)\n[*] Gravity fed mines (Robinson Gap, Alarka Copper) now run regardless of whether there are players present.\n[/list]",
+      "key": "1683150::c406891f3b98a0fa6fec80e422be291bd2bb18f1",
+      "tags": [
+        {
+          "feature": "Added Interchange Blocking setting which controls the degree to which cars delivered at the interchange(s) are blocked (grouped) by their destinations."
+        },
+        {
+          "feature": "Added proper UI Scaling preference, allowing you to set the scaling that works for you."
+        },
+        {
+          "feature": "Revamped overhead camera (2) control to move more smoothly."
+        },
+        {
+          "feature": "Revamped Auto Engineer to improve stopping accuracy."
+        },
+        {
+          "balance_change": "Reduced fusee stop distance."
+        },
+        {
+          "bug": "Fixed not able to maintain tier if selecting a lower tier when performance is below current tier conditions. (RR-223)"
+        },
+        {
+          "bug": "Fixed issue for multiplayer clients that could cause cars to show up out of position, e.g. at Robinson Gap. (RR-154)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2023.3.1",
+      "date": "2023-12-20 10:04:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585126600153",
+      "content": "In response to your feedback we've made further adjustments to the contract system. We aren't done tinkering with it - this is part of what Early Access is about - so we look forward to hearing your impressions!\n\n[list]\n[*]Contract tiers can only be raised after 3 days of performance data. Raising more than one tier requires 5 days.\n[*]A penalty is assessed when downgrading a contract. $250 per tier downgrade, plus an additional penalty depending on how new the contract was. (The longer running a contract, the less the penalty.)\n[*]If performance averages below 50% for three consecutive days, the tier will be lowered by two and penalty withdrawn.\n[/list]\n\nAlso:\n\n[list]\n[*]Customer performance is now updated at midnight. Payments for captive service are now received before paying shop crew wages. Fixed -1 shop crew. (RR-197)\n[*]Connelly and Walker no longer share storage between the camps. This change will cause existing saves to start with 0 logs/pulpwood in storage in these camps, but going forward they will maintain a higher - ahem - backlog of logs. (RR-208)\n[*]Fixed map icons with incorrect scale. (RR-207)\n[*]Fixed reputation not updating due to unexpected data. (RR-201)\n[*]Fixed MU logic not using correct locomotive as its target. (RR-209)\n[*]Lean Left/Right bindings are now used by the overhead camera rotation, and their orientation has been fixed. (RR-204, RR-205)\n[/list]",
+      "key": "1683150::fcc707baf2898bcc98662bb672eb98399e082534",
+      "tags": [
+        {
+          "balance_change": "Contract tiers can only be raised after 3 days of performance data. Raising more than one tier requires 5 days."
+        },
+        {
+          "balance_change": "A penalty is assessed when downgrading a contract. $250 per tier downgrade, plus an additional penalty depending on how new the contract was. (The longer running a contract, the less the penalty.)"
+        },
+        {
+          "balance_change": "If performance averages below 50% for three consecutive days, the tier will be lowered by two and penalty withdrawn."
+        },
+        {
+          "bug": "Customer performance is now updated at midnight. Payments for captive service are now received before paying shop crew wages. Fixed -1 shop crew. (RR-197)"
+        },
+        {
+          "bug": "Connelly and Walker no longer share storage between the camps. This change will cause existing saves to start with 0 logs/pulpwood in storage in these camps, but going forward they will maintain a higher - ahem - backlog of logs. (RR-208)"
+        },
+        {
+          "bug": "Fixed map icons with incorrect scale. (RR-207)"
+        },
+        {
+          "bug": "Fixed reputation not updating due to unexpected data. (RR-201)"
+        },
+        {
+          "bug": "Fixed MU logic not using correct locomotive as its target. (RR-209)"
+        },
+        {
+          "bug": "Lean Left/Right bindings are now used by the overhead camera rotation, and their orientation has been fixed. (RR-204, RR-205)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2023.3.0",
+      "date": "2023-12-18 16:23:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219988408473",
+      "content": "[list]\n[*] Contracts have been reworked: (RR-144)\n[list]\n  [*] Contracts no longer expire or have a term.\n  [*] Contracts may be changed each day (change takes effect at midnight).\n  [*] Performance at each tier is calculated only after delivery at that tier.\n[/list][*] Added customizable key bindings for most keyboard input. In game, open: Preferences, Input, Customize Bindings.\n[*] Locations panel enhancements/fixes: (RR-174)\n[list]\n  [*] Customers now display correct percentage for loads in storage.\n  [*] Cleaned up display of output rates.\n  [*] Formulaic industries such as Whittier Saw Mill, paper mills, etc. now display a warning when they are not able to produce due to lack of input loads or full output storage.\n[/list][*] Yard mode AI will now stop upon coupling with a cut. (RR-29)\n[*] Enabled disconnecting gladhands when not coupled. (RR-51)\n[*] Extended length of Bryson Bridge and Fontana Bridge sites. (RR-189)\n[*] Removed condition that interchange track contain only freight in order to add ordered cars to it. (RR-173)\n[*] Fixed Bryson W interlocking block tripping up AI trains. (RR-178)\n[*] Fixed error parsing autosave filenames with \"- Copy\" appended to filename. (RR-166)\n[/list]\n",
+      "key": "1683150::69280e16be1353a71192d69cd7c18fb59cd88766",
+      "tags": [
+        {
+          "feature": "- Added customizable key bindings for most keyboard input. In game, open: Preferences, Input, Customize Bindings."
+        },
+        {
+          "bug": "- Customers now display correct percentage for loads in storage."
+        },
+        {
+          "bug": "- Cleaned up display of output rates."
+        },
+        {
+          "feature": "- Formulaic industries such as Whittier Saw Mill, paper mills, etc. now display a warning when they are not able to produce due to lack of input loads or full output storage."
+        },
+        {
+          "feature": "- Yard mode AI will now stop upon coupling with a cut."
+        },
+        {
+          "feature": "- Enabled disconnecting gladhands when not coupled."
+        },
+        {
+          "feature": "- Extended length of Bryson Bridge and Fontana Bridge sites."
+        },
+        {
+          "bug": "- Removed condition that interchange track contain only freight in order to add ordered cars to it."
+        },
+        {
+          "bug": "- Fixed Bryson W interlocking block tripping up AI trains."
+        },
+        {
+          "bug": "- Fixed error parsing autosave filenames with \"- Copy\" appended to filename."
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2023.2.4",
+      "date": "2023-12-12 13:33:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616813479747",
+      "content": "[list]\n[*] Added \"Limit FPS\" setting under Graphics which defaults to on. (RR-145)\n[*] Fixed inaccurate passenger reputation calculation in some cases. (RR-151)\n[*] Fixed interchange grabbing your railroad's cars for its own purposes. (RR-147)\n[/list]",
+      "key": "1683150::3afa5de3142eb71d39a1c91ff9a1e1e3989ecf62",
+      "tags": [
+        {
+          "feature": "Added \"Limit FPS\" setting under Graphics which defaults to on. (RR-145)"
+        },
+        {
+          "bug": "Fixed inaccurate passenger reputation calculation in some cases. (RR-151)"
+        },
+        {
+          "bug": "Fixed interchange grabbing your railroad's cars for its own purposes. (RR-147)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2023.2.3",
+      "date": "2023-12-11 12:07:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616809616605",
+      "content": "Thank you for your incredible feedback on and support of Railroader! We're continuing to work on bug fixes and stability, as well as making plans to put together a public roadmap - stay tuned for that!\n\n[list]\n[*] Finance panel: Added $5,000 +/- loan buttons.\n[*] Fixed water tower only clickable from 20 meters away (now 50). (RR-112)\n[*] Fixed error when purchasing new engine that would have been \"101\" when another car has road number \"X101\". (RR-119)\n[*] Fixed anglecocks still being slightly open when the tooltip says \"Closed\". (RR-137)\n[*] Fixed P-18 wheelslip due to incorrect characteristics. (RR-108)\n[*] Fixed progression locations showing up in sandbox mode. (RR-107)\n[*] Fixed cars in switch list showing Hemingway as the location when they are within the Bryson radius. (RR-136)\n[*] Fixed typos in AI Engineer guide, Andrews locations. (RR-120, RR-121, RR-127)\n[/list]",
+      "key": "1683150::fd5ea120469b07d75031c1f2aa32b9b3c1e78565",
+      "tags": [
+        {
+          "feature": "Finance panel: Added $5,000 +/- loan buttons."
+        },
+        {
+          "bug": "Fixed water tower only clickable from 20 meters away (now 50). (RR-112)"
+        },
+        {
+          "bug": "Fixed error when purchasing new engine that would have been \"101\" when another car has road number \"X101\". (RR-119)"
+        },
+        {
+          "bug": "Fixed anglecocks still being slightly open when the tooltip says \"Closed\". (RR-137)"
+        },
+        {
+          "bug": "Fixed P-18 wheelslip due to incorrect characteristics. (RR-108)"
+        },
+        {
+          "bug": "Fixed progression locations showing up in sandbox mode. (RR-107)"
+        },
+        {
+          "bug": "Fixed cars in switch list showing Hemingway as the location when they are within the Bryson radius. (RR-136)"
+        },
+        {
+          "bug": "Fixed typos in AI Engineer guide, Andrews locations. (RR-120, RR-121, RR-127)"
+        }
+      ]
+    },
+    {
+      "title": "Railroader 2023.2.2",
+      "date": "2023-12-08 18:15:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616799613781",
+      "content": "A few more bugfixes for today:\n\n[list]\n[*] Fixed issue that could cause terrain tiles to not load, which appears to have been contributing to a memory leak. (RR-92)\n[*] Fixed Copy to Coupled affecting cars not owned by your railroad. (RR-109)\n[*] Fixed Automatic Waybill Cycle button not clearing when both are Not Set.\n[*] Fixed interchange-spawned cars with a reporting mark that matches yours getting marked as owned by your railroad, preventing them from being despawned when the interchange is served. To fix existing saves, switch to sandbox mode temporarily and delete the cars. (RR-111)\n[/list]",
+      "key": "1683150::bbc4620384d3a9084bff6e00a3229817f0dcab4f",
+      "tags": [
+        {
+          "bug": "Fixed issue that could cause terrain tiles to not load, which appears to have been contributing to a memory leak. (RR-92)"
+        },
+        {
+          "bug": "Fixed Copy to Coupled affecting cars not owned by your railroad. (RR-109)"
+        },
+        {
+          "bug": "Fixed Automatic Waybill Cycle button not clearing when both are Not Set."
+        },
+        {
+          "bug": "Fixed interchange-spawned cars with a reporting mark that matches yours getting marked as owned by your railroad, preventing them from being despawned when the interchange is served. To fix existing saves, switch to sandbox mode temporarily and delete the cars. (RR-111)"
+        }
+      ]
+    },
+    {
+      "title": "Build 2023.2.1",
+      "date": "2023-12-08 10:02:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616798365611",
+      "content": "Releasing Railroader has been a bit like standing trackside, hearing a train in the distance, and then having all of your senses overwhelmed by the rush of sound and color. We've heard great things from many of you, and we also know that there are bugs that are affecting others of you. We're working hard to address these issues. Thank you for your patience!\n\n[b]Multiplayer Join[/b] has been reworked to make it easier to find the railroad you want. Now you can enter the reporting mark of the railroad you want to join in the Search field (example: \"CRR\") and the game will show you railroads matching that mark. We've also adjusted the settings to search for more distant games. Give it a try and let us know! (RR-98)\n\nAdjusted [b]Automatic Waybill[/b] behavior to fix waybills being set incorrectly in specific cases, such as the East Whittier Coal Loader.  We've also added a \"Cycle\" button to the Car Inspector which forces the car's waybill between its two destinations. (RR-97)\n\n[list]\n[*] Added six bridges between Rhodo and Andrews.\n[*] Fixed an issue that could prevent saves from loading due to switch list data. (RR-94)\n[*] Fixed Shift-R working to manually push car while standing on it. (RR-96)\n[*] Fixed errors in \"Controls\" section of EETT. (RR-99)\n[*] Lettering is now limited to 100 characters.\n[*] Fixed Wilmot crossing pad.\n[/list]\n",
+      "key": "1683150::c528f129e5f4699285cb5b62e532428420b93e4b",
+      "tags": [
+        {
+          "feature": "Multiplayer Join has been reworked to make it easier to find the railroad you want. Now you can enter the reporting mark of the railroad you want to join in the Search field (example: \"CRR\") and the game will show you railroads matching that mark. We've also adjusted the settings to search for more distant games. Give it a try and let us know! (RR-98)"
+        },
+        {
+          "bug": "Adjusted Automatic Waybill behavior to fix waybills being set incorrectly in specific cases, such as the East Whittier Coal Loader."
+        },
+        {
+          "feature": "We've also added a \"Cycle\" button to the Car Inspector which forces the car's waybill between its two destinations. (RR-97)"
+        },
+        {
+          "feature": "Added six bridges between Rhodo and Andrews."
+        },
+        {
+          "bug": "Fixed an issue that could prevent saves from loading due to switch list data. (RR-94)"
+        },
+        {
+          "bug": "Fixed Shift-R working to manually push car while standing on it. (RR-96)"
+        },
+        {
+          "bug": "Fixed errors in \"Controls\" section of EETT. (RR-99)"
+        },
+        {
+          "balance_change": "Lettering is now limited to 100 characters."
+        },
+        {
+          "bug": "Fixed Wilmot crossing pad."
+        }
+      ]
+    },
+    {
+      "title": "November 2023 Update Video",
+      "date": "2023-11-08 16:54:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5302486387995758966",
+      "content": "It's finally time! The next development update video is set to premiere on Thursday, November 9th at 8pm EST! \n\n[previewyoutube=7gFt_uTKg7Y;full][/previewyoutube]\n\nWe'll cover our release plans and development updates, some detail on how freight moves in the game, and finally a big feature we've had under wraps for a long time and are now ready to unveil.\n\n\n\n",
+      "key": "1683150::17899e15eba4e412588b74c46a16ec6740681d23",
+      "tags": [
+        {
+          "feature": "finally a big feature we've had under wraps for a long time and are now ready to unveil."
+        }
+      ]
+    }
+  ]
+}

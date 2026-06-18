@@ -1,0 +1,108 @@
+{
+  "appId": "2640920",
+  "count": 4,
+  "notes": [
+    {
+      "title": "Q1 2025: Dev Update #7",
+      "date": "2025-03-31 15:28:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637957254",
+      "content": "Hey all. We\u2019ve been quiet. We know. The start of 2025 was full of hope and promise for our team and we were starting off very strong but real life hit and threw some speedbumps in our path.\n\nWe\u2019re again at a point where the team is back to normal.  We all still have our full-time jobs, but we are back to making significant progress on the project we are passionate about.\n\nThis is what we\u2019re currently working to finish:\n\nCLI Interaction\nProgramming functions of a switch in C++\nSwapped over to our new and improved Ports in game\nFixing bugs in our cabling code\nFinishing pass on the menu system and the game save state.\n\n\nThese are the final pieces to complete for the initial demo.  More info to come as we wrap up these final tasks and get ready to release the demo.\n\nThank you all for your continued interest and support.\n-The Walrus",
+      "key": "2640920::75bf093a44f1aafd3835ad57dc1915335d8110fe",
+      "tags": [
+        {
+          "bug": "Fixing bugs in our cabling code"
+        }
+      ]
+    },
+    {
+      "title": "December 2024: Dev Update #6",
+      "date": "2024-12-10 09:48:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1785321795769421",
+      "content": "Hey all! Wanted to get one final dev update before the end of the year and we have some great news to share.\n\nAs I mentioned in our previous dev update we are working on simulating how networks operate. From Layer 1 up to Layer 7. This past weekend we had a big breakthrough in our programming. We accomplished the following:\n\nMAC Address Assigning\nPatch Panels\nWireless\n\nLet\u2019s talk about each one for a moment and why this is a big deal for us.\n\nMAC Address Assigning.\n\n     If you\u2019re familiar with the world of IT, every single device that connects to a network has a MAC Address (also known as a physical address). So when you connect a device to a switch, that switch will learn that devices\u2019 MAC address and put it in a table to reference. But also, on each switch, each port has its own unique MAC address as well. \n\n     So what this means is we have accomplished auto MAC Address assigning of switches and their ports as well as allowing our switches to learn MAC Addresses from devices. We\u2019re very excited about this and hoping it speeds up the IP Addressing programming.\n\n\nPatch Panels\n\n\tWait a minute, patch panels are a big deal? Yes, yes it is. To reiterate what a patch panel is, it\u2019s just a piece of hardware that is normally found in a network closet that acts as a central point to organize and manage network cables. So what kind of programming was needed for this?\n\n\tIn real life, a patch panel doesn\u2019t do anything but allows termination of cables on two sides. There\u2019s no programming on it, it just sits there. But in our game? How do we translate that? Well, we figured it out.\n\n\tIn our programming we had to give the patch panel some sort of logic so that it can detect when something is plugged into it and allow the other end of that termination point to detect it is online. We want to simulate the real world as much as possible but we did not want to actually run cables from the patch panel to the various termination points in our levels. So we sort of tricked it.\n\t\n     The front side of the patch panel will detect the cable from the switch. The back side of the patch panel will then wirelessly detect that workstation across the hall if that is plugged in. With this now working, we sort of killed two birds with one stone.\n\n\nWireless\n\n\tWe sort of programmed wireless by accident as we were working on the patch panel logic. It\u2019s still early in our programming logic for wireless but we\u2019ve tested it, and we have wireless working. Of course there is still a LOT to do for wireless (like creating ranges, weak spots, wifi channels etc\u2026etc\u2026) and I doubt we will have wireless in the demo but I wanted to bring it up because we do plan on having wireless be present in our levels.\n\n\nWe are inching our way to a demo release and we know people want their hands on this. We promise you all, as soon as we have an idea when we have a date for the demo release we will shout it from the rooftops!\n\nWe know that once we get more of the network stack built and programmed, it will speed up our development of the game. Work has already begun on the level designs in Unreal. We have the pre-production visios done for the first set of levels and now we just need to build them in Unreal and apply the network logic.\n\nThank you all for continuing to stick with us on this incredible journey. 2024 has been a huge year for Walrus Game Studio. Not only did we release our first TTRPG book but also this year has been the start of building a great community. If you haven\u2019t already, join our discord if you want to chat with us, ask us any questions. Happy Holidays all!\n",
+      "key": "2640920::1d8a1dbc15be1bf2ddfd47c6e342dad2f9572f27",
+      "tags": [
+        {
+          "feature": "MAC Address Assigning"
+        },
+        {
+          "feature": "Patch Panels"
+        },
+        {
+          "feature": "Wireless"
+        }
+      ]
+    },
+    {
+      "title": "May 2024: Dev Update #2",
+      "date": "2024-05-06 09:52:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999958287279",
+      "content": "It's been awhile since we've done a dev update and figured we are overdue.\n\nWe know people are chomping at the bit for the game and we are so happy to see the response we have. Over 10,000 of you have wishlisted the game and that's WAY beyond our expectations. (Honestly we were thinking we'd be lucky to have 100).\n\nJust to let the people out there know, we are a team of four but only two of us do the actual programming and game development work in Unreal. One of us is the more business minded, takes care of finances/taxes and the last one is doing the social media and the actual network architect/engineer guiding the programmers on making sure what we're doing is something that would be seen in the real world.\n\nSo here is where we are at with the game:\n\nWe are polishing up the demo level now. The Demo level will only release with cabling at first and a later update will include some basic network CLI functions.\n\nSave Game states is working! Cables, Level state, player position, and inventory, all saved!\n\nIn network CLI news:\n\nLayer 1 and Layer 2 successfully modeled and implemented. Devices in game can generate, transmit and consume Ethernet Frames from source to destination ports, and the destination DeviceOS can consume them and act on them.\n\nYes that is correct! We are programming the Ethernet model in C++ and have successfully programmed Ethernet Frames. Our focus in Layer 2 at first and then work on getting Layer 2 protocols working, then work on the next layer in the stack, Layer 3.\n\n\n\n",
+      "key": "2640920::7b14594954c3c9f41f94aa1833afdee7262edc3c",
+      "tags": [
+        {
+          "feature": "The Demo level will only release with cabling at first and a later update will include some basic network CLI functions."
+        },
+        {
+          "feature": "Save Game states is working! Cables, Level state, player position, and inventory, all saved!"
+        },
+        {
+          "feature": "Layer 1 and Layer 2 successfully modeled and implemented. Devices in game can generate, transmit and consume Ethernet Frames from source to destination ports, and the destination DeviceOS can consume them and act on them."
+        },
+        {
+          "feature": "We are programming the Ethernet model in C++ and have successfully programmed Ethernet Frames. Our focus in Layer 2 at first and then work on getting Layer 2 protocols working, then work on the next layer in the stack, Layer 3."
+        }
+      ]
+    },
+    {
+      "title": "February 2024: Dev Update #1",
+      "date": "2024-02-05 12:14:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074955978662",
+      "content": "There has been a ton of ongoing work in the background as we not only get foundational systems coded but also get the demo ready and prepared for release.\n\nHere are some notes of what we have been working on:\n\nClosed Demo\n[list]\n[*] Level design\n[*] We\u2019ve been working on a scenario for the demo and getting all of the Racks and Servers, Patch panels, Services, and Cable Management set up and configured. \n[*] Cabling work and improvements\n[*] Cleaning up some early cabling design and improving the connections and interactions.\n[*] Laptop Interface, design, and diagnostic features. \n[/list]\n\nUI\n[list]\n[*] Building out the laptop interface\n[*] Game Menuing Design\n[*] Graphics, Audio, Keybindings\n[*] Early artwork and branding\n[/list]\n\nLocalization\n[list]\n[*] Initial work on localization.\n[/list]\n\nModeling\n[list]\n[*] Modeling several devices, such as servers, patch panels, cable management, face plates, and switches.\n[*] Supporting multiple U devices 1U and 2U devices\n[/list]\n\nAudio\n[list]\n[*] Adding several music tracks.\n[*] Adding sound effects to all interactions.\n[/list]\n\nGameplay\n[list]\n[*] Object Snapping: We have several objects that need to be aligned to other objects. We\u2019ve created a system that allows us to define a snapping layout that will allow us to define custom snapping on all objects that need it. This controls everything from servers snapping into a rack, or ports positioned on a server. \n[*] Interactive whiteboard\n[*] Interactions Indicators: Showing the thing you are looking at, and eventually will provide details on how to use those interaction points. \n[*] Device to Device communication allowing data traffic to communicate between devices.\n[/list]\n",
+      "key": "2640920::922ec0e0c54ba5e2fb4007a812004949b0899ec8",
+      "tags": [
+        {
+          "feature": "- Laptop Interface, design, and diagnostic features."
+        },
+        {
+          "feature": "- Building out the laptop interface"
+        },
+        {
+          "feature": "- Game Menuing Design"
+        },
+        {
+          "feature": "- Graphics, Audio, Keybindings"
+        },
+        {
+          "feature": "- Early artwork and branding"
+        },
+        {
+          "feature": "- Initial work on localization."
+        },
+        {
+          "feature": "- Modeling several devices, such as servers, patch panels, cable management, face plates, and switches."
+        },
+        {
+          "feature": "- Supporting multiple U devices 1U and 2U devices"
+        },
+        {
+          "feature": "- Adding several music tracks."
+        },
+        {
+          "feature": "- Adding sound effects to all interactions."
+        },
+        {
+          "feature": "- Object Snapping: We have several objects that need to be aligned to other objects. We\u2019ve created a system that allows us to define a snapping layout that will allow us to define custom snapping on all objects that need it. This controls everything from servers snapping into a rack, or ports positioned on a server."
+        },
+        {
+          "feature": "- Interactive whiteboard"
+        },
+        {
+          "feature": "- Interactions Indicators: Showing the thing you are looking at, and eventually will provide details on how to use those interaction points."
+        },
+        {
+          "feature": "- Device to Device communication allowing data traffic to communicate between devices."
+        }
+      ]
+    }
+  ]
+}

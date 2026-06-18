@@ -1,0 +1,2049 @@
+{
+  "appId": "2201620",
+  "count": 26,
+  "notes": [
+    {
+      "title": "Adaptory Alpha 12",
+      "date": "2025-06-05 02:56:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199383340",
+      "content": "I\u2019m very happy to launch the latest free update to Adaptory today!\n\nAlpha 12 now has a brand new world generation algorithm for you to play with, and you can now see the Adaptory research tree coming to life. (Most of the content we\u2019ve been adding since [url=https://stormcloak.games/2025/01/21/alpha-11]Alpha 11[/url] is locked behind Early Access.)\n\nYou can download the [url=https://soundasleepful.itch.io/adaptory]latest demo on itch.io[/url], or play the game on Steam:\n\nhttps://store.steampowered.com/app/2201620/Adaptory/\n\nWe\u2019re planning to do one [url=https://www.youtube.com/watch?v=9jK-NcRmVcw]final[/url] free demo/alpha release before our Early Access launch. You can expect this build to come out in September; if you want to be notified, don\u2019t forget to join [url=https://stormcloak.games/updates]our mailing list[/url] or [url=https://store.steampowered.com/app/2201620/Adaptory/]follow the game on Steam[/url].\n\n[h2]Research tree[/h2]\n\n[url=https://stormcloak.games/assets/screenshots/2025-06-04-research-tree.png][img]https://stormcloak.games/assets/screenshots/2025-06-04-research-tree.png[/img][/url]\n[i]A preview of Adaptory's new research tree. You'll need to play the demo to see the rest \ud83d\ude01[/i]\n\nData chips have been scattered across the world after your crash landing, and your explorers will be able to research them using the new [b]research desk[/b] building to unlock powerful new technologies and buildings.\n\nYou won\u2019t need to do any research in the demo \u2013 the research desk building isn\u2019t available, so you won\u2019t lose access to any buildings. But you\u2019ll be able to see what research nodes and content is currently in our EA build. More buildings, content, and systems will be added to the tree while we get ready for launch!\n\n[h2]World generation[/h2]\n\n[url=https://stormcloak.games/assets/screenshots/2025-06-04-world-generation-debug.png][img]https://stormcloak.games/assets/screenshots/2025-06-04-world-generation-debug.png[/img][/url]\n[i]A preview of Adaptory's new world generation, using noise, biomes, and cave systems[/i]\n\nWe\u2019ve massively revamped world generation to generate more interesting, varied, and challenging worlds.\n\nWorld generation now uses a combination of perlin noise and voroni points to generate biomes. Each biome has a different palette of elements and features. My goal is to make each world feel interesting and unique, but still conceptually coherent. As your explorers dig down further into the planetoid, who knows what you\u2019ll find?\n\nCave systems are also now generated, giving your explorers the opportunity to explore further and deeper. World generation now also creates boulders, columns, stalagmites, and stalagtites as well, to give the world a bit more depth. (I\u2019ve been playing a lot of Minecraft recently\u2026)\n\nThe world generation is still very much a work in progress! I\u2019d honestly love to [url=https://stormcloak.games/feedback]hear your thoughts[/url] because we\u2019ll be iterating the world generation parameters frequently before EA.\n\n[h2]Mac Arm64 support[/h2]\n\nAs mentioned in [url=https://stormcloak.games/2025/03/19/mac-arm64]the previous post[/url], arm64 builds are now available for Mac, and are live with Alpha 12! I think this has been well-tested and we\u2019ve worked out all the kinks, and the demo\u2019s ready to play. From our testing, the game should now be approximately twice as fast.\n\nA huge thank you to all of our [url=https://stormcloak.games/discord]Mac users on our Discord[/url] who have helped with testing and feedback. There probably wouldn\u2019t be Mac support without your help!! Thank you \ud83d\udc96\n\n[h2]And more[/h2]\n\nAnd of course, there are lots of other improvements in this release, bug fixes, optimisations, and quality of life improvements. I\u2019ve also tweaked some of the game balance, and you now need to fully power the emergency transmitter to finish the game.\n\nThe full patch notes are listed below.\n\n----\n\n\n[h2]New features[/h2]\n\n[list]\n[*]Adaptory is now available on Mac with both x86_64 (Intel) and arm64/aarch64 builds!\n  [list]\n  [*]If you're playing Adaptory on one of the new M1 etc machines, the arm64 version should be a lot faster (2x or more) and use less resources\n  [*]When starting up the demo on Mac, you will now be presented with a dialog of which version you'd like to play\n  [*](This is the best solution I could think of because Steam doesn't provide architecture-specific launch configurations)\n  [/list]\n[*]Updated world generation\n  [list]\n  [*]World generation now has more noise, variance, biomes, and cave systems\n  [*]This is still a WIP and will be refined over the coming releases\n  [*]Newly-generated worlds are now guaranteed to to spawn at least one brown bernie plant nearby as a source of food\n  [*]Added boulders, columns, stalagmites and stalactites to world generation\n  [/list]\n[*]Added research tree\n  [list]\n  [*]Building categories without any researched buildings are now hidden until researched\n  [*]In the demo, all available research has been automatically unlocked\n  [*]Buildings and content that are not available in the demo are shown as previews in the research tree\n  [*]More buildings and content are going to be added to the research tree before Early Access\n  [/list]\n[*]Removed support for old .ymlz save files\n  [list]\n  [*]These old save files were previously deprecated in [url=https://stormcloak.games/2025/01/20/alpha-11]Alpha 11[/url]\n  [*]The filename for your preferences has changed from [i]%APPDATA%/Adaptory/preferences.yml[/i] to [i]preferences.json[/i], and any previous settings may be reset to defaults\n  [/list]\n[/list]\n\n[h2]Simulation[/h2]\n\n[list]\n[*]Coal generators now accept any fuel, and can be configured to select only specific fuels (although [i]coal[/i] is the only fuel available in the demo)\n[*]Power generation with the coal generator is now calculated from the energy density of the fuel used\n[*]Added power generation efficiency attribute to the coal generator\n[*]Added a longer delay between creating liquid drops to reduce noise pollution\n[*]Changed explorer behaviour with tiny supply errands\n  [list]\n  [*]Before, any building trying to supply less than 1% of its target supplied mass would be ignored while calculating\n    potential supply errands\n  [*]Now, ALL buildings are considered regardless of pending mass, but if the mass requested is more than 2% of its maximum storage,\n    OR a potential source item has unreserved mass less than that,\n    then any source item will be a valid supply source for a new supply errand to supply that building\n  [*]All of this is tricky to parse but basically small items should be cleaned up (so the base doesn't\n    fill up with dust), while keeping large items mostly intact until they're required,\n    and preventing explorers from endlessly obsessing over tiny amounts required in coal generators\n  [*]Transmitters are still exempt from this test, because you need an exact amount to send the distress signal\n  [/list]\n[*]Items with unit masses can now automatically merge, improving simulation performance of long-term bases\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]The transmitter now needs to be fully powered in order to function\n[*]Increased the minimum amount of power required for most powered buildings to at least 1%\n[*]Explorers should no longer try to idly wander, write diary entries, or eat food at locations with very low levels of oxygen (0.1kg or less)\n[*]Doors now take 0.25 seconds to close instead of instantly, allowing animations to play\n[*]Reduced the number of alien artefacts generated in new worlds\n[/list]\n\n[h2]Accessibility[/h2]\n\n[list]\n[*]Added [i]Ctrl[/i]+[i]P[/i] keyboard shortcut to open up explorer priorities\n[*]Added [i]Ctrl[/i]+[i]I[/i] keyboard shortcut to open up the in-game database\n[*]Added [i]Ctrl[/i]+[i]R[/i] keyboard shortcut to open up research tree\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Improved the performance of rendering water drops\n[*]Improved performance of supply errand, item accessibility, and explorer simulations\n[*]Save games now keep track of the total playtime for that save, shown in the save/load dialog\n[*]Added \"not enough power\" overlay icon to buildings that require a minimum amount of power\n[*]The in-game database for powered building now displays the range of power required for that building to operate\n[*]Significantly improved render performance of textures while the game is paused\n[*]Added more idle conversations between explorers\n[*]Moved [i]light[/i] building from \"base\" building category into \"power\"\n[*]Stored unit masses (such as 1.0000 kg) are now rendered as 1 kg in the building panel\n[*]When selecting an explorer's Errands tab, more details are included for each errand (e.g. \"dig out dirt\", \"build a ladder\")\n[*]When selecting an explorer's Errands tab, the currently active errand is now labelled\n[*]Options that have not been changed from the defaults are no longer stored in [i]preferences.json[/i]\n[*]When an explorer passes out, an alert message is now displayed\n[*]Added wire drag sound loop while dragging wire build errands\n[*]Added plant sounds to all plants\n[*]Updated mushroom plant art to be more visibly distinctive between growing and waning\n[*]Updated power wire art\n[*]Updated door animation to be more squishy\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a bug where plants could render with the wrong skin immediately after loading an existing save\n[*]Fixed the \"time of day\" tooltip on the world clock only updating when the mouse is moved\n[*]Fixed beds clipping with items on the ground when explorers would sleep in the beds\n[*]Fixed explorers not correctly taking the time to enter beds after their first successful bed time\n[*]Fixed a bug where overwriting an existing save game would set the save game name to the empty string\n[*]Fixed a bug where powered buildings supplied with 0% power would still be considered powered\n[*]Fixed a bug where explorers, buildings, items and plants could be in the wrong state for one tick immediately after loading a save\n[*]Fixed a very rare bug where rendering two onscreen components with the exact same dimensions could cause a crash\n[*]Fixed a rare crash where an item could have 0.01g of reserved mass but no supply errands reserving that mass\n[*]Fixed initial startup log messages not being written to log (in [i]%TEMP%/Adaptory_*.log[/i])\n[*]Fixed the \"errands\" tab for an explorer saying \"there's nothing for me to do\" when the explorer is currently doing an errand\n[*]Fixed a crash that could occur when loading a save game with an explorer that was in the middle of facing an idle pose\n[*]Fixed a rare crash that could occur when a supply errand had been reserved by too many other tile errands\n[*]Fixed overlay icons in the top right going blank if hovered over while selected\n[*]Fixed some libraries not being able to log to disk\n[*]Fixed the game being able to be paused/unpaused while in the main menu\n[/list]",
+      "key": "2201620::0443c657fb8e56f0621b791a54f852cd36925bd1",
+      "tags": [
+        {
+          "feature": "Adaptory is now available on Mac with both x86_64 (Intel) and arm64/aarch64 builds!"
+        },
+        {
+          "feature": "If you're playing Adaptory on one of the new M1 etc machines, the arm64 version should be a lot faster (2x or more) and use less resources"
+        },
+        {
+          "feature": "When starting up the demo on Mac, you will now be presented with a dialog of which version you'd like to play"
+        },
+        {
+          "feature": "(This is the best solution I could think of because Steam doesn't provide architecture-specific launch configurations)"
+        },
+        {
+          "feature": "Updated world generation"
+        },
+        {
+          "feature": "World generation now has more noise, variance, biomes, and cave systems"
+        },
+        {
+          "feature": "This is still a WIP and will be refined over the coming releases"
+        },
+        {
+          "feature": "Newly-generated worlds are now guaranteed to to spawn at least one brown bernie plant nearby as a source of food"
+        },
+        {
+          "feature": "Added boulders, columns, stalagmites and stalactites to world generation"
+        },
+        {
+          "feature": "Added research tree"
+        },
+        {
+          "feature": "Building categories without any researched buildings are now hidden until researched"
+        },
+        {
+          "feature": "In the demo, all available research has been automatically unlocked"
+        },
+        {
+          "feature": "Buildings and content that are not available in the demo are shown as previews in the research tree"
+        },
+        {
+          "feature": "More buildings and content are going to be added to the research tree before Early Access"
+        },
+        {
+          "feature": "Removed support for old .ymlz save files"
+        },
+        {
+          "feature": "These old save files were previously deprecated in [url=https://stormcloak.games/2025/01/20/alpha-11]Alpha 11[/url]"
+        },
+        {
+          "feature": "The filename for your preferences has changed from [i]%APPDATA%/Adaptory/preferences.yml[/i] to [i]preferences.json[/i], and any previous settings may be reset to defaults"
+        },
+        {
+          "feature": "Coal generators now accept any fuel, and can be configured to select only specific fuels (although [i]coal[/i] is the only fuel available in the demo)"
+        },
+        {
+          "feature": "Power generation with the coal generator is now calculated from the energy density of the fuel used"
+        },
+        {
+          "feature": "Added power generation efficiency attribute to the coal generator"
+        },
+        {
+          "feature": "Added a longer delay between creating liquid drops to reduce noise pollution"
+        },
+        {
+          "feature": "Changed explorer behaviour with tiny supply errands"
+        },
+        {
+          "feature": "Before, any building trying to supply less than 1% of its target supplied mass would be ignored while calculating"
+        },
+        {
+          "feature": "potential supply errands"
+        },
+        {
+          "feature": "Now, ALL buildings are considered regardless of pending mass, but if the mass requested is more than 2% of its maximum storage,"
+        },
+        {
+          "feature": "OR a potential source item has unreserved mass less than that,"
+        },
+        {
+          "feature": "then any source item will be a valid supply source for a new supply errand to supply that building"
+        },
+        {
+          "feature": "All of this is tricky to parse but basically small items should be cleaned up (so the base doesn't"
+        },
+        {
+          "feature": "fill up with dust), while keeping large items mostly intact until they're required,"
+        },
+        {
+          "feature": "and preventing explorers from endlessly obsessing over tiny amounts required in coal generators"
+        },
+        {
+          "feature": "Transmitters are still exempt from this test, because you need an exact amount to send the distress signal"
+        },
+        {
+          "feature": "Items with unit masses can now automatically merge, improving simulation performance of long-term bases"
+        },
+        {
+          "balance_change": "The transmitter now needs to be fully powered in order to function"
+        },
+        {
+          "balance_change": "Increased the minimum amount of power required for most powered buildings to at least 1%"
+        },
+        {
+          "balance_change": "Explorers should no longer try to idly wander, write diary entries, or eat food at locations with very low levels of oxygen (0.1kg or less)"
+        },
+        {
+          "balance_change": "Doors now take 0.25 seconds to close instead of instantly, allowing animations to play"
+        },
+        {
+          "balance_change": "Reduced the number of alien artefacts generated in new worlds"
+        },
+        {
+          "feature": "Added [i]Ctrl[/i]+[i]P[/i] keyboard shortcut to open up explorer priorities"
+        },
+        {
+          "feature": "Added [i]Ctrl[/i]+[i]I[/i] keyboard shortcut to open up the in-game database"
+        },
+        {
+          "feature": "Added [i]Ctrl[/i]+[i]R[/i] keyboard shortcut to open up research tree"
+        },
+        {
+          "feature": "Improved the performance of rendering water drops"
+        },
+        {
+          "feature": "Improved performance of supply errand, item accessibility, and explorer simulations"
+        },
+        {
+          "feature": "Save games now keep track of the total playtime for that save, shown in the save/load dialog"
+        },
+        {
+          "feature": "Added \"not enough power\" overlay icon to buildings that require a minimum amount of power"
+        },
+        {
+          "feature": "The in-game database for powered building now displays the range of power required for that building to operate"
+        },
+        {
+          "feature": "Significantly improved render performance of textures while the game is paused"
+        },
+        {
+          "feature": "Added more idle conversations between explorers"
+        },
+        {
+          "feature": "Moved [i]light[/i] building from \"base\" building category into \"power\""
+        },
+        {
+          "feature": "Stored unit masses (such as 1.0000 kg) are now rendered as 1 kg in the building panel"
+        },
+        {
+          "feature": "When selecting an explorer's Errands tab, more details are included for each errand (e.g. \"dig out dirt\", \"build a ladder\")"
+        },
+        {
+          "feature": "When selecting an explorer's Errands tab, the currently active errand is now labelled"
+        },
+        {
+          "feature": "Options that have not been changed from the defaults are no longer stored in [i]preferences.json[/i]"
+        },
+        {
+          "feature": "When an explorer passes out, an alert message is now displayed"
+        },
+        {
+          "feature": "Added wire drag sound loop while dragging wire build errands"
+        },
+        {
+          "feature": "Added plant sounds to all plants"
+        },
+        {
+          "feature": "Updated mushroom plant art to be more visibly distinctive between growing and waning"
+        },
+        {
+          "feature": "Updated power wire art"
+        },
+        {
+          "feature": "Updated door animation to be more squishy"
+        },
+        {
+          "bug": "Fixed a bug where plants could render with the wrong skin immediately after loading an existing save"
+        },
+        {
+          "bug": "Fixed the \"time of day\" tooltip on the world clock only updating when the mouse is moved"
+        },
+        {
+          "bug": "Fixed beds clipping with items on the ground when explorers would sleep in the beds"
+        },
+        {
+          "bug": "Fixed explorers not correctly taking the time to enter beds after their first successful bed time"
+        },
+        {
+          "bug": "Fixed a bug where overwriting an existing save game would set the save game name to the empty string"
+        },
+        {
+          "bug": "Fixed a bug where powered buildings supplied with 0% power would still be considered powered"
+        },
+        {
+          "bug": "Fixed a bug where explorers, buildings, items and plants could be in the wrong state for one tick immediately after loading a save"
+        },
+        {
+          "bug": "Fixed a very rare bug where rendering two onscreen components with the exact same dimensions could cause a crash"
+        },
+        {
+          "bug": "Fixed a rare crash where an item could have 0.01g of reserved mass but no supply errands reserving that mass"
+        },
+        {
+          "bug": "Fixed initial startup log messages not being written to log (in [i]%TEMP%/Adaptory_*.log[/i])"
+        },
+        {
+          "bug": "Fixed the \"errands\" tab for an explorer saying \"there's nothing for me to do\" when the explorer is currently doing an errand"
+        },
+        {
+          "bug": "Fixed a crash that could occur when loading a save game with an explorer that was in the middle of facing an idle pose"
+        },
+        {
+          "bug": "Fixed a rare crash that could occur when a supply errand had been reserved by too many other tile errands"
+        },
+        {
+          "bug": "Fixed overlay icons in the top right going blank if hovered over while selected"
+        },
+        {
+          "bug": "Fixed some libraries not being able to log to disk"
+        },
+        {
+          "bug": "Fixed the game being able to be paused/unpaused while in the main menu"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.13.14 released",
+      "date": "2025-03-02 16:06:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526116891",
+      "content": "This is a small patch that fixes a couple of small memory leaks and also a rare crash.\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed two small memory leaks from liquid drops and interpolated object positions\n[*]Fixed a rare concurrency crash that could occur when calculating tile inaccessibility across chunk boundaries\n[/list]\n",
+      "key": "2201620::d90e6ab6c0a7a56f8e1322e10c7b99676333a570",
+      "tags": [
+        {
+          "bug": "Fixed two small memory leaks from liquid drops and interpolated object positions"
+        },
+        {
+          "bug": "Fixed a rare concurrency crash that could occur when calculating tile inaccessibility across chunk boundaries"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.13.12 released",
+      "date": "2025-02-19 15:53:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353171508",
+      "content": "This is a small patch that fixes a couple of rare crashes and small memory leaks. Thank you very much to [url=https://adaptorygame.com/discord]everyone on the Discord[/url] that has helped to find these :)\n\n\n[h2]Simulation[/h2]\n\n[list]\n[*]Slightly improved performance of simulations that modify entities (such as buildings, items, and explorers)\n[*]Explorers will now walk up to doors to open them, rather than sometimes opening them from a distance\n[*]Fixed a bug where light levels were incorrectly calculated for cells two or three tiles away from a light source\n[*]Background buildings such as wires and pipes can no longer be built if they are suddenly covered by a solid element\n[/list]\n\n[h2]Quality of life[/h2]\n\n[list]\n[*]Further improvements to object selection: when on an overlay layer, any relevant buildings will now have a higher selection priority (e.g. selecting wires when the power overlay is visible)\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Hovering over the world clock now displays the \"time of day\" in the game world, rounded down to 15 minute intervals (e.g. 12:45)\n[*]A new world starts day 1.0 at 12:00pm\n[*]Wire bridges can no longer be built on top of other buildings' power points\n[*]Renamed \"Materials\" to \"Elements\"\n[*]Split \"powered\" building tag into \"generates power\" and \"consumes power\" in the in-game database\n[*]Re-ordered each build panel building category, so common buildings such as wires and pipes are always at the top\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a crash when trying to render buildings with a very small game window\n[*]Fixed a very rare crash that could occur when trying to load game databases at startup\n[*]Fixed a bug where sometimes connecting a power wire would not update power network status until a nearby building or element changed\n[*]Fixed a crash that could occur if a DIG errand remained on a tile that no longer held a diggable element or plant (for example, from an element phase change)\n[*]Fixed a crash that could occur if a plant uprooted itself while it was actively being harvested\n[*]Fixed a couple of small rendering memory leaks from particles and mass packets\n[/list]\n",
+      "key": "2201620::7078a9e984be0c606f7280c0a6f8395160db35dc",
+      "tags": [
+        {
+          "bug": "[*]Fixed a bug where light levels were incorrectly calculated for cells two or three tiles away from a light source"
+        },
+        {
+          "bug": "[*]Fixed a crash when trying to render buildings with a very small game window"
+        },
+        {
+          "bug": "[*]Fixed a very rare crash that could occur when trying to load game databases at startup"
+        },
+        {
+          "bug": "[*]Fixed a bug where sometimes connecting a power wire would not update power network status until a nearby building or element changed"
+        },
+        {
+          "bug": "[*]Fixed a crash that could occur if a DIG errand remained on a tile that no longer held a diggable element or plant (for example, from an element phase change)"
+        },
+        {
+          "bug": "[*]Fixed a crash that could occur if a plant uprooted itself while it was actively being harvested"
+        },
+        {
+          "bug": "[*]Fixed a couple of small rendering memory leaks from particles and mass packets"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.13.7 released",
+      "date": "2025-02-09 18:33:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102731315",
+      "content": "This is a small patch that fixes a few crashes that slipped through our tests, and also slightly improves the rendering performance of all user interfaces. Thank you for [url=https://adaptorygame.com/discord]reporting the crashes on Discord[/url]!\n\n\n[h2]Internal[/h2]\n\n[list]\n[*]Improved rendering performance of all user interfaces by ~10%\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a crash if the game window was resized to smaller than 80x80px while the game was loading\n[*]Fixed a crash if an explorer was selected from the top bar before the explorer had been rendered for the first time\n[/list]\n",
+      "key": "2201620::640396ea01d374f83722d556488f4476dc6efe0f",
+      "tags": [
+        {
+          "bug": "[*]Fixed a crash if the game window was resized to smaller than 80x80px while the game was loading"
+        },
+        {
+          "bug": "[*]Fixed a crash if an explorer was selected from the top bar before the explorer had been rendered for the first time"
+        },
+        {
+          "balance_change": "[*]Improved rendering performance of all user interfaces by ~10%"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.13.5 released",
+      "date": "2025-02-06 16:41:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102631477",
+      "content": "This is a small patch that fixes a few bugs, but also adds a better way to select items in the world. I'd love to [url=https://adaptorygame.com/feedback]hear your feedback on these changes[/url]!\n\n[h2]New features[/h2]\n\n[list]\n[*]Improved object selection\n  [list]\n  [*]Objects in the game can now be selected more precisely, with non-square, non-integer selection bounds\n  [*]Selecting a tile now prefers the tile itself (such as oxygen or vacuum) over any background building (such as a background panel)\n  [*]Currently selected objects, and about-to-be-selected objects, are now highlighted\n  [*]If the mouse cursor moves while an object is selected, doing another selection now skips the current object, since it's unlikely you actually want to re-select the existing object\n  [*]Added selection animation\n  [/list]\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Selected plants now clearly describe \"needs\" and \"currently\" for their growth requirements\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Meteors are no longer selectable\n[*]Fixed a bug where explorers could get in a loop when trying to move to food while carrying another resource\n[*]Fixed a crash that could occur if an explorer was eating some food while also carrying a different food\n[/list]\n\nThank you very much to our [url=https://adaptorygame.com/discord]community testers[/url] who found some of these bugs :)",
+      "key": "2201620::42078ae3ddb59db9f3f256e81bd286d93e920eba",
+      "tags": [
+        {
+          "feature": "Objects in the game can now be selected more precisely, with non-square, non-integer selection bounds"
+        },
+        {
+          "feature": "Selecting a tile now prefers the tile itself (such as oxygen or vacuum) over any background building (such as a background panel)"
+        },
+        {
+          "feature": "Currently selected objects, and about-to-be-selected objects, are now highlighted"
+        },
+        {
+          "feature": "If the mouse cursor moves while an object is selected, doing another selection now skips the current object, since it's unlikely you actually want to re-select the existing object"
+        },
+        {
+          "feature": "Added selection animation"
+        },
+        {
+          "bug": "Meteors are no longer selectable"
+        },
+        {
+          "bug": "Fixed a bug where explorers could get in a loop when trying to move to food while carrying another resource"
+        },
+        {
+          "bug": "Fixed a crash that could occur if an explorer was eating some food while also carrying a different food"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Alpha 11",
+      "date": "2025-01-20 17:47:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014478456",
+      "content": "We\u2019re very excited to [url=https://stormcloak.games/2025/01/20/alpha-11]launch Alpha 11 of Adaptory today[/url]!\n\nWhile we\u2019re still focusing on [url=https://stormcloak.games/2024/02/14/next-fest-whats-next]Early Access content[/url], this is a major demo update that adds new buildings and a beautiful new night soundtrack, along with significant improvements and quality of life features. The full patch notes are listed below.\n\nYou can [url=https://soundasleepful.itch.io/adaptory]download a copy on itch.io[/url], or play the demo on Steam for free today:\n\nhttps://store.steampowered.com/app/2201620/Adaptory/\n\n[h2]Storage boxes[/h2]\n\nExplorers can now build [b]storage boxes[/b] allowing you to store away unused resources and items, cleaning up your base, and improving game performance. Explorers will automatically put unused resources in these boxes, and fetch resources from the boxes when they\u2019re needed.\n\nEach storage box can be configured to store different materials or items, so (for example) you can put all of your food in one, and building materials in another.\n\n[url=https://stormcloak.games/assets/screenshots/2025-01-21-storage-box-colours.png][img]https://stormcloak.games/assets/screenshots/2025-01-21-storage-box-colours.png[/img][/url]\n[i]Such a clean and organised base! You can also customise each storage box with one of ten different colours[/i]\n\n[h2]Night soundtrack[/h2]\n\nOur incredible composer [url=https://www.viusstudios.com/bio]Sai Natarajan[/url] has updated all of the existing music tracks to have new night versions, which seamlessly transition as the sun sets and night begins.\n\n[previewyoutube=z8ENzG99Zq8;full][/previewyoutube]\n[i]Seamless day/night cycle soundtrack transitions[/i]\n\n[h2]Power network improvements[/h2]\n\nThe status of each power network is now rendered in the power overlay, making it more obvious when a network is satisfied or under heavy load:\n\n[list]\n[*] Red = power demanded but no power available\n[*] Yellow = power available but not enough to satisfy all demands\n[*] Green = power available and sufficient to satisfy all demands\n[/list]\n\n[url=https://stormcloak.games/assets/screenshots/2025-01-21-power-bridge-and-overlay.png][img]https://stormcloak.games/assets/screenshots/2025-01-21-power-bridge-and-overlay.png[/img][/url]\n[i]The status of each power network and power connection is now shown in the power overlay[/i]\n\nAlpha 11 also includes a new [b]wire bridge[/b] building, allowing you to build more complex power networks by jumping over existing wires.\n\n[h2]Rewritten save file format[/h2]\n\nThe file format of save games [url=https://stormcloak.games/2024/09/07/faster-saves]has been rewritten[/url]; in a nutshell, by using JSON instead of YML, saving and loading games is now up to 30x faster.\n\n[b]IMPORTANT:[/b] Any old saves that you have should continue to work for now (and if they don\u2019t, [url=https://stormcloak.games/feedback]please let me know![/url]), but make sure that you migrate your save files soon. Old .ymlz saves will not be supported after Alpha 11.\n\n[h2]Quality of life improvements[/h2]\n\nAlpha 11 should be much more fun to play. To the amazing [url=https://stormcloak.games/discord]community testers[/url] who have helped test these features and provided feedback \u2013 thank you very much!\n\n[url=https://stormcloak.games/assets/screenshots/2025-01-21-tile-replacement.png][img]https://stormcloak.games/assets/screenshots/2025-01-21-tile-replacement.png[/img][/url]\n[i]You can now build tiles directly on top of ship tiles, without having to deconstruct them first[/i]\n\n[url=https://stormcloak.games/assets/screenshots/2025-01-21-overlay-tooltip.png][img]https://stormcloak.games/assets/screenshots/2025-01-21-overlay-tooltip.png[/img][/url]\n[i]Overlay icons now show a tooltip describing what's going on at a glance[/i]\n\n[url=https://stormcloak.games/assets/screenshots/2025-01-17-plant-growth-requirements.png][img]https://stormcloak.games/assets/screenshots/2025-01-17-plant-growth-requirements.png[/img][/url]\n[i]Wild plants can now be dug up using the DIG world action[/i]\n\n[url=https://stormcloak.games/assets/screenshots/2025-01-21-copy-building.png][img]https://stormcloak.games/assets/screenshots/2025-01-21-copy-building.png[/img][/url]\n[i]You can now quickly build a copy a building or build errand by pressing O[/i]\n\n[url=https://stormcloak.games/assets/screenshots/2025-01-21-liquid-network.png][img]https://stormcloak.games/assets/screenshots/2025-01-21-liquid-network.png[/img][/url]\n[i]Liquid network simulations should now be more understandable and less buggy[/i]\n\n[h2]And, as always, lots more[/h2]\n\nThere are lots and lots of other improvements in this release, bug fixes, and performance optimisations. This includes significant work and polish on the liquid network simulations and animations \u2013 these should now be much more understandable with fewer bugs.\n\nThe full patch notes are listed below.\n\n----\n\n[h1]Release notes for Adaptory 0.13 (Alpha 11)[/h1]\n\n\n[h2]New features[/h2]\n\n[list]\n[*]The file format of save games [url=https://stormcloak.games/2024/09/07/faster-saves]has been rewritten[/url]\n  [list]\n  [*]Saving and loading games as [i].jsonz[/i] should be 5-30x faster than the old file format [i].ymlz[/i]\n  [*]Old save games should still work, but will not be supported after Alpha 11\n  [*]Make sure to migrate any old save games!\n  [/list]\n[*]New building: [b]Wire bridge[/b]\n  [list]\n  [*]The wire bridge allows you to connect two power networks together over other wires\n  [*]Wire bridges are also rotatable\n  [/list]\n[*]New building: [b]Storage box[/b]\n  [list]\n  [*]Explorers can build storage boxes to automatically store away unused resources and items, giving you a cleaner base\n  [*]Storage boxes are configurable and allow you to specify the maximum mass, and the types of materials and items that can be stored within it\n  [*]You can also customise the colour of each storage box to one of ten different colours\n  [*]Items stored within a storage box conduct heat with the storage box itself, not with the cell containing the box\n  [/list]\n[*]Some buildings can now rotated (default keyboard shortcut = [i]R[/i] for clockwise, or [i]shift[/i]+[i]R[/i] for counter-clockwise)\n[*]The status of each power network and connection is now rendered in the power overlay ([i]F2[/i]):\n  [list]\n  [*]Red = power demanded but no power available, or not connected to any network\n  [*]Yellow = power available but not enough to satisfy all demands\n  [*]Green = power available and sufficient to satisfy all demands\n  [/list]\n[*]Added an incredible day/night cycle to all music tracks in the demo\n[/list]\n\n[h2]Quality of life[/h2]\n\n[list]\n[*]You can now build tiles directly on top of ship tiles, without having to deconstruct the ship tile first\n  [list]\n  [*]Explorers will still need to supply the new tile with materials before starting building; they won't deconstruct the ship tile first, otherwise you might end up losing resources to space before the build would be completed\n  [/list]\n[*]Added \"Copy building\" button to dialogs, and the keyboard shortcut [i]O[/i], to build a copy of the selected building or build errand\n[*]Added a new keyboard shortcut [i]Ctrl[/i]+[i]S[/i] to quickly autosave the current game\n[*]Added \"Continue game\" button in the main menu to quickly load the latest save file\n[*]Added tooltips to gas, liquid, and power network overlay icons when hovered over\n[*]Added \"no connection\" overlay icons to all remaining buildings that require a connection to a power network \u2013 including the transmitter provided at the start of the game\n[*]Added connected power network information to the [i]Network[/i] tab of selected power wires\n[*]Plants can now be dug up using the DIG world action\n[*]Selecting a plant will now display their current temperature and light level, if these are required for the plant to grow\n[*]The resource counter can now be toggled visible/hidden, and in new or migrated games, defaults to hidden\n[/list]\n\n[h2]Simulation[/h2]\n\n[list]\n[*]Changed the order of simulations so that buildings are updated before new mass packets are created in the liquid pipe network\n[*]Liquids that are stored within a pipe, but are not currently moving through the network, are now rendered as pipe bulges outside of the liquid network overlay\n[*]Mass stored within a pipe that is [i]not[/i] moving as part of a mass packet is now also rendered as a pipe bulge\n[*]Fixed the liquid network simulation so that all pipes, not just empty pipes, are able to transfer up to their maximum throughput\n[*]Item types now have a \"unit mass\" representing the mass required to make up \"one\" of that item\n[*]Doors now provide an \"internal ceiling\", allowing explorers to stand on top of them even if the door is currently open\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Changed the method used to interpolate between moving characters (e.g. explorers, items, and mass packets) so rendering should be much smoother at a wider range of FPS\n[*]Reduced the width of borders and whitespace on most dialogs and buttons, giving the game a bit more room to breathe\n[*]Added a \"blocked\" overlay icon for trees, coal generators, oxygen generators, and vents that are currently full and unable to emit into the world due to high pressure\n[*]Slightly increased errand accessibility calculation performance\n[*]Improved the performance of selected object UIs for objects that rarely change (e.g. tiles)\n[*]Improved rendering performance of selected object UIs by not having to always rerender the UI after every simulation step\n[*]Added new sound level sliders for voices and SFX\n[*]Added [i]--window-size=NxN[/i] command line option to set the size of the game window mode, e.g. [i]--window-size=1440x900[/i]\n[*]Added in-game database pages for oxygen candles and artefacts\n[*]In-game database pages for item types now include their default element and default unit mass, if relevant\n[*]In-game database pages for buildings now include whether they have internal ceilings or internal floors\n[*]Added links from explorers' \"carrying\" item/material to the relevant page in the in-game database\n[*]Added tooltip to the item types listed in the resource counter (top left), showing the number of items that are reserved and accessible\n[*]Increased the height of the building list, which now shows up to seven building types before a scrollbar appears (at default UI scaling)\n[*]The power network usage tab now separates battery discharge from other available power generation as two separate line items in Watts\n[*]By default, the mouse cursor is no longer captured in fullscreen mode\n[*]Added link to the [url=https://adaptory.wiki.gg/wiki/Adaptory_Wiki]official Adaptory wiki[/url]\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Increased door light absorption factor from 2.5% to 100%\n[*]Doors no longer allow light through while closed\n[*]The distress transmitter has been embiggened from 1x2 to 2x3 and has brand new art and animations, to make it more visible to new players\n[*]Reduced tree maximum output pressure into existing oxygen from 1000kg to 10kg\n[*]Reduced tree maximum output pressure into a different element from 10kg to 5kg\n[/list]\n\n[h2]Accessibility[/h2]\n\n[list]\n[*]Increased the opacity of resource counter background colour, to improve readability\n[*]Added keyboard shortcut [i]Delete[/i] to deconstruct selected buildings or cancel pending build errands\n[*]Dialogs for reading alerts and explorer priorities can now be closed with [i]Enter[/i] and [i]Escape[/i]\n[*]The game can also now be closed at the main menu by pressing [i]Escape[/i]\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a number of rare crashes that could occur when loading a game saved with autosave\n[*]Fixed a crash that would occur when a liquid pump that was not completely filled would try and absorb a different element\n[*]Fixed a crash that could occur when a liquid building with contents was deconstructed while in the liquid network overlay\n[*]Fixed a bug where two liquid masses being transferred into the same pipe in the liquid network could result in one mass being deleted\n[*]Pipes can no longer hold two masses with two different elements\n[*](Hopefully) fixed an issue with Mac fullscreen not being fully exclusive\n[*](Hopefully) fixed an issue where cursors could disappear when using Mac fullscreen\n[*]Fixed an issue where light levels would sometimes not visually update during the night cycle\n[*]Fixed a rare crash that could occur when trying to calculate tile accessibility while buildings were being built or deconstructed\n[*]Fixed a bug where interactive elements within scrollable user interface areas, within other scrollable areas, would not be correctly interactable\n[*]Fixed a crash that could occur if an explorer carrying one element tried to start carrying a different element\n[*]When building or deconstructing a large building, the explorers' laser now renders to cover the full area\n[*]Updated the crashed ship tileset to not show a vertical gap above the front door\n[*]Fixed a bug where you could construct buildings out-of-bounds, e.g. trees or solar panels at the edges of the world\n[*]Fixed dialog icon buttons (such as close, info, or copy buttons) not being interactable across their entire bounds\n[*]Fixed the power network status tab displaying incorrect values (e.g. 5 W demand for a network with a 25 W light)\n[*]Fixed explorers getting stuck trying to open a locked door if standing on top of it\n[*]Fixed label word wrapping on buttons\n[*]Fixed word wrapping on the meteor shower alert at 150%+ UI scale\n[*]The world camera can no longer go to +/- infinity, and instead will always show some part of the game world\n[*]Fixed the game resizing the window when applying options if the game was maximised while in windowed mode\n[*]Fixed a crash if trying to enter in a world seed, save game title, or explorer name that was too long (5k+ characters)\n[/list]",
+      "key": "2201620::8c4fe483d53faa5897df16f12947c1e4d01708aa",
+      "tags": [
+        {
+          "feature": "Explorers can now build [b]storage boxes[/b] allowing you to store away unused resources and items, cleaning up your base, and improving game performance. Explorers will automatically put unused resources in these boxes, and fetch resources from the boxes when they\u2019re needed."
+        },
+        {
+          "feature": "Alpha 11 also includes a new [b]wire bridge[/b] building, allowing you to build more complex power networks by jumping over existing wires."
+        },
+        {
+          "feature": "The file format of save games [url=https://stormcloak.games/2024/09/07/faster-saves]has been rewritten[/url]"
+        },
+        {
+          "feature": "New building: [b]Wire bridge[/b]"
+        },
+        {
+          "feature": "New building: [b]Storage box[/b]"
+        },
+        {
+          "feature": "Some buildings can now rotated (default keyboard shortcut = [i]R[/i] for clockwise, or [i]shift[/i]+[i]R[/i] for counter-clockwise)"
+        },
+        {
+          "feature": "The status of each power network and connection is now rendered in the power overlay ([i]F2[/i]):"
+        },
+        {
+          "feature": "Added an incredible day/night cycle to all music tracks in the demo"
+        },
+        {
+          "bug": "Fixed the liquid network simulation so that all pipes, not just empty pipes, are able to transfer up to their maximum throughput"
+        },
+        {
+          "bug": "Item types now have a \"unit mass\" representing the mass required to make up \"one\" of that item"
+        },
+        {
+          "bug": "Doors now provide an \"internal ceiling\", allowing explorers to stand on top of them even if the door is currently open"
+        },
+        {
+          "bug": "Fixed a number of rare crashes that could occur when loading a game saved with autosave"
+        },
+        {
+          "bug": "Fixed a crash that would occur when a liquid pump that was not completely filled would try and absorb a different element"
+        },
+        {
+          "bug": "Fixed a crash that could occur when a liquid building with contents was deconstructed while in the liquid network overlay"
+        },
+        {
+          "bug": "Fixed a bug where two liquid masses being transferred into the same pipe in the liquid network could result in one mass being deleted"
+        },
+        {
+          "bug": "Pipes can no longer hold two masses with two different elements"
+        },
+        {
+          "bug": "(Hopefully) fixed an issue with Mac fullscreen not being fully exclusive"
+        },
+        {
+          "bug": "(Hopefully) fixed an issue where cursors could disappear when using Mac fullscreen"
+        },
+        {
+          "bug": "Fixed a rare crash that could occur when trying to calculate tile accessibility while buildings were being built or deconstructed"
+        },
+        {
+          "bug": "Fixed a bug where interactive elements within scrollable user interface areas, within other scrollable areas, would not be correctly interactable"
+        },
+        {
+          "bug": "Fixed a crash that could occur if an explorer carrying one element tried to start carrying a different element"
+        },
+        {
+          "bug": "When building or deconstructing a large building, the explorers' laser now renders to cover the full area"
+        },
+        {
+          "bug": "Updated the crashed ship tileset to not show a vertical gap above the front door"
+        },
+        {
+          "bug": "Fixed a bug where you could construct buildings out-of-bounds, e.g. trees or solar panels at the edges of the world"
+        },
+        {
+          "bug": "Fixed dialog icon buttons (such as close, info, or copy buttons) not being interactable across their entire bounds"
+        },
+        {
+          "bug": "Fixed the power network status tab displaying incorrect values (e.g. 5 W demand for a network with a 25 W light)"
+        },
+        {
+          "bug": "Fixed explorers getting stuck trying to open a locked door if standing on top of it"
+        },
+        {
+          "bug": "Fixed label word wrapping on buttons"
+        },
+        {
+          "bug": "Fixed word wrapping on the meteor shower alert at 150%+ UI scale"
+        },
+        {
+          "bug": "The world camera can no longer go to +/- infinity, and instead will always show some part of the game world"
+        },
+        {
+          "bug": "Fixed the game resizing the window when applying options if the game was maximised while in windowed mode"
+        },
+        {
+          "bug": "Fixed a crash if trying to enter in a world seed, save game title, or explorer name that was too long (5k+ characters)"
+        },
+        {
+          "balance_change": "Increased door light absorption factor from 2.5% to 100%"
+        },
+        {
+          "balance_change": "Doors no longer allow light through while closed"
+        },
+        {
+          "balance_change": "The distress transmitter has been embiggened from 1x2 to 2x3 and has brand new art and animations, to make it more visible to new players"
+        },
+        {
+          "balance_change": "Reduced tree maximum output pressure into existing oxygen from 1000kg to 10kg"
+        },
+        {
+          "balance_change": "Reduced tree maximum output pressure into a different element from 10kg to 5kg"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.12.10 released",
+      "date": "2024-09-06 21:43:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076602273860",
+      "content": "This is a small patch that fixes a couple of input bugs and slightly improves the visibility of the tutorial.\n\n[h2]Internal[/h2]\n\n[list]\n[*][i]Adaptory[/i] is now being published by [url=https://indie.io]indie.io[/url]!\n[*]Added a yellow highlight to UI elements in tutorial steps\n[*]When idly wandering, explorers will no longer wander to in front of the transmitter\n[*]Added camera scrolling when the mouse is at the edge of the screen in fullscreen mode\n[*]Added speed multiplier options for keyboard and mouse cursor camera scrolling\n[*]Pressing a world action keyboard shortcut a second time will now unselect the world action\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed WASD moving the camera while a modal dialog was open\n[*]Fixed inputs not working if shift, control, or alt were being pressed (e.g. [i]shift-space[/i] would not pause the game)\n[/list]\n",
+      "key": "2201620::5eafba7bdaaac4b63ed5a127a9bea7a987010ff6",
+      "tags": [
+        {
+          "bug": "When idly wandering, explorers will no longer wander to in front of the transmitter"
+        },
+        {
+          "feature": "Added camera scrolling when the mouse is at the edge of the screen in fullscreen mode"
+        },
+        {
+          "feature": "Added speed multiplier options for keyboard and mouse cursor camera scrolling"
+        },
+        {
+          "feature": "Pressing a world action keyboard shortcut a second time will now unselect the world action"
+        },
+        {
+          "bug": "Fixed WASD moving the camera while a modal dialog was open"
+        },
+        {
+          "bug": "Fixed inputs not working if shift, control, or alt were being pressed (e.g. [i]shift-space[/i] would not pause the game)"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.12.3 released",
+      "date": "2024-07-22 18:06:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959980720951",
+      "content": "This is a very small patch that fixes a crash while eating and some missing art, thank you very much to [url=https://adaptorygame.com/discord]everyone on our Discord[/url] who helped to find these issues!\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed the broken cabinet background image not being visible\n[*]Fixed a crash that could occur if an explorer was eating food and the tile below them was removed\n[/list]",
+      "key": "2201620::b30500a89b5af71834ca25544af092424c936bfe",
+      "tags": [
+        {
+          "bug": "- Fixed the broken cabinet background image not being visible"
+        },
+        {
+          "bug": "- Fixed a crash that could occur if an explorer was eating food and the tile below them was removed"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.12.2 released",
+      "date": "2024-07-20 03:54:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959971275536",
+      "content": "This is a small patch that makes a couple of balance changes to liquid pipes and plants, and also fixes some rare crashes and bugs from the [url=https://steamcommunity.com/games/2201620/announcements/detail/4344368394391526892]Alpha 10 release[/url].\n\n[h2]Internal[/h2]\n\n[list]\n[*]Increased opacity and offset of the tile hover panel so the contents are more readable\n[*]Plants are now included in the tile hover panel\n[*]Tweaked the character renderer to render moving explorers more smoothly in-between world ticks\n[*]Explorers will no longer try to write diary entries or eat food in doorways\n[*]Explorers will no longer try to write diary entries, eat food, or idly wander to a cell that is exposed to the vacuum of space, [i]even if[/i] that cell is breathable\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Reduced the rate of wild plant growth from 50% to 20%\n[*]Increased number of brown bernie plants generated at world generation by 25%\n[*]Reduced the number of ration packs buried at world generation\n[*]Reduced the capacity of liquid pipes and other liquid network buildings from 10kg to 2kg\n[*]Reduced the oxygen generator water consumption from 2.5kg/sec to 1kg/sec\n[*]Reduced the amount of transmitite generated at world generation from 500kg to 400kg per cell\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a crash where explorers would try to pick up too much mass to supply an errand\n[*]Fixed a crash if a liquid pipe network tried to split up a very small liquid mass\n[*]Fixed \"brown bernie\" plants and foods sometimes showing up in-game as \"mushroom\"\n[*]Fixed tile hover text displaying \"ship-tile\" instead of \"ship tile\", \"oxygen-candle\" instead of \"oxygen candle\", etc.\n[*]Fixed a long explorer name breaking the layout of the priorities dialog\n[/list]",
+      "key": "2201620::5c0d9b82767e96a35124e17123023a4a52432d9c",
+      "tags": [
+        {
+          "balance_change": "Increased opacity and offset of the tile hover panel so the contents are more readable"
+        },
+        {
+          "feature": "Plants are now included in the tile hover panel"
+        },
+        {
+          "feature": "Tweaked the character renderer to render moving explorers more smoothly in-between world ticks"
+        },
+        {
+          "bug": "Explorers will no longer try to write diary entries or eat food in doorways"
+        },
+        {
+          "bug": "Explorers will no longer try to write diary entries, eat food, or idly wander to a cell that is exposed to the vacuum of space, [i]even if[/i] that cell is breathable"
+        },
+        {
+          "balance_change": "Reduced the rate of wild plant growth from 50% to 20%"
+        },
+        {
+          "balance_change": "Increased number of brown bernie plants generated at world generation by 25%"
+        },
+        {
+          "balance_change": "Reduced the number of ration packs buried at world generation"
+        },
+        {
+          "balance_change": "Reduced the capacity of liquid pipes and other liquid network buildings from 10kg to 2kg"
+        },
+        {
+          "balance_change": "Reduced the oxygen generator water consumption from 2.5kg/sec to 1kg/sec"
+        },
+        {
+          "balance_change": "Reduced the amount of transmitite generated at world generation from 500kg to 400kg per cell"
+        },
+        {
+          "bug": "Fixed a crash where explorers would try to pick up too much mass to supply an errand"
+        },
+        {
+          "bug": "Fixed a crash if a liquid pipe network tried to split up a very small liquid mass"
+        },
+        {
+          "bug": "Fixed \"brown bernie\" plants and foods sometimes showing up in-game as \"mushroom\""
+        },
+        {
+          "bug": "Fixed tile hover text displaying \"ship-tile\" instead of \"ship tile\", \"oxygen-candle\" instead of \"oxygen candle\", etc."
+        },
+        {
+          "bug": "Fixed a long explorer name breaking the layout of the priorities dialog"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Alpha 10 + TactiCon",
+      "date": "2024-07-17 23:54:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959963378822",
+      "content": "We\u2019re excited to release a [url=https://stormcloak.games/2024/07/18/alpha-10]brand new update for the Adaptory Demo[/url] today as part of [url=https://www.tacticon.games/selected-games-2024]TactiCon 2024[/url]!\n\n[url=https://www.tacticon.games/selected-games-2024][img]https://stormcloak.games/assets/screenshots/2024-07-18-adaptory-at-tacticon.png[/img][/url]\n\nThis is a major release that adds food and hunger to the game, that has rewritten explorer priorities to be more flexible and intelligent, and also includes lots of small improvements and quality of life fixes. The full patch notes are listed below.\n\nYou can [url=https://soundasleepful.itch.io/adaptory]download a copy on itch.io[/url], or [url=https://store.steampowered.com/app/2201620/Adaptory/]play the demo on Steam[/url] for free today:\n\nhttps://store.steampowered.com/app/2201620/Adaptory/\n\n[h2]TactiCon[/h2]\n\nAlpha 10 is being released exclusively as part of [url=https://www.tacticon.games/selected-games-2024]TactiCon 2024[/url] and we are thrilled to be a part of this incredible event. TactiCon is a celebration of strategy games on Steam with demos, discounts, exclusive announcements, and developer panels, and is running 18-22 July this year.\n\nJevon is also one of the speakers on the panel [i]Inclusion and Diversity in Strategy Games[/i], along with some of her new best friends at [url=https://www.balancingmonkeygames.com/]Balancing Monkey Games[/url]. We had a fantastic chat and yarn about diversity, accessibility, parenting, and all sorts of important topics. You can catch our talk at 8pm CEST, Saturday 20 July ([url=https://store.steampowered.com/news/group/42427156/view/6572523942428195439]RSVP here[/url]).\n\nhttps://store.steampowered.com/news/group/42427156/view/6572523942428195439\n\nPlease check out [url=https://www.tacticon.games/selected-games-2024]all of the TactiCon selected games[/url], watch some panels, download some free demos, and have a great TactiCon!\n\n[h2]Hunger[/h2]\n\nWe\u2019ve added the new [b]hunger[/b] mechanic that you\u2019ll need to manage to look after your crew. Your explorers will get hungry over time, and you\u2019ll need to discover, farm, or otherwise create food in order to keep them happy and working at peak efficiency.\n\n[url=https://stormcloak.games/assets/screenshots/2024-07-18-hunger.png][img]https://stormcloak.games/assets/screenshots/2024-07-18-hunger.png[/img][/url]\n[i]Explorers now seek out food when they get hungry. Om nom nom nom[/i]\n\nLuckily your ship had a healthy supply of emergency ration packs before it crash landed, but many of them got scattered across the world on impact.\n\n[h2]Plants[/h2]\n\nWe\u2019ve added wild plants to the game as a long-term source of food for your explorers, and in the demo, we\u2019ve added the [i]brown bernie[/i] as the first wild plant.\n\nEach plant type has specific growth requirements (temperature, atmosphere, pressure, light etc.), and they will only grow if all of their growth requirements are being met. Fully grown plants can then be harvested by your explorers with the new \u201charvest\u201d errand.\n\n[url=https://stormcloak.games/assets/screenshots/2024-07-18-brown-bernie-plant.png][img]https://stormcloak.games/assets/screenshots/2024-07-18-brown-bernie-plant.png[/img][/url]\n[i]Different types of plants have different growth requirements[/i]\n\n[h2]Goals and priorities[/h2]\n\nIn this release, we\u2019ve completely rewritten [b]explorer priorities[/b], based on your feedback. Explorers now have more flexibility in choosing which task or errand they\u2019ll choose to do and when, and are a bit more intelligent too \u2013 they\u2019ll prioritise doing urgent, high-priority, and nearby errands. (They\u2019ll also stop trying to write diary entries while underwater or in the vacuum of space.)\n\nWe\u2019ve also added a new screen to manage your explorers and optimise your base. Do you have an explorer that hates digging? Now you can control how often, if at all, they\u2019re subjected to doing the one job they dislike more than anything.\n\n[url=https://stormcloak.games/assets/screenshots/2024-07-18-priority-dialog.png][img]https://stormcloak.games/assets/screenshots/2024-07-18-priority-dialog.png[/img][/url]\n[i]You can now configure task priorities for individual explorers[/i]\n\n[h2]And a lot more[/h2]\n\nAlong with the usual batch of bug and balance fixes, we\u2019ve also added in some frequently-requested quality of life changes to the demo \u2013 such as being able to build wires and pipes around corners with a single drag, regenerating individual explorers when starting a new game, and automatically disconnecting neighbouring connections when deconstructing wires and pipes.\n\nThe full patch notes are listed below.\n\n----\n\n[h1]Release notes for Adaptory 0.12 (Alpha 10)[/h1]\n\n\n[h2]New features[/h2]\n\n[list]\n[*]Explorer goal selection has been rewritten\n  [list]\n  [*]Explorers no longer prefer tile errands over supply errands; they will always start whatever errand is closest to them\n  [*]When explorers arrive at a tile errand, they now immediately start the errand, rather than turning forward and then back to the side\n  [*]Added experimental \"errands\" tab to the selected explorer panel, showing all errands that they can do, in priority order\n  [/list]\n[*]Explorer priorities!\n  [list]\n  [*]You can now manually change the priorities of different categories of explorer actions!\n  [*]Explorers will prioritise the errands that are highest priority and closest to them first\n  [*]You can prevent an explorer from doing an entire category of actions, if needed\n  [*]The list of actions will be expanded as we get closer to Early Access\n  [/list]\n[*]You can now force explorers to drop what they're carrying in one of their inventory slots\n[*]Added buttons in the new game panel to regenerate individual explorers before starting out\n[*]Explorers now get hungry!\n  [list]\n  [*]When explorers' hunger hits 0%, they will work a lot slower\n  [*]Explorers will automatically eat food when they're idle and hungry\n  [*]Some ration packs are available when you crash land, and are also scattered throughout the world\n  [*]Added ration pack and brown bernie foods\n  [*]World generation now generates some brown bernie plants as a slow-growing wild food source\n  [*]Wild plants can be harvested with the new \"harvest\" errand\n  [/list]\n[*]New building overlay icons\n  [list]\n  [*]Overlay icons have tooltips when moused over\n  [*]Added \"no foundation\" overlay icon to buildings that require foundations\n  [*]Added \"no ceiling\" overlay icon to buildings that require a ceiling\n  [*]Added \"no connection\" overlay icons to buildings that require a connection to a power network\n  [/list]\n[*]Added conversation log to explorers, so you can see what they've been chatting about\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]The gas layer is now rendered behind \"foreground\" buildings and characters, but in front of \"background\" buildings\n[*]Added gas texture to gas layer\n[*]Tweaked breathability layer to better represent lower levels of oxygen\n[*]Personal explorer errands such as diary-writing now show progress in pink, not yellow, so it's clearer they're not interacting with a tile errand\n[*]Explorer oxygen level bars now render above all other progress bars\n[*]Explorers will try to give each other a bit more space, by sometimes moving when there is another explorer in the same tile\n[*]Explorers will no longer try to write diary entries in water or the vacuum of space, or on ladders\n[*]When an explorer deconstructs a wire or liquid pipe, neighbouring connected wires/pipes will now also be disconnected\n[*]Wire and liquid pipe corners can now be built with a single drag, rather than needing to drag two straight lines\n[*]Changed debug info keyboard shortcut from [i]F8[/i] to [i]shift[/i]+[i]F8[/i]\n[*]Added keyboard shortcut [i]Alt[/i]+[i]Enter[/i] to change fullscreen/windowed mode\n[*]The game can now change fullscreen/windowed mode with [i]F5[/i] or [i]Alt[/i]+[i]Enter[/i] while it is still starting up\n[*]Rewrote the liquid network flow resolver, so that networks split with multiple sinks (e.g. vents or oxygen generators) should now be equally split across the network, rather than all packets preferring the nearest sink\n[*]Tweaked the packet renderer to render moving packets more smoothly in-between world ticks\n[*]Explorer conversation replies have been moved down so they're easier to read\n[*]Updated liquid network overlay icons to be a bit clearer\n[*]Updated in-game database text for all buildings\n[*]The in-game database list of buildings for each building category is now sorted in alphabetical order\n[*]Added more conversation texts between explorers\n[*]Added an open source licenses dialog in the Credits panel\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Made battery charge/discharge units consistent with power generation units \u2013 all are now measured in W (watts), allowing batteries to charge and discharge faster\n[*]Batteries now require a foundation to charge and discharge\n[*]Liquid pumps now require a foundation to consume electricity and operate\n[*]The transmitter now requires a foundation to transmit the distress signal\n[*]Lights now require a ceiling to consume electricity and operate\n[*]If explorers have an assigned bed, they will no longer work until they pass out\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Explorers no longer obsess supplying a coal generator over other errands\n[*]Explorers will no longer take dirt or oxycans to bed when sleepy\n[*]Fixed a crash that could occur when a liquid network loop was connected to a vent with no liquid pump\n[*]Fixed a crash if \"none\" was selected for any dropdown in the sandbox tools\n[*]Fixed UntranslatedString in resource counter tooltips for items\n[*]Fixed a crash if a build errand was cancelled while an explorer was supplying it with a resource\n[*]Explorers can no longer build buildings behind dirt or other solid tiles\n[*]Fixed 3D sound spatialization imbalance\n[*]Fixed a number of issues with windowed fullscreen mode not being captured correctly by Windows, OBS, or other capture tools\n[*]Fixed build panel layout issue at 80% UI scale\n[*]Fixed a slight text alignment bug in the credits panel\n[*]Fixed some save files not loading\n[/list]\n",
+      "key": "2201620::605561007843fda5ab2aa99a24e934ea77773124",
+      "tags": [
+        {
+          "feature": "This is a major release that adds food and hunger to the game, that has rewritten explorer priorities to be more flexible and intelligent, and also includes lots of small improvements and quality of life fixes."
+        },
+        {
+          "feature": "We\u2019ve added the new hunger mechanic that you\u2019ll need to manage to look after your crew."
+        },
+        {
+          "feature": "We\u2019ve added wild plants to the game as a long-term source of food for your explorers, and in the demo, we\u2019ve added the brown bernie as the first wild plant."
+        },
+        {
+          "feature": "In this release, we\u2019ve completely rewritten explorer priorities, based on your feedback."
+        },
+        {
+          "feature": "We\u2019ve also added a new screen to manage your explorers and optimise your base."
+        },
+        {
+          "feature": "Along with the usual batch of bug and balance fixes, we\u2019ve also added in some frequently-requested quality of life changes to the demo \u2013 such as being able to build wires and pipes around corners with a single drag, regenerating individual explorers when starting a new game, and automatically disconnecting neighbouring connections when deconstructing wires and pipes."
+        },
+        {
+          "feature": "Explorer goal selection has been rewritten"
+        },
+        {
+          "feature": "Explorers no longer prefer tile errands over supply errands; they will always start whatever errand is closest to them"
+        },
+        {
+          "feature": "When explorers arrive at a tile errand, they now immediately start the errand, rather than turning forward and then back to the side"
+        },
+        {
+          "feature": "Added experimental \"errands\" tab to the selected explorer panel, showing all errands that they can do, in priority order"
+        },
+        {
+          "feature": "Explorer priorities!"
+        },
+        {
+          "feature": "You can now manually change the priorities of different categories of explorer actions!"
+        },
+        {
+          "feature": "Explorers will prioritise the errands that are highest priority and closest to them first"
+        },
+        {
+          "feature": "You can prevent an explorer from doing an entire category of actions, if needed"
+        },
+        {
+          "feature": "The list of actions will be expanded as we get closer to Early Access"
+        },
+        {
+          "feature": "You can now force explorers to drop what they're carrying in one of their inventory slots"
+        },
+        {
+          "feature": "Added buttons in the new game panel to regenerate individual explorers before starting out"
+        },
+        {
+          "feature": "Explorers now get hungry!"
+        },
+        {
+          "feature": "When explorers' hunger hits 0%, they will work a lot slower"
+        },
+        {
+          "feature": "Explorers will automatically eat food when they're idle and hungry"
+        },
+        {
+          "feature": "Some ration packs are available when you crash land, and are also scattered throughout the world"
+        },
+        {
+          "feature": "Added ration pack and brown bernie foods"
+        },
+        {
+          "feature": "World generation now generates some brown bernie plants as a slow-growing wild food source"
+        },
+        {
+          "feature": "Wild plants can be harvested with the new \"harvest\" errand"
+        },
+        {
+          "feature": "New building overlay icons"
+        },
+        {
+          "feature": "Overlay icons have tooltips when moused over"
+        },
+        {
+          "feature": "Added \"no foundation\" overlay icon to buildings that require foundations"
+        },
+        {
+          "feature": "Added \"no ceiling\" overlay icon to buildings that require a ceiling"
+        },
+        {
+          "feature": "Added \"no connection\" overlay icons to buildings that require a connection to a power network"
+        },
+        {
+          "feature": "Added conversation log to explorers, so you can see what they've been chatting about"
+        },
+        {
+          "feature": "The gas layer is now rendered behind \"foreground\" buildings and characters, but in front of \"background\" buildings"
+        },
+        {
+          "feature": "Added gas texture to gas layer"
+        },
+        {
+          "feature": "Tweaked breathability layer to better represent lower levels of oxygen"
+        },
+        {
+          "feature": "Personal explorer errands such as diary-writing now show progress in pink, not yellow, so it's clearer they're not interacting with a tile errand"
+        },
+        {
+          "feature": "Explorer oxygen level bars now render above all other progress bars"
+        },
+        {
+          "feature": "Explorers will try to give each other a bit more space, by sometimes moving when there is another explorer in the same tile"
+        },
+        {
+          "feature": "Explorers will no longer try to write diary entries in water or the vacuum of space, or on ladders"
+        },
+        {
+          "feature": "When an explorer deconstructs a wire or liquid pipe, neighbouring connected wires/pipes will now also be disconnected"
+        },
+        {
+          "feature": "Wire and liquid pipe corners can now be built with a single drag, rather than needing to drag two straight lines"
+        },
+        {
+          "feature": "Changed debug info keyboard shortcut from F8 to shift+F8"
+        },
+        {
+          "feature": "Added keyboard shortcut Alt+Enter to change fullscreen/windowed mode"
+        },
+        {
+          "feature": "The game can now change fullscreen/windowed mode with F5 or Alt+Enter while it is still starting up"
+        },
+        {
+          "feature": "Rewrote the liquid network flow resolver, so that networks split with multiple sinks (e.g. vents or oxygen generators) should now be equally split across the network, rather than all packets preferring the nearest sink"
+        },
+        {
+          "feature": "Tweaked the packet renderer to render moving packets more smoothly in-between world ticks"
+        },
+        {
+          "feature": "Explorer conversation replies have been moved down so they're easier to read"
+        },
+        {
+          "feature": "Updated liquid network overlay icons to be a bit clearer"
+        },
+        {
+          "feature": "Updated in-game database text for all buildings"
+        },
+        {
+          "feature": "The in-game database list of buildings for each building category is now sorted in alphabetical order"
+        },
+        {
+          "feature": "Added more conversation texts between explorers"
+        },
+        {
+          "feature": "Added an open source licenses dialog in the Credits panel"
+        },
+        {
+          "balance_change": "Made battery charge/discharge units consistent with power generation units \u2013 all are now measured in W (watts), allowing batteries to charge and discharge faster"
+        },
+        {
+          "balance_change": "Batteries now require a foundation to charge and discharge"
+        },
+        {
+          "balance_change": "Liquid pumps now require a foundation to consume electricity and operate"
+        },
+        {
+          "balance_change": "The transmitter now requires a foundation to transmit the distress signal"
+        },
+        {
+          "balance_change": "Lights now require a ceiling to consume electricity and operate"
+        },
+        {
+          "balance_change": "If explorers have an assigned bed, they will no longer work until they pass out"
+        },
+        {
+          "bug": "Explorers no longer obsess supplying a coal generator over other errands"
+        },
+        {
+          "bug": "Explorers will no longer take dirt or oxycans to bed when sleepy"
+        },
+        {
+          "bug": "Fixed a crash that could occur when a liquid network loop was connected to a vent with no liquid pump"
+        },
+        {
+          "bug": "Fixed a crash if \"none\" was selected for any dropdown in the sandbox tools"
+        },
+        {
+          "bug": "Fixed UntranslatedString in resource counter tooltips for items"
+        },
+        {
+          "bug": "Fixed a crash if a build errand was cancelled while an explorer was supplying it with a resource"
+        },
+        {
+          "bug": "Explorers can no longer build buildings behind dirt or other solid tiles"
+        },
+        {
+          "bug": "Fixed 3D sound spatialization imbalance"
+        },
+        {
+          "bug": "Fixed a number of issues with windowed fullscreen mode not being captured correctly by Windows, OBS, or other capture tools"
+        },
+        {
+          "bug": "Fixed build panel layout issue at 80% UI scale"
+        },
+        {
+          "bug": "Fixed a slight text alignment bug in the credits panel"
+        },
+        {
+          "bug": "Fixed some save files not loading"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.11.1 released",
+      "date": "2024-04-12 02:13:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312183728114",
+      "content": "This is a small patch that fixes a few unusual bugs from Alpha 9, and also should make the lower levels of the generated world a little bit more challenging! \ud83d\ude09\n\n[h2]Internal[/h2]\n\n[list]\n[*]Building pages in the in-game database now list the specific effects they may have on your explorer (for example, the bed's impact on explorer happiness)\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Increased magma default temperature in world generation from 1200 C to 2000 C\n[*]Added a wider variety of materials to world generation, increasing the difficulty to get down to the lowest levels\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a bug where continuous music would eventually stop playing music altogether\n[*]Fixed a bug where a transmitter could have 2499.994 kg of transmitite but could not be filled up further\n[/list]",
+      "key": "2201620::1e8cb17a4146d8046d80e321f7c10b875a35531b",
+      "tags": [
+        {
+          "feature": "-Building pages in the in-game database now list the specific effects they may have on your explorer (for example, the bed's impact on explorer happiness)"
+        },
+        {
+          "balance_change": "- Increased magma default temperature in world generation from 1200 C to 2000 C"
+        },
+        {
+          "balance_change": "- Added a wider variety of materials to world generation, increasing the difficulty to get down to the lowest levels"
+        },
+        {
+          "bug": "- Fixed a bug where continuous music would eventually stop playing music altogether"
+        },
+        {
+          "bug": "- Fixed a bug where a transmitter could have 2499.994 kg of transmitite but could not be filled up further"
+        }
+      ]
+    },
+    {
+      "title": "Alpha 9 now live",
+      "date": "2024-04-08 01:20:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364321511292",
+      "content": "[url=https://stormcloak.games/2024/04/08/alpha-9]Alpha 9 is now live![/url] This is a major release that has updated every single screen with brand new user interfaces that look and feel better. You can [url=https://soundasleepful.itch.io/adaptory/purchase?popup=1]download a copy on itch.io[/url] or [url=https://store.steampowered.com/app/2201620/Adaptory/]play the demo on Steam[/url] today.\n\n[url=https://stormcloak.games/assets/screenshots/2024-04-08-new-ui-screenshot.png][img]https://stormcloak.games/assets/screenshots/2024-04-08-new-ui-screenshot.png[/img][/url]\n\nIf you find any bugs, issues, balance problems or suggestions, please let us know [url=https://adaptorygame.com/discord]on Discord[/url] or by email. A huge thank you to [url=https://adaptorygame.com/discord]the community testers[/url] who have helped test this release, and found some really unusual bugs! \u2764\ufe0f\n\n[h2]A refreshed main screen[/h2]\n\nThe main game screen has had a complete overhaul:\n\n[img]https://stormcloak.games/assets/screenshots/2024-04-08-world-clock.png[/img]\n\nThere\u2019s a brand new [b]world time clock[/b] in the top right, with speed buttons clearly listed. It also shows you the progress of the day/night cycle.\n\n[img]https://stormcloak.games/assets/screenshots/2024-04-08-explorer-selection.png[/img]\n\nThe [b]explorer selection bar[/b] now displays their mood as a background colour and progress bar, so you can quickly see if someone is having a bad day.\n\n[img]https://stormcloak.games/assets/screenshots/2024-04-08-building-categories.png[/img]\n\nBuilding blueprints are now in different [b]building categories[/b], with separate dropdowns for each category (oxygen, power, liquid, gas etc.). Some of these categories will only become available in Early Access. These menus also give us room to add many more building types in future updates.\n\n[img]https://stormcloak.games/assets/screenshots/2024-04-08-info-panels.png[/img]\n\nSelected objects now have different [b]information panels[/b] to show different categories of information. For example, if you\u2019re clicking on an explorer, you\u2019re probably more interested to know how they\u2019re feeling, and less who their best friend is, or what material they\u2019re made out of \u2013 but it\u2019s still important to know these details sometimes.\n\n[h2]User interface design[/h2]\n\nWe\u2019ve worked hard on a brand new [b]user interface design[/b] that feels closer to the hand-drawn lineart style of the game. Buttons and dialogs are now rounded, shadows are cleaner, dropdowns are animated and have a scrollbar, text is crisper, rendering is faster, and there\u2019s been lots and lots of other tweaks and polish.\n\n[b]User interface scaling[/b] is no longer experimental; whether you\u2019re running the game at 80% or 200% zoom, the user interface should work great. Pressing keyboard shortcuts such as enter and escape now work more consistently across all user interfaces.\n\n[h2]In-game database[/h2]\n\nAs we add more content and systems to the game, it\u2019s important to be able to see what everything does. While Adaptory will have a wiki eventually, I think it\u2019s better to have this detailed information available in-game \u2013 and in Alpha 9, we\u2019ve added a fully interactive [b]in-game database[/b]!\n\n[url=https://stormcloak.games/assets/screenshots/2024-04-08-in-game-database.png][img]https://stormcloak.games/assets/screenshots/2024-04-08-in-game-database.png[/img][/url]\n[i]For now, the in-game database shows all of the possible buildings and materials[/i]\n\n[h2]And a lot more[/h2]\n\nWe\u2019ve added a lot of quality of life and user interface tweaks in this release, so the game should feel much more fluid and user-friendly. Please [url=https://adaptorygame.com/discord]let us know what you think[/url] and if you like the changes!\n\nFull patch notes below.\n\n---\n\n[h1]Release notes for Adaptory 0.11 (Alpha 9)[/h1]\n\n[h2]New features[/h2]\n\n[list]\n[*]A brand new user interface design which will take us into Early Access!\n[*]A brand new in-game database showing detailed properties for all materials and buildings in the game\n[*]The top explorer selection bar now also displays their mood as a background colour\n[*]Added new world clock to the top right, which also has game speed buttons\n[*]The build panel is now categorised, with separate dropdowns for each building category (oxygen, power, liquid, gas etc.). Some of these will only become available in Early Access\n[*]Updated transmitter with new art\n[*]Most windows can now be moved by clicking and dragging the header, and closed with [i]enter[/i] or [i]escape[/i]\n[*]Updated selected object panels:\n  [list]\n  [*]Panels now have tabs with different categories of information\n  [*]Added tooltips to describe the impact of each explorer trait, if any\n  [*]You can now cancel an individual building errand by selecting the errand and clicking the new \"cancel build\" button\n  [/list]\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Improved performance of all user interfaces and components\n[*]Tweaked text rendering to be slightly crisper\n[*]Fixed small transparent images sometimes having very subtle rendering errors from filtering\n[*]Dropdowns with too many values to fit at once will now display with a scrollbar\n[*]Animated opening and closing dropdowns\n[*]Added inner drop shadow rendering to scrollable areas\n[*]When changing the UI scale, a confirmation dialog now pops up giving you the opportunity to revert the scale back\n[*]Updated some tutorial text to be clearer and simpler\n[*]Added a tutorial step to help the player unpause the game if it was accidentally paused at start\n[*]Improved game startup speed by only generating bitmap fonts on demand\n[*]Changed order of layer overlays, to align with the building category order\n[*]Tweaked [i]right click[/i] to close more selected objects and actions, including the move explorer command and any selected overlay\n[*]When dragging an action, [i]right click[/i] will now cancel that draggable action\n[*]Renamed [i]artifact[/i] item type to [i]artefact[/i]\n[*]Explorer thought bubbles are now rendered above solid elements, so you can always see what they're thinking\n[*]Keyboard input changes:\n  [list]\n  [*]Pressing tilde [i]~[/i] within the console while the console has focus now closes the console, rather than typing the character\n  [*]Pressing [i]enter[/i] in the Save Game dialog is now the same as pressing the [i]Save[/i] button\n  [*]Changed the power overlay keyboard shortcut from [i]F4[/i] to [i]F2[/i]\n  [*]The [i]numpad enter[/i] key now works the same as normal [i]enter[/i]\n  [*]Pressing [i]space[/i] on a button no longer \"clicks\" the button, as game pause/unpause should be higher priority. [i]Enter[/i] and [i]numpad enter[/i] are still keyboard shortcuts to click the button\n  [*]Pressing [i]escape[/i] when an overlay layer is open will now close the overlay, rather than opening the escape menu\n  [/list]\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Reduced supply goal slider resolution from 1kg to 10kg\n[*]When opening an explorer's diary, new entries are no longer automatically marked as read\n[*]The day/night cycle now has an actual night period where sunlight is zero (1/4 of a day)\n[*][i]Oxygen candle holder[/i] buildings are now called [i]oxycan holders[/i]\n[*]When a non-solid tile moves (e.g. sand falling), all dig errands attached to that tile are now moved as well\n[*]Increased event budget cost of [i]solar flare[/i] event from 1.0 to 3.0\n[*]The [i]salt[/i] element is no longer a fixed solid, but loose like [i]sand[/i]\n[/list]\n\n[h2]Accessibility[/h2]\n\n[list]\n[*]Added \"background star movement\" option to options panel, which stops the movement of the main menu's background stars\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a number of font scaling bugs when the UI scale was not 100%\n[*]Fixed a bug where text tooltips would sometimes not be replaced with rich tooltips\n[*]Fixed a bug where if the options dialog was open, [i]escape[/i] would instead close the escape menu\n[*]Fixed not being able to subscribe to email updates from the main menu\n[*]Fixed being able to change an explorer's name to a blank string\n[*]Fixed a rare bug where you could not click on the Close button in Save/Load dialogs that listed a lot of save games\n[*]Fixed a memory leak that could occur when a scrollable user interface was left open for a long time\n[*]Fixed the sound at the start of the game sometimes being played more than once\n[*]Fixed a rare bug where the game would sometimes start paused\n[*]Fixed a rare crash from trying to delete a missing particle effect\n[*]Fixed a bug where a highlighted tutorial area would remain highlighted after clicking \"hide all tutorials\"\n[*]Fixed being able to unpause the game with [i]space[/i] while in the escape menu or other modal dialogs\n[*]Fixed being able to change the layer overlays while in modal dialogs\n[*]Fixed a significant texture memory leak \u2013 thanks rhys! \ud83d\ude0a\n[*]Fixed the game slowing down if a large number of sounds all tried to play at the same time\n[*]Fixed a bug where mass stored in a build errand would be deleted if the errand was cancelled\n[*]Fixed a bug where the camera would sometimes not center on the crashed ship at the start of a new game\n[*]Fixed a crash if an explorer stood on top of a pile of vacuum\n[*]Fixed a bug where suffocating explorers would not die until their body became visible (e.g. if they were stuck in sand)\n[*]Fixed a bug where digging a solid element would sometimes not visually update\n[/list]",
+      "key": "2201620::a151ff4c1ee18ec4a470ac76fd34316b6cfc4601",
+      "tags": [
+        {
+          "feature": "A brand new user interface design which will take us into Early Access!"
+        },
+        {
+          "feature": "A brand new in-game database showing detailed properties for all materials and buildings in the game"
+        },
+        {
+          "feature": "The top explorer selection bar now also displays their mood as a background colour"
+        },
+        {
+          "feature": "Added new world clock to the top right, which also has game speed buttons"
+        },
+        {
+          "feature": "The build panel is now categorised, with separate dropdowns for each building category (oxygen, power, liquid, gas etc.). Some of these will only become available in Early Access"
+        },
+        {
+          "feature": "Updated transmitter with new art"
+        },
+        {
+          "feature": "Most windows can now be moved by clicking and dragging the header, and closed with [i]enter[/i] or [i]escape[/i]"
+        },
+        {
+          "feature": "Panels now have tabs with different categories of information"
+        },
+        {
+          "feature": "Added tooltips to describe the impact of each explorer trait, if any"
+        },
+        {
+          "feature": "You can now cancel an individual building errand by selecting the errand and clicking the new \"cancel build\" button"
+        },
+        {
+          "balance_change": "Reduced supply goal slider resolution from 1kg to 10kg"
+        },
+        {
+          "balance_change": "When opening an explorer's diary, new entries are no longer automatically marked as read"
+        },
+        {
+          "balance_change": "The day/night cycle now has an actual night period where sunlight is zero (1/4 of a day)"
+        },
+        {
+          "balance_change": "[i]Oxygen candle holder[/i] buildings are now called [i]oxycan holders[/i]"
+        },
+        {
+          "balance_change": "When a non-solid tile moves (e.g. sand falling), all dig errands attached to that tile are now moved as well"
+        },
+        {
+          "balance_change": "Increased event budget cost of [i]solar flare[/i] event from 1.0 to 3.0"
+        },
+        {
+          "balance_change": "The [i]salt[/i] element is no longer a fixed solid, but loose like [i]sand[/i]"
+        },
+        {
+          "feature": "Added \"background star movement\" option to options panel, which stops the movement of the main menu's background stars"
+        },
+        {
+          "bug": "Fixed a number of font scaling bugs when the UI scale was not 100%"
+        },
+        {
+          "bug": "Fixed a bug where text tooltips would sometimes not be replaced with rich tooltips"
+        },
+        {
+          "bug": "Fixed a bug where if the options dialog was open, [i]escape[/i] would instead close the escape menu"
+        },
+        {
+          "bug": "Fixed not being able to subscribe to email updates from the main menu"
+        },
+        {
+          "bug": "Fixed being able to change an explorer's name to a blank string"
+        },
+        {
+          "bug": "Fixed a rare bug where you could not click on the Close button in Save/Load dialogs that listed a lot of save games"
+        },
+        {
+          "bug": "Fixed a memory leak that could occur when a scrollable user interface was left open for a long time"
+        },
+        {
+          "bug": "Fixed the sound at the start of the game sometimes being played more than once"
+        },
+        {
+          "bug": "Fixed a rare bug where the game would sometimes start paused"
+        },
+        {
+          "bug": "Fixed a rare crash from trying to delete a missing particle effect"
+        },
+        {
+          "bug": "Fixed a bug where a highlighted tutorial area would remain highlighted after clicking \"hide all tutorials\""
+        },
+        {
+          "bug": "Fixed being able to unpause the game with [i]space[/i] while in the escape menu or other modal dialogs"
+        },
+        {
+          "bug": "Fixed being able to change the layer overlays while in modal dialogs"
+        },
+        {
+          "bug": "Fixed a significant texture memory leak \u2013 thanks rhys! \ud83d\ude0a"
+        },
+        {
+          "bug": "Fixed the game slowing down if a large number of sounds all tried to play at the same time"
+        },
+        {
+          "bug": "Fixed a bug where mass stored in a build errand would be deleted if the errand was cancelled"
+        },
+        {
+          "bug": "Fixed a bug where the camera would sometimes not center on the crashed ship at the start of a new game"
+        },
+        {
+          "bug": "Fixed a crash if an explorer stood on top of a pile of vacuum"
+        },
+        {
+          "bug": "Fixed a bug where suffocating explorers would not die until their body became visible (e.g. if they were stuck in sand)"
+        },
+        {
+          "bug": "Fixed a bug where digging a solid element would sometimes not visually update"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.10.14 released",
+      "date": "2024-02-25 20:29:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065194716277",
+      "content": "This is a small patch that should hopefully fix a number of rare concurrent and UI crashes. Thank you to [url=https://adaptorygame.com/discord]everyone in Discord[/url] who helped test this release!\n\n[h2]Internal[/h2]\n\n[list]\n[*]Improved performance of string layout for most user interfaces\n[*]FPS counter now shows both slowest and average frames per second\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a very unusual crash when selecting a building type in the build panel\n[*]Changed user interface rendering from multithreaded to singlethreaded, to fix a bunch of rare and difficult-to-fix crashes\n[/list]",
+      "key": "2201620::23cecca60413b3af870110f711d66771a2d77ec6",
+      "tags": [
+        {
+          "bug": "[*]Fixed a very unusual crash when selecting a building type in the build panel"
+        },
+        {
+          "bug": "[*]Changed user interface rendering from multithreaded to singlethreaded, to fix a bunch of rare and difficult-to-fix crashes"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.10.9 released",
+      "date": "2024-02-09 18:41:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109270457840",
+      "content": "This is a small patch with a bunch of bug fixes, but also adds some small features and quality of life improvements. [url=https://adaptorygame.com/discord]Please let us know[/url] how this new build feels!\n\n[h2]New features[/h2]\n\n[list]\n[*]Different building types now take different amounts of time to build\n[*]Wire build time is now 50%, coal generator build time is now 200%\n[*]Selecting a building type in the build panel now displays quick stats about the building type\n[*]A list of keyboard shortcuts is now available in the Options panel\n[*]Added \"Dig\" and \"Cancel dig\" button to solid tiles when selected\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]When in the power or liquid network overlay, deconstruct commands will now only apply to wires or pipes\n[*]Selecting a bed now shows which explorer is assigned to the bed (by default, it's first come first served)\n[*]You can now unassign an explorer from a bed that they have been assigned to\n[*]Moved some dev-only keyboard shortcuts behind a new console command, [i]enableDev[/i]\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Increased event budget impact of uncovering a buried artefact by 300% to balance finding fewer artefacts\n[*]Increased space exposure mass loss from 1.25g/sec to 5g/sec\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed diary events referring to two-day-old events as \"in the future\"\n[*]Fixed some very rare crashes that could occur when starting a new game\n[*]Fixed a crash that could occur if starting a new game with certain charsets\n[*]Fixed a crash that could occur if the \"low oxygen\" alert dialog was scrolled down, and then a different alert was read\n[*]Fixed hovering over an open dropdown's option not being highlighted\n[*]Fixed clicking outside a dialog selecting a checkbox within the dialog\n[*]Fixed dead explorers staying fixed in the air or on ladders\n[*]Fixed explorers being able to sleep on a ladder, now they fall down\n[/list]",
+      "key": "2201620::55db6e00daf9d026b3e7dfe694342a2871e37b19",
+      "tags": [
+        {
+          "feature": "Different building types now take different amounts of time to build"
+        },
+        {
+          "feature": "Wire build time is now 50%, coal generator build time is now 200%"
+        },
+        {
+          "feature": "Selecting a building type in the build panel now displays quick stats about the building type"
+        },
+        {
+          "feature": "A list of keyboard shortcuts is now available in the Options panel"
+        },
+        {
+          "feature": "Added \"Dig\" and \"Cancel dig\" button to solid tiles when selected"
+        },
+        {
+          "bug": "When in the power or liquid network overlay, deconstruct commands will now only apply to wires or pipes"
+        },
+        {
+          "feature": "Selecting a bed now shows which explorer is assigned to the bed (by default, it's first come first served)"
+        },
+        {
+          "feature": "You can now unassign an explorer from a bed that they have been assigned to"
+        },
+        {
+          "feature": "Moved some dev-only keyboard shortcuts behind a new console command, [i]enableDev[/i]"
+        },
+        {
+          "balance_change": "Increased event budget impact of uncovering a buried artefact by 300% to balance finding fewer artefacts"
+        },
+        {
+          "balance_change": "Increased space exposure mass loss from 1.25g/sec to 5g/sec"
+        },
+        {
+          "bug": "Fixed diary events referring to two-day-old events as \"in the future\""
+        },
+        {
+          "bug": "Fixed some very rare crashes that could occur when starting a new game"
+        },
+        {
+          "bug": "Fixed a crash that could occur if starting a new game with certain charsets"
+        },
+        {
+          "bug": "Fixed a crash that could occur if the \"low oxygen\" alert dialog was scrolled down, and then a different alert was read"
+        },
+        {
+          "bug": "Fixed hovering over an open dropdown's option not being highlighted"
+        },
+        {
+          "bug": "Fixed clicking outside a dialog selecting a checkbox within the dialog"
+        },
+        {
+          "bug": "Fixed dead explorers staying fixed in the air or on ladders"
+        },
+        {
+          "bug": "Fixed explorers being able to sleep on a ladder, now they fall down"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.10.7 released",
+      "date": "2024-02-07 01:58:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109260625740",
+      "content": "A small patch with a couple of bug fixes, but also a new building (background panel), the ability to prioritise errands, AND more conversation text!\n\n[h2]New features[/h2]\n\n[list]\n[*]Added Background panel building \u2013 a panel that stops tiles from losing resources through space exposure\n[*]Added prioritise errand world action (experimental)\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Reduced number of buried artefacts generated in new worlds by 75%\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Added more conversation texts between explorers\n[*]Updated thinking text of explorers\n[*]Explorers are now equally likely to talk about different conversation topics\n[*]Improved texture quality of errand icons\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed explorers repeatedly writing diary entries about discovering their first artefact\n[/list]",
+      "key": "2201620::cc4f2e8bd02f2174b7b9c9864d7c4165c3ac0ae6",
+      "tags": [
+        {
+          "feature": "[*]Added Background panel building \u2013 a panel that stops tiles from losing resources through space exposure"
+        },
+        {
+          "feature": "[*]Added prioritise errand world action (experimental)"
+        },
+        {
+          "balance_change": "[*]Reduced number of buried artefacts generated in new worlds by 75%"
+        },
+        {
+          "feature": "[*]Added more conversation texts between explorers"
+        },
+        {
+          "bug": "[*]Fixed explorers repeatedly writing diary entries about discovering their first artefact"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.10.6 released",
+      "date": "2024-02-05 16:29:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074956624483",
+      "content": "Another small patch to fix a few bugs on high-DPI screens.\n\n[h2]Simulation[/h2]\n\n[list]\n[*]Explorers will now not automatically supply coal generators until the missing mass is at least 5kg\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed crew selection dialog being offscreen if UI scale was greater than 150%\n[*]Fixed explorers being unable to access certain errands to the south\n[/list]",
+      "key": "2201620::bed0aff03fdf4d1282ab30357168fe92f82c181a",
+      "tags": [
+        {
+          "balance_change": "[*]Explorers will now not automatically supply coal generators until the missing mass is at least 5kg"
+        },
+        {
+          "bug": "[*]Fixed crew selection dialog being offscreen if UI scale was greater than 150%"
+        },
+        {
+          "bug": "[*]Fixed explorers being unable to access certain errands to the south"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.10.5 released",
+      "date": "2024-02-05 04:07:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074954742807",
+      "content": "Another small patch with a couple of fixes, and adds an in-game dropdown for setting the fullscreen resolution.\n\nSee you all at Steam Next Fest tomorrow! \ud83d\ude0a\n\n[h2]Internal[/h2]\n\n[list]\n[*]Changed default window at startup from windowed fullscreen to normal fullscreen, to hopefully help with some weird startup issues\n[*]Added fullscreen resolution dropdown in Options panel\n[*]Added [i]--fullscreen-size=NxN[/i] command line option for normal fullscreen mode, e.g. [i]--fullscreen-size=1440x900[/i]\n[*]Data collection checkbox is no longer displayed on every startup (requested change)\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed a crash that could occur if the game was loading while minimised\n[/list]\n",
+      "key": "2201620::ef79418aa391a7b885c22ae6e116ea1c2a2b92a4",
+      "tags": [
+        {
+          "balance_change": "Changed default window at startup from windowed fullscreen to normal fullscreen, to hopefully help with some weird startup issues"
+        },
+        {
+          "feature": "Added fullscreen resolution dropdown in Options panel"
+        },
+        {
+          "feature": "Added [i]--fullscreen-size=NxN[/i] command line option for normal fullscreen mode, e.g. [i]--fullscreen-size=1440x900[/i]"
+        },
+        {
+          "feature": "Data collection checkbox is no longer displayed on every startup (requested change)"
+        },
+        {
+          "bug": "Fixed a crash that could occur if the game was loading while minimised"
+        }
+      ]
+    },
+    {
+      "title": "Adaptory Demo 0.10.3 released",
+      "date": "2024-02-03 04:20:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074947486637",
+      "content": "We've released a small patch to the demo fixing a couple of odd issues, and expanding the tutorial with more steps. Thank you to everyone who has [url=https://adaptorygame.com/discord]provided feedback and reports![/url]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Reduced oxygen candle holder conversion additional temperature from +500\u00b0K to +100\u00b0K, until the game has more temperature management options\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Added more tutorial steps at the start of the game, covering oxygen candles and oxycans\n[*]Added option to force using the system cursor, rather than in-game cursor\n[*]Reduced default maximum FPS from 240 to 120 (can still be set using the [i]--max-fps[/i] command-line option)\n[*]Added shaded background to explorer names\n[*]Added accessibility option to override all explorer diary entries with the default font\n[*]Game sounds should no longer play when the game is paused or escape menu is open\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed all sorts of weird behaviours on certain system locales\n[*]Fixed a very rare crash when trying to render a user interface\n[*]Fixed explorers not stopping talking when they finish writing a diary entry\n[*]Fixed a memory leak with animated particles\n[/list]\n",
+      "key": "2201620::3cf9d13b91aa61adab36b0e5074aa16412995911",
+      "tags": [
+        {
+          "balance_change": "Reduced oxygen candle holder conversion additional temperature from +500\u00b0K to +100\u00b0K, until the game has more temperature management options"
+        },
+        {
+          "feature": "Added more tutorial steps at the start of the game, covering oxygen candles and oxycans"
+        },
+        {
+          "feature": "Added option to force using the system cursor, rather than in-game cursor"
+        },
+        {
+          "balance_change": "Reduced default maximum FPS from 240 to 120 (can still be set using the [i]--max-fps[/i] command-line option)"
+        },
+        {
+          "feature": "Added shaded background to explorer names"
+        },
+        {
+          "feature": "Added accessibility option to override all explorer diary entries with the default font"
+        },
+        {
+          "bug": "Game sounds should no longer play when the game is paused or escape menu is open"
+        },
+        {
+          "bug": "Fixed all sorts of weird behaviours on certain system locales"
+        },
+        {
+          "bug": "Fixed a very rare crash when trying to render a user interface"
+        },
+        {
+          "bug": "Fixed explorers not stopping talking when they finish writing a diary entry"
+        },
+        {
+          "bug": "Fixed a memory leak with animated particles"
+        }
+      ]
+    },
+    {
+      "title": "Steam Next Fest demo now live!",
+      "date": "2024-02-01 23:26:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074943096531",
+      "content": "The Steam Next Fest demo for Adaptory is LIVE!! \ud83e\udd73 You can download your free copy of the game on Steam now.\n\nhttps://store.steampowered.com/app/2201620/Adaptory/\n\nFull patch notes are listed below.\n\nThis version has been heavily tested but there may still be bugs, crashes, and unexpected behaviour. Please continue [url=https://stormcloak.games/discord]sending through bug reports, feedback, and ideas[/url], as we\u2019ll be working on polish and tweaks over the next week. A huge, huge thanks to everyone who has played an early build \ud83e\udd70\n\nAs mentioned in the [url=https://stormcloak.games/2024/01/29/steam-next-festSteam Next Fest plan[/url], the plan is to keep this demo up beyond the festival, but I might need to turn it off if something unexpected occurs. So [url=https://store.steampowered.com/app/2201620/Adaptory/]download a copy today[/url], and [url=https://stormcloak.games/discord]please let us know[/url] what you think!\n\n[h3]Voices[/h3]\n\nIn the demo, your explorers can now express themselves! They\u2019ll make adorable noises when sleeping, digging, carrying, building, having conversations, or any other number of actions.\n\n[previewyoutube=jRyBlAmoN6w;full][/previewyoutube]\n\n[h3]Overlay selection bar[/h3]\n\nAdaptory is a complex game with multiple simulations all working together to create emergent gameplay. To see what\u2019s going on, you can use overlays to show different views of your base, such as the new breathability overlay in the game:\n\n[url=https://stormcloak.games/assets/screenshots/2024-02-02-oxygen-overlay.png][img]https://stormcloak.games/assets/screenshots/2024-02-02-oxygen-overlay.png[/img][/url]\n[i]The new breathability overlay[/i]\n\nThe selection bar also shows some of the systems and layers that will be coming in future releases.\n\n[h3]Revamped power systems[/h3]\n\nAll powered buildings have been improved. Batteries last longer, lights use less power, and stored power is now measured in Wd (Watt-days). I\u2019ve also fixed it so you can\u2019t get infinite power from a light. \ud83d\ude09\n\n[url=https://stormcloak.games/assets/screenshots/2024-02-02-watt-hours.png][img]https://stormcloak.games/assets/screenshots/2024-02-02-watt-hours.png[/img][/url]\n[i]Power storage is now measured in Watt-hours (Wh)[i]\n\n[h3]Oxygen generator[/h3]\n\nAs mentioned in [url=https://stormcloak.games/2024/01/15/oxygen-generator]an earlier post[/url], we\u2019ve added the [i]oxygen generator[/i], which turns liquid water into oxygen and hydrogen using electricity. This gives you another way to create oxygen for your team, although it requires a bit of setup and infrastructure to get going.\n\n[previewyoutube=WvQjy-IqMWA;full]https://www.youtube.com/watch?v=WvQjy-IqMWA[/previewyoutube]\n\nThere\u2019s also dozens of bug fixes, tweaks, balance, simulation, and performance improvements since the last release, making the game feel and play better. These include:\n\n[list]\n[*]     Particle effects and sounds, including splashes, thuds, crashes and puffs\n[*]     Loads of new building sounds and sound effects\n[*]     New materials hydrogen (gas), liquid hydrogen, and solid hydrogen\n[*]     Another music track by the incredible Sai\n[*]     A \u201cfollow\u201d button to keep your camera focused on an explorer\n[*]     The target simulation rate has been increased to 24 updates per second (UPS)\n[*]     The game now starts in fullscreen mode by default, and remembers which monitor it was last on\n[/list]\n\nFull patch notes below.\n\n----\n\n\n[h2]New features[/h2]\n\n[list]\n[*]Liquids and gases now render in front of buildings, explorers and items\n[*]Particle effects! Added splash, thud, crash, dissolve, puff, spurt particles and sounds\n[*]New building: [b]Oxygen generator![/b]\n  [list]\n  [*]Requires 100 W power and 2.5 kg/sec water (piped in) to generate oxygen and hydrogen\n  [*]Conversion rate depends on the buildings' power level\n  [/list]\n[*]Added \"follow\" button to explorers to keep the camera laser focused on them\n[*]Added breathability layer through [i]F1[/i]\n[*]Added overlay selection bar at top right\n[*]Explorers' names are now rendered in-game \u2013 you can turn this off in [i]Options[/i]\n[*]Explorers now have voices!\n[*]Added another music track by [url=https://www.viusstudios.com/]Sai Natarajan[/url]\n[/list]\n\n[h2]Simulation[/h2]\n\n[list]\n[*]Added the new elements [i]hydrogen[/i] (gas), [i]liquid hydrogen[/i], and [i]solid hydrogen[/i]\n[*]Fixed the element simulation performing absorption and emission running 3x too slow\n[*]Increased target simulation rate from 20 to 24 UPS, decreased element simulation target from 6.67 to 6 UPS\n[*]Increased number of ticks per game day from 7200 to 8640\n[*]Tweaked explorer behaviour to not obsess over supplying a coal generator\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Tweaked explorer breathing intake/output/conversion parameters\n[*]Changed breathing oxygen-to-carbon dioxide conversion ratio from 25% to 33%\n[*]Increased coal generator power generation from 100 W to 500 W\n[*]Increased solar power generation from 25 W to 100 W\n[*]Increased light consumption from 10 W to 25 W\n[*]Increased transmitter power consumption from 25 W to 200 W\n[*]Power networks now display storage in Wd (Watt-days) rather than W\n[*]Daylight now peaks at 20k lux and solar panels now require up to 10k lux\n[*]Increased number of oxygen candles generated in a new world\n[*]Reduced sadness debuff on movement speed from 20% to 10%\n[*]Reduced mood debuff on explorer death from 50% to 40%\n[*]Increased coal generator maximum supply from 100kg coal to 500kg\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Remove some unnecessary render layers, improving rendering performance\n[*]Improved user interface rendering performance\n[*]Improved rendered quality of user interface background images\n[*]Updated various building, explorer, and world sounds\n[*]Moving liquid packets' size are now proportional to the mass moving in that packet\n[*]Liquid pipes layer now displays non-moving mass in pipes as well as moving packets\n[*]Assets are no longer stored compressed, which may improve startup and load times, at the expense of slightly more disk space usage\n[*]Added keyboard shortcut [i]shift-F11[/i] to toggle visibility of all user interfaces, when debug info is also visible ([i]F8[/i]) - locked behind two keyboard shortcuts to prevent accidental toggling\n[*]Added direct link to feedback form in game menu\n[*]The game now starts up in windowed fullscreen mode by default\n[*]The game will now remember which monitor it was last used on, and start up on that screen\n[*]Moved attribution and logos into the loading assets screen\n[*]Sounds that occur outside of the visible area (i.e. behind fog-of-war) are no longer played\n[/list]\n\n[h2]Fixed[/h2]\n\n[list]\n[*]Fixed explorers sometimes being generated with both \"hates digging\" and \"loves digging\" traits\n[*]Fixed a rare crash when starting a new game or loading a save file\n[*]Fixed a rare crash when liquid pipes were trying to merge liquid packets\n[*]Fixed liquid mass packets sometimes being transferred unevenly from source buildings\n[*]Fixed a bug where Windowed Fullscreen from startup would sometimes be offscreen\n[*]Fixed simulation not working correctly across world x=63\n[*]Fixed the game flashing magenta at startup\n[*]Fixed looping sounds (sleeping, digging etc) still playing when starting a new game\n[*]Fixed a rare crash when trying to calculate FPS data\n[*]Fixed layers not rendering correctly if the world changes while the game is paused\n[*]Fixed a built light not having the same rendered dimensions as its blueprint\n[*]Fixed a crash on Windows Alt-Tab if the game was full-screen\n[*]Fixed links being rendered across multiple lines in a dialog not being clickable\n[*]Fixed lasers and conversation bubbles sometimes being fixed to an edge of the screen\n[/list]\n",
+      "key": "2201620::1b9dccfa672352f14668764ae2bfc0084e9b1e46",
+      "tags": [
+        {
+          "feature": "In the demo, your explorers can now express themselves! They\u2019ll make adorable noises when sleeping, digging, carrying, building, having conversations, or any other number of actions."
+        },
+        {
+          "feature": "Adaptory is a complex game with multiple simulations all working together to create emergent gameplay. To see what\u2019s going on, you can use overlays to show different views of your base, such as the new breathability overlay in the game:"
+        },
+        {
+          "balance_change": "All powered buildings have been improved. Batteries last longer, lights use less power, and stored power is now measured in Wd (Watt-days). I\u2019ve also fixed it so you can\u2019t get infinite power from a light. \ud83d\ude09"
+        },
+        {
+          "feature": "As mentioned in an earlier post, we\u2019ve added the oxygen generator, which turns liquid water into oxygen and hydrogen using electricity. This gives you another way to create oxygen for your team, although it requires a bit of setup and infrastructure to get going."
+        },
+        {
+          "feature": "Liquids and gases now render in front of buildings, explorers and items"
+        },
+        {
+          "feature": "Particle effects! Added splash, thud, crash, dissolve, puff, spurt particles and sounds"
+        },
+        {
+          "feature": "New building: Oxygen generator!"
+        },
+        {
+          "feature": "Added \"follow\" button to explorers to keep the camera laser focused on them"
+        },
+        {
+          "feature": "Added breathability layer through F1"
+        },
+        {
+          "feature": "Added overlay selection bar at top right"
+        },
+        {
+          "feature": "Explorers' names are now rendered in-game \u2013 you can turn this off in Options"
+        },
+        {
+          "feature": "Explorers now have voices!"
+        },
+        {
+          "feature": "Added another music track by Sai Natarajan"
+        },
+        {
+          "bug": "Fixed the element simulation performing absorption and emission running 3x too slow"
+        },
+        {
+          "balance_change": "Increased target simulation rate from 20 to 24 UPS, decreased element simulation target from 6.67 to 6 UPS"
+        },
+        {
+          "balance_change": "Increased number of ticks per game day from 7200 to 8640"
+        },
+        {
+          "balance_change": "Tweaked explorer behaviour to not obsess over supplying a coal generator"
+        },
+        {
+          "balance_change": "Tweaked explorer breathing intake/output/conversion parameters"
+        },
+        {
+          "balance_change": "Changed breathing oxygen-to-carbon dioxide conversion ratio from 25% to 33%"
+        },
+        {
+          "balance_change": "Increased coal generator power generation from 100 W to 500 W"
+        },
+        {
+          "balance_change": "Increased solar power generation from 25 W to 100 W"
+        },
+        {
+          "balance_change": "Increased light consumption from 10 W to 25 W"
+        },
+        {
+          "balance_change": "Increased transmitter power consumption from 25 W to 200 W"
+        },
+        {
+          "balance_change": "Power networks now display storage in Wd (Watt-days) rather than W"
+        },
+        {
+          "balance_change": "Daylight now peaks at 20k lux and solar panels now require up to 10k lux"
+        },
+        {
+          "balance_change": "Increased number of oxygen candles generated in a new world"
+        },
+        {
+          "balance_change": "Reduced sadness debuff on movement speed from 20% to 10%"
+        },
+        {
+          "balance_change": "Reduced mood debuff on explorer death from 50% to 40%"
+        },
+        {
+          "balance_change": "Increased coal generator maximum supply from 100kg coal to 500kg"
+        },
+        {
+          "feature": "Remove some unnecessary render layers, improving rendering performance"
+        },
+        {
+          "feature": "Improved user interface rendering performance"
+        },
+        {
+          "feature": "Improved rendered quality of user interface background images"
+        },
+        {
+          "feature": "Updated various building, explorer, and world sounds"
+        },
+        {
+          "feature": "Moving liquid packets' size are now proportional to the mass moving in that packet"
+        },
+        {
+          "feature": "Liquid pipes layer now displays non-moving mass in pipes as well as moving packets"
+        },
+        {
+          "feature": "Assets are no longer stored compressed, which may improve startup and load times, at the expense of slightly more disk space usage"
+        },
+        {
+          "feature": "Added keyboard shortcut shift-F11 to toggle visibility of all user interfaces, when debug info is also visible (F8) - locked behind two keyboard shortcuts to prevent accidental toggling"
+        },
+        {
+          "feature": "Added direct link to feedback form in game menu"
+        },
+        {
+          "feature": "The game now starts up in windowed fullscreen mode by default"
+        },
+        {
+          "feature": "The game will now remember which monitor it was last used on, and start up on that screen"
+        },
+        {
+          "feature": "Moved attribution and logos into the loading assets screen"
+        },
+        {
+          "feature": "Sounds that occur outside of the visible area (i.e. behind fog-of-war) are no longer played"
+        },
+        {
+          "bug": "Fixed explorers sometimes being generated with both \"hates digging\" and \"loves digging\" traits"
+        },
+        {
+          "bug": "Fixed a rare crash when starting a new game or loading a save file"
+        },
+        {
+          "bug": "Fixed a rare crash when liquid pipes were trying to merge liquid packets"
+        },
+        {
+          "bug": "Fixed liquid mass packets sometimes being transferred unevenly from source buildings"
+        },
+        {
+          "bug": "Fixed a bug where Windowed Fullscreen from startup would sometimes be offscreen"
+        },
+        {
+          "bug": "Fixed simulation not working correctly across world x=63"
+        },
+        {
+          "bug": "Fixed the game flashing magenta at startup"
+        },
+        {
+          "bug": "Fixed looping sounds (sleeping, digging etc) still playing when starting a new game"
+        },
+        {
+          "bug": "Fixed a rare crash when trying to calculate FPS data"
+        },
+        {
+          "bug": "Fixed layers not rendering correctly if the world changes while the game is paused"
+        },
+        {
+          "bug": "Fixed a built light not having the same rendered dimensions as its blueprint"
+        },
+        {
+          "bug": "Fixed a crash on Windows Alt-Tab if the game was full-screen"
+        },
+        {
+          "bug": "Fixed links being rendered across multiple lines in a dialog not being clickable"
+        },
+        {
+          "bug": "Fixed lasers and conversation bubbles sometimes being fixed to an edge of the screen"
+        }
+      ]
+    },
+    {
+      "title": "Steam Next Fest \u2013 what's happening",
+      "date": "2024-01-30 16:40:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046267816017",
+      "content": "[i]Adaptory[/i] is coming to [url=https://store.steampowered.com/sale/nextfest]Steam Next Fest next week[/url]! Here's what will be happening (all times are in PST).\n\n[h2]Today[/h2]\n\nIf you haven\u2019t already seen the video, there\u2019s a [url=https://www.youtube.com/watch?v=zie51sT-bMI]brand new trailer[/url], just for Next Fest:\n\n[previewyoutube=zie51sT-bMI;full][/previewyoutube]\n\nThe [url=https://store.steampowered.com/app/2201620/Adaptory/]Adaptory Steam page[/url] has also had an overhaul, with new text, GIFs, and screenshots. I\u2019m in the process of getting the page translated to a number of different languages, as well. (The demo will only be available in English, but I want to make it clear the full game will be localised!)\n\n[h2]Wed 31 January, 2pm PST[/h2]\n\nJevon is going to try her first ever [url=https://www.twitch.tv/soundasleep]dev livestream on Twitch[/url]! This is going to be a real experiment, not exactly sure how this will go \ud83d\ude00\n\n[h2]Thu 1 February, 4pm PST[/h2]\n\nAdaptory\u2019s Demo will [url=https://store.steampowered.com/app/2786010/]be released on Steam[/url], and anyone can download a copy and play it for free! \ud83e\udd73\n\nThe version we\u2019ll be releasing next week has new systems, content, and heaps of bug fixes. There are no limitations in this demo; you can play for as long as you want, but this version will [i]only[/i] be released on Steam.\n\n[h2]Mon 5 February, 2pm PST[/h2]\n\nSteam Next Fest launches today at 10am PST. We will also be [url=https://store.steampowered.com/news/app/2201620/view/3978435073801534645]livestreaming the game[/url] later that day at 10am PST. This stream is going to be featured across all of Steam! I\u2019ll be playing the game with special guest and friend ThisIsRubyOK, showing off some of the new systems, and answering questions. Come join in and say hi!! \n\nhttps://store.steampowered.com/news/app/2201620/view/3978435073801534645\n\n[h2]Wed 7 February, 8am PST[/h2]\n\nWe'll also be doing another livestream this day, at 5pm CEST, with another special guest. This stream is also going to be featured across all of Steam \u2013 so come on in and say hi again!\n\nhttps://store.steampowered.com/news/app/2201620/view/4021219904157277531\n\n[h2]Mon 12 February, 10am PST[/h2]\n\nSteam Next Fest ends at 10am, but I'm planning to keep the Steam Demo live after this date. I may need to turn it off if something unexpected occurs. \n\nWe\u2019ll then have a bit of a breather, review all of the feedback, and maybe make an announcement of the Early Access release date?!\n\n---\n\nA huge, huge thank you to everyone who has played any version of Adaptory over the [url=https://stormcloak.games/2022/04/30/first-playable-release]last two years[/url], provided feedback, bug reports, and support \u2013 especially [url=https://stormcloak.games/discord]everyone in the Adaptory discord[/url] and friends from NZGDA. The game feels really polished compared to a year ago and I am nervous and excited to share it with the world \ud83d\ude0a\n",
+      "key": "2201620::61b5853c6ad97a5147a9f1e25080821bd41a0f90",
+      "tags": [
+        {
+          "feature": "The version we\u2019ll be releasing next week has new systems, content, and heaps of bug fixes."
+        },
+        {
+          "bug": "The version we\u2019ll be releasing next week has new systems, content, and heaps of bug fixes."
+        }
+      ]
+    },
+    {
+      "title": "Alpha 7 now live",
+      "date": "2023-12-21 17:32:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585131382244",
+      "content": "[url=https://stormcloak.games/2023/12/21/alpha-7]Alpha 7 is now live![/url] You can [url=https://soundasleepful.itch.io/adaptory/purchase?popup=1]download a copy on itch.io for free[/url].\n\nIf you find any bugs, issues, balance problems or suggestions, please let us know on [url=https://adaptorygame.com/discord]Discord[/url] or by email so we can keep improving the game! \ud83d\ude42\n\nThe focus of this release has been technology, to try get the game as stable as possible before adding all of the systems and content for Early Access. This release has been heavily tested but there may be some bugs, so please let us know.\n\n----\n\n[h2]New art[/h2]\n\nWe\u2019ve replaced all of the raw resource pile art with brand new art, and it looks amazing. There\u2019s different art for small and big piles, and whether the piles are falling through space or are settled on the ground. Explorers also show what they\u2019re carrying \u2013 whether raw elements, or items such as oxygen candles.\n\n[url=https://stormcloak.games/assets/screenshots/2023-22-12-carrying-resources.png][img]https://stormcloak.games/assets/screenshots/2023-22-12-carrying-resources.png[/img][/url]\n[i]Explorers carrying dirt to supply the coal generator building blueprint[/i]\n\nThere\u2019s also new art and animations for the battery and light buildings.\n\n[h2]Tools for streamers[/h2]\n\nWe\u2019re starting to add some tools for streamers to play the game with their community! To start off, you\u2019re now able to rename your explorers. You can change their name at the start of the game, or in the middle of a game by clicking on their name:\n\n[url=https://stormcloak.games/assets/screenshots/2023-22-12-rename-explorer.gif][img]https://stormcloak.games/assets/screenshots/2023-22-12-rename-explorer.gif[/img][/url]\n[i]You can now rename your explorers[/i]\n\n[h2]Resource counting[/h2]\n\nNot sure if you\u2019re running low on construction materials? Is your oxygen candle supply getting dangerously low? We\u2019ve added a resource counter that automatically works out how many resources your crew is able to use. (It does not include resources that are buried, locked away behind doors, or otherwise inaccessible.)\n\n[url=https://stormcloak.games/assets/screenshots/2023-22-12-resource-counter.png][img]https://stormcloak.games/assets/screenshots/2023-22-12-resource-counter.png[/img][/url]\n[i]The Resource Station shows all available items to your crew[/i]\n\n[h2]Save and load[/h2]\n\nYou can now save and load your game in Adaptory, allowing for longer play sessions. This also means you can share save games with your friends, and perhaps collaborate on a base together!\n\nAutosave has also been added (by default every ten minutes). Occasional game crashes should no longer be the end of your game. Save/load is experimental so please let us know if your save game doesn\u2019t load properly.\n\n[h2]New audio and FMOD support[/h2]\n\nAlpha 7 marks our first release with sound design contributed by Mika! We have been adding lots of extra clicks and sounds and adaptive audio throughout the game. There\u2019s also three new music tracks in the game, including a music loop played in the main menu \u2013 I recommend listening to the music with headphones, if possible!\n\nThis release also switches our audio engine from OpenAL to FMOD.\n\n[h2]And a lot more[/h2]\n\n[list]\n[*]     More descriptions added to items and elements\n[*]     Animated dialogs for alerts and popup menus\n[*]     Brand new scrollbars that feel better and are more accessible\n[*]     A shiny new splash screen at the start of the game\n[*]     Command-line switches\n[*]     Windowed fullscreen mode\n[*]     And of course, lots of bug fixes and performance improvements\n[/list]\n\nFull patch notes below.\n\n[h2]What\u2019s next?[/h2]\n\nWe will be participating in Steam Next Fest Feb 2024 so most of the next few weeks we will be focusing on getting our demo and Steam page polished.\n\nShortly after Steam Next Fest, the plan is to [url=https://stormcloak.games/2023/07/21/ea-release-2024]officially enter Steam Early Access[/url]! The EA version of Adaptory will include:\n\n[list]\n[*]    Oxygen generator and gas transfer buildings (these needed a bit of a simulation rewrite, which is why it\u2019s not in A7)\n[*]    Configurable explorer priorities and jobs\n[*]    Storage for resources, artefacts, and explorers\n[*]    A refreshed and modern user interface design\n[*]    Plants and food production\n[*]    A basic research tree\n[/list]\n\n---\n\n[h1]Release notes for Adaptory 0.9 (Alpha 7)[/h1]\n\n[h2]New Features[/h2]\n\n[list]\n[*]Now uses the [url=https://www.fmod.com/]FMOD[/url] adaptive audio engine\n  [list]\n  [*]\"Sounds\" slider now controls [i]all[/i] sounds\n  [*]Added [i]User Interface[/i] levels slider\n  [*]Added many more sounds and UI clicks\n  [*](In progress) Added a wider range of item impact sounds, based on the source and surface\n  [/list]\n[*]Added resource counter, showing all elements and items that are accessible\n[*]Game load/save\n  [list]\n  [*]These are saved to [i]%APPDATA%\\Roaming\\Adaptory[/i] (Windows) or [i]~/Library/Application Support/Adaptory/[/i] (Mac)\n  [*]User preferences (options) are now saved to this location as well\n  [/list]\n[*]Game autosave \u2013 by default every 10 minutes, but this can be changed in [i]Options[/i] > [i]Autosave[/i]\n[*]New battery and light art\n[*]New raw element pile art for all solid elements\n[*]Explorers now show what they are carrying, whether raw elements or specific items\n[*]User interfaces are now rendered asynchronously, improving performance\n[*]Animated dialogs for alerts, options, and escape menu\n[*]Rewrote scrollbars to be faster, more accessible, and better behaved\n[*]Explorers can now be renamed at any time\n[*]Added main menu music, and two more game tracks, by [url=https://www.viusstudios.com/]Sai Natarajan[/url]\n[/list]\n\n[h2]Simulation[/h2]\n\n[list]\n[*]Non-raw item types (such as artifacts and oxygen candles) no longer merge if in the same tile\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]Increased item and pawn falling speed from 0.25 sec to 0.20 sec per tile\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Changed game speed options to 1x ([i]1[/i]), 2x ([i]2[/i]), 4x ([i]3[/i]), 0.1x ([i]shift-1[/i]) and 10x ([i]shift-3[/i])\n[*]Can now create items in the Sandbox tools\n[*]Added initial item and element descriptions\n[*]Added more active explorer errand descriptions\n[*]Runtime options can now be listed with [i]--help[/i] on the command line\n[*]Changed [i]-Dprivacy=1[/i] to [i]--privacy[/i]\n[*]Log messages are now written to disk in a temporary file instead to console\n  [list]\n  [*]On Windows: [i]%TEMP%/Adaptory_*.log[/i]\n  [*]Added [i]AdaptoryConsole.exe[/i] to Windows builds to still launch the game with a console\n  [*]Added [i]--log-to-file=<path>[/i] to print log messages directly to the specified file, unless [i]--log-to-console[/i] is specified\n  [/list]\n[*]Added splash screen at game startup\n[*]Improved fullscreen/windowed logic\n  [list]\n  [*]Added [i]Windowed Fullscreen[/i] option, which is turned on by default\n  [/list]\n[*]Changed selection priority order to Explorer > Item > Build errand > Building > Tile\n[*]Improved performance of building and explorer rendering\n[*]Renamed \"pawns\" to \"explorers\"\n[*]Removed Kryo dependency\n[*]Updated lwjgl library to 3.3.3\n[/list]\n\n[h2]Accessibility[/h2]\n\n[list]\n[*]Added \"Animated dialogs\" to options panel\n[*]Scrollbars now change width based on the UI scale factor\n[*]Added \"Mouse wheel\" scroll multiplier to options panel to control the speed of mouse wheel scrolling\n[*]Focused buttons can now be clicked with [i]enter[/i] or [i]space[/i]\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed explorers not making breathing sounds when catching their breath\n[*]Fixed footsteps being played too loudly\n[*]Fixed animated UI elements rendering on top of other UI elements\n[*]Fixed asset loading % at start of game jumping from 0% to 100%\n[*]Fixed scrollbars being interactive when a modal dialog was open\n[*]Fixed tutorial panels jumping around\n[*]Fixed explorer speech bubbles rendering above other dialogs\n[*]Fixed explorer speech bubbles rendering above power and other info layers\n[*]Fixed clicking a button in a dialog prevented moving the camera with WASD\n[*]Fixed selected text background colour vertical offset\n[*]Fixed game music not stopping when going back to the main menu\n[*]Do not always immediately shut down if an exception occurs while rendering\n[/list]",
+      "key": "2201620::47ea379864081532ee5d96512e144e0f89feceba",
+      "tags": [
+        {
+          "feature": "We\u2019ve replaced all of the raw resource pile art with brand new art, and it looks amazing. There\u2019s different art for small and big piles, and whether the piles are falling through space or are settled on the ground. Explorers also show what they\u2019re carrying \u2013 whether raw elements, or items such as oxygen candles."
+        },
+        {
+          "feature": "To start off, you\u2019re now able to rename your explorers. You can change their name at the start of the game, or in the middle of a game by clicking on their name:"
+        },
+        {
+          "feature": "We\u2019ve added a resource counter that automatically works out how many resources your crew is able to use. (It does not include resources that are buried, locked away behind doors, or otherwise inaccessible.)"
+        },
+        {
+          "feature": "You can now save and load your game in Adaptory, allowing for longer play sessions. This also means you can share save games with your friends, and perhaps collaborate on a base together!"
+        },
+        {
+          "feature": "Autosave has also been added (by default every ten minutes). Occasional game crashes should no longer be the end of your game. Save/load is experimental so please let us know if your save game doesn\u2019t load properly."
+        },
+        {
+          "feature": "Alpha 7 marks our first release with sound design contributed by Mika! We have been adding lots of extra clicks and sounds and adaptive audio throughout the game. There\u2019s also three new music tracks in the game, including a music loop played in the main menu \u2013 I recommend listening to the music with headphones, if possible!"
+        },
+        {
+          "feature": "This release also switches our audio engine from OpenAL to FMOD."
+        },
+        {
+          "feature": "More descriptions added to items and elements"
+        },
+        {
+          "feature": "Animated dialogs for alerts and popup menus"
+        },
+        {
+          "feature": "Brand new scrollbars that feel better and are more accessible"
+        },
+        {
+          "feature": "A shiny new splash screen at the start of the game"
+        },
+        {
+          "feature": "Command-line switches"
+        },
+        {
+          "feature": "Windowed fullscreen mode"
+        },
+        {
+          "feature": "And of course, lots of bug fixes and performance improvements"
+        },
+        {
+          "feature": "Now uses the [url=https://www.fmod.com/]FMOD[/url] adaptive audio engine"
+        },
+        {
+          "feature": "\"Sounds\" slider now controls [i]all[/i] sounds"
+        },
+        {
+          "feature": "Added [i]User Interface[/i] levels slider"
+        },
+        {
+          "feature": "Added many more sounds and UI clicks"
+        },
+        {
+          "feature": "(In progress) Added a wider range of item impact sounds, based on the source and surface"
+        },
+        {
+          "feature": "Added resource counter, showing all elements and items that are accessible"
+        },
+        {
+          "feature": "Game load/save"
+        },
+        {
+          "feature": "These are saved to [i]%APPDATA%\\Roaming\\Adaptory[/i] (Windows) or [i]~/Library/Application Support/Adaptory/[/i] (Mac)"
+        },
+        {
+          "feature": "User preferences (options) are now saved to this location as well"
+        },
+        {
+          "feature": "Game autosave \u2013 by default every 10 minutes, but this can be changed in [i]Options[/i] > [i]Autosave[/i]"
+        },
+        {
+          "feature": "New battery and light art"
+        },
+        {
+          "feature": "New raw element pile art for all solid elements"
+        },
+        {
+          "feature": "Explorers now show what they are carrying, whether raw elements or specific items"
+        },
+        {
+          "feature": "User interfaces are now rendered asynchronously, improving performance"
+        },
+        {
+          "feature": "Animated dialogs for alerts, options, and escape menu"
+        },
+        {
+          "feature": "Rewrote scrollbars to be faster, more accessible, and better behaved"
+        },
+        {
+          "feature": "Explorers can now be renamed at any time"
+        },
+        {
+          "feature": "Added main menu music, and two more game tracks, by [url=https://www.viusstudios.com/]Sai Natarajan[/url]"
+        },
+        {
+          "feature": "Non-raw item types (such as artifacts and oxygen candles) no longer merge if in the same tile"
+        },
+        {
+          "balance_change": "Increased item and pawn falling speed from 0.25 sec to 0.20 sec per tile"
+        },
+        {
+          "balance_change": "Changed game speed options to 1x ([i]1[/i]), 2x ([i]2[/i]), 4x ([i]3[/i]), 0.1x ([i]shift-1[/i]) and 10x ([i]shift-3[/i])"
+        },
+        {
+          "feature": "Can now create items in the Sandbox tools"
+        },
+        {
+          "feature": "Added initial item and element descriptions"
+        },
+        {
+          "feature": "Added more active explorer errand descriptions"
+        },
+        {
+          "feature": "Runtime options can now be listed with [i]--help[/i] on the command line"
+        },
+        {
+          "feature": "Changed [i]-Dprivacy=1[/i] to [i]--privacy[/i]"
+        },
+        {
+          "feature": "Log messages are now written to disk in a temporary file instead to console"
+        },
+        {
+          "feature": "On Windows: [i]%TEMP%/Adaptory_*.log[/i]"
+        },
+        {
+          "feature": "Added [i]AdaptoryConsole.exe[/i] to Windows builds to still launch the game with a console"
+        },
+        {
+          "feature": "Added [i]--log-to-file=<path>[/i] to print log messages directly to the specified file, unless [i]--log-to-console[/i] is specified"
+        },
+        {
+          "feature": "Added splash screen at game startup"
+        },
+        {
+          "feature": "Improved fullscreen/windowed logic"
+        },
+        {
+          "feature": "Added [i]Windowed Fullscreen[/i] option, which is turned on by default"
+        },
+        {
+          "feature": "Changed selection priority order to Explorer > Item > Build errand > Building > Tile"
+        },
+        {
+          "feature": "Improved performance of building and explorer rendering"
+        },
+        {
+          "feature": "Renamed \"pawns\" to \"explorers\""
+        },
+        {
+          "feature": "Removed Kryo dependency"
+        },
+        {
+          "feature": "Updated lwjgl library to 3.3.3"
+        },
+        {
+          "feature": "Added \"Animated dialogs\" to options panel"
+        },
+        {
+          "feature": "Scrollbars now change width based on the UI scale factor"
+        },
+        {
+          "feature": "Added \"Mouse wheel\" scroll multiplier to options panel to control the speed of mouse wheel scrolling"
+        },
+        {
+          "feature": "Focused buttons can now be clicked with [i]enter[/i] or [i]space[/i]"
+        },
+        {
+          "bug": "Fixed explorers not making breathing sounds when catching their breath"
+        },
+        {
+          "bug": "Fixed footsteps being played too loudly"
+        },
+        {
+          "bug": "Fixed animated UI elements rendering on top of other UI elements"
+        },
+        {
+          "bug": "Fixed asset loading % at start of game jumping from 0% to 100%"
+        },
+        {
+          "bug": "Fixed scrollbars being interactive when a modal dialog was open"
+        },
+        {
+          "bug": "Fixed tutorial panels jumping around"
+        },
+        {
+          "bug": "Fixed explorer speech bubbles rendering above other dialogs"
+        },
+        {
+          "bug": "Fixed explorer speech bubbles rendering above power and other info layers"
+        },
+        {
+          "bug": "Fixed clicking a button in a dialog prevented moving the camera with WASD"
+        },
+        {
+          "bug": "Fixed selected text background colour vertical offset"
+        },
+        {
+          "bug": "Fixed game music not stopping when going back to the main menu"
+        },
+        {
+          "bug": "Do not always immediately shut down if an exception occurs while rendering"
+        }
+      ]
+    },
+    {
+      "title": "Alpha 6 now on itch.io",
+      "date": "2023-10-10 23:39:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5246188851832882462",
+      "content": "Fresh off the PAX AUS floor, [url=https://stormcloak.games/2023/10/11/alpha-6]Alpha 6 of Adaptory is now live[/url]! You can [url=https://soundasleepful.itch.io/adaptory/purchase?popup=1]download a copy on itch.io for free[/url].\n\nIf you find any bugs, issues, balance problems or suggestions, please let us know on [url=https://stormcloak.games/discord]Discord[/url] so we can keep improving the game! \ud83d\ude42 I\u2019m really proud of all the work that we\u2019ve managed to pull together for this release, and I\u2019m excited to hear your feedback.\n\n----\n\n[h2]New game screen[/h2]\n\nAt the start of the game, you will now be presented with your team, and you can reshuffle them using a random seed. You can also re-use the same seed from a previous game to keep your previous team.\n\nIf you\u2019ve received one of our exclusive team postcards, you can enter in this code here too!\n\n[url=https://stormcloak.games/assets/screenshots/2023-10-11-new-game.png][img]https://stormcloak.games/assets/screenshots/2023-10-11-new-game.png[/img][/url]\n[i]Select your starting team and inspect their traits[/i]\n\n[h2]New art and tutorial[/h2]\n\nThere is a lot of new art in the game! We\u2019ve redone all of the [url=https://stormcloak.games/2023/09/22/solid-element-art]solid elements[/url] (dirt, rock, ice, coal, etc.) and cleaned up the element edges tileset. We have also completely redesigned your crashed ship at the start of the game, with beautiful new art and a new base entrance.\n\n[url=https://stormcloak.games/assets/screenshots/2023-10-11-crashed-ship-and-tutorial.png][img]https://stormcloak.games/assets/screenshots/2023-10-11-crashed-ship-and-tutorial.png[/img][/url]\n[i]The new crashed ship and solid element art \u2013 also showing off the new tutorial[/i]\n\nFinally, I\u2019ve also added a new simple seven-step tutorial to the game, to help new players get started. You can turn the tutorials on/off in the Options screen. I\u2019d like to know if this tutorial is helpful or not \u2013 please let me know.\n\n[h2]Conversations[/h2]\n\nPawns now have a \u201csocial\u201d level, and talk with each other when their social levels are low. These appear as little speech bubbles in-game, and the text (and replies) are based on their personality types, their traits and buffs, and what\u2019s been happening in game. Cass is going to be adding a lot more content!\n\n[url=https://stormcloak.games/assets/screenshots/2023-10-11-pawn-speech-bubbles.png][img]https://stormcloak.games/assets/screenshots/2023-10-11-pawn-speech-bubbles.png[/img][/url]\n[i]Pawns now have conversations with each other about their experiences and observations of their world[/i]\n\n[h2]Space exposure and background parallax[/h2]\n\nThere is now a new \u201cspace exposure\u201d attribute on tiles in space \u2013 gases and liquids exposed to these tiles will gradually lose mass. (Previously this would only occur at the edges of the game world.)\n\nWe\u2019ve also used this to add a new space background with parallax that is gorgeous \ud83e\udd70\n\n[i][url=https://www.youtube.com/watch?v=YzRCYkpoS5I]The new space background and fog of war in Adaptory[/url][/i]\n\n[h2]And a lot more[/h2]\n\n[list]\n[*]    Fog of war for unexplored areas\n[*]    Added an inline feedback message when the player is unable to perform an action\n[*]    \u201cDig-and-build\u201d: you can now place build errands over solid tiles, and pawns will automatically dig them out first\n[*]    Pawns no longer stand around idle in doorways\n[*]    Pawns should no longer be spawned on the top of your crashed ship\n[*]    Pawn pathfinding fixes\n[*]    Trees now consider the light levels across all of their cells, not just their base, when calculating aliveness\n[*]    Heaps of bug fixes and performance improvements\n[/list]\n\nFull patch notes below.\n\n[h2]What\u2019s next?[/h2]\n\n[list]\n[*]    Save & load game\n[*]    Configurable pawn priorities\n[*]    Resource counters\n[*]    Tools for streamers\n[*]    Oxygen generators, plants, and food systems\n[*]    And some new content\n[/list]\n\n---\n\n[h1]Release notes for Adaptory 0.8 (Alpha 6)[/h1]\n\n[h2]New Features[/h2]\n\n[list]\n[*]    Added a simple seven-step tutorial to the game; you can turn the tutorials on/off in Options\n[*]    Added a brand new \u201cNew game\u201d screen, where you can see the traits of your team before setting off. You can also enter in pawn seeds to get the same team each time\n[*]    Added inline feedback messages when the player is unable to perform an action\n[*]    New dialog art for reading diary entries\n[*]    Pawns now write their diary entries using different fonts\n[*]    Replaced all solid element art with new hand-drawn textures\n[*]    Replaced the art and layout of the crashed ship at the start of the game\n[*]    New \u201ctile\u201d tileset\n[*]    Pawns now have a \u201csocial\u201d meter, and talk with each other when their social levels get too low\n[*]    Added a new space background with parallax \ud83e\udd70\n[*]    Added \u201cspace exposure\u201d property to space tiles, not just the edge of worlds \u2013 gas and liquids exposed to these tiles will gradually lose mass over time\n[*]    You can now place build errands over solid tiles, and pawns will automatically dig them out first\n[*]    Added fog of war to unexplored areas of the world\n[/list]\n\n[h2]Simulation[/h2]\n\n[list]\n[*]    Pawns no longer jam their heads into ship tiles when trying to access a build errand on the other side\n[*]    Pawns no longer stand idle in a doorway \u2013 they will move to the nearest non-doorway accessible position\n[*]    Trees now use the light level across all of their cells, not just their base, when calculating aliveness\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]    World generation can no longer replace dirt tiles inside the crashed ship with coal\n[*]    Pawns should no longer spawn in the vacuum of space at game start\n[*]    Increased battery storage from 100 W to 500 W\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]    Minimum window size is now 800x600 at startup\n[*]    Improved quality of text rendering when against a transparent background (e.g. FPS counter)\n[*]    Restyled debug console\n[*]    More textures are now filtered, increasing render quality\n[*]    Generated pawns now face in random directions at the start of the game\n[*]    Added [i]Return to Main Menu[/i] button in escape menu\n[*]    Added close dialog buttons to all selected object panels\n[*]    Improved the performance when trying to place many building errands at once\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]    Fixed checkbox labels in options dialog word-wrapping too soon\n[*]    Fixed windowed mode resetting to default dimensions after applying new options\n[*]    Fixed crash if the game was paused while the viewport was very small (<= 240px)\n[*]    Fixed crash on Windows Alt-Tab if the game was full-screen\n[*]    Fixed a crash that could occur when a sad \"investigator\" pawn wrote a diary entry\n[*]    Fixed console and sandbox panels hiding behind select pawn panel\n[*]    Fixed a very rare crash at startup when loading YAML assets\n[*]    Fixed a crash that could occur if a new game was started while another event was already happening\n[*]    Fixed a rare bug where some interactive elements sometimes wouldn\u2019t respond to clicks\n[*]    Fixed pawns thinking they could access errands on the other side of solid tiles\n[*]    Fixed a crash if you told a pawn to move outside the world bounds\n[/list]\n\n",
+      "key": "2201620::6b39f6408b9380d423442e07a03c626f1b1fab18",
+      "tags": [
+        {
+          "feature": "Added a simple seven-step tutorial to the game; you can turn the tutorials on/off in Options"
+        },
+        {
+          "feature": "Added a brand new \u201cNew game\u201d screen, where you can see the traits of your team before setting off. You can also enter in pawn seeds to get the same team each time"
+        },
+        {
+          "feature": "Added inline feedback messages when the player is unable to perform an action"
+        },
+        {
+          "feature": "New dialog art for reading diary entries"
+        },
+        {
+          "feature": "Pawns now write their diary entries using different fonts"
+        },
+        {
+          "feature": "Replaced all solid element art with new hand-drawn textures"
+        },
+        {
+          "feature": "Replaced the art and layout of the crashed ship at the start of the game"
+        },
+        {
+          "feature": "New \u201ctile\u201d tileset"
+        },
+        {
+          "feature": "Pawns now have a \u201csocial\u201d meter, and talk with each other when their social levels get too low"
+        },
+        {
+          "feature": "Added a new space background with parallax \ud83e\udd70"
+        },
+        {
+          "feature": "Added \u201cspace exposure\u201d property to space tiles, not just the edge of worlds \u2013 gas and liquids exposed to these tiles will gradually lose mass over time"
+        },
+        {
+          "feature": "You can now place build errands over solid tiles, and pawns will automatically dig them out first"
+        },
+        {
+          "feature": "Added fog of war to unexplored areas of the world"
+        },
+        {
+          "bug": "Pawns no longer jam their heads into ship tiles when trying to access a build errand on the other side"
+        },
+        {
+          "bug": "Pawns no longer stand idle in a doorway \u2013 they will move to the nearest non-doorway accessible position"
+        },
+        {
+          "balance_change": "World generation can no longer replace dirt tiles inside the crashed ship with coal"
+        },
+        {
+          "bug": "Pawns should no longer spawn in the vacuum of space at game start"
+        },
+        {
+          "balance_change": "Increased battery storage from 100 W to 500 W"
+        },
+        {
+          "feature": "Minimum window size is now 800x600 at startup"
+        },
+        {
+          "feature": "Improved quality of text rendering when against a transparent background (e.g. FPS counter)"
+        },
+        {
+          "feature": "Restyled debug console"
+        },
+        {
+          "feature": "More textures are now filtered, increasing render quality"
+        },
+        {
+          "feature": "Generated pawns now face in random directions at the start of the game"
+        },
+        {
+          "feature": "Added [i]Return to Main Menu[/i] button in escape menu"
+        },
+        {
+          "feature": "Added close dialog buttons to all selected object panels"
+        },
+        {
+          "feature": "Improved the performance when trying to place many building errands at once"
+        },
+        {
+          "bug": "Fixed checkbox labels in options dialog word-wrapping too soon"
+        },
+        {
+          "bug": "Fixed windowed mode resetting to default dimensions after applying new options"
+        },
+        {
+          "bug": "Fixed crash if the game was paused while the viewport was very small (<= 240px)"
+        },
+        {
+          "bug": "Fixed crash on Windows Alt-Tab if the game was full-screen"
+        },
+        {
+          "bug": "Fixed a crash that could occur when a sad \"investigator\" pawn wrote a diary entry"
+        },
+        {
+          "bug": "Fixed console and sandbox panels hiding behind select pawn panel"
+        },
+        {
+          "bug": "Fixed a very rare crash at startup when loading YAML assets"
+        },
+        {
+          "bug": "Fixed a crash that could occur if a new game was started while another event was already happening"
+        },
+        {
+          "bug": "Fixed a rare bug where some interactive elements sometimes wouldn\u2019t respond to clicks"
+        },
+        {
+          "bug": "Fixed pawns thinking they could access errands on the other side of solid tiles"
+        },
+        {
+          "bug": "Fixed a crash if you told a pawn to move outside the world bounds"
+        }
+      ]
+    },
+    {
+      "title": "Alpha 5 now on itch.io",
+      "date": "2023-07-31 23:58:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124584686262892484",
+      "content": "[url=https://stormcloak.games/2023/08/01/alpha-5]Alpha 5 is now live![/url] You can [url=https://soundasleepful.itch.io/adaptory/purchase?popup=1]download a copy on itch.io for free[/url].\n\nIf you find any bugs, issues, balance problems or suggestions, please let me know on [url=https://adaptorygame.com/discord]Discord[/url] so we can keep improving the game! Thank you to everyone who have played previous versions and sent in their feedback and ideas. \ud83d\ude42\n\n---------\n\n[h2]Revamped diary engine[/h2]\n\nThe [url=https://stormcloak.games/2023/07/17/diary-entries]diary engine[/url] has had a major overhaul, thanks to a [url=https://stormcloak.games/2023/03/15/nzfc-interactive-development-fund]grant from the NZFC Interactive Development fund[/url]. Rather than pawns writing diary entries immediately after an event occurs, the event may now become the topic of a future diary entry. As soon as the pawn wants to write a diary entry (generally once a day), they will select the most important topic to write about at that time.\n\n[url=https://stormcloak.games/assets/screenshots/2023-08-01-diary-entry.png][img]https://stormcloak.games/assets/screenshots/2023-08-01-diary-entry.png[/img][/url]\n[i]A happy \"enthusiast\" pawn writing about a meteor event[/i]\n\nWe\u2019ve added in [b]pawn traits[/b], which affect how they deal with different situations. For example, a pawn that [i]loves digging[/i] will work faster if they did a lot of digging recently, or a pawn that is [i]afraid of the dark[/i] will get slightly sadder if their environment isn\u2019t lit up. For now, each pawn will be assigned a single trait randomly.\n\n[url=https://stormcloak.games/assets/screenshots/2023-08-01-pawn-traits.png][img]https://stormcloak.games/assets/screenshots/2023-08-01-pawn-traits.png[/img][/url]\n[i]Pawns now have one of four traits[/i]\n\nThere are also four new [b]pawn buffs[/b] which impact your pawns\u2019 productivity, happiness, and potential diary entries.\n\n[h2]Liquid networks[/h2]\n\nIn Alpha 5, there are three new buildings for creating [b]liquid networks[/b] \u2013 a way to suck up, transport, and release liquids throughout the world:\n\n[list]\n[*] [i]liquid pumps[/i], which are powered buildings, that suck up liquids to put into the network;\n[*] [i]liquid vents[/i], that serve as exits for the liquid network; and\n[*] [i]liquid pipes[/i], which actually transport liquids in the network around (to the nearest vent).\n[/list]\n\n[url=https://stormcloak.games/assets/screenshots/2023-08-01-liquid-network.gif][img]https://stormcloak.games/assets/screenshots/2023-08-01-liquid-network.gif[/img][/url]\n[i]A liquid pump moving water to a storage basin[/i]\n\nIn future updates these networks will tie into other buildings, such as an [i]oxygen generator[/i] that will transform water into oxygen and hydrogen.\n\nThere is also a new [b]liquid network overlay[/b] which shows your liquid network, and where the input and output points of the network are. This layer turns on automatically whenever you\u2019re building liquid network-enabled buildings, or you can press F6 to toggle it:\n\n[url=hhttps://stormcloak.games/assets/screenshots/2023-08-01-liquid-network.png][img]https://stormcloak.games/assets/screenshots/2023-08-01-liquid-network.png[/img][/url]\n[i]The \"liquid network\" overlay layer, showing input and output points[/i]\n\n[h2]Pawn quick-access bar[/h2]\n\nI\u2019ve added a new bar to the top of the screen where you can see [i]all[/i] of your pawns, their names, and their current state. You can see if they\u2019re happy, sad, sleeping, or dead\u2026 well hopefully not the last one:\n\n[url=https://stormcloak.games/assets/screenshots/2023-08-01-pawn-top-bar.png][img]https://stormcloak.games/assets/screenshots/2023-08-01-pawn-top-bar.png[/img][/url]\n[i]The new pawn quick-access bar[/i]\n\n[h2]And a lot more[/h2]\n\nThere\u2019s also improved pawn AI, new tree art, a new oxygen bar, an improved pause screen, closeable alert bubbles, graphics improvements, and a ton of bug and crash fixes. The full changelog is listed below!\n\n--------\n\n[h1]Release notes for Adaptory 0.7 (Alpha 5)[/h1]\n\n[h2]New Features[/h2]\n\n[list]\n[*] New diary entry engine!\n[list] [*]        When an event happens in the world, or to a pawn, or a particular buff, that may become the topic of a future diary entry\n[*]        As soon as the pawn wants to write a diary entry, they will select the most important topic to write about\n[*]        Pawns use different diary templates based on their mood (happy, neutral, sad)\n[*]        Rewrote most existing diary entries and added 12 new topic categories\n[*]        Pawns no longer immediately write a diary entry at the start of the game\n[*]        Diary entries are now shown in newest-to-oldest order[/list]\n[*]    Liquid networks!\n[list] [*]        Added liquid pumps, vents, and pipes that can suck up and transport any liquids\n[*]        Liquid pumps require electricity to function\n[*]        Added a liquid network layer that shows points in the network where liquids can enter and exit\n[*]        The liquid network layer can also be accessed with the keyboard shortcut F6[/list]\n[*]    Added a new top bar for selecting and moving to your pawns\n[list] [*]        The top bar also shows their current mood (happy, sad, dead, etc)\n[*]    Updated tree with new art, and changed dimensions to 1x2[/list]\n[*]    Pawns can now have traits which affect how different buffs and situations affect them, and the diary entries they write\n[*]    Selecting a pawn now shows what they\u2019re thinking about \u2013 what\u2019s going on, or their next diary entry topic\n[*]    Issuing a move command to a sleeping pawn will now wake them up\n[*]    When pawns have low oxygen levels, an oxygen bar will now appear below them\n[/list]\n\n[h2]Simulation[/h2]\n\n[list]\n[*]    Buildings and pawns that are buried or otherwise covered by impassable tiles can no longer emit or absorb nearby elements\n[*]    When pawns are low on oxygen, they will now look for the nearest tile that has at least enough oxygen to sustain them, rather than the nearest tile that has any oxygen\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*]    New pawn buffs\n[list] [*]        [i]in darkness[/i], which normally has no effect\n[*]        [i]slept on floor[/i], which reduces pawn happiness if they recently slept on the floor\n[*]        [i]did lots of digging yesterday[/i], if they spent more than 20% of their time yesterday doing dig errands\n[*]        [i]someone recently died[/i], if any pawn died in the last day[/list]\n[*]    New pawn traits\n[list] [*]        [i]light-sensitive[/i], which negates the happiness buff from being in bright areas\n[*]        [i]afraid of the dark[/i], which makes pawns unhappy if they\u2019re in the dark\n[*]        [i]loves digging[/i] and [i]hates digging[/i], which increase or decrease happiness and pawn speed if they did lots of digging yesterday[/list]\n[*]    Three additional pockets of water and oxygen are now generated in the world, just below the surface\n[*]    Increased the \u201cdangerously low\u201d oxygen level for pawns from 25% to 30%\n[*]    Pawns now catch their breath until their oxygen levels are back to 100% (was 25%)\n[*]    Reduced the maximum length of the solar flare event by 25%\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]    Added current keybindings list to readme.txt, until there\u2019s a proper control panel or configurable key list\n[*]    Added \u201cReport on Discord\u201d link to error capture screen\n[*]    Added check \u2714 to selected items in dropdown menus\n[*]    Game actions can now be done while paused \u2013 no need to unpause the game to apply changes\n[*]    Improved the way that sprites are animated between ticks during a game pause\n[*]    Reduced the size of world action buttons so more can fit on the screen at once\n[*]    The UI scale range in options is now rounded to the nearest 5%, to improve accessibility \u2013 please let me know if this is too big or small!\n[*]    Added border around the screen when the game is paused\n[*]    Errands that were only accessible by dead pawns are no longer shown as accessible\n[*]    Alerts that refer to a fixed-period event are now closeable\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]    Fix dropdown hover not aligning up with dropdown contents\n[*]    Fix a (very) rare crash if absorbed or stored mass in an object was nearly zero\n[*]    Fix pending building outlines being hidden by doors and other animated buildings\n[*]    Fix after applying settings, the menu screen behind the options panel could be dismissed with escape\n[*]    Fix a bug where the game world and buttons could be interacted with with an open dialog (e.g. welcome, end of game)\n[*]    Fix a crash where trying to build a ladder near the edges of the world\n[*]    Fix a rare crash when a game event could be triggered before the UI had finished loading\n[*]    Fix reading one pawns\u2019 diary entries would mark ALL pawn diary entries as read\n[*]    Fix digging tiles off-screen would sometimes not be displayed correctly until another tile was dug in that same chunk\n[*]    Fix a bug where pawns at the bottom of a 1-wide tile refused to do errands unless they had another accessible space next to them\n[*]    Fix tile information on hover showing what items are buried, now it shows \u201c(buried item)\u201d\n[*]    Fix mouse cursor occasionally getting stuck when clicking a link\n[*]    Fix credits dialog close X was not positioned in the header\n[/list]\n",
+      "key": "2201620::97c64d4c1a4375594f4f347629fca791f8ec3697",
+      "tags": [
+        {
+          "feature": "New diary entry engine!"
+        },
+        {
+          "feature": "When an event happens in the world, or to a pawn, or a particular buff, that may become the topic of a future diary entry"
+        },
+        {
+          "feature": "As soon as the pawn wants to write a diary entry, they will select the most important topic to write about"
+        },
+        {
+          "feature": "Pawns use different diary templates based on their mood (happy, neutral, sad)"
+        },
+        {
+          "feature": "Rewrote most existing diary entries and added 12 new topic categories"
+        },
+        {
+          "feature": "Pawns no longer immediately write a diary entry at the start of the game"
+        },
+        {
+          "feature": "Diary entries are now shown in newest-to-oldest order"
+        },
+        {
+          "feature": "Liquid networks!"
+        },
+        {
+          "feature": "Added liquid pumps, vents, and pipes that can suck up and transport any liquids"
+        },
+        {
+          "feature": "Liquid pumps require electricity to function"
+        },
+        {
+          "feature": "Added a liquid network layer that shows points in the network where liquids can enter and exit"
+        },
+        {
+          "feature": "The liquid network layer can also be accessed with the keyboard shortcut F6"
+        },
+        {
+          "feature": "Added a new top bar for selecting and moving to your pawns"
+        },
+        {
+          "feature": "The top bar also shows their current mood (happy, sad, dead, etc)"
+        },
+        {
+          "feature": "Updated tree with new art, and changed dimensions to 1x2"
+        },
+        {
+          "feature": "Pawns can now have traits which affect how different buffs and situations affect them, and the diary entries they write"
+        },
+        {
+          "feature": "Selecting a pawn now shows what they\u2019re thinking about \u2013 what\u2019s going on, or their next diary entry topic"
+        },
+        {
+          "feature": "Issuing a move command to a sleeping pawn will now wake them up"
+        },
+        {
+          "feature": "When pawns have low oxygen levels, an oxygen bar will now appear below them"
+        },
+        {
+          "bug": "Buildings and pawns that are buried or otherwise covered by impassable tiles can no longer emit or absorb nearby elements"
+        },
+        {
+          "balance_change": "When pawns are low on oxygen, they will now look for the nearest tile that has at least enough oxygen to sustain them, rather than the nearest tile that has any oxygen"
+        },
+        {
+          "feature": "New pawn buffs"
+        },
+        {
+          "feature": "[i]in darkness[/i], which normally has no effect"
+        },
+        {
+          "feature": "[i]slept on floor[/i], which reduces pawn happiness if they recently slept on the floor"
+        },
+        {
+          "feature": "[i]did lots of digging yesterday[/i], if they spent more than 20% of their time yesterday doing dig errands"
+        },
+        {
+          "feature": "[i]someone recently died[/i], if any pawn died in the last day"
+        },
+        {
+          "feature": "New pawn traits"
+        },
+        {
+          "feature": "[i]light-sensitive[/i], which negates the happiness buff from being in bright areas"
+        },
+        {
+          "feature": "[i]afraid of the dark[/i], which makes pawns unhappy if they\u2019re in the dark"
+        },
+        {
+          "feature": "[i]loves digging[/i] and [i]hates digging[/i], which increase or decrease happiness and pawn speed if they did lots of digging yesterday"
+        },
+        {
+          "feature": "Three additional pockets of water and oxygen are now generated in the world, just below the surface"
+        },
+        {
+          "balance_change": "Increased the \u201cdangerously low\u201d oxygen level for pawns from 25% to 30%"
+        },
+        {
+          "balance_change": "Pawns now catch their breath until their oxygen levels are back to 100% (was 25%)"
+        },
+        {
+          "balance_change": "Reduced the maximum length of the solar flare event by 25%"
+        },
+        {
+          "feature": "Added current keybindings list to readme.txt, until there\u2019s a proper control panel or configurable key list"
+        },
+        {
+          "feature": "Added \u201cReport on Discord\u201d link to error capture screen"
+        },
+        {
+          "feature": "Added check \u2714 to selected items in dropdown menus"
+        },
+        {
+          "feature": "Game actions can now be done while paused \u2013 no need to unpause the game to apply changes"
+        },
+        {
+          "feature": "Improved the way that sprites are animated between ticks during a game pause"
+        },
+        {
+          "feature": "Reduced the size of world action buttons so more can fit on the screen at once"
+        },
+        {
+          "feature": "The UI scale range in options is now rounded to the nearest 5%, to improve accessibility \u2013 please let me know if this is too big or small!"
+        },
+        {
+          "feature": "Added border around the screen when the game is paused"
+        },
+        {
+          "bug": "Errands that were only accessible by dead pawns are no longer shown as accessible"
+        },
+        {
+          "feature": "Alerts that refer to a fixed-period event are now closeable"
+        },
+        {
+          "bug": "Fix dropdown hover not aligning up with dropdown contents"
+        },
+        {
+          "bug": "Fix a (very) rare crash if absorbed or stored mass in an object was nearly zero"
+        },
+        {
+          "bug": "Fix pending building outlines being hidden by doors and other animated buildings"
+        },
+        {
+          "bug": "Fix after applying settings, the menu screen behind the options panel could be dismissed with escape"
+        },
+        {
+          "bug": "Fix a bug where the game world and buttons could be interacted with with an open dialog (e.g. welcome, end of game)"
+        },
+        {
+          "bug": "Fix a crash where trying to build a ladder near the edges of the world"
+        },
+        {
+          "bug": "Fix a rare crash when a game event could be triggered before the UI had finished loading"
+        },
+        {
+          "bug": "Fix reading one pawns\u2019 diary entries would mark ALL pawn diary entries as read"
+        },
+        {
+          "bug": "Fix digging tiles off-screen would sometimes not be displayed correctly until another tile was dug in that same chunk"
+        },
+        {
+          "bug": "Fix a bug where pawns at the bottom of a 1-wide tile refused to do errands unless they had another accessible space next to them"
+        },
+        {
+          "bug": "Fix tile information on hover showing what items are buried, now it shows \u201c(buried item)\u201d"
+        },
+        {
+          "bug": "Fix mouse cursor occasionally getting stuck when clicking a link"
+        },
+        {
+          "bug": "Fix credits dialog close X was not positioned in the header"
+        }
+      ]
+    },
+    {
+      "title": "Alpha 4 now on itch.io",
+      "date": "2023-06-06 19:56:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846333326919",
+      "content": "Alpha 4 is now live! You can [url=https://soundasleepful.itch.io/adaptory/purchase?popup=1]download a copy on itch.io for free[/url].\n\nThis release does not have any new content in it, but it has a [url=https://stormcloak.games/2023/06/05/new-data-model]rewritten data model[/url] that should run simulations up to 2-10x faster. All things going well, this should be the final model used through to EA/1.0 release.\n\nIf you\u2019re able to [url=https://soundasleepful.itch.io/adaptory/purchase?popup=1]download a copy[/url] and give it a go, please let me know if you find any weird bugs! You can report them on [url=https://adaptorygame.com/discord]our Discord server[/url]. I\u2019ve had to touch almost every part of the game so there is bound to be a few areas I\u2019ve missed.\n\n---------\n\n[h1]Release notes for Adaptory 0.6 (Alpha 4)[/h1]\n\n[h2]Simulation[/h2]\n\n[list]\n[*]A major data model rewrite\n[*]Lots of simulation optimisations and additional caches\n[*]Depending on your platform, you should expect speed increases of up to 10x\n[*][url=https://stormcloak.games/2023/06/05/new-data-model]Read more\u2026[/url]\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*]Added fullscreen mode, toggle with F5 or in the Options window\n[*]Added experimental UI scaling slider in Options window\n[*]Added new speed level 4, which tries to run simulations at 25x speed\n[*]Default game window is now 1440x960\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*]Fixed bug where tilesets edges for elements wouldn\u2019t update until another element in that same chunk updated\n[*]Fixed two items in the same cell with different item types merging, they shouldn\u2019t do that\n[/list]\n",
+      "key": "2201620::4f0c6fa05c81524b8095631f79ed5d49bc99e7c7",
+      "tags": [
+        {
+          "feature": "Added fullscreen mode, toggle with F5 or in the Options window"
+        },
+        {
+          "feature": "Added experimental UI scaling slider in Options window"
+        },
+        {
+          "feature": "Added new speed level 4, which tries to run simulations at 25x speed"
+        },
+        {
+          "bug": "Fixed bug where tilesets edges for elements wouldn\u2019t update until another element in that same chunk updated"
+        },
+        {
+          "bug": "Fixed two items in the same cell with different item types merging, they shouldn\u2019t do that"
+        }
+      ]
+    },
+    {
+      "title": "Alpha 3 now on itch.io",
+      "date": "2023-03-31 00:10:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551984193380",
+      "content": "Alpha 3 is now live!! \ud83e\udd73 You can [url=https://soundasleepful.itch.io/adaptory/purchase?popup=1]download a copy on itch.io for free[/url].\n\nThis release is packed with new systems, gameplay, sounds, and art for you to play with. And there\u2019s a lot more coming!\n\nIf you find any bugs, please report them to [url=https://stormcloak.games/discord]our Discord server[/url]. We\u2019ve tested this build on a number of machines and setups but I\u2019m sure there\u2019s a few sneaky bugs hiding in the woodwork. Thank you for all your feedback and support while we create Adaptory \ud83d\ude42\n\n[h2]Random events[/h2]\n\nIn Alpha 3, we\u2019ve introduced [url=https://stormcloak.games/2023/03/16/random-events]random world events[/url] that will challenge your base\u2019s ability to adapt. The frequency and intensity of the random events increase based on the number of tiles that you have dug, and the number of artifacts you\u2019ve uncovered.\n\n[url=https://stormcloak.games/assets/screenshots/2023-03-16-artifact.png][img]https://stormcloak.games/assets/screenshots/2023-03-16-artifact.png[/img][/url]\n[i]Ravi has uncovered an artifact while digging[/i]\n\nThis system is still very much WIP but the plan is to expand this out to many more types of world and character events.\n\n[h2]Power layer[/h2]\n\nThere\u2019s a [url=https://stormcloak.games/2023/03/07/power-layer]new power overlay[/url] which shows you your electricity network, and where the conductive points of each building are. This layer turns on automatically when you\u2019re building wires, or you can press F4 to toggle it:\n\n[url=https://stormcloak.games/assets/screenshots/2023-03-07-power-layer-on.png][img]https://stormcloak.games/assets/screenshots/2023-03-07-power-layer-on.png[/img][/url]\n[i]Powered buildings in Adaptory, power layer turned on[/i]\n\n[h2]New buildings[/h2]\n\nThere are two new buildings to play with:\n\n[b]Beds[/b] are buildings where your pawns can have a nap. When pawns are tired, they will prefer to seek out an unclaimed bed and sleep there, gaining a mood buff and faster stamina recovery.\n\n[b]Oxygen candles[/b] are based on the real world, where you can burn a cartridge (\u201coxycan\u201d) to generate oxygen (and a lot of heat). When starting the game, you are provided three oxygen candles to help you get going \u2013 a few more are scattered throughout the world for you to find.\n\n[h2]Pawn happiness[/h2]\n\nPawns now have a happiness/mood level, which can be affected by what they\u2019re doing, where they are, and how comfortable they are. Their mood affects how fast they work, and eventually this will affect how they write their diary entries, what they write about, the relationships they have with others, random world events, and more.\n\n[h2]Two new tracks by Sai Natarajan[/h2]\n\nAdaptory now has two tracks by the incredible composer [url=https://www.viusstudios.com/bio]Sai Natarajan[/url], and more are underway. The tracks are also featured in our [url=https://www.youtube.com/watch?v=ipI3hEsth0A]new Alpha 3 trailer[/url]!\n\nhttps://www.youtube.com/watch?v=ipI3hEsth0A\n\nBackground music now plays with some silence between tracks to help you feel more immersed in the game world. You can also turn continuous music back on in the game options.\n\n[h2]Refreshed graphics[/h2]\n\nA major part of this release are [url=https://stormcloak.games/2023/02/21/new-liquid-shaders]new liquid, gas, and light shaders[/url], which have smoother edges, waves, bubbles, and better performance across a wider range of computers.\n\nhttps://www.youtube.com/watch?v=EH-1mVYsTOQ\n\nCare has also been working hard on new building art in this release, and I\u2019ve been refreshing the animations to go along with them. I\u2019ve also fixed a rendering bug that vastly improves the quality of text across all dialogs and windows.\n\n[h2]A lot more[/h2]\n\nThere\u2019s also new art, new elements, faster simulations, alert bubbles, a new crash handler dialog, and a ton of bug and crash fixes. The full changelog is listed below!\n\n-------------\n\n[h1]Release notes for Adaptory 0.5 (Alpha 3)[/h1]\n[h3]New Features[/h3]\n\n[list]\n[*]     Oxygen candles!\n[list] [*]         Oxygen candles are based on the real world, where you can burn a cartridge to generate oxygen (and a lot of heat)\n[*]         New building: oxygen candle holder\n[*]         When starting the game, you are provided three oxygen candles to help you get going\n[*]         A few more are scattered throughout the world for you to find [/list]\n[*]     Beds!\n[list] [*]         Pawns can now build beds\n[*]         When they\u2019re tired, pawns will prefer to seek out an unclaimed bed and sleep there, rather than collapsing on the floor\n[*]         While they\u2019re in a bed, pawns will get a mood buff and recover their stamina much faster[/list]\n[*]     Random events!\n[list] [*]         As you play through the game, random world events can now trigger\n[*]         The frequency and intensity of the random events increase based on the number of dug tiles, and the number of uncovered artifacts\n[*]         Added meteor, meteor shower, and solar flare events\n[*]         Still very much a WIP[/list]\n[*]     Power layer\n[list] [*]         When building powered buildings, power connections are shown with a new layer\n[*]         The power layer can also be accessed with the keyboard shortcut F4[/list]\n[*]     Pawn happiness\n[list] [*]         Pawns now have a happiness/mood, which can be affected by what they\u2019re doing, where they are, and how comfortable they are\n[*]         Happy pawns will work slightly faster, and sad pawns will work slightly slower[/list]\n[*]     New liquid, gas and light shaders with smoother edges, waves, bubbles, and generally better performance on modern graphics cards\n[*]     Some buildings can now be individually toggled on and off, by selecting \u201cTurn on/off\u201d in the building dialog\n[*]     When something important happens in the game, an alert bubble now pops up at the top right\n[*]     Two new music tracks from Sai Natarajan[/list]\n\n[h3]Simulation[/h3]\n\n[list]\n[*]     Changed target simulation update rate from 15 ups to 20 ups \u2013 it feels much nicer\n[*]     Added new solid element, salt\n[*]     Items are now buried if they\u2019re covered with a solid element\n[*]     Implemented heat conductivity for buildings and pawns with supplied or carried mass\n[*]     Solar panels no longer generate electricity if they have no foundation[/list]\n\n[h3]Balance[/h3]\n\n[list]\n[*]     Reduce working speed buff of pawns in light from x2.0 to x1.4\n[*]     Change day/night cycle from ~2 minutes to 6 minutes[/list]\n\n[h3]Internal[/h3]\n\n[list]\n[*]     Added command-line options soundLevel and musicLevel to set sound and music level at startup\n[*]     Added some silence in between playing music tracks; this can be turned off with \u201ccontinuous music\u201d in Options\n[*]     Updated building art: solar panel, airlock door, ladder, coal generator\n[*]     Pawns are now rendered with a little bit of horizontal spacing so they don\u2019t all appear in the same spot\n[*]     Added a dedicated crash handler dialog, so uncaught exceptions don\u2019t immediately close the game window\n[*]     Significantly improved quality of text rendering across all dialogs and windows\n[/list]\n\n[h3]Fixes[/h3]\n\n[list]\n[*]     Fix tilesets occasionally not updating after a tile has changed\n[*]     Fix crash if the game was minimised on Windows (\u201cFrame buffer couldn\u2019t be constructed: incomplete attachment\u201d)\n[*]     Fix crash if a key was pressed after clicking certain buttons\n[*]     Fix some buttons not displaying as pressed down if their labels were pressed\n[*]     Fix world action keyboard shortcuts not working immediately after selecting a building type\n[*]     Fix crash that sometimes occurred when right clicking or typing on the loading screen\n[*]     Fix crash when trying to dig or cancel errands outside the bounds of the world\n[*]     Fix crash if a raw gas or liquid item tried to dissolve into vacuum\n[*]     Tooltips no longer render off the bottom of the screen\n[/list]",
+      "key": "2201620::6a69d7232d97c6419161eea64bdb52b71b02a9e5",
+      "tags": [
+        {
+          "feature": "In Alpha 3, we\u2019ve introduced random world events that will challenge your base\u2019s ability to adapt."
+        },
+        {
+          "feature": "There\u2019s a new power overlay which shows you your electricity network, and where the conductive points of each building are."
+        },
+        {
+          "feature": "There are two new buildings to play with:"
+        },
+        {
+          "feature": "Pawns now have a happiness/mood level, which can be affected by what they\u2019re doing, where they are, and how comfortable they are."
+        },
+        {
+          "feature": "Adaptory now has two tracks by the incredible composer Sai Natarajan, and more are underway."
+        },
+        {
+          "feature": "A major part of this release are new liquid, gas, and light shaders, which have smoother edges, waves, bubbles, and better performance across a wider range of computers."
+        },
+        {
+          "feature": "I\u2019ve also fixed a rendering bug that vastly improves the quality of text across all dialogs and windows."
+        },
+        {
+          "feature": "There\u2019s also new art, new elements, faster simulations, alert bubbles, a new crash handler dialog, and a ton of bug and crash fixes."
+        },
+        {
+          "feature": "Oxygen candles!"
+        },
+        {
+          "feature": "Beds!"
+        },
+        {
+          "feature": "Random events!"
+        },
+        {
+          "feature": "Power layer"
+        },
+        {
+          "feature": "Pawn happiness"
+        },
+        {
+          "feature": "New liquid, gas and light shaders with smoother edges, waves, bubbles, and generally better performance on modern graphics cards"
+        },
+        {
+          "feature": "Some buildings can now be individually toggled on and off, by selecting \u201cTurn on/off\u201d in the building dialog"
+        },
+        {
+          "feature": "When something important happens in the game, an alert bubble now pops up at the top right"
+        },
+        {
+          "feature": "Two new music tracks from Sai Natarajan"
+        },
+        {
+          "balance_change": "Changed target simulation update rate from 15 ups to 20 ups \u2013 it feels much nicer"
+        },
+        {
+          "feature": "Added new solid element, salt"
+        },
+        {
+          "feature": "Items are now buried if they\u2019re covered with a solid element"
+        },
+        {
+          "feature": "Implemented heat conductivity for buildings and pawns with supplied or carried mass"
+        },
+        {
+          "bug": "Solar panels no longer generate electricity if they have no foundation"
+        },
+        {
+          "balance_change": "Reduce working speed buff of pawns in light from x2.0 to x1.4"
+        },
+        {
+          "balance_change": "Change day/night cycle from ~2 minutes to 6 minutes"
+        },
+        {
+          "feature": "Added command-line options soundLevel and musicLevel to set sound and music level at startup"
+        },
+        {
+          "feature": "Added some silence in between playing music tracks; this can be turned off with \u201ccontinuous music\u201d in Options"
+        },
+        {
+          "feature": "Updated building art: solar panel, airlock door, ladder, coal generator"
+        },
+        {
+          "feature": "Pawns are now rendered with a little bit of horizontal spacing so they don\u2019t all appear in the same spot"
+        },
+        {
+          "feature": "Added a dedicated crash handler dialog, so uncaught exceptions don\u2019t immediately close the game window"
+        },
+        {
+          "feature": "Significantly improved quality of text rendering across all dialogs and windows"
+        },
+        {
+          "bug": "Fix tilesets occasionally not updating after a tile has changed"
+        },
+        {
+          "bug": "Fix crash if the game was minimised on Windows (\u201cFrame buffer couldn\u2019t be constructed: incomplete attachment\u201d)"
+        },
+        {
+          "bug": "Fix crash if a key was pressed after clicking certain buttons"
+        },
+        {
+          "bug": "Fix some buttons not displaying as pressed down if their labels were pressed"
+        },
+        {
+          "bug": "Fix world action keyboard shortcuts not working immediately after selecting a building type"
+        },
+        {
+          "bug": "Fix crash that sometimes occurred when right clicking or typing on the loading screen"
+        },
+        {
+          "bug": "Fix crash when trying to dig or cancel errands outside the bounds of the world"
+        },
+        {
+          "bug": "Fix crash if a raw gas or liquid item tried to dissolve into vacuum"
+        },
+        {
+          "bug": "Tooltips no longer render off the bottom of the screen"
+        }
+      ]
+    },
+    {
+      "title": "Alpha 2 now on itch.io",
+      "date": "2023-01-30 20:43:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109525792796",
+      "content": "Alpha 2 is now live!! \ud83e\udd73 You can [url=https://soundasleepful.itch.io/adaptory]download a copy on itch.io for free[/url]. (As soon as I can work out how to upload demos on Steam, I'll see if I can start uploading them here.)\n\nOver the last few months I\u2019ve added electricity, refined diary entries, added in the first background music, fixed a bunch of bugs, and generally improved the whole user experience. If you\u2019ve submitted any feedback, thank you!\n\n[h2]Electricity[/h2]\n\n[url=https://stormcloak.games/assets/screenshots/2023-01-31-electricity-network.png][img]https://stormcloak.games/assets/screenshots/2023-01-31-electricity-network.png[/img][/url]\n\nSome buildings (such as lights, and the transmitter you need to win the game) now require power to function. You can either go the renewable route with solar panels, or the quick route with coal.\n\nBe warned, though \u2013 while coal generates heaps of power, it also generates heaps of carbon dioxide\u2026\n\n[h2]Diary entries[/h2]\n\n[url=https://stormcloak.games/assets/screenshots/2023-01-31-writing-diary-entries.gif][img]https://stormcloak.games/assets/screenshots/2023-01-31-writing-diary-entries.gif[/img][/url]\n\nThere\u2019s still a lot more work to go on this, but now pawns write their diary entries when they\u2019re idle (rather than the entries appearing out of nowhere), and you can see them writing away.\n\n[h2]Building feedback[/h2]\n\n[url=https://stormcloak.games/assets/screenshots/2023-01-31-build-outlines.png][img]https://stormcloak.games/assets/screenshots/2023-01-31-build-outlines.png[/img][/url]\n\nWhen you\u2019re trying to place building blueprints, you can now immediately see what\u2019s about to be built. You also get immediate feedback (visual and sound) if you try to place a building in the wrong place \u2013 for example, a light with no ceiling, or a tree with no foundation.\n\n[h1]Release notes for 0.4 (Alpha 2)[/h1]\n\n[h2]New Features[/h2]\n\n[list]\n[*] Electricity!\n[list] [*] Some buildings (such as lights) now require power to function\n[*] Power needs to be supplied from generators using wires\n[*] New buildings: wire, battery, solar panel, coal generator\n[*] Batteries can store excess power, but gradually discharge over time\n[*] Coal generators can consume coal to generate power (and a lot of carbon dioxide) [/list]\n[*] Diary entries!\n[list] [*] Pawns now visibly write diary entries whenever there\u2019s an interesting topic they want to write about, and they aren\u2019t doing anything else [/list]\n[*] Music!\n[list] [*] Adaptory now has its first music track, written by [url=http://aprilfish.co.nz]Katie Morton[/url] \u2764\ufe0f [/list]\n[*] Pawns can deconstruct buildings using the new \u201cDeconstruct\u201d tool (keyboard shortcut X)\n[*] Individual buildings can be deconstructed by clicking on \u201cDeconstruct\u201d in the building panel\n[*] Pending build errands are rendered with dotted outlines, making it much more obvious what\u2019s going on\n[*] When trying to place a building somewhere it can\u2019t be built, it\u2019s rendered in red\n[*] Added custom mouse cursors to provide extra feedback about the currently selected world action\n[*] The volume of sounds and music in the game can now be changed in Options\n[/list]\n\n[h2]Balance[/h2]\n\n[list]\n[*] Maximum daylight is now 2000 lux, not 200 lux \u2013 so lights can\u2019t power solar panels\n[*] Blobs of coal are now generated throughout the world, closer to the landing site\n[*] Trees can now absorb carbon dioxide from its diagonal neighbours\n[*] The transmitter now needs to be powered\n[*] A new game now starts with 4 pawns\n[/list]\n\n[h2]Internal[/h2]\n\n[list]\n[*] Build errands for buildings that require a ceiling or foundation can now be placed against other build errands\n[*] Raw items that are gases and liquids (e.g. carbon dioxide previously stored in a tree that\u2019s since been deconstructed) dissolve into the element simulation if there is space\n[*] After a tile has been built, automatically push out any pawns or raw items within that point\n[*] Pending automatic supply errands from the same item to the same target can now merge\n[*] Added social links to Steam and [url=https://discord.gg/gku8afsKWF]our Discord[/url]\n[*] Camera can be moved with arrow keys as well as WASD\n[*] Updated libgdx library to 1.11\n[/list]\n\n[h2]Fixes[/h2]\n\n[list]\n[*] Fix pending tile errand icons not showing above some buildings\n[*] Fix some bugs where buildings could be built on top of other buildings or solid tiles\n[*] Add some missing raw element images\n[*] Trees that couldn\u2019t emit any more oxygen are now displayed as blocked/unable to emit\n[*] Fix a bug where buildings were sometimes not accessible immediately after they were built\n[*] Fix content blocks in panels sometimes not immediately refreshing when they should\n[*] Fix pawns not going outside to supply or build until the door was already open\n[*] Fix a crash on M1 Macs when trying to open a web link\n[/list]",
+      "key": "2201620::821a1cf73b7290e21a053e81e969d8e43122a1d1",
+      "tags": [
+        {
+          "feature": "Electricity!"
+        },
+        {
+          "feature": "Some buildings (such as lights) now require power to function"
+        },
+        {
+          "feature": "Power needs to be supplied from generators using wires"
+        },
+        {
+          "feature": "New buildings: wire, battery, solar panel, coal generator"
+        },
+        {
+          "feature": "Batteries can store excess power, but gradually discharge over time"
+        },
+        {
+          "feature": "Coal generators can consume coal to generate power (and a lot of carbon dioxide)"
+        },
+        {
+          "feature": "Diary entries!"
+        },
+        {
+          "feature": "Pawns now visibly write diary entries whenever there\u2019s an interesting topic they want to write about, and they aren\u2019t doing anything else"
+        },
+        {
+          "feature": "Adaptory now has its first music track, written by [url=http://aprilfish.co.nz]Katie Morton[/url] \u2764\ufe0f"
+        },
+        {
+          "feature": "Pawns can deconstruct buildings using the new \u201cDeconstruct\u201d tool (keyboard shortcut X)"
+        },
+        {
+          "feature": "Individual buildings can be deconstructed by clicking on \u201cDeconstruct\u201d in the building panel"
+        },
+        {
+          "feature": "Pending build errands are rendered with dotted outlines, making it much more obvious what\u2019s going on"
+        },
+        {
+          "feature": "When trying to place a building somewhere it can\u2019t be built, it\u2019s rendered in red"
+        },
+        {
+          "feature": "Added custom mouse cursors to provide extra feedback about the currently selected world action"
+        },
+        {
+          "feature": "The volume of sounds and music in the game can now be changed in Options"
+        },
+        {
+          "balance_change": "Maximum daylight is now 2000 lux, not 200 lux \u2013 so lights can\u2019t power solar panels"
+        },
+        {
+          "balance_change": "Blobs of coal are now generated throughout the world, closer to the landing site"
+        },
+        {
+          "balance_change": "Trees can now absorb carbon dioxide from its diagonal neighbours"
+        },
+        {
+          "balance_change": "The transmitter now needs to be powered"
+        },
+        {
+          "balance_change": "A new game now starts with 4 pawns"
+        },
+        {
+          "bug": "Fix pending tile errand icons not showing above some buildings"
+        },
+        {
+          "bug": "Fix some bugs where buildings could be built on top of other buildings or solid tiles"
+        },
+        {
+          "bug": "Add some missing raw element images"
+        },
+        {
+          "bug": "Trees that couldn\u2019t emit any more oxygen are now displayed as blocked/unable to emit"
+        },
+        {
+          "bug": "Fix a bug where buildings were sometimes not accessible immediately after they were built"
+        },
+        {
+          "bug": "Fix content blocks in panels sometimes not immediately refreshing when they should"
+        },
+        {
+          "bug": "Fix pawns not going outside to supply or build until the door was already open"
+        },
+        {
+          "bug": "Fix a crash on M1 Macs when trying to open a web link"
+        }
+      ]
+    }
+  ]
+}

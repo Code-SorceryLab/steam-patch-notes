@@ -1,0 +1,570 @@
+{
+  "appId": "2685150",
+  "count": 38,
+  "notes": [
+    {
+      "title": "fix flashing navball",
+      "date": "2024-09-11 07:47:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6250522009509282328",
+      "content": "navball was blinking/flashing while vehicle in motion. Stable lighting for navball now. (some kind of unity instability but I used an alternate less appropriate mechanism to light the navball. It is likely that in the future stability will return to the original method and as a result of the less appropriate nature of the present fix, it will be better to change back, but for now it should be ok with this fix) \n\nfixed Ganymede1970 spawned inside of crazy big shiny object/level unplayable. This level still needs readdress but is playable and the problem is that the way I want it does not run smoothly due to CPU bottlenecking so the present state is a compromise that will require further tuning.",
+      "key": "2685150::a18ccd2fe138ff69d8f89c47d707df4744495c32",
+      "tags": [
+        {
+          "bug": "navball was blinking/flashing while vehicle in motion. Stable lighting for navball now."
+        },
+        {
+          "bug": "fixed Ganymede1970 spawned inside of crazy big shiny object/level unplayable."
+        }
+      ]
+    },
+    {
+      "title": "mostly making things work as intended",
+      "date": "2024-05-14 06:06:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5768625435413369467",
+      "content": "spin-gravity had a lot of problems like : \n - moving hoops around after placing them in spin-space would move them to fixed-space\n - pressing reset while connected to a hoop would not leave the hoop where it was, instead would bring the hoop to the reset location\n - save/load of hoop colors/textures completely broke\n\nspin-grav has more objects, some obstacles with color-change like the hoops. spin-grav has a unique limitation in that non-convex colliders do not work with the spin-space , , (as it uses rigidbody interpolation in order to rotate smoothly, and physx does not support convex mesh colliders with rigidbody) ,, so it has a unique set of objects that players can use to make courses for it. Spin-grav also presents a unique limitation with the racetype \"timer on reset\" because the player is not allowed to move until the countdown is over,, BUT the ship is in motion with the spin-drum. It might be possible to verify that the ship velocity matches the reset location to within a tolerance, but I have not attempted this. \n\ntraining levels run a little smoother overall and work from the all-saves menu or from inside of a campaign. \n\nsave-load system SHOULD run fine after increasing the total color-change options available to players, however it is possible that some colors have moved around on any existing saves once loaded again. The most likely issues are going to be that either the texture selected will not show, or a color will be on an object that was not assigned, and the textures will not show ,, in this case unfortunately the player will just have to reset those bits of lost info and save again. \n\nload from campaign and all-saves was not properly working with spin-grav and should now.",
+      "key": "2685150::938f2036403ecc3543910a570dba15e2f9d6a12b",
+      "tags": [
+        {
+          "bug": "- moving hoops around after placing them in spin-space would move them to fixed-space"
+        },
+        {
+          "bug": "- pressing reset while connected to a hoop would not leave the hoop where it was, instead would bring the hoop to the reset location"
+        },
+        {
+          "bug": "- save/load of hoop colors/textures completely broke"
+        },
+        {
+          "bug": "- load from campaign and all-saves was not properly working with spin-grav and should now."
+        }
+      ]
+    },
+    {
+      "title": "more racesettings, mesh upgrades in svscenes",
+      "date": "2024-04-21 19:40:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032403387257",
+      "content": "Changed from compound box colliders to mesh colliders in HDscifi scenes. \n\nracesettings updates ::: new racetypes :::: HideAndSeek Laps  ,,,, HideAndSeek Laps (weights reset) \n\nHideAndSeek was previously only a line-race style racetype, where the player would go through each checkpoint one time (in any order that they can come across the checkpoints) and then the race would be finished. With laps mode, once all checkpoints have been triggered (hide and seek is in any order, there is no first or last hoop) all will once again reset. ((this does mean you can turn around and go right back the way you came, although there may be considerations if some checkpoints require weights!)) \n\nWith normal laps, if a weight is required and carried and then left somewhere, it will stay there on the start of the next lap, however with \"weights reset\" mode, once the next lap has begun, the weights will return to their initial start location. \n\nThere is a NEW way to program \"needs weight\" into courses. This is highly desirable as previously it was possible for the player to leave the weight somewhere other than its intended reset location, which might cause this weight to have a new reset location by accident. Using the new system, the player can press \"p\" while building race to spawn a \"weight programmer\" which is represented by a bubble around the player. While this bubble is active, all hoops the player flies through (to add to race) will now require weights to be connected during the race. So the new best practice for programming course orders using dockable weights is as follows: \n\nin spaysmode, place the hoops and weights as desired. Then, press \"f1\" while in spaysmode to enter \"building race\" mode. fly through each hoop in order, and as normal to add a dockable weight fly into the docking position of the weight and when prompted press \"dock\" (spacebar) to add the weight as a checkpoint. Then, move away from the weight and press \"p\" to spawn the \"weight programmer\" bubble. While the bubble is active, all hoops the player moves through to add, will now require that a weight is connected. To add a weight-dock, move up to the weightdock with the bubble and when prompted press \"dock\" (spacebar) to add the weightdock, then press \"p\" to deactivate the weight programmer, then move through the remaining checkpoints without the bubble to add these checkpoints as \"does not need weight\". \n\ndockable weights are only available to the following vehicles and all other vehicles do not have the option to have hideandseek weights reset ::: SV, SVS, Loader, Rockhopper.. The existing laps with weights reset on all other vehicles is benign at present although this may change however docking without RCS would be extremely difficult so a different connection technique would be required. \n\nHideAndSeek will also allow for needs-weight, so although there is no order to the checkpoints, the player must first dock to a weight in order to trigger a checkpoint that needs weight. In normal ordered racing, a HUD text will notify the player if a checkpoint needs weight, but in HideAndSeek, there is no \"next hoop\" , so a small blue-purple ring will appear in front of all checkpoints that need weight! \n\n",
+      "key": "2685150::02ea3c166992871c92b31dc7302a8f9d0cfc2f21",
+      "tags": [
+        {
+          "feature": "Changed from compound box colliders to mesh colliders in HDscifi scenes."
+        },
+        {
+          "feature": "racesettings updates ::: new racetypes :::: HideAndSeek Laps  ,,,, HideAndSeek Laps (weights reset)"
+        },
+        {
+          "feature": "There is a NEW way to program \"needs weight\" into courses."
+        },
+        {
+          "feature": "Using the new system, the player can press \"p\" while building race to spawn a \"weight programmer\" which is represented by a bubble around the player."
+        },
+        {
+          "feature": "dockable weights are only available to the following vehicles and all other vehicles do not have the option to have hideandseek weights reset ::: SV, SVS, Loader, Rockhopper.."
+        },
+        {
+          "feature": "HideAndSeek will also allow for needs-weight, so although there is no order to the checkpoints, the player must first dock to a weight in order to trigger a checkpoint that needs weight."
+        }
+      ]
+    },
+    {
+      "title": "race-settings changes",
+      "date": "2024-04-20 23:54:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5762994032400387994",
+      "content": "hullcam menu button in pause menu. Previously hullcams menu was accessible only by button press. It is now available from the in-game pause menu as well. hullcam settings save unique to each vehicle. The hullcam positioning will apply to ALL scenes for that particular vehicle type, but will NOT apply to any other vehicle, each vehicle must be set up independently although the most likely scenario is that these cameras will need to be uniquely positioned for each race. \n\nadded snap-look reverse to space-vehicle. (there is no actual hardware visible on the space-vehicle however it may be desired by the player particularly after using it so frequently on the duckys) \n\nrace-settings changes: These changes are accessible from the pause menu in the \"race settings\" menu. These settings will save the saved level as with the other race-settings. \n\n-skip next-to-last checkpoint on last lap. \nIt was already possible to have the last checkpoint work on the last lap only. (for example to have a dockport or landing pad be the final race checkpoint) ... Now it is possible to skip the 2nd to last checkpoint on the last lap if the last checkpoint is also last-lap only. One logical use-case is where the dockport/landing pad might be the final checkpoint, but the player wants the race to move past this checkpoint each lap, so places a hoop nearby the port/pad, but does NOT want the race to have to move through this hoop when the player approaches the pad itself. \n\n-timer on lasthoop or timer on firsthoop. \nPreviously the laptimer would begin counting a new lap only on the first checkpoint of the next lap. However depending on start location or player preferences, it may be desired that the laptimer begins counting the new lap on the last checkpoint of the previous lap. \n\nfull rundown of race-settings that save with player-saves :: racetype, timertype, lasthoop type, ignore weights, laptimer reset checkpoint",
+      "key": "2685150::ac11676c840906c982c0ca5f2a97492d7d6495cb",
+      "tags": [
+        {
+          "feature": "hullcam menu button in pause menu. Previously hullcams menu was accessible only by button press. It is now available from the in-game pause menu as well."
+        },
+        {
+          "feature": "hullcam settings save unique to each vehicle. The hullcam positioning will apply to ALL scenes for that particular vehicle type, but will NOT apply to any other vehicle, each vehicle must be set up independently although the most likely scenario is that these cameras will need to be uniquely positioned for each race."
+        },
+        {
+          "feature": "added snap-look reverse to space-vehicle. (there is no actual hardware visible on the space-vehicle however it may be desired by the player particularly after using it so frequently on the duckys)"
+        },
+        {
+          "feature": "race-settings changes: These changes are accessible from the pause menu in the \"race settings\" menu. These settings will save the saved level as with the other race-settings."
+        },
+        {
+          "feature": "-skip next-to-last checkpoint on last lap."
+        },
+        {
+          "feature": "-timer on lasthoop or timer on firsthoop."
+        },
+        {
+          "feature": "full rundown of race-settings that save with player-saves :: racetype, timertype, lasthoop type, ignore weights, laptimer reset checkpoint"
+        }
+      ]
+    },
+    {
+      "title": "little changes (not fixes)",
+      "date": "2024-04-16 00:49:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312198095091",
+      "content": "replay campaign button on endscreen \n\nadded front facing light to hoppers that will be affected by headlight/landinglight controls. This light is not presently independently toggleable, it will come on, off, and change intensity with the landing light only. I have found it to be useful particularly in the newly added to hoppers tunnel sections, particularly in darker scenes. \n\n",
+      "key": "2685150::b00011c8f4ac9c9aba808b142b46292150238407",
+      "tags": [
+        {
+          "feature": "replay campaign button on endscreen"
+        },
+        {
+          "feature": "added front facing light to hoppers that will be affected by headlight/landinglight controls. This light is not presently independently toggleable, it will come on, off, and change intensity with the landing light only. I have found it to be useful particularly in the newly added to hoppers tunnel sections, particularly in darker scenes."
+        }
+      ]
+    },
+    {
+      "title": "proliferated items, small fixes, pages for racehistory",
+      "date": "2024-04-15 18:09:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312197084367",
+      "content": "racehistory will display a single page until page is full (200 entries), then will roll that page to a new file and restart page 1. \n\nnew billboards to hoppers. \n\nexperimental tunnel section to hoppers, including spin-grav hoppers. \n\nfixed spin-grav OGH, TGH item not selecting from f3 menu. \n\nwhen switching to back from spaysmode, ship will attempt to match appropriate velocity to reacquire gravity without requiring the resetlocation.",
+      "key": "2685150::1e72032352359910ed4fcd35cc0dc4d0d07d8cf4",
+      "tags": [
+        {
+          "feature": "racehistory will display a single page until page is full (200 entries), then will roll that page to a new file and restart page 1."
+        },
+        {
+          "feature": "new billboards to hoppers."
+        },
+        {
+          "feature": "experimental tunnel section to hoppers, including spin-grav hoppers."
+        },
+        {
+          "bug": "fixed spin-grav OGH, TGH item not selecting from f3 menu."
+        },
+        {
+          "feature": "when switching to back from spaysmode, ship will attempt to match appropriate velocity to reacquire gravity without requiring the resetlocation."
+        }
+      ]
+    },
+    {
+      "title": "added more placeable objects for spacecrafts",
+      "date": "2024-04-15 00:23:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6474562312194384795",
+      "content": "small details: fixed racetype not updating in end-of-race popup for campaigns. \n\nchanged highlighted color for some buttons. \n\nadded some more billboards and neon ads to SV, L, FO, RD, TGD, VV",
+      "key": "2685150::9a9f745d5cc261492c3bd315c379a3ca37380543",
+      "tags": [
+        {
+          "feature": "added some more billboards and neon ads to SV, L, FO, RD, TGD, VV"
+        }
+      ]
+    },
+    {
+      "title": "oops fix",
+      "date": "2024-03-26 00:09:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301734817454",
+      "content": "fixed campaign creator menu erasing added saves when new scene is selected.",
+      "key": "2685150::2759dbd20e3ac231f1900bddad44de7feb847a7f",
+      "tags": [
+        {
+          "bug": "fixed campaign creator menu erasing added saves when new scene is selected."
+        }
+      ]
+    },
+    {
+      "title": "Moonar Cave Explorer scene",
+      "date": "2024-03-11 01:02:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637665500445",
+      "content": "added \"Moonar Cave Explorer\" to hopper vehicles.",
+      "key": "2685150::7dcc5f1663831f2decdbd23a5d90d85e6fa76774",
+      "tags": [
+        {
+          "feature": "added \"Moonar Cave Explorer\" to hopper vehicles."
+        }
+      ]
+    },
+    {
+      "title": "added Ganymede 1970 to hoppers",
+      "date": "2024-03-09 17:52:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5679673637660919619",
+      "content": "added new scene \"Ganymede 1970\" to hoppers",
+      "key": "2685150::fd867e7f13c4275635cacfccb421f8d7526861d2",
+      "tags": [
+        {
+          "feature": "added new scene \"Ganymede 1970\" to hoppers"
+        }
+      ]
+    },
+    {
+      "title": "ported experimental levels to other hoppers",
+      "date": "2024-02-24 16:41:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065190493637",
+      "content": "added the experimental levels to other hoppers.",
+      "key": "2685150::b6ab42461a8bcdc6b058348b6c6718c09c243360",
+      "tags": [
+        {
+          "feature": "added the experimental levels to other hoppers."
+        }
+      ]
+    },
+    {
+      "title": "ghost colliders removed",
+      "date": "2024-02-24 13:15:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065189972953",
+      "content": "fixed invisible cars (colliders only) would fly around.",
+      "key": "2685150::57ab45a79b3b51b01ffcce012c1db403fa634040",
+      "tags": [
+        {
+          "bug": "fixed invisible cars (colliders only) would fly around."
+        }
+      ]
+    },
+    {
+      "title": "box to mesh colliders",
+      "date": "2024-02-22 03:32:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065181204905",
+      "content": "changed several box to mesh colliders in lowpoly lunar surface 2242",
+      "key": "2685150::747943c68529bdb30bd1926f01dbf94a62ee8202",
+      "tags": [
+        {
+          "balance_change": "changed several box to mesh colliders in lowpoly lunar surface 2242"
+        }
+      ]
+    },
+    {
+      "title": "added lowpoly cyberpunk scene",
+      "date": "2024-02-22 02:11:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065180998732",
+      "content": "Added a lowpoly urban setting titled \"LowPoly Lunar Surface 2242\" which is a lowpoly cyberpunk scene.",
+      "key": "2685150::440f2ba77994814c50361365588f7c3aca6bc29b",
+      "tags": [
+        {
+          "feature": "Added a lowpoly urban setting titled \"LowPoly Lunar Surface 2242\" which is a lowpoly cyberpunk scene."
+        }
+      ]
+    },
+    {
+      "title": "\"round\" hoop test for spin-drum test",
+      "date": "2024-02-19 16:09:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544508268577",
+      "content": "added a \"round\" hoop to the spin-drum test.",
+      "key": "2685150::67d3b32e5f617087979323c5ef1ccd573b90707d",
+      "tags": [
+        {
+          "feature": "added a \"round\" hoop to the spin-drum test."
+        }
+      ]
+    },
+    {
+      "title": "fix",
+      "date": "2024-02-17 19:37:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/8033928544501504572",
+      "content": "fixed inverted pitch on spin-gravity test warpship",
+      "key": "2685150::20a3d5f5969e8a3f41ff7c6da0d4cf166b8f6b61",
+      "tags": [
+        {
+          "bug": "fixed inverted pitch on spin-gravity test warpship"
+        }
+      ]
+    },
+    {
+      "title": "fix",
+      "date": "2024-02-07 19:10:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5589599109263238982",
+      "content": "fixed slow duckies",
+      "key": "2685150::b580b9d87a12ae4fc686f889338b8d25b308ca05",
+      "tags": [
+        {
+          "bug": "fixed slow duckies"
+        }
+      ]
+    },
+    {
+      "title": "fix no sound TGD",
+      "date": "2024-02-04 18:17:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5582843074953250694",
+      "content": "fixed sound for TGD\nupdated credits",
+      "key": "2685150::6d36a16855cdcdede43d6703e0b42a41398f19f9",
+      "tags": [
+        {
+          "bug": "fixed sound for TGD"
+        }
+      ]
+    },
+    {
+      "title": "added \"half reverse, quarter reverse\" to SV (drone)",
+      "date": "2024-01-26 23:10:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046254223287",
+      "content": "added a larger version of all thinhoops to loader, RD, TGD, and FOV\n\nadded a \"half reverse\" and \"Quarter Reverse\" toggle in the \"other ship settings\" also available for keybind. \n\nThe new default other ship settings for the SV is halfreverse, halflats",
+      "key": "2685150::1a2087f6933c6354145c5384b0c9b91a41b7c3f8",
+      "tags": [
+        {
+          "feature": "added a larger version of all thinhoops to loader, RD, TGD, and FOV"
+        },
+        {
+          "feature": "added a \"half reverse\" and \"Quarter Reverse\" toggle in the \"other ship settings\" also available for keybind."
+        }
+      ]
+    },
+    {
+      "title": "oops.. NOW its right",
+      "date": "2024-01-25 02:07:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5519792046247379221",
+      "content": "fixed terrain texture misalignment after reducing resolution \n\nadded a number of \"thinhoops\" to SV , RH, OGH, TGH.  \n\nloader, Fo, Ducky, and tgd will get \"thinhoops\" in the future.",
+      "key": "2685150::5ca3ca86e37821a1c93e008e9a6bd3cb672c29b3",
+      "tags": [
+        {
+          "bug": "fixed terrain texture misalignment after reducing resolution"
+        },
+        {
+          "feature": "added a number of \"thinhoops\" to SV , RH, OGH, TGH."
+        }
+      ]
+    },
+    {
+      "title": "more scenes for hoppers",
+      "date": "2024-01-23 09:47:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213116369214",
+      "content": "added \n\"distant moon\" , \"icy moon\", and \"lunar surface 4.5billion bc\"",
+      "key": "2685150::0433e5cfca95661f5787e8d8b820e539bd87f447",
+      "tags": [
+        {
+          "feature": "\"distant moon\" , \"icy moon\", and \"lunar surface 4.5billion bc\""
+        }
+      ]
+    },
+    {
+      "title": "added \"red moon\" to hoppers",
+      "date": "2024-01-21 13:32:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213109648380",
+      "content": "added red moon to hoppers.",
+      "key": "2685150::0d6708a65ea5cda1856cea03b8d818b77d35c00d",
+      "tags": [
+        {
+          "feature": "added red moon to hoppers."
+        }
+      ]
+    },
+    {
+      "title": "added \"dark moon\" level to hoppers",
+      "date": "2024-01-21 12:33:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213109499337",
+      "content": "added dark moon to hoppers. \n\nfixed smallshiphatchopen connector position",
+      "key": "2685150::9607d8734866a80d45952ade5a3afff9f049a184",
+      "tags": [
+        {
+          "feature": "added dark moon to hoppers."
+        },
+        {
+          "bug": "fixed smallshiphatchopen connector position"
+        }
+      ]
+    },
+    {
+      "title": "slightly improved resolution support, more props",
+      "date": "2024-01-20 16:55:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5510784213106518459",
+      "content": "slight adjustments to the HUD layout and the way menus react to screen resolution to favor widescreens. (still temporary newb fix) \n\nadded \"polystyle distant station\" to OGH and TGH. \n\nadded some new placeable objects to all hoppers. \n\n",
+      "key": "2685150::8d36a63e2af7c0382aef94fb5ff8d868888cba2f",
+      "tags": [
+        {
+          "feature": "added \"polystyle distant station\" to OGH and TGH."
+        },
+        {
+          "feature": "added some new placeable objects to all hoppers."
+        }
+      ]
+    },
+    {
+      "title": "fixed dockpad would not add to race OGH",
+      "date": "2024-01-13 01:34:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6300039510126005614",
+      "content": "the dockpad was not adding to race for the OGH . It now works\n\nadded \"pad3\" to OGH",
+      "key": "2685150::f73278d473f4dfa431f638328450715f3c6e366a",
+      "tags": [
+        {
+          "bug": "the dockpad was not adding to race for the OGH . It now works"
+        },
+        {
+          "feature": "added \"pad3\" to OGH"
+        }
+      ]
+    },
+    {
+      "title": "hotfix hullcams would go wonky in menu when selected",
+      "date": "2024-01-09 01:02:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585198121457",
+      "content": "when selecting hullcams they would occasionally rotate to extreme angles for no apparent reason. \n\nit appears to be fixed.",
+      "key": "2685150::9aa0403950a813ba9a77a3f287e09db4e203b45d",
+      "tags": [
+        {
+          "bug": "when selecting hullcams they would occasionally rotate to extreme angles for no apparent reason."
+        }
+      ]
+    },
+    {
+      "title": "hotfix hopper placeable cams rotating wonky axis",
+      "date": "2024-01-08 23:06:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585197826947",
+      "content": "when the player would interact with the hopper vehicle placeable cam angle controls, the cameras would rotate on unusual axis and would not aim correctly. \n\nfixed.",
+      "key": "2685150::fe7f12af6469ed2758cf7ca487491ff3097e0077",
+      "tags": [
+        {
+          "bug": "when the player would interact with the hopper vehicle placeable cam angle controls, the cameras would rotate on unusual axis and would not aim correctly. \n\nfixed."
+        }
+      ]
+    },
+    {
+      "title": "hotfix",
+      "date": "2024-01-07 23:31:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585194246244",
+      "content": "placeable cameras not functioning rockhopper and one-gimbal hopper",
+      "key": "2685150::221b937daa0633a7ad0d42ffeca198e9c51461fe",
+      "tags": [
+        {
+          "bug": "placeable cameras not functioning rockhopper and one-gimbal hopper"
+        }
+      ]
+    },
+    {
+      "title": "hotfix advanced settings not opening",
+      "date": "2024-01-04 01:08:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585179912468",
+      "content": "fixed advanced settings won't open.",
+      "key": "2685150::44d86ee316361b194f0f60f6d33ff09cb0502a94",
+      "tags": [
+        {
+          "bug": "fixed advanced settings won't open."
+        }
+      ]
+    },
+    {
+      "title": "hotfix",
+      "date": "2024-01-03 22:57:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585179580755",
+      "content": "control mapper will no longer unassign controller from one config when assigning it to another, meaning that all config slots can be simultaneously live with individual configs for a single controller.",
+      "key": "2685150::b8225919e22f7f05bf5f1317cb410c800f723b41",
+      "tags": [
+        {
+          "bug": "control mapper will no longer unassign controller from one config when assigning it to another, meaning that all config slots can be simultaneously live with individual configs for a single controller."
+        }
+      ]
+    },
+    {
+      "title": "hotfix",
+      "date": "2023-12-26 04:16:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585147590709",
+      "content": "fixed main menu music slider would not work on first load, only when returning to main menu\n\nfixed navball in gimbal-only rocket wonky in one direction\n\nfixed shipvolume slider in gimbal-only rocket selected by player gameplay input, with value changing as player flew ship \n\n",
+      "key": "2685150::39b99c888d89b3ef92e20195a4ffc30501fe1cb7",
+      "tags": [
+        {
+          "bug": "fixed main menu music slider would not work on first load, only when returning to main menu"
+        },
+        {
+          "bug": "fixed navball in gimbal-only rocket wonky in one direction"
+        },
+        {
+          "bug": "fixed shipvolume slider in gimbal-only rocket selected by player gameplay input, with value changing as player flew ship"
+        }
+      ]
+    },
+    {
+      "title": "hotfix",
+      "date": "2023-12-24 23:37:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585143238677",
+      "content": "when deactivating rotation assist, ship thrusters would remain visibly on if they were on for rotation assist. (they would not provide thrust, but would make sound and be visible) \n\nfixed",
+      "key": "2685150::08f45a363fd0b8211638d2c49d9c0a74ddb02482",
+      "tags": [
+        {
+          "bug": "when deactivating rotation assist, ship thrusters would remain visibly on if they were on for rotation assist. (they would not provide thrust, but would make sound and be visible) \n\nfixed"
+        }
+      ]
+    },
+    {
+      "title": "Rotation Assist Update part 1",
+      "date": "2023-12-24 05:10:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5410576585140438179",
+      "content": "[img]{STEAM_CLAN_IMAGE}/44752707/709cac3ddc03fe10882c5fed107d8e26a2c0921a.png[/img]\n\nNew Rotation Assist modes : \n- All axis independently stabilize \n- Roll axis only independently stabilizes, pitch and yaw are linked. \n- Roll axis only stabilizes, pitch and yaw do not stabilize \n- All axis are linked, no stabilization until player rotation input is zero. \n\nRotation assist improvements with weights connected: rotation assist arrest rotation a little faster with weights connected. part 2 will hopefully have better smoothing without sacrificing the rate of arrest. I may make some options for rotation assist while weights are connected, although I do not plan to pursue the ultimate goal of full \"robotic tuning\" features in the near future. Just some preset tunings. Rotation assist does not exceed max rotation thrust available to the player in manual mode (anymore) under any circumstance.  (there was a little spike when approaching zero previously, not noticeable but not fair) \n\n[url={STEAM_CLAN_IMAGE}/44752707/928875ee53168c781bcbd89847cf06ce365b44c9.png][img]{STEAM_CLAN_IMAGE}/44752707/a78d22c0e77690f02d7ac720807c64151a34af09.png[/img][/url]\n\nRubber Ducky gimbal is now on a frame filter, which may need tuning. Part 2 of the update may see a slider setting so that the player can make the tail wag faster or slower to preference. Overall the mass to thrust ration of the rubber ducky means that as long as it doesn't take a whole second to aim the gimbal, overall performance will be about the same for the player, so in part it's just a visual preference, although my objective is to have a hard limitation that simulates the limitations of machine part acceleration,, and with spacecraft machine parts must be lighter more importantly than stronger, so I intend to have some degree of \"slowness\" in the gimbal translation,, at least such that the translation is visible, although not sluggish. This filter is unfortunately not in the fixed update and therefore a faster computer will have a different performance than a slower computer, although I do not want to update my filter in the fixed update as I am tracking player input in the update function. Therefore this setting may be included so that potato computers or racehorse computers can result in a pleasant visual experience from the stabilization wobbles while under thrust etc. (It uses the gimbal rocket for rotation stabilization)\n\nsome little fixes here and there, but a big fix to the \"other ship settings\" menu's accessed from the ships submenus (not from the pause menu, but via the main menu) where none of the toggles were loading at the correct setting and changing a setting would set all of the players previously set settings from other menus to options that had numbers that did not even exist in the game code ... ?? NOw it is necessary to have a \"save\" button in this menu although I imagine some players won't be happy without one anyway. \n\nall of the various cameras now have the same \"post processing\" settings, which will certainly change as I experiment in the future. \n\nother fixes not worth listing. \n\npart 2 expectations :: well I like how the mechanicalness of some of the vehicles stabilization is while connected to a weight. I know I should just smooth everything out, but will leave that for later in hopes that some players play the current stabilization and have an experience with it. also, stabilization loops are an arena of virtually infinite technological advancement, and therefore i COULD try to learn all sorts of things to include related to it, so most likely I will try to find a way to keep it rough for now, while offering smoothing for those who just can't stand it, with the future plan of trashing the entire current system in favor of a proper one. \n\nI may work on a \"rockhopper ducky\" or maybe not until after christmas, so perhaps for the part 2 the \"rubber ducky tests\" from the main menu will be replaced by a gimbal rocket lander test. \n\n",
+      "key": "2685150::7b300484df19358995565f27ecffb11296e23e46",
+      "tags": [
+        {
+          "feature": "- All axis independently stabilize "
+        },
+        {
+          "feature": "- Roll axis only independently stabilizes, pitch and yaw are linked. "
+        },
+        {
+          "feature": "- Roll axis only stabilizes, pitch and yaw do not stabilize "
+        },
+        {
+          "feature": "- All axis are linked, no stabilization until player rotation input is zero. "
+        },
+        {
+          "bug": "- Now it is necessary to have a \"save\" button in this menu although I imagine some players won't be happy without one anyway."
+        }
+      ]
+    },
+    {
+      "title": "rubber ducky test",
+      "date": "2023-12-17 17:27:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5409450219984924908",
+      "content": "added \"Rubber Ducky Test\" accessible from the main menu. \n\nJust press \"esc\" to return to the main menu!",
+      "key": "2685150::8121f209111040984079234280250bae8fa16efd",
+      "tags": [
+        {
+          "feature": "- added \"Rubber Ducky Test\" accessible from the main menu."
+        }
+      ]
+    },
+    {
+      "title": "added some scenes for FO and RH",
+      "date": "2023-12-09 10:17:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616802049129",
+      "content": "added a couple of scenes to FO including one new scene only available to FO presently. \n\nRH now has \"distant lowpoly\" scene as well",
+      "key": "2685150::a55969d9bb734193855b70c282f6631784851cba",
+      "tags": [
+        {
+          "feature": "added some scenes for FO and RH"
+        },
+        {
+          "feature": "added a couple of scenes to FO including one new scene only available to FO presently."
+        },
+        {
+          "feature": "RH now has \"distant lowpoly\" scene as well"
+        }
+      ]
+    },
+    {
+      "title": "added more placeable objects",
+      "date": "2023-12-08 09:32:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395938616798290109",
+      "content": "added some new objects to space vehicles (not rockhopper) \n\nfilled out the forward only vehicle placeable objects to include more of the objects available to spacevehicle\n\nseveral new large objects to build courses around!",
+      "key": "2685150::1e1e315834d23687a505b8db0c29d881e0c25dae",
+      "tags": [
+        {
+          "feature": "added some new objects to space vehicles (not rockhopper)"
+        },
+        {
+          "feature": "filled out the forward only vehicle placeable objects to include more of the objects available to spacevehicle"
+        },
+        {
+          "feature": "several new large objects to build courses around!"
+        }
+      ]
+    },
+    {
+      "title": "more placeable objects",
+      "date": "2023-12-03 17:09:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983673358253",
+      "content": "added some more placeable objects",
+      "key": "2685150::d45e5e63b417e13ac9c4e5613f231ac8980f5de1",
+      "tags": [
+        {
+          "feature": "added some more placeable objects"
+        }
+      ]
+    },
+    {
+      "title": "just some materials fixes",
+      "date": "2023-12-02 20:50:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5395937983670272650",
+      "content": "fixed tie fighter panels\n\nadded proper CC credits",
+      "key": "2685150::310f3987e5bd714e279e1c7f7b9bbaa57945f7ce",
+      "tags": [
+        {
+          "bug": "fixed tie fighter panels"
+        },
+        {
+          "feature": "added proper CC credits"
+        }
+      ]
+    }
+  ]
+}

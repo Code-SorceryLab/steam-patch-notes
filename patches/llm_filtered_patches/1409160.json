@@ -1,0 +1,555 @@
+{
+  "appId": "1409160",
+  "count": 14,
+  "notes": [
+    {
+      "title": "Update 0.4.0.0",
+      "date": "2024-02-20 18:25:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5728086065176174083",
+      "content": "Dear Engineers,\n\nWe're excited to push our first update out since resuming development.\n\nToday we're bringing some commonly requested features and improvements, thanks to everyone who is contributing with their ideas and feedback on the forums and on our friendly [url=https://discord.gg/4uXT5uxHqC]Discord[/url] server.\n\n[h3]Offset Changes[/h3]\nWe've changed the Offset operation to now support all 3 axis and increased the maximum amount of offset available to 0.5m, this should make life easier when building intricate models.\n[img]{STEAM_CLAN_IMAGE}/42952921/edf6e2d9413835dee6e41cab94d15f644b3c2eef.gif[/img]\n\n\n[h3]Component Spawner Additions[/h3]\nComponent Spawner now features two new properties:\n[list]\n[*]Lifetime: Allows you to define a time after which the spawned component will auto-destroy\n[*]Force: Applies a force to the spawned object\n[/list]Now you can finally make that tennis ball thrower you've been dreaming about!\n[img]{STEAM_CLAN_IMAGE}/42952921/e09762c152f3f824e25abe8b7a26390f94de51b3.gif[/img]\n\n[h3]Other Changes[/h3]\nIn no particular order:\n[list]\n[*]Gamepad Interface: Added 'Enabled' property to quickly enable/disable input\n[*]Raw Mechanic Components: Added 'Friction' property to allow for things like buttery smooth bearings or strong brakes \n[*]Character Movement: Added ability to change volume of character movement sound\n[*]Device Controller: Added 'Reset' Command to allow resetting a Device through Sketch (useful in Staged worlds)\n[/list]\n\nAs always please let us know if you find any issues or have any suggestions.\nThanks!\n",
+      "key": "1409160::9160216ccbdad210bb252cb7907332074fb692ff",
+      "tags": [
+        {
+          "feature": "We've changed the Offset operation to now support all 3 axis and increased the maximum amount of offset available to 0.5m, this should make life easier when building intricate models."
+        },
+        {
+          "feature": "Component Spawner now features two new properties:"
+        },
+        {
+          "feature": "Lifetime: Allows you to define a time after which the spawned component will auto-destroy"
+        },
+        {
+          "feature": "Force: Applies a force to the spawned object"
+        },
+        {
+          "feature": "Gamepad Interface: Added 'Enabled' property to quickly enable/disable input"
+        },
+        {
+          "feature": "Raw Mechanic Components: Added 'Friction' property to allow for things like buttery smooth bearings or strong brakes"
+        },
+        {
+          "feature": "Character Movement: Added ability to change volume of character movement sound"
+        },
+        {
+          "feature": "Device Controller: Added 'Reset' Command to allow resetting a Device through Sketch (useful in Staged worlds)"
+        }
+      ]
+    },
+    {
+      "title": "Milestone 1 - Closed Loops",
+      "date": "2023-06-12 13:46:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5129083846354260062",
+      "content": "[img]{STEAM_CLAN_IMAGE}/42952921/25deee1acb25be00c817b32ee57c39de0b7ada72.png[/img]\n\nHey there Engineers!\n\nIt\u2019s already been 2 months since the Early Access release, it has been amazing to see what the community is coming up with and the creativity and ingenuity shown by creators on the Workshop. On our end we\u2019ve been hard at work fixing bugs and closely following the community\u2019s needs, and today we\u2019re happy to finally reach our first milestone: [b]Closed Loops![/b]\n\nOne of the unique aspects of Plasma is its physics engine, which uses articulated bodies to simulate joint movement - a technology normally used in robotics simulations due to its accuracy and rigidity.\nOne of the downsides however is the inherent inability to form closed mechanical loops - until now! By making use of a rigid body constraint between the articulated bodies we can form closed loops, these won\u2019t be as rigid as the rest of the Device but work very well in most scenarios.\n\n[img]{STEAM_CLAN_IMAGE}/42952921/7e830ab8f1d87ac135a916dfda3921dde1d445f7.png[/img]\n\nWhen two [b]Joiners [/b]belong to the same group and are overlapping, a temporary mechanical join can be formed.\n\nWhen the [b]Joiners [/b]belong to the same Device, mechanical loops become possible.\n\n[img]{STEAM_CLAN_IMAGE}/42952921/522ce4ba1c789291afdb881c0df82d6923631194.gif[/img]\n\nJoins can also be made between separate devices!\n\n[img]{STEAM_CLAN_IMAGE}/42952921/caba0a3d101278f3a548afa0b8d0675fb4528eb5.gif[/img]\n\n\n[img]{STEAM_CLAN_IMAGE}/42952921/9962b579a1a032192f485dc302ccbd0df29e63a9.png[/img]\n\nA [b]Separator [/b]works a bit differently from a Joiner, it is designed to split off parts of a Device during simulation, think along the lines of a rocket shedding its boosters.\n\n[img]{STEAM_CLAN_IMAGE}/42952921/87b8bd893b0720b8b5c1e0cefba6ef52d25b5bf8.gif[/img]\n\nOr a drone separating from another vehicle.\n\n[img]{STEAM_CLAN_IMAGE}/42952921/03fd8676f6dc0dd4f88b8d55987573c0c408e863.gif[/img]\n\n[h3]Force/Torque Outputs[/h3]\nAll mechanical components with an internal link (ex: Hinges, Motors, Extenders) now output their applied force at the last simulation step, a very useful piece of information in robotics applications and a prerequisite for self-balancing robots.\n\n[img]{STEAM_CLAN_IMAGE}/42952921/61aec4a31646e4cab8108f6a1c1e724662d144f7.gif[/img]\n\n[h3]Linear and Angular Drag Fix[/h3]\nThe kind folk over at Unity 3D (the game engine we use) fixed a bug that caused linear and angular drag values to be applied incorrectly to articulation bodies during simulation.\nThis update includes the fix, but we had to revert linear drag values to the default in your saved Devices so you might need to re-adjust the value if you had previously changed it.\n\n[h3]Showcase World[/h3]\nWe also published the world containing all the devices you see here, so you can try them out yourself. The world is called \"[b]Closed Loops Showcase[/b]\" and its ID is [b]2988402150[/b].\n\n[h3]Roadmap Updated[/h3]\nSince we reached our first milestone, we've also updated our roadmap to show you what we have in store!\n\n[url=https://plasma.game/roadmap.png][img]{STEAM_CLAN_IMAGE}/42952921/5c284a7f963c5337498692399088b3c35f90855d.png[/img][/url]\n\nThat's it for our first milestone!\nWe hope you'll enjoy this update and we can't wait to see what you'll come up with!\n\n- Marco, Patrick, J\u00f3i, Javier, Michele, and Merlo",
+      "key": "1409160::7271595e096e931d32a51d1736c0af801f5d172d",
+      "tags": [
+        {
+          "bug": "On our end we\u2019ve been hard at work fixing bugs and closely following the community\u2019s needs, and today we\u2019re happy to finally reach our first milestone: Closed Loops!"
+        },
+        {
+          "feature": "By making use of a rigid body constraint between the articulated bodies we can form closed loops, these won\u2019t be as rigid as the rest of the Device but work very well in most scenarios."
+        },
+        {
+          "feature": "When two Joiners belong to the same group and are overlapping, a temporary mechanical join can be formed."
+        },
+        {
+          "feature": "When the Joiners belong to the same Device, mechanical loops become possible."
+        },
+        {
+          "feature": "Joins can also be made between separate devices!"
+        },
+        {
+          "feature": "A Separator works a bit differently from a Joiner, it is designed to split off parts of a Device during simulation, think along the lines of a rocket shedding its boosters."
+        },
+        {
+          "feature": "All mechanical components with an internal link (ex: Hinges, Motors, Extenders) now output their applied force at the last simulation step, a very useful piece of information in robotics applications and a prerequisite for self-balancing robots."
+        },
+        {
+          "bug": "The kind folk over at Unity 3D (the game engine we use) fixed a bug that caused linear and angular drag values to be applied incorrectly to articulation bodies during simulation."
+        },
+        {
+          "feature": "We also published the world containing all the devices you see here, so you can try them out yourself."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix for 0.3.1.1",
+      "date": "2023-05-22 10:37:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943320003018",
+      "content": "[b]FIXES[/b]\n[list]\n[*]Fixed an issue that would crash the game when interacting with a Text property in several components and nodes.\n[*]The \"[b][i]Despawner[/i][/b]\" component now correctly despawns devices that are very close to it.\n[*]The \"[b][i]Color Painter[/i][/b]\" component is now allowed to paint in a staged world where the player has no permission to paint.\n[*]The \"[b][i]Glass Part D[/i][/b]\" component is no longer missing the \"[b][i]Glass Opacity[/i][/b]\" property.\n[*]Fixed the \"[b][i]Fill Rect[/i][/b]\" command on the \"[b][i]Shape Drawer[/i][/b]\" node.\n[*]Fixed an artifact in the \"[b][i]Quarter Tube Window[/i][/b]\" component.\n[/list]\n",
+      "key": "1409160::46ba5811a1334cca763fcabc7bddbb9fb4bcee50",
+      "tags": [
+        {
+          "bug": "Fixed an issue that would crash the game when interacting with a Text property in several components and nodes."
+        },
+        {
+          "bug": "The \"Despawner\" component now correctly despawns devices that are very close to it."
+        },
+        {
+          "bug": "The \"Color Painter\" component is now allowed to paint in a staged world where the player has no permission to paint."
+        },
+        {
+          "bug": "The \"Glass Part D\" component is no longer missing the \"Glass Opacity\" property."
+        },
+        {
+          "bug": "Fixed the \"Fill Rect\" command on the \"Shape Drawer\" node."
+        },
+        {
+          "bug": "Fixed an artifact in the \"Quarter Tube Window\" component."
+        }
+      ]
+    },
+    {
+      "title": "Minor Update - 0.3.1.1",
+      "date": "2023-05-19 12:43:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340943309388525",
+      "content": "Welcome to another exciting update. The drones at PlasmaLabs Inc. are especially proud of this one!\n\n[b]IMPROVEMENTS[/b]\n[list]\n[*]Added the \"[b][i]Net Link[/i][/b]\" component: it allows you to execute web requests. You can use it to talk to REST servers and retrieve or post data. It supports text and images. We are pretty excited about this one!\n[*]Added the \"[b][i]Hex Arch[/i][/b]\" and \"[b][i]Semi Hex Arch[/i][/b]\" components. They fit very well with the glass components we added in the previous update.\n[*]Added the \"[b][i]Mini Docking Station[/i][/b]\" component. It's basically a smaller and less intrusive version of the \"[b][i]Docking Station[/i][/b]\" component.\n[*]Added the \"[b][i]JSON Inspector[/i][/b]\" node. You can use it to query or traverse a JSON blob. The perfect companion for the \"[b][i]Net Link[/i][/b]\" component!\n[*]Added the \"[b][i]Sound Fetcher[/i][/b]\" node. It allows you to get a sound asset by its name.\n[*]Added the \"[b][i]Text Array Converter[/i][/b]\" and \"[b][i]Number Array Converter[/i][/b]\" nodes to easily go from Text to TextArray or NumberArray, and viceversa.\n[*]Added the \"[b][i]Component Checker[/i][/b]\" node to be able to check if a specific component exists on the device.\n[*]Added an \"[b][i]Autosize\"[/i][/b] property to both the \"[b][i]Label[/i][/b]\" and \"[b][i]Emissive Label[/i][/b]\" components.\n[*]Added a button on both Device and World popups to open the Steam overlay on the selected workshop item.\n[*]Improved the \"[b][i]UI Button[/i][/b]\" node. It now allows you to have a payload that is output when the button is clicked.\n[*]Improved the \"[b][i]Text Manipulator[/i][/b]\" node. You can now escape and unescape URLs.\n[*]Improved nodes documentation: thanks to the help of members of our fantastic community, here's another batch of manuals for a bunch of nodes. These will keep coming with each update. Credits: @Alinto, @Azim, @Cracer, @FliX, @Gingerbread, @Leonardo1123, @PlasmAlex, @Super_IronMan, @vvmvx, @Zarro.[/spoiler]\n[/list]\n\n[b]FIXES[/b]\n[list]\n[*]Fixed an issue with the game restarting in Fullscreen after previously setting it to Window mode.\n[*]Fixed an issue with the Settings window that would show the wrong display's refresh rate.\n[*]Exiting Ghost Mode will no longer disable flying mode.\n[*]Fixed lasers on sensors not passing through opened sliding doors.\n[*]Sharp notes no longer sound louder than other notes.\n[*]Favorite icon in the Node Library now behaves correctly.\n[*]NumberArray data type now obeys the Decimal Digits property in various components and nodes.\n[*]\"[b][i]Range[/i][/b]\" property of light emitting components now has a lower limit of 1 to avoid a Unity bug that would turn the light off.\n[*]Double line spaces in nodes manuals should work correctly now.\n[*]Fixed the \"[b][i]LCD[/i][/b]\" component not updating its background color correctly.\n[*]Rotated images in the Image Importer window now scale correctly.\n[*]A few other minor fixes.\n[/list]",
+      "key": "1409160::2b72be649a3b758502b420989da2346721cd0e1c",
+      "tags": [
+        {
+          "feature": "Added the \"[b][i]Net Link[/i][/b]\" component: it allows you to execute web requests."
+        },
+        {
+          "feature": "Added the \"[b][i]Hex Arch[/i][/b]\" and \"[b][i]Semi Hex Arch[/i][/b]\" components."
+        },
+        {
+          "feature": "Added the \"[b][i]Mini Docking Station[/i][/b]\" component."
+        },
+        {
+          "feature": "Added the \"[b][i]JSON Inspector[/i][/b]\" node."
+        },
+        {
+          "feature": "Added the \"[b][i]Sound Fetcher[/i][/b]\" node."
+        },
+        {
+          "feature": "Added the \"[b][i]Text Array Converter[/i][/b]\" and \"[b][i]Number Array Converter[/i][/b]\" nodes to easily go from Text to TextArray or NumberArray, and viceversa."
+        },
+        {
+          "feature": "Added the \"[b][i]Component Checker[/i][/b]\" node to be able to check if a specific component exists on the device."
+        },
+        {
+          "feature": "Added an \"[b][i]Autosize\"[/i][/b] property to both the \"[b][i]Label[/i][/b]\" and \"[b][i]Emissive Label[/i][/b]\" components."
+        },
+        {
+          "feature": "Added a button on both Device and World popups to open the Steam overlay on the selected workshop item."
+        },
+        {
+          "feature": "Improved the \"[b][i]UI Button[/i][/b]\" node. It now allows you to have a payload that is output when the button is clicked."
+        },
+        {
+          "feature": "Improved the \"[b][i]Text Manipulator[/i][/b]\" node. You can now escape and unescape URLs."
+        },
+        {
+          "feature": "Improved nodes documentation: thanks to the help of members of our fantastic community, here's another batch of manuals for a bunch of nodes."
+        },
+        {
+          "bug": "Fixed an issue with the game restarting in Fullscreen after previously setting it to Window mode."
+        },
+        {
+          "bug": "Fixed an issue with the Settings window that would show the wrong display's refresh rate."
+        },
+        {
+          "bug": "Exiting Ghost Mode will no longer disable flying mode."
+        },
+        {
+          "bug": "Fixed lasers on sensors not passing through opened sliding doors."
+        },
+        {
+          "bug": "Sharp notes no longer sound louder than other notes."
+        },
+        {
+          "bug": "Favorite icon in the Node Library now behaves correctly."
+        },
+        {
+          "bug": "NumberArray data type now obeys the Decimal Digits property in various components and nodes."
+        },
+        {
+          "bug": "\"[b][i]Range[/i][/b]\" property of light emitting components now has a lower limit of 1 to avoid a Unity bug that would turn the light off."
+        },
+        {
+          "bug": "Double line spaces in nodes manuals should work correctly now."
+        },
+        {
+          "bug": "Fixed the \"[b][i]LCD[/i][/b]\" component not updating its background color correctly."
+        },
+        {
+          "bug": "Rotated images in the Image Importer window now scale correctly."
+        },
+        {
+          "bug": "A few other minor fixes."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix for 0.3.1.0",
+      "date": "2023-05-10 08:38:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5140340308865825259",
+      "content": "[b]FIXES[/b]\n[list]\n[*]Removed Lab Medium biome since it was crashing the game and wasn't supposed to be there in the first place. Don't worry, you're not missing much, it's just a test biome we use internally.\n[*]Fixed sharp notes volume.\n[*]Fixed \"[i][b]Quarter Tube Window[/b][/i]\" model. \n[*]Fixed \"[i][b]Square Screen[/b][/i]\" model. \n[/list]",
+      "key": "1409160::803296c745147394442fc11c9ea28f0e4ceb3ba6",
+      "tags": [
+        {
+          "bug": "Removed Lab Medium biome since it was crashing the game and wasn't supposed to be there in the first place."
+        },
+        {
+          "bug": "Fixed sharp notes volume."
+        },
+        {
+          "bug": "Fixed \"Quarter Tube Window\" model."
+        },
+        {
+          "bug": "Fixed \"Square Screen\" model."
+        }
+      ]
+    },
+    {
+      "title": "Plasma - v0.3.1.0",
+      "date": "2023-05-09 11:08:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5138087875097985832",
+      "content": "Welcome to this new juicy update brought to you by our beloved drones at PlasmaLabs Inc.!\n\n[img]{STEAM_CLAN_IMAGE}/42952921/1176de7effc1d985de2adff1c386ec9f1788961f.gif[/img]\n\n[b]IMPROVEMENTS[/b]\n[list]\n[*]Added a batch of new components called \"[b][i]Glass Part[/i][/b]\": these components are designed to be used on vehicles as canopies, but we know you'll find all kinds of other uses for them!\n[*]Added a few new Basic components: \"[b][i]Flat Rod L Junction[/i][/b]\", \"[b][i]Quarter Tube[/i][/b]\", \"[b][i]Quarter Tube Window[/i][/b]\", \"[b][i]Semi Tube[/i][/b]\", \"[b][i]Semi Tube Window[/i][/b]\", \"[b][i]Semi Tube Corner[/i][/b]\" and \"[b][i]Ramp Corner[/i][/b]\". You should be able to create interesting devices with those tube components!\n[*]Added the \"[b][i]Despawner[/i][/b]\" component: similar to the Death Ray, but smaller, quieter and doesn't have a cooldown. Designed to be used in factory-like scenarios (or when you want to silently destroy devices).\n[*]Added the \"[b][i]Square Screen[/i][/b]\" component: a square version of our beloved Screen!\n[*]Added the \"[b][i]Button Triangle[/i][/b]\" component: a triangular version of the Button.\n[*]Improved the \"[b][i]Sphere 1/8[/i][/b]\" component: it can now be scaled in any direction.\n[*]Improved the \"[b][i]Speaker[/i][/b]\" component: you can now control the octave of any sound played by the Speaker; in addition to that, we added a property to control whether the player's position should affect the sound volume.\n[*]Improved the \"[b][i]Component Spawner[/i][/b]\" component: you can now control the volume of the sound played when a new component is spawned. And yes, you can set it to OFF.\n[*]Added a new node called \"[b][i]Swapper[/i][/b]\": this node allows only one signal (out of two: Primary and Secondary) to pass. It's the counterpart of the \"[b][i]Router[/i][/b]\" node[i].[/i]\n[*]Improved the \"[b][i]Text Manipulator[/i][/b]\" node: we added the \"[b][i]Join[/i][/b]\" command to join all the elements of a Text Array into a single string, and its counterpart, the \"[b][i]Split[/i][/b]\" command to... split a text into an array of elements.\n[*]Improved the Tree Line overlay: now \"[b][i]Controller[/i][/b]\" components are shown with their own icon to easily spot them.\n[*]Improved the Guru Meditation window: it's now possible to skip saving the current world after the game has crashed.\n[*]Improved nodes documentation: thanks to the help of members of our fantastic community, here's the first batch of manuals for a bunch of nodes. These will keep coming with each update. Credits: @Alinto, @Azim, @Cracer, @Gingerbread, @Leonardo1123, @Super_IronMan, @vvmvx, @Zarro.\n[*]A few other small enhancements here and there.\n[/list]\n[b]FIXES[/b]\n[list]\n[*]Fixed the system responsible to catch infinite loops in Sketches (it now actually catches them...).\n[*]Fixed the search in the both the Device and World browsers for local items.\n[*]A few other minor fixes.\n[/list]\n",
+      "key": "1409160::e6074c60c871915428a8640ff5ecacaa95745681",
+      "tags": [
+        {
+          "feature": "Added a batch of new components called \"Glass Part\": these components are designed to be used on vehicles as canopies, but we know you'll find all kinds of other uses for them!"
+        },
+        {
+          "feature": "Added a few new Basic components: \"Flat Rod L Junction\", \"Quarter Tube\", \"Quarter Tube Window\", \"Semi Tube\", \"Semi Tube Window\", \"Semi Tube Corner\" and \"Ramp Corner\". You should be able to create interesting devices with those tube components!"
+        },
+        {
+          "feature": "Added the \"Despawner\" component: similar to the Death Ray, but smaller, quieter and doesn't have a cooldown. Designed to be used in factory-like scenarios (or when you want to silently destroy devices)."
+        },
+        {
+          "feature": "Added the \"Square Screen\" component: a square version of our beloved Screen!"
+        },
+        {
+          "feature": "Added the \"Button Triangle\" component: a triangular version of the Button."
+        },
+        {
+          "feature": "Improved the \"Sphere 1/8\" component: it can now be scaled in any direction."
+        },
+        {
+          "feature": "Improved the \"Speaker\" component: you can now control the octave of any sound played by the Speaker; in addition to that, we added a property to control whether the player's position should affect the sound volume."
+        },
+        {
+          "feature": "Improved the \"Component Spawner\" component: you can now control the volume of the sound played when a new component is spawned. And yes, you can set it to OFF."
+        },
+        {
+          "feature": "Added a new node called \"Swapper\": this node allows only one signal (out of two: Primary and Secondary) to pass. It's the counterpart of the \"Router\" node."
+        },
+        {
+          "feature": "Improved the \"Text Manipulator\" node: we added the \"Join\" command to join all the elements of a Text Array into a single string, and its counterpart, the \"Split\" command to... split a text into an array of elements."
+        },
+        {
+          "feature": "Improved the Tree Line overlay: now \"Controller\" components are shown with their own icon to easily spot them."
+        },
+        {
+          "feature": "Improved the Guru Meditation window: it's now possible to skip saving the current world after the game has crashed."
+        },
+        {
+          "feature": "Improved nodes documentation: thanks to the help of members of our fantastic community, here's the first batch of manuals for a bunch of nodes. These will keep coming with each update. Credits: @Alinto, @Azim, @Cracer, @Gingerbread, @Leonardo1123, @Super_IronMan, @vvmvx, @Zarro."
+        },
+        {
+          "bug": "Fixed the system responsible to catch infinite loops in Sketches (it now actually catches them...)."
+        },
+        {
+          "bug": "Fixed the search in the both the Device and World browsers for local items."
+        },
+        {
+          "bug": "A few other minor fixes."
+        }
+      ]
+    },
+    {
+      "title": "Minor Update - 0.3.0.5",
+      "date": "2023-04-25 10:41:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583099813894404",
+      "content": "A small update while we work on the big stuff!\n\n[b]IMPROVEMENTS[/b]\n[list]\n[*]New \"[b][i]Semi Tube[/i][/b]\" component added.\n[*]Increased range of the \"[b][i]Elevator[/i][/b]\" component.\n[*]Added sharp notes to the sound library.\n[*]Replaced the \"Showcase\" tab in the Device and World browsers with a more functional \"Most Popular\" one that fetches the most trending workshop items of the last two weeks.\n[*]Improved crash reports.\n[/list]\n[b]FIXES[/b]\n[list]\n[*]Fixed one of the most recurring crashes that would happen when creating a new world, quitting and then opening the game.\n[*]Fixed another crash that would happen when exiting Playtesting in a staged world while docked.\n[*]Fixed a nasty bug in the \"[b][i]Image Blitter\"[/i][/b] node that would introduce artifacts while blitting.\n[/list]\n",
+      "key": "1409160::fe3a1716af9030f8ddc61a5573ff2488a89c642c",
+      "tags": [
+        {
+          "feature": "New \"[b][i]Semi Tube[/i][/b]\" component added."
+        },
+        {
+          "balance_change": "Increased range of the \"[b][i]Elevator[/i][/b]\" component."
+        },
+        {
+          "feature": "Added sharp notes to the sound library."
+        },
+        {
+          "feature": "Replaced the \"Showcase\" tab in the Device and World browsers with a more functional \"Most Popular\" one that fetches the most trending workshop items of the last two weeks."
+        },
+        {
+          "bug": "Fixed one of the most recurring crashes that would happen when creating a new world, quitting and then opening the game."
+        },
+        {
+          "bug": "Fixed another crash that would happen when exiting Playtesting in a staged world while docked."
+        },
+        {
+          "bug": "Fixed a nasty bug in the \"[b][i]Image Blitter\"[/i][/b] node that would introduce artifacts while blitting."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix for the hotfix for 0.3.0.4",
+      "date": "2023-04-17 11:12:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519500405921",
+      "content": "[b]FIXES[/b]\n[list]\n[*]Fixed a bug that would show the whole homebase in Wireframe effect.\n[*]Fixed a nasty bug that would make repeatable nodes (Dispatcher, Modules, Repeater...) not output correctly.[/list]",
+      "key": "1409160::0c05a8d68342553401ce63dc33a83c58c4be2633",
+      "tags": [
+        {
+          "bug": "Fixed a bug that would show the whole homebase in Wireframe effect."
+        },
+        {
+          "bug": "Fixed a nasty bug that would make repeatable nodes (Dispatcher, Modules, Repeater...) not output correctly."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix for 0.3.0.4",
+      "date": "2023-04-16 10:14:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519496615585",
+      "content": "[b]FIXES[/b]\n[list]\n[*]Fixed a bug that would make all sensors stop working when mounted on a Player Connector component.\n[*]Fixed a vfx bug that would show a teleported device in Solid mode when it was actually in Wireframe mode.\n[/list]",
+      "key": "1409160::170ce78ad1d04b53a1176a56b307df75137d1ebf",
+      "tags": [
+        {
+          "bug": "Fixed a bug that would make all sensors stop working when mounted on a Player Connector component."
+        },
+        {
+          "bug": "Fixed a vfx bug that would show a teleported device in Solid mode when it was actually in Wireframe mode."
+        }
+      ]
+    },
+    {
+      "title": "Minor Update - 0.3.0.4",
+      "date": "2023-04-13 14:11:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6539831519486284349",
+      "content": "Just in time for the weekend! Enjoy the improvements and bug fixes!\n\n[b]IMPROVEMENTS[/b]\n[list]\n[*]The \"[i][b]Distance Sensor[/b][/i]\" component now outputs Max Distance when \"nothing\" is detected.\n[*]The \"[i][b]Holo Projector[/b][/i]\" component now offers a bunch of new properties: Pitch, Yaw, Roll and Offset.\n[*]New \"[i][b]Data Type Reader[/b][/i]\" node that outputs the type of any piece of data.\n[*]Added Vertical Alignment property to the \"[i][b]UI Text[/b][/i]\" node.\n[*]The \"[i][b]Log Monitor[/b][/i]\" node includes the node's name in its output.\n[*]Added \"fmod()\" function to the \"[i][b]Math Expression[/b][/i]\" node. This evaluates the modulus on decimal numbers.\n[*]Removed limitation on input values for the \"[i][b]Random Number[/b][/i]\" node.\n[*]Encyclopedia updated.\n[*]Removed cringe from device/world share message.\n[*]Improved Tutorial experience.\n[/list]\n[b]FIXES[/b]\n[list]\n[*]Fixed a bug that would soft-lock the game when trying to place a group of duplicated nodes in the Sketch, but there was no space. You can now cancel the operation by pressing ESC.\n[*]Fixed a bug that would load devices in the wrong orientation if they were saved while in Solid mode.\n[*]Plugged a few holes in the Desert biome.\n[*]Fixed ghost sounds for the \"[i][b]Smoke Emitter[/b][/i]\" and \"[i][b]Transceiver[/b][/i]\" components.\n[*]Fixed \"[i][b]Speaker[/b][/i]\" animation that would play when volume is set to 0.\n[/list]\n",
+      "key": "1409160::f6ffbd6586bcd747ac4c6282d694d9fb1495a3c8",
+      "tags": [
+        {
+          "feature": "The \"[i][b]Distance Sensor[/b][/i]\" component now outputs Max Distance when \"nothing\" is detected."
+        },
+        {
+          "feature": "The \"[i][b]Holo Projector[/b][/i]\" component now offers a bunch of new properties: Pitch, Yaw, Roll and Offset."
+        },
+        {
+          "feature": "New \"[i][b]Data Type Reader[/b][/i]\" node that outputs the type of any piece of data."
+        },
+        {
+          "feature": "Added Vertical Alignment property to the \"[i][b]UI Text[/b][/i]\" node."
+        },
+        {
+          "feature": "The \"[i][b]Log Monitor[/b][/i]\" node includes the node's name in its output."
+        },
+        {
+          "feature": "Added \"fmod()\" function to the \"[i][b]Math Expression[/b][/i]\" node. This evaluates the modulus on decimal numbers."
+        },
+        {
+          "feature": "Removed limitation on input values for the \"[i][b]Random Number[/b][/i]\" node."
+        },
+        {
+          "feature": "Encyclopedia updated."
+        },
+        {
+          "feature": "Removed cringe from device/world share message."
+        },
+        {
+          "feature": "Improved Tutorial experience."
+        },
+        {
+          "bug": "Fixed a bug that would soft-lock the game when trying to place a group of duplicated nodes in the Sketch, but there was no space. You can now cancel the operation by pressing ESC."
+        },
+        {
+          "bug": "Fixed a bug that would load devices in the wrong orientation if they were saved while in Solid mode."
+        },
+        {
+          "bug": "Plugged a few holes in the Desert biome."
+        },
+        {
+          "bug": "Fixed ghost sounds for the \"[i][b]Smoke Emitter[/b][/i]\" and \"[i][b]Transceiver[/b][/i]\" components."
+        },
+        {
+          "bug": "Fixed \"[i][b]Speaker[/b][/i]\" animation that would play when volume is set to 0."
+        }
+      ]
+    },
+    {
+      "title": "Plasma - v0.3.0.3",
+      "date": "2023-04-05 12:04:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5121196841285228667",
+      "content": "The drones at PlasmaLabs Inc. have been working hard for the past few days to bring you this amazing update! Enjoy!\n\n[b]IMPROVEMENTS[/b]\n[list]\n[*]Added a \"[b][i]Lock / Unlock Device[/i][/b]\" system: while looking at a device in Wireframe, press U to toggle between locked and unlocked. When a device is locked, it cannot be moved while it's in wireframe. Use this to avoid moving or rotating devices by mistake.\n[*]Added an \"[b][i]FPS Feel[/i][/b]\" to the Settings popup: turn it on to remove the momentum of your character and get a more instantaneous type of movement.\n[*]Added a \"[b][i]Time Controller[/i][/b]\" node: use it to get current in-game time info and also system time info. You can use it to set the in-game time as well, but only if you're not in a Staged world.\n[*]Small redesign of the Pause Menu: finding the button to go back to the Tutorial should be easier now; plus other small changes.\n[*]Added a \"[b][i]Console[/i][/b]\" window in the Sketch: if you get a notification in the bottom left corner (log, warning or error), you can now click on it and get a list of all notifications received since the last reset of the device.\n[*]Added a \"[b][i]Test Mode[/i][/b]\" to the Communicator component to simulate data transmission between two peers.\n[*]Some components are now labeled as \"[b][i]Experimental[/i][/b]\": this means the component is new and might not work correctly or might not be fully implemented.\n[*]Added a \"[b][i]Save Reminder[/i][/b]\" notification: it will pop up every 30 minutes to kindly remind you to save the world you're working on :)\n[*]The Image Importer will not try to scale up or down an image if it's already of the correct size (680x512).\n[*]Small improvements to Homebase biome and icons.\n[*]Default Feed Interval of the Camera component is now 0.\n[/list]\n[b]FIXES[/b]\n[list]\n[*]Fixed one of the most recurring crashes: if a variable in a sketch was deleted, and it was still used in a component, and then a new component was attached to the device, the game would crash. In addition to this, the Guru Meditation window would try to save the world, which would now be corrupted, leading to another crash while trying to load it back.\n[*]Fixed another \"popular\" crash: a GPS Tag component switched to wireframe would sometime lead to a crash when trying to read its position.\n[*]Fixed a crash when deleting a freshly duplicated component.\n[*]Fixed a crash that would happen when the player was interacting with a Button (or similar component) while docked and being teleported back.\n[*]Fixed a crash with the Undo action.\n[*]Fixed a bug where the Player Connector component wouldn't output 0 at least once when the scroll wheel stopped moving.\n[*]Fixed a bug where the Raw Servo and Raw Hinge wouldn't output anything trough the Target Reached port.\n[*]Fixed the lighting on the Moon biome: now the sun won't illuminate objects from beneath the biome any longer.\n[*]Fixed naming of some components.\n[*]Bunch of other small things!\n[/list]\n\n\n",
+      "key": "1409160::afabee7337fdbd7ac18e91fb1119391e1faab436",
+      "tags": [
+        {
+          "feature": "Added a \"[b][i]Lock / Unlock Device[/i][/b]\" system: while looking at a device in Wireframe, press U to toggle between locked and unlocked."
+        },
+        {
+          "feature": "Added an \"[b][i]FPS Feel[/i][/b]\" to the Settings popup: turn it on to remove the momentum of your character and get a more instantaneous type of movement."
+        },
+        {
+          "feature": "Added a \"[b][i]Time Controller[/i][/b]\" node: use it to get current in-game time info and also system time info."
+        },
+        {
+          "feature": "Added a \"[b][i]Console[/i][/b]\" window in the Sketch: if you get a notification in the bottom left corner (log, warning or error), you can now click on it and get a list of all notifications received since the last reset of the device."
+        },
+        {
+          "feature": "Added a \"[b][i]Test Mode[/i][/b]\" to the Communicator component to simulate data transmission between two peers."
+        },
+        {
+          "feature": "Added a \"[b][i]Save Reminder[/i][/b]\" notification: it will pop up every 30 minutes to kindly remind you to save the world you're working on :)"
+        },
+        {
+          "balance_change": "Default Feed Interval of the Camera component is now 0."
+        },
+        {
+          "bug": "Fixed one of the most recurring crashes: if a variable in a sketch was deleted, and it was still used in a component, and then a new component was attached to the device, the game would crash."
+        },
+        {
+          "bug": "Fixed another \"popular\" crash: a GPS Tag component switched to wireframe would sometime lead to a crash when trying to read its position."
+        },
+        {
+          "bug": "Fixed a crash when deleting a freshly duplicated component."
+        },
+        {
+          "bug": "Fixed a crash that would happen when the player was interacting with a Button (or similar component) while docked and being teleported back."
+        },
+        {
+          "bug": "Fixed a crash with the Undo action."
+        },
+        {
+          "bug": "Fixed a bug where the Player Connector component wouldn't output 0 at least once when the scroll wheel stopped moving."
+        },
+        {
+          "bug": "Fixed a bug where the Raw Servo and Raw Hinge wouldn't output anything trough the Target Reached port."
+        },
+        {
+          "bug": "Fixed the lighting on the Moon biome: now the sun won't illuminate objects from beneath the biome any longer."
+        },
+        {
+          "bug": "Fixed naming of some components."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix 0.3.0.2",
+      "date": "2023-03-31 14:20:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551986344817",
+      "content": "[list]\n[*]Some crashes fixed for players who played the demo\n[*]Redesigned Guru Meditation window to make it more clear and report more data about the crash\n[*]Light Sensor component fixed (it was causing a crash in the Tutorial world)\n[*]Sliding Door component won't fly away anymore (lol)\n[*]Docking Station and Screen component have new details added to identify orientation\n[*]\"Wind\" on the Moon is now less noisy (why is there wind on the Moon in the first place? We don't know)\n[/list]",
+      "key": "1409160::c1657691d27df01626d3584eb3459312544efa19",
+      "tags": [
+        {
+          "bug": "Some crashes fixed for players who played the demo"
+        },
+        {
+          "bug": "Light Sensor component fixed (it was causing a crash in the Tutorial world)"
+        },
+        {
+          "bug": "Sliding Door component won't fly away anymore (lol)"
+        },
+        {
+          "balance_change": "\"Wind\" on the Moon is now less noisy (why is there wind on the Moon in the first place? We don't know)"
+        }
+      ]
+    },
+    {
+      "title": "Hotfix 0.3.0.1",
+      "date": "2023-03-30 14:39:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6839319551982749820",
+      "content": "Just a quick patch to fix a crash caused by deleting a Light component while a Light Sensor was active (was happening in Tutorial too).",
+      "key": "1409160::4dd5bd1006b68b9fc2819cf5384e199a8e489d03",
+      "tags": [
+        {
+          "bug": "Just a quick patch to fix a crash caused by deleting a Light component while a Light Sensor was active (was happening in Tutorial too)."
+        }
+      ]
+    },
+    {
+      "title": "Changes since the Demo",
+      "date": "2023-03-27 21:28:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5143713753745083410",
+      "content": "As some of you know, Plasma was part of Steam Next Fest in October 2022, when we had a Demo of the game available to try out for a 3 week period.\nWe are often asked what has changed since the Demo, loads of things went in (too many to list!) but we'll focus on the more important changes.\n\n[h2]Homebase[/h2]\n[img]{STEAM_CLAN_IMAGE}/42952921/8aa2503631fed01826960d46fe039b17042eb152.png[/img]\nWe added a special world called [i][b]Homebase[/b][/i], a reference point for players to always come back to and explore. This is the first place players visit when finishing the tutorial, and is designed to be the place you return to when you finish playing a Staged World or just want to relax in a familiar setting.\n\n[h2]New Components[/h2]\n[img]{STEAM_CLAN_IMAGE}/42952921/07ad9a5b175bc20735d231484a97ac994be7d63e.png[/img]\nWe added a lot of new components that you can have fun building with, here are some highlights:\n[list]\n[*] [b]Color Sensor[/b] - It senses and outputs colors\n[*] [b]Component Spawner[/b] - It spawns a Component \n[*] [b]Color Painter[/b] - Allows you to automate the coloring of Components\n[*] [b]Zero Gravity[/b] - Disables gravity on the Device it's attached to\n[*] [b]Holographic Screen[/b] - A neat new screen with no frame and transparent background\n[*] [b]Death Ray[/b] and [b]Self Destructor[/b] - Components that allow you to destroy Devices\n[*] [b]Communicator [/b]- Allows you to send/receive data in real-time between Steam players\n[/list]\n[h2]Handheld Devices[/h2]\n[img]{STEAM_CLAN_IMAGE}/42952921/f061982b83510656f8259b5add0c18a3f93ac934.png[/img]\nUsing a special new Component, the Player Connector, we opened up the possibility of building handheld devices that mount to the player, allowing you to build all kinds of handheld fun! A good example of this is found in the Homebase, keep an eye out for it!\n\n[h2]New Biomes[/h2]\n[img]{STEAM_CLAN_IMAGE}/42952921/4c47c12fa4f0e3f155da256f67fcb3a25bc3bef9.png[/img]\nNew exciting Biomes to build in!\n[list]\n[*]Mars\n[*]Moon\n[*]A new huge (and we mean huge!) Lab world - totally flat and empty!\n[/list]\n[h2]Staged Worlds[/h2]\nWe overhauled and put a lot of work into the Staging tools. With these you can define a number of permissions in the World, effectively allowing you to create a specific experience to share with other players.\nThese could be challenges, puzzles, stories, adventures, explorations, whatever you can think of you can make it happen in a Staged World.\nIn fact, the Tutorial and Homebase you experience in the game were made using the same tools we give you.\n\n[h2]New Lua integration[/h2]\nBy popular demand we switched to Luau for our Lua implementation which allowed us to add:\n[list]\n[*] Image creation and per-pixel manipulation\n[*] Proper table and array support\n[*] Better support for out-of-the-box Lua functionalities\n[*] Huge performance increase\n[/list]\n[h2]Custom Palette[/h2]\nSome players found the in-built color palette too limiting, so we added the ability to edit the palette and customize it to your liking! Want to make that vomit green robot you've always dreamed of? Well now you can, while also annoying our art director at the same time!\n\n[h2]Lots of Quality of Life improvements[/h2]\nToo many to list! But, just for you, here's a short list of some we can actually remember:\n[list]\n[*]Added Array data type to Sketch (Number Array and Text Array)\n[*]Texture resolution increased to 680x512\n[*]Device maximum link capacity increased from 64 to 256 (a link is a moving part)\n[*]Configurable linear/angular drag on Devices\n[*]Documentation for some of the more complex nodes (Lua, Math Expression, etc.)\n[*]Thousands of bug fixes! Millions!\n[*]All the other things we can't remember!\n[/list]\n\nIt's been an incredibly long journey for the team to get to where we are now (over 5 years, in case anyone's keeping count) - we are so very excited for the Early Access release and can't wait to see what you will build in your engineering playground!\n\nThanks for reading!",
+      "key": "1409160::0d2e3dd5602a0e48854433a4df74166b8ed4db11",
+      "tags": [
+        {
+          "feature": "We added a special world called Homebase, a reference point for players to always come back to and explore."
+        },
+        {
+          "feature": "We added a lot of new components that you can have fun building with, here are some highlights:"
+        },
+        {
+          "feature": "Color Sensor - It senses and outputs colors"
+        },
+        {
+          "feature": "Component Spawner - It spawns a Component"
+        },
+        {
+          "feature": "Color Painter - Allows you to automate the coloring of Components"
+        },
+        {
+          "feature": "Zero Gravity - Disables gravity on the Device it's attached to"
+        },
+        {
+          "feature": "Holographic Screen - A neat new screen with no frame and transparent background"
+        },
+        {
+          "feature": "Death Ray and Self Destructor - Components that allow you to destroy Devices"
+        },
+        {
+          "feature": "Communicator - Allows you to send/receive data in real-time between Steam players"
+        },
+        {
+          "feature": "Using a special new Component, the Player Connector, we opened up the possibility of building handheld devices that mount to the player, allowing you to build all kinds of handheld fun!"
+        },
+        {
+          "feature": "New exciting Biomes to build in!"
+        },
+        {
+          "feature": "Mars"
+        },
+        {
+          "feature": "Moon"
+        },
+        {
+          "feature": "A new huge (and we mean huge!) Lab world - totally flat and empty!"
+        },
+        {
+          "feature": "We overhauled and put a lot of work into the Staging tools."
+        },
+        {
+          "feature": "By popular demand we switched to Luau for our Lua implementation which allowed us to add:"
+        },
+        {
+          "feature": "Image creation and per-pixel manipulation"
+        },
+        {
+          "feature": "Proper table and array support"
+        },
+        {
+          "feature": "Better support for out-of-the-box Lua functionalities"
+        },
+        {
+          "feature": "Huge performance increase"
+        },
+        {
+          "feature": "Some players found the in-built color palette too limiting, so we added the ability to edit the palette and customize it to your liking!"
+        },
+        {
+          "feature": "Added Array data type to Sketch (Number Array and Text Array)"
+        },
+        {
+          "feature": "Documentation for some of the more complex nodes (Lua, Math Expression, etc.)"
+        },
+        {
+          "bug": "Thousands of bug fixes! Millions!"
+        },
+        {
+          "balance_change": "Texture resolution increased to 680x512"
+        },
+        {
+          "balance_change": "Device maximum link capacity increased from 64 to 256 (a link is a moving part)"
+        },
+        {
+          "balance_change": "Configurable linear/angular drag on Devices"
+        }
+      ]
+    }
+  ]
+}

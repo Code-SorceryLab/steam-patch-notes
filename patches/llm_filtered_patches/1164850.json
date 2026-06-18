@@ -1,0 +1,279 @@
+{
+  "appId": "1164850",
+  "count": 15,
+  "notes": [
+    {
+      "title": "A musical update",
+      "date": "2024-07-29 06:33:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094362435217",
+      "content": "The game only had 2 soundtracks for years at this point.\nI thought it would be a good idea to change that.\nI contacted Kevin Macleod for permission to add some of his music to the game and he gave us permission to do so.\n\n[b]Added the following soundtracks by Kevin Macleod:[/b]\n- Dragon and Toast\n- Leaving Home\n- Man Down\n- Mystery Sax\n- Night Vigil\n- Oppressive Gloom\n- Relent\n- Serene\n- Stay the Course\n- Unholy Knight\n\n[b]Fixed the stern of the Goliath (big) where water wouldn't flow[/b]\n",
+      "key": "1164850::9a81d06b22182ad068442cb0dda27d30b3a5b15c",
+      "tags": [
+        {
+          "feature": "- Dragon and Toast"
+        },
+        {
+          "feature": "- Leaving Home"
+        },
+        {
+          "feature": "- Man Down"
+        },
+        {
+          "feature": "- Mystery Sax"
+        },
+        {
+          "feature": "- Night Vigil"
+        },
+        {
+          "feature": "- Oppressive Gloom"
+        },
+        {
+          "feature": "- Relent"
+        },
+        {
+          "feature": "- Serene"
+        },
+        {
+          "feature": "- Stay the Course"
+        },
+        {
+          "feature": "- Unholy Knight"
+        },
+        {
+          "bug": "Fixed the stern of the Goliath (big) where water wouldn't flow"
+        }
+      ]
+    },
+    {
+      "title": "Quick fix from previous update",
+      "date": "2024-07-06 08:23:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267342230578",
+      "content": "Removed duplicated items that causes the game to crash.",
+      "key": "1164850::8304acb1ec1e4fc6211de92d958ad359d0dcf363",
+      "tags": [
+        {
+          "bug": "Removed duplicated items that causes the game to crash."
+        }
+      ]
+    },
+    {
+      "title": "MULTI-LAYERS & THE ROUTE TO BETTER COLLISIONS",
+      "date": "2020-03-28 23:56:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2984138620254254755",
+      "content": "[h1]Hello everyone![/h1]\n\nFor quite some time, we\u2019ve been discussing potential ways to improve the game\u2019s collision while remaining simple enough to allow complex designs.\n\nFor the sake of simplicity and helping you folks visualize what I mean, I\u2019ve used the software \u201cAlgodoo\u201d in order to demonstrate the idea using a similar system.\nYou can download it here : http://www.algodoo.com/\n\nWe believe we\u2019ve found an elegant solution to this issue and it is by using a \u201cMulti-Layered\u201d system.\nEssentially, it means, most aspects of the creations will be simulated on different layers.\nFor instance, you could have the Hull of a ship as a different layer than the background \u201cnon hull\u201d \nSince the hull would be on a different layer, it will be treated as a different entity and it won\u2019t be subject to the same amount of force as the background \u201cnon hull\u201d of the ship.\nIt means we could (in theory) properly simulate Water pressure as the inside of this new Hull layer would be empty, (as opposed to the usual ships that use the background \u201cnon hull\u201d to fill the space).\n\nUsing the Hull on a new layer would also allow some types of interactivity that weren\u2019t possible before. \nFor instance, If the weight of water inside the ship is properly simulated, it could exert stress on the hull leading to structural failure and collapse. \n\nIt would also allow the creations of new Tools that only interact with a given layer.\nThis means we could destroy only the hull while keeping the background intact\nThis isn\u2019t possible right now because it would cut the ship in 2. While cutting only the Hull would allow the ships to keep their structural integrity and of course, expose the inside to the sea water\n\n[img]https://i.imgur.com/uYjCLi8.gif[/img]\n[img]https://i.imgur.com/9ikMbIG.gif[/img]\n\n\n[u][b][h3]What else can be done with Layers?[/h3][/b][/u]\n\nLayers will open entire new ranges of possibilities for the creation of various contraptions and complex structures.\nHowever, for that to be possible we need to introduce new features \u201cconstraints\u201d to the game\n\nConstraints are features for ship builders that will allow them to constraint layers together in multiple ways\n\n[b]Axis:[/b] The Axis will create a point between 2 or more layers that will only allow rotating motion\n[img]https://i.imgur.com/rTRTMFF.gif[/img]\n\n[b]Weld:[/b] The Weld is like the Axis, with the exception no movements are allowed between the points\n[img]https://i.imgur.com/Ti64Sov.gif[/img]\n\n[b]Rail:[/b] The Rail will use 2 points and allow 2 or more layers to move in a linear motion between them. \n[img]https://i.imgur.com/YZfWSsO.gif[/img]\n\n[b]Motor:[/b] A motor is essentially like the Axis with the exception it applies torque in the desired direction.\n[img]https://i.imgur.com/fR2SLg3.gif[/img]\n\nCombining those features together can lead to some amazing creations.\nFor instance, you could make a drawbridge, a piston, an engine, etc\u2026\nNear limitless amount of new possibilities.\n\n[u][b][h3]What about collisions?[/h3][/b][/u]\n\nSelf Collision is something we wanted to include from the start, however it\u2019s quite complicated to do properly\nThough, This multi-layer system won\u2019t necessarily help simplifying collisions, It will however, create the potential for a much better system.\n\nRight now, the idea is to keep each layer independent of one another, meaning they won\u2019t collide with each other. But layers with the same ID will.\n\nSince we want to move the Hull to a different layer than the background (non hull)\nIt will allow players to drop a heavy object on top of a ship and pierce through the entire ship without cutting the ship in half. Instead it will just punch its way through the hull layer and expose the bottom to the sea water.\n\nThough, the Hull layer won\u2019t be completely independent of the background layer\nOtherwise both would end up separating and that\u2019s bad. We don\u2019t want them to float away from each other.\nTherefore, the Background will need to act like a support for the hull and vice versa.\n\n[u][b][h3]What about loading the ships?[/h3][/b][/u]\n\nDue to the increase in complexity, we believe the best and simplest way to load a complex creation is to simply ZIP it with a Json file targeting each part of the creation.\nThe game would then load the zip file and of course upload it on the steam workshop\n\nHowever, it is also likely the game will include a Ship Editor to make the whole creation much simpler.  This way it may be possible to create things that would not be possible by converting image as images are limited by the pixels and it starts to get very complicated when we have many layers and potential interaction between them.",
+      "key": "1164850::ff296d40431f9edc5082c84dd60eef55d2955f2d",
+      "tags": [
+        {
+          "feature": "Layers will open entire new ranges of possibilities for the creation of various contraptions and complex structures."
+        },
+        {
+          "feature": "Constraints are features for ship builders that will allow them to constraint layers together in multiple ways"
+        },
+        {
+          "feature": "Axis: The Axis will create a point between 2 or more layers that will only allow rotating motion"
+        },
+        {
+          "feature": "Weld: The Weld is like the Axis, with the exception no movements are allowed between the points"
+        },
+        {
+          "feature": "Rail: The Rail will use 2 points and allow 2 or more layers to move in a linear motion between them."
+        },
+        {
+          "feature": "Motor: A motor is essentially like the Axis with the exception it applies torque in the desired direction."
+        },
+        {
+          "feature": "However, it is also likely the game will include a Ship Editor to make the whole creation much simpler."
+        }
+      ]
+    },
+    {
+      "title": "Out of Testing",
+      "date": "2020-02-02 22:58:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2609208878393351098",
+      "content": "[h1]Hello everyone![/h1]\nI wanted to let you all know the testing build has merged to the main build. \n\n\nFor those who aren't aware here's a quick summary of the new features\n[img]https://i.imgur.com/PBMqBRO.png[/img]\n[img]{STEAM_CLAN_IMAGE}/35944196/5a914ed951603b3b16f025b33646fd263c17395b.png[/img]\n\nYou can read more about them here:\nhttps://steamcommunity.com/games/1164850/announcements/detail/1718622067700485108\nhttps://steamcommunity.com/games/1164850/announcements/detail/1718622067690473211\nhttps://steamcommunity.com/games/1164850/announcements/detail/1712988746660798303\n\n[h2]We now have the Steam Workshop integration[/h2]\n[h3]To upload your creation on the steam workshop follow these simple steps[/h3]\n\n[list]\n[*] [b]If your creation is already in the game:[/b]\n[olist]\n[*] Click and spawn your creation\n[*] Go on the toolbox and click on \"edit current ship\"\n[*] Make sure all the infos are correct\n[*] Scroll at the bottom and click \"upload to steam\"\n[/olist][/list][list]\n[*] [b]If your creation isn't in the game:[/b]\n[olist]\n[*] Click on \"Create new ship\"\n[*] Fill up all the necessary info, Textures/Layers\n[*] Save the creation\n[*] follow the steps for existing creations\n[/olist]\n[/list]\n\n[img]https://i.imgur.com/kChXuOz.png[/img]",
+      "key": "1164850::777e2810656725102a5c997ec8dd101843905843",
+      "tags": [
+        {
+          "feature": "We now have the Steam Workshop integration"
+        }
+      ]
+    },
+    {
+      "title": "Real Fake Lights",
+      "date": "2020-02-02 13:38:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2609208878391944438",
+      "content": "[h1]Hello everyone![/h1]\n\nFred has been hard at work and managed to get a new \"Fake\" Lighting system into the game\nThis is an update to the Testing Branch.\nIt will become public in a few days if there aren't any major issues.\n\n\n[h2]What is a fake lighting system?[/h2]\nEssentially, this is a Shader which change the appearance of the texture based on ambient light. They also support all colours\n\nWe have 2 shaders\n\n[olist]\n[*] [u][b][h3]exlights[/h3][/b][/u]\nThe colour value will change the appearance of the texture layer.\na White value will make the texture just as bright as if would be in daytime\nA black value would make it just as dark as everything else around. \nIt is very useful if you plan to create some sort of interior texture where you want the inside of the ships to remain visible. example below\n[img]https://i.imgur.com/WKjbW9F.png[/img]\n[img]https://i.imgur.com/oF4U4HX.png[/img]\n\n[*][u][b][h3]inlights[/h3][/b][/u]\ninlight will essentially replace the texture itself and can get much brighter than what it may look light in daytime\nIt is very useful if you want to make an exterior texture where the porthole are very bright at night,\n[img]https://i.imgur.com/SS0nIfk.png[/img]\n[img]https://i.imgur.com/JERNaBw.png[/img]\n[/olist]\n\n\nThis is what the layer looks like\n[img]https://i.imgur.com/LRkQHPg.png[/img]\n\nThe black background essentially means there's nothing to change\nYou can create your own in the same way you create textures.\n\nThere is no way to toggle it off at the moment\nso if you wish to have a dark version of the ship at night, I strongly recommend you create a layer without those fake lights added in. \n\n\n[img]https://i.imgur.com/89wuA82.png[/img]\n",
+      "key": "1164850::44ee757e3f3d6e8324931880ac2024814eee2f70",
+      "tags": [
+        {
+          "feature": "Fred has been hard at work and managed to get a new \"Fake\" Lighting system into the game"
+        },
+        {
+          "feature": "We have 2 shaders"
+        },
+        {
+          "feature": "[u][b][h3]exlights[/h3][/b][/u]"
+        },
+        {
+          "feature": "[u][b][h3]inlights[/h3][/b][/u]"
+        }
+      ]
+    },
+    {
+      "title": "Little tweaks [TESTING]",
+      "date": "2020-01-30 19:07:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2609208878381928151",
+      "content": "[h1][b]Hello everyone![/b][/h1]\n\nthis is a minor update for the testing branch\nwe want to make sure nothing is broken before we make it public\n\nIf everything goes well it will become public in a few days.\n\n[h2]What's new?[/h2]\n[list]\n[*] Improved Ship loader\n[*] New Ships\n[*] Ship Proprieties Editor\n[*] Bugfix\n[/list]\n\nThe Toolbox and ship loaders were changed a little bit. \nIt is not possible to create a new ship or to edit the proprieties of the ship on the screen. \nTake note, those aren't tools to make ships from scratch, but to import images and customize their textures\n\nCreating or Edit a new ship will open a little window where you can \n[olist]\n[*] Load a base texture (it use the colour code from the palette) \n[*] load a custom material Json script (if you want to expand the materials type) \n[*] Add texture layers (as many as you want, you can toggle between them above the tools icons)\n[/olist]\n\nThe texture layers are any Png image you wish to apply to the ship, \nWe recommend you use an image with the exact same ratio as your base structure, otherwise it will stretch and look weird. \n\nThis is the same window to Edit or to Upload a ship on the Steam Workshop\n\nThank you for your time",
+      "key": "1164850::70e832879f38e17843175b4bd4e773630897b567",
+      "tags": [
+        {
+          "feature": "Improved Ship loader"
+        },
+        {
+          "feature": "New Ships"
+        },
+        {
+          "feature": "Ship Proprieties Editor"
+        },
+        {
+          "bug": "Bugfix"
+        }
+      ]
+    },
+    {
+      "title": "Ship Loader [Experimental]",
+      "date": "2020-01-02 19:43:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573899680773",
+      "content": "[h1]Hello everyone![/h1]\n\nI wanted to let you know I've pushed the latest experimental build into the \"Testing\" branch of the game\nThe new loader allows everyone to spawn their creation in a simple click of the mouse\nno need to drag the image into the game anymore\n\n[img]{STEAM_CLAN_IMAGE}/35944196/e7c1d13d010f82e2a2cb5708008617da00a89ec6.png[/img]\n\nIf you wish you run the experimental build, go to the game's proprieties and select the testing branch in the Betas tab\n[img]{STEAM_CLAN_IMAGE}/35944196/5e4603da638ccf1032285c4bcc4905f6bb226771.png[/img]\n\n\n\n[h3]The following only address those who like to create ships and other structures.\n[/h3]\nIn order for your textures and ships to load properly in the game, you need to follow these steps\n\n[list]\n[*] Your base model (the one using colour code) must end with \"_base\" \n[*] Your Textures must end in 3 potential ways: [olist]\n[*] \"_texture\" if you only have 1 texture\n[*] \"_interior_texture\" for the interior\n[*] \"_exterior_texture\" for the exterior\n[/olist]\n[/list]\nHere's an image for reference\n[img]{STEAM_CLAN_IMAGE}/35944196/498f4260d4840694eae2415795769a384727b132.png[/img]\n\nLater, we will implement other formats and shaders.\nYou will be able to share your own custom materials and Info (.json) files where you can write your ship history or any additional information you want to share with the world.  \n\n",
+      "key": "1164850::b80561f365abd23b15bc992092a94cce08ff9f89",
+      "tags": [
+        {
+          "feature": "The new loader allows everyone to spawn their creation in a simple click of the mouse"
+        }
+      ]
+    },
+    {
+      "title": "3D ships in Substance Designers",
+      "date": "2019-12-29 01:28:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573882481321",
+      "content": "We plan to eventually add compatibility with the typical shaders such as:\n- Ambient occlusion\n- Normal map\n- Height map\n\nThese 3 combined will make 2D ships into 3D objects \n\n[previewyoutube=AGJQkamInus;full][/previewyoutube]\n\n[previewyoutube=s2NQNr7NlIA;full][/previewyoutube]",
+      "key": "1164850::4e68d55306a155d5f539816644f55a436a3f520b",
+      "tags": [
+        {
+          "feature": "We plan to eventually add compatibility with the typical shaders such as:\n- Ambient occlusion\n- Normal map\n- Height map\n\nThese 3 combined will make 2D ships into 3D objects"
+        }
+      ]
+    },
+    {
+      "title": "AMD Crash",
+      "date": "2019-12-23 09:13:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573861965391",
+      "content": "[h1]Hello everyone[/h1]\n\nIt appears the latest update broke something which crashes the game for people with AMD Cards that ought to be compatible\n\nWe're sorry for the inconvenient it will be Fixed as soon as possible\n\nIn the meantime we've made a temporary build using the previous build. It should work fine for you guys\n\n- Right click on the game in your library,\n- Click on Proprieties\n- Go on the Beta Tab\n- Select the \"Temp-AMD\" build in the drop down menu\n\n\nSorry about that\n",
+      "key": "1164850::23375c1b892336ab5e1ccbc3e2cbe93f4d2a8953",
+      "tags": [
+        {
+          "bug": "It appears the latest update broke something which crashes the game for people with AMD Cards that ought to be compatible"
+        },
+        {
+          "bug": "We're sorry for the inconvenient it will be Fixed as soon as possible"
+        }
+      ]
+    },
+    {
+      "title": "A bunch of new things",
+      "date": "2019-12-22 20:46:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2592316573860091059",
+      "content": "[h1]Hello everyone![/h1]\n\n[h2]I am here to announce a new update to the game[/h2]\nThe update is live, \nAs always, please let us know if you are having any issues with it\n\n[h3]What's new?[/h3]\n- Reorganized the toolbox\n- Added Tooltips\n- Added Icons for tools (placeholder)\n- Added Hotkeys 1-4 for the tools\n- Added Simulation physics sliders\n- Added Colour selection for Water\n\n[h3]What's fixed?[/h3]\n- Fixed the Crash when minimizing the game\n- Fixed the Drag & Drop zone on the toolbox for load Textures\n\nLittle video\n[previewyoutube=urukiAkzSSg;full][/previewyoutube]",
+      "key": "1164850::c9bfe7cba5d0adb597e0971dbde63ef03dbf6208",
+      "tags": [
+        {
+          "feature": "- Reorganized the toolbox"
+        },
+        {
+          "feature": "- Added Tooltips"
+        },
+        {
+          "feature": "- Added Icons for tools (placeholder)"
+        },
+        {
+          "feature": "- Added Hotkeys 1-4 for the tools"
+        },
+        {
+          "feature": "- Added Simulation physics sliders"
+        },
+        {
+          "feature": "- Added Colour selection for Water"
+        },
+        {
+          "bug": "- Fixed the Crash when minimizing the game"
+        },
+        {
+          "bug": "- Fixed the Drag & Drop zone on the toolbox for load Textures"
+        }
+      ]
+    },
+    {
+      "title": "[Update] - Afraid of the dark",
+      "date": "2019-11-26 19:01:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2551782186253018461",
+      "content": "This is a very quick addition to the game\nWe had a lot of demands to add a way to remove or reduce the darkness of the Sea\nI hope you like it. \n\n[previewyoutube=UeHc1_-qCsM;full][/previewyoutube]",
+      "key": "1164850::e389469d3935ccc895fe49c6568b54c368c38ca1",
+      "tags": [
+        {
+          "feature": "We had a lot of demands to add a way to remove or reduce the darkness of the Sea"
+        }
+      ]
+    },
+    {
+      "title": "Mouse DeSync fix",
+      "date": "2019-11-17 00:11:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3657414904097757118",
+      "content": "[h1][b]Hello folks[/b][/h1]\n\nIf you had an issue similar to the following screenshot, well, it should be fixed now\nPlease, let us know if that is still happening\n\nThank you\n[img]{STEAM_CLAN_IMAGE}/35944196/8977c6dac14dc2a5ac6fdae3e64afd8df633bd95.png[/img]",
+      "key": "1164850::1993163508d682f3d890814ae85522b4d2ecccf9",
+      "tags": [
+        {
+          "bug": "If you had an issue similar to the following screenshot, well, it should be fixed now"
+        }
+      ]
+    },
+    {
+      "title": "Ship Hotfix",
+      "date": "2019-11-11 18:24:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2448197582035008048",
+      "content": "[b]Hello everyone,[/b]\n\nThis is a little update to tell you the ships folder should be working fine now\nThere was an issue with Users permissions that prevented the game to properly extract the ships at the right place, this caused the folder to be empty \n\nInstead of extracting the ships, we've added all the ships into the game directory and linked that folder instead of a newly generated one\n\n[h1][b]The button should work fine now[/b][/h1]\nTake note, if you still have the old empty folder, [u][b]Try reinstalling the game[/b][/u], it's possible that your game didn't updated properly\n\nSorry for the inconvenience.",
+      "key": "1164850::13488cc840fcfe35386e8e63b21414724c97c59c",
+      "tags": [
+        {
+          "bug": "This is a little update to tell you the ships folder should be working fine now"
+        },
+        {
+          "bug": "There was an issue with Users permissions that prevented the game to properly extract the ships at the right place, this caused the folder to be empty"
+        }
+      ]
+    },
+    {
+      "title": "Ships",
+      "date": "2019-10-30 19:00:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2451574645855823208",
+      "content": "[h1]Missing Ships![/h1]\nWe had a lot of people who had an issue with the ships folder\nIt seems the game didn't extracted the ships properly which resulted with an empty folder\n\nThis is why we have made this little update.\nNow, the ships folder is included in the main directory of the game\nTo find it, simply follow these simple instructions:\n[olist]\n[*]Right click on the game in your steam library\n[*]Click on Proprieties\n[*]Click on the \"local Files\" tab\n[*]Click on \"browse local files\"\n[/olist]\n\nThis will open the game's directory and you should be able to find a \"Ships\" folder\nI suggest you copy the ships from that folder into the one generated by the game\nIt will be a simple way to load the ships\n\n===========================================\n[h1]We have a Discord server[/h1]\n\nWe are not very active on the steam community page, If you wish to follow the development of the game or if you have any issues, please join our Discord server. \nThe community is growing slowly and many people will be able to assist you at almost all time\nLink : [url=https://discord.gg/h2ycGkC]Here[/url]\n\nThank you for your time",
+      "key": "1164850::46b86ebe6c6ef7aabcc494e9ce18e959cf9d9511",
+      "tags": [
+        {
+          "bug": "It seems the game didn't extracted the ships properly which resulted with an empty folder"
+        }
+      ]
+    },
+    {
+      "title": "Hotfix 1: Crashing",
+      "date": "2019-10-26 21:02:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2504491307412564836",
+      "content": "[img]{STEAM_CLAN_IMAGE}/35944196/c7e335ae69b3adcc64d8af2cea2ed188c219d94a.png[/img]\n\nRelentless crashing has caused a lot of frustration among the community, sorry about that.\nWe hadn't planned for such a massive influx of new players upon launch, which just worsened the situation.\n\nWe have isolated the cause of the issue in the GUI framework we used, and have replaced it completely with an alternative.\n\nThe new version should be far more stable.",
+      "key": "1164850::66b24fcb2ec74f737a4ec14d4a539a3ffd00ffb7",
+      "tags": [
+        {
+          "bug": "We have isolated the cause of the issue in the GUI framework we used, and have replaced it completely with an alternative."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,696 @@
+{
+  "appId": "1437760",
+  "count": 22,
+  "notes": [
+    {
+      "title": "20250724.16446",
+      "date": "2025-07-24 11:06:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758612859",
+      "content": "After a couple weeks of debugging, we\u2019re finally making public the corrected build that replaces the revert from earlier this month. The patch primarily addresses the root cause of the disappearing TOZ34 and related strange behavior related to saving/loading. Here\u2019s what went wrong:\nIn multiple scenes, notably Arcology, Apartment, and Memorial Tower, some items were disappearing or behaving erratically. The list of items isn\u2019t long and would probably slip under the radar, but one of the affected items was the TOZ34, both a starting item in the first level and a popular gun among Peri\u2019s numerous hobos. The symptom was primarily the gun disappearing on load, out of Marie\u2019s hands and those of enemies \u2013 leading to their AI becoming confused and numerous null reference errors clogging up the log and hogging memory.\n\nObviously, you\u2019d think the issue was with some change to the save system, which is still the focus of our endeavors to improve the player experience. After numerous internal builds, git reverts and combing through log files and specific commit changes, and cursing, we discovered that the issue was in fact not any of our code, but rooted in how Unity handles serialized prefab references in scenes. Under the hood, the issue can be summarized thus:\n[list]\n[*] Unity retained stale prefab references, often replacing base prefab references with their variant equivalents in scene files. \n[*] Unity\u2019s serialization didn\u2019t report anything wrong in the editor.\n[*] But builds failed to include the proper prefab GUIDs, causing dictionary lookups, save data, and runtime instantiation to break.\n[*] This issue didn\u2019t show up in-editor unless thoroughly recreated, making it extremely painful to track down.\n[/list]\nAll affected scenes were manually corrected to restore proper prefab linkage. To prevent future situations like that, we\u2019ve added internal checks during build to detect broken prefab lists and duplicate PIDs. A build will now throw a warning if it detects that base prefabs are missing or duplicated.\n\n[b]Important note to other developers:[/b]\nIf you\u2019re working with nested prefab variants in Unity: touch your scenes. Merging scene files from different branches without saving them in the editor afterward may cause corruption that will silently make it into builds. Unity doesn\u2019t always update what it should unless you explicitly tell it to.\n[b]Important note to players:[/b]\nIf you made a save in build 20250703.16370, 20250627.15469 or 20250626.22303, the TOZ will likely not reappear in the affected scenes. Please load a previous save or restart the level if that\u2019s the case for you.\n\nAnyway, back to our regularly scheduled updates. This version restores all the fixes and changes introduced before the revert (and, of course, the TOZ34) and also includes the following additions:\n[list]\n[*] Added an option for crouch toggle\n[*] Made the hot slot bar behave better in 4:3 aspect ratio resolutions\n[*] [REC] Made the save room mechanic more explicit\n[/list]\nOur patrons and backers are currently playing around with a cool new feature we\u2019ll be showing off this Screenshot Saturday. Once we gather enough feedback and make sure it won\u2019t cause any issues, it will become available to the public.\n\nThank you again for your patience.\n",
+      "key": "1437760::7af0b7981e593e41ab4493a57e91c486216201d2",
+      "tags": [
+        {
+          "bug": "The patch primarily addresses the root cause of the disappearing TOZ34 and related strange behavior related to saving/loading."
+        },
+        {
+          "bug": "In multiple scenes, notably Arcology, Apartment, and Memorial Tower, some items were disappearing or behaving erratically."
+        },
+        {
+          "bug": "The symptom was primarily the gun disappearing on load, out of Marie\u2019s hands and those of enemies \u2013 leading to their AI becoming confused and numerous null reference errors clogging up the log and hogging memory."
+        },
+        {
+          "bug": "Unity retained stale prefab references, often replacing base prefab references with their variant equivalents in scene files."
+        },
+        {
+          "bug": "Unity\u2019s serialization didn\u2019t report anything wrong in the editor."
+        },
+        {
+          "bug": "But builds failed to include the proper prefab GUIDs, causing dictionary lookups, save data, and runtime instantiation to break."
+        },
+        {
+          "bug": "This issue didn\u2019t show up in-editor unless thoroughly recreated, making it extremely painful to track down."
+        },
+        {
+          "bug": "All affected scenes were manually corrected to restore proper prefab linkage."
+        },
+        {
+          "feature": "To prevent future situations like that, we\u2019ve added internal checks during build to detect broken prefab lists and duplicate PIDs."
+        },
+        {
+          "feature": "A build will now throw a warning if it detects that base prefabs are missing or duplicated."
+        },
+        {
+          "feature": "Added an option for crouch toggle"
+        },
+        {
+          "feature": "Made the hot slot bar behave better in 4:3 aspect ratio resolutions"
+        },
+        {
+          "feature": "[REC] Made the save room mechanic more explicit"
+        }
+      ]
+    },
+    {
+      "title": "20250703.16370",
+      "date": "2025-07-03 11:08:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891739636",
+      "content": "Minor patch, fixing issues reported in the past days:\n\n[list]\n[*] Fixed flamethrower canisters not appearing on NPC backs\n[*] Weapons holstered by NPCs should appar on their hipsand back again\n[*] [KAR] Funicular location in the factory should not break on load from pre-20250626.22303 save\n[*] Priest, Ishtar and Lilith shouldn't have their hands contort in weird ways on load. Still needs additional work.\n[/list]",
+      "key": "1437760::0da83abfda98b2837e53027d909b84100cb21e45",
+      "tags": [
+        {
+          "bug": "Fixed flamethrower canisters not appearing on NPC backs"
+        },
+        {
+          "bug": "Weapons holstered by NPCs should appar on their hipsand back again"
+        },
+        {
+          "bug": "[KAR] Funicular location in the factory should not break on load from pre-20250626.22303 save"
+        },
+        {
+          "bug": "Priest, Ishtar and Lilith shouldn't have their hands contort in weird ways on load. Still needs additional work."
+        }
+      ]
+    },
+    {
+      "title": "20250627.15469",
+      "date": "2025-06-27 10:03:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891544213",
+      "content": "Small hotfix.\n\n[list]\n[*] Reverted a change that caused reloading weapons with internal magazines (shotties, sks) to potentially crash the game after loading in a save\n[*] Limited \"rotation is zero\" spam in log\n[/list]",
+      "key": "1437760::c943fc3b09cb84f582931e5b1f6e26442939301d",
+      "tags": [
+        {
+          "bug": "Reverted a change that caused reloading weapons with internal magazines (shotties, sks) to potentially crash the game after loading in a save"
+        }
+      ]
+    },
+    {
+      "title": "20250626.22303",
+      "date": "2025-06-26 17:55:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891521594",
+      "content": "As new content and mechanics are still in the oven (Topie Chan will return soon!), we continue to improve and tweak the current experience \u2013 just in time for the Summer Sale! Players both new and old, here\u2019s the changes you can expect:\n\n[list]\n[*] Quick saving/loading can\u2019t be done in menu anymore (particularly important for not accidentally loading)\n[*] You can no longer save while in midair or reloading, it will instead be queued up (assuming you don't go splat on the ground)\n[*] Inventory item values (uses/ammo counts) don\u2019t disappear on save anymore\n[*] NPCs \"speak\" during conversations again\n[*] Gas grenade clouds shouldn't continue to deal damage after loading a save\n[*] Fixed glitch causing melee weapons to instakill enemies while sprinting with a specific set of inputs\n[*] Grenades and nade-like objects should be less buggy (still working on this)\n[*] Fixed some weapons going pink when using thermoptic. Interestingly enough, sword and nade were fucked in completely different ways, leading to the same result.\n[*] Large batteries can\u2019t drop limb health below zero anymore\n[*] Added precautions against the elusive \u201cAPS spikes become huge\u201c bug. Still not sure why they occasionally decide to fill half of a room\n[*] Weapons shortened with the hacksaw (as well as the hacksaw itself) should save properly\n[*] You can't change firing mode while hacking anymore\n[*] The Map Drone can now be detected by NPCs if you knock one out with it\n[*] Disabled saves on arena since it wasn't supposed to have them\n[*] Improved the shader for cloaked items in third person\n[*] Improved character meshes (including armbands and new gasmasks)\n[*] Camera zoom function can be reassigned to different keys now\n [*] Added \u201cNext Hotslot\u201d and \u201cPrevious Hotslot\u201d keymappings (defaults are brackets)\n[*] Added the option to map mouse scrollwheel input (used for camera zoom as default but can be assigned for switching hotslots a\u2019la Deus Ex\u2026 or bunnyhopping)\n[*] Fixed cassette playback glitching out on Sunday Summer\n[*] [APT] Third Hallway Weirdo selection box won\u2019t glitch out\n[*] [APT] Kasia\u2019s bathroom door is now corporeal (ya creep)\n[*] [APT] Removed vestigial sound effects and improved particle effects\n[*] [KAR] Made funicular in factory lab not lock Marie\u2019s rotation\n[*] [KAR] Removed duplicate elevator panel in apartments\n[*] You can\u2019t claim a speedrun world record on Chasm with a goddamn debug cheat anymore\n[*] New outfit in the cheat menu\n[*] Renamed some of the levels to not cause confusion with real world places, which only inspired them \n[/list]",
+      "key": "1437760::2b40ef20a91878ff9ceaed10e0fa181a3df364a5",
+      "tags": [
+        {
+          "bug": "Quick saving/loading can\u2019t be done in menu anymore (particularly important for not accidentally loading)"
+        },
+        {
+          "bug": "You can no longer save while in midair or reloading, it will instead be queued up (assuming you don't go splat on the ground)"
+        },
+        {
+          "bug": "Inventory item values (uses/ammo counts) don\u2019t disappear on save anymore"
+        },
+        {
+          "bug": "NPCs \"speak\" during conversations again"
+        },
+        {
+          "bug": "Gas grenade clouds shouldn't continue to deal damage after loading a save"
+        },
+        {
+          "bug": "Fixed glitch causing melee weapons to instakill enemies while sprinting with a specific set of inputs"
+        },
+        {
+          "bug": "Grenades and nade-like objects should be less buggy (still working on this)"
+        },
+        {
+          "bug": "Fixed some weapons going pink when using thermoptic. Interestingly enough, sword and nade were fucked in completely different ways, leading to the same result."
+        },
+        {
+          "bug": "Large batteries can\u2019t drop limb health below zero anymore"
+        },
+        {
+          "bug": "Added precautions against the elusive \u201cAPS spikes become huge\u201c bug. Still not sure why they occasionally decide to fill half of a room"
+        },
+        {
+          "bug": "Weapons shortened with the hacksaw (as well as the hacksaw itself) should save properly"
+        },
+        {
+          "bug": "You can't change firing mode while hacking anymore"
+        },
+        {
+          "bug": "The Map Drone can now be detected by NPCs if you knock one out with it"
+        },
+        {
+          "bug": "Disabled saves on arena since it wasn't supposed to have them"
+        },
+        {
+          "bug": "Fixed cassette playback glitching out on Sunday Summer"
+        },
+        {
+          "bug": "[APT] Third Hallway Weirdo selection box won\u2019t glitch out"
+        },
+        {
+          "bug": "[APT] Kasia\u2019s bathroom door is now corporeal (ya creep)"
+        },
+        {
+          "bug": "[KAR] Made funicular in factory lab not lock Marie\u2019s rotation"
+        },
+        {
+          "bug": "[KAR] Removed duplicate elevator panel in apartments"
+        },
+        {
+          "bug": "You can\u2019t claim a speedrun world record on Chasm with a goddamn debug cheat anymore"
+        },
+        {
+          "feature": "Improved the shader for cloaked items in third person"
+        },
+        {
+          "feature": "Improved character meshes (including armbands and new gasmasks)"
+        },
+        {
+          "feature": "Camera zoom function can be reassigned to different keys now"
+        },
+        {
+          "feature": "Added \u201cNext Hotslot\u201d and \u201cPrevious Hotslot\u201d keymappings (defaults are brackets)"
+        },
+        {
+          "feature": "Added the option to map mouse scrollwheel input (used for camera zoom as default but can be assigned for switching hotslots a\u2019la Deus Ex\u2026 or bunnyhopping)"
+        },
+        {
+          "feature": "[APT] Removed vestigial sound effects and improved particle effects"
+        },
+        {
+          "feature": "New outfit in the cheat menu"
+        },
+        {
+          "feature": "Renamed some of the levels to not cause confusion with real world places, which only inspired them"
+        }
+      ]
+    },
+    {
+      "title": "20250415.09723",
+      "date": "2025-04-15 13:40:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1796631172414008",
+      "content": "As we continue working on new concent for Peri, we'd like to provide you with a new batch of fixes for the EA release!\n\n[list]\n[*] Fixed Karabash endings not playing and softlocking the game. The ending scene was not being properly activated.\n[*] Implants weren't saving their hotslot number, their position in the hotslot bar will now be stored correctly.\n[*] Kacper bugged out upon restarting the fight in Belgrade, as NPC AI is based on the assumption that no targets would ever be deleted and in this instance, this is exactly what happened.\n[*] Vodka would refill itself in certain situations, including loading from main menu.\n[*] Made the function to fire guns more nullsafe, should hopefully fix the issue that people have been having with certain instances of guns not shooting. Should this not be a sufficient fix, we'll look into it further.\n[*] Various fixes to Belgrade geometry, including:\n[list]\n[*] Plugged up various world holes \n[*] Removing instances of z-fighting.\n[/list][*] Made Junker's dialogue more readable.\n[*] Added a hacksaw (currently available in the Arcology).\n[*] Increased visibility of the Makarov, should prove useful in Belgrade.\n[*] Improved behavior of some NPC-only items.\n[/list]",
+      "key": "1437760::e1093021f143dd6e1f0a2555a67db71c9e755a89",
+      "tags": [
+        {
+          "bug": "Fixed Karabash endings not playing and softlocking the game. The ending scene was not being properly activated."
+        },
+        {
+          "bug": "Implants weren't saving their hotslot number, their position in the hotslot bar will now be stored correctly."
+        },
+        {
+          "bug": "Kacper bugged out upon restarting the fight in Belgrade, as NPC AI is based on the assumption that no targets would ever be deleted and in this instance, this is exactly what happened."
+        },
+        {
+          "bug": "Vodka would refill itself in certain situations, including loading from main menu."
+        },
+        {
+          "bug": "Made the function to fire guns more nullsafe, should hopefully fix the issue that people have been having with certain instances of guns not shooting. Should this not be a sufficient fix, we'll look into it further."
+        },
+        {
+          "bug": "Various fixes to Belgrade geometry, including:"
+        },
+        {
+          "bug": "Plugged up various world holes"
+        },
+        {
+          "bug": "Removing instances of z-fighting."
+        },
+        {
+          "feature": "Added a hacksaw (currently available in the Arcology)."
+        },
+        {
+          "balance_change": "Increased visibility of the Makarov, should prove useful in Belgrade."
+        }
+      ]
+    },
+    {
+      "title": "20250403.19723",
+      "date": "2025-04-04 07:08:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795917897355409",
+      "content": "Hello everyone! We hope your April started well. It was quite busy for us, here\u2019s a list of changes for this update:\n\n[list]\n[*] Added keybind for hiding entire UI (for the virtual photographers out there).\n[*] Added keybind for instant item pickup without triggering physics dragging (for low FPS).\n[*] Removed hardcoded keybinds \u2013 you should be able to effectively switch left and right mouse button in the input menu (should also help with custom Deck mappings).\n[*] Removed unused keybinds and renamed existing ones for clarity.\n[*] Fixed issues with some particle collision sounds not playing.\n[*] Marie\u2019s hairpins shouldn\u2019t appear in first person anymore.\n[*] Fixed Toblerone scene to use Marie\u2019s current outfit.\n[*] Lowered loudness of shotgun hit sound effects.\n[*] AI tweak: enemies with shotguns need to reload the same as player does, limiting spam.\n[*] Added a few missing guns to the murder/k/ube.\n[*] Timer during the trial will now slow down when reading documents and computers, as well as during conversations.\n[*] Removed Topie Chan.\n[/list]\n",
+      "key": "1437760::e7afdcef9ba3e7531803b16712bd56c663eb0d7e",
+      "tags": [
+        {
+          "feature": "Added keybind for hiding entire UI (for the virtual photographers out there)."
+        },
+        {
+          "feature": "Added keybind for instant item pickup without triggering physics dragging (for low FPS)."
+        },
+        {
+          "feature": "Removed hardcoded keybinds \u2013 you should be able to effectively switch left and right mouse button in the input menu (should also help with custom Deck mappings)."
+        },
+        {
+          "feature": "Removed unused keybinds and renamed existing ones for clarity."
+        },
+        {
+          "bug": "Fixed issues with some particle collision sounds not playing."
+        },
+        {
+          "bug": "Marie\u2019s hairpins shouldn\u2019t appear in first person anymore."
+        },
+        {
+          "bug": "Fixed Toblerone scene to use Marie\u2019s current outfit."
+        },
+        {
+          "balance_change": "Lowered loudness of shotgun hit sound effects."
+        },
+        {
+          "balance_change": "AI tweak: enemies with shotguns need to reload the same as player does, limiting spam."
+        },
+        {
+          "feature": "Added a few missing guns to the murder/k/ube."
+        },
+        {
+          "feature": "Timer during the trial will now slow down when reading documents and computers, as well as during conversations."
+        },
+        {
+          "feature": "Removed Topie Chan."
+        }
+      ]
+    },
+    {
+      "title": "Added Topie Chan",
+      "date": "2025-04-01 15:03:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637989841",
+      "content": "[url={STEAM_CLAN_IMAGE}/39205791/4e5910723cb50f4e18dde4d41dc61e1910d798f3.png][img]{STEAM_CLAN_IMAGE}/39205791/71f0876b8011cbcd68465e902fd884e6a63ee8c1.png[/img][/url]\nAdded Topie Chan. That is all. Thank you for your attention.",
+      "key": "1437760::5da1deabf90f636d9d4a5c90aacc03a0f3333f81",
+      "tags": [
+        {
+          "feature": "Added Topie Chan."
+        }
+      ]
+    },
+    {
+      "title": "20250326.05723 & 09723",
+      "date": "2025-03-26 09:53:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637787731",
+      "content": "Hope you're having a wonderful day. If you'll spend part of it playing Peri, you'll notice the following changes:\n\n[list]\n[*] Fixed open bolt guns to not have one round in chamber on mag removal.\n[*] The dogshit AK respects the reload keybind, wasting all the ammo in your inventory more efficiently. It was also added to the muder/k/ube.\n[*] A special Topielec will carry a newly added gun. Unfortunately it wont show up when loading a save from before this patch, you'll find it on a new playthrough.\n[*] Increased speed of RMB93 reload.\n[*] Tweaked magazine capacity for some guns to reflect real life values\n[*] Fixed bug introduced in the previous patch where carrying crates and other large objects would cause their physics to break.\n[*] Updated player model with better shoulder weight painting.\n[*] Fixed normals on the MAC10 model.\n[*] Fixed weird loot behavior of Iskander's weapons.\n[*] Fixed kiln gun and flamer being suppresable.\n[/list]\n\nPatch 09723 is just a hotfix for 2 small mesh issues in the previous build.",
+      "key": "1437760::66d15a9d9c3b5bad679156c32816b1028dc5f9ae",
+      "tags": [
+        {
+          "bug": "Fixed open bolt guns to not have one round in chamber on mag removal."
+        },
+        {
+          "feature": "The dogshit AK respects the reload keybind, wasting all the ammo in your inventory more efficiently. It was also added to the muder/k/ube."
+        },
+        {
+          "feature": "A special Topielec will carry a newly added gun. Unfortunately it wont show up when loading a save from before this patch, you'll find it on a new playthrough."
+        },
+        {
+          "balance_change": "Increased speed of RMB93 reload."
+        },
+        {
+          "balance_change": "Tweaked magazine capacity for some guns to reflect real life values"
+        },
+        {
+          "bug": "Fixed bug introduced in the previous patch where carrying crates and other large objects would cause their physics to break."
+        },
+        {
+          "bug": "Fixed normals on the MAC10 model."
+        },
+        {
+          "bug": "Fixed weird loot behavior of Iskander's weapons."
+        },
+        {
+          "bug": "Fixed kiln gun and flamer being suppresable."
+        }
+      ]
+    },
+    {
+      "title": "20250321.07723",
+      "date": "2025-03-22 05:54:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794830910932557",
+      "content": "Thank you for ongoing support of the game. Enjoy the latest round of fixes:\n[list]\n[*] Fixed the issue where if you saved, rotated an item that was on your hotbar, then loaded, it would leave a blank space that was nominally occupied by the item\n[*] Galil should no longer get cut down when you load from main menu, this was fixed by changing how attachments are saved\n[*] Adjusted the collision box for one of the Belgrade save rooms\n[*] Improved aim-down-sights feel, limiting the jitteriness. Still working on alleviating floating point imprecision when aiming at far away level locations.\n[*] Fixed various graphical issues with WE2000, Communist Party Shotgun and KK9\n[*] Often requested gun added to murder/k/ube (for those who know)\n[/list]",
+      "key": "1437760::91dd7f3abd194e27cf989641359fcef31d358487",
+      "tags": [
+        {
+          "bug": "Fixed the issue where if you saved, rotated an item that was on your hotbar, then loaded, it would leave a blank space that was nominally occupied by the item"
+        },
+        {
+          "bug": "Galil should no longer get cut down when you load from main menu, this was fixed by changing how attachments are saved"
+        },
+        {
+          "balance_change": "Adjusted the collision box for one of the Belgrade save rooms"
+        },
+        {
+          "bug": "Improved aim-down-sights feel, limiting the jitteriness."
+        },
+        {
+          "bug": "Fixed various graphical issues with WE2000, Communist Party Shotgun and KK9"
+        },
+        {
+          "feature": "Often requested gun added to murder/k/ube (for those who know)"
+        }
+      ]
+    },
+    {
+      "title": "20250312.21723",
+      "date": "2025-03-13 07:01:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528069932",
+      "content": "Thanks everyone for helping us with your bugreports, makes our job much more pleasant. [b]List of fixes:[/b]\n\n[list]\n[*] Adjustments made to the cost of implants.\n[*] Several items in missions would disappear when you loaded a saved game from main menu (particularly bad on Belgrade with several of the first guns you can find being affected), this was caused by a discrepancy in their save profiles compared to their prefabs: corrected this systematically\n[*] Some consumables weren't saving their hotslot number which is why they weren't going back to slots if you used them and reloaded.\n[*] Belgrade had a several second window (the duration of the opening cutscene) where you could drop your implants and pick them up before they were removed from your inventory.\n[*] There's been several reported crashes that have been revealed to be caused by a ragdoll stretching out indefinitely. While the exact cause of this crash is unknown, there is now a failsafe that gets tripped when you load a save from main menu and a corpse is showing signs of stretching his arms out (just for you). This at least should stop the bug from persisting on most save files.\n[/list]",
+      "key": "1437760::836244cca267cc63304fbeccbe82fc4a25a16cc1",
+      "tags": [
+        {
+          "balance_change": "Adjustments made to the cost of implants."
+        },
+        {
+          "bug": "Several items in missions would disappear when you loaded a saved game from main menu (particularly bad on Belgrade with several of the first guns you can find being affected), this was caused by a discrepancy in their save profiles compared to their prefabs: corrected this systematically"
+        },
+        {
+          "bug": "Some consumables weren't saving their hotslot number which is why they weren't going back to slots if you used them and reloaded."
+        },
+        {
+          "bug": "Belgrade had a several second window (the duration of the opening cutscene) where you could drop your implants and pick them up before they were removed from your inventory."
+        },
+        {
+          "bug": "There's been several reported crashes that have been revealed to be caused by a ragdoll stretching out indefinitely. While the exact cause of this crash is unknown, there is now a failsafe that gets tripped when you load a save from main menu and a corpse is showing signs of stretching his arms out (just for you). This at least should stop the bug from persisting on most save files."
+        }
+      ]
+    },
+    {
+      "title": "20250307.08723",
+      "date": "2025-03-07 11:33:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379410657",
+      "content": "Second patch today! Notes:\n\n[list]\n[*] Hotfix to undo an attempt to fix loading from main menu causing permanent distortion effect on Belgrade - broke several things including making the sound effect for Filemon giving you your augment play on loop and worse\n[*] Fixed the permanent distortion effect on Belgrade for real\n[*] Belgrade intro cutscene shouldn't play again when loading from main menu\n[*] Several updates to item prices and descriptions\n[/list]",
+      "key": "1437760::f2c6b12353d4062e1b8cb43e3c7be0a60d6c8bf0",
+      "tags": [
+        {
+          "bug": "Hotfix to undo an attempt to fix loading from main menu causing permanent distortion effect on Belgrade - broke several things including making the sound effect for Filemon giving you your augment play on loop and worse"
+        },
+        {
+          "bug": "Fixed the permanent distortion effect on Belgrade for real"
+        },
+        {
+          "bug": "Belgrade intro cutscene shouldn't play again when loading from main menu"
+        },
+        {
+          "balance_change": "Several updates to item prices and descriptions"
+        }
+      ]
+    },
+    {
+      "title": "20250306.15723",
+      "date": "2025-03-07 04:52:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379400823",
+      "content": "Please enjoy the latest Peripeteia patch. [b]List of fixes:[/b]\n\n[list]\n[*] If you died sprint toggle would return to default\n[*] There was an issue with the NavMeshAgent failing on the dolls, causing some of them to be less responsive.\n[*] Tanks should be less likely to have their turrets 15 meters away\n[*] If you loaded a save on Belgrade from main menu in certain places you'd get distortion that would never go away, caused by an oversight in the code that meant the effect would never fade in some situations\n[*] Jerrycan wasn't set up properly for saving\n[*] Juice wasn't usable\n[*] Machine gun belts weren't supposed to have save components, was causing them to appear in inventory when loading a save\n[/list]",
+      "key": "1437760::fc93bca43641daca7de3e8d095861df4f17534d0",
+      "tags": [
+        {
+          "bug": "If you died sprint toggle would return to default"
+        },
+        {
+          "bug": "There was an issue with the NavMeshAgent failing on the dolls, causing some of them to be less responsive."
+        },
+        {
+          "bug": "Tanks should be less likely to have their turrets 15 meters away"
+        },
+        {
+          "bug": "If you loaded a save on Belgrade from main menu in certain places you'd get distortion that would never go away, caused by an oversight in the code that meant the effect would never fade in some situations"
+        },
+        {
+          "bug": "Jerrycan wasn't set up properly for saving"
+        },
+        {
+          "bug": "Juice wasn't usable"
+        },
+        {
+          "bug": "Machine gun belts weren't supposed to have save components, was causing them to appear in inventory when loading a save"
+        }
+      ]
+    },
+    {
+      "title": "20250227.08723",
+      "date": "2025-02-27 18:34:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526022913",
+      "content": "Please enjoy the latest Peripeteia patch. [b]List of fixes:[/b]\n[list]\n[*] [BEL] Save rooms now have a UI element, thanks Hiro!\n[*] [BEL] Added failsafe to ensure that the vent doesn't get blocked by invisible wall\n[*] [BEL] Certain one-way door now has description to make it clear that it's locked and not just bugged\n[*] [BEL] Fixed table issue with RPG\n[*] [KAR] Mouse would get messed up if you hacked a certain important thing, it would persist with save file because the yaw on the camera would get majorly upset\n[*] Floating copies of transferred implants could be found, most noticeable on Belgrade's second tower\n[*] You weren't able to buy something if you had exact change (2/24) \n\n[b]Save fixes:[/b]\n[*] [KAR] The trial didn't have the incremental counters saved\n[*] [BEL] Some doors would scale and weren't saving that scale so they'd act weird\n[*] [BEL] New save room added\n[*] [BEL] School door wouldn't ever open if you ever interacted with it without a key\n[/list]",
+      "key": "1437760::08468e549fc3807b9cf9132db37032fc2c08f1d5",
+      "tags": [
+        {
+          "feature": "[BEL] Save rooms now have a UI element, thanks Hiro!"
+        },
+        {
+          "feature": "[BEL] Added failsafe to ensure that the vent doesn't get blocked by invisible wall"
+        },
+        {
+          "feature": "[BEL] Certain one-way door now has description to make it clear that it's locked and not just bugged"
+        },
+        {
+          "bug": "[BEL] Fixed table issue with RPG"
+        },
+        {
+          "bug": "[KAR] Mouse would get messed up if you hacked a certain important thing, it would persist with save file because the yaw on the camera would get majorly upset"
+        },
+        {
+          "bug": "Floating copies of transferred implants could be found, most noticeable on Belgrade's second tower"
+        },
+        {
+          "bug": "You weren't able to buy something if you had exact change (2/24)"
+        },
+        {
+          "bug": "[KAR] The trial didn't have the incremental counters saved"
+        },
+        {
+          "bug": "[BEL] Some doors would scale and weren't saving that scale so they'd act weird"
+        },
+        {
+          "feature": "[BEL] New save room added"
+        },
+        {
+          "bug": "[BEL] School door wouldn't ever open if you ever interacted with it without a key"
+        }
+      ]
+    },
+    {
+      "title": "20250223.15723",
+      "date": "2025-02-23 17:58:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792116353303796",
+      "content": "[list]\n[*] Augs carry over between scenes - anything that isn't an implant is liquidated at level end\n[*] Fixed elevators breaking\n[*] Hacking softlock fixed\n[*] Elevator access key could fall through the table it's on (Belgrade)\n[*] Level selection on main menu was unlocking in wrong order for Belgrade and Karabash\n[/list]",
+      "key": "1437760::989784eeaf0356f91fb3d27c4c93690934505681",
+      "tags": [
+        {
+          "bug": "[*] Fixed elevators breaking"
+        },
+        {
+          "bug": "[*] Hacking softlock fixed"
+        },
+        {
+          "bug": "[*] Elevator access key could fall through the table it's on (Belgrade)"
+        },
+        {
+          "bug": "[*] Level selection on main menu was unlocking in wrong order for Belgrade and Karabash"
+        }
+      ]
+    },
+    {
+      "title": "Peri 2023/2024 update roundup",
+      "date": "2024-09-29 14:09:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370193688521",
+      "content": "We\u2019re very happy with the steady progress we\u2019ve been making with Peripeteia since we last posted but the rate of public updates has slowed down as we\u2019re polishing up existing levels, mechanics and unbreaking the save system, leaving little that we can show off without spoiling the fun for everyone.\nIf you\u2019re interested in trying out our \u201cdev complete\u201d super buggy version of the game and help us test it, you can [url=https://www.patreon.com/peripeteia]subscribe to our Patreon[/url], as announced in this post/trailer summarizing what\u2019s in store:\n[previewyoutube=v1DqNoiC1fo;full][/previewyoutube]\n\nWe opt to create these large development updates rather than make separate post for every time we participate in Screenshot Saturday, but we\u2019d like to remind you that you can follow our social media:\n[url=https://x.com/90sGraphics]The platform formerly known as Twitter[/url]\n[url=https://www.youtube.com/peripeteia]YouTube[/url] and our [url=https://www.youtube.com/@Peripeteia/community]YT Community[/url]\n[url=https://bsky.app/profile/90sgraphics.bsky.social]Blue Sky[/url]\n[url=https://www.instagram.com/peripeteiagame/]Instagram[/url]\n[url=https://www.facebook.com/90sGraphics/]Facebook[/url]\n[url=https://imsim.dev/@Peripeteia]Fediverse [/url] (you can follow us from Mastodon, Pawoo, Misskey, poa.st and all other federated instances)\nYou'll gain the added bonus of fanart and reposts from other immersive sims and games with a similar vibe!\nAlso remember to [url=https://discord.com/invite/2Rs5nydSH3]join the Discord[/url], as it is the best way to reach us, receive updates and interact with the community!\n\nEnemies can smoke and use certain items dynamically now.\n[previewyoutube=Vao3g3ivSt8;full][/previewyoutube]\n\nThere are many solutions for your problems, at times, it's spiritually an OSHA violation.\n[previewyoutube=kJ3VkFjZ7oc;full][/previewyoutube]\n\nWe added more advanced gun attachments and had fun with them, referencing a certain popular action movie. Check out [url=https://store.steampowered.com/app/2788210/DEEP_STATE/]Deep State[/url], which inspired the original twitter post\n[previewyoutube=efMERLgVjCU;full][/previewyoutube]\n[previewyoutube=KASfcR0xPxc;full][/previewyoutube]\n[previewyoutube=60XPjmYLb4k;full][/previewyoutube]\n\nWe\u2019ve also fully implemented new armor options for Marie.\n[url={STEAM_CLAN_IMAGE}/39205791/a65fa2d8ecaac236823f81713a4ecdfed640530b.png][img]{STEAM_CLAN_IMAGE}/39205791/d5ce0f7e6c0ed9d45f0db1ac55db67c2aa23303d.png[/img][/url][url={STEAM_CLAN_IMAGE}/39205791/efa996b2042f4d598f5167a715759e5b056d2be9.png][img]{STEAM_CLAN_IMAGE}/39205791/1582a0b1deb42bb3a29e565e43104438f8e90734.png[/img][/url][url={STEAM_CLAN_IMAGE}/39205791/21acd5744a55a09711eed050f7c068f299471801.jpg][img]{STEAM_CLAN_IMAGE}/39205791/c819db76d0a9add6a4322d2735abe8d9cce85cde.jpg[/img][/url]\n\nMarie will be able purchase a Lada in later levels or live up to her people and steal one. Very proud of this addition\n[previewyoutube=USRuVp2ZVEs;full][/previewyoutube]\n\nThank you for playing our demo, following the game and supporting us! Stay tuned for more exciting news!\n",
+      "key": "1437760::32298dd18eecd93a49d62809ea14c483b3a4e5a9",
+      "tags": [
+        {
+          "feature": "Enemies can smoke and use certain items dynamically now."
+        },
+        {
+          "feature": "We added more advanced gun attachments and had fun with them, referencing a certain popular action movie."
+        },
+        {
+          "feature": "We\u2019ve also fully implemented new armor options for Marie."
+        },
+        {
+          "feature": "Marie will be able purchase a Lada in later levels or live up to her people and steal one."
+        }
+      ]
+    },
+    {
+      "title": "Next Fest Demo Update",
+      "date": "2023-10-15 19:39:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6438516944133031400",
+      "content": "Wow, what a week! The Steam Next Fest is almost over, thank you EVERYONE that wishlisted the game, played the demo, [url=https://90s.graphics/discord]joined the Discord to leave feedback[/url], commented on the [url=https://steamcommunity.com/app/1437760/discussions/]Steam forums[/url], tweeted out screenshots, [url=https://twitter.com/90sGraphics]drew fanart[/url], streamed the game, made videos, took screenshots and [url=https://streamable.com/fzguzk]attempted speedruns[/url]. There\u2019s thousands of you and it\u2019s been both a very humbling and encouraging experience for our team of 3 people and our contributors.\n\nMany of you have noticed: there\u2019s been a lot of updates over the week. We have been applying hotfixes, tweaks and patches daily. We have to admit: the demo you saw on Monday was very buggy, but thanks to your reports and a lot of work, the demo has achieved a level of quality we are close to proud of and hopefully you\u2019ll find enjoyable over the coming months, as we won\u2019t be taking it down. We\u2019re still ironing out bugs and we\u2019ll keep updating it, so please keep telling us your thoughts and sharing insights and suggestions.\n\nFor those who played the demo in its broken state and are planning to return to it, here\u2019s a general patchnote:\n\n[list]\n[*] Added a clearer description to the Puppeteer implant.\n[*] Added new areas to the Tutorial.\n[*] Added new quest logs.\n[*] Android does not collide with random invisible walls.\n[*] Augmentation UI should not cause a continuous sine wave tone.\n[*] Consumable items have been fixed.\n[*] Fall damage has been lowered.\n[*] Fixed flame damage on enemies.\n[*] Fixed inventory wipe on save.\n[*] Fixed issues with activating implants on load after death.\n[*] Fixed issues with inventory items not saving.\n[*] Fixed priest conversation.\n[*] Fixed the main menu for ultrawide resolutions.\n[*] Fixed transparent textures not working with raycasts (e.g. gunshots).\n[*] Headshot now work as intended.\n[*] Improved reliability of the light meter.\n[*] Improved the intended \u201cfirst time player\u201d tutorial guidance.\n[*] Instances of floating magazines removed, they can\u2019t be \u201cstolen\u201d from enemy guns either.\n[*] Inventory no longer activates during hacking, neither do you switch to third person.\n[*] Issues with loading after death have been addressed.\n[*] Items do not appear as \u201cduplicated\u201d inside containers.\n[*] Mosin sights have been fixed.\n[*] Night vision has been remade.\n[*] NPC behavior on load mostly fixed.\n[*] Resolved issue with receiving quest items from NPCs after load.\n[*] Save menu works reliably.\n[*] Snipers should not be sliding around, their laser sights no longer detach from their guns.\n[*] The \u201cslide\u201d section works as intended (you survive).\n[/list]\n\nAnyone that misses the original demo can still play it on [url=https://shodanon.itch.io/peripeteia]itch.io[/url] to compare and contrast.\n\nThanks again for both encouragement and critique. You make working on Peri worth it.",
+      "key": "1437760::595bbd9ef33a70292fcbf9b7d74914ad7c92ef6c",
+      "tags": [
+        {
+          "feature": "Added a clearer description to the Puppeteer implant."
+        },
+        {
+          "feature": "Added new areas to the Tutorial."
+        },
+        {
+          "feature": "Added new quest logs."
+        },
+        {
+          "bug": "Android does not collide with random invisible walls."
+        },
+        {
+          "bug": "Augmentation UI should not cause a continuous sine wave tone."
+        },
+        {
+          "bug": "Consumable items have been fixed."
+        },
+        {
+          "balance_change": "Fall damage has been lowered."
+        },
+        {
+          "bug": "Fixed flame damage on enemies."
+        },
+        {
+          "bug": "Fixed inventory wipe on save."
+        },
+        {
+          "bug": "Fixed issues with activating implants on load after death."
+        },
+        {
+          "bug": "Fixed issues with inventory items not saving."
+        },
+        {
+          "bug": "Fixed priest conversation."
+        },
+        {
+          "bug": "Fixed the main menu for ultrawide resolutions."
+        },
+        {
+          "bug": "Fixed transparent textures not working with raycasts (e.g. gunshots)."
+        },
+        {
+          "bug": "Headshot now work as intended."
+        },
+        {
+          "bug": "Improved reliability of the light meter."
+        },
+        {
+          "bug": "Improved the intended \u201cfirst time player\u201d tutorial guidance."
+        },
+        {
+          "bug": "Instances of floating magazines removed, they can\u2019t be \u201cstolen\u201d from enemy guns either."
+        },
+        {
+          "bug": "Inventory no longer activates during hacking, neither do you switch to third person."
+        },
+        {
+          "bug": "Issues with loading after death have been addressed."
+        },
+        {
+          "bug": "Items do not appear as \u201cduplicated\u201d inside containers."
+        },
+        {
+          "bug": "Mosin sights have been fixed."
+        },
+        {
+          "feature": "Night vision has been remade."
+        },
+        {
+          "bug": "NPC behavior on load mostly fixed."
+        },
+        {
+          "bug": "Resolved issue with receiving quest items from NPCs after load."
+        },
+        {
+          "bug": "Save menu works reliably."
+        },
+        {
+          "bug": "Snipers should not be sliding around, their laser sights no longer detach from their guns."
+        },
+        {
+          "bug": "The \u201cslide\u201d section works as intended (you survive)."
+        }
+      ]
+    },
+    {
+      "title": "Peri Kickstarter: interrogation mechanic unlocked!",
+      "date": "2021-09-02 03:20:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4020014099087343674",
+      "content": "[h1]Fifth goal: interrogation mechanics unlocked![/h1]\n\nWe\u2019ve got 12 days to go, and the Kickstarter for PERIPETEIA was able to reach 180% funding! Thanks to you, we\u2019ll be able to add Splinter-Cell and Metal Gear style interrogation dialogue and mechanics to the game.\n\n[img]{STEAM_CLAN_IMAGE}/39205791/19d1b7edb85aa9d183c47811f324b4a6ea85f92b.png[/img]\n\nSneak up on your enemies and take them hostage. Learn valuable intel, or simply have a friendly little chat. As a field operative with unlimited freedom, Marie deserves a truly skillful non-lethal move. An action executable without any equipment, but only possible to pull off on unsuspecting enemies. Essential for the players that want to play the game in a more sneaky manner.\n\n[h1]Goal #6: Selected Voiced Dialogue[/h1]\n\n[img]{STEAM_CLAN_IMAGE}/39205791/b07370ac045b08ddf32ea443ca07481d4c0e552a.jpg[/img]\n\nAt \u20ac21k / $24.8k, we put voices to some of our most important NPCs and dialogues; giving them stronger characterisation and helping to build Peri's already deep atmosphere.\n\nPERIPETEIA's world is an unforgiving and surreal place, filled with ruthless, scarred and broken people. Help us bring those characters a little more to life, and set the scene, by giving important lines the perfect delivery.\n\n[h2]Don't forget to check out our full campaign and rewards![/h2]\n\nDon't forget to stop in and have a look what rewards you could receive by backing [url=90s.graphics/ks]PERIPETEIA's Kickstarter[/url]. There are still 12 days left in the campaign and lots to come! \n\nFeel free to check out our [url=90s.graphics/discord]discord[/url] and play our [url=90s.graphics/steam]demo[/url] too. Let us know what you think!\n\nCheers,\nThe 9th Exodus Team",
+      "key": "1437760::4caf57da30c43c3e54bb34f4661522f7ed407826",
+      "tags": [
+        {
+          "feature": "Thanks to you, we\u2019ll be able to add Splinter-Cell and Metal Gear style interrogation dialogue and mechanics to the game."
+        }
+      ]
+    },
+    {
+      "title": "Another Kickstarter goal reached!",
+      "date": "2021-08-30 21:19:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4018887653996559936",
+      "content": "[h1]Fourth goal: CIA weapons pack unlocked![/h1]\n\nWe\u2019ve got 2 weeks to go, and the Kickstarter for PERIPETEIA was able to reach 160% funding. Thanks to your generosity, we\u2019ll be able to add western prototype firearms into the game.\n\n[img]{STEAM_CLAN_IMAGE}/39205791/03156b24abc140998237bc820f0a930ccdcf34dd.png[/img]\n\nWhile never realized in our timeline, prototype US and NATO guns such as the G11 Prototyp 5 and other ACR train entrants, the 90s chonky OICW and the more out there PDWs will be featured in Peripeteia as part of the arsenal of CIA agents within the world.\n\n[h1]Goal #5: Field interrogations[/h1]\n\n[img]{STEAM_CLAN_IMAGE}/39205791/19d1b7edb85aa9d183c47811f324b4a6ea85f92b.png[/img]\n\nAs a field operative with unlimited freedom, Marie deserves a truly skillful non-lethal move. If we reach the \u20ac18k / $21.2k goal, we\u2019ll be implementing interrogations akin to Splinter Cell and Metal Gear: an action executable without any equipment, but only possible to pull off on unsuspecting enemies. It will be a possible source of additional intel and resources for the players that want to play the game in a more sneaky manner.\n\n[h2]Don't forget to check out our full campaign and rewards![/h2]\n\nDon't forget to stop in and have a look what rewards you could receive by backing [url=90s.graphics/ks]PERIPETEIA's Kickstarter[/url]. There are still 17 days left in the campaign and lots to come! \n\nFeel free to check out our [url=90s.graphics/discord]discord[/url] and play our [url=90s.graphics/steam]demo[/url] too. Let us know what you think!\n\nCheers,\nThe 9th Exodus Team",
+      "key": "1437760::86ca93eb95d25c2e7393c1e3b7f376a621ea1c89",
+      "tags": [
+        {
+          "feature": "We\u2019ve got 2 weeks to go, and the Kickstarter for PERIPETEIA was able to reach 160% funding. Thanks to your generosity, we\u2019ll be able to add western prototype firearms into the game."
+        }
+      ]
+    },
+    {
+      "title": "PERIPETEIA Kickstarter hits another stretch goal!",
+      "date": "2021-08-22 07:33:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629321982660",
+      "content": "[h1]Second Goal: Unlocked![/h1]\n\n[img]{STEAM_CLAN_IMAGE}/39205791/7efda43947f0b511eba49d75d5c2af79560ff3dd.png[/img]\n\n[h2]Congratulations, the Kickstarter Campaign has reached 125%![/h2] [h3]Marie will now be granted a grappling hook to more easily traverse PERIPETEIA's enormous levels.[/h3]\n\n[h1]Third Goal: Additional Artwork By Hirotonfa[/h1]\n\n[img]{STEAM_CLAN_IMAGE}/39205791/4fd8343ed03abfda973dc075cf1b8dfc14b66bc5.png[/img] [img]{STEAM_CLAN_IMAGE}/39205791/186941144a571e47e7e756c9309b5972d778ea47.jpg[/img] [img]{STEAM_CLAN_IMAGE}/39205791/e03b31b6403cf3a50171819e10e0e8a0f4afa710.jpg[/img]\n\n[h3]Our good friend [url=https://twitter.com/hirotonfa]Hirotonfa[/url] (Known to many of you formerly as Mcklinskey), has already done amazing work adding a small stylized version of Marie to our in-game light detection UI.[/h3] [h2]If we hit this stretch the [b]\u20ac14k / $16.6k[/b] goal, we will invite Hiro back to create additional UI and in-game art for us![/h2]\n\n[h2]Don't forget to check out our full campaign and rewards![/h2]\n\nDon't forget to stop in and have a look what rewards you could receive by backing [url=90s.graphics/ks]PERIPETEIA's Kickstarter[/url]. There are still 26 days left in the campaign and lots to come! \n\nFeel free to check out our [url=90s.graphics/discord]discord[/url] and play our [url=90s.graphics/steam]demo[/url] too. Let us know what you think!\n\nCheers,\nThe 9th Exodus Team",
+      "key": "1437760::ec5196ff060817b1cc6da7deccf72eb7cc654e5e",
+      "tags": [
+        {
+          "feature": "Marie will now be granted a grappling hook to more easily traverse PERIPETEIA's enormous levels."
+        }
+      ]
+    },
+    {
+      "title": "PERIPETEIA: Now 78%+ funded!",
+      "date": "2021-08-16 08:51:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149069883262",
+      "content": "[h1]Home Stretch![/h1]\n\nWe're already nearly funded and it's been less than two days!\n\nThankyou everyone who has backed us so far: your generosity is deeply appreciated, and vital to helping us finish the game.\n\n[h2]Patching the demo[/h2]\n\nWe've been working hard today to patch some issues with yesterday's Kickstarter demo, and we're releasing that right... [b]NOW.[/b]\n\n[h2]Frequently ask questions[/h2]\n\nWe've had some questions about backer rewards and stretch goals so, we thought we'd just address those here. We'll keep answering questions as they come in, both here, on our [url=90s.graphics/twitter]Twitter[/url], on [url=90s.graphics/KS]Kickstarter[/url] and on [url=90s.graphics/discord]our Discord[/url]. Please drop in and talk to us, we're friendly (honest)!\n\n[h3]1. The DVD version of the game: full DRM free or steam installer?[/h3]\n\nA: The DVD will contain a DRM-free release build of the game.\n\n[h3]2. If DRM free, will we be releasing patches?[/h3]\n\nA: Yes, there will be patches or new builds available via Itch.io or indie.db for which you'll get a key.\n\n[h3]3. Is the DVD going have the soundtrack in some form too?[/h3]\n\nA: Yes, if we can fit it on there.\n\n[h3]4. Is the soundtrack going be a Bandcamp download or steam DLC?[/h3]\n\nA: Steam for the MP3 version of the soundtrack. Bandcamp for the high-quality FLAC version.\n\n[h3]5. How is the Generous Secretary \"help us design a level\" perk going to work?[/h3]\n\nA: Backers from the Generous Secretary tier will be allowed to contribute ideas, concepts, encounters, dialogue, NPCs; anything that goes into the design of a Peri-style level (within reason!). We will then take those ideas, and work with the Generous Secretaries to shop those ideas into a complete, large-size Peripetia level. We're very excited about this one because we love a challenge, and love weird and wonderful ideas, and combining them in interesting ways. Why settle for having an in-game \"backer room\" in your game when you can have an entire \"backer level\" that's completely playable and fits neatly into the theme of the game. \n\n[h3]6. How do I get my special backer discord role?[/h3]\n\nA: Originally we were going to hand out rewards like the discord roles once the KS ended, but we're happy to assign them now. KS unfortunately does not support an automatic role assignment integration with Discord, so please drop by our discord and show us a screenshot, and we'll have you looking down upon the un-contributing masses in no time.\n\n[h3]7. What will/can the \"LORE SNIPPET\" be?[/h3]\n\nA: We'll leave the exact implementation to our discretion, but we're encouraging you to write newspaper clippings, readable sections from books, government documents, or even item descriptions. If you have a fun idea how to flesh out the background worldbuilding of the game, share it! Our frob system allows for most objects to have an additional description attached to them (zooming on weapons or posters in the fourth level are an example of that), we'll have Deus Ex-style readable objects as well.\n\n",
+      "key": "1437760::82dbd3843ccd28a52432b8fa4255726d8b3fddcb",
+      "tags": [
+        {
+          "bug": "We've been working hard today to patch some issues with yesterday's Kickstarter demo, and we're releasing that right... NOW."
+        }
+      ]
+    },
+    {
+      "title": "The PERIPETEIA Kickstarter Campaign has begun!",
+      "date": "2021-08-14 10:58:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149062924877",
+      "content": "[h1]PERIPETEIA fans![/h1]\n\n[h2]Our Kickstarter campaign is now live![/h2]\n\n[previewyoutube=m726CTCucx4;full][/previewyoutube]\n\n[url=https://www.kickstarter.com/projects/shodanon/peripeteia]Please click here to visit our Kickstarter page[/url]. There you can find the details of what our future plans are, why you should help make PERIPETEIA a reality, and what you get in exchange for helping us.\n\n[h2]The New Demo[/h2]\n\nAs per our previous announcement, the Kickstarter also heralds a new demo for you to try, you can find it on the store page [url=https://store.steampowered.com/app/1437760/Peripeteia/]here[/url], or via our Kickstarter page.\n\n[h3]This new demo includes[/h3]\n\n- An improved tutorial mission in the perpetual night of the Underpass District.\n- A visit to Marie's new apartment and in-game shooting range.\n- A trip to the rain-soaked, revamped Memorial Tower, to pull off a high-profile assassination.\n- An epic-length, multi-pathed, explosive exploration mission across a full-blown warzone at \"The Chasm\".\n- Numerous improvements to the feel and flow of the game.\n- A non-proverbial arsenal of guns to play with.\n- A cactus you can talk to.\n\n[h2]Keep an eye out for us at REALMS DEEP 2021[/h2]\n\nPERIPETEIA will also be featuring as part of today's REALMS DEEP liveshow alongside other great shooters, in just a few short hours. Please tune in and show your support! You can view the show [url=https://www.realmsdeep.game/]here.[/url]\n\n\n[b]Thankyou for all your feedback and support!\n\n- The 9th Exodus Team[/b]",
+      "key": "1437760::20e4793d8327954c56ec98d6103099ffa9306087",
+      "tags": [
+        {
+          "feature": "- An improved tutorial mission in the perpetual night of the Underpass District."
+        },
+        {
+          "feature": "- A visit to Marie's new apartment and in-game shooting range."
+        },
+        {
+          "feature": "- A trip to the rain-soaked, revamped Memorial Tower, to pull off a high-profile assassination."
+        },
+        {
+          "feature": "- An epic-length, multi-pathed, explosive exploration mission across a full-blown warzone at \"The Chasm\"."
+        },
+        {
+          "feature": "- Numerous improvements to the feel and flow of the game."
+        },
+        {
+          "feature": "- A non-proverbial arsenal of guns to play with."
+        },
+        {
+          "feature": "- A cactus you can talk to."
+        }
+      ]
+    },
+    {
+      "title": "PERIPETEIA will be Kickstarting soon!",
+      "date": "2021-08-12 20:36:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149057106397",
+      "content": "[previewyoutube=m726CTCucx4;full][/previewyoutube]\n\nPERIPETEIA fans!\n\nWe're ecstatic to announce that Peripeteia will be launching its Kickstarter Campaign very soon! We'll be going live on August 14th 2021 8AM PT: followed by an appearance as part of the Realms Deep Live Show 2021!\n\n[b]New Demo[/b]\n\nAlong with this announcement, we've been working on a new and improved demo for you to try and see for yourself before backing. This is a new and improved version that has taken multiple rounds of your feedback into account, and offers nearly double the content of the last one. We hope you enjoy it.\n\nIncluded in the Kickstarter Demo is:\n\n- The improved tutorial mission in the perpetual night of the Underpass District.\n- A visit to Marie's new apartment and in-game shooting range.\n- A trip to the rain-soaked, revamped Memorial Tower, to pull off a high-profile assassination.\n- An epic-length, multi-pathed, explosive exploration mission across a full-blown warzone at \"The Chasm\".\n- Numerous improvements to the feel and flow of the game.\n- A non-proverbial arsenal of guns to play with.\n- A cactus you can talk to.\n\n[b]What can I expect in terms of backer rewards and stretch goals?[/b]\n\nThe full details of each reward tier and funding goal will be revealed when the Kickstarter goes live,\nbut here's an incomplete preview of the kinds of things you can expect:\n\n- Both digital and physical goodies like high-quality artworks and soundtrack.\n- Exclusive access to preview builds of the game and being able to influence what we include.\n- Stretch goals like contributions from talented, well-known artists and musicians.\n\n[b]Why Kickstarter?[/b]\n\nMoney can be exchanged for goods and services, which unfortunately our (for the time being) flesh-and-blood development team require to continue being alive. Working on Peripeteia is a full-time job, and the Kickstarter will give us the small living allowance needed to keep making the game. We make as many models, textures, sounds and other assets ourselves if we can. This is not only because we want a look and feel that is unique to PERIPETEIA, but also to keep our development budget as small as possible.\n\n[b]When is PERIPETEIA going to release?[/b]\n\nPERIPETEIA is going to release in Late 2022.\n\n[b]Where can I see the Kickstarter when it goes live?[/b]\n\nWe'll make another annoucement at the time with all the links and details but when it does go live, you can find the Kickstarter here:\n\n[url=https://www.kickstarter.com/projects/shodanon/peripeteia]90s.graphics/KS[/url]\n\n\nPlease stay tuned for our official announcement in the next 1.5 days, and we look forward to seeing you play the new demo!\n\nCheers,\nThe 9th Exodus Team",
+      "key": "1437760::0a4341552e634bf9ed50c7f11f97ec812faf709f",
+      "tags": [
+        {
+          "feature": "- The improved tutorial mission in the perpetual night of the Underpass District."
+        },
+        {
+          "feature": "- A visit to Marie's new apartment and in-game shooting range."
+        },
+        {
+          "feature": "- A trip to the rain-soaked, revamped Memorial Tower, to pull off a high-profile assassination."
+        },
+        {
+          "feature": "- An epic-length, multi-pathed, explosive exploration mission across a full-blown warzone at \"The Chasm\"."
+        },
+        {
+          "feature": "- A non-proverbial arsenal of guns to play with."
+        },
+        {
+          "feature": "- A cactus you can talk to."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "appId": "1752540",
+  "count": 2,
+  "notes": [
+    {
+      "title": "Devlog #57 - Characters swimming animations",
+      "date": "2025-02-06 08:37:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1790848102619918",
+      "content": "Hey everyone, and welcome to this week\u2019s devlog! Today, we\u2019re diving into the process of creating swimming animations for Ben. Since our previous animations were focused on ground movement and jumping, adding underwater mechanics brought forward animations for swimming for the characters.\n\nFor our water levels, we needed to create swimming animations that felt smooth and natural. Since this was our first time animating underwater movement, we started by gathering references of real swimming motions to ensure accuracy.  \n\nBen and Abi were rigged in Spine 2D using bones and IK controls, allowing for flexible movement. We created four main swimming animations:\n\n[list]\n[*] [b]Swim Idle [/b]\u2013 The character treads water in place.\n[*] [b]Swim on Water Surface [/b]\u2013 A movement animation for floating and swimming at the top of the water.\n[*][b] Swim Underwater [/b]\u2013 A deeper swimming motion for submerged movement.\n[*] [b]Pushing a Box in Water[/b] \u2013 A unique animation for interacting with objects underwater.\n[/list]\n\n[previewyoutube=_RP5WvHnqP8;full][/previewyoutube]\n\nEach animation was designed in loops, using different frame sizes to maintain fluidity while keeping the maximum frame size under 100.  \n\nOne of the biggest challenges was ensuring a seamless transition when the character jumped into the water. Initially, we noticed a slight jerk when switching from a running pose to a swimming pose. We resolved this by using Unity\u2019s animation mixing feature to create a smoother blend between the animations.  \n\nAligning the character\u2019s hands with the box edges was another tricky task. The arm and hand positions needed to match the box\u2019s movement precisely. To solve this, we repeatedly tested the animation, taking screenshots of the box in Unity and importing them into Spine. This allowed us to fine-tune the arm rotation and positioning for a more natural interaction.  \n\nSince our past animations focused only on ground and air movement, implementing swimming mechanics was an exciting new challenge. Through careful planning, testing, and iteration, we successfully brought Ben and Abi\u2019s underwater animations to life. We can't wait for players to experience them in action!\n\nThanks for following along, and stay tuned for more updates! \n\nBest regards,\nPlaydew Team\n\nhttps://store.steampowered.com/app/1752540/Lost_Twins_II/\n",
+      "key": "1752540::26d0b44dd5d2af91da0535c4fdaed7b3c30776bc",
+      "tags": [
+        {
+          "feature": "- Swim Idle \u2013 The character treads water in place."
+        },
+        {
+          "feature": "- Swim on Water Surface \u2013 A movement animation for floating and swimming at the top of the water."
+        },
+        {
+          "feature": "- Swim Underwater \u2013 A deeper swimming motion for submerged movement."
+        },
+        {
+          "feature": "- Pushing a Box in Water \u2013 A unique animation for interacting with objects underwater."
+        },
+        {
+          "bug": "Initially, we noticed a slight jerk when switching from a running pose to a swimming pose. We resolved this by using Unity\u2019s animation mixing feature to create a smoother blend between the animations."
+        },
+        {
+          "bug": "Aligning the character\u2019s hands with the box edges was another tricky task. The arm and hand positions needed to match the box\u2019s movement precisely. To solve this, we repeatedly tested the animation, taking screenshots of the box in Unity and importing them into Spine. This allowed us to fine-tune the arm rotation and positioning for a more natural interaction."
+        }
+      ]
+    },
+    {
+      "title": "Devlog#22: Introducing Puzzle Element - Breakable Wall",
+      "date": "2023-08-17 08:12:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5127964289172757989",
+      "content": "Greetings! We're thrilled to unveil the creative process that birthed one of our most exhilarating features - a breakwall wall.  We engaged in a brainstorming session to connect a feature with the electric car. As ideas sparkled and imagination flowed, we birthed a game-changing concept: crafting a wall that yielded to the electric car's might, breaking upon impact and unlocking new pathways for our characters, making traversing the obstacle-laden terrain an essential part of the adventure.\n\n\nKey Features:\n\n1. The breakable wall must only shatter upon the car's collision. The wall has been meticulously designed to shatter upon the exact point of impact with the electric car, granting players a satisfying and realistic experience.\n\n2. Locate an electric car within the level and utilize it to demolish the wall. The player has to make their way through the level and bring the two objects together to solve this puzzle, maneuvering the electric car to orchestrate a collision that cracks the wall.\n\nVisual:\n\nWe went through a bunch of ideas to figure out exactly how this wall should look. In terms of visual presentation, our aim was to depict the idea using stone fragments that appear as a cohesive wall when assembled. Each individual stone mesh was given an outline to enhance its visual attractiveness.\n\n[img]{STEAM_CLAN_IMAGE}/41223829/f15ce79b1d56e7a288cbd171917b68c93eb168ab.png[/img]\n\nOur team of artists constructed a wall using numerous stone meshes, skillfully combined to create the illusion of a wall that can be broken. To emphasize the impact upon collision with the car, we divided all meshes into three distinct sections. As the impact would originate from the center, we organized the meshes into a single parent for the central portion, while the left and right meshes were placed under separate parents.\n\n\nPhysics Mechanics:\n\nFor each stone mesh, we've affixed both a Unity built-in rigidbody and a mesh collider. Before the collision effect takes place, we've adjusted the isKinematic attribute to true. Additionally, a box collider corresponding to the wall's height has been created and properly positioned at its center.\n\nTo identify impacts, we've harnessed Unity's built-in OnCollisionEnter function. This function detects collisions and triggers our own functions for wall destruction if the colliding element is identified as an electric car, based on its layer assignment.\n\n\n\nWall Destruction:\n\nUpon the wall's demolition, our initial action involves resetting the isKinematic attribute to false, thereby enabling the operation of all relevant physics principles. Subsequently, a force is applied to the stone meshes positioned at the center, aligned with the car's motion trajectory.\n\n\nTo make it more realistic, we've also applied torque on these stone meshes, introducing a randomized rotation effect. Following the collision, a gradual fading effect is applied to the stone meshes, culminating in the complete removal of the wall from the scene.\n\nFeast your eyes on our captivating video that beautifully encapsulates this gameplay wonder in action.\n\n[previewyoutube=4p8wi0ICL_c;full][/previewyoutube]\n\nStay tuned for more updates\n\nBest regards, \nPlaydew team\n",
+      "key": "1752540::b9b5bceb43dba503c830a1a15132641c2d5ecf3a",
+      "tags": [
+        {
+          "feature": "Greetings! We're thrilled to unveil the creative process that birthed one of our most exhilarating features - a breakwall wall."
+        },
+        {
+          "feature": "As ideas sparkled and imagination flowed, we birthed a game-changing concept: crafting a wall that yielded to the electric car's might, breaking upon impact and unlocking new pathways for our characters, making traversing the obstacle-laden terrain an essential part of the adventure."
+        },
+        {
+          "feature": "The breakable wall must only shatter upon the car's collision."
+        },
+        {
+          "feature": "The wall has been meticulously designed to shatter upon the exact point of impact with the electric car, granting players a satisfying and realistic experience."
+        },
+        {
+          "feature": "Locate an electric car within the level and utilize it to demolish the wall."
+        },
+        {
+          "feature": "The player has to make their way through the level and bring the two objects together to solve this puzzle, maneuvering the electric car to orchestrate a collision that cracks the wall."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "appId": "67000",
+  "count": 12,
+  "notes": [
+    {
+      "title": "Version 141 - minor update",
+      "date": "2022-08-24 22:37:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316500001072724",
+      "content": "Version 140 got accused of being a French spy, so I had to remove the beret and hide the baguette.\n\nTo be exact, BitDefender and a handful of other generally fairly obscure antiviruses had a false positive in libintl-8.dll for [url=https://www.vice.com/en/article/8qxkyg/meet-babar-a-new-malware-almost-certainly-created-by-france]Babar, a supposed French malware.[/url] . \n\nI seen false positives before, but never for anything with an interesting backstory. Thanks \u6b7b\u306e\u5929\u4f7f / Shinotenshi for bringing this to my attention.\n\nTested in [url=https://www.virustotal.com/gui/file/3aa90a503684a3e33e01977f419b9486dbf48f639a9a19631a291b6ecf75974b/detection]VirusTotal[/url], most high quality antiviruses don't flag it. \n\nFortunately, removing debug information from the dll makes it [url=https://www.virustotal.com/gui/file/774fcb7c110ad87088d9f6e15275a279aeebb69b23360785e7e3ef2390a24df1?nocache=1]test clean[/url] while also confirming that it is a false positive, since malware doesn't live inside debug information.\n\nLess fortunately removing debug information makes it harder to process crash reports.\n\nTo clarify, all my binaries in every release are cross-compiled from source under a Linux environment, where Windows-only malware like Barbar can not infect them.\n\nedit: well I'll be damned, another one from BitDefender for a closely related library libiconv-2.dll , except this one gets a false positive only if it does [i]not[/i] have debug information. I guess time for release 142",
+      "key": "67000::067b996b0e7f3667c241576c7a881ffa59454a76",
+      "tags": [
+        {
+          "bug": "- Fortunately, removing debug information from the dll makes it [url=https://www.virustotal.com/gui/file/774fcb7c110ad87088d9f6e15275a279aeebb69b23360785e7e3ef2390a24df1?nocache=1]test clean[/url] while also confirming that it is a false positive, since malware doesn't live inside debug information."
+        },
+        {
+          "bug": "- Less fortunately removing debug information makes it harder to process crash reports."
+        },
+        {
+          "bug": "- edit: well I'll be damned, another one from BitDefender for a closely related library libiconv-2.dll , except this one gets a false positive only if it does [i]not[/i] have debug information. I guess time for release 142"
+        }
+      ]
+    },
+    {
+      "title": "Version 140 with backports from Polynomial 2",
+      "date": "2022-08-23 20:50:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4514316499997159143",
+      "content": "This update consists primarily of back-ported engine fixes from Polynomial 2 while keeping the gameplay unchanged.\n[list]\n[*]UI and system framework from Polynomial 2\n[*]Fixes for HiDPI scaling issues under Windows\n[*]Fixes for spinning screen issue under some Windows versions with HiDPI scaling\n[*]Compatibility with modern Linux distributions\n[*]Use steam Linux Runtime instead of custom libraries\n[*]Linux no-sound issue fixed\n[*]Improvements to \"add files\" dialog when in full screen mode\n[*]Fixed a bug with \"save image\" in fullscreen sometimes saving a black image\n[*]Updated SteamWorks SDK\n[*]Added 64 bit binaries for Windows\n[*]Linux 64 bit now supports achievements\n[/list]\n\nPlease report any regressions. If this update breaks something and you need to revert, you can right click on the game, \"Properties...\", and in Betas tab select \"old_version\" as a beta.\n\nMinor behavior changes: clicking outside the menu no longer unpauses the game, you need to press [esc] or click \"Play game\".\n\nKnown minor regressions: horizontal scroll bar in Scores panel may show incorrect position in the scroll bar even though the window scrolls correctly.\n",
+      "key": "67000::5abf51bc82a9f4068c9416b865a1fc70ff647440",
+      "tags": [
+        {
+          "feature": "[*]UI and system framework from Polynomial 2"
+        },
+        {
+          "bug": "[*]Fixes for HiDPI scaling issues under Windows"
+        },
+        {
+          "bug": "[*]Fixes for spinning screen issue under some Windows versions with HiDPI scaling"
+        },
+        {
+          "feature": "[*]Compatibility with modern Linux distributions"
+        },
+        {
+          "feature": "[*]Use steam Linux Runtime instead of custom libraries"
+        },
+        {
+          "bug": "[*]Linux no-sound issue fixed"
+        },
+        {
+          "feature": "[*]Improvements to \"add files\" dialog when in full screen mode"
+        },
+        {
+          "bug": "[*]Fixed a bug with \"save image\" in fullscreen sometimes saving a black image"
+        },
+        {
+          "feature": "[*]Updated SteamWorks SDK"
+        },
+        {
+          "feature": "[*]Added 64 bit binaries for Windows"
+        },
+        {
+          "feature": "[*]Linux 64 bit now supports achievements"
+        },
+        {
+          "bug": "Known minor regressions: horizontal scroll bar in Scores panel may show incorrect position in the scroll bar even though the window scrolls correctly."
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2011-09-06 15:00:00",
+      "url": "http://store.steampowered.com/news/6210/",
+      "content": " \n<ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed deletion in playlist.<br><li>Fixed multiple crashes under OS X Lion (10.7)<br><li>Set the default folder for file dialogs under OS X<br></ul>\t\t\t\t",
+      "key": "67000::c60cffdd15aa6fdf64f62ad1d5ab384854b29c38",
+      "tags": [
+        {
+          "bug": "Fixed deletion in playlist."
+        },
+        {
+          "bug": "Fixed multiple crashes under OS X Lion (10.7)"
+        },
+        {
+          "feature": "Set the default folder for file dialogs under OS X"
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2011-08-17 17:09:00",
+      "url": "http://store.steampowered.com/news/6091/",
+      "content": " \n<ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed a bug in waves and super waves visualizer hang protection.<br><li>Improved performance when shooting at sun.<br><li>Fixed wormhole sequence loop bug.<br><li>Start with zero throttle so that the player can read instructions in the level 0.<br></ul>\t\t\t\t",
+      "key": "67000::0344582d49f180384cdedd98ed7ab3aa5191cf96",
+      "tags": [
+        {
+          "bug": "Fixed a bug in waves and super waves visualizer hang protection."
+        },
+        {
+          "bug": "Fixed wormhole sequence loop bug."
+        },
+        {
+          "feature": "Start with zero throttle so that the player can read instructions in the level 0."
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2011-07-04 12:31:00",
+      "url": "http://store.steampowered.com/news/5790/",
+      "content": " \nImproved animator compatibility with old graphics cards (GeForce 7 series).\t\t\t\t",
+      "key": "67000::427cfe033c5060d3a8f9d73f4fe3e61c411a378f",
+      "tags": [
+        {
+          "feature": "Improved animator compatibility with old graphics cards (GeForce 7 series)."
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2011-05-13 19:32:00",
+      "url": "http://store.steampowered.com/news/5469/",
+      "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Impact markers on HUD to let you know where you're shot from<br><li>Controller improvements - <br><li>Dead zone parameter<br><li>Non-linearity to allow precise shooting<br><li>Relative throttle for gamepads<br></ul>\t\t\t\t",
+      "key": "67000::3bd158953e8942fac976b1dd7ffeba643f4147d5",
+      "tags": [
+        {
+          "feature": "Impact markers on HUD to let you know where you're shot from"
+        },
+        {
+          "feature": "Controller improvements - "
+        },
+        {
+          "feature": "Dead zone parameter"
+        },
+        {
+          "feature": "Non-linearity to allow precise shooting"
+        },
+        {
+          "feature": "Relative throttle for gamepads"
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2011-01-13 16:29:00",
+      "url": "http://store.steampowered.com/news/4880/",
+      "content": " \nUpdates to The Polynomias have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Windows: support for any audio format via DirectShow codecs; simply install system wide codecs in the usual way to play any format. Some types of internet streaming audio might also work now depending to the system configuration (OS X version already supports pretty much any format through system codecs)<br><li>Key bindings for next and previous song and song restart work correctly now<br><li>File chooser directories are remembered independently for different file chooser dialogs<br><li>Removed \"Merry Christmas\" from tutorial level (the Christmas tree remains in the Christmas level)<br><li>Moved Christmas themed music down in the default playlist<br></ul>\t\t\t\t",
+      "key": "67000::55913b928780e8c0a9a52b4d1c01a57c60c7ab64",
+      "tags": [
+        {
+          "feature": "Windows: support for any audio format via DirectShow codecs; simply install system wide codecs in the usual way to play any format. Some types of internet streaming audio might also work now depending to the system configuration (OS X version already supports pretty much any format through system codecs)"
+        },
+        {
+          "bug": "Key bindings for next and previous song and song restart work correctly now"
+        },
+        {
+          "bug": "File chooser directories are remembered independently for different file chooser dialogs"
+        },
+        {
+          "bug": "Removed \"Merry Christmas\" from tutorial level (the Christmas tree remains in the Christmas level)"
+        },
+        {
+          "balance_change": "Moved Christmas themed music down in the default playlist"
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2010-12-20 12:50:00",
+      "url": "http://store.steampowered.com/news/4815/",
+      "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Free Christmas-themed content.<br><li>Added a button to pause music.<br><li>Bugfixes for older ATI cards.<br></ul>\t\t\t\t",
+      "key": "67000::69ed733232fc54332c798215a8db2dc961620d85",
+      "tags": [
+        {
+          "feature": "Free Christmas-themed content."
+        },
+        {
+          "feature": "Added a button to pause music."
+        },
+        {
+          "bug": "Bugfixes for older ATI cards."
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2010-11-30 14:56:00",
+      "url": "http://store.steampowered.com/news/4711/",
+      "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed in-game help rendering on certain versions of Catalyst driver. With those versions, the in-game help was previously invisible, rendering the game somewhat incomprehensible. Some other objects were also affected.<br></ul>\t\t\t\t",
+      "key": "67000::21117536fb8ff7f57168f59dbd4acfbc2c3f880b",
+      "tags": [
+        {
+          "bug": "- Fixed in-game help rendering on certain versions of Catalyst driver. With those versions, the in-game help was previously invisible, rendering the game somewhat incomprehensible. Some other objects were also affected."
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2010-11-26 16:11:00",
+      "url": "http://store.steampowered.com/news/4703/",
+      "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><b>New features:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Massive improvements to the music analyzer, now visualizes even better for larger variety of music types.<br><li>New music customization option: use a slider to choose between animation to the beat or animation to the melody (and voice), or any mix of beat and melody. As with any other parameters, the effects are immediately visible, letting you tune it just right for your taste.<br><li>Configurable controller binding <li>set up your game controller's sticks and buttons and sliders just the way you like, in Controls panel.<br><li>Enemy flight improved, better flight and attack patterns.<br><li>Enemies collide and bounce off each other.<br></ul><b>Fixes:</b><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Fixed crash/hang when adding music files in fullscreen (reported for ATI cards under Windows 7 64-bit).<br><li>Fixed 2 rare crash bugs during gameplay.<br><li>Fixed a bug that caused current playlist not to autosave when appending music from another playlist. <br><li>Fixed continuous asking for restart on some multiple-display setups.<br><li>\"Difficulty\" announcement active only in level 0 now.<br><li>Numerous game engine improvements for improved performance and stability.<br></ul>\t\t\t\t",
+      "key": "67000::7c4df4ad9a5fe02365bf47b964ab88f2b0005f90",
+      "tags": [
+        {
+          "feature": "Massive improvements to the music analyzer, now visualizes even better for larger variety of music types."
+        },
+        {
+          "feature": "New music customization option: use a slider to choose between animation to the beat or animation to the melody (and voice), or any mix of beat and melody. As with any other parameters, the effects are immediately visible, letting you tune it just right for your taste."
+        },
+        {
+          "feature": "Configurable controller binding"
+        },
+        {
+          "feature": "set up your game controller's sticks and buttons and sliders just the way you like, in Controls panel."
+        },
+        {
+          "feature": "Enemy flight improved, better flight and attack patterns."
+        },
+        {
+          "feature": "Enemies collide and bounce off each other."
+        },
+        {
+          "bug": "Fixed crash/hang when adding music files in fullscreen (reported for ATI cards under Windows 7 64-bit)."
+        },
+        {
+          "bug": "Fixed 2 rare crash bugs during gameplay."
+        },
+        {
+          "bug": "Fixed a bug that caused current playlist not to autosave when appending music from another playlist."
+        },
+        {
+          "bug": "Fixed continuous asking for restart on some multiple-display setups."
+        },
+        {
+          "bug": "\"Difficulty\" announcement active only in level 0 now."
+        },
+        {
+          "bug": "Numerous game engine improvements for improved performance and stability."
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2010-10-19 14:44:00",
+      "url": "http://store.steampowered.com/news/4509/",
+      "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Leaderboards update frequency reduced to minimize server load. <br><li>Controller fixes (can set controller speed now with same slider as for mouse, and controller also works when in traditional shooter mode). <br><li>Can disable crosshair by pressing H one more time. <br><li>Crosshair drawing moved to Lua for user modifiability.<br></ul>\t\t\t\t",
+      "key": "67000::a8b295ae6e0eb11e681adae0527c126f7766f40d",
+      "tags": [
+        {
+          "balance_change": "Leaderboards update frequency reduced to minimize server load."
+        },
+        {
+          "feature": "Controller fixes (can set controller speed now with same slider as for mouse, and controller also works when in traditional shooter mode)."
+        },
+        {
+          "feature": "Can disable crosshair by pressing H one more time."
+        },
+        {
+          "feature": "Crosshair drawing moved to Lua for user modifiability."
+        }
+      ]
+    },
+    {
+      "title": "The Polynomial Update Released",
+      "date": "2010-10-18 15:51:00",
+      "url": "http://store.steampowered.com/news/4504/",
+      "content": " \nUpdates to The Polynomial have been released. The updates will be applied automatically when your Steam client is restarted. The major changes include:<br><br><ul style=\"padding-bottom: 0px; margin-bottom: 0px;\" ><li>Support for GeForce 7 series . <br><li>Improved explanations of the gameplay.<br><li>Fixed incorrect level ordering.<br><li>Fixed audio effect glitch.<br></ul>\t\t\t\t",
+      "key": "67000::7813461e854628d54bdeee428e5006e62992be76",
+      "tags": [
+        {
+          "feature": "Support for GeForce 7 series ."
+        },
+        {
+          "bug": "Fixed incorrect level ordering."
+        },
+        {
+          "bug": "Fixed audio effect glitch."
+        }
+      ]
+    }
+  ]
+}

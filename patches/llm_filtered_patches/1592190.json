@@ -1,0 +1,591 @@
+{
+  "appId": "1592190",
+  "count": 7,
+  "notes": [
+    {
+      "title": "Hotfix - controller tracking",
+      "date": "2024-10-31 16:11:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6146943657173910363",
+      "content": "Updated hotfix should correct the controller tracking issue after SteamVR 2.8 update. The issue was related to OpenXR-SteamVR runtime and would not effect the OculusXR runtime.\n\nIf you switched to the SteamVR beta - Previous version in order to temporarily fix this, it is now recommended to switch back to the main SteamVR branch.\n\nThis ultimately fixed the issue:\n[img]https://i.imgur.com/P1h0zjM.gif[/img]",
+      "key": "1592190::a7ca5ba335f1f8e25806f1232ec4c590c364ae89",
+      "tags": [
+        {
+          "bug": "Updated hotfix should correct the controller tracking issue after SteamVR 2.8 update."
+        }
+      ]
+    },
+    {
+      "title": "Patch #6",
+      "date": "2024-08-27 14:31:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438707222822",
+      "content": "[h2]Patch 6\n[/h2]\nPatch 6 introduces a new circuitry system and basic fixtures to the Marrow SDK. The circuitry system enables you to implement simple cause and effect electrical circuits in your levels. Fixtures are spawnable dynamic objects that are affixed to the world (example: buttons, levers, doors, etc.). Additionally, the new Impact Properties from Patch 5 have now been deployed throughout 90% of Bonelab's content with the rest coming in Patch 7.\n[img]https://i.imgur.com/KU7bUnT.gif[/img]\nSee the fixtures and circuitry in action in an updated Test Chamber 07!\n\n[h3]Circuits[/h3]\nBy combining various simple math nodes to create inputs and outputs, you can assemble functional puzzles quickly. These building blocks tie together functionally with fixtures and events to flesh out interactive ideas. With some clever wiring this can unlock seriously powerful level showcases.\n[img]https://i.imgur.com/bB47XLp.gif[/img]\n\n[h3]Fixtures[/h3]\nThe workflow for fixtures has taken a lot of effort to get right, we're confident that we've cracked it and are premiering it with some simple fixtures to use with circuits. Armed with the most commonly used pieces for building electric puzzles, we expect Lava Gang to add a lot more interaction to their level creations. Patch 6 includes buttons, levers, a slider and an airlock door.\n[img]https://i.imgur.com/l0LH08l.gif[/img]\n\nCircuits can also be triggered off zones and tagged entities.\n[img]https://i.imgur.com/3WcOiCM.gif[/img]\n\nDifferent activation types greatly increase the variety of use in puzzles\n[img]https://i.imgur.com/zUmN6jc.gif[/img]\n[img]https://i.imgur.com/X2qesGU.gif[/img]\n[img]https://i.imgur.com/I0qk1mh.gif[/img]\n\n[h3]QoL[/h3]\nIn the SDK, modders can now directly drag & drop spawnables from the asset warehouse into the inspector. When dragging a Fixture from the asset warehouse the spawnable side and static side are positionally linked, after placing in a scene, both will need to be selected at the same time to re-position.\n[img]https://i.imgur.com/2DbVxVb.gif[/img]\n[img]https://i.imgur.com/FXUl0Km.gif[/img]\n\n\n\n[h3]Bug Fixes\n[/h3]The avatar switching and bodylog switching bug from patch 5 has been fixed. Additionally the skybox not rendering in the spectator camera has been fixed. \n\n[h3]Rendering\n[/h3]Many rendering optimizations implemented including a focus on particle VFX, and spawning/despawning. \n\n ---------------------------\n\n[h2]Patch Notes - PATCH 6[/h2]\n\n[h3]MODDING/SDK CHANGES[/h3]\n[list]\n[*] Drag&Drop crates from Asset Warehouse\n[*] ZoneLink creation automatically adds ZoneAggro and ZoneAmbience objects\n[*] CrateSpawner field in SpawnDecorators now read-only instead of hidden\n[*] More robust LevelCrate dirtying and undo records\n[*] Added undo records for SceneChunk ZoneCuller addition or removal\n[/list]\n\n[h3]SDK FIXTURES[/h3]\n[list]\n[*] Button 1x\n[*] Button 1.5x\n[*] Button 2x\n[*] Button 3x\n[*] Airlock Door\n[*] Lever\n[*] Slider\n[*] Switch\n[*] Fixture poses added for setting start positions\n[*] Circuitry nodes (Add, Multiply, Xor, Event Actuator, etc.)\n[/list]\n\n[h3]BUGFIXES[/h3]\n[list]\n[*] Fixed issue with removed favorited avatar barcodes breaking bodymall\n[*] Fixed Skybox shaders not rendering in spectator camera\n[*] Restored behavior of suppressed guns not aggroing enemies\n[*] Fix for mag-eject staying after previously holding a gun\n[/list]\n\n[h3]ADJUSTS[/h3]\n[list]\n[*] Added additional fallback protection for removed avatar barcodes\n[*] Removed impact properties manager\n[/list]\n\n[h3]ADDITIONS[/h3]\n[list]\n[*] First pass and introduction of new Plug&Socket (preparation for general socket system)\n[/list]\n\n[h3]RENDERING[/h3]\n[list]\n[*] Rework of fizzle effect\n[*] Spawning/Despawning no longer dependent on blip script on objects\n[*] Effects now based on entity colliders' velocity and angular velocity\n[*] Supports multi-rigidbody spawnables\n[*] Added recycle callbacks to support new fizzles on SpawnPolicy pooled objects\n[*] VFX Optimization, consolidation, organization (WIP)\n[*] Enabled decals on more spawnables\n[*] Updated VRS to address a potential graphics related crash\n[/list]\n\n[h3]FURTHER OPTIMIZATIONS[/h3]\n[list]\n[*] Various backend rendering optimizations\n[*] Render pipeline clean up for volumetrics (WIP)\n[/list]",
+      "key": "1592190::c10c6f14c010bb047a21b327055aca46ee249de1",
+      "tags": [
+        {
+          "feature": "Patch 6 introduces a new circuitry system and basic fixtures to the Marrow SDK."
+        },
+        {
+          "feature": "The circuitry system enables you to implement simple cause and effect electrical circuits in your levels."
+        },
+        {
+          "feature": "Fixtures are spawnable dynamic objects that are affixed to the world (example: buttons, levers, doors, etc.)."
+        },
+        {
+          "feature": "Additionally, the new Impact Properties from Patch 5 have now been deployed throughout 90% of Bonelab's content with the rest coming in Patch 7."
+        },
+        {
+          "feature": "See the fixtures and circuitry in action in an updated Test Chamber 07!"
+        },
+        {
+          "feature": "By combining various simple math nodes to create inputs and outputs, you can assemble functional puzzles quickly."
+        },
+        {
+          "feature": "These building blocks tie together functionally with fixtures and events to flesh out interactive ideas."
+        },
+        {
+          "feature": "Patch 6 includes buttons, levers, a slider and an airlock door."
+        },
+        {
+          "feature": "Circuits can also be triggered off zones and tagged entities."
+        },
+        {
+          "feature": "Different activation types greatly increase the variety of use in puzzles"
+        },
+        {
+          "feature": "In the SDK, modders can now directly drag & drop spawnables from the asset warehouse into the inspector."
+        },
+        {
+          "bug": "The avatar switching and bodylog switching bug from patch 5 has been fixed."
+        },
+        {
+          "bug": "Additionally the skybox not rendering in the spectator camera has been fixed."
+        },
+        {
+          "feature": "Many rendering optimizations implemented including a focus on particle VFX, and spawning/despawning."
+        },
+        {
+          "feature": "Drag&Drop crates from Asset Warehouse"
+        },
+        {
+          "feature": "ZoneLink creation automatically adds ZoneAggro and ZoneAmbience objects"
+        },
+        {
+          "feature": "CrateSpawner field in SpawnDecorators now read-only instead of hidden"
+        },
+        {
+          "feature": "More robust LevelCrate dirtying and undo records"
+        },
+        {
+          "feature": "Added undo records for SceneChunk ZoneCuller addition or removal"
+        },
+        {
+          "feature": "Button 1x"
+        },
+        {
+          "feature": "Button 1.5x"
+        },
+        {
+          "feature": "Button 2x"
+        },
+        {
+          "feature": "Button 3x"
+        },
+        {
+          "feature": "Airlock Door"
+        },
+        {
+          "feature": "Lever"
+        },
+        {
+          "feature": "Slider"
+        },
+        {
+          "feature": "Switch"
+        },
+        {
+          "feature": "Fixture poses added for setting start positions"
+        },
+        {
+          "feature": "Circuitry nodes (Add, Multiply, Xor, Event Actuator, etc.)"
+        },
+        {
+          "bug": "Fixed issue with removed favorited avatar barcodes breaking bodymall"
+        },
+        {
+          "bug": "Fixed Skybox shaders not rendering in spectator camera"
+        },
+        {
+          "bug": "Restored behavior of suppressed guns not aggroing enemies"
+        },
+        {
+          "bug": "Fix for mag-eject staying after previously holding a gun"
+        },
+        {
+          "balance_change": "Added additional fallback protection for removed avatar barcodes"
+        },
+        {
+          "balance_change": "Removed impact properties manager"
+        },
+        {
+          "feature": "First pass and introduction of new Plug&Socket (preparation for general socket system)"
+        },
+        {
+          "feature": "Rework of fizzle effect"
+        },
+        {
+          "feature": "Spawning/Despawning no longer dependent on blip script on objects"
+        },
+        {
+          "feature": "Effects now based on entity colliders' velocity and angular velocity"
+        },
+        {
+          "feature": "Supports multi-rigidbody spawnables"
+        },
+        {
+          "feature": "Added recycle callbacks to support new fizzles on SpawnPolicy pooled objects"
+        },
+        {
+          "feature": "VFX Optimization, consolidation, organization (WIP)"
+        },
+        {
+          "feature": "Enabled decals on more spawnables"
+        },
+        {
+          "feature": "Updated VRS to address a potential graphics related crash"
+        },
+        {
+          "feature": "Various backend rendering optimizations"
+        },
+        {
+          "feature": "Render pipeline clean up for volumetrics (WIP)"
+        }
+      ]
+    },
+    {
+      "title": "Patch #5",
+      "date": "2024-07-18 16:40:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5969041959965924938",
+      "content": "[h2]Patch 5[/h2]\n\nToday's patch focuses on bringing impact properties and Stress Level Zero's grid wall assets to Marrow SDK 1.1.0 along a few other important features for level creation, responding to feedback from Patch #4, and further optimizing build size, overall performance and hitches via consolidating the materials that are used in game. Check out these changes in our updated Test Chambers mod: [url=https://mod.io/g/bonelab/m/test-chambers]Test Chambers[/url]\n\n[h3]Zone Aggro[/h3]\nZone Aggro enables spawned enemies to be alerted to players in zones. Previously in mod levels enemies would not react to the player firing a gun, now with Zone Aggro they will be alerted.\n[img]https://i.imgur.com/ILxZoBz.gif[/img]\n\n\n[h3]Surface Data Cards[/h3]\nSurface Data Cards are for defining the Impact Properties of colliders. For example, this determines how a surface reacts to being impacted VFX wise. Additionally, these can recommend a physics material to apply to associated colliders. (NOTE: This is so hot off the press that even we don't have the the entirety of Bonelab\u2019s static geometry surface data card passed until Patch7)\n[img]https://i.imgur.com/l6VQMQK.gif[/img]\n\n\n[h3]Spawn Force[/h3]\nSpawn Force decorator applies a directional and/or angular velocity force when a CrateSpawner object is spawned.\n[img]https://i.imgur.com/3vIJddu.gif[/img]\n[img]https://i.imgur.com/1va5R2N.gif[/img]\n[img]https://i.imgur.com/nuYJfh0.gif[/img]\n[i]Spawn Force even works with spawned enemies, please use responsibly[/i]\n\n\n[h3]GridWalls[/h3]\nGridWalls, Grid Mats, GlowMats are now available for modders via our asset backlot. These are the same prefabs and materials we use to layout levels.\n[img]https://i.imgur.com/YfNnx6N.gif[/img]\n\n\n[h3]Player Rig[/h3]\nPlayer Rig adjustments have been made to further improve the physicality and control. The noticeable change is that the arm's twist now factors in the range of motion and neutral of the wrist. By getting the elbow closer to your real elbow, the hand is able to better represent the desired final pose of the hand. Bonelab's player uniquely doesn't simply use IK to show a body connecting your hands to your head, instead there is a fully physical body with spine, elbow and wrist constraints that art is directly drawn upon. This has been a massive but worthwhile challenge that began in 2020 and will continue for years to come.  Under the hood, some members of Lava Gang may discover that a lot of invisible changes have happened to the rig, the code and prefabs have migrated from Bonelab to Marrow, better for future development and accessibility in the SDK.\n[img]https://i.imgur.com/OUcQx9h.gif[/img]\nAlso, an unexposed 'Active Ragdoll' may be discovered as a work in progress for a rig that can tumble in 6DOF.\n\n\n[h3]Material Cleanup Pass[/h3]\nAll levels gamewide received a material cleanup pass to trim and reduce the number of unnecessary materials and improve visual consistency. This also has an added benefit of reducing some chunk-load hitches as the memory footprint for many areas has been dramatically reduced. The full game size is also reduced slightly by this consolidation.\n[img]https://i.imgur.com/Tev0FGQ.gif[/img]\n[img]https://i.imgur.com/yS5iFxV.gif[/img]\n[img]https://i.imgur.com/IpG8ojp.gif[/img]\n\n\n[h3]VFX Cleanup[/h3]\nImpact and particle vfx got a pass across the board in an effort to make visuals more consistent.\n[img]https://i.imgur.com/c9ObXBw.gif[/img]\n[img]https://i.imgur.com/Nt0HAHn.gif[/img]\n\n[h3]SDK - Surface Data Tools[/h3]\nIn the SDK is an overlay tool to quickly apply Impact Properties to surfaces in levels, we are hoping this speeds up level updating for Patch5.\n[img]https://i.imgur.com/dPVwJWI.gif[/img]\n[img]https://i.imgur.com/7yvZCby.gif[/img]\n\n ---------------------------\n\n[h2]Patch Notes - PATCH 5[/h2]\n\n[h3]MODDING/SDK CHANGES[/h3]\n[list]\n[*] Zone Aggro - An added default component for zones that will alert enemies in a zone to the player. \n[*] Spawn Force -  This CrateSpawner decorator is used to apply a velocity and/or angular velocity when the crate object is spawned.\n[*] Added SurfaceDataCards - These allow users to set the effects used by Impact Properties.\n[*] Impact Properties - Updated to have a more concise set up and use SurfaceDataCards.\n[*] Avatar Surface Data - Option to set SurfaceDataCard for avatars.\n[*] Mod.io Connect - Mod.io connect url with code filled out automatically copied to copy/paste buffer on Quest. On PC the web page is automatically opened.\n[*] Mod Repo Json Change - Side loaded mod repositories no longer require the \u201ctypes\u201d dictionary to be present in the repository json file.\n[*] Better Pallet Editor - The Pallet Editor now dynamically shows which DataCards to create\n[/list]\n[h3]BUGFIXES\n[/h3]\n[list]\n[*] Stream Session fix for chunk scene loading leaking into the next fix a bug where the scene starts before loading screen finishes\n[*] Fixed tensor calculations, better mass merge algorithm\n[*] Fixed stabslash when joints are broken\n[*] Fixed joint accumulation in loading guns\n[*] Fixed bullet shell accumulation when reloading\n[*] Fixed un-held weapon mag eject bug\n[*] Fixed missing audio mixer\n[*] Fixed Clippie achievement bug\n[*] Fixed Pillar Occlusion issues\n[*] Fixed glowstick grip\n[/list]\n[h3]ADJUSTS[/h3]\n[list]\n[*] Player Rig - Arm twist now factors in wrist neutral and range of motion.\n[*] RigManager - all scripts are now in Marrow instead of Bonelab, invisible but important for the future.\n[*] Materials Pass - Materials visually unified; some textures updated or replaced, remaining instances of non-LitMAS shaders replaced. Renamed and organized under more consistent conventions. Usages within levels made more consistent and optimized.\n[*] VFX Pass - Some particle systems updated and visually polished. Some decal textures updated, and a new optimized decal projector system was implemented.\n[*] VFX Pass - Added import processor to skinned mesh imports to generate posespace data\n[*] VFX Pass - Baked Level lighting now affects cubemap reflection contribution\n[*] VFX Pass - Minor bug fixes\n[*] Grid Walls - Cleanup Pass\n[*] Grid Walls - Colliders optimized and made more accurate\n[*] Grid Walls - Some minor normal and UV fixes\n[*] Grid Walls - Added Goofy planes\n[*] Fixture Standardization (WIP)\n[*] Physics Material Pass (WIP)\n[/list]\n[h3]RENDERING[/h3]\n[list]\n[*] Quest 3 now uses PC transparent materials\n[*] Shader Cache Validation - Further optimized the shader cache start up step to skip if it has already been generated for the current build and driver version.\n[/list]\n[h3]FURTHER OPTIMIZATIONS[/h3]\n[list]\n[*] Build Size Further Reduced\n[*] Material reduction pass reduce some level hitching\n[*] Further audio clips set to proper play settings for improved performance\n[*] Unnecessary Barcode allocations removed from crate spawning\n[/list]\n",
+      "key": "1592190::0f2a99293cce6e78e9bc4eb6c8cb9c90f82e7724",
+      "tags": [
+        {
+          "feature": "Zone Aggro - An added default component for zones that will alert enemies in a zone to the player."
+        },
+        {
+          "feature": "Spawn Force - This CrateSpawner decorator is used to apply a velocity and/or angular velocity when the crate object is spawned."
+        },
+        {
+          "feature": "Added SurfaceDataCards - These allow users to set the effects used by Impact Properties."
+        },
+        {
+          "feature": "Impact Properties - Updated to have a more concise set up and use SurfaceDataCards."
+        },
+        {
+          "feature": "Avatar Surface Data - Option to set SurfaceDataCard for avatars."
+        },
+        {
+          "feature": "Mod.io Connect - Mod.io connect url with code filled out automatically copied to copy/paste buffer on Quest. On PC the web page is automatically opened."
+        },
+        {
+          "feature": "Mod Repo Json Change - Side loaded mod repositories no longer require the \u201ctypes\u201d dictionary to be present in the repository json file."
+        },
+        {
+          "feature": "Better Pallet Editor - The Pallet Editor now dynamically shows which DataCards to create"
+        },
+        {
+          "bug": "Stream Session fix for chunk scene loading leaking into the next fix a bug where the scene starts before loading screen finishes"
+        },
+        {
+          "bug": "Fixed tensor calculations, better mass merge algorithm"
+        },
+        {
+          "bug": "Fixed stabslash when joints are broken"
+        },
+        {
+          "bug": "Fixed joint accumulation in loading guns"
+        },
+        {
+          "bug": "Fixed bullet shell accumulation when reloading"
+        },
+        {
+          "bug": "Fixed un-held weapon mag eject bug"
+        },
+        {
+          "bug": "Fixed missing audio mixer"
+        },
+        {
+          "bug": "Fixed Clippie achievement bug"
+        },
+        {
+          "bug": "Fixed Pillar Occlusion issues"
+        },
+        {
+          "bug": "Fixed glowstick grip"
+        },
+        {
+          "balance_change": "Player Rig - Arm twist now factors in wrist neutral and range of motion."
+        },
+        {
+          "balance_change": "RigManager - all scripts are now in Marrow instead of Bonelab, invisible but important for the future."
+        },
+        {
+          "balance_change": "Materials Pass - Materials visually unified; some textures updated or replaced, remaining instances of non-LitMAS shaders replaced. Renamed and organized under more consistent conventions. Usages within levels made more consistent and optimized."
+        },
+        {
+          "balance_change": "VFX Pass - Some particle systems updated and visually polished. Some decal textures updated, and a new optimized decal projector system was implemented."
+        },
+        {
+          "balance_change": "VFX Pass - Added import processor to skinned mesh imports to generate posespace data"
+        },
+        {
+          "balance_change": "VFX Pass - Baked Level lighting now affects cubemap reflection contribution"
+        },
+        {
+          "bug": "VFX Pass - Minor bug fixes"
+        },
+        {
+          "balance_change": "Grid Walls - Cleanup Pass"
+        },
+        {
+          "balance_change": "Grid Walls - Colliders optimized and made more accurate"
+        },
+        {
+          "balance_change": "Grid Walls - Some minor normal and UV fixes"
+        },
+        {
+          "balance_change": "Grid Walls - Added Goofy planes"
+        },
+        {
+          "balance_change": "Fixture Standardization (WIP)"
+        },
+        {
+          "balance_change": "Physics Material Pass (WIP)"
+        },
+        {
+          "feature": "Quest 3 now uses PC transparent materials"
+        },
+        {
+          "balance_change": "Shader Cache Validation - Further optimized the shader cache start up step to skip if it has already been generated for the current build and driver version."
+        },
+        {
+          "balance_change": "Build Size Further Reduced"
+        },
+        {
+          "balance_change": "Material reduction pass reduce some level hitching"
+        },
+        {
+          "balance_change": "Further audio clips set to proper play settings for improved performance"
+        },
+        {
+          "balance_change": "Unnecessary Barcode allocations removed from crate spawning"
+        }
+      ]
+    },
+    {
+      "title": "Patch #4",
+      "date": "2024-06-06 20:09:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972550527965",
+      "content": "[h1]Patch 4[/h1]\n[img]https://i.imgur.com/Qtj9lsv.gif[/img]\n\n18 months of core development brings great performance increases, development optimizations, and a swath of game improvements. Slowly but surely these under-the-hood changes have brought us from experimental ideation to tangible quality advancements for VR physics interaction and bonestyle game development.\n\n[h2]Player Rig Improvements[/h2]\nThe player rig has significantly progressed to become more physical, more performant, and feel better to control. Particular attention was paid to mantling, interaction with levers and lockers, small pops when interacting, aiming guns, recoil, adding a physical neck, and physical twist bones on the upper arms, lower arms, and thighs.\n\n[h2]SDK Updates[/h2]\nPatch 4 comes alongside a large update in the MarrowSDK geared specifically towards Mod Level creation. Place spawnables with ease now using the dynamically loaded Spawner Preview Meshes! No more VOID meshes everywhere. This will even work with Pallets created by other users\n[img]{STEAM_CLAN_IMAGE}/42287774/192534c3881cd42cf0cff9503051c7c00b9f8789.png[/img]\n\n[h3]Zones[/h3]\nThe Zone System has been completely rebuilt, refactored, reworked, retooled  for level creation, Marrow Entity tracking, and performance optimization.  This enables modders to more seamlessly create high quality levels with more complex player involvement. For additional information please see updated Marrow SDK documentation! https://slz.gg/sdk\n\n[img]https://i.imgur.com/WHRlDfD.gif[/img]\n[i]Marrow Entities (dynamic physics objects) have their states tracked while inside zones. This enables Marrow to cull/un-cull without hitching.[/i]\n\n[img]https://i.imgur.com/j6Guool.gif[/img]\n[i]This gif showcases a zone cutting through other zones and seamless transitions between them. Once exposed in the SDK these tools will enable you to more easily setup interesting and unique level designs.[/i]\n\n[img]https://i.imgur.com/nAYfhsu.gif[/img]\n[i]You can see as the player entity traverses through linked zones, Marrow Entities are brought in/out for greatly improved optimization management.[/i]\n\n[h3]Spawnables[/h3]\nSpawnable dynamic objects (Marrow Entities) fill the library of items you are now able to utilize in your level creation. By referencing the Bonelab pallet of spawnables in your mod project, you can now place and spawn almost any Bonelab object the same way we can. Since these items are all Marrow Entities, they are tracked and dynamically culled per zone for optimization.\n\n[img]https://i.imgur.com/Me6ZRLX.gif[/img]\n[i]Since we know embarking on a massive easter egg hunt for all spawnable objects is a daunting prospect, a gashapon machine has been added to the endgame menu. This machine functions similarly to the Monomat from BONEWORKS; the ammo you have collected throughout BONELAB\u2019s campaign can be redeemed for unlockable objects you might have missed during your playthrough.[/i]\n\n[h3]Spawn Gun Usability[/h3]\n[b]The Spawn Gun UI has been reworked[/b] to allow better sorting and filtering of downloaded mods.  This should make things easier as the list of spawnable items and mods gets even longer!\n\n[img]https://i.imgur.com/hs7J25o.gif[/img]\n[i]It is important for us to further improve ways for players and modders to organize their crates and data.[/i]\n\n[h2]Quality of Life[/h2]\n\n[b]Box Grips and Barrel grips[/b]  have had a pass on bug fixing and interaction cleanup. Previously it was possible to run into an issue where grabbing a scaled box grip would cause the hand to grab towards the root or center of the box/barrel, rather than the spot the player intended to grab.\n\n[b]Minor level adjustments[/b] have been made throughout the game including missing collider fixes, misassigned physics and impact properties, fixes to zone connection issues, occlusion bakes, and light bakes.\n\n[b]Tons of further optimizations[/b] have been made to rendering, loading, asset streaming, interactive set pieces, colliders, occlusion, nav-mesh, textures, sounds, lightmaps, shaders, materials, fog, static batching, memory use, asset file size, etc. etc. etc. \n\n[b]Mountains of bug fixes[/b] covering a wide range of issues from logic errors, collider issues, incorrect scales (all leading to physics weirdness), to UI bugs, objects double spawning, double-rigidbody objects becoming broken from spawning, texture mistakes, incorrect references, mysterious super cursed override reference bug, and blown-out lightprobes.\n\n[b]Gashapons are now destructible![/b] Shoot them, smash them, or bash them, destroying them will unlock the spawnable item just as well as popping them normally.\n[img]https://i.imgur.com/5K6Zq0Y.gif[/img]\n\n[h2]Mod.io subscription downloading[/h2]\n[img]https://i.imgur.com/WUnLZBi.gif[/img]\n[i]You can now connect to your mod.io account and directly download all subscribed mods. Note: this will only download mods compatible with this MarrowSDK version and above. You can still manually install older mods but they will likely have problems if they haven\u2019t been updated.[/i]\n\n ---------------------------\n\n[h2]Patch Notes - PATCH 4[/h2]\n\n[h3]Player Rig Improvements[/h3][list]\n[*] Optimized hand poses and increased range of motion on some poses\n[*] Physical neck, upper arm, lower arm, and thigh twists added\n[*] Lever, locker, and joystick interaction polished\n[*] Shouldering pose added to tighten aiming and lean physics into shots\n[*] Interaction while moving polished to remove pops\n[*] Player stabilized to withstand greater forces\n[*] Teleporting polished\n[*] Gun recoil improved\n[*] Slow avatars move slightly faster\n[*] Mantling greatly improved\n[*] Movement while crouching improved\n[*] SFX added to hands when they slide on surfaces\n[*] Significantly optimized performance\n[*] Tons of under the hood preparation for the player rig to be more separable as an NPC\n[/list]\n[h3]Reworks[/h3][list]\n[*] [b]Zones -[/b] Fully rebuilt using new zone system / tools including zone links, triggers / events, and other zone based components.\n[*] [b]Marrow Entities -[/b] All Rigidbodies migrated to Marrow Entity system for tracking with new zones as well as internal state persistence / resetting and pooling, joint tracking\n[*][b]Layers -[/b] consolidated and optimized, collision matrix optimized, dedicated trigger layers for different use cases. Concept of fixtures added.\n[*][b]Damage Volumes -[/b] rebuilt for consistency with health system, NPCs, and object destructibles. \n[*][b]Audio and Mixes -[/b] all audio sources migrated to use dynamically pooled and spawned interface, mixer moved to marrow.\n[*][b]Spawnable Props -[/b] optimized artwork, restructured hierarchies, added LODs, various tunings, scale fixes.\n[*][b]LODs -[/b] static / environment artwork LOD work and adjustments for optimal performance and reducing visual pops.\n[*][b]Particle FX -[/b] optimizations and some redesigns.\n[*][b]Affordances -[/b] improved throughout most levels including lighting changes, object placement, material swapping, fog volume adjustments, color changes, sightlines,  and sound fx improvements.\nElectronic puzzles reworked with Voidlogic\n[*][b]GameControl logic[/b] reworked\n[*][b]ObjectDestructible[/b] and fragments\n[*][b]Trigger events[/b] reworked to Zones\n[*][b]Various UX[/b] design normalization (example: button sizes)\n[*][b]Encounters -[/b] adjusted, reworked, and optimized across most levels.\n[*][b]Encounter Spawner Groups[/b]\n[olist]\n[*] Spawn AI settings - roam, base configuration, spline roam, zone roam\n[*] Spawn Aggro\n[*] Zone Aggro\n[*] Agent Link Decorator[/olist]\n[*][b]NPC [/b][olist]\n[*] Lifecycles reworked for pooling/hibernation/artcull\n[*] Hierarchy rework and bug fixes\n[*] EntityPoseDecorator for posing NPCs on spawn\n[*] Omnis navigation improved [/olist]\n[/list]\n\n[h3]Bug Fixes[/h3]\n[list]\n[*] Loot table off by one fix\n[*] Respawn teleport points fixed and adjusted\n[*] Highlighting tutorials on weapons fixed\n[*] Crate reference issues fixed\n[*] Occlusion culling fixes\n[*] Double spawning objects fixed\n[*] UI alignment issues fixed\n[*] Collider fixes gamewide \n[*] Off-scale object fixes gamewide\n[*] Many texture mistakes fixed\n[*] Many light probe issues fixed\n[*] Box grips bug fix and interaction cleanup\n[*] Barrel grips bug fix and interaction cleanup\n[*] Leaderboard UI filtering bug fix\n[*] Rotational drift while seated fixed\n[*] Bunny hopping jump reset fixed\n[/list]\n\n[h3]Adjustments[/h3]\n[list]\n[*] Some levels slightly adjusted for improved UX or optimization\n[*] Destructibility added to certain spawnables\n[*] Gashapon balls are now destructible\n[*] Environment seams reduced\n[*] Environment layout adjustments to prevent players getting stuck\n[*] Material corrections\n[*] Music playback adjusted including placements and timing\n[*] Ladders swapped for lifts\n[*] Arena gameplay optimization and adjustments\n[*] Weapon choice and placements adjusted\n[*] Ammo count reconfigured\n[*] Missing colliders fixed in various levels\n[*] Misassigned physics materials and impact properties\n[*] Zone connection issues fixed in various levels\n[*] Occlusion bake issues fixed in various levels\n[*] Light bake issues fixed in various levels\n[*] Damage Volumes now behave consistently\n[*] Added Gashapon machine or quicker endgame collecting\n[*] Crate Descriptions added\n[/list]\n\n[h3]Rendering and Optimizations[/h3]\n[list]\n[*] Shader prewarming added\n[*] Light bakes visually improved and performance optimized across the game\n[*] Lightmap based baked reflection occlusion added\n[*] Fog visually improved and performance optimized\n[*] Static batching improved\n[*] Texture streaming cache size increased\n[*] Memory use optimizations\n[*] Storage use optimizations\n[*] Material use optimizations\n[*] Audio clip loading optimizations\n[*] Optimized poorly optimized meshes (WIP)\n[*] Consolidation of used assets per level\n[/list]\n\n[h3]Level Specific[/h3]\n[list]\n[*] [b]Descent -[/b] Final area layout adjusted and re-tuned\n[*] [b]Hub -[/b] QoL changes to special projects area\n[*] [b]Longrun -[/b] Puzzle section rework\n[*] [b]District -[/b] sightline geometry overhaul\n[/list]\n\n[h3]UI Updates[/h3]\n[list]\n[*] [b]Spawn Gun UI -[/b] reworked organization for handling many installed mods and spawnable items\n[*] [b]BodyMall UI -[/b] reworked organization for handling many installed avatars.\n[*] [b]Mod.io UI -[/b] Added interface for binding Mod.io account to automatically download subscription on website\n[/list]\n\n ---------------------------\n\n",
+      "key": "1592190::fc3dc1e95227b069196981df3ed5c067c05b6e9a",
+      "tags": [
+        {
+          "bug": "- Fixed an empty item panel sometimes showing on the scoreboard."
+        },
+        {
+          "bug": "-DE_Library: Fixed bug where some clients would crash on bomb explosion."
+        },
+        {
+          "bug": "- Fixed a bug where removing/adding a silencer would also drop a magazine on the ground."
+        },
+        {
+          "feature": "- Added the Highlights feature."
+        },
+        {
+          "feature": "- A new game mode has been added to matchmaking and offline play: Deathmatch."
+        },
+        {
+          "feature": "- Added three new playable heroes: Queen of Pain, Slark, and Templar Assassin"
+        },
+        {
+          "balance_change": "- Reduced Molotov price from 500 to 400."
+        },
+        {
+          "balance_change": "- XM1014 - reduced damage to 20."
+        },
+        {
+          "balance_change": "* Eul's Scepter of Divinity: Bonus movement speed reduced from +40 to +30"
+        }
+      ]
+    },
+    {
+      "title": "Anniversary Post",
+      "date": "2023-09-29 20:04:32",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5220291886492357149",
+      "content": "We\u2019ve been 100% focused on Marrow/Bonelab development, prioritizing it over PR, emails, and a fifth SLZ title, but since today is the one year anniversary it made sense to take an hour to make a post.\n\nThank you for your enthusiasm for Bonelab, SLZ, and VR in general. Anticipating a content drought, one of our major goals with Bonelab was to make a title that would keep you engaged as we work towards making it possible for Marrow content/titles to be made more efficiently. We\u2019re happy to announce that while playtime, refunds, and active users were great for Boneworks, after one year Bonelab currently has 3x the median playtime, 1/3rd the refunds, and 10x the daily active users of Boneworks. The team is motivated by the overwhelming response, but our VR work is still just getting started.\n\nOur goal is still to get the next update for Bonelab out as a beta this year. We\u2019ll talk about it more in the upcoming months, but here are a few bullets:\n[list]\n[*] This update is very different from what most would expect, but we thought and think it is best for the long term.\n[*] The Marrow SDK will receive level authoring focused features.\n[*] The focus is on the core tech, optimization, polish, and the Marrow SDK with a few exceptions. Rather than rapid feature release, VR needs a more stable physical foundation for long term growth.\n[*] The content team has been rebuilding the existing content invisibly with new systems as they come online.\n[*] Our goal (while it won\u2019t be fully realized for many years and many games) is that the Marrow SDK is the same externally and internally.\n[*] Tons of work has gone into a long term goal of unifying the player and the humanoid NPC\u2019s, still years from completion, but it\u2019s worth pursuing.\n[*] The player can now use a full body animation as input, is more physically complex than ever, and is 38% lighter on a Quest 2 CPU than Patch 3.\n[*] The future of VR gaming is bright, but incredibly labor intensive and expensive.\n[/list]\n\nAttached is a [url=https://youtu.be/Jx2oeyR8YrA]WIP clip of a torso track being integrated with locomotion and crouch from 5 months ago[/url] (not IOBT). \n\n[img]https://i.imgur.com/6b1uWBi.gif[/img]\n\nAs always, only purchase Bonelab as it currently is and not based on what it may be.\n\nBack to work,\nBrandon and the entire SLZ team\n",
+      "key": "1592190::7cf50a951ec6c00cca4f6eb2120748fd142ee748",
+      "tags": [
+        {
+          "feature": "- The Marrow SDK will receive level authoring focused features."
+        },
+        {
+          "feature": "- The player can now use a full body animation as input, is more physically complex than ever, and is 38% lighter on a Quest 2 CPU than Patch 3."
+        }
+      ]
+    },
+    {
+      "title": "PATCH #2",
+      "date": "2022-11-20 20:22:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4789043687486731703",
+      "content": "[img]https://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/42287774/cf3f75c0187db1da9ba1cb9de6e44a3ae530a672.png[/img]\n[b][h2]Overview[/h2]\n[/b]We\u2019re excited to release our second patch for BONELAB! Since launch the team has primarily been focused on listening to collective feedback to best prioritize quality of life fixes and bugs, but we\u2019ve found some time for some additional secrets and items as well.\n\nInteraction received a tune pass and some bug fixes. Near field tracking and occluded controllers are now handled better resulting in better gun handling and body slot interaction. Shouldering has been improved and will continue to be improved in the future. The player is perpetually a work in progress: Boneworks was year 3, Bonelab is currently in year 6, we have many years to go. Thank you for participating in the journey, the ceiling for VR interaction is so high.\n\nWe re-tuned Index grip interactions to take better advantage of grip force for holding objects.\n\nSaving has been improved. The Hub will now persist your inventory from the last campaign level you\u2019ve completed. This will improve the experience of replaying the campaign after you\u2019ve already beat the game.\n\nKeycards are now functional. Each ID badge can unlock a hidden developer room, each with at least one new unlockable object. We hope you enjoy finding what secrets they reveal!\n[img]https://i.imgur.com/BLda948.gif[/img]\n\nWe\u2019ve added new collectable spawnable items, including a M1 Garand with a fixed bayonet.  Enjoy using these props to get creative in sandboxes!\n[img]https://i.imgur.com/H2x6gU3.gif[/img]\n\nThe majority of levels have received some tweaks including encounter adjustments, lighting, bug fixing, optimizations and easter eggs. Sprint Bridge received a large rework adding enemy encounters including a helicopter to avoid. \n[img]https://i.imgur.com/Gsc8XP7.gif[/img]\n\n[b][h3]Please take the time to rate and review or update current reviews, your feedback is read by the team and is very helpful![/h3][/b]\n\n\n[h3]Patch Notes - PATCH 2[/h3]\n[list]\n[*] ADDED: Keycard functionality added  \n[*] ADDED:  [REDACTED]s added to [REDACTED]s  \n[*] ADDED: 1 Unlockable Avatar  \n[*] ADDED: 2 Unlockable Guns  \n[*] ADDED: 2 Unlockable Melee weapons  \n[*] ADDED: 30+ Unlockable Props  \n[/list][list]\n[*] FIXED:  NPC Skeleton is now unlockable\n[*] FIXED:  HOME - Fixed objects disappearing and potentially breaking the rig during taxi ride  \n[*] FIXED:  HUB - Fixed crane spawning incorrectly  \n[*] FIXED:  Magazines can no longer be inserted from above the gun.  \n[/list][list]\n[*] ADJUSTED: Shouldering plane moved back by 6cm. Long term the plan is to instead gain this additional reach by extending the neck to reduce held objects penetrating the torso, but this is a good short term improvement.  \n[*] ADJUSTED: Non-stocked guns are now more resilient to being affected by locomotion.  \n[*] ADJUSTED: Improved handling of controller tracking when out of camera\u2019s view. Now the controller will guess better when only tracked with the IMU.  \n[*] ADJUSTED: Body remapping tuning improved. Hands should no longer move when open/closed when not in proximity of each other.  \n[*] ADJUSTED: Save system updated so that hub inventory updates after every level  \n[*] ADJUSTED: SPRINT BRIDGE 04 - Reworked level and added encounters\n[*] ADJUSTED: NPC Ford visual tweaks  \n[*] ADJUSTED: Memory optimization tweaks  \n[*] ADJUSTED: Improve interaction on various props\n[*] ADJUSTED: Descent - Level tweaks\n[*] ADJUSTED: Hub - Level tweaks\n[*] ADJUSTED: LongRun- Level tweaks\n[*] ADJUSTED: MineDive- Level tweaks\n[*] ADJUSTED: StreetPuncher- Level tweaks\n[*] ADJUSTED: MoonBase- Level tweaks\n[*] ADJUSTED: Pillar - Level tweaks\n[*] ADJUSTED: Big Anomaly- Level tweaks\n[*] ADJUSTED: Ascent - Level tweaks\n[*] ADJUSTED: Big Bone Bowling - Level tweaks\n[*] ADJUSTED: Container Yard- Level tweaks\n[*] ADJUSTED: District Parkour / Tac Trial - Level tweaks\n[*] ADJUSTED: Drop Pit - Level tweaks\n[*] ADJUSTED: Dungeon Warrior - Level tweaks\n[*] ADJUSTED: Halfway Park - Level tweaks\n[*] ADJUSTED: Mirror - Level tweaks\n[*] ADJUSTED: Museum Basement - Level tweaks\n[*] ADJUSTED: RoofTops - Level tweaks\n[*] ADJUSTED: Tuscany - Level tweaks\n[*] ADJUSTED: PCVR- Added variable rate shading (VRS). Dramatically improves rendering performance. Only supported on Turing or later NVIDIA GPUs (GTX 1630 and above).\n[*] ADJUSTED: PCVR- Added radial density mask as a fallback for cards that do not support VRS. Works similarly to VRS, but less effective.\n[*] ADJUSTED: STEAM - Added Reverb G2 Mixed Reality interaction profile\n[*] ADJUSTED: STEAM - Index controller gripping action improved by factoring in grip force. (Improved gripping without trigger)\n[*] ADJUSTED: STEAM - Improved defaults for unsupported hardware. (More devices fall back to Quest bindings when unknown)\n[*] ADJUSTED: STEAM - Improved resilience to 3rd party hand tracking interference.\n[/list]\n",
+      "key": "1592190::fd72510d7636c7a0b0b3e7e0d4d86c15c9877dc5",
+      "tags": [
+        {
+          "feature": "ADDED: Keycard functionality added"
+        },
+        {
+          "feature": "ADDED: [REDACTED]s added to [REDACTED]s"
+        },
+        {
+          "feature": "ADDED: 1 Unlockable Avatar"
+        },
+        {
+          "feature": "ADDED: 2 Unlockable Guns"
+        },
+        {
+          "feature": "ADDED: 2 Unlockable Melee weapons"
+        },
+        {
+          "feature": "ADDED: 30+ Unlockable Props"
+        },
+        {
+          "bug": "FIXED: NPC Skeleton is now unlockable"
+        },
+        {
+          "bug": "FIXED: HOME - Fixed objects disappearing and potentially breaking the rig during taxi ride"
+        },
+        {
+          "bug": "FIXED: HUB - Fixed crane spawning incorrectly"
+        },
+        {
+          "bug": "FIXED: Magazines can no longer be inserted from above the gun."
+        },
+        {
+          "balance_change": "ADJUSTED: Shouldering plane moved back by 6cm. Long term the plan is to instead gain this additional reach by extending the neck to reduce held objects penetrating the torso, but this is a good short term improvement."
+        },
+        {
+          "balance_change": "ADJUSTED: Non-stocked guns are now more resilient to being affected by locomotion."
+        },
+        {
+          "balance_change": "ADJUSTED: Improved handling of controller tracking when out of camera\u2019s view. Now the controller will guess better when only tracked with the IMU."
+        },
+        {
+          "balance_change": "ADJUSTED: Body remapping tuning improved. Hands should no longer move when open/closed when not in proximity of each other."
+        },
+        {
+          "balance_change": "ADJUSTED: Save system updated so that hub inventory updates after every level"
+        },
+        {
+          "balance_change": "ADJUSTED: SPRINT BRIDGE 04 - Reworked level and added encounters"
+        },
+        {
+          "balance_change": "ADJUSTED: NPC Ford visual tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Memory optimization tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Improve interaction on various props"
+        },
+        {
+          "balance_change": "ADJUSTED: Descent - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Hub - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: LongRun- Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: MineDive- Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: StreetPuncher- Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: MoonBase- Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Pillar - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Big Anomaly- Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Ascent - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Big Bone Bowling - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Container Yard- Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: District Parkour / Tac Trial - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Drop Pit - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Dungeon Warrior - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Halfway Park - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Mirror - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Museum Basement - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: RoofTops - Level tweaks"
+        },
+        {
+          "balance_change": "ADJUSTED: Tuscany - Level tweaks"
+        },
+        {
+          "feature": "ADJUSTED: PCVR- Added variable rate shading (VRS). Dramatically improves rendering performance. Only supported on Turing or later NVIDIA GPUs (GTX 1630 and above)."
+        },
+        {
+          "feature": "ADJUSTED: PCVR- Added radial density mask as a fallback for cards that do not support VRS. Works similarly to VRS, but less effective."
+        },
+        {
+          "feature": "ADJUSTED: STEAM - Added Reverb G2 Mixed Reality interaction profile"
+        },
+        {
+          "balance_change": "ADJUSTED: STEAM - Index controller gripping action improved by factoring in grip force. (Improved gripping without trigger)"
+        },
+        {
+          "balance_change": "ADJUSTED: STEAM - Improved defaults for unsupported hardware. (More devices fall back to Quest bindings when unknown)"
+        },
+        {
+          "balance_change": "ADJUSTED: STEAM - Improved resilience to 3rd party hand tracking interference."
+        }
+      ]
+    },
+    {
+      "title": "Patch #1",
+      "date": "2022-10-20 16:20:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4714731755413283952",
+      "content": "BUG -  Fix to stop the ammo pouch and gun fighting over the magazine\nBUG - Fixed issue with volumetrics getting garbage data and becoming randomly colored\nADJUST - Bonelab version added to log\nADJUST - Device ID updates when using different controllers\nADJUST - Devtools spawnable if you have them unlocked, no longer requires developer mode\nADJUST - Level selection available through progression\nADJUST - 1911 made default unlock\nADJUST - Added gacha poster instructions\nADJUST - Nimbus gun disables leaderboards\n\nBUG - HUB - Fix for potential progression skip\nBUG - HUB - Fixes for potentially stalled progression when going from Hub to Ascent\nBUG - MINE DIVE - Various Triggers fixed\nBUG - MONOGON MOTORWAY - Trigger tutorial fixed\nBUG - LONGRUN - Dynamic railing colliders fixed\nBUG - BIG ANOMALY - Invulnerable health fix\nBUG - TUSCANY - Fixed complete button\n\nADJUST - HUB - Crane instruction UI added\nADJUST - HUB - Crane reset button and button labels added\nADJUST - HUB - Various UX and affordances tweeks\nADJUST - HUB - Improved funicular sound effects\nADJUST - HUB - Map is more direct, Lists core keys, and tells player what they should do.\nADJUST - MOON - Avatar Gacha capsule has beacon\nADJUST - MOON - Arrow pointing in gacha direction\nADJUST - MOON - Added jump pads\nADJUST - PILLAR - Checkpoint at middle of level added \nADJUST - PILLAR - More weapons added\nADJUST - PILLAR - Grip added to elevator platform top surface\nADJUST - PILLAR - Boids can no longer forcibly change your avatar\nADJUST - PILLAR - Added visual damage to the boid ball\nADJUST - PILLAR - Reworked upper arena area\nADJUST - STREET PUNCHER - Jukebox headphone made dynamic\nADJUST - DUNGEON WARRIOR - Closed gap in environment\nADJUST - ROOFTOPS - Various small UX improvements\nADJUST - DISTRICT - Zones adjusted to fix enemy pop-in\nADJUST - DISTRICT - Some material and lighting changes\n",
+      "key": "1592190::9aa589350cdd4d2c3b2d0cc852752c2eee789dc5",
+      "tags": [
+        {
+          "bug": "BUG -  Fix to stop the ammo pouch and gun fighting over the magazine"
+        },
+        {
+          "bug": "BUG - Fixed issue with volumetrics getting garbage data and becoming randomly colored"
+        },
+        {
+          "balance_change": "ADJUST - Bonelab version added to log"
+        },
+        {
+          "balance_change": "ADJUST - Device ID updates when using different controllers"
+        },
+        {
+          "balance_change": "ADJUST - Devtools spawnable if you have them unlocked, no longer requires developer mode"
+        },
+        {
+          "balance_change": "ADJUST - Level selection available through progression"
+        },
+        {
+          "balance_change": "ADJUST - 1911 made default unlock"
+        },
+        {
+          "balance_change": "ADJUST - Added gacha poster instructions"
+        },
+        {
+          "balance_change": "ADJUST - Nimbus gun disables leaderboards"
+        },
+        {
+          "bug": "BUG - HUB - Fix for potential progression skip"
+        },
+        {
+          "bug": "BUG - HUB - Fixes for potentially stalled progression when going from Hub to Ascent"
+        },
+        {
+          "bug": "BUG - MINE DIVE - Various Triggers fixed"
+        },
+        {
+          "bug": "BUG - MONOGON MOTORWAY - Trigger tutorial fixed"
+        },
+        {
+          "bug": "BUG - LONGRUN - Dynamic railing colliders fixed"
+        },
+        {
+          "bug": "BUG - BIG ANOMALY - Invulnerable health fix"
+        },
+        {
+          "bug": "BUG - TUSCANY - Fixed complete button"
+        },
+        {
+          "balance_change": "ADJUST - HUB - Crane instruction UI added"
+        },
+        {
+          "balance_change": "ADJUST - HUB - Crane reset button and button labels added"
+        },
+        {
+          "balance_change": "ADJUST - HUB - Various UX and affordances tweeks"
+        },
+        {
+          "balance_change": "ADJUST - HUB - Improved funicular sound effects"
+        },
+        {
+          "balance_change": "ADJUST - HUB - Map is more direct, Lists core keys, and tells player what they should do."
+        },
+        {
+          "balance_change": "ADJUST - MOON - Avatar Gacha capsule has beacon"
+        },
+        {
+          "balance_change": "ADJUST - MOON - Arrow pointing in gacha direction"
+        },
+        {
+          "balance_change": "ADJUST - MOON - Added jump pads"
+        },
+        {
+          "balance_change": "ADJUST - PILLAR - Checkpoint at middle of level added"
+        },
+        {
+          "balance_change": "ADJUST - PILLAR - More weapons added"
+        },
+        {
+          "balance_change": "ADJUST - PILLAR - Grip added to elevator platform top surface"
+        },
+        {
+          "balance_change": "ADJUST - PILLAR - Boids can no longer forcibly change your avatar"
+        },
+        {
+          "balance_change": "ADJUST - PILLAR - Added visual damage to the boid ball"
+        },
+        {
+          "balance_change": "ADJUST - PILLAR - Reworked upper arena area"
+        },
+        {
+          "balance_change": "ADJUST - STREET PUNCHER - Jukebox headphone made dynamic"
+        },
+        {
+          "balance_change": "ADJUST - DUNGEON WARRIOR - Closed gap in environment"
+        },
+        {
+          "balance_change": "ADJUST - ROOFTOPS - Various small UX improvements"
+        },
+        {
+          "balance_change": "ADJUST - DISTRICT - Zones adjusted to fix enemy pop-in"
+        },
+        {
+          "balance_change": "ADJUST - DISTRICT - Some material and lighting changes"
+        }
+      ]
+    }
+  ]
+}

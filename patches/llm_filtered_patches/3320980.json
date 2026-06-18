@@ -1,0 +1,1944 @@
+{
+  "appId": "3320980",
+  "count": 39,
+  "notes": [
+    {
+      "title": "Monday Musings #25 \u2013 Bestagon Blueprints",
+      "date": "2025-09-22 20:36:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915537846",
+      "content": "The community has spoken loud and clear, and the time for Blueprints is here! Even though I knew this day would always come, I'd like to talk about some of the specific challenges posed by Blueprints in MoteMancer, and for hexagons in general, because I'm a nerd and it's fun.\n\n[h3]It's just 60 degree rotations right?[/h3]\nIn simplest terms, yes, but in practice that's not the starting point that most footprints use. It is important to note that there is a difference between what is mathematically true and what feels correct as game UX. MoteMancer basically has 4 rotation paradigms for the 6 possible directions a building could be in order to make the UX smooth:\n[list]\n[*] Two rotations - 0\u00b0 & 60\u00b0: we rotate 60 degrees and then rotate back. This is for small buildings like Grindstones.\n[*] Two rotations - 0\u00b0 & 180\u00b0: we rotate 180 degrees and then rotate back. This is for larger structures like Titanic Chests and large production structures like a Greenhouse.\n[*] Three rotations - 0\u00b0, 120\u00b0, & 240\u00b0: any structure that is symmetric about 180 degrees actually needs 3 rotations to work properly. This applies to things like Wide Chests and Reefcrafters.\n[*] All 6 rotations: This applies to Mana Leaves and Streamways.\n[/list]\nCrucially, while MoteMancer could have used all 6 rotations for every building, it creates a large amount of overhead (6 variants of a building instead of 2), but also means the simple act of rotating would quickly become cumbersome because you would often have to reposition your mouse 2 or 3 times as often because a Structure's rotation point is rarely actually in the exact center, for a myriad of reasons.\n\n[h3]Why does that matter?[/h3]\nOnce you get to blueprinting and being able to grab multiple structures at a time, now you effectively need to 'teach' each structure what a 60 degree rotation means, even if they don't have one. This is best demonstrated by the image below where a Titanic Chest only has a 0 or 180 degree version. Rotating it 60 degrees intuitively means the pivot should be on the yellow hex, but that pivot orientation doesn't actually exist, the pink dots are the true 'center' coordinate used to place the Structure. So the game has to fake it - telling the Titanic Chest to use its 180\u00b0 version, but nudging it a hex over so it looks like a 60\u00b0 rotation.\n[img]{STEAM_CLAN_IMAGE}/45567834/3365e9acacb512d633ecb48c4e10aca49df00aec.png[/img]\nSo in effect you need to make a set of rules for each rotation paradigm, with the added challenge of making sure odd and even rows offset correctly based on the source and destination coordinate. All of the problems are solvable, but come with many mathematical edges that need to be precise.\n\n[h3]And that's just the rotation logic side[/h3]\nBeyond the simple math, making sure there are sufficient previews visuals and supporting shaders adds an extra layer of complexity, because not all of MoteMancers structures are handled the same way. Every tile visual like Mana Roots and Streamways have their own suites of tilemaps, and those exist on every plane, so the simple act of doubling those up for the sake of previews is a scary prospect in a game that is performance-sensitive. \n\nUltimately I ended up leveraging a similar tech to the Streamway/Shifting Slab join tech - where I am placing an invisible tile reference on their respective maps to fake the neighbor rules.  In this case, I made a completely bespoke set of tiles for preview purposes that can coexist on the same map, which solves One of the problems... but not the other. Since Blueprints and placed Structures are mutually exclusive, I can rely on them to never overlap, but for previewing a placement that is not the case. The preview cursor set itself needs yet another layer of custom logic and shaders, which needs its own set of rules.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/0f1febf6f17a232851dea0a975e25cfada6d0d32.png[/img]\n\n[h3]Sprinkles and the cherry on top[/h3]\nAfter all of that mathemagical wrangling, I\u2019m happy to say Blueprints are in a pretty good spot and [b]will be available with the next update![/b] A fun addition added specifically for MoteMancer is a structure will automatically rotate and snap into position if your cursor matches the blueprint. Not really required in a game where everything is a square, but for a hex grid with unique shapes and 6 rotations, it's a simple quality of life add that feels good. \n\nThe UI has 7 folders designated by elemental icons which can be used literally or in your own mental map way (and can be modded to support more for people that want it). Each folder can hold an unlimited number of blueprints. \n\nI waffled a lot on whether I would let players share strings with each other, because I feel like a lot of the joy in MoteMancer comes from solving your own spatial problems, and I didn't want people to \"net-deck\" their factories. That said, I realized my initial hesitation was too rigid and that perfecting blueprints, sharing them, and iterating as a group is its own type of fun. MoteMancer is also thankfully very resilient to being over-solved with blueprints because there are so many different approaches to problems and paths to take to get there. Which is a very long way of saying - blueprints are copyable into strings as you'd expect :)\n\n[img]{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png[/img]\n\nOne last bit about the future of Blueprints - they will be iterated upon with player feedback of course, but one thing I'd like to do is leverage the Research Plane hook that MM uses for walking around the tech tree, and create a sort of Mind Palace for placing blueprints down and tweaking them. This will also lead to tech for sandbox modes in the future, but I will likely focus on making the game more complete before getting into that. Good to already have ideas on where to go from here though, and definitely do share feedback as always.\n\nThe Entropy Update will hit experimental in the next day or two for smoke testing, and Live to everyone shortly after. Thanks for all of your support! As always, back to the lab \ud83c\udf3f\n~CyanAvatar\n\n\n",
+      "key": "3320980::1f0c8387d88098bb2c62b5daea3645cd13e9b41e",
+      "tags": [
+        {
+          "feature": "Blueprints are in a pretty good spot and will be available with the next update!"
+        },
+        {
+          "feature": "A fun addition added specifically for MoteMancer is a structure will automatically rotate and snap into position if your cursor matches the blueprint."
+        },
+        {
+          "feature": "The UI has 7 folders designated by elemental icons which can be used literally or in your own mental map way (and can be modded to support more for people that want it)."
+        },
+        {
+          "feature": "Each folder can hold an unlimited number of blueprints."
+        },
+        {
+          "feature": "MoteMancer is also thankfully very resilient to being over-solved with blueprints because there are so many different approaches to problems and paths to take to get there."
+        },
+        {
+          "feature": "Which is a very long way of saying - blueprints are copyable into strings as you'd expect :)"
+        },
+        {
+          "feature": "The Entropy Update will hit experimental in the next day or two for smoke testing, and Live to everyone shortly after."
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #24 \u2013 Scythe & Spindle - Upcoming Update",
+      "date": "2025-09-15 20:17:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566562059",
+      "content": "I knew at EA launch that Entropy as an adversary would be something that evolved over the course of development, but more than that I also knew I needed feedback to guide the ultimate shape MoteMancer's adversary would take. We've had many late-night community conversations about where we might be able to evolve Entropy, and today I'm going to share the fruits of those discussions.\n\n[h3]Entropy as a Resource[/h3] \nThe best way at a foundational level to change the way players interact with Entropy is to make it harvestable and useful rather than just something to carve into or build around. Entropy represents the unraveling of order, thread by thread, into a miasma of noise without enough structure to cohere into anything descript. For an experimenting alchemist, this means it could be leveraged in a multitude of novel and interesting ways.\n\nWe'll start with the [b]Entropic Alembic[/b], which distills nearby Entropy into [b]Entropic Shards[/b] - a crystallized reagent used as the foundation of our new arcane endeavors. From there, the [b]Transmutation Engine[/b] channels the chaotic potential of Entropy in a variety of forms. \n\nEarly on, the Engine\u2019s primary use-case is coaxing random Motes back from Entropy using Salt or Aether as a catalyst - reconstituting the Entropic Shard back into that which it dissolved. The random nature of the output adds for interesting logistical challenges, but can also always be turned back into Salt and Aether, since a Grindstone is undiscerning in that regard. Grippers will only pickup Ingredients that are useable in their destination Inventory as well, so there are many clever ways to filter a line, even before Enchanted and Stonebound techs come online. \n\nBeyond that, the Transmutation Engine allows you to cycle items through their Elemental counterparts. Accidentally bring 100 Streamways to the Fire plane where they can't be placed? Use the Transmutation Engine to convert them into Wide Chests or Ichor Slick, whatever suits your preference.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/130d22700e3c03a4b3620b5443116adcc77c2ac9.png[/img]        [i]Early Entropy Development[/i]\n\n[h3]Inter-Planar Logistics[/h3]\nRight now all of the Planar Portals have their cross-plane bridges on all the time, but it was always planned for this to be earned one way or another, and Entropy's kit of slicing through the planes is a perfect place for this tech to unlock. Each Element has its own style of Planar Bridging, and each can be earned through Entropy Research.\n\nAlongside these planar bridges comes a new feature - [b]Planar Reliquary[/b], which allows you to place an in-world \"Chest\" of sorts that is linked regardless of distance to a reserved slot in your inventory. The easiest use-case for this is to fill it from a Crafter or a line so that you always have a stack of your go-to Structures at hand, but since it lives in the world, it can also be used as a trash slot or canary buffer for whether a supply chain is running low or topped off.\n\n[h3]Spindle & Scythe[/h3]\nFor players that would rather just prevent Rifts from spawning so they can build in peace - [b]Spindle [/b]is a Diamond-shelled structure that holds a core of Entropy, keeping a local balance and preventing Rifts from reacting to nearby complexity. Spindles effectively stitch the seams of reality together, and has a research line that pushes Entropy back in a variety of ways. [b]Scythe [/b]on the other hand tears reality asunder, concentrating so much abundant Power in a location that a Rift can't help but open to feast on the concordance of energy. Scythe gameplay is about beckoning Entropy into your world so that it may be reaped and exploited.\n\n[h3]Feeding the Cycle[/h3]\nEntropy Research is a brand new tech tree that lives alongside the existing elemental tree. Research is simply commenced through cleansing nearby Entropy and Rifts, through Spells or Towers (but notably not through the Entropic Alembic). This gives players a clear path of bonus for killing Rifts, or farming it outright for new avenues of gameplay. There are a few extra goodies buried in the tree, but those you'll have to discover for yourself.\n\nThe Entropy Update is encroaching on the horizon - prepare your defenses or distilleries for the dance ahead.\n\n~CyanAvatar",
+      "key": "3320980::1fbfe9e7c3bfbe1830346b7eb32644032d282444",
+      "tags": [
+        {
+          "feature": "- Alongside these planar bridges comes a new feature - Planar Reliquary, which allows you to place an in-world \"Chest\" of sorts that is linked regardless of distance to a reserved slot in your inventory."
+        },
+        {
+          "feature": "- Spindle is a Diamond-shelled structure that holds a core of Entropy, keeping a local balance and preventing Rifts from reacting to nearby complexity."
+        },
+        {
+          "feature": "- Scythe on the other hand tears reality asunder, concentrating so much abundant Power in a location that a Rift can't help but open to feast on the concordance of energy."
+        },
+        {
+          "feature": "- Entropy Research is a brand new tech tree that lives alongside the existing elemental tree."
+        }
+      ]
+    },
+    {
+      "title": "Patch 0.1.452 - Fully Mastered OST and a new Experimental Branch.",
+      "date": "2025-09-11 19:36:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1810503566431451",
+      "content": "Ok fellow alchemists, today marks a state of evolution for MoteMancer.\n\nToday's patch is light on the primary build but introduces a new Experimental branch of the game for people that want to test upcoming features.  If you want to participate, in Steam you can right-click the app and go into: \n[i]Properties->Betas ->Experimental [/i]\nand set your game up for that.  More on this specific Experimental version in a bit, but first I also want to say, the Entropy Update is coming fast, and because it is so complex, I am likely to hold off on hitting an exact patch date next week, but will also likely push a version of it to the Experimental branch around that time. If you'd like to get those updates I highly encourage joining our Discord community. Either way it will be live very soon.\n\nMore details will come on Monday's Musings.\n\n[h3]Patch 0.1.452 [/h3]\n[list]\n[*] Fully Mastered Music tracks have been finalized. Every Element has 4 tracks, there is a possibility more will be added in the far future, but the OST volume 1 is locked. I will be updating the Steam download alongside the Entropy Update.\n\n[*] F1 reporting has changed under the hood to show which version of the game bugs are being reported from, so rest assured no matter which branch you are playing in, I will have the information needed to address it. Thank you everyone sincerely for all of your bug reports and patience, the game is better today because of you.\n[/list]\n\n[h3]Patch 0.1.454 - Experimental[/h3]\n\nPlease note: Games made here are [b][u]not[/u][/b] backwards compatible (if you drop from experimental to default, your terrain will be incorrect). I am planning on keeping old bases intact for as long as possible, but the code is branched to support this, and bug fixing for the old branch specifically is not likely. Starting with the Entropy update, we'll version up to 0.2.xxx, which will signify that any game saved in that suite of patches should be fully supported. We will likely version up again once Affixes are fully implemented. I will give a roadmap update in the coming weeks to clarify all of this.\n\n[list]\n[*] Random world seeds are available!  Currently starting a new game will roll a random seed for terrain and Mote/Portal generation.\n[*] Portal distances have been reigned in a lot past the first ring.\n[*] Seismic Flare will now find the nearest portal regardless of whether you have seen it or not.\n[/list]\n\nThank you once again for being along for the journey. MoteMancer is evolving quickly thanks to your continued feedback and support.",
+      "key": "3320980::8bf0d98a21d3e809b218cfb3581153c1c9f0b440",
+      "tags": [
+        {
+          "feature": "Random world seeds are available! Currently starting a new game will roll a random seed for terrain and Mote/Portal generation."
+        },
+        {
+          "balance_change": "Portal distances have been reigned in a lot past the first ring."
+        },
+        {
+          "bug": "Seismic Flare will now find the nearest portal regardless of whether you have seen it or not."
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #23 \u2013 Tips, Tricks, & Tutorials",
+      "date": "2025-09-08 19:41:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180178443",
+      "content": "There's a consistent struggle for any game: how much do you let the player discover for themselves, how much do you tell them, and what if anything do you force them to do? I've always held games like Celeste in high regard for how much the game teaches the player through \"Show, don't Tell\", but that gets harder and harder to do well as you give the player an increasing amount of actions and freedom.\n\nSometimes complex games just throw you in the deep end to sink or swim, and I honestly think that's more correct than not. I've always advocated to respect the intelligence of your players. That said, confusion and boredom are the quickest ways to cool your player's enthusiasm, so there is definitely not a one-size-fits-all approach. Add to that the myriad of player psychologies and approaches to solving problems and that's as good an encapsulation of game design challenges as any.\n\nMoteMancer has the extra hurdle of the alchemy skin, since that kit that is not commonly seen in modern media. So with that in mind, MoteMancer's early tutorial deliberately tries to give you as little information as possible, while still guiding you through the important mechanics of the game. This worked to some degree, but it needs improvement, and I'd like to talk through some of the specific areas I've learned from as I've watched players directly or indirectly through comments.\n\n[h3]Logistics Puzzles[/h3]\nOne of the big critiques I've heard is that \"you don't get to the fun fast enough\". I think when the game allows you to place Structures anywhere just to see what they do that makes sense, but one of the game's strengths is how logistics puzzles on the hex grid create a novel space for your brain to puzzle in, even in the first few Structures placed. I think that because the player is forced to hand-craft their initial Structures, they are spending more brain cycles on the crafting chain than the logistics puzzle, and I can help them there by providing an objective and a handful of Structures to get started with.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/2fdc3e6b00e9c0dc2634701775552d43a79df289.png[/img]\nEven a setup as small as this already has interest - Collectors are 2:1 ratio to Grindstones, they can be setup with a direct output line, and a single Mana Flare can power them all. Most players will start with something like the example on the right, which is perfectly serviceable, but it doesn't prime them for where the joy and interest in the game truly resides. This is a perfect case where a player will probably figure it out eventually, but will a player bounce off the game before they get there? Some for sure, so it's probably worth directly asking them to solve a simple puzzle like \"Power 3 Structures with a single Mana Flare\" just to get their gears turning.\n\n[h3]Novel Research[/h3]\nMoteMancer's research style is not common in automation games, but is also not completely original, many Minecraft mods use Fusion Crafting in one form or another, and this is heavily inspired by that. One of the biggest benefits of this style of research is that it flows back into the logistics puzzle part of the game, where positioning and transport matters just as much as the recipe itself. Despite having an animated gif and examples on the store page, players often don\u2019t stumble onto extra Altar layouts as early as they could, even though it usually delights them once they do.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/afc6b3e688a7e9bfdd78b4b5969c9a56504cdb75.png[/img]\nOne other thing people don't think of is how Pedestals can act as a simple buffer as well to allow for chaining research like this image on the left. And the right image is a demonstration of either 6 altars researching the same thing, or it could be changed into a hub researching 3 separate things at double speed because Pedestals can share Altars and vice versa. This is another area where simply planting the seed \"Have at least 2 Pedestals linked to 2 different Infusion Altars\" as an objective points them in a direction of problem solving and fun rather than asking for \"A way to speed the game up\" because they are just waiting on one Altar to do all the work.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png[/img]\nThe new Entropy Update is fast approaching, and part of that is going to be trying to smooth out the early game tutorials in places like this, as well as making Entropy much more interesting to interact with rather than just being a cleansable area denial. Even the way you first interact with Entropy when you unlock Riptide will change, but I'll save that update for next week.\n\nIf you are reading this and have suggestions for other ways to improve the early game tutorialization or \"things i wish i knew earlier\", I'd be happy to hear them and incorporate them if possible.\n\nThank you for the ongoing feedback and engagement, MoteMancer is better because of you, keep it coming!\n~CyanAvatar\n",
+      "key": "3320980::215dc32bf11bd705f39152d4e762c705c198bba2",
+      "tags": [
+        {
+          "feature": "- The new Entropy Update is fast approaching, and part of that is going to be trying to smooth out the early game tutorials in places like this, as well as making Entropy much more interesting to interact with rather than just being a cleansable area denial."
+        }
+      ]
+    },
+    {
+      "title": "Weekly Patch - Build v0.1.451 - [M] for Map! plus the usual bug fixes and QoL",
+      "date": "2025-09-04 20:31:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809869180049996",
+      "content": "[h3][M] Map is now available! [/h3]\n[list]\n[*] Maps will show terrain, Entropy, and Structures as pixels.\n[*] Mote Fields, Portals, and the Player have icons that remain anchored to the edges of the map and clickable for fast centering.\n[*] NOTE: The map will [u]Not[/u] automatically populate from a save prior to this update, but will populate as you move around. New saves will permanently save the revealed map. You will need to visit each Plane you have a base on to reveal it for the first time.\n[/list]\n\n[h3]QOL[/h3]\n[list]\n[*] Bastions, Cultivators, and Lava Generators now use unrestricted inventories (as opposed to input only), allowing you to daisy-chain their inventory slot contents to and from each other.\n[/list]\n[h3]Bug Fixes[/h3]\n[list]\n[*] Fixed a bug that could make a Mote Field total Motes show an incorrect value.\n[*] Fixed Mystical Agriculture's giant research icon in Alt Mode\n[*] Fixed a few bugs around Player Mana upgrade calculations.\n[*] Fix for Torrential Streamways sometimes getting destroyed on load when over a Chasm.\n[*] Fixed a bug that could cause Rifts to spawn additional Entropy tiles from Load Game when they shouldn't.\n[*] Ember Collector tooltips no longer refer to Cinder Collectors\n[/list]\n\n",
+      "key": "3320980::4ebd51d4486304a16a77a8268461e9b995006592",
+      "tags": [
+        {
+          "feature": "[M] Map is now available! "
+        },
+        {
+          "feature": "Maps will show terrain, Entropy, and Structures as pixels."
+        },
+        {
+          "feature": "Mote Fields, Portals, and the Player have icons that remain anchored to the edges of the map and clickable for fast centering."
+        },
+        {
+          "feature": "NOTE: the map will [u]Not[/u] automatically populate from a save prior to this update, but will populate as you move around. New saves will permanently save the revealed map. You will need to visit each Plane you have a base on to reveal it for the first time."
+        },
+        {
+          "feature": "Bastions, Cultivators, and Lava Generators now use unrestricted inventories (as opposed to input only), allowing you to daisy-chain their inventory slot contents to and from each other."
+        },
+        {
+          "bug": "Fixed a bug that could make a Mote Field total Motes show an incorrect value."
+        },
+        {
+          "bug": "Fixed Mystical Agriculture's giant research icon in Alt Mode"
+        },
+        {
+          "bug": "Fixed a few bugs around Player Mana upgrade calculations."
+        },
+        {
+          "bug": "Fix for Torrential Streamways sometimes getting destroyed on load when over a Chasm."
+        },
+        {
+          "bug": "Fixed a bug that could cause Rifts to spawn additional Entropy tiles from Load Game when they shouldn't."
+        },
+        {
+          "bug": "Ember Collector tooltips no longer refer to Cinder Collectors"
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #22 \u2013 MoteMancer Map Math, Part 2",
+      "date": "2025-09-01 20:29:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871731689",
+      "content": "Part of the reason MoteMancer didn't start with a map is because of how technically challenging it is to juggle hexagons and performance when you aren't working with a standard grid. What does a pixel even mean? Are hexagons expected to match the world? What's the best way to save a texture knowing a bunch of the space is likely to be wasted?\n\nIf I'm honest, I was secretly hoping that the in-world compass provided by Seismic Flare and the world flora leading you towards Mote Fields would be enough - there is a magic in the immersion of needing to navigate your world by landmarks alone. But, there are two major design reasons to add a map to MoteMancer:\n[list]\n[*] The Alchemical foundation of the game is not as intuitive a kit as a standard factory, but it is the conceit for the game and is unlikely to change. This is an important point because there are only so many things a player will bump into before they get too frustrated to continue. While I think the idea of a map-less experience is cool, having both mental burdens forced upon the player early can be too overwhelming.\n[*] The world is infinite, so the concept of a land-marker is much harder to latch onto. Because the world is largely self-similar, getting a [i]little [/i]lost can quickly lead to getting [i]very [/i]lost.\n[/list]\nAlso it's one of the most player-requested features, which counts for a lot,\n\n[h3]Always Back to Math[/h3]\nSo the first idea I had was to fake a half-pixel offset in a resulting map texture using some clever mod-math like this:\n[img]{STEAM_CLAN_IMAGE}/45567834/eb3b0d25b9f8ef638d45804b2c33751e2666e286.gif[/img]\n\nThen our forums started discussing ways to get the pixels to look like hexagons, and shared a bunch of super cool shaders that let you do this:\n[img]{STEAM_CLAN_IMAGE}/45567834/dbcad563e2cb34bb6d38cce916e975e475800a76.gif[/img]\n\n[h3]And That's When it Fell Apart[/h3]\nI spent an entire day trying to get these two methods to play nicely with each other in a variety of ways and always came up [i]just[/i] short of it working. I would either get an extra row here, or the wrong offset value there, it turns out that there's a lot of nuance in the width x height ratio of a hexagonal tiling grid. Mapping an orderly set of squares to that with proper offsets is just one too many balls to juggle.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/e3ea344fabe2413acd37ed48b8641baff05ca267.png[/img]\nI won't bore you with all the gory details, but here's a quick graveyard of some of the paths i tried and failed to get there with. I got close from a few different angles, but \"close\" and \"correct\" are not the same thing.\n\n[h3]Giving Up?[/h3]\nI think it is super important to share when you try something and don't quite make it. It is always a very natural part of the creation process, especially when you are treading territory that is less traveled. I do think that simply offsetting by half a pixel is functional, and already something most people don't do, so is an improvement on just mapping a coordinate system to a square grid.\n\nBut........ after stepping away to work on another problem this morning, I received a flash of insight. I am spending an enormous amount of effort effectively trying to procedurally create a set of UVs with very specific values... and I know what the end result should be... which means logically I can just make it by hand. It's not actually that different from making custom Streamway or Grindstone UVs, and since I know exactly what shape/tiling/colors each hex needs to be, a single custom UV texture is all I need. It's definitely a little silly to take a very procedural-feeling thing and hit it with the art hammer, but I guess there's a great lesson in that - If you are a hammer, every problem looks like a nail, changing your tool can change your perspective completely. I was definitely so focused on solving the problem from the engineering angle that I didn't even consider solving it from the art angle.\n\n[h3]Ever Towards the Horizon[/h3]\nEvery hour spent in game development is opportunity cost, and compartmentalizing this problem to a single day helped me set it down to see the problem from a different angle. While I do have to move on to work on the larger feature I'm planning for an upcoming milestone, I have better perspective for how I'm going to solve this problem in the future (and honestly that could even be tomorrow). For now the player map is functional and I'm certain changing pixels to hexagons will happen in short order. Thanks to everyone for all of the resources and help with solving this problem. Even though I didn't get there, I learned a ton, and gave me enough perspective to find a novel solution that will work.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/df5605e8f0980b1ce434c0ce4b929d26f4117422.png[/img]\n\nThe Map still needs a little feature love but should be ready for Thursday's patch. If you want to see all the code snippets I tried, there's a fair few of them in Discord, and I'm sure a procedural solution exists out there if someone is looking for a hard problem to solve for fun :)\n\nBack to the lab!\n~CyanAvatar\n",
+      "key": "3320980::7ff7b5dbcaa4307c59df539e8181c5035798d12b",
+      "tags": [
+        {
+          "feature": "The Map still needs a little feature love but should be ready for Thursday's patch."
+        }
+      ]
+    },
+    {
+      "title": "Weekly Update - Build v0.1.443 (Update - 446 Hotfixes)",
+      "date": "2025-08-29 01:17:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1809235871608521",
+      "content": "[h3]Hotfix v0.1.446[/h3]\n\nOk so i went a little overboard with this 'hotfix'\n\n[list]\n[*] Torrential Streamways can be built over Chasms now\n[*] Gust Funnels now power all adjacent tiles (power area only). Give feedback on whether this is confusing or cool, Future visual fx will still help for sure.\n[/list]\n[list]\n[*] Looping structure sounds will no longer phase in time, leading to weird overlaps\n[*] Fix for game stuttering on load\n[*] Fix Sovereign Manaheart information in the Power Window\n[*] Fix for Cultivator power window accidentally showing Fire stats\n[*] Plane blocker text now has a 2 second delay when trying to place instead of just per tile spam\n[*] Fix bad plane blocker string for Water\n[/list]\n\n[h3]Build v0.1.443[/h3]\nNew Power Window section, Audio Performance improvements, and a handful of Quality of Life updates and bug fixes.\n\nWorld Map [i]almost[/i] made it this week, but could stand to use a little polish before going live.\n\nThanks everyone for all of your suggestions and bug reports!\n~Cyan\n\n[h3]QoL[/h3]\n[b]New Power Window section (please give feedback on this!): [/b]\n* Modally shifts between Life/Fire/Air styles.\n* Shows additional stats like maximums or overage percentages.\n* Shows more stats about Air and Fire systems specifically for better understanding of what drives power generation.\n\n* If holding an item while a matching corner craft finishes, increment the held item rather than sending the item straight to the player inventory.\n* A flavorful Player feedback popup will play when trying to build a structure from an opposing plane.\n* Crafting Corner now has reminder for showing Inventory is Full.\n* Wavedash and Swiftstone bonuses have a one-tile slush range.\n\n[h3]Performance[/h3]\n[b]Significant audio rework to further improve performance.[/b]\n+ Looping sounds no longer use colliders. Instead only structures in the player's chunk or neighboring chunks can play their looping sounds. \n+ Looping sounds now have attenuation (only the 5 closest structures playing the same clip will now play, others will blend off or on respectively). \n+ Looping audio sources are now pooled.\n+ Delay between music tracks now uses real time instead of game time. \n\n[h3]Bug Fixes[/h3]\n* Better chunk collision handling and loading logic (should stop at least some of the chunks loading slowly/not at all issues).\n* Hovered structure can now change even if your mouse coord doesn't. (Fixes multiple rotations in place or pipette after rotation bugs).\n* Clear orb progression before loading a new game or returning to the main menu because it can put the portal in a weird state in the tutorial.\n* Fixed a bug that could cause weird graphical flicker on belt items.\n* Shattered recipes no longer contribute to allow lists for inventories (you can no longer place a Verdant Collector into the input of an Arboretum).\n* Mystical Agriculture research no longer has a giant icon in alt mode.\n* Fixed a bug that could prevent Entropy from spawning from a new Rift.\n* Fixed a bug that would cause unlocked research to not notify Production Structures to start crafting their new recipe.",
+      "key": "3320980::c33acccd90d6be54b63f15c2a649f02f95812575",
+      "tags": [
+        {
+          "feature": "Torrential Streamways can be built over Chasms now"
+        },
+        {
+          "feature": "Gust Funnels now power all adjacent tiles (power area only). Give feedback on whether this is confusing or cool, Future visual fx will still help for sure."
+        },
+        {
+          "bug": "Looping structure sounds will no longer phase in time, leading to weird overlaps"
+        },
+        {
+          "bug": "Fix for game stuttering on load"
+        },
+        {
+          "bug": "Fix Sovereign Manaheart information in the Power Window"
+        },
+        {
+          "bug": "Fix for Cultivator power window accidentally showing Fire stats"
+        },
+        {
+          "bug": "Plane blocker text now has a 2 second delay when trying to place instead of just per tile spam"
+        },
+        {
+          "bug": "Fix bad plane blocker string for Water"
+        },
+        {
+          "feature": "Modally shifts between Life/Fire/Air styles."
+        },
+        {
+          "feature": "Shows additional stats like maximums or overage percentages."
+        },
+        {
+          "feature": "Shows more stats about Air and Fire systems specifically for better understanding of what drives power generation."
+        },
+        {
+          "feature": "If holding an item while a matching corner craft finishes, increment the held item rather than sending the item straight to the player inventory."
+        },
+        {
+          "feature": "A flavorful Player feedback popup will play when trying to build a structure from an opposing plane."
+        },
+        {
+          "feature": "Crafting Corner now has reminder for showing Inventory is Full."
+        },
+        {
+          "balance_change": "Wavedash and Swiftstone bonuses have a one-tile slush range."
+        },
+        {
+          "feature": "Significant audio rework to further improve performance."
+        },
+        {
+          "feature": "Looping sounds no longer use colliders. Instead only structures in the player's chunk or neighboring chunks can play their looping sounds."
+        },
+        {
+          "feature": "Looping sounds now have attenuation (only the 5 closest structures playing the same clip will now play, others will blend off or on respectively)."
+        },
+        {
+          "feature": "Looping audio sources are now pooled."
+        },
+        {
+          "feature": "Delay between music tracks now uses real time instead of game time."
+        },
+        {
+          "bug": "Better chunk collision handling and loading logic (should stop at least some of the chunks loading slowly/not at all issues)."
+        },
+        {
+          "bug": "Hovered structure can now change even if your mouse coord doesn't. (Fixes multiple rotations in place or pipette after rotation bugs)."
+        },
+        {
+          "bug": "Clear orb progression before loading a new game or returning to the main menu because it can put the portal in a weird state in the tutorial."
+        },
+        {
+          "bug": "Fixed a bug that could cause weird graphical flicker on belt items."
+        },
+        {
+          "bug": "Shattered recipes no longer contribute to allow lists for inventories (you can no longer place a Verdant Collector into the input of an Arboretum)."
+        },
+        {
+          "bug": "Mystical Agriculture research no longer has a giant icon in alt mode."
+        },
+        {
+          "bug": "Fixed a bug that could prevent Entropy from spawning from a new Rift."
+        },
+        {
+          "bug": "Fixed a bug that would cause unlocked research to not notify Production Structures to start crafting their new recipe."
+        }
+      ]
+    },
+    {
+      "title": "Weekly Build v0.1.438 - Quality of Life and Performance Improvements",
+      "date": "2025-08-21 23:42:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808601382465258",
+      "content": "Thanks everyone for all the suggestions and bug reports, I read them all!\n\n[h3]Update- Hotfix Build v0.1.438[/h3]\n\n* Entropy Tooltips now behave more like Mote Field Tooltips\n* Escape and Research Tree will close tooltips\n* Blazecap and Cloudcap now correctly show up in Infernal Maw and Crystal Loft\n* revert Nitor brightness change until I can find a better method for luminance overlap\n\n\n[h3]QOL[/h3]\n[list]\n[*] Building previews now show specific blocked tiles and a different visual for out of Reach range.\n[*] Build mode no longer suppresses Ctrl click (you can drop structures in addition to reagents now)\n[*] When harvesting an Ichor Slick, if the pool is full, also harvest one of the held entities.\n[*] Nitor light is much larger and slightly brighter\n[*] Anchor Stone UI shows count now (hides at 0), will still go above 1000\n[*] New tooltip scaffolding for in-world items setup; new Hover Tooltips for Mote Fields, Rifts, Entropy.  More to come.\n[/list]\n\n[h3]Performance[/h3]\n[list]\n[*] Significantly refactored Colliders - Click Colliders are now generated based on footprint, which also means harvesting can only be done at the base of a doodad instead of its sprite. This will also easily allow harvesting items behind large blocking Structures like Portals. \n[*] Colliders were a large part of teardown cost, so going to Main Menu or finishing the game should be significantly faster.\n[*] More Belt logic optimizations: Increase belt chain length; better caching logic; better compression maintenance.\n[*] Colliders are now only active if you can see them\n[*] Multithread Manager refinement for better use with more types of hardware\n[*] Several small micro optimizations around object lifecycles.\n[/list]\n\n[h3]Bug Fixes[/h3]\n[list]\n[*] Torrential Slipstream is now Lit instead of Unlit\n[*] When 2 ichor slick pools are merged, only merge their count if they have the same entity. Otherwise, one entity type will always be consumed. \n[*] Ritual lines no longer show up on other planes\n[*] Mote patches and entropy sources can now span multiple chunks and will now be visible if any of their chunks are visible.\n[*] Fix vsync toggle when it starts off.\n[*] Underground Streams and Slabs will no longer make an invisible connection to another belt type\n[/list]\n",
+      "key": "3320980::b6f904f8395ce37244de9aaba25582939b8d6f67",
+      "tags": [
+        {
+          "bug": "Blazecap and Cloudcap now correctly show up in Infernal Maw and Crystal Loft"
+        },
+        {
+          "bug": "revert Nitor brightness change until I can find a better method for luminance overlap"
+        },
+        {
+          "feature": "Building previews now show specific blocked tiles and a different visual for out of Reach range."
+        },
+        {
+          "feature": "Build mode no longer suppresses Ctrl click (you can drop structures in addition to reagents now)"
+        },
+        {
+          "feature": "When harvesting an Ichor Slick, if the pool is full, also harvest one of the held entities."
+        },
+        {
+          "feature": "Nitor light is much larger and slightly brighter"
+        },
+        {
+          "feature": "Anchor Stone UI shows count now (hides at 0), will still go above 1000"
+        },
+        {
+          "feature": "New tooltip scaffolding for in-world items setup; new Hover Tooltips for Mote Fields, Rifts, Entropy. More to come."
+        },
+        {
+          "feature": "Significantly refactored Colliders - Click Colliders are now generated based on footprint, which also means harvesting can only be done at the base of a doodad instead of its sprite. This will also easily allow harvesting items behind large blocking Structures like Portals."
+        },
+        {
+          "feature": "Colliders were a large part of teardown cost, so going to Main Menu or finishing the game should be significantly faster."
+        },
+        {
+          "feature": "More Belt logic optimizations: Increase belt chain length; better caching logic; better compression maintenance."
+        },
+        {
+          "feature": "Colliders are now only active if you can see them"
+        },
+        {
+          "feature": "Multithread Manager refinement for better use with more types of hardware"
+        },
+        {
+          "feature": "Several small micro optimizations around object lifecycles."
+        },
+        {
+          "bug": "Torrential Slipstream is now Lit instead of Unlit"
+        },
+        {
+          "bug": "When 2 ichor slick pools are merged, only merge their count if they have the same entity. Otherwise, one entity type will always be consumed."
+        },
+        {
+          "bug": "Ritual lines no longer show up on other planes"
+        },
+        {
+          "bug": "Mote patches and entropy sources can now span multiple chunks and will now be visible if any of their chunks are visible."
+        },
+        {
+          "bug": "Fix vsync toggle when it starts off."
+        },
+        {
+          "bug": "Underground Streams and Slabs will no longer make an invisible connection to another belt type"
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #20 \u2013 MoteMancer Map Math",
+      "date": "2025-08-18 18:51:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939482592",
+      "content": "MoteMancer has always been about six overlapping planes of existence. From the very start, I knew this meant one big challenge: how do you make overlapping worlds feel harmonious?\n\nAt first, I imagined each plane acting on a shared landmass. Raise the seas here, swap water for lava there. Simple idea\u2026 but too samey. It robbed each plane of identity. It was way more fun to let Earth become twisting canyons, Water become wide sweeping beaches, Fire become volcanic wastelands. Unique spaces felt much better.\n\nBut then came the next problem: how do you ensure unique lands still intersect cleanly at Planar Portals?\n\n\n[h3]Fibonacci to the Rescue[/h3]\n\nMoteMancer\u2019s world is infinite, so I needed math that could hold up at scale while still feeling organic. I turned to an old favorite: the Fibonacci spiral lattice.\n\nIn this image, each dot in the spiral represents a portal combo: Cyan = Life/Water, Magenta = Life/Earth, and so on. It spreads portals evenly without rigid repetition. Because the world was huge, I intuitively added some extra spacing as they drifted further from the center of the world, but more on that later.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/9a5855bb165cfa02c55001d07e1a65cb89febd04.png[/img]\n\n\n[h3]From Circles to Coastlines[/h3]\n\nEarly on, portals just carved out round circles of space. It worked, but it looked\u2026 artificial. Too neat. So I added UV noise to the boundaries to breathe life into the coastlines, making them jagged and organic. \n\n[img]{STEAM_CLAN_IMAGE}/45567834/8bf5348282d7a1f9688c1b6417d06f263d813a71.png[/img]\n\nThen I got to leverage some of my favorite math and FX techniques to cast the two relevant portal colors into Red and Green, and leave all the others Blue.\nThat does three very cool things:\n[olist]\n[*] [b]Shaping coastlines[/b] \u2013 Red and green areas deform terrain to make room for portals, while blue areas keep the coastline natural.\n[*] [b]Hidden knowledge[/b] \u2013 Blue marks also quietly reveal where a portal exists in another plane. If you notice it, you feel like you\u2019ve uncovered an easter egg.\n[*] [b]Terrain Texture Masking[/b] \u2013 This elegantly allows a single terrain material to treat each color as both a heightmap and mask for multiple textures, allowing them to not only blend organically into each other, but also gives a clear space for things like near-portal tiles and biomes.\n[/olist]\n[img]{STEAM_CLAN_IMAGE}/45567834/6e8403e9e9c8bdb107b8cb31047d10e7b7506373.png[/img]\n\n[h3]Seeds, Bugs, and Feedback[/h3]\n\nThe entire game runs on procedural generation, but I locked the seed early for two reasons:\n\n[olist]\n[*] Player feedback \u2013 I originally thought portals should spread further apart the further you go. But in practice, since you only ever see two per plane at once, the distances were already big enough. Feedback convinced me to tighten the spiral back up for better pacing.\n[*] Bug hunting \u2013 Cloud saves revealed a wild GPU quirk where different hardware actually generated slightly different coastlines. Same seed, different shapes. Locking the world made it easier to isolate the problem so it can be addressed before the flood gates open.\n[/olist]\n[img]{STEAM_CLAN_IMAGE}/45567834/cae49996c4251ce7036080fa955f0db2e500bc81.png[/img]\n\nAnd that\u2019s the real win: the math foundation was solid, but the community made it better.\n\nBig thanks to everyone who explored deep into the infinite terrain and stress-tested this system across hardware. Every bug report and suggestion has helped me sculpt a world that feels strange, magical, and infinite. World seeds are just a hop skip and a jump away. There are a few optimizations to be made alongside moving the algorithm from GPU to CPU, and I want to make sure that saves are backwards compatible. Almost there :)\n\nSee you on the planes,\n~CyanAvatar",
+      "key": "3320980::1b84dc688f93b894c25bd11b9492cea85d633a73",
+      "tags": [
+        {
+          "bug": "Cloud saves revealed a wild GPU quirk where different hardware actually generated slightly different coastlines. Same seed, different shapes. Locking the world made it easier to isolate the problem so it can be addressed before the flood gates open."
+        }
+      ]
+    },
+    {
+      "title": "v0.1.432 Hotfixes - fixing some bugs caused by multi-threading",
+      "date": "2025-08-15 20:45:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939389280",
+      "content": "Bug Fixes:\n\n[list]\n[*] When removing a segment from a chain don't try to merge with the previous chain if the previous chain is the removed segment. (this was causing the lockup). \n[*] When a belt entity goes from a visible slot to a non-visible slot or vice versa, queue a visibility change request from the other thread so that we can update its visibility on the main thread (this should fix the \"orphaned\" entities). \n[*] Fix a couple entity orphaning issue. \n[*] If a delta is refreshed (because one of its neighbors is destroyed) don't orphan its entities.\n[*] chasm structure destruction now happens after collision generation so we can use the same logic to avoid \"thin\" chasms. \n[*] Streamways no longer try to consume every available processor (be a good citizen). Hoping this is a little better with people running on low core machines.\n[/list]",
+      "key": "3320980::e46a2929edde01f01820bdef409997a5036dba47",
+      "tags": [
+        {
+          "bug": "- When removing a segment from a chain don't try to merge with the previous chain if the previous chain is the removed segment. (this was causing the lockup)."
+        },
+        {
+          "bug": "- When a belt entity goes from a visible slot to a non-visible slot or vice versa, queue a visibility change request from the other thread so that we can update its visibility on the main thread (this should fix the \"orphaned\" entities)."
+        },
+        {
+          "bug": "- Fix a couple entity orphaning issue."
+        },
+        {
+          "bug": "- If a delta is refreshed (because one of its neighbors is destroyed) don't orphan its entities."
+        },
+        {
+          "bug": "- chasm structure destruction now happens after collision generation so we can use the same logic to avoid \"thin\" chasms."
+        },
+        {
+          "bug": "- Streamways no longer try to consume every available processor (be a good citizen). Hoping this is a little better with people running on low core machines."
+        }
+      ]
+    },
+    {
+      "title": "Build v0.1.425 - Perf, Bugs, New Trashing Style, Two New Music Tracks!",
+      "date": "2025-08-14 20:52:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939356392",
+      "content": "Mostly perf and bugs this week, back to features and QoL next week!\n\n[b]Performance[/b]\n[list]\n[*] Streamway calculations are now parallelized\n[*] Collision has been completely refactored for a variety of performance gains.\n[/list]\n\n[b]Quality of Life and Tuning[/b]\n[list]\n[*] New trashing style implemented + sound FX - Items will only trash when the inventory window is closed, or when a new item is placed ontop of an existing item in the trash slot. Hotkeys unchanged.\n[*] Collector overlay will now grey out motes that dont match\n[*] Whipwind gripper tuned to 2s from 3s (matching Whirling Gripper)\n[/list]\n\n[b]Aesthetics[/b]\n[list]\n[*] Simple Collector has a small visual indicator of what direction the output is without Alt mode.\n[*] Added environmental FX to the Library\n[*] Fire Track #4 and Shadow track #4 added to the OST\n[/list]\n\n[b]Bug Fixes[/b]\n[list]\n[*] Fixed a variety of token and tooltip errors, rewrote the system to be more consistent\n[*] Fixed a variety of bugs around Info Overlay that broke while making the system more performant\n[*] Fixed a variety of bugs around Structure Partner order that could lead to rare inoperable structures.\n[*] Fix for Underground Slabs having an invalid destination reference\n[*] Fix for Grippers sometimes placing opposite the preview when in a flip doesn't unflip\n[*] Mana Pools will no longer attempt to store power while in entropy.\n[*] Lava Pedestal should no longer show shadows on other planes.\n[*] Fixed bug where lava generators would not put down a lava tile if it destroyed a pedestal.\n[*] Fixed a bug that could leave a dangling tooltip from Closing Runeshroom Window.\n[*] Plane portals will now destroy any structures overlapping with their footprint when they are created.\n[*] Load/save creating an object on top of a doodad is more aggressive about destroying it. \n[*] Doodads will never be placed if there is something in their footprint (they can't run harvest logic).\n[/list]\n",
+      "key": "3320980::951e934787df82372e7f86d9d2bf473391e26fc5",
+      "tags": [
+        {
+          "feature": "New trashing style implemented + sound FX - Items will only trash when the inventory window is closed, or when a new item is placed ontop of an existing item in the trash slot. Hotkeys unchanged."
+        },
+        {
+          "balance_change": "Whipwind gripper tuned to 2s from 3s (matching Whirling Gripper)"
+        },
+        {
+          "feature": "Added environmental FX to the Library"
+        },
+        {
+          "feature": "Fire Track #4 and Shadow track #4 added to the OST"
+        },
+        {
+          "bug": "Fixed a variety of token and tooltip errors, rewrote the system to be more consistent"
+        },
+        {
+          "bug": "Fixed a variety of bugs around Info Overlay that broke while making the system more performant"
+        },
+        {
+          "bug": "Fixed a variety of bugs around Structure Partner order that could lead to rare inoperable structures."
+        },
+        {
+          "bug": "Fix for Underground Slabs having an invalid destination reference"
+        },
+        {
+          "bug": "Fix for Grippers sometimes placing opposite the preview when in a flip doesn't unflip"
+        },
+        {
+          "bug": "Mana Pools will no longer attempt to store power while in entropy."
+        },
+        {
+          "bug": "Lava Pedestal should no longer show shadows on other planes."
+        },
+        {
+          "bug": "Fixed bug where lava generators would not put down a lava tile if it destroyed a pedestal."
+        },
+        {
+          "bug": "Fixed a bug that could leave a dangling tooltip from Closing Runeshroom Window."
+        },
+        {
+          "bug": "Plane portals will now destroy any structures overlapping with their footprint when they are created."
+        },
+        {
+          "bug": "Load/save creating an object on top of a doodad is more aggressive about destroying it."
+        },
+        {
+          "bug": "Doodads will never be placed if there is something in their footprint (they can't run harvest logic)."
+        }
+      ]
+    },
+    {
+      "title": "Hotfixes v0.1.422 - Couple of extra edge case fixes for the weekend",
+      "date": "2025-08-09 20:12:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909650900",
+      "content": "[list]\n[*] Fix for Portal collision not properly being setup and causing issues with filling orbs\n[*] Fix pedestal orb vfx not showing up on load\n[*] Doodad propagation more performant.\n[*] Fix for ichor slick causing issues if coastlines vary per machine (this will not be an issue once world seeds are properly set up)\n[*] Fix for German localization of Biorhythm.\n[/list]\n\nHave a great weekend!",
+      "key": "3320980::7db61e739540d564e8784df0777c3a03ab5d6385",
+      "tags": [
+        {
+          "bug": "- Fix for Portal collision not properly being setup and causing issues with filling orbs"
+        },
+        {
+          "bug": "- Fix pedestal orb vfx not showing up on load"
+        },
+        {
+          "bug": "- Fix for ichor slick causing issues if coastlines vary per machine (this will not be an issue once world seeds are properly set up)"
+        },
+        {
+          "bug": "- Fix for German localization of Biorhythm."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix v0.1.418 - bugfix fallout from performance improvements",
+      "date": "2025-08-09 00:08:08",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909624303",
+      "content": "Thank you so much for your patience and bug reports.\nI think this is the last of the bugs from Thursday's performance patch. \nTo recap changes since 410:\n\n[list]\n[*] Fixed a rare bug that would prevent your save game from loading because of the Library's Simple Chest.\n[*] Fix Ichor Slick and Underground Slab removal logic not returning the item it removed.\n[*] Inventory now removes from back to front again.\n[*] Fix visuals root fighting with structure mana over whether or not the power out symbol should be visible.\n[*] Underground stream/slab now properly cleans up references from all logistics tiles, including invisible ones\n[*] Fix race condition where switching planes could cause the main portal to close and enough time to pass where the portal would \"close\" triggering the end end game flow.\n[*] Chunk loading was not centered on the player just after a load.\n[*] Power grids should no longer have a delay when run off of pools.\n[*] Earth prism and keystone tooltips now properly say reagent instead of structure\n[*] Fractured research no longer keeps stale title references\n[*] Don't let 1 empty mana pool cause others to completely drain. (fixes nighttime drain too)\n[*] Fixed a bug with mana pools bridging networks and causing interplanar issues\n[/list]",
+      "key": "3320980::550515e9f2242d54e2e6c0e31f8d92ab39534fd1",
+      "tags": [
+        {
+          "bug": "[*] Fixed a rare bug that would prevent your save game from loading because of the Library's Simple Chest."
+        },
+        {
+          "bug": "[*] Fix Ichor Slick and Underground Slab removal logic not returning the item it removed."
+        },
+        {
+          "bug": "[*] Inventory now removes from back to front again."
+        },
+        {
+          "bug": "[*] Fix visuals root fighting with structure mana over whether or not the power out symbol should be visible."
+        },
+        {
+          "bug": "[*] Underground stream/slab now properly cleans up references from all logistics tiles, including invisible ones"
+        },
+        {
+          "bug": "[*] Fix race condition where switching planes could cause the main portal to close and enough time to pass where the portal would \"close\" triggering the end end game flow."
+        },
+        {
+          "bug": "[*] Chunk loading was not centered on the player just after a load."
+        },
+        {
+          "bug": "[*] Power grids should no longer have a delay when run off of pools."
+        },
+        {
+          "bug": "[*] Earth prism and keystone tooltips now properly say reagent instead of structure"
+        },
+        {
+          "bug": "[*] Fractured research no longer keeps stale title references"
+        },
+        {
+          "bug": "[*] Don't let 1 empty mana pool cause others to completely drain. (fixes nighttime drain too)"
+        },
+        {
+          "bug": "[*] Fixed a bug with mana pools bridging networks and causing interplanar issues"
+        }
+      ]
+    },
+    {
+      "title": "Patch 0.1.414 - Performance, Rituals, Air Power Updates",
+      "date": "2025-08-08 01:14:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1807332909593274",
+      "content": "[h2]UPDATE #2[/h2]\nOk every issue I've seen reported so far with incorrect behavior has been resolved. That doesn't mean there isn't more there though, so please continue to send reports as you see them. Also make sure your game is on version 414.\n\n\n[h2]UPDATE[/h2]\nHey gang, looks like the perf improvements indeed added a little instability, I'm reverting back to 402 so I can fix a few things up tomorrow and your saves won't have odd behavior in the meantime. Will push an update tomorrow. If you have a compromised save for any reason (shouldn't happen but just in case), please reply to this thread and I will personally fix your save file. Thank you for your patience.\n\n_____________________________________________\n\n[h3]Feature Updates[/h3]\n[b]Rituals:[/b]\n[list]\n[*] Echo Catcher tuned to 20% chance from 10%\n[*] Unshattered Blazecaps and Cloudcaps - Air and Fire have 2 new rituals each for you to explore\n[*] Runeshroom now costs 500 Power all the time but will only turn on when the network is fully powered. Prevents Rituals turning on and off when they help create power.\n[*] Added new constellation icons to the Runeshroom window.\n[/list]\n\n[b]Significant Wind Power Update:[/b]\n[list]\n[*] Turbine starting range +1; starting open-air value to 3 from 5 (results in a baseline value of 153 from 135)\n[*] Chasm benefit from Updraft is now +4, unaffected by wind, increasing the Power floor\n[*] Entropy (How From Beyond) and Wind Shear (Cloudcap Ritual) now grant +7 per tile.\n[*] Gale Generators increase the value of all open-air tiles in their network by 3.\n* Runeshroom now costs 500 Power all the time but will only turn on when the network is fully powered. Prevents Rituals turning on and off when they help create power.\n[/list]\n\n[h3]QOL[/h3]\n[list]\n[*] Mystical Agrictulture can now be toggled off with Ctrl while Biorhythm is active.\n[*] Riptide pickup and Mystical Agriculture toggle states now persist between play sessions.\n[*] Black and White power out icon for buildings shut down by Entropy\n[*] MMB will quickly send items to trash\n[/list]\n\n[h3]Performance Update[/h3]\n[i]Many of these are significant refactors of existing systems, please report any odd behavior in your existing factories that feels like it was working before but is not now. I'm not expecting anything, but many many things were jostled to improve performance significantly.\n[/i]\n\n[list]\n[*] EntityData and StructureData refactor, updated all element associations to a Flags list (this would affect opposite plane placing rules)\n[*] Simulation for structures off screen has been significantly reduced.\n[*] Significant passes checking whether objects should be in use or not.\n[*] Cached math calculations in grippers.\n[*] Refactor belt chains, cap their calculations to 60hz, allowing garbage collection to run on off frames if you are above 60 fps)\n[*] Don't show or update power vis tiles on other planes.\n[*] Turn off ichor slick visual when its culled. \n[*] IsCoordInEntropy now has much better broad phase filtering.\n[*] Created a custom tilemap system for sparse information without the need for visuals or collision.\n[*] Updated Power out is now run from a shared material instead of a structure coroutine.\n[*] Culling now happens based on current zoom instead of fixed based on max zoom. \n[*] Improve perf when a chunk with entropy becomes visible. \n[*] Moved around miner logic so its doing less of the same work multiple times in the same frame.\n[*] We can now pick up multiple items in one call from PlaceGrab. This is mainly to reduce the repeated work when trying to do earth grippers. \n[/list]\n\n[h3]Bug Fixes[/h3]\n[list]\n[*] Create Plane Portals as part of save load. Before we were relying on you getting close enough to the chunk to create them. This will fix issues where you'd lose a portal power or belt connection if you were too far away from the portal when loading the game. You will have to at least once get close enough to the portal to \"wake the portal up\" but after that it should always load correctly without disconnecting your power or belt networks. \n[*] Crafting corner caps to elipsis in save load \n[*] Fix an issue where Bastion could consume ammo twice as fast as it is supposed to.\n[*] Fix bug where mana cultivators would be pegged at 100% speed if their saturation was at 100%. It should be the inverse: consumed / total. \n[*] Fix for cloud save display when no other saves exist.\n[*] Fix issue with miners that were in progress on save. \n[*] Fix inventory cache being wrong for empty slot count.\n[*] Air Plane should no longer be a disco at night.\n[/list]",
+      "key": "3320980::616edc8c7f4037ff6e1d6a027baf152e2696da97",
+      "tags": [
+        {
+          "balance_change": "Echo Catcher tuned to 20% chance from 10%"
+        },
+        {
+          "feature": "Unshattered Blazecaps and Cloudcaps - Air and Fire have 2 new rituals each for you to explore"
+        },
+        {
+          "balance_change": "Runeshroom now costs 500 Power all the time but will only turn on when the network is fully powered. Prevents Rituals turning on and off when they help create power."
+        },
+        {
+          "feature": "Added new constellation icons to the Runeshroom window."
+        },
+        {
+          "balance_change": "Turbine starting range +1; starting open-air value to 3 from 5 (results in a baseline value of 153 from 135)"
+        },
+        {
+          "balance_change": "Chasm benefit from Updraft is now +4, unaffected by wind, increasing the Power floor"
+        },
+        {
+          "balance_change": "Entropy (How From Beyond) and Wind Shear (Cloudcap Ritual) now grant +7 per tile."
+        },
+        {
+          "balance_change": "Gale Generators increase the value of all open-air tiles in their network by 3."
+        },
+        {
+          "balance_change": "Runeshroom now costs 500 Power all the time but will only turn on when the network is fully powered. Prevents Rituals turning on and off when they help create power."
+        },
+        {
+          "feature": "Mystical Agrictulture can now be toggled off with Ctrl while Biorhythm is active."
+        },
+        {
+          "feature": "Riptide pickup and Mystical Agriculture toggle states now persist between play sessions."
+        },
+        {
+          "feature": "Black and White power out icon for buildings shut down by Entropy"
+        },
+        {
+          "feature": "MMB will quickly send items to trash"
+        },
+        {
+          "bug": "Create Plane Portals as part of save load. Before we were relying on you getting close enough to the chunk to create them. This will fix issues where you'd lose a portal power or belt connection if you were too far away from the portal when loading the game. You will have to at least once get close enough to the portal to \"wake the portal up\" but after that it should always load correctly without disconnecting your power or belt networks."
+        },
+        {
+          "bug": "Crafting corner caps to elipsis in save load"
+        },
+        {
+          "bug": "Fix an issue where Bastion could consume ammo twice as fast as it is supposed to."
+        },
+        {
+          "bug": "Fix bug where mana cultivators would be pegged at 100% speed if their saturation was at 100%. It should be the inverse: consumed / total."
+        },
+        {
+          "bug": "Fix for cloud save display when no other saves exist."
+        },
+        {
+          "bug": "Fix issue with miners that were in progress on save."
+        },
+        {
+          "bug": "Fix inventory cache being wrong for empty slot count."
+        },
+        {
+          "bug": "Air Plane should no longer be a disco at night."
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #18 - Runeshroom Rituals",
+      "date": "2025-08-04 19:17:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490825655",
+      "content": "[img]{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png[/img]\n\nOne of the most beloved Minecraft mods I ever played was Astral Sorcery. Drawing massive constellations from the night sky onto your Attunement Altar to bind yourself to the stars... it was a powerful blend of mechanical progression and pure fantasy flavor. Even though it gave way to a traditional talent tree, the fantasy was just spectacular.\n\nMoteMancer is definitely inspired by a variety of those beloved mods, and tries to build something new and interesting on those foundations, which leads us to Runeshroom Rituals.\n\n[h3]Grounding the System[/h3]\nMoteMancer\u2019s design has a few guiding pillars, and one of the big ones is this:\nEvery space should have an opportunity cost.\n\nThat means the idea of placing a constellation on the ground where the 'stars' take up precious building space is a perfect fit. You build a ritual by laying out caps (like Flamecap, Shadecap, or Cloudcap) in a specific runic shape. That shape then generates an area effect. And because caps take up space, the structures you want to benefit from the ritual have to work around them. It follows the DNA of MoteMancer - always granting you a benefit through a spatial puzzle.\n\n[h3]Influence and Function[/h3]\nRituals in MoteMancer are like beacons from previous games, buffing affected structures or even just the area itself within. Rituals cannot overlap each other, but a single structure can sit at the intersection of three separate rituals. If any part of a structure is inside a ritual's area, it gains the benefit. This encourages clever layout strategies and leads to satisfying, emergent solutions.\n\nShadow structures in particular are designed with this in mind. Their long, winding shapes can thread between mushroom caps in ways others can't. It fits perfectly with Shadow\u2019s theme of subtlety and slipping between the seen and unseen. Also since Blazecaps and Cloudcaps have dual element associations, they follow the same Planar exclusivity that other combo buildings do, so your strategy will shift as it always has depending on the Elemental Plane you find yourself in.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/57254b9d79025854b05258e861a14f150c1072db.png[/img]\n[h3]Current Rituals[/h3]\nHere are the rituals planned so far:\n\n[b]Echocatcher [/b]\u2013 10% chance to duplicate a Structure\u2019s output.\n[b]Shadeveil [/b]\u2013 Prevents Entropy from spreading into the area.\n[b]Darkreach [/b]\u2013 Removes all Reach restrictions within the Ritual.\n\n[b]Windshear [/b]\u2013 Amplifies open-air tiles inside the ritual. \n[b]Tailwind [/b]\u2013 Boosts crafting speed of all Structures inside.\n\n[b]Emberheart [/b]\u2013 Reduces Mana cost of nearby Structures.\n[b]Amplify [/b]\u2013 Each Lava tile inside increases Lava Generator Heat.\n\n[h3]Open Design Space[/h3]\nThere is still (at least) one open ritual slot for Fire and Air - so if you have cool ideas, I\u2019d love to hear them! There are a lot of opportunities to use Runeshroom Rituals for Tower benefits, or maybe even some sort of Chasm gameplay. The original two I had planned are not cool enough, we can do better :)\n\nThe best part of Rituals is they don\u2019t eat into a Production Structure's recipe limit, so they don\u2019t compete for their slot the way brand new Structures do. There's even a possibility for other elemental combinations later if there's a cool enough thing to chase.\n\n[img]{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png[/img]\n\nIt started with a love of constellations.\nIt ended in a field of mushrooms.\nAnd I couldn\u2019t be happier.\n\nBlazecap and Cloudcap will be in Thursday's build! I can't wait to see what grows :) \n~CyanAvatar\n\n",
+      "key": "3320980::dad83e73e855d4ee99cedfae3d405e21cfcfad6c",
+      "tags": [
+        {
+          "feature": "Runeshroom Rituals"
+        },
+        {
+          "feature": "Echocatcher \u2013 10% chance to duplicate a Structure\u2019s output."
+        },
+        {
+          "feature": "Shadeveil \u2013 Prevents Entropy from spreading into the area."
+        },
+        {
+          "feature": "Darkreach \u2013 Removes all Reach restrictions within the Ritual."
+        },
+        {
+          "feature": "Windshear \u2013 Amplifies open-air tiles inside the ritual."
+        },
+        {
+          "feature": "Tailwind \u2013 Boosts crafting speed of all Structures inside."
+        },
+        {
+          "feature": "Emberheart \u2013 Reduces Mana cost of nearby Structures."
+        },
+        {
+          "feature": "Amplify \u2013 Each Lava tile inside increases Lava Generator Heat."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix v0.1.402 - Fixing a dupe bug, plus a few easy wins",
+      "date": "2025-08-04 16:04:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490821250",
+      "content": "* Dropping onto an inventory slot with the same item will not add to overflow. (thus preventing the dupe bug)\n* Evening Bloom tooltip had a broken token\n* Streamway Delta no longer leaves invisible references behind to interfere with Shifting Slab tiles\n* Ritual lines no longer show on tech tree or through planes\n* Cap Mushroom harvest time reduced to .25 sec",
+      "key": "3320980::7ddab239efb4587414764f37debd08fc2c9cd373",
+      "tags": [
+        {
+          "bug": "* Dropping onto an inventory slot with the same item will not add to overflow. (thus preventing the dupe bug)"
+        },
+        {
+          "bug": "* Evening Bloom tooltip had a broken token"
+        },
+        {
+          "bug": "* Streamway Delta no longer leaves invisible references behind to interfere with Shifting Slab tiles"
+        },
+        {
+          "bug": "* Ritual lines no longer show on tech tree or through planes"
+        },
+        {
+          "balance_change": "* Cap Mushroom harvest time reduced to .25 sec"
+        }
+      ]
+    },
+    {
+      "title": "Patch v0.1.401 - Steam Cloud Support and a menagerie of fixes.",
+      "date": "2025-08-01 03:04:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490706561",
+      "content": "I don't know how to categorize these, just think of me as a mad bomber this week  :)  Moving on to more Rituals and Perf as the main focus next week, but I'm sure there will be plenty more random adds like always.  Thanks for all of your bug reports and suggestions!\n\n[h3]Better Saving![/h3]\n[list]\n[*] Steam cloud save support.\n[*] Save Files can now be deleted. (Note - if using One Drive, there will be an folder left behind)\n[*] Added Rich Steam presence for fun.\n[/list]\n\n[h3]QoL[/h3]\n[list]\n[*] Rifts will not spawn on Mote Fields if they haven't been touched for more than 5 minutes. For old saves there may be wonky behavior for the very next spawn per rift since the timer is newly tracked.\n[*] Added a lot of protections around deleting your held item when inventory is full.  Items that overflow your inventory will attempt to add themselves back consistently until there is space to do so.\n[*] Altar and Pedestal harvest times have been reduced.\n[*] Action Bar loadouts has a tooltiphelper for hotkeys.\n[*] Control clicking on a recipe in a production structure will now evenly fill with the recipe instead of favoring the first ingredient\n[*] Hand-Crafting corner now saves instead of getting cleared.\n[/list]\n\n[h3]Coral Pools[/h3]\n[list]\n[*] Fire and Mushroom Corals are now properly gated behind research\n[*] Variety of fixes for Coral Pool Window around formatting and localization\n[*] Coral Pool Corals will now grow in the world after being planted, added a bit of water fx for fun.\n[/list]\n[h3]Lots of Bug and Behavior Fixes[/h3]\n[list]\n[*] Echo Catcher Runeshroom Ritual now functions properly, more Rituals coming soon!\n[*] Altars should no longer eat their currently active research on game load.\n[*] Fixed bugs around pedestals clearing items even if they fail to transfer to the target inventory. \n[*] Molten core will only count powered generators.\n[*] Cultivator Power recipes no longer scale above 1.0. (causing them to burn faster than 3 or 9 seconds if the networks draw was greater than output.\n[*] Power storage now counts as power used when its eating excess power (ie storing it in Mana Pools).\n[*] Lava pedestals are now blocked behind research. -- If you don't have the lava pedestals research, lava will eat all your pedestals like everything else.\n[*] Elemental Orb sub windows will no longer be blocked based on reach range from accessing the great portal window\n[*] Fixed bugs with belts losing track of their order if they are rotated while some slots are empty. \n[*] Harvest removed slots when rotating belts. Since this happens after the old structure is harvested, during the creation of the new structure, these can end up in overflow. \n[*] Fix fire earth portal inventory size. \n[*] Fix fire earth and life earth portal colliders so they contain the chest. \n[*] Gripping directly to the portal key slot can no longer overflow into other containers on the structure. \n[*] Air Gripper flip logic is now blocked behind research.  -- Loading an air gripper that was flipped without having the research will now rotate it 180 degrees.\n[*] Mystical agriculture now works on other planes as intended.\n[*] Shadows on structures fade up instead of popping in.\n[*] Ritual preview no longer hides when the window closes. Hides when the last viewed shroom is destroyed or it goes out of reach. \n[*] Fixed a variety of string typos, bad references, and localization.\n[/list]\n",
+      "key": "3320980::3c012bdef8daed825e3fbdaa3ef4287f186991ed",
+      "tags": [
+        {
+          "feature": "Steam cloud save support."
+        },
+        {
+          "feature": "Save Files can now be deleted. (Note - if using One Drive, there will be an folder left behind)"
+        },
+        {
+          "feature": "Added Rich Steam presence for fun."
+        },
+        {
+          "balance_change": "Altar and Pedestal harvest times have been reduced."
+        },
+        {
+          "feature": "Action Bar loadouts has a tooltiphelper for hotkeys."
+        },
+        {
+          "feature": "Control clicking on a recipe in a production structure will now evenly fill with the recipe instead of favoring the first ingredient"
+        },
+        {
+          "feature": "Hand-Crafting corner now saves instead of getting cleared."
+        },
+        {
+          "feature": "Fire and Mushroom Corals are now properly gated behind research"
+        },
+        {
+          "bug": "Variety of fixes for Coral Pool Window around formatting and localization"
+        },
+        {
+          "feature": "Coral Pool Corals will now grow in the world after being planted, added a bit of water fx for fun."
+        },
+        {
+          "bug": "Echo Catcher Runeshroom Ritual now functions properly, more Rituals coming soon!"
+        },
+        {
+          "bug": "Altars should no longer eat their currently active research on game load."
+        },
+        {
+          "bug": "Fixed bugs around pedestals clearing items even if they fail to transfer to the target inventory."
+        },
+        {
+          "bug": "Molten core will only count powered generators."
+        },
+        {
+          "bug": "Cultivator Power recipes no longer scale above 1.0. (causing them to burn faster than 3 or 9 seconds if the networks draw was greater than output."
+        },
+        {
+          "bug": "Power storage now counts as power used when its eating excess power (ie storing it in Mana Pools)."
+        },
+        {
+          "bug": "Lava pedestals are now blocked behind research. -- If you don't have the lava pedestals research, lava will eat all your pedestals like everything else."
+        },
+        {
+          "bug": "Elemental Orb sub windows will no longer be blocked based on reach range from accessing the great portal window"
+        },
+        {
+          "bug": "Fixed bugs with belts losing track of their order if they are rotated while some slots are empty."
+        },
+        {
+          "bug": "Harvest removed slots when rotating belts. Since this happens after the old structure is harvested, during the creation of the new structure, these can end up in overflow."
+        },
+        {
+          "bug": "Fix fire earth portal inventory size."
+        },
+        {
+          "bug": "Fix fire earth and life earth portal colliders so they contain the chest."
+        },
+        {
+          "bug": "Gripping directly to the portal key slot can no longer overflow into other containers on the structure."
+        },
+        {
+          "bug": "Air Gripper flip logic is now blocked behind research.  -- Loading an air gripper that was flipped without having the research will now rotate it 180 degrees."
+        },
+        {
+          "bug": "Mystical agriculture now works on other planes as intended."
+        },
+        {
+          "bug": "Shadows on structures fade up instead of popping in."
+        },
+        {
+          "bug": "Ritual preview no longer hides when the window closes. Hides when the last viewed shroom is destroyed or it goes out of reach."
+        },
+        {
+          "bug": "Fixed a variety of string typos, bad references, and localization."
+        }
+      ]
+    },
+    {
+      "title": "Build v0.1.392 - F hotkey fixes and a few research bugs",
+      "date": "2025-07-27 05:07:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758701490",
+      "content": "Binding F to two things was a terrible idea and I'm sorry. I didn't want to wait until Thursday to fix this, and I fixed a few other bug reports as well while I was at it.  Thank you for all your reports and patience still tons more to do!\n\n[list]\n[*] F is now the exclusive default for Pickup again.\n[*] Shift + (pickup bind) is the new way to call the Flip by default (so Shift + F).\n[*] Flip/Function no longer assigned to any key by default, but can be rebound if you want a unique button for it in addition to Shift + Pickup.\n[/list]\n\n[list]\n[*] Fixed a bug that could cause Tempest Collectors to break on upgrade (this should fix old saves too).\n[*] Fixed a bug that could cause Fire Wire and Thermal Tower range upgrades to fail (this should fix old saves too).\n[*] Downpour bastion Range upgrade no longer shows that it also unlocks the Downpour Bastion itself.\n[/list]\n",
+      "key": "3320980::c745d64f97aa745d5e0d68bd9cbba3efdbc04aa2",
+      "tags": [
+        {
+          "bug": "[*] Fixed a bug that could cause Tempest Collectors to break on upgrade (this should fix old saves too)."
+        },
+        {
+          "bug": "[*] Fixed a bug that could cause Fire Wire and Thermal Tower range upgrades to fail (this should fix old saves too)."
+        },
+        {
+          "bug": "[*] Downpour bastion Range upgrade no longer shows that it also unlocks the Downpour Bastion itself."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix v0.1.391 - More Localization",
+      "date": "2025-07-26 16:54:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758685506",
+      "content": "Found and fixed a variety of localization bugs in Simplified Chinese, Traditional Chinese, and Turkish",
+      "key": "3320980::589ad2c744cccb9a4909ede9cb924a40ee559616",
+      "tags": [
+        {
+          "bug": "Found and fixed a variety of localization bugs in Simplified Chinese, Traditional Chinese, and Turkish"
+        }
+      ]
+    },
+    {
+      "title": "Localization Hotfix v.0.1.387",
+      "date": "2025-07-25 16:12:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758653053",
+      "content": "\n[b]Chinese (and possibly other languages) broken Localization Hotfix[/b]\n\nThere was a very significant bug that could cause some UI's to not properly load if the localization token had incorrect formatting, Planar Portals were the worst offender (you could not interact with the UI at all), but there were others affected in minor ways. I deeply apologize for the lack of care here, any help with anything regarding localization is super appreciated.\n\n* Fixed Chinese string tokens for planar portals, power windows, time of day\n* Added defense against bad tokens - if this ever happens again, just the string will break and not the whole window\nIf you see any weirdness in strings (beyond Gale Generator tooltip, known, will fix soon)\n\n* Also found and fixed a bug - Portal Keystones are actually an hour now as the previous patch note stated.",
+      "key": "3320980::6686d8f4733b3d7ca9df4083559ce8031d9eb999",
+      "tags": [
+        {
+          "bug": "* Fixed Chinese string tokens for planar portals, power windows, time of day"
+        },
+        {
+          "feature": "* Added defense against bad tokens - if this ever happens again, just the string will break and not the whole window"
+        },
+        {
+          "bug": "* Also found and fixed a bug - Portal Keystones are actually an hour now as the previous patch note stated."
+        }
+      ]
+    },
+    {
+      "title": "Patch v0.1.374",
+      "date": "2025-07-24 03:30:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758601776",
+      "content": "[h2]Let the weekly patches commence![/h2]\n\n[h3]Features[/h3]\n[list]\n[*] [b]Multiple Action Bars are in![/b] You can use pg up / pg down (rebindable) to cycle between them or Ctrl 1-6 to direct select. \n[*] End Of Game - You can now open the portal back to the Library with a (very brief) end of game flow. In the future you will be able to launch challenge runs from the library, very looking forward to building that system.\n[*] Bunches of loc updates.\n[/list]\n\n[h3]New Hotkey - Flip [F][/h3]\n[list]\n[*] F is a new key that 'Flips' - Rotates +3 in build mode (or counterrotates if only 3 rotations). [u]This shares a bind with Pickup but can be rebound[/u], still deciding what defaults are and don't want to break people's muscle memory... yet.\n[*] Placed belts can be flipped. \n[*] Placed gust funnels can be rotated and flipped.\n[/list]\n\n[h3]QoL[/h3]\n[list]\n[*] Mouse click icon will show up in the intro if you don't click the book for 8 seconds.\n[*] Research nodes with Spells and Synergy now show in their respective tooltips for easier tracking.\n[*] Many Structures can now be built on top of each other (Chests, Mushrooms, Fire Power poles). \n[*] If a Structure is built on top of another Structure of the same type it can transfer its inventory to the new structure, excess items will be harvested. \n[*] Rotating Slabs and Streamways in place will follow the same logic so you don't pickup a full set every time you rotate.\n[/list]\n\n[h3]Aesthetics[/h3]\n[list]\n[*] Tooltips updated with new width to give more room for localization.\n[*] Rule Tiles should now be properly lit during night time.\n[*] Spells in the research tree have a new hexagonal frame, coded per element.\n[*] Updated research Icons in the research tree to better match crafting Icons.\n[*] Shrink gripper scale 10% for better spacing.\n[*] Adjusted Swiftstone alpha to clean out a couple of gaps.\n[*] The pickup sound for items will now wait until the UI message displays. \n[/list]\n\n[h3]Tuning[/h3]\n[list]\n[*] Block tight left and tight right inside track on undergrounds when there is only one input. [u]This is mostly a bug fix, but it will likely break some of your builds.[/u] Sorry! Hopefully this new functionality will open up a lot of possibilities. A wide turn will still let both lanes through.\n[*] Underground Slab stack size now 50\n[*] Stack sizes for combo buildings made more consistent.\n[*] Keystone duration up to an hour until there is actual gameplay around it\n[*] Updated Shadow research to require elemental shadow as intended\n[/list]\n\n[h3]Bug Fixes[/h3]\n[list]\n[*] Lava generator Heat should now save and load correctly.\n[*] slight action bar visual polish\n[*] Spells now save with your Action Bar.\n[*] Seismic flare should no longer lose track of the Great Portal\n[*] Changed the way Seismic flare keeps track of portals - instead of currently visible chunks it will keep a record of all chunks visited and find nearest that way. If a line doesn't show up, you've never been close enough.\n[*] Improve performance around localization lookups.\n[*] Nitor now correctly tagged as salt (was Water, preventing placement on Fire)\n[*] Fixed a bug that would make Mana Flare animate very slowly when far away from origin.\n[*] Elements on the spell Hex have been localized.\n[*] Mana pools can only ever count once in a mana wells max storage calculation even if they are coming from multiple grids. \n[*] When a mana well is created make sure its max storage is calculated without waiting for the powergrid to tell it to update. \n[*] When a mana well is disconnected from a power grid, decay over a few seconds to the new max. \n[*] Pipette now correctly picks up the flipped status of grippers.\n[*] Fix material jitter when all mana well and mana pool vfx have the same \"health\" value.\n[*] Research tip window should appropriately hide things\n[*] Elemental Orb Tooltips fixed for Anchor Stones\n[*] Torrential Streams now show their correct speeds\n[*] Torrential Slipstreams now save and load correctly\n[*] Torrential Slipstream correctly labeled logistics\n[/list]\n",
+      "key": "3320980::c2af4aab66f6a05608195bb3abc7cc27128a5cbf",
+      "tags": [
+        {
+          "feature": "[b]Multiple Action Bars are in![/b] You can use pg up / pg down (rebindable) to cycle between them or Ctrl 1-6 to direct select."
+        },
+        {
+          "feature": "End Of Game - You can now open the portal back to the Library with a (very brief) end of game flow. In the future you will be able to launch challenge runs from the library, very looking forward to building that system."
+        },
+        {
+          "feature": "F is a new key that 'Flips' - Rotates +3 in build mode (or counterrotates if only 3 rotations). [u]This shares a bind with Pickup but can be rebound[/u], still deciding what defaults are and don't want to break people's muscle memory... yet."
+        },
+        {
+          "feature": "Placed belts can be flipped."
+        },
+        {
+          "feature": "Placed gust funnels can be rotated and flipped."
+        },
+        {
+          "feature": "Mouse click icon will show up in the intro if you don't click the book for 8 seconds."
+        },
+        {
+          "feature": "Research nodes with Spells and Synergy now show in their respective tooltips for easier tracking."
+        },
+        {
+          "feature": "Many Structures can now be built on top of each other (Chests, Mushrooms, Fire Power poles)."
+        },
+        {
+          "feature": "If a Structure is built on top of another Structure of the same type it can transfer its inventory to the new structure, excess items will be harvested."
+        },
+        {
+          "feature": "Rotating Slabs and Streamways in place will follow the same logic so you don't pickup a full set every time you rotate."
+        },
+        {
+          "feature": "Tooltips updated with new width to give more room for localization."
+        },
+        {
+          "feature": "Rule Tiles should now be properly lit during night time."
+        },
+        {
+          "feature": "Spells in the research tree have a new hexagonal frame, coded per element."
+        },
+        {
+          "feature": "Updated research Icons in the research tree to better match crafting Icons."
+        },
+        {
+          "feature": "Shrink gripper scale 10% for better spacing."
+        },
+        {
+          "feature": "Adjusted Swiftstone alpha to clean out a couple of gaps."
+        },
+        {
+          "feature": "The pickup sound for items will now wait until the UI message displays."
+        },
+        {
+          "bug": "Block tight left and tight right inside track on undergrounds when there is only one input. [u]This is mostly a bug fix, but it will likely break some of your builds.[/u] Sorry! Hopefully this new functionality will open up a lot of possibilities. A wide turn will still let both lanes through."
+        },
+        {
+          "balance_change": "Underground Slab stack size now 50"
+        },
+        {
+          "balance_change": "Stack sizes for combo buildings made more consistent."
+        },
+        {
+          "balance_change": "Keystone duration up to an hour until there is actual gameplay around it"
+        },
+        {
+          "balance_change": "Updated Shadow research to require elemental shadow as intended"
+        },
+        {
+          "bug": "Lava generator Heat should now save and load correctly."
+        },
+        {
+          "bug": "slight action bar visual polish"
+        },
+        {
+          "bug": "Spells now save with your Action Bar."
+        },
+        {
+          "bug": "Seismic flare should no longer lose track of the Great Portal"
+        },
+        {
+          "bug": "Changed the way Seismic flare keeps track of portals - instead of currently visible chunks it will keep a record of all chunks visited and find nearest that way. If a line doesn't show up, you've never been close enough."
+        },
+        {
+          "bug": "Improve performance around localization lookups."
+        },
+        {
+          "bug": "Nitor now correctly tagged as salt (was Water, preventing placement on Fire)"
+        },
+        {
+          "bug": "Fixed a bug that would make Mana Flare animate very slowly when far away from origin."
+        },
+        {
+          "bug": "Elements on the spell Hex have been localized."
+        },
+        {
+          "bug": "Mana pools can only ever count once in a mana wells max storage calculation even if they are coming from multiple grids."
+        },
+        {
+          "bug": "When a mana well is created make sure its max storage is calculated without waiting for the powergrid to tell it to update."
+        },
+        {
+          "bug": "When a mana well is disconnected from a power grid, decay over a few seconds to the new max."
+        },
+        {
+          "bug": "Pipette now correctly picks up the flipped status of grippers."
+        },
+        {
+          "bug": "Fix material jitter when all mana well and mana pool vfx have the same \"health\" value."
+        },
+        {
+          "bug": "Research tip window should appropriately hide things"
+        },
+        {
+          "bug": "Elemental Orb Tooltips fixed for Anchor Stones"
+        },
+        {
+          "bug": "Torrential Streams now show their correct speeds"
+        },
+        {
+          "bug": "Torrential Slipstreams now save and load correctly"
+        },
+        {
+          "bug": "Torrential Slipstream correctly labeled logistics"
+        }
+      ]
+    },
+    {
+      "title": "Patch v0.1.366",
+      "date": "2025-07-21 17:48:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065477298",
+      "content": "[b]Updates[/b]\n\n[list]\n[*] Specialized elemental Collectors now only collect their matching Mote require their given mote - Mouseover UI shows 0 Motes of the matching element as a preview to explain it. Will likely add an error message later.\n[*] Note: for existing saves, the Collectors will still be there, but they will no longer Collect unmatching Motes from under them - you can no longer place a Collector on an unmatching field.\n[*] Collectors now show gathering rates on mouseover in the world (used to just be in inventory).\n[*] Collectors update their shown rates based on Array research being completed.\n[*] Production tab has been re-sorted for consistency.\n[*] Magma and Rooted Gripper cost tuning.\n[*] Rooted and Titan Gripper power consumption tuning.\n[/list]\n[b]Bug Fixes[/b]\n\n[list]\n[*] Nitor should now correctly light structures on its own plane.\n[*] Nitor now should correctly illuminate terrain on its own plane.\n[*] Tidal Collector Range upgrade should now function as expected.\n[*] Coral Pools will no longer consume resources when attempting to plant a coral with no slots available.\n[*] Elemental Orb progress will now save (there is more work to be done here for the UI and actual end of game flow).\n[*] Movement on the research tree should no longer be affected by pathways or streamways, but is still affected by passive speed bonuses.\n[/list]",
+      "key": "3320980::9cfbbfbe531a03d8f1a76688bf1e527252490cba",
+      "tags": [
+        {
+          "balance_change": "Magma and Rooted Gripper cost tuning."
+        },
+        {
+          "balance_change": "Rooted and Titan Gripper power consumption tuning."
+        },
+        {
+          "bug": "Nitor should now correctly light structures on its own plane."
+        },
+        {
+          "bug": "Nitor now should correctly illuminate terrain on its own plane."
+        },
+        {
+          "bug": "Tidal Collector Range upgrade should now function as expected."
+        },
+        {
+          "bug": "Coral Pools will no longer consume resources when attempting to plant a coral with no slots available."
+        },
+        {
+          "bug": "Elemental Orb progress will now save (there is more work to be done here for the UI and actual end of game flow)."
+        },
+        {
+          "bug": "Movement on the research tree should no longer be affected by pathways or streamways, but is still affected by passive speed bonuses."
+        }
+      ]
+    },
+    {
+      "title": "Hotfixes - Build v0.1.363",
+      "date": "2025-07-18 16:43:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065380455",
+      "content": "Super loving the active discussion around QoL and bugs, keep it coming :)\n\n[b]Updates and QoL[/b]\n* Skip tutorial removed in Demo - People that get confused about not being able to 'finish' the Demo with this skipped isn't worth the option, and fixing that logic in a custom way is a Lot of work unfortunately. May return later.\n* Reinstated your cursor grabbing another stack if you ctrl click place a stack\n* Levitate should now interact more intuitively with placing structures, entering the research tree, and portal colliders.\n* Excavator starts a little faster\n* If you saved with an Aura on, it will reactive on load. \n* Grippers can be built ontop of other grippers (more of this behavior coming soon)\n* Master research set to 500 for ell elements (was 300 for the back half accidentally)\n* Trash clears 3x as fast\n\n\n[b]Bug Fixes[/b]\n* Fixed even more Power Grid bugs. \n* Solar Power will now actually go to 0\n* Fixed a visual bug for streamways running into the Planar Portal\n* Fixed a variety of bugs around collectors in placement logic and power draw\n* Fix for streamway buffers occasionally eating items on load.\n* Tooltips for air grippers are now using the correct math, displays are per trail\n* Paths and Lights no longer open inventory when clicked\n* Shade Collectors work now\n",
+      "key": "3320980::d078f2f6a62136217efc13f1fe40b92a4a2d6649",
+      "tags": [
+        {
+          "feature": "* Reinstated your cursor grabbing another stack if you ctrl click place a stack"
+        },
+        {
+          "feature": "* Levitate should now interact more intuitively with placing structures, entering the research tree, and portal colliders."
+        },
+        {
+          "feature": "* Excavator starts a little faster"
+        },
+        {
+          "feature": "* If you saved with an Aura on, it will reactive on load."
+        },
+        {
+          "feature": "* Grippers can be built ontop of other grippers (more of this behavior coming soon)"
+        },
+        {
+          "balance_change": "* Master research set to 500 for ell elements (was 300 for the back half accidentally)"
+        },
+        {
+          "balance_change": "* Trash clears 3x as fast"
+        },
+        {
+          "bug": "* Fixed even more Power Grid bugs."
+        },
+        {
+          "bug": "* Solar Power will now actually go to 0"
+        },
+        {
+          "bug": "* Fixed a visual bug for streamways running into the Planar Portal"
+        },
+        {
+          "bug": "* Fixed a variety of bugs around collectors in placement logic and power draw"
+        },
+        {
+          "bug": "* Fix for streamway buffers occasionally eating items on load."
+        },
+        {
+          "bug": "* Tooltips for air grippers are now using the correct math, displays are per trail"
+        },
+        {
+          "bug": "* Paths and Lights no longer open inventory when clicked"
+        },
+        {
+          "bug": "* Shade Collectors work now"
+        }
+      ]
+    },
+    {
+      "title": "Hotfixes - Build v0.1.362",
+      "date": "2025-07-17 19:22:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065350992",
+      "content": "This patch has some helpers for people that find the intro tutorial needs more information, a handful of quality of life things that are frequent asks in the community, and a variety of performance and bug fixes as usual.  Thank you so much for helping find all the rough edges of this entropic madness :)\n\n[b]Features & Quality of Life[/b]\n* Implemented new tutorial objectives that allow you to close the tutorial banner, and optional helpers with animations. These are targeted at players getting stuck at various points like research, 3 element research, Mana Roots, and Collector. Feedback welcome on these!\n* Collectors now follow similar max placement logic to grippers (and wont flood an inventory).\n* Power structures (or really anything with an inventory that has a specific list of entities) will now also follow desired max placement logic. Lava Generators stack to 10. \n* Middle Mouse is now keybindable and defaulted to quit context/pipette\n* Added keybindings for zoom in and zoom out (defaulted to none). Middle mouse scroll wheel currently remains regardless of additional bindings.\n* Information overlay (alt mode) is now saved between sessions.\n* Trash Can is gated now behind Tinker Table research rather than triggered by inventory fullness.\n\n[b]Bugs & Perf[/b]\n* Fixed and cleaned up more Power Grid things, hopefully should squash a lot of odd behavior.\n* Fixed a variety of issues around single slot structures (pedstals, portal keys)\n* Torrential slipstreams and verdant streams now properly clean up their streamway tiles\n* Fixed click colliders for torrential streamways\n* Elemental Binder click collider adjusted to not block the tiles behind the crystals\n* More localization fixes\n* Discord links updated\n* Cleaned up performance issues with lots of Entropy spawns\n* Power upgrades like Mana Root +1 radius should be significantly less taxing on unlock.",
+      "key": "3320980::dd48f6920ad46700f139517f1d064e7fc6d0ded3",
+      "tags": [
+        {
+          "feature": "* Implemented new tutorial objectives that allow you to close the tutorial banner, and optional helpers with animations. These are targeted at players getting stuck at various points like research, 3 element research, Mana Roots, and Collector. Feedback welcome on these!"
+        },
+        {
+          "feature": "* Collectors now follow similar max placement logic to grippers (and wont flood an inventory)."
+        },
+        {
+          "feature": "* Power structures (or really anything with an inventory that has a specific list of entities) will now also follow desired max placement logic. Lava Generators stack to 10."
+        },
+        {
+          "feature": "* Middle Mouse is now keybindable and defaulted to quit context/pipette"
+        },
+        {
+          "feature": "* Added keybindings for zoom in and zoom out (defaulted to none). Middle mouse scroll wheel currently remains regardless of additional bindings."
+        },
+        {
+          "feature": "* Information overlay (alt mode) is now saved between sessions."
+        },
+        {
+          "feature": "* Trash Can is gated now behind Tinker Table research rather than triggered by inventory fullness."
+        },
+        {
+          "bug": "* Fixed and cleaned up more Power Grid things, hopefully should squash a lot of odd behavior."
+        },
+        {
+          "bug": "* Fixed a variety of issues around single slot structures (pedstals, portal keys)"
+        },
+        {
+          "bug": "* Torrential slipstreams and verdant streams now properly clean up their streamway tiles"
+        },
+        {
+          "bug": "* Fixed click colliders for torrential streamways"
+        },
+        {
+          "bug": "* Elemental Binder click collider adjusted to not block the tiles behind the crystals"
+        },
+        {
+          "bug": "* More localization fixes"
+        },
+        {
+          "bug": "* Discord links updated"
+        },
+        {
+          "bug": "* Cleaned up performance issues with lots of Entropy spawns"
+        },
+        {
+          "balance_change": "* Power upgrades like Mana Root +1 radius should be significantly less taxing on unlock."
+        }
+      ]
+    },
+    {
+      "title": "Hotfixes - Build v0.1.359",
+      "date": "2025-07-16 15:43:48",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805431065312841",
+      "content": "[b]Build v0.1.359[/b]\n\nThanks again to everyone for all of their feedback and bug reports, back to the lab!\n\n[b]Updates[/b]\n* Chinese Localization has been fully implemented. Please submit bug reports if anything feels incorrect.\n* Production times shown in Craft Tip window in addition to being in the Production Structure window. Please give feedback on this if you want it in more places.\n* Mana Flare now empty into Mana Pools rather than being a super powerful source of replacement energy. One Mana Flare (upgraded) should perfectly empty into a single Mana Pool.\n\n[b]Bug Fixes[/b]\n* Fixes for some localization bugs showing wrong images or wrong tokens.\n* Fixes for save files, your screenshots should now update rather than be locked to the first one\n* Fixed another bug that could cause lava to spill outside of the generators on build. Math is fun, with lava.\n* Found and fixed a handful of Structures with incorrect element associations.\n* Cleaned up a few ways for terrain to create invisible colliders where they clearly shouldn't be.\n* Power systems now should function completely with Stored Mana only if needed.\n* Fixed UI around this as well\n* Also fixed placing Life Keystones in portal UI by hand. Grippers and shift click worked but clicking on the UI with a keystone in hand was broken and is now fixed\n* Fixed several incorrect elemental associations for production structures\n* Found and fixed a bug that would cause altars to break when researching and the power runs out",
+      "key": "3320980::eea32c10cbf0ac516810a1004bdd379bf0434336",
+      "tags": [
+        {
+          "feature": "* Chinese Localization has been fully implemented. Please submit bug reports if anything feels incorrect."
+        },
+        {
+          "feature": "* Production times shown in Craft Tip window in addition to being in the Production Structure window. Please give feedback on this if you want it in more places."
+        },
+        {
+          "balance_change": "* Mana Flare now empty into Mana Pools rather than being a super powerful source of replacement energy. One Mana Flare (upgraded) should perfectly empty into a single Mana Pool."
+        },
+        {
+          "bug": "* Fixes for some localization bugs showing wrong images or wrong tokens."
+        },
+        {
+          "bug": "* Fixes for save files, your screenshots should now update rather than be locked to the first one"
+        },
+        {
+          "bug": "* Fixed another bug that could cause lava to spill outside of the generators on build. Math is fun, with lava."
+        },
+        {
+          "bug": "* Found and fixed a handful of Structures with incorrect element associations."
+        },
+        {
+          "bug": "* Cleaned up a few ways for terrain to create invisible colliders where they clearly shouldn't be."
+        },
+        {
+          "bug": "* Power systems now should function completely with Stored Mana only if needed."
+        },
+        {
+          "bug": "* Fixed UI around this as well"
+        },
+        {
+          "bug": "* Also fixed placing Life Keystones in portal UI by hand. Grippers and shift click worked but clicking on the UI with a keystone in hand was broken and is now fixed"
+        },
+        {
+          "bug": "* Fixed several incorrect elemental associations for production structures"
+        },
+        {
+          "bug": "* Found and fixed a bug that would cause altars to break when researching and the power runs out"
+        }
+      ]
+    },
+    {
+      "title": "Hotfixes v0.1.355",
+      "date": "2025-07-15 05:51:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805065414361019",
+      "content": "[b]v0.1.355[/b]\n\nThanks for all the bug reports! I'll likely be putting out a patch every day this week to shore up Bugs and Perf and Quality of Life until things stabilize.  I could not do this without all of your help, thank you so much!  \ud83c\udf3f\n\n[b]Bug Fixes[/b]\n* Fixed a bug that stopped Evening Bloom from working properly\n* Fixed a bug where Elemental Fire would show on overfilled chests\n* Collectors no longer gets stuck if the mote tile gets taken from under it by another Collector\n* Fix gripper trying to grab from a deleted structure. \n* Localization credits had an incorrect name for Spanish \n* Research data without flavor text will no longer display '0'\n* F to pickup now correctly blocked when the Research Tree is open\n* Toggling sound in background off no longer also pauses the game when alt tabbing\n* Fix for bad shadow research data asking key Shadow Keystones instead of Shadow Prisms\n* Fix main portal not showing the orb highlight when hovered.\n* Gathering Dawn music track no longer has an abrupt ending\n\n[b]Performance[/b]\n* Attempted to fix a host of people's issues with music causing severe lag. Please let me know if this is fixed, I cannot reproduce this on my system.\n* Cache rotated footprint coords in footprint data. \n* Minimize the amount of work done when creating doodads.\n+ Entropy microoptimizations around tween usage and garbage generation.\n* Better distance Culling\n* Don't process belt lanes with no items on them (still process inputs).\n* Don't process gripper visuals (move item along beam, tween multipickup objects) if the gripper is not in a visible chunk\n\n",
+      "key": "3320980::ac554d382971b8e397eb7bf99fa2b6815dab4d0e",
+      "tags": [
+        {
+          "bug": "* Fixed a bug that stopped Evening Bloom from working properly"
+        },
+        {
+          "bug": "* Fixed a bug where Elemental Fire would show on overfilled chests"
+        },
+        {
+          "bug": "* Collectors no longer gets stuck if the mote tile gets taken from under it by another Collector"
+        },
+        {
+          "bug": "* Fix gripper trying to grab from a deleted structure."
+        },
+        {
+          "bug": "* Localization credits had an incorrect name for Spanish"
+        },
+        {
+          "bug": "* Research data without flavor text will no longer display '0'"
+        },
+        {
+          "bug": "* F to pickup now correctly blocked when the Research Tree is open"
+        },
+        {
+          "bug": "* Toggling sound in background off no longer also pauses the game when alt tabbing"
+        },
+        {
+          "bug": "* Fix for bad shadow research data asking key Shadow Keystones instead of Shadow Prisms"
+        },
+        {
+          "bug": "* Fix main portal not showing the orb highlight when hovered."
+        },
+        {
+          "bug": "* Gathering Dawn music track no longer has an abrupt ending"
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #15 - MoteMancer Early Access starts today!",
+      "date": "2025-07-14 18:16:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1805065414345414",
+      "content": "[h3]Greetings Automagical Alchemists,[/h3][p][/p][p]MoteMancer has been years in development, and while there is still plenty left to build, I can think of nothing more fitting than releasing into [b]Early Access[/b] with [b]Automation Fest[/b] along-side the giants that have inspired me to make this game.[/p][p][/p][p]I'd like to share a roadmap (also available in game) of where MoteMancer is heading, and give some context around the simplified concepts to share my headspace. [/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/170589ab5b93742e54c538961ac03023707aa6bb.png\"][/img][/p][p][b]Research[/b] - While the research tree is vast, there is still plenty of room for improvement and additions. Some slots you see in the research tree are Shattered, typically consisting of plans already thought out for the future, but also an opportunity for the community to take existing ideas and either make them better or outright replace them.  [/p][p][/p][p][b]Air and Fire Power[/b] are hot off the press - they are very different from Life and also the least tested, so I imagine there will be improvements to be made there, but there are already interesting synergy and logistics nuances to each.[/p][p][/p][p][b]Runeshrooms[/b] will be later in your journey as they are Tier 2 Shadow research, but they offer a unique take on beacon gameplay, heavily inspired from Astral Sorcery. Currently there are two rituals available but 9 are planned.[/p][p][/p][p][b]Spell Improvements[/b] - Some spells deeper in the tree are not yet implemented but also some of the original ideas made less sense. There are also ways to improve the current spells planned like AoE Nudge and Excavator.[/p][p][/p][p][b]Entropy[/b] itself is a tricky beast, it's very easy to make it too oppressive, so I imagine there will be a lot of feedback in both the tuning of it and the evolution of how the challenge and tension escalates.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/fe8efc56a55096b5cb1a1b845214b48338e15463.png\"][/img][/p][p][/p][p][b]Blueprints[/b] (and a map) are hot community asks right now. They are both planned and both a little more tricky on a hex grid than a conventional square one, but we'll make it happen :)[/p][p][/p][p][b]Full Controller Support[/b] - technically MoteMancer is already fully playable on Steam Deck - if you are looking for controller layouts there are some floating around out community already. That said, my standards for \"Full Support\" are very high and i want to make the game very natural to play with a controller, and that will take dedicated time.  The framework is there, but I'm sure you'll agree that nuance and feel are everything for a feature like this.[/p][p][/p][p][b]More Music Tracks![/b] Aleksandria continues to work hard at polishing and refining the existing score, and there are still more tracks in store to round out the planes.[/p][p][/p][p][b]Art Improvements[/b] - There is so much to do here. I think MoteMancer is already in a good state but it could be much better. I have a lot of plans for FX and Night-time visuals especially, but gameplay was more important to focus on before polishing all of that. My hope is that I can spend time working on quality of life and aesthetics while gathering information for the best way to proceed with the larger features.[/p][p][/p][p][b]UI/UX improvements[/b] - Ongoing for sure. People still get stuck at some tutorial moments because the rules are nuanced. For anyone reading this that does get stuck and has an \"aha\" moment after, sharing what would have made the message more clear for you is [i]suuuuuper[/i] helpful. Send an in-game report with \\[F1] and I'll see it.[/p][p][/p][p][b]Affix Modes[/b] - MoteMancer is uniquely positioned for replay-ability because of the structure of the game. What if you started on the Fire Plane and Earth was completely shattered? What if Entropy spawned near every resource patch but Collectors were twice as efficient? There are so many ways to mix and match modifiers for gameplay, and I'm hoping institutionalizing a \"Challenge Run\" will give MoteMancer immense replayability.[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/06dafa33f06ba05e43fbb27a149e9c4576da70bb.png\"][/img][/p][p][b]Infinite Research[/b] - Once the Elemental Orbs are restored, securing a stronger elemental link to the Library will amplify your efficiency in a variety of ways.[/p][p][/p][p][b]Achievements and World Seeds[/b] - Much of this framework is in place, but making the game stable was a top priority. These will come very soon.[/p][p][/p][p]And of course [b]Community Requests[/b] - the in game feedback/bug/suggestion form is the best way to get a message to me at the moment. Hearing thoughts during flow state are super useful. Many ideas have already been implemented, and many more are on the docket.  This game will only get better with your feedback and ideas. [/p][p][/p][p]Also! Any feedback about [b]Localization[/b] is super helpful. MoteMancer definitely has less grounding in reality and I spent a lot of time trying to be poetic and functional and evocative all at the same time, but it's a fine needle to thread and especially in other languages. Any feedback on either syntax or even reading size is very welcome.[/p][p][/p][p][/p][p]There is so much more to do, but the elemental sandbox is already brimming with toys for you to experiment with. Thank you for being along for the journey. And now... back to the lab![/p][p][/p][p][i]~Cyanavatar[/i][/p][p][/p][p][/p][p][/p][p][/p]",
+      "key": "3320980::2c96c2862d75e662913f0a18854221992a9f104a",
+      "tags": [
+        {
+          "feature": "MoteMancer has been years in development, and while there is still plenty left to build, I can think of nothing more fitting than releasing into Early Access with Automation Fest along-side the giants that have inspired me to make this game."
+        },
+        {
+          "feature": "Blueprints (and a map) are hot community asks right now. They are both planned and both a little more tricky on a hex grid than a conventional square one, but we'll make it happen :)"
+        },
+        {
+          "feature": "Full Controller Support - technically MoteMancer is already fully playable on Steam Deck - if you are looking for controller layouts there are some floating around out community already. That said, my standards for \"Full Support\" are very high and i want to make the game very natural to play with a controller, and that will take dedicated time. The framework is there, but I'm sure you'll agree that nuance and feel are everything for a feature like this."
+        },
+        {
+          "feature": "More Music Tracks! Aleksandria continues to work hard at polishing and refining the existing score, and there are still more tracks in store to round out the planes."
+        },
+        {
+          "feature": "Art Improvements - There is so much to do here. I think MoteMancer is already in a good state but it could be much better. I have a lot of plans for FX and Night-time visuals especially, but gameplay was more important to focus on before polishing all of that. My hope is that I can spend time working on quality of life and aesthetics while gathering information for the best way to proceed with the larger features."
+        },
+        {
+          "feature": "UI/UX improvements - Ongoing for sure. People still get stuck at some tutorial moments because the rules are nuanced. For anyone reading this that does get stuck and has an \"aha\" moment after, sharing what would have made the message more clear for you is suuuuuper helpful. Send an in-game report with [F1] and I'll see it."
+        },
+        {
+          "feature": "Affix Modes - MoteMancer is uniquely positioned for replay-ability because of the structure of the game. What if you started on the Fire Plane and Earth was completely shattered? What if Entropy spawned near every resource patch but Collectors were twice as efficient? There are so many ways to mix and match modifiers for gameplay, and I'm hoping institutionalizing a \"Challenge Run\" will give MoteMancer immense replayability."
+        },
+        {
+          "feature": "Infinite Research - Once the Elemental Orbs are restored, securing a stronger elemental link to the Library will amplify your efficiency in a variety of ways."
+        },
+        {
+          "feature": "Achievements and World Seeds - Much of this framework is in place, but making the game stable was a top priority. These will come very soon."
+        },
+        {
+          "feature": "Community Requests - the in game feedback/bug/suggestion form is the best way to get a message to me at the moment. Hearing thoughts during flow state are super useful. Many ideas have already been implemented, and many more are on the docket. This game will only get better with your feedback and ideas."
+        },
+        {
+          "feature": "Localization is super helpful. MoteMancer definitely has less grounding in reality and I spent a lot of time trying to be poetic and functional and evocative all at the same time, but it's a fine needle to thread and especially in other languages. Any feedback on either syntax or even reading size is very welcome."
+        }
+      ]
+    },
+    {
+      "title": "July 9 Patch Notes",
+      "date": "2025-07-09 23:43:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891948151",
+      "content": "[h2]v0.1.332[/h2][p][/p][p]Hey MoteMancers! This will probably be the last patch before EA on Monday! That does not mean there won't be more in store, but the focus will be mainly on stability and presentation from here til then.  And then we can get back to making more features :)[/p][p][/p][h3]Features & QoL[/h3][list][*][p]Hover Overlays got a huge overhaul, please give feedback on this, most of the community suggestions were implemented.[/p][/*][*][p]Skip tutorial implemented[/p][/*][*][p]Fire power rework - Fire now builds heat slowly from min to max over time, Pyroclastic Chambers increase max heat capacity of the Lava Generator[/p][/*][*][p]Allow harvesting while holding a structure.[/p][/*][*][p]More research tree refinement[/p][/*][*][p]Collector Area upgrades fully implemented, fixed any bugs around Collector Array unlocks[/p][/*][*][p]Torrential Streamway tech unshattered and available to use[/p][/*][*][p]All research data has been fully setup with localization[/p][/*][/list][p][/p][h3]Combat[/h3][list][*][p]Meteor Swarm fully implemented[/p][/*][*][p]Downpour Bastion now actually requires power to fire [/p][/*][*][p]Structures require being in entropy for a second before turning off.[/p][/*][/list][h3]Art[/h3][list][*][p]Tar Cauldron Updated[/p][/*][*][p]Dark Grove Updated[/p][/*][*][p]Whispering Abyss Updated[/p][/*][*][p]Nimbus Sanctum Updated[/p][/*][*][p]Zephyrmill Updated[/p][/*][*][p] Hue separation on crystals for Charged Lodestone and Caldera[/p][/*][*][p]Tempest Collector Border fixed[/p][/*][*][p]Fire and Shadow Track 3's added[/p][/*][*][p][/p][/*][/list][h3]Bug Fixes[/h3][list][*][p]Fixed a bug where if you were standing on a portal during load it would prevent the portal from being created[/p][/*][*][p]Fixed a bug where you sometimes wouldn't be able to insert a keystone in to a Planar Portal[/p][/*][*][p]Fix research fog around Air tier 1[/p][/*][*][p]Fix for research window hiding grants the first time you mouse over something[/p][/*][*][p]Fix for Fuel Generators accumulating power per cycle[/p][/*][*][p]Research tree should no longer show the start of Fire immediately[/p][/*][*][p]Ichor Slicks, Roots, and Swiftstone should no longer affect neighboring slabs and streams[/p][/*][/list][p][/p][p][/p]",
+      "key": "3320980::122a16be6d980ba0bbd033c5c4fd3fcbe877155a",
+      "tags": [
+        {
+          "feature": "Hover Overlays got a huge overhaul, please give feedback on this, most of the community suggestions were implemented."
+        },
+        {
+          "feature": "Skip tutorial implemented"
+        },
+        {
+          "feature": "Fire power rework - Fire now builds heat slowly from min to max over time, Pyroclastic Chambers increase max heat capacity of the Lava Generator"
+        },
+        {
+          "feature": "Allow harvesting while holding a structure."
+        },
+        {
+          "feature": "More research tree refinement"
+        },
+        {
+          "feature": "Collector Area upgrades fully implemented, fixed any bugs around Collector Array unlocks"
+        },
+        {
+          "feature": "Torrential Streamway tech unshattered and available to use"
+        },
+        {
+          "feature": "All research data has been fully setup with localization"
+        },
+        {
+          "feature": "Meteor Swarm fully implemented"
+        },
+        {
+          "feature": "Downpour Bastion now actually requires power to fire "
+        },
+        {
+          "feature": "Structures require being in entropy for a second before turning off."
+        },
+        {
+          "feature": "Tar Cauldron Updated"
+        },
+        {
+          "feature": "Dark Grove Updated"
+        },
+        {
+          "feature": "Whispering Abyss Updated"
+        },
+        {
+          "feature": "Nimbus Sanctum Updated"
+        },
+        {
+          "feature": "Zephyrmill Updated"
+        },
+        {
+          "feature": " Hue separation on crystals for Charged Lodestone and Caldera"
+        },
+        {
+          "feature": "Tempest Collector Border fixed"
+        },
+        {
+          "feature": "Fire and Shadow Track 3's added"
+        },
+        {
+          "bug": "Fixed a bug where if you were standing on a portal during load it would prevent the portal from being created"
+        },
+        {
+          "bug": "Fixed a bug where you sometimes wouldn't be able to insert a keystone in to a Planar Portal"
+        },
+        {
+          "bug": "Fix research fog around Air tier 1"
+        },
+        {
+          "bug": "Fix for research window hiding grants the first time you mouse over something"
+        },
+        {
+          "bug": "Fix for Fuel Generators accumulating power per cycle"
+        },
+        {
+          "bug": "Research tree should no longer show the start of Fire immediately"
+        },
+        {
+          "bug": "Ichor Slicks, Roots, and Swiftstone should no longer affect neighboring slabs and streams"
+        }
+      ]
+    },
+    {
+      "title": "July 6 Patch Notes",
+      "date": "2025-07-06 18:05:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891844180",
+      "content": "[h2]v0.1.332[/h2][p][/p][p]Keep that feedback coming! Many improvements made here are the direct result of feedback from players like you. Thank you for helping to make MoteMancer magnificent :)[/p][p][/p][p][b]Tuning[/b][/p][list][*][p]Research Trees have been significantly re-tuned, many branches now add Ingredients rather than replacing[/p][/*][*][p]Later game Recipes have been retuned to make long automation crafting chains more approachable[/p][/*][/list][p][b]Entropy Updates[/b][/p][list][*][p]Entropy now spawns much faster after disturbing a Mote Field, giving you an opportunity to plan[/p][/*][*][p]Entropy Spawns further away but continues to grow on a much longer tail[/p][/*][*][p]Significantly increased the duration between entropy respawns.[/p][/*][*][p]Entropy now affects power-generating structures[/p][/*][*][p]Many unique Tower Upgrades implemented to combat Entropy.[/p][/*][/list][p][b]New Functionality[/b] [/p][list][*][p]Shifting Slabs can transfer to Streamways and vice versa.[/p][/*][*][p]Inter-planar logistics via portals implemented, currently is not gated behind anything but is likely to require active keystones to maintain the connection.[/p][/*][*][p]Mana Pools and Primordial Manawells fully implemented, they can be used as a way to bridge power networks and have their own internal Power storage. Added visuals to indicate their fullness.[/p][/*][/list][p][b]Quality of Life[/b][/p][list][*][p]Player Inventory Trashing implemented, will only show up when your inventory has 5 or fewer empty slots[/p][/*][*][p]Action bar button polish, hover tips take a moment to show up unless moving from button to button[/p][/*][*][p]Can place ichor slick over belts[/p][/*][*][p]Added research to have Riptide also works on salt slabs[/p][/*][*][p]Inventory now alternates row and column upgrades, was 12 rows x 6 cols, now 9x9[/p][/*][/list][p][b]Bug Fixes[/b][/p][list][*][p]Fixed a bug where Incinerator laser visuals might not clean up[/p][/*][*][p]Burrowroot art now sorts across planes properly[/p][/*][*][p]Fix manual crafting not checking for research unlocks[/p][/*][*][p]Firewire now visually connects to the nearest Lava Barrier[/p][/*][*][p]Variety of Localization fixes[/p][/*][*][p]Variety of Perf improvements[/p][/*][/list][p][/p][p]As always, please remember to submit bugs and suggestions directly in game![/p][p]~CyanAvatar[/p]",
+      "key": "3320980::8435308478139be21ce179395f71e593e244d695",
+      "tags": [
+        {
+          "balance_change": "Research Trees have been significantly re-tuned, many branches now add Ingredients rather than replacing"
+        },
+        {
+          "balance_change": "Later game Recipes have been retuned to make long automation crafting chains more approachable"
+        },
+        {
+          "balance_change": "Entropy now spawns much faster after disturbing a Mote Field, giving you an opportunity to plan"
+        },
+        {
+          "balance_change": "Entropy Spawns further away but continues to grow on a much longer tail"
+        },
+        {
+          "balance_change": "Significantly increased the duration between entropy respawns."
+        },
+        {
+          "balance_change": "Entropy now affects power-generating structures"
+        },
+        {
+          "feature": "Shifting Slabs can transfer to Streamways and vice versa."
+        },
+        {
+          "feature": "Inter-planar logistics via portals implemented, currently is not gated behind anything but is likely to require active keystones to maintain the connection."
+        },
+        {
+          "feature": "Mana Pools and Primordial Manawells fully implemented, they can be used as a way to bridge power networks and have their own internal Power storage. Added visuals to indicate their fullness."
+        },
+        {
+          "feature": "Player Inventory Trashing implemented, will only show up when your inventory has 5 or fewer empty slots"
+        },
+        {
+          "feature": "Action bar button polish, hover tips take a moment to show up unless moving from button to button"
+        },
+        {
+          "feature": "Can place ichor slick over belts"
+        },
+        {
+          "feature": "Added research to have Riptide also works on salt slabs"
+        },
+        {
+          "balance_change": "Inventory now alternates row and column upgrades, was 12 rows x 6 cols, now 9x9"
+        },
+        {
+          "bug": "Fixed a bug where Incinerator laser visuals might not clean up"
+        },
+        {
+          "bug": "Burrowroot art now sorts across planes properly"
+        },
+        {
+          "bug": "Fix manual crafting not checking for research unlocks"
+        },
+        {
+          "bug": "Firewire now visually connects to the nearest Lava Barrier"
+        },
+        {
+          "bug": "Variety of Localization fixes"
+        },
+        {
+          "bug": "Variety of Perf improvements"
+        }
+      ]
+    },
+    {
+      "title": "Jun 27 Patch Notes",
+      "date": "2025-06-27 05:24:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891537786",
+      "content": "[h2]v0.1.324[/h2][p]Thanks for being patient I know it's been a while since the last update, this new patch was a doozy.  Plenty of Quality of life for both Demo and Beta builds, and Entropy is now available for testing.[/p][h3]Entropy[/h3][list][*][p]Entropy is now an active and regenerating threat. Rifts are the source of where Entropy will spread from. Rifts will spawn once you've entered another Plane near any Mote Field you've been collecting from.[/p][/*][*][p]Entropy can be cleansed with spells (currently Riptide only) and Downpour Bastion, which will create a field of cleansing, but Rifts themselves can only be sealed with an Incineration Spire. The more planes you visit, the more aggressive the Rifts will become.[/p][/*][*][p]Remember that Entropy pierces the planes, so a Mote Field on one plane can interfere with your base on other Planes.[/p][/*][*][p]Entropy now persist through saves[/p][/*][*][p]Intro sequence uses the new entropy system but appears close to what it was before[/p][/*][*][p]Structures with power consumption will now be at 0 power if any part of their footprint is in entropy.[/p][/*][*][p]The Great Portal is now capable of having the Elemental Orbs be replenished with Keystones and Catalysts. Please give feedback on the UI, there's still work to do but the main request is to make sure it feels intuitive enough.[/p][/*][*][p]Collision should be fixed for the Anchor Stones near the Great Portal[/p][/*][/list][p][/p][h3]QOL[/h3][list][*][p]Mouseover tooltips have been significantly reworked to show more information that is contextual to whatever you are hovering over. Please give feedback on this. Mote Fields and Entropy/Rift tips coming shortly.[/p][/*][*][p]Add preview arrows to all belts[/p][/*][*][p]Collector specialization now shows colored text to help draw attention[/p][/*][*][p]Infusion Altars will now show mismatching ingredients with a red slot if there is no research for that ingredient available[/p][/*][*][p]Slight right offset to item counts while holding to prevent cursor getting in the way of held count[/p][/*][*][p]Hitting escape during an interactive rebind will now unbind that key.[/p][/*][/list][p][/p][h3]Tuning[/h3][list][*][p]Recipe updates for diamonds, charged lodestone, quintessence[/p][/*][*][p]Mana Bloom initial power area +1 radius[/p][/*][*][p]Fire Wire and Thermal Tower initial power area +1 radius[/p][/*][*][p]Tree of Life Research 1 and 2 tuned back to 30 and 50[/p][/*][*][p]Infusion Altar now takes 100 power to operate[/p][/*][*][p]Mana Flare now generates 500 Power[/p][/*][*][p]Coral Pool power cost now 1000[/p][/*][*][p]Air power now generates 5 per open-air tile, from 2[/p][/*][*][p]Fire power buffed significantly and is now more in line with Air and Life[/p][/*][/list][p][/p][h3]Art updates[/h3][list][*][p]Second Shadow music track added![/p][/*][*][p]Added a thin line to the outside range of Biorhythm and Downpour Bastion[/p][/*][*][p]Art polish passes for: [/p][/*][*][p]Mana Pool[/p][/*][*][p]Primordial Manawell[/p][/*][*][p]Downpour Bastion[/p][/*][*][p]Coral Pool[/p][/*][*][p]Ritual Shrooms[/p][/*][*][p]Reef Crafter[/p][/*][*][p]All Grippers[/p][/*][*][p]Vortex Miner[/p][/*][*][p]Zephyrmill[/p][/*][*][p]Incineration Spire[/p][/*][*][p]Void Chest[/p][/*][/list][p][/p][h3]Bug Fixes[/h3][list][*][p]Coral Pools now save and load properly[/p][/*][*][p]Fixed a variety of ways buildings could not be harvested or interacted with, mostly from interference from other Planes.[/p][/*][*][p]Fixed a bad verdant stream collider[/p][/*][*][p]Fixed a bug that would allow you to dupe Fire Wire[/p][/*][*][p]Fixed a bug that could cause your player to get stuck if pressing Q while casting a spell[/p][/*][*][p]Attempting to force game to run while in background to fix the few folks who have reported it.  This is inconsistent, please give feedback.[/p][/*][*][p]Fixed a bug where info text could block mouse input randomly[/p][/*][*][p]Walking near a Tidal Collector should sort with the player properly now[/p][/*][*][p]Fixed a variety of ways fire power could load improperly[/p][/*][*][p]More defense against overlapping aspect states[/p][/*][*][p]Fixed a variety of Collector Crystal FX that weren't sorting properly[/p][/*][*][p]Roots under buildings should no longer break Nudge[/p][/*][/list][p][/p][p][i]Thanks again for all the feedback, suggestions, and bug reports, keep them coming![/i][/p][p][i]~CyanAvatar[/i][/p]",
+      "key": "3320980::f02bd46277ff7d581bb5d1713f418de4151b2a9d",
+      "tags": [
+        {
+          "feature": "Entropy is now an active and regenerating threat. Rifts are the source of where Entropy will spread from. Rifts will spawn once you've entered another Plane near any Mote Field you've been collecting from."
+        },
+        {
+          "feature": "Entropy can be cleansed with spells (currently Riptide only) and Downpour Bastion, which will create a field of cleansing, but Rifts themselves can only be sealed with an Incineration Spire. The more planes you visit, the more aggressive the Rifts will become."
+        },
+        {
+          "feature": "Entropy now persist through saves"
+        },
+        {
+          "feature": "Intro sequence uses the new entropy system but appears close to what it was before"
+        },
+        {
+          "feature": "Structures with power consumption will now be at 0 power if any part of their footprint is in entropy."
+        },
+        {
+          "feature": "The Great Portal is now capable of having the Elemental Orbs be replenished with Keystones and Catalysts. Please give feedback on the UI, there's still work to do but the main request is to make sure it feels intuitive enough."
+        },
+        {
+          "feature": "Mouseover tooltips have been significantly reworked to show more information that is contextual to whatever you are hovering over. Please give feedback on this. Mote Fields and Entropy/Rift tips coming shortly."
+        },
+        {
+          "feature": "Add preview arrows to all belts"
+        },
+        {
+          "feature": "Collector specialization now shows colored text to help draw attention"
+        },
+        {
+          "feature": "Infusion Altars will now show mismatching ingredients with a red slot if there is no research for that ingredient available"
+        },
+        {
+          "feature": "Slight right offset to item counts while holding to prevent cursor getting in the way of held count"
+        },
+        {
+          "feature": "Hitting escape during an interactive rebind will now unbind that key."
+        },
+        {
+          "balance_change": "Recipe updates for diamonds, charged lodestone, quintessence"
+        },
+        {
+          "balance_change": "Mana Bloom initial power area +1 radius"
+        },
+        {
+          "balance_change": "Fire Wire and Thermal Tower initial power area +1 radius"
+        },
+        {
+          "balance_change": "Tree of Life Research 1 and 2 tuned back to 30 and 50"
+        },
+        {
+          "balance_change": "Infusion Altar now takes 100 power to operate"
+        },
+        {
+          "balance_change": "Mana Flare now generates 500 Power"
+        },
+        {
+          "balance_change": "Coral Pool power cost now 1000"
+        },
+        {
+          "balance_change": "Air power now generates 5 per open-air tile, from 2"
+        },
+        {
+          "balance_change": "Fire power buffed significantly and is now more in line with Air and Life"
+        },
+        {
+          "feature": "Second Shadow music track added!"
+        },
+        {
+          "feature": "Added a thin line to the outside range of Biorhythm and Downpour Bastion"
+        },
+        {
+          "feature": "Art polish passes for: "
+        },
+        {
+          "feature": "Mana Pool"
+        },
+        {
+          "feature": "Primordial Manawell"
+        },
+        {
+          "feature": "Downpour Bastion"
+        },
+        {
+          "feature": "Coral Pool"
+        },
+        {
+          "feature": "Ritual Shrooms"
+        },
+        {
+          "feature": "Reef Crafter"
+        },
+        {
+          "feature": "All Grippers"
+        },
+        {
+          "feature": "Vortex Miner"
+        },
+        {
+          "feature": "Zephyrmill"
+        },
+        {
+          "feature": "Incineration Spire"
+        },
+        {
+          "feature": "Void Chest"
+        },
+        {
+          "bug": "Coral Pools now save and load properly"
+        },
+        {
+          "bug": "Fixed a variety of ways buildings could not be harvested or interacted with, mostly from interference from other Planes."
+        },
+        {
+          "bug": "Fixed a bad verdant stream collider"
+        },
+        {
+          "bug": "Fixed a bug that would allow you to dupe Fire Wire"
+        },
+        {
+          "bug": "Fixed a bug that could cause your player to get stuck if pressing Q while casting a spell"
+        },
+        {
+          "bug": "Attempting to force game to run while in background to fix the few folks who have reported it. This is inconsistent, please give feedback."
+        },
+        {
+          "bug": "Fixed a bug where info text could block mouse input randomly"
+        },
+        {
+          "bug": "Walking near a Tidal Collector should sort with the player properly now"
+        },
+        {
+          "bug": "Fixed a variety of ways fire power could load improperly"
+        },
+        {
+          "bug": "More defense against overlapping aspect states"
+        },
+        {
+          "bug": "Fixed a variety of Collector Crystal FX that weren't sorting properly"
+        },
+        {
+          "bug": "Roots under buildings should no longer break Nudge"
+        }
+      ]
+    },
+    {
+      "title": "Jun 18 Patch Notes",
+      "date": "2025-06-19 01:33:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802893906719093",
+      "content": "[h2]Build v0.1.313[/h2][p]Thanks everyone for all the feedback, bug reports, and suggestions.  There's still plenty more to do but here's a quick recap of the last two weeks of work.  More frequent patches are posted in the community discord.[/p][p][/p][p][b]Features & QOL[/b][/p][list][*][p]Support for crafting items from action bar when empty, left click for 1 right click for 5[/p][/*][*][p]Added contextual hover tip for action bar with a variety of states and indicators based on what each mouse button will do[/p][/*][*][p]Production Structures now allow for clicking on recipes to transfer items from the player inventory to the input inventory: Click will move one set of ingredients, Shift Click for 5, Ctrl Click for all matching ingredients[/p][/*][*][p]Hand crafting speed is doubled when you have available mana - Added a visual to crafting corner as an indicator[/p][/*][*][p]All Life power structures and combo structures with roots can be built ontop of Mana Roots[/p][/*][*][p]Power outage indicators are now synchronized[/p][/*][*][p]Raw crafting counts now uses ratios with multi-crafts[/p][/*][*][p]Crafting Corner now only shows two rows of crafts[/p][/*][*][p]Riptide pickups now clump a little more to avoid +1 spam[/p][/*][*][p]Feedback from now pauses game when open[/p][/*][*][p]Added more research flavor tips, some are disabled for non-english languages if not yet localized[/p][/*][*][p]Main menu button implemented on Escape Menu[/p][/*][*][p]Action Bar slot will dim and hide count when the matching entity has no items left[/p][/*][*][p]Action bar now matches picked up entity with a highlight[/p][/*][/list][p][/p][p][b]Tuning / Pacing[/b] [/p][list][*][p]Testing size 1 Output inventory to encourage more logistical play rather than pooling play. - please give feedback on this![/p][/*][*][p]Game-wide research cost tuning, most focused on early game pacing and shoring up late game consistency.[/p][/*][*][p]Moved Mana Roots to unlock simultaneously with Tree of life research, leaving mana bloom its own research immediately after[/p][/*][*][p]Swapped Reach and Rampant bloom in the Life research tree (because roots as a thing to automate streamlines with this better, also unlocks it sooner)[/p][/*][*][p]Gust Funnel ingredients now 1 Turbine and 3 Aether for 3 Gust Funnels[/p][/*][*][p]Swapped the order of tutorial 6's gripper/collector beats for better flow[/p][/*][*][p]Research tuning: second arm of research now adds instead of replaces Aether.[/p][/*][*][p]Earth Might (Earth grippers pick up 2 things) upgrade moved to tier 1[/p][p]Air grippers can be flipped with F, this will be locked behind tech later, but for now enjoy![/p][p][/p][/*][/list][p][b]Art & Implementation[/b][/p][list][*][p]Art updates for: Earth chests, Wave Wright, Luminarium, Pyrolyzer, Cinder Collector, Sovereign Manaheart, Tide Collector[/p][/*][*][p]Added Fractured Research as a means to create stubs for unimplemented tech without breaking immersion[/p][/*][*][p]Research line grooves are a little clearer[/p][/*][*][p]Two new Air music tracks have been added [/p][/*][*][p]One new Fire music track has been added [/p][/*][*][p]All three void chests work now and have inventory size 6[/p][/*][*][p]Verdant Stream and Verdant Delta are implemented [/p][/*][*][p]Ancient Chest and Basalt Chest fully functional[/p][p][/p][/*][/list][p][b]Bug Fixes[/b] [/p][list][*][p]Last Crafted should now be saved in save games to support Alt mode consistency[/p][/*][*][p]F should now be able to pick up from undergrounds,[/p][/*][*][p]Fixes for bad colliders near portals that could block harvesting[/p][/*][*][p]Fixed a case where quit context could leave the Spell Hex in a bad state[/p][/*][*][p]Fix for research tree quarry collector huge icon,[/p][/*][*][p]Fix for toast banner blocking structure placement[/p][/*][*][p]Collectors now build their inventories on the fly, matching upgrades and fixing their UI when Arrays are researched[/p][/*][*][p]Undergrounds and Deltas now use insert positions like normal belts do, allowing grippers to place to all segments[/p][/*][*][p]Fixed a bug where action bar would dim in the wrong circumstance,[/p][/*][*][p]Research colors for Altars and Pedestals cleaned up for each element and combo,[/p][/*][*][p]Fixes for save and load menu localization button sizes,[/p][/*][*][p]Fix for visual bugs in the preview when merging two power grids,[/p][/*][*][p]Added sound fx to right click dropping single items,[/p][/*][*][p]Pedestals and Chests should no longer play a building ambient like Slabs do[/p][/*][*][p]Fixed a bug where your action bar count would update incorrectly if swapping between hotkeys,[/p][/*][*][p]Fixed preview for flipped F grippers,[/p][/*][*][p]More defense against that pesky Aura/Spell hex bug,[/p][/*][*][p]Fixed Downpour Bastion research,[/p][/*][*][p]Fixed Brinery research and bonus research visuals,[/p][/*][*][p]Stubbed in Incineration Spire and Downpour Bastion footprints,[/p][/*][*][p]Verdant Streams and Verdant Delta should now join seamlessly with streamways,[/p][/*][*][p]Fixed a variety of typos and old structure names and associated icons[/p][/*][*][p]Fixed Sealed Research presentation on live that broke,[/p][/*][*][p]Fixes for crafting structures losing their hover tips when implementing click transferring,[/p][/*][*][p]Fixed structure mouseover bleed while hovering over UI,[/p][/*][*][p]Fixed Crafting requirements were mismatched on multi-crafts[/p][/*][*][p]Added hardening to intro tutorial sequence grippers sometimes failing. Very hard to repro, if you see this please submit a bug report in game.,[/p][/*][*][p]Fixes for bugged string tokens in the updated research tree,[/p][/*][*][p]Extra tooltip protection for shattered research sometimes showing incorrect information,[/p][/*][*][p]Fix for one of the Crystalline Brambles harvesting for Motes of Life,[/p][/*][*][p]Rampant Bloom now correctly interacts with Coral Pool,[/p][/*][*][p]Verdant Delta fixed in craft window,[/p][/*][*][p]The player should no longer draw behind underground slabs,[/p][/*][*][p]Fixed a bug where a Lava Generator accidentally could choose the wrong side of the barrier and try to flood the Entire World with lava.,[/p][/*][*][p]Fix for reaching gripper not having a sound effect[/p][/*][*][p]Don't allow craft chaining to recipes that must be crafted in a structure.,[/p][/*][*][p]Data fixes for lots of structures,[/p][/*][*][p]Fixes for many Lava Generator bugs,[/p][/*][*][p]Fixes for double item dropping with control click.,[/p][/*][*][p]Fixes around bad belt states when replacing in place.,[/p][/*][*][p]Fixed a bug that could cause Gripper Arcs to render thin,[/p][/*][*][p]Fix for research tips getting stuck on in rare circumstances,[/p][/*][*][p]Fix for research tiles changing positions based on research tree view vs not[/p][/*][*][p]Fixed a bug that could cause power grids to initialize improperly on load for specific structures,[/p][/*][*][p]Improve spellcasting animations. Spells now lock you in place during their animations.,[/p][/*][*][p]Fix spam sound fx when placing an underground belt,[/p][/*][*][p]Rootbound grippers can power themselves when attached to a Rampant Bloom structure.,[/p][/*][*][p]Pedestals now block control clicking if they are currently holding an entity, preventing losing items from spam clicking.,[/p][/*][*][p]Fixed a variety of edges where Pipette can get into a bad state. Please post another bug report if the issue persists.[/p][/*][/list][p][/p]",
+      "key": "3320980::e2a53a3c02fa3e7d88ce4acb16edecd2a40e130c",
+      "tags": [
+        {
+          "feature": "Support for crafting items from action bar when empty, left click for 1 right click for 5"
+        },
+        {
+          "feature": "Added contextual hover tip for action bar with a variety of states and indicators based on what each mouse button will do"
+        },
+        {
+          "feature": "Production Structures now allow for clicking on recipes to transfer items from the player inventory to the input inventory: Click will move one set of ingredients, Shift Click for 5, Ctrl Click for all matching ingredients"
+        },
+        {
+          "feature": "Hand crafting speed is doubled when you have available mana - Added a visual to crafting corner as an indicator"
+        },
+        {
+          "feature": "All Life power structures and combo structures with roots can be built ontop of Mana Roots"
+        },
+        {
+          "feature": "Power outage indicators are now synchronized"
+        },
+        {
+          "feature": "Raw crafting counts now uses ratios with multi-crafts"
+        },
+        {
+          "feature": "Crafting Corner now only shows two rows of crafts"
+        },
+        {
+          "feature": "Riptide pickups now clump a little more to avoid +1 spam"
+        },
+        {
+          "feature": "Feedback from now pauses game when open"
+        },
+        {
+          "feature": "Added more research flavor tips, some are disabled for non-english languages if not yet localized"
+        },
+        {
+          "feature": "Main menu button implemented on Escape Menu"
+        },
+        {
+          "feature": "Action Bar slot will dim and hide count when the matching entity has no items left"
+        },
+        {
+          "feature": "Action bar now matches picked up entity with a highlight"
+        },
+        {
+          "balance_change": "Testing size 1 Output inventory to encourage more logistical play rather than pooling play. - please give feedback on this!"
+        },
+        {
+          "balance_change": "Game-wide research cost tuning, most focused on early game pacing and shoring up late game consistency."
+        },
+        {
+          "balance_change": "Moved Mana Roots to unlock simultaneously with Tree of life research, leaving mana bloom its own research immediately after"
+        },
+        {
+          "balance_change": "Swapped Reach and Rampant bloom in the Life research tree (because roots as a thing to automate streamlines with this better, also unlocks it sooner)"
+        },
+        {
+          "balance_change": "Gust Funnel ingredients now 1 Turbine and 3 Aether for 3 Gust Funnels"
+        },
+        {
+          "balance_change": "Swapped the order of tutorial 6's gripper/collector beats for better flow"
+        },
+        {
+          "balance_change": "Research tuning: second arm of research now adds instead of replaces Aether."
+        },
+        {
+          "balance_change": "Earth Might (Earth grippers pick up 2 things) upgrade moved to tier 1"
+        },
+        {
+          "feature": "Air grippers can be flipped with F, this will be locked behind tech later, but for now enjoy!"
+        },
+        {
+          "feature": "Art updates for: Earth chests, Wave Wright, Luminarium, Pyrolyzer, Cinder Collector, Sovereign Manaheart, Tide Collector"
+        },
+        {
+          "feature": "Added Fractured Research as a means to create stubs for unimplemented tech without breaking immersion"
+        },
+        {
+          "feature": "Research line grooves are a little clearer"
+        },
+        {
+          "feature": "Two new Air music tracks have been added "
+        },
+        {
+          "feature": "One new Fire music track has been added "
+        },
+        {
+          "feature": "All three void chests work now and have inventory size 6"
+        },
+        {
+          "feature": "Verdant Stream and Verdant Delta are implemented "
+        },
+        {
+          "feature": "Ancient Chest and Basalt Chest fully functional"
+        },
+        {
+          "bug": "Last Crafted should now be saved in save games to support Alt mode consistency"
+        },
+        {
+          "bug": "F should now be able to pick up from undergrounds,"
+        },
+        {
+          "bug": "Fixes for bad colliders near portals that could block harvesting"
+        },
+        {
+          "bug": "Fixed a case where quit context could leave the Spell Hex in a bad state"
+        },
+        {
+          "bug": "Fix for research tree quarry collector huge icon,"
+        },
+        {
+          "bug": "Fix for toast banner blocking structure placement"
+        },
+        {
+          "bug": "Collectors now build their inventories on the fly, matching upgrades and fixing their UI when Arrays are researched"
+        },
+        {
+          "bug": "Undergrounds and Deltas now use insert positions like normal belts do, allowing grippers to place to all segments"
+        },
+        {
+          "bug": "Fixed a bug where action bar would dim in the wrong circumstance,"
+        },
+        {
+          "bug": "Research colors for Altars and Pedestals cleaned up for each element and combo,"
+        },
+        {
+          "bug": "Fixes for save and load menu localization button sizes,"
+        },
+        {
+          "bug": "Fix for visual bugs in the preview when merging two power grids,"
+        },
+        {
+          "bug": "Added sound fx to right click dropping single items,"
+        },
+        {
+          "bug": "Pedestals and Chests should no longer play a building ambient like Slabs do"
+        },
+        {
+          "bug": "Fixed a bug where your action bar count would update incorrectly if swapping between hotkeys,"
+        },
+        {
+          "bug": "Fixed preview for flipped F grippers,"
+        },
+        {
+          "bug": "More defense against that pesky Aura/Spell hex bug,"
+        },
+        {
+          "bug": "Fixed Downpour Bastion research,"
+        },
+        {
+          "bug": "Fixed Brinery research and bonus research visuals,"
+        },
+        {
+          "bug": "Stubbed in Incineration Spire and Downpour Bastion footprints,"
+        },
+        {
+          "bug": "Verdant Streams and Verdant Delta should now join seamlessly with streamways,"
+        },
+        {
+          "bug": "Fixed a variety of typos and old structure names and associated icons"
+        },
+        {
+          "bug": "Fixed Sealed Research presentation on live that broke,"
+        },
+        {
+          "bug": "Fixes for crafting structures losing their hover tips when implementing click transferring,"
+        },
+        {
+          "bug": "Fixed structure mouseover bleed while hovering over UI,"
+        },
+        {
+          "bug": "Fixed Crafting requirements were mismatched on multi-crafts"
+        },
+        {
+          "bug": "Added hardening to intro tutorial sequence grippers sometimes failing. Very hard to repro, if you see this please submit a bug report in game.,"
+        },
+        {
+          "bug": "Fixes for bugged string tokens in the updated research tree,"
+        },
+        {
+          "bug": "Extra tooltip protection for shattered research sometimes showing incorrect information,"
+        },
+        {
+          "bug": "Fix for one of the Crystalline Brambles harvesting for Motes of Life,"
+        },
+        {
+          "bug": "Rampant Bloom now correctly interacts with Coral Pool,"
+        },
+        {
+          "bug": "Verdant Delta fixed in craft window,"
+        },
+        {
+          "bug": "The player should no longer draw behind underground slabs,"
+        },
+        {
+          "bug": "Fixed a bug where a Lava Generator accidentally could choose the wrong side of the barrier and try to flood the Entire World with lava.,"
+        },
+        {
+          "bug": "Fix for reaching gripper not having a sound effect"
+        },
+        {
+          "bug": "Don't allow craft chaining to recipes that must be crafted in a structure.,"
+        },
+        {
+          "bug": "Data fixes for lots of structures,"
+        },
+        {
+          "bug": "Fixes for many Lava Generator bugs,"
+        },
+        {
+          "bug": "Fixes for double item dropping with control click.,"
+        },
+        {
+          "bug": "Fixes around bad belt states when replacing in place.,"
+        },
+        {
+          "bug": "Fixed a bug that could cause Gripper Arcs to render thin,"
+        },
+        {
+          "bug": "Fix for research tips getting stuck on in rare circumstances,"
+        },
+        {
+          "bug": "Fix for research tiles changing positions based on research tree view vs not"
+        },
+        {
+          "bug": "Fixed a bug that could cause power grids to initialize improperly on load for specific structures,"
+        },
+        {
+          "bug": "Improve spellcasting animations. Spells now lock you in place during their animations.,"
+        },
+        {
+          "bug": "Fix spam sound fx when placing an underground belt,"
+        },
+        {
+          "bug": "Rootbound grippers can power themselves when attached to a Rampant Bloom structure.,"
+        },
+        {
+          "bug": "Pedestals now block control clicking if they are currently holding an entity, preventing losing items from spam clicking.,"
+        },
+        {
+          "bug": "Fixed a variety of edges where Pipette can get into a bad state. Please post another bug report if the issue persists."
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #11 \u2013 The Winding Road",
+      "date": "2025-06-16 17:55:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289703439",
+      "content": "[h2][b]MoteMancer enters Early Access on July 14th[/b]  [/h2][h2][i]as part of Automation Fest![/i][/h2][p]This week marks a big milestone: what began as a solo project, scribbled together from FX tricks and a healthy dose of mathemagic, has grown from a passion project into a full-fledged experience \u2014 with dozens of hours of brain-bending gameplay.[/p][img src=\"{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png\"][/img][h3]\ud83c\udf3f Looking Back, and Forward[/h3][p]Next Fest just wrapped, and I can't help but take a moment to look back at where this all began. MoteMancer started as a solo project just because I loved the genre and wanted to learn C#. I think it's important to continually remind players and aspiring developers that everything starts with humble beginnings, and one of my personal goals has always been to inspire future creators and dreamers as I have been inspired. [/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/0d368dc51025dfd4c985463a0c01d9ab6e435ed2.png\"][/img][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png\"][/img][/p][p][/p][h3]\ud83d\udca1Continued Creativity[/h3][p]If you missed the streams, check out the replays: [url=\"https://www.youtube.com/watch?v=IkP4f8RXgRs\"]\\[Day 1][/url], [url=\"https://www.youtube.com/watch?v=iV8xTkbScjU\"]\\[Day 2][/url], [url=\"https://www.youtube.com/watch?v=Vdn6ceOJ628\"]\\[Day 3][/url], [url=\"https://www.youtube.com/watch?v=W6L87Yuy-xc\"]\\[Day 4][/url].[/p][p]My favorite day by far was showcasing the clever and creative builds dreamt up by the community. MoteMancer is a sandbox with rare rules, encouraging you to think sideways (sometimes literally) and challenge your sense of efficiency and aesthetics consistently. [/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/f3bd409481a47a61abf5364002be584efa1eb542.png\"][/img][/p][p]Beyond in-game builds themselves, the community has also contributed some of the best new ideas and features to MoteMancer, notably [b]Rampant Bloom[/b] and [b]Charged Lodestone[/b] were born directly from community feedback. [/p][p]If that\u2019s any indication of what\u2019s to come, we\u2019re in good hands.[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png\"][/img][/p][p][/p][h3]\ud83e\uddea What Comes Next[/h3][p]Early Access is just the next chapter. The game is deep, intricate, and full of promise \u2014 but still growing. We\u2019ll continue to fix bugs, add polish, and expand the world with your help. [/p][p]If you haven\u2019t yet: [/p][p]\ud83d\udc49 Play the free demo [/p][p]\ud83d\udc49 Wishlist MoteMancer for July [/p][p]\ud83d\udc49 Join our Discord and be part of the conversation[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45567834/54037ec78f081302d9ae52ac2fe3bb25ea6bc0d7.png\"][/img][/p][p][/p][h3]\ud83c\udf1e Thank You[/h3][p]Seriously \u2014 thank you. For every build shared, bug spotted, suggestion posted, and kind word offered. We\u2019re just getting started. See you July 14th for Early Access \u2014 and a clear roadmap for what lies ahead. [/p][p][/p][p][i]~CyanAvatar[/i][/p]",
+      "key": "3320980::66d357688d3649ef8af88b33c840619039eb76d2",
+      "tags": [
+        {
+          "feature": "Rampant Bloom"
+        },
+        {
+          "feature": "Charged Lodestone"
+        }
+      ]
+    },
+    {
+      "title": "June 5 Hotfixes",
+      "date": "2025-06-06 02:47:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199416298",
+      "content": "[h2]Build v0.1.296[/h2][p]Thanks everyone for posting bugs and feedback, we'll likely drop another patch before Next Fest begins, so anything you think would be great for new players please make sure to share your feedback![/p][p][/p][h3]Features and Tuning[/h3][list][*][p]You can now permanently toggle a local Grid Overlay with G (keybindable)[/p][/*][*][p]Item counts now show on recipes that make multiple things,[/p][/*][*][p]Altar cost cut in half[/p][/*][*][p]Air Grippers are now fully functional (flipping will be implemented later)[/p][/*][*][p]Ichor Slick fully functional[/p][/*][/list][h3]Bug Fixes[/h3][list][*][p]Collectors will no longer draw power while waiting to place a mote[/p][/*][*][p]Fixed - Biorhythm could cause an exception loop if you destroyed a building while it was being powered. [/p][/*][*][p]Riptide and Biorhythm should now show properly on any plane[/p][/*][*][p]Lava barriers are back to fully functional, and should save and load properly, visuals still need updating[/p][/*][*][p]Bunches of research tree cleanup[/p][/*][/list][p][/p]",
+      "key": "3320980::cf39d33e19262563dff482b465b328517e290d34",
+      "tags": [
+        {
+          "feature": "You can now permanently toggle a local Grid Overlay with G (keybindable)"
+        },
+        {
+          "feature": "Item counts now show on recipes that make multiple things,"
+        },
+        {
+          "balance_change": "Altar cost cut in half"
+        },
+        {
+          "feature": "Air Grippers are now fully functional (flipping will be implemented later)"
+        },
+        {
+          "feature": "Ichor Slick fully functional"
+        },
+        {
+          "bug": "Collectors will no longer draw power while waiting to place a mote"
+        },
+        {
+          "bug": "Fixed - Biorhythm could cause an exception loop if you destroyed a building while it was being powered."
+        },
+        {
+          "bug": "Riptide and Biorhythm should now show properly on any plane"
+        },
+        {
+          "bug": "Lava barriers are back to fully functional, and should save and load properly, visuals still need updating"
+        },
+        {
+          "bug": "Bunches of research tree cleanup"
+        }
+      ]
+    },
+    {
+      "title": "June 3 Hotfixes",
+      "date": "2025-06-03 05:09:20",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756467785",
+      "content": "[h3]v0.1.291[/h3]\n\n[h2][b]Tuning and Features[/b][/h2]\n[list]\n[*] Rampant Bloom now also works on Collectors in addition to Production Structures.\n[*] Earth Gripper multi-pickup research is now functional.\n\n[/list]\n[b][h2]Bug Fixes & Perf[/h2][/b]\n[list]\n[*] Tooltips should no longer extend off screen for any resolution or in any language, please report with your language/resolution if issues persist.\n[*] Underground belts should cleanly be able to replace above ground belts now.\n[*] You should no longer be able to accidentally harvest a Structure while in the Research Tree.\n[*] Pipette functionality should be more stable now.\n[*] Prevents spells from being able to be bound before they are unlocked.\n[*] Fixed a bug that could cause Swiftstone speed buff to not work.\n[*] Improved performance around crafting and inventory actions.\n[/list]\n\nThanks everyone for your help making MoteMancer better. Keep those feedback and bug reports coming!\n\n~CyanAvatar",
+      "key": "3320980::9dc9602aaf4199aed5c3d0c90bd1b76143208011",
+      "tags": [
+        {
+          "balance_change": "[*] Rampant Bloom now also works on Collectors in addition to Production Structures."
+        },
+        {
+          "feature": "[*] Earth Gripper multi-pickup research is now functional."
+        },
+        {
+          "bug": "[*] Tooltips should no longer extend off screen for any resolution or in any language, please report with your language/resolution if issues persist."
+        },
+        {
+          "bug": "[*] Underground belts should cleanly be able to replace above ground belts now."
+        },
+        {
+          "bug": "[*] You should no longer be able to accidentally harvest a Structure while in the Research Tree."
+        },
+        {
+          "bug": "[*] Pipette functionality should be more stable now."
+        },
+        {
+          "bug": "[*] Prevents spells from being able to be bound before they are unlocked."
+        },
+        {
+          "bug": "[*] Fixed a bug that could cause Swiftstone speed buff to not work."
+        },
+        {
+          "bug": "[*] Improved performance around crafting and inventory actions."
+        }
+      ]
+    },
+    {
+      "title": "June 2 Hotfixes",
+      "date": "2025-06-02 04:20:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756433614",
+      "content": "[h2]Quality of Life for Belts & more[/h2]\nMany players have expressed that dragging out Salt Slabs and Streamways can be difficult on a hex grid, so there is now a toggle between Freeform and Locked Mode. MoteMancer is a very organic game, and Freeform mode lends itself to twists and bends that are uniquely available in a hex grid, but if you need precision, Locked mode is now there for you.\n\n[h3]v0.1.290[/h3]\n\n[b][h3]QOL[/h3][/b]\n* Halved harvest time for belts, grippers, collectors, paths, lights, Life Power structures, and environmental structures.\n* There is now a Placement Mode toggle for placing Slabs and Streamways (belts), use CTRL to switch between Locked and Freeform.  \n* Improved belt preview visualization. More to do, but a good chunk of improvement.\n* Feedback form now closes escape menu for better screenshots of the game state.\n\n[b][h3]Localization[/h3][/b]\n* Fixes for power window localization and strings.\n* Added localization for base elements.\n* Fixes for portal window localization and strings.\n* Updated all localization for all tutorial banners, spacing and formatting.\n\n[b][h3]Bug Fixes[/h3][/b]\n* Open Air tile math is now correct in the Power pane.\n* Fixed many bugs around tutorial banner popups.\n\n\nWe're fast approaching Next Fest, please continue to post bugs and feedback so we can share MoteMancer with many more future alchemists! \n\n~CyanAvatar\ud83c\udf3f",
+      "key": "3320980::6b2a194fb162d9ff5365543ba436cc9c7e1a3f2c",
+      "tags": [
+        {
+          "feature": "There is now a Placement Mode toggle for placing Slabs and Streamways (belts), use CTRL to switch between Locked and Freeform."
+        },
+        {
+          "feature": "Improved belt preview visualization. More to do, but a good chunk of improvement."
+        },
+        {
+          "bug": "Fixes for power window localization and strings."
+        },
+        {
+          "feature": "Added localization for base elements."
+        },
+        {
+          "bug": "Fixes for portal window localization and strings."
+        },
+        {
+          "bug": "Updated all localization for all tutorial banners, spacing and formatting."
+        },
+        {
+          "bug": "Open Air tile math is now correct in the Power pane."
+        },
+        {
+          "bug": "Fixed many bugs around tutorial banner popups."
+        }
+      ]
+    },
+    {
+      "title": "May 29 Hotfixes",
+      "date": "2025-05-30 06:14:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756340226",
+      "content": "[h2]Sanding Down the Spikes[/h2]\nThanks for the great feedback! Today's patch tackles tutorial pacing, adds some polish, and squashes a few elusive bugs.\n\n[h3]v0.1.281[/h3]\n\n[h3][b]Pacing & Tutorials[/b][/h3]\n[list]\n[*] Added an intro reminder flow banner to help players who get stuck in the Library\n[*] Added a chest sprite to intro dialogue for clearer direction\n[*] Removed the objective to craft 10 Salt Prisms in a Grindstone\u2014testing if this improves early clarity\n[*] New onboarding flow for first-time Research usage\n[*] Tutorial Research objectives with exactly 1 unlock now track progress properly\n[/list]\n\n[h3][b]Quality of Life[/b][/h3]\n[list]\n[*] Using an action bar button while holding a matching item will now clear the held item\n[*] Grippers can now be plucked with Ctrl\n[/list]\n\n[h3][b]Localization[/b][/h3]\n[list]\n[*] Riptide\u2019s description is now localized\n[*] Added localization for several error messages\n[*] Hover texts should now be fully localized\n[/list]\n\n[h3][b]Bug Fixes[/b][/h3]\n[list]\n[*] Fixed structure audio restarting when re-clicking the same building\n[*] Addressed race conditions in Dialogue that could cause a crash\n[*] Fixed Seismic Flare visuals getting orphaned if the Mana Flare was destroyed quickly\n[*] Fixed an issue where descending from Levitate could leave the spell wheel in a bad state\n[/list]\n\nMore pacing and polish updates are in the works, please post any bugs you run into - thanks for helping shape the journey! \ud83e\uddea\u2728",
+      "key": "3320980::40dca0e4243dbcc8271dc642ae7c5533e40c16a2",
+      "tags": [
+        {
+          "feature": "Added an intro reminder flow banner to help players who get stuck in the Library"
+        },
+        {
+          "feature": "Added a chest sprite to intro dialogue for clearer direction"
+        },
+        {
+          "feature": "New onboarding flow for first-time Research usage"
+        },
+        {
+          "feature": "Tutorial Research objectives with exactly 1 unlock now track progress properly"
+        },
+        {
+          "feature": "Using an action bar button while holding a matching item will now clear the held item"
+        },
+        {
+          "feature": "Grippers can now be plucked with Ctrl"
+        },
+        {
+          "bug": "Fixed structure audio restarting when re-clicking the same building"
+        },
+        {
+          "bug": "Addressed race conditions in Dialogue that could cause a crash"
+        },
+        {
+          "bug": "Fixed Seismic Flare visuals getting orphaned if the Mana Flare was destroyed quickly"
+        },
+        {
+          "bug": "Fixed an issue where descending from Levitate could leave the spell wheel in a bad state"
+        }
+      ]
+    },
+    {
+      "title": "May 28 Hotfixes",
+      "date": "2025-05-29 05:44:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756306384",
+      "content": "[h2]More fixes today, thanks for all the feedback![/h2]\n\n[h3]v0.1.276[/h3]\n\n[h3][b]QOL[/b][/h3]\n[list]\n[*] In-world Ctrl click functionality for Chest, Production, and Pedestal Structures\n[*] Pipette now works on Mana Flare\n[*] Quarry Collector will collect Motes of Water for now, this may change in the future\n[/list]\n[h3][b]Performance & Bugs[/b][/h3]\n[list]\n[*] Improved Entropy performance significantly\n[*] Improved post-processing performance significantly\n[*] Fixed a variety of tokens in tooltips\n[*] Entropy full screen effect should no longer appear when in the research tree\n[*] Fixed a bug where Tutorial Corner could inadvertently block clicks\n[*] Hide the Transfer Tutorial if the player closes the structure window while its up.\n[*] Fixed a bug that would cause Mystical Agriculture to not work, polished visuals a tad.\n[/list]\n\nMore fixes tomorrow! \u2728",
+      "key": "3320980::5cc0f4f121e8c6652c822734e2f291043206de7f",
+      "tags": [
+        {
+          "feature": "In-world Ctrl click functionality for Chest, Production, and Pedestal Structures"
+        },
+        {
+          "feature": "Pipette now works on Mana Flare"
+        },
+        {
+          "feature": "Quarry Collector will collect Motes of Water for now, this may change in the future"
+        },
+        {
+          "bug": "Fixed a variety of tokens in tooltips"
+        },
+        {
+          "bug": "Entropy full screen effect should no longer appear when in the research tree"
+        },
+        {
+          "bug": "Fixed a bug where Tutorial Corner could inadvertently block clicks"
+        },
+        {
+          "bug": "Hide the Transfer Tutorial if the player closes the structure window while its up."
+        },
+        {
+          "bug": "Fixed a bug that would cause Mystical Agriculture to not work, polished visuals a tad."
+        }
+      ]
+    },
+    {
+      "title": "May 27 Hotfixes",
+      "date": "2025-05-28 03:01:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756269769",
+      "content": "[h2]Thanks to everyone who jumped in on day one![/h2]\nWe\u2019ve patched several bugs that blocked progress in the early game\u2014especially in non-English languages.\n\nPatch v0.1.271\n[list]\n[*] Fixed an issue where some languages broke dialogue and halted the intro progression.\n[*] Intro dialogue should now stay inside the dialogue box in all languages.\n[*] Fixed an issue that could cause Social buttons to break.\n[*] Various localization bugs fixed\u2014especially frame overflow during the intro.\n[*] Language selection now persists between sessions.\n[*] Tutorial corner now updates instantly when changing language.\n[*] Fixed missing Aether and Salt sprites in the book dialogue.\n[*] Removed the \u201cDisable Tutorials\u201d menu option for the demo.\n[*] Found and fixed a variety of ways to fall out of intro tutorial sequence order.\n[*] Added more visual cues to support early tutorial beats.\n[/list]\n\nPlease keep the feedback and bug reports coming\u2014they're incredibly helpful at this stage. Many issues are simple oversights that only surface once real players get their hands on the game. Our team is small, and your support means the world.\ud83c\udf3f\n",
+      "key": "3320980::35f03dc945a00d27897b8097ed4b0ac33897ec6d",
+      "tags": [
+        {
+          "bug": "[*] Fixed an issue where some languages broke dialogue and halted the intro progression."
+        },
+        {
+          "bug": "[*] Intro dialogue should now stay inside the dialogue box in all languages."
+        },
+        {
+          "bug": "[*] Fixed an issue that could cause Social buttons to break."
+        },
+        {
+          "bug": "[*] Various localization bugs fixed\u2014especially frame overflow during the intro."
+        },
+        {
+          "bug": "[*] Language selection now persists between sessions."
+        },
+        {
+          "bug": "[*] Tutorial corner now updates instantly when changing language."
+        },
+        {
+          "bug": "[*] Fixed missing Aether and Salt sprites in the book dialogue."
+        },
+        {
+          "bug": "[*] Found and fixed a variety of ways to fall out of intro tutorial sequence order."
+        },
+        {
+          "feature": "[*] Added more visual cues to support early tutorial beats."
+        }
+      ]
+    },
+    {
+      "title": "Monday Musings #7 \u2013 Blooming Community",
+      "date": "2025-05-19 17:50:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799817379608654",
+      "content": "Designing a fantasy factory game means walking a careful line: we want MoteMancer to feel unique, but not unfamiliar. And this week, we\u2019re celebrating one of the best parts of development \u2014 [b]feedback that helps the game bloom.[/b]\n\n[h3]\ud83c\udf3f The Challenge: Early Power Puzzles[/h3]\n\nIn MoteMancer, Life power spreads through a living network of [b]Mana Roots[/b] and [b]Mana Blooms[/b] \u2014 a branching, organic system instead of traditional power poles. That\u2019s by design. We want power to feel like something you grow.\n\nBut after chatting with some of our early testers, a pattern emerged:\n[list]\n[*] New players felt confused or limited by the lack of \u201ctraditional\u201d power poles.\n[*] [b]Veterans[/b] quickly worked around the system before Mana Bloom even unlocked, making it feel like a tool you didn\u2019t really need anymore.\n[*] The [i]fantasy[/i] of growing a living network was there \u2014 but the [i]timing[/i] was off.\n[/list]\n[img]{STEAM_CLAN_IMAGE}/45567834/f89e8a4087b3ac8f77b3cb423f93d213b7902d75.png[/img]\n\n[h3]\ud83e\uddea The Solution: Community-Nurtured Sprouts[/h3]\n\nSo we talked. We tried things. And we grew into something better. \ud83c\udf38\n\nNow, [b]Mana Bloom unlocks earlier[/b] \u2014 right alongside Mana Roots \u2014 giving you a clearer sense of how these two tools complement each other. Instead of feeling like a late-game patch, Bloom is now part of your foundational power puzzle.\n\nAnd to really bring it to life?\n\n[h3]\ud83c\udf31 New Upgrade: Rampant Bloom[/h3]\n[b]\u201cMana Blooms extend their root network under adjacent Production Structures.\u201d[/b]\n\nThis upgrade changes everything:\n[list]\n[*] Larger structures spread Bloom further.\n[*] You still have to solve logistics, but now with more [i]creative flexibility[/i].\n[*] It enhances Life\u2019s identity \u2014 [i]grow a living, sprawling grid[/i] \u2014 instead of erasing the puzzle with raw range.\n[/list]\nCould we have just made Mana Bloom\u2019s radius bigger? Sure. But that would\u2019ve removed gameplay. This upgrade adds it. \n\n[img]{STEAM_CLAN_IMAGE}/45567834/e7af30493152c940fcbc1b6e240a1f4ab28214e2.jpg[/img]\n\n[h3]\ud83c\udf89 Thank You, Testers[/h3]\n\nA huge shoutout to the testers and players who helped shape this direction. MoteMancer is better because of you. This has already inspired designs that will improve the rest of the game as well!\n\nStay tuned \u2014 the [b]public demo is almost here[/b], and we can\u2019t wait to see the wild ways you grow your power network. \ud83c\udf1e\n\nThanks for reading! See you next Monday for another MoteMancer Musing.\n\n[b]\u2014 The MoteMancer Team[/b]",
+      "key": "3320980::d933337061fec267a285ea6baf64a41c502f5a93",
+      "tags": [
+        {
+          "balance_change": "Now, Mana Bloom unlocks earlier \u2014 right alongside Mana Roots \u2014 giving you a clearer sense of how these two tools complement each other."
+        },
+        {
+          "feature": "\u201cMana Blooms extend their root network under adjacent Production Structures.\u201d"
+        }
+      ]
+    }
+  ]
+}

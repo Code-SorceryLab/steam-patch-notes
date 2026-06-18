@@ -1,0 +1,234 @@
+{
+  "appId": "881520",
+  "count": 6,
+  "notes": [
+    {
+      "title": "Hotfix - v1.7.002 Alpha",
+      "date": "2024-08-13 04:03:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363407917943",
+      "content": "Hello all!\n\nAnother week and another set of fixes! \n\nAppreciate all the help everyone is giving in Discord to find all the bugs and suggest improvements! You all are the best! \u02d0steamhappy\u02d0\n\n[h2]v1.7.002 Release Notes[/h2]\n[list]\n[*] Fixed issues with the confirmation overlay on tower build buttons.\n[*] Add confirmation to the tower sell button.\n[*] Implemented confirmation settings in Options for sell/build/upgrade (build+upgrade share a setting).\n[*] [b]Potential Fix[/b] for Sappers hitting the core unintentionally. They should only collide with cores if there are no towers they can attach to.\n[*] Tweaked rocket projectile rotation - looks better and nerfs accuracy (more changes to come).\n[*] Extended Tower Stats Panel to include unique icons for Credits/Buffs to better display Banker and Buffer towers.\n[*] Enemy shields and core spawn selection now part of the procedural wave system. Now waves should be identical between playthroughs.\n[*] Fixed bug where Profile could be displayed in the Game scene after viewing the Encyclopedia.\n[*] Increased Sword damage by 50% (200->300 damage).\n[*] Added Mutation into the game (similar but different to the system from 1.6 and earlier):\n[list]\n[*] Increases enemy base health dependent on difficulty and wave count.\n[*] Normal: After Wave 25 enemy health will increase by 1% per wave.\n[*] Hard: After Wave 50 enemy health will increase by 2% per wave.\n[*] Nightmare: Mutation is always active and increase enemy health by 3% per wave.\n[*] Added icon that appears in the Game scene once Mutation becomes active and displays the current modifier.[/list][/list]\n\n[img]{STEAM_CLAN_IMAGE}/32968733/d96d5c4789851891be75f7c132cbee96e61c11ff.png[/img]\n\n[h2]Fixing Saves from 1.7.000[/h2]\n[list]\n[*] Navigate to the Steam install folder (ex: C:\\Program Files (x86)\\Steam\\steamapps\\common\\Geometry Defense Infinite\\)\n[*] Depending on the platform you may see something different. On Windows 64-bit you will now see two data folders:\n[list]\n[*] GeometryDefense_Data <- old data\n[*] GeometryDefense_x64_Data <- new data\n[*] In the old data folder the saves will be found in the \"saves\" folder with structure like:\n[list]\n[*] saves\n[list]\n[*] Profile Name <- folder ex: \"Zebec Games\"\n[list]\n[*] player.save <- the save file has a generic name[/list][/list][/list]\n[*] In the new data folder (GeometryDefense_x64_Data) you will see (or need to create if it doesn't exist):\n[list][*] savesDir <- move the player.save filer to here and rename it to the profile name (ex: Zebec Games.save)  [/list][/list][/list]\nSorry for the inconvience - will continue to try to avoid this issue in the future but cannot guarantee it. Good luck and reach out in Discord for help if you get stuck!\n\nThanks!",
+      "key": "881520::0d826de5d291496efc889899e88b59798a427edc",
+      "tags": [
+        {
+          "bug": "[*] Fixed issues with the confirmation overlay on tower build buttons."
+        },
+        {
+          "feature": "[*] Add confirmation to the tower sell button."
+        },
+        {
+          "feature": "[*] Implemented confirmation settings in Options for sell/build/upgrade (build+upgrade share a setting)."
+        },
+        {
+          "bug": "[*] [b]Potential Fix[/b] for Sappers hitting the core unintentionally. They should only collide with cores if there are no towers they can attach to."
+        },
+        {
+          "balance_change": "[*] Tweaked rocket projectile rotation - looks better and nerfs accuracy (more changes to come)."
+        },
+        {
+          "feature": "[*] Extended Tower Stats Panel to include unique icons for Credits/Buffs to better display Banker and Buffer towers."
+        },
+        {
+          "feature": "[*] Enemy shields and core spawn selection now part of the procedural wave system. Now waves should be identical between playthroughs."
+        },
+        {
+          "bug": "[*] Fixed bug where Profile could be displayed in the Game scene after viewing the Encyclopedia."
+        },
+        {
+          "balance_change": "[*] Increased Sword damage by 50% (200->300 damage)."
+        },
+        {
+          "feature": "[*] Added Mutation into the game (similar but different to the system from 1.6 and earlier):"
+        },
+        {
+          "feature": "[*] Increases enemy base health dependent on difficulty and wave count."
+        },
+        {
+          "balance_change": "[*] Normal: After Wave 25 enemy health will increase by 1% per wave."
+        },
+        {
+          "balance_change": "[*] Hard: After Wave 50 enemy health will increase by 2% per wave."
+        },
+        {
+          "balance_change": "[*] Nightmare: Mutation is always active and increase enemy health by 3% per wave."
+        },
+        {
+          "feature": "[*] Added icon that appears in the Game scene once Mutation becomes active and displays the current modifier."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix - v1.7.001 Alpha",
+      "date": "2024-08-07 03:03:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363385898977",
+      "content": "Hello all!\n\nPushed a quick fix with some critical fixes. Unfortunately, due to changes to the save structure saves will be lost. Follow the instructions at the end of the article to attempt to recover your save.\n\nSpecial shout out to those in Discord helping to test and find all the bugs: Kasen, Sgt. Badass, kivalier, vic32768, and others! Thank you! \u02d0steamthumbsup\u02d0\n\n[h2]v1.7.001 Release Notes[/h2]\n[list]\n[*] Fixed incorrect stats displayed in the upgrade card when building towers.\n[*] Fixed music missing from Main scene when first loading the game.\n[*] Fixed a variety of issues with creating saves + research loss bug. It is best to start with a fresh save but see the end of this article for instructions for manually fixing your save.\n[*] No longer should see multiple launch options on Windows.\n[*] Fixed Saturn-1 difficulty and rewards.\n[*] Fixed profile Stars+Research Points overlapping in some cases.\n[*] Fixed profile widget not updating Research points correctly.\n[*] Fixed Wave 2x Speed toggle button from getting de-synced.\n[*] Fixed Tile picking breaking on certain procedural maps.\n[*] Fixed issues with certain procedural levels from working correctly (Earth-5, Jupiter-6, Mars-2).\n[*] Mana regen and Banker should no longer generate resources before starting the first wave - sorry no more easy bucks :(\n[*] Added disclaimer to alpha to warn players of the risk of playing an untested and unstable build.\n[*] Tweaked intensity of bloom based on overall luminosity of the level.\n[/list]\n\n[h2]Fixing Saves from 1.7.000[/h2]\n[list]\n[*] Navigate to the Steam install folder (ex: C:\\Program Files (x86)\\Steam\\steamapps\\common\\Geometry Defense Infinite\\)\n[*] Depending on the platform you may see something different. On Windows 64-bit you will now see two data folders:\n[list]\n[*] GeometryDefense_Data <- old data\n[*] GeometryDefense_x64_Data <- new data\n[*] In the old data folder the saves will be found in the \"saves\" folder with structure like:\n[list]\n[*] saves\n[list]\n[*] Profile Name <- folder ex: \"Zebec Games\"\n[list]\n[*] player.save <- the save file has a generic name[/list][/list][/list]\n[*] In the new data folder (GeometryDefense_x64_Data) you will see (or need to create if it doesn't exist):\n[list][*] savesDir <- move the player.save filer to here and rename it to the profile name (ex: Zebec Games.save)  [/list][/list][/list]\nSorry for the inconvience - will continue to try to avoid this issue in the future but cannot guarantee it. Good luck and reach out in Discord for help if you get stuck!\n\nThanks!",
+      "key": "881520::9134990910d577cb3a260e10e942284603b55960",
+      "tags": [
+        {
+          "bug": "[*] Fixed incorrect stats displayed in the upgrade card when building towers."
+        },
+        {
+          "bug": "[*] Fixed music missing from Main scene when first loading the game."
+        },
+        {
+          "bug": "[*] Fixed a variety of issues with creating saves + research loss bug. It is best to start with a fresh save but see the end of this article for instructions for manually fixing your save."
+        },
+        {
+          "bug": "[*] No longer should see multiple launch options on Windows."
+        },
+        {
+          "bug": "[*] Fixed Saturn-1 difficulty and rewards."
+        },
+        {
+          "bug": "[*] Fixed profile Stars+Research Points overlapping in some cases."
+        },
+        {
+          "bug": "[*] Fixed profile widget not updating Research points correctly."
+        },
+        {
+          "bug": "[*] Fixed Wave 2x Speed toggle button from getting de-synced."
+        },
+        {
+          "bug": "[*] Fixed Tile picking breaking on certain procedural maps."
+        },
+        {
+          "bug": "[*] Fixed issues with certain procedural levels from working correctly (Earth-5, Jupiter-6, Mars-2)."
+        },
+        {
+          "balance_change": "[*] Mana regen and Banker should no longer generate resources before starting the first wave - sorry no more easy bucks :("
+        },
+        {
+          "feature": "[*] Added disclaimer to alpha to warn players of the risk of playing an untested and unstable build."
+        },
+        {
+          "balance_change": "[*] Tweaked intensity of bloom based on overall luminosity of the level."
+        }
+      ]
+    },
+    {
+      "title": "Tower Defense Fest, 1.7 Alpha, and the Future of Geometry Defense!",
+      "date": "2024-08-03 22:59:18",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728344523115",
+      "content": "[quote=ZebecGames] [h3]First off - It's been a while and I am glad you are here and still holding out! I think 2024 will be the year this thing finally goes live. I appreciate all the support you've given me over the years. [b]Thank you all![/b][/h3] - Jacob [/quote]\n\n[img]{STEAM_CLAN_IMAGE}/32968733/b74c1ab937a369a19c13d925cdc532799758fb5b.png[/img]\n\n[expand type=details expanded=false]\n[list]\n[*] If you haven't noticed Geometry Defense is participating in Tower Defense Fest and is on sale! \n[*] [h3] While it is recommended to wishlist the game until it is ready... the base price of the game will be increasing in the near future in anticipation of the exit from Early Access.[/h3]\n[*] Current expectations are to get 1.7 out of alpha and Geometry Defense as a whole out of Early Access in Q3 of this year - if not before 2025.\n[/list][/expand]\n\n[img]{STEAM_CLAN_IMAGE}/32968733/ea9ceceea2cf876f98b99736fcf70fe89d543dd8.png[/img]\n\n[expand type=details expanded=false]\n[list]\n[*] A bit rough around the edges and a true ALPHA the current 1.7 build has been uploaded to the \"beta\" branch!\n[*] To participate:\n[olist]\n[*] Right-click and select Properties on the game in your Steam Library\n[*] Go to the Betas tab\n[*] Switch from \"None\" to \"alpha1.7.000 - alpha 1.7.000\"[/olist]\n[*] Below you can find a rough plan for how this alpha will be approached.\n[*] There are many more details and changes along the way than what is captured here but these are the headlines.\n[*] Future plans are best intentions and highly dependent on the success of 1.7 and overall motivation to develop the game further.\n[/list]\n[img]{STEAM_CLAN_IMAGE}/32968733/2a229a80546475ec1d835938ee79d2a58614a72a.png[/img]\n\n[img]{STEAM_CLAN_IMAGE}/32968733/dffdd0ba88637d5a1a724631f29eddd309767246.png[/img]\n[img]{STEAM_CLAN_IMAGE}/32968733/fb8bf1dd0c31f40cf2dd62027709d0ace7da02cc.png[/img]\n[img]{STEAM_CLAN_IMAGE}/32968733/0c16693363a78ad52386953bd8cf5f8f19f9461c.png[/img]\n[img]{STEAM_CLAN_IMAGE}/32968733/d7743889d856ef60c6be28128c980142f752ce8d.png[/img][/expand]\n\n[img]{STEAM_CLAN_IMAGE}/32968733/6fe234c8eaebfa9fe52ea07b7bf83b5bbb99cf22.png[/img]\n\nhttps://store.steampowered.com/app/881520/Geometry_Defense_Infinite/",
+      "key": "881520::7c1ea6a7efd4590adfaf3079ff01f5862a31b6f9",
+      "tags": [
+        {
+          "feature": "[h3] While it is recommended to wishlist the game until it is ready... the base price of the game will be increasing in the near future in anticipation of the exit from Early Access.[/h3]"
+        }
+      ]
+    },
+    {
+      "title": "Geometry Defense 1.7 Plans & Status",
+      "date": "2020-10-06 01:53:53",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3807188575865912872",
+      "content": "[img]{STEAM_CLAN_IMAGE}/32968733/ee10624ef8da80aefc613405cde414f29ced77df.gif[/img][h2]Quick Update[/h2]\n\nHi everyone!\n\nNot sure if anyone is still around but I want to give an update on what's going on with the game.\n\nWhere have I been? Well the short of it is that I have been MIA for some time but now I am back. The slightly longer answer is that I was only able to give my games focus before since I was working on them full-time. The last 1.5yrs I have been working a normal job and dealing with other life events. I have never given up on this game though.\n\nThe goal is to see a complete Geometry Defense launch before the end of 2020. The first step towards that goal is update 1.7 coming November - this will end up being one of the biggest updates ever to the game.\n\nThings you'll see in 1.7:\n[list]\n[*]2 new enemy types.\n[*]2 new bosses.\n[*]2 new towers.\n[*]All new animations.\n[*]Enhanced effects.\n[*]Unlockable Endless mode options.\n[*]Procedural map generator.\n[*]Procedurally generated Campaign maps with new \"mini-boss\" mechanic.\n[*]Completely re-balanced game.\n[/list]\n\nI highly encourage everyone to check the [url=https://trello.com/b/RSkyY1as/geometry-defense]Trello/Roadmap[/url] page for current status and what is planned.\n\nFor those of you interested in providing feedback, seeing more details, or want to engage with other members of the community [url=https://discord.gg/3cptFMB]the Discord server is really the best place[/url]. It has been challenging to keep up with every platform with my limited time so 90% of my effort is going into Discord.\n\n[h2]Summary[/h2]\n[list]\n[*]I am back!\n[*]1.7 in November\n[*]Exiting EA before 2021\n[*]Roadmap: [url=https://trello.com/b/RSkyY1as/geometry-defense]https://trello.com/b/RSkyY1as/geometry-defense[/url]\n[*]Discord for all the stuff: [url=https://discord.gg/3cptFMB]https://discord.gg/3cptFMB[/url]\n[/list]\n\n[h3]Stay tuned! Thanks everyone![/h3]\n",
+      "key": "881520::1868399fbe8c16b3d9d54627e78f37eeb37517f0",
+      "tags": [
+        {
+          "feature": "2 new enemy types."
+        },
+        {
+          "feature": "2 new bosses."
+        },
+        {
+          "feature": "2 new towers."
+        },
+        {
+          "feature": "All new animations."
+        },
+        {
+          "feature": "Enhanced effects."
+        },
+        {
+          "feature": "Unlockable Endless mode options."
+        },
+        {
+          "feature": "Procedural map generator."
+        },
+        {
+          "feature": "Procedurally generated Campaign maps with new \"mini-boss\" mechanic."
+        },
+        {
+          "balance_change": "Completely re-balanced game."
+        }
+      ]
+    },
+    {
+      "title": "Geometry Defense Update v1.6.007",
+      "date": "2018-11-15 03:09:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163913241052",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/32968733/135a769d8fc33ec44959e721fbd279896ae137bc.png[/img]\r\n\r\nHello all!\r\n\r\nThe main highlight of this patch are tweaks to the save system to avoid data loss. Keep in mind that the game has a single save file that is automatically updated. If you do not exit the game via the main menu you will risk losing progress. This patch now syncs the progress with the save system more often but if the game is closed unexpectedly some progress will be lost.\r\n\r\nI haven't been very active lately but I am working on balancing my time better to ensure a regular cycle of updates.\r\n\r\n[h1]Highlights[/h1]\r\n[list]\r\n[*] Fixed progress loss bug. [i]NOTE: Data loss is still possible if you exit the game using ALT+F4 or by killing the task. The risk has been mitigated with this patch significantly.[/i]\r\n[*] New and improved bloom technique.\r\n[*] Removed machine translated languages.\r\n[*] Fixed bug in secondary damage for Cannon and Rocket Towers.\r\n[*] Minor fixes and tweaks.\r\n[/list]\r\n\r\n[h1]Known Issues[/h1]\r\n[list]\r\n[*] Mac/Linux does not clear the enemy path. Once enabled it stays on until restart. Can no longer reproduce - anyone still seeing this?\r\n[*] Enabling the path when the build menu up will also cause it to become stuck in an enabled state.\r\n[*] Using Fullscreen can have issues when ALT+TAB is used. Typically the resolution will become messed up. This seems to be an engine issue but I am looking for a fix.\r\n[*] Sword ability still not usable via hotkey.\r\n[/list]\r\n\r\n[h1]Next Update Focus[/h1]\r\n[list]\r\n[*] Key re-mapping and option menu enhancements.\r\n[*] Build menu revamp.\r\n[/list]\r\n\r\n[h1]On the Horizon[/h1]\r\n[list]\r\n[*] Sandbox mode/options for Endless mode.\r\n[*] Campaign overhaul.\r\n[*] New enemies and towers.\r\n[/list]",
+      "key": "881520::f7898bf29c2764582d8f18b2542684f8ea5735c4",
+      "tags": [
+        {
+          "bug": "- Fixed progress loss bug."
+        },
+        {
+          "feature": "- New and improved bloom technique."
+        },
+        {
+          "bug": "- Fixed bug in secondary damage for Cannon and Rocket Towers."
+        },
+        {
+          "bug": "- Minor fixes and tweaks."
+        }
+      ]
+    },
+    {
+      "title": "Geometry Defense Update v1.6.006",
+      "date": "2018-07-19 16:58:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2412125660635509446",
+      "content": "Hello all!\r\n\r\nToday marks the drop of the first Steam Early Access patch, v1.6.006. There have been many tweaks to enhance the usability on PC, Mac, and Linux. Take a look below!\r\n\r\n[h1]Highlights[/h1]\r\n[list]\r\n[*]New menu effects for mouse overs.\r\n[*]Fixed various text inconsistencies (tap-> click). [i]I realized I overlooked some instances and will get them in the next update.[/i]\r\n[*]New hotkeys\r\n[olist]\r\n[*]Left Shift to enable speed up.\r\n[*]Left CTRL for showing the enemy path.\r\n[*]Space to Start Waves.\r\n[*]Escape for Pause/Unpause and backing out of some menus.\r\n[*]Q, W, E, A, S, D for controlling tower building.\r\n[*]Arrows can be used to navigate build-able tiles.\r\n[/olist]\r\n[*]Enemy path overlay and 2x speed buttons can now be toggled.\r\n[*]Improved the overall looked of the options menu and fixed numerous resolution issues. [i]NOTE: The game can no longer be scaled in Windowed mode.[/i]\r\n[*]Saved game data is now exported to \"GeometryDefenseSave.dat\" which is located in \"%USERPROFILE%\\AppData\\LocalLow\\Zebec Games\\Geometry Defense\" on Windows.\r\n[/list]\r\n\r\n[h1]Known Issues[/h1]\r\n[list]\r\n[*]Mac/Linux does not clear the enemy path. Once enabled it stays on until restart. [i]Can no longer reproduce - anyone still seeing this?[/i]\r\n[*]Enabling the path when the build menu up will also cause it to become stuck in an enabled state.\r\n[*]Using Fullscreen can have issues when ALT+TAB is used. Typically the resolution will become messed up. This seems to be an engine issue but I am looking for a fix.\r\n[*]Sword ability still not usable via hotkey.\r\n[/list]\r\n\r\n[h1]Next Update Focus[/h1]\r\n[list]\r\n[*]Key re-mapping and option menu enhancements.\r\n[*]Build menu revamp.\r\n[/list]\r\n\r\n[h1]On the Horizon[/h1]\r\n[list]\r\n[*]Sandbox mode/options for Endless mode.\r\n[*]Campaign overhaul.\r\n[*]New enemies and towers.\r\n[/list]",
+      "key": "881520::6a43f977547cc36af96350cab1664cf4d4bb19f6",
+      "tags": [
+        {
+          "feature": "[*]New menu effects for mouse overs."
+        },
+        {
+          "bug": "[*]Fixed various text inconsistencies (tap-> click). [i]I realized I overlooked some instances and will get them in the next update.[/i]"
+        },
+        {
+          "feature": "[*]New hotkeys"
+        },
+        {
+          "feature": "[*]Left Shift to enable speed up."
+        },
+        {
+          "feature": "[*]Left CTRL for showing the enemy path."
+        },
+        {
+          "feature": "[*]Space to Start Waves."
+        },
+        {
+          "feature": "[*]Escape for Pause/Unpause and backing out of some menus."
+        },
+        {
+          "feature": "[*]Q, W, E, A, S, D for controlling tower building."
+        },
+        {
+          "feature": "[*]Arrows can be used to navigate build-able tiles."
+        },
+        {
+          "feature": "[*]Enemy path overlay and 2x speed buttons can now be toggled."
+        },
+        {
+          "feature": "[*]Improved the overall looked of the options menu and fixed numerous resolution issues. [i]NOTE: The game can no longer be scaled in Windowed mode.[/i]"
+        },
+        {
+          "feature": "[*]Saved game data is now exported to \"GeometryDefenseSave.dat\" which is located in \"%USERPROFILE%\\AppData\\LocalLow\\Zebec Games\\Geometry Defense\" on Windows."
+        },
+        {
+          "bug": "[*]Mac/Linux does not clear the enemy path. Once enabled it stays on until restart. [i]Can no longer reproduce - anyone still seeing this?[/i]"
+        },
+        {
+          "bug": "[*]Enabling the path when the build menu up will also cause it to become stuck in an enabled state."
+        },
+        {
+          "bug": "[*]Using Fullscreen can have issues when ALT+TAB is used. Typically the resolution will become messed up. This seems to be an engine issue but I am looking for a fix."
+        },
+        {
+          "bug": "[*]Sword ability still not usable via hotkey."
+        }
+      ]
+    }
+  ]
+}

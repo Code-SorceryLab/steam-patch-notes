@@ -1,0 +1,363 @@
+{
+  "appId": "612880",
+  "count": 13,
+  "notes": [
+    {
+      "title": "Patch for November 19, 2018: NVIDIA Adaptive Shading",
+      "date": "2018-11-19 12:54:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3316234163929162127",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29139006/d738163a6862c90c4be78669c35ba57c452ce50a.jpg[/img]\r\n\r\nA new patch has been deployed to implement NVIDIA Adaptive Shading, improving the performance of Wolfenstein II: The New Colossus. We\u2019ve been working with NVIDIA to make sure the game runs great on NVIDIA RTX hardware. Wolfenstein II: The New Colossus debuts the first implementation of NAS. \r\n\r\nAdditional patch notes:\r\n\r\n[list]\r\n[*] Added support for NVIDIA Adaptive Shading on NVIDIA RTX series GPUs.  (Improves frame rate by dynamically adjusting the shading resolution in different areas of the screen, without affecting fidelity).\r\n[*] Ensured that, on multiple GPU systems, the discrete GPU is preferred over an integrated GPU.\r\n[*] Players can now choose to ignore/suppress warnings when the selected video settings exceed the amount of dedicated VRAM available on the GPU\r\n[*] Fixes for skinning issues on GTX 970\r\n[/list]\r\n\r\n\r\nFor more information, check out the below info from NVIDIA:\r\n\r\nGeForce RTX graphics cards support several new, innovative advanced shading techniques, that enable developers to further improve performance, and do things that were previously impossible. One of these techniques is NVIDIA Adaptive Shading (NAS), formerly known as Content Adaptive Shading (CAS). This adjusts the rate at which portions of the screen are shaded, meaning the GPU has less work to do, boosting performance. Factors like spatial and temporal color coherence are measured each frame, and in areas where detail remains unchanged from frame to frame, such as sky boxes and walls, the shading rate can be lowered in successive frames.\r\n\r\n",
+      "key": "612880::6b066c25ea66e61713d350a56f74f56f62edaa39",
+      "tags": [
+        {
+          "feature": "[*] Added support for NVIDIA Adaptive Shading on NVIDIA RTX series GPUs.  (Improves frame rate by dynamically adjusting the shading resolution in different areas of the screen, without affecting fidelity)."
+        },
+        {
+          "bug": "[*] Ensured that, on multiple GPU systems, the discrete GPU is preferred over an integrated GPU."
+        },
+        {
+          "feature": "[*] Players can now choose to ignore/suppress warnings when the selected video settings exceed the amount of dedicated VRAM available on the GPU"
+        },
+        {
+          "bug": "[*] Fixes for skinning issues on GTX 970"
+        }
+      ]
+    },
+    {
+      "title": "Video Memory Error Hotfix - August 27",
+      "date": "2018-08-27 12:14:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293802029842",
+      "content": "[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29139006/d738163a6862c90c4be78669c35ba57c452ce50a.jpg[/img]\r\n\r\nHey all,\r\n\r\nWe've now pushed live a patch to address an issue that prevented users from closing a video memory error prompt that could appear. The [url=https://steamcommunity.com/app/612880/discussions/0/1735462352492759141/] beta version\t[/url] of this patch was pushed live last week. \r\n\r\n\r\n[i] \"What if I still receive the error?\"[/i]\r\n\r\nIn our most recent patch, we introduced a new warning message to help you know if you have set your graphics settings too high for your card to handle stably. While our hotfix addresses an issue where users were unable to clear the error \u201cThe video driver has run out of dedicated video memory\u201d, although that warning message will still appear when attempting to run the game at settings that require more VRAM than your GPU has available.\r\n\r\nTo see how much VRAM your GPU has, and how much you are trying to use with your current settings, enable \u201cShow Performance Metrics\u201d through the Advanced Video options.\r\n\r\nIf the amount shown in \u201cHeap\u201d (the amount of VRAM the game is using at these settings) is higher than the amount shown in \u201cVRAM\u201d (the amount of memory your GPU has), then \u201cHeap\u201d will show in yellow or red text and you\u2019ll receive the warning message that \u201cThe video driver has run out of dedicated video memory\u201d when you load a level. This may not cause a crash immediately, but will result in degraded performance that can also cause stability issues. We advise against running the game in this state.\r\n\r\nTo avoid seeing the warning message, use one of these methods:\r\n[list]\r\n    [*]To restore default settings that are the most appropriate for the GPU, delete your configuration files located in 'C:\\Users\\[User.Name]\\Saved Games\\Wolfenstein II The New Colossus\\base'.\r\n    [*]Alternatively, change the Video Quality Profile to a lower value in the Video options menu, or reduce the 'Resolution' and 'Image Streaming Quality' settings in the Advanced Video options to reduce your VRAM usage. \r\n    [*]If you are a user of GeForce Experience, you can use it to select the Optimal settings for your Nvidia GPU\r\n[/list]",
+      "key": "612880::98d4c420747d41807c6a187e062e30fe782fa63a",
+      "tags": [
+        {
+          "bug": "we have now pushed live a patch to address an issue that prevented users from closing a video memory error prompt that could appear."
+        },
+        {
+          "bug": "our hotfix addresses an issue where users were unable to clear the error \u201cThe video driver has run out of dedicated video memory\u201d"
+        }
+      ]
+    },
+    {
+      "title": "Video Memory Error - Beta Hotfix (8/24/2018)",
+      "date": "2018-08-24 16:26:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293791822560",
+      "content": "Hey all,\r\n\r\nSince our latest patch, some users have reported the following issue since updating to this week's game update for Wolfenstein II: \u201cThe video driver has run out of dedicated video memory.  Your gameplay will be negatively affected.\u201d We apologize for the inconvenience that this latest patch has caused.\r\n\r\nThis message is appearing when attempting to run the game at higher settings than the GPU can handle. We have put a potential hotfix candidate that fixes the messaging prompts into the Public Beta branch. This hotfix allows players to get past the message on load screens and continue playing the game. However, in order to get the message to stop appearing, you\u2019ll need to lower the graphical settings to an appropriate level that the GPU can handle. You can view your VRAM by enabling \u201cShow Performance Metrics\u201d through the Advanced Video options.\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/29139006/0fa5a52d852d1d3d8058b5c1d1d76375dc46c1ab.jpg[/img]\r\n\r\nIf the heap usage exceeds the amount of VRAM available to the GPU, it won't result in an instant crash but hitching and stuttering in frame rate may be observed, and overtime that may cause crashes during gameplay.\r\n\r\nHow to fix:\r\n\r\n[list]\r\n    [*]The minimum requirements for the game is for the GPU to have least a 4GB of VRAM.\r\n    [*]To restore default settings that are the most appropriate for the GPU, delete your configuration files located in 'C:\\Users\\[User.Name]\\Saved Games\\Wolfenstein II The New Colossus\\base'.\r\n    [*]Alternatively, changing the graphical preset to a lower value in the Video menu or reducing the 'Resolution' and 'Image Streaming Quality' settings in the Advanced Video options can help alleviate strain on the VRAM.\r\n    [*]How to Access Public Beta Branch:\r\n    [*]To access the Beta Branch, right click on Wolfenstein II: The New Colossus in your Steam Library and select 'Properties'. Navigate to the 'BETAS' tab, and select the Public Beta from the drop down list.\r\n[/list]",
+      "key": "612880::8c85875fb40daed1d45bef4571c3bb96336af48c",
+      "tags": [
+        {
+          "bug": "This message is appearing when attempting to run the game at higher settings than the GPU can handle."
+        },
+        {
+          "bug": "We have put a potential hotfix candidate that fixes the messaging prompts into the Public Beta branch."
+        },
+        {
+          "bug": "If the heap usage exceeds the amount of VRAM available to the GPU, it won't result in an instant crash but hitching and stuttering in frame rate may be observed, and overtime that may cause crashes during gameplay."
+        }
+      ]
+    },
+    {
+      "title": "New Wolfenstein II Patch: August 22, 2018",
+      "date": "2018-08-22 13:03:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2444779293784084474",
+      "content": "Hey all,\r\n\r\nWe've deployed a new update that will resolve various issues. The list of fixes is below:\r\n\r\n[list]\r\n    [*]Fixed crash after changing Async compute settings on supported AMD GPUs\r\n    [*]Added in-game warning for when GPU drivers over-allocate to memory heaps\r\n    [*] Added GPU memory heap usage statistics in full statistics reporting mode\r\n    [*]General stability improvements on lower-end GPUs\r\n    [*]Fixed issue causing \"Failed to write coredump\" during startup \r\n \r\n[/list]",
+      "key": "612880::270fcc95f8ca66d10e070fdcff6e29f2de50c7f0",
+      "tags": [
+        {
+          "bug": "[*]Fixed crash after changing Async compute settings on supported AMD GPUs"
+        },
+        {
+          "feature": "[*]Added in-game warning for when GPU drivers over-allocate to memory heaps"
+        },
+        {
+          "feature": "[*] Added GPU memory heap usage statistics in full statistics reporting mode"
+        },
+        {
+          "bug": "[*]Fixed issue causing \"Failed to write coredump\" during startup"
+        }
+      ]
+    },
+    {
+      "title": "New Game Patch & DLC Available Jan 30",
+      "date": "2018-01-29 11:37:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2356940714996704860",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29139006/6725de808cde73ec0ecdb3d69242e65eb9f579cd.jpg[/img]\r\n\r\nHey all,\r\n\r\nA brand new game patch is coming on January 30 for Wolfenstein II: The New Colossus. Here are the patch notes for the new base game update:\r\n\r\n\u2022    Various optimizations and bug fixes\r\n\u2022    Updated difficulty balancing\r\n\u2022    More prominent damage direction indicators\r\n\r\nIn addition to the base game update, the latest DLC for The Freedom Chronicles is on its way. \"The Diaries of Agent Silent Death\" follows ex-OSS agent and assassin Jessica Valiant as she infiltrates Nazi bunkers in California. You'll even infiltrate well known sets on the Tinseltown backlot... including the set of the popular gameshow, \"German...Or Else!\" \r\n\r\n(The planned unlock times for the content is 7:00pm ET on Jan 29.)",
+      "key": "612880::184af58ca3a04fd381472efe53e4fca95d7c947b",
+      "tags": [
+        {
+          "bug": "\u2022    Various optimizations and bug fixes"
+        },
+        {
+          "balance_change": "\u2022    Updated difficulty balancing"
+        },
+        {
+          "feature": "\u2022    More prominent damage direction indicators"
+        }
+      ]
+    },
+    {
+      "title": "New Game Patch & DLC Available Jan 30",
+      "date": "2018-01-29 11:37:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687408722",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29139006/6725de808cde73ec0ecdb3d69242e65eb9f579cd.jpg[/img]\r\n\r\nHey all,\r\n\r\nA brand new game patch is coming on January 30 for Wolfenstein II: The New Colossus. Here are the patch notes for the new base game update:\r\n\r\n\u2022    Various optimizations and bug fixes\r\n\u2022    Updated difficulty balancing\r\n\u2022    More prominent damage direction indicators\r\n\r\nIn addition to the base game update, the latest DLC for The Freedom Chronicles is on its way. \"The Diaries of Agent Silent Death\" follows ex-OSS agent and assassin Jessica Valiant as she infiltrates Nazi bunkers in California. You'll even infiltrate well known sets on the Tinseltown backlot... including the set of the popular gameshow, \"German...Or Else!\" \r\n\r\n(The planned unlock times for the content is 7:00pm ET on Jan 29.)",
+      "key": "612880::d1534cb91aa975e2c30e81b2a8bf265a6a48761f",
+      "tags": [
+        {
+          "bug": "\u2022    Various optimizations and bug fixes"
+        },
+        {
+          "balance_change": "\u2022    Updated difficulty balancing"
+        },
+        {
+          "feature": "\u2022    More prominent damage direction indicators"
+        }
+      ]
+    },
+    {
+      "title": "Wolfenstein 2 PC patch adds DLC episode, combat simulations, stability fixes",
+      "date": "2017-11-07 10:32:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/pcgamer/2140760316608329084",
+      "content": "<p></p>\n<p>Last week, Wolfenstein 2: The New Colossus <a href=\"http://www.pcgamer.com/wolfenstein-2-the-new-colossus-patch-re-enables-steam-overlay-targets-amd-players/\">dropped a modest patch</a> that re-enabled Steam overlay and sorted distribution issues in a number of regions. Today, the alternate timeline shooter has launched its first major update&#x2014;that comes with a new DLC episode, ten new combat simulations, and a number of stability fixes, among other things.&#xA0;</p><p>Live now, the patch activates the Vault option which was previously locked in the game&apos;s menu. Within, players will now find ten new so-called &quot;combat simulations&quot; that can be accessed following Chapter 2. &quot;You can replay these missions anytime from the menu option,&quot; reads this <a href=\"http://steamcommunity.com/games/612880/announcements/detail/1448332135231249648\">Steam community update</a>, &quot;or in a room on Evas Hammer in the game.&quot;</p><p>Furthermore, The Freedom Chronicles DLC prequel chapter&#x2014;named Episode Zero&#x2014;is now available for those players who pre-ordered, as well as Season Pass holders who redeemed codes.</p>\n<iframe src=\"https://www.youtube.com/embed/bmy4WW8TqL8\"></iframe>\n<p>As for PC-exclusive fixes, the new update hits stability across Windows 10 and Nvidia GPUs, as well as a handful of tweaks and adjustments as outlined here:</p>\n<ul ><li>Improved stability on NVIDIA 10-series GPUs.</li><li>Async compute temporarily disabled until driver fix available.</li><li>Forced driver update on driver detect warning message can now be manually bypassed.</li><li>Improved Win 10 stability on supported NVIDIA GPUs when launching at any resolution other than 4K when DPI scaling is set to 175 percent 4K monitor.</li><li>Improved Win 10 stability on supported NVIDIA GPUs when resolution is changed to 4K while DPI scaling is set to 125 percent or 150 percent.</li><li>Fixed &#x201C;zoomed in brightness menu&#x201D; issue on 4K monitors (when DPI scaling was set to greater than 100 percent).</li><li>Skybox fixes.</li></ul>\n<p>If you&apos;ve played Wolfenstein 2: The New Colossus already, you may like to check out <a href=\"http://www.pcgamer.com/wolfenstein-2-twist/\">what we thought of its big twist and its dark vision of Nazi America</a>. If you&apos;d rather some less spoiler-heavy, check out <a href=\"http://www.pcgamer.com/wolfenstein-2-the-new-colossus-review/\">Samuel&apos;s review</a>.&#xA0;</p>",
+      "key": "612880::ccbd0e3b562a3c5006643b1bea3cf25818be9e4a",
+      "tags": [
+        {
+          "feature": "Live now, the patch activates the Vault option which was previously locked in the game&apos;s menu. Within, players will now find ten new so-called &quot;combat simulations&quot; that can be accessed following Chapter 2."
+        },
+        {
+          "feature": "Furthermore, The Freedom Chronicles DLC prequel chapter&#x2014;named Episode Zero&#x2014;is now available for those players who pre-ordered, as well as Season Pass holders who redeemed codes."
+        },
+        {
+          "bug": "<li>Skybox fixes.</li>"
+        },
+        {
+          "bug": "<li>Fixed &#x201C;zoomed in brightness menu&#x201D; issue on 4K monitors (when DPI scaling was set to greater than 100 percent).</li>"
+        },
+        {
+          "bug": "<li>Improved Win 10 stability on supported NVIDIA GPUs when resolution is changed to 4K while DPI scaling is set to 125 percent or 150 percent.</li>"
+        },
+        {
+          "bug": "<li>Improved Win 10 stability on supported NVIDIA GPUs when launching at any resolution other than 4K when DPI scaling is set to 175 percent 4K monitor.</li>"
+        },
+        {
+          "bug": "<li>Forced driver update on driver detect warning message can now be manually bypassed.</li>"
+        },
+        {
+          "bug": "<li>Async compute temporarily disabled until driver fix available.</li>"
+        },
+        {
+          "bug": "<li>Improved stability on NVIDIA 10-series GPUs.</li>"
+        }
+      ]
+    },
+    {
+      "title": "Patch Notes - November 7 (10am ET)",
+      "date": "2017-11-06 19:57:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2140760316606123501",
+      "content": "[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29139006/a07712d72a4a86847ee1b60befbe96c2251a5fa2.jpg[/img]\r\n\r\nHey all,\r\n\r\nThe newest update for Wolfenstein II: The New Colossus will be arriving on Steam November 7 at 10am ET. Here are the release notes for the latest patch:\r\n\r\n[b]Features[/b]\r\n[list]\r\n    [*]Freedom Chronicles Episode Zero\r\n     - Available for pre-order customers who redeemed codes\r\n    [*]Vault unlocked!\r\n     - 10 new combat simulations\r\n     - Playable from Main Menu or in Evas Hammer\r\n     - Requires progression to Chapter 2\r\n    [*]Leaderboard functionality: compete with your friends for the highest score!\r\n[/list]\r\n\r\n[b]PC Fixes[/b]\r\n[list]\r\n    [*]Improved stability on NVIDIA 10-series GPUs\r\n    [*]Async compute temporarily disabled until driver fix available\r\n    [*]Forced driver update on driver detect warning message can now be manually bypassed\r\n    [*]Improved Win 10 stability on supported NVIDIA GPUs when launching at any resolution other than 4K when DPI scaling is set to 175% 4K monitor\r\n    [*]Improved Win 10 stability on supported NVIDIA GPUs when resolution is changed to 4K while DPI scaling is set to 125% or 150%\r\n    [*]Fixed \u201czoomed in brightness menu\u201d issue on 4K monitors (when DPI scaling was set to greater than 100%)\r\n    [*]Skybox fixes\r\n[/list]\r\n\r\nNew FAQ items for issues introduced w/the November 6 Patch (Arriving at 10am ET on 11/7):\r\n________________________________________________\r\n\r\n[b]I am unable to progress past the \u201cLost at Sea\u201d chapter on the Fergus timeline[/b]\r\nWorkaround: Re-load a save from the start of Lost at Sea, or the most recent save you have from one of the previous chapters and continue from that point.\r\n\r\n\r\n\r\n[b]Mein Lieben Difficulty Notice[/b]\r\n\r\nDo not load or create any save games after playing the game on Mein Lieben difficulty. Instead, please exit and restart the game to prevent any loss to save game data after playing on Mein Lieben.\r\n\r\n\r\n[b]Game does not pause when Alt + Tabbing during Combat Simulations[/b]\r\n",
+      "key": "612880::54324b7d71bdab9498b8a29048d9f7da4c6e17db",
+      "tags": [
+        {
+          "feature": "Freedom Chronicles Episode Zero"
+        },
+        {
+          "feature": "Vault unlocked!"
+        },
+        {
+          "feature": "Leaderboard functionality: compete with your friends for the highest score!"
+        },
+        {
+          "bug": "Improved stability on NVIDIA 10-series GPUs"
+        },
+        {
+          "bug": "Async compute temporarily disabled until driver fix available"
+        },
+        {
+          "bug": "Forced driver update on driver detect warning message can now be manually bypassed"
+        },
+        {
+          "bug": "Improved Win 10 stability on supported NVIDIA GPUs when launching at any resolution other than 4K when DPI scaling is set to 175% 4K monitor"
+        },
+        {
+          "bug": "Improved Win 10 stability on supported NVIDIA GPUs when resolution is changed to 4K while DPI scaling is set to 125% or 150%"
+        },
+        {
+          "bug": "Fixed \u201czoomed in brightness menu\u201d issue on 4K monitors (when DPI scaling was set to greater than 100%)"
+        },
+        {
+          "bug": "Skybox fixes"
+        },
+        {
+          "bug": "Game does not pause when Alt + Tabbing during Combat Simulations"
+        }
+      ]
+    },
+    {
+      "title": "Patch Notes - November 7 (10am ET)",
+      "date": "2017-11-06 19:57:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687409058",
+      "content": "[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/29139006/a07712d72a4a86847ee1b60befbe96c2251a5fa2.jpg[/img]\r\n\r\nHey all,\r\n\r\nThe newest update for Wolfenstein II: The New Colossus will be arriving on Steam November 7 at 10am ET. Here are the release notes for the latest patch:\r\n\r\n[b]Features[/b]\r\n[list]\r\n    [*]Freedom Chronicles Episode Zero\r\n     - Available for pre-order customers who redeemed codes\r\n    [*]Vault unlocked!\r\n     - 10 new combat simulations\r\n     - Playable from Main Menu or in Evas Hammer\r\n     - Requires progression to Chapter 2\r\n    [*]Leaderboard functionality: compete with your friends for the highest score!\r\n[/list]\r\n\r\n[b]PC Fixes[/b]\r\n[list]\r\n    [*]Improved stability on NVIDIA 10-series GPUs\r\n    [*]Async compute temporarily disabled until driver fix available\r\n    [*]Forced driver update on driver detect warning message can now be manually bypassed\r\n    [*]Improved Win 10 stability on supported NVIDIA GPUs when launching at any resolution other than 4K when DPI scaling is set to 175% 4K monitor\r\n    [*]Improved Win 10 stability on supported NVIDIA GPUs when resolution is changed to 4K while DPI scaling is set to 125% or 150%\r\n    [*]Fixed \u201czoomed in brightness menu\u201d issue on 4K monitors (when DPI scaling was set to greater than 100%)\r\n    [*]Skybox fixes\r\n[/list]\r\n\r\nNew FAQ items for issues introduced w/the November 6 Patch (Arriving at 10am ET on 11/7):\r\n________________________________________________\r\n\r\n[b]I am unable to progress past the \u201cLost at Sea\u201d chapter on the Fergus timeline[/b]\r\nWorkaround: Re-load a save from the start of Lost at Sea, or the most recent save you have from one of the previous chapters and continue from that point.\r\n\r\n\r\n\r\n[b]Mein Lieben Difficulty Notice[/b]\r\n\r\nDo not load or create any save games after playing the game on Mein Lieben difficulty. Instead, please exit and restart the game to prevent any loss to save game data after playing on Mein Lieben.\r\n\r\n\r\n[b]Game does not pause when Alt + Tabbing during Combat Simulations[/b]\r\n",
+      "key": "612880::4c86539e1a3c7ea24ee80df09ae483d224778e52",
+      "tags": [
+        {
+          "feature": "Freedom Chronicles Episode Zero"
+        },
+        {
+          "feature": "Vault unlocked!"
+        },
+        {
+          "feature": "Leaderboard functionality: compete with your friends for the highest score!"
+        },
+        {
+          "bug": "Improved stability on NVIDIA 10-series GPUs"
+        },
+        {
+          "bug": "Async compute temporarily disabled until driver fix available"
+        },
+        {
+          "bug": "Forced driver update on driver detect warning message can now be manually bypassed"
+        },
+        {
+          "bug": "Improved Win 10 stability on supported NVIDIA GPUs when launching at any resolution other than 4K when DPI scaling is set to 175% 4K monitor"
+        },
+        {
+          "bug": "Improved Win 10 stability on supported NVIDIA GPUs when resolution is changed to 4K while DPI scaling is set to 125% or 150%"
+        },
+        {
+          "bug": "Fixed \u201czoomed in brightness menu\u201d issue on 4K monitors (when DPI scaling was set to greater than 100%)"
+        },
+        {
+          "bug": "Skybox fixes"
+        },
+        {
+          "bug": "Game does not pause when Alt + Tabbing during Combat Simulations"
+        }
+      ]
+    },
+    {
+      "title": "Wolfenstein 2: The New Colossus patch re-enables Steam overlay, targets AMD players",
+      "date": "2017-10-30 07:10:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/pcgamer/2140759684356704510",
+      "content": "<p></p>\n<p>Since its launch last week Wolfenstein 2: The New Colossus has given us much to think about via <a href=\"http://www.pcgamer.com/wolfenstein-2-the-new-colossus-review/\">Samuel&apos;s review</a>, the seven things Austin <a href=\"http://www.pcgamer.com/wolfenstein-2-tips/\">wished he knew</a> before jumping in, and <a href=\"http://www.pcgamer.com/heres-21-gifs-of-nazis-getting-owned-in-wolfenstein-2-the-new-colossus/\">this GIF-tastic gallery</a> of Nazi slaughter.&#xA0;</p><p>Now, MachineGames and Bethesda have rolled out a beta hotfix patch that fixes Steam overlay and re-enables Async compute for AMD players, so long as they&apos;re using the latest drivers. Most crucial for players in Japan, Bahrain, Kuwait, Lebanon, Oman, Qatar and Saudi Arabia&#x2014;an issue affecting file deployment has been resolved.&#xA0;</p><p>Here&apos;s the <a href=\"http://steamcommunity.com/app/612880/discussions/0/1479856439035331007/\">patch notes</a> in full:&#xA0;</p>\n<ul ><li>Resolved an issue affecting the deployment of full game files in Japan, Bahrain, Kuwait, Lebanon, Oman, Qatar, and Saudi Arabia.</li><li>Re-enabled Async compute for AMD users (requires AMD driver version 17.10.3).</li><li>Temporarily disabled Async compute on 1080ti until driver fix is in.</li><li>Re-enabled Steam Overlay.</li><li>Added driver version detection and dialogue.&#xA0;</li></ul>\n<p>MachineGames advises those interested in the above to install the patch via the Steam public beta branch, and by right clicking the game via your Steam library. Select &quot;betas&quot; from there and then public beta thereafter.</p>",
+      "key": "612880::3d048e8c2a9adf7f5e58c382487dab94fb881d27",
+      "tags": [
+        {
+          "bug": "Resolved an issue affecting the deployment of full game files in Japan, Bahrain, Kuwait, Lebanon, Oman, Qatar, and Saudi Arabia."
+        },
+        {
+          "bug": "Re-enabled Async compute for AMD users (requires AMD driver version 17.10.3)."
+        },
+        {
+          "bug": "Temporarily disabled Async compute on 1080ti until driver fix is in."
+        },
+        {
+          "bug": "Re-enabled Steam Overlay."
+        },
+        {
+          "feature": "Added driver version detection and dialogue."
+        }
+      ]
+    },
+    {
+      "title": "AMD s GPU driver update promises big gains in Destiny 2 and other games",
+      "date": "2017-10-24 13:14:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/pcgamer/3111284858389701274",
+      "content": "<p></p>\n<p>AMD has a new Crimson ReLive 17.10.2 driver package available that is supposed to deliver significantly improved performance in several games compared to the previous 17.10.1 driver release.</p><p>According to the release notes, Radeon RX Vega 56 owners who run Destiny 2 at 2560x1440 will see up to a 43 percent improvement in performance by installing the new driver package. Radeon RX 580 owners will see an even bigger bump, up to 50 percent at the same resolution, AMD claims.</p><p>AMD&apos;s Crimson ReLive 17.10.2 release is also optimized for Wolfenstein II: The New Colossus and Assassin&apos;s Creed Origins. The performance jump is not quite as tall, but still noteworthy&#x2014;in Wolfenstein II, AMD says Radeon RX Vega 56 and Radeon RX 580 owners will up to 8 percent and 4 percent better performance, respectively, at 2560x1440. And in Assassin Creed Origins, AMD says Radeon RX 56 owners can expect up to 16 percent faster performance at 2560x1440, while Radeon RX 580 owners will see up to a 13 percent boost at 1920x1080.</p><p>Those are the only examples AMD provided, and likely indicative of the highest gains observed across multiple scenarios. Nevertheless, they leave plenty of room for impressive gains with other hardware and resolution combinations, especially in Destiny 2.</p><p>The new driver release provides initial support for the Windows 10 Fall Creators Update, along with support for compute workloads for up to 12 installed RX 400, Radeon RX 500, or Radeon RX Vega cards in Windows 10. As part of that, AMD added a new toggle in Radeon Settings under the Gaming, Global Settings options to switch between graphics or compute workloads on selection Radeon RX 500 and Radeon RX 400 series graphics cards.</p><p>There are a handful of fixed issues in AMD&apos;s latest driver package, too. They include:</p>\n<ul ><li>Radeon Software may not appear in the uninstall options under &quot;Apps and Features&quot; on Windows operating systems after a Radeon Software upgrade.</li><li>Minor corruption may appear in PUBG in some game locations when using Ultra graphics settings in game.</li><li>Radeon Wattman may fail to apply user adjusted voltage values on certain configurations.</li><li>Hearts of Iron IV may experience a crash or system hang during some scenario gameplay.</li><li>Radeon Settings gaming tab may not automatically populate games detected on the users system.</li></ul>\n<p>Go <a href=\"http://support.amd.com/en-us/download\" target=\"_blank\">here</a> to grab the new driver package and read the full release notes.</p>",
+      "key": "612880::9316d9f402d44435ba115408a3241f5977ba3370",
+      "tags": [
+        {
+          "bug": "Radeon Software may not appear in the uninstall options under \"Apps and Features\" on Windows operating systems after a Radeon Software upgrade."
+        },
+        {
+          "bug": "Minor corruption may appear in PUBG in some game locations when using Ultra graphics settings in game."
+        },
+        {
+          "bug": "Radeon Wattman may fail to apply user adjusted voltage values on certain configurations."
+        },
+        {
+          "bug": "Hearts of Iron IV may experience a crash or system hang during some scenario gameplay."
+        },
+        {
+          "bug": "Radeon Settings gaming tab may not automatically populate games detected on the users system."
+        },
+        {
+          "feature": "The new driver release provides initial support for the Windows 10 Fall Creators Update, along with support for compute workloads for up to 12 installed RX 400, Radeon RX 500, or Radeon RX Vega cards in Windows 10."
+        },
+        {
+          "feature": "As part of that, AMD added a new toggle in Radeon Settings under the Gaming, Global Settings options to switch between graphics or compute workloads on selection Radeon RX 500 and Radeon RX 400 series graphics cards."
+        }
+      ]
+    },
+    {
+      "title": "Wolfenstein II - PC Specs & Features",
+      "date": "2017-10-23 12:01:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3111284858385856371",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29139006/bc934a0009fac20a7deebe6a432ecfde20c045e0.jpg[/img]\r\n\r\nHey all!\r\n\r\nIt's launch week, and the time is finally here to share PC specs for Wolfenstein II: The New Colossus. In addition to the system requirements, we also wanted to share the advanced featured available in the game. Here are the requirements and specs, along with some notes from the development team at MachineGames:\r\n\r\n[b]Recommended Drivers:[/b]\r\nAMD - 17.10.2\r\n[url=http://support.amd.com/en-us/kb-articles/Pages/Radeon-Software-Crimson-ReLive-Edition-17.10.2-Release-Notes.aspx] AMD link\t[/url]\r\n\r\n\r\n\r\nNVIDIA - GeForce Hotfix Driver 388.10 has been released on 10/26:\r\n\r\n[url=http://nvidia.custhelp.com/app/answers/detail/a_id/4575] NVIDIA link\t[/url]\r\n\r\n\r\n\r\n(Visit GeForce for information here: https://forums.geforce.com/default/topic/1027449/geforce-drivers/announcing-geforce-hotfx-driver-388-10-for-wolfenstein-ii-the-new-colossus-released-10-26-17-/)\r\n\r\n\r\n[b]PC SYSTEM REQUIREMENTS[/b]\r\n\r\n[b]Minimum[/b]\r\n\r\nCPU: AMD\t\r\nAMD Ryzen 5 1400 or AMD FX-8350 \r\n\r\nCPU: Intel\r\nIntel i5-3570 or Intel i7-3770 \r\n\r\nGPU: AMD\t\r\nAMD Radeon R9 290 4GB \r\n\r\nGPU: NVidia\t\r\nNVIDIA GTX 770 4GB\r\n\r\nRAM:  8GB\r\nOperating System:\tWin7, 8.1**, or 10 (64-Bit versions)\r\n\r\n** AMD GPU drivers no longer support Windows 8.1\r\n\r\nHard Drive Space:\t55GB available hard drive space\r\n\t\r\nAdditional Requirements: Steam account and broadband internet connection for activation and installation\r\n\r\n\r\n[b]Recommended[/b]\r\n\r\n\r\nCPU: AMD\r\nAMD Ryzen 5 1600X or AMD FX-9370 \r\n\r\nCPU: Intel\r\nIntel Core i7-4770\r\n \r\nGPU: AMD\r\nAMD Radeon RX 470 4GB \r\n\r\nGPU: NVIDIA\r\nNVIDIA GTX 1060 6GB\r\n\r\nRAM: 16GB\r\n\r\nOperating System: Win7, 8.1**, or 10 (64-Bit versions)\r\n\r\n** AMD GPU drivers no longer support Windows 8.1\r\n\r\nHard Drive Space:   55GB available hard drive space\r\n\r\nAdditional Requirements: Steam account and broadband internet connection for activation and installation\r\n\r\n\r\n\r\n[b]PC ADVANCED SETTINGS AND FEATURES[/b]\r\n\r\n[b]Uncapped Framerate[/b]\r\nWe at MachineGames are huge PC players, and all of id Software\u2019s games have very strong PC DNA. So it\u2019s important for us to make sure the PC version of the game is as solid as any console version. That\u2019s why we built the game on idTech 6, which also allows for uncapped framerate \u2013 one of the features we\u2019re most excited about.\r\n\r\n[b]Aspect Ratios[/b]\r\nWith such a wide range of tastes in aspect ratios among PC gamers, it was important for us to ensure compatibility with as many as possible. Here are a few of the big ones, but it\u2019s by no means all of them.\r\n\r\n[list]\r\n [*]4:3\r\n [*]16:9\r\n [*]16:10\r\n [*]21:9 (ultra widescreen)\r\n[/list]\r\n\r\n[b]Resolution[/b]\r\nSupports 4K resolution\r\n\r\n[b]Field of View Slider[/b]\r\n70 FOV to 120 FOV\r\n\r\n[b]Advanced Visual Settings[/b]\r\n\r\n[list]\r\n [*]Lights\r\n [*]Shadows\r\n [*]Directional Occlusion\r\n [*]Reflections\r\n [*]Decals\r\n [*]Motion Blur\r\n [*]Image Streaming\r\n [*]Volumetric Quality\r\n [*]Decal Filtering\r\n [*]Deferred Rendering\r\n [*]Chromatic Aberration\r\n [*]Depth of Field\r\n [*]Resolution Scaling\r\n[/list]\r\n\r\n\r\n[b]Vulkan[/b]\r\nWhen we started development of Wolfenstein II, the choice of graphics API for PC was a simple one. DOOM had already set the stage for what could be done with Vulkan and we wanted to take it to the next level.\r\n\r\nUsing Vulkan when developing has allowed us to utilize the power of AMD's VEGA graphics chips in ways that were not possible before, giving us fine grained control over the performance and feature set of the GPU without having to sacrifice artistic intent. Combined with the flexibility of AMD's hardware, Vulkan gives us the artistic freedom to deliver Wolfenstein without compromise.\r\n\r\n[b]Controls[/b]\r\nFull keyboard and mouse rebinding options\r\nSeparate controller and mouse/keyboard sensitivity settings\r\n\r\n[b]Anti-Aliasing Options[/b]\r\nWe have a range of anti-aliasing options including, but not limited to:\r\n\r\n[list]\r\n [*]TAA\r\n [*]FXAA\r\n [*]SMAA\r\n [*]TSSAA\r\n[/list]\r\n\r\n[b]Colorblind Modes[/b]\r\nHere are the three modes we included:\r\n\r\n[list]\r\n[*]Protanopia\r\n[*]Deuteranopia\r\n[*]Tritanopia\r\n[/list]\r\n",
+      "key": "612880::64f963d379b4a8f1557e7f632e1356dfaae0f3b3",
+      "tags": [
+        {
+          "feature": "Uncapped Framerate"
+        },
+        {
+          "feature": "Aspect Ratios"
+        },
+        {
+          "feature": "Resolution"
+        },
+        {
+          "feature": "Field of View Slider"
+        },
+        {
+          "feature": "Advanced Visual Settings"
+        },
+        {
+          "feature": "Vulkan"
+        },
+        {
+          "feature": "Controls"
+        },
+        {
+          "feature": "Anti-Aliasing Options"
+        },
+        {
+          "feature": "Colorblind Modes"
+        }
+      ]
+    },
+    {
+      "title": "Wolfenstein II - PC Specs & Features",
+      "date": "2017-10-23 12:01:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687409180",
+      "content": "[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/29139006/bc934a0009fac20a7deebe6a432ecfde20c045e0.jpg[/img]\r\n\r\nHey all!\r\n\r\nIt's launch week, and the time is finally here to share PC specs for Wolfenstein II: The New Colossus. In addition to the system requirements, we also wanted to share the advanced featured available in the game. Here are the requirements and specs, along with some notes from the development team at MachineGames:\r\n\r\n[b]Recommended Drivers:[/b]\r\nAMD - 17.10.2\r\n[url=http://support.amd.com/en-us/kb-articles/Pages/Radeon-Software-Crimson-ReLive-Edition-17.10.2-Release-Notes.aspx] AMD link\t[/url]\r\n\r\n\r\n\r\nNVIDIA - GeForce Hotfix Driver 388.10 has been released on 10/26:\r\n\r\n[url=http://nvidia.custhelp.com/app/answers/detail/a_id/4575] NVIDIA link\t[/url]\r\n\r\n\r\n\r\n(Visit GeForce for information here: https://forums.geforce.com/default/topic/1027449/geforce-drivers/announcing-geforce-hotfx-driver-388-10-for-wolfenstein-ii-the-new-colossus-released-10-26-17-/)\r\n\r\n\r\n[b]PC SYSTEM REQUIREMENTS[/b]\r\n\r\n[b]Minimum[/b]\r\n\r\nCPU: AMD\t\r\nAMD Ryzen 5 1400 or AMD FX-8350 \r\n\r\nCPU: Intel\r\nIntel i5-3570 or Intel i7-3770 \r\n\r\nGPU: AMD\t\r\nAMD Radeon R9 290 4GB \r\n\r\nGPU: NVidia\t\r\nNVIDIA GTX 770 4GB\r\n\r\nRAM:  8GB\r\nOperating System:\tWin7, 8.1**, or 10 (64-Bit versions)\r\n\r\n** AMD GPU drivers no longer support Windows 8.1\r\n\r\nHard Drive Space:\t55GB available hard drive space\r\n\t\r\nAdditional Requirements: Steam account and broadband internet connection for activation and installation\r\n\r\n\r\n[b]Recommended[/b]\r\n\r\n\r\nCPU: AMD\r\nAMD Ryzen 5 1600X or AMD FX-9370 \r\n\r\nCPU: Intel\r\nIntel Core i7-4770\r\n \r\nGPU: AMD\r\nAMD Radeon RX 470 4GB \r\n\r\nGPU: NVIDIA\r\nNVIDIA GTX 1060 6GB\r\n\r\nRAM: 16GB\r\n\r\nOperating System: Win7, 8.1**, or 10 (64-Bit versions)\r\n\r\n** AMD GPU drivers no longer support Windows 8.1\r\n\r\nHard Drive Space:   55GB available hard drive space\r\n\r\nAdditional Requirements: Steam account and broadband internet connection for activation and installation\r\n\r\n\r\n\r\n[b]PC ADVANCED SETTINGS AND FEATURES[/b]\r\n\r\n[b]Uncapped Framerate[/b]\r\nWe at MachineGames are huge PC players, and all of id Software\u2019s games have very strong PC DNA. So it\u2019s important for us to make sure the PC version of the game is as solid as any console version. That\u2019s why we built the game on idTech 6, which also allows for uncapped framerate \u2013 one of the features we\u2019re most excited about.\r\n\r\n[b]Aspect Ratios[/b]\r\nWith such a wide range of tastes in aspect ratios among PC gamers, it was important for us to ensure compatibility with as many as possible. Here are a few of the big ones, but it\u2019s by no means all of them.\r\n\r\n[list]\r\n [*]4:3\r\n [*]16:9\r\n [*]16:10\r\n [*]21:9 (ultra widescreen)\r\n[/list]\r\n\r\n[b]Resolution[/b]\r\nSupports 4K resolution\r\n\r\n[b]Field of View Slider[/b]\r\n70 FOV to 120 FOV\r\n\r\n[b]Advanced Visual Settings[/b]\r\n\r\n[list]\r\n [*]Lights\r\n [*]Shadows\r\n [*]Directional Occlusion\r\n [*]Reflections\r\n [*]Decals\r\n [*]Motion Blur\r\n [*]Image Streaming\r\n [*]Volumetric Quality\r\n [*]Decal Filtering\r\n [*]Deferred Rendering\r\n [*]Chromatic Aberration\r\n [*]Depth of Field\r\n [*]Resolution Scaling\r\n[/list]\r\n\r\n\r\n[b]Vulkan[/b]\r\nWhen we started development of Wolfenstein II, the choice of graphics API for PC was a simple one. DOOM had already set the stage for what could be done with Vulkan and we wanted to take it to the next level.\r\n\r\nUsing Vulkan when developing has allowed us to utilize the power of AMD's VEGA graphics chips in ways that were not possible before, giving us fine grained control over the performance and feature set of the GPU without having to sacrifice artistic intent. Combined with the flexibility of AMD's hardware, Vulkan gives us the artistic freedom to deliver Wolfenstein without compromise.\r\n\r\n[b]Controls[/b]\r\nFull keyboard and mouse rebinding options\r\nSeparate controller and mouse/keyboard sensitivity settings\r\n\r\n[b]Anti-Aliasing Options[/b]\r\nWe have a range of anti-aliasing options including, but not limited to:\r\n\r\n[list]\r\n [*]TAA\r\n [*]FXAA\r\n [*]SMAA\r\n [*]TSSAA\r\n[/list]\r\n\r\n[b]Colorblind Modes[/b]\r\nHere are the three modes we included:\r\n\r\n[list]\r\n[*]Protanopia\r\n[*]Deuteranopia\r\n[*]Tritanopia\r\n[/list]\r\n",
+      "key": "612880::39a877b1744e3b312040934e95a91e7b95cc45ec",
+      "tags": [
+        {
+          "feature": "Uncapped Framerate"
+        },
+        {
+          "feature": "Aspect Ratios"
+        },
+        {
+          "feature": "Resolution"
+        },
+        {
+          "feature": "Field of View Slider"
+        },
+        {
+          "feature": "Advanced Visual Settings"
+        },
+        {
+          "feature": "Vulkan"
+        },
+        {
+          "feature": "Controls"
+        },
+        {
+          "feature": "Anti-Aliasing Options"
+        },
+        {
+          "feature": "Colorblind Modes"
+        }
+      ]
+    }
+  ]
+}

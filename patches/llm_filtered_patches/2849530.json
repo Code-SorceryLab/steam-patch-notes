@@ -1,0 +1,99 @@
+{
+  "appId": "2849530",
+  "count": 3,
+  "notes": [
+    {
+      "title": "DevBlog #4",
+      "date": "2024-09-09 11:10:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6242640076611605822",
+      "content": "Greetings runners,\n\n[h2]Introduction:[/h2]\nWelcome to the fourth DevBlog of [b]A Maze-ing runner[/b]!\nIt has been a while since #3, in this timeframe we made further improvements to our code base, decided to go for (and implement) a central hub with (branch and) floor selection, and implemented a shop, NPC system and inventory (with potions that provide stat boosts).\n\n[h2]Code refactoring:[/h2]\nAs mentioned in [url=https://steamcommunity.com/games/2849530/announcements/detail/4169844395571358619]devblog #2[/url], keeping code clean is an important part of remaining agile towards the future. In this iteration we further improved the way a maze is constructed, allowing us to place \"templates\" which the random algorithm will then build around. In addition, the way the tower structure (including Branches) are stored was further improved. If there is interest, we can delve into some code/technical design choices. So let us know if you would like that :)!\n\n[h2]Current Tower structure:[/h2]\nIn the  [url=https://steamcommunity.com/games/2849530/announcements/detail/4205875729079398723]previous devblog[/url] we were considering two alternative approaches in representing the HUB/tower. There is either a central HUB which contains a tool to select a Branch/Floor from a tower layout, or a Branch specific HUB/Floor combination (See the previous blog for visual examples).\n\nAfter deliberation, we want to achieve two goals with the HUB, it should be a familiar place where you can easily navigate to the service you want to use (shop, floor selection, etc.), and we want the HUB to reflect tower progression. For these reasons we decided on the first option.\n\nA central HUB allows you to get familiar with the layout rather than a branch specific HUB. In addition, if a new Branch (update) leads to new services, these services could be added to the HUB in the form of new rooms. This should lead to a sense of progression and ownership.\n[img]{STEAM_CLAN_IMAGE}/44920942/0c28e460f6ecb5936a8ae984141042cd58eb758b.png[/img]\nWhile we leave the complete HUB for a future post, the image above presents a functional work in progress) version of the Floor selection UI. Each Branch has its own colour and around three Floors. Floors are unlocked along the way, and the last floor of a Branch contains a Boss Maze which will have its own challenges.\n\n[h2]Ember and Ale:[/h2]\nWhat is a HUB without some friendly NPCs and shops? Like a Maze without an Exit. So let us introduce your first two friends that will accompany you while you take a well deserved break from all that running!\n\n[img]{STEAM_CLAN_IMAGE}/44920942/8056088f915b97b7617f500148b6df9f980b4913.png[/img]\nMeet Ember, your loyal dragon friend. Ember has lived in the Tower long before anyone was aware of its existence. How Ember got here, and how old Ember is, no one knows. However, what is apparent, is that Ember loves to hear of your adventures!\n[img]{STEAM_CLAN_IMAGE}/44920942/5f1451cb316725dbb493ad8c458cca5c418eaee1.gif[/img]\n\n[img]{STEAM_CLAN_IMAGE}/44920942/5303ccea8e9b3d7df8a28caeb26ec98a0c5ae95d.gif[/img]\nNext up, Ale (looks are subject to change). Hailing from the distant \"Roaring Thunder Mountains\", Ale is here to help Maze-runners (for the right price that is). Having just arrived himself, it will take some time before he fully sets up shop. Initially you will be able to purchase potions, but give it some time, and Ale will have all sorts of wares, and more.\n\n[h2]Early Access:[/h2]\nOur aim was to go into early access in August, but we have come to the realization that our view of \"early-access worthiness\" is not yet realized. We strive to have the core game implemented before we go into early-access. Therefore, we will determine a new (best estimate) release window in the coming weeks and post an update accordingly. For more information, see our Early Access section (date estimates will update soon).\n\nWhat do you think of the Early Access concept?\n\nAnd do you think our pricing approach is reasonable?\n\nWhat is for you a good definition of Early Access?\n\nThanks for joining us again for another DevBlog!\nSee you out there runners!",
+      "key": "2849530::cee52961cdfcea04ab041b094493fc54ba115c0a",
+      "tags": [
+        {
+          "feature": "decided to go for (and implement) a central hub with (branch and) floor selection, and implemented a shop, NPC system and inventory (with potions that provide stat boosts)."
+        },
+        {
+          "feature": "implemented a shop, NPC system and inventory (with potions that provide stat boosts)."
+        },
+        {
+          "feature": "improved the way a maze is constructed, allowing us to place \"templates\" which the random algorithm will then build around."
+        },
+        {
+          "feature": "the way the tower structure (including Branches) are stored was further improved."
+        },
+        {
+          "feature": "A central HUB allows you to get familiar with the layout rather than a branch specific HUB."
+        },
+        {
+          "feature": "if a new Branch (update) leads to new services, these services could be added to the HUB in the form of new rooms."
+        },
+        {
+          "feature": "the image above presents a functional work in progress) version of the Floor selection UI."
+        },
+        {
+          "feature": "Each Branch has its own colour and around three Floors."
+        },
+        {
+          "feature": "Floors are unlocked along the way, and the last floor of a Branch contains a Boss Maze which will have its own challenges."
+        },
+        {
+          "feature": "Meet Ember, your loyal dragon friend."
+        },
+        {
+          "feature": "Next up, Ale (looks are subject to change)."
+        },
+        {
+          "feature": "Initially you will be able to purchase potions, but give it some time, and Ale will have all sorts of wares, and more."
+        }
+      ]
+    },
+    {
+      "title": "DevBlog #2",
+      "date": "2024-04-04 13:17:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5756237364308747773",
+      "content": "Greetings runners,\n\n[h2]Introduction:[/h2]\nWelcome to the second DevBlog of [b]A Maze-ing runner[/b]!\nThe last two weeks were focused around improving the code so it is more future proof. However, the map editor received some new features and improved user experience to help creating A Maze-ing mazes!\n\n[h2]Refactoring:[/h2]\nAs a foundation of A Maze-ing runner's critical gameplay loop has been achieved with the demo, we are cleaning up the code. To get the demo up and running we cut some corners in terms of design that work on the short term, but are not sustainable. In this refactor run, everything related to the world and theme was tackled. A major part of the code base which would not have allowed for different themes or alternative types of maps (for instance a world hub). However, there is little to show without getting into technical details.\n\n[h2]Map Editor:[/h2]\nSo let's talk map editor instead. The Map editor received a major update on the front of user experience and a random mazes.\n \nFirst, camera movement. The camera can zoom in and out, and move around. to inspect the maze from different perspectives and in more detail.\n[img]{STEAM_CLAN_IMAGE}/44920942/5e534df49482a6c0a75c50247ccd067433cc9e08.gif[/img]\n\nSecond, tile placement validation. Certain tiles like for instance the moving wall have placement criteria. Pointing the moving wall to the edge or outside the maze is not very useful. So messages are displayed when a constraint is violated. In addition, you can also see how linked tiles (in this case a teleporter and its destination) can be identified by a link id.\n[img]{STEAM_CLAN_IMAGE}/44920942/ca5266fc6ace454b3ce758623f3e92a2da8382e3.gif[/img]\n\nLast, two last minute additions. Random mazes and Pathfinding. The map editor now has access to our procedural generator, allowing mazes to be created with a button press!\n[img]{STEAM_CLAN_IMAGE}/44920942/5aadb82b239cb0dcf53f7af174d6fa8dd466d79b.gif[/img]\nAnd pathfind allows you to see if the maze can be completed (and/or what the shortest path is, fulfilling the completion criteria such as pressure plates and gates).\n[img]{STEAM_CLAN_IMAGE}/44920942/3a6f23bba172503c9c901d213d8463c98a709071.gif[/img]\n\n[h2]Thanks[/h2]\nWell that is it for this DevBlog. We hope you enjoyed this update! Let us know what you think in the comments. Thanks for visiting and (if you haven't already) consider to wishlist our game to receive update notifications and try out our demo.\n\nSee you out there runners!",
+      "key": "2849530::8cce7cb1c8f53620c9446ffa1a73c5649c450874",
+      "tags": [
+        {
+          "feature": "The map editor received a major update on the front of user experience and a random mazes."
+        },
+        {
+          "feature": "First, camera movement. The camera can zoom in and out, and move around. to inspect the maze from different perspectives and in more detail."
+        },
+        {
+          "feature": "Second, tile placement validation. Certain tiles like for instance the moving wall have placement criteria. Pointing the moving wall to the edge or outside the maze is not very useful. So messages are displayed when a constraint is violated. In addition, you can also see how linked tiles (in this case a teleporter and its destination) can be identified by a link id."
+        },
+        {
+          "feature": "Last, two last minute additions. Random mazes and Pathfinding. The map editor now has access to our procedural generator, allowing mazes to be created with a button press!"
+        },
+        {
+          "feature": "And pathfind allows you to see if the maze can be completed (and/or what the shortest path is, fulfilling the completion criteria such as pressure plates and gates)."
+        }
+      ]
+    },
+    {
+      "title": "DevBlog #1",
+      "date": "2024-03-20 11:08:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5686430301714613282",
+      "content": "Greetings runners,\n\n[h2]Introduction:[/h2]\nWelcome to the first DevBlog of [b]A Maze-ing runner[/b]!\nHere we will give regular updates on development of our game. The topics may vary from gameplay mechanics to lore and much more! Join us on the trails! And feel free to request specific topics for future\u00a0updates.\n\n[h2]Foundation:[/h2]\nAs the foundation of our gameplay has been achieved with our Demo, we are reaching the point where we are working out the world structure. As a runner you have entered the Tower of A maze-ing-ness. In your travels through the tower, you will explore a variety of settings, each with their own unique challenges and rewards! More on this in a future update.\n\n[h2]Map Editor:[/h2]\nTo facilitate the process of creating a world and the various stages/mazes it contains, we are working on a map editor. While we initially generate mazes via a procedural system (only), we want to have more control to make adjustments. At this moment the map editor can generate mazes with the procedural system in place, or an empty map and make changes to the map (see animation below). The intention is that when we start Early Access, we provide these tools to you to make your own creations and share them with other A maze-ing runners out there!\n\nCurrently the editor supports adding, removing and replacing of tiles. In addition you can save and load maps. However, more features are planned.\n[img]{STEAM_CLAN_IMAGE}/44920942/b41f50e1d2c0cc8bd2aa07ac2fd22354ca0b3328.gif[/img]\n\nLet us know what you think of the editor. How important is a Map editor for you? Are there any features you might want to have?\n\n[h2]Thanks[/h2]\nThanks for visiting and (if you haven't already) consider to wishlist our game to receive update notifications and trying out our demo.\n\nSee you out there runners!",
+      "key": "2849530::1fadc2a39fdfb3ebe8171ccbfdf984c2a3cbb0d6",
+      "tags": [
+        {
+          "feature": "To facilitate the process of creating a world and the various stages/mazes it contains, we are working on a map editor."
+        },
+        {
+          "feature": "At this moment the map editor can generate mazes with the procedural system in place, or an empty map and make changes to the map (see animation below)."
+        },
+        {
+          "feature": "The intention is that when we start Early Access, we provide these tools to you to make your own creations and share them with other A maze-ing runners out there!"
+        },
+        {
+          "feature": "Currently the editor supports adding, removing and replacing of tiles."
+        },
+        {
+          "feature": "In addition you can save and load maps."
+        }
+      ]
+    }
+  ]
+}

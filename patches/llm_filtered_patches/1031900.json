@@ -1,0 +1,264 @@
+{
+  "appId": "1031900",
+  "count": 10,
+  "notes": [
+    {
+      "title": "Dec 22 update: graphics tablet support",
+      "date": "2022-12-24 08:37:56",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037449745841",
+      "content": "Improved graphics tablet / touch-screen support (tested on Wacom Intuos). Now, a pen can be used to navigate the menus and complete the stroke order sections.\n\nNote: even on graphics tablet, the stroke order section is still design to just teach stroke order. It's not a free-drawing mode, the best way to practise actual handwriting is still pen/paper.",
+      "key": "1031900::6245ba00c54c0d9da68d2e0f8fb0a397adc12be4",
+      "tags": [
+        {
+          "feature": "Improved graphics tablet / touch-screen support (tested on Wacom Intuos). Now, a pen can be used to navigate the menus and complete the stroke order sections."
+        }
+      ]
+    },
+    {
+      "title": "Word explainer hotfix",
+      "date": "2022-07-18 18:10:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144701197741",
+      "content": "[list]\n[*] Added click audio to word explainer\n[*] ESC key now closes Word Explainer\n[/list]",
+      "key": "1031900::066af593aaa981ef35aed2ca4beebcbc660435de",
+      "tags": [
+        {
+          "feature": "[*] Added click audio to word explainer"
+        },
+        {
+          "feature": "[*] ESC key now closes Word Explainer"
+        }
+      ]
+    },
+    {
+      "title": "'Word Explainer' Update",
+      "date": "2022-07-17 10:56:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4937651144696457804",
+      "content": "[h1][b]Summary[/b][/h1]\n\n[list]\n[*] Added the Word Explainer, an interactive way to view the valid inputs for a word.\n[*] Multiple improvements to the translation system\n[/list]\n\n[b][h3]If you're enjoying You Can Kana and appreciate these free updates, please recommend the game on Steam![/h3][/b]\n\n[h1][b]Word Explainer[/b][/h1]\n\n[img]{STEAM_CLAN_IMAGE}/35769671/d85111cd7b0238738ff610f4930573a43a4a6cf4.gif[/img]\n\n[b]Use the mouse to click on the kana or romaji and explore the relationships between the two.[/b] For example, hovering over [b]\u30c1\u30e5[/b] reveals two possible inputs: [b]chu[/b] and [b]chi xyu[/b].\n\n[img]{STEAM_CLAN_IMAGE}/35769671/2260cbd00a2a778d1bb0cb38e9c069088ad754b5.png[/img]\n\nThe Word Explainer [b]can be accessed in any mode by clicking on a word.[/b] Note that in modes where accuracy matters (Challenge, Review, Test, etc) won't count words that have been clicked on towards the score.\n\nNot all inputs are shown - some words have a LOT of valid inputs, and some are obscure. [b]Test a possible input by typing it into the text field.[/b] This should help with cases where people weren't sure if they had mistyped, or if the game did not support a valid input.\n\n[img]{STEAM_CLAN_IMAGE}/35769671/40f01b7c406b0e32da17664de0340e832ac2aee5.png[/img]\n\nAnd on that note...\n\n[h1][b]Translation System Update[/b][/h1]\n\n[b]The Translation System is now a lot more robust, and supports more valid inputs.[/b] Now for each word the game recursively creates a list of possible inputs, branching every time a character - or group of characters - has multiple interpretations. The previous system required a lot of specific cases to be added manually, relying on player reports of failed inputs.\n\nThe new valid inputs are based on a combination of Hepburn, Kunrei-Shiki, and Waapuro romanisations.\n\nIf you're interested, you can see the kana-romaji mapping at [i]You Can Kana\\resources\\app\\src\\assets\\kana_romaji_map.csv[/i] (please note that elongated vowels are missing from this file - they don't need to be added because they are calculated at runtime)\n\nEnjoy the update!\n\nJames\n\n[img]{STEAM_CLAN_IMAGE}/35769671/9b726b2837c7dc4cd6456a68712175bc9d2fb211.png[/img]",
+      "key": "1031900::2ac75bd493d16908e4dedbfa4187169fd65d871a",
+      "tags": [
+        {
+          "feature": "Added the Word Explainer, an interactive way to view the valid inputs for a word."
+        },
+        {
+          "feature": "Multiple improvements to the translation system"
+        },
+        {
+          "feature": "The Translation System is now a lot more robust, and supports more valid inputs."
+        }
+      ]
+    },
+    {
+      "title": "You Can Kana 2022 Update 1",
+      "date": "2022-06-03 19:51:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4469272893497832238",
+      "content": "Hi everyone, a new update for You Can Kana is available!\n\nThanks again to everyone who submitted feedback, I do read through it all and try to address what I can. Apologies for the large gap between this update and the last one - I have to balance development on YCK with my day job, which can get very busy some times.\n\n[h1]Summary[/h1]\n[list]\n[*][b]Challenge Mode[/b] Improvements\n[*]Added (experimental) [b]touch screen support[/b] - feedback welcome!\n[*]Added [b]two new colour palettes[/b] (which were actually unlocking before, but had no menu option)\n[*][b]New mode: JLPT Training Mode[/b] - practise the JLPT Challenges with no time restrictions\n[*]Randomly selected words no longer start with small tsu characters (\u3063 and \u30c3)\n[*]Improvements to the [b]Learn phase[/b] (details below)\n[*]Improvements to [b]Answer Processing[/b] (details below)\n[*]No longer possible to click on chapter select keys while Cheat Sheet or Pause Menu are open\n[*]Characters with Dakuten / Handakuten now draw completely in the Cheat Sheet\n[/list]\n\n[h3]Challenge Mode Improvements[/h3]\n[list]\n[*]Fixed words in challenge mode resetting the combo even after being answered correctly, if their timer was close to running out\n[*]Visual effects associated with word timers also no longer show if a word has been answered\n[*]The minimum number of words that should appear on screen at once, plus word spawn time, now takes score into account. This should help prevent gameovers at high scores due to a lack of words. Starts taking effect at 10,000 points.\n[/list]\n\n[h3]Learn Phase[/h3]\n[list]\n[*]Changed suggested answers for \u3058\u3085 to ju and \u3058\u3087 to jo, and \u3062\u3085 to dju\n[*]Show more hints for \u30c3 introduction e.g. \u30c3\u30c6 (tte)\n[*]Fixed a bug which sometimes caused hints to not show\n[/list]\n\n[h3]Answer Processing[/h3]\nThanks to everyone who provided feedback here. There's so many ways to input kana, and some of them clash with each other, which makes this system one of the most complicated parts of the game. I'll try to update whenever people find inputs that don't work.\n\n[b]Fixed issues with the following words:[/b]\n[list]\n[*]\u30c8\u30c3\u30d5\u30a3\u30fc\n[*]\u30d4\u30c3\u30c1\u30e3\u30fc\n[*]\u30a2\u30c7\u30e5\u30fc\n[*]\u30c5\u30fc\n[/list]\n\n[b]Answer processing now considers the following inputs as valid equivalents:[/b]\n[list]\n[*]\u30c7\u30e5\u30fc: dyuu\n[*]ffii: ffyii\n[*]xtsufii: ffyii\n[*]ccha: tcha\n[*]shyoo: shoo\n[*]shyuu: shuu\n[*]shyaa: shaa\n[*]chyoo: choo\n[*]chyuu: chuu\n[*]chyaa: chaa\n[/list]\n\nEnjoy the update!\n- James\n\n[img]{STEAM_CLAN_IMAGE}/35769671/9b726b2837c7dc4cd6456a68712175bc9d2fb211.png[/img]",
+      "key": "1031900::6621e9f092f20e9df2771244dd6b8ae92c433289",
+      "tags": [
+        {
+          "feature": "Added (experimental) touch screen support - feedback welcome!"
+        },
+        {
+          "feature": "Added two new colour palettes (which were actually unlocking before, but had no menu option)"
+        },
+        {
+          "feature": "New mode: JLPT Training Mode - practise the JLPT Challenges with no time restrictions"
+        },
+        {
+          "bug": "Fixed words in challenge mode resetting the combo even after being answered correctly, if their timer was close to running out"
+        },
+        {
+          "balance_change": "The minimum number of words that should appear on screen at once, plus word spawn time, now takes score into account. This should help prevent gameovers at high scores due to a lack of words. Starts taking effect at 10,000 points."
+        },
+        {
+          "balance_change": "Changed suggested answers for \u3058\u3085 to ju and \u3058\u3087 to jo, and \u3062\u3085 to dju"
+        },
+        {
+          "bug": "Fixed a bug which sometimes caused hints to not show"
+        },
+        {
+          "bug": "Fixed issues with the following words: \u30c8\u30c3\u30d5\u30a3\u30fc"
+        },
+        {
+          "bug": "Fixed issues with the following words: \u30d4\u30c3\u30c1\u30e3\u30fc"
+        },
+        {
+          "bug": "Fixed issues with the following words: \u30a2\u30c7\u30e5\u30fc"
+        },
+        {
+          "bug": "Fixed issues with the following words: \u30c5\u30fc"
+        }
+      ]
+    },
+    {
+      "title": "Training Mode Update",
+      "date": "2021-11-26 08:39:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224935490639429054",
+      "content": "Hi everyone, hope you're all enjoying You Can Kana! It's been a while since the last update, hasn't it? I've been very busy working on a new game, which I'm hoping to announce some time next year. But I still have something new for you all.\n\nTo celebrate the Steam Autumn Sale I've updated the game to add a new mode: [b]Training Mode![/b] You can access Training Mode the same way you access Challenge Mode.\n\nIn Training Mode, [b]all timers are disabled[/b], and the [b]Cheat Sheet is enabled[/b], so you can look up characters you don't remember. I hope you find it useful for practising the characters if you find Challenge Mode to be a bit overwhelming, or you're just looking to play something more relaxed.\n\nI've also fixed a few translation errors in the game. Specifically, the \u30c3\u30c1\u30e3- (double consonant AND long vowel) structure and \u30a2\u30c7\u30e5- (long dyu) structure in katakana. Thanks to players who pointed these out.\n\nThanks everyone for playing.\n\nJames",
+      "key": "1031900::7fc35b691c6355ef135778bacab7b6dfee6bad62",
+      "tags": [
+        {
+          "feature": "To celebrate the Steam Autumn Sale I've updated the game to add a new mode: [b]Training Mode![/b]"
+        },
+        {
+          "feature": "In Training Mode, [b]all timers are disabled[/b], and the [b]Cheat Sheet is enabled[/b], so you can look up characters you don't remember."
+        },
+        {
+          "bug": "I've also fixed a few translation errors in the game. Specifically, the \u30c3\u30c1\u30e3- (double consonant AND long vowel) structure and \u30a2\u30c7\u30e5- (long dyu) structure in katakana."
+        }
+      ]
+    },
+    {
+      "title": "JLPT Challenge Mode",
+      "date": "2021-08-30 10:48:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4018887653994964667",
+      "content": "[h2]Change summary:[/h2]\n\n[list]\n[*]Added JLPT Mode, a new form of Challenge Mode\n[*]Hiragana and katakana are both active at the same time in this mode\n[*]Choose which JLPT levels to limit vocab to\n[*]Complete both hiragana and katakana campaigns to unlock JLPT Mode\n[*]Skip mode has been sped up to make it easier to complete the campaigns\n[*]A new achievement has been added for reaching 10,000 points in JLPT Mode\n[/list]\n\n[h2]More details:[/h2]\n\n[h3]Making skip mode (even) faster[/h3]\n\nBuilding on optimisations from previous updates. Now the word picker prioritises words that have a high proportion of unseen characters, meaning less word answers in total should be needed to complete the skip.\n\nMore words can appear on the screen at once now in this mode and there's less of a time gap between words spawning.\n\n[h3]JLPT Mode[/h3]\n\nJLPT Mode is a new unlockable mode for You Can Kana that allows you to play Challenge Mode with a limited set of vocab, based on the Japanese Language Proficiency Test. The aim of this mode is [b]not to teach vocab[/b] but it can still be useful to practise reading words that are familiar, and some simple words can be picked up this way.\n\n[u][b]Please note:[/b] I know that a lot of people want some kind of vocab-teaching mode. Currently I have no plans to implement this.[/u]\n\n[img]{STEAM_CLAN_IMAGE}/35769671/be478781b2f0ca272f5f8766c81e945a2335b9f1.jpg[/img]\n\nYou should see this new mode available on the front end menu. Complete both hiragana and katakana campaigns to unlock access.\n\n[img]{STEAM_CLAN_IMAGE}/35769671/3f103800ecc64607bf0b2a6735d6ed2fe0f283fd.jpg[/img]\n\nBefore starting the mode you can pick a level, or levels, from the JLPT, to limit the vocab list.\n\n[img]{STEAM_CLAN_IMAGE}/35769671/19ea77e21c5ac39604967a4b38a4f7e91ea5132f.jpg[/img]\n\nThe word picker will pick words at random from this list, avoiding showing the same word twice until the whole list has been exhausted. You can see also that both hiragana and katakana words can appear on the screen at once, which is more in line with what reading real japanese is like.\n\nI've been working on JLPT Mode since the game launched, and I know a few people have been looking forward to it. Please enjoy!\n\nJames",
+      "key": "1031900::14840faa8425868ee95341753de5f94b2ed0083b",
+      "tags": [
+        {
+          "feature": "Added JLPT Mode, a new form of Challenge Mode"
+        },
+        {
+          "feature": "Hiragana and katakana are both active at the same time in this mode"
+        },
+        {
+          "feature": "Choose which JLPT levels to limit vocab to"
+        },
+        {
+          "feature": "Complete both hiragana and katakana campaigns to unlock JLPT Mode"
+        },
+        {
+          "balance_change": "Skip mode has been sped up to make it easier to complete the campaigns"
+        },
+        {
+          "feature": "A new achievement has been added for reaching 10,000 points in JLPT Mode"
+        }
+      ]
+    },
+    {
+      "title": "22nd August Hotfix",
+      "date": "2021-08-21 19:30:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629320154413",
+      "content": "\u2714 Fixed characters that won't rendering in tooltips in the skip summary.\n\u2714 Fixed a crash that happened during the multiple choice section of katakana lessons.\n\u2714 Made it so that in review and test mode, we always prioritise the characters from the actual lesson we're on.\n\u2714 Removed a 'rya' question from the part of the katakana campaign where we introduce the small 'ya' character, as the 'r' characters are not introduced at this point.\n\u2714 Removed erroneous \"\u30c7\u30e7\" words that were showing up in katakana mode.\n\u2714 Fixed a minor graphical issue where small characters would shrink suddenly when they finished drawing in the multiple choice test.\n\u2714 Fixed a minor graphical issue where stroke width of a character would change when they finished drawing in the multiple choice test.\n\u2714 Made it slightly easier to select the start of a path in handwriting mode.\n\u2714 Fixed a minor graphical bug where the dakuten in \u30f4 was overlapping the main part of the character.\n\u2714 Added multiple choice quiz to small 'tsu' character (\u30c3) Learn lesson.\n\nThanks again to everyone who has let me know about issues in the [url=https://steamcommunity.com/app/1031900/discussions/0/]discussions section[/url], so far I've been able to turn these bugs around within a few days, on in this case, a few hours! So keep them coming and I'll keep improving the game. Maybe we'll even run out of bugs eventually :)\n\nJames",
+      "key": "1031900::8d354c1cef5ed28380ef36134a66e78a4f20969c",
+      "tags": [
+        {
+          "bug": "\u2714 Fixed characters that won't rendering in tooltips in the skip summary."
+        },
+        {
+          "bug": "\u2714 Fixed a crash that happened during the multiple choice section of katakana lessons."
+        },
+        {
+          "bug": "\u2714 Removed erroneous \"\u30c7\u30e7\" words that were showing up in katakana mode."
+        },
+        {
+          "bug": "\u2714 Fixed a minor graphical issue where small characters would shrink suddenly when they finished drawing in the multiple choice test."
+        },
+        {
+          "bug": "\u2714 Fixed a minor graphical issue where stroke width of a character would change when they finished drawing in the multiple choice test."
+        },
+        {
+          "bug": "\u2714 Fixed a minor graphical bug where the dakuten in \u30f4 was overlapping the main part of the character."
+        },
+        {
+          "feature": "\u2714 Added multiple choice quiz to small 'tsu' character (\u30c3) Learn lesson."
+        }
+      ]
+    },
+    {
+      "title": "Minor patch: \u30c3 / small tsu (katakana)",
+      "date": "2021-08-21 11:47:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4022264629318985537",
+      "content": "[list]\n[*] Removed words with consisted solely of a small tsu, followed by a vowel.\n[*] In the case that these do show up in game, they can now be inputted as e.g. 'aa' or 'xtsua' for '\u30c3\u30a2'\n[*] Made the \u30c3 character show smaller to better differentiate it from regular \u30c4\n[/list]\n\n[img]{STEAM_CLAN_IMAGE}/35769671/ed7f846acab155fbd198cd5b61044d6794d3e861.png[/img]\n\n[olist]\n[*] Regular \u30c4\n[*] Small \u30c3 (before change)\n[*] Small \u30c3 (after change)\n[/olist]\n\nThanks to @\u30af\u30e9\u30b2\u304f\u3093 for the suggestion!\n\nJames",
+      "key": "1031900::131182da8bf9b2ea959c286a79167dae53b07a5c",
+      "tags": [
+        {
+          "bug": "Removed words with consisted solely of a small tsu, followed by a vowel."
+        },
+        {
+          "feature": "In the case that these do show up in game, they can now be inputted as e.g. 'aa' or 'xtsua' for '\u30c3\u30a2'"
+        },
+        {
+          "feature": "Made the \u30c3 character show smaller to better differentiate it from regular \u30c4"
+        }
+      ]
+    },
+    {
+      "title": "Update Notes for Aug 16th",
+      "date": "2021-08-16 18:38:04",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4516534149071366602",
+      "content": "[list]\n[*] Support for more romaji inputs\n[*] Skip mode: made the mode quicker to complete\n[*] Skip mode: added warning \n[*] Skip mode: prevented the player from disabling challenge mode by skipping backwards\n[*] Added more words and JLPT N level data in preparation for JLPT mode\n[*] Added text to handwriting mode to clarify its purpose\n[*] [b]Edit: I forgot the most important thing! The little You Can Kana guy's eyes now follow your mouse during handwriting mode.[/b]\n[/list]\n\nMore detail:\n\n[u][b]1. Support for more input methods[/b][/u]\n\nA few cases were found where typing romaji would not count as a correct answer even if it was a valid input, I've addressed these.\n\n[b]The romaji 'nna' can be used to answer '\u3063\u306a', '\u3093\u3093\u3042', or '\u3093\u306a'.\nThe japanese '\u3063\u3061' or '\u30c3\u30c1' can be written as 'tti', 'tchi', or 'cchi'[/b]\n\n[u][b]2. Skip mode improvements[/b][/u]\n\nI've received some comments that skip mode takes too long. I'm considering making skip mode completely skippable, but for now, I'm just taking steps to make it a bit quicker.\n\nThe way skip mode works is that it tries to put every character into one of three buckets:\n\n1. Known (has been answered correctly)\n2. Possibly difficult (has been answered incorrectly)\n3. Definitely difficult (has been answered incorrectly on its own)\n\nIf you answer the word '\u3072\u3089\u304c\u306a' incorrectly as 'hirakana', I don't want the game to assume you don't know \u3072, \u3089, or \u306a. So at this point, all four characters drop into bucket 2. They are then answered individually, at which point they can either drop into bucket 3, if wrong, or bucket 1, if correct.\n\nThe problem was that if the player is not 100% accurate, they can end up with some characters constantly rotating between bucket 1 and 2. I've now made it so [b]if a character is answered correctly at least once, it counts as 'known' for the purposes of the test[/b], preventing these loops.\n\nI also heard from some players who [b]accidentally skipped backwards[/b] after completing skip mode so I've added some warnings to hopefully prevent this from happening.\n\nBy skipping backwards [b]it was also possible to disable challenge mode.[/b] Oops. I've fixed this as well.\n\n[u][b]3. More words[/b][/u]\n\nIn preparation for JLPT mode I've added more JLPT vocab to the game and tagged them with their N levels. [b]Stay tuned for more news on this![/b]\n\n[u][b]4. Handwriting[/b][/u]\n\nI've added some text to this mode to clarify its purpose: [b]to teach stroke order[/b]. Most players will be drawing on a mouse, which is not really a substitute for real handwriting practise. This is why I decided to make the controls here as generous as possible, as it was never really meant to be testing drawing accuracy.\n\nThis is something quite a few people mentioned in reviews so I thought I would just address it here. I have plans to revisit the control scheme here to offer multiple options, which will include a stricter option as well as the option to skip handwriting completely.",
+      "key": "1031900::8e8334ffb38a4237cd2753d4f145e457b2e1a85f",
+      "tags": [
+        {
+          "feature": "- Support for more romaji inputs"
+        },
+        {
+          "balance_change": "- Skip mode: made the mode quicker to complete"
+        },
+        {
+          "feature": "- Skip mode: added warning"
+        },
+        {
+          "bug": "- Skip mode: prevented the player from disabling challenge mode by skipping backwards"
+        },
+        {
+          "feature": "- Added more words and JLPT N level data in preparation for JLPT mode"
+        },
+        {
+          "feature": "- Added text to handwriting mode to clarify its purpose"
+        },
+        {
+          "feature": "- The little You Can Kana guy's eyes now follow your mouse during handwriting mode."
+        },
+        {
+          "bug": "A few cases were found where typing romaji would not count as a correct answer even if it was a valid input, I've addressed these."
+        },
+        {
+          "feature": "The romaji 'nna' can be used to answer '\u3063\u306a', '\u3093\u3093\u3042', or '\u3093\u306a'."
+        },
+        {
+          "feature": "The japanese '\u3063\u3061' or '\u30c3\u30c1' can be written as 'tti', 'tchi', or 'cchi'"
+        },
+        {
+          "balance_change": "if a character is answered correctly at least once, it counts as 'known' for the purposes of the test"
+        },
+        {
+          "feature": "accidentally skipped backwards after completing skip mode so I've added some warnings to hopefully prevent this from happening."
+        },
+        {
+          "bug": "By skipping backwards it was also possible to disable challenge mode. Oops. I've fixed this as well."
+        },
+        {
+          "feature": "In preparation for JLPT mode I've added more JLPT vocab to the game and tagged them with their N levels."
+        },
+        {
+          "feature": "I've added some text to this mode to clarify its purpose: to teach stroke order."
+        }
+      ]
+    },
+    {
+      "title": "Handwriting Update",
+      "date": "2021-07-03 17:42:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4032392655097790896",
+      "content": "Hi everyone, thanks for playing the demo. You Can Kana is due to launch at the end of July and I'd like to share what I've been working on since Steam Next Fest.\n\nPlease give the game a [url=https://store.steampowered.com/app/1031900/You_Can_Kana/]wishlist[/url] if you're enjoying the demo!\n\nThe demo was a great opportunity to get some feedback on the gameplay and the no. 1 requested feature was the ability to draw the characters. So I've added this functionality to the Learn phase!\n\nIf you've already completed all of the characters, you can still review the stroke order from the kana tables in the menu. I've also made it possible to reset your save if you just want to work through the characters from scratch, which can be a good way to practise.\n\n[previewyoutube=XMP-3t254aQ;full][/previewyoutube]\n\nFull change log:\n[list]\n[*] The Learn phase now teaches handwriting\n[*] The kana tables now display stroke order information\n[*] You can now replay Learn and Review phases\n[*] Added more colour palettes\n[*] You can now reset your save from the options menu\n[/list]",
+      "key": "1031900::06c0538ccc2a552feee7320c73a816713e76bc37",
+      "tags": [
+        {
+          "feature": "The Learn phase now teaches handwriting"
+        },
+        {
+          "feature": "The kana tables now display stroke order information"
+        },
+        {
+          "feature": "You can now replay Learn and Review phases"
+        },
+        {
+          "feature": "Added more colour palettes"
+        },
+        {
+          "feature": "You can now reset your save from the options menu"
+        }
+      ]
+    }
+  ]
+}

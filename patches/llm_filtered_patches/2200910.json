@@ -1,0 +1,120 @@
+{
+  "appId": "2200910",
+  "count": 4,
+  "notes": [
+    {
+      "title": "The Plant system!",
+      "date": "2024-08-07 10:59:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963414363387102953",
+      "content": "[img]{STEAM_CLAN_IMAGE}/45033694/00d4389b474302611c66343f75a10acc1f3a89dc.png[/img]\n\n[b]Hello, dear friends![/b]\n\nLast week we told you about such an interesting mechanic as Plant, and exactly how it will be implemented in the game itself. Today we want to delve into the technical part of this system and talk about how it all works in practice.\n\n[b]\ud83d\udccc Part 2.[/b]\n\nThe Plant system is designed to solve 2 main tasks:\n\n1. Creating zones for the appearance and disappearance of many monsters at specified points.\n2. Changing the behavioral characteristics of Plants.\n\nLet's talk about each item separately.\n\n1. The feature of this system is the activation of habitat zones and the nth number of points of appearance of creatures in it. When the player's character crosses the border of the zone, the spawn points are activated in it, which in turn create in their place related Plant instances. In addition, the zones themselves may overlap with each other. That is, when one of the zones is activated, Plants appear not only in the corresponding zone, but also at the point of contact. At the same time, each zone will use the contact zone as its own. At the moment when a player leaves one of the intersecting zones and moves to another without leaving both at once, the Plants in the area of contact do not disappear. In the rest of the area, the zones that have just been touched appear, and in the zone that has just been left they disappear.\n\n2. The behavior of the Plants depends on which zone the player is in at the moment. There are 4 such zones in total.\n\n- Neutral. Plant does not react to the player in any way.\n- Preparation. The Plant begins to feel the player, move and reach out its tentacles.\n- Attacking with medium damage. The Plant attacks in a circle in the range.\n- Attacking with maximum damage. When the player is directly under the Plant, he attacks it straight down with all his strength.\n\nIn addition, our team does not forget about optimization. We try to correctly place habitat zones, do not load the system with unnecessary areas, and also monitor the balance of difficulty and the number of enemies on the level so that you feel comfortable and interesting playing our game!)\n\n[b]\ud83d\udd37 You can support our project:[/b]\n\u2022 Boosty - https://boosty.to/ovnru\n\n\u2022 DonationAlerts- https://www.donationalerts.com/r/ovnru\n\n\u2022 VK Play - https://vkplay.ru/play/game/pigeon_ovnru/\n\n\n[b]\ud83d\udd37 Subscribe to our social networks to learn more about us:[/b]\n\u2022 Discord oVnRU - https://discord.gg/EEqZGQmqvK\n\n\u2022 Twitter oVnRU - https://twitter.com/oVn_RU\n\n\u2022 Website oVnRu - https://www.ovnru.site/\n\n\u2022 YouTube oVnRU - https://www.youtube.com/channel/UCj_SJnOtyYUyS2QF2zGuxCg",
+      "key": "2200910::50a5f2cd94aa65466ba27b649dd03a5f804a6fbc",
+      "tags": [
+        {
+          "feature": "The Plant system is designed to solve 2 main tasks:\n\n1. Creating zones for the appearance and disappearance of many monsters at specified points.\n2. Changing the behavioral characteristics of Plants."
+        },
+        {
+          "feature": "The feature of this system is the activation of habitat zones and the nth number of points of appearance of creatures in it."
+        },
+        {
+          "feature": "When the player's character crosses the border of the zone, the spawn points are activated in it, which in turn create in their place related Plant instances."
+        },
+        {
+          "feature": "In addition, the zones themselves may overlap with each other."
+        },
+        {
+          "feature": "That is, when one of the zones is activated, Plants appear not only in the corresponding zone, but also at the point of contact."
+        },
+        {
+          "feature": "At the same time, each zone will use the contact zone as its own."
+        },
+        {
+          "feature": "At the moment when a player leaves one of the intersecting zones and moves to another without leaving both at once, the Plants in the area of contact do not disappear."
+        },
+        {
+          "feature": "In the rest of the area, the zones that have just been touched appear, and in the zone that has just been left they disappear."
+        },
+        {
+          "feature": "The behavior of the Plants depends on which zone the player is in at the moment."
+        },
+        {
+          "feature": "There are 4 such zones in total."
+        },
+        {
+          "feature": "- Neutral. Plant does not react to the player in any way."
+        },
+        {
+          "feature": "- Preparation. The Plant begins to feel the player, move and reach out its tentacles."
+        },
+        {
+          "feature": "- Attacking with medium damage. The Plant attacks in a circle in the range."
+        },
+        {
+          "feature": "- Attacking with maximum damage. When the player is directly under the Plant, he attacks it straight down with all his strength."
+        },
+        {
+          "balance_change": "In addition, our team does not forget about optimization. We try to correctly place habitat zones, do not load the system with unnecessary areas, and also monitor the balance of difficulty and the number of enemies on the level so that you feel comfortable and interesting playing our game!)"
+        }
+      ]
+    },
+    {
+      "title": "The Plant system!",
+      "date": "2024-07-31 11:00:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413728331768358",
+      "content": "[img]{STEAM_CLAN_IMAGE}/45033694/4f9c2f1ed4bafd24bc6af645da6299a9283a6987.jpg[/img]\n\n[b]Hello, dear friends![/b]\n\nToday we want to tell you about a rather complicated, but interesting and ready-made mechanic called Plant. Since this system is quite multifaceted, we will divide this news into two parts and now tell you how it works directly during the game.\n\n\ud83d\udccc Part 1.\n\nA Plant is a predatory plant creature that lives in dungeons and is located on the vaults and walls of caves. Hunting various creatures, he lures them to him with his mana-filled tentacles. The tentacles themselves are extremely toxic, and upon contact with them, the victim will be affected by hallucinogenic substances.\n\nFrom the gameplay point of view of the mechanic, we work as follows: when a player approaches a Plant, he will feel it and begin to react to it, pulling out his tentacles and luring the victim to himself. Since the Plant does not have eyes and is oriented in space only thanks to its appendages, it will not attack immediately, but will wait until the player gets close enough, and then it will begin to attack. Moreover, while the player is standing next to him, he will hit the entire circle, causing average damage to the character. But if you go up and stand under it, the Plant will strike straight down, causing maximum damage. The player, in turn, will have the opportunity to block his blows and counterattack, and in case of a successful attack, the monster will abruptly hide its tentacles and cover itself with leaves, creating armor through which damage will not pass through it. To finally kill Plant, you will have to wait until he opens up again, and then deal him a fatal blow.\n\nIt is worth noting that Plant's behavior extends not only to the player, but also to everyone else, including monsters. So in some situations, this feature can be used to your advantage!)\n\n[b]\ud83d\udd37 You can support our project:[/b]\n\u2022 Boosty - https://boosty.to/ovnru\n\n\u2022 DonationAlerts- https://www.donationalerts.com/r/ovnru\n\n\u2022 VK Play - https://vkplay.ru/play/game/pigeon_ovnru/\n\n\n[b]\ud83d\udd37 Subscribe to our social networks to learn more about us:[/b]\n\u2022 Discord oVnRU - https://discord.gg/EEqZGQmqvK\n\n\u2022 Twitter oVnRU - https://twitter.com/oVn_RU\n\n\u2022 Website oVnRu - https://www.ovnru.site/\n\n\u2022 YouTube oVnRU - https://www.youtube.com/channel/UCj_SJnOtyYUyS2QF2zGuxCg",
+      "key": "2200910::92ad0569477e90f46e5f121b513b09209522d4e2",
+      "tags": [
+        {
+          "feature": "A Plant is a predatory plant creature that lives in dungeons and is located on the vaults and walls of caves. Hunting various creatures, he lures them to him with his mana-filled tentacles. The tentacles themselves are extremely toxic, and upon contact with them, the victim will be affected by hallucinogenic substances."
+        },
+        {
+          "feature": "From the gameplay point of view of the mechanic, we work as follows: when a player approaches a Plant, he will feel it and begin to react to it, pulling out his tentacles and luring the victim to himself. Since the Plant does not have eyes and is oriented in space only thanks to its appendages, it will not attack immediately, but will wait until the player gets close enough, and then it will begin to attack. Moreover, while the player is standing next to him, he will hit the entire circle, causing average damage to the character. But if you go up and stand under it, the Plant will strike straight down, causing maximum damage. The player, in turn, will have the opportunity to block his blows and counterattack, and in case of a successful attack, the monster will abruptly hide its tentacles and cover itself with leaves, creating armor through which damage will not pass through it. To finally kill Plant, you will have to wait until he opens up again, and then deal him a fatal blow."
+        },
+        {
+          "feature": "It is worth noting that Plant's behavior extends not only to the player, but also to everyone else, including monsters. So in some situations, this feature can be used to your advantage!)"
+        }
+      ]
+    },
+    {
+      "title": "The user interface is in the game!",
+      "date": "2024-07-24 11:00:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5963413094344885350",
+      "content": "[img]{STEAM_CLAN_IMAGE}/45033694/b3b310a0d647029143c00dc40c199f90c00516d8.png[/img]\n\n[b]Hello, dear friends![/b]\n\nAt the moment, our team of artists is actively working on creating a user interface for the game, including the design of one of the most important elements of the game UI: HUD (Heads-Up Display). Today we want to show you a ready-made version of HUD and tell you about it in detail.\n\nIn the upper left corner, according to the classics, the most important interface elements are located: a health bar, a flask with mana, which, by the way, will not appear immediately, but only after some time, when Richard acquires his witchcraft abilities, as well as a mini-map on which various objects, tasks, and the location of the main character relative to the game will be displayed the world and so on. In addition, in addition to the information component, we have also added decorative elements in the form of bright feathers. Just below is an icon with the name of the active quest and the task to promote or complete it. On the bottom right, we have placed three slots for quick access to various consumables \u2014 food, potions and more.\n\nOf course, the HUD design will still be refined and improved, but you can evaluate the quality and style of the main interface elements right now. We really hope that you will like the result!)\n\n[b]\ud83d\udd37 You can support our project:[/b]\n\u2022 Boosty - https://boosty.to/ovnru\n\n\u2022 DonationAlerts- https://www.donationalerts.com/r/ovnru\n\n\u2022 VK Play - https://vkplay.ru/play/game/pigeon_ovnru/\n\n\n[b]\ud83d\udd37 Subscribe to our social networks to learn more about us:[/b]\n\u2022 Discord oVnRU - https://discord.gg/EEqZGQmqvK\n\n\u2022 Twitter oVnRU - https://twitter.com/oVn_RU\n\n\u2022 Website oVnRu - https://www.ovnru.site/\n\n\u2022 YouTube oVnRU - https://www.youtube.com/channel/UCj_SJnOtyYUyS2QF2zGuxCg",
+      "key": "2200910::cbf926a660b2fb96bef153a0cc3078489561ac49",
+      "tags": [
+        {
+          "feature": "At the moment, our team of artists is actively working on creating a user interface for the game, including the design of one of the most important elements of the game UI: HUD (Heads-Up Display). Today we want to show you a ready-made version of HUD and tell you about it in detail."
+        },
+        {
+          "feature": "In the upper left corner, according to the classics, the most important interface elements are located: a health bar, a flask with mana, which, by the way, will not appear immediately, but only after some time, when Richard acquires his witchcraft abilities, as well as a mini-map on which various objects, tasks, and the location of the main character relative to the game will be displayed the world and so on."
+        },
+        {
+          "feature": "In addition, in addition to the information component, we have also added decorative elements in the form of bright feathers."
+        },
+        {
+          "feature": "Just below is an icon with the name of the active quest and the task to promote or complete it."
+        },
+        {
+          "feature": "On the bottom right, we have placed three slots for quick access to various consumables \u2014 food, potions and more."
+        },
+        {
+          "feature": "Of course, the HUD design will still be refined and improved, but you can evaluate the quality and style of the main interface elements right now."
+        }
+      ]
+    },
+    {
+      "title": "A new look and model of the Zerta monster!",
+      "date": "2024-06-20 13:13:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039976804638",
+      "content": "[img]{STEAM_CLAN_IMAGE}/45033694/847dfb657f5a59270a641710880a1c0df4df1e69.jpg[/img]\n\n[b]Hello, dear friends![/b]\n\nThere are a huge number of different creatures in the Pigeon universe, both cute and friendly, as well as dangerous, aggressive ones. Most of them have several species that differ from each other either in color or body structure, which gives them even more individuality. Today we want to show you a new, evolutionary, advanced type of the Zert monster. It differs from the other version by a smaller number of limbs: It has six paws, three heads and no tail, but it has fur and muscles. And don't be confused by such visual changes, because this type of Zert is much more dangerous, fiercer and smarter, and also has increased strength, health and endurance.\n\nAlthough the model is still without textures, but you can evaluate the alternative design of this beast right now!)\n\n[b]\ud83d\udd37 You can support our project:[/b]\n\u2022 Boosty - https://boosty.to/ovnru\n\n\u2022 DonationAlerts- https://www.donationalerts.com/r/ovnru\n\n\u2022 VK Play - https://vkplay.ru/play/game/pigeon_ovnru/\n\n\n[b]\ud83d\udd37 Subscribe to our social networks to learn more about us:[/b]\n\u2022 Discord oVnRU - https://discord.gg/EEqZGQmqvK\n\n\u2022 Twitter oVnRU - https://twitter.com/oVn_RU\n\n\u2022 Website oVnRu - https://www.ovnru.site/\n\n\u2022 YouTube oVnRU - https://www.youtube.com/channel/UCj_SJnOtyYUyS2QF2zGuxCg",
+      "key": "2200910::777c1fbdb6ff0af1025a6f66257d7e880485c852",
+      "tags": [
+        {
+          "feature": "Today we want to show you a new, evolutionary, advanced type of the Zert monster."
+        },
+        {
+          "balance_change": "And don't be confused by such visual changes, because this type of Zert is much more dangerous, fiercer and smarter, and also has increased strength, health and endurance."
+        }
+      ]
+    }
+  ]
+}

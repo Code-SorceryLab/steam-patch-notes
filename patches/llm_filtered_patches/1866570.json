@@ -1,0 +1,822 @@
+{
+  "appId": "1866570",
+  "count": 32,
+  "notes": [
+    {
+      "title": "1.38 hotfix notes",
+      "date": "2024-05-05 02:04:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999953459472",
+      "content": "Brief hotfix patch. I'm frying bigger fish right now, but these things needed addressing.\n\n[list]\n[*]Hive's Hold Timer now properly depletes in the rear position (relative to your Pressure, just like in the front position). This solves an issue where she couldn't be tagged back in if you tagged out during a chain.\n[*]Bear no longer randomly crashes the Piece Selector.\n[/list]\n\nThe next patch is taking a while for artwork reasons. Thank you for your patience.",
+      "key": "1866570::214cf4ae49d1d572f1c34bef08d71c0d649ab8f8",
+      "tags": [
+        {
+          "bug": "[*]Hive's Hold Timer now properly depletes in the rear position (relative to your Pressure, just like in the front position). This solves an issue where she couldn't be tagged back in if you tagged out during a chain."
+        },
+        {
+          "bug": "[*]Bear no longer randomly crashes the Piece Selector."
+        }
+      ]
+    },
+    {
+      "title": "The hottest fixes. (v1.35 patch notes)",
+      "date": "2023-03-07 17:10:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176581718281",
+      "content": "Xross Dreams, v1.35 Patch Notes:\n[list]\n[*][b]Fixed a rounding error in Hive's pressure calculations.[/b] This means that Hold Time should gradually scale downward starting at 10 seconds, instead of how it used to never get slower until it immediately got way too fast.\n[*][b]Hive's cursor now appropriately moves downward when there is a visible Crush Wall.[/b]\n[*][b]Skeleton can no longer infinitely displace pieces.[/b]\n[*][b]Journey appropriately self-destructs in the rear position.[/b]\n[*][b]Under no circumstances is it possible to tag into a dead Dreamer.[/b]\n[*][b]Fighter's Puzzle damage targets altered to be possible with up-to-date damage calculations.[/b] The original Tech Bonus puzzle is now a Displacement Bonus puzzle.\n[/list]",
+      "key": "1866570::67555a1ccecf5f5363e3f5092748fc3ab11ffd0b",
+      "tags": [
+        {
+          "bug": "[b]Fixed a rounding error in Hive's pressure calculations.[/b]"
+        },
+        {
+          "bug": "[b]Hive's cursor now appropriately moves downward when there is a visible Crush Wall.[/b]"
+        },
+        {
+          "bug": "[b]Skeleton can no longer infinitely displace pieces.[/b]"
+        },
+        {
+          "bug": "[b]Journey appropriately self-destructs in the rear position.[/b]"
+        },
+        {
+          "bug": "[b]Under no circumstances is it possible to tag into a dead Dreamer.[/b]"
+        },
+        {
+          "bug": "[b]Fighter's Puzzle damage targets altered to be possible with up-to-date damage calculations.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "This is a good thing. (v1.34 patch notes)",
+      "date": "2023-03-06 10:29:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5070528176577058588",
+      "content": "Xross Dreams, v1.34 Patch Notes:\n[list]\n[*][b]Fixed the \"End-of-Turn Switch to kill your whole team\" bug.[/b] I still kept the functionality where you choose which screen takes damage, but the self-destruction option no longer annihilates both Dreamers.\n[*][b]Event readout display visuals recalculated.[/b] Information should display where your drop point was all the time, now, regardless of resolution and player side.\n[*][b]Completely rewrote Dreamer Select netcode.[/b] Since lag isn't a real issue on the selection screen, I reprogrammed Selection so that you send memory states instead of inputs. This makes it functionally impossible to desync on Dreamer Select, but you may occasionally see the banners have the wrong visuals (despite the correct Dreamer being selected) if people mash through it.\n[*][b]Hive now instantly dies if you take more than 56 rows over the top of the board in damage.[/b] This fixes a crash in the most violent way possible.\n[/list]\n\nThank you for your patience.",
+      "key": "1866570::373f5c769bc44a64efd846f3acaac2c6c7ff4b04",
+      "tags": [
+        {
+          "bug": "[b]Fixed the \"End-of-Turn Switch to kill your whole team\" bug.[/b] I still kept the functionality where you choose which screen takes damage, but the self-destruction option no longer annihilates both Dreamers."
+        },
+        {
+          "bug": "[b]Event readout display visuals recalculated.[/b] Information should display where your drop point was all the time, now, regardless of resolution and player side."
+        },
+        {
+          "bug": "[b]Completely rewrote Dreamer Select netcode.[/b] Since lag isn't a real issue on the selection screen, I reprogrammed Selection so that you send memory states instead of inputs. This makes it functionally impossible to desync on Dreamer Select, but you may occasionally see the banners have the wrong visuals (despite the correct Dreamer being selected) if people mash through it."
+        },
+        {
+          "bug": "[b]Hive now instantly dies if you take more than 56 rows over the top of the board in damage.[/b] This fixes a crash in the most violent way possible."
+        }
+      ]
+    },
+    {
+      "title": "Softening the colors. (v1.33 patch notes)",
+      "date": "2023-02-23 04:12:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059268543356277100",
+      "content": "Xross Dreams, v1.33 Patch Notes:\n[list]\n[*][b]Tyrannosaurus Red Dinorbs now colored properly when you lose your colors.[/b] I'm the only one who would notice.\n[*][b]Dinosaur no longer picks impossible Push patterns against Journey.[/b] This fixes a crash.\n[*][b]Thinker no longer gets stuck in a chain timer loop if you crack open a Shell in extremely specific ways.[/b] This fixes a soft lock scenario.\n[*][b]Thinker can no longer grab or drop pieces while Shells are cracking.[/b] This is related to the above fix, and fixes some strange issues with temporarily disappearing pieces.\n[*][b]Fixed some Sandbox crashes involving the Hit Me With menu.[/b]\n[*][b]Fighter, Robot, Goddess, Skeleton, Comet, Hive, and Dinosaur now use updated softening timing.[/b] To achieve parity with Thinker, which was updated to achieve parity with the game that inspired Thinker, all these Dreamers now soften Hard pieces mid-ignition. What this means is that pieces softened can be ignited simultaneously as they are softened. This is an edge-case scenario bugfix that theoretically makes it easier to fight Thinker but should ultimately affect nothing in the long run.\n[*][b]When a cutscene is triggered online by a remote opponent, you roll back to the frame they were at when they lost the Dreamer.[/b] This solves some nasty timing disputes online.\n[*][b]Attacks sent online now are sent to a queue before manifesting instead of having their startup lengthened.[/b] This is hocus-pocus that prevents some extremely weird edge-case scenario desyncs online where somebody parries an attack that should have hit them already.\n[*][b]If you lose a Dreamer and are waiting at the cutscene for the opponent to catch up, extra protections are in place to make sure the final frame's inputs don't get dropped.[/b] This is more hocus-pocus that prevents an extremely specific edge-case scenario where exactly the wrong packet gets dropped, soft-locking the game.\n[/list]\n\n\nWhat this mostly means is fewer desyncs, way fewer soft locks, and a lot fewer crashes. Thanks for your patience.",
+      "key": "1866570::7d89b249763ff68da18e2196e0b7abe246a8ff69",
+      "tags": [
+        {
+          "bug": "[b]Tyrannosaurus Red Dinorbs now colored properly when you lose your colors.[/b] I'm the only one who would notice."
+        },
+        {
+          "bug": "[b]Dinosaur no longer picks impossible Push patterns against Journey.[/b] This fixes a crash."
+        },
+        {
+          "bug": "[b]Thinker no longer gets stuck in a chain timer loop if you crack open a Shell in extremely specific ways.[/b] This fixes a soft lock scenario."
+        },
+        {
+          "bug": "[b]Thinker can no longer grab or drop pieces while Shells are cracking.[/b] This is related to the above fix, and fixes some strange issues with temporarily disappearing pieces."
+        },
+        {
+          "bug": "[b]Fixed some Sandbox crashes involving the Hit Me With menu.[/b]"
+        },
+        {
+          "bug": "[b]Fighter, Robot, Goddess, Skeleton, Comet, Hive, and Dinosaur now use updated softening timing.[/b] To achieve parity with Thinker, which was updated to achieve parity with the game that inspired Thinker, all these Dreamers now soften Hard pieces mid-ignition. What this means is that pieces softened can be ignited simultaneously as they are softened. This is an edge-case scenario bugfix that theoretically makes it easier to fight Thinker but should ultimately affect nothing in the long run."
+        },
+        {
+          "bug": "[b]When a cutscene is triggered online by a remote opponent, you roll back to the frame they were at when they lost the Dreamer.[/b] This solves some nasty timing disputes online."
+        },
+        {
+          "bug": "[b]Attacks sent online now are sent to a queue before manifesting instead of having their startup lengthened.[/b] This is hocus-pocus that prevents some extremely weird edge-case scenario desyncs online where somebody parries an attack that should have hit them already."
+        },
+        {
+          "bug": "[b]If you lose a Dreamer and are waiting at the cutscene for the opponent to catch up, extra protections are in place to make sure the final frame's inputs don't get dropped.[/b] This is more hocus-pocus that prevents an extremely specific edge-case scenario where exactly the wrong packet gets dropped, soft-locking the game."
+        }
+      ]
+    },
+    {
+      "title": "Another step forward. (v1.32 patch notes)",
+      "date": "2023-02-15 20:37:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5059267908812520234",
+      "content": "Xross Dreams, v1.32 Patch Notes:\n[list]\n[*][b]As Hive, Shells and Shell Towers properly carry chain values when opening.[/b] You can properly \"garbage chain\" just like in the inspiring games.\n[*][b]Hive no longer gets posthumous bonus points for Escalating, causing a slight desync online.[/b]\n[*][b]Hive's Hold Timer no longer depletes when Hive is in the rear position.[/b] This is a bugfix, but I imagine this affects some strategies.\n[*][b]Thinker's The Power now properly ignites in more situations.[/b] I went back to the arcade machine for the inspiring game and did a bunch of homework. You can now clear The Power if sandwiched between 2 fruit, if 2 of The Power are in a stack and drop onto a fruit/have a fruit dropped onto them, and/or if The Power is adjacent to a group of exploding fruit.\n[*][b]As Thinker, Hard Fruit properly softens mid-ignition.[/b] [i]This is a doozy of a bugfix. I will apply this change to all other Dreamers in the next patch, but since it's such a huge engine change I want to dedicate more time to testing it and making sure nothing breaks.[/i] As per the inspiring game, Hard Fruit that softens will explode if touching a group of currently exploding fruit, which happens at least once every time. This is kind of a big deal. Anyway, this sometimes leaves a hard gap that goes away in a second. I'll see if I can't take care of that with the rest in the next patch.\n[*][b]Pause is no longer considered held if the round ends.[/b] No more frozen, floating thinking emoji.\n[*][b]ALL TURN-BASED DREAMERS NOW CHECK FOR DOWN BEFORE RECEIVING ATTACKS. [i]This is a necessary engine change that absolutely results in fewer desyncs Online.[/i][/b] If you Down (\"top out\") with incoming damage it will guaranteed hit the next incoming Dreamer. No more arguments between machines about whether or not you got KOed. This affects strategy somewhat, I'm aware, as now there is a clear divide between Down and KO when it comes to managing incoming attacks.\n[/list]\n\nIt looks like the future things I need to do to make the game work better online will also significantly affect the game offline. This wasn't the plan, but I will do what is necessary to improve the experience. Thank you for your patience.",
+      "key": "1866570::2f3dba7aefcb13d5a691452b164c960af9bd3e5b",
+      "tags": [
+        {
+          "bug": "[b]As Hive, Shells and Shell Towers properly carry chain values when opening.[/b] You can properly \"garbage chain\" just like in the inspiring games."
+        },
+        {
+          "bug": "[b]Hive no longer gets posthumous bonus points for Escalating, causing a slight desync online.[/b]"
+        },
+        {
+          "bug": "[b]Hive's Hold Timer no longer depletes when Hive is in the rear position.[/b] This is a bugfix, but I imagine this affects some strategies."
+        },
+        {
+          "bug": "[b]Thinker's The Power now properly ignites in more situations.[/b] I went back to the arcade machine for the inspiring game and did a bunch of homework. You can now clear The Power if sandwiched between 2 fruit, if 2 of The Power are in a stack and drop onto a fruit/have a fruit dropped onto them, and/or if The Power is adjacent to a group of exploding fruit."
+        },
+        {
+          "bug": "[b]As Thinker, Hard Fruit properly softens mid-ignition.[/b] [i]This is a doozy of a bugfix. I will apply this change to all other Dreamers in the next patch, but since it's such a huge engine change I want to dedicate more time to testing it and making sure nothing breaks.[/i] As per the inspiring game, Hard Fruit that softens will explode if touching a group of currently exploding fruit, which happens at least once every time. This is kind of a big deal. Anyway, this sometimes leaves a hard gap that goes away in a second. I'll see if I can't take care of that with the rest in the next patch."
+        },
+        {
+          "bug": "[b]Pause is no longer considered held if the round ends.[/b] No more frozen, floating thinking emoji."
+        },
+        {
+          "bug": "[b]ALL TURN-BASED DREAMERS NOW CHECK FOR DOWN BEFORE RECEIVING ATTACKS. [i]This is a necessary engine change that absolutely results in fewer desyncs Online.[/i][/b] If you Down (\"top out\") with incoming damage it will guaranteed hit the next incoming Dreamer. No more arguments between machines about whether or not you got KOed. This affects strategy somewhat, I'm aware, as now there is a clear divide between Down and KO when it comes to managing incoming attacks."
+        }
+      ]
+    },
+    {
+      "title": "All the way. (v1.30 patch notes)",
+      "date": "2023-02-08 13:38:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5036749277226672862",
+      "content": "Xross Dreams, v1.30 Patch Notes:\n[list]\n[*][b]As Hive, Shells that are in the process of opening will ignore adjacent clears.[/b] Bugfix.\n[*][b]Reimplemented end-of-round handshake sequence. [i]This absolutely results in fewer desyncs online, specifically those happening at the end of the round where a player perceives the other player as doing nothing when they were in fact fighting back.[/i][/b] There were multiple parts to this fix, but needless to say this may be the final part of the netcode that needed my immediate attention. Preliminary testing showed that the problem is gone. Reports of mid-match desyncs were nonexistent after yesterday's patch, so this means that the netcode is finally no longer a thorn in my side!\n[/list]\n\nI have a good feeling about this.",
+      "key": "1866570::29de0f67b7aa44829af9cdbcde3b8fc87be019ab",
+      "tags": [
+        {
+          "bug": "[b]As Hive, Shells that are in the process of opening will ignore adjacent clears.[/b] Bugfix."
+        },
+        {
+          "bug": "[b]Reimplemented end-of-round handshake sequence. [i]This absolutely results in fewer desyncs online, specifically those happening at the end of the round where a player perceives the other player as doing nothing when they were in fact fighting back.[/i][/b]"
+        }
+      ]
+    },
+    {
+      "title": "Ascension cannot be shortcutted. (v1.29 patch notes)",
+      "date": "2023-02-07 12:25:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743898822086",
+      "content": "Xross Dreams, v1.29 Patch Notes:\n[list]\n[*][b]Disabled fight counter achievements in Tournament Vs Mode.[/b] They were in a different part of the code and I overlooked them.\n[*][b]If Hive gets hit (while not in Hold Time) but does not get brought above the Deadline, Hive receives a brief (15 frame) Hold Time.[/b] This is to achieve parity with Panel de Pon, which has a slight delay before pressure restarts after you receive hits. 15 frames is a lot, though.\n[*][b]Isolated frame counters per each half of the engine, using the lower value to call once per frame engine updates online. [i]This absolutely results in fewer desyncs online.[/i][/b] Preliminary testing came up with perfect results. KO/Down cutscenes still perform slowly online (because of delay-based netcode instances that allow both players to load the next song), and it's possible to end matches slightly differently if somebody Downs when they were frames away from being KOed. However, desyncs during the match were not apparent, down to the frame.\n[/list]\n\nI hope this is the one.",
+      "key": "1866570::02ec14a98e65c2b28e4e9df3784b2b69a1903f2e",
+      "tags": [
+        {
+          "bug": "[b]Disabled fight counter achievements in Tournament Vs Mode.[/b] They were in a different part of the code and I overlooked them."
+        },
+        {
+          "feature": "[b]If Hive gets hit (while not in Hold Time) but does not get brought above the Deadline, Hive receives a brief (15 frame) Hold Time.[/b] This is to achieve parity with Panel de Pon, which has a slight delay before pressure restarts after you receive hits. 15 frames is a lot, though."
+        },
+        {
+          "bug": "[b]Isolated frame counters per each half of the engine, using the lower value to call once per frame engine updates online. [i]This absolutely results in fewer desyncs online.[/i][/b] Preliminary testing came up with perfect results. KO/Down cutscenes still perform slowly online (because of delay-based netcode instances that allow both players to load the next song), and it's possible to end matches slightly differently if somebody Downs when they were frames away from being KOed. However, desyncs during the match were not apparent, down to the frame."
+        }
+      ]
+    },
+    {
+      "title": "I have the worst superpower imaginable. (v1.28 patch notes)",
+      "date": "2023-02-01 22:26:35",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743878471183",
+      "content": "thinker can now grab fossils",
+      "key": "1866570::bb2fc4085e7dfb3ef89e0810a39399ebfc804493",
+      "tags": [
+        {
+          "feature": "thinker can now grab fossils"
+        }
+      ]
+    },
+    {
+      "title": "I've got it! (v1.27 patch notes)",
+      "date": "2023-02-01 15:20:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622743877392110",
+      "content": "Xross Dreams v1.26b patch notes that I didn't post last time:\n[list]\n[*]Fixed a typo in Fighter's scoring formula.\n[/list]\n\nXross Dreams v1.27 patch notes:\n[list]\n[*][b]Push damage against Hive fixed for real.[/b] Any Push received as Hive will generate rows identical to those generated naturally by pressure or pressing the Escalate button. This is so close to the intended behavior that I feel like a fool for not having done this before.\n[*][b]Added asynchronous Online Pressure management. [i]This absolutely results in fewer desyncs online.[/i][/b] In my search for what was causing rare desyncs that caused only a few frames of difference at very hard to catch times, I discovered the answer deep within myself. Pressure may take a moment to affect your opponent, but it will now be appropriately synchronized at all times.\n[*][b]Added dummy input buffer to allow both players to properly render cutscenes Online.[/b] This should prevent post-round soft-lock scenarios where the loser stops losing the frame that they lose.\n[/list]\n\nI really wanted to avoid doing anything else that affects gameplay. I hope you can forgive me for doing this so close to Frosty Faustings. Anyway, if this fixes netplay the way I hope it does, we can finally move on to adding real extra content-- eventually!\n\nThank you for your patience.",
+      "key": "1866570::64d750c7a303dfe2d6d219cfac92ff3e8ca36e9c",
+      "tags": [
+        {
+          "bug": "[*]Fixed a typo in Fighter's scoring formula."
+        },
+        {
+          "bug": "[*][b]Push damage against Hive fixed for real.[/b] Any Push received as Hive will generate rows identical to those generated naturally by pressure or pressing the Escalate button. This is so close to the intended behavior that I feel like a fool for not having done this before."
+        },
+        {
+          "feature": "[*][b]Added asynchronous Online Pressure management. [i]This absolutely results in fewer desyncs online.[/i][/b] In my search for what was causing rare desyncs that caused only a few frames of difference at very hard to catch times, I discovered the answer deep within myself. Pressure may take a moment to affect your opponent, but it will now be appropriately synchronized at all times."
+        },
+        {
+          "feature": "[*][b]Added dummy input buffer to allow both players to properly render cutscenes Online.[/b] This should prevent post-round soft-lock scenarios where the loser stops losing the frame that they lose."
+        }
+      ]
+    },
+    {
+      "title": "I'm starting to understand. (v1.26 patch notes)",
+      "date": "2023-01-26 14:13:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035622109510222224",
+      "content": "Xross Dreams, v1.26 Patch Notes:\n[list]\n[*][b]Graphical artifacts fixed on Astronaut's hitstun.[/b]\n[*][b]Hive's scythe animation properly timed.[/b]\n[*][b]Tournament Mode completely disables all achievements instead of just some.[/b]\n[*]Part of a desync prevention protocol. You won't see results yet, but you will next update.\n[/list]\n\nI'm working on it.",
+      "key": "1866570::a63a7df6c539e221b04c8880ab587088ebedced9",
+      "tags": [
+        {
+          "bug": "[b]Graphical artifacts fixed on Astronaut's hitstun.[/b]"
+        },
+        {
+          "bug": "[b]Hive's scythe animation properly timed.[/b]"
+        },
+        {
+          "bug": "[b]Tournament Mode completely disables all achievements instead of just some.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "Downstacking of bugs. (v1.24 patch notes)",
+      "date": "2023-01-24 10:41:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474429579324",
+      "content": "I actually prefer \"cleaning\" or \"rapid clears\" to the word \"downstacking,\" especially considering that not everybody builds/clears in the same direction in Xross Dreams. Cleaning also makes a lot more sense as a term.\n\nXross Dreams, v1.24 Patch Notes:\n[list]\n[*][b]Fixed Goddess crash when opening Shells at specific y-values.[/b]\n[*]Secret character fixes: [spoiler][b]Bear/Big Bear Hold now dynamically sets its own volume on the fly.[/b] Pretty standard bug fix.[/spoiler]\n[*]Secret character fixes: [spoiler][b]Bear/Big Bear Lock Delay now properly resets when using the Hold function.[/b] I noticed this when I fixed the above.[/spoiler]\n[*][b]Standardized Push Violence against Fighter and Hive.[/b] Everybody else's already worked properly. Now, all regular Pushes (\"regular\" meaning from anybody but Dinosaur) use the same pattern (Comet's pattern). This obviously affects a couple secret characters.\n[*][b]Cleaned up Online timing synchronization code.[/b] If this affects anything, then you'll see slightly fewer freezes online.\n[*][b]Added placeholder Waiting... indicator when playing Online and the opponent is catching up to a cutscene that you are already rendering.[/b] This will become better-looking and fancier once I have the time and opportunity. For now, it should help make some moments that aren't actually freezes look less like the game has frozen.\n[/list]\n\nWhat tech have you discovered? Are you finally starting to learn your mains?",
+      "key": "1866570::69807f3d7bc25ff772df748b7b859205970d4e71",
+      "tags": [
+        {
+          "bug": "[b]Fixed Goddess crash when opening Shells at specific y-values.[/b]"
+        },
+        {
+          "bug": "[b]Bear/Big Bear Hold now dynamically sets its own volume on the fly.[/b]"
+        },
+        {
+          "bug": "[b]Bear/Big Bear Lock Delay now properly resets when using the Hold function.[/b]"
+        },
+        {
+          "bug": "[b]Standardized Push Violence against Fighter and Hive.[/b]"
+        },
+        {
+          "bug": "[b]Cleaned up Online timing synchronization code.[/b]"
+        },
+        {
+          "feature": "[b]Added placeholder Waiting... indicator when playing Online and the opponent is catching up to a cutscene that you are already rendering.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "We are all part of a chain. (v1.23 patch notes)",
+      "date": "2023-01-23 10:04:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474425842179",
+      "content": "Xross Dreams, v1.23 Patch Notes:\n[list]\n[*][b]Fixed random crashes when Hive sends Shells larger than size 6.[/b] The randomness was the problem, and thus has been removed.\n[*][b]Fixed Journey's popup display to properly read out Charge Elements in the chain.[/b]\n[*][b]Fixed Gifts of the wrong size/color being sent if done so in a combo between both Dreamers.[/b] This affects a variety of things including some crashes.\n[*][b]Removed some depreciated handshakes for now-fixed Online timing disputes.[/b] This should result in fewer strange freezes of the opponent's board online.\n[*][b]Added visual hint of gameplay style to Sandbox Dreamer Select if you have Beginner Info enabled for Player 1.[/b] This will not display if you switch to Familiar or Supreme Info (in the Dreamer pause options). By the way, the graphics for these hints are PNGs in %XD%\\Content\\GFX\\menu\\sandbox, so you're free to mod them if you must replace them with, say, screenshots of the games that inspired the Dreamers.\n[/list]\n\n\nHonestly, I was hoping the first mod would be Goku.",
+      "key": "1866570::f67113be67296d176d8ad1946ebf5ddefb3ae372",
+      "tags": [
+        {
+          "bug": "[b]Fixed random crashes when Hive sends Shells larger than size 6.[/b]"
+        },
+        {
+          "bug": "[b]Fixed Journey's popup display to properly read out Charge Elements in the chain.[/b]"
+        },
+        {
+          "bug": "[b]Fixed Gifts of the wrong size/color being sent if done so in a combo between both Dreamers.[/b]"
+        },
+        {
+          "bug": "[b]Removed some depreciated handshakes for now-fixed Online timing disputes.[/b]"
+        },
+        {
+          "feature": "[b]Added visual hint of gameplay style to Sandbox Dreamer Select if you have Beginner Info enabled for Player 1.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "Whack-a-mole for the soul. (v1.22 patch notes)",
+      "date": "2023-01-21 03:28:29",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474417550301",
+      "content": "It's very late, and there's a lot going on.\n\nXross Dreams, v1.22\n[list]\n[*]Secret Character fix: [spoiler][b]Enabling the Piece Selector for either Bear no longer breaks dynamic Gate calculations.[/b] Whoops! I'm too clever for my own good. There isn't always a Next piece. If you enable Piece Selector with Bear or Big Bear, the game now generates a placeholder set of gates for you (based off Big O, Cast in the name of God, ye not guilty).[/spoiler]\n[*][b]Comprehensively rewrote Rocket Science mechanics.[/b] This is something of a series of bugfixes, but it was also something I saw coming. The engine simply couldn't have handled it the way I wrote it at launch. Anyway, Astronaut's Rocket Science is largely identical, but the edge cases (sometimes literal edge cases, like multiple Rockets causing science to occur in adjacent columns) now yield results. The big changes are multi-column science, returning wasted Slingshots, stacking everything at lower heights (for faster science), and getting more Fusions/Stars for inputting more Novas/Fusions.\n[/list]\n\nNext week is going to be a doozy! I really want to make sure offline is clean before tournament season starts. Keep being puzzled!",
+      "key": "1866570::f438450b4939cc9fcebe92a76ebdb80c4fb6bb59",
+      "tags": [
+        {
+          "bug": "[b]Enabling the Piece Selector for either Bear no longer breaks dynamic Gate calculations.[/b]"
+        },
+        {
+          "bug": "[b]Comprehensively rewrote Rocket Science mechanics.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "Miracles are earned. (v1.21 patch notes)",
+      "date": "2023-01-20 06:03:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474414295953",
+      "content": "Xross Dreams, v1.21 Patch Notes:\n[list]\n[*][b]Rollforward recalculated for Crush.[/b] Crush consists of 2 attacks-- destroying your Piece/Queue/Hand/Cursor and raising your Crush Wall. Since the former activates a rollback, it is not necessary (and may have caused timing disputes) for the latter to have rollforward applied to its startup.\n[*][b]Scoreboards now properly synchronized with save states.[/b] Oops.\n[*][b]Crush damage calculations now compensate for delay online in edge case scenarios.[/b] Spoilers.\n[*][b]Goddess's sounds are properly Instanced, affecting volume, stereo side, and memory management.[/b] This also nerfs mashing the C button with an empty meter. I'm sorry. You'll be compensated in a future patch.\n[*][b]Distortions will wait until the opponent catches up to that frame before being inflicted.[/b] If you distort the opponent online, there may be a delay before you see it go.\n[/list]\n\nI got a spooky rollback glitch and I saw somebody else a spooky freeze online, but other than that I'm happy to report that people are playing the game successfully online! I'm still determined to achieve perfection. We're almost there.",
+      "key": "1866570::78f53ab2b095a852a65979aa8dce14aa6657ed78",
+      "tags": [
+        {
+          "bug": "[b]Rollforward recalculated for Crush.[/b] Crush consists of 2 attacks-- destroying your Piece/Queue/Hand/Cursor and raising your Crush Wall. Since the former activates a rollback, it is not necessary (and may have caused timing disputes) for the latter to have rollforward applied to its startup."
+        },
+        {
+          "bug": "[b]Scoreboards now properly synchronized with save states.[/b] Oops."
+        },
+        {
+          "bug": "[b]Crush damage calculations now compensate for delay online in edge case scenarios.[/b] Spoilers."
+        },
+        {
+          "bug": "[b]Goddess's sounds are properly Instanced, affecting volume, stereo side, and memory management.[/b] This also nerfs mashing the C button with an empty meter. I'm sorry. You'll be compensated in a future patch."
+        },
+        {
+          "bug": "[b]Distortions will wait until the opponent catches up to that frame before being inflicted.[/b] If you distort the opponent online, there may be a delay before you see it go."
+        }
+      ]
+    },
+    {
+      "title": "Rollforward, rollback. (v1.20 patch notes)",
+      "date": "2023-01-19 05:55:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035621474410630291",
+      "content": "Xross Dreams v1.20 Patch Notes:\n[list]\n[*][b]Memory management for sounds again, again, again.[/b]\n[*][b]The Problem Sounds now only [i]attempt[/i] to play instead of playing.[/b] This is a very toxic solution to a very stupid problem. It also guarantees no crashes from those situations ever again.\n[*][b]The Set Inputs screen in School lightens the background for keyboard users.[/b] So you can see the prompts, now.\n[*][b]Keyboard mapping in School updates every frame instead of just frames where you are pressing a single button.[/b] This fixes some weird problems where you had to hold the direction to pick a seat, and so on.\n[*][b]Selecting a Dreamer in School has a brief input lockout period.[/b] This prevents accidental double-clicks, which were rather regular occurences on keyboard\n[*][b]You can no longer select Random Dreamers in the Finale Plot.[/b] This fixes several bugs at the cost of requiring you to be decisive when it matters most.\n[*][b]Memory management fixes for plot cutscenes.[/b] Fixes weird crashes during plot cutscenes.\n[*][b]Online menus now properly scale with resolution.[/b]\n[*][b]Life/death statuses resynchronize when you load state online.[/b] There were specific ways to KO opponents who should still have been alive, if you hit them at specific times in specific ways during a series of online rollbacks.\n[*][b]Rollforward calculations cleaned up. [i]This absolutely results in fewer desyncs online[/i].[/b] [i]Technical details: When you attack somebody online, the startup of the attack is modified relative to the lag differential at the time. This wasn't being applied as comprehensively as it could have been before, resulting in slight attack timing differences for Dreamers that can spam quick attacks, like Hive.[/i] When I tested this, I got frame-perfect timing every time when attacking opponents online. This might be the fix that fixes everything.\n[/list]\n\nThere is still a noticeable lag spike during a Down/KO cutscene online. It shouldn't affect gameplay, but I'll make it prettier once I'm sure the desync problems are done for.\n\nThank you for your patience.",
+      "key": "1866570::f0ebc99655f456c687a439e845c0fd088cfab018",
+      "tags": [
+        {
+          "bug": "[b]The Problem Sounds now only [i]attempt[/i] to play instead of playing.[/b] This is a very toxic solution to a very stupid problem. It also guarantees no crashes from those situations ever again."
+        },
+        {
+          "feature": "[b]The Set Inputs screen in School lightens the background for keyboard users.[/b] So you can see the prompts, now."
+        },
+        {
+          "feature": "[b]Keyboard mapping in School updates every frame instead of just frames where you are pressing a single button.[/b] This fixes some weird problems where you had to hold the direction to pick a seat, and so on."
+        },
+        {
+          "bug": "[b]Selecting a Dreamer in School has a brief input lockout period.[/b] This prevents accidental double-clicks, which were rather regular occurences on keyboard"
+        },
+        {
+          "bug": "[b]You can no longer select Random Dreamers in the Finale Plot.[/b] This fixes several bugs at the cost of requiring you to be decisive when it matters most."
+        },
+        {
+          "bug": "[b]Memory management fixes for plot cutscenes.[/b] Fixes weird crashes during plot cutscenes."
+        },
+        {
+          "feature": "[b]Online menus now properly scale with resolution.[/b]"
+        },
+        {
+          "bug": "[b]Life/death statuses resynchronize when you load state online.[/b] There were specific ways to KO opponents who should still have been alive, if you hit them at specific times in specific ways during a series of online rollbacks."
+        },
+        {
+          "balance_change": "[b]Rollforward calculations cleaned up. [i]This absolutely results in fewer desyncs online[/i].[/b] [i]Technical details: When you attack somebody online, the startup of the attack is modified relative to the lag differential at the time. This wasn't being applied as comprehensively as it could have been before, resulting in slight attack timing differences for Dreamers that can spam quick attacks, like Hive.[/i] When I tested this, I got frame-perfect timing every time when attacking opponents online. This might be the fix that fixes everything."
+        }
+      ]
+    },
+    {
+      "title": "bug fixes and minor improvements (v1.19 patch notes)",
+      "date": "2023-01-17 00:48:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840548143549",
+      "content": "Xross Dreams, v1.19 Patch Notes:\n[list]\n[*]Secret character stuff: [spoiler][b]Completely rewrote displacement code for Bear and Big Bear from scratch.[/b] I really hope I don't regret spending all my time doing this! I rewrote it from the ground up. I tested it all. Again. T-Spin doubles, T-Spin triples, J-spin doubles, J-spin triples, L-spin doubles, L-spin triples, counterclockwise and clockwise, both sides of the board. I deleted it all, rewrote them, tested them. I also rewrote Big Bears' displacement code. No failed wallkicks on open parts of the board. Big doesn't get the displace bonus (on purpose) but displacements work. SRS does 4 wallkick checks and I'm doing 7 (15 if you're Big). If you can find a setup that fails a rotation with a valid place for the piece to enter then I'm going to think you're a weirdo.[/spoiler]\n[*]More on a secret character: [spoiler][b]Big Bear now properly displays the Gate, and will properly Down if the Gate is covered at the start of a new turn.[/b] No more shmup hitbox![/spoiler]\n[*][b]Escape now pauses instantly without needing to be held down.[/b] Did you know that you can pause on pad by holding any unmapped button?\n[*]Dinosaur no longer locks themselves out after chaining in the rear position.\n[*]Dinosaur's board now saves and loads row offsets properly in the Sandbox.\n[*]Added playing state exceptions to landing sounds, so they should no longer cause semi-random crashes if you play Drop-type Dreamers weirdly enough.\n[/list]",
+      "key": "1866570::951b26a7c7ae977809513699987ce2e59f50ba20",
+      "tags": [
+        {
+          "feature": "Completely rewrote displacement code for Bear and Big Bear from scratch."
+        },
+        {
+          "feature": "Big Bear now properly displays the Gate, and will properly Down if the Gate is covered at the start of a new turn."
+        },
+        {
+          "bug": "Escape now pauses instantly without needing to be held down."
+        },
+        {
+          "bug": "Dinosaur no longer locks themselves out after chaining in the rear position."
+        },
+        {
+          "bug": "Dinosaur's board now saves and loads row offsets properly in the Sandbox."
+        },
+        {
+          "bug": "Added playing state exceptions to landing sounds, so they should no longer cause semi-random crashes if you play Drop-type Dreamers weirdly enough."
+        }
+      ]
+    },
+    {
+      "title": "Magic is real. (v1.18 patch notes)",
+      "date": "2023-01-13 20:39:24",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840536580620",
+      "content": "Xross Dreams v1.18 Patch Notes\n[list]\n[*]Further memory management passes related to a crash for garbage-collected sound effects.\n[*]Volume stabilization pass related to the above.\n[*]Secret character mechanical fixes: [spoiler][b]Bear rotation system expanded to include extraordinary displacements.[/b] The Super Rotation System, which Bear mostly uses, has a matrix determining the outcome of a piece's displacement if a rotation fails due to existing pieces or lack of space on the board. I have expanded the possibilities beyond what the SRS normally declares to allow additional expected setups. This is most notable in L-spin Double setups such as Lilia, which now work properly instead of failing to spin.[/spoiler]\n[/list]\n\nThere's a way to make the game desync online with Hive and I'll get to it next week. Thank you for understanding.",
+      "key": "1866570::ec0675a30efbf7923deace5ccbcb70a15fb29549",
+      "tags": [
+        {
+          "bug": "[*]Further memory management passes related to a crash for garbage-collected sound effects."
+        },
+        {
+          "bug": "[*]Volume stabilization pass related to the above."
+        },
+        {
+          "bug": "[*]Secret character mechanical fixes: [spoiler][b]Bear rotation system expanded to include extraordinary displacements.[/b] The Super Rotation System, which Bear mostly uses, has a matrix determining the outcome of a piece's displacement if a rotation fails due to existing pieces or lack of space on the board. I have expanded the possibilities beyond what the SRS normally declares to allow additional expected setups. This is most notable in L-spin Double setups such as Lilia, which now work properly instead of failing to spin.[/spoiler]"
+        }
+      ]
+    },
+    {
+      "title": "It's never over. (v1.17 patch notes)",
+      "date": "2023-01-13 00:44:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840533555132",
+      "content": "Xross Dreams, v1.17 Patch Notes:\n[list]\n[*][b]Holding up for several seconds with Pressure set to None as a Drop-type Dreamer no longer crashes the game.[/b]\n[*][b]Gravity now properly aligns horizontally on Journey's board in the rear position on Player 2's side.[/b]\n[*][b]Thinker now reports grab failure when attempting to pick up any part of a Shell, Shell Tower, or Hard Shell.[/b] It now makes the \"clack\" sound instead of the \"doink\" sound, which is what you'd notice.\n[*][b]Thinker now has exception coverage for explosions that haven't evaporated properly.[/b] In testing, this means no more frozen explosions, no more hard empty spaces, etc.\n[*][b]Shells on Thinker's board can no longer be pierced by violence by any means.[/b] Fixed an edge-case scenario involving part of a Shell being pushed by small amounts of violence applied later in the round.\n[*][b]Thinker no longer spawns extra rows Online from being in hitstun due to \"sticky\" values carrying over from the previous frame. [i]This absolutely results in fewer desyncs online.[/i][/b]\n[*][b]If the game crashes, it now leaves an error log in Users/Documents/Starlight Studios/Xross Dreams.[/b] In the future, feel free to copy and paste/send this file alongside any descriptions of any crashes you may encounter, and it'll go a long way towards fixing them.\n[/list]\n\nI've been told I'm working too hard.",
+      "key": "1866570::8db55bdf152d19db0ff2448530501dea39a9668a",
+      "tags": [
+        {
+          "bug": "[b]Holding up for several seconds with Pressure set to None as a Drop-type Dreamer no longer crashes the game.[/b]"
+        },
+        {
+          "bug": "[b]Gravity now properly aligns horizontally on Journey's board in the rear position on Player 2's side.[/b]"
+        },
+        {
+          "bug": "[b]Thinker now reports grab failure when attempting to pick up any part of a Shell, Shell Tower, or Hard Shell.[/b]"
+        },
+        {
+          "bug": "[b]Thinker now has exception coverage for explosions that haven't evaporated properly.[/b]"
+        },
+        {
+          "bug": "[b]Shells on Thinker's board can no longer be pierced by violence by any means.[/b]"
+        },
+        {
+          "bug": "[b]Thinker no longer spawns extra rows Online from being in hitstun due to \"sticky\" values carrying over from the previous frame. [i]This absolutely results in fewer desyncs online.[/i][/b]"
+        },
+        {
+          "bug": "[b]If the game crashes, it now leaves an error log in Users/Documents/Starlight Studios/Xross Dreams.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "Weird. (v1.16 Patch Notes)",
+      "date": "2023-01-12 02:53:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840530236103",
+      "content": "Xross Dreams v1.16 Patch Notes:\n[list]\n[*][b]Huge memory management pass.[/b] The game uses less RAM and there are fewer leaks. This affects some crashes and also Discord integration.\n[*][b]Encounter fixes.[/b] Encounters now wait for gravity and cleanup to complete before accepting new incoming attacks. This makes some things less janky and fixes some wild glitches.\n[*][b]Journey visuals.[/b] Chains are properly horizontally aligned when Journey is in the rear position. Perceptual Distortion no longer misaligns the Crush Wall and visible paws.\n[*][b]Impossible puzzle is now possible again.[/b] I do not understand how the Slingshot puzzle suddenly became impossible when it was possible in earlier versions, but it's possible again now.\n[*][b]Placing pieces obscenely high no longer crashes.[/b] The height was different for most Dreamers, but now there is no height where placing a piece will crash the game.\n[*][b]Encounters now use updated Journey combo sequencer.[/b] There was a glitch where Encounters would get obscenely comboed by Journey. It's gone, now.\n[*][b]Astronaut has an extra sound effect for Bonus Pieces.[/b] This was actually a fix for a memory management issue, but it's notable enough to get its own line.\n[/list]\n\nI'm trying to recreate the desyncs I'm hearing reported. It's hard work. I'm definitely following the Bug Reporting thread on the forum here and going through those. Your voices are being heard.",
+      "key": "1866570::c021ff09b936c93623028f5d073ebc9a8c160883",
+      "tags": [
+        {
+          "bug": "[*][b]Encounter fixes.[/b] Encounters now wait for gravity and cleanup to complete before accepting new incoming attacks. This makes some things less janky and fixes some wild glitches."
+        },
+        {
+          "bug": "[*][b]Journey visuals.[/b] Chains are properly horizontally aligned when Journey is in the rear position. Perceptual Distortion no longer misaligns the Crush Wall and visible paws."
+        },
+        {
+          "bug": "[*][b]Impossible puzzle is now possible again.[/b] I do not understand how the Slingshot puzzle suddenly became impossible when it was possible in earlier versions, but it's possible again now."
+        },
+        {
+          "bug": "[*][b]Placing pieces obscenely high no longer crashes.[/b] The height was different for most Dreamers, but now there is no height where placing a piece will crash the game."
+        },
+        {
+          "bug": "[*][b]Encounters now use updated Journey combo sequencer.[/b] There was a glitch where Encounters would get obscenely comboed by Journey. It's gone, now."
+        },
+        {
+          "bug": "[*][b]Astronaut has an extra sound effect for Bonus Pieces.[/b] This was actually a fix for a memory management issue, but it's notable enough to get its own line."
+        }
+      ]
+    },
+    {
+      "title": "The truth is out there. (v1.15 patch notes)",
+      "date": "2023-01-10 22:06:21",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620840525865684",
+      "content": "This one feels way better.\n\n[list]\n[*][b]Incoming hit detection status calculates incoming attacks before running engine updates online. [i]This fixes Journey and Thinker online.[/i][/b] There's not much more I can say without getting too technical, but hey! It works!\n[*][b]Sound effect instances now dispose internally before immediate reuse.[/b] There were some extremely random and hard to track crashes that were being caused by something called \"InstancePlayLimitException\" which is theoretically impossible to cause on non-mobile games. Except that I routinely do the impossible. Anyway, I went through nearly every sound in the game and reviewed how they were handled in garbage collection to prevent edge cases from improperly reporting this error if multiple versions of the same instance are somehow played in a single frame.\n[*][b]Impact animations now properly display Online.[/b] Again, this one gets really technical. I updated the phase switcher for all Dreamer engines' attack generators to properly include Online and Spectator modes.\n[*][b]Can now properly exit Thinker's Piece Selector.[/b] This was the last instance of this particular glitch.\n[*][b]Fighter's Piece Selector now properly displays how to summon Power Bombs.[/b] You can hit C to spawn Power Bombs. The game tells you this, now.\n[*][b]Downs no longer improperly report as Knockouts Online.[/b] This counts as fixing a desync, even if the mechanical implications are somewhat minor (if you count the scores being out of sync as minor).\n[/list]\n\nThere were also some unlisted fixes today and yesterday pertaining to netcode. Again, it would get too nitty-gritty to list these, but safe to say we're extremely close to Good Online. There is a visible lag spike when somebody Downs or KOs while you wait for the opponent to report that they're watching the same cutscene as you. I can make that quicker and smoother, but I want it to work, first.\n\nI hope you're having a wonderful year.",
+      "key": "1866570::6f40de936bd7b0656ab11bbf715c455cf63137f3",
+      "tags": [
+        {
+          "bug": "[i]This fixes Journey and Thinker online.[/i]"
+        },
+        {
+          "bug": "[b]Sound effect instances now dispose internally before immediate reuse.[/b]"
+        },
+        {
+          "bug": "[b]Impact animations now properly display Online.[/b]"
+        },
+        {
+          "bug": "[b]Can now properly exit Thinker's Piece Selector.[/b]"
+        },
+        {
+          "bug": "[b]Fighter's Piece Selector now properly displays how to summon Power Bombs.[/b]"
+        },
+        {
+          "bug": "[b]Downs no longer improperly report as Knockouts Online.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "Spoilers: It's part of a series. (v1.14 Patch Note)",
+      "date": "2023-01-10 01:17:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387704985765",
+      "content": "It's mostly bug fixes.\n\nXross Dreams v1.14 Patch Notes:\n[list]\n[*][b]Skeleton bones no longer render at the wrong scaling when he is KOed.[/b] You probably care the least about this.\n[*][b]Shells no longer cause Hive's gravity to freeze in extremely specific piece arrangements.[/b]\n[*][b]Hive no longer reports \"ghost chains\" that cause your screen not to reset back to inactive.[/b] If you're a Hive player, sometimes your screen would stop rising for no explainable reason. This was the reason.\n[*][b]Hive's Piece Selector now properly closes if you switch back to Random pieces.[/b]\n[*][b]Rematch options re-unbroken online.[/b] During the switch to the new input parser, I briefly broke half of the rematch menu, but it's now fixed.\n[*][b]Homie screen cleaned up.[/b] It no longer flickers, stages properly render behind it, and you still have an indication that the game isn't frozen even on stages with no visible animations at round start.\n[*][b]Rewrote a huge chunk of the outer Dream engine to enable synchronized asynchronous receipt of attacks. [i]This absolutely results in fewer desyncs online.[/i][/b] This is what took me so long. The netcode is nearly almost fixed to a state where I'm comfortable leaving it for a while. We're not completely out of the woods yet, though, because Thinker and Journey aren't playing nicely with getting hit online as of current.\n[/list]\n\nAt this rate the netcode should be operating at full capacity in... days? I really don't want to put the information out there and give the wrong parts of the universe another way to troll me.\n\nThank you for your patience.",
+      "key": "1866570::85007ee0bef1b65896a40dcd731fa46bb4cd83db",
+      "tags": [
+        {
+          "bug": "[b]Skeleton bones no longer render at the wrong scaling when he is KOed.[/b]"
+        },
+        {
+          "bug": "[b]Shells no longer cause Hive's gravity to freeze in extremely specific piece arrangements.[/b]"
+        },
+        {
+          "bug": "[b]Hive no longer reports \"ghost chains\" that cause your screen not to reset back to inactive.[/b]"
+        },
+        {
+          "bug": "[b]Hive's Piece Selector now properly closes if you switch back to Random pieces.[/b]"
+        },
+        {
+          "bug": "[b]Rematch options re-unbroken online.[/b]"
+        },
+        {
+          "bug": "[b]Homie screen cleaned up.[/b]"
+        },
+        {
+          "bug": "[b]Rewrote a huge chunk of the outer Dream engine to enable synchronized asynchronous receipt of attacks. [i]This absolutely results in fewer desyncs online.[/i][/b]"
+        }
+      ]
+    },
+    {
+      "title": "But did you get all the dogs? Xross Dreams v1.13",
+      "date": "2023-01-06 00:28:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5035620387690284263",
+      "content": "Time to make amends.\n\nXross Dreams v1.13 Patch Notes:\n[list][*][b]It is no longer possible to activate multiple adjacent Gifts and have them open into an infinitely large column.[/b] All crashes related to this are also handled.\n[*][b]Gifts and Rocks send as part of a combo no longer send unearned \"extras.\"[/b] Don't worry, Journey and Astronaut are still good.\n[*][b]A currently active Crush loses its active frames if you KO somebody.[/b] [i]This may decrease desyncs online.[/i] Used Crushes should no longer automatically annihilate the incoming Dreamer's first piece. Don't worry, Goddess is still good.\n[*][b]Onscreen version indicator during the title screen.[/b] Just to be sure.\n[*][b]Loading screens will start loading AFTER we transition to the loading screen itself.[/b] This looks a lot cleaner. I might make it look better in the future.\n[*][b]Extremely huge attacks (>96 pieces) no longer cause crashes against Dinosaur.[/b] This really only affects Fighter, since nearly everybody else has a damage cap that prevents attacks of this size.\n[*][b]Reduced Hive's total screen shake.[/b] Getting your screen shook when you get hit? Rad. Having it get in the way while you're still playing? Bad.\n[*][b]Proper DOWN and KO animations for everybody.[/b] There were some strange animation glitches that prevented characters from being properly updated to their death states. Those are now fixed.\n[*][b]Discord integration.[/b] Very simple Discord integration! Unfortunately, Discord's API does not behave well with games programmed in C# that do not use Unity, which what Xross Dreams is. But you get a fancy icon (and maybe even a status) if you open the game if Discord is already open, now.\n[/list]\n\n\nI'm still trying to recreate the desyncs involving people dying and not seeing the opponent die. I'm working very hard on it. Thank you for playing. Thank you for your patience. I hope you're having a wonderful week.",
+      "key": "1866570::7c2962ee70259bec4ab62b1e5e7a7b06852a0a09",
+      "tags": [
+        {
+          "bug": "[*][b]It is no longer possible to activate multiple adjacent Gifts and have them open into an infinitely large column.[/b] All crashes related to this are also handled."
+        },
+        {
+          "bug": "[*][b]Gifts and Rocks send as part of a combo no longer send unearned \"extras.\"[/b] Don't worry, Journey and Astronaut are still good."
+        },
+        {
+          "bug": "[*][b]A currently active Crush loses its active frames if you KO somebody.[/b] [i]This may decrease desyncs online.[/i] Used Crushes should no longer automatically annihilate the incoming Dreamer's first piece. Don't worry, Goddess is still good."
+        },
+        {
+          "feature": "[*][b]Onscreen version indicator during the title screen.[/b] Just to be sure."
+        },
+        {
+          "feature": "[*][b]Loading screens will start loading AFTER we transition to the loading screen itself.[/b] This looks a lot cleaner. I might make it look better in the future."
+        },
+        {
+          "bug": "[*][b]Extremely huge attacks (>96 pieces) no longer cause crashes against Dinosaur.[/b] This really only affects Fighter, since nearly everybody else has a damage cap that prevents attacks of this size."
+        },
+        {
+          "balance_change": "[*][b]Reduced Hive's total screen shake.[/b] Getting your screen shook when you get hit? Rad. Having it get in the way while you're still playing? Bad."
+        },
+        {
+          "bug": "[*][b]Proper DOWN and KO animations for everybody.[/b] There were some strange animation glitches that prevented characters from being properly updated to their death states. Those are now fixed."
+        },
+        {
+          "feature": "[*][b]Discord integration.[/b] Very simple Discord integration! Unfortunately, Discord's API does not behave well with games programmed in C# that do not use Unity, which what Xross Dreams is. But you get a fancy icon (and maybe even a status) if you open the game if Discord is already open, now."
+        }
+      ]
+    },
+    {
+      "title": "Is there no limit? Xross Dreams v1.12",
+      "date": "2023-01-04 19:32:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037491479889",
+      "content": "There is still more to come.\n\nPatch notes, Xross Dreams v1.12:\n[list]\n[*][b]You will no longer desync online as the result of a player dying and not locking out the opponent's controls during a cutscene.[/b] This was literally an off-by-one error and it drove me nuts.\n[*]Secret character(s) spoilers: [spoiler][b]Being recommended the Bear in the School and then selecting its lessons/puzzles no longer crashes the game.[/b] The crash was related to loading the Bear's puzzles (which I ended up removing from the game for reasons), but while I was in there I changed a few things. If you're recommended the Bear in the School, it will display the Bear code and unlock the Bear code in the Secrets Gallery. It is also now possible to be recommended the Bear without having done the code first.[/spoiler]\n[/list]\n\nSometimes, I'm worried I made the Plot mode too easy. Crazy, right? Don't worry. I'm letting it rock.\n\n2023 is our year. Good things are coming!",
+      "key": "1866570::8bfbc14c4f2fbbb7eddfed205a379d94ceac4397",
+      "tags": [
+        {
+          "bug": "[b]You will no longer desync online as the result of a player dying and not locking out the opponent's controls during a cutscene.[/b]"
+        },
+        {
+          "bug": "[b]Being recommended the Bear in the School and then selecting its lessons/puzzles no longer crashes the game.[/b]"
+        }
+      ]
+    },
+    {
+      "title": "Ascension is possible. (Patch Notes)",
+      "date": "2023-01-03 20:56:45",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037488049201",
+      "content": "Oh yeah. I can feel it.\n\nPerfection is achievable if we understand the requirements and limitations.\n\nXross Dreams, v1.11 Patch Notes:\n[list]\n[*][b]Instant Switching (hold to Switch) no longer desyncs online.[/b] In preparation for Replays, I redid the input code last update. Holding the Switch button wasn't yet brought up to speed with the rest of the code. It now is. [i]If you must know, I have been calling the other Switch \"End of Turn Switching,\" but with time and effort I'm sure we'll come up with something shorter and snappier.[/i]\n[*][b]Inert Encounters no longer softlock while healing.[/b] Some Encounters [spoiler]namely, the STRIKER Cybermenace, Awakened Robeast Superintelligence, and ULTIMATE Awakened Robeast Superintelligence STRIKER[/spoiler] are Inert, meaning they will not automatically open Gifts. These Encounters can also Heal, which will activate and open Gifts on their board. These 2 mechanics caused a softlock in concert with each other after I fixed the cascading Gifts glitch a few days ago.\n[*][b]Skeleton, Journey, and Thinker can now receive Hard Shells.[/b] How did I miss that?!\n[*][b]Shell Towers no longer fragment when dropped onto Journey's board as a result of a dropped chain.[/b] Actually, all Shells of all shapes will be dropped as a singular group if they're in the queue and your chain is dropped. This fixes a few glitches related to Journey and things like pieces falling through shells, shells being unqueuable, and so on.\n[/list]\n\nYes, replays are coming, but not until after the desyncs are gone. Thank you for playing. I hope you're having a good time! There are more features and secrets on the horizon; I'm going to support this game for a while.\n\nBetter get in your practice now, because once netcode is working for good the curators and streamers are going to flood the online modes.\n\n\nThank you for being. You light up my life. Stay cool.",
+      "key": "1866570::05004b4691cf01c2d34db7869393ef31f99cf6f7",
+      "tags": [
+        {
+          "bug": "[b]Instant Switching (hold to Switch) no longer desyncs online.[/b] In preparation for Replays, I redid the input code last update. Holding the Switch button wasn't yet brought up to speed with the rest of the code. It now is. [i]If you must know, I have been calling the other Switch \"End of Turn Switching,\" but with time and effort I'm sure we'll come up with something shorter and snappier."
+        },
+        {
+          "bug": "[b]Inert Encounters no longer softlock while healing.[/b] Some Encounters [spoiler]namely, the STRIKER Cybermenace, Awakened Robeast Superintelligence, and ULTIMATE Awakened Robeast Superintelligence STRIKER[/spoiler] are Inert, meaning they will not automatically open Gifts. These Encounters can also Heal, which will activate and open Gifts on their board. These 2 mechanics caused a softlock in concert with each other after I fixed the cascading Gifts glitch a few days ago."
+        },
+        {
+          "bug": "[b]Skeleton, Journey, and Thinker can now receive Hard Shells.[/b] How did I miss that?!"
+        },
+        {
+          "bug": "[b]Shell Towers no longer fragment when dropped onto Journey's board as a result of a dropped chain.[/b] Actually, all Shells of all shapes will be dropped as a singular group if they're in the queue and your chain is dropped. This fixes a few glitches related to Journey and things like pieces falling through shells, shells being unqueuable, and so on."
+        }
+      ]
+    },
+    {
+      "title": "New year, new patch. Xross Dreams v1.10",
+      "date": "2023-01-02 17:00:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037483805926",
+      "content": "Okay, long story short, there's a mechanic in puzzle games called Entry Delay. It's a brief pause before a piece is spawned, so the player has time to prepare.\n\nXross Dreams has an entry delay of 7 frames. This value was intended to be an option, along with Delayed Auto Shift and a few other extremely finicky high-level puzzle gamer sensitivity mechanics.\n\nAnyway, ED was being decremented once per frame, which is perfect. The problem is that online play updates each player's boards and physics separately each frame. This was causing a 0-7 frame desync depending on the internet connection and relative processor speeds.\n\nNow, in online modes, Entry Delay is calculated individually alongside other board physics at the end of each player's individual frame calculations.\n\nThere were some other changes, but that's the most important one. Let me know if online play desyncs less, and after I take the rest of this evening off I'll get to handling some of the stability problems.\n\n\nThank you for your patience.",
+      "key": "1866570::5d8f0b0a3885ffa676068a00f8ecf806f95b86fc",
+      "tags": [
+        {
+          "bug": "This was causing a 0-7 frame desync depending on the internet connection and relative processor speeds."
+        },
+        {
+          "feature": "Now, in online modes, Entry Delay is calculated individually alongside other board physics at the end of each player's individual frame calculations."
+        }
+      ]
+    },
+    {
+      "title": "The stars are watching! (v1.08 Patch Notes)",
+      "date": "2022-12-29 20:06:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037469704040",
+      "content": "I am determined to get this game into the best possible state it can be. I will work as much as possible to achieve this. Thank you for your patience.\n\nXross Dreams v1.08 patch notes:\n[list]\n[*][b]Netcode improvements:[/b] Remote players recover dropped inputs at a more consistent point in the frame.\n[*][b]Netcode improvements:[/b] Added handshake at round start, just in case players suffer a timing desync after the loading screen.\n[*][b]Netcode improvements:[/b] Going from unplayable to playable (eg: when a piece spawns) has a brief input lockout as a buffer to aid communication timing.\n[*]When a lobby creator abandons their lobby, it properly sends you back to a functioning lobby menu.\n[*]Fixed all sound effects that weren't respecting volume settings.\n[*][b]Sandbox: Hit Me With... Fossils?[/b] no longer attempts to hit you with impossible patterns, causing a crash.\n[*][b]All Dreamers and Encounters:[/b] Gift openings are now recursively checked in a single frame. This fixes 1-sized Gifts opening into nothing, and it theoretically fixes Gifts opening into an infinitely rising cascade. Let me know if you encounter the latter one again.\n[*][b]Hive:[/b] Active Magnets now visually highlight their row like they highlight their column. They always vertically dragged the cursor, you can just see it now.\n[*][b]Astronaut: No longer starts with a partially full board.[/b] Consider this a debug feature that got left in. I'm confident you know how to build with Astronaut. There's no need for Fever starts.\n[*][b]Astronaut: Board rises when fewer than 6 Pieces[/b] (down from 18). Yes, this is a nerf. Do not blame yourselves. You now have real motivation to launch Stars.\n[/list]\n\nMy goal is to get netcode into a stable condition, then address the remaining crashes. After that, I can put more effort into things like promotion, adding more features, and improving the Low artwork setting.\n\nGo crazy.",
+      "key": "1866570::03dc86295fa110a597fa3360ad955524f1f2ea23",
+      "tags": [
+        {
+          "bug": "[*]When a lobby creator abandons their lobby, it properly sends you back to a functioning lobby menu."
+        },
+        {
+          "bug": "[*]Fixed all sound effects that weren't respecting volume settings."
+        },
+        {
+          "bug": "[*][b]Sandbox: Hit Me With... Fossils?[/b] no longer attempts to hit you with impossible patterns, causing a crash."
+        },
+        {
+          "bug": "[*][b]All Dreamers and Encounters:[/b] Gift openings are now recursively checked in a single frame. This fixes 1-sized Gifts opening into nothing, and it theoretically fixes Gifts opening into an infinitely rising cascade. Let me know if you encounter the latter one again."
+        },
+        {
+          "feature": "[*][b]Hive:[/b] Active Magnets now visually highlight their row like they highlight their column. They always vertically dragged the cursor, you can just see it now."
+        },
+        {
+          "feature": "[*][b]Astronaut: No longer starts with a partially full board.[/b] Consider this a debug feature that got left in. I'm confident you know how to build with Astronaut. There's no need for Fever starts."
+        },
+        {
+          "balance_change": "[*][b]Astronaut: Board rises when fewer than 6 Pieces[/b] (down from 18). Yes, this is a nerf. Do not blame yourselves. You now have real motivation to launch Stars."
+        }
+      ]
+    },
+    {
+      "title": "It's never over! v1.07 Patch Notes",
+      "date": "2022-12-28 19:26:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037465957960",
+      "content": "I hope you had a wonderful Wednesday. I appreciate the constant love and input, and I'm doing everything I can to to fix whatever I can.\n\n\nXross Dreams v1.07 patch notes:\n[list]\n[*][b]Shells no longer recursively trigger, causing them to open improperly.[/b] If you were getting Gates as pieces at weird times, this was the cause. If Shells were shrinking instead of opening, this was the cause.\n[*][b]Comet's \"ghost rows\" no longer erase Pieces that are not Color Pieces.[/b] You could view this as a nerf if you want, but it's actually a buff.\n[*]Combo Counter now properly resets after a single hit.\n[*]Added Pressure entry to the Dictionary.\n[*]Dictionary alignment fixed at lower resolutions.\n[*]Terrifantastiperfect no longer permanently disables the UI.\n[*][b]Skeleton's chains no longer give collosal points.[/b] If you were getting random Terrifantastiperfects as Skeleton, this may have been the cause.\n[*][b]Thinker now handles Shells more intelligently.[/b] Shells will properly be pushed by other violence, and gravity interprets Shells correctly.\n[*][b]Thinker's The Power now only requires 2 Fruit to activate.[/b] This was an oversight.\n[*][b]Gifts cause smaller openings on the boards of [spoiler]Bear and Big Bear[/spoiler].[/b]\n[*][b]Dreamers now only check for a single death at a time.[/b] This should prevent the Dual KO glitch in the future.\n[*][b]Dinosaur reports selected pieces earlier in the frame.[/b] This fixes the Piece Selector puzzle glitches.\n[*][b]Astronaut's Bonus Pieces no longer count as Boosts for rock count.[/b] This is functionally a nerf.\n[*][b]Netcode Improvements: [/b]Remote inputs received after a cutscene now properly respect the opponent's cutscene state.\n[*][b]Netcode Improvements: [/b]Remote inputs are now processed 1 frame earlier if the remote player is on P1's side.\n[*][b]Netcode Improvements: [/b]Online inputs now check for unplayable states at the end of the frame instead of the beginning.\n[*]Rematch screen in a 2-person lobby no longer reports ghost inputs.\n[*]Rematching in a 2-person lobby no longer infinitely loops you through Dreamer Select after picking a stage.\n[/list]\n\nThere are still frame-perfect desyncs, and they're very difficult for me to recreate. I'm going to keep working at this until they're gone. Thank you for patience.\n\nAlso, thank you for sharing twitter clips of you dunking on people. And thank you again for all the love.\n\nExpect another patch tonight, focused on netcode.",
+      "key": "1866570::c3edb3112708f972fe0900383939d87355ad0af9",
+      "tags": [
+        {
+          "bug": "[*][b]Shells no longer recursively trigger, causing them to open improperly.[/b] If you were getting Gates as pieces at weird times, this was the cause. If Shells were shrinking instead of opening, this was the cause."
+        },
+        {
+          "bug": "[*][b]Comet's \"ghost rows\" no longer erase Pieces that are not Color Pieces.[/b] You could view this as a nerf if you want, but it's actually a buff."
+        },
+        {
+          "bug": "[*]Combo Counter now properly resets after a single hit."
+        },
+        {
+          "bug": "[*]Dictionary alignment fixed at lower resolutions."
+        },
+        {
+          "bug": "[*]Terrifantastiperfect no longer permanently disables the UI."
+        },
+        {
+          "bug": "[*][b]Skeleton's chains no longer give collosal points.[/b] If you were getting random Terrifantastiperfects as Skeleton, this may have been the cause."
+        },
+        {
+          "bug": "[*][b]Thinker now handles Shells more intelligently.[/b] Shells will properly be pushed by other violence, and gravity interprets Shells correctly."
+        },
+        {
+          "bug": "[*][b]Gifts cause smaller openings on the boards of [spoiler]Bear and Big Bear[/spoiler].[/b]"
+        },
+        {
+          "bug": "[*][b]Dreamers now only check for a single death at a time.[/b] This should prevent the Dual KO glitch in the future."
+        },
+        {
+          "bug": "[*][b]Dinosaur reports selected pieces earlier in the frame.[/b] This fixes the Piece Selector puzzle glitches."
+        },
+        {
+          "bug": "[*]Netcode Improvements: Remote inputs received after a cutscene now properly respect the opponent's cutscene state."
+        },
+        {
+          "bug": "[*]Netcode Improvements: Remote inputs are now processed 1 frame earlier if the remote player is on P1's side."
+        },
+        {
+          "bug": "[*]Netcode Improvements: Online inputs now check for unplayable states at the end of the frame instead of the beginning."
+        },
+        {
+          "bug": "[*]Rematch screen in a 2-person lobby no longer reports ghost inputs."
+        },
+        {
+          "bug": "[*]Rematching in a 2-person lobby no longer infinitely loops you through Dreamer Select after picking a stage."
+        },
+        {
+          "feature": "[*]Added Pressure entry to the Dictionary."
+        },
+        {
+          "balance_change": "[*][b]Thinker's The Power now only requires 2 Fruit to activate.[/b] This was an oversight."
+        },
+        {
+          "balance_change": "[*][b]Astronaut's Bonus Pieces no longer count as Boosts for rock count.[/b] This is functionally a nerf."
+        }
+      ]
+    },
+    {
+      "title": "Patch notes: For me, it was Tuesday.",
+      "date": "2022-12-27 19:31:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037462328240",
+      "content": "I hope you had a wonderful day. It's about to get better.\n\nXross Dreams v1.06 Patch Notes:\n[list]\n[*]Fix to Random Stage crash online.\n[*][b]Gifts no longer open infinitely against Hive.[/b] (Yikes!)\n[*][b]Astronaut now properly shifts magnetism when Shifting a Magnet.[/b]\n[*][b]Hive now properly swaps magnetism when Swapping a Magnet.[/b]\n[*]Fix for Encounters referring to unlisted attacks, resulting in a crash if you hit specific Encounters.\n[*][b]Version checking[/b] online. This is a rudimentary pass and will be louder and more intrusive in future updates.\n[*]Random Character/Random Team now randomly choose from all secret characters (as opposed to just the 2).\n[*][b]A lot of netcode changes.[/b]\n- Rollback checks and load states happen more universally, instead of prioritizing the remote player.\n- Cutscenes lock inputs out for 5f after completion, to prevent desyncs from mashing.\n- Cutscenes will now render opponent's inputs if they aren't yet caught up.\n- Cutscenes will now wait for opponent to catch up afterward in addition to before.\n- Being in hitstun locks out inputs, to prevent desyncs from mashing.\n- Inputs are locked for 30f at round start (online-only), to prevent desyncs from mashing.\n- Improved input handling for local and remote player.\n[/list]\n\nI cannot say this will be the end of the desync era of Xross Dreams, but I will say it's getting harder and harder for me to recreate them.\n\nUsability changes will be upcoming, once the netplay is straightened out. Given the choice between holding your hand and respecting your intelligence, I decided that the latter was sorely missing in the modern era of games. Only time will tell if I went too far. Until that point, I will do what I can to make the game not utterly bewildering to experience.\n\nThank you for your patience. I hope you're having fun.",
+      "key": "1866570::6bfd6651053fb7ad75d580299cc9bb06ef732e2b",
+      "tags": [
+        {
+          "bug": "[*]Fix to Random Stage crash online."
+        },
+        {
+          "bug": "[*][b]Gifts no longer open infinitely against Hive.[/b] (Yikes!)"
+        },
+        {
+          "bug": "[*][b]Astronaut now properly shifts magnetism when Shifting a Magnet.[/b]"
+        },
+        {
+          "bug": "[*][b]Hive now properly swaps magnetism when Swapping a Magnet.[/b]"
+        },
+        {
+          "bug": "[*]Fix for Encounters referring to unlisted attacks, resulting in a crash if you hit specific Encounters."
+        },
+        {
+          "feature": "[*]Random Character/Random Team now randomly choose from all secret characters (as opposed to just the 2)."
+        },
+        {
+          "bug": "- Cutscenes lock inputs out for 5f after completion, to prevent desyncs from mashing."
+        },
+        {
+          "bug": "- Cutscenes will now render opponent's inputs if they aren't yet caught up."
+        },
+        {
+          "bug": "- Cutscenes will now wait for opponent to catch up afterward in addition to before."
+        },
+        {
+          "bug": "- Being in hitstun locks out inputs, to prevent desyncs from mashing."
+        },
+        {
+          "bug": "- Inputs are locked for 30f at round start (online-only), to prevent desyncs from mashing."
+        },
+        {
+          "bug": "- Improved input handling for local and remote player."
+        }
+      ]
+    },
+    {
+      "title": "Patch: Are we asking the right questions?",
+      "date": "2022-12-26 21:09:54",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037458934002",
+      "content": "This one is a doozy. Thank you for your patience.\n\nPatch notes, Xross Dreams v1.05:\n[list]\n[*]Crush Wall is now visually aligned properly at all resolutions.\n[*]Comet's Next is now visually aligned properly at all resolutions.\n[*]Dinosaur's board is now visually aligned properly at all resolutions when in rear position.\n[*][b]Drop-type Dreamers no longer experience Delayed Auto Shift when pressing Up or Down.[/b] This was an oversight; I treated all directions the same with DAS until today.\n[*][b]Drop-type Dreamers now decrease Lock Delay by 1f (down from 20f) when holding Down on a locking Piece.[/b] I set out to make this the Versus Game of puzzle games, down to the responsiveness of the controls. It turns out this decision has been a bit alarming to some.\n[*][b]Rewrote Online input interpreter, resulting in MUCH fewer desyncs.[/b] They can still happen, but they are much rarer.\n[/list]\n\n\"Would I rather fix lag problems or desync problems?\" I asked myself, 5 years ago. Simple, I thought, nobody wants the game to be slower. Smoothness was the priority.\n\nI'm really glad you're enjoying Xross Dreams. There's more good to come.",
+      "key": "1866570::0531a42bf381ff60274791a0b93299b9bc8a27d3",
+      "tags": [
+        {
+          "bug": "[*]Crush Wall is now visually aligned properly at all resolutions."
+        },
+        {
+          "bug": "[*]Comet's Next is now visually aligned properly at all resolutions."
+        },
+        {
+          "bug": "[*]Dinosaur's board is now visually aligned properly at all resolutions when in rear position."
+        },
+        {
+          "bug": "[*][b]Drop-type Dreamers no longer experience Delayed Auto Shift when pressing Up or Down.[/b] This was an oversight; I treated all directions the same with DAS until today."
+        },
+        {
+          "balance_change": "[*][b]Drop-type Dreamers now decrease Lock Delay by 1f (down from 20f) when holding Down on a locking Piece.[/b] I set out to make this the Versus Game of puzzle games, down to the responsiveness of the controls. It turns out this decision has been a bit alarming to some."
+        },
+        {
+          "bug": "[*][b]Rewrote Online input interpreter, resulting in MUCH fewer desyncs.[/b] They can still happen, but they are much rarer."
+        }
+      ]
+    },
+    {
+      "title": "Keyboard hotfix",
+      "date": "2022-12-26 14:22:16",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037457902975",
+      "content": "Keyboard players can now hold directional buttons and get fluid inputs.",
+      "key": "1866570::5fbe40c50a01f48c1b9bb9dbdb9c184fd5ef70a7",
+      "tags": [
+        {
+          "feature": "Keyboard players can now hold directional buttons and get fluid inputs."
+        }
+      ]
+    },
+    {
+      "title": "Boy, what a week, huh?",
+      "date": "2022-12-26 13:30:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037457772317",
+      "content": "Thank you so much for your patience and support.\n\nI want this game to be as good as possible, as soon as possible. With that said, expect more patches within the near future as I iron out issues I couldn't catch with my limited resources leading up to launch.\n\nPATCH NOTES, v1.04:\n[list]\n[*][b]Packet buffer added to online play.[/b] This should significantly reduce the risk of desyncs.\n[*][b][spoiler]Color Rider STRIKER[/spoiler] can now properly Color Blind.[/b] A number of issues snuck through that crashed the game when he attempted to do so. Enjoy losing to him for real!\n[*][b]Keyboard can now map their own direction inputs.[/b] Hello, Tetris players! I know you're out there!\n[*][b]Keyboard ghosting issues fixed.[/b] Keyboard players can now properly hit multiple inputs in a single frame.\n[*][b]Exit icon added to Dog menu.[/b] Just in case you were having difficulty figuring out how to leave that screen.\n[*][b]Dinosaur can now fail at School.[/b] It spooks me that I had to type that.\n[*][b]Journey Row Selector issues fixed.[/b] Journey can now disable an active Row Selector and have it properly disappear from the screen.\n[*][b]Journey Gift issues fixed.[/b] Gifts that open on Journey's board do so at appropriate heights now, and should no longer erase sections of the board above them.\n[/list]\n\n\nThink positive, for a tomorrow that leads to a tomorrow.",
+      "key": "1866570::684f706517308a6d3865546f864e26037fbb1260",
+      "tags": [
+        {
+          "feature": "[b]Packet buffer added to online play.[/b] This should significantly reduce the risk of desyncs."
+        },
+        {
+          "bug": "[b][spoiler]Color Rider STRIKER[/spoiler] can now properly Color Blind.[/b] A number of issues snuck through that crashed the game when he attempted to do so. Enjoy losing to him for real!"
+        },
+        {
+          "feature": "[b]Keyboard can now map their own direction inputs.[/b] Hello, Tetris players! I know you're out there!"
+        },
+        {
+          "bug": "[b]Keyboard ghosting issues fixed.[/b] Keyboard players can now properly hit multiple inputs in a single frame."
+        },
+        {
+          "feature": "[b]Exit icon added to Dog menu.[/b] Just in case you were having difficulty figuring out how to leave that screen."
+        },
+        {
+          "bug": "[b]Dinosaur can now fail at School.[/b] It spooks me that I had to type that."
+        },
+        {
+          "bug": "[b]Journey Row Selector issues fixed.[/b] Journey can now disable an active Row Selector and have it properly disappear from the screen."
+        },
+        {
+          "bug": "[b]Journey Gift issues fixed.[/b] Gifts that open on Journey's board do so at appropriate heights now, and should no longer erase sections of the board above them."
+        }
+      ]
+    },
+    {
+      "title": "Thank you for believing!",
+      "date": "2022-12-25 21:42:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5000716037455374485",
+      "content": "Merry Christmas! Or, if you may, Merry Xrossmas.\n\nThank you so much for your support. I'm just one man, so getting through all the feedback is a daunting task, but I'm doing the best I can with what I have.\n\nFor now, I decided to stay up this Christmas evening fixing a few crashes.\n\nPatch Notes for Xross Dreams 1.01:\n\n- Fixes for HENSHIRO cutscene.\n- Fixes for Lobby invite softlocks.\n- Fixes for Lobby exit softlocks.\n- Disabled tagging in School. How did that even make it in?\n\nI'm aware there are some desync issues online. I'm doing the best I can to reproduce and fix these issues. Thank you for your patience. I'm really happy that you're all enjoying the game!",
+      "key": "1866570::b26ee18d75b50b1f25ce3f27c6e8480b9bee9450",
+      "tags": [
+        {
+          "bug": "- Fixes for HENSHIRO cutscene."
+        },
+        {
+          "bug": "- Fixes for Lobby invite softlocks."
+        },
+        {
+          "bug": "- Fixes for Lobby exit softlocks."
+        },
+        {
+          "bug": "- Disabled tagging in School. How did that even make it in?"
+        }
+      ]
+    }
+  ]
+}

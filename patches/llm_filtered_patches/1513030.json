@@ -1,0 +1,354 @@
+{
+  "appId": "1513030",
+  "count": 15,
+  "notes": [
+    {
+      "title": "Update 1.3.4",
+      "date": "2025-05-12 13:47:13",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287964923",
+      "content": "Remove a developer hotkey",
+      "key": "1513030::bb92124ed709664573639bb355c794784690d2d7",
+      "tags": [
+        {
+          "bug": "Remove a developer hotkey"
+        }
+      ]
+    },
+    {
+      "title": "Update 1.3.3",
+      "date": "2025-05-12 13:24:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287964444",
+      "content": "[list]\n[*] Fix a barrier preventing player from re-entering the hole they fell into in the tutorial\n[*] Fix problems when starting a new game\n[*] Make tutorial harder to break\n[*] Remove a random door & windmill from village\n[/list]",
+      "key": "1513030::944b85d06176fbc7c0ad3e7d8af7a46607c16f14",
+      "tags": [
+        {
+          "bug": "Fix a barrier preventing player from re-entering the hole they fell into in the tutorial"
+        },
+        {
+          "bug": "Fix problems when starting a new game"
+        },
+        {
+          "bug": "Make tutorial harder to break"
+        },
+        {
+          "bug": "Remove a random door & windmill from village"
+        }
+      ]
+    },
+    {
+      "title": "Update 1.3.2",
+      "date": "2025-05-11 23:50:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287945875",
+      "content": "[list]\n[*] Fix several bugs rendering the main quest uncompletable\n[*] Improve HLODs\n[*] Fix random bits of corruption not clearing properly\n[*] Fix waterfall island (near Shajara) not being properly corrupted\n[*] Fix maze + shrine island offset\n[*] Fix regrown forest not rendering on loading save game\n[/list]",
+      "key": "1513030::bd6672c8634b49891d4875f3851ae32b2e211f8a",
+      "tags": [
+        {
+          "bug": "Fix several bugs rendering the main quest uncompletable"
+        },
+        {
+          "bug": "Fix random bits of corruption not clearing properly"
+        },
+        {
+          "bug": "Fix waterfall island (near Shajara) not being properly corrupted"
+        },
+        {
+          "bug": "Fix maze + shrine island offset"
+        },
+        {
+          "bug": "Fix regrown forest not rendering on loading save game"
+        }
+      ]
+    },
+    {
+      "title": "Update 1.3.1",
+      "date": "2025-05-10 18:52:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287910504",
+      "content": "[list]\n[*] Fix updraft windlines in pillar area rendering in the wrong location\n[*] Fix whale's island not appearing in HLOD\n[*] Fix torch quest corruption not clearing\n[*] Fix animal corruption near desert castle\n[*] Fix day/night cycle getting stuck just after sunset\n[/list]",
+      "key": "1513030::03804031246e215edad30c025d47f55a2c2577d0",
+      "tags": [
+        {
+          "bug": "Fix updraft windlines in pillar area rendering in the wrong location"
+        },
+        {
+          "bug": "Fix whale's island not appearing in HLOD"
+        },
+        {
+          "bug": "Fix torch quest corruption not clearing"
+        },
+        {
+          "bug": "Fix animal corruption near desert castle"
+        },
+        {
+          "bug": "Fix day/night cycle getting stuck just after sunset"
+        }
+      ]
+    },
+    {
+      "title": "Optimization 2",
+      "date": "2025-05-09 13:14:36",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1799088287871620",
+      "content": "As mentioned during the last optimization pass, the bulk of Soar's performance problems stem from inefficiently loading in the overworld & poor foliage optimization. Sharp-eyed players will have noticed lag spikes as they approach Fadh-as-Sayl, Shajara, and the trapped Whale. These are areas where, for one reason or another, large chunks of the overworld are loaded in all at once. Unlike most performance problems- which are tied to the GPU or CPU- streaming is limited by storage and RAM speed; which is why these issues can affect even high end systems.\n\nThe solution is very simple- turn down the streaming distance, and use HLODs to fill in the now-empty world. We've avoided doing this because HLODs are very intensive to generate- they lock up a given machine for up to an hour, and on top of that they need multiple passes to get right. For our small team, that's a massive amount of developer time we're not using to playtest or bugfix. However, as Soar is maturing, it feels like an appropriate time to start investing in HLODs. This has the added benefit of allowing us to keep the entire map visible at all times without any added performance cost, a massive win in our book.\n\nWhile this update (probably) won't improve your peak framerate, it will significantly stabilize framerates in problematic areas compared to the last update. We don't feel that optimization is complete- it never is- but, for better or for worse, the bulk of what remains will just involve improving the HLODs. So, unless there's another major bottleneck that we find, this is the final optimization oriented update, and all other future performance improvements will be rolled into other patches.\n\nSome players have expressed frustration that Soar has un-removable motion blur or uses upscaling. While we greatly sympathize with concerns around certain industry trends, there's no motion blur whatsoever, and the only upscaling in the game- TSR- is totally optional. However, as always, these frustrations come from a legitimate place. In this case, our cloud material uses sub-surface scattering to give them a soft, voluminous look- at some distances, angles, and speeds, this can cause a smearing effect on the player character that looks quite a lot like temporal smearing. It's most noticable in the opening cinematic, which certainly may have soured some first impressions. Rest assured, we're aware of the issue and plan to fix it, but as it has no impact on gameplay and isn't triggered often, it's a low priority for us right now.\n\nAlongside optimization, we also have a variety of bugfixes and improvements to tide you over until the next major update.\n\n[b]Patchlist:[/b]\n[list]\n[*] Add HLODs\n[*] Optimize foliage meshes\n[*] Fix collected trapped stars leaving behind corruption when loading a save\n[*] Removed extra UI element from inventory popup\n[*] Fix incorrect water rendering, especially in Shajara\n[*] Polish ball challenge\n[*] Improve the way NPCs choose dialogue from their available pool\n[*] Update obelisk hunt translations\n[*] Tweak obelisk cutscene timing\n[*] Seed collectible no longer leaves behind an interaction icon\n[*] Make herbs bigger & respond to player movement\n[*] Make mouse hide on pause menu if using gamepad\n[*] Fix text overflow on 'leviathan's repose'\n[*] Fix a couple of zones that were offset from their content\n[*] Improve Corruption effect\n[*] Tweak Corruption placement to be more logical\n[*] Improve boar behavior on mountain foot trial\n[*] Exiting to main menu now triggers a save\n[*] Reverse shot in the intro cutscene that had the player falling backwards\n[*] Fix a lighting bug at lower scalability settings\n[*] Fix gyroscope (by laser) being uncompletable\n[*] Fix Corruption on the 2nd largest tree in Shajara not clearing properly\n[/list]\nComing soon- major improvements to the way that players are directed to the main quest",
+      "key": "1513030::0f5f869e09a67520d800ee0257d6a6fbb3cd33c1",
+      "tags": [
+        {
+          "feature": "Add HLODs"
+        },
+        {
+          "balance_change": "Optimize foliage meshes"
+        },
+        {
+          "bug": "Fix collected trapped stars leaving behind corruption when loading a save"
+        },
+        {
+          "feature": "Removed extra UI element from inventory popup"
+        },
+        {
+          "bug": "Fix incorrect water rendering, especially in Shajara"
+        },
+        {
+          "feature": "Polish ball challenge"
+        },
+        {
+          "feature": "Improve the way NPCs choose dialogue from their available pool"
+        },
+        {
+          "feature": "Update obelisk hunt translations"
+        },
+        {
+          "balance_change": "Tweak obelisk cutscene timing"
+        },
+        {
+          "bug": "Seed collectible no longer leaves behind an interaction icon"
+        },
+        {
+          "feature": "Make herbs bigger & respond to player movement"
+        },
+        {
+          "feature": "Make mouse hide on pause menu if using gamepad"
+        },
+        {
+          "bug": "Fix text overflow on 'leviathan's repose'"
+        },
+        {
+          "bug": "Fix a couple of zones that were offset from their content"
+        },
+        {
+          "feature": "Improve Corruption effect"
+        },
+        {
+          "balance_change": "Tweak Corruption placement to be more logical"
+        },
+        {
+          "feature": "Improve boar behavior on mountain foot trial"
+        },
+        {
+          "feature": "Exiting to main menu now triggers a save"
+        },
+        {
+          "bug": "Reverse shot in the intro cutscene that had the player falling backwards"
+        },
+        {
+          "bug": "Fix a lighting bug at lower scalability settings"
+        },
+        {
+          "bug": "Fix gyroscope (by laser) being uncompletable"
+        },
+        {
+          "bug": "Fix Corruption on the 2nd largest tree in Shajara not clearing properly"
+        }
+      ]
+    },
+    {
+      "title": "Hotfix 1.2.3",
+      "date": "2025-05-05 15:42:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487740777",
+      "content": "Pressing R now reloads you at the middle of the world",
+      "key": "1513030::43ea4ce9af7d833eca4272d81ad4544d8ec03f6b",
+      "tags": [
+        {
+          "bug": "Pressing R now reloads you at the middle of the world"
+        }
+      ]
+    },
+    {
+      "title": "Soar 1.2.1 Hotfix",
+      "date": "2025-05-05 13:04:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487737082",
+      "content": "Remove collision from objects atop Aisha's shelf, preventing players from getting stuck there",
+      "key": "1513030::793b6a50d2b6c370ee0e76b6efc508a42c7209fe",
+      "tags": [
+        {
+          "bug": "Remove collision from objects atop Aisha's shelf, preventing players from getting stuck there"
+        }
+      ]
+    },
+    {
+      "title": "Update 3: Exploration",
+      "date": "2025-05-05 04:11:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487725233",
+      "content": "Exploration should be challenging, but it's important to strike a balance between challenge and fun. We're experimenting with improving player's ability to track their own progress in-game, starting with our freshly re-designed Torch Hunt and placing more area-scanning objects around the over world.\n\nPatchlist\n[list]\n[*] Torch hunt quest has been replaced with Obelisks\n[*] Can now scan the area to get a hint for the location of remaining Obelisks\n[*] Add scanners to every major region\n[*] Improve stability and reliability of scanners\n[*] Improve scanner interface, bringing it in line with other actors\n[*] Update scanner design to something more legible\n[*] Fix whale totem glow & echo not responding properly to direction\n[*] Improve the way gliding & transformation are taught in the tutorial\n[*] Fix the Mountain being a few meters too low\n[*] Clean up some leftover meshes\n[*] Improve nighttime visibility\n[*] Hedaad collected dialogue no longer triggers inappropriately\n[*] Improve timer visibility\n[*] Tuck piece of iron back in\n[/list]\n\nComing next- strengthening the direction of the main quest & the relationship between the trapped whale and clearing corruption",
+      "key": "1513030::61c35b596166f4259abf18c5bbf88acf49d178ca",
+      "tags": [
+        {
+          "feature": "Torch hunt quest has been replaced with Obelisks"
+        },
+        {
+          "feature": "Can now scan the area to get a hint for the location of remaining Obelisks"
+        },
+        {
+          "feature": "Add scanners to every major region"
+        },
+        {
+          "bug": "Fix whale totem glow & echo not responding properly to direction"
+        },
+        {
+          "bug": "Fix the Mountain being a few meters too low"
+        },
+        {
+          "bug": "Hedaad collected dialogue no longer triggers inappropriately"
+        }
+      ]
+    },
+    {
+      "title": "Update 2: Interactions",
+      "date": "2025-04-30 20:58:41",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487587490",
+      "content": "Interactions were a bit finnicky and inconsistent, due to a rushed codebase. With some time to breath, we could lock in and iron out a lot of the edge cases.\n\n[list]\n[*] under the hood: redo interaction system, fixing several small bugs\n[*] add dedicated drop button & accompanying popups\n[*] improve Hedaad capture quest\n[/list]\n\nNext patch, we'll be targeting NPC dialogue!",
+      "key": "1513030::734ad19ec8a7633a41f77c8d802fa91876133dc9",
+      "tags": [
+        {
+          "bug": "under the hood: redo interaction system, fixing several small bugs"
+        },
+        {
+          "feature": "add dedicated drop button & accompanying popups"
+        },
+        {
+          "feature": "improve Hedaad capture quest"
+        }
+      ]
+    },
+    {
+      "title": "Soar 1.11 Hotfix",
+      "date": "2025-04-30 08:55:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487570656",
+      "content": "Fixes:\n[list]\n[*] translated logos errors\n[*] save file not loading properly if you quit & reload tutorial\n[*] tutorial being uncompletable\n[*] ability to freely exit tutorial at any time\n[/list]",
+      "key": "1513030::c57503e0c3cdeb72b5d50b659958871552d2b249",
+      "tags": [
+        {
+          "bug": "translated logos errors"
+        },
+        {
+          "bug": "save file not loading properly if you quit & reload tutorial"
+        },
+        {
+          "bug": "tutorial being uncompletable"
+        },
+        {
+          "bug": "ability to freely exit tutorial at any time"
+        }
+      ]
+    },
+    {
+      "title": "Hotfix- translations",
+      "date": "2025-04-29 23:02:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487557038",
+      "content": "Fixed a couple of untranslated lines in the tutorial",
+      "key": "1513030::fa6d82c38cf815f05483c007d86b6933c9690cc1",
+      "tags": [
+        {
+          "bug": "Fixed a couple of untranslated lines in the tutorial"
+        }
+      ]
+    },
+    {
+      "title": "The Tutorial Update",
+      "date": "2025-04-29 17:51:55",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624635092",
+      "content": "From user feedback and our own internal testing, we've decided to improve the tutorial and some controls. We understand that this may negatively impact some players, but we felt that the potential gains were worth the discomfort. This will be the only change to [i]Soar's [/i] control scheme. If you've already finished the tutorial, we strongly encourage you to read the patch notes, if you haven't, then this won't affect you.\n\nTutorial:\n[list]\n[*] Fix a couple of bugs\n[*] Tutorialize air braking\n[*] Tutorialize mantling\n[*] Time of day no longer changes during tutorial\n[*] Reloading mid-tutorial no longer forces you to re-do the whole tutorial\n[/list]\nControls:\n[list]\n[*] Mantling is moved to a button: RT on gamepad, Left Shift on keyboard\n[*] Air braking & walking are rebound to Left Control on keyboard\n[/list]\nOther:\n[list]\n[*] Improve foliage distance blending & performance\n[*] 'Continue' loads your last location, instead of a predetermined location\n[/list]\n\nComing soon- translations, new audio and particles, and more!",
+      "key": "1513030::3a3fce6ed339ba278dc49fa402efe48cab972512",
+      "tags": [
+        {
+          "bug": "[*] Fix a couple of bugs"
+        },
+        {
+          "feature": "[*] Tutorialize air braking"
+        },
+        {
+          "feature": "[*] Tutorialize mantling"
+        },
+        {
+          "bug": "[*] Time of day no longer changes during tutorial"
+        },
+        {
+          "bug": "[*] Reloading mid-tutorial no longer forces you to re-do the whole tutorial"
+        },
+        {
+          "feature": "[*] Mantling is moved to a button: RT on gamepad, Left Shift on keyboard"
+        },
+        {
+          "feature": "[*] Air braking & walking are rebound to Left Control on keyboard"
+        },
+        {
+          "feature": "[*] Improve foliage distance blending & performance"
+        },
+        {
+          "feature": "[*] 'Continue' loads your last location, instead of a predetermined location"
+        }
+      ]
+    },
+    {
+      "title": "Soar 1.01 Hotfix",
+      "date": "2025-04-29 04:20:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1797820624615460",
+      "content": "Hi everyone, and welcome to the first ever patchlist for Soar!\n\n[list]\n[*] Fixed Aisha's dialogue not being correct during herb harvesting\n[*] Fix mirror lake\n[*] Fix Haroon's positioning after freeing the djinn\n[*] Add SFX and VFX to gliding\n[/list]\n\nKeep your eye out for more bugfixes, upgrades to the tutorial, and gameplay improvements!",
+      "key": "1513030::48c63163fe8d42bc44c84ae871d52491741fec3c",
+      "tags": [
+        {
+          "bug": "Fixed Aisha's dialogue not being correct during herb harvesting"
+        },
+        {
+          "bug": "Fix mirror lake"
+        },
+        {
+          "bug": "Fix Haroon's positioning after freeing the djinn"
+        },
+        {
+          "feature": "Add SFX and VFX to gliding"
+        }
+      ]
+    },
+    {
+      "title": "Developer Update: Flight",
+      "date": "2025-03-05 12:41:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1793384379346308",
+      "content": "Hey everyone-\n\nFlight is at the heart of SOAR, in more ways than one. Obviously, from a player's perspective, it's the core way that you experience Tasneem, and the main thing that separates us from any other game that you might choose to play. But, it's special for us, too- we made SOAR because we love flight, and we wanted to see more games that centered around it.\n\nOur flight system took about 2 years & 4 separate attempts to develop, and we're extremely proud of it. It sets us apart from every other flight-based game by being very physical and active, resisting your attempts to control it- which, as I'm typing this out, doesn't [i]sound[/i] all that fun. But, as many of our players know, if you're able to get in-tune with it, SOAR's flight provides a marvelous sense of speed and momentum. The physicality of it, which initially breaks your immersion, transforms into a tactility that sinks you more deeply into the player character than you might have thought possible.\n\nUnfortunately, we've known for many years that a certain subset of players (about 10-20%) just don't seem to click with this flight system. It's not for lack of interest, they come to SOAR fully aware of what it is and excited to play it, but then they find that flight just drags them out of the experience. As we've researched the problem, explored dozens of tutorialization options, and even tried in-person coaching, we've learned more and more that this just isn't solvable. Some players simply don't like how SOAR plays, and if there's a way around that, we can't see it.\n\nThat left us at a bit of an impasse. On the one hand, we didn't want to ignore a sizable chunk of our player base, but on the other, we couldn't seem to find any way to engage them. Until, that is, the Next Fest. Thanks to the feedback that you all provided, we had an epiphany: If players don't like the way SOAR flies, give them another way to fly.\n\nAs I mentioned earlier, SOAR has had 3 major iterations on flight before this one. We dug around in our archives, grabbed the last one, and brought it back to life. SOAR now has two flight modes: [b]Physical[/b] and [b]Simplified[/b]. Physical is our default flight mode, but [b]Simplified[/b] is exactly what it sounds like- a flight mechanic with simplified physics. I'll spare you all the technical details, but, if you felt frustrated by the way the dragon automatically drops while you're flying, you should definitely try out [b]Simplified[/b] flight.\n\nWhile you can change your flight style at any time in the [b]Options[/b] menu, under [b]Controls[/b], we understand that digging around in menus isn't most people's idea of a good time (even if it might be ours). So, as you're playing through the tutorial, you'll eventually encounter this pop-up:\n\n[img]{STEAM_CLAN_IMAGE}/44946247/d858f22ef26657967778dc1e35f90a814ce2e9c4.png[/img]\n\nNow, to be clear, Physical flight is the intended experience for SOAR, we built out the world and content with it in mind. So, we want to encourage players to stick with the default flight schema as much as possible.\n\nThis is just a first pass on this system, so, please let us know what you think- does Simplified flight suit your playstyle better? Does this integration system work well for you? What did you have for breakfast today? We want to know!",
+      "key": "1513030::ff883b4bca1ea6fd75aa5571f9fd06e4e5f4a2d1",
+      "tags": [
+        {
+          "feature": "SOAR now has two flight modes: [b]Physical[/b] and [b]Simplified[/b]."
+        },
+        {
+          "feature": "While you can change your flight style at any time in the [b]Options[/b] menu, under [b]Controls[/b], we understand that digging around in menus isn't most people's idea of a good time (even if it might be ours)."
+        },
+        {
+          "feature": "So, as you're playing through the tutorial, you'll eventually encounter this pop-up:"
+        }
+      ]
+    },
+    {
+      "title": "Developer Update: Collectibles",
+      "date": "2025-02-28 16:30:49",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526054060",
+      "content": "Hey everyone-\n\nThanks so much to all of you who played the demo and provided feedback! We've heard a large number of players have been struggling with finding hidden collectibles and feeling lost past collecting a certain amount of content. To remedy this, we've made two important changes.\n\nFirstly, we've added a feature to the Warm Egg that will give you an easier time finding missing pieces of corruption:\n\n[img]{STEAM_CLAN_IMAGE}/44946247/36ecfeba56308d626d975169b7c005925a81d7b7.gif[/img]\n\nWe hope that this'll help you have an easier time keeping track of your progress.\n\nSecondly, we've dramatically enhanced the visibility of corrupted shards:\n\n[img]{STEAM_CLAN_IMAGE}/44946247/42cdd275a08f6cc059f793bfe04bc3708283a2ca.gif[/img]\n\nWe hope this makes your time in Tasneem smoother and more enjoyable!",
+      "key": "1513030::865bb9bd1ff4aacbbd4d121435049ff2979bc261",
+      "tags": [
+        {
+          "feature": "Firstly, we've added a feature to the Warm Egg that will give you an easier time finding missing pieces of corruption:"
+        },
+        {
+          "balance_change": "Secondly, we've dramatically enhanced the visibility of corrupted shards:"
+        }
+      ]
+    }
+  ]
+}

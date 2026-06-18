@@ -1,0 +1,57 @@
+{
+  "appId": "1502090",
+  "count": 2,
+  "notes": [
+    {
+      "title": "New Music!",
+      "date": "2021-01-10 03:58:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3942305442255122308",
+      "content": "[h2]Right off the bat, there are a bunch of new tracks added to the game.[/h2] These tracks have a fairly wide range in variability to keep things from sounding too stale for too long. As of now, a random track from a pool of 15 will be chosen. Upon entering a new section, a new random track will be selected, regardless of whether or not a new track just started. This is to aid in hopefully making the jump to a new section feel more substantial.\n\nOn that note, the variation between sections is one I've been thinking about for a long time in terms of what to do to help make each section unique without having to overhaul too much of the game. As of now, this is looking to be more of a color variation in the core level structure. This would be fairly simple to add and with a more restrictive pool of music specific for each section. This might actually work in helping set a mood for each section or at the very least, make sections more defined from each other.\n\n[h2]As for sound effects.[/h2] The way the game handles sound has been far more streamlined and as a result, many sound effects that previously went unheard or were rarely heard, now actually work as expected. So far, at least. I've yet to run into any broken sounds but if I do, I'll probably have them fixed without much fanfare. If anyone happens to find something that they feel should have a sound effect but doesn't, by all means, let me know. You probably found something I missed or didn't think would benefit from a sound effect.\n\n[h2]Some added polish was added too.[/h2]\nWhile no means the most striking part of the game, a handful of particle effects were tweaked and adjusted to add a little more flare or subtly. This includes fixing the particle/light flash that occurs when you change colors, as well as a new fire particle system for Fire gems. The starting particle effect was also tweaked to have a little more pizazz. \n\n[h2]Wrap up[/h2]\nThis update definitely had some issues getting out. The systems being tweaked or adjusted exposed a lot of bad legacy code that was causing a handful of issues that took some diligent debugging to sort out, but all that should (hopefully) be behind us now. Let me know if you have any issues or feedback!\n\n[i]Hotfix v4.3.6:[/i]\n[list]\n[*] Removed the \"scratch\" and audible noise during close encounters as they get really obnoxious on later levels where there are a lot more close encounters with enemies.\n[*] Fixed an exploit where the close-encounter score bonus would contribute to the score during a non-playing state. (ie: Paused or waiting to start the level.)\n[*] Added a couple of feedback buttons both to the title screen and the pause menu. These will take you straight to the Community Discussions board for the game to help boost engagement.\n[*] Re-enabled \"Level Select\" on the pause menu. It's not functional at the moment but this should help ease concerns that it won't be available at release.\n[/list]\n\nQuick reminder: If you are currently in the prerelease beta branch, you'll need to leave that branch to continue getting updates.",
+      "key": "1502090::e36bceedb5fa36d742a33cb627c76e9633bb5538",
+      "tags": [
+        {
+          "feature": "Right off the bat, there are a bunch of new tracks added to the game."
+        },
+        {
+          "bug": "The way the game handles sound has been far more streamlined and as a result, many sound effects that previously went unheard or were rarely heard, now actually work as expected."
+        },
+        {
+          "bug": "This includes fixing the particle/light flash that occurs when you change colors, as well as a new fire particle system for Fire gems."
+        },
+        {
+          "balance_change": "Removed the \"scratch\" and audible noise during close encounters as they get really obnoxious on later levels where there are a lot more close encounters with enemies."
+        },
+        {
+          "bug": "Fixed an exploit where the close-encounter score bonus would contribute to the score during a non-playing state."
+        },
+        {
+          "feature": "Added a couple of feedback buttons both to the title screen and the pause menu."
+        },
+        {
+          "feature": "Re-enabled \"Level Select\" on the pause menu."
+        }
+      ]
+    },
+    {
+      "title": "Quick Update",
+      "date": "2021-01-06 11:58:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3942305442241785947",
+      "content": "So first and foremost, I'd like to keep everyone here up to date on what's currently happening and what happened with the latest update. Specifically, why it's taking so long.\n\nWhat's in the new update so far:\n[list]\n[*]New Music! 15 new in-game tracks to be specific.\n[*]New sound effects! Not everything is replaced yet though.\n[*]Added polish to some visual effects, including the initial player state and color changing!\n[*]Fix for why many sound effects weren't playing properly or even at all for that matter.\n[/list]\n\nSo what went wrong?\nWell the update was just about ready to be released, but I had some weird issues when playing the stand-alone build prior to uploading it to Steam. I thought maybe the issues were related to the Steamworks API not linking up, since it wasn't running in Steam, but unfortunately that doesn't appear to be the case.\n\nFirst off, a lot of long-standing issues with sound effects not playing correctly are finally being addressed. Specifically, the manner in which sound emitters and audio listeners interact with each other. These updates appear to have fixed almost every single issue causing sound effects to either not play or were very hit or miss whether or not they could actually be heard. So that's good!\n\nUnfortunately three major issues came up at the last minute, two of which are possibly related to the changes made to the sound script, but neither of appear related at all. Which means, worst case scenario: We've likely got an unhandled exception somewhere that's not playing nice outside of Unity and the safety of full .NET support, which might be causing major areas of code to be skipped altogether. The worst part? These issues only appear to be affecting the game after it's been compiled. I can't seem to recreate them inside of Unity itself, so I'm going to need to start resorting to some more advanced debugging to figure it out. Nothing I haven't done before, this isn't the first time this happened, but it just means these issues are going to take a little longer to sort out.\n\nSo what are the issues?\nWell the least offensive of them is an issue where the titlescreen music continues playing into starting the game, rather than a random track being selected. This is probably a list out of bounds issue, but it hasn't happen inside of Unity (so far) so I'm not sure yet. I suspect this will be the easiest to fix.\n\nAnother much smaller but a little trickier issue is that some localized ambience was added to a handful of objects, specifically the homing fuses, roaming spikes, and tornado diamonds. These sound beautiful when only one exists in the level, but once more than once exists and they're within close proximity of both you and each other, some really nasty audio overlapping occurs. This sounds a lot less nice.\n\nFinally, the one I'm looking forward to fixing the least... a random assortment of levels appear to be failing to load properly.. seemingly at random. When this happens, a number of weird things happen. Levels load with a quarter of the level itself missing entirely, which means the level stopped constructing at some point. Fortunately the failed load seems fairly consistent so that's one clue. Secondly, no amount of restarting the level or reloading the level from the title seems to fix it, only rebooting the game. Third, whatever's happening seems to be affecting leaderboard submissions and menu screen interactions (to a lesser degree), so these are probably area's of code being skipped from an unhandled exception. But I won't know any of this until I start debugging the compiled game with Visual Studio directly.\n\nAll and all, more is improved than broken with this update so I don't anticipate it taking that much longer to sort the issues out. But I do have a day job (overnight job, specifically) so the timetable is probably a little longer than what it otherwise could have been had I spotted these issues just a few days ago.\n\nFor anyone who's been given access to the private pre-release beta branch in Steam, this update is available to playtest right now. So be sure to jump into that branch and take it for a test run. Just go in fully expecting at the very least, the issues mentioned above.",
+      "key": "1502090::ccd320d8ab05b480c62e726944b639b4e95ccba3",
+      "tags": [
+        {
+          "feature": "New Music! 15 new in-game tracks to be specific."
+        },
+        {
+          "feature": "New sound effects! Not everything is replaced yet though."
+        },
+        {
+          "feature": "Added polish to some visual effects, including the initial player state and color changing!"
+        },
+        {
+          "bug": "Fix for why many sound effects weren't playing properly or even at all for that matter."
+        }
+      ]
+    }
+  ]
+}

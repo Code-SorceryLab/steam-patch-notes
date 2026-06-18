@@ -1,0 +1,177 @@
+{
+  "appId": "1067540",
+  "count": 7,
+  "notes": [
+    {
+      "title": "R\u00f6KI is Now Playable on Steam Deck - Embark on a Small-Screen Adventure!",
+      "date": "2022-03-04 13:00:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4247462367434830940",
+      "content": "Adventurers,\n\nGrab your backpack, put on your coat and visit the cold nord on Steam Deck!\n\nExplore the snow capped wilderness and experience the tale of tragic loss on the Steam Deck's LCD screen making the experience even more immersive.\n\n[img]{STEAM_CLAN_IMAGE}/36019928/b1aba6d900d2580f0ec0b9aa4bd0493e7125efb1.png[/img]\n\nRunning at a solid 60fps on Steam Deck, there has never been a better time to explore a world full of hidden legends and forgotten monsters.\n\nGet ready and set off for your magical adventure, [b]NOW with 70% OFF[/b]!\n\nhttps://store.steampowered.com/app/1067540/Rki/\n\n[b]R\u00f6ki feature:[/b]\n[list]\n[*] EXPLORE a Living Fairy Tale Forest\n[*] Make Friends With MONSTERS\n[*] SEARCH for Long Forgotten Items\n[*] SOLVE the Riddles of the Wilderness\n[*] CHART your Journey\n[/list]\n",
+      "key": "1067540::8310d484618606c663d947c8acf505f65da4cd79",
+      "tags": [
+        {
+          "feature": "R\u00f6KI is Now Playable on Steam Deck - Embark on a Small-Screen Adventure!"
+        }
+      ]
+    },
+    {
+      "title": "R\u00f6ki Patch Notes - 4th December",
+      "date": "2020-12-07 04:32:42",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3856733878308546697",
+      "content": "[img]{STEAM_CLAN_IMAGE}/36019928/924c2cb9a1f5216f88901e66dc24a28d0d3d2542.png[/img]\n\n[h1]Hi everyone![/h1]\n\nIt\u2019s been a while\u2026 but don\u2019t worry, we haven\u2019t forgotten about you just yet! \nWith this update, we\u2019re bringing some few adjustments and improvements, listed below. \n\n[b]Fixes & Improvements:[/b]\n\u2744\ufe0f Act restart - You can now restart the Act in which you are playing at any time, by choosing the option in the pause menu\n\u2744\ufe0f Fixed an issue that could occur during cutscenes in Act 2\n\u2744\ufe0f Fixed an issue that could prevent progression during a scene transition in Act 3\n\nWe\u2019re also very proud to have been nominated for The Game Awards, in the \u201cBest Debut Game\u201d category! You can support us by voting for R\u00f6ki, it would mean the world to us!\nVote [url=https://thegameawards.com/nominees/best-debut-game]HERE[/url].\n\nPlease don\u2019t hesitate to keep sending us comments on the [url=https://steamcommunity.com/app/1067540/discussions/]Steam forum[/url], or messages at support@unitedlabelgames.com.\n\n[b]Thank you again for playing![/b]\n\n[i]R\u00d6KI: A game about monsters that shouldn\u2019t exist[/i]\n\nhttps://store.steampowered.com/app/1067540/Rki/",
+      "key": "1067540::d8f821d0a8e155fc61bf66fdb3ee1508b573b432",
+      "tags": [
+        {
+          "feature": "Act restart - You can now restart the Act in which you are playing at any time, by choosing the option in the pause menu"
+        },
+        {
+          "bug": "Fixed an issue that could occur during cutscenes in Act 2"
+        },
+        {
+          "bug": "Fixed an issue that could prevent progression during a scene transition in Act 3"
+        }
+      ]
+    },
+    {
+      "title": "R\u00f6ki Dev Blog - Footprints",
+      "date": "2020-10-22 05:04:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3895010671336436820",
+      "content": "[img]{STEAM_CLAN_IMAGE}/36019928/2d8b2497ebbc02f8660f473c5842567ef389d6bd.gif[/img]\n\nHi everyone! \n\nToday we're going to be looking at Tove's fancy pants... footprint!. Previously she cast a shadow which grounds her in the scene nicely, but as she's going to be spending a great deal of time in the snowy wilderness, we thought it's be super neat if she left a trail of footprints in the snow - and maybe throw in some footfall particle effects whilst we were in the neighbourhood!\n\nIn fact, once we got something up and running we decided to use the effect to varying degrees in all our scenes. We put in variables so that the footprints colour and intensity can be set on a scene by scene basis, so we could even use them in a subtle fashion in the interior scenes.\n\nAnyway, that's the overview. We're gonna take a step-by-step look at how we created them. We're not going to be going into super tetchy details so hopefully it'll still be an interesting read for the non gamedev folks!\n\n[b]Unity Projectors[/b]\n\nUnity's projects are the base building block that we built up from. They're essentially project an image onto a surface, in our case the flat shape of a boot-print!  This is neat as they can work on different terrain, it doesn't matter if you have slopes or steps in your environment they still work as the footprint is projected down from above. You can read more about them [url=https://docs.unity3d.com/Manual/class-Projector.html]here[/url] if you like.\n\n[b]Custom Footprint Shader[/b]\n\nSo you can use the basic multiply projector shader than is in Unity's standard assets and it will project your image onto your scene. It works well but we needed to add some more functionality to make it work how we wanted, so we created a custom footprint shader using the standard one as a basis.\n\n[img]{STEAM_CLAN_IMAGE}/36019928/d244466d2d9899e93e9f9e2e095db129da15c18c.png[/img]\n\nFirst thing was we wanted to add was the ability for the footprint to fade out over time so there is no noticeable 'POP!' when we kill it.\n\nThe second thing we wanted was a tint colour. We'd worked out early on that the effect would add a nice touch to most of our scenes but would need to be adjusted to suit. It might be quite dark and blue tinged in the snowy exteriors but more subtle and warm when used in dusty interior spaces.\n\nThat was all the functionality we needed, pretty simple really.\n\n[b]How do we Trigger a Footprint?[/b]\n\nThe next question was how are we gonna tell the game when to place one of these things on the ground? We'd need to know when the foot had planted and we might not want it for all animations (for example we wouldn't want it for when Tove climbs a ladder).\n\nThe answer was actually pretty straight forward, we used animation events. These are triggers you can add to an individual animation's timeline, when the animation is playing and hits the trigger/anim event you can make it do STUFF!\n\n[img]{STEAM_CLAN_IMAGE}/36019928/a6ee1647c5760af833c9e501bab27956b94a050d.jpg[/img]\n\nIn our case that 'STUFF' would be to trigger a 'footprint function' that would place our footprint for us.\n\nThe nice things about using animation event's for this is that it's not automated, you can use your judgement to say which anims you want to have footprints, they will only trigger on animation you add the events to so there's a great deal of control.\n\nAs well as triggering functions this way you can also pass them bits of extra info in the anim event which is nice. In this case we decided to pass either the string \"Left\" or \"Right\" along with the function call.\n\n[b]Footprint Function[/b]\n\nSo we have this function that slaps a footprint down, but what does it actually do? Handily I remembered to capture some video footage as I was implementing the footfall VFX, so let's have a look at what it does step by step...\n\n[img]{STEAM_CLAN_IMAGE}/36019928/1516e198b9ae25c7f6da60a1af2ca8cb9bfbf33e.gif[/img]\n\n- At the point the anim event is triggered it gets the position of Tove's foot and uses its TX and TZ to position the footprint projector in the first place beneath her planted foot.\n\n- It also gets her foots rotation and used that to rotate the projector so the footprint will match the rotation of her foot (you can see this below).\n\n[img]{STEAM_CLAN_IMAGE}/36019928/e5996d0b8a7de7abf06feeb3021082ca6a62e8c2.gif[/img]\n\n- Remember that string (\"Left\" or \"Right\") we passed to the function from the anim event? If you look at the above video you can see that all the footprints are shaped for the left foot! So to fix that we now we use the passed string (\"Left\" or \"Right\") to pick which image we want to project down onto the ground, the left or the right foot (we probably could have got away with having a generic footprint that was used for both feet but what the hell I was feeling fruity so I added it in). You can see this update below:\n\n[img]{STEAM_CLAN_IMAGE}/36019928/d4991069ea418af702062481d516ab1137e23c0b.gif[/img]\n\n- In the above examples you can see that once it reaches a limit of 6 footprints it kills the oldest one and creates a new one in the fresh footfall position. In order to make that look nice we use fades, so by the time we need to kill a footprint it was already conveniently faded from sight! We records the game time that the foot landed on (from when the anim event was triggered) and then works out how much time has past so it can calculate how faded out the footprint should be. \n\n[img]{STEAM_CLAN_IMAGE}/36019928/20fa44faae4d7fdc78a571cd7542f090d8c07b26.gif[/img]\n\n- Finally, once the footprint has faded out completely we kill it and it goes to footprint heaven.\n\n[b]Footfall Particles[/b]\n\nThe last ingredient was the footfall particles to simulate snow or dust that is getting flung up with the impact and wake of each footstep. As we now had all this info about where the footfall was and what rotation it was it was a simple case of moving a particle emitter to the foot once it had landed and have it play it's particle 'POOF'\n\nThe only extra condition we added was that we didn't want this particle 'POOF' to trigger for any old footfall, just when Tove is running (it was a bit overkill for when she is just walking about). In order to do this when the foot lands we check one of her animation parameters in her animation network which tells us preciesly that.\n\nSimple, if the check says she's not running, don't trigger the particle 'POOF', if she is then fill your boots!\n\n[img]{STEAM_CLAN_IMAGE}/36019928/9b7af8a7dfdd729bc07c0c141de0d7ea13035f8a.gif[/img]\n\n[b]Projector Ignore Layers[/b]\n\nAnother neat thing about projectors in Unity (versus the real world) is that you can set them to ignore certain parts of your scene.  As you can imagine we don't want the footprint to be projected on Tove, so we set it to ignore our Character Layer. In fact we wanted to ensure that only the elements we absolutely required to receive footprints were the once that were considered. So we created a new layer 'Receive_Footprints' and added any floor meshes and terrain we wanted to get the footprint treatment in there pronto.\n\n[img]{STEAM_CLAN_IMAGE}/36019928/64663bc3cd587fb2839fa89976b92b924813fdfd.png[/img]\n\nAs well as making it more efficient it also cuts down on the amount of visual artifacts you'll get. The projector isn't particularly smart and just projects an image down so you can sometime get footprints appearing where you don't want them, smeared down the vertical part of a step or even appearing on the roof mysteriously above where Tove is running (kinda creepy)! So yeah, using those ignore layers is a double win.\n\nANNNND...That's your lot, you can look again at the top image to see it all working together in a scene! We hope you found that interesting, it's quite cool how you can layer up lots of simple steps and get something that's pretty effective!\n\nUntil next time,\n\nCheers,\nAlex & Tom\n\n[i]R\u00d6KI: A game about monsters that shouldn\u2019t exist[/i]\n\nhttps://store.steampowered.com/app/1067540/Rki/",
+      "key": "1067540::d51660996147e76f5524ba00448c3bd7185df419",
+      "tags": [
+        {
+          "feature": "Previously she cast a shadow which grounds her in the scene nicely, but as she's going to be spending a great deal of time in the snowy wilderness, we thought it's be super neat if she left a trail of footprints in the snow - and maybe throw in some footfall particle effects whilst we were in the neighbourhood!"
+        },
+        {
+          "feature": "In fact, once we got something up and running we decided to use the effect to varying degrees in all our scenes."
+        },
+        {
+          "feature": "We put in variables so that the footprints colour and intensity can be set on a scene by scene basis, so we could even use them in a subtle fashion in the interior scenes."
+        },
+        {
+          "feature": "First thing was we wanted to add was the ability for the footprint to fade out over time so there is no noticeable 'POP!' when we kill it."
+        },
+        {
+          "feature": "The second thing we wanted was a tint colour."
+        },
+        {
+          "feature": "The last ingredient was the footfall particles to simulate snow or dust that is getting flung up with the impact and wake of each footstep."
+        },
+        {
+          "feature": "The only extra condition we added was that we didn't want this particle 'POOF' to trigger for any old footfall, just when Tove is running (it was a bit overkill for when she is just walking about)."
+        }
+      ]
+    },
+    {
+      "title": "R\u00f6ki Patch Notes \u2013 28th September",
+      "date": "2020-09-28 05:50:03",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3715990047708451244",
+      "content": "[img]{STEAM_CLAN_IMAGE}/36019928/563a732d252cba024b92c2c37441965f503abd7a.png[/img]\n\nHi Scandinavian wilderness dwelvers!\n\nWith today\u2019s update, we\u2019re bringing some few adjustments and improvements, listed below. \n\n[b]Fixes & Improvements:[/b]\n    \u2744\ufe0f Improved Tove\u2019s ponytail physics\n    \u2744\ufe0f Fixed an issue that could occur with V-Sync\n    \u2744\ufe0f Fixed an issue that could occur with the logo starting sequence during game launch\n    \u2744\ufe0f Fixed a visual glitch that could occur during the Stag Trial in Act 2\n    \u2744\ufe0f Fixed an issue that could occur during the Rampart puzzle in Act 3\n\nPlease don\u2019t hesitate to keep sending us comments on the [url=https://steamcommunity.com/app/1067540/discussions/]Steam forum[/url], or messages at support@unitedlabelgames.com.\n\nThank you again for playing!\n\n[i]R\u00d6KI: A game about monsters that shouldn\u2019t exist[/i]\n\nhttps://store.steampowered.com/app/1067540/Rki/",
+      "key": "1067540::eeb8154338b90f3cdbaa1fc029a0ee74bc7ab585",
+      "tags": [
+        {
+          "bug": "Fixed an issue that could occur with V-Sync"
+        },
+        {
+          "bug": "Fixed an issue that could occur with the logo starting sequence during game launch"
+        },
+        {
+          "bug": "Fixed a visual glitch that could occur during the Stag Trial in Act 2"
+        },
+        {
+          "bug": "Fixed an issue that could occur during the Rampart puzzle in Act 3"
+        }
+      ]
+    },
+    {
+      "title": "R\u00f6ki Patch Notes - 16th September",
+      "date": "2020-09-16 05:31:17",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3819572206263292079",
+      "content": "[img]{STEAM_CLAN_IMAGE}/36019928/fec68725c2fff02c90bd312055b2e27c6eba0ba8.png[/img]\n\nGood morning all,\n\nThe [b]macOS version[/b] is now available! In addition to bringing you this great news, you\u2019ll also find a number of bug fixes and improvements, listed below.\n\n[b]Fixes & Improvements:[/b]\n[list]\n[*] Improved the overall performance throughout the game\n[*] Improved the lighting in various scenes for a better usage of the highlight functionality\n[*] Improved the camera positioning in various scenes\n[*] Fixed several other minor issues that could occur with the Inventory and Save files\n[*] Fixed an issue that could occur during the loading screen in Act 3\n[*] Fixed an issue that could occur with character swapping in Act 3\n[/list]\n[b]Next up:[/b]\n[list]\n[*] Additional improvements and fixes\n[/list]\nPlease don\u2019t hesitate to keep sending us comments on the [url=https://steamcommunity.com/app/1067540/discussions/1/]Steam forum[/url], or messages at support@unitedlabelgames.com.\n\nThank you again for playing!\n\n[i]R\u00d6KI: A game about monsters that shouldn\u2019t exist[/i]\n\nhttps://store.steampowered.com/app/1067540/Rki/",
+      "key": "1067540::ed8a6318f72dae7de481a02a8a8f7782c591b642",
+      "tags": [
+        {
+          "feature": "The macOS version is now available!"
+        },
+        {
+          "bug": "Improved the overall performance throughout the game"
+        },
+        {
+          "bug": "Improved the lighting in various scenes for a better usage of the highlight functionality"
+        },
+        {
+          "bug": "Improved the camera positioning in various scenes"
+        },
+        {
+          "bug": "Fixed several other minor issues that could occur with the Inventory and Save files"
+        },
+        {
+          "bug": "Fixed an issue that could occur during the loading screen in Act 3"
+        },
+        {
+          "bug": "Fixed an issue that could occur with character swapping in Act 3"
+        }
+      ]
+    },
+    {
+      "title": "R\u00f6ki Patch Notes - 5th August",
+      "date": "2020-08-05 11:00:52",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3664194214735145229",
+      "content": "[img]{STEAM_CLAN_IMAGE}/36019928/56e4f59b3c197d9979a1f2c928728b6219de8e78.png[/img]\n\nHey all,\n\nThanks to your continuous feedback, we keep improving the game! With this second update, you\u2019ll find a number of bug fixes and improvements, listed below.\n\n[b]Fixes & Improvements:[/b]\n\u2744\ufe0f By popular demand, we\u2019ve revised our Save system and now you can keep up to [b]3 save slots[/b]!\n\u2744\ufe0f Fixed an issue that could occur with the Journal when exiting Shroomi\u2019s cave\n\u2744\ufe0f Fixed an issue that could occur when interacting with the mulch when equipped with the Invisibility Mask\n\u2744\ufe0f Fixed several other minor issues that could occur with the Inventory, Save files, and Journal\n\n[b]Next up:[/b]\n\u2744\ufe0f We\u2019re working on the release of the macOS version, to be coming soon!\n\nPlease don\u2019t hesitate to keep sending us comments on the [url=https://steamcommunity.com/app/1067540/discussions/]Steam forum[/url], or messages at support@unitedlabelgames.com.\n\nThank you again for playing!\n\n[i]R\u00d6KI: A game about monsters that shouldn\u2019t exist[/i]\n\nhttps://store.steampowered.com/app/1067540/Rki/",
+      "key": "1067540::90d214a452977bb51c8de8e4f3ce7417093c5b24",
+      "tags": [
+        {
+          "feature": "By popular demand, we\u2019ve revised our Save system and now you can keep up to 3 save slots!"
+        },
+        {
+          "bug": "Fixed an issue that could occur with the Journal when exiting Shroomi\u2019s cave"
+        },
+        {
+          "bug": "Fixed an issue that could occur when interacting with the mulch when equipped with the Invisibility Mask"
+        },
+        {
+          "bug": "Fixed several other minor issues that could occur with the Inventory, Save files, and Journal"
+        }
+      ]
+    },
+    {
+      "title": "R\u00f6ki Patch Notes - 30th July",
+      "date": "2020-07-30 12:17:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3664193578960063706",
+      "content": "[img]{STEAM_CLAN_IMAGE}/36019928/37b99ecd89d93a4cc05f055424691aec080f2ba5.png[/img]\n\nHey everyone! \n\nWe\u2019re very delighted that you are enjoying R\u00f6ki, and excited by your warm reception! We\u2019re also thankful for your feedback that helps us improve your experience in the Scandinavian wilderness.\n\nWith this first update patch, you\u2019ll find a number of bug fixes and improvements, listed below.\n\n[b]Fixes & Improvements:[/b]\n    \u2744\ufe0fFixed an issue where the player could get stuck after rescuing the Mother Tree and viewing the following cutscene\n    \u2744\ufe0fFixed an issue inside the Church Interior, in which Tove could get stuck behind the pews, when examining the crypt\n    \u2744\ufe0fFixed an issue where the Star Discs sometimes was not recognised as properly removed\n    \u2744\ufe0fFixed an issue when picking-up the Book wasn\u2019t properly registered, not allowing the player to skip the Flash Hotspots prompt\n    \u2744\ufe0fFixed an issue where the straws sometimes could not stack properly inside the inventory during the Wolf Trial\n    \u2744\ufe0fFixed an issue where starting a new game with an existing save could result in a white screen, forcing a game restart\n    \u2744\ufe0fFixed a bug where picking up the Ancient Fishing Lure could prevent unlocking the [i]\"Raven Botherer\"[/i] badge\n    \u2744\ufe0fFixed an issue where the Sundial puzzle sometimes would result in a freeze\n    \u2744\ufe0fFixed an issue where the player could get blocked after opening the gate to the Sundial Courtyard as Tove, and leaving to the Gatehouse from the Prison as Henrik\n    \u2744\ufe0fOptimised circling Ravens for better framerate in lower end PCs\n\n[b]Next up:[/b]\n    \u2744\ufe0fImprovements to the save system - adding 3 save slots! \n    \u2744\ufe0fSeveral minor fixes related to the Inventory and Save files\n    \u2744\ufe0fSeveral minor fixes related to the Journal \n\nPlease don\u2019t hesitate to keep sending us comments on the [url=https://steamcommunity.com/app/1067540/discussions/]Steam forum[/url], or a message at support@unitedlabelgames.com.\n\nThank you again for playing!\n\n[i]R\u00d6KI: A game about monsters that shouldn\u2019t exist[/i]\n\nhttps://store.steampowered.com/app/1067540/Rki/",
+      "key": "1067540::74ff1a46348d39b371716e10733703da7f093c01",
+      "tags": [
+        {
+          "bug": "Fixed an issue where the player could get stuck after rescuing the Mother Tree and viewing the following cutscene"
+        },
+        {
+          "bug": "Fixed an issue inside the Church Interior, in which Tove could get stuck behind the pews, when examining the crypt"
+        },
+        {
+          "bug": "Fixed an issue where the Star Discs sometimes was not recognised as properly removed"
+        },
+        {
+          "bug": "Fixed an issue when picking-up the Book wasn\u2019t properly registered, not allowing the player to skip the Flash Hotspots prompt"
+        },
+        {
+          "bug": "Fixed an issue where the straws sometimes could not stack properly inside the inventory during the Wolf Trial"
+        },
+        {
+          "bug": "Fixed an issue where starting a new game with an existing save could result in a white screen, forcing a game restart"
+        },
+        {
+          "bug": "Fixed a bug where picking up the Ancient Fishing Lure could prevent unlocking the \"Raven Botherer\" badge"
+        },
+        {
+          "bug": "Fixed an issue where the Sundial puzzle sometimes would result in a freeze"
+        },
+        {
+          "bug": "Fixed an issue where the player could get blocked after opening the gate to the Sundial Courtyard as Tove, and leaving to the Gatehouse from the Prison as Henrik"
+        },
+        {
+          "bug": "Optimised circling Ravens for better framerate in lower end PCs"
+        }
+      ]
+    }
+  ]
+}

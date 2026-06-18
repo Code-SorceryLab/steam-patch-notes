@@ -1,0 +1,255 @@
+{
+  "appId": "3656660",
+  "count": 3,
+  "notes": [
+    {
+      "title": "Demo v0.6.6 - Scrap!",
+      "date": "2025-06-29 17:16:59",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1803527891617827",
+      "content": "[p][b]Hello![/b]\nThis is everything I've been up to over the past two weeks. Adding more interaction to the game, gearing up to create the full length of the game so I'll have an end-to-end that I can start refining, and of course working through improvements and feedback from people. So here are the major changes, minor changes, and bug fixes I've done for [b]v0.6.6[/b]!\n\n[b]Scrap Processor Jobs[/b]\nAs a bit of variety and also story, I've added scrap processing jobs where you can collect items of scrap and feed them to a scrap processor which will then process them into a higher value cube. This is meant to be a bit of fun interaction but also provides a bit of opportunity for the game's story, as well as helping to enrich the game with more mission types and interactions.\nThis is also linked to an upgrade for the player ship, which is available in the demo but hidden as a little secret...\n\n[img src=\"https://i.imgur.com/E7V6IGO.gif\"][/img]\n\n[b]Destruction Code Update[/b]\nI've updated the code used for creating asteroid destructions so that now it can take arbitrary shapes as input (Up until now it was only circles). This was necessary now so that I could allow any shaped item to be attached to an asteroid and then be dislodged when hit and leave only a hole of its own shape.\nThis also prepares things very well for shaped charges and other things that will leave a non-circular impact on asteroids.\nI've also improved destruction so that there are no false pieces of asteroids left over. By which I mean pieces of asteroids that are drawn but don't actually have any physical presence backing them up. This happened quite a lot when using the gatling gun repeatedly on one area of an asteroid.\n\n[b]Tutorial Rework[/b]\nI've had the massive fortune of being able to watch a few streamers and youtubers play the game recently, and I noticed that the tutorial definitely needed improving. The main problem was that it was too easy to miss the sections explaining the Scanner, since you could blow right through them without even reading.\nI've reworked things now so that you have to go through the scanner explanation first before your mining gun activates, since what I saw before was as soon as the mining gun would activate people would just keep blasting and they would accidently complete the scanner tutorial steps.\n\n[b]Level Editor Updates[/b]\nI've updated the makeshift level editor I use so that items can be chosen and placed much more easily and starting destructions can also be added.\nThis is a super makeshift, solo-dev, style level editor that uses a bunch of confusing hotkeys and outputs code to a text file that I just copy/paste into the class for the level. Which is all fine because it's only me who's going to be using it :)\nI uploaded a little video of it here:\n[dynamiclink href=\"https://www.youtube.com/watch?v=JDlRvbo6r0g\"][/dynamiclink] \n[b]Maximised Windows[/b]\nAnother thing I saw when watching streamers play was an annoying issue where if you try to maximise the game window (not fullscreen) on 1920x1080 the game's integer scaling will kick in and force the game resolution to the integer below, effectively making the game appear rendered much smaller in the middle of the window.\nThis was happening because the title bar takes up some pixels and actually makes the window height about 1051, which the integer scaling doesn't like.\nThis went unnoticed forever because both of my monitors are 1920x1200, so it's my fault for not testing natively with the most resolution!\nThe simple fix was to give a little vertical tolerance to the integer scaling, so you can lose some pixels off the top and bottom of the screen before it will kick in and change the actual resolution.\n\n[img src=\"https://i.imgur.com/iWRbI7f.png\"][/img]\n\n[b]Other Changes[/b]\n- Default tool hotkeys now use backtick for Activator Tool, then correct number keys for tools\n- SFX and UI volumes default to 75%\n- Tutorial tells you that you can rebind controls\n- Increased physical size of player ship cargo hold, so picking up certain items is easier now\n- Volume selectors and Debt Repayment amount selectors now change in higher increments when holding down buttons but still move in single increments when tapping.\n- Market now shows tool ammo amounts and cost before buying\n- Debug overlay (via backtick) is no longer available in release builds\n- Any item can now be attached to an asteroid\n- Changed confusing \"TL_...\" style statuses back to \"TOOL_...\"\n- Improved checks for entities stuck inside other entities, should now kick in faster on actual instances and less altogether on false positives\n- Added check for unsold resources in cargo before starting a job. A popup will show asking if you want to continue\n- Improved physics particle performance drastically in worst case scenarios\n- When buying an item in the market you are now prompted over whether you want to place it in your cargo or storage\n- Loans will now cover any negative credits you have, plus 100\n- Some items will now appear in the market earlier\n- Storage slot count reduced to make it more important to buy the upgrade\n- Debt repayment page starts with the amount selector selected\n- Re-ordered the terminal pages so that Inventory is before any other page where you can spend credits, so you can go straight to selling your resources and then go to spend the credits instead of going up and down\n\n[b]Fixes[/b]\n- Can no longer rotate asteroids with (invisible) mouse-over and scroll\n- Laser reflections are now limited in number, this fixes a crash where the laser start is stuck inside an object and reflects infinitely\n- Unused extraction ship bays are now \"filled in\", this stops the player glitching into them and getting stuck if they're positioned on the edge of the map when the extraction ship enters\n- Fix for laser sight line effect being accumulating over a number of days\n- Tools no longer stay active if held down when extracting\n- Late extraction fines are now actually applied (time below zero was not making its way to the debrief page!)\n- Property damage fines weren't being reset when you restarted a job\n[/p]",
+      "key": "3656660::2b597d1379a2e507678a3d9acad6dca641e43a41",
+      "tags": [
+        {
+          "feature": "As a bit of variety and also story, I've added scrap processing jobs where you can collect items of scrap and feed them to a scrap processor which will then process them into a higher value cube. This is meant to be a bit of fun interaction but also provides a bit of opportunity for the game's story, as well as helping to enrich the game with more mission types and interactions."
+        },
+        {
+          "feature": "I've updated the code used for creating asteroid destructions so that now it can take arbitrary shapes as input (Up until now it was only circles). This was necessary now so that I could allow any shaped item to be attached to an asteroid and then be dislodged when hit and leave only a hole of its own shape."
+        },
+        {
+          "feature": "I've reworked things now so that you have to go through the scanner explanation first before your mining gun activates, since what I saw before was as soon as the mining gun would activate people would just keep blasting and they would accidently complete the scanner tutorial steps."
+        },
+        {
+          "feature": "I've updated the makeshift level editor I use so that items can be chosen and placed much more easily and starting destructions can also be added."
+        },
+        {
+          "feature": "Another thing I saw when watching streamers play was an annoying issue where if you try to maximise the game window (not fullscreen) on 1920x1080 the game's integer scaling will kick in and force the game resolution to the integer below, effectively making the game appear rendered much smaller in the middle of the window."
+        },
+        {
+          "feature": "The simple fix was to give a little vertical tolerance to the integer scaling, so you can lose some pixels off the top and bottom of the screen before it will kick in and change the actual resolution."
+        },
+        {
+          "feature": "Default tool hotkeys now use backtick for Activator Tool, then correct number keys for tools"
+        },
+        {
+          "feature": "SFX and UI volumes default to 75%"
+        },
+        {
+          "feature": "Tutorial tells you that you can rebind controls"
+        },
+        {
+          "balance_change": "Increased physical size of player ship cargo hold, so picking up certain items is easier now"
+        },
+        {
+          "balance_change": "Volume selectors and Debt Repayment amount selectors now change in higher increments when holding down buttons but still move in single increments when tapping."
+        },
+        {
+          "feature": "Market now shows tool ammo amounts and cost before buying"
+        },
+        {
+          "feature": "Debug overlay (via backtick) is no longer available in release builds"
+        },
+        {
+          "feature": "Any item can now be attached to an asteroid"
+        },
+        {
+          "feature": "Changed confusing \"TL_...\" style statuses back to \"TOOL_...\""
+        },
+        {
+          "bug": "Improved checks for entities stuck inside other entities, should now kick in faster on actual instances and less altogether on false positives"
+        },
+        {
+          "feature": "Added check for unsold resources in cargo before starting a job. A popup will show asking if you want to continue"
+        },
+        {
+          "feature": "Improved physics particle performance drastically in worst case scenarios"
+        },
+        {
+          "feature": "When buying an item in the market you are now prompted over whether you want to place it in your cargo or storage"
+        },
+        {
+          "balance_change": "Loans will now cover any negative credits you have, plus 100"
+        },
+        {
+          "balance_change": "Some items will now appear in the market earlier"
+        },
+        {
+          "balance_change": "Storage slot count reduced to make it more important to buy the upgrade"
+        },
+        {
+          "feature": "Debt repayment page starts with the amount selector selected"
+        },
+        {
+          "feature": "Re-ordered the terminal pages so that Inventory is before any other page where you can spend credits, so you can go straight to selling your resources and then go to spend the credits instead of going up and down"
+        },
+        {
+          "bug": "Can no longer rotate asteroids with (invisible) mouse-over and scroll"
+        },
+        {
+          "bug": "Laser reflections are now limited in number, this fixes a crash where the laser start is stuck inside an object and reflects infinitely"
+        },
+        {
+          "bug": "Unused extraction ship bays are now \"filled in\", this stops the player glitching into them and getting stuck if they're positioned on the edge of the map when the extraction ship enters"
+        },
+        {
+          "bug": "Fix for laser sight line effect being accumulating over a number of days"
+        },
+        {
+          "bug": "Tools no longer stay active if held down when extracting"
+        },
+        {
+          "bug": "Late extraction fines are now actually applied (time below zero was not making its way to the debrief page!)"
+        },
+        {
+          "bug": "Property damage fines weren't being reset when you restarted a job"
+        }
+      ]
+    },
+    {
+      "title": "Demo v0.6.5 - Next Fest Feedback",
+      "date": "2025-06-12 15:04:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1802354289571210",
+      "content": "[p][b]Hello!\n[/b]Next Fest has been pretty intense so far. A lot of feedback and chatting with players about the game. Here's a collection of tweaks, bug fixes, and even a couple of minor features I managed to get in for version 0.6.5 of the demo.[/p][p]Next Fest is still in full swing, so if you haven't played the demo yet, please do and let me know what you think![/p][p][b]Laser Sight\n[/b]Special mention for the laser sight, which I'm really happy with (it reflects and lights up particles!).[/p][p][img src=\"https://i.imgur.com/6b8duDk.gif\"][/img][/p][p][b]Features\n[/b]- Laser sight upgrade\n- Volume settings are now split between SFX, UI, and Music, and can be set from 0 to 100 (previously 0 to 10). This should help streamers who have more sensitive setups.[/p][p][b]Balance\n[/b]- Hammer easier to control\n- Some items are cheaper now\n- Crystals sell for more\n- Don't show cycle tool reminder on charge training day\n- Charge training hints at key for dropping charges from cargo\n- Added status notification for an empty tool slot\n- Lowered damage necessary to force a container open\n- Increased time limits across all days\n- Scanner tutorial step now requires you to get closer to the scanned resource\n- Some wording changes in mail messages[/p][p][b]Fixes\n[/b]- Default key bindings are set properly, instead of the debug ones\n- DPI Awareness is now working again (proper resolution scaling when you have Windows scaling set)\n- Activator tool sprite now drawn on the correct layer\n- Possible fix for losing BASS audio after PC wakes up from sleep, plus additional logging around this in case the issue persists\n- Stopped null tool drawing pink sprite\n- Fix for culture variant text comparisons. This was causing crashes due to Font validation on PCs with certain locale settings\n- Log file uses 24h time instead of incorrectly using 12h\n- Hammer retract animation now plays properly\n- Mail reply scroll bar no longer shows on other mail pages when there are no replies\n- Additional logging around entity wrapping and asteroid destruction to help with an investigation into a wrapping bug\n- Extraction ship typo when extracting (\"EXTRACING\" -> \"EXTRACTING\")[/p]",
+      "key": "3656660::34f8c21a13571e11439c2f074676724bbd7a7005",
+      "tags": [
+        {
+          "feature": "- Laser sight upgrade"
+        },
+        {
+          "feature": "- Volume settings are now split between SFX, UI, and Music, and can be set from 0 to 100 (previously 0 to 10). This should help streamers who have more sensitive setups."
+        },
+        {
+          "balance_change": "- Hammer easier to control"
+        },
+        {
+          "balance_change": "- Some items are cheaper now"
+        },
+        {
+          "balance_change": "- Crystals sell for more"
+        },
+        {
+          "balance_change": "- Don't show cycle tool reminder on charge training day"
+        },
+        {
+          "balance_change": "- Charge training hints at key for dropping charges from cargo"
+        },
+        {
+          "balance_change": "- Added status notification for an empty tool slot"
+        },
+        {
+          "balance_change": "- Lowered damage necessary to force a container open"
+        },
+        {
+          "balance_change": "- Increased time limits across all days"
+        },
+        {
+          "balance_change": "- Scanner tutorial step now requires you to get closer to the scanned resource"
+        },
+        {
+          "balance_change": "- Some wording changes in mail messages"
+        },
+        {
+          "bug": "- Default key bindings are set properly, instead of the debug ones"
+        },
+        {
+          "bug": "- DPI Awareness is now working again (proper resolution scaling when you have Windows scaling set)"
+        },
+        {
+          "bug": "- Activator tool sprite now drawn on the correct layer"
+        },
+        {
+          "bug": "- Possible fix for losing BASS audio after PC wakes up from sleep, plus additional logging around this in case the issue persists"
+        },
+        {
+          "bug": "- Stopped null tool drawing pink sprite"
+        },
+        {
+          "bug": "- Fix for culture variant text comparisons. This was causing crashes due to Font validation on PCs with certain locale settings"
+        },
+        {
+          "bug": "- Log file uses 24h time instead of incorrectly using 12h"
+        },
+        {
+          "bug": "- Hammer retract animation now plays properly"
+        },
+        {
+          "bug": "- Mail reply scroll bar no longer shows on other mail pages when there are no replies"
+        },
+        {
+          "bug": "- Additional logging around entity wrapping and asteroid destruction to help with an investigation into a wrapping bug"
+        },
+        {
+          "bug": "- Extraction ship typo when extracting (\"EXTRACING\" -> \"EXTRACTING\")"
+        }
+      ]
+    },
+    {
+      "title": "Demo v0.6.4 Update",
+      "date": "2025-06-04 14:28:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1801617199366831",
+      "content": "[b]Hello![/b]\nIt's been almost a week since I released version [b]0.6[/b] in preparation for Next Fest and it's pretty clear that getting the demo out early is paying off massively. There's been a lot of excellent feedback and bug reports, and I've been really surprised by just how helpful people are willing to be. So thanks again to everyone who has and is helping :). I've managed to stay on top of the bug reports, make some requested tweaks, and also get some bigger improvements (not quite features) in for [b]v0.6.4[/b]!\n\n[b]Animated Backgrounds[/b]\nThe space backgrounds have been pretty dead and static so far (plus there's nothing animated on the main or terminal menus so it can sometimes look like the game is frozen), so I thought now would be a good time to add a bit of action in there. I've gone with a nice simple parallax animation to the space dust that was already used for the background. In the menus this shows some dust and distance stars, and on the jobs it shows some dust and particles specific to the asteroids present. At the moment they're only moving on a single axis because I found it a little jarring when they move diagonally since that can introduce slower movements, which look jerky and more noticeable than faster movements at this level of pixelation. I've also added an option to switch off the animated in the video settings in case anyone doesn't enjoy this visualisation.\n\n[img]https://i.imgur.com/xAZu6Kb.gif[/img]\n\n[img]https://i.imgur.com/obGPkMc.gif[/img]\n\n[b]Improved Job Confirmation[/b]\nThe job page and confirmation screen have been changed quite a bit in recent versions. It was hard knowing what information was important for players initially and I didn't want to invest a lot of time into designing UI before I'd had some players actually testing this. The changes made in this version were to the confirmation screen, which before just showed the job Id, Time, and Permit. Now I've added the current Tools and Cargo loadout, which will really help with actually knowing what you're taking on a job with you (quite a few people reported going into jobs without the items they'd just purchased). If I'd designed the terminal with more UI space I'd probably make it so that you could edit the loadout there, but I actually quite like the simplicity of the current approach.\n\n[img]https://i.imgur.com/2BptrMm.png[/img]\n\n[img]https://i.imgur.com/GIT6C8Z.png[/img]\n\n[b]Windows Scaled Resolution[/b]\nMy PC is a laptop with a high DPI screen, and a monitor with a pretty standard DPI screen. This means I use Windows Scaling 125% for the laptop screen, and no special scaling for the second monitor. Since the start of development I've had issues when moving the game window between these screens and just generally displaying the game on the scaled screen. The resolution on the scaled screen would look off and blurry as Windows tried to scale things itself, which is a real pain for this game which relies on nice crisp pixels. I'd tried unsuccessfully to fix this so I pushed it to the bottom of the pile for a long time until a player on the Steam community said they were having an issue with resolutions and it turned out to be the same thing. They also pointed me to Skyrim, which apparently has issues on scaled screens, which then lead me to understanding the problem more and actually knowing how to search for the solution! And obviously the solution is just a small addition to the application manifest, which solves everything nicely :'). This probably wasn't going to be an issue for a lot of people, but it's very satisfying to finally have it dealt with.\n\n[b]Steam Deck Support[/b]\nNothing official or verified yet but I finally got my hands on a Steam Deck and have been blown away by how well the game works on it right out of the box. I still need to give it a more thorough test but it looks like there's nothing I really need to do to have it run as intended on there. Saying that, I did see an issue where when updating the asteroid's texture after some destruction huge chunks of the texture would just vanish. This has been pretty hard to reproduce on the Steam Deck and I haven't yet seen it happen on Windows, so it might be something with graphics device specific to the Deck. If you come across something that sounds like this, either on Windows or Steam Deck, please let me know and send me a log file. :)\n\n[b]Other Tweaks and Fixes in v0.6.4[/b]\n- Tweaks to tutorial wording to hint more at how the scanner functions\n- Price tweaks\n- Slightly more destruction from bullets and hammer\n- Slightly more damage to small charges\n- Moving left in the UI now lets you exit some UI states. This effectively makes Left work like Back in some states.\n- Back button actually works in the UI popup states now\n- Fix for crash when calling for extraction before the dropship leaves\n- Added splash explainer for menu controls when first starting up the game\n- Job page time/permit selector now can't be navigated to if it only has one selection. This is to make it more obvious when it does have multiple selections\n- Lazy loading some asteroid geometry data which is only used during randomised jobs, this should speed up start up time significantly\n- Fixed bug where some jobs would cause a crash when loading straight into them from a save file\n- Containers now spark when their lid receives damage\n\n[b]Fixes in Versions 0.6.1 to 0.6.3[/b]\n- Fix for asteroids sharing some data that is mutated after each destruction\n- Fixed crash caused by bug in texture to vertices code\n- Fixed infinite loop in triangulation validation code\n- Fix for debug resolution hotkeys being available in release builds and blocking use of F12 for screenshot\n\nThanks again to everyone who's been play testing, reporting issues, and giving feedback. You're the best.",
+      "key": "3656660::cff4cb4c94a74668c9cc46cc711c5f8ee23194a6",
+      "tags": [
+        {
+          "feature": "Animated Backgrounds\nThe space backgrounds have been pretty dead and static so far (plus there's nothing animated on the main or terminal menus so it can sometimes look like the game is frozen), so I thought now would be a good time to add a bit of action in there. I've gone with a nice simple parallax animation to the space dust that was already used for the background. In the menus this shows some dust and distance stars, and on the jobs it shows some dust and particles specific to the asteroids present. At the moment they're only moving on a single axis because I found it a little jarring when they move diagonally since that can introduce slower movements, which look jerky and more noticeable than faster movements at this level of pixelation. I've also added an option to switch off the animated in the video settings in case anyone doesn't enjoy this visualisation."
+        },
+        {
+          "feature": "Improved Job Confirmation\nThe job page and confirmation screen have been changed quite a bit in recent versions. It was hard knowing what information was important for players initially and I didn't want to invest a lot of time into designing UI before I'd had some players actually testing this. The changes made in this version were to the confirmation screen, which before just showed the job Id, Time, and Permit. Now I've added the current Tools and Cargo loadout, which will really help with actually knowing what you're taking on a job with you (quite a few people reported going into jobs without the items they'd just purchased). If I'd designed the terminal with more UI space I'd probably make it so that you could edit the loadout there, but I actually quite like the simplicity of the current approach."
+        },
+        {
+          "bug": "Windows Scaled Resolution\nMy PC is a laptop with a high DPI screen, and a monitor with a pretty standard DPI screen. This means I use Windows Scaling 125% for the laptop screen, and no special scaling for the second monitor. Since the start of development I'd had issues when moving the game window between these screens and just generally displaying the game on the scaled screen. The resolution on the scaled screen would look off and blurry as Windows tried to scale things itself, which is a real pain for this game which relies on nice crisp pixels. I'd tried unsuccessfully to fix this so I pushed it to the bottom of the pile for a long time until a player on the Steam community said they were having an issue with resolutions and it turned out to be the same thing. They also pointed me to Skyrim, which apparently has issues on scaled screens, which then lead me to understanding the problem more and actually knowing how to search for the solution! And obviously the solution is just a small addition to the application manifest, which solves everything nicely :'). This probably wasn't going to be an issue for a lot of people, but it's very satisfying to finally have it dealt with."
+        },
+        {
+          "feature": "Steam Deck Support\nNothing official or verified yet but I finally got my hands on a Steam Deck and have been blown away by how well the game works on it right out of the box. I still need to give it a more thorough test but it looks like there's nothing I really need to do to have it run as intended on there. Saying that, I did see an issue where when updating the asteroid's texture after some destruction huge chunks of the texture would just vanish. This has been pretty hard to reproduce on the Steam Deck and I haven't yet seen it happen on Windows, so it might be something with graphics device specific to the Deck. If you come across something that sounds like this, either on Windows or Steam Deck, please let me know and send me a log file. :)"
+        },
+        {
+          "balance_change": "- Tweaks to tutorial wording to hint more at how the scanner functions"
+        },
+        {
+          "balance_change": "- Price tweaks"
+        },
+        {
+          "balance_change": "- Slightly more destruction from bullets and hammer"
+        },
+        {
+          "balance_change": "- Slightly more damage to small charges"
+        },
+        {
+          "feature": "- Moving left in the UI now lets you exit some UI states. This effectively makes Left work like Back in some states."
+        },
+        {
+          "feature": "- Back button actually works in the UI popup states now"
+        },
+        {
+          "bug": "- Fix for crash when calling for extraction before the dropship leaves"
+        },
+        {
+          "feature": "- Added splash explainer for menu controls when first starting up the game"
+        },
+        {
+          "feature": "- Job page time/permit selector now can't be navigated to if it only has one selection. This is to make it more obvious when it does have multiple selections"
+        },
+        {
+          "feature": "- Lazy loading some asteroid geometry data which is only used during randomised jobs, this should speed up start up time significantly"
+        },
+        {
+          "bug": "- Fixed bug where some jobs would cause a crash when loading straight into them from a save file"
+        },
+        {
+          "feature": "- Containers now spark when their lid receives damage"
+        },
+        {
+          "bug": "- Fix for asteroids sharing some data that is mutated after each destruction"
+        },
+        {
+          "bug": "- Fixed crash caused by bug in texture to vertices code"
+        },
+        {
+          "bug": "- Fixed infinite loop in triangulation validation code"
+        },
+        {
+          "bug": "- Fix for debug resolution hotkeys being available in release builds and blocking use of F12 for screenshot"
+        }
+      ]
+    }
+  ]
+}

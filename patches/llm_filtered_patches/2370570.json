@@ -1,0 +1,159 @@
+{
+  "appId": "2370570",
+  "count": 4,
+  "notes": [
+    {
+      "title": "Standable v2.1.1 PATCH NOTES",
+      "date": "2025-01-17 04:49:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1789039014362897",
+      "content": "Mini Patch Notes for Standable [b]v2.1.1[/b]!\n\nv2.1.1 has only a few bug fixes and updates, but very important nonetheless!\n\nPatch Notes below:\n\n[h2]One Handed/Controller Calibration[/h2]\nIf a controller dies or you are unable to use two controllers for whatever reasons Standable calibration will still work as intended with only one controller connected (t-pose, alignment options, etc).\n\n[i]Note: Two controllers must be connected at the beginning of each session, but after initial connection you are free to turn one of the controllers off.[/i]\n\n[h2]Anti Virus Fixes[/h2]\nThere have been multiple reports of Standable triggering Anti-Virus programs (specifically McAfee). These triggers have been mitigated and [b]Standable now no longer falsely triggers Anti-Virus Programs[/b] (or at least not the most popular ones. There will be edge cases where it still could).\n\n[h2]Other[/h2]\n- [b]Fixed:[/b] Standable no longer spams the Steam Console when an HMD is not detected.",
+      "key": "2370570::86fa4516e00c79f3a81a29eb088b42530b5cac46",
+      "tags": [
+        {
+          "bug": "- Standable now no longer falsely triggers Anti-Virus Programs"
+        },
+        {
+          "bug": "- Fixed: Standable no longer spams the Steam Console when an HMD is not detected."
+        }
+      ]
+    },
+    {
+      "title": "Standable v2.0.1 Patch Notes",
+      "date": "2024-05-24 18:04:14",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105612247705",
+      "content": "[b]Patch v2.0.1 is now live![/b]\n\n[b]UI:[/b]\n[list]\n[*]QuickStart Guide link in UI now flashes yellow for first time users.\n[/list]\n\n[b]Calibrate Floor Button:[/b]\n[list]\n[*]New Button in advanced settings for quick floor setting without need to stand up.\n[/list]\n\n[b]Virtual Desktop Jitter (temporary) Workaround:[/b]\nThere is an issue that arises sometimes when using Virtual Desktop where Standable's DeltaTime is somehow messed up. This can slightly or severely affect Standable's tracker velocity math (depending on unknown variables).\n\nTo temporarily mitigate the issues while I search for the root cause, I've added a new section `Virtual Desktop` in advanced settings with two new settings:\n\n[b]Auto Detect VD Issues:[/b]\n[list]\n[*]This attempts to detect the incorrect deltatimes and auto disables the tracker velocity math.\n[/list]\n\n[b]Disable Velocity Math:[/b]\n[list]\n[*]This will manually disable the velocity math (use if auto detect doesn't help). \"Auto Detect VD Issues\" must be disabled for this to make any difference.\n[/list]\n\nAgain, this is a workaround and a full fix is being looked into.\n\n[b]Other:[/b]\n[list]\n[*]Removed DT Override setting\n[/list]\n\nThat's all for now! Let me know how things go!\n",
+      "key": "2370570::87cbeb09a24624849d04128a21da457f944a6686",
+      "tags": [
+        {
+          "feature": "QuickStart Guide link in UI now flashes yellow for first time users."
+        },
+        {
+          "feature": "New Button in advanced settings for quick floor setting without need to stand up."
+        },
+        {
+          "feature": "This attempts to detect the incorrect deltatimes and auto disables the tracker velocity math."
+        },
+        {
+          "feature": "This will manually disable the velocity math (use if auto detect doesn't help). \"Auto Detect VD Issues\" must be disabled for this to make any difference."
+        },
+        {
+          "bug": "Removed DT Override setting"
+        }
+      ]
+    },
+    {
+      "title": "Standable Full Body Estimation v2.0 Patch Notes",
+      "date": "2024-05-22 12:02:50",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5741605105604041558",
+      "content": "[b]Standable v2.0 is a full rewrite of Standable: Full Body Estimation.[/b] This gave the opportunity to add new systems like Seat Estimation and Mixed Tracking, but it also gave the opportunity to vastly improve what was already there, adding that bit much more polish. Hope you enjoy!\n\nMake sure to watch through the (not so quick) [url=https://www.youtube.com/watch?v=hvShfPmjzo8]QuickStart Guide[/url] video to get a grasp of how to use v2.0!\n\n[h2]All New User Interface[/h2]\n[b]Fresh new UI[/b] to personalize your Standable experience to your liking.\n[list]\n    [*]Sit/Lay Pose Adjustment sliders for more control over your pose.\n    [*]Adjustable hip sway and hip counterbalance movement.\n    [*]Enable/Disable Trackers on the fly without restarting.\n    [*]New tracker models that dynamically change color based on tracking status.\n    [*]Over 30 new tracker icons to represent the Standable virtual trackers. We like to call them \"Standabuddies\".[/list]\n[h2]IK/Estimation Improvements[/h2]\n[b]Rewritten from the ground up[/b] for a better more immersive experience.\n[list]\n    [*]Implemented Smart Lay Rotation (no more body weirdly following your hands!).\n    [*]Improved Lay/Body Rolling.\n    [*]Improved walk gait naturalness.\n    [*]Smoothed out transitions between poses.\n    [*] + more![/list]\n[h3]New Advanced Estimation Options[/h3]\n[list]\n[b]New Seat Estimation:[/b] Sit down on a chair or other surfaces and Standable will now blend into a proper seated pose!\n[b]Advanced Chest Estimation:[/b] Put hands near shoulders to dynamically move the chest.[/list]\n[h2]Mixed Tracking[/h2]\n[b]Have real FBT devices?[/b] Combine them with Standable for the best of both worlds!\n[list]\n    [*]Fill in the gaps using Standable!\n    [*]Enable fallback triggers to allow linked FBT devices to fallback to Standable.\n    [*]Smooth out tracker data [i](currently only basic interpolation. More advanced methods will be implemented in future updates).[/i][/list]\n[h3]Quick Consistent Calibration[/h3]\n[list]\n    [*]Align the Standable skeleton to your avatar using new Alignment options for consistent and accurate calibration.\n    [*]Pencil Pose for quick mixed tracking calibration.\n    [*]Smart Offsets for consistent mixed tracking calibration.[/list]\n[h2]And much more![/h2]\nNot everything in v2.0 is mentioned here in the patch notes. If you have issues with v2.0 or want to join the awesome Standable community, feel free to join the [url=https://discord.gg/kz69uH5dpK]Official Standable Discord[/url]!\n\nIt has been a long journey building Standable v2.0. I want to thank all of my Patreon members for their continued support throughout this past year and the wonderful Beta Testers for breaking my horrible code. [b]Standable v2.0 would not exist if it weren't for them <3[/b]",
+      "key": "2370570::3985ff96b355ae1ad2b70b99f4a56b759740281d",
+      "tags": [
+        {
+          "feature": "This gave the opportunity to add new systems like Seat Estimation and Mixed Tracking, but it also gave the opportunity to vastly improve what was already there, adding that bit much more polish."
+        },
+        {
+          "feature": "Fresh new UI to personalize your Standable experience to your liking."
+        },
+        {
+          "feature": "Sit/Lay Pose Adjustment sliders for more control over your pose."
+        },
+        {
+          "feature": "Adjustable hip sway and hip counterbalance movement."
+        },
+        {
+          "feature": "Enable/Disable Trackers on the fly without restarting."
+        },
+        {
+          "feature": "New tracker models that dynamically change color based on tracking status."
+        },
+        {
+          "feature": "Over 30 new tracker icons to represent the Standable virtual trackers. We like to call them \"Standabuddies\"."
+        },
+        {
+          "feature": "Implemented Smart Lay Rotation (no more body weirdly following your hands!)."
+        },
+        {
+          "feature": "Improved Lay/Body Rolling."
+        },
+        {
+          "feature": "Improved walk gait naturalness."
+        },
+        {
+          "feature": "Smoothed out transitions between poses."
+        },
+        {
+          "feature": "+ more!"
+        },
+        {
+          "feature": "New Seat Estimation: Sit down on a chair or other surfaces and Standable will now blend into a proper seated pose!"
+        },
+        {
+          "feature": "Advanced Chest Estimation: Put hands near shoulders to dynamically move the chest."
+        },
+        {
+          "feature": "Have real FBT devices? Combine them with Standable for the best of both worlds!"
+        },
+        {
+          "feature": "Fill in the gaps using Standable!"
+        },
+        {
+          "feature": "Enable fallback triggers to allow linked FBT devices to fallback to Standable."
+        },
+        {
+          "feature": "Smooth out tracker data (currently only basic interpolation. More advanced methods will be implemented in future updates)."
+        },
+        {
+          "feature": "Align the Standable skeleton to your avatar using new Alignment options for consistent and accurate calibration."
+        },
+        {
+          "feature": "Pencil Pose for quick mixed tracking calibration."
+        },
+        {
+          "feature": "Smart Offsets for consistent mixed tracking calibration."
+        }
+      ]
+    },
+    {
+      "title": "Patch Notes for May 14 (v1.1)",
+      "date": "2023-05-15 00:36:05",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6557848386954497932",
+      "content": "[u][b]Additions[/b][/u]\n[b]\n\u2022  Rotating logic breakthrough![/b] - While working on the small bugs I accidentally came across a huge issue with my code. After a simple variable change, now turning around is much more natural! This also fixes most cases of the legs randomly crossing. v1.1 feels so much more natural to \"puppet\"!\n\n[b]\u2022 Calibration message[/b] - Calibration notification when in calibration mode (For VRChat make sure to set tracker visualization to \"system\" in to see it in-game)\n\n[b]\u2022 Improved laying pose[/b] - Much more natural laying/prone look (requires to set \"lock all\" in VRChat settings)\n\n[b]\u2022 Slightly improved sitting pose[/b] - Not as scrunched as before \ud83e\udd37\u200d\u2642\ufe0f\n\n[b]\u2022 Selectively disable trackers[/b] - while you wait for a proper UI in v2.0 you can disable specific tracker points by changing the sfbe_settings.txt located in the sfbe plugin's folder*\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\n\n[u][b]Changes\n[/b][/u]\n[b]\u2022  Set floor level change[/b] - To set the floor level now only needs you to be 4 foot (120 cm) [b]away [/b]from the controllers (still have to be set close to each other) instead of [b]above [/b]the controllers\n\n[b]\u2022  Knees and Elbows[/b] - Knees and elbows pulled in some more to be more obvious what they are\n\n[b]\u2022  Starts in calibration mode[/b] - Opening SteamVR automatically starts SFBE in calibration mode\n\n[b]\u2022  Updated executable[/b] - The sfbe.exe (previously launch_steamvr.exe) executable now launches automatically with SteamVR (and thus allows for a proper playtime counter!)\n\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\n\n[b][u]Bug Fixes[/u][/b]\n\n\u2022  Fixed Vive wand support issue (HTC Vive users rejoice!)\n\n\u2022  Steam now tracks your playtime using Standable",
+      "key": "2370570::10fd203d485b82ce858d771732bee817b83724b6",
+      "tags": [
+        {
+          "feature": "\u2022  Rotating logic breakthrough! - While working on the small bugs I accidentally came across a huge issue with my code. After a simple variable change, now turning around is much more natural! This also fixes most cases of the legs randomly crossing. v1.1 feels so much more natural to \"puppet\"!"
+        },
+        {
+          "feature": "\u2022 Calibration message - Calibration notification when in calibration mode (For VRChat make sure to set tracker visualization to \"system\" in to see it in-game)"
+        },
+        {
+          "feature": "\u2022 Improved laying pose - Much more natural laying/prone look (requires to set \"lock all\" in VRChat settings)"
+        },
+        {
+          "feature": "\u2022 Slightly improved sitting pose - Not as scrunched as before \ud83e\udd37\u200d\u2642\ufe0f"
+        },
+        {
+          "feature": "\u2022 Selectively disable trackers - while you wait for a proper UI in v2.0 you can disable specific tracker points by changing the sfbe_settings.txt located in the sfbe plugin's folder*"
+        },
+        {
+          "balance_change": "\u2022  Set floor level change - To set the floor level now only needs you to be 4 foot (120 cm) [b]away [/b]from the controllers (still have to be set close to each other) instead of [b]above [/b]the controllers"
+        },
+        {
+          "balance_change": "\u2022  Knees and Elbows - Knees and elbows pulled in some more to be more obvious what they are"
+        },
+        {
+          "feature": "\u2022 Starts in calibration mode - Opening SteamVR automatically starts SFBE in calibration mode"
+        },
+        {
+          "feature": "\u2022 Updated executable - The sfbe.exe (previously launch_steamvr.exe) executable now launches automatically with SteamVR (and thus allows for a proper playtime counter!)"
+        },
+        {
+          "bug": "\u2022  Fixed Vive wand support issue (HTC Vive users rejoice!)"
+        },
+        {
+          "bug": "\u2022  Steam now tracks your playtime using Standable"
+        }
+      ]
+    }
+  ]
+}

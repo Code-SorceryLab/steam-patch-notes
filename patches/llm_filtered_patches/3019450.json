@@ -1,0 +1,117 @@
+{
+  "appId": "3019450",
+  "count": 4,
+  "notes": [
+    {
+      "title": "August 2025 dev update",
+      "date": "2025-08-16 01:16:30",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939395442",
+      "content": "[p]Hey everyone![/p][p][/p][p]It has been a while since our last update here, and there is a lot of stuff to unpack since march. We originally wanted these updates to be monthly, but considering the (very) small size of the team, we often have had to prioritize actually working on the game rather than making updates (these things take time!). Almanach is still in active development, and we will do larger updates here every couple months. But if you want more, join our community on [url=\"https://discord.gg/HkVX5ndRv4\"]discord[/url], where we publish smaller updates almost weekly, or have a look at [url=\"https://almanach.blog\"]almanach.blog[/url], where we periodically do deep dives on specific game design topics.[/p][p][/p][p]In this update: city UI revamp, tactical AI update, map generation overhaul, and much more! Lets dive right in with first a look at our newest key art (which should take over the steam page shortly!):[/p][p][img src=\"{STEAM_CLAN_IMAGE}/45302990/125642deeea533fe0930552c138ce0b6a22a6380.png\"][/img][/p][p][/p][h2]City UI[/h2][p][/p][p]One of the main problems we found during our playtests revolved around the micromanagement of cities. There were a lot of manipulations to do in the city, be it constructing new buildings, clearing out obstacles, exploiting resources and balancing out the needs of a rising population. Basically, there was a lot of stuff to do, but not many of those things were highly impactful on the overall game, and they tended to pile up as soon as you had more than one or two cities.[/p][p][/p][p]So we set out in the goal of optimizing, automatizing and overall removing tedious interactions, and came up with two main massive improvements to the city UI: a production queue, and a full revamp of the exploitation system. The production queue is precisely what it sounds like: you can now queue up construction projects, unit trainings and more, and as soon as population becomes available, it gets assigned at whatever top priority you set in the production queue. The exploitation system, on the other hand, changed considerably. In the past, you could place a physical exploitation on the map to exploit a specific resource. Now, all exploitable resources are directly accessible directly from the beginning, and you only need to assign population to their extraction. There is no limit to how many pops you can assign, but careful: assign too many, and your resources may dwindle and disappear...[/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45302990/e6ed36ca9d4945743c0aa2ac6df4b0a3ef0a6651.png\"][/img][/p][p][/p][p]By the way: we are currently working on integrating new, [i]much[/i] nicer visuals for the UI, more on that in the next update![/p][p][/p][h2]Map generation[/h2][p][/p][p]Our map generator needed some love to be able to create nice and interesting maps, now that most systems are implemented in the game. In the first place, we asked ourselves: what constitutes an interesting map? And we came up with 3 main answers:[/p][p]-An interesting map will have variety: where you start on the map should shape your empire in some ways. This can mean to have access to different resources, or a facility to access lands or the oceans, or even just starting next to a cool unique feature such as a Gate to the Underworld or a dragon's lair.[/p][p]-An interesting map should be fair: although there can be zones which are richer in resources than others (jungles vs deserts for example), a special care needs to be put so that every region brings something to the table.[/p][p]-An interesting map should be fun to navigate: moving units around, whether for exploration, attacking your neighbors or defending your cities, should be rewarding. This means great, open spaces in some places, but also tight, defensible chokepoints in others, and mostly... few dead ends. Nothing worse than having to come back where you came from because there is nowhere else to go![/p][p][/p][p][img src=\"{STEAM_CLAN_IMAGE}/45302990/f672e8bb532e1144cbe53089a54cae164ebcd20b.png\"][/img][/p][p]So we implemented a bunch of new systems and ways to make this happen: the map is now round, with warmer climates in the middle and colder ones out near the edge (note: Almanach has flat worlds, cause it looks cool and makes sense when magic exists... that doesn't mean the flat-Earthers are right). We implemented new climate models for the map, with dominant winds bringing humidity inland, new region delimitations to separate resource types, added many new advanced types of resources (including naval resources, which were previously missing), and designed a whole fertility system to encompass the whole resource placement process.[/p][p][/p][p]With all these improvements, we are now fully set up to design the full early to late game progression![/p][p][/p][h2]Tactical AI progress[/h2][p][/p][p]We've mentioned in the past that in order to fix tactical Artificial Intelligence (AI) in 4X games, we believe that using advanced reinforcement-learning (RL) techniques will be necessary, and we've continued making headway in this direction. How does RL differ from traditional AI? For one, RL does not require the programmer to code anything in terms of actual behaviors apart from the most basic moves. Basically, RL works by giving a lot of freedom to an 'agent' (in our case a unit): you tell it the different moves it can make, and it will start doing random things. Then you design rewards that it will try to obtain to accomplishes more advanced tasks (an advanced task could be to reach a specific tile; the reward could then be to give points to the agent when it reduces the distance to the target). The whole art of the process is then to juggle a bunch of parameters with writing an appropriate reward function and training environment, and voila![/p][p][/p][p]The concept is simple, but the application can be tricky. Recently we toyed with a bunch of parameters and found a promising combination, as well as made sure to remap every couple dozen turns (to prevent units from only learning a single map, which would then be useless on any other map). Results are encouraging: the AI is getting decent at defending a position or exploring, but still has trouble figuring out what to do in offensive or more complicated situations. Work in progress, so stay tuned![/p][p][/p][p][/p][p]That's all for now! We could have talked about a bunch of smaller features and bugfixes (such as a brand new hex editor, a large-scale hex visuals uniformization, a search tool for map features, or tutorial updates), but at this point this update has been long enough, hasn't it? Stay tuned in the next months for more AI and UI news, as well as more work on the early to mid game content![/p]",
+      "key": "3019450::5559d157d0298a332b20465a2fc94efa3ed9b7bc",
+      "tags": [
+        {
+          "feature": "- An interesting map will have variety: where you start on the map should shape your empire in some ways. This can mean to have access to different resources, or a facility to access lands or the oceans, or even just starting next to a cool unique feature such as a Gate to the Underworld or a dragon's lair."
+        },
+        {
+          "feature": "-An interesting map should be fair: although there can be zones which are richer in resources than others (jungles vs deserts for example), a special care needs to be put so that every region brings something to the table."
+        },
+        {
+          "feature": "-An interesting map should be fun to navigate: moving units around, whether for exploration, attacking your neighbors or defending your cities, should be rewarding. This means great, open spaces in some places, but also tight, defensible chokepoints in others, and mostly... few dead ends. Nothing worse than having to come back where you came from because there is nowhere else to go!"
+        },
+        {
+          "feature": "So we implemented a bunch of new systems and ways to make this happen: the map is now round, with warmer climates in the middle and colder ones out near the edge (note: Almanach has flat worlds, cause it looks cool and makes sense when magic exists... that doesn't mean the flat-Earthers are right). We implemented new climate models for the map, with dominant winds bringing humidity inland, new region delimitations to separate resource types, added many new advanced types of resources (including naval resources, which were previously missing), and designed a whole fertility system to encompass the whole resource placement process."
+        },
+        {
+          "feature": "- We are currently working on integrating new, [i]much[/i] nicer visuals for the UI, more on that in the next update!"
+        },
+        {
+          "feature": "the production queue is precisely what it sounds like: you can now queue up construction projects, unit trainings and more, and as soon as population becomes available, it gets assigned at whatever top priority you set in the production queue."
+        },
+        {
+          "feature": "The exploitation system, on the other hand, changed considerably. In the past, you could place a physical exploitation on the map to exploit a specific resource. Now, all exploitable resources are directly accessible directly from the beginning, and you only need to assign population to their extraction. There is no limit to how many pops you can assign, but careful: assign too many, and your resources may dwindle and disappear..."
+        },
+        {
+          "bug": "- a brand new hex editor"
+        },
+        {
+          "feature": "- a large-scale hex visuals uniformization"
+        },
+        {
+          "feature": "- a search tool for map features"
+        },
+        {
+          "feature": "- tutorial updates"
+        }
+      ]
+    },
+    {
+      "title": "March 2025 monthly update!",
+      "date": "2025-03-04 13:52:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1792751526180910",
+      "content": "Hello everyone!\n\nWe're back with another [strike]almost[/strike] monthly update for Almanach! We skipped last month's update to focus more on the playtest that was available from Feb. 17-24 and give us more time to focus on making a better experience for you guys. So first of all, thanks to everyone who played the game and left us some feedback! We are still sorting through everything, and will consider all your comments in the continuing development. The last 2 months have been all about refinement and polishing the demo experience, and pushing the game's visuals and usability further. Let\u2019s dive in!\n\n[h2]Playtest Polish & Debugging[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/45302990/9614cfce00693eff2fe277182a916e910b0c7ef5.png[/img]\nA lot of work in the last 2 months has gone into making sure the playtest was as smooth and enjoyable as possible. We've improved visibility around cities, ensuring key information is clearer at a glance. We've also added tutorials for trade and influence, and linked those systems into the rest of the gameplay experience. Alongside that, we tackled various crashes, hangs, added missing icons, and introduced new narrative events with fresh illustrations to deepen the story of the Azca people that you guys got to play.\n\n[h2]City Visuals[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/45302990/7d139d3d40715313e6dd9fe3749ad54bcea6aec6.png[/img]\nOur cities are looking better by the day! We\u2019ve added new decorative elements, outlines, models, and decals to give them a richer, more immersive feel. While we are not quite there yet as to the final look, this is a nice step towards having a more detailed and dynamic urban landscape in your empire!\n\n[h2]UI Redesign[/h2]\n\n[img]{STEAM_CLAN_IMAGE}/45302990/22a2758615fbd2144dda0056a1addeb8f0340972.png[/img]\nWe\u2019ve started giving the UI a sorely needed thematic facelift! Although we are still in the visual design phase of this update, the interface will better match the game's atmosphere, making interactions feel more cohesive and engaging. Expect a more refined, immersive presentation as we continue to enhance the overall look and feel.\n\n[h2]Quality of Life Improvements[/h2]\n\nAuto-save, reloading, and returning to the main menu are now fully implemented. This means you can now step away from your empire without fear of losing progress.\n\nThat\u2019s it for this update! As always, thank you for your support and feedback\u2014it helps us shape Almanach into the best version it can be. Stay tuned for more updates (or [url=https://discord.gg/HkVX5ndRv4]join the discord[/url] for more frequent ones), and let us know what you think in the comments!\n\nSee you next time!\n\n\u2014 The Almanach Team",
+      "key": "3019450::54de6d46501135f2ab6af86c709a5c7c2f53d4ed",
+      "tags": [
+        {
+          "bug": "- We've also added tutorials for trade and influence, and linked those systems into the rest of the gameplay experience. Alongside that, we tackled various crashes, hangs, added missing icons, and introduced new narrative events with fresh illustrations to deepen the story of the Azca people that you guys got to play."
+        },
+        {
+          "feature": "- We've improved visibility around cities, ensuring key information is clearer at a glance."
+        },
+        {
+          "feature": "- We've also added tutorials for trade and influence, and linked those systems into the rest of the gameplay experience."
+        },
+        {
+          "feature": "- We've added new decorative elements, outlines, models, and decals to give them a richer, more immersive feel."
+        },
+        {
+          "feature": "- Although we are still in the visual design phase of this update, the interface will better match the game's atmosphere, making interactions feel more cohesive and engaging."
+        },
+        {
+          "feature": "Auto-save, reloading, and returning to the main menu are now fully implemented."
+        },
+        {
+          "bug": "- added missing icons"
+        },
+        {
+          "bug": "- tackled various crashes, hangs"
+        }
+      ]
+    },
+    {
+      "title": "December 2024 Monthly Update",
+      "date": "2025-01-09 12:46:19",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1788311419022292",
+      "content": "Hello everyone!\n\nWe are back with the 2nd monthly update for December (sorry for the small delay, it's been a busy holiday season!). This month, we have mostly worked on finalizing cities, be it on the mechanics or visuals side. With the adding of multitile cities and the internal market, the economy part of the systems for Almanach is almost complete! We will then need to use those systems to make content for the actual game.\n\n[h3]Multitile cities[/h3]\nIt is now possible, for an influence fee, to expand the borders of your cities and add adjacent tiles as districts. This enlarges the buildable area for your city, and also expands the territory you control around them. This change makes is so that it is now possible to buy megalopolises which span over as many hexes as you want... as long as you have the influence to support it.\n[img]{STEAM_CLAN_IMAGE}/45302990/c514cc00978dfb92c676130a27a42bb17a06576c.gif[/img]\n\n[h3]Internal market[/h3]\nCities now also have access to the internal market, an empire wide market which allows cities to buy and sell resources. Selling a resource to the market will give you money and make it available for other cities to buy; buying a resource will cost you gold, but award another city with that resource. Be careful about distances however, as the buying price of the resource will increase as a function of how far the two cities are and how much infrastructure you have to support commerce...\n\n[h3]Visual benchmark for cities[/h3]\nOn the art side, we have finally converged on the next benchmark look for cities, which you can see below. We tried to imagine ways in which cities could be made to look as a whole rather than an assembly of spare parts, and this concept art is what ended up coming out of our lead artist's head. Next step: figure out how to implement this 2D image into the 3D world of the game! Expect to see more about this in the coming months!\n[img]{STEAM_CLAN_IMAGE}/45302990/1e1f143ad6d7313c092fe05a2f902b7fda0ab8c0.png[/img]",
+      "key": "3019450::e60ea283909f90752faa63d0149b3921b5f65185",
+      "tags": [
+        {
+          "feature": "It is now possible, for an influence fee, to expand the borders of your cities and add adjacent tiles as districts. This enlarges the buildable area for your city, and also expands the territory you control around them. This change makes is so that it is now possible to buy megalopolises which span over as many hexes as you want... as long as you have the influence to support it."
+        },
+        {
+          "feature": "Cities now also have access to the internal market, an empire wide market which allows cities to buy and sell resources. Selling a resource to the market will give you money and make it available for other cities to buy; buying a resource will cost you gold, but award another city with that resource. Be careful about distances however, as the buying price of the resource will increase as a function of how far the two cities are and how much infrastructure you have to support commerce..."
+        }
+      ]
+    },
+    {
+      "title": "November 2024 Monthly Update",
+      "date": "2024-12-03 17:51:06",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1784506359190540",
+      "content": "Hello everyone!\n\nThis is the first of a series of monthly updates for Almanach, where we will keep you updated on our progress on the game. As this is the first time, the format might still need some work as we adjust to a new medium, so bear with us, and do let us know what you think! Too long, too dry, would like to hear about something specific? Let us know in the comments!\n\nAs a bit of background, we had a pretty intense October, where we basically made sure our demo was as polished as possible in the ramp-up leading to us holding a booth (thanks Loto-Quebec for the opportunity, by the way!) at the Montreal International Games Summit (MIGS), and showing the game off to many potential partners in the games industry. After a week of follow-ups in early november, we went back to the development of game systems and visuals.\n\nSo here goes for the November changelog:\n\n-Multi-tile cities: It was one of our long-term goals that cities in Almanach should be able to expand to adjacent tiles when space gets tight (or when you want an early access to that sweet mana node on the other tile maybe...?). This is now done! You can exchange influence to buy tiles that you control and add them to your cities.\n\n-City UI and UX: New systems are only ever so good as the UI the players need to use to navigate them. In parallel to the development of new systems for multi-tile cities, we also designed and implemented interfaces to be able to properly inspect and interact with the various tiles of your cities (80% done). We also did a first design pass on the UI for our next system, the internal empire-wide market which will allow you to exchange resources from one city to the next (for a fee... of course).\n\n-Machine Learning (ML) AI: We are developing an innovative ML-based AI to control the tactical decisions of various units on the battlefield. We had already started to work on this over the summer, but had to pause development on the ramp-up to MIGS. AI development is a lengthy process, and we are mostly always working on it a little bit on the background or on the side, so expect to hear about it often. This month, we re-actualized our training setup, and notably massively increased the map awareness of our bots by giving them access to much larger regions of the map, which seems to improve their ability to navigate complex terrain.\n\n-On the art side: We've been unsatisfied with how our cities look like for a while now, as the current placement of buildings results in cities looking like an assembly of buildings rather than a cohesive whole. So our lead artist spent basically the whole month redesigning player-placeable improvements and buildings, and then sketching them together in much more organic ways. Have a look below! At the moment this remains on the conceptual side, but you can expect to see this in-game coming in the next 2-3 months!\n\n[img]{STEAM_CLAN_IMAGE}/45302990/c26f9f681dea0febf0d8e739474a576f1e015c3e.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/45302990/d5aa6be528a6b9cdf6a3128c5a1b2cd7e4ee2b4b.gif[/img]",
+      "key": "3019450::10778a85e6fe46ea8356cd2b62ba7f6c5cc0780b",
+      "tags": [
+        {
+          "feature": "-Multi-tile cities: It was one of our long-term goals that cities in Almanach should be able to expand to adjacent tiles when space gets tight (or when you want an early access to that sweet mana node on the other tile maybe...?). This is now done! You can exchange influence to buy tiles that you control and add them to your cities."
+        },
+        {
+          "feature": "- City UI and UX: New systems are only ever so good as the UI the players need to use to navigate them. In parallel to the development of new systems for multi-tile cities, we also designed and implemented interfaces to be able to properly inspect and interact with the various tiles of your cities (80% done). We also did a first design pass on the UI for our next system, the internal empire-wide market which will allow you to exchange resources from one city to the next (for a fee... of course)."
+        },
+        {
+          "feature": "-Machine Learning (ML) AI: We are developing an innovative ML-based AI to control the tactical decisions of various units on the battlefield. We had already started to work on this over the summer, but had to pause development on the ramp-up to MIGS. AI development is a lengthy process, and we are mostly always working on it a little bit on the background or on the side, so expect to hear about it often. This month, we re-actualized our training setup, and notably massively increased the map awareness of our bots by giving them access to much larger regions of the map, which seems to improve their ability to navigate complex terrain."
+        },
+        {
+          "feature": "-On the art side: We've been unsatisfied with how our cities look like for a while now, as the current placement of buildings results in cities looking like an assembly of buildings rather than a cohesive whole. So our lead artist spent basically the whole month redesigning player-placeable improvements and buildings, and then sketching them together in much more organic ways. Have a look below! At the moment this remains on the conceptual side, but you can expect to see this in-game coming in the next 2-3 months!"
+        }
+      ]
+    }
+  ]
+}

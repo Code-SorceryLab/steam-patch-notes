@@ -1,0 +1,1320 @@
+{
+  "appId": "685910",
+  "count": 27,
+  "notes": [
+    {
+      "title": "0.3.2207.6 Ship editing and testing improvements, merge from beta branch",
+      "date": "2022-07-07 03:23:15",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4474904295779915193",
+      "content": "This update focuses on improvements to make the ship blueprint editing and testing gameplay loop smoother. All existing changes from the beta branch are now also included in the main branch.\n[h3]New functionality:[/h3]\n[list]\n\t[*]Added options for fleet test battle to reduce need for manually setting up a desired scenario every time. The level size, enemy fleet, and fleet deployment distance can be chosen from a new dialog.\n[img]{STEAM_CLAN_IMAGE}/30166125/bc98e17ae444ef77be28fc1dcc554a56204307a1.png[/img]\n\t[*]Added the existing fleet generator tool to fleet editor.\n\t[*]Game overlay (damage, resources etc.) enabled and opacity settings are now persisted in game settings file automatically. The values are separate for sandbox battles, normal battles, fleet editor, and ship editor.\n\t[*]Position and visibility of ship editor dialogs is now retained until the whole fleet editor screen is closed.\n\t[*]Enabled configuration modding of shield parameters like size, energy use etc.\n\t[*]Ship mirror tool now uses existing movement group assignments of actuators for mirrored actuators instead of always recalculating all movement groups so any manual assignment effort is not lost. The logic tries to smartly utilize the existing assignments based on mirror axis and movement group direction, but may yield worse results than full reassignment.\n\t[*]Added settings for maximum overlapping shield opacity to the game settings file, but no UI. The limit can be lowered to see the ship's modules better under overlapping shields. Separate values are used for the fleet editor and battle.\n\t[*]Fleet editor: Added option to include only the selected ships into the fleet save dialog. This is primarily meant to enable a ship / fleet testing workflow where one or more ships are saved from current fleet to use as enemy fleet in the test battles.\n\t[*]Added file deletion button to all file open and save dialogs.\n[/list]\n[h3]Notable fixes:[/h3]\n[list]\t\n\t[*]Debug overlay: Improved visibility of certain debug texts by drawing a black background under them.\n\t[*]Fixed configuration modding of shield modules.\n\t[*]Fixed / refactored beam weapon firing logic to use electricity and generate heat at the start of each firing burst.\n\t[*]Improved \"first use\" UX of the fleet generator tool by hiding the fleet listing and \"Add ships\" button until a fleet has been generated.\n\t[*]Fixed fleet generator tool dialog not resizing correctly to content when the dialog was first dragged, and then a fleet was generated.\n[/list]\n[h3]Career mode related:[/h3]\n[list]\n\t[*][b]Renamed the \"Campaign mode\" to \"Career mode\"[/b] as that matches the idea of sandbox overworld mode with persistent fleet better. There likely won't be any story-driven or scripted \"campaign\" to play through.\n\t[*]Start battle dialog in career mode now shows a listing of the enemy fleet content.\n\t[*]Added option in ship blueprint browser (in fleet editor) to show only currently buildable blueprints. This is based on available modules in fleet and module production capability (including purchase price and resources needed) if docked to a station.\n\t[*]Fleets defeated in universe battles now automatically jettison cargo and slow ships to escape their attacker.\n\t[*]Empty fleets are now \"scuttled\" to debris instead of just deleting them, which releases any carried resources to the universe.\n\t[*]Player fleet motion planning now uses \"stop and go\" solution if it is significantly faster than the smooth one.\n\t[*]Fixed ship rebuild logic not assigning movement, weapon etc. groups, which would sometimes cause rebuilt ships to be immobile in battle.\n\t[*]Fixed fleet rebuild getting stuck in a temporary empty fleet state. This would happen when fleet's only ship needs to be fully dismantled to then build another ship from scratch.\n[/list]\n[h3]Highlights of features previously available only in the beta branch:[/h3]\n[list]\n\t[*]Limited modding support via configuration files.\n\t[*]Many additions and improvements to the career sandbox, including:\n[list]\n\t\t[*]Roaming pirate fleets\n\t\t[*]Basic playable station battles\n\t\t[*]Improved fleet motion planning and added fleet evasion logic.\n\t\t[*]Several UI functionalities related to resource transfer, starting and escaping battles etc.\n[/list][/list]\nPlease see previous announcements for some more info.",
+      "key": "685910::b22443aab14f446327bdec5a5d8882b05db8a5de",
+      "tags": [
+        {
+          "feature": "Added options for fleet test battle to reduce need for manually setting up a desired scenario every time. The level size, enemy fleet, and fleet deployment distance can be chosen from a new dialog."
+        },
+        {
+          "feature": "Added the existing fleet generator tool to fleet editor."
+        },
+        {
+          "feature": "Game overlay (damage, resources etc.) enabled and opacity settings are now persisted in game settings file automatically. The values are separate for sandbox battles, normal battles, fleet editor, and ship editor."
+        },
+        {
+          "feature": "Position and visibility of ship editor dialogs is now retained until the whole fleet editor screen is closed."
+        },
+        {
+          "feature": "Enabled configuration modding of shield parameters like size, energy use etc."
+        },
+        {
+          "feature": "Ship mirror tool now uses existing movement group assignments of actuators for mirrored actuators instead of always recalculating all movement groups so any manual assignment effort is not lost. The logic tries to smartly utilize the existing assignments based on mirror axis and movement group direction, but may yield worse results than full reassignment."
+        },
+        {
+          "feature": "Added settings for maximum overlapping shield opacity to the game settings file, but no UI. The limit can be lowered to see the ship's modules better under overlapping shields. Separate values are used for the fleet editor and battle."
+        },
+        {
+          "feature": "Fleet editor: Added option to include only the selected ships into the fleet save dialog. This is primarily meant to enable a ship / fleet testing workflow where one or more ships are saved from current fleet to use as enemy fleet in the test battles."
+        },
+        {
+          "feature": "Added file deletion button to all file open and save dialogs."
+        },
+        {
+          "bug": "Debug overlay: Improved visibility of certain debug texts by drawing a black background under them."
+        },
+        {
+          "bug": "Fixed configuration modding of shield modules."
+        },
+        {
+          "bug": "Fixed / refactored beam weapon firing logic to use electricity and generate heat at the start of each firing burst."
+        },
+        {
+          "bug": "Improved \"first use\" UX of the fleet generator tool by hiding the fleet listing and \"Add ships\" button until a fleet has been generated."
+        },
+        {
+          "bug": "Fixed fleet generator tool dialog not resizing correctly to content when the dialog was first dragged, and then a fleet was generated."
+        },
+        {
+          "feature": "Renamed the \"Campaign mode\" to \"Career mode\" as that matches the idea of sandbox overworld mode with persistent fleet better. There likely won't be any story-driven or scripted \"campaign\" to play through."
+        },
+        {
+          "feature": "Start battle dialog in career mode now shows a listing of the enemy fleet content."
+        },
+        {
+          "feature": "Added option in ship blueprint browser (in fleet editor) to show only currently buildable blueprints. This is based on available modules in fleet and module production capability (including purchase price and resources needed) if docked to a station."
+        },
+        {
+          "feature": "Fleets defeated in universe battles now automatically jettison cargo and slow ships to escape their attacker."
+        },
+        {
+          "feature": "Empty fleets are now \"scuttled\" to debris instead of just deleting them, which releases any carried resources to the universe."
+        },
+        {
+          "feature": "Player fleet motion planning now uses \"stop and go\" solution if it is significantly faster than the smooth one."
+        },
+        {
+          "bug": "Fixed ship rebuild logic not assigning movement, weapon etc. groups, which would sometimes cause rebuilt ships to be immobile in battle."
+        },
+        {
+          "bug": "Fixed fleet rebuild getting stuck in a temporary empty fleet state. This would happen when fleet's only ship needs to be fully dismantled to then build another ship from scratch."
+        },
+        {
+          "feature": "Limited modding support via configuration files."
+        },
+        {
+          "feature": "Many additions and improvements to the career sandbox, including:"
+        },
+        {
+          "feature": "Roaming pirate fleets"
+        },
+        {
+          "feature": "Basic playable station battles"
+        },
+        {
+          "feature": "Improved fleet motion planning and added fleet evasion logic."
+        },
+        {
+          "feature": "Several UI functionalities related to resource transfer, starting and escaping battles etc."
+        }
+      ]
+    },
+    {
+      "title": "New features in beta branch",
+      "date": "2021-12-24 07:10:12",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4224938027302883848",
+      "content": "The \"development\" beta branch has been updated to the current state of development, which includes few still work-in-progress but already pretty functional features.\n\nDuring 2021 the amount of time spent on development has been admittedly pretty low and the work has focused on the sandbox campaign mode, which is still quite far from a releasable product.\n\n[h3]New features:[/h3]\n[list]\n[*] Added simple configuration mod support. Don't like the balance of combat or want to try something wacky, like 10x faster fire rates on all weapons? Enable mods from a launcher or create your own by editing some JSON files.\n[*] Added roaming pirate fleets to campaign sandbox.\n[*] Added neutral single-station \"free port\" factions to campaign sandbox that are a good place to sell salvaged debris and rebuild your fleet.\n[*] Station battles can be now fought manually in campaign sandbox. This feature is still pretty basic, but features static defense platforms in a generated level with asteroids. Player can be either attacker or defender and any docked fleets also take part in the battle.\n[*] Lots of minor improvements to campaign Faction and fleet logic. For example, fleets will now evade enemies, and more fleets may join ongoing autoresolved battles.\n[/list]",
+      "key": "685910::a1d6c61b77c78819cf4b034e26b62535d461ad27",
+      "tags": [
+        {
+          "feature": "[*] Added simple configuration mod support. Don't like the balance of combat or want to try something wacky, like 10x faster fire rates on all weapons? Enable mods from a launcher or create your own by editing some JSON files."
+        },
+        {
+          "feature": "[*] Added roaming pirate fleets to campaign sandbox."
+        },
+        {
+          "feature": "[*] Added neutral single-station \"free port\" factions to campaign sandbox that are a good place to sell salvaged debris and rebuild your fleet."
+        },
+        {
+          "feature": "[*] Station battles can be now fought manually in campaign sandbox. This feature is still pretty basic, but features static defense platforms in a generated level with asteroids. Player can be either attacker or defender and any docked fleets also take part in the battle."
+        },
+        {
+          "feature": "[*] Lots of minor improvements to campaign Faction and fleet logic. For example, fleets will now evade enemies, and more fleets may join ongoing autoresolved battles."
+        }
+      ]
+    },
+    {
+      "title": "Workshop content usage hotfix",
+      "date": "2021-08-02 15:20:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4038025597327095169",
+      "content": "Fixed an issue that prevented playing some newer challenge levels and using ship blueprints downloaded from the workshop.\nThese would show up in the game, but e.g. trying to add such ships to a level would just fail without any error message. The root cause was that the Steam workshop item IDs for new items are now larger numbers than what a 32-bit Integer can hold, which hasn't been an issue before.\n\nNew feature updates will come eventually when those are ready. The \"development\" beta branch will get these first if you don't mind having some bugs.",
+      "key": "685910::291b682a5073416c2a297d3504f6a972958c7d22",
+      "tags": [
+        {
+          "bug": "Fixed an issue that prevented playing some newer challenge levels and using ship blueprints downloaded from the workshop."
+        }
+      ]
+    },
+    {
+      "title": "0.3.2004.04 Fleet generator tool and fixes",
+      "date": "2020-04-04 12:10:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2978509755353147363",
+      "content": "This minor update adds a handy fleet generator tool to the battle sandbox. It allows quickly adding randomly selected ships similar to the battle setup screen. The tool may get introduced to the fleet and battle editors later.\n\n[img]{STEAM_CLAN_IMAGE}/30166125/3de3a388b746bf5b8b49caf1684acc0079c8f271.png[/img]\n\n[b]Minor changes and fixes since previous patch notes:[/b]\n[list][*] Changed large plasma projectile damage modeling to allow them pass through multiple modules but not being able to fully destroy a module with a single hit.\n[*] Made large plasma projectiles cause external explosion if they hit ship exterior armor. This is intended to spread some damage to adjacent armor segments as well and generally buff these projectiles against armor. \n[*] Added a plasma destroyer ship design. It is a medium size ship with large plasma turrets and shields but very light armor.\n[*] Improved / changed ship peak power use statistic to include charging of shields and weapons. This makes the stat more useful and the power ratio stat to generally be less than 1.\n\n[*] Fixed ships sometimes not getting to launch all their missiles due to issues in the launching logic.\n[*] Fixed being able to queue launching of more missiles than were actually available.\n[*] Fixed fleet battle AI trying to regroup even if it only had one ship.\n[*] Fixed damage overlay rendering for ships that have kinetic shields.\n[*] Fixed a rare UI overlay initialization issue related to mouse position update to the UI.\n[*] Fixed certain single shot particle effects never getting to spawn their particles.\n[*] Fixed module disabled and destruction particle effects not spawning when last module of a ship got destroyed.\n[*] Fixed module destruction particle effects for ships's last module getting applied a random high velocity.\n[/list]",
+      "key": "685910::929445130bafc65e84ffb29f6089439451ff7606",
+      "tags": [
+        {
+          "balance_change": "Changed large plasma projectile damage modeling to allow them pass through multiple modules but not being able to fully destroy a module with a single hit."
+        },
+        {
+          "balance_change": "Made large plasma projectiles cause external explosion if they hit ship exterior armor. This is intended to spread some damage to adjacent armor segments as well and generally buff these projectiles against armor."
+        },
+        {
+          "feature": "Added a plasma destroyer ship design. It is a medium size ship with large plasma turrets and shields but very light armor."
+        },
+        {
+          "balance_change": "Improved / changed ship peak power use statistic to include charging of shields and weapons. This makes the stat more useful and the power ratio stat to generally be less than 1."
+        },
+        {
+          "bug": "Fixed ships sometimes not getting to launch all their missiles due to issues in the launching logic."
+        },
+        {
+          "bug": "Fixed being able to queue launching of more missiles than were actually available."
+        },
+        {
+          "bug": "Fixed fleet battle AI trying to regroup even if it only had one ship."
+        },
+        {
+          "bug": "Fixed damage overlay rendering for ships that have kinetic shields."
+        },
+        {
+          "bug": "Fixed a rare UI overlay initialization issue related to mouse position update to the UI."
+        },
+        {
+          "bug": "Fixed certain single shot particle effects never getting to spawn their particles."
+        },
+        {
+          "bug": "Fixed module disabled and destruction particle effects not spawning when last module of a ship got destroyed."
+        },
+        {
+          "bug": "Fixed module destruction particle effects for ships's last module getting applied a random high velocity."
+        }
+      ]
+    },
+    {
+      "title": "0.3.2003.10 Performance improvements",
+      "date": "2020-03-10 15:54:00",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2579938650942507489",
+      "content": "A small service update that improves performance in certain areas, allowing larger ships and fleets.\n[list][*]Fixed a significant issue with audio objects not getting released correctly if the sound never actually started playing due to a limit of simultaneous sounds. This caused whole game audio to eventually glitch and stop with large battles, and a long hang when returning to menu from a battle. It also gradually slowed the game down.\n[*]Improved performance of ship resource distribution and especially that of radiator modules. The effect is very noticeable in very large ships or platforms with up to hundreds of radiator modules.\n[*]Minor optimizations in particle spawning and ship weapon control logic.\n[/list]",
+      "key": "685910::ef409866a5df8bf24e15cdc22e4790deeee810e6",
+      "tags": [
+        {
+          "bug": "[*]Fixed a significant issue with audio objects not getting released correctly if the sound never actually started playing due to a limit of simultaneous sounds. This caused whole game audio to eventually glitch and stop with large battles, and a long hang when returning to menu from a battle. It also gradually slowed the game down."
+        },
+        {
+          "balance_change": "[*]Improved performance of ship resource distribution and especially that of radiator modules. The effect is very noticeable in very large ships or platforms with up to hundreds of radiator modules."
+        },
+        {
+          "balance_change": "[*]Minor optimizations in particle spawning and ship weapon control logic."
+        }
+      ]
+    },
+    {
+      "title": "0.3.2002.19 Big Guns",
+      "date": "2020-02-19 14:45:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2578811485589182389",
+      "content": "This larger update brings a new class of weapons, changes to shields, an easier way to fly-test your ship designs, and lots of small fixes.\n\n[h1]New large modules[/h1]\n[img]{STEAM_CLAN_IMAGE}/30166125/dd3ee02c768817c9053ddbab70129d2f55580dbf.png[/img]\nThese new 2x2 modules are [b]beam turret[/b], [b]plasma turret[/b], and [b]shield generator[/b]. They function similarly to the existing smaller versions, but with about 10 times the raw damage output and resource usage they form a new significantly higher tier.\nThe large plasma and large beam are intended as main weapons of large ships that can provide enough energy and cooling to reach their potential. Normal shields are not adequate to defend against these weapons, which is where the large shield comes to play.\n\n[b]Large beam turret[/b] has slow rotation speed but can fire a perfectly accurate 4-second burst with medium range. If the firing ship and target stay still enough, the beam can drill its way through multiple modules. The large beam can be very effective against heavily armored ships, because the core modules can usually be sniped with a flanking attack.\n\n[b]Large plasma turret[/b] fires relatively slow plasma projectiles with medium to long range. It is effective against slower and larger ships that it can hit reliably. The large plasma shots destroy armor plating on impact and do additional explosive damage if they penetrate, which can damage multiple modules. Like the medium plasma module, the projectile size can be tuned from module options.\n\n[b]Large shield generator[/b] has double the max shield radius of the normal shield generator, and the shield is also tougher. The large shields are very effective against medium plasma, kinetic and beam weapons, being able to nullify even large amounts of incoming fire if the ship can provide enough electricity. Missiles, super gauss and large weapons may still get through. Note the difference between energy and kinetic shield variants also added in this update.\n\nThe new modules currently use existing audio effects, but the plan is to eventually have specially made individual effects that convey their greater power.\n\n[h1]Energy and kinetic shields[/h1]\n[img]{STEAM_CLAN_IMAGE}/30166125/ce5b20b04ca1102560333a49f18a54be51f4a7f8.png[/img]\nUntil now the shields have provided protection against all weapons, while being better against plasma and beams. This is now changed by having separate \"energy\" and \"kinetic\" shield variants with different properties. The choice can made using module options in ship editor.\n\n[b]The energy shields[/b] are effective against plasma projectiles and beam weapons, but have almost no effect on kinetic projectiles. They have same max diameter and visuals as the generic shields previously.\n\n[b]The kinetic shields[/b] are effective at stopping and deflecting kinetic projectiles, but do little against plasma and beam weapons. In addition, the kinetic shields stop relative motion of other ships and asteroids, guarding against collisions. Motion away from the center of the shield is not affected, so its hard to get further into a kinetic shield but easy to get out along the radius. Kinetic shields can be identified visually by their lighter color and larger max diameter compared to the energy shields.\n\n[h1]Test flight mode[/h1]\nThe fleet editor now has a second option beside \"Test battle\" for easier testing of your ship designs. \nThe \"Test flight\" button [b]takes you directly to manual control mode with selected[/b] ship in a special test level that has some passive targets to shoot and asteroids to fly around. \nThis mode is based on the regular battle sandbox and [b]the test level is a battle scenario you can edit using the battle editor.[/b]\n\n[h1]Graphical changes[/h1]\n[img]{STEAM_CLAN_IMAGE}/30166125/0e364750fc719ba329a7f8307bf67030ffc8dbd8.png[/img]\n[list][*]New beam rendering for sharper and more accurate visuals. \nThe beams now fade away correctly along their length when their energy is drained by shields and segment ends are aligned to hit module surface normals to avoid gaps. When zoomed out far enough, simplified rendering is used to keep all beams in view similar to how projectile graphics are scaled. \n[*]Fixed weapon muzzle flash and projectile hit light effects. These seem to have been broken for a while and actually look pretty nice.\n[*]New particle effects for the large weapons and super gauss include firing, large plasma projectile trails, and projectile impacts.\n[*]Reimplemented main ship sprite sets to be a single sheet created with TexturePacker and loaded from user-editable image file instead of xnb resource.\n[/list]\n[h1]Minor fixes and changes[/h1]\n[list][*]Extended toggle ship / camera follow logic to allow following enemy ships and other objects if no ships are selected. [b]Just point at an object and press F.[/b] Heavily prefers following ships over everything else.\n[*]Weapon turret targeting and firing logic improvements. Improved turret firing logic to require a valid intercept solution found in setTarget call, which prevents wasting energy on shots that will surely miss.\n[*]Globally disallow button elements to get and retain focus when clicked.\n[*]Added better handling of ship blueprint id conflicts when loading them from disk. New logic assigns new id to one of the blueprints and re-saves it. Stock and workshop designs have precedence in keeping their preferred ids.\n[*]Added mouse position change tolerance check to double and triple click check. This fixes issue in ship editor where fast placing of modules using single clicks would trigger the end ship editing action.\n[*]Fixed issues in rebuilding and duplication of ships have been edited in the ship editor and then brought into a test battle.\n[*]Fixed shield generator modules wasting / using too much electricity when shield is at max size.\n[*]Implemented adaptive shield rendering vertex count (LOD) based on visual size for small performance gain.\n[*]Fix for beam penetration intersection calculation in a situation where beam first enters a module with custom shape such as medium armor, passes through it and to adjacent module such that the exit and enter points are the same.\n[*]Added some tooltips in fleet editor and improved action button descriptions.\n[*]Improved some module descriptions.\n[*]Fixed projectile light position being at world origin on first frame of its existence.\n[*]Fixed wrong particle emitter's parameters getting updated in UI if an effect had multiple copies of same emitter type. Also fixed emitter parameter change event handler removal logic after exiting and re-entering the particle editor screen.\n[*]Fixed particle emitters continuing emission after emission time had elapsed if the whole effect wasn't done.\n[*]Increased shield pattern texture size and also increased its opacity when zoomed out. Enabled mipmapping for the shield hex pattern to avoid aliasing.\n[*]Made the game speed slider in battle screen actually reach 10 as max value.\n[*]Fixed beam energy calculation when module structural HP is negative.\n[*]Fixed initialization of shield generator module to not reset to full strength when deserializing.\n[*]Fixed mirroring of 2x2 modules in ship editor.\n[*]Added separate color gradients for kinetic shields.\n[*]Fixed and much improved sustained firepower ship statistic calculation. Now takes into account both available power generation and heatsinking within ship for a better estimate, but still not really accurate since resource distribution order, weapon range, active module usage etc. many other variables matter too.\n[*]Fixed manual ship control action groups UI moving vertically in battle sandbox when game was paused or unpaused.\n[*]Fixed ship control commands being triggered from shortcuts when in battle sandbox edit mode.\n[*]Fixed issue related to having disabled ships (debris) selected in battle sandbox screen.\n[*]Made radiator module self-illumination pass animate based on the stored heat similar to the diffuse channel.\n[*]Added smooth blending between shaded and raw diffuse color based on self-illumination value in DeferredCombine shader. The hard cutoff was very visible with radiator modules when the self-illu is animated based on the amount of stored heat.\n[*]Fixed bindings for ship control commands causing crash in the campaign prototype screen.\n[/list]\n[h1]Stock ship library updates[/h1]\n[img]{STEAM_CLAN_IMAGE}/30166125/a1b4e76adc37b86d0948ecc6d1423eb1d6ba2ca5.png[/img]\n[list][*]Added Beam destroyer ship blueprint.\n[*]Added Beam stiletto ship design.\n[*]Added Plasma battleship mk. 2 ship blueprint.\n[*]Added Capital cruiser mk. 2 ship blueprint.\n[*]Updated gauss battery ship design with kinetic shields, added resource groups.\n[*]Updated shield wall ship design with large shields.\n[*]Updated arrow fighter ship design with kinetic shields.\n[*]Updated super gauss fighter design with kinetic shield.\n[*]Updated heavy punch ship design with kinetic shields.\n[*]Updated thin sniper ship design with kinetic shields.\n[*]Updated gauss barrage ship design with kinetic shields.\n[*]Updated light frigate ship design with kinetic shield and few more generators.\n[*]Updated big box ship design with large shields and guns, increased power generation.\n[*]Updated medium sniper ship design with kinetic shields, resource grouping.\n[/list]",
+      "key": "685910::f852b02b10736cfc94b2529cb4cb3a8f46947d65",
+      "tags": [
+        {
+          "feature": "These new 2x2 modules are [b]beam turret[/b], [b]plasma turret[/b], and [b]shield generator[/b]."
+        },
+        {
+          "feature": "The large plasma and large beam are intended as main weapons of large ships that can provide enough energy and cooling to reach their potential."
+        },
+        {
+          "feature": "Normal shields are not adequate to defend against these weapons, which is where the large shield comes to play."
+        },
+        {
+          "feature": "[b]Large beam turret[/b] has slow rotation speed but can fire a perfectly accurate 4-second burst with medium range."
+        },
+        {
+          "feature": "The large beam can be very effective against heavily armored ships, because the core modules can usually be sniped with a flanking attack."
+        },
+        {
+          "feature": "[b]Large plasma turret[/b] fires relatively slow plasma projectiles with medium to long range."
+        },
+        {
+          "feature": "It is effective against slower and larger ships that it can hit reliably."
+        },
+        {
+          "feature": "The large plasma shots destroy armor plating on impact and do additional explosive damage if they penetrate, which can damage multiple modules."
+        },
+        {
+          "feature": "Like the medium plasma module, the projectile size can be tuned from module options."
+        },
+        {
+          "feature": "[b]Large shield generator[/b] has double the max shield radius of the normal shield generator, and the shield is also tougher."
+        },
+        {
+          "feature": "The large shields are very effective against medium plasma, kinetic and beam weapons, being able to nullify even large amounts of incoming fire if the ship can provide enough electricity."
+        },
+        {
+          "feature": "Missiles, super gauss and large weapons may still get through."
+        },
+        {
+          "feature": "Note the difference between energy and kinetic shield variants also added in this update."
+        },
+        {
+          "feature": "The new modules currently use existing audio effects, but the plan is to eventually have specially made individual effects that convey their greater power."
+        },
+        {
+          "feature": "Until now the shields have provided protection against all weapons, while being better against plasma and beams."
+        },
+        {
+          "feature": "This is now changed by having separate \"energy\" and \"kinetic\" shield variants with different properties."
+        },
+        {
+          "feature": "The choice can made using module options in ship editor."
+        },
+        {
+          "feature": "[b]The energy shields[/b] are effective against plasma projectiles and beam weapons, but have almost no effect on kinetic projectiles."
+        },
+        {
+          "feature": "They have same max diameter and visuals as the generic shields previously."
+        },
+        {
+          "feature": "[b]The kinetic shields[/b] are effective at stopping and deflecting kinetic projectiles, but do little against plasma and beam weapons."
+        },
+        {
+          "feature": "In addition, the kinetic shields stop relative motion of other ships and asteroids, guarding against collisions."
+        },
+        {
+          "feature": "Motion away from the center of the shield is not affected, so its hard to get further into a kinetic shield but easy to get out along the radius."
+        },
+        {
+          "feature": "Kinetic shields can be identified visually by their lighter color and larger max diameter compared to the energy shields."
+        },
+        {
+          "feature": "The fleet editor now has a second option beside \"Test battle\" for easier testing of your ship designs."
+        },
+        {
+          "feature": "The \"Test flight\" button [b]takes you directly to manual control mode with selected[/b] ship in a special test level that has some passive targets to shoot and asteroids to fly around."
+        },
+        {
+          "feature": "This mode is based on the regular battle sandbox and [b]the test level is a battle scenario you can edit using the battle editor.[/b]"
+        },
+        {
+          "feature": "New beam rendering for sharper and more accurate visuals."
+        },
+        {
+          "feature": "The beams now fade away correctly along their length when their energy is drained by shields and segment ends are aligned to hit module surface normals to avoid gaps."
+        },
+        {
+          "feature": "When zoomed out far enough, simplified rendering is used to keep all beams in view similar to how projectile graphics are scaled."
+        },
+        {
+          "bug": "[*]Fixed weapon muzzle flash and projectile hit light effects."
+        },
+        {
+          "feature": "[*]New particle effects for the large weapons and super gauss include firing, large plasma projectile trails, and projectile impacts."
+        },
+        {
+          "feature": "[*]Reimplemented main ship sprite sets to be a single sheet created with TexturePacker and loaded from user-editable image file instead of xnb resource."
+        },
+        {
+          "feature": "[*]Extended toggle ship / camera follow logic to allow following enemy ships and other objects if no ships are selected."
+        },
+        {
+          "feature": "[b]Just point at an object and press F.[/b]"
+        },
+        {
+          "feature": "Heavily prefers following ships over everything else."
+        },
+        {
+          "balance_change": "[*]Weapon turret targeting and firing logic improvements."
+        },
+        {
+          "balance_change": "Improved turret firing logic to require a valid intercept solution found in setTarget call, which prevents wasting energy on shots that will surely miss."
+        },
+        {
+          "bug": "[*]Globally disallow button elements to get and retain focus when clicked."
+        },
+        {
+          "feature": "[*]Added better handling of ship blueprint id conflicts when loading them from disk."
+        },
+        {
+          "feature": "New logic assigns new id to one of the blueprints and re-saves it."
+        },
+        {
+          "feature": "Stock and workshop designs have precedence in keeping their preferred ids."
+        },
+        {
+          "bug": "[*]Added mouse position change tolerance check to double and triple click check."
+        },
+        {
+          "bug": "This fixes issue in ship editor where fast placing of modules using single clicks would trigger the end ship editing action."
+        },
+        {
+          "bug": "[*]Fixed issues in rebuilding and duplication of ships have been edited in the ship editor and then brought into a test battle."
+        },
+        {
+          "bug": "[*]Fixed shield generator modules wasting / using too much electricity when shield is at max size."
+        },
+        {
+          "feature": "[*]Implemented adaptive shield rendering vertex count (LOD) based on visual size for small performance gain."
+        },
+        {
+          "bug": "[*]Fix for beam penetration intersection calculation in a situation where beam first enters a module with custom shape such as medium armor, passes through it and to adjacent module such that the exit and enter points are the same."
+        },
+        {
+          "feature": "[*]Added some tooltips in fleet editor and improved action button descriptions."
+        },
+        {
+          "feature": "[*]Improved some module descriptions."
+        },
+        {
+          "bug": "[*]Fixed projectile light position being at world origin on first frame of its existence."
+        },
+        {
+          "bug": "[*]Fixed wrong particle emitter's parameters getting updated in UI if an effect had multiple copies of same emitter type."
+        },
+        {
+          "bug": "Also fixed emitter parameter change event handler removal logic after exiting and re-entering the particle editor screen."
+        },
+        {
+          "bug": "[*]Fixed particle emitters continuing emission after emission time had elapsed if the whole effect wasn't done."
+        },
+        {
+          "balance_change": "[*]Increased shield pattern texture size and also increased its opacity when zoomed out."
+        },
+        {
+          "feature": "Enabled mipmapping for the shield hex pattern to avoid aliasing."
+        },
+        {
+          "balance_change": "[*]Made the game speed slider in battle screen actually reach 10 as max value."
+        },
+        {
+          "bug": "[*]Fixed beam energy calculation when module structural HP is negative."
+        },
+        {
+          "bug": "[*]Fixed initialization of shield generator module to not reset to full strength when deserializing."
+        },
+        {
+          "bug": "[*]Fixed mirroring of 2x2 modules in ship editor."
+        },
+        {
+          "feature": "[*]Added separate color gradients for kinetic shields."
+        },
+        {
+          "bug": "[*]Fixed and much improved sustained firepower ship statistic calculation."
+        },
+        {
+          "bug": "Now takes into account both available power generation and heatsinking within ship for a better estimate, but still not really accurate since resource distribution order, weapon range, active module usage etc. many other variables matter too."
+        },
+        {
+          "bug": "[*]Fixed manual ship control action groups UI moving vertically in battle sandbox when game was paused or unpaused."
+        },
+        {
+          "bug": "[*]Fixed ship control commands being triggered from shortcuts when in battle sandbox edit mode."
+        },
+        {
+          "bug": "[*]Fixed issue related to having disabled ships (debris) selected in battle sandbox screen."
+        },
+        {
+          "feature": "[*]Made radiator module self-illumination pass animate based on the stored heat similar to the diffuse channel."
+        },
+        {
+          "feature": "[*]Added smooth blending between shaded and raw diffuse color based on self-illumination value in DeferredCombine shader."
+        },
+        {
+          "feature": "The hard cutoff was very visible with radiator modules when the self-illu is animated based on the amount of stored heat."
+        },
+        {
+          "bug": "[*]Fixed bindings for ship control commands causing crash in the campaign prototype screen."
+        },
+        {
+          "feature": "[*]Added Beam destroyer ship blueprint."
+        },
+        {
+          "feature": "[*]Added Beam stiletto ship design."
+        },
+        {
+          "feature": "[*]Added Plasma battleship mk. 2 ship blueprint."
+        },
+        {
+          "feature": "[*]Added Capital cruiser mk. 2 ship blueprint."
+        },
+        {
+          "feature": "[*]Updated gauss battery ship design with kinetic shields, added resource groups."
+        },
+        {
+          "feature": "[*]Updated shield wall ship design with large shields."
+        },
+        {
+          "feature": "[*]Updated arrow fighter ship design with kinetic shields."
+        },
+        {
+          "feature": "[*]Updated super gauss fighter design with kinetic shield."
+        },
+        {
+          "feature": "[*]Updated heavy punch ship design with kinetic shields."
+        },
+        {
+          "feature": "[*]Updated thin sniper ship design with kinetic shields."
+        },
+        {
+          "feature": "[*]Updated gauss barrage ship design with kinetic shields."
+        },
+        {
+          "feature": "[*]Updated light frigate ship design with kinetic shield and few more generators."
+        },
+        {
+          "feature": "[*]Updated big box ship design with large shields and guns, increased power generation."
+        },
+        {
+          "feature": "[*]Updated medium sniper ship design with kinetic shields, resource grouping."
+        }
+      ]
+    },
+    {
+      "title": "0.3.1910.12 Battle Sandbox improvements",
+      "date": "2019-10-13 03:19:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/3051677487685072056",
+      "content": "A minor update with mostly small user interface improvements in the Battle Sandbox game mode.\n\n[b]New functionality[/b]\n[list][*]Added options for what you can select in Command and Edit modes of the Battle Sandbox. This helps avoid accidental selection of e.g. enemy ships or missiles, asteroids.\n[*]Added ability to select, manipulate and rebuild destroyed ships in Battle Sandbox edit mode.\n[/list]\n[img]{STEAM_CLAN_IMAGE}/30166125/d650d83ba78bcd99b448a41697f07b8204b26b47.png[/img]\n\n[b]Fixes[/b]\n[list][*]Fixed a rendering issue that was causing jagged edges e.g. on weapon beams.\n[*]Fixed crash when using debug overlay in Battle Sandbox and selecting projectiles.\n[*]Going to Edit mode in Battle Sandbox now releases manual control of ship.\n[*]Fixed crash when using ship manual control in Battle Sandbox mode while the fleet AI is enabled.\n[*]Fixed static / stuck weapon beam lights appearing in battle after it has been loaded from a Level file. This also affected entering Battle Sandbox mode from an existing battle.\n[*]Moving a ship to another fleet in Battle Sandbox now immediately removes it as a target from other ships in that fleet.\n[*]Fixes related to popup menus and tooltips in normal Battles and Battle Sandbox.\n[/list]",
+      "key": "685910::1bb2f7dc24c6c9251aff9fd54222108f6d49b7f3",
+      "tags": [
+        {
+          "feature": "[*]Added options for what you can select in Command and Edit modes of the Battle Sandbox. This helps avoid accidental selection of e.g. enemy ships or missiles, asteroids."
+        },
+        {
+          "feature": "[*]Added ability to select, manipulate and rebuild destroyed ships in Battle Sandbox edit mode."
+        },
+        {
+          "bug": "[*]Fixed a rendering issue that was causing jagged edges e.g. on weapon beams."
+        },
+        {
+          "bug": "[*]Fixed crash when using debug overlay in Battle Sandbox and selecting projectiles."
+        },
+        {
+          "bug": "[*]Going to Edit mode in Battle Sandbox now releases manual control of ship."
+        },
+        {
+          "bug": "[*]Fixed crash when using ship manual control in Battle Sandbox mode while the fleet AI is enabled."
+        },
+        {
+          "bug": "[*]Fixed static / stuck weapon beam lights appearing in battle after it has been loaded from a Level file. This also affected entering Battle Sandbox mode from an existing battle."
+        },
+        {
+          "bug": "[*]Moving a ship to another fleet in Battle Sandbox now immediately removes it as a target from other ships in that fleet."
+        },
+        {
+          "bug": "[*]Fixes related to popup menus and tooltips in normal Battles and Battle Sandbox."
+        }
+      ]
+    },
+    {
+      "title": "0.3.1909.19: New game mode: Battle Sandbox",
+      "date": "2019-09-20 12:04:58",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2406534841132093582",
+      "content": "One of the major design goals for Battlefleet Engineer has always been to give the player freedom and tools to make their own fun with different ship designs and battle compositions. However, a significant limitation has been that the battles need to be set up completely beforehand with the fleets, level parameters, and asteroids fixed.\n\nThe new Battle Sandbox mode can be started from any ongoing battle and allows commanding ships in both fleets, adding ships and removing objects, ship and asteroid manipulation etc. - all without even having to pause the simulation! \nIn addition, the \"Command\" mode of the sandbox lets you still play the battle as usual, with some additions such as being able to also fly and command the enemy ships if you want.\n\n[b]Current features include:[/b]\n[list]\n[*]Add, delete, rearm, repair and rebuild ships.\n[*]Teleport or drag ships, missiles and projectiles around.\n[*]Move ships between player and enemy fleet.\n[*]Add, delete, move, and scale asteroids.\n[*]Independently enable / disable fleet AI for both fleets, allowing fully automatic battles or even playing against yourself.\n[/list]\n\n[b]Tutorial / overview[/b]\n[previewyoutube=2DxHlq7MEKI;full][/previewyoutube]\n\nMore editing functionality and UI improvements are likely. Please let me know what you would like to see added to the sandbox mode.",
+      "key": "685910::0ee471a2fbe45c023b4a19c2d82ac0fbd1672058",
+      "tags": [
+        {
+          "feature": "The new Battle Sandbox mode can be started from any ongoing battle and allows commanding ships in both fleets, adding ships and removing objects, ship and asteroid manipulation etc. - all without even having to pause the simulation!"
+        },
+        {
+          "feature": "In addition, the \"Command\" mode of the sandbox lets you still play the battle as usual, with some additions such as being able to also fly and command the enemy ships if you want."
+        },
+        {
+          "feature": "[*]Add, delete, rearm, repair and rebuild ships."
+        },
+        {
+          "feature": "[*]Teleport or drag ships, missiles and projectiles around."
+        },
+        {
+          "feature": "[*]Move ships between player and enemy fleet."
+        },
+        {
+          "feature": "[*]Add, delete, move, and scale asteroids."
+        },
+        {
+          "feature": "[*]Independently enable / disable fleet AI for both fleets, allowing fully automatic battles or even playing against yourself."
+        }
+      ]
+    },
+    {
+      "title": "0.2.1811.3 Battle challenge workshop support, new fleet editor features",
+      "date": "2018-11-05 15:12:23",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2407631646387289619",
+      "content": "This update adds publishing of battle challenges to the Steam Workshop and some new tools for fleet editing. However, much of the work since last update has been in background functionality to support persistent fleets and other functionality needed for new game modes.\r\n\r\n[h1]Battle Challenges[/h1]\r\nYou can now publish your own battle challenges made in the Battle editor to the Steam Workshop and download ones made by others. The challenges can include your own ship designs for both the enemy and player fleet. Highscores are still only local for now at least.\r\n[list]\r\n    [*]Can now subscribe to battle challenges from the workshop using the Steam client or Steam Workshop website.\r\n    [*]Can now publish your own battle challenges to the workhop from the battle challenges screen in-game.\r\n    [*]Battle challenges screen now shows a preview image of the level including level bounds, asteroids, ships and deployment areas.\r\n[/list]\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/30166125/18427b1f8e3bac852af970579b179e26d0f6ec19.png[/img]\r\n\r\n[h1]Fleet Editor[/h1]\r\nImplemented tracking, visual comparison and reverting of changes made to the fleet in the editor. These will be more useful with persistent fleets that will be repaired and rebuilt incrementally between battles.\r\n[list]\r\n    [*]Stores each ship's state before editing, desired state before editing, and edited state.\r\n    [*]Can display the fleet in any of the stored states.\r\n    [*]Can compare any of the stored states with a visual overlay that shows changed, removed and added modules.\r\n\t[*]Replaced ship rebuild command with a more featured revert command that can revert to any stored state and shows a live preview.\r\n\t[*]Can now display damage and engagement range overlays in the fleet editor. Toggle using shortcuts: left Ctrl + F1, left Ctrl + F3.\r\n[/list]\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/30166125/823d90cc60f9edabd63c5812910d01db80a541b4.png[/img]\r\n\r\n[h1]Ship Editor[/h1]\r\n[list]\r\n    [*]Now tracks how many of each module type has been added and removed in the ship.\r\n    [*]Can display a comparison overlay between ship state before and after current edits.\r\n    [*][b]Added shortcut:[/b] double click on a module to select all modules of the same type.\r\n[/list]\r\n\r\n[h1]Miscellaneous / minor[/h1]\r\n[list]\r\n    [*]Replaced all battle background music. Old battle background music added to the menu music playlist.\r\n\t[*]Refactored handling of ship active core switch and splitting so that the ship origin no longer changes. This should help with some glitches and improve performance of those operations somewhat.\r\n\t[*]Ship blueprints loaded from battle challenges are no longer shown in the ship blueprint browser.\r\n\t[*]Ship blueprint browser now retains selection when updated.\r\n    [*]Made radio button labels clickable in the publish to workshop dialog.\r\n\t[*]Can now scroll through the challenges using the up and down arrow keys.\r\n\t[*]Battle challenges now have separate title and description.\r\n\t[*]Resizable columns in the battle challenges listing.\r\n[/list]",
+      "key": "685910::2673d35a614210fe01b98b6287728521d8f3f582",
+      "tags": [
+        {
+          "feature": "You can now publish your own battle challenges made in the Battle editor to the Steam Workshop and download ones made by others."
+        },
+        {
+          "feature": "Can now subscribe to battle challenges from the workshop using the Steam client or Steam Workshop website."
+        },
+        {
+          "feature": "Can now publish your own battle challenges to the workhop from the battle challenges screen in-game."
+        },
+        {
+          "feature": "Battle challenges screen now shows a preview image of the level including level bounds, asteroids, ships and deployment areas."
+        },
+        {
+          "feature": "Implemented tracking, visual comparison and reverting of changes made to the fleet in the editor."
+        },
+        {
+          "feature": "Stores each ship's state before editing, desired state before editing, and edited state."
+        },
+        {
+          "feature": "Can display the fleet in any of the stored states."
+        },
+        {
+          "feature": "Can compare any of the stored states with a visual overlay that shows changed, removed and added modules."
+        },
+        {
+          "feature": "Replaced ship rebuild command with a more featured revert command that can revert to any stored state and shows a live preview."
+        },
+        {
+          "feature": "Can now display damage and engagement range overlays in the fleet editor. Toggle using shortcuts: left Ctrl + F1, left Ctrl + F3."
+        },
+        {
+          "feature": "Now tracks how many of each module type has been added and removed in the ship."
+        },
+        {
+          "feature": "Can display a comparison overlay between ship state before and after current edits."
+        },
+        {
+          "feature": "Added shortcut: double click on a module to select all modules of the same type."
+        },
+        {
+          "feature": "Replaced all battle background music. Old battle background music added to the menu music playlist."
+        },
+        {
+          "bug": "Refactored handling of ship active core switch and splitting so that the ship origin no longer changes. This should help with some glitches and improve performance of those operations somewhat."
+        },
+        {
+          "bug": "Ship blueprints loaded from battle challenges are no longer shown in the ship blueprint browser."
+        },
+        {
+          "feature": "Ship blueprint browser now retains selection when updated."
+        },
+        {
+          "feature": "Made radio button labels clickable in the publish to workshop dialog."
+        },
+        {
+          "feature": "Can now scroll through the challenges using the up and down arrow keys."
+        },
+        {
+          "feature": "Battle challenges now have separate title and description."
+        },
+        {
+          "feature": "Resizable columns in the battle challenges listing."
+        }
+      ]
+    },
+    {
+      "title": "0.2.1805.25 Module drag and drop in ship editor",
+      "date": "2018-05-25 14:12:28",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2394106369049081117",
+      "content": "A small update with 2 features: Easier ship editing by simply dragging to move or duplicate modules in ship editor, ship motion traces test in debug overlay.\r\n\r\n[h1]Module dragging[/h1]\r\n[url=https://youtu.be/cxjA5grhUI4]Simple demonstration video[/url]\r\n[list]\r\n\t[*]Selected modules can be moved at once by dragging them to desired location and dropping.\r\n    [*]Selected modules can be duplicated by dragging and holding left ctrl when releasing the drag.\r\n\t[*]Modules can be dragged to disconnected positions, but the ship has to be in one piece to exit editing.\r\n    [*]Note: Active origin (core) module can't be replaced or deleted by dragging other modules over it.\r\n\t[*]Core and thruster modules can be moved by dragging as well.\r\n[/list]\r\n\r\n[h1]Ship motion traces[/h1]\r\nImplemented a simple test of tracing ship movement semi-persistently in debug overlay. It looks quite neat so I thought it worth mentioning.\r\nI might later make a proper implementation with better performance and visuals as a battle overlay.\r\n\r\n[img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/30166125/b22c1c8111c0f0f70e4589a0222ce514628e6aba.png[/img]",
+      "key": "685910::774e9dfeb8e04446277f6e20cb4bab97c5d5ef54",
+      "tags": [
+        {
+          "feature": "Easier ship editing by simply dragging to move or duplicate modules in ship editor"
+        },
+        {
+          "feature": "ship motion traces test in debug overlay"
+        },
+        {
+          "feature": "Selected modules can be moved at once by dragging them to desired location and dropping."
+        },
+        {
+          "feature": "Selected modules can be duplicated by dragging and holding left ctrl when releasing the drag."
+        },
+        {
+          "feature": "Modules can be dragged to disconnected positions, but the ship has to be in one piece to exit editing."
+        },
+        {
+          "feature": "Core and thruster modules can be moved by dragging as well."
+        },
+        {
+          "feature": "Implemented a simple test of tracing ship movement semi-persistently in debug overlay."
+        }
+      ]
+    },
+    {
+      "title": "0.2.1805.16 Missile controls and synchronized move command",
+      "date": "2018-05-17 12:59:40",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2391853754536142556",
+      "content": "This update gives more control over missiles and adds synchronized movement mode for ships. Also includes some smaller fixes.\r\n\r\n[b]Missiles[/b]\r\n[list]\r\n    [*]New missile launch controls UI allows disabling automatic launching and lets player manually launch missiles from selected ships.\r\n\t[*]Launching missiles can be queued and is automatically optimized to launch requested number of missiles as fast as possible.\r\n    [*]Missiles can now be selected and followed with camera.\r\n    [*]Missiles can be given movement command that sets their heading.\r\n    [*]Missile target can be manually set as a ship or module within a ship.\r\n    [*]A group of missiles can be given multiple targets at once. Game logic distributes the targets between the selected missiles.\r\n    [*]Enemy missiles can be now set as targets, but still only beam weapons will damage them.\r\n[/list]\r\n    [img]https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/30166125/ddd058dbc1e6bcaa10933d5252d4393e4a98f067.png[/img]\r\n\r\nSide note: Refactoring to allow selecting and giving commands to missiles was pretty major effort requiring changes to some 20 classes because those were made to only work with the Ship class.\r\n\r\n\r\n[b]Synchronized ship movement[/b]\r\n\r\nThis feature is a limited implementation of \"move in formation\" type command for ships only. Optimal (fast) movement in formation is a difficult problem in Battlefleet Engineer because all movement is physics driven, acceleration is generally very low, and each ship's performance can't be estimated very accurately as it changes over time.\r\n\r\nThis implementation calculates motion solution where all selected ships reach their target positions at the same time and then executes that plan. If ships deviate too much from their expected intermediate positions during execution the plan gets revised. Further, the plan is calculated so that (when possible) the acceleration, coasting and deacceleration phase changes of all ships are synchronized in effort to maintain relative positions (formation). The multi-degree-of-freedom synchronized motion solution calculation is done by industrial-grade Reflexxes Type II library.\r\n\r\nTo give a synchronized move command, enable the synchronized move command mode from the formations menu or using its keyboard shortcut, select two or more ships, give a movement command normally using right mouse and modifier keys.\r\n\r\nLimitations:\r\n[list]\r\n    [*]Waypoints are not supported. This also means that ships won't navigate around asteroids.\r\n    [*]Reflexxes only supports symmetrical acceleration and deacceleration so a lower value dictates ship's performance.\r\n    [*]Formations tend to break apart during movement if speed limiter is turned off. I think this is because phase synchronization not working without a speed limit.\r\n\t[*]Missiles don't support synchronized motion.\r\n[/list]\r\n\r\n[b]Other[/b]\r\n[list]\r\n\t[*]Added \"select similar\" action by double clicking on a ship or missile in battle.\r\n    [*]Fixed \"module disabled\" effects getting applied to chemical thrusters when they run out of fuel.\r\n    [*]Camera no longer stops following object when it gets disabled.\r\n    [*]Organized fleet command buttons to a collapsible widget.\r\n[/list]",
+      "key": "685910::b7c37c7595cffeb8f64ac754b15db56b5940abcd",
+      "tags": [
+        {
+          "feature": "[*]New missile launch controls UI allows disabling automatic launching and lets player manually launch missiles from selected ships."
+        },
+        {
+          "feature": "[*]Launching missiles can be queued and is automatically optimized to launch requested number of missiles as fast as possible."
+        },
+        {
+          "feature": "[*]Missiles can now be selected and followed with camera."
+        },
+        {
+          "feature": "[*]Missiles can be given movement command that sets their heading."
+        },
+        {
+          "feature": "[*]Missile target can be manually set as a ship or module within a ship."
+        },
+        {
+          "feature": "[*]A group of missiles can be given multiple targets at once. Game logic distributes the targets between the selected missiles."
+        },
+        {
+          "feature": "[*]Enemy missiles can be now set as targets, but still only beam weapons will damage them."
+        },
+        {
+          "feature": "This feature is a limited implementation of \"move in formation\" type command for ships only."
+        },
+        {
+          "feature": "To give a synchronized move command, enable the synchronized move command mode from the formations menu or using its keyboard shortcut, select two or more ships, give a movement command normally using right mouse and modifier keys."
+        },
+        {
+          "feature": "[*]Added \"select similar\" action by double clicking on a ship or missile in battle."
+        },
+        {
+          "bug": "[*]Fixed \"module disabled\" effects getting applied to chemical thrusters when they run out of fuel."
+        },
+        {
+          "bug": "[*]Camera no longer stops following object when it gets disabled."
+        },
+        {
+          "feature": "[*]Organized fleet command buttons to a collapsible widget."
+        }
+      ]
+    },
+    {
+      "title": "0.2.1803.03 New particle effects.",
+      "date": "2018-03-04 02:27:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363699280666907255",
+      "content": "Almost all particle effects in the game have been revised to make them bigger and prettier. Most noticeable additions are explosion, flame and smoke effects that also make it very clear when a ship or module gets disabled. The number of spawned particles can be adjusted from the settings screen at any time so you can control the performance impact.\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/30166125/3c74bf72dc3ee3be2fe4a8da58cf1fbe4c3159dd.png[/img]\r\n[url=https://youtu.be/oAaKTWexjpA]Gameplay video with the new effects[/url]\r\n\r\nThe game has had GPU accelerated particle systems (which can handle a lot of debris and effect particles) since before the first release but the effects have been pretty subtle. While the subtle effects were more realistic, bigger effects can greatly add to the visual appeal of the game, especially on video where details are lost in compression and scaling.\r\n\r\n[b]Changelog[/b]\r\n[list]\r\n    [*]New flame and smoke effect when an active (not armor or hull) module gets disabled.\r\n    [*]Redesigned explosion effect when a propellant tank module gets destroyed.\r\n    [*]New explosion effect when a core module gets disabled.\r\n\t[*]New Explosion effect for impact explosive missiles.\r\n\t[*]Smaller tweaks to all other particle effects as well.\r\n\t[*]Updated particle effect textures and infra to allow different sprite sizes. The sprites are now defined in a separate file.\r\n\t[*]Added separate spawn rate multipliers for effect and debris particles to the settings screen.\r\n\t[*]Various improvements to particle emitter code to make flame and smoke effects look better when attached to accelerating and rotating objects.\r\n\t[*]Increased visual size of projectiles when not zoomed in very close.\r\n\t[*]Increased visual size of missiles in \"icons overlay\" shown when zoomed far out.\r\n[/list]",
+      "key": "685910::bf71c126d1e6afdf78da4771325295de90e1fd85",
+      "tags": [
+        {
+          "feature": "New flame and smoke effect when an active (not armor or hull) module gets disabled."
+        },
+        {
+          "feature": "Redesigned explosion effect when a propellant tank module gets destroyed."
+        },
+        {
+          "feature": "New explosion effect when a core module gets disabled."
+        },
+        {
+          "feature": "New Explosion effect for impact explosive missiles."
+        },
+        {
+          "feature": "Smaller tweaks to all other particle effects as well."
+        },
+        {
+          "feature": "Updated particle effect textures and infra to allow different sprite sizes. The sprites are now defined in a separate file."
+        },
+        {
+          "feature": "Added separate spawn rate multipliers for effect and debris particles to the settings screen."
+        },
+        {
+          "feature": "Various improvements to particle emitter code to make flame and smoke effects look better when attached to accelerating and rotating objects."
+        },
+        {
+          "balance_change": "Increased visual size of projectiles when not zoomed in very close."
+        },
+        {
+          "balance_change": "Increased visual size of missiles in \"icons overlay\" shown when zoomed far out."
+        }
+      ]
+    },
+    {
+      "title": "0.2.1803.03 New particle effects.",
+      "date": "2018-03-04 02:27:51",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687729431",
+      "content": "Almost all particle effects in the game have been revised to make them bigger and prettier. Most noticeable additions are explosion, flame and smoke effects that also make it very clear when a ship or module gets disabled. The number of spawned particles can be adjusted from the settings screen at any time so you can control the performance impact.\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/30166125/3c74bf72dc3ee3be2fe4a8da58cf1fbe4c3159dd.png[/img]\r\n[url=https://youtu.be/oAaKTWexjpA]Gameplay video with the new effects[/url]\r\n\r\nThe game has had GPU accelerated particle systems (which can handle a lot of debris and effect particles) since before the first release but the effects have been pretty subtle. While the subtle effects were more realistic, bigger effects can greatly add to the visual appeal of the game, especially on video where details are lost in compression and scaling.\r\n\r\n[b]Changelog[/b]\r\n[list]\r\n    [*]New flame and smoke effect when an active (not armor or hull) module gets disabled.\r\n    [*]Redesigned explosion effect when a propellant tank module gets destroyed.\r\n    [*]New explosion effect when a core module gets disabled.\r\n\t[*]New Explosion effect for impact explosive missiles.\r\n\t[*]Smaller tweaks to all other particle effects as well.\r\n\t[*]Updated particle effect textures and infra to allow different sprite sizes. The sprites are now defined in a separate file.\r\n\t[*]Added separate spawn rate multipliers for effect and debris particles to the settings screen.\r\n\t[*]Various improvements to particle emitter code to make flame and smoke effects look better when attached to accelerating and rotating objects.\r\n\t[*]Increased visual size of projectiles when not zoomed in very close.\r\n\t[*]Increased visual size of missiles in \"icons overlay\" shown when zoomed far out.\r\n[/list]",
+      "key": "685910::1aacb223cdd66af6efc9b7cd0ea229683075c190",
+      "tags": [
+        {
+          "feature": "New flame and smoke effect when an active (not armor or hull) module gets disabled."
+        },
+        {
+          "feature": "Redesigned explosion effect when a propellant tank module gets destroyed."
+        },
+        {
+          "feature": "New explosion effect when a core module gets disabled."
+        },
+        {
+          "feature": "New Explosion effect for impact explosive missiles."
+        },
+        {
+          "feature": "Smaller tweaks to all other particle effects as well."
+        },
+        {
+          "feature": "Updated particle effect textures and infra to allow different sprite sizes. The sprites are now defined in a separate file."
+        },
+        {
+          "feature": "Added separate spawn rate multipliers for effect and debris particles to the settings screen."
+        },
+        {
+          "feature": "Various improvements to particle emitter code to make flame and smoke effects look better when attached to accelerating and rotating objects."
+        },
+        {
+          "balance_change": "Increased visual size of projectiles when not zoomed in very close."
+        },
+        {
+          "balance_change": "Increased visual size of missiles in \"icons overlay\" shown when zoomed far out."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2! New damage model and game balance. Updated ship library and battle challenges.",
+      "date": "2018-02-11 07:53:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2363697377460368273",
+      "content": "The major damage model and game balance changes have been in the beta branch for a while. This update makes them official and contains updated battle challenges, bug fixes. See previous announcements for details about the changes.\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/30166125/e37c428c8fc9812001ec365c4245dc220dcdb440.png[/img]\r\n\r\n[b]New features[/b]\r\n[list]\r\n\t[*]Armor plate simulation with per-segment damage independent from module damage\r\n\t[*]Explosion simulation\r\n\t[*]Armor piercing explosive projectiles that explode after penetrating\r\n\t[*]Projectile passthrough, ship internal ricochets\r\n\t[*]Projectile penetration, armor plate and module damage visualization\r\n\t[*]Beam (weapon) penetration and passthrough, distance-based shield interaction\r\n[/list]\r\n\r\n[b]Content changes[/b]\r\n[list]\r\n\t[*]All stock ship designs either improved or replaced with new ones\r\n\t[*]Existing challenge levels updated and tweaked to take the new game balance into account\r\n\t[*]3 new challenge levels: \"Canyon battle\", \"Obstacle race 2\", \"Obstacle race 3\"\r\n[/list]\r\n\r\n[b]Imrovements and fixes since the previous beta version[/b]\r\n[list]\r\n\t[*]Implemented new collision avoidance check that calculates where the ship would stop if it \"hit the brakes\" and tries to stop the ship if that point is inside an obstacle or outside level bounds.\r\n\t[*]Improved ship movement along (around) asteroids by fixing some issues and adding some new flight control logic for that\r\n\t[*]Improved \"movement disabled\" check that is a condition in enemy ship surrendering logic\r\n\t[*]Fixed fleet creation challenges sometimes getting the enemy ships moved and asteroids added to them\r\n\t[*]Fixed some rare exceptions / crash related to ships getting disabled\r\n\t[*]Fixed projectiles that exit ship to a void left by a single module within the ship not colliding again with the ship properly, causing them to pass through some modules\r\n\t[*]Fixed player fleet ship listing not showing at all in battle setup screen if the fleet contains ships that are not in the blueprint library\r\n[/list]\r\n\r\nFull version number: 0.2.1802.10",
+      "key": "685910::57d159a70bcb626082dfbb156b77e9f719993c85",
+      "tags": [
+        {
+          "feature": "Armor plate simulation with per-segment damage independent from module damage"
+        },
+        {
+          "feature": "Explosion simulation"
+        },
+        {
+          "feature": "Armor piercing explosive projectiles that explode after penetrating"
+        },
+        {
+          "feature": "Projectile passthrough, ship internal ricochets"
+        },
+        {
+          "feature": "Projectile penetration, armor plate and module damage visualization"
+        },
+        {
+          "feature": "Beam (weapon) penetration and passthrough, distance-based shield interaction"
+        },
+        {
+          "balance_change": "Existing challenge levels updated and tweaked to take the new game balance into account"
+        },
+        {
+          "feature": "3 new challenge levels: \"Canyon battle\", \"Obstacle race 2\", \"Obstacle race 3\""
+        },
+        {
+          "feature": "Implemented new collision avoidance check that calculates where the ship would stop if it \"hit the brakes\" and tries to stop the ship if that point is inside an obstacle or outside level bounds."
+        },
+        {
+          "feature": "Improved ship movement along (around) asteroids by fixing some issues and adding some new flight control logic for that"
+        },
+        {
+          "feature": "Improved \"movement disabled\" check that is a condition in enemy ship surrendering logic"
+        },
+        {
+          "bug": "Fixed fleet creation challenges sometimes getting the enemy ships moved and asteroids added to them"
+        },
+        {
+          "bug": "Fixed some rare exceptions / crash related to ships getting disabled"
+        },
+        {
+          "bug": "Fixed projectiles that exit ship to a void left by a single module within the ship not colliding again with the ship properly, causing them to pass through some modules"
+        },
+        {
+          "bug": "Fixed player fleet ship listing not showing at all in battle setup screen if the fleet contains ships that are not in the blueprint library"
+        }
+      ]
+    },
+    {
+      "title": "Version 0.2! New damage model and game balance. Updated ship library and battle challenges.",
+      "date": "2018-02-11 07:53:37",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687729565",
+      "content": "The major damage model and game balance changes have been in the beta branch for a while. This update makes them official and contains updated battle challenges, bug fixes. See previous announcements for details about the changes.\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/30166125/e37c428c8fc9812001ec365c4245dc220dcdb440.png[/img]\r\n\r\n[b]New features[/b]\r\n[list]\r\n\t[*]Armor plate simulation with per-segment damage independent from module damage\r\n\t[*]Explosion simulation\r\n\t[*]Armor piercing explosive projectiles that explode after penetrating\r\n\t[*]Projectile passthrough, ship internal ricochets\r\n\t[*]Projectile penetration, armor plate and module damage visualization\r\n\t[*]Beam (weapon) penetration and passthrough, distance-based shield interaction\r\n[/list]\r\n\r\n[b]Content changes[/b]\r\n[list]\r\n\t[*]All stock ship designs either improved or replaced with new ones\r\n\t[*]Existing challenge levels updated and tweaked to take the new game balance into account\r\n\t[*]3 new challenge levels: \"Canyon battle\", \"Obstacle race 2\", \"Obstacle race 3\"\r\n[/list]\r\n\r\n[b]Imrovements and fixes since the previous beta version[/b]\r\n[list]\r\n\t[*]Implemented new collision avoidance check that calculates where the ship would stop if it \"hit the brakes\" and tries to stop the ship if that point is inside an obstacle or outside level bounds.\r\n\t[*]Improved ship movement along (around) asteroids by fixing some issues and adding some new flight control logic for that\r\n\t[*]Improved \"movement disabled\" check that is a condition in enemy ship surrendering logic\r\n\t[*]Fixed fleet creation challenges sometimes getting the enemy ships moved and asteroids added to them\r\n\t[*]Fixed some rare exceptions / crash related to ships getting disabled\r\n\t[*]Fixed projectiles that exit ship to a void left by a single module within the ship not colliding again with the ship properly, causing them to pass through some modules\r\n\t[*]Fixed player fleet ship listing not showing at all in battle setup screen if the fleet contains ships that are not in the blueprint library\r\n[/list]\r\n\r\nFull version number: 0.2.1802.10",
+      "key": "685910::bdbe5da8756dd69487c8a494194ab6bcf71f113d",
+      "tags": [
+        {
+          "feature": "Armor plate simulation with per-segment damage independent from module damage"
+        },
+        {
+          "feature": "Explosion simulation"
+        },
+        {
+          "feature": "Armor piercing explosive projectiles that explode after penetrating"
+        },
+        {
+          "feature": "Projectile passthrough, ship internal ricochets"
+        },
+        {
+          "feature": "Projectile penetration, armor plate and module damage visualization"
+        },
+        {
+          "feature": "Beam (weapon) penetration and passthrough, distance-based shield interaction"
+        },
+        {
+          "balance_change": "Existing challenge levels updated and tweaked to take the new game balance into account"
+        },
+        {
+          "feature": "3 new challenge levels: \"Canyon battle\", \"Obstacle race 2\", \"Obstacle race 3\""
+        },
+        {
+          "feature": "Implemented new collision avoidance check that calculates where the ship would stop if it \"hit the brakes\" and tries to stop the ship if that point is inside an obstacle or outside level bounds."
+        },
+        {
+          "feature": "Improved ship movement along (around) asteroids by fixing some issues and adding some new flight control logic for that"
+        },
+        {
+          "feature": "Improved \"movement disabled\" check that is a condition in enemy ship surrendering logic"
+        },
+        {
+          "bug": "Fixed fleet creation challenges sometimes getting the enemy ships moved and asteroids added to them"
+        },
+        {
+          "bug": "Fixed some rare exceptions / crash related to ships getting disabled"
+        },
+        {
+          "bug": "Fixed projectiles that exit ship to a void left by a single module within the ship not colliding again with the ship properly, causing them to pass through some modules"
+        },
+        {
+          "bug": "Fixed player fleet ship listing not showing at all in battle setup screen if the fleet contains ships that are not in the blueprint library"
+        }
+      ]
+    },
+    {
+      "title": "0.2.1801.27 - Updated stock ship designs and fixes for beta branch",
+      "date": "2018-01-28 01:40:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2356940714991594262",
+      "content": "I have now gone through all ship designs that come with the game and updated them for the new damage model and game balance. Practically all ships got some changes. Some were redesigned, some all new designs are introduced and some outdated designs are removed completely.\r\n\r\nThe battle challenges haven't been updated yet.\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/30166125/c5586048c461eca8db26450e6bfe848441510cab.jpg[/img]\r\n\r\n[b]Tips for updating your own designs[/b]\r\n[list]\r\n    [*]Change from heavy to medium armor except in critical places. This reduces weight and ship cost a lot.\r\n    [*]Place hull modules for additional light armor inside ship.\r\n    [*]Use corner and slope armor pieces where possible to benefit from increased effective armor thickness.\r\n    [*]Add more gas tank modules to ships with chemical thrusters.\r\n    [*]Cut number of weapon modules to reduce ship cost. Add power generation and radiators to get better fire rate instead.\r\n    [*]Shields now use even more power when under strain. Reduce number of shield modules and add power generation.\r\n    [*]Check the ship's center of mass since armor is now very heavy.\r\n[/list]\r\n\r\n[b]Fixes and changes in this version[/b]\r\n[list]\r\n    [*]Fixed projectile impacts sometimes causing ships to jump or shake.\r\n\t[*]Fixed exception if user clicks \"release ship control\" button twice very quickly.\r\n\t[*]Fixed a crash related to module targets.\r\n\t[*]Core modules now explode (but still don't necessarily get destroyed) when they get disabled.\r\n\t[*]Improved mobility stat calculation to take relative actuator strength into account. This affects automatic classification to ships and platforms.\r\n\t[*]Improved enemy surrender logic to keep enemies fighting longer.\r\n    [*]Balance: Buffed armor effectiveness against kinetic projectiles.\r\n    [*]Balance: Increased armored thruster thrust slightly.\r\n\t[*]Balance: Increased beam weapon range.\r\n\t[*]Balance: Module price changes.\r\n\t[*]Balance: Tweaked weapon ranges.\r\n\t[*]Balance: Reduced medium plasma electricity use and increased that of medium gauss.\t\r\n[/list]\r\n\r\nNext I will update the battle challenges, hunt down some remaining bugs and then the beta branch will become the official version. If you don't like the new balance now is the time to voice your suggestions.",
+      "key": "685910::7cb93784148865cf015ba1abf36128e7af2cb8bf",
+      "tags": [
+        {
+          "bug": "[*]Fixed projectile impacts sometimes causing ships to jump or shake."
+        },
+        {
+          "bug": "[*]Fixed exception if user clicks \"release ship control\" button twice very quickly."
+        },
+        {
+          "bug": "[*]Fixed a crash related to module targets."
+        },
+        {
+          "bug": "[*]Core modules now explode (but still don't necessarily get destroyed) when they get disabled."
+        },
+        {
+          "bug": "[*]Improved mobility stat calculation to take relative actuator strength into account. This affects automatic classification to ships and platforms."
+        },
+        {
+          "bug": "[*]Improved enemy surrender logic to keep enemies fighting longer."
+        },
+        {
+          "balance_change": "[*]Balance: Buffed armor effectiveness against kinetic projectiles."
+        },
+        {
+          "balance_change": "[*]Balance: Increased armored thruster thrust slightly."
+        },
+        {
+          "balance_change": "[*]Balance: Increased beam weapon range."
+        },
+        {
+          "balance_change": "[*]Balance: Module price changes."
+        },
+        {
+          "balance_change": "[*]Balance: Tweaked weapon ranges."
+        },
+        {
+          "balance_change": "[*]Balance: Reduced medium plasma electricity use and increased that of medium gauss."
+        }
+      ]
+    },
+    {
+      "title": "0.2.1801.27 - Updated stock ship designs and fixes for beta branch",
+      "date": "2018-01-28 01:40:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687729677",
+      "content": "I have now gone through all ship designs that come with the game and updated them for the new damage model and game balance. Practically all ships got some changes. Some were redesigned, some all new designs are introduced and some outdated designs are removed completely.\r\n\r\nThe battle challenges haven't been updated yet.\r\n\r\n[img]http://cdn.akamai.steamstatic.com/steamcommunity/public/images/clans/30166125/c5586048c461eca8db26450e6bfe848441510cab.jpg[/img]\r\n\r\n[b]Tips for updating your own designs[/b]\r\n[list]\r\n    [*]Change from heavy to medium armor except in critical places. This reduces weight and ship cost a lot.\r\n    [*]Place hull modules for additional light armor inside ship.\r\n    [*]Use corner and slope armor pieces where possible to benefit from increased effective armor thickness.\r\n    [*]Add more gas tank modules to ships with chemical thrusters.\r\n    [*]Cut number of weapon modules to reduce ship cost. Add power generation and radiators to get better fire rate instead.\r\n    [*]Shields now use even more power when under strain. Reduce number of shield modules and add power generation.\r\n    [*]Check the ship's center of mass since armor is now very heavy.\r\n[/list]\r\n\r\n[b]Fixes and changes in this version[/b]\r\n[list]\r\n    [*]Fixed projectile impacts sometimes causing ships to jump or shake.\r\n\t[*]Fixed exception if user clicks \"release ship control\" button twice very quickly.\r\n\t[*]Fixed a crash related to module targets.\r\n\t[*]Core modules now explode (but still don't necessarily get destroyed) when they get disabled.\r\n\t[*]Improved mobility stat calculation to take relative actuator strength into account. This affects automatic classification to ships and platforms.\r\n\t[*]Improved enemy surrender logic to keep enemies fighting longer.\r\n    [*]Balance: Buffed armor effectiveness against kinetic projectiles.\r\n    [*]Balance: Increased armored thruster thrust slightly.\r\n\t[*]Balance: Increased beam weapon range.\r\n\t[*]Balance: Module price changes.\r\n\t[*]Balance: Tweaked weapon ranges.\r\n\t[*]Balance: Reduced medium plasma electricity use and increased that of medium gauss.\t\r\n[/list]\r\n\r\nNext I will update the battle challenges, hunt down some remaining bugs and then the beta branch will become the official version. If you don't like the new balance now is the time to voice your suggestions.",
+      "key": "685910::412adca19d16acad097d964258d14452837a1c96",
+      "tags": [
+        {
+          "bug": "[*]Fixed projectile impacts sometimes causing ships to jump or shake."
+        },
+        {
+          "bug": "[*]Fixed exception if user clicks \"release ship control\" button twice very quickly."
+        },
+        {
+          "bug": "[*]Fixed a crash related to module targets."
+        },
+        {
+          "bug": "[*]Core modules now explode (but still don't necessarily get destroyed) when they get disabled."
+        },
+        {
+          "bug": "[*]Improved mobility stat calculation to take relative actuator strength into account. This affects automatic classification to ships and platforms."
+        },
+        {
+          "bug": "[*]Improved enemy surrender logic to keep enemies fighting longer."
+        },
+        {
+          "balance_change": "[*]Balance: Buffed armor effectiveness against kinetic projectiles."
+        },
+        {
+          "balance_change": "[*]Balance: Increased armored thruster thrust slightly."
+        },
+        {
+          "balance_change": "[*]Balance: Increased beam weapon range."
+        },
+        {
+          "balance_change": "[*]Balance: Module price changes."
+        },
+        {
+          "balance_change": "[*]Balance: Tweaked weapon ranges."
+        },
+        {
+          "balance_change": "[*]Balance: Reduced medium plasma electricity use and increased that of medium gauss."
+        }
+      ]
+    },
+    {
+      "title": "New damage model and major game rebalancing now in beta branch!",
+      "date": "2018-01-14 07:19:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2747626897941192255",
+      "content": "I have worked on these new features and gameplay changes for the past few months, and would like to hear your thoughts on the community discussion forum.\r\nhttp://steamcommunity.com/app/685910/discussions/0/2595630410183931964/\r\n\r\n[b]To get the beta version:[/b] Right click on Battlefleet Engineer in the games list -> Properties -> Betas -> Select \"development\" from the dropdown and close the dialog.\r\n\r\n\r\n[h1]What?[/h1]\r\n\r\nThe new damage model significantly deepens simulation of projectile and beam weapon damage to ships, and removes many previous limitations in an effort to make the ship engineering aspect of the game more meaningful and detailed. Managing weak points and compromises in ship design, and leveraging those of the enemy in battles is now much more important.\r\n[list]\r\n    [*]Modules now have separate armor plating, which is divided to small segments. Each segment takes damage independently. Previously there was only a simple armor hitpoints value for each module.\r\n    [*]Projectile hits first consider armor penetration and damage to the hit armor segment, then may penetrate and cause damage to the module.\r\n    [*]Projectiles can now penetrate into a ship, hit internal armor, ricochet internally, explode with a timed fuse, or pass through entire ship and still hit something else.\r\n    [*]Beams now lose energy according to distance traveled within enemy shields, can penetrate into ship and even pass through a ship.\r\n    [*]Internal and external explosions are now modeled in detail as well, with armor plating providing cover against damage.\r\n    [*]New damage overlay provides slowed-down animation of penetrating projectiles and explosions, shows armor plating state, and damage to enemy ships as well.\r\n    [*]Kinetic weapons can now fire both armor piercing and armor piercing explosive projectiles. Explosive projectiles have lower velocity and thus penetration, explosions damage armor plates and cause mostly functional area damage.\r\n[/list]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/30166125/8e2f598e932dbad46c3456867fb2a2e069731423.jpg[/img]\r\n\r\n[b]Balance changes:[/b]\r\n\r\nArmor is now generally stronger but very heavy and expensive. Modules now get disabled much more often than outright destroyed.\r\n[list]\r\n    [*]Armor is now much heavier and expensive.\r\n    [*]Weapon modules are now much more expensive.\r\n    [*]Kinetic projectiles (medium and super gauss) do lots of functional damage if they pass into a module, but very little structural damage. Functional damage makes modules disabled, structural destroys the module.\r\n    [*]Medium and heavy armor are very effective against kinetic projectiles.\r\n    [*]Plasma is especially effective at burning away armor plates and causes lots of structural damage, but doesn't penetrate armor or module to module. Shields are now more effective against plasma projectiles.\r\n    [*]Beam weapons do decent damage all-around and have some penetration. Shields are now more effective against beams, 2 overlapping shields can stop a beam completely. \r\n    [*]Beam weapons now use more energy.\r\n    [*]Medium gauss can now benefit from radiators, fire rate drops after 4 shots otherwise.\r\n    [*]Plasma and kinetic weapon ranges have been tuned. Projectile type affects kinetic weapon range to maintain same flight time.\r\n    [*]Chemical thruster and gas tank modules carry less fuel. The gas tanks are much less prone to chain-explosions but cause area damage when blown up.\r\n[/list]\r\n\r\n\r\n[h1]Why?[/h1]\r\n\r\nAs a niche indie game, Battlefleet Engineer needs to focus on its strengths and unique core features to make a compelling product. I don't have the resources  or will to try and emulate all features of other \"block ship building\" games, so extending the simulation and ship engineering aspect further makes sense.\r\n\r\nBalance changes such as module weight and cost increases are meant to drive the meta game towards more interesting ship designs and battles. These along with other game design choices aim to discourage trivial \"a blob with 10 layers of armor all around and 1000 guns\" designs I would consider generally boring.\r\n\r\nMain ideas behind armor changes is to make single armor layer viable on most ships and medium armor actually useful. The weapon damage changes serve to make them more distinctive and give them different roles. Kinetic weapons are pretty much defeated by armor plating, but plasma and beam weapons can weaken that armor plating to let them through, yet shields can be used to defend against those.",
+      "key": "685910::92fc66c816fb15347197a710a56883c8c92fcdcf",
+      "tags": [
+        {
+          "feature": "Modules now have separate armor plating, which is divided to small segments. Each segment takes damage independently. Previously there was only a simple armor hitpoints value for each module."
+        },
+        {
+          "feature": "Projectile hits first consider armor penetration and damage to the hit armor segment, then may penetrate and cause damage to the module."
+        },
+        {
+          "feature": "Projectiles can now penetrate into a ship, hit internal armor, ricochet internally, explode with a timed fuse, or pass through entire ship and still hit something else."
+        },
+        {
+          "feature": "Beams now lose energy according to distance traveled within enemy shields, can penetrate into ship and even pass through a ship."
+        },
+        {
+          "feature": "Internal and external explosions are now modeled in detail as well, with armor plating providing cover against damage."
+        },
+        {
+          "feature": "New damage overlay provides slowed-down animation of penetrating projectiles and explosions, shows armor plating state, and damage to enemy ships as well."
+        },
+        {
+          "feature": "Kinetic weapons can now fire both armor piercing and armor piercing explosive projectiles. Explosive projectiles have lower velocity and thus penetration, explosions damage armor plates and cause mostly functional area damage."
+        },
+        {
+          "balance_change": "Armor is now much heavier and expensive."
+        },
+        {
+          "balance_change": "Weapon modules are now much more expensive."
+        },
+        {
+          "balance_change": "Kinetic projectiles (medium and super gauss) do lots of functional damage if they pass into a module, but very little structural damage. Functional damage makes modules disabled, structural destroys the module."
+        },
+        {
+          "balance_change": "Medium and heavy armor are very effective against kinetic projectiles."
+        },
+        {
+          "balance_change": "Plasma is especially effective at burning away armor plates and causes lots of structural damage, but doesn't penetrate armor or module to module. Shields are now more effective against plasma projectiles."
+        },
+        {
+          "balance_change": "Beam weapons do decent damage all-around and have some penetration. Shields are now more effective against beams, 2 overlapping shields can stop a beam completely."
+        },
+        {
+          "balance_change": "Beam weapons now use more energy."
+        },
+        {
+          "balance_change": "Medium gauss can now benefit from radiators, fire rate drops after 4 shots otherwise."
+        },
+        {
+          "balance_change": "Plasma and kinetic weapon ranges have been tuned. Projectile type affects kinetic weapon range to maintain same flight time."
+        },
+        {
+          "balance_change": "Chemical thruster and gas tank modules carry less fuel. The gas tanks are much less prone to chain-explosions but cause area damage when blown up."
+        }
+      ]
+    },
+    {
+      "title": "New damage model and major game rebalancing now in beta branch!",
+      "date": "2018-01-14 07:19:22",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687729789",
+      "content": "I have worked on these new features and gameplay changes for the past few months, and would like to hear your thoughts on the community discussion forum.\r\nhttp://steamcommunity.com/app/685910/discussions/0/2595630410183931964/\r\n\r\n[b]To get the beta version:[/b] Right click on Battlefleet Engineer in the games list -> Properties -> Betas -> Select \"development\" from the dropdown and close the dialog.\r\n\r\n\r\n[h1]What?[/h1]\r\n\r\nThe new damage model significantly deepens simulation of projectile and beam weapon damage to ships, and removes many previous limitations in an effort to make the ship engineering aspect of the game more meaningful and detailed. Managing weak points and compromises in ship design, and leveraging those of the enemy in battles is now much more important.\r\n[list]\r\n    [*]Modules now have separate armor plating, which is divided to small segments. Each segment takes damage independently. Previously there was only a simple armor hitpoints value for each module.\r\n    [*]Projectile hits first consider armor penetration and damage to the hit armor segment, then may penetrate and cause damage to the module.\r\n    [*]Projectiles can now penetrate into a ship, hit internal armor, ricochet internally, explode with a timed fuse, or pass through entire ship and still hit something else.\r\n    [*]Beams now lose energy according to distance traveled within enemy shields, can penetrate into ship and even pass through a ship.\r\n    [*]Internal and external explosions are now modeled in detail as well, with armor plating providing cover against damage.\r\n    [*]New damage overlay provides slowed-down animation of penetrating projectiles and explosions, shows armor plating state, and damage to enemy ships as well.\r\n    [*]Kinetic weapons can now fire both armor piercing and armor piercing explosive projectiles. Explosive projectiles have lower velocity and thus penetration, explosions damage armor plates and cause mostly functional area damage.\r\n[/list]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/30166125/8e2f598e932dbad46c3456867fb2a2e069731423.jpg[/img]\r\n\r\n[b]Balance changes:[/b]\r\n\r\nArmor is now generally stronger but very heavy and expensive. Modules now get disabled much more often than outright destroyed.\r\n[list]\r\n    [*]Armor is now much heavier and expensive.\r\n    [*]Weapon modules are now much more expensive.\r\n    [*]Kinetic projectiles (medium and super gauss) do lots of functional damage if they pass into a module, but very little structural damage. Functional damage makes modules disabled, structural destroys the module.\r\n    [*]Medium and heavy armor are very effective against kinetic projectiles.\r\n    [*]Plasma is especially effective at burning away armor plates and causes lots of structural damage, but doesn't penetrate armor or module to module. Shields are now more effective against plasma projectiles.\r\n    [*]Beam weapons do decent damage all-around and have some penetration. Shields are now more effective against beams, 2 overlapping shields can stop a beam completely. \r\n    [*]Beam weapons now use more energy.\r\n    [*]Medium gauss can now benefit from radiators, fire rate drops after 4 shots otherwise.\r\n    [*]Plasma and kinetic weapon ranges have been tuned. Projectile type affects kinetic weapon range to maintain same flight time.\r\n    [*]Chemical thruster and gas tank modules carry less fuel. The gas tanks are much less prone to chain-explosions but cause area damage when blown up.\r\n[/list]\r\n\r\n\r\n[h1]Why?[/h1]\r\n\r\nAs a niche indie game, Battlefleet Engineer needs to focus on its strengths and unique core features to make a compelling product. I don't have the resources  or will to try and emulate all features of other \"block ship building\" games, so extending the simulation and ship engineering aspect further makes sense.\r\n\r\nBalance changes such as module weight and cost increases are meant to drive the meta game towards more interesting ship designs and battles. These along with other game design choices aim to discourage trivial \"a blob with 10 layers of armor all around and 1000 guns\" designs I would consider generally boring.\r\n\r\nMain ideas behind armor changes is to make single armor layer viable on most ships and medium armor actually useful. The weapon damage changes serve to make them more distinctive and give them different roles. Kinetic weapons are pretty much defeated by armor plating, but plasma and beam weapons can weaken that armor plating to let them through, yet shields can be used to defend against those.",
+      "key": "685910::a14a55d7a41163e520a1c8631dcf376b94459ac2",
+      "tags": [
+        {
+          "feature": "Modules now have separate armor plating, which is divided to small segments. Each segment takes damage independently. Previously there was only a simple armor hitpoints value for each module."
+        },
+        {
+          "feature": "Projectile hits first consider armor penetration and damage to the hit armor segment, then may penetrate and cause damage to the module."
+        },
+        {
+          "feature": "Projectiles can now penetrate into a ship, hit internal armor, ricochet internally, explode with a timed fuse, or pass through entire ship and still hit something else."
+        },
+        {
+          "feature": "Beams now lose energy according to distance traveled within enemy shields, can penetrate into ship and even pass through a ship."
+        },
+        {
+          "feature": "Internal and external explosions are now modeled in detail as well, with armor plating providing cover against damage."
+        },
+        {
+          "feature": "New damage overlay provides slowed-down animation of penetrating projectiles and explosions, shows armor plating state, and damage to enemy ships as well."
+        },
+        {
+          "feature": "Kinetic weapons can now fire both armor piercing and armor piercing explosive projectiles. Explosive projectiles have lower velocity and thus penetration, explosions damage armor plates and cause mostly functional area damage."
+        },
+        {
+          "balance_change": "Armor is now much heavier and expensive."
+        },
+        {
+          "balance_change": "Weapon modules are now much more expensive."
+        },
+        {
+          "balance_change": "Kinetic projectiles (medium and super gauss) do lots of functional damage if they pass into a module, but very little structural damage. Functional damage makes modules disabled, structural destroys the module."
+        },
+        {
+          "balance_change": "Medium and heavy armor are very effective against kinetic projectiles."
+        },
+        {
+          "balance_change": "Plasma is especially effective at burning away armor plates and causes lots of structural damage, but doesn't penetrate armor or module to module. Shields are now more effective against plasma projectiles."
+        },
+        {
+          "balance_change": "Beam weapons do decent damage all-around and have some penetration. Shields are now more effective against beams, 2 overlapping shields can stop a beam completely."
+        },
+        {
+          "balance_change": "Beam weapons now use more energy."
+        },
+        {
+          "balance_change": "Medium gauss can now benefit from radiators, fire rate drops after 4 shots otherwise."
+        },
+        {
+          "balance_change": "Plasma and kinetic weapon ranges have been tuned. Projectile type affects kinetic weapon range to maintain same flight time."
+        },
+        {
+          "balance_change": "Chemical thruster and gas tank modules carry less fuel. The gas tanks are much less prone to chain-explosions but cause area damage when blown up."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1710.09 - Bug fixes and some usability improvements.",
+      "date": "2017-10-09 13:15:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2145261379799330515",
+      "content": "This is a maintenance update without significant new features, but some of the fixes do affect gameplay.\r\n\r\n[h1]Usability changes[/h1]\r\n[list]\r\n\t[*]Fleet editor now opens with a core only ship already in it. Note that you can always easily restore your previous fleet setup by loading the \"autosave\" fleet.\r\n\t[*]Free skirmish battle setup screen now automatically remembers last used settings within session.\r\n[/list]\r\n\r\n[h1]Bug fixes[/h1]\r\n[list]\r\n    [*]Fixed missiles being pointlessly transferred between launchers. Missiles now get launched faster overall, in salvos of equal size.\r\n\t[*]Fixed point defence not working when the ship didn't have a primary target.\r\n\t[*]Tweaked fighting to escaping battle AI trigger logic so that missile heavy ship designs will stick around to use their other weapons as well.\r\n\t[*]Fixed display of fleet, level, and battle file modification date when using a different locale.\r\n\t[*]No longer possible to enter direct ship control mode in deployment phase by using its shortcut key.\r\n\t[*]Fixed redoing in ship editor causing reference to the ship's original blueprint getting lost.\r\n\t[*]Fixed rebuild action in ship editor creating an incorrect undo state containing only the ship's core.\r\n\t[*]Fixed an oversight that allowed non-core module to be set as origin in ship editor, causing the ship to become permanently disabled.\r\n\t[*]Fixed surrendered ships potentially getting re-activated when split by enemy fire.\r\n\t[*]Fixed scrolling in menus affecting initial camera zoom when entering battle, battle editor, or fleet editor screen.\r\n[/list]",
+      "key": "685910::f4721d3e0c6edc2bea42329f9bbb2ace1362cb64",
+      "tags": [
+        {
+          "feature": "Fleet editor now opens with a core only ship already in it. Note that you can always easily restore your previous fleet setup by loading the \"autosave\" fleet."
+        },
+        {
+          "feature": "Free skirmish battle setup screen now automatically remembers last used settings within session."
+        },
+        {
+          "bug": "Fixed missiles being pointlessly transferred between launchers. Missiles now get launched faster overall, in salvos of equal size."
+        },
+        {
+          "bug": "Fixed point defence not working when the ship didn't have a primary target."
+        },
+        {
+          "balance_change": "Tweaked fighting to escaping battle AI trigger logic so that missile heavy ship designs will stick around to use their other weapons as well."
+        },
+        {
+          "bug": "Fixed display of fleet, level, and battle file modification date when using a different locale."
+        },
+        {
+          "bug": "No longer possible to enter direct ship control mode in deployment phase by using its shortcut key."
+        },
+        {
+          "bug": "Fixed redoing in ship editor causing reference to the ship's original blueprint getting lost."
+        },
+        {
+          "bug": "Fixed rebuild action in ship editor creating an incorrect undo state containing only the ship's core."
+        },
+        {
+          "bug": "Fixed an oversight that allowed non-core module to be set as origin in ship editor, causing the ship to become permanently disabled."
+        },
+        {
+          "bug": "Fixed surrendered ships potentially getting re-activated when split by enemy fire."
+        },
+        {
+          "bug": "Fixed scrolling in menus affecting initial camera zoom when entering battle, battle editor, or fleet editor screen."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1710.09 - Bug fixes and some usability improvements.",
+      "date": "2017-10-09 13:15:47",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687729892",
+      "content": "This is a maintenance update without significant new features, but some of the fixes do affect gameplay.\r\n\r\n[h1]Usability changes[/h1]\r\n[list]\r\n\t[*]Fleet editor now opens with a core only ship already in it. Note that you can always easily restore your previous fleet setup by loading the \"autosave\" fleet.\r\n\t[*]Free skirmish battle setup screen now automatically remembers last used settings within session.\r\n[/list]\r\n\r\n[h1]Bug fixes[/h1]\r\n[list]\r\n    [*]Fixed missiles being pointlessly transferred between launchers. Missiles now get launched faster overall, in salvos of equal size.\r\n\t[*]Fixed point defence not working when the ship didn't have a primary target.\r\n\t[*]Tweaked fighting to escaping battle AI trigger logic so that missile heavy ship designs will stick around to use their other weapons as well.\r\n\t[*]Fixed display of fleet, level, and battle file modification date when using a different locale.\r\n\t[*]No longer possible to enter direct ship control mode in deployment phase by using its shortcut key.\r\n\t[*]Fixed redoing in ship editor causing reference to the ship's original blueprint getting lost.\r\n\t[*]Fixed rebuild action in ship editor creating an incorrect undo state containing only the ship's core.\r\n\t[*]Fixed an oversight that allowed non-core module to be set as origin in ship editor, causing the ship to become permanently disabled.\r\n\t[*]Fixed surrendered ships potentially getting re-activated when split by enemy fire.\r\n\t[*]Fixed scrolling in menus affecting initial camera zoom when entering battle, battle editor, or fleet editor screen.\r\n[/list]",
+      "key": "685910::2781493850ede2d19211a0ae69e27a5c76f454da",
+      "tags": [
+        {
+          "feature": "Fleet editor now opens with a core only ship already in it. Note that you can always easily restore your previous fleet setup by loading the \"autosave\" fleet."
+        },
+        {
+          "feature": "Free skirmish battle setup screen now automatically remembers last used settings within session."
+        },
+        {
+          "bug": "Fixed missiles being pointlessly transferred between launchers. Missiles now get launched faster overall, in salvos of equal size."
+        },
+        {
+          "bug": "Fixed point defence not working when the ship didn't have a primary target."
+        },
+        {
+          "balance_change": "Tweaked fighting to escaping battle AI trigger logic so that missile heavy ship designs will stick around to use their other weapons as well."
+        },
+        {
+          "bug": "Fixed display of fleet, level, and battle file modification date when using a different locale."
+        },
+        {
+          "bug": "No longer possible to enter direct ship control mode in deployment phase by using its shortcut key."
+        },
+        {
+          "bug": "Fixed redoing in ship editor causing reference to the ship's original blueprint getting lost."
+        },
+        {
+          "bug": "Fixed rebuild action in ship editor creating an incorrect undo state containing only the ship's core."
+        },
+        {
+          "bug": "Fixed an oversight that allowed non-core module to be set as origin in ship editor, causing the ship to become permanently disabled."
+        },
+        {
+          "bug": "Fixed surrendered ships potentially getting re-activated when split by enemy fire."
+        },
+        {
+          "bug": "Fixed scrolling in menus affecting initial camera zoom when entering battle, battle editor, or fleet editor screen."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1709.27 - Ship editor mirror tool",
+      "date": "2017-09-27 14:31:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2175660043461766160",
+      "content": "This patch adds a very handy mirroring tool to ship editor, improves ship movement and fixed weapon firing accuracy.\r\n[list]\r\n    [*]Added a tool that can mirror your ship design by any horizontal or vertical axis, replacing the other side. This can effectively reduce your module placement effort by half! Works with undo as well.\r\n    [*]Reimplemented some core motion control math to take moving target frame's own movement during planned motion into account. Generally ships should now reach and keep their desired engagement distance better.\r\n    [*]Improved fixed weapon accuracy by refining their firing timing algorithm. The logic now extrapolates motion of the weapon and target to expected next frame's time and doesn't fire if the next frame's firing solution seems to yield a hit closer to the target's center.\r\n    [*]Some small / rare bugs fixed.\r\n[/list]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/30166125/134a9e3df7f984f30973dff30a805437a0277b87.png[/img]",
+      "key": "685910::19b1593b34e5c00998dfc9099e3ec8bc5244cfae",
+      "tags": [
+        {
+          "feature": "[*]Added a tool that can mirror your ship design by any horizontal or vertical axis, replacing the other side. This can effectively reduce your module placement effort by half! Works with undo as well."
+        },
+        {
+          "balance_change": "[*]Reimplemented some core motion control math to take moving target frame's own movement during planned motion into account. Generally ships should now reach and keep their desired engagement distance better."
+        },
+        {
+          "balance_change": "[*]Improved fixed weapon accuracy by refining their firing timing algorithm. The logic now extrapolates motion of the weapon and target to expected next frame's time and doesn't fire if the next frame's firing solution seems to yield a hit closer to the target's center."
+        },
+        {
+          "bug": "[*]Some small / rare bugs fixed."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1709.27 - Ship editor mirror tool",
+      "date": "2017-09-27 14:31:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687730002",
+      "content": "This patch adds a very handy mirroring tool to ship editor, improves ship movement and fixed weapon firing accuracy.\r\n[list]\r\n    [*]Added a tool that can mirror your ship design by any horizontal or vertical axis, replacing the other side. This can effectively reduce your module placement effort by half! Works with undo as well.\r\n    [*]Reimplemented some core motion control math to take moving target frame's own movement during planned motion into account. Generally ships should now reach and keep their desired engagement distance better.\r\n    [*]Improved fixed weapon accuracy by refining their firing timing algorithm. The logic now extrapolates motion of the weapon and target to expected next frame's time and doesn't fire if the next frame's firing solution seems to yield a hit closer to the target's center.\r\n    [*]Some small / rare bugs fixed.\r\n[/list]\r\n\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/30166125/134a9e3df7f984f30973dff30a805437a0277b87.png[/img]",
+      "key": "685910::2c58bf12db3fb691100dc52ee2903cfd9f2de0e8",
+      "tags": [
+        {
+          "feature": "[*]Added a tool that can mirror your ship design by any horizontal or vertical axis, replacing the other side. This can effectively reduce your module placement effort by half! Works with undo as well."
+        },
+        {
+          "balance_change": "[*]Reimplemented some core motion control math to take moving target frame's own movement during planned motion into account. Generally ships should now reach and keep their desired engagement distance better."
+        },
+        {
+          "balance_change": "[*]Improved fixed weapon accuracy by refining their firing timing algorithm. The logic now extrapolates motion of the weapon and target to expected next frame's time and doesn't fire if the next frame's firing solution seems to yield a hit closer to the target's center."
+        },
+        {
+          "bug": "[*]Some small / rare bugs fixed."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1709.13 - Steam Workshop integration for ship designs",
+      "date": "2017-09-13 13:37:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2138504078126915901",
+      "content": "This update brings easy sharing of ship designs through the Steam Workshop and some related smaller changes. The workshop integration took significant amount of work, but it should now work pretty well.\r\n\r\n[list]\r\n    [*]Ship blueprints can now be downloaded from Steam Workshop using the common item subscription system. Game restart is not needed to add subscriptions.\r\n    [*]Player-made ship blueprints can now be published to Steam Workshop from the ship blueprint browser in Fleet & Ship Editor screen.\r\n    [*]Added function to delete blueprints from the the ship blueprint browser in Fleet & Ship Editor screen.\r\n    [*]Added option to exclude a blueprint from auto-generated fleets. It is accessible in the \"save as\" dialog for blueprints. [b]You need to resave your existing ship designs to include them in generated fleets.[/b]\r\n    [*]Ship blueprint browser in Fleet & Ship Editor screen now automatically refreshes when a blueprint is saved.\r\n    [*]Added icons to ship blueprint browser that indicate if the blueprint is player-made or downloaded from Steam Workshop.\r\n    [*]Some other small fixes.\r\n[/list]",
+      "key": "685910::0563205952e8a5325eec709a091265ecfeaf59b0",
+      "tags": [
+        {
+          "feature": "[*]Ship blueprints can now be downloaded from Steam Workshop using the common item subscription system. Game restart is not needed to add subscriptions."
+        },
+        {
+          "feature": "[*]Player-made ship blueprints can now be published to Steam Workshop from the ship blueprint browser in Fleet & Ship Editor screen."
+        },
+        {
+          "feature": "[*]Added function to delete blueprints from the the ship blueprint browser in Fleet & Ship Editor screen."
+        },
+        {
+          "feature": "[*]Added option to exclude a blueprint from auto-generated fleets. It is accessible in the \"save as\" dialog for blueprints. [b]You need to resave your existing ship designs to include them in generated fleets.[/b]"
+        },
+        {
+          "feature": "[*]Ship blueprint browser in Fleet & Ship Editor screen now automatically refreshes when a blueprint is saved."
+        },
+        {
+          "feature": "[*]Added icons to ship blueprint browser that indicate if the blueprint is player-made or downloaded from Steam Workshop."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1709.13 - Steam Workshop integration for ship designs",
+      "date": "2017-09-13 13:37:34",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687730113",
+      "content": "This update brings easy sharing of ship designs through the Steam Workshop and some related smaller changes. The workshop integration took significant amount of work, but it should now work pretty well.\r\n\r\n[list]\r\n    [*]Ship blueprints can now be downloaded from Steam Workshop using the common item subscription system. Game restart is not needed to add subscriptions.\r\n    [*]Player-made ship blueprints can now be published to Steam Workshop from the ship blueprint browser in Fleet & Ship Editor screen.\r\n    [*]Added function to delete blueprints from the the ship blueprint browser in Fleet & Ship Editor screen.\r\n    [*]Added option to exclude a blueprint from auto-generated fleets. It is accessible in the \"save as\" dialog for blueprints. [b]You need to resave your existing ship designs to include them in generated fleets.[/b]\r\n    [*]Ship blueprint browser in Fleet & Ship Editor screen now automatically refreshes when a blueprint is saved.\r\n    [*]Added icons to ship blueprint browser that indicate if the blueprint is player-made or downloaded from Steam Workshop.\r\n    [*]Some other small fixes.\r\n[/list]",
+      "key": "685910::3555d4e1ed5f83556a9144ae6c6774a7e08c6130",
+      "tags": [
+        {
+          "feature": "[*]Ship blueprints can now be downloaded from Steam Workshop using the common item subscription system. Game restart is not needed to add subscriptions."
+        },
+        {
+          "feature": "[*]Player-made ship blueprints can now be published to Steam Workshop from the ship blueprint browser in Fleet & Ship Editor screen."
+        },
+        {
+          "feature": "[*]Added function to delete blueprints from the the ship blueprint browser in Fleet & Ship Editor screen."
+        },
+        {
+          "feature": "[*]Added option to exclude a blueprint from auto-generated fleets. It is accessible in the \"save as\" dialog for blueprints. [b]You need to resave your existing ship designs to include them in generated fleets.[/b]"
+        },
+        {
+          "feature": "[*]Ship blueprint browser in Fleet & Ship Editor screen now automatically refreshes when a blueprint is saved."
+        },
+        {
+          "feature": "[*]Added icons to ship blueprint browser that indicate if the blueprint is player-made or downloaded from Steam Workshop."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1708.26 - Quality of life improvements",
+      "date": "2017-08-26 14:27:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/2094592080075650723",
+      "content": "This patch brings few smaller features and improvements based on player feedback.\r\n[list]\r\n    [*]Implemented selection groups feature for battles. Select units and press ctrl + number key 1-0 to set group. Then press the number key to select ships in that group.\r\n    [*]Changed camera panning keys to be WASD by default. The new default is not applied automatically. You need to rebind or delete bindings from you settings file.\r\n    [*]Expanded support for the rebindable camera panning keys to editors and when following a ship in battle.\r\n    [*]Added a camera panning speed setting to settings screen.\r\n    [*]Replaced \"Version\" column in ship blueprint browser wtih \"Author\" column to make finding your own designs easier.\r\n    [*]Added game version display to main menu.\r\n    [*]Fixed disabled thrusters causing incorrect movement group effect calculation.\r\n    [*]Unified .NET Framework target to version 4.5.2 and x86 on all assemblies.\r\n[/list]\r\n\r\nSelection groups UI:\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/30166125/88559e8b746321bff130175fcc1e8c506ad8ca24.png[/img]",
+      "key": "685910::e7ecdd166705cfc430d7f3f29d9b0e07c9a8e778",
+      "tags": [
+        {
+          "feature": "[*]Implemented selection groups feature for battles. Select units and press ctrl + number key 1-0 to set group. Then press the number key to select ships in that group."
+        },
+        {
+          "feature": "[*]Changed camera panning keys to be WASD by default. The new default is not applied automatically. You need to rebind or delete bindings from you settings file."
+        },
+        {
+          "feature": "[*]Expanded support for the rebindable camera panning keys to editors and when following a ship in battle."
+        },
+        {
+          "feature": "[*]Added a camera panning speed setting to settings screen."
+        },
+        {
+          "feature": "[*]Replaced \"Version\" column in ship blueprint browser wtih \"Author\" column to make finding your own designs easier."
+        },
+        {
+          "feature": "[*]Added game version display to main menu."
+        },
+        {
+          "bug": "[*]Fixed disabled thrusters causing incorrect movement group effect calculation."
+        },
+        {
+          "feature": "[*]Unified .NET Framework target to version 4.5.2 and x86 on all assemblies."
+        }
+      ]
+    },
+    {
+      "title": "Version 0.1.1708.26 - Quality of life improvements",
+      "date": "2017-08-26 14:27:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521687730322",
+      "content": "This patch brings few smaller features and improvements based on player feedback.\r\n[list]\r\n    [*]Implemented selection groups feature for battles. Select units and press ctrl + number key 1-0 to set group. Then press the number key to select ships in that group.\r\n    [*]Changed camera panning keys to be WASD by default. The new default is not applied automatically. You need to rebind or delete bindings from you settings file.\r\n    [*]Expanded support for the rebindable camera panning keys to editors and when following a ship in battle.\r\n    [*]Added a camera panning speed setting to settings screen.\r\n    [*]Replaced \"Version\" column in ship blueprint browser wtih \"Author\" column to make finding your own designs easier.\r\n    [*]Added game version display to main menu.\r\n    [*]Fixed disabled thrusters causing incorrect movement group effect calculation.\r\n    [*]Unified .NET Framework target to version 4.5.2 and x86 on all assemblies.\r\n[/list]\r\n\r\nSelection groups UI:\r\n[img]http://cdn.edgecast.steamstatic.com/steamcommunity/public/images/clans/30166125/88559e8b746321bff130175fcc1e8c506ad8ca24.png[/img]",
+      "key": "685910::3f4109c1b1711f22b481e2fbb86d4c17e086b722",
+      "tags": [
+        {
+          "feature": "[*]Implemented selection groups feature for battles. Select units and press ctrl + number key 1-0 to set group. Then press the number key to select ships in that group."
+        },
+        {
+          "feature": "[*]Changed camera panning keys to be WASD by default. The new default is not applied automatically. You need to rebind or delete bindings from you settings file."
+        },
+        {
+          "feature": "[*]Expanded support for the rebindable camera panning keys to editors and when following a ship in battle."
+        },
+        {
+          "feature": "[*]Added a camera panning speed setting to settings screen."
+        },
+        {
+          "feature": "[*]Replaced \"Version\" column in ship blueprint browser wtih \"Author\" column to make finding your own designs easier."
+        },
+        {
+          "feature": "[*]Added game version display to main menu."
+        },
+        {
+          "bug": "[*]Fixed disabled thrusters causing incorrect movement group effect calculation."
+        },
+        {
+          "feature": "[*]Unified .NET Framework target to version 4.5.2 and x86 on all assemblies."
+        }
+      ]
+    }
+  ]
+}

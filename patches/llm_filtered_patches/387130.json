@@ -1,0 +1,210 @@
+{
+  "appId": "387130",
+  "count": 9,
+  "notes": [
+    {
+      "title": "Development vlog April",
+      "date": "2025-05-04 12:41:11",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1798454487705135",
+      "content": "This April we were quite busy. We attended Games Gathering conference in Lviv, showed our game to hundreds of people and won an award for best graphics, drastically improved lighting in our levels and significantly improved all aspects of our zombies.\n\n[img]{STEAM_CLAN_IMAGE}/11591001/b64b3dc16d6f575304f17a118a7c8d4bc52ac04b.jpg[/img]\n\nAt the start of the month, we attended Games Gathering conference in Lviv. Zombie Hunter inc won an award for the best art and we gathered a tone of bugs glitches and requests from over 60 people that played the game over two days. That is why we spent the rest of the months addressing the issues that surfaced.\n\nAndrii worked on improving zombies. He added various death animations for zombies and merged them with our ragdoll system, to make every death pose unique. He also improved ragdoll, so that zombies no longer fly through geometry when you kill them with a powerful gun. At the same time, now our zombies have a vision system, made out of several zones: forward white \u2013 spotting player using rays, peripheral gray \u2013 spotting player with rays but slower, close yellow \u2013 instant spotting and orange \u2013 spotting via non-visual cues from the back. We plan on using this feature extensively once we start working on bandits and other gun-wielding enemies.\n\nEgor fixed visual bugs and researched Unity water. We now know how to control the waterflow using special textures. He also experimented with foam effects and created a cool effect that we will use when water is flowing around an object. At the same time, he is finally working on sewers. We now have a clear understanding how the level should look: every tunnel, every corner must be designed to satisfy two conditions: to look man-made and to facilitate waterflow. So, no cave-like tunnels, no sharp corners and no square rooms.\n\n[previewyoutube=ONdgvR4kzUA;full][/previewyoutube]\n\nIn April I discovered a Black State gameplay video and was quite surprised and intrigued how they managed to achieve this level of visual fidelity. There were a number of games released recently, notable for their realistic graphics: Bodycam, Cyberpunk 2077 with mods and now Black State. At first, I dismissed them by thinking \u201cwe would never be able to achieve something like this\u201d, \u201cthis is only possible in Unreal\u201d and \u201cit\u2019s raytracing, once Unity improves its raytracing support, we will have it by default\u201d. But after the Black State video Andrii told me: \u201cWe have all these extremely detailed assets, yet our graphics looks dated\u201d and that really bugged me. So, I spent a whole day arguing with ChatGPT, trying to understand how these Turkish Arcviz guys managed to make their game look this good. And here is what I learned:\n-\tThey use only cloudy weather outside.\n-\tTheir shadows are very blurred, almost non-existant.\n-\tWhat we perceive as shadows in their videos is actually high quality reflections of objects from puddles, achieved with raytracing. Which is a brilliant trick, as it grounds the objects in an environment, where there are no shadows.\n\nThis led me to create a plan:\n-\tMake a high quality static ambient light baking instead of Enlighten realtime light, which is very blurred.\n-\tUse Angular diameter for all lights, but especially the sun, to make shadows very blurry.\n-\tAdd puddles and raytracing to make everything look grounded.\n-      Turn on Raytracing for high quality Ambient Occlusion (better darkening) and reflections.\n\nAnd let me tell you, this plan paid off big time:\n[img]{STEAM_CLAN_IMAGE}/11591001/68a847a1da31da4993318a5075491e1bfb34e792.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/11591001/9e61a42198b7b1f7dd1f5ef9ef84d418042dbb43.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/11591001/06ddf5d0ee72e7022fdc814a9880a44b1f9fe459.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/11591001/c99c27acb18da2556878446e88ac9ddc4c4dc63a.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/11591001/3b2d5c1546330a2420a485bb7a5bf85c879d55c7.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/11591001/fc0c2528e21041670a5f584123eec067cf107f06.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/11591001/45faae8c572e45738a5694506f20421cd085a7f2.jpg[/img]\n[img]{STEAM_CLAN_IMAGE}/11591001/0f60d8b6520fa64045aa81597a1cf25bbe199844.jpg[/img]\n\nSee you next month.",
+      "key": "387130::a268ce752047dd037ed02fc4e8475b08b49e1fd7",
+      "tags": [
+        {
+          "feature": "drastically improved lighting in our levels"
+        },
+        {
+          "feature": "significantly improved all aspects of our zombies"
+        },
+        {
+          "bug": "gathered a tone of bugs glitches and requests from over 60 people that played the game over two days"
+        },
+        {
+          "feature": "added various death animations for zombies and merged them with our ragdoll system, to make every death pose unique"
+        },
+        {
+          "bug": "improved ragdoll, so that zombies no longer fly through geometry when you kill them with a powerful gun"
+        },
+        {
+          "feature": "now our zombies have a vision system, made out of several zones: forward white \u2013 spotting player using rays, peripheral gray \u2013 spotting player with rays but slower, close yellow \u2013 instant spotting and orange \u2013 spotting via non-visual cues from the back"
+        },
+        {
+          "bug": "fixed visual bugs"
+        },
+        {
+          "feature": "researched Unity water. We now know how to control the waterflow using special textures."
+        },
+        {
+          "feature": "experimented with foam effects and created a cool effect that we will use when water is flowing around an object."
+        },
+        {
+          "feature": "finally working on sewers. We now have a clear understanding how the level should look: every tunnel, every corner must be designed to satisfy two conditions: to look man-made and to facilitate waterflow. So, no cave-like tunnels, no sharp corners and no square rooms."
+        },
+        {
+          "feature": "Make a high quality static ambient light baking instead of Enlighten realtime light, which is very blurred."
+        },
+        {
+          "feature": "Use Angular diameter for all lights, but especially the sun, to make shadows very blurry."
+        },
+        {
+          "feature": "Add puddles and raytracing to make everything look grounded."
+        },
+        {
+          "feature": "Turn on Raytracing for high quality Ambient Occlusion (better darkening) and reflections."
+        }
+      ]
+    },
+    {
+      "title": "\"Welcome to Zombie Hunter, inc.\" update.",
+      "date": "2025-01-06 18:22:09",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1787858252857212",
+      "content": "[previewyoutube=HdPHutCkJpI;full][/previewyoutube]\nZombie Hunter inc update is live. We've added the first proper level into the game. It now tells a short story of an IT guy trapped in a zombie apocalypse.\n[img]{STEAM_CLAN_IMAGE}/11591001/8bb4b56403d20cfaa6131c8f5daf7b50f6ce635b.jpg[/img]\nYou will have to battle your way to the roof of the building, where you will be picked up by a helicopter.\n\nBeware of zombie firefighters - if you are too slow - you are dead!\n[img]{STEAM_CLAN_IMAGE}/11591001/490cd675487e0282188b599bb601f365b6ebd3e0.jpg[/img]\nThe build features two new locations with insane details, one new zombie type and one new gun - M60. Belive me - you WANT to try it).\n\nNext update will bring back bandits and firefights with smart enemies. We also plan on adding our first mission with dynamic goals and emerging scenarios, stay tuned!\n\nAlso, due to popular demand, we added two options screens, one for changing graphics quality and game resolution and the second one for changing controls.\n\nHop in, zombie hunters! And have a Happy New Year!\n[img]{STEAM_CLAN_IMAGE}/11591001/04d08fc5bc9263962a2d3f11237a32bab8796cca.jpg[/img]",
+      "key": "387130::6e46e2f43006f3492394ed6bdae913116ae8760e",
+      "tags": [
+        {
+          "feature": "We've added the first proper level into the game."
+        },
+        {
+          "feature": "The build features two new locations with insane details, one new zombie type and one new gun - M60."
+        },
+        {
+          "feature": "Also, due to popular demand, we added two options screens, one for changing graphics quality and game resolution and the second one for changing controls."
+        }
+      ]
+    },
+    {
+      "title": "A sizeable update comming by the end of December",
+      "date": "2024-11-08 16:38:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6148070194801641000",
+      "content": "Just like we promiced, an update is comming closer to the end of this year. In it, you will find a complete intro \"Tutorial\" level, a \"Hub\" level, where you would always would go back to between missions and a number of improvements to the large \"Streets\" level.\n\nThere will also be a new zombie type and a bunch of new items, including a new gun - M60.\n\nThe main player character model was completely replaced for a much more story-appropriate model.\nNow you play as a shy IT guy running away from a zombie apocalypse with the help of Bob - the head of Zombie Hunter incorporated - a gang of zombie mercenaries for hire. Your house was overrun by zombies, while you were asleep. You need to get to the roof, shooting and looting in the process, and wait for Bob's chopper to come save you.\n\nThe update will also include settings menu, amon other things, which many of you have requested. You will be able to change graphics settings there and set up controls to suit your playstyle.\n\nWe plan on increasing the game's price 20% with this update, so now is a good time to buy it, if you want to save.\n\n[img]{STEAM_CLAN_IMAGE}/11591001/a03178163a438d0c2a09852b4ac6878fa133003d.jpg[/img]\n\nWait for a more detailed review when the update is ready - see you there!\nThe Maya Gameworks team",
+      "key": "387130::29f9034ca47ec584fcbd8f48d3ffc9bae9bd9466",
+      "tags": [
+        {
+          "feature": "In it, you will find a complete intro \"Tutorial\" level, a \"Hub\" level, where you would always would go back to between missions and a number of improvements to the large \"Streets\" level."
+        },
+        {
+          "feature": "There will also be a new zombie type and a bunch of new items, including a new gun - M60."
+        },
+        {
+          "feature": "The main player character model was completely replaced for a much more story-appropriate model."
+        },
+        {
+          "feature": "The update will also include settings menu, amon other things, which many of you have requested."
+        },
+        {
+          "feature": "You will be able to change graphics settings there and set up controls to suit your playstyle."
+        },
+        {
+          "balance_change": "We plan on increasing the game's price 20% with this update, so now is a good time to buy it, if you want to save."
+        }
+      ]
+    },
+    {
+      "title": "An update arriving in a few months",
+      "date": "2017-02-15 09:41:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/75836429537650319",
+      "content": "I am very sorry for being silent for such a long time. I am the kind of person that speaks little but works a lot. As some of you know, I had to let go our entire team and the game is now being developed solely by myself. That does not mean that the development has stopped. I am moving the game to the Unity engine and I have already finished the entire main character's functionality. I've also introduced a cool mechanical change: the ability to rotate the camera, WITHOUT loosing the ability to land precise headshots. Moreover, I am integrating multiplayer right away, which means that the game can be played with friends already. However, there is no place to play at as there is no level yet, and that is precisely what I am doing right now. I need a few more months to set up a level and then you will be able to try it out. \r\n\r\nMykhaylo",
+      "key": "387130::d5bbd0999c0ac42dcaac1a3afa2abcccec896b3d",
+      "tags": [
+        {
+          "feature": "I am moving the game to the Unity engine"
+        },
+        {
+          "feature": "I've also introduced a cool mechanical change: the ability to rotate the camera, WITHOUT loosing the ability to land precise headshots."
+        },
+        {
+          "feature": "Moreover, I am integrating multiplayer right away, which means that the game can be played with friends already."
+        }
+      ]
+    },
+    {
+      "title": "An update arriving in a few months",
+      "date": "2017-02-15 09:41:02",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521683147540",
+      "content": "I am very sorry for being silent for such a long time. I am the kind of person that speaks little but works a lot. As some of you know, I had to let go our entire team and the game is now being developed solely by myself. That does not mean that the development has stopped. I am moving the game to the Unity engine and I have already finished the entire main character's functionality. I've also introduced a cool mechanical change: the ability to rotate the camera, WITHOUT loosing the ability to land precise headshots. Moreover, I am integrating multiplayer right away, which means that the game can be played with friends already. However, there is no place to play at as there is no level yet, and that is precisely what I am doing right now. I need a few more months to set up a level and then you will be able to try it out. \r\n\r\nMykhaylo",
+      "key": "387130::dd88ae0f0f6b083929fb5b3a745db03ec4d9ef54",
+      "tags": [
+        {
+          "feature": "I am moving the game to the Unity engine"
+        },
+        {
+          "feature": "I've also introduced a cool mechanical change: the ability to rotate the camera, WITHOUT loosing the ability to land precise headshots."
+        },
+        {
+          "feature": "Moreover, I am integrating multiplayer right away, which means that the game can be played with friends already."
+        }
+      ]
+    },
+    {
+      "title": "UI update",
+      "date": "2016-01-21 05:26:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/341513287000754385",
+      "content": "Following Brudda's suggestion we've updated the UI controls. Now you can traverse the buy menu the standard way - just as if it was your inventory, plust \"B\" does not close it but instead performs your desired action. Plus you can use D-Pad to traverse the buy menu. D-Pad control also added for campaign mode's inventory.",
+      "key": "387130::4c01df3c8758d78989077dad3e35fa4ac2b411ed",
+      "tags": [
+        {
+          "feature": "Now you can traverse the buy menu the standard way - just as if it was your inventory, plust \"B\" does not close it but instead performs your desired action."
+        },
+        {
+          "feature": "Plus you can use D-Pad to traverse the buy menu."
+        },
+        {
+          "feature": "D-Pad control also added for campaign mode's inventory."
+        }
+      ]
+    },
+    {
+      "title": "UI update",
+      "date": "2016-01-21 05:26:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521683147657",
+      "content": "Following Brudda's suggestion we've updated the UI controls. Now you can traverse the buy menu the standard way - just as if it was your inventory, plust \"B\" does not close it but instead performs your desired action. Plus you can use D-Pad to traverse the buy menu. D-Pad control also added for campaign mode's inventory.",
+      "key": "387130::faa0169c41e25382f32eb4eb75bb66ec0586ac2b",
+      "tags": [
+        {
+          "feature": "Now you can traverse the buy menu the standard way - just as if it was your inventory, plust \"B\" does not close it but instead performs your desired action."
+        },
+        {
+          "feature": "Plus you can use D-Pad to traverse the buy menu."
+        },
+        {
+          "feature": "D-Pad control also added for campaign mode's inventory."
+        }
+      ]
+    },
+    {
+      "title": "Update 0.06",
+      "date": "2016-01-19 02:53:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/341512658325603179",
+      "content": "Following DGA's video we updated the game to remove a few issues that we spotted:\r\n\r\n- Game no longer crashes when trying pressing Join Game with no active servers,\r\n\r\n- Removed an unwanted visual effect that appeared when a match was lost in Survival Mode,\r\n\r\n- Fixed the position and appearance of \"!\" sign in the map.",
+      "key": "387130::de9820585957862fa365859fedc7fef57018e08c",
+      "tags": [
+        {
+          "bug": "- Game no longer crashes when trying pressing Join Game with no active servers,"
+        },
+        {
+          "bug": "- Removed an unwanted visual effect that appeared when a match was lost in Survival Mode,"
+        },
+        {
+          "bug": "- Fixed the position and appearance of \"!\" sign in the map."
+        }
+      ]
+    },
+    {
+      "title": "Update 0.06",
+      "date": "2016-01-19 02:53:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/4249665521683147910",
+      "content": "Following DGA's video we updated the game to remove a few issues that we spotted:\r\n\r\n- Game no longer crashes when trying pressing Join Game with no active servers,\r\n\r\n- Removed an unwanted visual effect that appeared when a match was lost in Survival Mode,\r\n\r\n- Fixed the position and appearance of \"!\" sign in the map.",
+      "key": "387130::33576f746b688da016cb675177e4b1f82f1632cf",
+      "tags": [
+        {
+          "bug": "- Game no longer crashes when trying pressing Join Game with no active servers,"
+        },
+        {
+          "bug": "- Removed an unwanted visual effect that appeared when a match was lost in Survival Mode,"
+        },
+        {
+          "bug": "- Fixed the position and appearance of \"!\" sign in the map."
+        }
+      ]
+    }
+  ]
+}

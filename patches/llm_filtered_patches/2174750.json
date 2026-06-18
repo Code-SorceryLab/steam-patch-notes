@@ -1,0 +1,531 @@
+{
+  "appId": "2174750",
+  "count": 15,
+  "notes": [
+    {
+      "title": "Status 0.1.1761",
+      "date": "2025-09-19 17:15:43",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1811138915437213",
+      "content": "[h3]Hey guys - Dev here[/h3]\n\nLet's have another video and talk about how things are going.\n[previewyoutube=oi0ZosWdlmo;leftthumb][/previewyoutube]\n\n[h3]Production[/h3]\nMaking Level 06 was like: \"Yeh... Production wasn't so bad.\"\nMaking Level 07 was like: \"Yeh... Production is actually bad.\"\nAnd after that realization we started to do a bunch of workflow improvements here and there. Most was about automating and structuring gameplay logic. The latter has also a big impact on modding, because you set up gameplay data and assign them to the objects in the level. The good part is that gameplay data are automatically linked to the unlocks, which are shown in the level info screen. If you wonder about the reason: I had to fix a few wrong setups in both level 06 and 07 and it was really tedious to wiggle through the level object setup.\nAnother big thing we did was to streamline the monster difficulty setup. At the beginning we had to look up the difficulty value for the level and then assign some magic numbers to the monster objects. After improving production we select the monster part and tell it to \"exist on normal difficulty\". Everything else is done automatically.\n\n[h3]Bugs[/h3]\nIf you have watched the video, you surely noticed that the dead monster parts are not very cooperative. They block out tentacles and also are not a big fan of gravity. That's stuff I fix next week.\n\n[h3]Tweaks[/h3]\nAnother thing we want and can adjust with the better difficulty setup is how already spawned monster parts evolve. It may look and feel a bit better if monster parts further away from the eyes evolve slower. Right now they only evolve later and the monster has maxxed out parts rather early. Having that slowed evolution will cause the outer monster parts to be easier to destroy and the core will be a bit tougher. And as a nice side effect, the monster may look a wee bit prettier too.\n\nAlright, that's all we have to tell so far.\nHave Fun\n",
+      "key": "2174750::c70a068fc596fcf23b68c19dfb0f56ef2f4b5d98",
+      "tags": [
+        {
+          "bug": "They block out tentacles and also are not a big fan of gravity. That's stuff I fix next week."
+        },
+        {
+          "balance_change": "Having that slowed evolution will cause the outer monster parts to be easier to destroy and the core will be a bit tougher."
+        }
+      ]
+    },
+    {
+      "title": "Status 0.1.1695",
+      "date": "2025-08-15 04:25:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1808061939366320",
+      "content": "[h3]Hey guys - Dev here[/h3][p]Today is the last day with our interns, and they\u2019ve both left us with some great progress to share.[/p][p][/p][h3]Modding[/h3][p]The modding system is now about 90\u201395% complete. The main work left is just wrapping it all up properly. We can already load the base game as a mod.[/p][p]If everything goes as planned, we\u2019ll be able to ship Waifu with the base game packaged as a mod, neatly stored inside the game files. This way, you\u2019ll have the best possible example of how a mod works.[/p][p]The mod files use a JSON format. Right now, you can change and create data assets (the core game data). You can also create prefabs\u2014Unity\u2019s term for templates of in-game objects, like bullets or tentacle segments. On top of that, you can add your own graphics and sounds.[/p][p]What\u2019s not yet supported is creating new levels or terrain. There are also no modding tools yet, and I\u2019m not sure if I\u2019ll ever have time to write full modding documentation while working solo on the game. Still, let me know which features you\u2019d like to see, so I can make some plans.[/p][p][/p][h3]Animation[/h3][p]Our character design intern made a video for you\u2014so Waifu is now officially an ARG.[/p][p][dynamiclink href=\"https://www.youtube.com/watch?v=6T-b52j9ixM\"][/dynamiclink][/p][h3]Everything Else[/h3][p]Progress still feels slow, but it\u2019s fun. The past two weeks, we focused heavily on monster setup. Most of the systems I had prepared for them turned out to be too fiddly to work with. But that is under control now. We\u2019ve also fixed countless bugs and adjusted the system so it works well with modding.[/p][p]Have a gif how the monster grows and evolves with increasing difficulty.[/p][p][img src=\"{STEAM_CLAN_IMAGE}/43782660/fafcbaf01c50c6a9c1934b22dbe36d629a7b60ca.gif\"][/img][/p][p]Until then - Have fun[/p]",
+      "key": "2174750::5888769ba41a3f83514bb7b77f7b0c31e095109a",
+      "tags": [
+        {
+          "bug": "- We\u2019ve also fixed countless bugs and adjusted the system so it works well with modding."
+        }
+      ]
+    },
+    {
+      "title": "Status 0.1.1683",
+      "date": "2025-07-28 13:01:57",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806064758744330",
+      "content": "[h3]Hey guys - Dev here[/h3][p]Come closer, because I will tell you a fun, little secret for why there were no posts the last two months. It's really fun, promise.[/p][p]The reason is that I want to make news and other posts on Friday afternoon. Ideally I do this after finishing a task, so I have a gif to post. For the last two months, we were working on dozens of small improvements on pretty much every gameplay element inside a level. We do this, because we learned that the game gets too repetitive, so we have to move away from our static level design and unlock principle and give every level some individual touch. This resulted in a lot of small tasks and every Friday I was like: \"Ah, let's do this. Won't take long.\"[/p][p]Five Once-In-A-Lifetime Historical Events Later[/p][p]\"Ah... It's late. Let's post an update next week.\"\nAnd here we are. Long overdue update, so let's take a look at what we did since the last update.[/p][h3]Let's start with the juicy news: The Interns Are Back and Modding[/h3][p]Here at Flying Realms we want to follow the idea that interns don't have to provide any value for the company. Instead they pick a thing they want to do, try their best and with some luck we get some value out of it. In the case of Waifu this results in modding, we talked about last year. Progress on the modding front looks really, really good. There are three things modding can do:[/p][olist][*][p]Data Asset Modding (That's what tells the game how to go brrrrr)[/p][/*][*][p]Prefab Modding (Which allows you make new things to go brrrrr)[/p][/*][*][p]Automatic Code Generation (For us devs, so modding goes brrrrr)[/p][/*][/olist][p]As a cool side effect, the automatic code generation works so well that we want to use it for our savegame system. Right now savegame code has to be maintained manually, but all of that can be automated.[/p][h3]Gameplay Variation[/h3][p]As mentioned earlier, we want to address the repetition issue. The lowest hanging fruit for that is the level design. While the level shapes and biomes will grant some diversity, the general gameplay was always identical: Look around, throw crates, pick up unlocks, save the waifu, defeat the monster, get a pillow. Rinse and repeat for every level.[/p][p]What we want to change is everything before saving the waifu and the probably best way is to drop you a list of what mini-features we added:[/p][list][*][p]Generic Pickups: Instead of having hard-coded pickups, we use a \"logic system\", where we set conditions and effects to determine what happens when you collect a pickup.[/p][/*][*][p]Generic Throwables: Same as the pickups, but for everything that can be thrown.[/p][/*][*][p]Generic Environmental Object: Stuff like trees, rocks and so on are no longer bound to hard definitions of what kind of loot they drop. This is also handled by the logic system now.[/p][/*][*][p]Generic Interactables: We now can have things you fly up to, press a button and if the logic system says yes, you get something.[/p][/*][*][p]Zen Minigame in Levels: The zen minigame can now be done in the levels too.[/p][/*][*][p]Surface Elements: Like small stardust specks, which drop stardust on hit.[/p][/*][*][p]Monster Evolution: Our content pipeline to make monsters grow and evolve with the difficulty level is like 95% done. We can just drop entire presets of monsters into the level, press a button and these things get merged into one giant waifu stealing glob.[/p][/*][*][p]Best Part: All of this relies on Data Asset- and Prefab Modding, including the placement of stuff like trees and machinery. And the monster is also fully moddable.[/p][/*][/list][p]And here are a few more specific examples of what we can do with all this generic stuff, where some of it is planned and other stuff is possible.[/p][list][*][p]Picnic baskets, which you can throw around and drop food.[/p][/*][*][p]Hidden spots you can dig for treasures.[/p][/*][*][p]Throw rocks into a grinder to gain stardust.[/p][/*][*][p]Caches, which require a specific stat to be opened.[/p][/*][*][p]Use zen to activate a machine for more stardust.[/p][/*][*][p]We can easily add new pickups like candy bars, more stardust variations or batteries to grant absorbed bullets.[/p][/*][*][p]We can easily add new stuff you can yeet around.[/p][/*][*][p]New items can be found in more places than just boxes with a question mark.[/p][/*][*][p]Environmental objects can have effects like the all-time favorite: Contact Damage[/p][/*][*][p]With the logic system we could add some randomness to the monsters. It is not planned though, but possible.[/p][/*][/list][p]Alright - I hope this update is to your liking. Let us know what you think and have fun.[/p]",
+      "key": "2174750::dcfe44f57896d9c41ab34e5c1034f90406d3f7a4",
+      "tags": [
+        {
+          "feature": "Data Asset Modding (That's what tells the game how to go brrrrr)"
+        },
+        {
+          "feature": "Prefab Modding (Which allows you make new things to go brrrrr)"
+        },
+        {
+          "feature": "Automatic Code Generation (For us devs, so modding goes brrrrr)"
+        },
+        {
+          "feature": "Generic Pickups: Instead of having hard-coded pickups, we use a \"logic system\", where we set conditions and effects to determine what happens when you collect a pickup."
+        },
+        {
+          "feature": "Generic Throwables: Same as the pickups, but for everything that can be thrown."
+        },
+        {
+          "feature": "Generic Environmental Object: Stuff like trees, rocks and so on are no longer bound to hard definitions of what kind of loot they drop. This is also handled by the logic system now."
+        },
+        {
+          "feature": "Generic Interactables: We now can have things you fly up to, press a button and if the logic system says yes, you get something."
+        },
+        {
+          "feature": "Zen Minigame in Levels: The zen minigame can now be done in the levels too."
+        },
+        {
+          "feature": "Surface Elements: Like small stardust specks, which drop stardust on hit."
+        },
+        {
+          "feature": "Monster Evolution: Our content pipeline to make monsters grow and evolve with the difficulty level is like 95% done. We can just drop entire presets of monsters into the level, press a button and these things get merged into one giant waifu stealing glob."
+        },
+        {
+          "feature": "Best Part: All of this relies on Data Asset- and Prefab Modding, including the placement of stuff like trees and machinery. And the monster is also fully moddable."
+        },
+        {
+          "feature": "Picnic baskets, which you can throw around and drop food."
+        },
+        {
+          "feature": "Hidden spots you can dig for treasures."
+        },
+        {
+          "feature": "Throw rocks into a grinder to gain stardust."
+        },
+        {
+          "feature": "Caches, which require a specific stat to be opened."
+        },
+        {
+          "feature": "Use zen to activate a machine for more stardust."
+        },
+        {
+          "feature": "We can easily add new pickups like candy bars, more stardust variations or batteries to grant absorbed bullets."
+        },
+        {
+          "feature": "We can easily add new stuff you can yeet around."
+        },
+        {
+          "feature": "New items can be found in more places than just boxes with a question mark."
+        },
+        {
+          "feature": "Environmental objects can have effects like the all-time favorite: Contact Damage"
+        },
+        {
+          "feature": "With the logic system we could add some randomness to the monsters. It is not planned though, but possible."
+        }
+      ]
+    },
+    {
+      "title": "Update 0.1.1604",
+      "date": "2025-03-20 04:17:39",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1794102528294875",
+      "content": "Hey - Dev Here,\n\nWe could say that the demo update is a proper baby\u2014it's been nine months since the last one! This time we have to show a few things. The biggest changes are the UI overhaul and the new dialogues. Let us know what you think about it and if you enjoy chatting with the Waifus.\n\nSo let's take a look at the big and small changes.\nBIG:\n[list]\n[*] Added a new dialogue ui with big character graphics.\n[*] Replaced the old, linear dialogues with new interactive ones.\n[*] Overhauled the visuals for the entire UI.\n[/list]\n\nsmol:\n[list]\n[*] A few more environment objects (like rocks with stardust) are now throwable.\n[*] Improved render performance.\n[*] Intro splash screen can be skipped.\n[*] Consecutive Waifu Rescues now require stamina, to prevent an exploit that made Poneh virtually immortal in every level with a Waifu.\n[*] Level buttons are moved to the top of the map room.\n[/list]\n\nFixes:\n[list]\n[*] Changing resolutions should work way better now.\n[*] Changing displays is much more reliable now.\n[*] Fixed wrong background parallax scrolling on some resolutions.\n[*] Fixed an issue where digging to escape narrow situations wasn't possible when Poneh had no stamina.\n[*] Fixed strange tooltip positioning on some resolutions.\n[*] Fixed a bug where the camera wouldn\u2019t properly scroll after changing the resolution.\n[*] Fixed some rare physics issues with creeps (the small monsters) when spawned inside monsters or walls.\n[*] Fixed an exploit that allowed invalid item placement after swapping an item.\n[*] Fixed an issue where a game couldn\u2019t be loaded if an item was left in the crafting input slot.\n[*] Fixed a bug that prevented leaving a level if a player collected three item loot pickups.\n[*] Fixed an issue where the title image moved when changing resolution.\n[/list]\n\nWhat comes next?\nRight now we\u2019re upgrading our input middleware to support more controllers beyond just Xbox. This will also give us a baseline to display the right input for the Steam Deck. However, we still have to do a lot of work before the game runs well on Steam Deck. Right now our render pipeline is really stressy on it and playing Waifu drains the battery fast.\n\nNext up, we\u2019ll be replacing the item management in the house with a classic menu. The designs are done, and work on it will start right after we finish the input update. Luckily all the functionality for inventory management is already in place. We just need to move it from the house into the UI. Let's hope it\u2019s as easy as it sounds.\n\nSo - With the demo update out, we should be able to return to our usual news schedule. The past few weeks were a lot of fun for us, but the radio silence wasn't much fun for you. Let us know if the update was worth it.\n\nThat's all\u2014Have fun and hopefully we see each other in the forum or on Discord.\n",
+      "key": "2174750::b023e89cdff928e2db343b003ab59c6fafa39c92",
+      "tags": [
+        {
+          "feature": "[*] Added a new dialogue ui with big character graphics."
+        },
+        {
+          "feature": "[*] Replaced the old, linear dialogues with new interactive ones."
+        },
+        {
+          "feature": "[*] Overhauled the visuals for the entire UI."
+        },
+        {
+          "feature": "[*] A few more environment objects (like rocks with stardust) are now throwable."
+        },
+        {
+          "feature": "[*] Intro splash screen can be skipped."
+        },
+        {
+          "feature": "[*] Level buttons are moved to the top of the map room."
+        },
+        {
+          "bug": "[*] Changing resolutions should work way better now."
+        },
+        {
+          "bug": "[*] Changing displays is much more reliable now."
+        },
+        {
+          "bug": "[*] Fixed wrong background parallax scrolling on some resolutions."
+        },
+        {
+          "bug": "[*] Fixed an issue where digging to escape narrow situations wasn't possible when Poneh had no stamina."
+        },
+        {
+          "bug": "[*] Fixed strange tooltip positioning on some resolutions."
+        },
+        {
+          "bug": "[*] Fixed a bug where the camera wouldn\u2019t properly scroll after changing the resolution."
+        },
+        {
+          "bug": "[*] Fixed some rare physics issues with creeps (the small monsters) when spawned inside monsters or walls."
+        },
+        {
+          "bug": "[*] Fixed an exploit that allowed invalid item placement after swapping an item."
+        },
+        {
+          "bug": "[*] Fixed an issue where a game couldn\u2019t be loaded if an item was left in the crafting input slot."
+        },
+        {
+          "bug": "[*] Fixed a bug that prevented leaving a level if a player collected three item loot pickups."
+        },
+        {
+          "bug": "[*] Fixed an issue where the title image moved when changing resolution."
+        },
+        {
+          "balance_change": "[*] Consecutive Waifu Rescues now require stamina, to prevent an exploit that made Poneh virtually immortal in every level with a Waifu."
+        },
+        {
+          "balance_change": "[*] Improved render performance."
+        }
+      ]
+    },
+    {
+      "title": "Status 0.1.1552",
+      "date": "2025-01-03 13:31:46",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1787858252755090",
+      "content": "Happy New Year - We made it 25% to the next century.\n\nThe last month was filled with making graphics for the dialog poses and refining them where necessary. Alongside that we also refined our tools for previewing stuff. So have a gif:\n\n[img]{STEAM_CLAN_IMAGE}/43782660/76f1bdc3a347a6918afa348b7c827c976e68a198.gif[/img]\n\nThe UI Overhaul is done and only needs a good long test.\n\n[h3]So let's get to the really cool news. We've got two interns for reinforcement.[/h3]\n\nOne of them helps with the character art, most importantly the cape for the Antagonist and one very big surprise was how much work it is to put the cape over the shoulders. We hoped that a \"one size fits all\"-approach would be fine but in the end... no. Not so much. Additionally he also gave our current art work a nice reality check about missing details like nostrils and small shadows under the eyebrows.\n\n[img]{STEAM_CLAN_IMAGE}/43782660/7053cb57ad6eb7713c202ce77fadcf8c32a7861d.png[/img]\n\nOur second intern comes from the modding scene and there is no greater gift for a modder than having access to the source. We thought that it easily takes a month of our non-existent development time to get modding support working and he kinda made a proof of concept in like two days to get all game data moddable. Like all... 2400 files.\n\n[img]{STEAM_CLAN_IMAGE}/43782660/94a9813b6f0e4e00eea144b6a948023fcb58e5e4.png[/img]\n\nA word of caution though: We need to be very careful with modding support, as it is a nice feature. But right now we are on a really promising pace to give you all something really cool to play with, but we still have to find out what moddability we can deliver at the end. (And if everything fails, I know that you will just bepInEx your way into the game and do whatever you want).\n\nAlright - That's our progress and let's see what we manage to do this year.",
+      "key": "2174750::989b56304e937a8a638ad93ca3b40aff75b0628a",
+      "tags": [
+        {
+          "feature": "We thought that it easily takes a month of our non-existent development time to get modding support working and he kinda made a proof of concept in like two days to get all game data moddable."
+        },
+        {
+          "feature": "A word of caution though: We need to be very careful with modding support, as it is a nice feature."
+        }
+      ]
+    },
+    {
+      "title": "Status 0.1.1469",
+      "date": "2024-06-27 13:49:25",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5842939267310247721",
+      "content": "Hey - Dev here\n\nLet's have a small status update. Today I uploaded a new Unstable Build. The reason that it's not a regular update is that I did some risky changes to improve the performance, but may cause very mean errors. Maybe even a good 'ol crash. So before I drop the next update I will observe it on my system for a while. But some of the changes really give us a significant gain of a few milliseconds on a decent machine and may help to get the game up to 60FPS on really old machines (Like with hardware from around 2016).\n\nWith the Unstable Build is also a change to the waifu rescue mechanic. It turned out that the short time freeze combined with throwing the waifu makes you basically invincible. Game breaking exploits are fine as long as they don't \"un-game\" the game. So instead of the freeze, the rescue just makes Poneh dodge to the Waifu and it costs one stamina. Plus it doesn't have the time freeze anymore and to be honest: Doesn't feel great. I will try to twiddle with it and see if it feels better. But I am also really inclined to keep the time-freeze, but let the rescue cost one stamina, but a few of them will still be free (like the first one, or if you just lost the Waifu).\n\nBesides this, here are some of the changes:\n[list]\n[*] Some objects like stardust rocks and the UFOs on the levels are now throwable.\n[*] Digging to get out of a situation where the player is stuck triggers always instead of when the player has no more stamina.\n[*] Small monsters always move towards the player if they spawn inside a collider. This should prevent countless creeps from leaving the arena.\n[*] Background graphics should no longer change anytime we upload a new build.\n[/list]\n\nAnd a bunch of fixes:\n[list]\n[*] Fixed broken parallax effects on resolutions other than full HD.\n[*] Fixed a small error where the tooltips in the title screen didn't show any useful text.\n[*] Fixed strangely floaty tooltips if a resolution with a different aspect ratio of 16:9 is chosen.\n[*] Fixed a camera scrolling error when the resolution was changed during gameplay.\n[*] Fixed another camera scrolling error where the camera was allowed to scroll past the level edges, revealing the \"graphical edges\".\n[*] Fixed an error in which swapping items may allow the player to use items even if there is not enough stardust available for it.\n[*] Fixed a bug, which made it impossible to load the game if an item is stored on the crafting input slot.\n[*] Fixed a bug where the player can not leave the level if three or more loot items were collected.\n[*] Fixed an error in which it was no longer possible to change the resolution at all.\n[*] It is now possible to change the display and resolution at the same time.\n[/list]\n\nAnd the performance improvements:\n[list]\n[*] Tiny monsters avoiding each other is much faster now, allowing bigger swarms.\n[*] Removed sanity checks in the sprite rendering code - That can cause error messages popping up.\n[*] Removed pointer-sanity checks for sprite rendering code - That is a potential source for crashes.\n[*] Better Unity-API usage when applying sprite meshes to be rendered by the GPU.\n[/list]\n\nWhat's next?\nWaifu Dialogs. The start to create these may be a bit slow, because I desperately need a better workflow. My current tools are nice, but we all know that nice is the little sister of something we don't mention here. The moment I figured out how to write a lot of dialogs, we may finally dive into proper content creation.\n\nSo yeah - for the brave ones who play the Unstable Build - let me know if it works for you, so that this update can be put on the main branch.\n\nHave Fun",
+      "key": "2174750::760231bdafd6a5a0ce56e99afa585de74494af42",
+      "tags": [
+        {
+          "feature": "[list]\n[*] Some objects like stardust rocks and the UFOs on the levels are now throwable."
+        },
+        {
+          "bug": "[list]\n[*] Digging to get out of a situation where the player is stuck triggers always instead of when the player has no more stamina."
+        },
+        {
+          "bug": "[list]\n[*] Small monsters always move towards the player if they spawn inside a collider. This should prevent countless creeps from leaving the arena."
+        },
+        {
+          "bug": "[list]\n[*] Background graphics should no longer change anytime we upload a new build."
+        },
+        {
+          "bug": "[list]\n[*] Fixed broken parallax effects on resolutions other than full HD."
+        },
+        {
+          "bug": "[list]\n[*] Fixed a small error where the tooltips in the title screen didn't show any useful text."
+        },
+        {
+          "bug": "[list]\n[*] Fixed strangely floaty tooltips if a resolution with a different aspect ratio of 16:9 is chosen."
+        },
+        {
+          "bug": "[list]\n[*] Fixed a camera scrolling error when the resolution was changed during gameplay."
+        },
+        {
+          "bug": "[list]\n[*] Fixed another camera scrolling error where the camera was allowed to scroll past the level edges, revealing the \"graphical edges\"."
+        },
+        {
+          "bug": "[list]\n[*] Fixed an error in which swapping items may allow the player to use items even if there is not enough stardust available for it."
+        },
+        {
+          "bug": "[list]\n[*] Fixed a bug, which made it impossible to load the game if an item is stored on the crafting input slot."
+        },
+        {
+          "bug": "[list]\n[*] Fixed a bug where the player can not leave the level if three or more loot items were collected."
+        },
+        {
+          "bug": "[list]\n[*] Fixed an error in which it was no longer possible to change the resolution at all."
+        },
+        {
+          "feature": "[list]\n[*] It is now possible to change the display and resolution at the same time."
+        },
+        {
+          "bug": "[list]\n[*] Tiny monsters avoiding each other is much faster now, allowing bigger swarms."
+        },
+        {
+          "bug": "[list]\n[*] Removed sanity checks in the sprite rendering code - That can cause error messages popping up."
+        },
+        {
+          "bug": "[list]\n[*] Removed pointer-sanity checks for sprite rendering code - That is a potential source for crashes."
+        },
+        {
+          "feature": "[list]\n[*] Better Unity-API usage when applying sprite meshes to be rendered by the GPU."
+        }
+      ]
+    },
+    {
+      "title": "We Have Publisher + Update 0.1.1454",
+      "date": "2024-06-03 10:52:27",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5742731639344904023",
+      "content": "Hey - Dev Here\n\nDo you remember the Freedom Games Publisher Sale from April? Maybe some of you have noticed that Waifu popped up on the wishlist recommendations among all the other cool games. In storytelling we like to call this \"Setup and Payoff\" - a subtle hint being given in the story to prepare for a much more awesome impact later on. That wishlist recommendation was the Setup and today is the Payoff: Flying Realms and Indie.io (Which, was Freedom Games during the last publisher sale - What a plot twist!) are friends now!\n\nActually, we have been working together for a few months now and the folks at Indie.io helped a lot with the development of Waifu. We got some good reality checks on the current state of the game and a lot of in-depth insights from the many testing sessions. We can now focus more on the development, while Indie.io takes care of marketing, more testing and general quality assurance, before we drop new builds.\n\nWe will also stay in contact with you. There will still be the occasional status updates here and we are still busy on the discord server to answer all your questions and read your feedback.\n\nWell... it's quite a crazy ride having a pony-tentacle game out in the wilderness. And it's great to have you all with us. \n\nAnd additionally to that - We also have an update for you:\n[list]\n[*] Boost and Dodge are now merged. You can use dodge anytime now and adjusted tutorials accordingly.\n[*] Level 03 is easier now.\n[*] Level 04 is more difficult to act as a proper boss fight.\n[*] Also adjusted the monster layout in level 04 to no longer have the monster end up in situation, where it is super difficult to destroy.\n[*] You do no longer need to equip specific waifus in a few levels to have the monster drop a memento slot upgrade. A high enough Dread value is enough.\n[*] Swapped the order of the charged shot and rapid fire tutorial.\n[*] Tutorial for absorbing bullets does no longer lose progression when you shoot.\n[*] Added a Senpai tutorial, which gives you hints and reminders after each level. This is temporary until the house gets a general overhaul in size and handling.\n[*] Fixed a small error, where the crosshair was always too far away.\n[*] Improved the behavior for the Apply and Back buttons in the options menu.\n[*] Black fades are a bit smoother and prevent the playfield from suddenly flashing in.\n[*] Fixed an error where the selected display was not kept between game starts.\n[*] Added an extra check for the digging mode to hopefully always stop digging eventually.\n[/list]\n",
+      "key": "2174750::4521d66afbdf9db27c7a7cda8d780fedc4533641",
+      "tags": [
+        {
+          "feature": "Boost and Dodge are now merged. You can use dodge anytime now and adjusted tutorials accordingly."
+        },
+        {
+          "balance_change": "Level 03 is easier now."
+        },
+        {
+          "balance_change": "Level 04 is more difficult to act as a proper boss fight."
+        },
+        {
+          "bug": "Also adjusted the monster layout in level 04 to no longer have the monster end up in situation, where it is super difficult to destroy."
+        },
+        {
+          "balance_change": "You do no longer need to equip specific waifus in a few levels to have the monster drop a memento slot upgrade. A high enough Dread value is enough."
+        },
+        {
+          "feature": "Swapped the order of the charged shot and rapid fire tutorial."
+        },
+        {
+          "bug": "Tutorial for absorbing bullets does no longer lose progression when you shoot."
+        },
+        {
+          "feature": "Added a Senpai tutorial, which gives you hints and reminders after each level. This is temporary until the house gets a general overhaul in size and handling."
+        },
+        {
+          "bug": "Fixed a small error, where the crosshair was always too far away."
+        },
+        {
+          "feature": "Improved the behavior for the Apply and Back buttons in the options menu."
+        },
+        {
+          "feature": "Black fades are a bit smoother and prevent the playfield from suddenly flashing in."
+        },
+        {
+          "bug": "Fixed an error where the selected display was not kept between game starts."
+        },
+        {
+          "bug": "Added an extra check for the digging mode to hopefully always stop digging eventually."
+        }
+      ]
+    },
+    {
+      "title": "Update 0.1.1447",
+      "date": "2024-05-20 11:22:10",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970433423397",
+      "content": "Hey - Dev Here\n\nWe deployed on Friday and delivered a game breaking but to all mouse and keyboard users and as a big surprise we also adjusted the UI for better readability. We certainly need another pass over the UI to make it prettier, so let us know what you think.\n\nHere are the changes:\n[list]\n[*] Fixed an issue where mouse and keyboard users couldn't select any dialog choices.\n[*] Fixed an error where dialogs remained after leaving a level during a dialog.\n[*] Fixed wrong memento stat boost for waifu mementos.\n[*] Improved UI readability.\n[/list]",
+      "key": "2174750::5d4d743f795a4825f7a67ddb1b5491475d13203e",
+      "tags": [
+        {
+          "bug": "[*] Fixed an issue where mouse and keyboard users couldn't select any dialog choices."
+        },
+        {
+          "bug": "[*] Fixed an error where dialogs remained after leaving a level during a dialog."
+        },
+        {
+          "bug": "[*] Fixed wrong memento stat boost for waifu mementos."
+        },
+        {
+          "feature": "[*] Improved UI readability."
+        }
+      ]
+    },
+    {
+      "title": "Hotfix 0.1.1446",
+      "date": "2024-05-17 16:03:01",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5747233970423200261",
+      "content": "Professionals: Don't deploy on Friday\nMe: [i]Deploys on Friday[/i]\n\nHey - Dev Here\n\nas planned we managed to get a hotfix build out, which addresses most things we noticed during the A MAZE.\n\nHere is a changelog:\n[list]\n[*] Fixed the crash when picking up slot upgrades (like from the gray box in level 02).\n[*] Fixed the endless loop in the dialog with the Picnic Waifu after level 01.\n[*] Fixed an error where players lose stardust when loading a game, when also having items equipped.\n[*] Tutorial boxes are back at the bottom left corner instead of obstructing the playfield.\n[*] Fixed missing tooltips in the level info screen.\n[*] Pause menu can now be opened during dialogs.\n[*] Replaced a few occurrences of the word \"level\" in various texts. Better for the immersion.\n[/list]\nWhat's next:\nFor the next few weeks we will split out attention to the UI and the waifu dialogs. With our two days per week we spend out Troubleshoot Thursdays to improve the UI to improve readability and make it easier to understand what is a button and what not. When we are done with the UI, we will start, getting rid of the diegetic house menu and replacing it with a simple menu for inventory management.\n\nOur Feature Fridays will be writing dialogs for the Waifus and making sure all of them are in the House all the time. The dialogs will be more about tutorials, some world building, idly chatting and similar and preparing some logic for the different story arcs. Maybe we also address the books strewn all over the house to make use of the dialog system.\n\nWhen the above things are done (maybe around the beginning of July), things will become super interesting, because we get into the big content production phase. We will finalize our level making tools, doing small overhauls with the existing levels and also have the dialogs with the waifus affect the gameplay (like getting a few items).\n\nBut for now - Let's have a nice weekend.",
+      "key": "2174750::f3a0e438cbb39f1ca27753b16b231dfacc03319b",
+      "tags": [
+        {
+          "bug": "[*] Fixed the crash when picking up slot upgrades (like from the gray box in level 02)."
+        },
+        {
+          "bug": "[*] Fixed the endless loop in the dialog with the Picnic Waifu after level 01."
+        },
+        {
+          "bug": "[*] Fixed an error where players lose stardust when loading a game, when also having items equipped."
+        },
+        {
+          "bug": "[*] Tutorial boxes are back at the bottom left corner instead of obstructing the playfield."
+        },
+        {
+          "bug": "[*] Fixed missing tooltips in the level info screen."
+        },
+        {
+          "bug": "[*] Pause menu can now be opened during dialogs."
+        },
+        {
+          "bug": "[*] Replaced a few occurrences of the word \"level\" in various texts. Better for the immersion."
+        }
+      ]
+    },
+    {
+      "title": "Update 0.1.1442",
+      "date": "2024-05-07 15:29:07",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5766372999962785750",
+      "content": "Hey - Dev Here,\n\nWe have a lot of nice things to talk about. Tomorrow starts the A MAZE festival in Berlin and we\u2019ll be there showing Waifu around. And to make sure that everybody gets something, the new demo build is also online.\n\nThis version comes with some nice changes and bugfixes. So here is a list of a few things:\n[list]\n[*] Crafting now uses Poneh Zen\n[*] Redesigned all items and crafting recipes to get rid of that pesky item grinding\n[*] Added flavor texts and names to all waifus and items\n[*] A lot of small tweaks to the placement of UI elements\n[*] Added a bullet absorb counter under the health bar\n[*] Stamina bar blinks red when you can\u2019t boost or dodge\n[*] Antagonist is a bit worse at dodging bullets\n[*] Tweaked the tutorials to disappear a bit earlier\n[*] Dialogs do not repeat when playing a level multiple times\n[*] Reduced that confusing level info menu to a bare minimum\n[/list]\n\nOn the technical side we had to do this, which took a long time:\n[list]\n[*] Overhaul of the entire UI code to make it easier to set up\n[*] Overhaul of the dialog code to make it easier for us to build new dialogs\n[*] And of course we needed to implement Poneh Zen\n[*] Some design basics for visual novel style character art for dialogs\n[/list]\nI am not able to keep the old save games intact. The changes with the items and the new crafting system is such a huge change, that I have no clue how to convert the old stuff into the new stuff. So all I can do is apologize and maybe post a gif of the funny man offering an egg in these trying times. I will try to find a solution for that issue and future updates.\n\nSo, what\u2019s next? Over the many months we got a lot of really good feedback (and sometimes we watch your videos on Youtube), which gave us a super long list of tasks. They range all over UI improvements, difficulty, visuals and gameplay.\n\nDiegetic House\nThis seems to be the biggest issue from all the reports. The house is cool but way too big and the idea to have the house as the menu to handle waifus and equipment looks good on paper but not so much in practice. To reduce the size of the house and be less confusing we wanna drop the diegetic approach and just give you proper menus. We will keep a lot of the things in the house, because they are wonderful visualizations for your current setup and a good way for quick access to info without opening a menu all the time. The menus themselves will be great for tutorials and navigating the house. And if you feel like it, you can just fly around and talk with the waifus.\n\nVisual Style Dialogs\nAnother thing we learned from talking and watching gameplay is that the waifus really need a proper presence in the house. Because of that we spent so much time the last months to streamline our tools to create dialogs and prepared the UI to handle more character art. We also had the chance to play a few dialog heavy games and they showed us that the current texts are so reduced, they don\u2019t really have that nice flair. That means we want to have proper dialogs for level one to five (the demo), teasing a few of the story arcs and give the waifus finally the presence they need.\n\nWhen these two things are done, we will take the first five levels and overhaul the unlocking mechanics and implement that the monsters are bigger on higher difficulty levels. We drop more info on this when we start working on it. Until then we try to deliver more updates. The visual style dialogs are quite modular and can be implemented step by step alongside the dialogs. The menus in the house - well, they could be mean, but with some luck we also replace things step by step. So you don't need to wait five more months for the next update.\n\nSo - this was a long post. I have to focus the next few days on the A MAZE, so I will be very quiet on the discord server and be unable to react to issues until next week. Until then - have a good one.",
+      "key": "2174750::ba3976345abc6eacb2f0b15e7bcbb2d73d03f8f8",
+      "tags": [
+        {
+          "feature": "[*] Crafting now uses Poneh Zen"
+        },
+        {
+          "feature": "[*] Redesigned all items and crafting recipes to get rid of that pesky item grinding"
+        },
+        {
+          "feature": "[*] Added flavor texts and names to all waifus and items"
+        },
+        {
+          "feature": "[*] A lot of small tweaks to the placement of UI elements"
+        },
+        {
+          "feature": "[*] Added a bullet absorb counter under the health bar"
+        },
+        {
+          "feature": "[*] Stamina bar blinks red when you can\u2019t boost or dodge"
+        },
+        {
+          "balance_change": "[*] Antagonist is a bit worse at dodging bullets"
+        },
+        {
+          "feature": "[*] Tweaked the tutorials to disappear a bit earlier"
+        },
+        {
+          "feature": "[*] Dialogs do not repeat when playing a level multiple times"
+        },
+        {
+          "balance_change": "[*] Reduced that confusing level info menu to a bare minimum"
+        },
+        {
+          "feature": "[*] Overhaul of the entire UI code to make it easier to set up"
+        },
+        {
+          "feature": "[*] Overhaul of the dialog code to make it easier for us to build new dialogs"
+        },
+        {
+          "feature": "[*] And of course we needed to implement Poneh Zen"
+        },
+        {
+          "feature": "[*] Some design basics for visual novel style character art for dialogs"
+        }
+      ]
+    },
+    {
+      "title": "Hotfix 0.1.1367",
+      "date": "2023-09-02 06:46:33",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141476355664528607",
+      "content": "Demo Hotfix!\n\n[list]\n[*] Fixed an error that made finishing the shooting tutorial impossible for mouse/keyboard users.\n[*] Fixed the missing loca tooltip string for the customize button in the new game menu.\n[*] Changed the standard boost key to left shift.\n[*] Changed the standard throw key to space.\n[*] Changed the standard turret mode key to e.\n[*] Changed the standard multiplayer join/leave key to return.\n[*] Fixed the ugly fog for the autumn morning weather.\n[/list]\n\nIf you have already played the demo and got used to the previous standard key setup, it will keep it.\n\nSorry for the inconvenience with the tutorial. That is something that shouldn't have happen at all.\nHave fun ^^",
+      "key": "2174750::fc8d3ae4aa260e18ffd1c47dcc7d6a43749afc9d",
+      "tags": [
+        {
+          "bug": "[*] Fixed an error that made finishing the shooting tutorial impossible for mouse/keyboard users."
+        },
+        {
+          "bug": "[*] Fixed the missing loca tooltip string for the customize button in the new game menu."
+        },
+        {
+          "balance_change": "[*] Changed the standard boost key to left shift."
+        },
+        {
+          "balance_change": "[*] Changed the standard throw key to space."
+        },
+        {
+          "balance_change": "[*] Changed the standard turret mode key to e."
+        },
+        {
+          "balance_change": "[*] Changed the standard multiplayer join/leave key to return."
+        },
+        {
+          "bug": "[*] Fixed the ugly fog for the autumn morning weather."
+        }
+      ]
+    },
+    {
+      "title": "Big Update 0.1.1363",
+      "date": "2023-08-25 05:49:31",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5141475722330237044",
+      "content": "So - We finished a lot of other important steps towards the demo release. We cleaned up and improved a lot of the weaker parts of the game. Have a list of the more important changes:\n\n[list]\n[*] Interactive dialogs with the Waifus.\n[*] Branching story paths; One of them is solvable in the demo.\n[*] Improved in-game tutorial.\n[*] Removed Researching, because it bogged down crafting.\n[*] Crafting recipes are discovered with the items.\n[*] All four crafting slots are now available from the start.\n[*] Reflecting bullets got replaced with bullet absorption, which makes your bullets stronger.\n[*] Improved throwing and made it more useful.\n[*] Throwing environmental parts like trees and rocks is now possible.\n[*] Improved monster/environment interactions.\n[*] Also improved monster/item interactions.\n[*] Poneh eats the monster when boosting and heals if his appetite is high enough.\n[*] Added a dodge mechanic, which allows Poneh to boost into any direction.\n[*] Added stamina, which allows Poneh to deal extra damage.\n[*] Proper imbalancing of more difficult to use actions like throwing, boosting and cats.\n[*] Simplified handling of items carried by Poneh. You can now carry all the stuff at once.\n[/list]\n\nAnd also a bunch of small bug fixes and improvements - probably too many to list in one post. The full log of my changes are also in discord. I basically post my commit messages there. They contain everything, including work on tools and code.\n\nWhat comes next? While the demo release on steam is on its way, I will make a bunch of smaller improvements and fixes to our build pipeline. Parallel to that I will work massively on the Poneh Zen system and Crafting. These two features will bring us much closer to Early Access.\n\nWe will also start contacting publishers very soon. We are really hyped for the game to turn from a part-time-almost-solo-dev project to a full time developed endeavour. With each day we come closer to the end of the pre-production. And then it will be content, content and more content. Level art, story arcs, dialogs, monster designs, items, graphics and music. Sometimes we are impressed by what can be done in two days. Because of that we want to see where the game can go with a team, but also with you being part of an Early Access release.\n\nThank you for being here with us and next time we talk, it's hopefully about the demo or publisher announcement.",
+      "key": "2174750::e0afe50d9137d06e1953ed9c66c7db23a1b855c7",
+      "tags": [
+        {
+          "feature": "[list]\n[*] Interactive dialogs with the Waifus.\n[*] Branching story paths; One of them is solvable in the demo.\n[*] Improved in-game tutorial.\n[*] Removed Researching, because it bogged down crafting.\n[*] Crafting recipes are discovered with the items.\n[*] All four crafting slots are now available from the start.\n[*] Reflecting bullets got replaced with bullet absorption, which makes your bullets stronger.\n[*] Improved throwing and made it more useful.\n[*] Throwing environmental parts like trees and rocks is now possible.\n[*] Improved monster/environment interactions.\n[*] Also improved monster/item interactions.\n[*] Poneh eats the monster when boosting and heals if his appetite is high enough.\n[*] Added a dodge mechanic, which allows Poneh to boost into any direction.\n[*] Added stamina, which allows Poneh to deal extra damage.\n[*] Proper imbalancing of more difficult to use actions like throwing, boosting and cats.\n[*] Simplified handling of items carried by Poneh. You can now carry all the stuff at once.\n[/list]"
+        },
+        {
+          "balance_change": "[*] Reflecting bullets got replaced with bullet absorption, which makes your bullets stronger."
+        },
+        {
+          "balance_change": "[*] Proper imbalancing of more difficult to use actions like throwing, boosting and cats."
+        }
+      ]
+    },
+    {
+      "title": "Status 0.1.1350",
+      "date": "2023-08-03 11:57:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5124585319849612488",
+      "content": "Wow. Time really flies by. Time for a status update.\n\nJuly was really slow and didn't work very well. But things are speeding up again. When we checked our task list this week, we noticed that we implemented all the gameplay changes and created the basics for the Poneh Zen minigame.\n\nHere's a list of what we did and what we are currently testing:\n- Dodge, which is basically a Boost just before you are getting hit by something.\n- Absorb to replace Reflect; Reflect was really useless, so instead of reflecting bullets you absorb them and they increase the damage of your regular shots.\n- Throwing is much better now; Higher damage and better throw speeds.\n- Carrying items got an overhaul, so you can carry around more stuff.\n- More Stamina, which increases Damage if you eat stuff.\n- Appetite Based Life Leech; Now you heal when you are hungry and hit the enemies with Boost.\n- You can now grab things from the environment and throw them.\n- Some improvements with Player/Monster/Collectible-Interactions.\n\nWhen testing is done and we solved a bunch of errors and bugs, we are releasing a new Unstable Build, which you can get on Discord or Itch.\n\nAfter we put out the Unstable Build, we will do a few smaller things, like updating tutorials, texts and a few menu entries here and there. This will give us some more time to react on big issues we have missed in the Unstable Build and prepare for another big update.\n\nWhen this is done, our last big push to get the demo out on Steam will be improvements to the crafting system and proper implementation of Poneh Zen.\n\nEnjoy the gifs and see ya next time.\n\n[img]{STEAM_CLAN_IMAGE}/43782660/d695939153cba34d6bc4d249cf18cbb9aa9a0699.gif[/img]\n[img]{STEAM_CLAN_IMAGE}/43782660/6816434f1b3df8ce5c3d5bff47754d1c550e4baf.gif[/img]",
+      "key": "2174750::bd0fe03be6b0224d105333f433c55780875eb2b0",
+      "tags": [
+        {
+          "feature": "- Dodge, which is basically a Boost just before you are getting hit by something."
+        },
+        {
+          "feature": "- Absorb to replace Reflect; Reflect was really useless, so instead of reflecting bullets you absorb them and they increase the damage of your regular shots."
+        },
+        {
+          "balance_change": "- Throwing is much better now; Higher damage and better throw speeds."
+        },
+        {
+          "balance_change": "- Carrying items got an overhaul, so you can carry around more stuff."
+        },
+        {
+          "balance_change": "- More Stamina, which increases Damage if you eat stuff."
+        },
+        {
+          "balance_change": "- Appetite Based Life Leech; Now you heal when you are hungry and hit the enemies with Boost."
+        },
+        {
+          "feature": "- You can now grab things from the environment and throw them."
+        },
+        {
+          "feature": "- Some improvements with Player/Monster/Collectible-Interactions."
+        }
+      ]
+    },
+    {
+      "title": "Status Update 0.1.1314",
+      "date": "2023-04-23 07:06:26",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5133583099806060408",
+      "content": "We are on a good way towards the Steam Launch. The weeks since the announcement were mostly problem solving without workflow and adjusting a few internals of the game to get our new content system running. The original estimation for the Steam Release was between end of April and end of May. We are likely heading for a Steam Release at the end of May.\n\nWhile the goals for the Steam Release are clear, we also know what we want to take care of after the release.\n\nThe biggest thing we want to change is the crafting system. Right now it is a good proof of concept on how not to do it. If you want to get high tier items you have to grind a lot and frankly the benefits for grinding are so small that it doesn't make sense to invest time into it at all. So we will completely overhaul our recipes and how item stats are generated. We also want to link the crafting to the Poneh Zen mechanic, so that crafting is not a glorified menu interaction.\n\nWe also got some great feedback and will take a closer look into other game mechanics, which lack things. The Boost ability is way too defensive and restricted on how to use it. Healing is very primitive, Collecting Meat is lackluster, Throwing is fiddly and the standard keyboard bindings are not ideal yet. Plus the House and the Level End Menu are still overwhelming. It is a lot - but many of these things are rather easy to fix and change. That means that when we are stuck in a long change (for example crafting system or implementing Poneh Zen) we can throw tiny adjustments.\n\nSo - Thank you very much for your patience with the game and thanks for every bug report or critique.",
+      "key": "2174750::55b61c3641110a0f354ee142fad0313f39a56566",
+      "tags": [
+        {
+          "balance_change": "- The Boost ability is way too defensive and restricted on how to use it."
+        },
+        {
+          "balance_change": "- Healing is very primitive"
+        },
+        {
+          "balance_change": "- Collecting Meat is lackluster"
+        },
+        {
+          "balance_change": "- Throwing is fiddly"
+        },
+        {
+          "balance_change": "- the standard keyboard bindings are not ideal yet."
+        },
+        {
+          "balance_change": "- Plus the House and the Level End Menu are still overwhelming."
+        }
+      ]
+    },
+    {
+      "title": "Waifus Coming to Steam",
+      "date": "2023-03-18 06:04:38",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5125698536860713199",
+      "content": "\"Get Your Tantecales Off My Waifu\" is coming to Steam!\n\nWe are working on the last changes for the release, which is mostly overhauling the current dialogs. The ones we have in the game are linear and without any interactivity. We want to get this part right, because right now it is the weakest part.\n\nWe also have a lot of nice-to-have goals for the release and after two days of coding we can say that all that is left is creating the necessary content. All that is left to the release is to dialogs and to set up some game logic.\n\nOur guess is that we may be able to release both the demo and Early Access version at the end of April. If things go really slow maybe at the end of May. We still have to figure out how complicated it will be to write dialogs for the first five levels and how chaotic it will be. That's why we prefer to under-promise, so that if things go well we can over-deliver - and if not that you don't have to suffer through a million delays from development hell.\n\nLastly have a list with the things we want to have in the release:\n- Basic Interactive Dialogs for the first 5 Levels\n- Option to allow Heavy story Impact on Gameplay\n- Optional feature that saved Waifus do not longer spawn in levels\n- Optional feature that [spoiler]Level 5 stops and can never be played again when you allow the Antagonist to keep the Tsundere Waifu[/spoiler]\n- An option which turns every occurrence of Husbando into Horsebando",
+      "key": "2174750::2336e47970e4f560d11d459b65f7e16cf9ae1577",
+      "tags": [
+        {
+          "feature": "- Basic Interactive Dialogs for the first 5 Levels"
+        },
+        {
+          "feature": "- Option to allow Heavy story Impact on Gameplay"
+        },
+        {
+          "feature": "- Optional feature that saved Waifus do not longer spawn in levels"
+        },
+        {
+          "feature": "- Optional feature that [spoiler]Level 5 stops and can never be played again when you allow the Antagonist to keep the Tsundere Waifu[/spoiler]"
+        },
+        {
+          "feature": "- An option which turns every occurrence of Husbando into Horsebando"
+        }
+      ]
+    }
+  ]
+}

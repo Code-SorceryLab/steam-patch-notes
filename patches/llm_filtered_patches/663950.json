@@ -1,0 +1,267 @@
+{
+  "appId": "663950",
+  "count": 1,
+  "notes": [
+    {
+      "title": "Ruin - Patch Notes, 0.7.1.3",
+      "date": "2025-03-27 18:36:44",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1795283637832578",
+      "content": "[h2]Inventory & Action Bar Improvements[/h2]\n\n[list]\n[*] Added the ability to link items or abilities to the action bar.\n[*] Client now sends the item/ability ID instead of just the slot ID.\n[*] Picking up an item from the action bar now removes the old slot link if applicable.\n[*] Consumable items on the action bar now properly check inventory and consume charges.\n[*] Fixed action bar items being used when they have 0 quantity.\n[*] Action bar now correctly links to items in inventory or equipment.\n[*] Pressing escape while holding a linked item now removes it.\n[*] Created a new database table to handle links efficiently.\n[*] Links now persist properly between server and client.\n[*] Added slot for ammo that functions as a link and is server-verified.\n[*] Ammo links now check level requirements.\n[*] Fixed issues with links switching incorrectly.\n[/list]\n\n[h2]Combat & Equipment Fixes[/h2]\n\n[list]\n[*] Fixed projectiles not properly moving toward targets.\n[*] Fixed melee/ranged weapons not updating damage on the character panel.\n[*] Fixed offhand weapons attacking with default damage.\n[*] Players and mobs now require weapons to attack properly.\n[/list]\n\n[h2]Adjusted attack speeds[/h2]\n\n[list]\n[*] No weapon: 2.5 attack speed (main hand only).\n[*] Offhand equipped: 2.5 attack speed main hand, offhand follows correctly.\n[*] Fixed ranged attack reload issues.\n[*] Switching weapons/ammo is now possible while in combat.\n[*] Added damage values for ammo (e.g., Sharp Arrow increases ranged damage by 10).\n[*] Fixed mobs not calculating melee damage correctly.\n[/list]\n\n[h2]Implemented weapon restrictions[/h2]\n\n[list]\n[*] Cannot equip a 1H weapon in offhand while using a 2H weapon.\n[*] Weapon swapping now checks requirements properly.\n[/list]\n\n[h2]Fixed ability tooltips[/h2]\n\n[list]\n[*] Required weapon type text now displays in red/white.\n[*] Required level now displays in red if unmet.\n[/list]\n\n[h2]Adjusted cooldowns[/h2]\n\n[list]\n[*] Charge ability now properly triggers cooldown.\n[*] Abilities without a global cooldown now have a minimum 1.5s cooldown.\n[*] Server now tracks spell cooldowns even when players log out.\n[/list]\n\n[h2]Item Handling & UI Enhancements:[/h2]\n\n[list]\n[*] Fixed item stacking issues when picking up items from the world.\n[*] Items now correctly merge or increase count instead of breaking.\n[*] Fixed dropping an item on itself from removing it.\n[*] Picking up an item no longer clears mouse-held data incorrectly.\n[*] Holding shift + left click now properly picks up an item/ability from a quick slot.\n[*] Fixed incorrect item deletion when dragging max stacks.\n[*] Added global function to handle item rarity display.\n[*] Implemented proper tracking of item cooldowns using new cooldown system.\n[*] Vendor interactions improved:\n[*] Added sell price to item tooltips.\n[*] Implemented global currency functions for consistency.\n[*] Vendors now properly display item prices.\n[*] Added trinket with a 5-minute cooldown that heals 2000 HP.\n[*] Added a new item type: \"Sharp Arrow\" (drops from dungeon mobs).\n[*] Item tooltips now fade when moving away, with a particle glow effect.\n[*] Items now hover slightly in the world for better visibility.\n[*] Added an XP bar to the UI.\n[*] Shortcut buttons now correctly open windows.\n[*] Improved vendor UI design.\n[*] Fixed spellbook abilities with ID > 255 not functioning.\n[*] Starter characters now receive appropriate food, water, and abilities.\n[/list]\n\n[h2]Bag System Overhaul[/h2]\n\n[list]\n[*] Bags now dynamically adjust inventory size.\n[*] Inventory updates in real time when adding/removing bags.\n[*] Players must empty a bag before removing it.\n[*] Implemented 4 new bag types with varying slot sizes.\n[*] Server now correctly tracks bag slots and item placement.\n[*] Added slot highlighting when hovering over a bag.\n[*] Left-clicking a bag now properly opens the inventory.\n[*] Locked bag slots are now enforced to prevent exploits.\n[*] Fixed bags not updating properly when removed.\n[/list]\n\n[h2]General Fixes & Enhancements[/h2]\n\n[list]\n[*] Fixed characters not being created or loaded correctly.\n[*] Character selection now supports a maximum of 9 characters per account.\n[*] Implemented correct animation handling when switching weapons.\n[*] Players can now sheath and unsheath weapons properly.\n[*] Fixed incorrect animations causing casting issues.\n[*] Ability casting now resets after use to prevent multiple activations.\n[*] Triple Shot, Smouldering Shot, and Double Shot now correctly consume ammo.\n[*] Fixed \"X\" closing equipment not syncing with the server.\n[*] Loot icons now disappear when moving out of range but maintain a glow effect.\n[*] Item light sources are removed when picked up.\n[*] Implemented proper item tracking for server-client sync.\n[*] Fixed chat behavior: opening chat now hides all other windows.\n[/list]\n\n[h2]UI improvements[/h2]\n\n[list]\n[*] Tooltips now appear above windows.\n[*] Fixed non-IWindow elements appearing above UI windows.\n[*] Adjusted all slot sizes to 30x30 for consistency.\n[/list]\n\n[h2]Server optimizations[/h2]\n\n[list]\n[*] Reduced console spam.\n[*] Growth effect no longer applies Cripple.\n[*] Overtime effects now store data as ushort instead of string for efficiency.\n[/list]\n\n[h2]Fixed blocking mechanics[/h2]\n\n[list]\n[*] Can only block or parry when the attacker is in front.\n[*] Shield buffs now properly reduce charges.\n[/list]\n\n[h2]Fixed various inventory bugs, including[/h2]\n\n[list]\n[*] Item duplication on slot swaps.\n[*] Dropping a real item onto a linked slot.\n[*] Incorrectly merging item stacks.\n[*] Stopped abilities from being placed in inventory slots.\n[*] Fixed crashes related to dragging abilities onto themselves.\n[*] Updated UI elements for better readability and accessibility.\n[/list]\n\n[h2]Upcoming Features[/h2]\n\n[list]\n[*] Further UI improvements.\n[*] Expanded item tooltip details.\n[*] More dungeon loot and rewards.\n[*] Refinements to animation transitions.\n[/list]",
+      "key": "663950::7fa3537bf46a6a270ee386d6b17374a8dd16f7d9",
+      "tags": [
+        {
+          "feature": "Added the ability to link items or abilities to the action bar."
+        },
+        {
+          "feature": "Client now sends the item/ability ID instead of just the slot ID."
+        },
+        {
+          "feature": "Picking up an item from the action bar now removes the old slot link if applicable."
+        },
+        {
+          "feature": "Consumable items on the action bar now properly check inventory and consume charges."
+        },
+        {
+          "bug": "Fixed action bar items being used when they have 0 quantity."
+        },
+        {
+          "feature": "Action bar now correctly links to items in inventory or equipment."
+        },
+        {
+          "feature": "Pressing escape while holding a linked item now removes it."
+        },
+        {
+          "feature": "Created a new database table to handle links efficiently."
+        },
+        {
+          "feature": "Links now persist properly between server and client."
+        },
+        {
+          "feature": "Added slot for ammo that functions as a link and is server-verified."
+        },
+        {
+          "feature": "Ammo links now check level requirements."
+        },
+        {
+          "bug": "Fixed issues with links switching incorrectly."
+        },
+        {
+          "bug": "Fixed projectiles not properly moving toward targets."
+        },
+        {
+          "bug": "Fixed melee/ranged weapons not updating damage on the character panel."
+        },
+        {
+          "bug": "Fixed offhand weapons attacking with default damage."
+        },
+        {
+          "bug": "Players and mobs now require weapons to attack properly."
+        },
+        {
+          "balance_change": "No weapon: 2.5 attack speed (main hand only)."
+        },
+        {
+          "balance_change": "Offhand equipped: 2.5 attack speed main hand, offhand follows correctly."
+        },
+        {
+          "bug": "Fixed ranged attack reload issues."
+        },
+        {
+          "feature": "Switching weapons/ammo is now possible while in combat."
+        },
+        {
+          "feature": "Added damage values for ammo (e.g., Sharp Arrow increases ranged damage by 10)."
+        },
+        {
+          "bug": "Fixed mobs not calculating melee damage correctly."
+        },
+        {
+          "feature": "Cannot equip a 1H weapon in offhand while using a 2H weapon."
+        },
+        {
+          "feature": "Weapon swapping now checks requirements properly."
+        },
+        {
+          "bug": "Required weapon type text now displays in red/white."
+        },
+        {
+          "bug": "Required level now displays in red if unmet."
+        },
+        {
+          "bug": "Charge ability now properly triggers cooldown."
+        },
+        {
+          "balance_change": "Abilities without a global cooldown now have a minimum 1.5s cooldown."
+        },
+        {
+          "feature": "Server now tracks spell cooldowns even when players log out."
+        },
+        {
+          "bug": "Fixed item stacking issues when picking up items from the world."
+        },
+        {
+          "bug": "Items now correctly merge or increase count instead of breaking."
+        },
+        {
+          "bug": "Fixed dropping an item on itself from removing it."
+        },
+        {
+          "bug": "Picking up an item no longer clears mouse-held data incorrectly."
+        },
+        {
+          "feature": "Holding shift + left click now properly picks up an item/ability from a quick slot."
+        },
+        {
+          "bug": "Fixed incorrect item deletion when dragging max stacks."
+        },
+        {
+          "feature": "Added global function to handle item rarity display."
+        },
+        {
+          "feature": "Implemented proper tracking of item cooldowns using new cooldown system."
+        },
+        {
+          "feature": "Added sell price to item tooltips."
+        },
+        {
+          "feature": "Implemented global currency functions for consistency."
+        },
+        {
+          "feature": "Vendors now properly display item prices."
+        },
+        {
+          "feature": "Added trinket with a 5-minute cooldown that heals 2000 HP."
+        },
+        {
+          "feature": "Added a new item type: \"Sharp Arrow\" (drops from dungeon mobs)."
+        },
+        {
+          "feature": "Item tooltips now fade when moving away, with a particle glow effect."
+        },
+        {
+          "feature": "Items now hover slightly in the world for better visibility."
+        },
+        {
+          "feature": "Added an XP bar to the UI."
+        },
+        {
+          "feature": "Shortcut buttons now correctly open windows."
+        },
+        {
+          "feature": "Improved vendor UI design."
+        },
+        {
+          "bug": "Fixed spellbook abilities with ID > 255 not functioning."
+        },
+        {
+          "feature": "Starter characters now receive appropriate food, water, and abilities."
+        },
+        {
+          "feature": "Bags now dynamically adjust inventory size."
+        },
+        {
+          "feature": "Inventory updates in real time when adding/removing bags."
+        },
+        {
+          "feature": "Players must empty a bag before removing it."
+        },
+        {
+          "feature": "Implemented 4 new bag types with varying slot sizes."
+        },
+        {
+          "feature": "Server now correctly tracks bag slots and item placement."
+        },
+        {
+          "feature": "Added slot highlighting when hovering over a bag."
+        },
+        {
+          "feature": "Left-clicking a bag now properly opens the inventory."
+        },
+        {
+          "feature": "Locked bag slots are now enforced to prevent exploits."
+        },
+        {
+          "bug": "Fixed bags not updating properly when removed."
+        },
+        {
+          "bug": "Fixed characters not being created or loaded correctly."
+        },
+        {
+          "balance_change": "Character selection now supports a maximum of 9 characters per account."
+        },
+        {
+          "feature": "Implemented correct animation handling when switching weapons."
+        },
+        {
+          "feature": "Players can now sheath and unsheath weapons properly."
+        },
+        {
+          "bug": "Fixed incorrect animations causing casting issues."
+        },
+        {
+          "bug": "Ability casting now resets after use to prevent multiple activations."
+        },
+        {
+          "bug": "Triple Shot, Smouldering Shot, and Double Shot now correctly consume ammo."
+        },
+        {
+          "bug": "Fixed \"X\" closing equipment not syncing with the server."
+        },
+        {
+          "feature": "Loot icons now disappear when moving out of range but maintain a glow effect."
+        },
+        {
+          "feature": "Item light sources are removed when picked up."
+        },
+        {
+          "feature": "Implemented proper item tracking for server-client sync."
+        },
+        {
+          "bug": "Fixed chat behavior: opening chat now hides all other windows."
+        },
+        {
+          "feature": "Tooltips now appear above windows."
+        },
+        {
+          "bug": "Fixed non-IWindow elements appearing above UI windows."
+        },
+        {
+          "balance_change": "Adjusted all slot sizes to 30x30 for consistency."
+        },
+        {
+          "feature": "Reduced console spam."
+        },
+        {
+          "bug": "Growth effect no longer applies Cripple."
+        },
+        {
+          "balance_change": "Overtime effects now store data as ushort instead of string for efficiency."
+        },
+        {
+          "bug": "Can only block or parry when the attacker is in front."
+        },
+        {
+          "bug": "Shield buffs now properly reduce charges."
+        },
+        {
+          "bug": "Item duplication on slot swaps."
+        },
+        {
+          "bug": "Dropping a real item onto a linked slot."
+        },
+        {
+          "bug": "Incorrectly merging item stacks."
+        },
+        {
+          "bug": "Stopped abilities from being placed in inventory slots."
+        },
+        {
+          "bug": "Fixed crashes related to dragging abilities onto themselves."
+        },
+        {
+          "feature": "Updated UI elements for better readability and accessibility."
+        }
+      ]
+    }
+  ]
+}
